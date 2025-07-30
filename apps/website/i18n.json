@@ -1,0 +1,22 @@
+{
+  "Quick Start": {
+    "en-US": "Quick Start",
+    "zh-CN": "快速开始"
+  },
+  "examples": {
+    "en-US": "examples",
+    "zh-CN": "示例"
+  },
+  "guide": {
+    "en-US": "Guide",
+    "zh-CN": "指南"
+  },
+  "playground": {
+    "en-US": "Playground",
+    "zh-CN": "Playground"
+  },
+  "deployment": {
+    "en-US": "Deployment",
+    "zh-CN": "部署"
+  }
+}

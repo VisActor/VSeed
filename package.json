@@ -1,0 +1,32 @@
+{
+  "name": "vseed-monorepo",
+  "private": true,
+  "keywords": [
+    "vchart",
+    "vtable",
+    "visactor"
+  ],
+  "author": "visactor",
+  "description": "VSeed, an elegant data composer, transforming complexity into simplicity.",
+  "scripts": {
+    "dev": "pnpm -r --color --parallel dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "publish:vseed": "pnpm publish --force --filter @visactor/vseed",
+    "ci:publish": "pnpm publish -r"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@changesets/cli": "^2.29.5",
+    "prettier": "^3.6.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=10.13.1"
+  },
+  "packageManager": "pnpm@10.13.1",
+  "license": "MIT"
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "text": "Guide",
+    "link": "/guide/",
+    "activeMatch": "/guide/"
+  },
+  {
+    "text": "Gallery",
+    "link": "/gallery/",
+    "activeMatch": "/gallery/"
+  },
+  {
+    "text": "Playground",
+    "link": "/playground/",
+    "activeMatch": "/playground/"
+  },
+  {
+    "text": "About VChart",
+    "link": "https://visactor.com/vchart"
+  },
+  {
+    "text": "About VTable",
+    "link": "https://visactor.com/vtable"
+  }
+]

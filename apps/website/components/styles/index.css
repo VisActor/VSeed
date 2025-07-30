@@ -1,0 +1,6 @@
+.rspress-playground {
+  margin: 20px 20px 20px 20px !important;
+}
+.rspress-playground-horizontal {
+  height: calc(100vh - 72px - 40px) !important;
+}

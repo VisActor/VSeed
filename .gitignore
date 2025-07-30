@@ -10,6 +10,7 @@ node_modules/
 
 # IDE
 .vscode/*
+!.vscode/settings.json
 !.vscode/extensions.json
 .idea
 

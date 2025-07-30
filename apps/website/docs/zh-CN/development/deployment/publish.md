@@ -19,6 +19,6 @@ title: 发布
 
 合入main分支
 
-## pnpm published -r
+## pnpm published -r --access=public
 
 需要处理的版本

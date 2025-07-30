@@ -7,7 +7,8 @@ pageType: custom
 ```tsx
 import React, { useRef, useEffect } from 'react';
 import VChart from '@visactor/vchart'
-
+import { zVSeed, VSeedJSONSchema } from '@visactor/vseed'
+console.log(VSeedJSONSchema)
 function Demo() {
   const spec = {
     type: 'line',

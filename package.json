@@ -12,8 +12,8 @@
     "dev": "pnpm -r --color --parallel dev",
     "build": "pnpm -r build",
     "test": "pnpm -r test",
-    "publish:vseed": "pnpm publish --force --filter @visactor/vseed",
-    "ci:publish": "pnpm publish -r"
+    "publish:vseed": "pnpm publish -r --access=public",
+    "ci:publish": "pnpm publish -r --access=public"
   },
   "workspaces": [
     "apps/*",

@@ -1,4 +1,4 @@
-import z from "zod";
+import { z } from 'zod'
 
 /**
  * example dataset link:
@@ -11,6 +11,5 @@ import z from "zod";
  * ]
  */
 export const zDataset = z.array(z.record(z.string().or(z.number()), z.any()))
-
 
 export type Dataset = z.infer<typeof zDataset>

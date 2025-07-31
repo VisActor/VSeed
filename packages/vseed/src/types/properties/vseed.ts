@@ -1,4 +1,4 @@
-import z from 'zod'
+import { z } from 'zod'
 import type { ChartType } from './chartType'
 import { zChartType } from './chartType'
 import type { Dataset } from './dataset'

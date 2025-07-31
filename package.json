@@ -10,7 +10,9 @@
   "description": "VSeed, an elegant data composer, transforming complexity into simplicity.",
   "scripts": {
     "dev": "pnpm -r --color --parallel dev",
+    "dev:rsdoctor": "pnpm --filter=@visactor/vseed run dev:rsdoctor",
     "build": "pnpm -r build",
+    "build:rsdoctor": "pnpm --filter=@visactor/vseed run build:rsdoctor",
     "test": "pnpm -r test",
     "publish:vseed": "pnpm publish -r --access=public",
     "ci:publish": "pnpm publish -r --access=public"

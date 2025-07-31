@@ -18,8 +18,8 @@ export const zVSeed = z.object({
 export type VSeed = {
   chartType: ChartType
   dataset: Dataset
-  dimensions: Dimensions
-  measures: Measures
+  dimensions?: Dimensions
+  measures?: Measures
 }
 
 export const VSeedJSONSchema = z.toJSONSchema(zVSeed)

@@ -5,7 +5,7 @@ export const zDimensions = z
     z.object({
       id: z.string(),
       alias: z.string().optional(),
-      visible: z.boolean().optional().default(true),
+      visible: z.boolean().default(true).optional(),
       location: z
         .enum(['dimension', 'rowDimension', 'columnDimension'])
         .optional(),

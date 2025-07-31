@@ -1,0 +1,1 @@
+export { registerColumn } from './column'

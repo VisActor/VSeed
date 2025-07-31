@@ -1,3 +1,4 @@
-export const squared = (n: number): number => n * n
-
+export { Builder } from './builder'
+export { registerColumn } from './builder/register'
 export * from './types'
+export * from './pipeline'

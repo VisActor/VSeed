@@ -1,10 +1,3 @@
----
-title: 标题
-playgroundDirection: horizontal
-pageType: custom
----
-
-```tsx
 import React, { useRef, useEffect } from 'react'
 import VChart from '@visactor/vchart'
 import { registerColumn, VSeed, Builder } from '@visactor/vseed'
@@ -58,6 +51,3 @@ function Demo() {
 }
 
 export default Demo
-
-
-```

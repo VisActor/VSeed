@@ -9,8 +9,8 @@ import type { ExecPipelineType, Pipe } from 'src/types'
  */
 export const execPipeline: ExecPipelineType = <T, U>(
   pipeline: Array<Pipe<T, U>>,
-  initialValue: Partial<T>,
   context: U,
+  initialValue: Partial<T> = {},
 ): T => {
   const result = pipeline.reduce((prev, cur) => {
     return cur(prev, context)

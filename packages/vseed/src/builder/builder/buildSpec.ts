@@ -22,7 +22,7 @@ export const buildSpec = (
     advancedVSeed,
   }
   try {
-    return execPipeline<ISpec, SpecPipelineContext>(pipeline, {}, context)
+    return execPipeline<ISpec, SpecPipelineContext>(pipeline, context)
   } catch (e) {
     console.error(e)
     throw new Error(`buildSpec error, see error info in console`)

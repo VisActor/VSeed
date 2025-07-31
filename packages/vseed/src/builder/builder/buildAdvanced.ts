@@ -20,7 +20,6 @@ export const buildAdvanced = (builder: Builder): AdvancedVSeed | null => {
   try {
     return execPipeline<AdvancedVSeed, AdvancedPipelineContext>(
       pipeline,
-      {},
       context,
     )
   } catch (e) {

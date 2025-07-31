@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import VChart from '@visactor/vchart'
 import { registerColumn, VSeed, Builder } from '@visactor/vseed'
 registerColumn()
@@ -14,11 +14,17 @@ function Demo() {
     const vseed: VSeed = {
       chartType: 'column',
       dataset: [
-        { date: '2019', profit: 10, sales: 100 },
-        { date: '2020', profit: 30, sales: 3200 },
-        { date: '2021', profit: 30, sales: 300 },
-        { date: '2022', profit: 50, sales: 2400 },
-        { date: '2023', profit: 40, sales: 500 },
+        { date: '2019', type: 'A', profit: 10, sales: 100 },
+        { date: '2020', type: 'A', profit: 30, sales: 3200 },
+        { date: '2021', type: 'A', profit: 30, sales: 300 },
+        { date: '2022', type: 'A', profit: 50, sales: 2400 },
+        { date: '2023', type: 'A', profit: 40, sales: 500 },
+
+        { date: '2019', type: 'B', profit: 10, sales: 100 },
+        { date: '2020', type: 'B', profit: 30, sales: 3200 },
+        { date: '2021', type: 'B', profit: 30, sales: 300 },
+        { date: '2022', type: 'B', profit: 50, sales: 2400 },
+        { date: '2023', type: 'B', profit: 40, sales: 500 },
       ],
       dimensions: [
         {

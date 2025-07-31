@@ -8,7 +8,7 @@ import type {
 } from 'src/types'
 import { buildAdvanced } from './buildAdvanced'
 import { buildSpec } from './buildSpec'
-import type { ISpec } from '@visactor/vchart'
+import { build } from './build'
 
 export class Builder implements VSeedBuilder {
   private _vseed: VSeed
@@ -22,9 +22,11 @@ export class Builder implements VSeedBuilder {
     this._advancedVSeed = null
   }
 
-  buildSpec = (): ISpec => buildSpec(this)
+  build = () => build(this)
 
-  buildAdvanced = (): AdvancedVSeed | null => buildAdvanced(this)
+  buildSpec = (advanced: AdvancedVSeed) => buildSpec(this, advanced)
+
+  buildAdvanced = () => buildAdvanced(this)
 
   getAdvancedPipeline = (chartType: ChartType): AdvancedPipeline =>
     Builder._advancedPipelineMap[chartType] as AdvancedPipeline

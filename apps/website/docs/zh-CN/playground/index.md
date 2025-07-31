@@ -45,7 +45,7 @@ function Demo() {
       ],
     }
 
-    const spec = Builder.from(vseed).buildSpec()
+    const spec = Builder.from(vseed).build()
 
     const vchart = new VChart(spec, { dom: ref.current })
 

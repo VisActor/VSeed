@@ -1,20 +1,30 @@
 import type { ISpec } from '@visactor/vchart'
 import type { Builder } from './builder'
-import type { SpecPipeline, SpecPipelineContext } from 'src/types'
+import type { AdvancedVSeed, SpecPipelineContext } from 'src/types'
 import { execPipeline } from '../../pipeline'
 
-export const buildSpec = (builder: Builder): ISpec => {
-  const advancedVSeed = builder.buildAdvanced()
-  if (!advancedVSeed) {
-    throw new Error('advancedVSeed is null')
+export const buildSpec = (
+  builder: Builder,
+  advancedVSeed: AdvancedVSeed,
+): ISpec => {
+  const { chartType } = builder.vseed
+  if (!chartType) {
+    throw new Error('chartType is nil in buildSpec')
   }
+
+  const pipeline = builder.getSpecPipeline(chartType)
+  if (!pipeline) {
+    throw new Error(`no spec pipeline for chartType ${chartType}`)
+  }
+
   const context: SpecPipelineContext = {
     vseed: builder.vseed,
     advancedVSeed,
   }
-  const pipeline = builder.getSpecPipeline(
-    builder.vseed.chartType,
-  ) as SpecPipeline
-  const spec = execPipeline<ISpec, SpecPipelineContext>(pipeline, {}, context)
-  return spec
+  try {
+    return execPipeline<ISpec, SpecPipelineContext>(pipeline, {}, context)
+  } catch (e) {
+    console.error(e)
+    throw new Error(`buildSpec error, see error info in console`)
+  }
 }

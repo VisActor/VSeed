@@ -1,25 +1,30 @@
-import type {
-  AdvancedPipeline,
-  AdvancedPipelineContext,
-  AdvancedVSeed,
-} from 'src/types'
+import type { AdvancedPipelineContext, AdvancedVSeed } from 'src/types'
 import { execPipeline } from '../../pipeline'
 import type { Builder } from './builder'
 
 export const buildAdvanced = (builder: Builder): AdvancedVSeed | null => {
-  const vseed = builder.vseed
-  const { chartType } = vseed
-  const pipeline = builder.getAdvancedPipeline(chartType) as AdvancedPipeline
+  const { chartType } = builder.vseed
+  if (!chartType) {
+    throw new Error('chartType is nil in buildAdvanced')
+  }
+
+  const pipeline = builder.getAdvancedPipeline(chartType)
   if (!pipeline) {
     throw new Error(`no advanced pipeline for chartType ${chartType}`)
   }
+
   const context = {
-    vseed,
+    vseed: builder.vseed,
   }
-  const advancedVSeed = execPipeline<AdvancedVSeed, AdvancedPipelineContext>(
-    pipeline,
-    {},
-    context,
-  )
-  return advancedVSeed
+
+  try {
+    return execPipeline<AdvancedVSeed, AdvancedPipelineContext>(
+      pipeline,
+      {},
+      context,
+    )
+  } catch (e) {
+    console.error(e)
+    throw new Error(`buildAdvanced error, see error info in console`)
+  }
 }

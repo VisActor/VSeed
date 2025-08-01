@@ -1,26 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`unfoldMeasures > 0 dimensions, 0 measures 1`] = `[]`;
-
-exports[`unfoldMeasures > 0 dimensions, 0 measures 2`] = `[]`;
-
-exports[`unfoldMeasures > 0 dimensions, 1 measures 1`] = `
-[
-  {
-    "sales": 100,
-  },
-]
-`;
-
-exports[`unfoldMeasures > 0 dimensions, 2 measures 1`] = `
-[
-  {
-    "profit": 10,
-    "sales": 100,
-  },
-]
-`;
-
 exports[`unfoldMeasures > 1 dimensions, 0 measures 1`] = `
 [
   {

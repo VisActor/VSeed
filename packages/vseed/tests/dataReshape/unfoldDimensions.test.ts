@@ -8,19 +8,15 @@ describe('unfoldMeasures', () => {
     const dataset: Dataset = []
     const measures: Measure[] = []
     const dimensions: Dimension[] = []
-    const result0 = unfoldDimensions(dataset, dimensions, measures, 0)
-    expect(result0.dataset as Dataset).matchSnapshot()
-
-    const result1 = unfoldDimensions(dataset, dimensions, measures, 1)
-    expect(result1.dataset as Dataset).matchSnapshot()
+    expect(() => unfoldDimensions(dataset, dimensions, measures, 0)).toThrowError('unfoldStartIndex is out of range')
+    expect(() => unfoldDimensions(dataset, dimensions, measures, 1)).toThrowError('unfoldStartIndex is out of range')
   })
 
   test('0 dimensions, 1 measures', () => {
     const dataset: Dataset = [{ sales: 100 }]
     const measures: Measure[] = [{ id: 'sales', alias: 'Sales' }]
     const dimensions: Dimension[] = []
-    const result = unfoldDimensions(dataset, dimensions, measures, 0)
-    expect(result.dataset as Dataset).matchSnapshot()
+    expect(() => unfoldDimensions(dataset, dimensions, measures, 0)).toThrowError('unfoldStartIndex is out of range')
   })
 
   test('0 dimensions, 2 measures', () => {
@@ -30,23 +26,14 @@ describe('unfoldMeasures', () => {
       { id: 'profit', alias: 'Profit' },
     ]
     const dimensions: Dimension[] = []
-    const result = unfoldDimensions(dataset, dimensions, measures, 1)
-    expect(result.dataset as Dataset).matchSnapshot()
+    expect(() => unfoldDimensions(dataset, dimensions, measures, 1)).toThrowError('unfoldStartIndex is out of range')
   })
 
   // One Dimension
   test('1 dimensions, 0 measures', () => {
-    const dataset: Dataset = [
-      { date: '2019' },
-      { date: '2020' },
-      { date: '2021' },
-      { date: '2022' },
-      { date: '2023' },
-    ]
+    const dataset: Dataset = [{ date: '2019' }, { date: '2020' }, { date: '2021' }, { date: '2022' }, { date: '2023' }]
     const measures: Measure[] = []
-    const dimensions: Dimension[] = [
-      { id: 'date', alias: 'Date', location: 'dimension' },
-    ]
+    const dimensions: Dimension[] = [{ id: 'date', alias: 'Date', location: 'dimension' }]
     const result0 = unfoldDimensions(dataset, dimensions, measures, 0)
     expect(result0.dataset as Dataset).matchSnapshot()
   })
@@ -60,15 +47,11 @@ describe('unfoldMeasures', () => {
       { date: '2023', sales: 500 },
     ]
     const measures: Measure[] = [{ id: 'sales', alias: 'Sales' }]
-    const dimensions: Dimension[] = [
-      { id: 'date', alias: 'Date', location: 'dimension' },
-    ]
+    const dimensions: Dimension[] = [{ id: 'date', alias: 'Date', location: 'dimension' }]
     const result0 = unfoldDimensions(dataset, dimensions, measures, 0)
     expect(result0.dataset as Dataset).matchSnapshot()
 
-    expect(() =>
-      unfoldDimensions(dataset, dimensions, measures, 1),
-    ).toThrowError('unfoldStartIndex is out of range')
+    expect(() => unfoldDimensions(dataset, dimensions, measures, 1)).toThrowError('unfoldStartIndex is out of range')
   })
 
   test('1 dimensions, 5 measures', () => {
@@ -121,15 +104,11 @@ describe('unfoldMeasures', () => {
       { id: 'price', alias: 'Price' },
       { id: 'number', alias: 'Number' },
     ]
-    const dimensions: Dimension[] = [
-      { id: 'date', alias: 'Date', location: 'dimension' },
-    ]
+    const dimensions: Dimension[] = [{ id: 'date', alias: 'Date', location: 'dimension' }]
     const result0 = unfoldDimensions(dataset, dimensions, measures, 0)
     expect(result0.dataset as Dataset).matchSnapshot()
 
-    expect(() =>
-      unfoldDimensions(dataset, dimensions, measures, 1),
-    ).toThrowError('unfoldStartIndex is out of range')
+    expect(() => unfoldDimensions(dataset, dimensions, measures, 1)).toThrowError('unfoldStartIndex is out of range')
   })
 
   // Two Dimensions

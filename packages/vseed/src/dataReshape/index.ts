@@ -1,3 +1,3 @@
 export { unfoldDimensions } from './unfoldDimensions'
 export { foldMeasures } from './foldMeasures'
-export { dataReshape } from './dataReshape'
+export { dataReshapeFor2M1D } from './dataReshape'

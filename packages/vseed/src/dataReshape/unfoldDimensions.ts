@@ -12,12 +12,16 @@ export const unfoldDimensions = (
   dimensions: Dimension[],
   measures: Measure[],
   unfoldStartIndex: number = 0,
-  dimensionsSeparator: string = Separator,
   foldGroupName: string = FoldDimensionGroup,
+  dimensionsSeparator: string = Separator,
 ): {
   dataset: Dataset
   unfoldInfo: UnfoldInfo
 } => {
+  if (unfoldStartIndex < 0 || unfoldStartIndex >= dimensions.length) {
+    throw new Error('unfoldStartIndex is out of range')
+  }
+
   const dimensionsToBeUnfolded = dimensions.slice(unfoldStartIndex)
   const unfoldInfo: UnfoldInfo = {
     unfoldMap: {},
@@ -33,9 +37,6 @@ export const unfoldDimensions = (
         newMeasureIds: [],
       },
     }
-  }
-  if (unfoldStartIndex < 0 || unfoldStartIndex >= dimensions.length) {
-    throw new Error('unfoldStartIndex is out of range')
   }
 
   const colorItems = []

@@ -28,13 +28,7 @@ export const foldMeasures = (
   let index = 0
   for (let i = 0; i < dataset.length; i++) {
     for (let j = 0; j < measures.length; j++) {
-      const datum: Record<string, any> =
-        assignIds.length == 0
-          ? { ...dataset[i] }
-          : assignIds.reduce<Record<string, any>>((pre, cur) => {
-              pre[cur] = dataset[i][cur] as unknown
-              return pre
-            }, {})
+      const datum: Record<string, any> = { ...dataset[i] }
 
       const measure = measures[j]
       const { id, alias } = measure

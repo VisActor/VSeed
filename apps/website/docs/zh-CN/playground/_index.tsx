@@ -30,6 +30,7 @@ function Demo() {
         {
           id: 'date',
           alias: '日期',
+          location: 'dimension',
         },
       ],
       measures: [

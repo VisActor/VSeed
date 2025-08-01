@@ -1,9 +1,4 @@
-import {
-  dataReshape,
-  type Dataset,
-  type Dimension,
-  type Measure,
-} from '@visactor/vseed'
+import { dataReshape, type Dataset, type Dimension, type Measure } from '@visactor/vseed'
 import { describe, test } from 'vitest'
 
 describe('dataReshape', () => {
@@ -14,7 +9,6 @@ describe('dataReshape', () => {
       { date: '2021', type: '商品', profit: 30, sales: 300 },
       { date: '2022', type: '商品', profit: 50, sales: 2400 },
       { date: '2023', type: '商品', profit: 40, sales: 500 },
-
       { date: '2019', type: '家具', profit: 10, sales: 100 },
       { date: '2020', type: '家具', profit: 30, sales: 3200 },
       { date: '2021', type: '家具', profit: 30, sales: 300 },
@@ -31,6 +25,7 @@ describe('dataReshape', () => {
     ]
 
     const result = dataReshape(dataset, dimensions, measures)
-    debugger
+
+    console.log(result)
   })
 })

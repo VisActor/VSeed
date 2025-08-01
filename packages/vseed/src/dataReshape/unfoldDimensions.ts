@@ -1,5 +1,6 @@
 import type { Dataset, Datum, Dimension, Measure } from 'src/types'
 import type { UnfoldInfo } from 'src/types'
+import { FoldDimensionGroup, Separator } from './constant'
 
 /**
  * TODO: 优化展开维度的性能
@@ -10,18 +11,17 @@ export const unfoldDimensions = (
   dataset: Dataset,
   dimensions: Dimension[],
   measures: Measure[],
-  unfoldStartIndex = 0,
-  dimensionsSeparator = '-',
-  measureSeparator = '-',
+  unfoldStartIndex: number = 0,
+  dimensionsSeparator: string = Separator,
+  foldGroupName: string = FoldDimensionGroup,
 ): {
   dataset: Dataset
   unfoldInfo: UnfoldInfo
 } => {
   const dimensionsToBeUnfolded = dimensions.slice(unfoldStartIndex)
-  const dimensionsToBeGrouped = dimensions.slice(0, unfoldStartIndex)
   const unfoldInfo: UnfoldInfo = {
     unfoldMap: {},
-    newMeasureIds: [],
+    colorItems: [],
   }
 
   // 指标为空或维度为空, 则不检测
@@ -38,74 +38,16 @@ export const unfoldDimensions = (
     throw new Error('unfoldStartIndex is out of range')
   }
 
-  // 1. 维值去重
-  const dimensionGroupNames = Array.from(
-    new Set(
-      dataset.map((datum) =>
-        generateDimGroupName(
-          dimensionsToBeUnfolded,
-          datum,
-          dimensionsSeparator,
-        ),
-      ),
-    ),
-  )
-  // 2. 指标名称列表
-  unfoldInfo.newMeasureIds = dimensionGroupNames.flatMap((dimGroupName) => {
-    if (measures.length === 1) {
-      return dimGroupName
-    }
+  const colorItems = []
+  for (let i = 0; i < dataset.length; i++) {
+    const datum = dataset[i]
+    const colorItem = generateDimGroupName(dimensionsToBeUnfolded, datum, dimensionsSeparator)
+    datum[foldGroupName] = colorItem
+    colorItems.push(colorItem)
+  }
 
-    return measures.map((mea) => {
-      const measureName = mea.alias || mea.id
-      return `${dimGroupName}${measureSeparator}${measureName}`
-    })
-  })
-  // 3. 计算有效的分组
-  const groups: Record<string, Dataset> = {}
-  dataset.forEach((item) => {
-    const groupName = generateDimGroupName(
-      dimensionsToBeGrouped,
-      item,
-      dimensionsSeparator,
-    )
-    if (!groups[groupName]) {
-      groups[groupName] = []
-    }
-    groups[groupName].push(item)
-  })
-  // 4. 展开维度, 重组数据
-  const result = Object.values(groups).map((group: Dataset) => {
-    const datum: Datum = {}
-    // 补充分组信息
-    dimensionsToBeGrouped.forEach((dim) => {
-      datum[dim.id] = group[0][dim.id] as unknown
-    })
-    // 补全指标信息
-    dimensionGroupNames.forEach((dimGroupName) => {
-      const matchDatum = group.find(
-        (datum) =>
-          dimensionsToBeUnfolded
-            .map((d) => String(datum[d.id]))
-            .join(dimensionsSeparator) === dimGroupName,
-      )
-      Object.assign(datum, matchDatum)
-      measures.forEach((mea) => {
-        const measureName = mea.alias || mea.id
-        const newMeasureId =
-          measures.length === 1
-            ? dimGroupName
-            : `${dimGroupName}${measureSeparator}${measureName}`
-        datum[newMeasureId] = (matchDatum?.[mea.id] as unknown) ?? null
-      })
-    })
-
-    return datum
-  })
-
-  debugger
   return {
-    dataset: result,
+    dataset,
     unfoldInfo,
   }
 }
@@ -117,12 +59,6 @@ export const unfoldDimensions = (
  * @param dimensionsSeparator 维度分隔符
  * @returns 维度组合名称
  */
-export const generateDimGroupName = (
-  dimensionsToBeGrouped: Dimension[],
-  datum: Datum,
-  dimensionsSeparator: string,
-) => {
-  return dimensionsToBeGrouped
-    .map((dim) => String(datum[dim.id]))
-    .join(dimensionsSeparator)
+export const generateDimGroupName = (dimensionsToBeGrouped: Dimension[], datum: Datum, dimensionsSeparator: string) => {
+  return dimensionsToBeGrouped.map((dim) => String(datum[dim.id])).join(dimensionsSeparator)
 }

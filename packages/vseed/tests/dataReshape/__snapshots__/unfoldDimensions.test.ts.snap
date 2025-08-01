@@ -1,0 +1,330 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`unfoldMeasures > 0 dimensions, 0 measures 1`] = `[]`;
+
+exports[`unfoldMeasures > 0 dimensions, 0 measures 2`] = `[]`;
+
+exports[`unfoldMeasures > 0 dimensions, 1 measures 1`] = `
+[
+  {
+    "sales": 100,
+  },
+]
+`;
+
+exports[`unfoldMeasures > 0 dimensions, 2 measures 1`] = `
+[
+  {
+    "profit": 10,
+    "sales": 100,
+  },
+]
+`;
+
+exports[`unfoldMeasures > 1 dimensions, 0 measures 1`] = `
+[
+  {
+    "date": "2019",
+  },
+  {
+    "date": "2020",
+  },
+  {
+    "date": "2021",
+  },
+  {
+    "date": "2022",
+  },
+  {
+    "date": "2023",
+  },
+]
+`;
+
+exports[`unfoldMeasures > 1 dimensions, 1 measures 1`] = `
+[
+  {
+    "2019": 100,
+    "2020": 3200,
+    "2021": 300,
+    "2022": 2400,
+    "2023": 500,
+    "date": "2023",
+    "sales": 500,
+  },
+]
+`;
+
+exports[`unfoldMeasures > 1 dimensions, 5 measures 1`] = `
+[
+  {
+    "2019-Count": 10,
+    "2019-Number": 10,
+    "2019-Price": 50,
+    "2019-Profit": 10,
+    "2019-Sales": 100,
+    "2020-Count": 20,
+    "2020-Number": 20,
+    "2020-Price": 100,
+    "2020-Profit": 20,
+    "2020-Sales": 3200,
+    "2021-Count": 30,
+    "2021-Number": 30,
+    "2021-Price": 100,
+    "2021-Profit": 30,
+    "2021-Sales": 300,
+    "2022-Count": 40,
+    "2022-Number": 40,
+    "2022-Price": 100,
+    "2022-Profit": 40,
+    "2022-Sales": 2400,
+    "2023-Count": 50,
+    "2023-Number": 50,
+    "2023-Price": 100,
+    "2023-Profit": 50,
+    "2023-Sales": 500,
+    "count": 50,
+    "date": "2023",
+    "number": 50,
+    "price": 100,
+    "profit": 50,
+    "sales": 500,
+  },
+]
+`;
+
+exports[`unfoldMeasures > 2 dimensions, 0 measures 1`] = `
+[
+  {
+    "date": "2019",
+    "type": "A",
+  },
+  {
+    "date": "2020",
+    "type": "A",
+  },
+  {
+    "date": "2021",
+    "type": "A",
+  },
+  {
+    "date": "2022",
+    "type": "A",
+  },
+  {
+    "date": "2023",
+    "type": "A",
+  },
+  {
+    "date": "2019",
+    "type": "B",
+  },
+  {
+    "date": "2020",
+    "type": "B",
+  },
+  {
+    "date": "2021",
+    "type": "B",
+  },
+  {
+    "date": "2022",
+    "type": "B",
+  },
+  {
+    "date": "2023",
+    "type": "B",
+  },
+]
+`;
+
+exports[`unfoldMeasures > 2 dimensions, 0 measures 2`] = `
+[
+  {
+    "date": "2019",
+    "type": "A",
+  },
+  {
+    "date": "2020",
+    "type": "A",
+  },
+  {
+    "date": "2021",
+    "type": "A",
+  },
+  {
+    "date": "2022",
+    "type": "A",
+  },
+  {
+    "date": "2023",
+    "type": "A",
+  },
+  {
+    "date": "2019",
+    "type": "B",
+  },
+  {
+    "date": "2020",
+    "type": "B",
+  },
+  {
+    "date": "2021",
+    "type": "B",
+  },
+  {
+    "date": "2022",
+    "type": "B",
+  },
+  {
+    "date": "2023",
+    "type": "B",
+  },
+]
+`;
+
+exports[`unfoldMeasures > 2 dimensions, 1 measures 1`] = `
+[
+  {
+    "2019-A": 100,
+    "2019-B": 100,
+    "2020-A": 3200,
+    "2020-B": 3200,
+    "2021-A": 300,
+    "2021-B": 300,
+    "2022-A": 2400,
+    "2022-B": 2400,
+    "2023-A": 500,
+    "2023-B": 500,
+    "date": "2023",
+    "sales": 500,
+    "type": "B",
+  },
+]
+`;
+
+exports[`unfoldMeasures > 2 dimensions, 1 measures 2`] = `
+[
+  {
+    "A": 100,
+    "B": 100,
+    "date": "2019",
+    "sales": 100,
+    "type": "B",
+  },
+  {
+    "A": 3200,
+    "B": 3200,
+    "date": "2020",
+    "sales": 3200,
+    "type": "B",
+  },
+  {
+    "A": 300,
+    "B": 300,
+    "date": "2021",
+    "sales": 300,
+    "type": "B",
+  },
+  {
+    "A": 2400,
+    "B": 2400,
+    "date": "2022",
+    "sales": 2400,
+    "type": "B",
+  },
+  {
+    "A": 500,
+    "B": 500,
+    "date": "2023",
+    "sales": 500,
+    "type": "B",
+  },
+]
+`;
+
+exports[`unfoldMeasures > 2 dimensions, 2 measures 1`] = `
+[
+  {
+    "2019-A-Profit": 10,
+    "2019-A-Sales": 100,
+    "2019-B-Profit": 10,
+    "2019-B-Sales": 100,
+    "2020-A-Profit": 30,
+    "2020-A-Sales": 3200,
+    "2020-B-Profit": 30,
+    "2020-B-Sales": 3200,
+    "2021-A-Profit": 30,
+    "2021-A-Sales": 300,
+    "2021-B-Profit": 30,
+    "2021-B-Sales": 300,
+    "2022-A-Profit": 50,
+    "2022-A-Sales": 2400,
+    "2022-B-Profit": 50,
+    "2022-B-Sales": 2400,
+    "2023-A-Profit": 40,
+    "2023-A-Sales": 500,
+    "2023-B-Profit": 40,
+    "2023-B-Sales": 500,
+    "date": "2023",
+    "profit": 40,
+    "sales": 500,
+    "type": "B",
+  },
+]
+`;
+
+exports[`unfoldMeasures > 2 dimensions, 2 measures 2`] = `
+[
+  {
+    "A-Profit": 10,
+    "A-Sales": 100,
+    "B-Profit": 10,
+    "B-Sales": 100,
+    "date": "2019",
+    "profit": 10,
+    "sales": 100,
+    "type": "B",
+  },
+  {
+    "A-Profit": 30,
+    "A-Sales": 3200,
+    "B-Profit": 30,
+    "B-Sales": 3200,
+    "date": "2020",
+    "profit": 30,
+    "sales": 3200,
+    "type": "B",
+  },
+  {
+    "A-Profit": 30,
+    "A-Sales": 300,
+    "B-Profit": 30,
+    "B-Sales": 300,
+    "date": "2021",
+    "profit": 30,
+    "sales": 300,
+    "type": "B",
+  },
+  {
+    "A-Profit": 50,
+    "A-Sales": 2400,
+    "B-Profit": 50,
+    "B-Sales": 2400,
+    "date": "2022",
+    "profit": 50,
+    "sales": 2400,
+    "type": "B",
+  },
+  {
+    "A-Profit": 40,
+    "A-Sales": 500,
+    "B-Profit": 40,
+    "B-Sales": 500,
+    "date": "2023",
+    "profit": 40,
+    "sales": 500,
+    "type": "B",
+  },
+]
+`;

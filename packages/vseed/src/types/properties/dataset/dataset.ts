@@ -10,6 +10,8 @@ import { z } from 'zod'
  *    { date: '2022', 20001:'type', profit:50, sales: 100, },
  * ]
  */
-export const zDataset = z.array(z.record(z.string().or(z.number()), z.any()))
+export const zDatum = z.record(z.string().or(z.number()), z.any())
+export const zDataset = z.array(zDatum)
 
+export type Datum = z.infer<typeof zDatum>
 export type Dataset = z.infer<typeof zDataset>

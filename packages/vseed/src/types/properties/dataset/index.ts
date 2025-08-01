@@ -1,2 +1,2 @@
-export type { Dataset } from './dataset'
-export { zDataset } from './dataset'
+export type { Dataset, Datum } from './dataset'
+export { zDataset, zDatum } from './dataset'

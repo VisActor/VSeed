@@ -13,6 +13,7 @@ export const foldMeasures = (
   measureId = FoldMeasureId,
   measureName = FoldMeasureName,
   measureValue = FoldMeasureValue,
+  assignIds: string[] = [],
 ): {
   dataset: Dataset
   foldInfo: FoldInfo
@@ -23,17 +24,23 @@ export const foldMeasures = (
     measureValue,
     foldMap: {},
   }
-
   const result: Dataset = new Array(dataset.length * measures.length) as Dataset
   let index = 0
   for (let i = 0; i < dataset.length; i++) {
-    const datum: Record<string, any> = { ...dataset[i] }
     for (let j = 0; j < measures.length; j++) {
+      const datum: Record<string, any> =
+        assignIds.length == 0
+          ? { ...dataset[i] }
+          : assignIds.reduce<Record<string, any>>((pre, cur) => {
+              pre[cur] = dataset[i][cur] as unknown
+              return pre
+            }, {})
+
       const measure = measures[j]
       const { id, alias } = measure
       datum[measureId] = id
       datum[measureName] = alias
-      datum[measureValue] = datum[id] as unknown
+      datum[measureValue] = dataset[i][id] as unknown
 
       foldInfo.foldMap[id] = alias
       result[index++] = datum

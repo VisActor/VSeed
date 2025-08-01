@@ -1,2 +1,2 @@
-export type { Dimensions } from './dimensions';
-export { zDimensions } from './dimensions'
+export type { Dimension, Dimensions } from './dimensions'
+export { zDimension, zDimensions } from './dimensions'

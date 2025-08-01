@@ -24,7 +24,7 @@ export const unfoldDimensions = (
 
   const dimensionsToBeUnfolded = dimensions.slice(unfoldStartIndex)
   const unfoldInfo: UnfoldInfo = {
-    unfoldMap: {},
+    groupName: foldGroupName,
     colorItems: [],
   }
 
@@ -33,7 +33,7 @@ export const unfoldDimensions = (
     return {
       dataset,
       unfoldInfo: {
-        unfoldMap: {},
+        groupName: foldGroupName,
         colorItems: [],
       },
     }
@@ -47,6 +47,7 @@ export const unfoldDimensions = (
     colorItems.push(colorItem)
   }
 
+  unfoldInfo.colorItems = colorItems
   return {
     dataset,
     unfoldInfo,

@@ -12,7 +12,7 @@ const emptyReshapeResult = {
     measureValue: '',
   },
   unfoldInfo: {
-    unfoldMap: {},
+    groupName: '',
     colorItems: [],
   },
 }

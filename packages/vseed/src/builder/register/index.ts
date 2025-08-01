@@ -1,1 +1,1 @@
-export { registerColumn } from './column'
+export { registerColumn, registerAll, registerBar } from './register'

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { Dataset, Measure, Measures } from 'src/types'
-import type { FoldInfo } from 'src/types/dataReshape'
+import type { Dataset, FoldInfo, Measure, Measures } from 'src/types'
 import { FoldMeasureId, FoldMeasureName, FoldMeasureValue } from './constant'
 
 /**
@@ -13,7 +12,6 @@ export const foldMeasures = (
   measureId = FoldMeasureId,
   measureName = FoldMeasureName,
   measureValue = FoldMeasureValue,
-  assignIds: string[] = [],
 ): {
   dataset: Dataset
   foldInfo: FoldInfo

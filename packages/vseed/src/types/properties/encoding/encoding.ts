@@ -12,4 +12,12 @@ export const zEncoding = z.array(
   }),
 )
 
-export type Encoding = z.infer<typeof zEncoding>
+export type Encoding = Array<{
+  x?: string[]
+  y?: string[]
+  color?: string[]
+  group?: string[]
+  angle?: string[]
+  radius?: string[]
+  tooltip?: string[]
+}>

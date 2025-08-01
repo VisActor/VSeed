@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react'
 import VChart from '@visactor/vchart'
-import { registerColumn, VSeed, Builder } from '@visactor/vseed'
-registerColumn()
+import { registerAll, VSeed, Builder } from '@visactor/vseed'
+registerAll()
 
 function Demo() {
   const ref = useRef<HTMLDivElement>(null)
@@ -32,16 +32,15 @@ function Demo() {
           alias: '日期',
           location: 'dimension',
         },
+        {
+          id: 'type',
+          alias: '类型',
+          location: 'dimension',
+        },
       ],
       measures: [
-        {
-          id: 'measure-group1',
-          children: [{ id: 'profit', alias: '利润' }],
-        },
-        {
-          id: 'measure-group2',
-          children: [{ id: 'sales', alias: '销售额' }],
-        },
+        { id: 'profit', alias: '利润' },
+        { id: 'sales', alias: '销售额' },
       ],
     }
 

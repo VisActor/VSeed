@@ -3,7 +3,11 @@ import { foldMeasures } from './foldMeasures'
 import { FoldDimensionGroup, FoldMeasureId, FoldMeasureName, FoldMeasureValue } from './constant'
 import { unfoldDimensions } from './unfoldDimensions'
 
-const emptyReshapeResult = {
+const emptyReshapeResult: {
+  dataset: Dataset
+  foldInfo: FoldInfo
+  unfoldInfo: UnfoldInfo
+} = {
   dataset: [],
   foldInfo: {
     foldMap: {},
@@ -12,8 +16,8 @@ const emptyReshapeResult = {
     measureValue: '',
   },
   unfoldInfo: {
-    unfoldMap: {},
     colorItems: [],
+    groupName: ''
   },
 }
 /**

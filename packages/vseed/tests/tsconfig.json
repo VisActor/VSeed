@@ -1,4 +1,18 @@
 {
   "extends": "../tsconfig.json",
-  "include": [".", "../vitest.setup.ts"]
+  "include": [
+    ".",
+    "../src",
+    "../vitest.setup.ts"
+  ],
+  "compilerOptions": {
+    "paths": {
+      "baseUrl": [
+        "../"
+      ],
+      "@visactor/vseed": [
+        "../src"
+      ]
+    }
+  },
 }

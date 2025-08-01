@@ -1,5 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Dataset, Measure, Measures } from 'src/types'
+import type { FoldInfo } from 'src/types/dataReshape'
+import { FoldMeasureId, FoldMeasureName, FoldMeasureValue } from './constant'
 
 /**
  * 折叠指定的指标
@@ -7,22 +9,40 @@ import type { Dataset, Measure, Measures } from 'src/types'
  */
 export const foldMeasures = (
   dataset: Dataset,
-  measures: Required<Measure[]>,
-  measureId = '__MeaId__',
-  measureName = '__MeaName__',
-  measureValue = '__MeaValue__',
-) => {
-  const newDataset = dataset.map((datum) => {
-    measures.forEach((measure) => {
+  measures: Measure[],
+  measureId = FoldMeasureId,
+  measureName = FoldMeasureName,
+  measureValue = FoldMeasureValue,
+): {
+  dataset: Dataset
+  foldInfo: FoldInfo
+} => {
+  const foldInfo: FoldInfo = {
+    measureId,
+    measureName,
+    measureValue,
+    foldMap: {},
+  }
+
+  const result: Dataset = new Array(dataset.length * measures.length) as Dataset
+  let index = 0
+  for (let i = 0; i < dataset.length; i++) {
+    const datum: Record<string, any> = { ...dataset[i] }
+    for (let j = 0; j < measures.length; j++) {
+      const measure = measures[j]
       const { id, alias } = measure
       datum[measureId] = id
       datum[measureName] = alias
-      datum[measureValue] = datum[id]
-    })
-  })
+      datum[measureValue] = datum[id] as unknown
+
+      foldInfo.foldMap[id] = alias
+      result[index++] = datum
+    }
+  }
 
   return {
-    dataset: newDataset,
+    dataset: result,
+    foldInfo,
   }
 }
 

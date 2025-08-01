@@ -23,7 +23,7 @@ const emptyReshapeResult = {
  * @param measures
  * @returns
  */
-export const dataReshapeFor2M1D = (
+export const dataReshapeFor2D1M = (
   dataset: Dataset,
   dimensions: Dimension[],
   measures: Measure[],

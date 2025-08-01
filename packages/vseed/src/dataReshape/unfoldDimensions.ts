@@ -34,7 +34,7 @@ export const unfoldDimensions = (
       dataset,
       unfoldInfo: {
         unfoldMap: {},
-        newMeasureIds: [],
+        colorItems: [],
       },
     }
   }

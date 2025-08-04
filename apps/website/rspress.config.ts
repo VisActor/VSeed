@@ -9,16 +9,14 @@ export default defineConfig({
   //   path.join(__dirname, 'components/Gallery', 'Gallery.tsx'),
   // ],
   globalStyles: path.join(__dirname, 'components/styles/index.css'),
-  plugins: [pluginPlayground({
-    include: [
-    '@visactor/vchart',
-    '@visactor/vtable',
-    '@visactor/vseed',
+  plugins: [
+    pluginPlayground({
+      include: ['@visactor/vchart', '@visactor/vtable', '@visactor/vseed'],
+    }),
   ],
-  })],
   lang: 'zh-CN',
   locales: [
-     {
+    {
       lang: 'zh-CN',
       label: '简体中文',
       title: 'VisActor VSeed',
@@ -56,4 +54,7 @@ export default defineConfig({
   title: 'VisActor/VSeed',
   icon: '/logo.svg',
   logoText: 'VisActor VSeed',
+  route: {
+    exclude: ['component/**/*'],
+  },
 })

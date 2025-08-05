@@ -8,5 +8,10 @@
     "type": "dir",
     "name": "chartType",
     "label": "chartType"
+  },
+  {
+    "type": "dir",
+    "name": "baseConfig",
+    "label": "baseConfig"
   }
 ]

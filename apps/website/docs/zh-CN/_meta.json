@@ -5,9 +5,9 @@
     "activeMatch": "/guide/"
   },
   {
-    "text": "示例",
-    "link": "/gallery/",
-    "activeMatch": "/gallery/"
+    "text": "配置项",
+    "link": "/option/",
+    "activeMatch": "/option/"
   },
   {
     "text": "开发指南",

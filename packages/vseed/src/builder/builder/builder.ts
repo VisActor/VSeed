@@ -15,11 +15,6 @@ export class Builder implements VSeedBuilder {
   private _vseed: VSeed
   private _advancedVSeed: AdvancedVSeed | null = null
 
-  static _advancedPipelineMap: Partial<Record<ChartType, AdvancedPipeline>> = {}
-  static _specPipelineMap: Partial<Record<ChartType, SpecPipeline>> = {}
-  static _themeMap: Record<string, CustomThemeConfig> = {}
-  static from = (vseed: VSeed) => new Builder(vseed)
-
   constructor(vseed: VSeed) {
     this._vseed = vseed
   }
@@ -50,4 +45,9 @@ export class Builder implements VSeedBuilder {
   set advancedVSeed(value) {
     this._advancedVSeed = value
   }
+
+  static _advancedPipelineMap: Partial<Record<ChartType, AdvancedPipeline>> = {}
+  static _specPipelineMap: Partial<Record<ChartType, SpecPipeline>> = {}
+  static _themeMap: Record<string, CustomThemeConfig> = {}
+  static from = (vseed: VSeed) => new Builder(vseed)
 }

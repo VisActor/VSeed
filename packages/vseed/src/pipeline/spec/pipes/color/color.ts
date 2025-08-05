@@ -6,9 +6,13 @@ export const color: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { datasetReshapeInfo } = advancedVSeed
   const { unfoldInfo } = datasetReshapeInfo
-  const baseConfig = advancedVSeed.baseConfig.vchart as { color: Color }
+  const baseConfig = advancedVSeed.baseConfig.vchart
+  if (!baseConfig || !baseConfig.color) {
+    return result
+  }
+
   const { color } = baseConfig
-  const { colorScheme, colorMapping } = color
+  const { colorScheme, colorMapping } = color as Color
 
   result.color = {
     type: 'ordinal',

@@ -7,10 +7,13 @@ const defaultLegend = {
 export const legend: SpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed } = context
-  const baseConfig = advancedVSeed.baseConfig.vchart as { legend: Legend }
-  const { legend = defaultLegend } = baseConfig
+  const baseConfig = advancedVSeed.baseConfig.vchart
+  if (!baseConfig || !baseConfig.legend) {
+    return result
+  }
 
-  const { enable } = legend
+  const { legend = defaultLegend } = baseConfig
+  const { enable } = legend as Legend
 
   result.legends = {
     visible: enable,

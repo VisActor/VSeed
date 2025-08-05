@@ -1,5 +1,5 @@
-export { Builder } from './builder'
-export { registerColumn, registerAll, registerBar } from './builder/register'
+export * from './builder'
 export * from './types'
 export * from './pipeline'
 export * from './dataReshape'
+export * from './theme'

@@ -19,6 +19,9 @@
       "@visactor/vseed": [
         "../../packages/vseed/src"
       ],
+      "@components": [
+        "./components"
+      ],
     }
   },
   "include": [

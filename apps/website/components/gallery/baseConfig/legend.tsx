@@ -1,11 +1,11 @@
 import { VSeed } from '@visactor/vseed'
-import { VSeedRender } from '../../VSeedRender'
+import { VSeedRender } from '../../render/VSeedRender'
 import { memo } from 'react'
 
-export const BaseConfigLabel = memo(() => {
+export const BaseConfigLegend = memo(() => {
   const vseed: VSeed = {
     chartType: 'columnParallel',
-    label: {
+    legend: {
       enable: false,
     },
     dataset: [

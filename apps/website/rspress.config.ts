@@ -50,6 +50,6 @@ export default defineConfig({
   icon: '/logo.svg',
   logoText: 'VisActor VSeed',
   route: {
-    exclude: ['components/**/*', 'zh-CN/components/**/*', 'en-US/components/**/*'],
+    exclude: ['components/**/*'],
   },
 })

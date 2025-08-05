@@ -1,13 +1,11 @@
 import { VSeed } from '@visactor/vseed'
-import { VSeedRender } from '../../VSeedRender'
+import { VSeedRender } from '../../render/VSeedRender'
 import { memo } from 'react'
 
-export const BaseConfigLegend = memo(() => {
+export const ThemeDark = memo(() => {
   const vseed: VSeed = {
     chartType: 'columnParallel',
-    legend: {
-      enable: false,
-    },
+    theme: 'dark',
     dataset: [
       { date: '2019', profit: 10, sales: 20 },
       { date: '2020', profit: 30, sales: 60 },

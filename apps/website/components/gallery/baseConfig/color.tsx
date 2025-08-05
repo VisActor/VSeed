@@ -1,5 +1,5 @@
 import { VSeed } from '@visactor/vseed'
-import { VSeedRender } from '../../VSeedRender'
+import { VSeedRender } from '../../render/VSeedRender'
 import { memo } from 'react'
 
 export const BaseConfigColorScheme = memo(() => {

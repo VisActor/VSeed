@@ -2,7 +2,7 @@ import { z } from 'zod'
 import { zBaseConfig } from '../baseConfig'
 
 export const zCustomThemeConfig = z.object({
-  baseConfig: zBaseConfig,
+  baseConfig: zBaseConfig.optional(),
 })
 
 export const zCustomTheme = z.record(z.string(), zCustomThemeConfig).optional()

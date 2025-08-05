@@ -4,10 +4,6 @@ import { pluginPlayground } from '@rspress/plugin-playground'
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
-  // globalUIComponents: [
-  //   path.join(__dirname, 'components/Editor', 'Editor.tsx'),
-  //   path.join(__dirname, 'components/Gallery', 'Gallery.tsx'),
-  // ],
   globalStyles: path.join(__dirname, 'components/styles/index.css'),
   plugins: [
     pluginPlayground({
@@ -24,7 +20,6 @@ export default defineConfig({
     },
     {
       lang: 'en-US',
-      // 导航栏切换语言的标签
       label: 'English',
       title: 'VisActor VSeed',
       description: 'VisActor VSeed',
@@ -55,6 +50,6 @@ export default defineConfig({
   icon: '/logo.svg',
   logoText: 'VisActor VSeed',
   route: {
-    exclude: ['component/**/*'],
+    exclude: ['components/**/*', 'zh-CN/components/**/*', 'en-US/components/**/*'],
   },
 })

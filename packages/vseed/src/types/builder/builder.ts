@@ -1,7 +1,8 @@
 import type { ISpec } from '@visactor/vchart'
-import type { AdvancedVSeed, ChartType, CustomThemeConfig } from '../properties'
+import type { ChartType, CustomThemeConfig } from '../properties'
 import type { VSeed } from '../chartType'
 import type { AdvancedPipeline, SpecPipeline } from '../pipeline'
+import type { AdvancedVSeed } from '../advancedVSeed'
 
 export interface VSeedBuilder {
   build: () => ISpec

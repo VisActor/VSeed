@@ -1,4 +1,15 @@
 import type { SpecPipeline } from 'src/types'
-import { initBar, dataset, xLinear, yBand, percent, backgroundColor } from '../pipes'
+import { initBar, dataset, xLinear, yBand, percent, backgroundColor, label, tooltip, legend, color } from '../pipes'
 
-export const barPercentSpecPipeline: SpecPipeline = [initBar, backgroundColor, percent, dataset, xLinear, yBand]
+export const barPercentSpecPipeline: SpecPipeline = [
+  initBar,
+  color,
+  backgroundColor,
+  percent,
+  dataset,
+  xLinear,
+  yBand,
+  label,
+  tooltip,
+  legend,
+]

@@ -1,7 +1,8 @@
 [
-  "backgroundColor",
+  "color",
   "label",
   "legend",
   "tooltip",
-  "responsive"
+  "responsive",
+  "backgroundColor"
 ]

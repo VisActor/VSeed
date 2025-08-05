@@ -1,5 +1,6 @@
+import type { AdvancedVSeed } from 'src/types/advancedVSeed'
 import type { VSeed } from '../../chartType'
-import type { AdvancedVSeed, CustomTheme } from '../../properties'
+import type { CustomTheme } from '../../properties'
 import type { Pipe } from '../pipeline'
 
 export type AdvancedPipelineContext = {

@@ -1,50 +1,32 @@
-import { mergeDeep } from 'remeda'
-import type { AdvancedPipe, VChartBaseConfig } from 'src/types'
+import { pick } from 'remeda'
+import type { AdvancedPipe, VChartBaseConfig, VTableBaseConfig } from 'src/types'
 
 export const vchartBaseConfig: AdvancedPipe = (advancedVSeed, context) => {
-  const { vseed, customTheme } = context
-  const { backgroundColor, theme } = vseed
+  const { vseed } = context
+
   const result = {
     ...advancedVSeed,
   }
-  // theme 优先级低于用户配置的
-  const higherPriorityBaseConfig: VChartBaseConfig = {
-    backgroundColor,
-  }
 
-  if (!theme || !customTheme || !customTheme[theme].baseConfig?.vchart) {
-    return {
-      ...result,
-      baseConfig: {
-        vchart: {
-          ...higherPriorityBaseConfig,
-        },
-      },
-    }
-  }
+  const config: VChartBaseConfig = pick(vseed, ['backgroundColor', 'color', 'label', 'legend', 'tooltip'])
 
-  const customThemeConfig = customTheme?.[theme]
-  const lowerPriorityBaseConfig = customThemeConfig.baseConfig?.vchart ?? {}
-  const mergedBaseConfig = mergeDeep(higherPriorityBaseConfig, lowerPriorityBaseConfig)
-
-  return {
-    ...result,
-    baseConfig: {
-      vchart: {
-        ...mergedBaseConfig,
-      },
+  result.baseConfig = {
+    vchart: {
+      ...config,
     },
   }
+  return result
 }
 
 export const vtableBaseConfig: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context
-  const { backgroundColor } = vseed
+  const config: VTableBaseConfig = pick(vseed, ['backgroundColor'])
+
   return {
     ...advancedVSeed,
     baseConfig: {
       vtable: {
-        backgroundColor,
+        ...config,
       },
     },
   }

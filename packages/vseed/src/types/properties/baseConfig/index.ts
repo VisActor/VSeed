@@ -1,4 +1,13 @@
-export type { BackgroundColor } from './backgroundColor'
+export type { VTableBaseConfig, VChartBaseConfig } from './baseConfig'
+
 export { zBackgroundColor } from './backgroundColor'
-export type { VTableBaseConfig, VChartBaseConfig } from './baseConfig';
+export type { BackgroundColor } from './backgroundColor'
 export { zBaseConfig } from './baseConfig'
+export type { Color } from './color'
+export { zColor } from './color'
+export type { Label } from './label'
+export { zLabel } from './label'
+export type { Legend } from './legend'
+export { zLegend } from './legend'
+export type { Tooltip } from './tooltip'
+export { zTooltip } from './tooltip'

@@ -1,4 +1,4 @@
-import type { BackgroundColor, Dataset, Dimensions, Measures, Theme } from 'src/types'
+import type { BackgroundColor, Color, Dataset, Dimensions, Label, Legend, Measures, Theme, Tooltip } from 'src/types'
 
 /**
  * 环形图类型定义
@@ -52,6 +52,30 @@ export interface Donut {
    * @description 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
    */
   backgroundColor?: BackgroundColor
+
+  /**
+   * 颜色
+   * @description 颜色配置, 用于定义图表的颜色方案, 包括颜色列表, 颜色映射, 颜色渐变等.
+   */
+  color?: Color
+
+  /**
+   * 标签
+   * @description 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
+   */
+  label?: Label
+
+  /**
+   * 图例
+   * @description 图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.
+   */
+  legend?: Legend
+
+  /**
+   * 提示信息
+   * @description 提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等.
+   */
+  tooltip?: Tooltip
 
   /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置

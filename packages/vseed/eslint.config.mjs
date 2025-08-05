@@ -11,7 +11,7 @@ export default [
 
   ...tseslint.configs.recommendedTypeChecked,
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ['src/*.ts', 'tests/*.ts'],
     languageOptions: {
       parserOptions: {
         projectService: true,
@@ -21,10 +21,7 @@ export default [
     rules: {
       '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/consistent-type-exports': 'error',
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        { argsIgnorePattern: '^_' },
-      ],
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     },
   },
 ]

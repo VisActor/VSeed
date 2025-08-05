@@ -2,6 +2,11 @@
   {
     "type": "file",
     "name": "index",
-    "label": "图表类型"
+    "label": "介绍"
+  },
+  {
+    "type": "dir",
+    "name": "chartType",
+    "label": "chartType"
   }
 ]

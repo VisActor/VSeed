@@ -1,0 +1,1 @@
+export { percent } from './percent'

@@ -1,0 +1,1 @@
+export { initAdvancedVSeed } from './initAdvancedVSeed'

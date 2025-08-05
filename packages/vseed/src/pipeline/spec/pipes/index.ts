@@ -1,3 +1,5 @@
 export * from './dataset'
 export * from './init'
 export * from './axes'
+export * from './percent'
+export * from './stack'

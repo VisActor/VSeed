@@ -1,9 +1,9 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, memo } from 'react'
 import VChart from '@visactor/vchart'
 import { registerAll, VSeed, Builder } from '@visactor/vseed'
 registerAll()
 
-function VSeedRender(props: { vseed: VSeed }) {
+export const VSeedRender = memo((props: { vseed: VSeed }) => {
   const {
     vseed = {
       chartType: 'column',
@@ -54,7 +54,18 @@ function VSeedRender(props: { vseed: VSeed }) {
     return () => vchart.release()
   })
 
-  return <div ref={ref} style={{ height: 200, width: '100%' }}></div>
-}
-
-export { VSeedRender }
+  return (
+    <div
+      ref={ref}
+      style={{
+        padding: '8px 1.25rem 0 1.25rem',
+        height: 200,
+        width: '100%',
+        border: '1px solid #e5e7eb',
+        borderRadius: '1rem',
+        boxSizing: 'content-box',
+        overflow: 'hidden',
+      }}
+    ></div>
+  )
+})

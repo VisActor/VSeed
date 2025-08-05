@@ -18,5 +18,49 @@
   "deployment": {
     "en-US": "Deployment",
     "zh-CN": "部署"
+  },
+  "chartType": {
+    "en-US": "Chart Type",
+    "zh-CN": "图表类型"
+  },
+  "bar": {
+    "en-US": "Bar Chart",
+    "zh-CN": "堆叠条形图"
+  },
+  "barPercent": {
+    "en-US": "Bar Percent Chart",
+    "zh-CN": "百分比条形图"
+  },
+  "barParallel": {
+    "en-US": "Bar Parallel Chart",
+    "zh-CN": "并列条形图"
+  },
+  "column": {
+    "en-US": "Column Chart",
+    "zh-CN": "堆叠柱状图"
+  },
+  "columnPercent": {
+    "en-US": "Column Percent Chart",
+    "zh-CN": "百分比柱状图"
+  },
+  "columnParallel": {
+    "en-US": "Column Parallel Chart",
+    "zh-CN": "并列柱状图"
+  },
+  "line": {
+    "en-US": "Line Chart",
+    "zh-CN": "折线图"
+  },
+  "area": {
+    "en-US": "Area Chart",
+    "zh-CN": "堆叠面积图"
+  },
+  "areaPercent": {
+    "en-US": "Area Percent Chart",
+    "zh-CN": "百分比面积图"
+  },
+  "scatter": {
+    "en-US": "Scatter Chart",
+    "zh-CN": "散点图"
   }
 }

@@ -1,0 +1,11 @@
+[
+  "line",
+  "column",
+  "columnParallel",
+  "columnPercent",
+  "bar",
+  "barParallel",
+  "barPercent",
+  "area",
+  "areaPercent"
+]

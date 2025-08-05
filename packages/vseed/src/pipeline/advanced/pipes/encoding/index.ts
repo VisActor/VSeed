@@ -1,1 +1,1 @@
-export { encodingCartesian } from './encodingCartesian'
+export { encodingXY, encodingYX } from './encodingCartesian'

@@ -10,14 +10,14 @@
     "activeMatch": "/gallery/"
   },
   {
-    "text": "Playground",
-    "link": "/playground/",
-    "activeMatch": "/playground/"
-  },
-  {
     "text": "开发指南",
     "link": "/development/",
     "activeMatch": "/development/"
+  },
+  {
+    "text": "Playground",
+    "link": "/playground/",
+    "activeMatch": "/playground/"
   },
   {
     "text": "了解VChart",

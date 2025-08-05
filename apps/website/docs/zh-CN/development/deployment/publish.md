@@ -4,21 +4,29 @@ title: 发布
 
 # 发布
 
-## pnpm changeset
 要生成新的 changesets，请在仓库的根目录中执行 pnpm changeset。 .changeset 目录中生成的 markdown 文件应被提交到存储库。
-
-## pnpm changeset version
+```bash
+pnpm changeset
+```
 
 指定版本，并更新变更日志文件。
+```bash
+pnpm changeset version
+```
 
-## pnpm install
+更新依赖和lock file
+```bash
+pnpm install
+```
 
-更新lock file
-
-## 提交更改
-
-合入main分支
-
-## pnpm publish:vseed
+提交更改, 并推送至远程仓库的main分支
+```bash
+git add .
+git commit -m "chore: release message"
+git push
+```
 
 需要处理的版本
+```bash
+pnpm publish:vseed
+```

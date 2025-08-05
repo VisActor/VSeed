@@ -7,11 +7,10 @@ pageType: doc
 ```tsx
 import { useRef, useEffect } from 'react'
 import VChart from '@visactor/vchart'
-import { registerAll, VSeed, Builder, registerTheme } from '@visactor/vseed'
+import { registerColumnParallel, VSeed, Builder, registerCustomTheme } from '@visactor/vseed'
 
-registerAll()
-
-registerTheme('cyberpunk', {
+registerColumnParallel()
+registerCustomTheme('cyberpunk', {
   baseConfig: {
     vtable: {
       backgroundColor: '#000000',

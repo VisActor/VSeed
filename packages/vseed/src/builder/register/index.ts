@@ -9,5 +9,5 @@ export {
   registerBarPercent,
   registerBarParallel,
 } from './chartType'
-export { registerTheme, registerLightTheme, registerDarkTheme } from './theme'
+export { registerCustomTheme, registerLightTheme, registerDarkTheme } from './theme'
 export { registerAll } from './all'

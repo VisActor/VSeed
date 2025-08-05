@@ -1,4 +1,4 @@
-import type { Dataset, Dimensions, Measures } from 'src/types'
+import type { BackgroundColor, Dataset, Dimensions, Measures } from 'src/types'
 
 /**
  * 双轴图类型定义
@@ -9,7 +9,7 @@ import type { Dataset, Dimensions, Measures } from 'src/types'
  * - 需要同时展示数值和增长率等复合指标
  * - 支持不同类型图表组合（如折线图+柱状图/ 折线图+面积图/ 面积图+柱状图）
  * 数据要求:
- * - 至少1个指标字段（度量） 
+ * - 至少1个指标字段（度量）
  * - 支持指标组, 第一组指标会放置(主轴)左轴, 第二组指标会放置(次轴)右轴
  * - 第一个维度会放至X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
  * - 两组指标字段可分别映射到左右两个Y轴, 一个指标组内的所有会自动合并为一个指标
@@ -47,4 +47,11 @@ export interface DualAxis {
    * @example [{id: 'value', alias: '数值', axis: 'left'}, {id: 'growth', alias: '增长率', axis: 'right', format: 'percent'}]
    */
   measures: Measures
+
+  /**
+   * 图表的背景颜色
+   * @default transparent 默认为透明背景
+   * @description 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
+   */
+  backgroundColor?: BackgroundColor
 }

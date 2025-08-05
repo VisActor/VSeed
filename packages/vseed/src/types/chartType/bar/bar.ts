@@ -1,4 +1,4 @@
-import type { Dataset, Dimensions, Measures } from 'src/types'
+import type { BackgroundColor, Dataset, Dimensions, Measures } from 'src/types'
 
 /**
  * 条形图类型定义
@@ -45,4 +45,11 @@ export interface Bar {
    * @example [{id: "value", alias: "数值"}]
    */
   measures: Measures
+
+  /**
+   * 图表的背景颜色
+   * @default transparent 默认为透明背景
+   * @description 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
+   */
+  backgroundColor?: BackgroundColor
 }

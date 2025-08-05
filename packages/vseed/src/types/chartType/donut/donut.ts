@@ -1,4 +1,4 @@
-import type { Dataset, Dimensions, Measures } from 'src/types'
+import type { BackgroundColor, Dataset, Dimensions, Measures } from 'src/types'
 
 /**
  * 环形图类型定义
@@ -8,7 +8,7 @@ import type { Dataset, Dimensions, Measures } from 'src/types'
  * - 强调数据的整体与部分关系
  * - 中心区域需要展示关键指标或标题
  * 数据要求:
- * - 至少1个指标字段（度量） 
+ * - 至少1个指标字段（度量）
  * - 所有维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
  * - 所有指标会自动合并为一个指标
  * 默认开启的功能:
@@ -45,4 +45,11 @@ export interface Donut {
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
   measures: Measures
+
+  /**
+   * 图表的背景颜色
+   * @default transparent 默认为透明背景
+   * @description 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
+   */
+  backgroundColor?: BackgroundColor
 }

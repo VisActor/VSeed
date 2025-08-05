@@ -1,4 +1,4 @@
-import type { Dataset, Dimensions, Measures } from 'src/types'
+import type { BackgroundColor, Dataset, Dimensions, Measures } from 'src/types'
 
 /**
  * 百分比柱状图类型定义
@@ -8,7 +8,7 @@ import type { Dataset, Dimensions, Measures } from 'src/types'
  * - 多维度数据的构成分析
  * - 时间序列的占比变化趋势
  * 数据要求:
- * - 至少1个指标字段（度量） 
+ * - 至少1个指标字段（度量）
  * - 第一个维度会放至X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
  * - 所有指标会自动合并为一个指标
  * 默认开启的功能:
@@ -45,4 +45,11 @@ export interface ColumnPercent {
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
   measures: Measures
+
+  /**
+   * 图表的背景颜色
+   * @default transparent 默认为透明背景
+   * @description 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
+   */
+  backgroundColor?: BackgroundColor
 }

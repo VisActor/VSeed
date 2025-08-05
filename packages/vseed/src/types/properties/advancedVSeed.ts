@@ -5,6 +5,7 @@ import { zDimensions } from './dimensions'
 import { zMeasures } from './measures'
 import { zEncoding } from './encoding/encoding'
 import { zDatasetReshapeInfo } from './datasetReshapeInfo/datasetReshapeInfo'
+import { zBaseConfig } from './baseConfig/baseConfig'
 
 export const zAdvancedVSeed = z.object({
   chartType: zChartType,
@@ -13,6 +14,7 @@ export const zAdvancedVSeed = z.object({
   dimensions: zDimensions,
   measures: zMeasures,
   encoding: zEncoding,
+  baseConfig: zBaseConfig,
 })
 
 export type AdvancedVSeed = z.infer<typeof zAdvancedVSeed>

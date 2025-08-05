@@ -1,5 +1,6 @@
 import type { ISpec } from '@visactor/vchart'
-import type { AdvancedVSeed, VSeed } from '../properties'
+import type { AdvancedVSeed } from '../properties'
+import type { VSeed } from '../chartType'
 
 export interface VSeedBuilder {
   build: () => ISpec
@@ -7,6 +8,6 @@ export interface VSeedBuilder {
   buildSpec: (advancedVSeed: AdvancedVSeed) => ISpec
 
   get vseed(): VSeed
-  get advancedVSeed(): VSeed | null
-  set advancedVSeed(value: VSeed | null)
+  get advancedVSeed(): AdvancedVSeed | null
+  set advancedVSeed(value: AdvancedVSeed | null)
 }

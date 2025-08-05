@@ -14,7 +14,7 @@ import type { DualAxis } from './dualAxis'
 import type { Area } from './area'
 import type { AreaPercent } from './areaPercent'
 
-export type VSeedDSL =
+export type VSeed =
   | Table
   | PivotTable
   | Line

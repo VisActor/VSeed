@@ -1,0 +1,1 @@
+export { backgroundColor } from './background'

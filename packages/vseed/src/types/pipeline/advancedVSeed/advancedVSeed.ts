@@ -1,4 +1,5 @@
-import type { AdvancedVSeed, VSeed } from '../../properties'
+import type { VSeed } from '../../chartType'
+import type { AdvancedVSeed } from '../../properties'
 import type { Pipe } from '../pipeline'
 
 export type AdvancedPipelineContext = {

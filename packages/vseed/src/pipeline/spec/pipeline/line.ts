@@ -1,4 +1,4 @@
 import type { SpecPipeline } from 'src/types'
-import { initColumn, dataset, xBand, yLinear, initLine } from '../pipes'
+import { dataset, xBand, yLinear, initLine, backgroundColor } from '../pipes'
 
-export const lineSpecPipeline: SpecPipeline = [initLine, dataset, xBand, yLinear]
+export const lineSpecPipeline: SpecPipeline = [initLine, backgroundColor, dataset, xBand, yLinear]

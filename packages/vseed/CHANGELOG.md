@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.4
+
+### Patch Changes
+
+- feat: theme and base config
+
 ## 0.0.3
 
 ### Patch Changes

@@ -36,7 +36,7 @@ export interface PivotTable {
    * @type {Dimensions}
    * @example [{id: 'region', alias: '地区', isRow: true}, {id: 'product', alias: '产品', isColumn: true}]
    */
-  dimensions: Dimensions
+  dimensions?: Dimensions
 
   /**
    * 指标
@@ -44,7 +44,7 @@ export interface PivotTable {
    * @type {Measures}
    * @example [{id: 'sales', alias: '销售额', aggregation: 'sum'}]
    */
-  measures: Measures
+  measures?: Measures
 
   /**
    * 图表的背景颜色

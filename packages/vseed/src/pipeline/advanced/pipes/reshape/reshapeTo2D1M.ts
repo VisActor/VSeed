@@ -10,7 +10,9 @@ import type { AdvancedPipe } from 'src/types'
 export const reshapeTo2D1M: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
-  const { dimensions, measures, dataset } = vseed
+  const { dataset } = vseed
+  const { dimensions, measures } = advancedVSeed
+
   if (!measures || !dimensions || !dataset) {
     return result
   }

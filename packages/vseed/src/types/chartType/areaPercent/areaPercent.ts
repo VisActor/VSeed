@@ -36,7 +36,7 @@ export interface AreaPercent {
    * @type {Dimensions}
    * @example [{ id: 'month', alias: '月份' }, { id: 'year', alias: '年份' }]
    */
-  dimensions: Dimensions
+  dimensions?: Dimensions
 
   /**
    * 指标
@@ -44,7 +44,7 @@ export interface AreaPercent {
    * @type {Measures}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures: Measures
+  measures?: Measures
 
   /**
    * 图表的背景颜色

@@ -38,7 +38,7 @@ export interface DualAxis {
    * @type {Dimensions}
    * @example [{id: 'month', alias: '月份'}]
    */
-  dimensions: Dimensions
+  dimensions?: Dimensions
 
   /**
    * 指标
@@ -46,7 +46,7 @@ export interface DualAxis {
    * @type {Measures}
    * @example [{id: 'value', alias: '数值', axis: 'left'}, {id: 'growth', alias: '增长率', axis: 'right', format: 'percent'}]
    */
-  measures: Measures
+  measures?: Measures
 
   /**
    * 图表的背景颜色

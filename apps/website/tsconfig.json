@@ -15,6 +15,7 @@
     "moduleResolution": "bundler",
     "useDefineForClassFields": true,
     "allowImportingTsExtensions": true,
+    "baseUrl": ".",
     "paths": {
       "@visactor/vseed": [
         "../../packages/vseed/src"
@@ -26,6 +27,7 @@
   },
   "include": [
     "docs",
+    "components",
     "theme",
     "rspress.config.ts"
   ],

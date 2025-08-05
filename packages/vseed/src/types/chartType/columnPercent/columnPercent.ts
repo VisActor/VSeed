@@ -36,7 +36,7 @@ export interface ColumnPercent {
    * @type {Dimensions}
    * @example [{id: 'category', alias: '类别'}]
    */
-  dimensions: Dimensions
+  dimensions?: Dimensions
 
   /**
    * 指标
@@ -44,7 +44,7 @@ export interface ColumnPercent {
    * @type {Measures}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures: Measures
+  measures?: Measures
 
   /**
    * 图表的背景颜色

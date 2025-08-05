@@ -1,8 +1,10 @@
 import type { AdvancedPipeline } from 'src/types'
-import { encodingXY, initAdvancedVSeed, reshapeTo2D1M, vchartBaseConfig, vchartTheme } from '../pipes'
+import { autoDimensions, autoMeasures, encodingXY, initAdvancedVSeed, reshapeTo2D1M, vchartBaseConfig, vchartTheme } from '../pipes'
 
 export const areaAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  autoMeasures,
+  autoDimensions,
   reshapeTo2D1M,
   encodingXY,
   vchartBaseConfig,

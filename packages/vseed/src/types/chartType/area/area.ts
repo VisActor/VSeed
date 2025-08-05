@@ -37,7 +37,7 @@ export interface Area {
    * @type {Dimensions}
    * @example [{ id: 'month', alias: '月份' }, { id: 'year', alias: '年份' }]
    */
-  dimensions: Dimensions
+  dimensions?: Dimensions
 
   /**
    * 指标
@@ -45,7 +45,7 @@ export interface Area {
    * @type {Measures}
    * @example [{id: 'value', alias: '数值'}]
    */
-  measures: Measures
+  measures?: Measures
 
   /**
    * 图表的背景颜色

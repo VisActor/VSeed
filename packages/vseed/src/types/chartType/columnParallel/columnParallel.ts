@@ -36,7 +36,7 @@ export interface ColumnParallel {
    * @type {Dimensions}
    * @example [{id: 'category', alias: '类别'}]
    */
-  dimensions: Dimensions
+  dimensions?: Dimensions
 
   /**
    * 指标
@@ -44,7 +44,7 @@ export interface ColumnParallel {
    * @type {Measures}
    * @example [{id: 'value1', alias: '指标1'}, {id: 'value2', alias: '指标2'}]
    */
-  measures: Measures
+  measures?: Measures
 
   /**
    * 图表的背景颜色

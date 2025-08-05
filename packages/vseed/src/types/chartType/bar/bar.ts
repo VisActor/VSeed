@@ -36,7 +36,7 @@ export interface Bar {
    * @type {Dimensions}
    * @example [{id: "date", alias: "日期"}, {id: "value", alias: "数值"}]
    */
-  dimensions: Dimensions
+  dimensions?: Dimensions
 
   /**
    * 指标
@@ -44,7 +44,7 @@ export interface Bar {
    * @type {Measures}
    * @example [{id: "value", alias: "数值"}]
    */
-  measures: Measures
+  measures?: Measures
 
   /**
    * 图表的背景颜色

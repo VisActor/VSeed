@@ -9,11 +9,15 @@ nvm use 20
 ```
 
 [Pnpm Install](https://pnpm.io/zh/installation#%E4%BD%BF%E7%94%A8-corepack)
+> `package.json`中配置`packageManager`为`pnpm@10.13.1`, `corepack`会自动安装该版本
 ```bash title="pnpm"
 corepack enable pnpm
 ```
 
-
+检查pnpm版本, 预期是10.13.1.
+```bash title="pnpm version"
+pnpm -v # expected 10.13.1
+```
 
 ## 启动项目
 

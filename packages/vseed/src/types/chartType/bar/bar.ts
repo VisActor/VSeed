@@ -1,4 +1,4 @@
-import type { BackgroundColor, Dataset, Dimensions, Measures } from 'src/types'
+import type { BackgroundColor, Dataset, Dimensions, Measures, Theme } from 'src/types'
 
 /**
  * 条形图类型定义
@@ -52,4 +52,14 @@ export interface Bar {
    * @description 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
    */
   backgroundColor?: BackgroundColor
+
+  /**
+   * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置
+   * @default light 默认为亮色主题
+   * @description 内置light与dark两种主题, 用户可以通过Builder自定义主题
+   * @example 'dark'
+   * @example 'light'
+   * @example 'customThemeName'
+   */
+  theme?: Theme
 }

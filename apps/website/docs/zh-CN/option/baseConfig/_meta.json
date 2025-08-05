@@ -1,12 +1,12 @@
 [
   {
     "type": "dir",
-    "name": "vchart",
-    "label": "VChart通用配置"
+    "name": "chart",
+    "label": "Chart通用配置"
   },
   {
     "type": "dir",
-    "name": "vtable",
-    "label": "VTable通用配置"
+    "name": "table",
+    "label": "Table通用配置"
   }
 ]

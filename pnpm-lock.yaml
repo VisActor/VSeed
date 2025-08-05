@@ -63,6 +63,9 @@ importers:
       '@visactor/vtable':
         specifier: '>1.19.0'
         version: 1.19.4
+      remeda:
+        specifier: ^2.28.0
+        version: 2.28.0
       zod:
         specifier: 4.0.14
         version: 4.0.14
@@ -3102,6 +3105,9 @@ packages:
   remark@14.0.3:
     resolution: {integrity: sha512-bfmJW1dmR2LvaMJuAnE88pZP9DktIFYXazkTfOIKZzi3Knk9lT0roItIA24ydOucI3bV/g/tXBA6hzqq3FV9Ew==}
 
+  remeda@2.28.0:
+    resolution: {integrity: sha512-943nIauNk4xBh/2DNcsZCc3DRpKncNXnNjtWlqfhM72FvD4bKuOXWSfuY0+k7yf8/Ob3+QzXtxLeobLoMn/INA==}
+
   require-from-string@2.0.2:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
     engines: {node: '>=0.10.0'}
@@ -3584,6 +3590,10 @@ packages:
   type-detect@4.1.0:
     resolution: {integrity: sha512-Acylog8/luQ8L7il+geoSxhEkazvkslg7PSNKOX59mbB9cOveP5aq9h74Y7YU8yDpJwetzQQrfIwtf4Wp4LKcw==}
     engines: {node: '>=4'}
+
+  type-fest@4.41.0:
+    resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
+    engines: {node: '>=16'}
 
   type-is@1.6.18:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
@@ -7467,6 +7477,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  remeda@2.28.0:
+    dependencies:
+      type-fest: 4.41.0
+
   require-from-string@2.0.2: {}
 
   resolve-from@4.0.0: {}
@@ -7929,6 +7943,8 @@ snapshots:
       prelude-ls: 1.2.1
 
   type-detect@4.1.0: {}
+
+  type-fest@4.41.0: {}
 
   type-is@1.6.18:
     dependencies:

@@ -19,3 +19,6 @@ export const zBaseConfig = z
     vchart: zVChartBaseConfig,
   })
   .optional()
+
+export type VTableBaseConfig = z.infer<typeof zVTableBaseConfig>
+export type VChartBaseConfig = z.infer<typeof zVChartBaseConfig>

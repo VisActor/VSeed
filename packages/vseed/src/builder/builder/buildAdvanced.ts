@@ -13,15 +13,13 @@ export const buildAdvanced = (builder: Builder): AdvancedVSeed | null => {
     throw new Error(`no advanced pipeline for chartType ${chartType}`)
   }
 
-  const context = {
+  const context: AdvancedPipelineContext = {
     vseed: builder.vseed,
+    customTheme: builder.getThemeMap(),
   }
 
   try {
-    return execPipeline<AdvancedVSeed, AdvancedPipelineContext>(
-      pipeline,
-      context,
-    )
+    return execPipeline<AdvancedVSeed, AdvancedPipelineContext>(pipeline, context)
   } catch (e) {
     console.error(e)
     throw new Error(`buildAdvanced error, see error info in console`)

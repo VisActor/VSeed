@@ -4,3 +4,7 @@
 .rspress-playground-horizontal {
   height: calc(100vh - 72px - 40px) !important;
 }
+
+* {
+  box-sizing: border-box!important;
+}

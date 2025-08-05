@@ -22,15 +22,12 @@ import { Builder } from '../builder'
 
 export const registerAll = () => {
   registerLine()
-
   registerColumn()
   registerColumnParallel()
   registerColumnPercent()
-
   registerBar()
   registerBarParallel()
   registerBarPercent()
-
   registerArea()
   registerAreaPercent()
 }

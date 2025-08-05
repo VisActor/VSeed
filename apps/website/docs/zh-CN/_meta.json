@@ -6,8 +6,8 @@
   },
   {
     "text": "配置项",
-    "link": "/option/",
-    "activeMatch": "/option/"
+    "link": "/option/chartType/line",
+    "activeMatch": "/option/chartType/line"
   },
   {
     "text": "开发指南",

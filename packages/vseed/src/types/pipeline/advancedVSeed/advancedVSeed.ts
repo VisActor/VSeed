@@ -1,9 +1,10 @@
 import type { VSeed } from '../../chartType'
-import type { AdvancedVSeed } from '../../properties'
+import type { AdvancedVSeed, CustomTheme } from '../../properties'
 import type { Pipe } from '../pipeline'
 
 export type AdvancedPipelineContext = {
   vseed: VSeed
+  customTheme?: CustomTheme
 }
 
 export type AdvancedPipe = Pipe<AdvancedVSeed, AdvancedPipelineContext>

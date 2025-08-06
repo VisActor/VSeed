@@ -6,10 +6,14 @@
     "collapsed": true
   },
   {
-    "type": "dir",
+    "type": "file",
+    "name": "dataset",
+    "label": "dataset"
+  },
+  {
+    "type": "file",
     "name": "measures",
-    "label": "measures",
-    "collapsed": true
+    "label": "measures"
   },
   {
     "type": "dir",

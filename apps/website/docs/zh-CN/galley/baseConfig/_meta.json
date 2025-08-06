@@ -3,10 +3,5 @@
     "type": "dir",
     "name": "chart",
     "label": "Chart通用配置"
-  },
-  {
-    "type": "dir",
-    "name": "table",
-    "label": "Table通用配置"
   }
 ]

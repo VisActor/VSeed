@@ -1,0 +1,61 @@
+---
+pageType: doc
+---
+
+import { MeasureGroups, Measures } from '@components'
+
+# measures
+
+:::info {title="指标"} 支持树形指标组, 指标分组后, 图表会组合在一起, 其中双轴图更为特殊:::
+
+## measures
+
+<Measures />
+
+```json {4-6}
+{
+  "chartType": "columnParallel",
+  "measures": [
+    { "id": "profit", "alias": "利润" },
+    { "id": "sales", "alias": "销售额" }
+    { "id": "discount", "alias": "折扣" }
+  ],
+  "dimensions": [{ "id": "date", "alias": "日期", "location": "dimension" }],
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20, "discount": 0.1 },
+    { "date": "2020", "profit": 30, "sales": 60, "discount": 0.2 },
+    { "date": "2021", "profit": 30, "sales": 60, "discount": 0.1 },
+    { "date": "2022", "profit": 50, "sales": 100, "discount": 0.2 },
+    { "date": "2023", "profit": 40, "sales": 80, "discount": 0.3 }
+  ]
+}
+```
+
+## groups
+
+<MeasureGroups />
+
+```json {4-11}
+{
+  "chartType": "columnParallel",
+  "measures": [
+    {
+      "id": "group",
+      "alias": "分组",
+      "children": [
+        { "id": "profit", "alias": "利润" },
+        { "id": "sales", "alias": "销售额" }
+      ]
+    },
+    { "id": "discount", "alias": "折扣" }
+  ],
+  "dimensions": [{ "id": "date", "alias": "日期", "location": "dimension" }],
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20, "discount": 0.1 },
+    { "date": "2020", "profit": 30, "sales": 60, "discount": 0.2 },
+    { "date": "2021", "profit": 30, "sales": 60, "discount": 0.1 },
+    { "date": "2022", "profit": 50, "sales": 100, "discount": 0.2 },
+    { "date": "2023", "profit": 40, "sales": 80, "discount": 0.3 }
+  ]
+}
+```

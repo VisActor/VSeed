@@ -27,6 +27,18 @@
     "en-US": "Chart Type",
     "zh-CN": "图表类型"
   },
+  "dataset": {
+    "en-US": "dataset",
+    "zh-CN": "数据集"
+  },
+  "measures": {
+    "en-US": "measures",
+    "zh-CN": "指标"
+  },
+  "dimensions": {
+    "en-US": "dimensions",
+    "zh-CN": "维度"
+  },
   "theme": {
     "en-US": "Theme",
     "zh-CN": "主题"

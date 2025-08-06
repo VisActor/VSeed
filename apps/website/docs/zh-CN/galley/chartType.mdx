@@ -1,0 +1,171 @@
+---
+pageType: doc
+---
+
+import {
+  AreaChart,
+  AreaPercentChart,
+  LineChart,
+  BarChart,
+  BarParallelChart,
+  BarPercentChart,
+  ColumnChart,
+  ColumnParallelChart,
+  ColumnPercentChart,
+} from '@components'
+
+# 图表类型
+
+:::info {图表类型}  按图表类型约定图表默认的配置, 使用`约定优于配置`的方法, 每一种图表类型有大量约定配置, 极大简化配置心智 :::
+## 折线图
+
+<LineChart />
+
+```json title="折线图" {2}
+{
+  "chartType": "line",
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20 },
+    { "date": "2020", "profit": 30, "sales": 60 },
+    { "date": "2021", "profit": 30, "sales": 60 },
+    { "date": "2022", "profit": 50, "sales": 100 },
+    { "date": "2023", "profit": 40, "sales": 80 }
+  ]
+}
+```
+
+## 堆叠面积图
+
+<AreaChart />
+
+```json title="堆叠面积图" {2}
+{
+  "chartType": "area",
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20 },
+    { "date": "2020", "profit": 30, "sales": 60 },
+    { "date": "2021", "profit": 30, "sales": 60 },
+    { "date": "2022", "profit": 50, "sales": 100 },
+    { "date": "2023", "profit": 40, "sales": 80 }
+  ]
+}
+```
+
+## 百分比面积图
+
+<AreaPercentChart />
+
+```json title="百分比面积图" {2}
+{
+  "chartType": "areaPercent",
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20 },
+    { "date": "2020", "profit": 30, "sales": 60 },
+    { "date": "2021", "profit": 30, "sales": 60 },
+    { "date": "2022", "profit": 50, "sales": 100 },
+    { "date": "2023", "profit": 40, "sales": 80 }
+  ]
+}
+```
+
+## 堆叠柱状图
+
+<ColumnChart />
+
+```json title="堆叠柱状图" {2}
+{
+  "chartType": "column",
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20 },
+    { "date": "2020", "profit": 30, "sales": 60 },
+    { "date": "2021", "profit": 30, "sales": 60 },
+    { "date": "2022", "profit": 50, "sales": 100 },
+    { "date": "2023", "profit": 40, "sales": 80 }
+  ]
+}
+```
+
+## 并列柱状图
+
+<ColumnParallelChart />
+
+```json title="并列柱状图"  {2}
+{
+  "chartType": "columnParallel",
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20 },
+    { "date": "2020", "profit": 30, "sales": 60 },
+    { "date": "2021", "profit": 30, "sales": 60 },
+    { "date": "2022", "profit": 50, "sales": 100 },
+    { "date": "2023", "profit": 40, "sales": 80 }
+  ]
+}
+```
+
+## 百分比柱状图
+
+<ColumnPercentChart />
+
+```json title="百分比柱状图"  {2}
+{
+  "chartType": "columnPercent",
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20 },
+    { "date": "2020", "profit": 30, "sales": 60 },
+    { "date": "2021", "profit": 30, "sales": 60 },
+    { "date": "2022", "profit": 50, "sales": 100 },
+    { "date": "2023", "profit": 40, "sales": 80 }
+  ]
+}
+```
+
+## 条形图
+
+<BarChart />
+
+```json title="条形图" {2}
+{
+  "chartType": "bar",
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20 },
+    { "date": "2020", "profit": 30, "sales": 60 },
+    { "date": "2021", "profit": 30, "sales": 60 },
+    { "date": "2022", "profit": 50, "sales": 100 },
+    { "date": "2023", "profit": 40, "sales": 80 }
+  ]
+}
+```
+
+## 并列条形图
+
+<BarParallelChart />
+
+```json title="并列条形图"  {2}
+{
+  "chartType": "barParallel",
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20 },
+    { "date": "2020", "profit": 30, "sales": 60 },
+    { "date": "2021", "profit": 30, "sales": 60 },
+    { "date": "2022", "profit": 50, "sales": 100 },
+    { "date": "2023", "profit": 40, "sales": 80 }
+  ]
+}
+```
+
+## 百分比条形图
+
+<BarPercentChart />
+
+```json title="百分比条形图"  {2}
+{
+  "chartType": "barPercent",
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20 },
+    { "date": "2020", "profit": 30, "sales": 60 },
+    { "date": "2021", "profit": 30, "sales": 60 },
+    { "date": "2022", "profit": 50, "sales": 100 },
+    { "date": "2023", "profit": 40, "sales": 80 }
+  ]
+}
+```

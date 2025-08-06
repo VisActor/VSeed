@@ -5,9 +5,9 @@
     "activeMatch": "/guide/"
   },
   {
-    "text": "配置项",
-    "link": "/option/chartType/line",
-    "activeMatch": "/option/chartType/line"
+    "text": "示例",
+    "link": "/galley/chartType/line",
+    "activeMatch": "/galley"
   },
   {
     "text": "开发指南",

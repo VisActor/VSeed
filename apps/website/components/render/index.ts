@@ -1,1 +1,2 @@
-export { VSeedRender } from './VSeedRender'
+export { VSeedRender } from './Chart'
+export { PivotChart } from './PivotChart'

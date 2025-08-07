@@ -1,2 +1,2 @@
-export { MeasureGroups } from './groups'
+export { MeasureGroups } from './measureGroups'
 export { Measures } from './measures'

@@ -1,5 +1,5 @@
 import { VSeed } from '@visactor/vseed'
-import { VSeedRender } from '../../render/VSeedRender'
+import { VSeedRender } from '../../render/Chart'
 import { memo } from 'react'
 
 export const BaseConfigLabel = memo(() => {

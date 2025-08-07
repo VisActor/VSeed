@@ -4,6 +4,6 @@ export const FoldMeasureValue = '__MeaValue__'
 export const FoldMeasureId = '__MeaId__'
 
 // Reshape Dimensions
-export const FoldDimensionGroup = '__DimGroup__'
+export const UnfoldDimensionGroup = '__DimGroup__'
 
 export const Separator = '-'

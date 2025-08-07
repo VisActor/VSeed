@@ -1,4 +1,4 @@
-import { VSeedRender } from '../../render/VSeedRender'
+import { VSeedRender } from '../../render/Chart'
 import { memo } from 'react'
 import { ColumnParallel } from '@visactor/vseed'
 

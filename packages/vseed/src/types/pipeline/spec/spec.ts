@@ -1,4 +1,4 @@
-import type { ISpec } from '@visactor/vchart'
+import type { Spec } from 'src/types'
 import type { Pipe } from '../pipeline'
 import type { VSeed } from '../../chartType'
 import type { AdvancedVSeed } from 'src/types/advancedVSeed'
@@ -8,6 +8,6 @@ export type SpecPipelineContext = {
   advancedVSeed: AdvancedVSeed
 }
 
-export type SpecPipe = Pipe<ISpec, SpecPipelineContext>
+export type SpecPipe = Pipe<Spec, SpecPipelineContext>
 
 export type SpecPipeline = SpecPipe[]

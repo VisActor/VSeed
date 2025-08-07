@@ -1,6 +1,7 @@
 import type { Dataset, Datum, Dimension, Measure } from 'src/types'
 import type { UnfoldInfo } from 'src/types'
-import { FoldDimensionGroup, Separator } from './constant'
+import { UnfoldDimensionGroup, Separator } from './constant'
+import { unique } from 'remeda'
 
 /**
  * TODO: 优化展开维度的性能
@@ -12,7 +13,7 @@ export const unfoldDimensions = (
   dimensions: Dimension[],
   measures: Measure[],
   unfoldStartIndex: number = 0,
-  foldGroupName: string = FoldDimensionGroup,
+  foldGroupName: string = UnfoldDimensionGroup,
   dimensionsSeparator: string = Separator,
 ): {
   dataset: Dataset
@@ -47,7 +48,7 @@ export const unfoldDimensions = (
     colorItems.push(colorItem)
   }
 
-  unfoldInfo.colorItems = colorItems
+  unfoldInfo.colorItems = unique(colorItems)
   return {
     dataset,
     unfoldInfo,

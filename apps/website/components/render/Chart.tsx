@@ -56,16 +56,22 @@ export const VSeedRender = memo((props: { vseed: VSeed }) => {
 
   return (
     <div
-      ref={ref}
       style={{
         padding: '1rem 1.25rem',
         height: 200,
         width: '100%',
         border: '1px solid var(--rp-c-divider-light)',
         borderRadius: '1rem',
-        boxSizing: 'content-box',
         overflow: 'hidden',
       }}
-    ></div>
+    >
+      <div
+        ref={ref}
+        style={{
+          height: '100%',
+          width: '100%',
+        }}
+      ></div>
+    </div>
   )
 })

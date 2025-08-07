@@ -1,20 +1,26 @@
 import { VSeed } from '@visactor/vseed'
-import { VSeedRender } from '../../render/VSeedRender'
+import { PivotChart } from 'components/render'
 import { memo } from 'react'
 
 export const MeasureGroups = memo(() => {
   const vseed: VSeed = {
-    chartType: 'columnParallel',
+    chartType: 'column',
     measures: [
       {
-        id: 'group',
-        alias: '分组',
+        id: 'group1',
+        alias: '分组1',
         children: [
           { id: 'profit', alias: '利润' },
           { id: 'sales', alias: '销售额' },
         ],
       },
-      { id: 'discount', alias: '折扣' },
+      {
+        id: 'group2',
+        alias: '分组2',
+        children: [
+          { id: 'discount', alias: '折扣' }
+        ],
+      },
     ],
     dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
     dataset: [
@@ -25,5 +31,5 @@ export const MeasureGroups = memo(() => {
       { date: '2023', profit: 40, sales: 80, discount: 0.3 },
     ],
   }
-  return <VSeedRender vseed={vseed} />
+  return <PivotChart vseed={vseed} />
 })

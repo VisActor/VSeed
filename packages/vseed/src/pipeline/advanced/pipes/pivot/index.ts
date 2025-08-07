@@ -1,0 +1,1 @@
+export { pivotAdapter } from './pivotAdapter'

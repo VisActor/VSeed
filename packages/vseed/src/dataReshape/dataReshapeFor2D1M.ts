@@ -1,6 +1,6 @@
 import type { Dataset, Dimension, FoldInfo, Measure, UnfoldInfo } from 'src/types'
 import { foldMeasures } from './foldMeasures'
-import { FoldDimensionGroup, FoldMeasureId, FoldMeasureName, FoldMeasureValue } from './constant'
+import { UnfoldDimensionGroup, FoldMeasureId, FoldMeasureName, FoldMeasureValue } from './constant'
 import { unfoldDimensions } from './unfoldDimensions'
 
 const emptyReshapeResult: {
@@ -17,7 +17,7 @@ const emptyReshapeResult: {
   },
   unfoldInfo: {
     colorItems: [],
-    groupName: ''
+    groupName: '',
   },
 }
 /**
@@ -31,11 +31,23 @@ export const dataReshapeFor2D1M = (
   dataset: Dataset,
   dimensions: Dimension[],
   measures: Measure[],
+  options?: {
+    foldMeasureId?: string
+    foldMeasureName?: string
+    foldMeasureValue?: string
+    unfoldDimensionGroup?: string
+  },
 ): {
   dataset: Dataset
   foldInfo: FoldInfo
   unfoldInfo: UnfoldInfo
 } => {
+  const {
+    foldMeasureId = FoldMeasureId,
+    foldMeasureName = FoldMeasureName,
+    foldMeasureValue = FoldMeasureValue,
+    unfoldDimensionGroup = UnfoldDimensionGroup,
+  } = options || {}
   if (dimensions.length === 0 && measures.length === 0) {
     return emptyReshapeResult
   }
@@ -44,31 +56,31 @@ export const dataReshapeFor2D1M = (
   const { dataset: foldedDataset, foldInfo } = foldMeasures(
     dataset,
     measures,
-    FoldMeasureId,
-    FoldMeasureName,
-    FoldMeasureValue,
+    foldMeasureId,
+    foldMeasureName,
+    foldMeasureValue,
   )
 
   if (dimensions.length === 0) {
     const { dataset: finalDataset, unfoldInfo } = unfoldDimensions(
       foldedDataset,
       [
-        { id: FoldMeasureId, alias: '指标Id', location: 'dimension' },
-        { id: FoldMeasureName, alias: '指标名称', location: 'dimension' },
+        { id: foldMeasureId, alias: '指标Id', location: 'dimension' },
+        { id: foldMeasureName, alias: '指标名称', location: 'dimension' },
       ],
-      [{ id: FoldMeasureValue, alias: '指标值' }],
+      [{ id: foldMeasureValue, alias: '指标值' }],
       1,
-      FoldDimensionGroup,
+      unfoldDimensionGroup,
     )
     return { dataset: finalDataset, foldInfo, unfoldInfo }
   } else {
     // 展开指定的维度为指标
     const { dataset: finalDataset, unfoldInfo } = unfoldDimensions(
       foldedDataset,
-      [...dimensions, { id: FoldMeasureName, alias: '指标名称', location: 'dimension' }],
-      [{ id: FoldMeasureValue, alias: '指标值' }],
+      [...dimensions, { id: foldMeasureName, alias: '指标名称', location: 'dimension' }],
+      [{ id: foldMeasureValue, alias: '指标值' }],
       1,
-      FoldDimensionGroup,
+      unfoldDimensionGroup,
     )
     return { dataset: finalDataset, foldInfo, unfoldInfo }
   }

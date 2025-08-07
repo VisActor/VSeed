@@ -23,9 +23,12 @@ export const zUnfoldInfo = z.object({
   groupName: z.string(),
 })
 
-export const zDatasetReshapeInfo = z.object({
-  foldInfo: zFoldInfo,
-  unfoldInfo: zUnfoldInfo,
-})
+export const zDatasetReshapeInfo = z.array(
+  z.object({
+    id: z.string(),
+    foldInfo: zFoldInfo,
+    unfoldInfo: zUnfoldInfo,
+  }),
+)
 
 export type DatasetReshapeInfo = z.infer<typeof zDatasetReshapeInfo>

@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.6
+
+### Patch Changes
+
+- feat: combination chart
+
 ## 0.0.5
 
 ### Patch Changes

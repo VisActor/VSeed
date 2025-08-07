@@ -18,6 +18,8 @@ import {
   initPivot,
   pivotIndicatorsAsRow,
   pivotGridStyle,
+  pivotColumnDimensions,
+  pivotRowDimensions,
 } from '../pipes'
 
 const area: SpecPipeline = [initArea, color, backgroundColor, stack, dataset, xBand, yLinear, label, tooltip, legend]
@@ -28,6 +30,8 @@ const pivotArea: SpecPipeline = [
   pivotIndicatorsAsRow,
   datasetPivot,
   pivotIndicators([initArea, color, backgroundColor, stack, datasetPivotPlaceholder, xBand, yLinear, label, tooltip]),
+  pivotRowDimensions,
+  pivotColumnDimensions,
   pivotLegend,
 ]
 

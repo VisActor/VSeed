@@ -17,6 +17,8 @@ import {
   pivotLegend,
   pivotIndicatorsAsRow,
   pivotGridStyle,
+  pivotRowDimensions,
+  pivotColumnDimensions,
 } from '../pipes'
 
 const columnParallel: SpecPipeline = [
@@ -46,6 +48,8 @@ const pivotColumnParallel: SpecPipeline = [
     label,
     tooltip,
   ]),
+  pivotRowDimensions,
+  pivotColumnDimensions,
   pivotLegend,
 ]
 

@@ -17,6 +17,8 @@ import {
   pivotAdapter,
   pivotIndicatorsAsCol,
   pivotGridStyle,
+  pivotRowDimensions,
+  pivotColumnDimensions,
 } from '../pipes'
 
 const barParallel: SpecPipeline = [
@@ -37,6 +39,8 @@ const pivotBarParallel: SpecPipeline = [
   pivotIndicatorsAsCol,
   datasetPivot,
   pivotIndicators([initBarParallel, color, backgroundColor, datasetPivotPlaceholder, yBand, xLinear, label, tooltip]),
+  pivotRowDimensions,
+  pivotColumnDimensions,
   pivotLegend,
 ]
 

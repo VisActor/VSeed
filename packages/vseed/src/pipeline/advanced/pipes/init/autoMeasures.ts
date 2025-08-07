@@ -1,4 +1,5 @@
-import type { AdvancedPipe, Datum } from 'src/types'
+import { isPivotChart } from '../../../utils'
+import type { AdvancedPipe, Datum, MeasureGroup } from 'src/types'
 
 export const autoMeasures: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
@@ -11,6 +12,10 @@ export const autoMeasures: AdvancedPipe = (advancedVSeed, context) => {
 
   if (dataset.length === 0) {
     return result
+  }
+
+  if (isPivotChart(vseed)) {
+    return autoMeasureGroup(advancedVSeed, context)
   }
 
   if (measures) {
@@ -34,4 +39,67 @@ export const autoMeasures: AdvancedPipe = (advancedVSeed, context) => {
     }))
 
   return result
+}
+
+const autoMeasureGroup: AdvancedPipe = (advancedVSeed, context) => {
+  const { vseed } = context
+  const { measures } = vseed
+  const hasMeasureGroup = measures?.some((measure: MeasureGroup) => measure.children)
+
+  if (!measures) {
+    return advancedVSeed
+  }
+
+  // 没有指标组, 则自动添加一个指标组
+  if (!hasMeasureGroup) {
+    const newMeasures = [
+      {
+        id: 'measureGroup',
+        alias: 'measureGroup',
+        children: measures,
+      },
+    ]
+    return {
+      ...advancedVSeed,
+      measures: newMeasures,
+    }
+  }
+
+  // 存在指标组, 则任意连续的独立指标成组
+  let currentGroup: MeasureGroup = createEmptyMeasureGroup()
+  const measureGroups: MeasureGroup[] = []
+  for (const measure of measures) {
+    if ('children' in measure) {
+      // 当前指标组之前的所有独立指标成组
+      if (currentGroup.children?.length) {
+        currentGroup.id = currentGroup.children.map((item) => item.id).join('-')
+        currentGroup.alias = currentGroup.children.map((item) => item.alias).join('-')
+        measureGroups.push(currentGroup)
+        currentGroup = createEmptyMeasureGroup()
+      }
+      // 当前是指标组
+      measureGroups.push(measure)
+    } else {
+      currentGroup.children?.push(measure)
+    }
+  }
+
+  // 最后一组
+  if (currentGroup.children?.length) {
+    currentGroup.id = currentGroup.children.map((item) => item.id).join('-')
+    currentGroup.alias = currentGroup.children.map((item) => item.alias).join('-')
+    measureGroups.push(currentGroup)
+    currentGroup = createEmptyMeasureGroup()
+  }
+
+  advancedVSeed.measures = measureGroups
+  return advancedVSeed
+}
+
+const createEmptyMeasureGroup = () => {
+  return {
+    id: '',
+    alias: '',
+    children: [],
+  }
 }

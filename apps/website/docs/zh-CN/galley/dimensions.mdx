@@ -1,0 +1,165 @@
+---
+pageType: doc
+---
+
+import { ColumnDimensions, RowDimensions, PivotDimensions, Dimensions } from '@components'
+
+# 维度
+
+:::info {title="维度"} 维度， 分普通维度,行维度,列维度, 设置行列维度, 图表将透视。:::
+
+## 普通维度
+
+<Dimensions />
+
+```json {4-6}
+{
+  "chartType": "columnParallel",
+  "dimensions": [
+    { "id": "category", "alias": "类别", "location": "dimension" },
+    { "id": "date", "alias": "日期", "location": "dimension" },
+    { "id": "region", "alias": "区域", "location": "dimension" }
+  ],
+  "measures": [{ "id": "profit", "alias": "利润" }],
+  "dataset": [
+    { "date": "2019", "region": "east", "category": "Grocery", "profit": 10 },
+    { "date": "2019", "region": "east", "category": "Beverages", "profit": 30 },
+    { "date": "2019", "region": "east", "category": "Dairy", "profit": 30 },
+    { "date": "2019", "region": "east", "category": "Household", "profit": 50 },
+    { "date": "2019", "region": "east", "category": "Personal", "profit": 40 },
+    { "date": "2019", "region": "west", "category": "Grocery", "profit": 10 },
+    { "date": "2019", "region": "west", "category": "Beverages", "profit": 30 },
+    { "date": "2019", "region": "west", "category": "Dairy", "profit": 30 },
+    { "date": "2019", "region": "west", "category": "Household", "profit": 50 },
+    { "date": "2019", "region": "west", "category": "Personal", "profit": 40 },
+
+    { "date": "2020", "region": "east", "category": "Grocery", "profit": 10 },
+    { "date": "2020", "region": "east", "category": "Beverages", "profit": 30 },
+    { "date": "2020", "region": "east", "category": "Dairy", "profit": 30 },
+    { "date": "2020", "region": "east", "category": "Household", "profit": 50 },
+    { "date": "2020", "region": "east", "category": "Personal", "profit": 40 },
+    { "date": "2020", "region": "west", "category": "Grocery", "profit": 10 },
+    { "date": "2020", "region": "west", "category": "Beverages", "profit": 30 },
+    { "date": "2020", "region": "west", "category": "Dairy", "profit": 30 },
+    { "date": "2020", "region": "west", "category": "Household", "profit": 50 },
+    { "date": "2020", "region": "west", "category": "Personal", "profit": 40 }
+  ]
+}
+```
+
+## 列维度
+
+<ColumnDimensions />
+
+```json {4-6}
+{
+  "chartType": "columnParallel",
+  "dimensions": [
+    { "id": "category", "alias": "类别", "location": "dimension" },
+    { "id": "date", "alias": "日期", "location": "columnDimension" },
+    { "id": "region", "alias": "区域", "location": "columnDimension" }
+  ],
+  "measures": [{ "id": "profit", "alias": "利润" }],
+  "dataset": [
+    { "date": "2019", "region": "east", "category": "Grocery", "profit": 10 },
+    { "date": "2019", "region": "east", "category": "Beverages", "profit": 30 },
+    { "date": "2019", "region": "east", "category": "Dairy", "profit": 30 },
+    { "date": "2019", "region": "east", "category": "Household", "profit": 50 },
+    { "date": "2019", "region": "east", "category": "Personal", "profit": 40 },
+    { "date": "2019", "region": "west", "category": "Grocery", "profit": 10 },
+    { "date": "2019", "region": "west", "category": "Beverages", "profit": 30 },
+    { "date": "2019", "region": "west", "category": "Dairy", "profit": 30 },
+    { "date": "2019", "region": "west", "category": "Household", "profit": 50 },
+    { "date": "2019", "region": "west", "category": "Personal", "profit": 40 },
+
+    { "date": "2020", "region": "east", "category": "Grocery", "profit": 10 },
+    { "date": "2020", "region": "east", "category": "Beverages", "profit": 30 },
+    { "date": "2020", "region": "east", "category": "Dairy", "profit": 30 },
+    { "date": "2020", "region": "east", "category": "Household", "profit": 50 },
+    { "date": "2020", "region": "east", "category": "Personal", "profit": 40 },
+    { "date": "2020", "region": "west", "category": "Grocery", "profit": 10 },
+    { "date": "2020", "region": "west", "category": "Beverages", "profit": 30 },
+    { "date": "2020", "region": "west", "category": "Dairy", "profit": 30 },
+    { "date": "2020", "region": "west", "category": "Household", "profit": 50 },
+    { "date": "2020", "region": "west", "category": "Personal", "profit": 40 }
+  ]
+}
+```
+
+## 行维度
+
+<RowDimensions />
+
+```json {4-6}
+{
+  "chartType": "columnParallel",
+  "dimensions": [
+    { "id": "category", "alias": "类别", "location": "dimension" },
+    { "id": "date", "alias": "日期", "location": "rowDimension" },
+    { "id": "region", "alias": "区域", "location": "rowDimension" }
+  ],
+  "measures": [{ "id": "profit", "alias": "利润" }],
+  "dataset": [
+    { "date": "2019", "region": "east", "category": "Grocery", "profit": 10 },
+    { "date": "2019", "region": "east", "category": "Beverages", "profit": 30 },
+    { "date": "2019", "region": "east", "category": "Dairy", "profit": 30 },
+    { "date": "2019", "region": "east", "category": "Household", "profit": 50 },
+    { "date": "2019", "region": "east", "category": "Personal", "profit": 40 },
+    { "date": "2019", "region": "west", "category": "Grocery", "profit": 10 },
+    { "date": "2019", "region": "west", "category": "Beverages", "profit": 30 },
+    { "date": "2019", "region": "west", "category": "Dairy", "profit": 30 },
+    { "date": "2019", "region": "west", "category": "Household", "profit": 50 },
+    { "date": "2019", "region": "west", "category": "Personal", "profit": 40 },
+
+    { "date": "2020", "region": "east", "category": "Grocery", "profit": 10 },
+    { "date": "2020", "region": "east", "category": "Beverages", "profit": 30 },
+    { "date": "2020", "region": "east", "category": "Dairy", "profit": 30 },
+    { "date": "2020", "region": "east", "category": "Household", "profit": 50 },
+    { "date": "2020", "region": "east", "category": "Personal", "profit": 40 },
+    { "date": "2020", "region": "west", "category": "Grocery", "profit": 10 },
+    { "date": "2020", "region": "west", "category": "Beverages", "profit": 30 },
+    { "date": "2020", "region": "west", "category": "Dairy", "profit": 30 },
+    { "date": "2020", "region": "west", "category": "Household", "profit": 50 },
+    { "date": "2020", "region": "west", "category": "Personal", "profit": 40 }
+  ]
+}
+```
+
+## 透视维度
+
+<PivotDimensions />
+
+```json {4-6}
+{
+  "chartType": "columnParallel",
+  "dimensions": [
+    { "id": "category", "alias": "类别", "location": "dimension" },
+    { "id": "date", "alias": "日期", "location": "columnDimension" },
+    { "id": "region", "alias": "区域", "location": "rowDimension" }
+  ],
+  "measures": [{ "id": "profit", "alias": "利润" }],
+  "dataset": [
+    { "date": "2019", "region": "east", "category": "Grocery", "profit": 10 },
+    { "date": "2019", "region": "east", "category": "Beverages", "profit": 30 },
+    { "date": "2019", "region": "east", "category": "Dairy", "profit": 30 },
+    { "date": "2019", "region": "east", "category": "Household", "profit": 50 },
+    { "date": "2019", "region": "east", "category": "Personal", "profit": 40 },
+    { "date": "2019", "region": "west", "category": "Grocery", "profit": 10 },
+    { "date": "2019", "region": "west", "category": "Beverages", "profit": 30 },
+    { "date": "2019", "region": "west", "category": "Dairy", "profit": 30 },
+    { "date": "2019", "region": "west", "category": "Household", "profit": 50 },
+    { "date": "2019", "region": "west", "category": "Personal", "profit": 40 },
+
+    { "date": "2020", "region": "east", "category": "Grocery", "profit": 10 },
+    { "date": "2020", "region": "east", "category": "Beverages", "profit": 30 },
+    { "date": "2020", "region": "east", "category": "Dairy", "profit": 30 },
+    { "date": "2020", "region": "east", "category": "Household", "profit": 50 },
+    { "date": "2020", "region": "east", "category": "Personal", "profit": 40 },
+    { "date": "2020", "region": "west", "category": "Grocery", "profit": 10 },
+    { "date": "2020", "region": "west", "category": "Beverages", "profit": 30 },
+    { "date": "2020", "region": "west", "category": "Dairy", "profit": 30 },
+    { "date": "2020", "region": "west", "category": "Household", "profit": 50 },
+    { "date": "2020", "region": "west", "category": "Personal", "profit": 40 }
+  ]
+}
+```

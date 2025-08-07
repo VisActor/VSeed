@@ -19,11 +19,7 @@ export const MeasureGroups = memo(() => {
         alias: '分组2',
         children: [{ id: 'discount', alias: '折扣' }],
       },
-      {
-        id: 'group3',
-        alias: '分组3',
-        children: [{ id: 'rateOfReturn', alias: '回报率' }],
-      },
+      { id: 'rateOfReturn', alias: '回报率' },
     ],
     dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
     dataset: [

@@ -1,12 +1,12 @@
-import type { AdvancedPipe, AdvancedPipeline, AdvancedPipelineContext, AdvancedVSeed, MeasureGroup } from 'src/types'
-import { execPipeline } from '../../../utils'
+import type { AdvancedPipe, AdvancedPipeline, AdvancedPipelineContext, AdvancedVSeed } from 'src/types'
+import { execPipeline, isPivotChart } from '../../../utils'
 
 export const pivotAdapter = (pipeline: AdvancedPipeline, pivotPipeline: AdvancedPipeline): AdvancedPipe => {
   return (advancedVSeed, context) => {
     const { vseed } = context
-    const { measures } = vseed
+    const usePivotChart = isPivotChart(vseed)
 
-    if (measures && measures.find((measure: MeasureGroup) => measure && measure.children)) {
+    if (usePivotChart) {
       return execPipeline<AdvancedVSeed, AdvancedPipelineContext>(pivotPipeline, context, advancedVSeed)
     }
 

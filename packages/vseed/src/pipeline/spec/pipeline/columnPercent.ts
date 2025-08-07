@@ -18,6 +18,8 @@ import {
   pivotLegend,
   pivotIndicatorsAsRow,
   pivotGridStyle,
+  pivotRowDimensions,
+  pivotColumnDimensions,
 } from '../pipes'
 
 const columnPercent: SpecPipeline = [
@@ -49,6 +51,8 @@ const pivotColumnPercent: SpecPipeline = [
     label,
     tooltip,
   ]),
+  pivotRowDimensions,
+  pivotColumnDimensions,
   pivotLegend,
 ]
 

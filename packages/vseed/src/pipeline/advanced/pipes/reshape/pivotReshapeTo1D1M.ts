@@ -38,12 +38,14 @@ export const pivotReshapeTo1D1M: AdvancedPipe = (advancedVSeed, context) => {
     if (!measures) {
       return
     }
+
+    const commonDimensions = dimensions.filter((dim) => dim.location === 'dimension')
     const groupId = measureGroup.id
     const {
       dataset: newSubDataset,
       foldInfo,
       unfoldInfo,
-    } = dataReshapeFor1D1M(dataset, dimensions, measures, {
+    } = dataReshapeFor1D1M(dataset, commonDimensions, measures, {
       foldMeasureId: FoldMeasureId,
       foldMeasureName: FoldMeasureName,
       foldMeasureValue: FoldMeasureValue + groupId,

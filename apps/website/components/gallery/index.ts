@@ -1,5 +1,6 @@
 export * from './chartType'
 export * from './baseConfig'
 export * from './measures'
+export * from './dimensions'
 export * from './theme'
 export * from './dataset'

@@ -16,6 +16,11 @@
     "label": "measures"
   },
   {
+    "type": "file",
+    "name": "dimensions",
+    "label": "dimensions"
+  },
+  {
     "type": "dir",
     "name": "baseConfig",
     "label": "baseConfig",

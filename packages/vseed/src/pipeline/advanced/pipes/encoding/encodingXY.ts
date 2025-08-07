@@ -12,7 +12,6 @@ export const encodingXY: AdvancedPipe = (advancedVSeed) => {
     const { foldInfo, unfoldInfo } = cur
 
     const isSingleDimension = dimensions.length === 0
-
     const x = [isSingleDimension ? foldInfo.measureName : dimensions[0].id]
     const y = [foldInfo.measureValue]
     const group = [isSingleDimension ? foldInfo.measureName : unfoldInfo.groupName]

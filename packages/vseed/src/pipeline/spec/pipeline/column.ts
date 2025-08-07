@@ -17,6 +17,8 @@ import {
   pivotLegend,
   pivotIndicatorsAsRow,
   pivotGridStyle,
+  pivotRowDimensions,
+  pivotColumnDimensions,
 } from '../pipes'
 
 const column: SpecPipeline = [initColumn, color, backgroundColor, dataset, xBand, yLinear, label, tooltip, legend]
@@ -27,6 +29,8 @@ const pivotColumn: SpecPipeline = [
   pivotIndicatorsAsRow,
   datasetPivot,
   pivotIndicators([initColumn, color, backgroundColor, datasetPivotPlaceholder, xBand, yLinear, label, tooltip]),
+  pivotRowDimensions,
+  pivotColumnDimensions,
   pivotLegend,
 ]
 

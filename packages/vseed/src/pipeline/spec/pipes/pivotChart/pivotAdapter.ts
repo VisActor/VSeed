@@ -1,12 +1,12 @@
-import type { MeasureGroup, Spec, SpecPipe, SpecPipeline, SpecPipelineContext } from 'src/types'
-import { execPipeline } from '../../../utils'
+import type { Spec, SpecPipe, SpecPipeline, SpecPipelineContext } from 'src/types'
+import { execPipeline, isPivotChart } from '../../../utils'
 
 export const pivotAdapter = (pipeline: SpecPipeline, pivotPipeline: SpecPipeline): SpecPipe => {
   return (spec, context) => {
-    const { advancedVSeed } = context
-    const { measures } = advancedVSeed
+    const { vseed } = context
+    const usePivotChart = isPivotChart(vseed)
 
-    if (measures && measures.find((measure: MeasureGroup) => measure && measure.children)) {
+    if (usePivotChart) {
       return execPipeline<Spec, SpecPipelineContext>(pivotPipeline, context, spec)
     }
 

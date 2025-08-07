@@ -17,6 +17,8 @@ import {
   datasetPivotPlaceholder,
   pivotIndicatorsAsCol,
   pivotGridStyle,
+  pivotColumnDimensions,
+  pivotRowDimensions,
 } from '../pipes'
 
 const bar: SpecPipeline = [initBar, color, backgroundColor, dataset, xLinear, yBand, label, tooltip, legend]
@@ -27,6 +29,8 @@ const pivotBar: SpecPipeline = [
   pivotIndicatorsAsCol,
   datasetPivot,
   pivotIndicators([initBar, color, backgroundColor, datasetPivotPlaceholder, yBand, label, label, tooltip]),
+  pivotRowDimensions,
+  pivotColumnDimensions,
   pivotLegend,
 ]
 

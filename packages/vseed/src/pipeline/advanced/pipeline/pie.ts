@@ -1,0 +1,22 @@
+import type { AdvancedPipeline } from 'src/types'
+import {
+  autoDimensions,
+  autoMeasures,
+  initAdvancedVSeed,
+  vchartBaseConfig,
+  vchartTheme,
+  pivotAdapter,
+  reshapeTo1D1M,
+  pivotReshapeTo1D1M,
+  encodingPolar,
+} from '../pipes'
+
+export const pieAdvancedPipeline: AdvancedPipeline = [
+  initAdvancedVSeed,
+  autoMeasures,
+  autoDimensions,
+  pivotAdapter([reshapeTo1D1M], [pivotReshapeTo1D1M]),
+  encodingPolar,
+  vchartBaseConfig,
+  vchartTheme,
+]

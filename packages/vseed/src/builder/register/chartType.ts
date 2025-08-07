@@ -17,6 +17,8 @@ import {
   columnSpecPipeline,
   lineAdvancedPipeline,
   lineSpecPipeline,
+  pieAdvancedPipeline,
+  pieSpecPipeline,
 } from '../../pipeline'
 import { Builder } from '../builder'
 
@@ -75,4 +77,9 @@ export const registerColumnParallel = () => {
 export const registerBarParallel = () => {
   Builder._advancedPipelineMap['barParallel'] = barParallelAdvancedPipeline
   Builder._specPipelineMap['barParallel'] = barParallelSpecPipeline
+}
+
+export const registerPie = () => {
+  Builder._advancedPipelineMap['pie'] = pieAdvancedPipeline
+  Builder._specPipelineMap['pie'] = pieSpecPipeline
 }

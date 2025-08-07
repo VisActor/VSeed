@@ -58,7 +58,7 @@ export const VSeedRender = memo((props: { vseed: VSeed }) => {
     <div
       style={{
         padding: '1rem 1.25rem',
-        height: 200,
+        height: 300,
         width: '100%',
         border: '1px solid var(--rp-c-divider-light)',
         borderRadius: '1rem',

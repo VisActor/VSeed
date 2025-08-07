@@ -16,6 +16,8 @@ export const initPivot: SpecPipe = (spec) => {
   }
 }
 
+
+
 export const pivotIndicatorsAsRow: SpecPipe = (spec) => {
   const result = { ...spec } as PivotChartConstructorOptions
 

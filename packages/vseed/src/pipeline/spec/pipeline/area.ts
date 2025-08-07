@@ -17,12 +17,14 @@ import {
   pivotAdapter,
   initPivot,
   pivotIndicatorsAsRow,
+  pivotGridStyle,
 } from '../pipes'
 
 const area: SpecPipeline = [initArea, color, backgroundColor, stack, dataset, xBand, yLinear, label, tooltip, legend]
 
 const pivotArea: SpecPipeline = [
   initPivot,
+  pivotGridStyle,
   pivotIndicatorsAsRow,
   datasetPivot,
   pivotIndicators([initArea, color, backgroundColor, stack, datasetPivotPlaceholder, xBand, yLinear, label, tooltip]),

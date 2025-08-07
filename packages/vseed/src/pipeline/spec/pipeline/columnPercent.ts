@@ -17,6 +17,7 @@ import {
   pivotIndicators,
   pivotLegend,
   pivotIndicatorsAsRow,
+  pivotGridStyle,
 } from '../pipes'
 
 const columnPercent: SpecPipeline = [
@@ -34,6 +35,7 @@ const columnPercent: SpecPipeline = [
 
 const pivotColumnPercent: SpecPipeline = [
   initPivot,
+  pivotGridStyle,
   pivotIndicatorsAsRow,
   datasetPivot,
   pivotIndicators([

@@ -18,11 +18,11 @@ export const pivotLegend: SpecPipe = (spec, context) => {
   const { enable } = legend as Legend
   const { colorScheme } = color as Color
 
-  result.legends = {
+  const legends: IDiscreteTableLegendOption = {
     visible: enable,
     alignSelf: 'end',
     type: 'discrete',
-    position: 'start',
+    position: 'middle',
     data: colorItems.map((d, index) => ({
       label: d,
       shape: {
@@ -30,7 +30,24 @@ export const pivotLegend: SpecPipe = (spec, context) => {
         fill: colorScheme[index],
       },
     })),
+    item: {
+      background: {
+        visible: true,
+        state: {
+          selectedHover: {
+            fill: '#000000',
+            fillOpacity: 0.05,
+          },
+        },
+      },
+      label: {
+        style: {
+          fontSize: 12,
+          fill: '#6F6F6F',
+        },
+      },
+    },
     orient: 'bottom',
   } as unknown as IDiscreteTableLegendOption
-  return result
+  return { ...result, legends }
 }

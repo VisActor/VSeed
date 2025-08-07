@@ -16,12 +16,14 @@ import {
   pivotIndicators,
   pivotLegend,
   pivotIndicatorsAsRow,
+  pivotGridStyle,
 } from '../pipes'
 
 const column: SpecPipeline = [initColumn, color, backgroundColor, dataset, xBand, yLinear, label, tooltip, legend]
 
 const pivotColumn: SpecPipeline = [
   initPivot,
+  pivotGridStyle,
   pivotIndicatorsAsRow,
   datasetPivot,
   pivotIndicators([initColumn, color, backgroundColor, datasetPivotPlaceholder, xBand, yLinear, label, tooltip]),

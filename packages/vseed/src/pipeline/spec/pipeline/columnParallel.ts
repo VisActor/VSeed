@@ -16,6 +16,7 @@ import {
   datasetPivotPlaceholder,
   pivotLegend,
   pivotIndicatorsAsRow,
+  pivotGridStyle,
 } from '../pipes'
 
 const columnParallel: SpecPipeline = [
@@ -32,6 +33,7 @@ const columnParallel: SpecPipeline = [
 
 const pivotColumnParallel: SpecPipeline = [
   initPivot,
+  pivotGridStyle,
   pivotIndicatorsAsRow,
   datasetPivot,
   pivotIndicators([

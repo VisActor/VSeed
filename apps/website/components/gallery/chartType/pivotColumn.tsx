@@ -51,3 +51,46 @@ export const CombinationColumnChart = memo(() => {
   }
   return <PivotChart vseed={vseed} />
 })
+
+export const PivotColumnChart = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'column',
+    dimensions: [
+      { id: 'category', alias: '类别', location: 'dimension' },
+      { id: 'date', alias: '日期', location: 'columnDimension' },
+      { id: 'region', alias: '区域', location: 'rowDimension' },
+    ],
+    measures: [
+      {
+        id: 'group-sales',
+        alias: '销售额分组',
+        children: [{ id: 'sales', alias: '销售额' }],
+      },
+      { id: 'profit', alias: '利润' },
+    ],
+    dataset: [
+      { date: '2019', region: 'east', category: 'Grocery', profit: 10, sales: 100 },
+      { date: '2019', region: 'east', category: 'Beverages', profit: 30, sales: 3200 },
+      { date: '2019', region: 'east', category: 'Dairy', profit: 30, sales: 300 },
+      { date: '2019', region: 'east', category: 'Household', profit: 50, sales: 2400 },
+      { date: '2019', region: 'east', category: 'Personal', profit: 40, sales: 500 },
+      { date: '2019', region: 'west', category: 'Grocery', profit: 10, sales: 100 },
+      { date: '2019', region: 'west', category: 'Beverages', profit: 30, sales: 3200 },
+      { date: '2019', region: 'west', category: 'Dairy', profit: 30, sales: 300 },
+      { date: '2019', region: 'west', category: 'Household', profit: 50, sales: 2400 },
+      { date: '2019', region: 'west', category: 'Personal', profit: 40, sales: 500 },
+
+      { date: '2020', region: 'east', category: 'Grocery', profit: 10, sales: 100 },
+      { date: '2020', region: 'east', category: 'Beverages', profit: 30, sales: 3200 },
+      { date: '2020', region: 'east', category: 'Dairy', profit: 30, sales: 300 },
+      { date: '2020', region: 'east', category: 'Household', profit: 50, sales: 2400 },
+      { date: '2020', region: 'east', category: 'Personal', profit: 40, sales: 500 },
+      { date: '2020', region: 'west', category: 'Grocery', profit: 10, sales: 100 },
+      { date: '2020', region: 'west', category: 'Beverages', profit: 30, sales: 3200 },
+      { date: '2020', region: 'west', category: 'Dairy', profit: 30, sales: 300 },
+      { date: '2020', region: 'west', category: 'Household', profit: 50, sales: 2400 },
+      { date: '2020', region: 'west', category: 'Personal', profit: 40, sales: 500 },
+    ],
+  }
+  return <PivotChart vseed={vseed} />
+})

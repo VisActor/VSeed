@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.7
+
+### Patch Changes
+
+- feat: add pie chart
+
 ## 0.0.6
 
 ### Patch Changes

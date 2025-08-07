@@ -9,13 +9,13 @@ import {
   vchartTheme,
   pivotAdapter,
 } from '../pipes'
-import { reshapePivotTo2D1M } from '../pipes/reshape/reshapePivotTo2D1M'
+import { pivotReshapeTo2D1M } from '../pipes/reshape/pivotReshapeTo2D1M'
 
 export const columnAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   autoMeasures,
   autoDimensions,
-  pivotAdapter([reshapeTo2D1M], [reshapePivotTo2D1M]),
+  pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
   vchartBaseConfig,
   vchartTheme,

@@ -15,3 +15,21 @@ export const initPivot: SpecPipe = (spec) => {
     indicatorsAsCol: false,
   }
 }
+
+export const pivotIndicatorsAsRow: SpecPipe = (spec) => {
+  const result = { ...spec } as PivotChartConstructorOptions
+
+  return {
+    ...result,
+    indicatorsAsCol: false,
+  }
+}
+
+export const pivotIndicatorsAsCol: SpecPipe = (spec) => {
+  const result = { ...spec } as PivotChartConstructorOptions
+
+  return {
+    ...result,
+    indicatorsAsCol: true,
+  }
+}

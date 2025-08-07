@@ -4,16 +4,18 @@ import {
   autoMeasures,
   encodingXY,
   initAdvancedVSeed,
-  reshapeTo2D1M,
   vchartBaseConfig,
   vchartTheme,
+  reshapeTo2D1M,
+  pivotReshapeTo2D1M,
+  pivotAdapter,
 } from '../pipes'
 
 export const columnPercentAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   autoMeasures,
   autoDimensions,
-  reshapeTo2D1M,
+  pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
   vchartBaseConfig,
   vchartTheme,

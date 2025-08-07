@@ -14,6 +14,8 @@ export const yLinear: SpecPipe = (spec) => {
       visible: true,
       type: 'linear',
       orient: 'left',
+      nice: true,
+      zero: true,
     },
   ] as ISpec['axes']
 

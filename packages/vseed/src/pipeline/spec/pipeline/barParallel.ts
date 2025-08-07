@@ -1,7 +1,24 @@
 import type { SpecPipeline } from 'src/types'
-import { dataset, xLinear, yBand, initBarParallel, backgroundColor, label, tooltip, legend, color } from '../pipes'
+import {
+  dataset,
+  xLinear,
+  yBand,
+  initBarParallel,
+  backgroundColor,
+  label,
+  tooltip,
+  legend,
+  color,
+  datasetPivotPlaceholder,
+  initPivot,
+  datasetPivot,
+  pivotLegend,
+  pivotIndicators,
+  pivotAdapter,
+  pivotIndicatorsAsCol,
+} from '../pipes'
 
-export const barParallelSpecPipeline: SpecPipeline = [
+const barParallel: SpecPipeline = [
   initBarParallel,
   color,
   backgroundColor,
@@ -12,3 +29,13 @@ export const barParallelSpecPipeline: SpecPipeline = [
   tooltip,
   legend,
 ]
+
+const pivotBarParallel: SpecPipeline = [
+  initPivot,
+  pivotIndicatorsAsCol,
+  datasetPivot,
+  pivotIndicators([initBarParallel, color, backgroundColor, datasetPivotPlaceholder, yBand, xLinear, label, tooltip]),
+  pivotLegend,
+]
+
+export const barParallelSpecPipeline: SpecPipeline = [pivotAdapter(barParallel, pivotBarParallel)]

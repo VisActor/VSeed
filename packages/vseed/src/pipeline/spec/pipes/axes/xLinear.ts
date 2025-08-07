@@ -14,6 +14,8 @@ export const xLinear: SpecPipe = (spec) => {
       visible: true,
       type: 'linear',
       orient: 'bottom',
+      nice: true,
+      zero: true,
     },
   ] as ISpec['axes']
 

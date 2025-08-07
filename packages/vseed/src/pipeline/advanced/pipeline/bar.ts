@@ -2,18 +2,20 @@ import type { AdvancedPipeline } from 'src/types'
 import {
   initAdvancedVSeed,
   encodingYX,
-  reshapeTo2D1M,
   vchartBaseConfig,
   vchartTheme,
   autoMeasures,
   autoDimensions,
+  reshapeTo2D1M,
+  pivotReshapeTo2D1M,
+  pivotAdapter,
 } from '../pipes'
 
 export const barAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   autoMeasures,
   autoDimensions,
-  reshapeTo2D1M,
+  pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingYX,
   vchartBaseConfig,
   vchartTheme,

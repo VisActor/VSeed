@@ -13,7 +13,7 @@ import type { AdvancedPipe, Dataset, DatasetReshapeInfo, MeasureGroup } from 'sr
  * @param context
  * @returns
  */
-export const reshapePivotTo1D1M: AdvancedPipe = (advancedVSeed, context) => {
+export const pivotReshapeTo1D1M: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset } = vseed

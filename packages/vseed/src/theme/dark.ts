@@ -77,10 +77,10 @@ export const darkTheme = (): CustomThemeConfig => {
   return {
     baseConfig: {
       vtable: {
-        backgroundColor: '#141414',
+        backgroundColor: '#191d24',
       },
       vchart: {
-        backgroundColor: '#141414',
+        backgroundColor: '#191d24',
         color: {
           colorScheme: [
             '#2E62F1',

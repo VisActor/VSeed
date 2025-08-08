@@ -1,7 +1,7 @@
 import { useRef, useEffect, memo } from 'react'
 import VChart from '@visactor/vchart'
 import { register, PivotChart as VTablePivotChart, PivotChartConstructorOptions } from '@visactor/vtable'
-import { registerAll, VSeed, Builder } from '@visactor/vseed'
+import { registerAll, VSeed, Builder, UnfoldDimensionGroup } from '@visactor/vseed'
 
 register.chartModule('vchart', VChart)
 registerAll()
@@ -17,6 +17,17 @@ export const PivotChart = memo((props: { vseed: VSeed }) => {
 
     const spec = Builder.from(vseed).build() as PivotChartConstructorOptions
     const tableInstance = new VTablePivotChart(ref.current, spec)
+
+    tableInstance.on('legend_item_click', (args) => {
+      console.log('LEGEND_ITEM_CLICK', args)
+      tableInstance.updateFilterRules([
+        {
+          filterKey: UnfoldDimensionGroup,
+          filteredValues: args.value,
+        },
+      ])
+    })
+
     return () => tableInstance.release()
   })
 

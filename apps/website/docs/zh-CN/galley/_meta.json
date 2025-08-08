@@ -6,24 +6,21 @@
     "collapsed": true
   },
   {
-    "type": "file",
-    "name": "dataset",
-    "label": "dataset"
-  },
-  {
-    "type": "file",
-    "name": "measures",
-    "label": "measures"
-  },
-  {
-    "type": "file",
-    "name": "dimensions",
-    "label": "dimensions"
+    "type": "dir",
+    "name": "dataConfig",
+    "label": "dataConfig",
+    "collapsed": true
   },
   {
     "type": "dir",
     "name": "baseConfig",
     "label": "baseConfig",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "chartConfig",
+    "label": "chartConfig",
     "collapsed": true
   },
   {

@@ -1,2 +1,2 @@
-export type { ChartType } from './zChartType';
-export { zChartType } from './zChartType'
+export type { ChartType } from './chartType';
+export { zChartType } from './chartType'

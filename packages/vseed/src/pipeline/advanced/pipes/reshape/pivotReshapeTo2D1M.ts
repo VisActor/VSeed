@@ -46,10 +46,10 @@ export const pivotReshapeTo2D1M: AdvancedPipe = (advancedVSeed, context) => {
       foldInfo,
       unfoldInfo,
     } = dataReshapeFor2D1M(dataset, commonDimensions, measures, {
-      foldMeasureId: FoldMeasureId + groupId,
-      foldMeasureName: FoldMeasureName + groupId,
+      foldMeasureId: FoldMeasureId,
+      foldMeasureName: FoldMeasureName,
       foldMeasureValue: FoldMeasureValue + groupId,
-      unfoldDimensionGroup: UnfoldDimensionGroup + groupId,
+      unfoldDimensionGroup: UnfoldDimensionGroup,
     })
     const reshapeInfo = {
       id: groupId,

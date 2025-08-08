@@ -7,15 +7,22 @@ import { zEncoding } from './properties/encoding/encoding'
 import { zDatasetReshapeInfo } from './properties/datasetReshapeInfo/datasetReshapeInfo'
 import { zBaseConfig } from './properties/baseConfig/baseConfig'
 import { zTheme, zCustomTheme } from './properties/theme'
+import { zConfig } from './properties/config'
 
 export const zAdvancedVSeed = z.object({
+  // chart type
   chartType: zChartType,
+  // data config
   dataset: zDataset,
   datasetReshapeInfo: zDatasetReshapeInfo,
   dimensions: zDimensions,
   measures: zMeasures,
   encoding: zEncoding,
+  // base config
   baseConfig: zBaseConfig,
+  // chart config
+  config: zConfig,
+  // theme config
   theme: zTheme,
   customTheme: zCustomTheme,
 })

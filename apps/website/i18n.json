@@ -19,9 +19,17 @@
     "en-US": "Deployment",
     "zh-CN": "部署"
   },
+  "dataConfig": {
+    "en-US": "Data Config",
+    "zh-CN": "数据配置"
+  },
   "baseConfig": {
     "en-US": "Base Config",
     "zh-CN": "通用配置"
+  },
+  "chartConfig":{
+    "en-US": "Chart Config",
+    "zh-CN": "图表配置"
   },
   "chartType": {
     "en-US": "Chart Type",

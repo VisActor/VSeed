@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react'
 import VChart from '@visactor/vchart'
 import { registerAll, VSeed, Builder } from '@visactor/vseed'
+
 registerAll()
 
 function Demo() {

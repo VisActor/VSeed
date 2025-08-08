@@ -33,18 +33,29 @@ export const yLinear: SpecPipe = (spec, context) => {
 
     zero,
     nice,
+    inverse,
     max,
     min,
   } = config
 
   const linearAxis = {
-    visible: visible,
+    visible,
     type: 'linear',
     orient: 'left',
-    nice: nice,
-    zero: zero,
+    nice,
+    zero,
+    inverse,
     max,
     min,
+    label: {
+      visible: label?.visible,
+      style: {
+        fill: label?.labelColor,
+        angle: label?.labelAngle,
+        fontSize: label?.labelFontSize,
+        fontWeight: label?.labelFontWeight,
+      },
+    },
     title: {
       visible: title?.visible,
       text: title?.titleText,
@@ -60,15 +71,6 @@ export const yLinear: SpecPipe = (spec, context) => {
       inside: tick?.tickInside,
       style: {
         stroke: tick?.tickColor,
-      },
-    },
-    label: {
-      visible: label?.visible,
-      style: {
-        fill: label?.labelColor,
-        angle: label?.labelAngle,
-        fontSize: label?.labelFontSize,
-        fontWeight: label?.labelFontWeight,
       },
     },
     grid: {

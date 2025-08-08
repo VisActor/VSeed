@@ -1,5 +1,5 @@
 import { VSeed } from '@visactor/vseed'
-import { VSeedRender } from '../../render/Chart'
+import { VChartRender } from '../../render/Chart'
 import { memo } from 'react'
 
 export const BaseConfigColorScheme = memo(() => {
@@ -38,7 +38,7 @@ export const BaseConfigColorScheme = memo(() => {
       { id: 'sales', alias: '销售额' },
     ],
   }
-  return <VSeedRender vseed={vseed} />
+  return <VChartRender vseed={vseed} />
 })
 
 export const BaseConfigColorMapping = memo(() => {
@@ -80,5 +80,5 @@ export const BaseConfigColorMapping = memo(() => {
       { id: 'sales', alias: '销售额' },
     ],
   }
-  return <VSeedRender vseed={vseed} />
+  return <VChartRender vseed={vseed} />
 })

@@ -1,4 +1,4 @@
-import { VSeedRender } from '../../render/Chart'
+import { VChartRender } from '../../render/Chart'
 import { memo } from 'react'
 import { ColumnParallel } from '@visactor/vseed'
 
@@ -27,5 +27,5 @@ export const BaseConfigTooltip = memo(() => {
       { id: 'sales', alias: '销售额' },
     ],
   }
-  return <VSeedRender vseed={vseed} />
+  return <VChartRender vseed={vseed} />
 })

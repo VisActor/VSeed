@@ -1,5 +1,5 @@
 import { VSeed } from '@visactor/vseed'
-import { VSeedRender } from '../../render/Chart'
+import { VChartRender } from '../../render/Chart'
 import { memo } from 'react'
 
 export const Dataset3M3D = memo(() => {
@@ -19,5 +19,5 @@ export const Dataset3M3D = memo(() => {
       { date: '2020', region: 'north of east', city: 'E', profit: 4, sales: 8, discount: 0.5 },
     ],
   }
-  return <VSeedRender vseed={vseed} />
+  return <VChartRender vseed={vseed} />
 })

@@ -4,6 +4,7 @@ export const lightTheme = (): CustomThemeConfig => {
   const linearAxis: YLinearAxis = {
     nice: true,
     zero: true,
+    inverse: false,
     label: {
       visible: true,
       labelAngle: 0,
@@ -74,6 +75,16 @@ export const lightTheme = (): CustomThemeConfig => {
     },
   }
 
+  const barBandAxis: YBandAxis = {
+    ...bandAxis,
+    labelAutoHide: false,
+    labelAutoHideGap: 1,
+    labelAutoLimit: false,
+    labelAutoLimitLength: undefined,
+    labelAutoRotate: false,
+    labelAutoRotateAngleRange: [0, -45, -90],
+  }
+
   return {
     baseConfig: {
       vtable: {
@@ -125,15 +136,15 @@ export const lightTheme = (): CustomThemeConfig => {
       },
       bar: {
         xAxis: linearAxis,
-        yAxis: bandAxis,
+        yAxis: barBandAxis,
       },
       barParallel: {
         xAxis: linearAxis,
-        yAxis: bandAxis,
+        yAxis: barBandAxis,
       },
       barPercent: {
         xAxis: linearAxis,
-        yAxis: bandAxis,
+        yAxis: barBandAxis,
       },
       area: {
         xAxis: bandAxis,

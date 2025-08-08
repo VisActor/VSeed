@@ -5,13 +5,53 @@
     "label": "line",
     "collapsed": true
   },
-  "column",
-  "columnParallel",
-  "columnPercent",
-  "bar",
-  "barParallel",
-  "barPercent",
-  "area",
-  "areaPercent",
+  {
+    "type": "dir",
+    "name": "column",
+    "label": "column",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "columnParallel",
+    "label": "columnParallel",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "columnPercent",
+    "label": "columnPercent",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "bar",
+    "label": "bar",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "barParallel",
+    "label": "barParallel",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "barPercent",
+    "label": "barPercent",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "area",
+    "label": "area",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "areaPercent",
+    "label": "areaPercent",
+    "collapsed": true
+  },
   "pie"
 ]

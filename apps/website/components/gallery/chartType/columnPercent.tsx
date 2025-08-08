@@ -1,5 +1,5 @@
 import { VSeed } from '@visactor/vseed'
-import { VSeedRender } from '../../render/Chart'
+import { VChartRender } from '../../render/Chart'
 import { memo } from 'react'
 
 export const ColumnPercentChart = memo(() => {
@@ -13,5 +13,5 @@ export const ColumnPercentChart = memo(() => {
       { date: '2023', profit: 40, sales: 80 },
     ],
   }
-  return <VSeedRender vseed={vseed} />
+  return <VChartRender vseed={vseed} />
 })

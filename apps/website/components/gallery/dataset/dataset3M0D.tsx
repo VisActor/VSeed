@@ -1,5 +1,5 @@
 import { VSeed } from '@visactor/vseed'
-import { VSeedRender } from '../../render/Chart'
+import { VChartRender } from '../../render/Chart'
 import { memo } from 'react'
 
 export const Dataset3M0D = memo(() => {
@@ -7,5 +7,5 @@ export const Dataset3M0D = memo(() => {
     chartType: 'columnParallel',
     dataset: [{ profit: 1, sales: 2, discount: 0.1 }],
   }
-  return <VSeedRender vseed={vseed} />
+  return <VChartRender vseed={vseed} />
 })

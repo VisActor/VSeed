@@ -38,11 +38,37 @@ export const xBand: SpecPipe = (spec, context) => {
     labelAutoRotateAngleRange,
   } = config
 
+  const sampling = !(labelAutoHide || labelAutoRotate || labelAutoLimit)
+
   const bandAxis = {
     visible,
     type: 'band',
     orient: 'bottom',
     maxHeight: labelAutoLimitLength,
+    sampling,
+    hover: true,
+    label: {
+      visible: label?.visible,
+      flush: true,
+      space: 8,
+      style: {
+        maxLineWidth: labelAutoLimitLength,
+        fill: label?.labelColor,
+        angle: label?.labelAngle,
+        fontSize: label?.labelFontSize,
+        fontWeight: label?.labelFontWeight,
+      },
+
+      // 防重叠相关
+      minGap: labelAutoHideGap,
+      autoHide: labelAutoHide,
+      autoHideMethod: 'greedy',
+      autoHideSeparation: labelAutoHideGap,
+      autoLimit: labelAutoLimit,
+      autoRotate: labelAutoRotate,
+      autoRotateAngle: labelAutoRotateAngleRange,
+      lastVisible: true,
+    },
     title: {
       visible: title?.visible,
       text: title?.titleText,
@@ -58,22 +84,6 @@ export const xBand: SpecPipe = (spec, context) => {
       inside: tick?.tickInside,
       style: {
         stroke: tick?.tickColor,
-      },
-    },
-    label: {
-      // 防重叠相关
-      autoHide: labelAutoHide,
-      autoHideSeparation: labelAutoHideGap,
-      autoLimit: labelAutoLimit,
-      autoRotate: labelAutoRotate,
-      autoRotateAngle: labelAutoRotateAngleRange,
-      visible: label?.visible,
-      style: {
-        maxLineWidth: labelAutoLimitLength,
-        fill: label?.labelColor,
-        angle: label?.labelAngle,
-        fontSize: label?.labelFontSize,
-        fontWeight: label?.labelFontWeight,
       },
     },
     grid: {

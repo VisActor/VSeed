@@ -3,7 +3,7 @@ import VChart from '@visactor/vchart'
 import { registerAll, VSeed, Builder } from '@visactor/vseed'
 registerAll()
 
-export const VSeedRender = memo((props: { vseed: VSeed }) => {
+export const VChartRender = memo((props: { vseed: VSeed }) => {
   const {
     vseed = {
       chartType: 'column',

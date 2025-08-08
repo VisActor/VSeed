@@ -33,6 +33,14 @@ export type Axis = {
   nice?: boolean
 
   /**
+   * 轴是否反向展示
+   * @description 仅对数值轴生效
+   * @default false
+   * @example false
+   */
+  inverse?: boolean
+
+  /**
    * 是否在坐标轴上显示 0 值,
    * @description 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
    * @default true
@@ -48,7 +56,9 @@ export type Axis = {
   labelAutoHide?: boolean
   /**
    * 轴标签, 自动隐藏间隔
-   * @description 当autoHide开启时, 若2个文本标签的间隔小于autoHideGap, 则自动隐藏导致重叠的标签. 仅对类目轴生效.
+   * @description 若2个文本标签的间隔小于autoHideGap, 则自动隐藏导致重叠的标签. 仅对类目轴生��.
+   *  autoHide开启时, 使用autoHide, 设置在autoHideSeparation上
+   *  autoHide关闭时, 使用sampling采样, 设置在minGap上
    * @default 4
    */
   labelAutoHideGap?: number
@@ -221,6 +231,7 @@ export const zAxis = z.object({
   max: z.number().optional(),
   nice: z.boolean().default(true).optional(),
   zero: z.boolean().default(true).optional(),
+  inverse: z.boolean().default(false).optional(),
 
   labelAutoHide: z.boolean().default(true).optional(),
   labelAutoHideGap: z.number().default(4).optional(),

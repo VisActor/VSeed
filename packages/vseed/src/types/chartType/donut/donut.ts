@@ -1,4 +1,14 @@
-import type { BackgroundColor, Color, Dataset, Dimensions, Label, Legend, Measures, Theme, Tooltip } from 'src/types'
+import type {
+  BackgroundColor,
+  Color,
+  Dataset,
+  Dimensions,
+  Label,
+  Legend,
+  Measures,
+  Theme,
+  Tooltip,
+} from '../../properties'
 
 /**
  * 环形图类型定义

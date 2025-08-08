@@ -9,6 +9,7 @@ import {
   reshapeTo2D1M,
   pivotReshapeTo2D1M,
   pivotAdapter,
+  barConfig,
 } from '../pipes'
 
 export const barAdvancedPipeline: AdvancedPipeline = [
@@ -17,6 +18,7 @@ export const barAdvancedPipeline: AdvancedPipeline = [
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingYX,
+  barConfig,
   vchartBaseConfig,
   vchartTheme,
 ]

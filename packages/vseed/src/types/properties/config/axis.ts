@@ -49,13 +49,13 @@ export type Axis = {
   /**
    * 轴标签, 自动隐藏间隔
    * @description 当autoHide开启时, 若2个文本标签的间隔小于autoHideGap, 则自动隐藏导致重叠的标签. 仅对类目轴生效.
-   * @default 0
+   * @default 4
    */
   labelAutoHideGap?: number
   /**
    * 轴标签, 自动旋转
    * @description 当标签宽度超过轴长度时, 自动旋转标签. 仅对类目轴生效.
-   * @default false
+   * @default true
    */
   labelAutoRotate?: boolean
   /**
@@ -67,7 +67,7 @@ export type Axis = {
   /**
    * 轴标签, 自动限制长度,
    * @description 当标签宽度超过轴长度时, 超出部分省略号表示, 鼠标悬浮后可见标签, 自动限制标签宽度. 仅对类目轴生效.
-   * @default false
+   * @default true
    */
   labelAutoLimit?: boolean
   /**
@@ -81,32 +81,32 @@ export type Axis = {
    * X轴刻度标签
    * @default true
    */
-  label: {
+  label?: {
     /**
      * 标签是否可见
      * @default true
      */
-    visible: boolean
+    visible?: boolean
     /**
      * 标签颜色
      * @default '#797B85'
      */
-    labelColor: string
+    labelColor?: string
     /**
      * 标签字体大小
      * @default 12
      */
-    labelFontSize: number
+    labelFontSize?: number
     /**
      * 标签字体粗细
      * @default 400
      */
-    labelFontWeight: number
+    labelFontWeight?: number
     /**
      * 标签旋转角度
      * @default 0
      */
-    labelAngle: number
+    labelAngle?: number
   }
 
   /**
@@ -118,99 +118,99 @@ export type Axis = {
    *   lineWidth: 2,
    * }
    */
-  line: {
+  line?: {
     /**
      * 轴线是否可见
      * @default true
      */
-    visible: boolean
+    visible?: boolean
     /**
      * 轴线颜色
      * @default 'rgba(54, 65, 89, 0.30)'
      */
-    lineColor: string
+    lineColor?: string
     /**
      * 轴线宽度
      * @default 1
      */
-    lineWidth: number
+    lineWidth?: number
   }
 
   /**
    * X轴刻度
    * @default true
    */
-  tick: {
+  tick?: {
     /**
      * 刻度是否可见
      * @default true
      */
-    visible: boolean
+    visible?: boolean
     /**
      * 刻度是否朝内
      * @default false
      */
-    tickInside: boolean
+    tickInside?: boolean
     /**
      * 刻度颜色
      * @default 'rgba(54, 65, 89, 0.30)'
      */
-    tickColor: string
+    tickColor?: string
     /**
      * 刻度尺寸
      * @default 4
      */
-    tickSize: number
+    tickSize?: number
   }
 
   /**
    * X轴标题
    * @default false
    */
-  title: {
+  title?: {
     /**
      * 标题是否可见
      * @default false
      */
-    visible: boolean
+    visible?: boolean
     /**
      * 标题文本, 默认跟随字段配置
      * @default ''
      */
-    titleText: string
+    titleText?: string
     /**
      * 标题颜色
      * @default '#646A73'
      */
-    titleColor: string
+    titleColor?: string
     /**
      * 标题字体大小
      * @default 12
      */
-    titleFontSize: number
+    titleFontSize?: number
     /**
      * 标题字体粗细
      * @default 400
      */
-    titleFontWeight: number
+    titleFontWeight?: number
   }
 
   /**
    * X轴网格线
    * @default false
    */
-  grid: {
-    visible: boolean
+  grid?: {
+    visible?: boolean
     /**
      * 网格线颜色
      * @default 'rgba(54, 65, 89, 0.15)'
      */
-    gridColor: string
+    gridColor?: string
     /**
      * 网格线宽度
      * @default 0.5
      */
-    gridWidth: number
+    gridWidth?: number
   }
 }
 
@@ -223,39 +223,49 @@ export const zAxis = z.object({
   zero: z.boolean().default(true).optional(),
 
   labelAutoHide: z.boolean().default(true).optional(),
-  labelAutoHideGap: z.number().default(0).optional(),
+  labelAutoHideGap: z.number().default(4).optional(),
   labelAutoRotate: z.boolean().default(true).optional(),
   labelAutoRotateAngleRange: z.array(z.number()).default([0, -45, -90]).optional(),
   labelAutoLimit: z.boolean().default(true).optional(),
   labelAutoLimitLength: z.number().default(100).optional(),
-  label: z.object({
-    visible: z.boolean().default(true).optional(),
-    labelColor: z.string().default('#797B85').optional(),
-    labelFontSize: z.number().default(12).optional(),
-    labelFontWeight: z.number().default(400).optional(),
-    labelAngle: z.number().default(0).optional(),
-  }),
-  line: z.object({
-    visible: z.boolean().default(true).optional(),
-    lineColor: z.string().default('rgba(54, 65, 89, 0.30)').optional(),
-    lineWidth: z.number().default(1).optional(),
-  }),
-  tick: z.object({
-    visible: z.boolean().default(true).optional(),
-    tickInside: z.boolean().default(false).optional(),
-    tickColor: z.string().default('rgba(54, 65, 89, 0.30)').optional(),
-    tickSize: z.number().default(4).optional(),
-  }),
-  title: z.object({
-    visible: z.boolean().default(false).optional(),
-    titleText: z.string().default('').optional(),
-    titleColor: z.string().default('#646A73').optional(),
-    titleFontSize: z.number().default(12).optional(),
-    titleFontWeight: z.number().default(400).optional(),
-  }),
-  grid: z.object({
-    visible: z.boolean().default(false).optional(),
-    gridColor: z.string().default('rgba(54, 65, 89, 0.15)').optional(),
-    gridWidth: z.number().default(0.5).optional(),
-  }),
+  label: z
+    .object({
+      visible: z.boolean().default(true).optional(),
+      labelColor: z.string().default('#797B85').optional(),
+      labelFontSize: z.number().default(12).optional(),
+      labelFontWeight: z.number().default(400).optional(),
+      labelAngle: z.number().default(0).optional(),
+    })
+    .optional(),
+  line: z
+    .object({
+      visible: z.boolean().default(true).optional(),
+      lineColor: z.string().default('rgba(54, 65, 89, 0.30)').optional(),
+      lineWidth: z.number().default(1).optional(),
+    })
+    .optional(),
+  tick: z
+    .object({
+      visible: z.boolean().default(true).optional(),
+      tickInside: z.boolean().default(false).optional(),
+      tickColor: z.string().default('rgba(54, 65, 89, 0.30)').optional(),
+      tickSize: z.number().default(4).optional(),
+    })
+    .optional(),
+  title: z
+    .object({
+      visible: z.boolean().default(false).optional(),
+      titleText: z.string().default('').optional(),
+      titleColor: z.string().default('#646A73').optional(),
+      titleFontSize: z.number().default(12).optional(),
+      titleFontWeight: z.number().default(400).optional(),
+    })
+    .optional(),
+  grid: z
+    .object({
+      visible: z.boolean().default(false).optional(),
+      gridColor: z.string().default('rgba(54, 65, 89, 0.15)').optional(),
+      gridWidth: z.number().default(0.5).optional(),
+    })
+    .optional(),
 })

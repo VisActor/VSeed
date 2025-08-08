@@ -1,4 +1,14 @@
-import type { BackgroundColor, Color, Dataset, Dimensions, Label, Legend, Measures, Theme, Tooltip } from 'src/types'
+import type {
+  BackgroundColor,
+  Color,
+  Dataset,
+  Dimensions,
+  Label,
+  Legend,
+  Measures,
+  Theme,
+  Tooltip,
+} from '../../properties'
 
 /**
  * 玫瑰图类型定义
@@ -53,7 +63,7 @@ export interface Rose {
    */
   backgroundColor?: BackgroundColor
 
-    /**
+  /**
    * 颜色
    * @description 颜色配置, 用于定义图表的颜色方案, 包括颜色列表, 颜色映射, 颜色渐变等.
    */
@@ -76,7 +86,7 @@ export interface Rose {
    * @description 提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等.
    */
   tooltip?: Tooltip
-  
+
   /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置
    * @default light 默认为亮色主题

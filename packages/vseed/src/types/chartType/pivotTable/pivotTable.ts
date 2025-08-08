@@ -1,4 +1,4 @@
-import type { BackgroundColor, Dataset, Dimensions, Measures, Theme } from 'src/types'
+import type { BackgroundColor, Dataset, Dimensions, Measures, Theme } from '../../properties'
 
 /**
  * 透视表类型定义

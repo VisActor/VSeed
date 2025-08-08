@@ -17,7 +17,6 @@ export const pivotIndicators =
 
       const newEncoding = [encoding[index]]
       const newDatasetReshapeInfo = [{ ...reshapeInfo, unfoldInfo: { ...reshapeInfo.unfoldInfo, colorItems } }]
-
       const newContext: SpecPipelineContext = {
         ...context,
         advancedVSeed: {

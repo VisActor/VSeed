@@ -1,4 +1,16 @@
-import type { BackgroundColor, Color, Dataset, Dimensions, Label, Legend, Measures, Theme, Tooltip } from 'src/types'
+import type {
+  BackgroundColor,
+  Color,
+  Dataset,
+  Dimensions,
+  Label,
+  Legend,
+  Measures,
+  Theme,
+  Tooltip,
+  XBandAxis,
+  YLinearAxis,
+} from '../../properties'
 
 /**
  * 柱状图类型定义
@@ -76,6 +88,18 @@ export interface Column {
    * @description 提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等.
    */
   tooltip?: Tooltip
+
+  /**
+   * x轴
+   * @description 类目轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.
+   */
+  xAxis?: XBandAxis
+
+  /**
+   * y轴
+   * @description 数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.
+   */
+  yAxis?: YLinearAxis
 
   /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置

@@ -9,6 +9,7 @@ import {
   reshapeTo2D1M,
   pivotReshapeTo2D1M,
   pivotAdapter,
+  columnPercentConfig,
 } from '../pipes'
 
 export const columnPercentAdvancedPipeline: AdvancedPipeline = [
@@ -17,6 +18,7 @@ export const columnPercentAdvancedPipeline: AdvancedPipeline = [
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
+  columnPercentConfig,
   vchartBaseConfig,
   vchartTheme,
 ]

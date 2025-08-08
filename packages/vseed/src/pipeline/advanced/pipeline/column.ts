@@ -8,6 +8,7 @@ import {
   vchartBaseConfig,
   vchartTheme,
   pivotAdapter,
+  columnConfig,
 } from '../pipes'
 import { pivotReshapeTo2D1M } from '../pipes/reshape/pivotReshapeTo2D1M'
 
@@ -17,6 +18,7 @@ export const columnAdvancedPipeline: AdvancedPipeline = [
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
+  columnConfig,
   vchartBaseConfig,
   vchartTheme,
 ]

@@ -17,5 +17,10 @@ export const initBarParallel: SpecPipe = (spec, context) => {
   result.xField = encoding[0].x[0]
   result.seriesField = encoding[0].group[0]
   result.padding = 0
+  result.region = [
+    {
+      clip: true,
+    },
+  ]
   return result
 }

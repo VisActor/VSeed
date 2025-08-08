@@ -9,6 +9,7 @@ import {
   vchartTheme,
   pivotAdapter,
   pivotReshapeTo2D1M,
+  lineConfig,
 } from '../pipes'
 
 export const lineAdvancedPipeline: AdvancedPipeline = [
@@ -18,5 +19,6 @@ export const lineAdvancedPipeline: AdvancedPipeline = [
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
   vchartBaseConfig,
+  lineConfig,
   vchartTheme,
 ]

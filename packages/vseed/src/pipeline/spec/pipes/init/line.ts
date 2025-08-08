@@ -16,5 +16,10 @@ export const initLine: SpecPipe = (spec, context) => {
   result.yField = encoding[0].y[0]
   result.seriesField = encoding[0].group[0]
   result.padding = 0
+  result.region = [
+    {
+      clip: true,
+    },
+  ]
   return result
 }

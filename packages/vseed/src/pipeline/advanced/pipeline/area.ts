@@ -9,6 +9,7 @@ import {
   vchartBaseConfig,
   vchartTheme,
   pivotAdapter,
+  areaConfig,
 } from '../pipes'
 
 export const areaAdvancedPipeline: AdvancedPipeline = [
@@ -17,6 +18,7 @@ export const areaAdvancedPipeline: AdvancedPipeline = [
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
+  areaConfig,
   vchartBaseConfig,
   vchartTheme,
 ]

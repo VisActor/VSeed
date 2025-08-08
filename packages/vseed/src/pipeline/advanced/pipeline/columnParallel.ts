@@ -9,6 +9,7 @@ import {
   vchartTheme,
   pivotAdapter,
   pivotReshapeTo2D1M,
+  columnParallelConfig,
 } from '../pipes'
 
 export const columnParallelAdvancedPipeline: AdvancedPipeline = [
@@ -17,6 +18,7 @@ export const columnParallelAdvancedPipeline: AdvancedPipeline = [
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
+  columnParallelConfig,
   vchartBaseConfig,
   vchartTheme,
 ]

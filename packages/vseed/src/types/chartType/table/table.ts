@@ -1,4 +1,4 @@
-import type { BackgroundColor, Dataset, Dimensions, Measures, Theme } from 'src/types'
+import type { BackgroundColor, Dataset, Dimensions, Measures, Theme } from '../../properties'
 
 /**
  * 表格类型定义

@@ -12,7 +12,7 @@ import {
   initPivot,
   datasetPivot,
   datasetPivotPlaceholder,
-  pivotLegend,
+  pivotDiscreteLegend,
   pivotIndicators,
   pivotAdapter,
   pivotIndicatorsAsRow,
@@ -31,7 +31,7 @@ const pivotLine: SpecPipeline = [
   pivotIndicators([initLine, color, backgroundColor, datasetPivotPlaceholder, xBand, yLinear, label, tooltip]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotLegend,
+  pivotDiscreteLegend,
 ]
 
 export const lineSpecPipeline: SpecPipeline = [pivotAdapter(line, pivotLine)]

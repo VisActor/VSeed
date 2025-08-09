@@ -13,7 +13,7 @@ import {
   initPivot,
   datasetPivot,
   pivotIndicators,
-  pivotLegend,
+  pivotDiscreteLegend,
   datasetPivotPlaceholder,
   pivotIndicatorsAsCol,
   pivotGridStyle,
@@ -31,7 +31,7 @@ const pivotBar: SpecPipeline = [
   pivotIndicators([initBar, color, backgroundColor, datasetPivotPlaceholder, yBand, label, label, tooltip]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotLegend,
+  pivotDiscreteLegend,
 ]
 
 export const barSpecPipeline: SpecPipeline = [pivotAdapter(bar, pivotBar)]

@@ -12,7 +12,7 @@ import {
   datasetPivotPlaceholder,
   initPivot,
   datasetPivot,
-  pivotLegend,
+  pivotDiscreteLegend,
   pivotIndicators,
   pivotAdapter,
   pivotIndicatorsAsCol,
@@ -41,7 +41,7 @@ const pivotBarParallel: SpecPipeline = [
   pivotIndicators([initBarParallel, color, backgroundColor, datasetPivotPlaceholder, yBand, xLinear, label, tooltip]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotLegend,
+  pivotDiscreteLegend,
 ]
 
 export const barParallelSpecPipeline: SpecPipeline = [pivotAdapter(barParallel, pivotBarParallel)]

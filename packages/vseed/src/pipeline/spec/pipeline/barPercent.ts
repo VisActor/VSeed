@@ -14,7 +14,7 @@ import {
   initPivot,
   datasetPivot,
   pivotIndicators,
-  pivotLegend,
+  pivotDiscreteLegend,
   datasetPivotPlaceholder,
   pivotIndicatorsAsCol,
   pivotGridStyle,
@@ -43,7 +43,7 @@ const pivotBarPercent: SpecPipeline = [
   pivotIndicators([initBar, color, backgroundColor, percent, datasetPivotPlaceholder, yBand, xLinear, label, tooltip]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotLegend,
+  pivotDiscreteLegend,
 ]
 
 export const barPercentSpecPipeline: SpecPipeline = [pivotAdapter(barPercent, pivotBarPercent)]

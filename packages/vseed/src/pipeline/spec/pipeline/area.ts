@@ -13,7 +13,7 @@ import {
   datasetPivotPlaceholder,
   datasetPivot,
   pivotIndicators,
-  pivotLegend,
+  pivotDiscreteLegend,
   pivotAdapter,
   initPivot,
   pivotIndicatorsAsRow,
@@ -53,7 +53,7 @@ const pivotArea: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotLegend,
+  pivotDiscreteLegend,
 ]
 
 export const areaSpecPipeline = [pivotAdapter(area, pivotArea)]

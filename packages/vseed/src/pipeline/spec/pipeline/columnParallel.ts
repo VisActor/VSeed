@@ -14,7 +14,7 @@ import {
   datasetPivot,
   pivotAdapter,
   datasetPivotPlaceholder,
-  pivotLegend,
+  pivotDiscreteLegend,
   pivotIndicatorsAsRow,
   pivotGridStyle,
   pivotRowDimensions,
@@ -50,7 +50,7 @@ const pivotColumnParallel: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotLegend,
+  pivotDiscreteLegend,
 ]
 
 export const columnParallelSpecPipeline: SpecPipeline = [pivotAdapter(columnParallel, pivotColumnParallel)]

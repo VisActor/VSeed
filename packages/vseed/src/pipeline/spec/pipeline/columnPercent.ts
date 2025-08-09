@@ -15,7 +15,7 @@ import {
   initPivot,
   datasetPivot,
   pivotIndicators,
-  pivotLegend,
+  pivotDiscreteLegend,
   pivotIndicatorsAsRow,
   pivotGridStyle,
   pivotRowDimensions,
@@ -56,7 +56,7 @@ const pivotColumnPercent: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotLegend,
+  pivotDiscreteLegend,
 ]
 
 export const columnPercentSpecPipeline: SpecPipeline = [pivotAdapter(columnPercent, pivotColumnPercent)]

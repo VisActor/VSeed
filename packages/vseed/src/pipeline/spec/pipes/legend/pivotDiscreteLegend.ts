@@ -1,14 +1,22 @@
-import type { Legend, SpecPipe } from 'src/types'
+import type { PivotChartConstructorOptions } from '@visactor/vtable'
+import type { IDiscreteTableLegendOption } from '@visactor/vtable/es/ts-types/component/legend'
+import { unique } from 'remeda'
+import type { Color, Legend, SpecPipe } from 'src/types'
 
-export const discreteLegend: SpecPipe = (spec, context) => {
-  const result = { ...spec }
+export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
+  const result = { ...spec } as PivotChartConstructorOptions
   const { advancedVSeed } = context
   const baseConfig = advancedVSeed.baseConfig.vchart
   if (!baseConfig || !baseConfig.legend) {
     return result
   }
 
-  const { legend } = baseConfig
+  const { datasetReshapeInfo } = advancedVSeed
+  const colorItems = unique(datasetReshapeInfo.flatMap((d) => d.unfoldInfo.colorItems))
+
+  const { legend, color } = baseConfig
+  const { colorScheme } = color as Color
+
   const {
     enable,
     position = 'bottom',
@@ -33,28 +41,27 @@ export const discreteLegend: SpecPipe = (spec, context) => {
       ? 'end'
       : 'middle'
 
-  result.legends = {
-    type: 'discrete',
+  const legends: IDiscreteTableLegendOption = {
     visible: enable,
-    maxCol: maxSize,
-    maxRow: maxSize,
-    autoPage: true,
+    type: 'discrete',
     orient,
     position: legendPosition,
-    data: border
-      ? (items) => {
-          return items.map((item) => {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            item.shape.outerBorder = {
-              stroke: item.shape.fill,
+    maxCol: maxSize,
+    maxRow: maxSize,
+    data: colorItems.map((d, index) => ({
+      label: d,
+      shape: {
+        outerBorder: border
+          ? {
+              stroke: colorScheme[index],
               distance: 3,
               lineWidth: 1,
             }
-            return item
-          })
-        }
-      : undefined,
+          : undefined,
+        fill: colorScheme[index],
+      },
+    })),
+
     item: {
       focus: true,
       focusIconStyle: {
@@ -85,6 +92,6 @@ export const discreteLegend: SpecPipe = (spec, context) => {
         },
       },
     },
-  }
-  return result
+  } as unknown as IDiscreteTableLegendOption
+  return { ...result, legends }
 }

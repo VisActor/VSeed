@@ -14,7 +14,7 @@ import {
   pivotGridStyle,
   pivotIndicators,
   pivotIndicatorsAsRow,
-  pivotLegend,
+  pivotDiscreteLegend,
   pivotRowDimensions,
   tooltip,
 } from '../pipes'
@@ -29,7 +29,7 @@ const pivotPie: SpecPipeline = [
   pivotIndicators([initPie, color, backgroundColor, datasetPivotPlaceholder, label, tooltip]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotLegend,
+  pivotDiscreteLegend,
 ]
 
 export const pieSpecPipeline: SpecPipeline = [pivotAdapter(pie, pivotPie)]

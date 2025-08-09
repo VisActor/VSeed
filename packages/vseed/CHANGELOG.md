@@ -1,5 +1,13 @@
 # @visactor/vseed
 
+## 0.0.9
+
+### Patch Changes
+
+- 1. feat: add bar style
+  2. feat: optimize legend
+  3. feat: optimize theme
+
 ## 0.0.8
 
 ### Patch Changes

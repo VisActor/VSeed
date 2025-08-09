@@ -24,7 +24,7 @@ export const BaseConfigLegendPosition = memo(() => {
     chartType: 'columnParallel',
     legend: {
       enable: true,
-      position: 'rightTop',
+      position: 'bl',
     },
     dataset: [
       { date: '2019', profit: 10, sales: 20 },

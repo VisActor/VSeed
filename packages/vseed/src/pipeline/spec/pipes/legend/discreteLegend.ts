@@ -28,9 +28,9 @@ export const discreteLegend: SpecPipe = (spec, context) => {
         ? 'left'
         : 'right'
 
-  const legendPosition = ['topLeft', 'bottomLeft', 'leftTop', 'rightTop', 'lt', 'rt', 'tl', 'tr'].includes(position)
+  const legendPosition = ['topLeft', 'bottomLeft', 'leftTop', 'rightTop', 'lt', 'rt', 'tl', 'bl'].includes(position)
     ? 'start'
-    : ['topRight', 'bottomRight', 'leftBottom', 'rightBottom', 'lb', 'rb', 'bl', 'br'].includes(position)
+    : ['topRight', 'bottomRight', 'leftBottom', 'rightBottom', 'lb', 'rb', 'rt', 'br'].includes(position)
       ? 'end'
       : 'middle'
 

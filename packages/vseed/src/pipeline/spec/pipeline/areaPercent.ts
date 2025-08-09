@@ -20,10 +20,12 @@ import {
   pivotGridStyle,
   pivotRowDimensions,
   pivotColumnDimensions,
+  stackInverse,
 } from '../pipes'
 
 const areaPercent: SpecPipeline = [
   initArea,
+  stackInverse,
   color,
   backgroundColor,
   percent,
@@ -37,10 +39,22 @@ const areaPercent: SpecPipeline = [
 
 const pivotAreaPercent: SpecPipeline = [
   initPivot,
+
   pivotGridStyle,
   pivotIndicatorsAsRow,
   datasetPivot,
-  pivotIndicators([initArea, color, backgroundColor, percent, datasetPivotPlaceholder, xBand, yLinear, label, tooltip]),
+  pivotIndicators([
+    initArea,
+    stackInverse,
+    color,
+    backgroundColor,
+    percent,
+    datasetPivotPlaceholder,
+    xBand,
+    yLinear,
+    label,
+    tooltip,
+  ]),
   pivotRowDimensions,
   pivotColumnDimensions,
   pivotLegend,

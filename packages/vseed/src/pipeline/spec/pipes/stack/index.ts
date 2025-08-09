@@ -1,1 +1,1 @@
-export { stack } from './stack'
+export { stackInverse } from './stack'

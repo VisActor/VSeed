@@ -21,18 +21,18 @@ export const lightTheme = (): CustomThemeConfig => {
     },
     grid: {
       visible: true,
-      gridColor: 'rgba(54, 65, 89, 0.15)',
+      gridColor: '#36415926',
       gridWidth: 0.5,
     },
     tick: {
       visible: false,
       tickInside: false,
       tickSize: 4,
-      tickColor: 'rgba(54, 65, 89, 0.30)',
+      tickColor: '#3641594d',
     },
     line: {
       visible: false,
-      lineColor: 'rgba(54, 65, 89, 0.30)',
+      lineColor: '#3641594d',
       lineWidth: 1,
     },
   }
@@ -59,18 +59,18 @@ export const lightTheme = (): CustomThemeConfig => {
     },
     grid: {
       visible: false,
-      gridColor: 'rgba(54, 65, 89, 0.15)',
+      gridColor: '#36415926',
       gridWidth: 0.5,
     },
     tick: {
       visible: false,
       tickInside: false,
       tickSize: 4,
-      tickColor: 'rgba(54, 65, 89, 0.30)',
+      tickColor: '#3641594d',
     },
     line: {
       visible: true,
-      lineColor: 'rgba(54, 65, 89, 0.30)',
+      lineColor: '#3641594d',
       lineWidth: 1,
     },
   }
@@ -88,10 +88,10 @@ export const lightTheme = (): CustomThemeConfig => {
   return {
     baseConfig: {
       vtable: {
-        backgroundColor: '#ffffff',
+        backgroundColor: 'transparent',
       },
       vchart: {
-        backgroundColor: '#ffffff',
+        backgroundColor: 'transparent',
         color: {
           colorScheme: [
             '#8D72F6',
@@ -114,6 +114,12 @@ export const lightTheme = (): CustomThemeConfig => {
         },
         legend: {
           enable: true,
+          border: true,
+          maxSize: 1,
+          position: 'rt',
+          labelFontColor: '#646A73',
+          labelFontSize: 12,
+          labelFontWeight: 400,
         },
       },
     },

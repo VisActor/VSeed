@@ -20,10 +20,12 @@ import {
   pivotGridStyle,
   pivotRowDimensions,
   pivotColumnDimensions,
+  stackInverse,
 } from '../pipes'
 
 const columnPercent: SpecPipeline = [
   initColumn,
+  stackInverse,
   color,
   backgroundColor,
   percent,
@@ -42,6 +44,7 @@ const pivotColumnPercent: SpecPipeline = [
   datasetPivot,
   pivotIndicators([
     initColumn,
+    stackInverse,
     color,
     percent,
     backgroundColor,

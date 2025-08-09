@@ -77,10 +77,10 @@ export const darkTheme = (): CustomThemeConfig => {
   return {
     baseConfig: {
       vtable: {
-        backgroundColor: '#191d24',
+        backgroundColor: 'transparent',
       },
       vchart: {
-        backgroundColor: '#191d24',
+        backgroundColor: 'transparent',
         color: {
           colorScheme: [
             '#2E62F1',
@@ -103,6 +103,12 @@ export const darkTheme = (): CustomThemeConfig => {
         },
         legend: {
           enable: true,
+          border: true,
+          maxSize: 1,
+          position: 'rt',
+          labelFontColor: '#FDFDFD',
+          labelFontSize: 12,
+          labelFontWeight: 400,
         },
       },
     },

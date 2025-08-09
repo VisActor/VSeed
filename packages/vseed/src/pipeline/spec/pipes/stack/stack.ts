@@ -1,8 +1,8 @@
-import { IAreaChartSpec, IBarChartSpec } from '@visactor/vchart'
-import { SpecPipe } from 'src/types'
+import type { IAreaChartSpec, IBarChartSpec } from '@visactor/vchart'
+import type { SpecPipe } from 'src/types'
 
-export const stack: SpecPipe = (spec, context) => {
+export const stackInverse: SpecPipe = (spec) => {
   const result = { ...spec } as IAreaChartSpec | IBarChartSpec
-  result.stack = true
+  result.stackInverse = true
   return result
 }

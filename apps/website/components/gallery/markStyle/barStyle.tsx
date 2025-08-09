@@ -25,7 +25,7 @@ export const SelectorBarValue = memo(() => {
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
-      { id: 'discount', alias: '折扣' },
+      { id: 'count', alias: '数量' },
     ],
   }
   return <VChartRender vseed={vseed} />
@@ -54,7 +54,7 @@ export const SelectorBarPartialDatum = memo(() => {
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
-      { id: 'discount', alias: '折扣' },
+      { id: 'count', alias: '数量' },
     ],
   }
   return <VChartRender vseed={vseed} />
@@ -89,7 +89,7 @@ export const SelectorBarDimensionCondition = memo(() => {
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
-      { id: 'discount', alias: '折扣' },
+      { id: 'count', alias: '数量' },
     ],
   }
   return <VChartRender vseed={vseed} />
@@ -122,7 +122,7 @@ export const SelectorBarMeasureCondition = memo(() => {
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
-      { id: 'discount', alias: '折扣' },
+      { id: 'count', alias: '数量' },
     ],
   }
   return <VChartRender vseed={vseed} />

@@ -5,7 +5,7 @@ import type { IModelMarkAttributeContext } from '@visactor/vchart/esm/compile/ma
 
 export const barStyle: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const { markStyle } = advancedVSeed
+  const { markStyle, encoding } = advancedVSeed
   const { barStyle } = markStyle
   if (!barStyle) {
     return spec
@@ -32,7 +32,7 @@ export const barStyle: SpecPipe = (spec, context) => {
           }
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          return context.seriesColor(datum.__VCHART_DEFAULT_DATA_SERIES_FIELD) as string
+          return context.seriesColor(datum[encoding[0]?.group?.[0]]) as string
         },
         fillOpacity: (datum: Datum) => {
           if (selector(datum, barSelector)) {
@@ -48,7 +48,7 @@ export const barStyle: SpecPipe = (spec, context) => {
           }
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          return context.seriesColor(datum.__VCHART_DEFAULT_DATA_SERIES_FIELD) as string
+          return context.seriesColor(datum[encoding[0]?.group?.[0]]) as string
         },
         lineWidth: (datum: Datum) => {
           if (selector(datum, barSelector)) {

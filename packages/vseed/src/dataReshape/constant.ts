@@ -7,3 +7,5 @@ export const FoldMeasureId = '__MeaId__'
 export const UnfoldDimensionGroup = '__DimGroup__'
 
 export const Separator = '-'
+
+export const ORIGINAL_DATA = '__OriginalData__'

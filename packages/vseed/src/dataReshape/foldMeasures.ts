@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Dataset, FoldInfo, Measure, Measures } from 'src/types'
-import { FoldMeasureId, FoldMeasureName, FoldMeasureValue } from './constant'
+import { FoldMeasureId, FoldMeasureName, FoldMeasureValue, ORIGINAL_DATA } from './constant'
+import { omit } from 'remeda'
 
 /**
  * 折叠指定的指标
@@ -24,12 +25,17 @@ export const foldMeasures = (
   }
   const result: Dataset = new Array(dataset.length * measures.length) as Dataset
   let index = 0
+  const ids = measures.map((d) => d.id)
   for (let i = 0; i < dataset.length; i++) {
     for (let j = 0; j < measures.length; j++) {
-      const datum: Record<string, any> = { ...dataset[i] }
+      const datum: Record<string, any> = omit({ ...dataset[i] }, ids)
+
+      datum[ORIGINAL_DATA] = dataset[i]
 
       const measure = measures[j]
       const { id, alias } = measure
+
+      datum[id] = dataset[i][id] as unknown
       datum[measureId] = id
       datum[measureName] = alias
       datum[measureValue] = dataset[i][id] as unknown

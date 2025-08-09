@@ -8,6 +8,7 @@ import { zDatasetReshapeInfo } from './properties/datasetReshapeInfo/datasetResh
 import { zBaseConfig } from './properties/baseConfig/baseConfig'
 import { zTheme, zCustomTheme } from './properties/theme'
 import { zConfig } from './properties/config'
+import { zMarkStyle } from './properties'
 
 export const zAdvancedVSeed = z.object({
   // chart type
@@ -18,12 +19,12 @@ export const zAdvancedVSeed = z.object({
   dimensions: zDimensions,
   measures: zMeasures,
   encoding: zEncoding,
-  // base config
+  // function config
   baseConfig: zBaseConfig,
-  // chart config
   config: zConfig,
-  // theme config
   theme: zTheme,
+  // style config
+  markStyle: zMarkStyle,
   customTheme: zCustomTheme,
 })
 

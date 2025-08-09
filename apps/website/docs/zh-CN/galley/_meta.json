@@ -28,5 +28,17 @@
     "name": "theme",
     "label": "theme",
     "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "markStyle",
+    "label": "markStyle",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "annotation",
+    "label": "annotation",
+    "collapsed": true
   }
 ]

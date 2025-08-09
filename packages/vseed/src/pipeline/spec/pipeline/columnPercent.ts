@@ -21,6 +21,7 @@ import {
   pivotRowDimensions,
   pivotColumnDimensions,
   stackInverse,
+  barStyle,
 } from '../pipes'
 
 const columnPercent: SpecPipeline = [
@@ -35,6 +36,7 @@ const columnPercent: SpecPipeline = [
   label,
   tooltip,
   discreteLegend,
+  barStyle
 ]
 
 const pivotColumnPercent: SpecPipeline = [
@@ -53,6 +55,7 @@ const pivotColumnPercent: SpecPipeline = [
     yLinear,
     label,
     tooltip,
+    barStyle
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

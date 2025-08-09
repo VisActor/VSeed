@@ -20,6 +20,7 @@ import {
   pivotRowDimensions,
   pivotColumnDimensions,
   stackInverse,
+  barStyle,
 } from '../pipes'
 
 const column: SpecPipeline = [
@@ -33,6 +34,7 @@ const column: SpecPipeline = [
   label,
   tooltip,
   discreteLegend,
+  barStyle,
 ]
 
 const pivotColumn: SpecPipeline = [
@@ -40,7 +42,18 @@ const pivotColumn: SpecPipeline = [
   pivotGridStyle,
   pivotIndicatorsAsRow,
   datasetPivot,
-  pivotIndicators([initColumn, stackInverse, color, backgroundColor, datasetPivotPlaceholder, xBand, yLinear, label, tooltip]),
+  pivotIndicators([
+    initColumn,
+    stackInverse,
+    color,
+    backgroundColor,
+    datasetPivotPlaceholder,
+    xBand,
+    yLinear,
+    label,
+    tooltip,
+    barStyle,
+  ]),
   pivotRowDimensions,
   pivotColumnDimensions,
   pivotDiscreteLegend,

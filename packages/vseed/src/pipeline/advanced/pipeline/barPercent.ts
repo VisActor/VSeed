@@ -9,7 +9,8 @@ import {
   vchartTheme,
   pivotAdapter,
   pivotReshapeTo2D1M,
-  barPercentConfig
+  barPercentConfig,
+  markStyle
 } from '../pipes'
 
 export const barPercentAdvancedPipeline: AdvancedPipeline = [
@@ -21,4 +22,5 @@ export const barPercentAdvancedPipeline: AdvancedPipeline = [
   barPercentConfig,
   vchartBaseConfig,
   vchartTheme,
+  markStyle
 ]

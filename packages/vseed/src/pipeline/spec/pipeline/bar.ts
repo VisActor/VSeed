@@ -19,16 +19,28 @@ import {
   pivotGridStyle,
   pivotColumnDimensions,
   pivotRowDimensions,
+  barStyle,
 } from '../pipes'
 
-const bar: SpecPipeline = [initBar, color, backgroundColor, dataset, xLinear, yBand, label, tooltip, discreteLegend]
+const bar: SpecPipeline = [
+  initBar,
+  color,
+  backgroundColor,
+  dataset,
+  xLinear,
+  yBand,
+  label,
+  tooltip,
+  discreteLegend,
+  barStyle,
+]
 
 const pivotBar: SpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsCol,
   datasetPivot,
-  pivotIndicators([initBar, color, backgroundColor, datasetPivotPlaceholder, yBand, label, label, tooltip]),
+  pivotIndicators([initBar, color, backgroundColor, datasetPivotPlaceholder, yBand, label, label, tooltip, barStyle]),
   pivotRowDimensions,
   pivotColumnDimensions,
   pivotDiscreteLegend,

@@ -1,0 +1,1 @@
+export { markStyle } from './markStyle'

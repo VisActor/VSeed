@@ -1,0 +1,1 @@
+export { barStyle } from './barStyle'

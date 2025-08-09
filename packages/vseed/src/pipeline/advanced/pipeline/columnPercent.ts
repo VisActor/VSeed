@@ -10,6 +10,7 @@ import {
   pivotReshapeTo2D1M,
   pivotAdapter,
   columnPercentConfig,
+  markStyle,
 } from '../pipes'
 
 export const columnPercentAdvancedPipeline: AdvancedPipeline = [
@@ -21,4 +22,5 @@ export const columnPercentAdvancedPipeline: AdvancedPipeline = [
   columnPercentConfig,
   vchartBaseConfig,
   vchartTheme,
+  markStyle
 ]

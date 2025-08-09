@@ -8,7 +8,7 @@ import {
   initPie,
   initPivot,
   label,
-  legend,
+  discreteLegend,
   pivotAdapter,
   pivotColumnDimensions,
   pivotGridStyle,
@@ -19,7 +19,7 @@ import {
   tooltip,
 } from '../pipes'
 
-const pie: SpecPipeline = [initPie, color, backgroundColor, dataset, label, tooltip, legend]
+const pie: SpecPipeline = [initPie, color, backgroundColor, dataset, label, tooltip, discreteLegend]
 
 const pivotPie: SpecPipeline = [
   initPivot,

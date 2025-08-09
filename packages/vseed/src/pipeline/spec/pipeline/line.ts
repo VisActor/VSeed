@@ -7,7 +7,7 @@ import {
   backgroundColor,
   label,
   tooltip,
-  legend,
+  discreteLegend,
   color,
   initPivot,
   datasetPivot,
@@ -21,7 +21,7 @@ import {
   pivotRowDimensions,
 } from '../pipes'
 
-const line: SpecPipeline = [initLine, color, backgroundColor, dataset, xBand, yLinear, label, tooltip, legend]
+const line: SpecPipeline = [initLine, color, backgroundColor, dataset, xBand, yLinear, label, tooltip, discreteLegend]
 
 const pivotLine: SpecPipeline = [
   initPivot,

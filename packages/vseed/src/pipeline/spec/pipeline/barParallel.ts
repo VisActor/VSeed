@@ -7,7 +7,7 @@ import {
   backgroundColor,
   label,
   tooltip,
-  legend,
+  discreteLegend,
   color,
   datasetPivotPlaceholder,
   initPivot,
@@ -30,7 +30,7 @@ const barParallel: SpecPipeline = [
   yBand,
   label,
   tooltip,
-  legend,
+  discreteLegend,
 ]
 
 const pivotBarParallel: SpecPipeline = [

@@ -7,7 +7,7 @@ import {
   backgroundColor,
   label,
   tooltip,
-  legend,
+  discreteLegend,
   color,
   pivotAdapter,
   initPivot,
@@ -21,7 +21,17 @@ import {
   pivotColumnDimensions,
 } from '../pipes'
 
-const column: SpecPipeline = [initColumn, color, backgroundColor, dataset, xBand, yLinear, label, tooltip, legend]
+const column: SpecPipeline = [
+  initColumn,
+  color,
+  backgroundColor,
+  dataset,
+  xBand,
+  yLinear,
+  label,
+  tooltip,
+  discreteLegend,
+]
 
 const pivotColumn: SpecPipeline = [
   initPivot,

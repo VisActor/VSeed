@@ -1,2 +1,2 @@
-export { legend } from './legend'
+export { discreteLegend } from './discreteLegend'
 export { pivotLegend } from './pivotLegend'

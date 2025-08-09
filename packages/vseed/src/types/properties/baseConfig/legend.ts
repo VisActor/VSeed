@@ -33,7 +33,7 @@ export type Legend = {
    * @default 400
    * @example labelFontWeight: 400
    */
-  labelFontWeight?: number
+  labelFontWeight?: number | string
   /**
    * 图例位置
    * @default 'top'
@@ -65,8 +65,29 @@ export type Legend = {
 export const zLegend = z.object({
   enable: z.boolean().default(true).optional(),
   maxSize: z.number().default(1).optional(),
-  position: z.string().default('bottom').optional(),
+  position: z.enum([
+    'left',
+    'leftTop',
+    'leftBottom',
+    'lt',
+    'lb',
+    'top',
+    'topLeft',
+    'topRight',
+    'tl',
+    'tr',
+    'right',
+    'rightTop',
+    'rightBottom',
+    'rt',
+    'rb',
+    'bottom',
+    'bottomLeft',
+    'bottomRight',
+    'bl',
+    'br',
+  ]).default('bottom').optional(),
   labelFontSize: z.number().default(12).optional(),
   labelFontColor: z.string().default('#fff').optional(),
-  labelFontWeight: z.string().default('normal').optional(),
+  labelFontWeight: z.number().or(z.string()).default(400).optional(),
 })

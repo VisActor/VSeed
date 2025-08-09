@@ -8,7 +8,7 @@ import {
   backgroundColor,
   label,
   tooltip,
-  legend,
+  discreteLegend,
   color,
   pivotAdapter,
   initPivot,
@@ -32,7 +32,7 @@ const barPercent: SpecPipeline = [
   yBand,
   label,
   tooltip,
-  legend,
+  discreteLegend,
 ]
 
 const pivotBarPercent: SpecPipeline = [

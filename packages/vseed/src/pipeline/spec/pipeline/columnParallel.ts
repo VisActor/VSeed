@@ -7,7 +7,7 @@ import {
   backgroundColor,
   label,
   tooltip,
-  legend,
+  discreteLegend,
   color,
   pivotIndicators,
   initPivot,
@@ -30,7 +30,7 @@ const columnParallel: SpecPipeline = [
   yLinear,
   label,
   tooltip,
-  legend,
+  discreteLegend,
 ]
 
 const pivotColumnParallel: SpecPipeline = [

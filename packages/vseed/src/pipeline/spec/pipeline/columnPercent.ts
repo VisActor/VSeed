@@ -8,7 +8,7 @@ import {
   backgroundColor,
   label,
   tooltip,
-  legend,
+  discreteLegend,
   color,
   datasetPivotPlaceholder,
   pivotAdapter,
@@ -32,7 +32,7 @@ const columnPercent: SpecPipeline = [
   yLinear,
   label,
   tooltip,
-  legend,
+  discreteLegend,
 ]
 
 const pivotColumnPercent: SpecPipeline = [

@@ -17,6 +17,7 @@ export const discreteLegend: SpecPipe = (spec, context) => {
     labelFontWeight,
     maxSize,
     border,
+    shapeType = 'rectRound',
   } = (legend || {}) as Legend
 
   const orient = ['bottom', 'bottomLeft', 'bottomRight', 'bl', 'br'].includes(position)
@@ -65,7 +66,7 @@ export const discreteLegend: SpecPipe = (spec, context) => {
       shape: {
         space: border ? 6 : 4,
         style: {
-          symbolType: 'rectRound',
+          symbolType: shapeType,
           size: border ? 8 : 10,
         },
       },

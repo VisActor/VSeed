@@ -41,6 +41,34 @@ export type Legend = {
    */
   labelFontWeight?: number | string
   /**
+   * 图例形状
+   * @default 'rectRound'
+   * @example shapeType: 'circle'
+   */
+  shapeType?:
+    | 'circle'
+    | 'cross'
+    | 'diamond'
+    | 'square'
+    | 'arrow'
+    | 'arrow2Left'
+    | 'arrow2Right'
+    | 'wedge'
+    | 'thinTriangle'
+    | 'triangle'
+    | 'triangleUp'
+    | 'triangleDown'
+    | 'triangleRight'
+    | 'triangleLeft'
+    | 'stroke'
+    | 'star'
+    | 'wye'
+    | 'rect'
+    | 'arrowLeft'
+    | 'arrowRight'
+    | 'rectRound'
+    | 'roundLine'
+  /**
    * 图例位置
    * @default 'top'
    * @example position: 'rightTop'
@@ -72,6 +100,33 @@ export const zLegend = z.object({
   enable: z.boolean().default(true).optional(),
   border: z.boolean().default(true).optional(),
   maxSize: z.number().default(1).optional(),
+  shapeType: z
+    .enum([
+      'circle',
+      'cross',
+      'diamond',
+      'square',
+      'arrow',
+      'arrow2Left',
+      'arrow2Right',
+      'wedge',
+      'thinTriangle',
+      'triangle',
+      'triangleUp',
+      'triangleDown',
+      'triangleRight',
+      'triangleLeft',
+      'stroke',
+      'star',
+      'wye',
+      'rect',
+      'arrowLeft',
+      'arrowRight',
+      'rectRound',
+      'roundLine',
+    ])
+    .default('rectRound')
+    .optional(),
   position: z
     .enum([
       'left',

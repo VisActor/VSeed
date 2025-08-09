@@ -116,6 +116,7 @@ export const lightTheme = (): CustomThemeConfig => {
           enable: true,
           border: true,
           maxSize: 1,
+          shapeType: 'rectRound',
           position: 'rt',
           labelFontColor: '#646A73',
           labelFontSize: 12,

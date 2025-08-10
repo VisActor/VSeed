@@ -17,16 +17,17 @@ import {
   pivotDiscreteLegend,
   pivotRowDimensions,
   tooltip,
+  annotationPoint,
 } from '../pipes'
 
-const pie: SpecPipeline = [initPie, color, backgroundColor, dataset, label, tooltip, discreteLegend]
+const pie: SpecPipeline = [initPie, color, backgroundColor, dataset, label, tooltip, discreteLegend, annotationPoint]
 
 const pivotPie: SpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
   datasetPivot,
-  pivotIndicators([initPie, color, backgroundColor, datasetPivotPlaceholder, label, tooltip]),
+  pivotIndicators([initPie, color, backgroundColor, datasetPivotPlaceholder, label, tooltip, annotationPoint]),
   pivotRowDimensions,
   pivotColumnDimensions,
   pivotDiscreteLegend,

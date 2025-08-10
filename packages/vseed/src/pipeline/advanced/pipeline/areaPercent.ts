@@ -10,6 +10,7 @@ import {
   pivotAdapter,
   pivotReshapeTo2D1M,
   areaPercentConfig,
+  annotation,
 } from '../pipes'
 
 export const areaPercentAdvancedPipeline: AdvancedPipeline = [
@@ -21,4 +22,5 @@ export const areaPercentAdvancedPipeline: AdvancedPipeline = [
   areaPercentConfig,
   vchartBaseConfig,
   vchartTheme,
+  annotation
 ]

@@ -1,16 +1,7 @@
----
-pageType: doc
----
+import { VSeed } from '@visactor/vseed'
+import { VChartRender } from '../../render/Chart'
+import { memo } from 'react'
 
-import { AnnotationPointValue, AnnotationPointPartialDatum, AnnotationPointCondition } from '@components'
-
-# annotationPoint
-
-## value point
-
-<AnnotationPointValue />
-
-```tsx pure {5,12}
 export const AnnotationPointValue = memo(() => {
   const vseed: VSeed = {
     chartType: 'column',
@@ -42,13 +33,7 @@ export const AnnotationPointValue = memo(() => {
   }
   return <VChartRender vseed={vseed} />
 })
-```
 
-## partial datum
-
-<AnnotationPointPartialDatum />
-
-```tsx pure {13-16,23}
 export const AnnotationPointPartialDatum = memo(() => {
   const vseed: VSeed = {
     chartType: 'line',
@@ -87,13 +72,7 @@ export const AnnotationPointPartialDatum = memo(() => {
   }
   return <VChartRender vseed={vseed} />
 })
-```
 
-## condition
-
-<AnnotationPointCondition />
-
-```tsx pure {14-18,26-30}
 export const AnnotationPointCondition = memo(() => {
   const vseed: VSeed = {
     chartType: 'area',
@@ -139,4 +118,3 @@ export const AnnotationPointCondition = memo(() => {
   }
   return <VChartRender vseed={vseed} />
 })
-```

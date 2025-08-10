@@ -10,6 +10,7 @@ import {
   pivotReshapeTo1D1M,
   encodingPolar,
   pieConfig,
+  annotation,
 } from '../pipes'
 
 export const pieAdvancedPipeline: AdvancedPipeline = [
@@ -21,4 +22,5 @@ export const pieAdvancedPipeline: AdvancedPipeline = [
   pieConfig,
   vchartBaseConfig,
   vchartTheme,
+  annotation
 ]

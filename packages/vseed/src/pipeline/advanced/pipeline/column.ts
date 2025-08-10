@@ -10,6 +10,7 @@ import {
   pivotAdapter,
   columnConfig,
   markStyle,
+  annotation,
 } from '../pipes'
 import { pivotReshapeTo2D1M } from '../pipes/reshape/pivotReshapeTo2D1M'
 
@@ -22,5 +23,6 @@ export const columnAdvancedPipeline: AdvancedPipeline = [
   columnConfig,
   vchartBaseConfig,
   vchartTheme,
-  markStyle
+  markStyle,
+  annotation,
 ]

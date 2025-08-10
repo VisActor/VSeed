@@ -11,6 +11,7 @@ import {
   pivotReshapeTo2D1M,
   columnParallelConfig,
   markStyle,
+  annotation,
 } from '../pipes'
 
 export const columnParallelAdvancedPipeline: AdvancedPipeline = [
@@ -22,5 +23,6 @@ export const columnParallelAdvancedPipeline: AdvancedPipeline = [
   columnParallelConfig,
   vchartBaseConfig,
   vchartTheme,
-  markStyle
+  markStyle,
+  annotation,
 ]

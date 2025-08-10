@@ -1,4 +1,5 @@
 import type {
+  AnnotationPoint,
   BackgroundColor,
   Color,
   Dataset,
@@ -110,4 +111,10 @@ export interface Line {
    * @example 'customThemeName'
    */
   theme?: Theme
+
+  /**
+   * 标注点
+   * @description 标注点配置, 根据选择的数据, 定义图表的标注点, 包括标注点的位置, 格式, 样式等.
+   */
+  annotationPoint?: AnnotationPoint | AnnotationPoint[]
 }

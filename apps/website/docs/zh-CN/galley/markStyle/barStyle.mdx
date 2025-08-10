@@ -102,7 +102,7 @@ export const SelectorBarPartialDatum = memo(() => {
 
 <SelectorBarDimensionCondition />
 
-```tsx pure {5,12-17}
+```tsx pure {5,9,12-17}
 export const SelectorBarDimensionCondition = memo(() => {
   const vseed: VSeed = {
     chartType: 'columnParallel',
@@ -117,8 +117,8 @@ export const SelectorBarDimensionCondition = memo(() => {
       selector: [
         {
           field: 'date',
-          operator: '=',
-          value: '2019',
+          operator: 'in',
+          value: ['2019', '2023'],
         },
       ],
       barColor: 'gray',

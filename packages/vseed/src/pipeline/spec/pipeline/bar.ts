@@ -20,6 +20,7 @@ import {
   pivotColumnDimensions,
   pivotRowDimensions,
   barStyle,
+  annotationPoint,
 } from '../pipes'
 
 const bar: SpecPipeline = [
@@ -33,6 +34,7 @@ const bar: SpecPipeline = [
   tooltip,
   discreteLegend,
   barStyle,
+  annotationPoint,
 ]
 
 const pivotBar: SpecPipeline = [
@@ -40,7 +42,18 @@ const pivotBar: SpecPipeline = [
   pivotGridStyle,
   pivotIndicatorsAsCol,
   datasetPivot,
-  pivotIndicators([initBar, color, backgroundColor, datasetPivotPlaceholder, yBand, label, label, tooltip, barStyle]),
+  pivotIndicators([
+    initBar,
+    color,
+    backgroundColor,
+    datasetPivotPlaceholder,
+    yBand,
+    label,
+    label,
+    tooltip,
+    barStyle,
+    annotationPoint,
+  ]),
   pivotRowDimensions,
   pivotColumnDimensions,
   pivotDiscreteLegend,

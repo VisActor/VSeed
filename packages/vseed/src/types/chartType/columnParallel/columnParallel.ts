@@ -1,4 +1,5 @@
 import type {
+  AnnotationPoint,
   BackgroundColor,
   BarStyle,
   Color,
@@ -121,4 +122,10 @@ export interface ColumnParallel {
    * 若未配置selector, 则样式全局生效.
    */
   barStyle?: BarStyle
+
+  /**
+   * 标注点
+   * @description 标注点配置, 根据选择的数据, 定义图表的标注点, 包括标注点的位置, 格式, 样式等.
+   */
+  annotationPoint?: AnnotationPoint | AnnotationPoint[]
 }

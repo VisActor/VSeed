@@ -10,6 +10,7 @@ import {
   pivotAdapter,
   pivotReshapeTo2D1M,
   lineConfig,
+  annotation,
 } from '../pipes'
 
 export const lineAdvancedPipeline: AdvancedPipeline = [
@@ -21,4 +22,5 @@ export const lineAdvancedPipeline: AdvancedPipeline = [
   vchartBaseConfig,
   lineConfig,
   vchartTheme,
+  annotation
 ]

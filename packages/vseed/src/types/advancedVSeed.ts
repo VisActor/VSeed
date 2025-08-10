@@ -8,24 +8,21 @@ import { zDatasetReshapeInfo } from './properties/datasetReshapeInfo/datasetResh
 import { zBaseConfig } from './properties/baseConfig/baseConfig'
 import { zTheme, zCustomTheme } from './properties/theme'
 import { zConfig } from './properties/config'
-import { zMarkStyle } from './properties'
+import { zAnnotation, zMarkStyle } from './properties'
 
 export const zAdvancedVSeed = z.object({
-  // chart type
   chartType: zChartType,
-  // data config
   dataset: zDataset,
   datasetReshapeInfo: zDatasetReshapeInfo,
   dimensions: zDimensions,
   measures: zMeasures,
   encoding: zEncoding,
-  // function config
   baseConfig: zBaseConfig,
   config: zConfig,
   theme: zTheme,
-  // style config
   markStyle: zMarkStyle,
   customTheme: zCustomTheme,
+  annotation: zAnnotation,
 })
 
 export type AdvancedVSeed = z.infer<typeof zAdvancedVSeed>

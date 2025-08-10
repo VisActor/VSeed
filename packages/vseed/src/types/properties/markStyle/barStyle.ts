@@ -1,5 +1,5 @@
-import { zSelector, zSelectors, type Selector, type Selectors } from '../../dataSelector'
 import { z } from 'zod'
+import { zSelector, zSelectors, type Selector, type Selectors } from '../../dataSelector'
 
 export type BarStyle = {
   /**
@@ -91,11 +91,11 @@ export type BarStyle = {
 }
 
 export const zBarStyle = z.object({
-  selector: z.union([zSelector, zSelectors]),
-  barColor: z.string(),
-  barColorOpacity: z.number(),
-  barBorderColor: z.string(),
-  barBorderWidth: z.number(),
-  barBorderStyle: z.union([z.literal('solid'), z.literal('dashed'), z.literal('dotted')]),
-  barRadius: z.union([z.number(), z.array(z.number())]),
+  selector: z.union([zSelector, zSelectors]).optional(),
+  barColor: z.string().optional(),
+  barColorOpacity: z.number().optional(),
+  barBorderColor: z.string().optional(),
+  barBorderWidth: z.number().optional(),
+  barBorderStyle: z.union([z.literal('solid'), z.literal('dashed'), z.literal('dotted')]).optional(),
+  barRadius: z.union([z.number(), z.array(z.number())]).optional(),
 })

@@ -20,6 +20,7 @@ import {
   pivotGridStyle,
   pivotColumnDimensions,
   pivotRowDimensions,
+  annotationPoint,
 } from '../pipes'
 
 const area: SpecPipeline = [
@@ -33,6 +34,7 @@ const area: SpecPipeline = [
   label,
   tooltip,
   discreteLegend,
+  annotationPoint,
 ]
 
 const pivotArea: SpecPipeline = [
@@ -50,6 +52,7 @@ const pivotArea: SpecPipeline = [
     yLinear,
     label,
     tooltip,
+    annotationPoint,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

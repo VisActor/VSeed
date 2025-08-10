@@ -74,8 +74,8 @@ export const SelectorBarDimensionCondition = memo(() => {
       selector: [
         {
           field: 'date',
-          operator: '=',
-          value: '2019',
+          operator: 'in',
+          value: ['2019', '2023'],
         },
       ],
       barColor: 'gray',

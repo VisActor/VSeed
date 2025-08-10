@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.10
+
+### Patch Changes
+
+- feat: add annotation point
+
 ## 0.0.9
 
 ### Patch Changes

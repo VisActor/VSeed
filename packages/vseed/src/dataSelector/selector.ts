@@ -27,9 +27,12 @@ export const selector = (datum: Datum, selector: Selector | Selectors | undefine
 
     // 2. 指标选择器
     else if (isMeasureSelector(selector)) {
+      const op = selector.operator || selector.op
       const selectorValueArr = Array.isArray(selector.value) ? selector.value : [selector.value]
-      switch (selector.operator) {
+
+      switch (op) {
         case '=':
+        case '==':
           if (datum[selector.field] === selectorValueArr[0]) {
             return true
           }
@@ -74,14 +77,21 @@ export const selector = (datum: Datum, selector: Selector | Selectors | undefine
     }
     // 3. 维度选择器
     else if (isDimensionSelector(selector)) {
+      const op = selector.operator || selector.op
       const selectorValueArr = Array.isArray(selector.value) ? selector.value : [selector.value]
-      if (selector.operator === 'in' && selectorValueArr.includes(datum[selector.field] as string | number)) {
-        return true
-      } else if (
-        selector.operator === 'not in' &&
-        !selectorValueArr.includes(datum[selector.field] as string | number)
-      ) {
-        return true
+      switch (op) {
+        case 'in':
+          if (selectorValueArr.includes(datum[selector.field] as string | number)) {
+            return true
+          }
+          break
+        case 'not in':
+          if (!selectorValueArr.includes(datum[selector.field] as string | number)) {
+            return true
+          }
+          break
+        default:
+          break
       }
     }
     // 4. 部分数据对象选择器
@@ -108,9 +118,10 @@ export const isMeasureSelector = (selector: Selector): selector is MeasureSelect
     typeof selector === 'object' &&
     selector !== null &&
     'field' in selector &&
-    'operator' in selector &&
+    ('operator' in selector || 'op' in selector) &&
     'value' in selector &&
-    ['=', '!=', '>', '<', '>=', '<=', 'between'].includes(selector.operator as string)
+    (['=', '==', '!=', '>', '<', '>=', '<=', 'between'].includes(selector.operator as string) ||
+      ['=', '==', '!=', '>', '<', '>=', '<=', 'between'].includes(selector.op as string))
   )
 }
 
@@ -119,8 +130,8 @@ export const isDimensionSelector = (selector: Selector): selector is DimensionSe
     typeof selector === 'object' &&
     selector !== null &&
     'field' in selector &&
-    'operator' in selector &&
+    ('operator' in selector || 'op' in selector) &&
     'value' in selector &&
-    ['in', 'not in'].includes(selector.operator as string)
+    (['in', 'not in'].includes(selector.operator as string) || ['in', 'not in'].includes(selector.op as string))
   )
 }

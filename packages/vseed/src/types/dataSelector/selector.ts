@@ -7,13 +7,15 @@ export type PartialDatumSelector = Datum
 
 export type MeasureSelector = {
   field: string
-  operator: '=' | '!=' | '>' | '<' | '>=' | '<=' | 'between'
+  operator?: '=' | '==' | '!=' | '>' | '<' | '>=' | '<=' | 'between'
+  op?: '=' | '==' | '!=' | '>' | '<' | '>=' | '<=' | 'between'
   value: string | number | Array<string | number>
 }
 
 export type DimensionSelector = {
   field: string
-  operator: 'in' | 'not in'
+  operator?: 'in' | 'not in'
+  op?: 'in' | 'not in'
   value: string | number | Array<string | number>
 }
 
@@ -26,12 +28,14 @@ export const zSelector = z.union([
   z.number(),
   z.object({
     field: z.string(),
-    operator: z.string(),
+    operator: z.enum(['=', '==', '!=', '>', '<', '>=', '<=', 'between']).optional(),
+    op: z.enum(['=', '==', '!=', '>', '<', '>=', '<=', 'between']).optional(),
     value: z.union([z.string(), z.number(), z.array(z.union([z.string(), z.number()]))]),
   }),
   z.object({
     field: z.string(),
-    operator: z.string(),
+    operator: z.enum(['in', 'not in']).optional(),
+    op: z.enum(['in', 'not in']).optional(),
     value: z.union([z.string(), z.number(), z.array(z.union([z.string(), z.number()]))]),
   }),
 ])

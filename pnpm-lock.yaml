@@ -18,8 +18,8 @@ importers:
   apps/website:
     dependencies:
       '@visactor/vchart':
-        specifier: 2.0.2
-        version: 2.0.2
+        specifier: 2.0.3
+        version: 2.0.3
       '@visactor/vseed':
         specifier: workspace:*
         version: link:../../packages/vseed
@@ -1271,6 +1271,9 @@ packages:
   '@visactor/vchart@2.0.2':
     resolution: {integrity: sha512-9ERESHbN/HaTlNmT9yom28IsoJuIW0hO4ngrtXwvQwqMEOoimly+BaDUiq0emFSUXGnDTbv5sVai1OQT/17xyA==}
 
+  '@visactor/vchart@2.0.3':
+    resolution: {integrity: sha512-66UXPiT0Ak4IhQnsnbg1yW1eYpVPBBIEtXEgbkeGyEnc2no4bULfRcrcqKEMpAMO2RFQAITIkSUqRTLJJcWWmg==}
+
   '@visactor/vdataset@0.18.18':
     resolution: {integrity: sha512-lye23zpineMKV42JmuJaOY3fgl7aWhyDIwK9dWooqZzP14AFukPoK7ZvUeuKZihLrHxqtCg2VWEjovnh9O1RUg==}
 
@@ -1312,6 +1315,9 @@ packages:
 
   '@visactor/vutils-extension@2.0.2':
     resolution: {integrity: sha512-qknQZmr6qnLrMOUXMnuLyFln3wTtOhFUNYoNpYyupwrPCIRleR8LKnBycJ1TRANFBZELSI1R5471T9hENUgz2w==}
+
+  '@visactor/vutils-extension@2.0.3':
+    resolution: {integrity: sha512-xGIOxhtk1kh3GYmS6XWvg/GXqNfvxtwCd8CQ/PFx6xL4LQhFElns+wwFaqax1vgkXAPgPPW/CqqvIytXqvwLJg==}
 
   '@visactor/vutils@0.18.18':
     resolution: {integrity: sha512-byEJefqxiCz3UWe+YedEVjsdPtnJOAtKdRYi4qT9ojgACdd6QqlWs53Eb7PlMZgWDxVxqkxJP2bZnRKw+ME0Xg==}
@@ -5218,6 +5224,18 @@ snapshots:
       '@visactor/vutils': 1.0.7
       '@visactor/vutils-extension': 2.0.2
 
+  '@visactor/vchart@2.0.3':
+    dependencies:
+      '@visactor/vdataset': 1.0.7
+      '@visactor/vlayouts': 1.0.7
+      '@visactor/vrender-animate': 1.0.9
+      '@visactor/vrender-components': 1.0.9
+      '@visactor/vrender-core': 1.0.9
+      '@visactor/vrender-kits': 1.0.9
+      '@visactor/vscale': 1.0.7
+      '@visactor/vutils': 1.0.7
+      '@visactor/vutils-extension': 2.0.3
+
   '@visactor/vdataset@0.18.18':
     dependencies:
       '@turf/flatten': 6.5.0
@@ -5328,6 +5346,11 @@ snapshots:
       '@visactor/vutils': 0.18.18
 
   '@visactor/vutils-extension@2.0.2':
+    dependencies:
+      '@visactor/vdataset': 1.0.7
+      '@visactor/vutils': 1.0.7
+
+  '@visactor/vutils-extension@2.0.3':
     dependencies:
       '@visactor/vdataset': 1.0.7
       '@visactor/vutils': 1.0.7

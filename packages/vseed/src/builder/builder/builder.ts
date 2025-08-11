@@ -3,6 +3,7 @@ import type {
   AdvancedVSeed,
   ChartType,
   CustomThemeConfig,
+  Spec,
   SpecPipeline,
   VSeed,
   VSeedBuilder,
@@ -14,6 +15,7 @@ import { build } from './build'
 export class Builder implements VSeedBuilder {
   private _vseed: VSeed
   private _advancedVSeed: AdvancedVSeed | null = null
+  private _spec: Spec | null = null
 
   constructor(vseed: VSeed) {
     this._vseed = vseed
@@ -44,6 +46,14 @@ export class Builder implements VSeedBuilder {
 
   set advancedVSeed(value) {
     this._advancedVSeed = value
+  }
+
+  get spec() {
+    return this._spec
+  }
+
+  set spec(value) {
+    this._spec = value
   }
 
   static _advancedPipelineMap: Partial<Record<ChartType, AdvancedPipeline>> = {}

@@ -22,6 +22,8 @@ import {
   stackInverse,
   barStyle,
   annotationPoint,
+  annotationVerticalLine,
+  annotationHorizontalLine,
 } from '../pipes'
 
 const column: SpecPipeline = [
@@ -36,7 +38,9 @@ const column: SpecPipeline = [
   tooltip,
   discreteLegend,
   barStyle,
-  annotationPoint
+  annotationPoint,
+  annotationVerticalLine,
+  annotationHorizontalLine,
 ]
 
 const pivotColumn: SpecPipeline = [
@@ -55,7 +59,9 @@ const pivotColumn: SpecPipeline = [
     label,
     tooltip,
     barStyle,
-    annotationPoint
+    annotationPoint,
+    annotationVerticalLine,
+    annotationHorizontalLine
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

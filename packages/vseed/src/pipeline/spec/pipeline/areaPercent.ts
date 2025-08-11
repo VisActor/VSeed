@@ -22,6 +22,8 @@ import {
   pivotColumnDimensions,
   stackInverse,
   annotationPoint,
+  annotationVerticalLine,
+  annotationHorizontalLine,
 } from '../pipes'
 
 const areaPercent: SpecPipeline = [
@@ -36,7 +38,9 @@ const areaPercent: SpecPipeline = [
   label,
   tooltip,
   discreteLegend,
-  annotationPoint
+  annotationPoint,
+  annotationVerticalLine,
+  annotationHorizontalLine
 ]
 
 const pivotAreaPercent: SpecPipeline = [
@@ -56,7 +60,9 @@ const pivotAreaPercent: SpecPipeline = [
     yLinear,
     label,
     tooltip,
-    annotationPoint
+    annotationPoint,
+    annotationVerticalLine,
+    annotationHorizontalLine
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

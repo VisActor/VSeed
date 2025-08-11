@@ -1,5 +1,6 @@
 [
   "annotationPoint",
-  "annotationLine",
+  "annotationVerticalLine",
+  "annotationHorizontalLine",
   "annotationArea"
 ]

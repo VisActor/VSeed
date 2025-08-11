@@ -1,3 +1,5 @@
 export { annotationPoint } from './annotationPoint'
 export { annotationVerticalLine } from './annotationVerticalLine'
 export { annotationHorizontalLine } from './annotationHorizontalLine'
+export { annotationArea } from './annotationArea'
+export { annotationAreaBand } from './annotationAreaBand'

@@ -23,6 +23,7 @@ import {
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
+  annotationArea,
 } from '../pipes'
 
 const area: SpecPipeline = [
@@ -39,6 +40,7 @@ const area: SpecPipeline = [
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
+  annotationArea,
 ]
 
 const pivotArea: SpecPipeline = [
@@ -59,6 +61,7 @@ const pivotArea: SpecPipeline = [
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,
+    annotationArea,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

@@ -24,6 +24,7 @@ import {
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
+  annotationAreaBand,
 } from '../pipes'
 
 const column: SpecPipeline = [
@@ -41,6 +42,7 @@ const column: SpecPipeline = [
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
+  annotationAreaBand,
 ]
 
 const pivotColumn: SpecPipeline = [
@@ -61,7 +63,8 @@ const pivotColumn: SpecPipeline = [
     barStyle,
     annotationPoint,
     annotationVerticalLine,
-    annotationHorizontalLine
+    annotationHorizontalLine,
+    annotationAreaBand,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

@@ -1,5 +1,13 @@
 # @visactor/vseed
 
+## 0.0.11
+
+### Patch Changes
+
+- 1. feat: add annotation line
+  2. feat: add annotation area
+  3. docs: optimize the guide and demos
+
 ## 0.0.10
 
 ### Patch Changes

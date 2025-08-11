@@ -52,4 +52,9 @@ export default defineConfig({
   route: {
     exclude: ['components/**/*'],
   },
+  builderConfig: {
+    output: {
+      assetPrefix: 'https://visactor.github.io/VSeed/',
+    },
+  },
 })

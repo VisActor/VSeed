@@ -2,7 +2,7 @@ import { VSeed } from '@visactor/vseed'
 import { VChartRender } from '../../render/Chart'
 import { memo } from 'react'
 
-export const AnnotationVerticalLineSelector = memo(() => {
+export const AnnotationHorizontalLineSelector = memo(() => {
   const vseed: VSeed = {
     chartType: 'line',
     dataset: [
@@ -12,13 +12,9 @@ export const AnnotationVerticalLineSelector = memo(() => {
       { date: '2022', profit: 50, sales: 100, count: 50 },
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
-    annotationVerticalLine: {
-      selector: {
-        field: 'date',
-        operator: 'not in',
-        value: ['2019'],
-      },
-      text: '下降趋势',
+    annotationHorizontalLine: {
+      selector: 200,
+      text: '销售额最大值',
     },
     dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
     measures: [
@@ -30,7 +26,7 @@ export const AnnotationVerticalLineSelector = memo(() => {
   return <VChartRender vseed={vseed} />
 })
 
-export const AnnotationVerticalLineValue = memo(() => {
+export const AnnotationHorizontalLineValue = memo(() => {
   const vseed: VSeed = {
     chartType: 'area',
     dataset: [
@@ -40,10 +36,16 @@ export const AnnotationVerticalLineValue = memo(() => {
       { date: '2022', profit: 50, sales: 100, count: 50 },
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
-    annotationVerticalLine: {
-      xValue: '2022',
-      text: '下降开始',
-    },
+    annotationHorizontalLine: [
+      {
+        yValue: 220.5,
+        text: `数值 ${220.5}`,
+      },
+      {
+        yValue: [300, 30],
+        text: `参考线`,
+      },
+    ],
     dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
     measures: [
       { id: 'profit', alias: '利润' },

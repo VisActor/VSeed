@@ -22,6 +22,7 @@ import {
   barStyle,
   annotationPoint,
   annotationVerticalLine,
+  annotationHorizontalLine,
 } from '../pipes'
 
 const barParallel: SpecPipeline = [
@@ -36,7 +37,8 @@ const barParallel: SpecPipeline = [
   discreteLegend,
   barStyle,
   annotationPoint,
-  annotationVerticalLine
+  annotationVerticalLine,
+  annotationHorizontalLine
 ]
 
 const pivotBarParallel: SpecPipeline = [
@@ -55,7 +57,8 @@ const pivotBarParallel: SpecPipeline = [
     tooltip,
     barStyle,
     annotationPoint,
-    annotationVerticalLine
+    annotationVerticalLine,
+    annotationHorizontalLine,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

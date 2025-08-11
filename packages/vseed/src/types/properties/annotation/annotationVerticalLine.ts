@@ -5,8 +5,13 @@ export type AnnotationVerticalLine = {
   /**
    * 依赖选择的数据, 进行数据标记.
    */
-  selector: Selector | Selectors
-
+  selector?: Selector | Selectors
+  /**
+   * 固定的x值, 用于标注垂直线
+   * @description 类目轴在x方向, 则可输入维值, 数值轴在x方向, 则可输入具体的数值
+   * @default []
+   */
+  xValue?: (number | string) | (number | string)[]
   /**
    * 标注的文本
    * @description 标注的文本
@@ -14,12 +19,11 @@ export type AnnotationVerticalLine = {
    * @example '标注文本'
    */
   text?: string | string[]
-
   /**
    * 文本位置
    * @description 标注线的标签位置（标签相对线的相对位置）。
-   * @default 'middle'
-   * @example 'start'
+   * @default 'insideEnd'
+   * @example 'outsideEnd'
    */
   textPosition?: 'outsideStart' | 'outsideEnd' | 'outsideMiddle' | 'insideStart' | 'insideMiddle' | 'insideEnd'
   /**
@@ -43,22 +47,20 @@ export type AnnotationVerticalLine = {
    * @example 400
    */
   textFontWeight?: number
-
   /**
    * 文本对齐方式
    * @description 文本对齐方式
-   * @default 'left'
+   * @default 'right'
    * @example 'left'
    */
   textAlign?: 'left' | 'right' | 'center'
   /**
    * 文本垂直对齐方式
    * @description 文本垂直对齐方式
-   * @default 'middle'
+   * @default 'top'
    * @example 'middle'
    */
   textBaseline?: 'top' | 'middle' | 'bottom'
-
   /**
    * 文本Y方向的, 偏移量
    * @description 文本Y方向的, 偏移量, 支持正负
@@ -146,17 +148,18 @@ export type AnnotationVerticalLine = {
 }
 
 export const zAnnotationVerticalLine = z.object({
-  selector: z.union([zSelector, zSelectors]),
+  selector: z.union([zSelector, zSelectors]).optional(),
+  xValue: z.union([z.number(), z.string(), z.array(z.union([z.number(), z.string()]))]).optional(),
   text: z.string().or(z.array(z.string())).optional(),
   textPosition: z
     .enum(['outsideStart', 'outsideEnd', 'outsideMiddle', 'insideStart', 'insideMiddle', 'insideEnd'])
-    .default('insideMiddle')
+    .default('insideEnd')
     .optional(),
   textColor: z.string().default('#ffffff').optional(),
   textFontSize: z.number().default(12).optional(),
   textFontWeight: z.number().default(400).optional(),
-  textAlign: z.enum(['left', 'right', 'center']).default('center').optional(),
-  textBaseline: z.enum(['top', 'middle', 'bottom']).default('middle').optional(),
+  textAlign: z.enum(['left', 'right', 'center']).default('right').optional(),
+  textBaseline: z.enum(['top', 'middle', 'bottom']).default('top').optional(),
   lineVisible: z.boolean().optional(),
   lineColor: z.string().optional(),
   lineWidth: z.number().optional(),

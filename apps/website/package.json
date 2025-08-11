@@ -12,7 +12,7 @@
   "dependencies": {
     "rspress": "^1.40.2",
     "@visactor/vseed": "workspace:*",
-    "@visactor/vchart": "2.0.2",
+    "@visactor/vchart": "2.0.3",
     "@visactor/vtable": "1.19.4",
     "zustand": "5.0.6"
   },

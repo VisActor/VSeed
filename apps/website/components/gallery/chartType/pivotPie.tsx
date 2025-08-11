@@ -5,6 +5,32 @@ import { memo } from 'react'
 export const CombinationPieChart = memo(() => {
   const vseed: VSeed = {
     chartType: 'pie',
+    measures: [
+      {
+        id: 'sales-and-profit',
+        alias: '销售额与利润',
+        children: [
+          {
+            id: 'sales',
+            alias: 'sales',
+          },
+          {
+            id: 'profit',
+            alias: '利润',
+          },
+        ],
+      },
+      {
+        id: 'ratio',
+        alias: '比率',
+        children: [
+          {
+            id: 'rateOfReturn',
+            alias: '回报率',
+          },
+        ],
+      },
+    ],
     dataset: [
       { date: '2019', profit: 10, sales: 20, rateOfReturn: 0.1 },
       { date: '2020', profit: 20, sales: 40, rateOfReturn: 0.2 },
@@ -17,35 +43,6 @@ export const CombinationPieChart = memo(() => {
         id: 'date',
         alias: '日期',
         location: 'dimension',
-      },
-    ],
-    measures: [
-      {
-        id: 'sales-and-profit',
-        alias: '销售额与利润',
-        children: [
-          {
-            id: 'sales',
-            alias: 'sales',
-            location: 'measure',
-          },
-          {
-            id: 'profit',
-            alias: '利润',
-            location: 'measure',
-          },
-        ],
-      },
-      {
-        id: 'ratio',
-        alias: '比率',
-        children: [
-          {
-            id: 'rateOfReturn',
-            alias: '回报率',
-            location: 'measure',
-          },
-        ],
       },
     ],
   }

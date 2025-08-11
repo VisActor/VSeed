@@ -29,7 +29,7 @@ export const annotationPoint: SpecPipe = (spec, context) => {
       backgroundBorderRadius = 4,
       backgroundBorderWidth = 1,
       backgroundColor = '#212121',
-      backgroundPadding = 4,
+      backgroundPadding = 2,
       backgroundVisible = true,
       offsetX = 0,
       offsetY = 0,

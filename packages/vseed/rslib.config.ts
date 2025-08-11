@@ -1,8 +1,6 @@
 import { defineConfig } from '@rslib/core'
 import path from 'node:path'
 
-console.log('debug', path.resolve(__dirname, './src'))
-
 export default defineConfig({
   lib: [
     {

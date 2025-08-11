@@ -504,7 +504,7 @@ const Demo = () => {
     }
 
     const vseed: VSeed = {
-      chartType: 'area',
+      chartType: 'columnParallel',
       dataset: [
         { date: '2019', profit: 10, sales: 100 },
         { date: '2020', profit: 30, sales: 200 },
@@ -547,7 +547,8 @@ registerAll()
 
 const Demo = () => {
   const [vseed, setVSeed] = useState()
-
+  const ref = useRef()
+  const chartRef = useRef()
   const vseed1: VSeed = {
     chartType: 'line',
     dataset: [
@@ -558,6 +559,7 @@ const Demo = () => {
       { date: '2023', profit: 40, sales: 500 },
     ],
   }
+
   const vseed2: VSeed = {
     chartType: 'bar',
     dataset: [
@@ -576,30 +578,42 @@ const Demo = () => {
     await navigator.clipboard.writeText(JSON.stringify(vseed2))
   }
 
-  useEffect(() => {
-    const handleKeyDown = async (event) => {
-      if (event.ctrlKey && event.key === 'c') {
-        // 假设这里默认复制 vseed1 的内容，你可以根据需求修改
-        setVSeed(vseed1)
+  const paste = async () => {
+    try {
+      if (chartRef.current) {
+        chartRef.current.release()
       }
-    }
+      const clipboardText = await navigator.clipboard.readText()
+      const parsedVSeed = JSON.parse(clipboardText)
 
-    window.addEventListener('keydown', handleKeyDown)
+      const builder = Builder.from(parsedVSeed)
+      const advancedVSeed = builder.buildAdvanced()
+      const spec = builder.buildSpec(advancedVSeed)
+      const vchart = new VChart(spec, { dom: ref.current })
+      vchart.renderSync()
 
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown)
+      chartRef.current = vchart
+    } catch (error) {
+      console.log('debug', error)
+      alert('从剪切板读取内容时出错')
     }
-  }, [])
+  }
 
   return (
     <div style={{ display: 'flex' }}>
-      <button onClick={copyVSeed1} style={{ width: 100, marginRight: 4 }}>
-        copy demo1
-      </button>
-      <button onClick={copyVSeed2} style={{ width: 100 }}>
-        copy demo2
-      </button>
-      <div>123</div>
+      <div style={{ width: 100 }}>
+        <button onClick={copyVSeed1} style={{ width: 100, marginBottom: 4 }}>
+          copy demo1
+        </button>
+        <button onClick={copyVSeed2} style={{ width: 100, marginBottom: 4 }}>
+          copy demo2
+        </button>
+        <button onClick={paste} style={{ width: 100 }}>
+          paste
+        </button>
+      </div>
+
+      <div ref={ref} style={{ height: 260, width: 'calc(100% - 100px)' }}></div>
     </div>
   )
 }

@@ -22,6 +22,7 @@ import {
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
+  annotationArea,
 } from '../pipes'
 
 const line: SpecPipeline = [
@@ -36,7 +37,8 @@ const line: SpecPipeline = [
   discreteLegend,
   annotationPoint,
   annotationVerticalLine,
-  annotationHorizontalLine
+  annotationHorizontalLine,
+  annotationArea,
 ]
 
 const pivotLine: SpecPipeline = [
@@ -55,7 +57,8 @@ const pivotLine: SpecPipeline = [
     tooltip,
     annotationPoint,
     annotationVerticalLine,
-    annotationHorizontalLine
+    annotationHorizontalLine,
+    annotationArea,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

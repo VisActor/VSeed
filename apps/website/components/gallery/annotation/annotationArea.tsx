@@ -1,20 +1,7 @@
----
-pageType: doc
----
+import { VSeed } from '@visactor/vseed'
+import { VChartRender } from '../../render/Chart'
+import { memo } from 'react'
 
-import {
-  AnnotationAreaSelectorVertical,
-  AnnotationAreaSelectorHorizontal,
-  AnnotationAreaSelectorLine,
-} from '@components'
-
-# annotationArea
-
-## column
-
-<AnnotationAreaSelectorVertical />
-
-```tsx pure {11-14}
 export const AnnotationAreaSelectorVertical = memo(() => {
   const vseed: VSeed = {
     chartType: 'column',
@@ -38,13 +25,7 @@ export const AnnotationAreaSelectorVertical = memo(() => {
   }
   return <VChartRender vseed={vseed} />
 })
-```
 
-## bar
-
-<AnnotationAreaSelectorHorizontal />
-
-```tsx pure {11-14}
 export const AnnotationAreaSelectorHorizontal = memo(() => {
   const vseed: VSeed = {
     chartType: 'bar',
@@ -58,6 +39,8 @@ export const AnnotationAreaSelectorHorizontal = memo(() => {
     annotationArea: {
       selector: ['2019', '2021'],
       text: '区域',
+      textPosition: 'topRight',
+      textAlign: 'right',
     },
     dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
     measures: [
@@ -68,13 +51,7 @@ export const AnnotationAreaSelectorHorizontal = memo(() => {
   }
   return <VChartRender vseed={vseed} />
 })
-```
 
-## line
-
-<AnnotationAreaSelectorLine />
-
-```tsx pure {4-11}
 export const AnnotationAreaSelectorLine = memo(() => {
   const vseed: VSeed = {
     chartType: 'line',
@@ -98,4 +75,3 @@ export const AnnotationAreaSelectorLine = memo(() => {
   }
   return <VChartRender vseed={vseed} />
 })
-```

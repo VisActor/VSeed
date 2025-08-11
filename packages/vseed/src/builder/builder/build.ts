@@ -10,6 +10,7 @@ export const build = (builder: Builder): Spec => {
     throw new Error('advancedVSeed is null')
   }
   const spec = builder.buildSpec(advancedVSeed)
+  builder.spec = spec
   // console.log('debug spec', spec)
   return spec
 }

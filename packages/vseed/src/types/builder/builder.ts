@@ -12,7 +12,10 @@ export interface VSeedBuilder {
   getAdvancedPipeline: (chartType: ChartType) => AdvancedPipeline
   getSpecPipeline: (chartType: ChartType) => SpecPipeline
   getTheme: (themeKey: string) => CustomThemeConfig
+  getThemeMap: () => Record<string, CustomThemeConfig>
 
+  get spec(): Spec | null
+  set spec(value: Spec | null)
   get vseed(): VSeed
   set vseed(value: VSeed)
   get advancedVSeed(): AdvancedVSeed | null

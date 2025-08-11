@@ -1,5 +1,7 @@
 import type {
+  AnnotationHorizontalLine,
   AnnotationPoint,
+  AnnotationVerticalLine,
   BackgroundColor,
   BarStyle,
   Color,
@@ -128,4 +130,16 @@ export interface BarParallel {
    * @description 标注点配置, 根据选择的数据, 定义图表的标注点, 包括标注点的位置, 格式, 样式等.
    */
   annotationPoint?: AnnotationPoint | AnnotationPoint[]
+
+  /**
+   * 标注垂直线
+   * @description 标注垂直线配置, 根据选择的数据, 定义图表的标注垂直线, 包括标注垂直线的位置, 样式等.
+   */
+  annotationVerticalLine?: AnnotationVerticalLine | AnnotationVerticalLine[]
+
+  /**
+   * 标注水平线
+   * @description 标注水平线配置, 根据选择的数据, 定义图表的标注水平线, 包括标注水平线的位置, 样式等.
+   */
+  annotationHorizontalLine?: AnnotationHorizontalLine | AnnotationHorizontalLine[]
 }

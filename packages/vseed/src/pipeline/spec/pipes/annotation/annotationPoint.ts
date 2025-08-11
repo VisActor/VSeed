@@ -4,6 +4,7 @@
 import type { ILineChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../dataSelector'
 import type { Datum, SpecPipe } from 'src/types'
+import { isSubset } from './utils'
 
 export const annotationPoint: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
@@ -109,16 +110,4 @@ export const annotationPoint: SpecPipe = (spec, context) => {
     ...spec,
     markPoint,
   }
-}
-
-const isSubset = (sub: Datum, obj: Datum) => {
-  return Object.entries(sub).every(([key, value]) => {
-    if (typeof value === 'string') {
-      return obj[key] === value
-    }
-    if (typeof value === 'number') {
-      return obj[key] === value
-    }
-    return true
-  })
 }

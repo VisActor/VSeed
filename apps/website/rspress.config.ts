@@ -4,6 +4,7 @@ import { pluginPlayground } from '@rspress/plugin-playground'
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
+  base: '/VSeed/',
   globalStyles: path.join(__dirname, 'components/styles/index.css'),
   plugins: [
     pluginPlayground({

@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-import type { ILineChartSpec } from '@visactor/vchart'
+import type { ICartesianSeries, ILineChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../dataSelector'
 import type { Datum, SpecPipe } from 'src/types'
 import { isSubset } from './utils'
+import { ANNOTATION_Z_INDEX } from './constant'
 
 export const annotationPoint: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
@@ -34,10 +32,6 @@ export const annotationPoint: SpecPipe = (spec, context) => {
       backgroundVisible = true,
       offsetX = 0,
       offsetY = 0,
-      // lineColor,
-      // lineStyle,
-      // lineVisible,
-      // lineWidth,
     } = annotationPoint
 
     const dataset = advancedVSeed.dataset.flat()
@@ -45,31 +39,15 @@ export const annotationPoint: SpecPipe = (spec, context) => {
 
     return selectedData.map((datum) => {
       return {
+        zIndex: ANNOTATION_Z_INDEX,
         regionRelative: true,
-        position: (
-          data: Datum[],
-          context: {
-            scaleX: any
-            scaleY: any
-            dataToPosition: (datum: Datum) => { x: number; y: number }
-          },
-        ) => {
+        position: (data: Datum[], context: ICartesianSeries) => {
           const targetDatum = data.find((item) => isSubset(datum, item))
           if (targetDatum) {
             const { x, y } = context.dataToPosition(targetDatum) as { x: number; y: number }
-            const xBandWidth = context.scaleX?.bandwidth?.() as number
-            const yBandWidth = context.scaleY?.bandwidth?.() as number
-            if (xBandWidth) {
-              return {
-                x: x,
-                y: y,
-              }
-            }
-            if (yBandWidth) {
-              return {
-                x,
-                y: y,
-              }
+            return {
+              x,
+              y,
             }
           }
         },

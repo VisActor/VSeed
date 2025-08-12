@@ -2,6 +2,7 @@ import type { ICartesianSeries, ILineChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../dataSelector'
 import type { Datum, SpecPipe } from 'src/types'
 import { isSubset } from './utils'
+import { ANNOTATION_Z_INDEX } from './constant'
 
 export const annotationArea: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
@@ -53,18 +54,28 @@ export const annotationArea: SpecPipe = (spec, context) => {
     const selectedData = dataset.filter((datum) => selector(datum, selectorPoint))
 
     return {
+      zIndex: ANNOTATION_Z_INDEX,
       regionRelative: true,
       positions: (data: Datum[], context: ICartesianSeries) => {
-        console.log('debug selectedData', selectedData)
         const positionData = data.filter((item) => selectedData.some((datum) => isSubset(datum, item)))
         const xyList = positionData.map((datum) => context.dataToPosition(datum) as { x: number; y: number })
 
-        const xScale = context.scaleX as unknown as { bandwidth: () => number; range: () => number[] }
-        const yScale = context.scaleY as unknown as { bandwidth: () => number; range: () => number[] }
-        const xBandWidth = xScale?.bandwidth?.()
-        const yBandWidth = yScale?.bandwidth?.()
+        const yAxisHelper = context.getYAxisHelper() as unknown as {
+          getBandwidth: (depth?: number) => number
+          getScale: () => {
+            range: () => number[]
+          }
+        }
+        const xAxisHelper = context.getXAxisHelper() as unknown as {
+          getBandwidth: (depth?: number) => number
+          getScale: () => {
+            range: () => number[]
+          }
+        }
 
-        if (xBandWidth) {
+        if (typeof xAxisHelper?.getBandwidth === 'function') {
+          const yScale = yAxisHelper.getScale()
+
           const minX = Math.min(...xyList.map((item) => item.x)) - outerPadding
           const maxX = Math.max(...xyList.map((item) => item.x)) + outerPadding
           const minY = Math.min(...yScale.range())
@@ -93,7 +104,9 @@ export const annotationArea: SpecPipe = (spec, context) => {
           ]
         }
 
-        if (yBandWidth) {
+        if (typeof yAxisHelper?.getBandwidth === 'function') {
+          const xScale = xAxisHelper.getScale()
+
           const minY = Math.min(...xyList.map((item) => item.y)) - outerPadding
           const maxY = Math.max(...xyList.map((item) => item.y)) + outerPadding
           const minX = Math.min(...xScale.range())
@@ -125,7 +138,6 @@ export const annotationArea: SpecPipe = (spec, context) => {
 
         return []
       },
-
       label: {
         position: positionMap[textPosition],
         visible: true,

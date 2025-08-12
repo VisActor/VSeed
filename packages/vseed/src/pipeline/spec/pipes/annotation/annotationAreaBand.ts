@@ -5,7 +5,7 @@ import { isSubset } from './utils'
 
 export const annotationAreaBand: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const { annotation } = advancedVSeed
+  const { annotation, encoding } = advancedVSeed
 
   if (!annotation || !annotation.annotationArea) {
     return spec
@@ -57,21 +57,25 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
       positions: (data: Datum[], context: ICartesianSeries) => {
         const positionData = data.filter((item) => selectedData.some((datum) => isSubset(datum, item)))
         const xyList = positionData.map((datum) => context.dataToPosition(datum) as { x: number; y: number })
-        const xScale = context.scaleX as unknown as {
-          bandwidth: () => number
-          range: () => number[]
-          _paddingOuter: number
+
+        const yAxisHelper = context.getYAxisHelper() as unknown as {
+          getBandwidth: (depth?: number) => number
+          getScale: () => {
+            range: () => number[]
+          }
         }
-        const yScale = context.scaleY as unknown as {
-          bandwidth: () => number
-          range: () => number[]
-          _paddingOuter: number
+        const xAxisHelper = context.getXAxisHelper() as unknown as {
+          getBandwidth: (depth?: number) => number
+          getScale: () => {
+            range: () => number[]
+          }
         }
 
-        const xBandWidth = xScale?.bandwidth?.()
-        const yBandWidth = yScale?.bandwidth?.()
+        if (typeof xAxisHelper?.getBandwidth === 'function') {
+          const depth = context.fieldX.length ?? 0
+          const xBandWidth = xAxisHelper?.getBandwidth?.(depth - 1)
+          const yScale = yAxisHelper.getScale()
 
-        if (xBandWidth) {
           const minX = Math.min(...xyList.map((item) => item.x)) - outerPadding
           const maxX = Math.max(...xyList.map((item) => item.x)) + xBandWidth + outerPadding
           const minY = Math.min(...yScale.range())
@@ -100,7 +104,11 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           ]
         }
 
-        if (yBandWidth) {
+        if (typeof yAxisHelper?.getBandwidth === 'function') {
+          const depth = context.fieldY.length ?? 0
+          const yBandWidth = yAxisHelper?.getBandwidth?.(depth - 1)
+          const xScale = xAxisHelper.getScale()
+
           const minY = Math.min(...xyList.map((item) => item.y)) - outerPadding
           const maxY = Math.max(...xyList.map((item) => item.y)) + yBandWidth + outerPadding
           const minX = Math.min(...xScale.range())

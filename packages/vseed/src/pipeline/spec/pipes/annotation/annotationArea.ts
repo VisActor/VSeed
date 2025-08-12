@@ -41,7 +41,7 @@ export const annotationArea: SpecPipe = (spec, context) => {
       backgroundColor = '#191d24',
       backgroundPadding = 4,
       backgroundVisible = true,
-      outerPadding = 8,
+      outerPadding = 0,
       areaColor = '#888888',
       areaColorOpacity = 0.15,
       areaBorderColor,

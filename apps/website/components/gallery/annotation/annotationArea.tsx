@@ -4,7 +4,7 @@ import { memo } from 'react'
 
 export const AnnotationAreaSelectorVertical = memo(() => {
   const vseed: VSeed = {
-    chartType: 'column',
+    chartType: 'columnParallel',
     dataset: [
       { date: '2019', profit: 10, sales: 20, count: 50 },
       { date: '2020', profit: 30, sales: 60, count: 50 },

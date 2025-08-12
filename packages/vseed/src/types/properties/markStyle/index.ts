@@ -1,2 +1,5 @@
 export * from './barStyle'
+export * from './pointStyle'
+export * from './lineStyle'
+export * from './areaStyle'
 export * from './markStyle'

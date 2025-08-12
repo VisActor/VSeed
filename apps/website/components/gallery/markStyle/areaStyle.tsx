@@ -1,42 +1,10 @@
----
-pageType: doc
----
+import { VSeed } from '@visactor/vseed'
+import { VChartRender } from '../../render/Chart'
+import { memo } from 'react'
 
-import {
-  SelectorBarValue,
-  SelectorBarPartialDatum,
-  SelectorBarMeasureCondition,
-  SelectorBarDimensionCondition,
-  MultiBarStyle,
-} from '@components'
-
-# barStyle
-
-:::info{title=柱图样式}
-
-全局样式或条件样式配置
-
-支持图表类型: `bar`, `barParallel`, `barPercent`, `column`, `columnParallel`, `columnPercent`
-:::
-
-## selector
-
-:::tip {title=数据筛选器}
-
-若配置`selector`, 提供`数值 selector`, `局部数据 selector`, `条件维度 selector`, `条件指标 selector` 共四类数据匹配能力
-
-若未配置`selector`, 则样式全局生效.
-
-:::
-
-### value
-
-<SelectorBarValue />
-
-```tsx pure {5-6,12}
-export const SelectorBarValue = memo(() => {
+export const SelectorAreaValue = memo(() => {
   const vseed: VSeed = {
-    chartType: 'column',
+    chartType: 'area',
     dataset: [
       { date: '2019', profit: 10, sales: 20, count: 50 },
       { date: '2020', profit: 30, sales: 60, count: 50 },
@@ -44,15 +12,12 @@ export const SelectorBarValue = memo(() => {
       { date: '2022', profit: 50, sales: 100, count: 50 },
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
-    barStyle: {
-      selector: ['2019', '2020'],
-      barColor: 'lightpink',
-      barColorOpacity: 0.8,
-      barBorderColor: 'lightpink',
-      barBorderWidth: 4,
-      barBorderStyle: 'dashed',
-      barRadius: [8, 8, 0, 0],
-    },
+    areaStyle: [
+      {
+        selector: '2019',
+        areaColorOpacity: 0.05,
+      },
+    ],
     dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
     measures: [
       { id: 'profit', alias: '利润' },
@@ -62,16 +27,10 @@ export const SelectorBarValue = memo(() => {
   }
   return <VChartRender vseed={vseed} />
 })
-```
 
-### partial datum
-
-<SelectorBarPartialDatum />
-
-```tsx pure {5,6,7,9,12}
-export const SelectorBarPartialDatum = memo(() => {
+export const SelectorAreaPartialDatum = memo(() => {
   const vseed: VSeed = {
-    chartType: 'bar',
+    chartType: 'areaPercent',
     dataset: [
       { date: '2019', profit: 10, sales: 20, count: 50 },
       { date: '2020', profit: 30, sales: 60, count: 50 },
@@ -79,14 +38,9 @@ export const SelectorBarPartialDatum = memo(() => {
       { date: '2022', profit: 50, sales: 100, count: 50 },
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
-    barStyle: {
+    areaStyle: {
       selector: [{ date: '2019' }, { sales: 60 }],
-      barColor: 'lightblue',
-      barColorOpacity: 0.8,
-      barBorderColor: 'lightblue',
-      barBorderWidth: 4,
-      barBorderStyle: 'dashed',
-      barRadius: [8, 8, 0, 0],
+      areaColor: 'red',
     },
     dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
     measures: [
@@ -97,16 +51,10 @@ export const SelectorBarPartialDatum = memo(() => {
   }
   return <VChartRender vseed={vseed} />
 })
-```
 
-### dimension condition
-
-<SelectorBarDimensionCondition />
-
-```tsx pure {5,9,12-17}
-export const SelectorBarDimensionCondition = memo(() => {
+export const SelectorAreaDimensionCondition = memo(() => {
   const vseed: VSeed = {
-    chartType: 'columnParallel',
+    chartType: 'area',
     dataset: [
       { date: '2019', profit: 10, sales: 20, count: 50 },
       { date: '2020', profit: 30, sales: 60, count: 50 },
@@ -114,7 +62,7 @@ export const SelectorBarDimensionCondition = memo(() => {
       { date: '2022', profit: 50, sales: 100, count: 50 },
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
-    barStyle: {
+    areaStyle: {
       selector: [
         {
           field: 'date',
@@ -122,12 +70,16 @@ export const SelectorBarDimensionCondition = memo(() => {
           value: ['2019', '2023'],
         },
       ],
-      barColor: 'gray',
-      barColorOpacity: 0.8,
-      barBorderColor: 'gray',
-      barBorderWidth: 4,
-      barBorderStyle: 'dashed',
-      barRadius: [8, 8, 0, 0],
+      areaColorOpacity: 0.8,
+    },
+    lineStyle: {
+      selector: [
+        {
+          field: 'date',
+          operator: 'in',
+          value: ['2019', '2023'],
+        },
+      ],
     },
     dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
     measures: [
@@ -138,16 +90,10 @@ export const SelectorBarDimensionCondition = memo(() => {
   }
   return <VChartRender vseed={vseed} />
 })
-```
 
-### measure condition
-
-<SelectorBarMeasureCondition />
-
-```tex pure {6,7,9,12-16}
-export const SelectorBarMeasureCondition = memo(() => {
+export const SelectorAreaMeasureCondition = memo(() => {
   const vseed: VSeed = {
-    chartType: 'barParallel',
+    chartType: 'areaPercent',
     dataset: [
       { date: '2019', profit: 10, sales: 20, count: 50 },
       { date: '2020', profit: 30, sales: 60, count: 50 },
@@ -155,41 +101,27 @@ export const SelectorBarMeasureCondition = memo(() => {
       { date: '2022', profit: 50, sales: 100, count: 50 },
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
-    barStyle: {
+    areaStyle: {
       selector: {
         field: 'profit',
         operator: 'between',
         value: [20, 40],
       },
-      barColor: 'lightgreen',
-      barColorOpacity: 0.8,
-      barBorderColor: 'lightgreen',
-      barBorderWidth: 4,
-      barBorderStyle: 'dashed',
-      barRadius: [8, 8, 0, 0],
+      areaColorOpacity: 1,
     },
     dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
-            { id: 'count', alias: '数量' },
-
+      { id: 'count', alias: '数量' },
     ],
   }
   return <VChartRender vseed={vseed} />
 })
-```
 
-## barStyle array
-
-优先级顺序: 后者覆盖前者
-
-<MultiBarStyle />
-
-```tsx pure {11-26}
-export const MultiBarStyle = memo(() => {
+export const MultiAreaStyle = memo(() => {
   const vseed: VSeed = {
-    chartType: 'barParallel',
+    chartType: 'area',
     dataset: [
       { date: '2019', profit: 10, sales: 20, count: 50 },
       { date: '2020', profit: 30, sales: 60, count: 50 },
@@ -197,20 +129,14 @@ export const MultiBarStyle = memo(() => {
       { date: '2022', profit: 50, sales: 100, count: 50 },
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
-    barStyle: [
+    areaStyle: [
       {
-        barColorOpacity: 0.8,
-        barRadius: 10,
-      },
-      {
-        selector: [100, 40],
-        barColor: 'lightgreen',
-        barColorOpacity: 0.8,
+        areaColor: 'red',
+        areaColorOpacity: 0.5,
       },
       {
         selector: [100, 80],
-        barColor: 'red',
-        barColorOpacity: 0.8,
+        areaColorOpacity: 0.05,
       },
     ],
     dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
@@ -222,4 +148,3 @@ export const MultiBarStyle = memo(() => {
   }
   return <VChartRender vseed={vseed} />
 })
-```

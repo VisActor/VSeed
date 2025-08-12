@@ -50,7 +50,6 @@ export const VChartRender = memo((props: { vseed: VSeed }) => {
     builderRef.current = builder
 
     const spec = builder.build()
-
     const vchart = new VChart(spec, { dom: ref.current })
 
     vchart.renderSync()

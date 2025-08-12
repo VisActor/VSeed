@@ -6,7 +6,6 @@ export type AnnotationPoint = {
    * 依赖选择的数据, 进行数据标记.
    */
   selector: Selector | Selectors
-
   /**
    * 标注的文本
    * @description 标注的文本
@@ -65,34 +64,6 @@ export type AnnotationPoint = {
    * @example offsetX: -10
    */
   offsetX?: number
-  // /**
-  //  * 线可见
-  //  * @description 线可见
-  //  * @default true
-  //  * @example true
-  //  */
-  // lineVisible?: boolean
-  // /**
-  //  * 线颜色
-  //  * @description 线颜色
-  //  * @default 'red'
-  //  * @example 'red'
-  //  */
-  // lineColor?: string
-  // /**
-  //  * 线宽度
-  //  * @description 线宽度
-  //  * @default 2
-  //  * @example 2
-  //  */
-  // lineWidth?: number
-  // /**
-  //  * 线样式
-  //  * @description 线样式
-  //  * @default 'solid'
-  //  * @example 'solid'
-  //  */
-  // lineStyle?: 'solid' | 'dashed' | 'dotted'
   /**
    * 背景可见
    * @description 背景可见
@@ -145,10 +116,6 @@ export const zAnnotationPoint = z.object({
   textFontWeight: z.number().default(400).optional(),
   textAlign: z.enum(['left', 'right', 'center']).default('center').optional(),
   textBaseline: z.enum(['top', 'middle', 'bottom']).default('middle').optional(),
-  // lineVisible: z.boolean().optional(),
-  // lineColor: z.string().optional(),
-  // lineWidth: z.number().optional(),
-  // lineStyle: z.union([z.literal('solid'), z.literal('dashed'), z.literal('dotted')]).optional(),
   backgroundVisible: z.boolean().default(true).optional(),
   backgroundColor: z.string().default('#212121').optional(),
   backgroundBorderColor: z.string().optional(),

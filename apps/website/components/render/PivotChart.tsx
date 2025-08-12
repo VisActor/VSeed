@@ -2,6 +2,7 @@ import { useRef, useEffect, memo } from 'react'
 import VChart from '@visactor/vchart'
 import { register, PivotChart as VTablePivotChart, PivotChartConstructorOptions } from '@visactor/vtable'
 import { registerAll, VSeed, Builder, UnfoldDimensionGroup } from '@visactor/vseed'
+import { useDark } from 'rspress/runtime'
 
 register.chartModule('vchart', VChart)
 registerAll()
@@ -10,13 +11,14 @@ export const PivotChart = memo((props: { vseed: VSeed }) => {
   const { vseed } = props
   const ref = useRef<HTMLDivElement>(null)
   const builderRef = useRef<Builder>(Builder.from({}))
+  const dark = useDark()
 
   useEffect(() => {
     if (!ref.current) {
       return
     }
 
-    const builder = Builder.from(vseed)
+    const builder = Builder.from({ ...vseed, theme: dark ? 'dark' : 'light' })
     builderRef.current = builder
 
     const spec = builder.build() as PivotChartConstructorOptions
@@ -33,7 +35,7 @@ export const PivotChart = memo((props: { vseed: VSeed }) => {
     })
 
     return () => tableInstance.release()
-  })
+  }, [dark])
 
   return (
     <div

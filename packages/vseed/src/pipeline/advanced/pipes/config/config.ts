@@ -8,7 +8,26 @@ export const lineConfig: AdvancedPipe = (advancedVSeed, context) => {
     ...advancedVSeed,
   }
 
-  const config = pick(vseed, ['xAxis', 'yAxis']) as Config['line']
+  const config = pick(vseed, ['xAxis', 'yAxis', 'crosshairLine']) as Config['line']
+
+  result.config = {
+    ...(result.config || {}),
+    [chartType]: {
+      ...config,
+    },
+  }
+
+  return result as AdvancedVSeed
+}
+
+export const columnConfig: AdvancedPipe = (advancedVSeed, context) => {
+  const { vseed } = context
+  const { chartType } = vseed
+  const result = {
+    ...advancedVSeed,
+  }
+
+  const config = pick(vseed, ['xAxis', 'yAxis', 'crosshairRect']) as Config['column']
 
   result.config = {
     ...(result.config || {}),
@@ -39,11 +58,11 @@ export const pieConfig: AdvancedPipe = (advancedVSeed, context) => {
   return result as AdvancedVSeed
 }
 
-export const barConfig: AdvancedPipe = lineConfig
-export const barParallelConfig: AdvancedPipe = lineConfig
-export const barPercentConfig: AdvancedPipe = lineConfig
-export const columnConfig: AdvancedPipe = lineConfig
-export const columnParallelConfig: AdvancedPipe = lineConfig
-export const columnPercentConfig: AdvancedPipe = lineConfig
 export const areaConfig: AdvancedPipe = lineConfig
 export const areaPercentConfig: AdvancedPipe = lineConfig
+
+export const barConfig: AdvancedPipe = columnConfig
+export const barParallelConfig: AdvancedPipe = columnConfig
+export const barPercentConfig: AdvancedPipe = columnConfig
+export const columnParallelConfig: AdvancedPipe = columnConfig
+export const columnPercentConfig: AdvancedPipe = columnConfig

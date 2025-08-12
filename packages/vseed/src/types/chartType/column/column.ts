@@ -6,6 +6,7 @@ import type {
   BackgroundColor,
   BarStyle,
   Color,
+  CrosshairRect,
   Dataset,
   Dimensions,
   Label,
@@ -116,6 +117,11 @@ export interface Column {
    */
   theme?: Theme
 
+  /**
+   * 垂直提示框
+   * @description 垂直提示框配置, 用于定义图表的垂直提示框, 包括垂直提示框的颜色、标签样式等.
+   */
+  crosshairRect?: CrosshairRect
   /**
    * 矩形图元样式
    * @description 条形图样式配置, 用于定义图表的条形图样式, 包括条形图的颜色, 边框, 圆角等.

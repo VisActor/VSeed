@@ -25,6 +25,7 @@ import {
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationAreaBand,
+  verticalCrosshairRect,
 } from '../pipes'
 
 const column: SpecPipeline = [
@@ -37,6 +38,7 @@ const column: SpecPipeline = [
   yLinear,
   label,
   tooltip,
+  verticalCrosshairRect,
   discreteLegend,
   barStyle,
   annotationPoint,
@@ -60,6 +62,7 @@ const pivotColumn: SpecPipeline = [
     yLinear,
     label,
     tooltip,
+    verticalCrosshairRect,
     barStyle,
     annotationPoint,
     annotationVerticalLine,

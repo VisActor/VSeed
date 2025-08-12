@@ -41,7 +41,7 @@ export const lightTheme = (): CustomThemeConfig => {
     labelAutoHideGap: 4,
     labelAutoLimit: true,
     labelAutoLimitLength: 100,
-    labelAutoRotate: true,
+    labelAutoRotate: false,
     labelAutoRotateAngleRange: [0, -45, -90],
     label: {
       visible: true,
@@ -74,7 +74,6 @@ export const lightTheme = (): CustomThemeConfig => {
       lineWidth: 1,
     },
   }
-
   const barBandAxis: YBandAxis = {
     ...bandAxis,
     labelAutoHide: false,
@@ -85,6 +84,20 @@ export const lightTheme = (): CustomThemeConfig => {
     labelAutoRotateAngleRange: [0, -45, -90],
   }
 
+  const crosshairLine = {
+    visible: true,
+    labelVisible: true,
+    lineColor: '#3641594d',
+    labelColor: '#ffffff',
+    labelBackgroundColor: '#364159',
+  }
+  const crosshairRect = {
+    visible: true,
+    labelVisible: true,
+    rectColor: '#3641594d',
+    labelColor: '#ffffff',
+    labelBackgroundColor: '#364159',
+  }
   return {
     baseConfig: {
       vtable: {
@@ -128,38 +141,47 @@ export const lightTheme = (): CustomThemeConfig => {
       line: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairLine,
       },
       column: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairRect,
       },
       columnParallel: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairRect,
       },
       columnPercent: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairRect,
       },
       bar: {
         xAxis: linearAxis,
         yAxis: barBandAxis,
+        crosshairRect,
       },
       barParallel: {
         xAxis: linearAxis,
         yAxis: barBandAxis,
+        crosshairRect,
       },
       barPercent: {
         xAxis: linearAxis,
         yAxis: barBandAxis,
+        crosshairRect,
       },
       area: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairLine,
       },
       areaPercent: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairLine,
       },
     },
   }

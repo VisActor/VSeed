@@ -19,7 +19,8 @@
   },
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "llm_test"
   ],
   "devDependencies": {
     "@changesets/cli": "^2.29.5",

@@ -1,0 +1,9 @@
+{
+  "name": "vseed-llm-test",
+  "private": true,
+  "devDependencies": {
+    "openai": "5.12.2",
+    "dotenv": "17.2.1",
+    "ts-node": "10.9.2"
+  }
+}

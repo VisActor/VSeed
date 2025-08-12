@@ -17,6 +17,7 @@ import type {
   Tooltip,
   XBandAxis,
   YLinearAxis,
+  CrosshairLine,
 } from '../../properties'
 
 /**
@@ -107,6 +108,12 @@ export interface AreaPercent {
    * @description 数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.
    */
   yAxis?: YLinearAxis
+
+  /**
+   * 垂直提示线
+   * @description  鼠标移动到图表上时, 显示的垂直提示线
+   */
+  crosshairLine?: CrosshairLine
 
   /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置

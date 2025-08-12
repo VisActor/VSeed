@@ -1,62 +1,73 @@
 import { z } from 'zod'
 import { zXBandAxis, zYBandAxis } from './bandAxis'
 import { zXLinearAxis, zYLinearAxis } from './linearAxis'
+import { zCrosshairLine, zCrosshairRect } from './crosshair'
 
 export const zConfig = z.object({
   line: z
     .object({
-      xAxis: zXBandAxis,
-      yAxis: zYLinearAxis,
+      xAxis: zXBandAxis.optional(),
+      yAxis: zYLinearAxis.optional(),
+      crosshairLine: zCrosshairLine.optional(),
     })
     .optional(),
   column: z
     .object({
-      xAxis: zXBandAxis,
-      yAxis: zYLinearAxis,
+      xAxis: zXBandAxis.optional(),
+      yAxis: zYLinearAxis.optional(),
+      crosshairRect: zCrosshairRect.optional(),
     })
     .optional(),
   columnParallel: z
     .object({
-      xAxis: zXBandAxis,
-      yAxis: zYLinearAxis,
+      xAxis: zXBandAxis.optional(),
+      yAxis: zYLinearAxis.optional(),
+      crosshairRect: zCrosshairRect.optional(),
     })
     .optional(),
   columnPercent: z
     .object({
-      xAxis: zXBandAxis,
-      yAxis: zYLinearAxis,
+      xAxis: zXBandAxis.optional(),
+      yAxis: zYLinearAxis.optional(),
+      crosshairRect: zCrosshairRect.optional(),
     })
     .optional(),
   bar: z
     .object({
-      xAxis: zXLinearAxis,
-      yAxis: zYBandAxis,
+      xAxis: zXLinearAxis.optional(),
+      yAxis: zYBandAxis.optional(),
+      crosshairRect: zCrosshairRect.optional(),
     })
     .optional(),
   barParallel: z
     .object({
-      xAxis: zXLinearAxis,
-      yAxis: zYBandAxis,
+      xAxis: zXLinearAxis.optional(),
+      yAxis: zYBandAxis.optional(),
+      crosshairRect: zCrosshairRect.optional(),
     })
     .optional(),
   barPercent: z
     .object({
-      xAxis: zXLinearAxis,
-      yAxis: zYBandAxis,
+      xAxis: zXLinearAxis.optional(),
+      yAxis: zYBandAxis.optional(),
+      crosshairRect: zCrosshairRect.optional(),
     })
     .optional(),
   area: z
     .object({
-      xAxis: zXBandAxis,
-      yAxis: zYLinearAxis,
+      xAxis: zXBandAxis.optional(),
+      yAxis: zYLinearAxis.optional(),
+      crosshairLine: zCrosshairLine.optional(),
     })
     .optional(),
   areaPercent: z
     .object({
-      xAxis: zXBandAxis,
-      yAxis: zYLinearAxis,
+      xAxis: zXBandAxis.optional(),
+      yAxis: zYLinearAxis.optional(),
+      crosshairLine: zCrosshairLine.optional(),
     })
     .optional(),
+
   pie: z.object({}).optional(),
   donut: z.object({}).optional(),
   rose: z.object({}).optional(),

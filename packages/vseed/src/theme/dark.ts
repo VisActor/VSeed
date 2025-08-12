@@ -40,7 +40,7 @@ export const darkTheme = (): CustomThemeConfig => {
     labelAutoHideGap: 4,
     labelAutoLimit: true,
     labelAutoLimitLength: 100,
-    labelAutoRotate: true,
+    labelAutoRotate: false,
     labelAutoRotateAngleRange: [0, -45, -90],
     label: {
       visible: true,
@@ -72,6 +72,29 @@ export const darkTheme = (): CustomThemeConfig => {
       lineColor: '#4B4F54',
       lineWidth: 1,
     },
+  }
+  const barBandAxis: YBandAxis = {
+    ...bandAxis,
+    labelAutoHide: false,
+    labelAutoHideGap: 1,
+    labelAutoLimit: false,
+    labelAutoLimitLength: undefined,
+    labelAutoRotate: false,
+    labelAutoRotateAngleRange: [0, -45, -90],
+  }
+  const crosshairLine = {
+    visible: true,
+    labelVisible: true,
+    lineColor: '#E2E3E6',
+    labelColor: '#4B4F54',
+    labelBackgroundColor: '#ffffff',
+  }
+  const crosshairRect = {
+    visible: true,
+    labelVisible: true,
+    lineColor: '#E2E3E6',
+    labelColor: '#4B4F54',
+    labelBackgroundColor: '#ffffff',
   }
 
   return {
@@ -117,38 +140,47 @@ export const darkTheme = (): CustomThemeConfig => {
       line: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairLine: crosshairLine,
       },
       column: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairRect: crosshairRect,
       },
       columnParallel: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairRect: crosshairRect,
       },
       columnPercent: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairRect: crosshairRect,
       },
       bar: {
         xAxis: linearAxis,
-        yAxis: bandAxis,
+        yAxis: barBandAxis,
+        crosshairRect: crosshairRect,
       },
       barParallel: {
         xAxis: linearAxis,
-        yAxis: bandAxis,
+        yAxis: barBandAxis,
+        crosshairRect: crosshairRect,
       },
       barPercent: {
         xAxis: linearAxis,
-        yAxis: bandAxis,
+        yAxis: barBandAxis,
+        crosshairRect: crosshairRect,
       },
       area: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairLine: crosshairLine,
       },
       areaPercent: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairLine: crosshairLine,
       },
     },
   }

@@ -26,6 +26,7 @@ import {
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationAreaBand,
+  verticalCrosshairRect,
 } from '../pipes'
 
 const columnPercent: SpecPipeline = [
@@ -39,6 +40,7 @@ const columnPercent: SpecPipeline = [
   yLinear,
   label,
   tooltip,
+  verticalCrosshairRect,
   discreteLegend,
   barStyle,
   annotationPoint,
@@ -63,6 +65,7 @@ const pivotColumnPercent: SpecPipeline = [
     yLinear,
     label,
     tooltip,
+    verticalCrosshairRect,
     barStyle,
     annotationPoint,
     annotationVerticalLine,

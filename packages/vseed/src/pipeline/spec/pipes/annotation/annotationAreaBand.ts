@@ -2,10 +2,11 @@ import type { ICartesianSeries, ILineChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../dataSelector'
 import type { Datum, SpecPipe } from 'src/types'
 import { isSubset } from './utils'
+import { ANNOTATION_Z_INDEX } from './constant'
 
 export const annotationAreaBand: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const { annotation, encoding } = advancedVSeed
+  const { annotation } = advancedVSeed
 
   if (!annotation || !annotation.annotationArea) {
     return spec
@@ -53,6 +54,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
     const selectedData = dataset.filter((datum) => selector(datum, selectorPoint))
 
     return {
+      zIndex: ANNOTATION_Z_INDEX,
       regionRelative: true,
       positions: (data: Datum[], context: ICartesianSeries) => {
         const positionData = data.filter((item) => selectedData.some((datum) => isSubset(datum, item)))

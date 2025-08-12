@@ -2,6 +2,7 @@ import type { ILineChartSpec, IMarkLineSpec } from '@visactor/vchart'
 import { selector } from '../../../../dataSelector'
 import type { SpecPipe } from 'src/types'
 import { isArray, isNumber, isString } from 'remeda'
+import { ANNOTATION_Z_INDEX } from './constant'
 
 export const annotationVerticalLine: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
@@ -53,6 +54,7 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
 
     const generateOneMarkLine = (x: number | string) => ({
       x: x as string,
+      zIndex: ANNOTATION_Z_INDEX,
       line: {
         visible: lineVisible,
         style: {

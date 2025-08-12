@@ -146,31 +146,37 @@ export const darkTheme = (): CustomThemeConfig => {
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect: crosshairRect,
+        stackCornerRadius: [4, 4, 0, 0],
       },
       columnParallel: {
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect: crosshairRect,
+        stackCornerRadius: [4, 4, 0, 0],
       },
       columnPercent: {
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect: crosshairRect,
+        stackCornerRadius: [4, 4, 0, 0],
       },
       bar: {
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect: crosshairRect,
+        stackCornerRadius: [0, 4, 4, 0],
       },
       barParallel: {
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect: crosshairRect,
+        stackCornerRadius: [0, 4, 4, 0],
       },
       barPercent: {
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect: crosshairRect,
+        stackCornerRadius: [0, 4, 4, 0],
       },
       area: {
         xAxis: bandAxis,

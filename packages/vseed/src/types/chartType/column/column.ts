@@ -12,6 +12,7 @@ import type {
   Label,
   Legend,
   Measures,
+  StackCornerRadius,
   Theme,
   Tooltip,
   XBandAxis,
@@ -122,6 +123,14 @@ export interface Column {
    * @description 垂直提示框配置, 用于定义图表的垂直提示框, 包括垂直提示框的颜色、标签样式等.
    */
   crosshairRect?: CrosshairRect
+
+  /**
+   * 柱状图 堆叠圆角
+   * @description 条形图 堆叠圆角
+   * @default 8
+   */
+  stackCornerRadius?: StackCornerRadius
+
   /**
    * 矩形图元样式
    * @description 条形图样式配置, 用于定义图表的条形图样式, 包括条形图的颜色, 边框, 圆角等.

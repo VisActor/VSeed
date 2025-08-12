@@ -1,7 +1,1 @@
-[
-  "barStyle",
-  "lineStyle",
-  "pointStyle",
-  "areaStyle",
-  "pieStyle"
-]
+["barStyle", "lineStyle", "pointStyle", "areaStyle"]

@@ -27,7 +27,7 @@ export const columnConfig: AdvancedPipe = (advancedVSeed, context) => {
     ...advancedVSeed,
   }
 
-  const config = pick(vseed, ['xAxis', 'yAxis', 'crosshairRect']) as Config['column']
+  const config = pick(vseed, ['xAxis', 'yAxis', 'crosshairRect', 'stackCornerRadius']) as Config['column']
 
   result.config = {
     ...(result.config || {}),

@@ -98,6 +98,7 @@ export const lightTheme = (): CustomThemeConfig => {
     labelColor: '#ffffff',
     labelBackgroundColor: '#364159',
   }
+
   return {
     baseConfig: {
       vtable: {
@@ -147,31 +148,37 @@ export const lightTheme = (): CustomThemeConfig => {
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect,
+        stackCornerRadius: [4, 4, 0, 0],
       },
       columnParallel: {
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect,
+        stackCornerRadius: [4, 4, 0, 0],
       },
       columnPercent: {
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect,
+        stackCornerRadius: [4, 4, 0, 0],
       },
       bar: {
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect,
+        stackCornerRadius: [0, 4, 4, 0],
       },
       barParallel: {
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect,
+        stackCornerRadius: [0, 4, 4, 0],
       },
       barPercent: {
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect,
+        stackCornerRadius: [0, 4, 4, 0],
       },
       area: {
         xAxis: bandAxis,

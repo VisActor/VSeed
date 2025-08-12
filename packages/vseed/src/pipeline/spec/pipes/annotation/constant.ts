@@ -1,1 +1,0 @@
-export const ANNOTATION_Z_INDEX = 1000

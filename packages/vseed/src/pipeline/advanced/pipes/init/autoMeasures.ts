@@ -72,8 +72,8 @@ const autoMeasureGroup: AdvancedPipe = (advancedVSeed, context) => {
     if ('children' in measure) {
       // 当前指标组之前的所有独立指标成组
       if (currentGroup.children?.length) {
-        currentGroup.id = currentGroup.children.map((item) => item.id).join('-')
         currentGroup.alias = currentGroup.children.map((item) => item.alias).join('-')
+        currentGroup.id = currentGroup.alias + currentGroup.children.map((item) => item.id).join('-')
         measureGroups.push(currentGroup)
         currentGroup = createEmptyMeasureGroup()
       }
@@ -86,8 +86,8 @@ const autoMeasureGroup: AdvancedPipe = (advancedVSeed, context) => {
 
   // 最后一组
   if (currentGroup.children?.length) {
-    currentGroup.id = currentGroup.children.map((item) => item.id).join('-')
     currentGroup.alias = currentGroup.children.map((item) => item.alias).join('-')
+    currentGroup.id = currentGroup.alias + currentGroup.children.map((item) => item.id).join('-')
     measureGroups.push(currentGroup)
     currentGroup = createEmptyMeasureGroup()
   }

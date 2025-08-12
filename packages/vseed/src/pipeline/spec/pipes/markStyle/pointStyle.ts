@@ -6,10 +6,21 @@ export const pointStyle: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { markStyle } = advancedVSeed
   const { pointStyle } = markStyle
+  const result = {
+    ...spec,
+    point: {
+      state: {
+        dimension_hover: {
+          scaleX: 1.4,
+          scaleY: 1.4,
+        },
+      },
+    },
+  } as IAreaChartSpec
+
   if (!pointStyle) {
-    return spec
+    return result
   }
-  const result = { ...spec } as IAreaChartSpec
 
   const pointStyles = (Array.isArray(pointStyle) ? pointStyle : [pointStyle]) as PointStyle[]
 

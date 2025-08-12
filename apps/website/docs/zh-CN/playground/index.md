@@ -5,6 +5,8 @@ pageType: custom
 ---
 
 ```tsx
+import { useDark } from 'rspress/runtime'
+
 import { useRef, useEffect } from 'react'
 import VChart from '@visactor/vchart'
 import { registerAll, VSeed, Builder, isPivotChart, isVChart, isVTable } from '@visactor/vseed'
@@ -53,13 +55,13 @@ const Demo = () => {
 const SimpleVSeedRender = (props: { vseed: VSeed }) => {
   const { vseed } = props
   const ref = useRef<HTMLDivElement>(null)
-
+  const dark = useDark()
   useEffect(() => {
     if (!ref.current) {
       return
     }
-
-    const spec = Builder.from(vseed).build()
+    const theme = dark ? 'dark' : 'light'
+    const spec = Builder.from({ ...vseed, theme }).build()
 
     if (isPivotChart(vseed)) {
       const tableInstance = new PivotChart(ref.current, spec)
@@ -72,11 +74,10 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
       const tableInstance = new ListTable(ref.current, spec)
       return () => tableInstance.release()
     }
-  }, [vseed])
+  }, [vseed, dark])
 
   return <div ref={ref} style={{ height: 300, width: '100%' }}></div>
 }
 
 export default Demo
-
 ```

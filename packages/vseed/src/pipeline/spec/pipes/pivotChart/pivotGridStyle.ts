@@ -4,6 +4,8 @@ import type { SpecPipe } from 'src/types'
 export const pivotGridStyle: SpecPipe = (spec) => {
   const result = { ...spec } as PivotChartConstructorOptions
   const transparent = 'rgba(0,0,0,0)'
+
+  const hoverBackgroundColor = 'rgba(178,186,207, 0.2)'
   return {
     ...result,
     theme: {
@@ -13,6 +15,9 @@ export const pivotGridStyle: SpecPipe = (spec) => {
         borderLineWidth: [0, 0, 2, 0],
         bgColor: transparent,
         padding: [0, 0, 1, 0],
+        hover: {
+          cellBgColor: hoverBackgroundColor,
+        },
       },
       headerStyle: {
         borderColor: 'rgba(0,4,20,0.2)',
@@ -22,7 +27,7 @@ export const pivotGridStyle: SpecPipe = (spec) => {
         borderLineWidth: 0,
         bgColor: transparent,
         hover: {
-          cellBgColor: 'rgba(178,186,207, 0.2)',
+          cellBgColor: hoverBackgroundColor,
         },
       },
       rowHeaderStyle: {
@@ -32,7 +37,7 @@ export const pivotGridStyle: SpecPipe = (spec) => {
         borderLineWidth: 0,
         bgColor: transparent,
         hover: {
-          cellBgColor: 'rgba(178,186,207, 0.2)',
+          cellBgColor: hoverBackgroundColor,
         },
       },
       cornerHeaderStyle: {
@@ -44,7 +49,7 @@ export const pivotGridStyle: SpecPipe = (spec) => {
         borderLineWidth: [0, 0, 0, 0],
         bgColor: transparent,
         hover: {
-          cellBgColor: '',
+          cellBgColor: hoverBackgroundColor,
         },
       },
       cornerRightTopCellStyle: {
@@ -52,7 +57,7 @@ export const pivotGridStyle: SpecPipe = (spec) => {
         borderLineWidth: 0,
         bgColor: transparent,
         hover: {
-          cellBgColor: '',
+          cellBgColor: hoverBackgroundColor,
         },
       },
       cornerLeftBottomCellStyle: {
@@ -60,7 +65,7 @@ export const pivotGridStyle: SpecPipe = (spec) => {
         borderLineWidth: 0,
         bgColor: transparent,
         hover: {
-          cellBgColor: '',
+          cellBgColor: hoverBackgroundColor,
         },
       },
       cornerRightBottomCellStyle: {
@@ -68,7 +73,7 @@ export const pivotGridStyle: SpecPipe = (spec) => {
         borderLineWidth: 0,
         bgColor: transparent,
         hover: {
-          cellBgColor: '',
+          cellBgColor: hoverBackgroundColor,
         },
       },
       rightFrozenStyle: {
@@ -76,7 +81,7 @@ export const pivotGridStyle: SpecPipe = (spec) => {
         borderLineWidth: 0,
         bgColor: transparent,
         hover: {
-          cellBgColor: 'rgba(178,186,207, 0.2)',
+          cellBgColor: hoverBackgroundColor,
         },
       },
       bottomFrozenStyle: {
@@ -84,7 +89,7 @@ export const pivotGridStyle: SpecPipe = (spec) => {
         borderLineWidth: 0,
         bgColor: transparent,
         hover: {
-          cellBgColor: 'rgba(178,186,207, 0.2)',
+          cellBgColor: hoverBackgroundColor,
         },
       },
       selectionStyle: {

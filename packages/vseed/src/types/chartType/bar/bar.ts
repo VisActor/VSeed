@@ -12,6 +12,7 @@ import type {
   Label,
   Legend,
   Measures,
+  StackCornerRadius,
   Theme,
   Tooltip,
   XLinearAxis,
@@ -112,6 +113,13 @@ export interface Bar {
    * @description 水平提示框配置, 用于定义图表的水平提示框, 包括水平提示框的颜色、标签样式等.
    */
   crosshairRect?: CrosshairRect
+
+  /**
+   * 条形图 堆叠圆角
+   * @description 条形图 堆叠圆角
+   * @default 8
+   */
+  stackCornerRadius?: StackCornerRadius
 
   /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置

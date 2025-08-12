@@ -16,7 +16,7 @@ export const pivotGridStyle: SpecPipe = (spec) => {
         bgColor: transparent,
         padding: [0, 0, 1, 0],
         hover: {
-          cellBgColor: hoverBackgroundColor,
+          cellBgColor: 'transparent',
         },
       },
       headerStyle: {

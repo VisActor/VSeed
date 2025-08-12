@@ -2,6 +2,7 @@ import { z } from 'zod'
 import { zXBandAxis, zYBandAxis } from './bandAxis'
 import { zXLinearAxis, zYLinearAxis } from './linearAxis'
 import { zCrosshairLine, zCrosshairRect } from './crosshair'
+import { zStackCornerRadius } from './stackCornerRadius'
 
 export const zConfig = z.object({
   line: z
@@ -16,6 +17,7 @@ export const zConfig = z.object({
       xAxis: zXBandAxis.optional(),
       yAxis: zYLinearAxis.optional(),
       crosshairRect: zCrosshairRect.optional(),
+      stackCornerRadius: zStackCornerRadius.optional(),
     })
     .optional(),
   columnParallel: z
@@ -23,6 +25,7 @@ export const zConfig = z.object({
       xAxis: zXBandAxis.optional(),
       yAxis: zYLinearAxis.optional(),
       crosshairRect: zCrosshairRect.optional(),
+      stackCornerRadius: zStackCornerRadius.optional(),
     })
     .optional(),
   columnPercent: z
@@ -30,6 +33,7 @@ export const zConfig = z.object({
       xAxis: zXBandAxis.optional(),
       yAxis: zYLinearAxis.optional(),
       crosshairRect: zCrosshairRect.optional(),
+      stackCornerRadius: zStackCornerRadius.optional(),
     })
     .optional(),
   bar: z
@@ -37,6 +41,7 @@ export const zConfig = z.object({
       xAxis: zXLinearAxis.optional(),
       yAxis: zYBandAxis.optional(),
       crosshairRect: zCrosshairRect.optional(),
+      stackCornerRadius: zStackCornerRadius.optional(),
     })
     .optional(),
   barParallel: z
@@ -44,6 +49,7 @@ export const zConfig = z.object({
       xAxis: zXLinearAxis.optional(),
       yAxis: zYBandAxis.optional(),
       crosshairRect: zCrosshairRect.optional(),
+      stackCornerRadius: zStackCornerRadius.optional(),
     })
     .optional(),
   barPercent: z
@@ -51,6 +57,7 @@ export const zConfig = z.object({
       xAxis: zXLinearAxis.optional(),
       yAxis: zYBandAxis.optional(),
       crosshairRect: zCrosshairRect.optional(),
+      stackCornerRadius: zStackCornerRadius.optional(),
     })
     .optional(),
   area: z

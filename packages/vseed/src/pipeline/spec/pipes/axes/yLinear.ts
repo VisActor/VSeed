@@ -1,4 +1,5 @@
 import type { ISpec } from '@visactor/vchart'
+import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../constant'
 import type { SpecPipe, YLinearAxis } from 'src/types'
 
 export const yLinear: SpecPipe = (spec, context) => {
@@ -86,6 +87,9 @@ export const yLinear: SpecPipe = (spec, context) => {
         lineWidth: line?.lineWidth,
         stroke: line?.lineColor,
       },
+    },
+    innerOffset: {
+      top: LINEAR_AXIS_INNER_OFFSET_TOP,
     },
   }
 

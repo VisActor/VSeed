@@ -11,6 +11,7 @@ import {
   pivotAdapter,
   areaConfig,
   annotation,
+  markStyle,
 } from '../pipes'
 
 export const areaAdvancedPipeline: AdvancedPipeline = [
@@ -22,5 +23,6 @@ export const areaAdvancedPipeline: AdvancedPipeline = [
   areaConfig,
   vchartBaseConfig,
   vchartTheme,
+  markStyle,
   annotation
 ]

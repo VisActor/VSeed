@@ -2,9 +2,9 @@ import { VSeed } from '@visactor/vseed'
 import { VChartRender } from '../../render/Chart'
 import { memo } from 'react'
 
-export const SelectorBarValue = memo(() => {
+export const SelectorPointValue = memo(() => {
   const vseed: VSeed = {
-    chartType: 'column',
+    chartType: 'area',
     dataset: [
       { date: '2019', profit: 10, sales: 20, count: 50 },
       { date: '2020', profit: 30, sales: 60, count: 50 },
@@ -12,14 +12,42 @@ export const SelectorBarValue = memo(() => {
       { date: '2022', profit: 50, sales: 100, count: 50 },
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
-    barStyle: {
-      selector: ['2019', '2020'],
-      barColor: 'lightpink',
-      barColorOpacity: 0.8,
-      barBorderColor: 'lightpink',
-      barBorderWidth: 4,
-      barBorderStyle: 'dashed',
-      barRadius: [8, 8, 0, 0],
+    pointStyle: [
+      {
+        selector: '2019',
+        pointSize: 20,
+        pointBorderColor: '#000000',
+        pointBorderWidth: 2,
+      },
+    ],
+    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    measures: [
+      { id: 'profit', alias: '利润' },
+      { id: 'sales', alias: '销售额' },
+      { id: 'count', alias: '数量' },
+    ],
+  }
+  return <VChartRender vseed={vseed} />
+})
+
+export const SelectorPointPartialDatum = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'area',
+    dataset: [
+      { date: '2019', profit: 10, sales: 20, count: 50 },
+      { date: '2020', profit: 30, sales: 60, count: 50 },
+      { date: '2021', profit: 30, sales: 60, count: 50 },
+      { date: '2022', profit: 50, sales: 100, count: 50 },
+      { date: '2023', profit: 40, sales: 80, count: 50 },
+    ],
+    pointStyle: {
+      selector: [{ date: '2019' }, { sales: 60 }],
+      pointSize: 20,
+      pointColor: 'lightblue',
+      pointColorOpacity: 0.8,
+      pointBorderColor: 'blue',
+      pointBorderWidth: 1,
+      pointBorderStyle: 'dashed',
     },
     dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
     measures: [
@@ -31,9 +59,9 @@ export const SelectorBarValue = memo(() => {
   return <VChartRender vseed={vseed} />
 })
 
-export const SelectorBarPartialDatum = memo(() => {
+export const SelectorPointDimensionCondition = memo(() => {
   const vseed: VSeed = {
-    chartType: 'bar',
+    chartType: 'line',
     dataset: [
       { date: '2019', profit: 10, sales: 20, count: 50 },
       { date: '2020', profit: 30, sales: 60, count: 50 },
@@ -41,36 +69,7 @@ export const SelectorBarPartialDatum = memo(() => {
       { date: '2022', profit: 50, sales: 100, count: 50 },
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
-    barStyle: {
-      selector: [{ date: '2019' }, { profit: 40, sales: 80, count: 50 }, { sales: 60 }],
-      barColor: 'lightblue',
-      barColorOpacity: 0.8,
-      barBorderColor: 'lightblue',
-      barBorderWidth: 4,
-      barBorderStyle: 'dashed',
-      barRadius: [8, 8, 0, 0],
-    },
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
-    measures: [
-      { id: 'profit', alias: '利润' },
-      { id: 'sales', alias: '销售额' },
-      { id: 'count', alias: '数量' },
-    ],
-  }
-  return <VChartRender vseed={vseed} />
-})
-
-export const SelectorBarDimensionCondition = memo(() => {
-  const vseed: VSeed = {
-    chartType: 'columnParallel',
-    dataset: [
-      { date: '2019', profit: 10, sales: 20, count: 50 },
-      { date: '2020', profit: 30, sales: 60, count: 50 },
-      { date: '2021', profit: 30, sales: 60, count: 50 },
-      { date: '2022', profit: 50, sales: 100, count: 50 },
-      { date: '2023', profit: 40, sales: 80, count: 50 },
-    ],
-    barStyle: {
+    pointStyle: {
       selector: [
         {
           field: 'date',
@@ -78,12 +77,12 @@ export const SelectorBarDimensionCondition = memo(() => {
           value: ['2019', '2023'],
         },
       ],
-      barColor: 'gray',
-      barColorOpacity: 0.8,
-      barBorderColor: 'gray',
-      barBorderWidth: 4,
-      barBorderStyle: 'dashed',
-      barRadius: [8, 8, 0, 0],
+      pointSize: 20,
+      pointColor: 'gray',
+      pointColorOpacity: 0.8,
+      pointBorderColor: 'gray',
+      pointBorderWidth: 1,
+      pointBorderStyle: 'dashed',
     },
     dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
     measures: [
@@ -95,9 +94,9 @@ export const SelectorBarDimensionCondition = memo(() => {
   return <VChartRender vseed={vseed} />
 })
 
-export const SelectorBarMeasureCondition = memo(() => {
+export const SelectorPointMeasureCondition = memo(() => {
   const vseed: VSeed = {
-    chartType: 'barParallel',
+    chartType: 'areaPercent',
     dataset: [
       { date: '2019', profit: 10, sales: 20, count: 50 },
       { date: '2020', profit: 30, sales: 60, count: 50 },
@@ -105,19 +104,52 @@ export const SelectorBarMeasureCondition = memo(() => {
       { date: '2022', profit: 50, sales: 100, count: 50 },
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
-    barStyle: {
+    pointStyle: {
       selector: {
         field: 'profit',
         operator: 'between',
         value: [20, 40],
       },
-      barColor: 'lightgreen',
-      barColorOpacity: 0.8,
-      barBorderColor: 'lightgreen',
-      barBorderWidth: 4,
-      barBorderStyle: 'dashed',
-      barRadius: [8, 8, 0, 0],
+      pointSize: 20,
+      pointColor: 'lightgreen',
+      pointColorOpacity: 0.8,
+      pointBorderColor: '#000000',
+      pointBorderWidth: 1,
+      pointBorderStyle: 'dashed',
     },
+    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    measures: [
+      { id: 'profit', alias: '利润' },
+      { id: 'sales', alias: '销售额' },
+      { id: 'count', alias: '数量' },
+    ],
+  }
+  return <VChartRender vseed={vseed} />
+})
+
+export const MultiPointStyle = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'line',
+    dataset: [
+      { date: '2019', profit: 10, sales: 20, count: 50 },
+      { date: '2020', profit: 30, sales: 60, count: 50 },
+      { date: '2021', profit: 30, sales: 60, count: 50 },
+      { date: '2022', profit: 50, sales: 100, count: 50 },
+      { date: '2023', profit: 40, sales: 80, count: 50 },
+    ],
+    pointStyle: [
+      {
+        pointSize: 20,
+        pointColor: 'lightgreen',
+        pointColorOpacity: 0.8,
+      },
+      {
+        selector: [100, 80],
+        pointSize: 20,
+        pointColor: 'red',
+        pointColorOpacity: 0.8,
+      },
+    ],
     dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
     measures: [
       { id: 'profit', alias: '利润' },

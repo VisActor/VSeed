@@ -42,7 +42,7 @@ export const SelectorBarPartialDatum = memo(() => {
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
     barStyle: {
-      selector: [{ date: '2019' }, { profit: 40, sales: 80, count: 50 }, { sales: 60 }],
+      selector: [{ date: '2019' }, { sales: 60 }],
       barColor: 'lightblue',
       barColorOpacity: 0.8,
       barBorderColor: 'lightblue',
@@ -139,6 +139,10 @@ export const MultiBarStyle = memo(() => {
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
     barStyle: [
+      {
+        barColorOpacity: 0.8,
+        barRadius: 10,
+      },
       {
         selector: [100, 40],
         barColor: 'lightgreen',

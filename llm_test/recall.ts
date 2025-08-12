@@ -40,11 +40,15 @@ export async function callLLM(input: {
         { role: 'system', content: systemPrompt },
         { role: 'user', content: JSON.stringify(input) }
       ],
-      response_format: { type: 'json_object' }
-    });
+      response_format: { type: 'json_object' },
+      thinking: {
+        "type": "disabled"
+      }
+    } as any);
 
     // 解析JSON响应
     const answer = JSON.parse(response?.choices?.[0]?.message?.content || '{}');
+    console.log(answer)
     return answer;
   } catch (error) {
     console.error('调用OpenAI API失败:', error);

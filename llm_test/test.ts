@@ -1,4 +1,5 @@
 import { callLLM } from './recall';
+import { verify } from './verify';
 
 const config = {
   chartType: 'column',
@@ -21,6 +22,31 @@ const input = {
   chartType: config.chartType,
 }
 
-callLLM(input).then(res => {
-  console.log(JSON.stringify(res, null, 2))
+callLLM(input).then(async (res: {
+  answer: {
+    op: string
+    target: string
+    value: any
+  }[]
+}) => {
+  const spec = res.answer
+
+  const newConfig = JSON.parse(JSON.stringify(config))
+  spec.forEach(item => {
+    if (item.op === 'add' || item.op === 'update') {
+      const target = item.target.split('.')
+      let cur = newConfig
+      target.forEach((key, index) => {
+        if (index === target.length - 1) {
+          cur[key] = item.value
+        } else {
+          cur = cur[key]
+        }
+      })
+    }
+  })
+  
+  const verifyRes = await verify(question, config, newConfig)
+
+  console.log(verifyRes)
 })

@@ -7,12 +7,17 @@ import type {
   Selectors,
   ValueSelector,
 } from '../types/dataSelector'
+import { omit } from 'remeda'
 
-export const selector = (datum: Datum, selector: Selector | Selectors | undefined | null) => {
+export const selector = (vchartDatum: Datum, selector: Selector | Selectors | undefined | null) => {
   // 无有效选择器, 则认为全部匹配成功
   if (!selector) {
     return true
   }
+
+  // 过滤掉 vchart 相关字段
+  const vchartKeys = Object.keys(vchartDatum).filter((k) => k.toLocaleLowerCase().startsWith('__vchart'))
+  const datum = omit(vchartDatum, vchartKeys) as Datum
 
   // 统一处理选择器为数组
   const selectors = (Array.isArray(selector) ? selector : [selector]) as Selectors

@@ -25,6 +25,8 @@ import {
   annotationHorizontalLine,
   annotationArea,
   pointStyle,
+  lineStyle,
+  areaStyle,
 } from '../pipes'
 
 const area: SpecPipeline = [
@@ -39,6 +41,8 @@ const area: SpecPipeline = [
   tooltip,
   discreteLegend,
   pointStyle,
+  lineStyle,
+  areaStyle,
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
@@ -60,6 +64,9 @@ const pivotArea: SpecPipeline = [
     yLinear,
     label,
     tooltip,
+    pointStyle,
+    lineStyle,
+    areaStyle,
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,

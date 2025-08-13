@@ -1,6 +1,6 @@
 import type { Dataset, Datum, Dimension, Measure } from 'src/types'
 import type { UnfoldInfo } from 'src/types'
-import { UnfoldDimensionGroup, Separator } from './constant'
+import { UnfoldDimensionGroup, Separator, UnfoldDimensionGroupId, FoldMeasureId } from './constant'
 import { unique } from 'remeda'
 
 /**
@@ -13,7 +13,9 @@ export const unfoldDimensions = (
   dimensions: Dimension[],
   measures: Measure[],
   unfoldStartIndex: number = 0,
-  foldGroupName: string = UnfoldDimensionGroup,
+  unfoldGroupName: string = UnfoldDimensionGroup,
+  unfoldGroupId: string = UnfoldDimensionGroupId,
+  foldMeasureId: string = FoldMeasureId,
   dimensionsSeparator: string = Separator,
 ): {
   dataset: Dataset
@@ -25,8 +27,10 @@ export const unfoldDimensions = (
 
   const dimensionsToBeUnfolded = dimensions.slice(unfoldStartIndex)
   const unfoldInfo: UnfoldInfo = {
-    groupName: foldGroupName,
+    groupName: unfoldGroupName,
+    groupId: unfoldGroupId,
     colorItems: [],
+    colorIdMap: {},
   }
 
   // 指标为空或维度为空, 则不检测
@@ -34,21 +38,28 @@ export const unfoldDimensions = (
     return {
       dataset,
       unfoldInfo: {
-        groupName: foldGroupName,
+        groupName: unfoldGroupName,
+        groupId: unfoldGroupId,
         colorItems: [],
+        colorIdMap: {},
       },
     }
   }
 
   const colorItems = []
+  const colorMap: Record<string, string> = {}
   for (let i = 0; i < dataset.length; i++) {
     const datum = dataset[i]
-    const colorItem = generateDimGroupName(dimensionsToBeUnfolded, datum, dimensionsSeparator)
-    datum[foldGroupName] = colorItem
-    colorItems.push(colorItem)
+    const colorName = generateDimGroupName(dimensionsToBeUnfolded, datum, dimensionsSeparator)
+    const colorId = colorName + ((datum[foldMeasureId] as string) || '')
+    datum[unfoldGroupName] = colorName
+    datum[unfoldGroupId] = colorId
+    colorItems.push(colorId)
+    colorMap[colorId] = colorName
   }
 
   unfoldInfo.colorItems = unique(colorItems)
+  unfoldInfo.colorIdMap = colorMap
   return {
     dataset,
     unfoldInfo,

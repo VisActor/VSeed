@@ -1,3 +1,4 @@
+import type { StringOrNumber } from '@visactor/vchart'
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
 import type { IDiscreteTableLegendOption } from '@visactor/vtable/es/ts-types/component/legend'
 import { unique } from 'remeda'
@@ -13,6 +14,10 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
 
   const { datasetReshapeInfo } = advancedVSeed
   const colorItems = unique(datasetReshapeInfo.flatMap((d) => d.unfoldInfo.colorItems))
+
+  const colorIdMap = datasetReshapeInfo.reduce<Record<string, string>>((prev, cur) => {
+    return { ...prev, ...cur.unfoldInfo.colorIdMap }
+  }, {})
 
   const { legend, color } = baseConfig
   const { colorScheme } = color as Color
@@ -78,6 +83,9 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
         },
       },
       label: {
+        formatMethod: (value: StringOrNumber) => {
+          return colorIdMap[String(value)] ?? value
+        },
         style: {
           fontSize: labelFontSize,
           fill: labelFontColor,

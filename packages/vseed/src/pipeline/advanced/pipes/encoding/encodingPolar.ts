@@ -12,9 +12,9 @@ export const encodingPolar: AdvancedPipe = (advancedVSeed) => {
     const { foldInfo, unfoldInfo } = cur
 
     const radius = [foldInfo.measureValue]
-    const angle = [unfoldInfo.groupName]
-    const group = [unfoldInfo.groupName]
-    const color = [unfoldInfo.groupName]
+    const angle = [unfoldInfo.groupId]
+    const group = [unfoldInfo.groupId]
+    const color = [unfoldInfo.groupId]
 
     return [
       ...prev,

@@ -1,40 +1,40 @@
-`BarStyle` 对象用于定义条形图的样式。
+`PointStyle` 对象用于定义折线图上的点的样式。
 
 ```typescript
-export type BarStyle = {
+export type PointStyle = {
   /**
    * 数据选择器
    * @description 若配置, 则样式仅对匹配的数据生效; 否则全局生效。
    */
   selector?: Selector | Selectors;
   /**
-   * 条形图颜色
+   * 点大小
+   * @default 10
    */
-  barColor?: string;
+  pointSize?: number;
   /**
-   * 条形图颜色透明度
+   * 点颜色
+   */
+  pointColor?: string;
+  /**
+   * 点颜色透明度
    * @default 1
    */
-  barColorOpacity?: number;
+  pointColorOpacity?: number;
   /**
-   * 条形图边框颜色
+   * 点边框颜色
    */
-  barBorderColor?: string;
+  pointBorderColor?: string;
   /**
-   * 条形图边框宽度
+   * 点边框宽度
    * @default 0
    */
-  barBorderWidth?: number;
+  pointBorderWidth?: number;
   /**
-   * 条形图边框样式
+   * 点边框样式
    * @default 'solid'
    */
-  barBorderStyle?: 'solid' | 'dashed' | 'dotted';
-  /**
-   * 条形图圆角
-   * @default 0
-   */
-  barRadius?: number | number[];
+  pointBorderStyle?: 'solid' | 'dashed' | 'dotted';
 };
 ```
 

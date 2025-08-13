@@ -1,87 +1,87 @@
 [
   {
+    "componentName": "Column",
+    "name": "column",
+    "description": "固定为 'column'"
+  },
+  {
+    "componentName": "Dataset",
     "name": "dataset",
-    "description": "`Dataset` 是一个对象数组，其中每个对象代表一个数据点。",
-    "componentName": "Dataset"
+    "description": "定义图表的数据来源和结构。"
   },
   {
+    "componentName": "Dimensions",
     "name": "dimensions",
-    "description": "`Dimensions` 是一个 `Dimension` 对象数组，用于定义图表的维度。",
-    "componentName": "Dimensions"
+    "description": "折线图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示。"
   },
   {
+    "componentName": "Measures",
     "name": "measures",
-    "description": "`Measures` 是 `Measure` 或 `MeasureGroup` 对象的数组，用于定义图表的度量。",
-    "componentName": "Measures"
+    "description": "折线图的所有指标会自动合并为一个指标, 映射到Y轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示."
   },
   {
+    "componentName": "BackgroundColor",
     "name": "backgroundColor",
-    "description": "`BackgroundColor` 是一个字符串，用于定义图表的背景颜色。",
-    "componentName": "BackgroundColor"
+    "description": "支持颜色字符串、hex、rgb或rgba值。"
   },
   {
+    "componentName": "Color",
     "name": "color",
-    "description": "`Color` 对象用于定义图表的颜色方案。",
-    "componentName": "Color"
+    "description": "定义图表的颜色方案, 包括颜色列表, 颜色映射等。"
   },
   {
+    "componentName": "Label",
     "name": "label",
-    "description": "`Label` 对象用于配置数据标签。",
-    "componentName": "Label"
+    "description": "数据标签配置"
   },
   {
+    "componentName": "Legend",
     "name": "legend",
-    "description": "`Legend` 对象用于配置图例。",
-    "componentName": "Legend"
+    "description": "图例配置"
   },
   {
+    "componentName": "Tooltip",
     "name": "tooltip",
-    "description": "`Tooltip` 对象用于配置提示信息。",
-    "componentName": "Tooltip"
+    "description": "提示信息配置"
   },
   {
+    "componentName": "Axis",
     "name": "xAxis",
-    "description": "`XBandAxis` 用于配置X轴（类目轴）。",
-    "componentName": "XBandAxis"
+    "description": "`x轴配置 (类目轴)`"
   },
   {
+    "componentName": "Axis",
     "name": "yAxis",
-    "description": "`YLinearAxis` 用于配置Y轴（数值轴）。",
-    "componentName": "YLinearAxis"
+    "description": "`y轴配置 (数值轴)`"
   },
   {
+    "componentName": "Theme",
     "name": "theme",
-    "description": "`Theme` 是一个字符串，用于定义图表的主题。",
-    "componentName": "Theme"
+    "description": "内置 'light' 与 'dark' 两种主题。"
   },
   {
+    "componentName": "BarStyle",
     "name": "barStyle",
-    "description": "`BarStyle` 对象用于定义柱状图的样式。",
-    "componentName": "BarStyle"
+    "description": "条形图样式配置, 用于定义图表的条形图样式, 包括条形图的颜色, 边框, 圆角等."
   },
   {
+    "componentName": "AnnotationPoint",
     "name": "annotationPoint",
-    "description": "`AnnotationPoint` 对象用于定义标注点。",
-    "componentName": "AnnotationPoint"
+    "description": "根据所选数据定义图表的标注点。"
   },
   {
+    "componentName": "AnnotationVerticalLine",
     "name": "annotationVerticalLine",
-    "description": "`AnnotationVerticalLine` 对象用于定义垂直标注线。",
-    "componentName": "AnnotationVerticalLine"
+    "description": "标注垂直线配置, 根据选择的数据, 定义图表的标注垂直线, 包括标注垂直线的位置, 样式等."
   },
   {
+    "componentName": "AnnotationHorizontalLine",
     "name": "annotationHorizontalLine",
-    "description": "`AnnotationHorizontalLine` 对象用于定义水平标注线。",
-    "componentName": "AnnotationHorizontalLine"
+    "description": "标注水平线配置, 根据选择的数据, 定义图表的标注水平线, 包括标注水平线的位置, 样式等."
   },
   {
+    "componentName": "AnnotationArea",
     "name": "annotationArea",
-    "description": "`AnnotationArea` 对象用于定义标注区域。",
-    "componentName": "AnnotationArea"
-  },
-  {
-    "name": "selector",
-    "description": "`Selector` 用于从数据集中选择数据。",
-    "componentName": "Selector"
+    "description": "标注区域配置, 根据选择的数据, 定义图表的标注区域, 包括标注区域的位置, 样式等."
   }
 ]

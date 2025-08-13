@@ -67,7 +67,7 @@ export interface Column {
    * 矩形图元样式
    * @description 定义柱状图的样式，支持全局或按条件配置。
    */
-  barStyle?: BarStyle
+  barStyle?: BarStyle | BarStyle[]
   /**
    * 标注点配置
    * @description 根据所选数据定义图表的标注点。
@@ -78,18 +78,33 @@ export interface Column {
    * @description 标注垂直线配置, 根据选择的数据, 定义图表的标注垂直线, 包括标注垂直线的位置, 样式等.
    */
   annotationVerticalLine?: AnnotationVerticalLine | AnnotationVerticalLine[]
-
   /**
    * 标注水平线
    * @description 标注水平线配置, 根据选择的数据, 定义图表的标注水平线, 包括标注水平线的位置, 样式等.
    */
   annotationHorizontalLine?: AnnotationHorizontalLine | AnnotationHorizontalLine[]
-
   /**
    * 标注区域
    * @description 标注区域配置, 根据选择的数据, 定义图表的标注区域, 包括标注区域的位置, 样式等.
    */
   annotationArea?: AnnotationArea | AnnotationArea[]
+  /**
+   * 垂直提示框
+   * @description 垂直提示框配置, 用于定义图表的垂直提示框, 包括垂直提示框的颜色、标签样式等.
+   */
+  crosshairRect?: CrosshairRect
+  /**
+   * 柱状图 堆叠圆角
+   * @description 条形图 堆叠圆角
+   * @default 8
+   */
+  stackCornerRadius?: StackCornerRadius
+  /**
+   * 语言
+   * @description 图表语言配置, 支持'zh-CN'与'en-US'两种语言
+   * @default 'zh-CN'
+   */
+  locale?: 'zh-CN' | 'en-US'
 }
 ```
 

@@ -81,6 +81,19 @@ export interface BarParallel {
   yAxis?: YBandAxis
 
   /**
+   * 水平提示框
+   * @description 水平提示框配置, 用于定义图表的水平提示框, 包括水平提示框的颜色、标签样式等.
+   */
+  crosshairRect?: CrosshairRect
+
+  /**
+   * 条形图 堆叠圆角
+   * @description 条形图 堆叠圆角
+   * @default 8
+   */
+  stackCornerRadius?: StackCornerRadius
+
+  /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置
    * @default light 默认为亮色主题
    * @description 内置light与dark两种主题, 用户可以通过Builder自定义主题
@@ -98,7 +111,7 @@ export interface BarParallel {
    * 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
    * 若未配置selector, 则样式全局生效.
    */
-  barStyle?: BarStyle
+  barStyle?: BarStyle | BarStyle[]
 
   /**
    * 标注点
@@ -123,6 +136,13 @@ export interface BarParallel {
    * @description 标注区域配置, 根据选择的数据, 定义图表的标注区域, 包括标注区域的位置, 样式等.
    */
   annotationArea?: AnnotationArea | AnnotationArea[]
+
+  /**
+   * 语言
+   * @description 图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言
+   * @default 'zh-CN'
+   */
+  locale?: Locale
 }
 ```
 
@@ -339,18 +359,73 @@ export type Tooltip = {
 
 ---
 
-### XLinearAxis
+### Axis
 
-`XLinearAxis` 用于配置X轴（数值轴）。
+`Axis` 是坐标轴的通用配置。
 
 ```typescript
-export type XLinearAxis = {
+export type Axis = {
+  /**
+   * 轴是否可见
+   * @default true
+   */
   visible?: boolean;
+  /**
+   * 轴的最小值
+   */
   min?: number;
+  /**
+   * 轴的最大值
+   */
   max?: number;
+  /**
+   * 是否自动调整轴的刻度间隔
+   * @default true
+   */
   nice?: boolean;
-  zero?: boolean;
+  /**
+   * 轴是否反向展示
+   * @default false
+   */
   inverse?: boolean;
+  /**
+   * 是否在坐标轴上显示 0 值
+   * @default true
+   */
+  zero?: boolean;
+  /**
+   * 轴标签是否自动隐藏
+   * @default true
+   */
+  labelAutoHide?: boolean;
+  /**
+   * 轴标签自动隐藏的间隔
+   * @default 4
+   */
+  labelAutoHideGap?: number;
+  /**
+   * 轴标签是否自动旋转
+   * @default true
+   */
+  labelAutoRotate?: boolean;
+  /**
+   * 轴标签自动旋转的角度范围
+   * @default [0, -45, -90]
+   */
+  labelAutoRotateAngleRange?: number[];
+  /**
+   * 轴标签是否自动限制长度
+   * @default true
+   */
+  labelAutoLimit?: boolean;
+  /**
+   * 轴标签自动限制的最大长度
+   * @default 100
+   */
+  labelAutoLimitLength?: number;
+  /**
+   * 轴刻度标签
+   */
   label?: {
     visible?: boolean;
     labelColor?: string;
@@ -358,78 +433,89 @@ export type XLinearAxis = {
     labelFontWeight?: number;
     labelAngle?: number;
   };
+  /**
+   * 轴线
+   */
   line?: {
     visible?: boolean;
     lineColor?: string;
     lineWidth?: number;
   };
+  /**
+   * 轴刻度
+   */
   tick?: {
     visible?: boolean;
     tickInside?: boolean;
     tickColor?: string;
     tickSize?: number;
   };
+  /**
+   * 轴标题
+   */
   title?: {
     visible?: boolean;
     titleText?: string;
     titleColor?: string;
     titleFontSize?: number;
-    titleFontWeight?: number;
-  };
-  grid?: {
-    visible?: boolean;
-    gridColor?: string;
-    gridWidth?: number;
   };
 };
 ```
 
 ---
 
-### YBandAxis
+### XLinearAxis & YBandAxis
 
-`YBandAxis` 用于配置Y轴（类目轴）。
+`XLinearAxis` (数值轴) 和 `YBandAxis` (类目轴) 继承自 `Axis`。
 
 ```typescript
-export type YBandAxis = {
-  visible?: boolean;
-  labelAutoHide?: boolean;
-  labelAutoHideGap?: number;
-  labelAutoRotate?: boolean;
-  labelAutoRotateAngleRange?: number[];
-  labelAutoLimit?: boolean;
-  labelAutoLimitLength?: number;
-  label?: {
-    visible?: boolean;
-    labelColor?: string;
-    labelFontSize?: number;
-    labelFontWeight?: number;
-    labelAngle?: number;
-  };
-  line?: {
-    visible?: boolean;
-    lineColor?: string;
-    lineWidth?: number;
-  };
-  tick?: {
-    visible?: boolean;
-    tickInside?: boolean;
-    tickColor?: string;
-    tickSize?: number;
-  };
-  title?: {
-    visible?: boolean;
-    titleText?: string;
-    titleColor?: string;
-    titleFontSize?: number;
-    titleFontWeight?: number;
-  };
-  grid?: {
-    visible?: boolean;
-    gridColor?: string;
-    gridWidth?: number;
-  };
+export type XLinearAxis = Axis;
+export type YBandAxis = Axis;
+```
+
+---
+
+### CrosshairRect
+
+`CrosshairRect` 用于配置水平提示框。
+
+```typescript
+export type CrosshairRect = {
+  /**
+   * 提示框背景色
+   */
+  crosshairRectFill?: string;
+  /**
+   * 提示框背景透明度
+   */
+  crosshairRectFillOpacity?: number;
+  /**
+   * 提示框边框色
+   */
+  crosshairRectStroke?: string;
+  /**
+   * 提示框边框透明度
+   */
+  crosshairRectStrokeOpacity?: number;
+  /**
+   * 提示框边框线宽
+   */
+  crosshairRectLineWidth?: number;
+  /**
+   * 提示框边框虚线
+   */
+  crosshairRectLineDash?: number[];
 };
+```
+
+---
+
+### StackCornerRadius
+
+`StackCornerRadius` 用于配置堆叠圆角。
+
+```typescript
+export type StackCornerRadius = number;
 ```
 
 ---
@@ -578,30 +664,109 @@ export type AnnotationPoint = {
 
 ### AnnotationVerticalLine
 
-`AnnotationVerticalLine` 对象用于定义标注垂直线。
+`AnnotationVerticalLine` 对象用于定义垂直标注线。
 
 ```typescript
 export type AnnotationVerticalLine = {
+  /**
+   * 依赖选择的数据, 进行数据标记.
+   */
   selector?: Selector | Selectors;
+  /**
+   * 固定的x值, 用于标注垂直线
+   */
   xValue?: (number | string) | (number | string)[];
+  /**
+   * 标注的文本
+   */
   text?: string | string[];
+  /**
+   * 文本位置
+   * @default 'insideEnd'
+   */
   textPosition?: 'outsideStart' | 'outsideEnd' | 'outsideMiddle' | 'insideStart' | 'insideMiddle' | 'insideEnd';
+  /**
+   * 文本颜色
+   * @default '#ffffff'
+   */
   textColor?: string;
+  /**
+   * 文本字体大小
+   * @default 12
+   */
   textFontSize?: number;
+  /**
+   * 文本字体重量
+   * @default 400
+   */
   textFontWeight?: number;
+  /**
+   * 文本对齐方式
+   * @default 'right'
+   */
   textAlign?: 'left' | 'right' | 'center';
+  /**
+   * 文本垂直对齐方式
+   * @default 'top'
+   */
   textBaseline?: 'top' | 'middle' | 'bottom';
+  /**
+   * 文本Y方向的偏移量
+   * @default 0
+   */
   offsetY?: number;
+  /**
+   * 文本X方向的偏移量
+   * @default 0
+   */
   offsetX?: number;
+  /**
+   * 线是否可见
+   * @default true
+   */
   lineVisible?: boolean;
+  /**
+   * 线颜色
+   */
   lineColor?: string;
+  /**
+   * 线宽度
+   * @default 2
+   */
   lineWidth?: number;
+  /**
+   * 线样式
+   * @default 'solid'
+   */
   lineStyle?: 'solid' | 'dashed' | 'dotted';
+  /**
+   * 背景是否可见
+   * @default true
+   */
   backgroundVisible?: boolean;
+  /**
+   * 背景颜色
+   * @default '#212121'
+   */
   backgroundColor?: string;
+  /**
+   * 背景边框颜色
+   */
   backgroundBorderColor?: string;
+  /**
+   * 背景边框宽度
+   * @default 1
+   */
   backgroundBorderWidth?: number;
+  /**
+   * 背景边框圆角
+   * @default 4
+   */
   backgroundBorderRadius?: number;
+  /**
+   * 背景内边距
+   * @default 4
+   */
   backgroundPadding?: number;
 };
 ```
@@ -610,30 +775,109 @@ export type AnnotationVerticalLine = {
 
 ### AnnotationHorizontalLine
 
-`AnnotationHorizontalLine` 对象用于定义标注水平线。
+`AnnotationHorizontalLine` 对象用于定义水平标注线。
 
 ```typescript
 export type AnnotationHorizontalLine = {
+  /**
+   * 依赖选择的数据, 进行数据标记.
+   */
   selector?: Selector | Selectors;
+  /**
+   * 固定的y值, 用于标注水平线
+   */
   yValue?: (number | string) | (number | string)[];
+  /**
+   * 标注的文本
+   */
   text?: string | string[];
+  /**
+   * 文本位置
+   * @default 'insideEnd'
+   */
   textPosition?: 'outsideStart' | 'outsideEnd' | 'outsideMiddle' | 'insideStart' | 'insideMiddle' | 'insideEnd';
+  /**
+   * 文本颜色
+   * @default '#ffffff'
+   */
   textColor?: string;
+  /**
+   * 文本字体大小
+   * @default 12
+   */
   textFontSize?: number;
+  /**
+   * 文本字体重量
+   * @default 400
+   */
   textFontWeight?: number;
+  /**
+   * 文本对齐方式
+   * @default 'left'
+   */
   textAlign?: 'left' | 'right' | 'center';
+  /**
+   * 文本垂直对齐方式
+   * @default 'bottom'
+   */
   textBaseline?: 'top' | 'middle' | 'bottom';
+  /**
+   * 文本Y方向的偏移量
+   * @default 0
+   */
   offsetY?: number;
+  /**
+   * 文本X方向的偏移量
+   * @default 0
+   */
   offsetX?: number;
+  /**
+   * 线是否可见
+   * @default true
+   */
   lineVisible?: boolean;
+  /**
+   * 线颜色
+   */
   lineColor?: string;
+  /**
+   * 线宽度
+   * @default 2
+   */
   lineWidth?: number;
+  /**
+   * 线样式
+   * @default 'solid'
+   */
   lineStyle?: 'solid' | 'dashed' | 'dotted';
+  /**
+   * 背景是否可见
+   * @default true
+   */
   backgroundVisible?: boolean;
+  /**
+   * 背景颜色
+   * @default '#212121'
+   */
   backgroundColor?: string;
+  /**
+   * 背景边框颜色
+   */
   backgroundBorderColor?: string;
+  /**
+   * 背景边框宽度
+   * @default 1
+   */
   backgroundBorderWidth?: number;
+  /**
+   * 背景边框圆角
+   * @default 4
+   */
   backgroundBorderRadius?: number;
+  /**
+   * 背景内边距
+   * @default 4
+   */
   backgroundPadding?: number;
 };
 ```
@@ -646,25 +890,100 @@ export type AnnotationHorizontalLine = {
 
 ```typescript
 export type AnnotationArea = {
+  /**
+   * 依赖选择的数据, 进行数据标记.
+   */
   selector: Selector | Selectors;
+  /**
+   * 标注的文本
+   */
   text?: string | string[];
+  /**
+   * 文本位置
+   * @default 'top'
+   */
   textPosition?: 'top' | 'topRight' | 'topLeft' | 'bottom' | 'bottomLeft' | 'bottomRight' | 'left' | 'right';
+  /**
+   * 文本颜色
+   * @default '#ffffff'
+   */
   textColor?: string;
+  /**
+   * 文本字体大小
+   * @default 12
+   */
   textFontSize?: number;
+  /**
+   * 文本字体重量
+   * @default 400
+   */
   textFontWeight?: number;
+  /**
+   * 文本对齐方式
+   * @default 'left'
+   */
   textAlign?: 'left' | 'right' | 'center';
+  /**
+   * 文本垂直对齐方式
+   * @default 'middle'
+   */
   textBaseline?: 'top' | 'middle' | 'bottom';
+  /**
+   * 背景是否可见
+   * @default true
+   */
   backgroundVisible?: boolean;
+  /**
+   * 背景颜色
+   * @default '#212121'
+   */
   backgroundColor?: string;
+  /**
+   * 背景边框颜色
+   */
   backgroundBorderColor?: string;
+  /**
+   * 背景边框宽度
+   * @default 1
+   */
   backgroundBorderWidth?: number;
+  /**
+   * 背景边框圆角
+   * @default 4
+   */
   backgroundBorderRadius?: number;
+  /**
+   * 背景内边距
+   * @default 4
+   */
   backgroundPadding?: number;
+  /**
+   * 面积区域颜色
+   */
   areaColor?: string;
+  /**
+   * 面积区域颜色透明度
+   * @default 0.5
+   */
   areaColorOpacity?: number;
+  /**
+   * 面积区域边框颜色
+   */
   areaBorderColor?: number;
+  /**
+   * 面积区域边框宽度
+   * @default 2
+   */
   areaBorderWidth?: number;
+  /**
+   * 面积区域边框圆角
+   * @default 4
+   */
   areaBorderRadius?: number;
+  /**
+   * 面积区域的边距
+   * @default 8
+   */
   outerPadding?: number;
 };
 ```

@@ -1,8 +1,9 @@
 ```typescript
 export interface AreaPercent {
   /**
-   * 图表类型
-   * @description 固定为 'areaPercent'
+   * 百分比面积图
+   * @description 百分比面积图，以百分比形式展示多类别占比随某个维度的变化
+   * @type {'areaPercent'}
    */
   chartType: 'areaPercent'
   /**
@@ -52,11 +53,31 @@ export interface AreaPercent {
    */
   yAxis?: YLinearAxis
   /**
+   * 垂直提示线
+   * @description  鼠标移动到图表上时, 显示的垂直提示线
+   */
+  crosshairLine?: CrosshairLine
+  /**
    * 图表主题
    * @description 内置 'light' 与 'dark' 两种主题。
    * @default 'light'
    */
   theme?: Theme
+  /**
+   * 点图元样式
+   * @description 定义图表的点图元样式，支持全局或按条件配置。
+   */
+  pointStyle?: PointStyle | PointStyle[]
+  /**
+   * 线图元样式
+   * @description 定义图表的线图元样式，支持全局或按条件配置。
+   */
+  lineStyle?: LineStyle | LineStyle[]
+  /**
+   * 面积图元样式
+   * @description 定义图表的面积图元样式，支持全局或按条件配置。
+   */
+  areaStyle?: AreaStyle | AreaStyle[]
   /**
    * 标注点配置
    * @description 根据所选数据定义图表的标注点。
@@ -77,5 +98,11 @@ export interface AreaPercent {
    * @description 标注区域配置, 根据选择的数据, 定义图表的标注区域, 包括标注区域的位置, 样式等.
    */
   annotationArea?: AnnotationArea | AnnotationArea[]
+  /**
+   * 语言
+   * @description 图表语言配置, 支持'zh-CN'与'en-US'两种语言
+   * @default 'zh-CN'
+   */
+  locale?: Locale
 }
 ```

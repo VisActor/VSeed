@@ -1,0 +1,10 @@
+[
+  "dark",
+  "light",
+  {
+    "type": "file",
+    "name": "registerTheme",
+    "label": "注册主题",
+    "collapsed": true
+  }
+]

@@ -42,7 +42,7 @@ export const SelectorBarPartialDatum = memo(() => {
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
     barStyle: {
-      selector: [{ date: '2019' }, { profit: 40, sales: 80, count: 50 }, { sales: 60 }],
+      selector: [{ date: '2019' }, { sales: 60 }],
       barColor: 'lightblue',
       barColorOpacity: 0.8,
       barBorderColor: 'lightblue',
@@ -118,6 +118,42 @@ export const SelectorBarMeasureCondition = memo(() => {
       barBorderStyle: 'dashed',
       barRadius: [8, 8, 0, 0],
     },
+    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    measures: [
+      { id: 'profit', alias: '利润' },
+      { id: 'sales', alias: '销售额' },
+      { id: 'count', alias: '数量' },
+    ],
+  }
+  return <VChartRender vseed={vseed} />
+})
+
+export const MultiBarStyle = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'barParallel',
+    dataset: [
+      { date: '2019', profit: 10, sales: 20, count: 50 },
+      { date: '2020', profit: 30, sales: 60, count: 50 },
+      { date: '2021', profit: 30, sales: 60, count: 50 },
+      { date: '2022', profit: 50, sales: 100, count: 50 },
+      { date: '2023', profit: 40, sales: 80, count: 50 },
+    ],
+    barStyle: [
+      {
+        barColorOpacity: 0.8,
+        barRadius: 10,
+      },
+      {
+        selector: [100, 40],
+        barColor: 'lightgreen',
+        barColorOpacity: 0.8,
+      },
+      {
+        selector: [100, 80],
+        barColor: 'red',
+        barColorOpacity: 0.8,
+      },
+    ],
     dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
     measures: [
       { id: 'profit', alias: '利润' },

@@ -11,10 +11,13 @@ import {
   pivotAdapter,
   areaConfig,
   annotation,
+  markStyle,
+  locale,
 } from '../pipes'
 
 export const areaAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  locale,
   autoMeasures,
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
@@ -22,5 +25,6 @@ export const areaAdvancedPipeline: AdvancedPipeline = [
   areaConfig,
   vchartBaseConfig,
   vchartTheme,
-  annotation
+  markStyle,
+  annotation,
 ]

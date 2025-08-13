@@ -41,7 +41,7 @@ export const lightTheme = (): CustomThemeConfig => {
     labelAutoHideGap: 4,
     labelAutoLimit: true,
     labelAutoLimitLength: 100,
-    labelAutoRotate: true,
+    labelAutoRotate: false,
     labelAutoRotateAngleRange: [0, -45, -90],
     label: {
       visible: true,
@@ -74,7 +74,6 @@ export const lightTheme = (): CustomThemeConfig => {
       lineWidth: 1,
     },
   }
-
   const barBandAxis: YBandAxis = {
     ...bandAxis,
     labelAutoHide: false,
@@ -83,6 +82,21 @@ export const lightTheme = (): CustomThemeConfig => {
     labelAutoLimitLength: undefined,
     labelAutoRotate: false,
     labelAutoRotateAngleRange: [0, -45, -90],
+  }
+
+  const crosshairLine = {
+    visible: true,
+    labelVisible: true,
+    lineColor: '#3641594d',
+    labelColor: '#ffffff',
+    labelBackgroundColor: '#364159',
+  }
+  const crosshairRect = {
+    visible: true,
+    labelVisible: true,
+    rectColor: '#3641594d',
+    labelColor: '#ffffff',
+    labelBackgroundColor: '#364159',
   }
 
   return {
@@ -128,38 +142,53 @@ export const lightTheme = (): CustomThemeConfig => {
       line: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairLine,
       },
       column: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairRect,
+        stackCornerRadius: [4, 4, 0, 0],
       },
       columnParallel: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairRect,
+        stackCornerRadius: [4, 4, 0, 0],
       },
       columnPercent: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairRect,
+        stackCornerRadius: [4, 4, 0, 0],
       },
       bar: {
         xAxis: linearAxis,
         yAxis: barBandAxis,
+        crosshairRect,
+        stackCornerRadius: [0, 4, 4, 0],
       },
       barParallel: {
         xAxis: linearAxis,
         yAxis: barBandAxis,
+        crosshairRect,
+        stackCornerRadius: [0, 4, 4, 0],
       },
       barPercent: {
         xAxis: linearAxis,
         yAxis: barBandAxis,
+        crosshairRect,
+        stackCornerRadius: [0, 4, 4, 0],
       },
       area: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairLine,
       },
       areaPercent: {
         xAxis: bandAxis,
         yAxis: linearAxis,
+        crosshairLine,
       },
     },
   }

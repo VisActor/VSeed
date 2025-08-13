@@ -1,3 +1,4 @@
+import type { Locale } from 'src/types/i18n'
 import type {
   AnnotationArea,
   AnnotationHorizontalLine,
@@ -6,11 +7,13 @@ import type {
   BackgroundColor,
   BarStyle,
   Color,
+  CrosshairRect,
   Dataset,
   Dimensions,
   Label,
   Legend,
   Measures,
+  StackCornerRadius,
   Theme,
   Tooltip,
   XLinearAxis,
@@ -107,6 +110,19 @@ export interface Bar {
   yAxis?: YBandAxis
 
   /**
+   * 水平提示框
+   * @description 水平提示框配置, 用于定义图表的水平提示框, 包括水平提示框的颜色、标签样式等.
+   */
+  crosshairRect?: CrosshairRect
+
+  /**
+   * 条形图 堆叠圆角
+   * @description 条形图 堆叠圆角
+   * @default 8
+   */
+  stackCornerRadius?: StackCornerRadius
+
+  /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置
    * @default light 默认为亮色主题
    * @description 内置light与dark两种主题, 用户可以通过Builder自定义主题
@@ -124,7 +140,7 @@ export interface Bar {
    * 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
    * 若未配置selector, 则样式全局生效.
    */
-  barStyle?: BarStyle
+  barStyle?: BarStyle | BarStyle[]
 
   /**
    * 标注点
@@ -149,4 +165,11 @@ export interface Bar {
    * @description 标注区域配置, 根据选择的数据, 定义图表的标注区域, 包括标注区域的位置, 样式等.
    */
   annotationArea?: AnnotationArea | AnnotationArea[]
+
+  /**
+   * 语言
+   * @description 图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言
+   * @default 'zh-CN'
+   */
+  locale?: Locale
 }

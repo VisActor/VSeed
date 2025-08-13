@@ -100,6 +100,8 @@ export const yBand: SpecPipe = (spec, context) => {
         stroke: line?.lineColor,
       },
     },
+    paddingInner: [0.15, 0.1],
+    paddingOuter: [0.075, 0.1],
   } as ICartesianBandAxisSpec
 
   result.axes = [...result.axes, bandAxis] as ISpec['axes']

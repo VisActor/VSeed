@@ -1,25 +1,12 @@
 import { z } from 'zod'
+import { zNumFormat } from './format/numFormat'
 
 export const zMeasure = z.object({
   id: z.string(),
   alias: z.string().optional(),
   visible: z.boolean().default(true).optional(),
   autoFormat: z.boolean().default(true).optional(),
-  format: z
-    .object({
-      type: z
-        .enum(['number', 'percent', 'permille'])
-        .optional()
-        .default('number'),
-      ratio: z.number().optional().default(1),
-      symbol: z.string().optional().default(''),
-      thousandSeparator: z.boolean().optional().default(false),
-      decimalPlaces: z.number().optional().default(2),
-      round: z.enum(['round', 'floor', 'ceil']).optional().default('round'),
-      prefix: z.string().optional().default(''),
-      suffix: z.string().optional().default(''),
-    })
-    .optional(),
+  format: zNumFormat.default({}).optional(),
 })
 
 export const zMeasureGroup = z.object({

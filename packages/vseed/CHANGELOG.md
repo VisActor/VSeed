@@ -1,12 +1,31 @@
 # @visactor/vseed
 
+## 0.0.13
+
+### Patch Changes
+
+- feat: auto format
+- feat: i18n and locale in vseed
+
+## 0.0.12
+
+### Patch Changes
+
+- feat: add measure format
+- feat: optimize light and dark theme
+- feat: add line style
+- feat: add area style
+- feat: add point style
+- feat: optimize line and bar hover style
+- docs: demos for new features
+
 ## 0.0.11
 
 ### Patch Changes
 
-- 1. feat: add annotation line
-  2. feat: add annotation area
-  3. docs: optimize the guide and demos
+- feat: add annotation line
+- feat: add annotation area
+- docs: optimize the guide and demos
 
 ## 0.0.10
 
@@ -18,9 +37,9 @@
 
 ### Patch Changes
 
-- 1. feat: add bar style
-  2. feat: optimize legend
-  3. feat: optimize theme
+- feat: add bar style
+- feat: optimize legend
+- feat: optimize theme
 
 ## 0.0.8
 

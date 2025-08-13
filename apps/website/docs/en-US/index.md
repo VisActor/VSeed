@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /guide/
+      link: /guide/quickStart
     - theme: alt
       text: Github
       link: https://github.com/visactor/vseed

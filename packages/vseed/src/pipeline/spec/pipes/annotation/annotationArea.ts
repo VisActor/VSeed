@@ -2,7 +2,7 @@ import type { ICartesianSeries, ILineChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../dataSelector'
 import type { Datum, SpecPipe } from 'src/types'
 import { isSubset } from './utils'
-import { ANNOTATION_Z_INDEX } from './constant'
+import { ANNOTATION_Z_INDEX } from '../../../constant'
 
 export const annotationArea: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
@@ -40,9 +40,9 @@ export const annotationArea: SpecPipe = (spec, context) => {
       backgroundBorderRadius = 4,
       backgroundBorderWidth = 1,
       backgroundColor = '#191d24',
-      backgroundPadding = 4,
+      backgroundPadding = 10,
       backgroundVisible = true,
-      outerPadding = 0,
+      outerPadding = 4,
       areaColor = '#888888',
       areaColorOpacity = 0.15,
       areaBorderColor,

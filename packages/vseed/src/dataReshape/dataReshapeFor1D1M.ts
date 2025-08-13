@@ -2,6 +2,7 @@ import type { Dataset, Dimension, FoldInfo, Measure, UnfoldInfo } from 'src/type
 import { foldMeasures } from './foldMeasures'
 import { UnfoldDimensionGroup, FoldMeasureId, FoldMeasureName, FoldMeasureValue } from './constant'
 import { unfoldDimensions } from './unfoldDimensions'
+import { i18n } from '../i18n'
 
 const emptyReshapeResult = {
   dataset: [],
@@ -61,8 +62,8 @@ export const dataReshapeFor1D1M = (
   if (dimensions.length === 0) {
     const { dataset: finalDataset, unfoldInfo } = unfoldDimensions(
       foldedDataset,
-      [{ id: foldMeasureName, alias: '指标名称', location: 'dimension' }],
-      [{ id: foldMeasureValue, alias: '指标值' }],
+      [{ id: foldMeasureName, alias: i18n`指标名称`, location: 'dimension' }],
+      [{ id: foldMeasureValue, alias: i18n`指标值` }],
       0,
       unfoldDimensionGroup,
     )
@@ -71,8 +72,8 @@ export const dataReshapeFor1D1M = (
     // 展开指定的维度为指标
     const { dataset: finalDataset, unfoldInfo } = unfoldDimensions(
       foldedDataset,
-      [...dimensions, { id: foldMeasureName, alias: '指标名称', location: 'dimension' }],
-      [{ id: foldMeasureValue, alias: '指标值' }],
+      [...dimensions, { id: foldMeasureName, alias: i18n`指标名称`, location: 'dimension' }],
+      [{ id: foldMeasureValue, alias: i18n`指标值` }],
       0,
       unfoldDimensionGroup,
     )

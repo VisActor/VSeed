@@ -1,0 +1,17 @@
+[
+  {
+    "type": "file",
+    "name": "dataset",
+    "label": "dataset"
+  },
+  {
+    "type": "file",
+    "name": "measures",
+    "label": "measures"
+  },
+  {
+    "type": "file",
+    "name": "dimensions",
+    "label": "dimensions"
+  }
+]

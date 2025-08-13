@@ -9,6 +9,7 @@ import { zBaseConfig } from './properties/baseConfig/baseConfig'
 import { zTheme, zCustomTheme } from './properties/theme'
 import { zConfig } from './properties/config'
 import { zAnnotation, zMarkStyle } from './properties'
+import { zLocale } from './i18n'
 
 export const zAdvancedVSeed = z.object({
   chartType: zChartType,
@@ -23,6 +24,7 @@ export const zAdvancedVSeed = z.object({
   markStyle: zMarkStyle,
   customTheme: zCustomTheme,
   annotation: zAnnotation,
+  locale: zLocale,
 })
 
 export type AdvancedVSeed = z.infer<typeof zAdvancedVSeed>

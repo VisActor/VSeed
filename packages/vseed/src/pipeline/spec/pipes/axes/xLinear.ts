@@ -1,10 +1,13 @@
 import type { ISpec } from '@visactor/vchart'
+import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../constant'
 import type { SpecPipe, XLinearAxis } from 'src/types'
+import { autoFormatter } from '../../../utils'
 
 export const xLinear: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
+  const { locale } = advancedVSeed
   const config = advancedVSeed.config?.[chartType]?.xAxis as XLinearAxis
 
   if (!result.axes) {
@@ -49,6 +52,9 @@ export const xLinear: SpecPipe = (spec, context) => {
     min,
     label: {
       visible: label?.visible,
+      formatMethod: (value: string) => {
+        return autoFormatter(value, locale)
+      },
       style: {
         fill: label?.labelColor,
         angle: label?.labelAngle,
@@ -86,6 +92,9 @@ export const xLinear: SpecPipe = (spec, context) => {
         lineWidth: line?.lineWidth,
         stroke: line?.lineColor,
       },
+    },
+    innerOffset: {
+      top: LINEAR_AXIS_INNER_OFFSET_TOP,
     },
   }
 

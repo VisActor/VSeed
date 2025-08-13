@@ -1,91 +1,68 @@
 import type { IBarChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../dataSelector'
-import type { Datum, SpecPipe } from 'src/types'
-import type { IModelMarkAttributeContext } from '@visactor/vchart/esm/compile/mark'
+import type { BarStyle, Datum, SpecPipe } from 'src/types'
+import type { ISeriesMarkAttributeContext } from '@visactor/vchart/esm/compile/mark'
 
 export const barStyle: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { markStyle, encoding } = advancedVSeed
   const { barStyle } = markStyle
-  if (!barStyle) {
-    return spec
-  }
-  const result = { ...spec } as IBarChartSpec
 
-  const {
-    selector: barSelector,
-    barBorderColor,
-    barBorderStyle,
-    barBorderWidth,
-    barColor,
-    barColorOpacity,
-    barRadius,
-  } = barStyle
+  const result = {
+    ...spec,
+    bar: {
+      state: {
+        hover: {
+          stroke: (datum, context: ISeriesMarkAttributeContext) => {
+            const field = encoding[0]?.group?.[0] as string
+            const color = context.seriesColor(datum[field] as string)
+            return color
+          },
+          lineWidth: 4,
+          fillOpacity: 0.6,
+        },
+      },
+    },
+  } as IBarChartSpec
+
+  if (!barStyle) {
+    return result
+  }
+
+  const barStyles = (Array.isArray(barStyle) ? barStyle : [barStyle]) as BarStyle[]
+
+  const customMap = barStyles.reduce<object>((result, style, index) => {
+    const { barBorderColor, barBorderStyle, barBorderWidth, barColor, barColorOpacity, barRadius } = style
+
+    const lineDash = barBorderStyle === 'dashed' ? [5, 2] : barBorderStyle === 'dotted' ? [2, 5] : [0, 0]
+    return {
+      ...result,
+      [`custom${index + 1}`]: {
+        // 优先级: 后者覆盖前者
+        level: index + 1,
+        filter: (datum: Datum) => {
+          if (selector(datum, style.selector)) {
+            return true
+          }
+          return false
+        },
+        style: {
+          fill: barColor,
+          fillOpacity: barColorOpacity,
+          stroke: barBorderColor,
+          lineWidth: barBorderWidth,
+          lineDash: lineDash,
+          cornerRadius: barRadius,
+        },
+      },
+    }
+  }, {})
 
   return {
     ...result,
     bar: {
-      style: {
-        fill: barColor
-          ? (datum: Datum, context: IModelMarkAttributeContext) => {
-              if (selector(datum, barSelector)) {
-                return barColor
-              }
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-ignore
-              return context.seriesColor(datum[encoding[0]?.group?.[0]]) as string
-            }
-          : undefined,
-        fillOpacity: barColorOpacity
-          ? (datum: Datum) => {
-              if (selector(datum, barSelector)) {
-                return barColorOpacity
-              }
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-ignore
-              return 1
-            }
-          : undefined,
-        stroke: barBorderColor
-          ? (datum: Datum, context: IModelMarkAttributeContext) => {
-              if (selector(datum, barSelector)) {
-                return barBorderColor
-              }
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-ignore
-              return context.seriesColor(datum[encoding[0]?.group?.[0]]) as string
-            }
-          : undefined,
-        lineWidth: barBorderWidth
-          ? (datum: Datum) => {
-              if (selector(datum, barSelector)) {
-                return barBorderWidth
-              }
-              return 0
-            }
-          : undefined,
-        lineDash: barBorderStyle
-          ? (datum: Datum) => {
-              if (selector(datum, barSelector)) {
-                if (barBorderStyle === 'solid') {
-                  return [0, 0]
-                } else if (barBorderStyle === 'dashed') {
-                  return [5, 5]
-                } else if (barBorderStyle === 'dotted') {
-                  return [1, 5]
-                }
-              }
-              return [0, 0]
-            }
-          : undefined,
-        cornerRadius: barRadius
-          ? (datum: Datum) => {
-              if (selector(datum, barSelector)) {
-                return barRadius
-              }
-              return 0
-            }
-          : undefined,
+      state: {
+        ...customMap,
       },
     },
   }

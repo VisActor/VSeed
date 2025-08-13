@@ -24,10 +24,13 @@ import {
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationAreaBand,
+  horizontalCrosshairRect,
+  stackCornerRadius,
 } from '../pipes'
 
 const barParallel: SpecPipeline = [
   initBarParallel,
+  stackCornerRadius,
   color,
   backgroundColor,
   dataset,
@@ -35,6 +38,7 @@ const barParallel: SpecPipeline = [
   yBand,
   label,
   tooltip,
+  horizontalCrosshairRect,
   discreteLegend,
   barStyle,
   annotationPoint,
@@ -50,6 +54,7 @@ const pivotBarParallel: SpecPipeline = [
   datasetPivot,
   pivotIndicators([
     initBarParallel,
+    stackCornerRadius,
     color,
     backgroundColor,
     datasetPivotPlaceholder,
@@ -57,6 +62,7 @@ const pivotBarParallel: SpecPipeline = [
     xLinear,
     label,
     tooltip,
+    horizontalCrosshairRect,
     barStyle,
     annotationPoint,
     annotationVerticalLine,

@@ -25,10 +25,13 @@ import {
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationAreaBand,
+  verticalCrosshairRect,
+  stackCornerRadius,
 } from '../pipes'
 
 const column: SpecPipeline = [
   initColumn,
+  stackCornerRadius,
   stackInverse,
   color,
   backgroundColor,
@@ -37,6 +40,7 @@ const column: SpecPipeline = [
   yLinear,
   label,
   tooltip,
+  verticalCrosshairRect,
   discreteLegend,
   barStyle,
   annotationPoint,
@@ -52,6 +56,7 @@ const pivotColumn: SpecPipeline = [
   datasetPivot,
   pivotIndicators([
     initColumn,
+    stackCornerRadius,
     stackInverse,
     color,
     backgroundColor,
@@ -60,6 +65,7 @@ const pivotColumn: SpecPipeline = [
     yLinear,
     label,
     tooltip,
+    verticalCrosshairRect,
     barStyle,
     annotationPoint,
     annotationVerticalLine,

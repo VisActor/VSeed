@@ -55,14 +55,17 @@ const Demo = () => {
 const SimpleVSeedRender = (props: { vseed: VSeed }) => {
   const { vseed } = props
   const ref = useRef<HTMLDivElement>(null)
+  const builderRef = useRef<Builder>()
   const dark = useDark()
   useEffect(() => {
     if (!ref.current) {
       return
     }
     const theme = dark ? 'dark' : 'light'
-    const spec = Builder.from({ ...vseed, theme }).build()
+    const builder = Builder.from({ ...vseed, theme })
+    const spec = builder.build()
 
+    builderRef.current = builder
     if (isPivotChart(vseed)) {
       const tableInstance = new PivotChart(ref.current, spec)
       return () => tableInstance.release()
@@ -76,7 +79,14 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
     }
   }, [vseed, dark])
 
-  return <div ref={ref} style={{ height: 300, width: '100%' }}></div>
+  return <div ref={ref} style={{ height: 300, width: '100%' }} onClick={() => {
+      console.group(`selected ${vseed.chartType}`)
+      console.log('builder', builderRef.current)
+      console.log('spec', builderRef.current.spec)
+      console.log('vseed', builderRef.current.vseed)
+      console.log('advancedVSeed', builderRef.current.advancedVSeed)
+      console.groupEnd()
+    }}></div>
 }
 
 export default Demo

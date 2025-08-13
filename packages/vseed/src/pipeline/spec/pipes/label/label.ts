@@ -14,29 +14,38 @@ export const label: SpecPipe = (spec, context) => {
     return result
   }
 
-  const { measureId } = datasetReshapeInfo[0].foldInfo
+  const { measureId, measureValue } = datasetReshapeInfo[0].foldInfo
+  // const { groupId, groupName } = datasetReshapeInfo[0].unfoldInfo
   const { label } = baseConfig
   const { enable } = label as Label
 
   result.label = {
     visible: enable,
     formatMethod: (value: string, datum: Datum) => {
-      const id = datum[measureId] as string
-      const measure = findMeasureById(measures, id)
-      if (!measure) {
-        return value
+      const result = []
+
+      const formatValue = (value: number) => {
+        const id = datum[measureId] as string
+        const measure = findMeasureById(measures, id)
+        if (!measure) {
+          return value
+        }
+
+        const { format = {}, autoFormat = true } = measure
+
+        if (!isEmpty(format)) {
+          const formatter = createFormatter(format)
+          return formatter(value)
+        }
+        if (autoFormat) {
+          return autoFormatter(value, locale)
+        }
+        return String(value)
       }
 
-      const { format = {}, autoFormat = true } = measure
+      result.push(formatValue(datum[measureValue] as number))
 
-      if (!isEmpty(format)) {
-        const formatter = createFormatter(format)
-        return formatter(value)
-      }
-      if (autoFormat) {
-        return autoFormatter(value, locale)
-      }
-      return String(value)
+      return result.join(' ')
     },
   } as ILineLikeLabelSpec
   return result

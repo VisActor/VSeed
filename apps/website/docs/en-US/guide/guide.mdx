@@ -276,7 +276,7 @@ export default Demo
 import { useRef, useEffect, memo } from 'react'
 import VChart from '@visactor/vchart'
 import { register, PivotChart, PivotChartConstructorOptions } from '@visactor/vtable'
-import { registerAll, VSeed, Builder, UnfoldDimensionGroup } from '@visactor/vseed'
+import { registerAll, VSeed, Builder, UnfoldDimensionGroupId } from '@visactor/vseed'
 
 register.chartModule('vchart', VChart)
 registerAll()
@@ -320,7 +320,7 @@ const Demo = () => {
       console.log('LEGEND_ITEM_CLICK', args)
       tableInstance.updateFilterRules([
         {
-          filterKey: UnfoldDimensionGroup,
+          filterKey: UnfoldDimensionGroupId,
           filteredValues: args.value,
         },
       ])
@@ -341,7 +341,7 @@ export default Demo
 import { useRef, useEffect, memo } from 'react'
 import VChart from '@visactor/vchart'
 import { register, PivotChart, PivotChartConstructorOptions } from '@visactor/vtable'
-import { registerAll, VSeed, Builder, UnfoldDimensionGroup } from '@visactor/vseed'
+import { registerAll, VSeed, Builder, UnfoldDimensionGroupId } from '@visactor/vseed'
 
 register.chartModule('vchart', VChart)
 registerAll()
@@ -394,7 +394,7 @@ const Demo = () => {
       console.log('LEGEND_ITEM_CLICK', args)
       tableInstance.updateFilterRules([
         {
-          filterKey: UnfoldDimensionGroup,
+          filterKey: UnfoldDimensionGroupId,
           filteredValues: args.value,
         },
       ])

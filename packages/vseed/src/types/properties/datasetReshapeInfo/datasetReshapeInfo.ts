@@ -9,7 +9,9 @@ export type FoldInfo = {
 
 export type UnfoldInfo = {
   groupName: string
+  groupId: string
   colorItems: string[]
+  colorIdMap: Record<string, string>
 }
 
 export const zFoldInfo = z.object({
@@ -20,6 +22,8 @@ export const zFoldInfo = z.object({
 })
 export const zUnfoldInfo = z.object({
   colorItems: z.array(z.string()),
+  groupId: z.string(),
+  colorIdMap: z.record(z.string(), z.string()),
   groupName: z.string(),
 })
 

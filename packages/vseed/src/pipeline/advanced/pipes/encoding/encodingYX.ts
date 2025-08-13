@@ -12,10 +12,9 @@ export const encodingYX: AdvancedPipe = (advancedVSeed) => {
     const { foldInfo, unfoldInfo } = cur
 
     const isZeroDimension = dimensions.length === 0
-    const isSingleDimension = dimensions.length === 1
     const y = [isZeroDimension ? foldInfo.measureName : dimensions[0].id]
     const x = [foldInfo.measureValue]
-    const group = [isSingleDimension || isZeroDimension ? foldInfo.measureName : unfoldInfo.groupName]
+    const group = [unfoldInfo.groupId]
     const color = [foldInfo.measureName]
 
     return [

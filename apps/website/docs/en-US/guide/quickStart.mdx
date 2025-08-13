@@ -1,0 +1,148 @@
+---
+pageType: doc
+---
+
+# 快速开始
+
+```bash title=install
+npm install @visactor/vseed
+
+# optional
+npm install @visactor/vchart
+
+# optional
+npm install @visactor/vtable
+```
+
+## 基本用法
+
+```tsx pure {14}
+import { registerAll, VSeed, Builder } from '@visactor/vseed'
+
+const vseed: VSeed = {
+  chartType: 'line',
+  dataset: [
+    { date: '2019', profit: 10, sales: 100 },
+    { date: '2020', profit: 30, sales: 200 },
+    { date: '2021', profit: 30, sales: 300 },
+    { date: '2022', profit: 50, sales: 400 },
+    { date: '2023', profit: 40, sales: 500 },
+  ],
+}
+
+const spec = Builder.from(vseed).build()
+```
+
+## VChart 渲染
+
+:::tip
+只需传入图表类型与数据, 即可直接出图
+:::
+
+```tsx direction=vertical
+import { useRef, useEffect } from 'react'
+import VChart from '@visactor/vchart'
+import { registerAll, VSeed, Builder } from '@visactor/vseed'
+registerAll()
+
+const Demo = () => {
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!ref.current) {
+      return
+    }
+
+    const vseed: VSeed = {
+      chartType: 'line',
+      dataset: [
+        { date: '2019', profit: 10, sales: 100 },
+        { date: '2020', profit: 30, sales: 200 },
+        { date: '2021', profit: 30, sales: 300 },
+        { date: '2022', profit: 50, sales: 400 },
+        { date: '2023', profit: 40, sales: 500 },
+      ],
+    }
+
+    const spec = Builder.from(vseed).build()
+
+    const vchart = new VChart(spec, { dom: ref.current })
+
+    vchart.renderSync()
+
+    return () => vchart.release()
+  })
+
+  return <div ref={ref} style={{ height: 260, width: '100%' }}></div>
+}
+
+export default Demo
+```
+
+## PivotChart 渲染
+
+:::tip
+配置measures分组, 或维度透视, 即可渲染出透视图表
+:::
+
+```tsx direction=vertical
+import { useRef, useEffect, memo } from 'react'
+import VChart from '@visactor/vchart'
+import { register, PivotChart, PivotChartConstructorOptions } from '@visactor/vtable'
+import { registerAll, VSeed, Builder, UnfoldDimensionGroup } from '@visactor/vseed'
+
+register.chartModule('vchart', VChart)
+registerAll()
+
+const Demo = () => {
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!ref.current) {
+      return
+    }
+
+    const vseed: VSeed = {
+      chartType: 'line',
+      dataset: [
+        { date: '2019', profit: 10, sales: 100 },
+        { date: '2020', profit: 30, sales: 200 },
+        { date: '2021', profit: 30, sales: 300 },
+        { date: '2022', profit: 50, sales: 400 },
+        { date: '2023', profit: 40, sales: 500 },
+      ],
+      dimensions: [{ id: 'date', alias: '日期' }],
+      measures: [
+        {
+          id: 'profit-group',
+          children: [{ id: 'profit', alias: '利润' }],
+        },
+        {
+          id: 'sales-group',
+          children: [{ id: 'sales', alias: '销售额' }],
+        },
+      ],
+    }
+
+    const spec = Builder.from(vseed).build()
+
+    const tableInstance = new PivotChart(ref.current, spec)
+
+    tableInstance.on('legend_item_click', (args) => {
+      console.log('LEGEND_ITEM_CLICK', args)
+      tableInstance.updateFilterRules([
+        {
+          filterKey: UnfoldDimensionGroup,
+          filteredValues: args.value,
+        },
+      ])
+    })
+
+    return () => tableInstance.release()
+  })
+
+  return <div ref={ref} style={{ height: 260, width: '100%' }}></div>
+}
+
+export default Demo
+```

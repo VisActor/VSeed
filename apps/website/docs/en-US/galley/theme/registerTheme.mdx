@@ -1,0 +1,84 @@
+---
+pageType: doc
+sidebar: true
+outline: false
+---
+
+# 注册主题
+
+```tsx
+import { useRef, useEffect } from 'react'
+import VChart from '@visactor/vchart'
+import { registerColumnParallel, VSeed, Builder, registerCustomTheme } from '@visactor/vseed'
+
+registerColumnParallel()
+registerCustomTheme('cyberpunk', {
+  baseConfig: {
+    vtable: {
+      backgroundColor: '#000000',
+    },
+    vchart: {
+      backgroundColor: '#000000',
+      color: {
+        colorScheme: [
+          '#FF2A8A', // 霓虹玫红（抖音主色变体）
+          '#8D00FF', // 炫光紫（赛博核心）
+          '#00F0FF', // 荧光蓝（抖音蓝升级）
+          '#05F8B6', // 赛博青（霓虹青绿）
+          '#D600FF', // 脉冲紫（渐变过渡）
+          '#FFE800', // 数字柠檬黄（高亮点缀）
+          '#FF005D', // 抖音热粉（视觉焦点）
+          '#00E4FF', // 全息蓝（透明感）
+          '#C95BFF', // 幻彩紫（渐变衔接）
+          '#FF5A00', // 故障橙（赛博点缀）
+        ]
+      },
+      label: {
+        enable: true,
+      },
+      tooltip: {
+        enable: true,
+      },
+      legend: {
+        enable: true,
+      },
+    },
+  },
+})
+
+function Demo() {
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!ref.current) {
+      return
+    }
+
+    const vseed: VSeed = {
+      chartType: 'columnParallel',
+      theme: 'cyberpunk',
+      dataset: [
+        { date: '2019', profit: 10, sales: 20 },
+        { date: '2020', profit: 30, sales: 60 },
+        { date: '2021', profit: 30, sales: 60 },
+        { date: '2022', profit: 50, sales: 100 },
+        { date: '2023', profit: 40, sales: 80 },
+      ],
+    }
+
+    const spec = Builder.from(vseed).build()
+
+    const vchart = new VChart(spec, { dom: ref.current })
+
+    vchart.renderSync()
+
+    return () => vchart.release()
+  })
+
+  return (
+    <div ref= { ref } style = {{ height: 300, width: '100%' }}></div>
+  )
+}
+
+export default Demo
+```

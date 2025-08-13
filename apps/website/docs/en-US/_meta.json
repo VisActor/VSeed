@@ -1,13 +1,18 @@
 [
   {
     "text": "Guide",
-    "link": "/guide/",
+    "link": "/guide/quickStart",
     "activeMatch": "/guide/"
   },
   {
-    "text": "Gallery",
-    "link": "/gallery/",
-    "activeMatch": "/gallery/"
+    "text": "Examples",
+    "link": "/galley/chartType/line",
+    "activeMatch": "/galley"
+  },
+  {
+    "text": "Development",
+    "link": "/development/",
+    "activeMatch": "/development/"
   },
   {
     "text": "Playground",

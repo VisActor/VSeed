@@ -7,14 +7,14 @@ pageType: doc
 ## 图表类型切换
 
 ```tsx direction=vertical
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import VChart from '@visactor/vchart'
 import { registerAll, VSeed, Builder } from '@visactor/vseed'
 registerAll()
 
 const Demo = () => {
   const ref = useRef<HTMLDivElement>(null)
-
+  const [chartType, setChartType] = useState('line')
   const chartTypes = [
     'line',
     'column',
@@ -28,13 +28,17 @@ const Demo = () => {
     'areaPercent',
   ]
 
+  const changeChartType = (c) => () => {
+    setChartType(c)
+  }
+
   useEffect(() => {
     if (!ref.current) {
       return
     }
 
     const vseed: VSeed = {
-      chartType: 'line',
+      chartType,
       dataset: [
         { date: '2019', profit: 10, sales: 100 },
         { date: '2020', profit: 30, sales: 200 },
@@ -43,31 +47,33 @@ const Demo = () => {
         { date: '2023', profit: 40, sales: 500 },
       ],
     }
-
-    const spec = Builder.from(vseed).build()
+    const builder = Builder.from(vseed)
+    const spec = builder.build()
 
     const vchart = new VChart(spec, { dom: ref.current })
     vchart.renderSync()
-
-    const renderNext = (index: number) => {
-      const chartType = chartTypes[index % chartTypes.length]
-      const nextVSeed = {
-        ...vseed,
-        chartType: chartType,
-      }
-      const nextSpec = Builder.from(nextVSeed).build()
-      vchart.updateSpec(nextSpec)
-
-      setTimeout(() => {
-        renderNext(index + 1)
-      }, 2000)
-    }
-    renderNext(0)
-
     return () => vchart.release()
-  })
+  }, [chartType])
 
-  return <div ref={ref} style={{ height: 260, width: '100%' }}></div>
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div>
+        {chartTypes.map((d) => {
+          return (
+            <span key={d} style={{ margin: '0 2px' }}>
+              <button
+                onClick={changeChartType(d)}
+                style={{ fontSize: 10, padding: '0 2px', border: '1px solid #cccccc' }}
+              >
+                {d}
+              </button>
+            </span>
+          )
+        })}
+      </div>
+      <div ref={ref} style={{ height: 260, width: '100%' }}></div>
+    </div>
+  )
 }
 
 export default Demo
@@ -75,14 +81,13 @@ export default Demo
 
 ## 数据重塑
 
-```tsx direction=horizontal
-import { useRef, useEffect } from 'react'
+```tsx direction=vertical
+import { useRef, useEffect, useState } from 'react'
 import VChart from '@visactor/vchart'
 import { registerAll, VSeed, Builder } from '@visactor/vseed'
 
 const Demo = () => {
   const ref = useRef<HTMLDivElement>(null)
-
   const datasetList = [
     // 单指标零维度
     [{ profit: 10 }],
@@ -133,6 +138,12 @@ const Demo = () => {
       { date: '2020', region: 'north of east', city: 'E', profit: 40, sales: 80, discount: 0.1 },
     ],
   ]
+
+  const [dataset, setDataset] = useState(datasetList[0])
+  const changeDataset = (c) => () => {
+    setDataset(c)
+  }
+
   useEffect(() => {
     if (!ref.current) {
       return
@@ -140,36 +151,38 @@ const Demo = () => {
 
     const vseed: VSeed = {
       chartType: 'columnParallel',
-      dataset: datasetList[0],
+      dataset,
       legend: {
         position: 'bottom',
       },
     }
 
     const spec = Builder.from(vseed).build()
-
     const vchart = new VChart(spec, { dom: ref.current })
     vchart.renderSync()
 
-    const renderNext = (index: number) => {
-      const dataset = datasetList[index % datasetList.length]
-      const nextVSeed = {
-        ...vseed,
-        dataset: dataset,
-      }
-      const nextSpec = Builder.from(nextVSeed).build()
-      vchart.updateSpec(nextSpec)
-
-      setTimeout(() => {
-        renderNext(index + 1)
-      }, 3000)
-    }
-    renderNext(0)
-
     return () => vchart.release()
-  })
+  }, [dataset])
 
-  return <div ref={ref} style={{ height: '300', width: '100%' }}></div>
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div>
+        {datasetList.map((d, index) => {
+          return (
+            <span key={index} style={{ margin: '0 2px' }}>
+              <button
+                onClick={changeDataset(d)}
+                style={{ fontSize: 10, padding: '0 2px', border: '1px solid #cccccc' }}
+              >
+                {`dataset` + (index + 1)}
+              </button>
+            </span>
+          )
+        })}
+      </div>
+      <div ref={ref} style={{ height: 260, width: '100%' }}></div>
+    </div>
+  )
 }
 
 export default Demo

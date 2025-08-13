@@ -24,15 +24,15 @@ import type { AreaPercent } from './chartType/areaPercent'
 export type VSeed =
   | Table
   | PivotTable
-  | Line
-  | Column
-  | ColumnParallel
-  | ColumnPercent
-  | Bar
-  | BarParallel
-  | BarPercent
-  | Area
-  | AreaPercent
+  | Line // done
+  | Column // done
+  | ColumnParallel // done
+  | ColumnPercent // done
+  | Bar // done
+  | BarParallel // done
+  | BarPercent // done
+  | Area // done
+  | AreaPercent // done
   | DualAxis
   | Rose
   | Pie

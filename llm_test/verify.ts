@@ -113,7 +113,7 @@ export async function verify(command: string, spec1: any, spec2: any): Promise<{
 
     console.log('Getting judgment from OpenAI...');
     const result = await getOpenAIJudgement(command, image1, image2);
-    await fs.writeFile(path.join(runDir, 'result.json'), JSON.stringify(result, null, 2));
+    await fs.writeFile(path.join(runDir, 'result.json'), JSON.stringify({spec1, spec2, result}, null, 2));
     console.log('Saved result.json');
 
     return result;

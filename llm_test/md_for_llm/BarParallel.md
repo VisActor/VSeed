@@ -1,78 +1,111 @@
-# Column 图表类型定义
+# BarParallel 图表类型定义
 
-`Column` 组件用于渲染柱状图。柱状图适用于纵向数据对比场景，X轴为类目轴（分类数据），Y轴为数值轴（连续数据），柱子纵向排列。
+`BarParallel` 组件用于渲染并列条形图。并列条形图适用于多指标横向并行对比场景，多个条形平行排列展示不同指标值。
 
-## Column
+## BarParallel
 
 ```typescript
-export interface Column {
+export interface BarParallel {
   /**
-   * 图表类型
-   * @description 固定为 'column'
+   * 并列条形图
+   * @description 并列条形图，适用于多指标横向并行对比场景
+   * @type {'barParallel'}
+   * @example 'barParallel'
    */
-  chartType: 'column'
+  chartType: 'barParallel'
   /**
    * 数据集
-   * @description 定义图表的数据来源和结构。
+   * @description 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 并列条形图的数据最终会被转换为2个维度, 1个指标.
+   * @type {Array<Record<string|number, any>>}
+   * @example [{category:'A', value1:100, value2:200}, {category:'B', value1:150, value2:250}]
    */
   dataset: Dataset
+
   /**
    * 维度
-   * @description 柱状图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示。
+   * @description 第一个维度被映射到Y轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
+   * @type {Dimensions}
+   * @example [{id: 'category', alias: '类别'}]
    */
   dimensions?: Dimensions
+
   /**
    * 指标
-   * @description 柱状图的所有指标会自动合并为一个指标, 映射到Y轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示。
+   * @description 并列条形图指标会自动合并为一个指标, 映射到X轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
+   * @type {Measures}
+   * @example [{id: 'value1', alias: '指标1'}, {id: 'value2', alias: '指标2'}]
    */
   measures?: Measures
+
   /**
    * 图表的背景颜色
-   * @description 支持颜色字符串、hex、rgb或rgba值。
-   * @default 'transparent'
+   * @default transparent 默认为透明背景
+   * @description 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
    */
   backgroundColor?: BackgroundColor
+
   /**
-   * 颜色配置
-   * @description 定义图表的颜色方案, 包括颜色列表, 颜色映射等。
+   * 颜色
+   * @description 颜色配置, 用于定义图表的颜色方案, 包括颜色列表, 颜色映射, 颜色渐变等.
    */
   color?: Color
+
   /**
-   * 数据标签配置
+   * 标签
+   * @description 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
    */
   label?: Label
+
   /**
-   * 图例配置
+   * 图例
+   * @description 图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.
    */
   legend?: Legend
+
   /**
-   * 提示信息配置
+   * 提示信息
+   * @description 提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等.
    */
   tooltip?: Tooltip
+
   /**
-   * x轴配置 (类目轴)
+   * x轴
+   * @description 数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.
    */
-  xAxis?: XBandAxis
+  xAxis?: XLinearAxis
+
   /**
-   * y轴配置 (数值轴)
+   * y轴
+   * @description 类目轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.
    */
-  yAxis?: YLinearAxis
+  yAxis?: YBandAxis
+
   /**
-   * 图表主题
-   * @description 内置 'light' 与 'dark' 两种主题。
-   * @default 'light'
+   * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置
+   * @default light 默认为亮色主题
+   * @description 内置light与dark两种主题, 用户可以通过Builder自定义主题
+   * @example 'dark'
+   * @example 'light'
+   * @example 'customThemeName'
    */
   theme?: Theme
+
   /**
    * 矩形图元样式
-   * @description 定义柱状图的样式，支持全局或按条件配置。
+   * @description 条形图样式配置, 用于定义图表的条形图样式, 包括条形图的颜色, 边框, 圆角等.
+   * 支持全局样式或条件样式配置
+   * 数据筛选器
+   * 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
+   * 若未配置selector, 则样式全局生效.
    */
   barStyle?: BarStyle
+
   /**
-   * 标注点配置
-   * @description 根据所选数据定义图表的标注点。
+   * 标注点
+   * @description 标注点配置, 根据选择的数据, 定义图表的标注点, 包括标注点的位置, 格式, 样式等.
    */
   annotationPoint?: AnnotationPoint | AnnotationPoint[]
+
   /**
    * 标注垂直线
    * @description 标注垂直线配置, 根据选择的数据, 定义图表的标注垂直线, 包括标注垂直线的位置, 样式等.
@@ -306,73 +339,18 @@ export type Tooltip = {
 
 ---
 
-### Axis
+### XLinearAxis
 
-`Axis` 是坐标轴的通用配置。
+`XLinearAxis` 用于配置X轴（数值轴）。
 
 ```typescript
-export type Axis = {
-  /**
-   * 轴是否可见
-   * @default true
-   */
+export type XLinearAxis = {
   visible?: boolean;
-  /**
-   * 轴的最小值
-   */
   min?: number;
-  /**
-   * 轴的最大值
-   */
   max?: number;
-  /**
-   * 是否自动调整轴的刻度间隔
-   * @default true
-   */
   nice?: boolean;
-  /**
-   * 轴是否反向展示
-   * @default false
-   */
-  inverse?: boolean;
-  /**
-   * 是否在坐标轴上显示 0 值
-   * @default true
-   */
   zero?: boolean;
-  /**
-   * 轴标签是否自动隐藏
-   * @default true
-   */
-  labelAutoHide?: boolean;
-  /**
-   * 轴标签自动隐藏的间隔
-   * @default 4
-   */
-  labelAutoHideGap?: number;
-  /**
-   * 轴标签是否自动旋转
-   * @default true
-   */
-  labelAutoRotate?: boolean;
-  /**
-   * 轴标签自动旋转的角度范围
-   * @default [0, -45, -90]
-   */
-  labelAutoRotateAngleRange?: number[];
-  /**
-   * 轴标签是否自动限制长度
-   * @default true
-   */
-  labelAutoLimit?: boolean;
-  /**
-   * 轴标签自动限制的最大长度
-   * @default 100
-   */
-  labelAutoLimitLength?: number;
-  /**
-   * 轴刻度标签
-   */
+  inverse?: boolean;
   label?: {
     visible?: boolean;
     labelColor?: string;
@@ -380,44 +358,78 @@ export type Axis = {
     labelFontWeight?: number;
     labelAngle?: number;
   };
-  /**
-   * 轴线
-   */
   line?: {
     visible?: boolean;
     lineColor?: string;
     lineWidth?: number;
   };
-  /**
-   * 轴刻度
-   */
   tick?: {
     visible?: boolean;
     tickInside?: boolean;
     tickColor?: string;
     tickSize?: number;
   };
-  /**
-   * 轴标题
-   */
   title?: {
     visible?: boolean;
     titleText?: string;
     titleColor?: string;
     titleFontSize?: number;
+    titleFontWeight?: number;
+  };
+  grid?: {
+    visible?: boolean;
+    gridColor?: string;
+    gridWidth?: number;
   };
 };
 ```
 
 ---
 
-### XBandAxis & YLinearAxis
+### YBandAxis
 
-`XBandAxis` (类目轴) 和 `YLinearAxis` (数值轴) 继承自 `Axis`。
+`YBandAxis` 用于配置Y轴（类目轴）。
 
 ```typescript
-export type XBandAxis = Axis;
-export type YLinearAxis = Axis;
+export type YBandAxis = {
+  visible?: boolean;
+  labelAutoHide?: boolean;
+  labelAutoHideGap?: number;
+  labelAutoRotate?: boolean;
+  labelAutoRotateAngleRange?: number[];
+  labelAutoLimit?: boolean;
+  labelAutoLimitLength?: number;
+  label?: {
+    visible?: boolean;
+    labelColor?: string;
+    labelFontSize?: number;
+    labelFontWeight?: number;
+    labelAngle?: number;
+  };
+  line?: {
+    visible?: boolean;
+    lineColor?: string;
+    lineWidth?: number;
+  };
+  tick?: {
+    visible?: boolean;
+    tickInside?: boolean;
+    tickColor?: string;
+    tickSize?: number;
+  };
+  title?: {
+    visible?: boolean;
+    titleText?: string;
+    titleColor?: string;
+    titleFontSize?: number;
+    titleFontWeight?: number;
+  };
+  grid?: {
+    visible?: boolean;
+    gridColor?: string;
+    gridWidth?: number;
+  };
+};
 ```
 
 ---
@@ -439,7 +451,7 @@ export type Theme = 'light' | 'dark' | string;
 
 ### BarStyle
 
-`BarStyle` 对象用于定义柱状图的样式。
+`BarStyle` 对象用于定义条形图的样式。
 
 ```typescript
 export type BarStyle = {
@@ -449,30 +461,30 @@ export type BarStyle = {
    */
   selector?: Selector | Selectors;
   /**
-   * 柱状图颜色
+   * 条形图颜色
    */
   barColor?: string;
   /**
-   * 柱状图颜色透明度
+   * 条形图颜色透明度
    * @default 1
    */
   barColorOpacity?: number;
   /**
-   * 柱状图边框颜色
+   * 条形图边框颜色
    */
   barBorderColor?: string;
   /**
-   * 柱状图边框宽度
+   * 条形图边框宽度
    * @default 0
    */
   barBorderWidth?: number;
   /**
-   * 柱状图边框样式
+   * 条形图边框样式
    * @default 'solid'
    */
   barBorderStyle?: 'solid' | 'dashed' | 'dotted';
   /**
-   * 柱状图圆角
+   * 条形图圆角
    * @default 0
    */
   barRadius?: number | number[];
@@ -566,109 +578,30 @@ export type AnnotationPoint = {
 
 ### AnnotationVerticalLine
 
-`AnnotationVerticalLine` 对象用于定义垂直标注线。
+`AnnotationVerticalLine` 对象用于定义标注垂直线。
 
 ```typescript
 export type AnnotationVerticalLine = {
-  /**
-   * 依赖选择的数据, 进行数据标记.
-   */
   selector?: Selector | Selectors;
-  /**
-   * 固定的x值, 用于标注垂直线
-   */
   xValue?: (number | string) | (number | string)[];
-  /**
-   * 标注的文本
-   */
   text?: string | string[];
-  /**
-   * 文本位置
-   * @default 'insideEnd'
-   */
   textPosition?: 'outsideStart' | 'outsideEnd' | 'outsideMiddle' | 'insideStart' | 'insideMiddle' | 'insideEnd';
-  /**
-   * 文本颜色
-   * @default '#ffffff'
-   */
   textColor?: string;
-  /**
-   * 文本字体大小
-   * @default 12
-   */
   textFontSize?: number;
-  /**
-   * 文本字体重量
-   * @default 400
-   */
   textFontWeight?: number;
-  /**
-   * 文本对齐方式
-   * @default 'right'
-   */
   textAlign?: 'left' | 'right' | 'center';
-  /**
-   * 文本垂直对齐方式
-   * @default 'top'
-   */
   textBaseline?: 'top' | 'middle' | 'bottom';
-  /**
-   * 文本Y方向的偏移量
-   * @default 0
-   */
   offsetY?: number;
-  /**
-   * 文本X方向的偏移量
-   * @default 0
-   */
   offsetX?: number;
-  /**
-   * 线是否可见
-   * @default true
-   */
   lineVisible?: boolean;
-  /**
-   * 线颜色
-   */
   lineColor?: string;
-  /**
-   * 线宽度
-   * @default 2
-   */
   lineWidth?: number;
-  /**
-   * 线样式
-   * @default 'solid'
-   */
   lineStyle?: 'solid' | 'dashed' | 'dotted';
-  /**
-   * 背景是否可见
-   * @default true
-   */
   backgroundVisible?: boolean;
-  /**
-   * 背景颜色
-   * @default '#212121'
-   */
   backgroundColor?: string;
-  /**
-   * 背景边框颜色
-   */
   backgroundBorderColor?: string;
-  /**
-   * 背景边框宽度
-   * @default 1
-   */
   backgroundBorderWidth?: number;
-  /**
-   * 背景边框圆角
-   * @default 4
-   */
   backgroundBorderRadius?: number;
-  /**
-   * 背景内边距
-   * @default 4
-   */
   backgroundPadding?: number;
 };
 ```
@@ -677,109 +610,30 @@ export type AnnotationVerticalLine = {
 
 ### AnnotationHorizontalLine
 
-`AnnotationHorizontalLine` 对象用于定义水平标注线。
+`AnnotationHorizontalLine` 对象用于定义标注水平线。
 
 ```typescript
 export type AnnotationHorizontalLine = {
-  /**
-   * 依赖选择的数据, 进行数据标记.
-   */
   selector?: Selector | Selectors;
-  /**
-   * 固定的y值, 用于标注水平线
-   */
   yValue?: (number | string) | (number | string)[];
-  /**
-   * 标注的文本
-   */
   text?: string | string[];
-  /**
-   * 文本位置
-   * @default 'insideEnd'
-   */
   textPosition?: 'outsideStart' | 'outsideEnd' | 'outsideMiddle' | 'insideStart' | 'insideMiddle' | 'insideEnd';
-  /**
-   * 文本颜色
-   * @default '#ffffff'
-   */
   textColor?: string;
-  /**
-   * 文本字体大小
-   * @default 12
-   */
   textFontSize?: number;
-  /**
-   * 文本字体重量
-   * @default 400
-   */
   textFontWeight?: number;
-  /**
-   * 文本对齐方式
-   * @default 'left'
-   */
   textAlign?: 'left' | 'right' | 'center';
-  /**
-   * 文本垂直对齐方式
-   * @default 'bottom'
-   */
   textBaseline?: 'top' | 'middle' | 'bottom';
-  /**
-   * 文本Y方向的偏移量
-   * @default 0
-   */
   offsetY?: number;
-  /**
-   * 文本X方向的偏移量
-   * @default 0
-   */
   offsetX?: number;
-  /**
-   * 线是否可见
-   * @default true
-   */
   lineVisible?: boolean;
-  /**
-   * 线颜色
-   */
   lineColor?: string;
-  /**
-   * 线宽度
-   * @default 2
-   */
   lineWidth?: number;
-  /**
-   * 线样式
-   * @default 'solid'
-   */
   lineStyle?: 'solid' | 'dashed' | 'dotted';
-  /**
-   * 背景是否可见
-   * @default true
-   */
   backgroundVisible?: boolean;
-  /**
-   * 背景颜色
-   * @default '#212121'
-   */
   backgroundColor?: string;
-  /**
-   * 背景边框颜色
-   */
   backgroundBorderColor?: string;
-  /**
-   * 背景边框宽度
-   * @default 1
-   */
   backgroundBorderWidth?: number;
-  /**
-   * 背景边框圆角
-   * @default 4
-   */
   backgroundBorderRadius?: number;
-  /**
-   * 背景内边距
-   * @default 4
-   */
   backgroundPadding?: number;
 };
 ```
@@ -792,100 +646,25 @@ export type AnnotationHorizontalLine = {
 
 ```typescript
 export type AnnotationArea = {
-  /**
-   * 依赖选择的数据, 进行数据标记.
-   */
   selector: Selector | Selectors;
-  /**
-   * 标注的文本
-   */
   text?: string | string[];
-  /**
-   * 文本位置
-   * @default 'top'
-   */
   textPosition?: 'top' | 'topRight' | 'topLeft' | 'bottom' | 'bottomLeft' | 'bottomRight' | 'left' | 'right';
-  /**
-   * 文本颜色
-   * @default '#ffffff'
-   */
   textColor?: string;
-  /**
-   * 文本字体大小
-   * @default 12
-   */
   textFontSize?: number;
-  /**
-   * 文本字体重量
-   * @default 400
-   */
   textFontWeight?: number;
-  /**
-   * 文本对齐方式
-   * @default 'left'
-   */
   textAlign?: 'left' | 'right' | 'center';
-  /**
-   * 文本垂直对齐方式
-   * @default 'middle'
-   */
   textBaseline?: 'top' | 'middle' | 'bottom';
-  /**
-   * 背景是否可见
-   * @default true
-   */
   backgroundVisible?: boolean;
-  /**
-   * 背景颜色
-   * @default '#212121'
-   */
   backgroundColor?: string;
-  /**
-   * 背景边框颜色
-   */
   backgroundBorderColor?: string;
-  /**
-   * 背景边框宽度
-   * @default 1
-   */
   backgroundBorderWidth?: number;
-  /**
-   * 背景边框圆角
-   * @default 4
-   */
   backgroundBorderRadius?: number;
-  /**
-   * 背景内边距
-   * @default 4
-   */
   backgroundPadding?: number;
-  /**
-   * 面积区域颜色
-   */
   areaColor?: string;
-  /**
-   * 面积区域颜色透明度
-   * @default 0.5
-   */
   areaColorOpacity?: number;
-  /**
-   * 面积区域边框颜色
-   */
   areaBorderColor?: number;
-  /**
-   * 面积区域边框宽度
-   * @default 2
-   */
   areaBorderWidth?: number;
-  /**
-   * 面积区域边框圆角
-   * @default 4
-   */
   areaBorderRadius?: number;
-  /**
-   * 面积区域的边距
-   * @default 8
-   */
   outerPadding?: number;
 };
 ```

@@ -12,10 +12,12 @@ import {
   barPercentConfig,
   markStyle,
   annotation,
+  locale,
 } from '../pipes'
 
 export const barPercentAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  locale,
   autoMeasures,
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),

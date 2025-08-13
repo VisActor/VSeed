@@ -6,7 +6,7 @@ export const zMeasure = z.object({
   alias: z.string().optional(),
   visible: z.boolean().default(true).optional(),
   autoFormat: z.boolean().default(true).optional(),
-  format: zNumFormat.optional(),
+  format: zNumFormat.default({}).optional(),
 })
 
 export const zMeasureGroup = z.object({

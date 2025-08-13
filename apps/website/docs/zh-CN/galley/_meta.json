@@ -40,5 +40,11 @@
     "name": "annotation",
     "label": "annotation",
     "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "i18n",
+    "label": "i18n",
+    "collapsed": true
   }
 ]

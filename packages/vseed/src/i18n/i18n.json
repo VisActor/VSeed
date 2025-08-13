@@ -1,0 +1,14 @@
+{
+  "指标名称": {
+    "en-US": "MeasureName",
+    "zh-CN": "指标名称"
+  },
+  "指标Id": {
+    "en-US": "MeasureId",
+    "zh-CN": "指标Id"
+  },
+  "指标值": {
+    "en-US": "MeasureValue",
+    "zh-CN": "指标值"
+  }
+}

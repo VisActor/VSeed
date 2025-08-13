@@ -11,6 +11,7 @@ import type {
 import { buildAdvanced } from './buildAdvanced'
 import { buildSpec } from './buildSpec'
 import { build } from './build'
+import { intl } from '../../i18n'
 
 export class Builder implements VSeedBuilder {
   private _vseed: VSeed
@@ -19,6 +20,7 @@ export class Builder implements VSeedBuilder {
 
   constructor(vseed: VSeed) {
     this._vseed = vseed
+    this._vseed.locale = vseed.locale || intl.getLocale()
   }
 
   build = () => build(this)

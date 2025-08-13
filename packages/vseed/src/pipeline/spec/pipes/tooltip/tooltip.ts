@@ -14,14 +14,16 @@ export const tooltip: SpecPipe = (spec, context) => {
   const { tooltip = defaultTooltip } = baseConfig
   const { enable } = tooltip
 
-  const { measureId, measureName, measureValue } = datasetReshapeInfo[0].foldInfo
+  const { measureId, measureValue } = datasetReshapeInfo[0].foldInfo
+  const { groupName } = datasetReshapeInfo[0].unfoldInfo
+
   result.tooltip = {
     visible: enable,
     mark: {
       content: [
         {
           visible: true,
-          key: (datum) => (datum && (datum[measureName] as string)) || '',
+          key: (datum) => (datum && (datum[groupName] as string)) || '',
           value: (datum) => {
             if (!datum) {
               return ''
@@ -51,7 +53,7 @@ export const tooltip: SpecPipe = (spec, context) => {
       content: [
         {
           visible: true,
-          key: (datum) => (datum && (datum[measureName] as string)) || '',
+          key: (datum) => (datum && (datum[groupName] as string)) || '',
           value: (datum) => {
             if (!datum) {
               return ''

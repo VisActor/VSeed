@@ -12,10 +12,12 @@ import {
   areaPercentConfig,
   annotation,
   markStyle,
+  locale,
 } from '../pipes'
 
 export const areaPercentAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  locale,
   autoMeasures,
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),

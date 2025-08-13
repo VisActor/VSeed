@@ -1,4 +1,5 @@
-import { createFormatter, findMeasureById } from '../../../utils'
+import { isEmpty } from 'remeda'
+import { autoFormatter, createFormatter, findMeasureById } from '../../../utils'
 import type { SpecPipe, Tooltip } from 'src/types'
 
 const defaultTooltip: Tooltip = {
@@ -34,9 +35,12 @@ export const tooltip: SpecPipe = (spec, context) => {
 
             const { format = {}, autoFormat = true } = measure
 
-            if (format || autoFormat) {
+            if (!isEmpty(format)) {
               const formatter = createFormatter(format)
               return formatter(value)
+            }
+            if (autoFormat) {
+              return autoFormatter(value)
             }
             return String(value)
           },
@@ -61,9 +65,12 @@ export const tooltip: SpecPipe = (spec, context) => {
 
             const { format = {}, autoFormat = true } = measure
 
-            if (format || autoFormat) {
+            if (!isEmpty(format)) {
               const formatter = createFormatter(format)
               return formatter(value)
+            }
+            if (autoFormat) {
+              return autoFormatter(value)
             }
             return String(value)
           },

@@ -20,6 +20,7 @@ import type { Donut } from './chartType/donut'
 import type { DualAxis } from './chartType/dualAxis'
 import type { Area } from './chartType/area'
 import type { AreaPercent } from './chartType/areaPercent'
+import { zLocale } from './i18n'
 
 export type VSeed =
   | Table
@@ -41,9 +42,10 @@ export type VSeed =
 export const zVSeed = z.object({
   chartType: zChartType,
   dataset: zDataset,
-  dimensions: zDimensions,
-  measures: zMeasures,
-  backgroundColor: zBackgroundColor,
+  dimensions: zDimensions.optional(),
+  measures: zMeasures.optional(),
+  backgroundColor: zBackgroundColor.optional(),
+  locale: zLocale.optional(),
 })
 
 export const VSeedJSONSchema = z.toJSONSchema(zVSeed)

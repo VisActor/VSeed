@@ -1,12 +1,13 @@
 import type { ILineChartSpec } from '@visactor/vchart'
 import type { ILineLikeLabelSpec } from '@visactor/vchart/esm/series/mixin/interface'
-import { createFormatter, findMeasureById } from '../../../utils'
+import { autoFormatter, createFormatter, findMeasureById } from '../../../utils'
 import type { Datum, Label, SpecPipe } from 'src/types'
+import { isEmpty } from 'remeda'
 
 export const label: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
   const { advancedVSeed } = context
-  const { measures, datasetReshapeInfo } = advancedVSeed
+  const { measures, datasetReshapeInfo, locale } = advancedVSeed
   const baseConfig = advancedVSeed.baseConfig.vchart
 
   if (!baseConfig || !baseConfig.label) {
@@ -28,10 +29,14 @@ export const label: SpecPipe = (spec, context) => {
 
       const { format = {}, autoFormat = true } = measure
 
-      if (format || autoFormat) {
+      if (!isEmpty(format)) {
         const formatter = createFormatter(format)
         return formatter(value)
       }
+      if (autoFormat) {
+        return autoFormatter(value, locale)
+      }
+      return String(value)
     },
   } as ILineLikeLabelSpec
   return result

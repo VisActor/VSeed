@@ -11,11 +11,13 @@ import {
   columnConfig,
   markStyle,
   annotation,
+  locale,
 } from '../pipes'
 import { pivotReshapeTo2D1M } from '../pipes/reshape/pivotReshapeTo2D1M'
 
 export const columnAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  locale,
   autoMeasures,
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),

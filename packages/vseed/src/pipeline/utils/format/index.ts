@@ -1,2 +1,2 @@
-export { createNumFormatter } from './createNumFormatter'
-export { createFormatter } from './createFormatter'
+export * from './createNumFormatter'
+export * from './createFormatter'

@@ -1,5 +1,14 @@
 # @visactor/vseed
 
+## 0.0.14
+
+### Patch Changes
+
+- feat: allow same alias
+- feat: legend label format
+- fix: alias missing error
+- docs: optimize guide
+
 ## 0.0.13
 
 ### Patch Changes

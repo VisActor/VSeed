@@ -1,5 +1,12 @@
 # @visactor/vseed
 
+## 0.0.13
+
+### Patch Changes
+
+- feat: auto format
+- feat: i18n and locale in vseed
+
 ## 0.0.12
 
 ### Patch Changes

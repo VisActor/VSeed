@@ -10,7 +10,12 @@ registerAll()
 export const PivotChart = memo((props: { vseed: VSeed }) => {
   const { vseed } = props
   const ref = useRef<HTMLDivElement>(null)
-  const builderRef = useRef<Builder>(Builder.from({}))
+  const builderRef = useRef<Builder>(
+    Builder.from({
+      chartType: 'line',
+      dataset: [],
+    }),
+  )
   const dark = useDark()
 
   useEffect(() => {

@@ -17,9 +17,6 @@
     "allowImportingTsExtensions": true,
     "baseUrl": ".",
     "paths": {
-      "@visactor/vseed": [
-        "../../packages/vseed/src"
-      ],
       "@components": [
         "./components"
       ],

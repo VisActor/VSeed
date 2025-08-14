@@ -9,6 +9,7 @@ import {
   registerColumnPercent,
   registerLine,
   registerPie,
+  registerDonut,
 } from './chartType'
 import { registerDarkTheme, registerLightTheme } from './theme'
 
@@ -24,6 +25,7 @@ export const registerAll = () => {
   registerArea()
   registerAreaPercent()
   registerPie()
+  registerDonut()
 
   // Theme
   registerLightTheme()

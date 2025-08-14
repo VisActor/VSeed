@@ -8,5 +8,6 @@
   "barPercent",
   "area",
   "areaPercent",
-  "pie"
+  "pie",
+  "donut"
 ]

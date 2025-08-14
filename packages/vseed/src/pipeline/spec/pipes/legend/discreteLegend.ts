@@ -1,8 +1,11 @@
+import type { StringOrNumber } from '@visactor/vchart'
 import type { Legend, SpecPipe } from 'src/types'
 
 export const discreteLegend: SpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed } = context
+  const { datasetReshapeInfo } = advancedVSeed
+  const { unfoldInfo } = datasetReshapeInfo[0]
   const baseConfig = advancedVSeed.baseConfig.vchart
   if (!baseConfig || !baseConfig.legend) {
     return result
@@ -71,6 +74,9 @@ export const discreteLegend: SpecPipe = (spec, context) => {
         },
       },
       label: {
+        formatMethod: (value: StringOrNumber) => {
+          return unfoldInfo.colorIdMap[String(value)] ?? value
+        },
         style: {
           fontSize: labelFontSize,
           fill: labelFontColor,

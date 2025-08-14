@@ -37,7 +37,7 @@ export const foldMeasures = (
 
       datum[id] = dataset[i][id] as unknown
       datum[measureId] = id
-      datum[measureName] = alias
+      datum[measureName] = alias || id
       datum[measureValue] = dataset[i][id] as unknown
 
       foldInfo.foldMap[id] = alias

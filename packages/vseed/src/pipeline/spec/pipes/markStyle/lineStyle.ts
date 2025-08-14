@@ -44,8 +44,7 @@ export const lineStyle: SpecPipe = (spec, context) => {
         },
         style: {
           curveType: curveType,
-          fill: lineColor,
-          fillOpacity: lineColorOpacity,
+          strokeOpacity: lineColorOpacity,
           stroke: lineColor,
           lineWidth: lineWidth,
           lineDash: lineDash,

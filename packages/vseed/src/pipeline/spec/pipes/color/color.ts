@@ -13,12 +13,22 @@ export const color: SpecPipe = (spec, context) => {
 
   const { color } = baseConfig
   const { colorScheme, colorMapping } = color as Color
+  const mappingList: Array<[string, string]> = []
+  if (colorMapping) {
+    Object.entries(colorMapping).forEach(([key, value]) => {
+      const idMap = Object.entries(unfoldInfo.colorIdMap).filter(([_, v]) => key === v)
+
+      for (const [colorId] of idMap) {
+        mappingList.push([colorId, value])
+      }
+    })
+  }
 
   result.color = {
     type: 'ordinal',
     domain: unfoldInfo.colorItems,
     range: colorScheme,
-    specified: colorMapping,
+    specified: Object.fromEntries(mappingList),
   }
   return result
 }

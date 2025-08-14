@@ -1,6 +1,12 @@
 import type { Dataset, Dimension, FoldInfo, Measure, UnfoldInfo } from 'src/types'
 import { foldMeasures } from './foldMeasures'
-import { UnfoldDimensionGroup, FoldMeasureId, FoldMeasureName, FoldMeasureValue } from './constant'
+import {
+  UnfoldDimensionGroup,
+  FoldMeasureId,
+  FoldMeasureName,
+  FoldMeasureValue,
+  UnfoldDimensionGroupId,
+} from './constant'
 import { unfoldDimensions } from './unfoldDimensions'
 import { i18n } from '../i18n'
 
@@ -17,8 +23,10 @@ const emptyReshapeResult: {
     measureValue: '',
   },
   unfoldInfo: {
-    colorItems: [],
     groupName: '',
+    groupId: '',
+    colorItems: [],
+    colorIdMap: {},
   },
 }
 /**
@@ -37,6 +45,7 @@ export const dataReshapeFor2D1M = (
     foldMeasureName?: string
     foldMeasureValue?: string
     unfoldDimensionGroup?: string
+    unfoldDimensionGroupId?: string
   },
 ): {
   dataset: Dataset
@@ -48,6 +57,7 @@ export const dataReshapeFor2D1M = (
     foldMeasureName = FoldMeasureName,
     foldMeasureValue = FoldMeasureValue,
     unfoldDimensionGroup = UnfoldDimensionGroup,
+    unfoldDimensionGroupId = UnfoldDimensionGroupId,
   } = options || {}
   if (dimensions.length === 0 && measures.length === 0) {
     return emptyReshapeResult
@@ -72,6 +82,8 @@ export const dataReshapeFor2D1M = (
       [{ id: foldMeasureValue, alias: i18n`指标值` }],
       1,
       unfoldDimensionGroup,
+      unfoldDimensionGroupId,
+      foldMeasureId,
     )
     return { dataset: finalDataset, foldInfo, unfoldInfo }
   } else {
@@ -82,6 +94,8 @@ export const dataReshapeFor2D1M = (
       [{ id: foldMeasureValue, alias: i18n`指标值` }],
       1,
       unfoldDimensionGroup,
+      unfoldDimensionGroupId,
+      foldMeasureId,
     )
     return { dataset: finalDataset, foldInfo, unfoldInfo }
   }

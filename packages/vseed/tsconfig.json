@@ -12,6 +12,8 @@
     "moduleResolution": "bundler",
     "useDefineForClassFields": true,
     "allowImportingTsExtensions": true,
+    "rootDir": "./src",
+    "baseUrl": ".",
     "paths": {
       "src/*": [
         "./src/*"

@@ -1,4 +1,4 @@
-import type { Locale } from 'src/types/i18n'
+import type { Locale } from '../../i18n'
 import type { BackgroundColor, Dataset, Dimensions, Measures, Theme } from '../../properties'
 
 /**

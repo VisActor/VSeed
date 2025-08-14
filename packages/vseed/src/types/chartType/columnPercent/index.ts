@@ -1,1 +1,1 @@
-export type { ColumnPercent } from './columnPercent'
+export * from './columnPercent'

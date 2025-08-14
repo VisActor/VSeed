@@ -1,1 +1,1 @@
-export type { Pie } from './pie'
+export * from './pie'

@@ -1,24 +1,45 @@
-import type { Locale } from 'src/types/i18n'
-import type {
-  AnnotationArea,
-  AnnotationHorizontalLine,
-  AnnotationPoint,
-  AnnotationVerticalLine,
-  BackgroundColor,
-  BarStyle,
-  Color,
-  CrosshairRect,
-  Dataset,
-  Dimensions,
-  Label,
-  Legend,
-  Measures,
-  StackCornerRadius,
-  Theme,
-  Tooltip,
-  XLinearAxis,
-  YBandAxis,
+import { zLocale, type Locale } from '../../i18n'
+import {
+  zAnnotationArea,
+  zAnnotationHorizontalLine,
+  zAnnotationPoint,
+  zAnnotationVerticalLine,
+  zBackgroundColor,
+  zBarStyle,
+  zColor,
+  zCrosshairRect,
+  zDataset,
+  zDimensions,
+  zLabel,
+  zLegend,
+  zMeasures,
+  zStackCornerRadius,
+  zTheme,
+  zTooltip,
+  zXLinearAxis,
+  zYBandAxis,
 } from '../../properties'
+import {
+  type AnnotationArea,
+  type AnnotationHorizontalLine,
+  type AnnotationPoint,
+  type AnnotationVerticalLine,
+  type BackgroundColor,
+  type BarStyle,
+  type Color,
+  type CrosshairRect,
+  type Dataset,
+  type Dimensions,
+  type Label,
+  type Legend,
+  type Measures,
+  type StackCornerRadius,
+  type Theme,
+  type Tooltip,
+  type XLinearAxis,
+  type YBandAxis,
+} from '../../properties'
+import { z } from 'zod'
 
 /**
  * 条形图类型定义
@@ -173,3 +194,26 @@ export interface Bar {
    */
   locale?: Locale
 }
+
+export const zBar = z.object({
+  chartType: z.literal('bar'),
+  dataset: zDataset.optional(),
+  dimensions: zDimensions.optional(),
+  measures: zMeasures.optional(),
+  backgroundColor: zBackgroundColor.optional(),
+  color: zColor.optional(),
+  label: zLabel.optional(),
+  legend: zLegend.optional(),
+  tooltip: zTooltip.optional(),
+  xAxis: zXLinearAxis.optional(),
+  yAxis: zYBandAxis.optional(),
+  crosshairRect: zCrosshairRect.optional(),
+  stackCornerRadius: zStackCornerRadius.optional(),
+  theme: zTheme.optional(),
+  barStyle: zBarStyle.optional(),
+  annotationPoint: zAnnotationPoint.optional(),
+  annotationVerticalLine: zAnnotationVerticalLine.optional(),
+  annotationHorizontalLine: zAnnotationHorizontalLine.optional(),
+  annotationArea: zAnnotationArea.optional(),
+  locale: zLocale.optional(),
+})

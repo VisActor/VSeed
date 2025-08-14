@@ -1,1 +1,1 @@
-export type { BarParallel } from './barParallel'
+export * from './barParallel'

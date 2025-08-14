@@ -5,12 +5,11 @@ pageType: custom
 ---
 
 ```tsx
-import { useDark } from 'rspress/runtime'
-
 import { useRef, useEffect } from 'react'
+import { useDark } from 'rspress/runtime'
 import VChart from '@visactor/vchart'
-import { registerAll, VSeed, Builder, isPivotChart, isVChart, isVTable } from '@visactor/vseed'
 import { ListTable, PivotChart, register } from '@visactor/vtable'
+import { registerAll, VSeed, Builder, isPivotChart, isVChart, isVTable, zVSeed } from '@visactor/vseed'
 
 registerAll()
 register.chartModule('vchart', VChart)
@@ -49,7 +48,13 @@ const Demo = () => {
     ],
   }
 
-  return <SimpleVSeedRender vseed={vseed} />
+  if (zVSeed.safeParse(vseed)) {
+    console.log('zVSeed parse success!!!')
+  } else {
+    console.error('zVSeed parse error!!!')
+  }
+
+  return <SimpleVSeedRender vseed={ vseed } />
 }
 
 const SimpleVSeedRender = (props: { vseed: VSeed }) => {
@@ -79,14 +84,15 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
     }
   }, [vseed, dark])
 
-  return <div ref={ref} style={{ height: 300, width: '100%' }} onClick={() => {
-      console.group(`selected ${vseed.chartType}`)
-      console.log('builder', builderRef.current)
-      console.log('spec', builderRef.current.spec)
-      console.log('vseed', builderRef.current.vseed)
-      console.log('advancedVSeed', builderRef.current.advancedVSeed)
-      console.groupEnd()
-    }}></div>
+  return <div ref={ ref } style = {{ height: 300, width: '100%' }
+} onClick = {() => {
+  console.group(`selected ${vseed.chartType}`)
+  console.log('builder', builderRef.current)
+  console.log('spec', builderRef.current.spec)
+  console.log('vseed', builderRef.current.vseed)
+  console.log('advancedVSeed', builderRef.current.advancedVSeed)
+  console.groupEnd()
+}}> </div>
 }
 
 export default Demo

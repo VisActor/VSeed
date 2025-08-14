@@ -1,1 +1,1 @@
-export type { Line } from './line'
+export *  from './line'

@@ -1,4 +1,16 @@
-import type { Locale } from 'src/types/i18n'
+import type { Locale } from '../../i18n'
+import { zLocale } from '../../i18n'
+import {
+  zBackgroundColor,
+  zColor,
+  zDataset,
+  zDimensions,
+  zLabel,
+  zLegend,
+  zMeasures,
+  zTheme,
+  zTooltip,
+} from '../../properties'
 import type {
   BackgroundColor,
   Color,
@@ -10,6 +22,7 @@ import type {
   Theme,
   Tooltip,
 } from '../../properties'
+import { z } from 'zod'
 
 /**
  * 饼图类型定义
@@ -105,3 +118,17 @@ export interface Pie {
    */
   locale?: Locale
 }
+
+export const zPie = z.object({
+  chartType: z.literal('pie'),
+  dataset: zDataset.optional(),
+  dimensions: zDimensions.optional(),
+  measures: zMeasures.optional(),
+  backgroundColor: zBackgroundColor.optional(),
+  color: zColor.optional(),
+  label: zLabel.optional(),
+  legend: zLegend.optional(),
+  tooltip: zTooltip.optional(),
+  theme: zTheme.optional(),
+  locale: zLocale.optional(),
+})

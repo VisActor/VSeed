@@ -1,1 +1,1 @@
-export type { Column } from './column'
+export * from './column'

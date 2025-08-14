@@ -1,1 +1,1 @@
-export type { Area } from './area'
+export * from './area'

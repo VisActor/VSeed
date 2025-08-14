@@ -12,6 +12,15 @@ export default defineConfig({
       format: 'cjs',
       syntax: ['node 18'],
     },
+    {
+      format: 'umd',
+      umdName: 'RslibUmdExample',
+      output: {
+        distPath: {
+          root: './dist/umd',
+        },
+      },
+    },
   ],
   output: {
     sourceMap: true,

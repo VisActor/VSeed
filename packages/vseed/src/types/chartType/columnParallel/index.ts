@@ -1,1 +1,1 @@
-export type { ColumnParallel } from './columnParallel'
+export * from './columnParallel'

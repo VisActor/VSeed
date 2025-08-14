@@ -1,1 +1,1 @@
-export type { AreaPercent } from './areaPercent'
+export * from './areaPercent'

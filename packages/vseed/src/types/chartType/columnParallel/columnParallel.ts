@@ -1,4 +1,25 @@
-import type { Locale } from 'src/types/i18n'
+import type { Locale } from '../../i18n'
+import { zLocale } from '../../i18n'
+import {
+  zAnnotationArea,
+  zAnnotationHorizontalLine,
+  zAnnotationPoint,
+  zAnnotationVerticalLine,
+  zBackgroundColor,
+  zBarStyle,
+  zColor,
+  zCrosshairRect,
+  zDataset,
+  zDimensions,
+  zLabel,
+  zLegend,
+  zMeasures,
+  zStackCornerRadius,
+  zTheme,
+  zTooltip,
+  zXBandAxis,
+  zYLinearAxis,
+} from '../../properties'
 import type {
   AnnotationArea,
   AnnotationHorizontalLine,
@@ -19,6 +40,7 @@ import type {
   XBandAxis,
   YLinearAxis,
 } from '../../properties'
+import { z } from 'zod'
 
 /**
  * 并列柱状图类型定义
@@ -173,3 +195,26 @@ export interface ColumnParallel {
    */
   locale?: Locale
 }
+
+export const zColumnParallel = z.object({
+  chartType: z.literal('columnParallel'),
+  dataset: zDataset.optional(),
+  dimensions: zDimensions.optional(),
+  measures: zMeasures.optional(),
+  backgroundColor: zBackgroundColor.optional(),
+  color: zColor.optional(),
+  label: zLabel.optional(),
+  legend: zLegend.optional(),
+  tooltip: zTooltip.optional(),
+  xAxis: zXBandAxis.optional(),
+  yAxis: zYLinearAxis.optional(),
+  crosshairRect: zCrosshairRect.optional(),
+  stackCornerRadius: zStackCornerRadius.optional(),
+  theme: zTheme.optional(),
+  barStyle: zBarStyle.optional(),
+  annotationPoint: zAnnotationPoint.optional(),
+  annotationVerticalLine: zAnnotationVerticalLine.optional(),
+  annotationHorizontalLine: zAnnotationHorizontalLine.optional(),
+  annotationArea: zAnnotationArea.optional(),
+  locale: zLocale.optional(),
+})

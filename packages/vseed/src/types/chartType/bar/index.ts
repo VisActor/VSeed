@@ -1,1 +1,1 @@
-export type { Bar } from './bar'
+export * from './bar'

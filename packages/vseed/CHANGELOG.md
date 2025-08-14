@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.15
+
+### Patch Changes
+
+- feat: add zVSeed
+
 ## 0.0.14
 
 ### Patch Changes

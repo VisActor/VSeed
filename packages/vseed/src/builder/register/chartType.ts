@@ -17,6 +17,8 @@ import {
   columnSpecPipeline,
   donutAdvancedPipeline,
   donutSpecPipeline,
+  funnelAdvancedPipeline,
+  funnelSpecPipeline,
   lineAdvancedPipeline,
   lineSpecPipeline,
   pieAdvancedPipeline,
@@ -91,4 +93,9 @@ export const registerRose = () => {
 export const registerRoseParallel = () => {
   Builder._advancedPipelineMap['roseParallel'] = roseParallelAdvancedPipeline
   Builder._specPipelineMap['roseParallel'] = roseParallelSpecPipeline
+}
+
+export const registerFunnel = () => {
+  Builder._advancedPipelineMap['funnel'] = funnelAdvancedPipeline
+  Builder._specPipelineMap['funnel'] = funnelSpecPipeline
 }

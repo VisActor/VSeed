@@ -70,3 +70,4 @@ export const columnPercentConfig: AdvancedPipe = columnConfig
 export const donutConfig: AdvancedPipe = pieConfig
 export const roseConfig: AdvancedPipe = pieConfig
 export const roseParallelConfig: AdvancedPipe = pieConfig
+export const funnelConfig: AdvancedPipe = pieConfig

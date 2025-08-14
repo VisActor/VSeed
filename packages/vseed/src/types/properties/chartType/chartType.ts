@@ -17,6 +17,8 @@ export type ChartType =
   | 'pie'
   | 'donut'
   | 'dualAxis'
+  | 'scatter'
+  | 'funnel'
 
 export enum ChartTypeEnum {
   Table = 'table',
@@ -35,6 +37,8 @@ export enum ChartTypeEnum {
   Pie = 'pie',
   Donut = 'donut',
   DualAxis = 'dualAxis',
+  Scatter = 'scatter',
+  Funnel = 'funnel',
 }
 
 export const zChartType = z.enum([
@@ -54,4 +58,6 @@ export const zChartType = z.enum([
   'pie',
   'donut',
   'dualAxis',
+  'scatter',
+  'funnel',
 ])

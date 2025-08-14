@@ -11,4 +11,5 @@ export * from './pie'
 export * from './donut'
 export * from './rose'
 export * from './roseParallel'
+export * from './funnel'
 

@@ -1,10 +1,25 @@
-import { VSeed } from '@visactor/vseed'
-import { PivotChart } from '../../render/PivotChart'
 import { memo } from 'react'
+import { VSeed } from '@visactor/vseed'
+import { VChartRender } from '../../render/Chart'
+import { PivotChart } from '../../render/PivotChart'
 
-export const CombinationLineChart = memo(() => {
+export const RoseParallelChart = memo(() => {
   const vseed: VSeed = {
-    chartType: 'line',
+    chartType: 'roseParallel',
+    dataset: [
+      { date: '2019', profit: 10, sales: 20 },
+      { date: '2020', profit: 30, sales: 60 },
+      { date: '2021', profit: 30, sales: 60 },
+      { date: '2022', profit: 50, sales: 100 },
+      { date: '2023', profit: 40, sales: 80 },
+    ],
+  }
+  return <VChartRender vseed={vseed} />
+})
+
+export const CombinationRoseParallelChart = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'roseParallel',
     dataset: [
       { date: '2019', profit: 10, sales: 20, rateOfReturn: 0.1 },
       { date: '2020', profit: 20, sales: 40, rateOfReturn: 0.2 },
@@ -21,12 +36,12 @@ export const CombinationLineChart = memo(() => {
     ],
     measures: [
       {
-        id: 'sales-and-profit',
+        id: 'salesAndProfit',
         alias: '销售额与利润',
         children: [
           {
             id: 'sales',
-            alias: 'sales',
+            alias: '销售额',
             location: 'measure',
           },
           {
@@ -52,9 +67,9 @@ export const CombinationLineChart = memo(() => {
   return <PivotChart vseed={vseed} />
 })
 
-export const PivotLineChart = memo(() => {
+export const PivotRoseParallelChart = memo(() => {
   const vseed: VSeed = {
-    chartType: 'line',
+    chartType: 'roseParallel',
     dimensions: [
       { id: 'category', alias: '类别', location: 'dimension' },
       { id: 'date', alias: '日期', location: 'columnDimension' },
@@ -70,25 +85,25 @@ export const PivotLineChart = memo(() => {
     ],
     dataset: [
       { date: '2019', region: 'east', category: 'Grocery', profit: 10, sales: 100 },
-      { date: '2019', region: 'east', category: 'Beverages', profit: 30, sales: 3200 },
+      { date: '2019', region: 'east', category: 'Beverages', profit: 30, sales: 320 },
       { date: '2019', region: 'east', category: 'Dairy', profit: 30, sales: 300 },
-      { date: '2019', region: 'east', category: 'Household', profit: 50, sales: 2400 },
+      { date: '2019', region: 'east', category: 'Household', profit: 50, sales: 240 },
       { date: '2019', region: 'east', category: 'Personal', profit: 40, sales: 500 },
       { date: '2019', region: 'west', category: 'Grocery', profit: 10, sales: 100 },
-      { date: '2019', region: 'west', category: 'Beverages', profit: 30, sales: 3200 },
+      { date: '2019', region: 'west', category: 'Beverages', profit: 30, sales: 320 },
       { date: '2019', region: 'west', category: 'Dairy', profit: 30, sales: 300 },
-      { date: '2019', region: 'west', category: 'Household', profit: 50, sales: 2400 },
+      { date: '2019', region: 'west', category: 'Household', profit: 50, sales: 240 },
       { date: '2019', region: 'west', category: 'Personal', profit: 40, sales: 500 },
 
       { date: '2020', region: 'east', category: 'Grocery', profit: 10, sales: 100 },
-      { date: '2020', region: 'east', category: 'Beverages', profit: 30, sales: 3200 },
+      { date: '2020', region: 'east', category: 'Beverages', profit: 30, sales: 320 },
       { date: '2020', region: 'east', category: 'Dairy', profit: 30, sales: 300 },
-      { date: '2020', region: 'east', category: 'Household', profit: 50, sales: 2400 },
+      { date: '2020', region: 'east', category: 'Household', profit: 50, sales: 240 },
       { date: '2020', region: 'east', category: 'Personal', profit: 40, sales: 500 },
       { date: '2020', region: 'west', category: 'Grocery', profit: 10, sales: 100 },
-      { date: '2020', region: 'west', category: 'Beverages', profit: 30, sales: 3200 },
+      { date: '2020', region: 'west', category: 'Beverages', profit: 30, sales: 320 },
       { date: '2020', region: 'west', category: 'Dairy', profit: 30, sales: 300 },
-      { date: '2020', region: 'west', category: 'Household', profit: 50, sales: 2400 },
+      { date: '2020', region: 'west', category: 'Household', profit: 50, sales: 240 },
       { date: '2020', region: 'west', category: 'Personal', profit: 40, sales: 500 },
     ],
   }

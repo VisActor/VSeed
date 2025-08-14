@@ -66,3 +66,7 @@ export const barParallelConfig: AdvancedPipe = columnConfig
 export const barPercentConfig: AdvancedPipe = columnConfig
 export const columnParallelConfig: AdvancedPipe = columnConfig
 export const columnPercentConfig: AdvancedPipe = columnConfig
+
+export const donutConfig: AdvancedPipe = pieConfig
+export const roseConfig: AdvancedPipe = pieConfig
+export const roseParallelConfig: AdvancedPipe = pieConfig

@@ -22,5 +22,17 @@ export const initPie: SpecPipe = (spec, context) => {
       clip: true,
     },
   ]
+  result.pie = {
+    style: {
+      stroke: '#ffffff',
+      lineWidth: 1,
+    },
+    state: {
+      hover: {
+        centerOffset: 10,
+        outerRadius: result.outerRadius * 1.1,
+      },
+    },
+  }
   return result
 }

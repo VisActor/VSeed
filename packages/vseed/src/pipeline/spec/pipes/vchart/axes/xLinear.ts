@@ -8,7 +8,7 @@ export const xLinear: SpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const { locale } = advancedVSeed
-  const config = advancedVSeed.config?.[chartType]?.xAxis as XLinearAxis
+  const config = advancedVSeed.config?.[chartType as 'bar']?.xAxis as XLinearAxis
 
   if (!result.axes) {
     result.axes = []

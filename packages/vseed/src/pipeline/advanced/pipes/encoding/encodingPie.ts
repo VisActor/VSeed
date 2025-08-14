@@ -1,7 +1,7 @@
 import type { AdvancedPipe } from 'src/types'
 import type { Encoding } from 'src/types'
 
-export const encodingPolar: AdvancedPipe = (advancedVSeed) => {
+export const encodingPie: AdvancedPipe = (advancedVSeed) => {
   const result = { ...advancedVSeed }
   const { datasetReshapeInfo, dimensions } = advancedVSeed
   if (!datasetReshapeInfo || !dimensions) {

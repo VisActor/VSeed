@@ -1,1 +1,1 @@
-export type { Donut } from './donut'
+export * from './donut'

@@ -22,8 +22,8 @@ import {
 } from '../../properties'
 
 /**
- * 堆叠玫瑰图类型定义
- * @description 堆叠玫瑰图，适用于多维度数据对比场景，通过极坐标系下的扇形弧度和半径展示数据大小
+ * 分组玫瑰图类型定义
+ * @description 分组玫瑰图，适用于多维度数据对比场景，通过极坐标系下的扇形弧度和半径展示数据大小
  * 适用场景:
  * - 多维度数据的分布对比
  * - 周期性数据的强弱比较
@@ -35,14 +35,14 @@ import {
  * 默认开启的功能:
  * - 默认开启图例、极坐标系、数据标签、提示信息、数值缩放
  */
-export interface Rose {
+export interface RoseParallel {
   /**
-   * 堆叠玫瑰图
-   * @description 堆叠玫瑰图，通过极坐标系展示多维度数据对比关系
-   * @type {'rose'}
-   * @example 'rose'
+   * 分组玫瑰图
+   * @description 分组玫瑰图，通过极坐标系展示多维度数据对比关系
+   * @type {'roseParallel'}
+   * @example 'roseParallel'
    */
-  chartType: 'rose'
+  chartType: 'roseParallel'
   /**
    * 数据集
    * @description 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 玫瑰图的数据最终会被转换为2个维度, 1个指标.
@@ -116,8 +116,8 @@ export interface Rose {
   locale?: Locale
 }
 
-export const zRose = z.object({
-  chartType: z.literal('rose'),
+export const zRoseParallel = z.object({
+  chartType: z.literal('roseParallel'),
   dataset: zDataset.optional(),
   dimensions: zDimensions.optional(),
   measures: zMeasures.optional(),

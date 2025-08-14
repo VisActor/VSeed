@@ -8,7 +8,7 @@ export const yLinear: SpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const { locale } = advancedVSeed
-  const config = advancedVSeed.config?.[chartType]?.yAxis as YLinearAxis
+  const config = advancedVSeed.config?.[chartType as 'column']?.yAxis as YLinearAxis
 
   if (!result.axes) {
     result.axes = []

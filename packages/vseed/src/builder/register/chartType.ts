@@ -21,6 +21,10 @@ import {
   lineSpecPipeline,
   pieAdvancedPipeline,
   pieSpecPipeline,
+  roseAdvancedPipeline,
+  roseParallelAdvancedPipeline,
+  roseParallelSpecPipeline,
+  roseSpecPipeline,
 } from '../../pipeline'
 import { Builder } from '../builder'
 
@@ -77,4 +81,14 @@ export const registerPie = () => {
 export const registerDonut = () => {
   Builder._advancedPipelineMap['donut'] = donutAdvancedPipeline
   Builder._specPipelineMap['donut'] = donutSpecPipeline
+}
+
+export const registerRose = () => {
+  Builder._advancedPipelineMap['rose'] = roseAdvancedPipeline
+  Builder._specPipelineMap['rose'] = roseSpecPipeline
+}
+
+export const registerRoseParallel = () => {
+  Builder._advancedPipelineMap['roseParallel'] = roseParallelAdvancedPipeline
+  Builder._specPipelineMap['roseParallel'] = roseParallelSpecPipeline
 }

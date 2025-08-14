@@ -22,5 +22,18 @@ export const initDonut: SpecPipe = (spec, context) => {
       clip: true,
     },
   ]
+
+  result.pie = {
+    style: {
+      stroke: '#ffffff',
+      lineWidth: 1,
+    },
+    state: {
+      hover: {
+        outerRadius: result.outerRadius * 1.1,
+      },
+    },
+  }
+
   return result
 }

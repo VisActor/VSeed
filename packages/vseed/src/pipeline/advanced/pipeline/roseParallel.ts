@@ -3,26 +3,28 @@ import {
   autoDimensions,
   autoMeasures,
   initAdvancedVSeed,
+  reshapeTo2D1M,
   vchartBaseConfig,
   vchartTheme,
   pivotAdapter,
-  reshapeTo1D1M,
-  pivotReshapeTo1D1M,
-  encodingPie,
+  pivotReshapeTo2D1M,
+  markStyle,
   annotation,
   locale,
-  donutConfig,
+  roseParallelConfig,
+  encodingRose,
 } from '../pipes'
 
-export const donutAdvancedPipeline: AdvancedPipeline = [
+export const roseParallelAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   locale,
   autoMeasures,
   autoDimensions,
-  pivotAdapter([reshapeTo1D1M], [pivotReshapeTo1D1M]),
-  encodingPie,
-  donutConfig,
+  pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
+  encodingRose,
+  roseParallelConfig,
   vchartBaseConfig,
   vchartTheme,
-  annotation
+  markStyle,
+  annotation,
 ]

@@ -1,36 +1,39 @@
-import { VSeed } from '@visactor/vseed'
-import { PivotChart } from '../../render/PivotChart'
 import { memo } from 'react'
+import { VSeed } from '@visactor/vseed'
+import { VChartRender } from '../../render/Chart'
+import { PivotChart } from '../../render/PivotChart'
 
-export const CombinationDonutChart = memo(() => {
+export const RoseChart = memo(() => {
   const vseed: VSeed = {
-    chartType: 'donut',
-    measures: [
-      {
-        id: 'sales-and-profit',
-        alias: '销售额与利润',
-        children: [
-          {
-            id: 'sales',
-            alias: 'sales',
-          },
-          {
-            id: 'profit',
-            alias: '利润',
-          },
-        ],
-      },
-      {
-        id: 'ratio',
-        alias: '比率',
-        children: [
-          {
-            id: 'rateOfReturn',
-            alias: '回报率',
-          },
-        ],
-      },
+    chartType: 'rose',
+    dataset: [
+      { date: '2023', profit: 40 },
+      { date: '2022', profit: 50 },
+      { date: '2021', profit: 25 },
+      { date: '2020', profit: 30 },
+      { date: '2019', profit: 10 },
     ],
+  }
+  return <VChartRender vseed={vseed} />
+})
+
+export const StackedRoseChart = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'rose',
+    dataset: [
+      { date: '2019', profit: 10, sales: 20 },
+      { date: '2020', profit: 30, sales: 60 },
+      { date: '2021', profit: 30, sales: 60 },
+      { date: '2022', profit: 50, sales: 100 },
+      { date: '2023', profit: 40, sales: 80 },
+    ],
+  }
+  return <VChartRender vseed={vseed} />
+})
+
+export const CombinationRoseChart = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'rose',
     dataset: [
       { date: '2019', profit: 10, sales: 20, rateOfReturn: 0.1 },
       { date: '2020', profit: 20, sales: 40, rateOfReturn: 0.2 },
@@ -45,13 +48,42 @@ export const CombinationDonutChart = memo(() => {
         location: 'dimension',
       },
     ],
+    measures: [
+      {
+        id: 'salesAndProfit',
+        alias: '销售额与利润',
+        children: [
+          {
+            id: 'sales',
+            alias: '销售额',
+            location: 'measure',
+          },
+          {
+            id: 'profit',
+            alias: '利润',
+            location: 'measure',
+          },
+        ],
+      },
+      {
+        id: 'ratio',
+        alias: '比率',
+        children: [
+          {
+            id: 'rateOfReturn',
+            alias: '回报率',
+            location: 'measure',
+          },
+        ],
+      },
+    ],
   }
   return <PivotChart vseed={vseed} />
 })
 
-export const PivotDonutChart = memo(() => {
+export const PivotRoseChart = memo(() => {
   const vseed: VSeed = {
-    chartType: 'donut',
+    chartType: 'rose',
     dimensions: [
       { id: 'category', alias: '类别', location: 'dimension' },
       { id: 'date', alias: '日期', location: 'columnDimension' },

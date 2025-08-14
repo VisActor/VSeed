@@ -1,10 +1,10 @@
-import type { AdvancedPipe } from 'src/types'
+import type { AdvancedPipe, AdvancedVSeed } from 'src/types'
 
 export const initAdvancedVSeed: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context
-  const { chartType = 'table' } = vseed
+  const { chartType } = vseed
   return {
     ...advancedVSeed,
     chartType,
-  }
+  } as AdvancedVSeed
 }

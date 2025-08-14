@@ -1,1 +1,1 @@
-export type { Rose } from './rose'
+export * from './rose'

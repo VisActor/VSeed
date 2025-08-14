@@ -5,7 +5,7 @@ export const xBand: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
-  const config = advancedVSeed.config?.[chartType]?.xAxis as XBandAxis
+  const config = advancedVSeed.config?.[chartType as 'column']?.xAxis as XBandAxis
 
   if (!result.axes) {
     result.axes = []

@@ -1,6 +1,6 @@
 import type { Spec } from 'src/types'
 import type { ChartType, CustomThemeConfig } from '../properties'
-import type { VSeed } from '../chartType'
+import type { VSeed } from '../vseed'
 import type { AdvancedPipeline, SpecPipeline } from '../pipeline'
 import type { AdvancedVSeed } from '../advancedVSeed'
 

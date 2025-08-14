@@ -1,5 +1,5 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
-import { execPipeline } from '../../../utils'
+import { execPipeline } from '../../../../utils'
 import type { SpecPipe, SpecPipeline, SpecPipelineContext } from 'src/types'
 import { unique } from 'remeda'
 

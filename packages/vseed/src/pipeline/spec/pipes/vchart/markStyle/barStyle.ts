@@ -1,5 +1,5 @@
 import type { IBarChartSpec } from '@visactor/vchart'
-import { selector } from '../../../../dataSelector'
+import { selector } from '../../../../../dataSelector'
 import type { BarStyle, Datum, SpecPipe } from 'src/types'
 import type { ISeriesMarkAttributeContext } from '@visactor/vchart/esm/compile/mark'
 

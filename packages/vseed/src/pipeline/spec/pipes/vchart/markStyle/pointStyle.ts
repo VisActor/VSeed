@@ -1,5 +1,5 @@
 import type { IAreaChartSpec } from '@visactor/vchart'
-import { selector } from '../../../../dataSelector'
+import { selector } from '../../../../../dataSelector'
 import type { Datum, PointStyle, SpecPipe } from 'src/types'
 
 export const pointStyle: SpecPipe = (spec, context) => {

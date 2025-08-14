@@ -1,5 +1,5 @@
 import type { IAreaChartSpec } from '@visactor/vchart'
-import { selector } from '../../../../dataSelector'
+import { selector } from '../../../../../dataSelector'
 import type { AreaStyle, Datum, SpecPipe } from 'src/types'
 import { groupBy } from 'remeda'
 

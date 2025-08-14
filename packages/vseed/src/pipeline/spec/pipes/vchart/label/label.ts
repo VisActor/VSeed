@@ -1,6 +1,6 @@
 import type { ILineChartSpec } from '@visactor/vchart'
 import type { ILineLikeLabelSpec } from '@visactor/vchart/esm/series/mixin/interface'
-import { autoFormatter, createFormatter, findMeasureById } from '../../../utils'
+import { autoFormatter, createFormatter, findMeasureById } from '../../../../utils'
 import type { Datum, Label, SpecPipe } from 'src/types'
 import { isEmpty } from 'remeda'
 

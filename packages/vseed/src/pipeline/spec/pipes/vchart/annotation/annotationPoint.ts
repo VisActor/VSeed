@@ -1,8 +1,8 @@
 import type { ICartesianSeries, ILineChartSpec } from '@visactor/vchart'
-import { selector } from '../../../../dataSelector'
+import { selector } from '../../../../../dataSelector'
 import type { Datum, SpecPipe } from 'src/types'
 import { isSubset } from './utils'
-import { ANNOTATION_Z_INDEX } from '../../../constant'
+import { ANNOTATION_Z_INDEX } from '../../../../constant'
 
 export const annotationPoint: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context

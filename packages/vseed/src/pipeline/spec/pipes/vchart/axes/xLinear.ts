@@ -1,14 +1,14 @@
 import type { ISpec } from '@visactor/vchart'
-import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../constant'
-import { autoFormatter } from '../../../utils'
-import type { SpecPipe, YLinearAxis } from 'src/types'
+import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../constant'
+import type { SpecPipe, XLinearAxis } from 'src/types'
+import { autoFormatter } from '../../../../utils'
 
-export const yLinear: SpecPipe = (spec, context) => {
+export const xLinear: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const { locale } = advancedVSeed
-  const config = advancedVSeed.config?.[chartType]?.yAxis as YLinearAxis
+  const config = advancedVSeed.config?.[chartType]?.xAxis as XLinearAxis
 
   if (!result.axes) {
     result.axes = []
@@ -20,7 +20,7 @@ export const yLinear: SpecPipe = (spec, context) => {
       {
         visible: true,
         type: 'linear',
-        orient: 'left',
+        orient: 'bottom',
       },
     ] as ISpec['axes']
     return result
@@ -44,7 +44,7 @@ export const yLinear: SpecPipe = (spec, context) => {
   const linearAxis = {
     visible,
     type: 'linear',
-    orient: 'left',
+    orient: 'bottom',
     nice,
     zero,
     inverse,

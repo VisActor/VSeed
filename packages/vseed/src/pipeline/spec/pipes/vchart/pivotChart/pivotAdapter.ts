@@ -1,5 +1,5 @@
 import type { Spec, SpecPipe, SpecPipeline, SpecPipelineContext } from 'src/types'
-import { execPipeline, isPivotChart } from '../../../utils'
+import { execPipeline, isPivotChart } from '../../../../utils'
 
 export const pivotAdapter = (pipeline: SpecPipeline, pivotPipeline: SpecPipeline): SpecPipe => {
   return (spec, context) => {

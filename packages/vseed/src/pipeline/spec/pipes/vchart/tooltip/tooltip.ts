@@ -1,5 +1,5 @@
 import { isEmpty } from 'remeda'
-import { autoFormatter, createFormatter, findMeasureById } from '../../../utils'
+import { autoFormatter, createFormatter, findMeasureById } from '../../../../utils'
 import type { SpecPipe, Tooltip } from 'src/types'
 
 const defaultTooltip: Tooltip = {

@@ -17,6 +17,14 @@ export const RoseChart = memo(() => {
   return <VChartRender vseed={vseed} />
 })
 
+export const RoseChartOnlyMeasures = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'rose',
+    dataset: [{ profit: 40, sales: 100, goalSales: 200, count: 20 }],
+  }
+  return <VChartRender vseed={vseed} />
+})
+
 export const StackedRoseChart = memo(() => {
   const vseed: VSeed = {
     chartType: 'rose',

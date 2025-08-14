@@ -21,5 +21,7 @@ export const initLine: SpecPipe = (spec, context) => {
       clip: true,
     },
   ]
+  result.animation = true
+
   return result
 }

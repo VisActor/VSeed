@@ -35,5 +35,7 @@ export const initDonut: SpecPipe = (spec, context) => {
     },
   }
 
+  result.animation = true
+
   return result
 }

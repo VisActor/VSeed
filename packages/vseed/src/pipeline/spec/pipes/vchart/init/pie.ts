@@ -29,10 +29,12 @@ export const initPie: SpecPipe = (spec, context) => {
     },
     state: {
       hover: {
-        centerOffset: 10,
+        centerOffset: 5,
         outerRadius: result.outerRadius * 1.1,
       },
     },
   }
+  result.animation = true
+
   return result
 }

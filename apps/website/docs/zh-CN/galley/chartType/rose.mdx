@@ -2,7 +2,7 @@
 pageType: doc
 ---
 
-import { RoseChart, StackedRoseChart, CombinationRoseChart, PivotRoseChart } from '@components'
+import { RoseChart, RoseChartOnlyMeasures, StackedRoseChart, CombinationRoseChart, PivotRoseChart } from '@components'
 
 # rose
 
@@ -21,6 +21,20 @@ export const RoseChart = memo(() => {
       { date: '2020', profit: 30 },
       { date: '2019', profit: 10 },
     ],
+  }
+  return <VChartRender vseed={vseed} />
+})
+```
+
+## 玫瑰图(零维度)
+
+<RoseChartOnlyMeasures />
+
+```tsx pure {}
+export const RoseChartOnlyMeasures = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'rose',
+    dataset: [{ profit: 40, sales: 100, goalSales: 200, count: 20 }],
   }
   return <VChartRender vseed={vseed} />
 })

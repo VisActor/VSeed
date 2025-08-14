@@ -6,6 +6,7 @@ export const initPivot: SpecPipe = (spec) => {
 
   return {
     ...result,
+    animation: true,
     rows: [],
     columns: [],
     indicators: [],
@@ -15,8 +16,6 @@ export const initPivot: SpecPipe = (spec) => {
     indicatorsAsCol: false,
   }
 }
-
-
 
 export const pivotIndicatorsAsRow: SpecPipe = (spec) => {
   const result = { ...spec } as PivotChartConstructorOptions

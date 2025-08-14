@@ -21,5 +21,6 @@ export const initBar: SpecPipe = (spec, context) => {
       clip: true,
     },
   ]
+  result.animation = true
   return result
 }

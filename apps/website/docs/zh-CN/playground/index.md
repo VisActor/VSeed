@@ -48,7 +48,7 @@ const Demo = () => {
     ],
   }
 
-  if (zVSeed.safeParse(vseed)) {
+  if (zVSeed.safeParse(vseed).success) {
     console.log('zVSeed parse success!!!')
   } else {
     console.error('zVSeed parse error!!!')

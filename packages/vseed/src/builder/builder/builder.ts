@@ -11,7 +11,7 @@ import type {
 import { buildAdvanced } from './buildAdvanced'
 import { buildSpec } from './buildSpec'
 import { build } from './build'
-import { intl } from '../../i18n'
+import { intl } from 'src/i18n'
 
 export class Builder implements VSeedBuilder {
   private _vseed: VSeed

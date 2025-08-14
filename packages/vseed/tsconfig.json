@@ -24,5 +24,5 @@
   },
   "include": [
     "src"
-  ]
+, "src/pipeline/spec/pipeline/.ts"  ]
 }

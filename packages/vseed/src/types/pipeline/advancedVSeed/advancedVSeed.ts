@@ -1,5 +1,5 @@
 import type { AdvancedVSeed } from 'src/types/advancedVSeed'
-import type { VSeed } from '../../chartType'
+import type { VSeed } from '../../vseed'
 import type { CustomTheme } from '../../properties'
 import type { Pipe } from '../pipeline'
 

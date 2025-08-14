@@ -1,8 +1,0 @@
-export { initColumn } from './column'
-export { initBar } from './bar'
-export { initBarParallel } from './barParallel'
-export { initArea } from './area'
-export { initLine } from './line'
-export { initColumnParallel } from './columnParallel'
-export { initPie } from './pie'
-export { initPivot } from './pivot'

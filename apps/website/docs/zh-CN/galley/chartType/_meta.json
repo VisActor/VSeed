@@ -8,5 +8,8 @@
   "barPercent",
   "area",
   "areaPercent",
-  "pie"
+  "rose",
+  "roseParallel",
+  "pie",
+  "donut"
 ]

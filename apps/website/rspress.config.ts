@@ -48,40 +48,6 @@ export default defineConfig({
         outlineTitle: '目录',
       },
     ],
-    nav: [
-      {
-        text: '介绍',
-        link: '/guide/guide',
-        activeMatch: '/guide/',
-      },
-      {
-        text: '示例',
-        link: '/galley/chartType/line',
-        activeMatch: '/galley',
-      },
-      ...(isDev
-        ? [
-            {
-              text: '开发指南',
-              link: '/development/',
-              activeMatch: '/development/',
-            },
-          ]
-        : []),
-      {
-        text: 'Playground',
-        link: '/playground/',
-        activeMatch: '/playground/',
-      },
-      {
-        text: '了解VChart',
-        link: 'https://visactor.com/vchart',
-      },
-      {
-        text: '了解VTable',
-        link: 'https://visactor.com/vtable',
-      },
-    ],
   },
   title: 'VisActor/VSeed',
   icon: '/logo.svg',

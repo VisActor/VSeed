@@ -1,0 +1,30 @@
+[
+  {
+    "text": "Guide",
+    "link": "/guide/quickStart",
+    "activeMatch": "/guide/"
+  },
+  {
+    "text": "Examples",
+    "link": "/galley/chartType/line",
+    "activeMatch": "/galley"
+  },
+  {
+    "text": "Development",
+    "link": "/development/",
+    "activeMatch": "/development/"
+  },
+  {
+    "text": "Playground",
+    "link": "/playground/",
+    "activeMatch": "/playground/"
+  },
+  {
+    "text": "About VChart",
+    "link": "https://visactor.com/vchart"
+  },
+  {
+    "text": "About VTable",
+    "link": "https://visactor.com/vtable"
+  }
+]

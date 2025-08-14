@@ -1,4 +1,5 @@
-import type { Locale } from '../../i18n'
+import { z } from 'zod'
+import { zLocale, type Locale } from '../../i18n'
 import type {
   BackgroundColor,
   Color,
@@ -10,7 +11,17 @@ import type {
   Theme,
   Tooltip,
 } from '../../properties'
-
+import {
+  zBackgroundColor,
+  zColor,
+  zDataset,
+  zDimensions,
+  zLabel,
+  zLegend,
+  zMeasures,
+  zTheme,
+  zTooltip,
+} from '../../properties'
 /**
  * 环形图类型定义
  * @description 环形图，适用于展示单一维度数据的占比关系，中心留有空白区域可展示汇总信息
@@ -105,3 +116,17 @@ export interface Donut {
    */
   locale?: Locale
 }
+
+export const zDonut = z.object({
+  chartType: z.literal('donut'),
+  dataset: zDataset.optional(),
+  dimensions: zDimensions.optional(),
+  measures: zMeasures.optional(),
+  backgroundColor: zBackgroundColor.optional(),
+  color: zColor.optional(),
+  label: zLabel.optional(),
+  legend: zLegend.optional(),
+  tooltip: zTooltip.optional(),
+  theme: zTheme.optional(),
+  locale: zLocale.optional(),
+})

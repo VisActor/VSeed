@@ -75,9 +75,10 @@ export const zConfig = z.object({
     })
     .optional(),
 
+  rose: z.object({}).optional(),
+  roseParallel: z.object({}).optional(),
   pie: z.object({}).optional(),
   donut: z.object({}).optional(),
-  rose: z.object({}).optional(),
   dualAxis: z.object({}).optional(),
   table: z.object({}).optional(),
   pivotTable: z.object({}).optional(),

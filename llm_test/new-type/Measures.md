@@ -1,6 +1,5 @@
 
 ### Measures
-表格的每个指标会对应一行, 并且天生支持指标组合.
 ```typescript
 export type Measures = (
   | _Schema0

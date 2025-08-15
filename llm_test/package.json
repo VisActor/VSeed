@@ -2,6 +2,7 @@
   "name": "vseed-llm-test",
   "private": true,
   "devDependencies": {
+    "@types/node": "^24.2.1",
     "dotenv": "17.2.1",
     "openai": "5.12.2",
     "puppeteer": "^24.16.1",

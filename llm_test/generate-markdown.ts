@@ -17,6 +17,7 @@ function generateChartTypeMarkdown() {
     'pie',
     'pivotTable',
     'rose',
+    'roseParallel',
     'table',
   ]
   const outputDir = path.resolve(__dirname, './new-type')

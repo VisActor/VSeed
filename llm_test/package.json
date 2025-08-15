@@ -5,6 +5,13 @@
     "dotenv": "17.2.1",
     "openai": "5.12.2",
     "puppeteer": "^24.16.1",
-    "ts-node": "10.9.2"
+    "ts-morph": "^26.0.0",
+    "ts-node": "10.9.2",
+    "zod": "4.0.17",
+    "@visactor/vseed": "workspace:*",
+    "json-schema-to-typescript": "15.0.4"
+  },
+  "scripts": {
+    "generate": "ts-node ./generate-top-key.ts && ts-node ./generate-doc.ts"
   }
 }

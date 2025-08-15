@@ -3,7 +3,7 @@ import {
   autoDimensions,
   autoMeasures,
   initAdvancedVSeed,
-  vchartTheme,
+  theme,
   pivotAdapter,
   annotation,
   markStyle,
@@ -22,7 +22,7 @@ export const scatterAdvancedPipeline: AdvancedPipeline = [
   pivotAdapter([reshapeTo1D2M], [pivotReshapeTo1D2M]),
   encodingYY,
   scatterConfig,
-  vchartTheme,
+  theme,
   markStyle,
   annotation,
 ]

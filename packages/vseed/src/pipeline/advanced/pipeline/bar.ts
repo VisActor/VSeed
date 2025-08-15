@@ -2,7 +2,7 @@ import type { AdvancedPipeline } from 'src/types'
 import {
   initAdvancedVSeed,
   encodingYX,
-  vchartTheme,
+  theme,
   autoMeasures,
   autoDimensions,
   reshapeTo2D1M,
@@ -22,7 +22,7 @@ export const barAdvancedPipeline: AdvancedPipeline = [
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingYX,
   barConfig,
-  vchartTheme,
+  theme,
   markStyle,
   annotation,
 ]

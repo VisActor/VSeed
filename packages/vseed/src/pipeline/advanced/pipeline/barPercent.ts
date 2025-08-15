@@ -5,7 +5,7 @@ import {
   encodingYX,
   initAdvancedVSeed,
   reshapeTo2D1M,
-  vchartTheme,
+  theme,
   pivotAdapter,
   pivotReshapeTo2D1M,
   barPercentConfig,
@@ -22,7 +22,7 @@ export const barPercentAdvancedPipeline: AdvancedPipeline = [
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingYX,
   barPercentConfig,
-  vchartTheme,
+  theme,
   markStyle,
   annotation,
 ]

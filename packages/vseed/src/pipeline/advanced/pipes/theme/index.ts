@@ -1,1 +1,1 @@
-export { vchartTheme, vtableTheme } from './theme'
+export { theme } from './theme'

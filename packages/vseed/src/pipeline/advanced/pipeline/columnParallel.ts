@@ -5,7 +5,7 @@ import {
   encodingXY,
   initAdvancedVSeed,
   reshapeTo2D1M,
-  vchartTheme,
+  theme,
   pivotAdapter,
   pivotReshapeTo2D1M,
   columnParallelConfig,
@@ -22,7 +22,7 @@ export const columnParallelAdvancedPipeline: AdvancedPipeline = [
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
   columnParallelConfig,
-  vchartTheme,
+  theme,
   markStyle,
   annotation,
 ]

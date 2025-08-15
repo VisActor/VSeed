@@ -4,7 +4,7 @@ import {
   autoMeasures,
   encodingXY,
   initAdvancedVSeed,
-  vchartTheme,
+  theme,
   reshapeTo2D1M,
   pivotReshapeTo2D1M,
   pivotAdapter,
@@ -22,7 +22,7 @@ export const columnPercentAdvancedPipeline: AdvancedPipeline = [
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
   columnPercentConfig,
-  vchartTheme,
+  theme,
   markStyle,
   annotation,
 ]

@@ -5,7 +5,7 @@ import {
   encodingYX,
   initAdvancedVSeed,
   reshapeTo2D1M,
-  vchartTheme,
+  theme,
   pivotAdapter,
   pivotReshapeTo2D1M,
   barParallelConfig,
@@ -22,7 +22,7 @@ export const barParallelAdvancedPipeline: AdvancedPipeline = [
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingYX,
   barParallelConfig,
-  vchartTheme,
+  theme,
   markStyle,
   annotation,
 ]

@@ -4,7 +4,7 @@ import {
   autoMeasures,
   initAdvancedVSeed,
   reshapeTo2D1M,
-  vchartTheme,
+  theme,
   pivotAdapter,
   pivotReshapeTo2D1M,
   markStyle,
@@ -22,7 +22,7 @@ export const roseParallelAdvancedPipeline: AdvancedPipeline = [
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingRose,
   roseParallelConfig,
-  vchartTheme,
+  theme,
   markStyle,
   annotation,
 ]

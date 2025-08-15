@@ -5,7 +5,7 @@ import { zDimensions } from './properties/dimensions'
 import { zMeasures } from './properties/measures'
 import { zEncoding } from './properties/encoding/encoding'
 import { zDatasetReshapeInfo } from './properties/datasetReshapeInfo/datasetReshapeInfo'
-import { zTheme, zCustomTheme } from './properties/theme'
+import { zTheme, zCustomThemeConfig } from './properties/theme'
 import { zConfig } from './properties/config'
 import { zAnnotation, zMarkStyle } from './properties'
 import { zLocale } from './i18n'
@@ -20,7 +20,7 @@ export const zAdvancedVSeed = z.object({
   config: zConfig,
   theme: zTheme,
   markStyle: zMarkStyle,
-  customTheme: zCustomTheme,
+  customTheme: zCustomThemeConfig,
   annotation: zAnnotation,
   locale: zLocale,
 })

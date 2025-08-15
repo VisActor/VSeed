@@ -249,6 +249,20 @@ export const darkTheme = (): CustomThemeConfig => {
       },
       funnel: {
         ...baseConfig,
+        color: {
+          colorScheme: [
+            '#2E62F1',
+            '#3A6EF6',
+            '#4780FA',
+            '#548CFE',
+            '#6198FF',
+            '#6FA3FF',
+            '#7CACFF',
+            '#88B7FF',
+            '#94C2FF',
+            '#A0CEFF',
+          ],
+        },
       },
     },
   }

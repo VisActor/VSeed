@@ -242,6 +242,20 @@ export const lightTheme = (): CustomThemeConfig => {
       },
       funnel: {
         ...baseConfig,
+        color: {
+          colorScheme: [
+            '#5766EC',
+            '#6372F0',
+            '#7080F4',
+            '#7C8CFA',
+            '#8998FF',
+            '#95A3FF',
+            '#A0AEFF',
+            '#ACB9FF',
+            '#B7C4FF',
+            '#C2CEFF',
+          ],
+        },
       },
     },
   }

@@ -9,6 +9,7 @@ export const pointStateDimensionHover: SpecPipe = (spec) => {
     point: {
       ...point,
       state: {
+        ...(point.state || {}),
         dimension_hover: {
           scaleX: 1.4,
           scaleY: 1.4,
@@ -28,6 +29,7 @@ export const pointStateHover: SpecPipe = (spec, context) => {
     point: {
       ...point,
       state: {
+        ...(point.state || {}),
         hover: {
           scaleX: 1.4,
           scaleY: 1.4,

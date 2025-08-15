@@ -8,10 +8,11 @@ export const encodingXY: AdvancedPipe = (advancedVSeed) => {
     return result
   }
 
+  const isZeroDimension = dimensions.length === 0
+
   const encoding = datasetReshapeInfo.reduce<Encoding>((prev, cur) => {
     const { foldInfo, unfoldInfo } = cur
 
-    const isZeroDimension = dimensions.length === 0
     const x = [isZeroDimension ? foldInfo.measureName : dimensions[0].id]
     const y = [foldInfo.measureValue]
     const group = [unfoldInfo.groupId]

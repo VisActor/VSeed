@@ -23,9 +23,12 @@ const Demo = () => {
     'bar',
     'barPercent',
     'barParallel',
-    'pie',
     'area',
     'areaPercent',
+    'rose',
+    'roseParallel',
+    'pie',
+    'donut',
   ]
 
   const changeChartType = (c) => () => {
@@ -139,9 +142,31 @@ const Demo = () => {
     ],
   ]
 
-  const [dataset, setDataset] = useState(datasetList[0])
+  const chartTypes = [
+    'line',
+    'column',
+    'columnPercent',
+    'columnParallel',
+    'bar',
+    'barPercent',
+    'barParallel',
+    'area',
+    'areaPercent',
+    'rose',
+    'roseParallel',
+    'pie',
+    'donut',
+  ]
+
+  const [chartType, setChartType] = useState('columnParallel')
+  const [dataset, setDataset] = useState(datasetList[1])
+  const builderRef = useRef(null)
   const changeDataset = (c) => () => {
     setDataset(c)
+  }
+
+  const changeChartType = (c) => () => {
+    setChartType(c)
   }
 
   useEffect(() => {
@@ -150,22 +175,34 @@ const Demo = () => {
     }
 
     const vseed: VSeed = {
-      chartType: 'columnParallel',
+      chartType,
       dataset,
       legend: {
         position: 'bottom',
       },
     }
 
-    const spec = Builder.from(vseed).build()
+    const builder = Builder.from(vseed)
+    const spec = builder.build()
+    builderRef.current = builder
     const vchart = new VChart(spec, { dom: ref.current })
     vchart.renderSync()
 
     return () => vchart.release()
-  }, [dataset])
+  }, [dataset, chartType])
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div
+      style={{ display: 'flex', flexDirection: 'column' }}
+      onClick={() => {
+        console.group(`selected ${chartType}`)
+        console.log('builder', builderRef.current)
+        console.log('spec', builderRef.current.spec)
+        console.log('vseed', builderRef.current.vseed)
+        console.log('advancedVSeed', builderRef.current.advancedVSeed)
+        console.groupEnd()
+      }}
+    >
       <div>
         {datasetList.map((d, index) => {
           return (
@@ -180,6 +217,21 @@ const Demo = () => {
           )
         })}
       </div>
+      <div>
+        {chartTypes.map((d) => {
+          return (
+            <span key={d} style={{ margin: '0 2px' }}>
+              <button
+                onClick={changeChartType(d)}
+                style={{ fontSize: 10, padding: '0 2px', border: '1px solid #cccccc' }}
+              >
+                {d}
+              </button>
+            </span>
+          )
+        })}
+      </div>
+
       <div ref={ref} style={{ height: 260, width: '100%' }}></div>
     </div>
   )

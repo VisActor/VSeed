@@ -1,3 +1,4 @@
 export { encodingXY } from './encodingXY'
 export { encodingYX } from './encodingYX'
-export { encodingPolar } from './encodingPolar'
+export { encodingRose } from './encodingRose'
+export { encodingPie } from './encodingPie'

@@ -1,7 +1,7 @@
 import { useDark } from 'rspress/runtime'
 
 import { useRef, useEffect, memo } from 'react'
-import VChart from '@visactor/vchart'
+import VChart, { ISpec } from '@visactor/vchart'
 import { registerAll, VSeed, Builder } from '@visactor/vseed'
 registerAll()
 
@@ -41,7 +41,12 @@ export const VChartRender = memo((props: { vseed: VSeed }) => {
     },
   } = props
   const ref = useRef<HTMLDivElement>(null)
-  const builderRef = useRef<Builder>(Builder.from({}))
+  const builderRef = useRef<Builder>(
+    Builder.from({
+      chartType: 'line',
+      dataset: [],
+    }),
+  )
 
   const dark = useDark()
 
@@ -53,7 +58,7 @@ export const VChartRender = memo((props: { vseed: VSeed }) => {
     const builder = Builder.from({ ...vseed, theme: dark ? 'dark' : 'light' })
     builderRef.current = builder
 
-    const spec = builder.build()
+    const spec = builder.build() as ISpec
     const vchart = new VChart(spec, { dom: ref.current })
 
     vchart.renderSync()

@@ -1,3 +1,4 @@
+import { z } from 'zod'
 import type { Locale } from '../../i18n'
 import { zLocale } from '../../i18n'
 import {
@@ -22,7 +23,6 @@ import type {
   Theme,
   Tooltip,
 } from '../../properties'
-import { z } from 'zod'
 
 /**
  * 饼图类型定义

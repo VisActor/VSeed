@@ -1,19 +1,29 @@
-import type { Locale } from '../../i18n'
-import type {
-  BackgroundColor,
-  Color,
-  Dataset,
-  Dimensions,
-  Label,
-  Legend,
-  Measures,
-  Theme,
-  Tooltip,
+import { z } from 'zod'
+import { zLocale, type Locale } from '../../i18n'
+import {
+  zBackgroundColor,
+  zColor,
+  zDataset,
+  zDimensions,
+  zLabel,
+  zLegend,
+  zMeasures,
+  zTheme,
+  zTooltip,
+  type BackgroundColor,
+  type Color,
+  type Dataset,
+  type Dimensions,
+  type Label,
+  type Legend,
+  type Measures,
+  type Theme,
+  type Tooltip,
 } from '../../properties'
 
 /**
- * 玫瑰图类型定义
- * @description 玫瑰图，适用于多维度数据对比场景，通过极坐标系下的扇形弧度和半径展示数据大小
+ * 堆叠玫瑰图类型定义
+ * @description 堆叠玫瑰图，适用于多维度数据对比场景，通过极坐标系下的扇形弧度和半径展示数据大小
  * 适用场景:
  * - 多维度数据的分布对比
  * - 周期性数据的强弱比较
@@ -27,8 +37,8 @@ import type {
  */
 export interface Rose {
   /**
-   * 玫瑰图
-   * @description 玫瑰图，通过极坐标系展示多维度数据对比关系
+   * 堆叠玫瑰图
+   * @description 堆叠玫瑰图，通过极坐标系展示多维度数据对比关系
    * @type {'rose'}
    * @example 'rose'
    */
@@ -105,3 +115,17 @@ export interface Rose {
    */
   locale?: Locale
 }
+
+export const zRose = z.object({
+  chartType: z.literal('rose'),
+  dataset: zDataset.optional(),
+  dimensions: zDimensions.optional(),
+  measures: zMeasures.optional(),
+  backgroundColor: zBackgroundColor.optional(),
+  color: zColor.optional(),
+  label: zLabel.optional(),
+  legend: zLegend.optional(),
+  tooltip: zTooltip.optional(),
+  theme: zTheme.optional(),
+  locale: zLocale.optional(),
+})

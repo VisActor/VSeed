@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.16
+
+### Patch Changes
+
+- feat: add rose roseParallel donut
+
 ## 0.0.15
 
 ### Patch Changes

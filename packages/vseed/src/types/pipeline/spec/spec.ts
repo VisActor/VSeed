@@ -1,6 +1,6 @@
 import type { Spec } from 'src/types'
 import type { Pipe } from '../pipeline'
-import type { VSeed } from '../../chartType'
+import type { VSeed } from '../../vseed'
 import type { AdvancedVSeed } from 'src/types/advancedVSeed'
 
 export type SpecPipelineContext = {

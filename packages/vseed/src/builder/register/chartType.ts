@@ -15,24 +15,18 @@ import {
   columnPercentAdvancedPipeline,
   columnPercentSpecPipeline,
   columnSpecPipeline,
+  donutAdvancedPipeline,
+  donutSpecPipeline,
   lineAdvancedPipeline,
   lineSpecPipeline,
   pieAdvancedPipeline,
   pieSpecPipeline,
+  roseAdvancedPipeline,
+  roseParallelAdvancedPipeline,
+  roseParallelSpecPipeline,
+  roseSpecPipeline,
 } from '../../pipeline'
 import { Builder } from '../builder'
-
-export const registerAll = () => {
-  registerLine()
-  registerColumn()
-  registerColumnParallel()
-  registerColumnPercent()
-  registerBar()
-  registerBarParallel()
-  registerBarPercent()
-  registerArea()
-  registerAreaPercent()
-}
 
 export const registerColumn = () => {
   Builder._advancedPipelineMap['column'] = columnAdvancedPipeline
@@ -82,4 +76,19 @@ export const registerBarParallel = () => {
 export const registerPie = () => {
   Builder._advancedPipelineMap['pie'] = pieAdvancedPipeline
   Builder._specPipelineMap['pie'] = pieSpecPipeline
+}
+
+export const registerDonut = () => {
+  Builder._advancedPipelineMap['donut'] = donutAdvancedPipeline
+  Builder._specPipelineMap['donut'] = donutSpecPipeline
+}
+
+export const registerRose = () => {
+  Builder._advancedPipelineMap['rose'] = roseAdvancedPipeline
+  Builder._specPipelineMap['rose'] = roseSpecPipeline
+}
+
+export const registerRoseParallel = () => {
+  Builder._advancedPipelineMap['roseParallel'] = roseParallelAdvancedPipeline
+  Builder._specPipelineMap['roseParallel'] = roseParallelSpecPipeline
 }

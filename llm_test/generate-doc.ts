@@ -2,8 +2,8 @@ import { generateSchema } from "./generate-from-zod"
 import { generateMarkdown } from "./generate-markdown"
 
 async function generateDoc() {
-  await generateMarkdown()
   await generateSchema()
+  await generateMarkdown()
 }
 
 generateDoc().then(() => {

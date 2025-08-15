@@ -26,6 +26,9 @@ function generateChartTypeMarkdown() {
     fs.mkdirSync(outputDir, { recursive: true })
   }
 
+  // 加载Locale.md
+  const localeMd = fs.readFileSync(path.resolve(__dirname, './new-type/Locale.md')).toString();
+
   chartTypes.forEach((chartType) => {
     const chartTypePath = path.resolve(__dirname, `../packages/vseed/src/types/chartType/${chartType}/${chartType}.ts`)
     let fileContentStr
@@ -66,7 +69,11 @@ function generateChartTypeMarkdown() {
 
       if (definitionEndIndex !== -1) {
         const definition = fileContentStr.substring(startIndex, definitionEndIndex + 1)
-        const mdContent = '```typescript\n' + definition + '\n```'
+        let mdContent = '```typescript\n' + definition + '\n```'
+        if (mdContent.includes('Locale')) {
+          // 补充locale的描述
+          mdContent += `\n${localeMd}`
+        }
         const outputFilePath = path.resolve(outputDir, `${pascalCaseChartType}.md`)
         fs.writeFileSync(outputFilePath, mdContent)
         console.log(`Generated markdown for ${pascalCaseChartType}`)
@@ -105,6 +112,9 @@ function generateComponentMarkdown() {
 
   // 读取dir目录下的所有文件
   const files = fs.readdirSync(dir, { recursive: true })
+
+  // 加载Selector.md
+  const selectorMd = fs.readFileSync(path.resolve(__dirname, './new-type/Selector.md')).toString();
 
   topKeySet.forEach((topKey: string) => {
     // 首字母小写
@@ -153,7 +163,11 @@ function generateComponentMarkdown() {
 
         if (definitionEndIndex !== -1) {
           const typeDefinition = fileContentStr.substring(startIndex, definitionEndIndex + 1)
-          const mdContent = `### ${topKey}\n${topKeyDesc[topKey]}\n\`\`\`typescript\n` + typeDefinition + '\n```'
+          let mdContent = `### ${topKey}\n${topKeyDesc[topKey]}\n\`\`\`typescript\n` + typeDefinition + '\n```'
+          if (mdContent.includes('Selector')) {
+            // 补充selector的描述
+            mdContent += `\n${selectorMd}`
+          }
           fs.writeFileSync(path.resolve(outputDir, `${topKey}.md`), mdContent)
           console.log(`Generated markdown for ${topKey}`)
         } else {
@@ -253,22 +267,22 @@ function generateAxisMarkdown() {
   const bandAxisDefinition = removeProperties(axisDefinition, bandAxisOmit);
   
   const xBandAxisDefinition = bandAxisDefinition.replace('export type Axis', 'export type XBandAxis');
-  fs.writeFileSync(path.resolve(outputDir, 'XBandAxis.md'), '```typescript\n' + xBandAxisDefinition + '\n```');
+  fs.writeFileSync(path.resolve(outputDir, 'XBandAxis.md'), '### XBandAxis\n类目轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.\n```typescript\n' + xBandAxisDefinition + '\n```');
   console.log('Generated markdown for XBandAxis');
 
   const yBandAxisDefinition = bandAxisDefinition.replace('export type Axis', 'export type YBandAxis');
-  fs.writeFileSync(path.resolve(outputDir, 'YBandAxis.md'), '```typescript\n' + yBandAxisDefinition + '\n```');
+  fs.writeFileSync(path.resolve(outputDir, 'YBandAxis.md'), '### YBandAxis\n类目轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.\n```typescript\n' + yBandAxisDefinition + '\n```');
   console.log('Generated markdown for YBandAxis');
 
   const linearAxisOmit = ['labelAutoHide', 'labelAutoHideGap', 'labelAutoRotate', 'labelAutoRotateAngleRange', 'labelAutoLimit', 'labelAutoLimitLength'];
   const linearAxisDefinition = removeProperties(axisDefinition, linearAxisOmit);
 
   const xLinearAxisDefinition = linearAxisDefinition.replace('export type Axis', 'export type XLinearAxis');
-  fs.writeFileSync(path.resolve(outputDir, 'XLinearAxis.md'), '```typescript\n' + xLinearAxisDefinition + '\n```');
+  fs.writeFileSync(path.resolve(outputDir, 'XLinearAxis.md'), '### XLinearAxis\n数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.\n```typescript\n' + xLinearAxisDefinition + '\n```');
   console.log('Generated markdown for XLinearAxis');
 
   const yLinearAxisDefinition = linearAxisDefinition.replace('export type Axis', 'export type YLinearAxis');
-  fs.writeFileSync(path.resolve(outputDir, 'YLinearAxis.md'), '```typescript\n' + yLinearAxisDefinition + '\n```');
+  fs.writeFileSync(path.resolve(outputDir, 'YLinearAxis.md'), '### YLinearAxis\n数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.\n```typescript\n' + yLinearAxisDefinition + '\n```');
   console.log('Generated markdown for YLinearAxis');
 }
 

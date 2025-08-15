@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { compile } from 'json-schema-to-typescript'
-import {zDataset, zDimensions, zMeasures, zBackgroundColor, zCrosshairLine, zTheme, zLocale, zCrosshairRect, zStackCornerRadius} from '@visactor/vseed';
+import {zDataset, zDimensions, zMeasures, zBackgroundColor, zCrosshairLine, zTheme, zLocale, zCrosshairRect, zStackCornerRadius, zSelector, zSelectors} from '@visactor/vseed';
 import fs from 'fs';
 import path from 'path';
 
@@ -89,15 +89,17 @@ ${themeSchema}
 \`\`\`
   `);
 
-//   // Locale
-//   const localeSchema = await compile(z.toJSONSchema(zLocale) as any, 'Locale', {
-//     bannerComment: ''
-//   });
-//   fs.writeFileSync(path.join(__dirname, './new-type/Locale.md'), `
-// \`\`\`typescript
-// ${localeSchema}
-// \`\`\`
-//   `);
+  // Locale
+  const localeSchema = await compile(z.toJSONSchema(zLocale) as any, 'Locale', {
+    bannerComment: ''
+  });
+  fs.writeFileSync(path.join(__dirname, './new-type/Locale.md'), `
+### Locale
+${topKeyDesc['Locale']}
+\`\`\`typescript
+${localeSchema}
+\`\`\`
+  `);
 
   // CrosshairRect
   const crosshairRectSchema = await compile(z.toJSONSchema(zCrosshairRect) as any, 'CrosshairRect', {
@@ -120,6 +122,26 @@ ${crosshairRectSchema}
 ${topKeyDesc['StackCornerRadius']}
 \`\`\`typescript
 ${stackCornerRadiusSchema}
+\`\`\`
+  `);
+
+  // Selector
+  const selectorSchema = await compile(z.toJSONSchema(zSelector) as any, 'Selector', {
+    bannerComment: ''
+  });
+  // Selectors
+  const selectorsSchema = await compile(z.toJSONSchema(zSelectors) as any, 'Selectors', {
+    bannerComment: ''
+  });
+  fs.writeFileSync(path.join(__dirname, './new-type/Selector.md'), `
+### Selector
+\`\`\`typescript
+${selectorSchema}
+\`\`\`
+
+### Selectors
+\`\`\`typescript
+${selectorsSchema}
 \`\`\`
   `);
 }

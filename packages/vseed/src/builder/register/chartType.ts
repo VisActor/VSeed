@@ -17,6 +17,8 @@ import {
   columnSpecPipeline,
   donutAdvancedPipeline,
   donutSpecPipeline,
+  funnelAdvancedPipeline,
+  funnelSpecPipeline,
   lineAdvancedPipeline,
   lineSpecPipeline,
   pieAdvancedPipeline,
@@ -25,6 +27,8 @@ import {
   roseParallelAdvancedPipeline,
   roseParallelSpecPipeline,
   roseSpecPipeline,
+  scatterAdvancedPipeline,
+  scatterSpecPipeline,
 } from '../../pipeline'
 import { Builder } from '../builder'
 
@@ -91,4 +95,14 @@ export const registerRose = () => {
 export const registerRoseParallel = () => {
   Builder._advancedPipelineMap['roseParallel'] = roseParallelAdvancedPipeline
   Builder._specPipelineMap['roseParallel'] = roseParallelSpecPipeline
+}
+
+export const registerFunnel = () => {
+  Builder._advancedPipelineMap['funnel'] = funnelAdvancedPipeline
+  Builder._specPipelineMap['funnel'] = funnelSpecPipeline
+}
+
+export const registerScatter = () => {
+  Builder._advancedPipelineMap['scatter'] = scatterAdvancedPipeline
+  Builder._specPipelineMap['scatter'] = scatterSpecPipeline
 }

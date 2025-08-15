@@ -28,6 +28,7 @@ import {
   lineStyle,
   areaStyle,
   verticalCrosshairLine,
+  pointStateDimensionHover,
 } from '../pipes'
 
 const area: SpecPipeline = [
@@ -43,6 +44,7 @@ const area: SpecPipeline = [
   verticalCrosshairLine,
   discreteLegend,
   pointStyle,
+  pointStateDimensionHover,
   lineStyle,
   areaStyle,
   annotationPoint,
@@ -68,6 +70,7 @@ const pivotArea: SpecPipeline = [
     tooltip,
     verticalCrosshairLine,
     pointStyle,
+    pointStateDimensionHover,
     lineStyle,
     areaStyle,
     annotationPoint,

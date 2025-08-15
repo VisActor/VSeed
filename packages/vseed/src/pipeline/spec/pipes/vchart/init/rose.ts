@@ -31,7 +31,7 @@ export const initRose: SpecPipe = (spec, context) => {
     state: {
       hover: {
         lineWidth: 1,
-        fillOpacity: 0.75,
+        fillOpacity: 0.6,
       },
     },
   }

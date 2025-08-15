@@ -46,7 +46,8 @@ export const BaseConfigColorMapping = memo(() => {
     chartType: 'columnParallel',
     color: {
       colorMapping: {
-        'E-利润': 'blue',
+        利润: 'yellow',
+        E: 'green',
         'E-销售额': 'red',
       },
     },

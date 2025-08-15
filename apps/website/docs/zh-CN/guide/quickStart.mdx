@@ -14,10 +14,39 @@ npm install @visactor/vchart
 npm install @visactor/vtable
 ```
 
-## 基本用法
+## 快速理解
 
-```tsx pure {14}
+### vseed DSL
+
+vseed 是一个面向分析领域的DSL, 封装了该领域常用的图表能力, 极大地提升分析式报表平台的搭建效率.
+
+一般情况下, 给定数据集和图表类型, 即可直接出图. 每类图表类型存在大量的默认约定逻辑.
+
+```tsx pure {5-12}
+import { VSeed } from '@visactor/vseed'
+registerAll()
+
+const vseed: VSeed = {
+  chartType: 'line',
+  dataset: [
+    { date: '2019', profit: 10, sales: 100 },
+    { date: '2020', profit: 30, sales: 200 },
+    { date: '2021', profit: 30, sales: 300 },
+    { date: '2022', profit: 50, sales: 400 },
+    { date: '2023', profit: 40, sales: 500 },
+  ],
+}
+```
+
+### builder
+
+一个spec builder, 接收一个vseed, 输出一个vtable或vchart的spec, 可以基于builder的构建结果, 二次修改spec.
+
+极大地降低vtable、vchart的图表的配置复杂度, 并给予开发者极高的灵活度.
+
+```tsx pure {15,17}
 import { registerAll, VSeed, Builder } from '@visactor/vseed'
+registerAll()
 
 const vseed: VSeed = {
   chartType: 'line',
@@ -30,7 +59,21 @@ const vseed: VSeed = {
   ],
 }
 
-const spec = Builder.from(vseed).build()
+const builder = Builder.from(vseed)
+
+const spec = builder.build()
+```
+
+### register
+
+可以使用register注册特定图表类型
+
+- registerAll 注册所有图表类型和深浅色主题
+- registerCustomTheme用于自定义主题.
+
+```tsx pure {14}
+import { registerAll } from '@visactor/vseed'
+registerAll()
 ```
 
 ## VChart 渲染

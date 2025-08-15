@@ -9,6 +9,7 @@ export const zEncoding = z.array(
     angle: z.array(z.string()).optional(),
     radius: z.array(z.string()).optional(),
     tooltip: z.array(z.string()).optional(),
+    size: z.array(z.string()).optional(),
   }),
 )
 
@@ -20,4 +21,5 @@ export type Encoding = Array<{
   angle?: string[]
   radius?: string[]
   tooltip?: string[]
+  size?: string[]
 }>

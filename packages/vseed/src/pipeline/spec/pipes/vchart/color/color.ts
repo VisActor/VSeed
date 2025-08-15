@@ -1,4 +1,5 @@
 import type { ILineChartSpec } from '@visactor/vchart'
+import { Separator } from 'src/dataReshape'
 import type { Color, SpecPipe } from 'src/types'
 
 export const color: SpecPipe = (spec, context) => {
@@ -15,13 +16,15 @@ export const color: SpecPipe = (spec, context) => {
   const { colorScheme, colorMapping } = color as Color
   const mappingList: Array<[string, string]> = []
   if (colorMapping) {
-    Object.entries(colorMapping).forEach(([key, value]) => {
-      const idMap = Object.entries(unfoldInfo.colorIdMap).filter(([_, v]) => key === v)
+    Object.entries(colorMapping)
+      .sort((a, b) => a[0].split(Separator).length - b[0].split(Separator).length)
+      .forEach(([key, value]) => {
+        const idMap = Object.entries(unfoldInfo.colorIdMap).filter(([_, v]) => v.includes(key))
 
-      for (const [colorId] of idMap) {
-        mappingList.push([colorId, value])
-      }
-    })
+        for (const [colorId] of idMap) {
+          mappingList.push([colorId, value])
+        }
+      })
   }
 
   result.color = {
@@ -29,6 +32,6 @@ export const color: SpecPipe = (spec, context) => {
     domain: unfoldInfo.colorItems,
     range: colorScheme,
     specified: Object.fromEntries(mappingList),
-  }
+  } as ILineChartSpec['color']
   return result
 }

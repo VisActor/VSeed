@@ -59,12 +59,12 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
       shape: {
         outerBorder: border
           ? {
-              stroke: colorScheme[index],
+              stroke: colorScheme?.[index],
               distance: 3,
               lineWidth: 1,
             }
           : undefined,
-        fill: colorScheme[index],
+        fill: colorScheme?.[index],
       },
     })),
 

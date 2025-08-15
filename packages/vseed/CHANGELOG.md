@@ -1,5 +1,13 @@
 # @visactor/vseed
 
+## 0.0.17
+
+### Patch Changes
+
+- feat: add scatter, donut, funnel
+- feat: optimize line sort
+- feat: optimize color mapping
+
 ## 0.0.16
 
 ### Patch Changes

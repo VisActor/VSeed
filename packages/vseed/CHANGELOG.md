@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.18
+
+### Patch Changes
+
+- fix: data reshape err
+
 ## 0.0.17
 
 ### Patch Changes

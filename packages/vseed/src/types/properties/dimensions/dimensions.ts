@@ -4,7 +4,7 @@ export const zDimension = z.object({
   id: z.string(),
   alias: z.string().optional(),
   visible: z.boolean().default(true).optional(),
-  location: z.enum(['dimension', 'rowDimension', 'columnDimension']),
+  location: z.enum(['dimension', 'rowDimension', 'columnDimension']).default('dimension').optional(),
 })
 
 export const zDimensions = z.array(zDimension).optional()

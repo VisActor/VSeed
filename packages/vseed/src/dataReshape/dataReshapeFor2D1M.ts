@@ -87,10 +87,18 @@ export const dataReshapeFor2D1M = (
     )
     return { dataset: finalDataset, foldInfo, unfoldInfo }
   } else {
+    const onlyOneMeasure = measures.length === 1
+    const onlyOneDimension = dimensions.length === 1
+
+    const dims = [...dimensions]
+    if (!onlyOneMeasure || onlyOneDimension) {
+      dims.push({ id: foldMeasureName, alias: i18n`指标名称`, location: 'dimension' })
+    }
+
     // 展开指定的维度为指标
     const { dataset: finalDataset, unfoldInfo } = unfoldDimensions(
       foldedDataset,
-      [...dimensions, { id: foldMeasureName, alias: i18n`指标名称`, location: 'dimension' }],
+      dims,
       [{ id: foldMeasureValue, alias: i18n`指标值` }],
       1,
       unfoldDimensionGroup,

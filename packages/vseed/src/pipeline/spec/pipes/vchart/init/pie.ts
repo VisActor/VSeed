@@ -26,6 +26,7 @@ export const initPie: SpecPipe = (spec, context) => {
     style: {
       stroke: '#ffffff',
       lineWidth: 1,
+      centerOffset: 0,
     },
     state: {
       hover: {

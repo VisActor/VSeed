@@ -104,6 +104,20 @@ const Demo = () => {
       { date: '2022', profit: 50 },
       { date: '2023', profit: 40 },
     ],
+    // 单指标两维度
+    [
+      { date: '2019', region: 'A', profit: 1 },
+      { date: '2019', region: 'B', profit: 2 },
+      { date: '2019', region: 'C', profit: 3 },
+      { date: '2019', region: 'D', profit: 4 },
+      { date: '2019', region: 'E', profit: 5 },
+
+      { date: '2020', region: 'A', profit: 10 },
+      { date: '2020', region: 'B', profit: 9 },
+      { date: '2020', region: 'C', profit: 8 },
+      { date: '2020', region: 'D', profit: 7 },
+      { date: '2020', region: 'E', profit: 6 },
+    ],
     // 单指标多维度
     [
       { date: '2019', region: 'east', city: 'A', profit: 10 },
@@ -111,12 +125,11 @@ const Demo = () => {
       { date: '2019', region: 'east', city: 'C', profit: 30 },
       { date: '2019', region: 'east', city: 'D', profit: 50 },
       { date: '2019', region: 'east', city: 'E', profit: 40 },
-
-      { date: '2020', region: 'north of east', city: 'A', profit: 10 },
-      { date: '2020', region: 'north of east', city: 'B', profit: 30 },
-      { date: '2020', region: 'north of east', city: 'C', profit: 30 },
-      { date: '2020', region: 'north of east', city: 'D', profit: 50 },
-      { date: '2020', region: 'north of east', city: 'E', profit: 40 },
+      { date: '2020', region: 'east', city: 'A', profit: 10 },
+      { date: '2020', region: 'east', city: 'B', profit: 30 },
+      { date: '2020', region: 'east', city: 'C', profit: 30 },
+      { date: '2020', region: 'east', city: 'D', profit: 50 },
+      { date: '2020', region: 'east', city: 'E', profit: 40 },
     ],
     // 多指标零维度
     [{ profit: 1, sales: 2, discount: 0.1 }],
@@ -128,6 +141,16 @@ const Demo = () => {
       { date: '2022', profit: 50, sales: 100, discount: 0.1 },
       { date: '2023', profit: 40, sales: 80, discount: 0.1 },
     ],
+    // 多指标两维度
+    [
+      { date: '2019', type: 'A', profit: 10, sales: 20, discount: 0.1 },
+      { date: '2019', type: 'B', profit: 30, sales: 60, discount: 0.1 },
+      { date: '2019', type: 'C', profit: 30, sales: 60, discount: 0.1 },
+
+      { date: '2020', type: 'A', profit: 10, sales: 20, discount: 0.1 },
+      { date: '2020', type: 'B', profit: 30, sales: 60, discount: 0.1 },
+      { date: '2020', type: 'C', profit: 30, sales: 60, discount: 0.1 },
+    ],
     // 多指标多维度
     [
       { date: '2019', region: 'east', city: 'A', profit: 10, sales: 20, discount: 0.1 },
@@ -135,12 +158,11 @@ const Demo = () => {
       { date: '2019', region: 'east', city: 'C', profit: 30, sales: 60, discount: 0.1 },
       { date: '2019', region: 'east', city: 'D', profit: 50, sales: 100, discount: 0.1 },
       { date: '2019', region: 'east', city: 'E', profit: 40, sales: 80, discount: 0.1 },
-
-      { date: '2020', region: 'north of east', city: 'A', profit: 10, sales: 20, discount: 0.1 },
-      { date: '2020', region: 'north of east', city: 'B', profit: 30, sales: 60, discount: 0.1 },
-      { date: '2020', region: 'north of east', city: 'C', profit: 30, sales: 60, discount: 0.1 },
-      { date: '2020', region: 'north of east', city: 'D', profit: 50, sales: 100, discount: 0.1 },
-      { date: '2020', region: 'north of east', city: 'E', profit: 40, sales: 80, discount: 0.1 },
+      { date: '2020', region: 'east', city: 'A', profit: 10, sales: 20, discount: 0.1 },
+      { date: '2020', region: 'east', city: 'B', profit: 30, sales: 60, discount: 0.1 },
+      { date: '2020', region: 'east', city: 'C', profit: 30, sales: 60, discount: 0.1 },
+      { date: '2020', region: 'east', city: 'D', profit: 50, sales: 100, discount: 0.1 },
+      { date: '2020', region: 'east', city: 'E', profit: 40, sales: 80, discount: 0.1 },
     ],
   ]
 

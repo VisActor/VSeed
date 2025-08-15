@@ -42,8 +42,6 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
       backgroundColor = '#212121',
       backgroundPadding = 2,
       backgroundVisible = true,
-      offsetX = 0,
-      offsetY = 0,
       lineColor = '#212121',
       lineStyle = 'dashed',
       lineVisible = true,
@@ -58,8 +56,6 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
       line: {
         visible: lineVisible,
         style: {
-          offsetX,
-          offsetY,
           stroke: lineColor,
           lineStyle: lineStyle,
           lineWidth: lineWidth,
@@ -70,8 +66,6 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
         text: text,
         position: positionMap[textPosition],
         style: {
-          offsetX,
-          offsetY,
           visible: true,
           textAlign: textAlign,
           textBaseline: textBaseline,
@@ -83,8 +77,6 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
           visible: backgroundVisible,
           padding: backgroundPadding,
           style: {
-            offsetX,
-            offsetY,
             cornerRadius: backgroundBorderRadius ?? 4,
             fill: backgroundColor,
             stroke: backgroundBorderColor,

@@ -215,9 +215,9 @@ export const zLine = z.object({
   theme: zTheme.optional(),
   pointStyle: zPointStyle.optional(),
   lineStyle: zLineStyle.optional(),
-  annotationPoint: zAnnotationPoint.optional(),
-  annotationVerticalLine: zAnnotationVerticalLine.optional(),
-  annotationHorizontalLine: zAnnotationHorizontalLine.optional(),
-  annotationArea: zAnnotationArea.optional(),
+  annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
+  annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
+  annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),
+  annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).optional(),
   locale: zLocale.optional(),
 })

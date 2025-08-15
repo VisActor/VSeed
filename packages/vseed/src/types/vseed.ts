@@ -7,15 +7,15 @@ import { zColumnParallel, type ColumnParallel } from './chartType/columnParallel
 import { zColumnPercent, type ColumnPercent } from './chartType/columnPercent'
 import { zLine, type Line } from './chartType/line'
 import type { Table } from './chartType/table'
-import type { Rose } from './chartType/rose'
+import { zRose, type Rose } from './chartType/rose'
 import { zBarPercent, type BarPercent } from './chartType/barPercent'
 import type { PivotTable } from './chartType/pivotTable'
 import { zPie, type Pie } from './chartType/pie'
-import type { Donut } from './chartType/donut'
+import { zDonut, type Donut } from './chartType/donut'
 import type { DualAxis } from './chartType/dualAxis'
 import { zArea, type Area } from './chartType/area'
 import { zAreaPercent, type AreaPercent } from './chartType/areaPercent'
-import type { Funnel, RoseParallel } from './chartType'
+import { zFunnel, zRoseParallel, zScatter, type Funnel, type RoseParallel, type Scatter } from './chartType'
 
 export type VSeed =
   | Table
@@ -34,6 +34,7 @@ export type VSeed =
   | Pie
   | Donut
   | DualAxis
+  | Scatter
   | Funnel
 
 export const zVSeed = z.discriminatedUnion('chartType', [
@@ -47,7 +48,10 @@ export const zVSeed = z.discriminatedUnion('chartType', [
   zArea,
   zAreaPercent,
   zPie,
-  // zRose,
+  zRose,
+  zRoseParallel,
   // zDualAxis,
-  // zDonut,
+  zScatter,
+  zDonut,
+  zFunnel,
 ])

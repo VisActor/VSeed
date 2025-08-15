@@ -1,24 +1,21 @@
 import type { IBarChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { BarStyle, Datum, SpecPipe } from 'src/types'
-import type { ISeriesMarkAttributeContext } from '@visactor/vchart/esm/compile/mark'
 
 export const barStyle: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const { markStyle, encoding } = advancedVSeed
+  const { markStyle } = advancedVSeed
   const { barStyle } = markStyle
 
   const result = {
     ...spec,
     bar: {
+      style: {
+        stroke: '#fff',
+        lineWidth: 1,
+      },
       state: {
         hover: {
-          stroke: (datum, context: ISeriesMarkAttributeContext) => {
-            const field = encoding[0]?.group?.[0] as string
-            const color = context.seriesColor(datum[field] as string)
-            return color
-          },
-          lineWidth: 4,
           fillOpacity: 0.6,
         },
       },

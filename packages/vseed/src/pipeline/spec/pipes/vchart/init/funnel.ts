@@ -29,7 +29,7 @@ export const initFunnel: SpecPipe = (spec, context) => {
     },
     state: {
       hover: {
-        fillOpacity: 0.8,
+        fillOpacity: 0.6,
       },
     },
   }

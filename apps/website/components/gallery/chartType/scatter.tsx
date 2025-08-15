@@ -1,16 +1,8 @@
----
-pageType: doc
----
+import { memo } from 'react'
+import { VSeed } from '@visactor/vseed'
+import { VChartRender } from '../../render/Chart'
+import { PivotChart } from '../../render/PivotChart'
 
-import { ScatterChart, CombinationScatterChart, PivotScatterChart } from '@components'
-
-# scatter
-
-## 散点图
-
-<ScatterChart />
-
-```tsx pure {}
 export const ScatterChart = memo(() => {
   const vseed: VSeed = {
     chartType: 'scatter',
@@ -45,13 +37,6 @@ export const ScatterChart = memo(() => {
   return <VChartRender vseed={vseed} />
 })
 
-```
-
-## 组合散点图
-
-<CombinationScatterChart />
-
-```tsx pure {}
 export const CombinationScatterChart = memo(() => {
   const vseed: VSeed = {
     chartType: 'scatter',
@@ -106,12 +91,7 @@ export const CombinationScatterChart = memo(() => {
   }
   return <PivotChart vseed={vseed} />
 })
-```
 
-## 透视组合散点图
-
-<PivotScatterChart />
-```tsx pure {}
 export const PivotScatterChart = memo(() => {
   const vseed: VSeed = {
     chartType: 'scatter',
@@ -124,9 +104,7 @@ export const PivotScatterChart = memo(() => {
       {
         id: 'group-sales',
         alias: '销售额分组',
-        children: [
-          { id: 'sales', alias: '销售额' },
-        ],
+        children: [{ id: 'sales', alias: '销售额' }],
       },
       {
         id: 'group-sales',
@@ -166,4 +144,3 @@ export const PivotScatterChart = memo(() => {
   }
   return <PivotChart vseed={vseed} />
 })
-```

@@ -94,7 +94,8 @@ export const xLinear: SpecPipe = (spec, context) => {
       },
     },
     innerOffset: {
-      top: LINEAR_AXIS_INNER_OFFSET_TOP,
+      right: LINEAR_AXIS_INNER_OFFSET_TOP,
+      // left: LINEAR_AXIS_INNER_OFFSET_TOP,
     },
   }
 

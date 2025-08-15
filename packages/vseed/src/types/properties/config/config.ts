@@ -83,7 +83,13 @@ export const zConfig = z.object({
   pie: z.object({}).optional(),
   donut: z.object({}).optional(),
   dualAxis: z.object({}).optional(),
-  scatter: z.object({}).optional(),
+  scatter: z
+    .object({
+      xAxis: zXLinearAxis.optional(),
+      yAxis: zYLinearAxis.optional(),
+      crosshairLine: zCrosshairLine.optional(),
+    })
+    .optional(),
   funnel: z.object({}).optional(),
 })
 

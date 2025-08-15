@@ -13,6 +13,7 @@ import {
   registerRose,
   registerRoseParallel,
   registerFunnel,
+  registerScatter,
 } from './chartType'
 import { registerDarkTheme, registerLightTheme } from './theme'
 
@@ -32,7 +33,8 @@ export const registerAll = () => {
   registerRose()
   registerRoseParallel()
   registerFunnel()
-  
+  registerScatter()
+
   // Theme
   registerLightTheme()
   registerDarkTheme()

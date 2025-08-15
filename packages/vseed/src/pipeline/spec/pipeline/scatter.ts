@@ -1,9 +1,7 @@
 import type { SpecPipeline } from 'src/types'
 import {
   dataset,
-  xBand,
   yLinear,
-  initLine,
   backgroundColor,
   label,
   tooltip,
@@ -24,49 +22,51 @@ import {
   annotationHorizontalLine,
   annotationArea,
   pointStyle,
-  lineStyle,
   verticalCrosshairLine,
-  pointStateDimensionHover,
+  xLinear,
+  horizontalCrosshairLine,
+  pointStateHover,
 } from '../pipes'
+import { initScatter } from '../pipes/vchart/init/scatter'
 
-const line: SpecPipeline = [
-  initLine,
+const scatter: SpecPipeline = [
+  initScatter,
   color,
   backgroundColor,
   dataset,
-  xBand,
+  xLinear,
   yLinear,
   label,
   tooltip,
   verticalCrosshairLine,
+  horizontalCrosshairLine,
   discreteLegend,
   pointStyle,
-  pointStateDimensionHover,
-  lineStyle,
+  pointStateHover,
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationArea,
 ]
 
-const pivotLine: SpecPipeline = [
+const pivotScatter: SpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
   datasetPivot,
   pivotIndicators([
-    initLine,
+    initScatter,
     color,
     backgroundColor,
     datasetPivotPlaceholder,
-    xBand,
+    xLinear,
     yLinear,
     label,
     tooltip,
     verticalCrosshairLine,
+    horizontalCrosshairLine,
     pointStyle,
-    pointStateDimensionHover,
-    lineStyle,
+    pointStateHover,
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,
@@ -77,4 +77,4 @@ const pivotLine: SpecPipeline = [
   pivotDiscreteLegend,
 ]
 
-export const lineSpecPipeline: SpecPipeline = [pivotAdapter(line, pivotLine)]
+export const scatterSpecPipeline: SpecPipeline = [pivotAdapter(scatter, pivotScatter)]

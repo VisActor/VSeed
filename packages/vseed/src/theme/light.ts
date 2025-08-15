@@ -190,6 +190,23 @@ export const lightTheme = (): CustomThemeConfig => {
         yAxis: linearAxis,
         crosshairLine,
       },
+      scatter: {
+        xAxis: {
+          ...linearAxis,
+          line: {
+            ...linearAxis.line,
+            visible: true,
+          },
+        },
+        yAxis: {
+          ...linearAxis,
+          line: {
+            ...linearAxis.line,
+            visible: true,
+          },
+        },
+        crosshairLine,
+      },
     },
   }
 }

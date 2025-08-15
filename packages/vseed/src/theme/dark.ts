@@ -188,6 +188,23 @@ export const darkTheme = (): CustomThemeConfig => {
         yAxis: linearAxis,
         crosshairLine: crosshairLine,
       },
+      scatter: {
+        xAxis: {
+          ...linearAxis,
+          line: {
+            ...linearAxis.line,
+            visible: true,
+          },
+        },
+        yAxis: {
+          ...linearAxis,
+          line: {
+            ...linearAxis.line,
+            visible: true,
+          },
+        },
+        crosshairLine,
+      },
     },
   }
 }

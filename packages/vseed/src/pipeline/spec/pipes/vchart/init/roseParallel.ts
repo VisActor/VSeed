@@ -30,6 +30,12 @@ export const initRoseParallel: SpecPipe = (spec, context) => {
       stroke: '#ffffff',
       lineWidth: 1,
     },
+    state: {
+      hover: {
+        lineWidth: 1,
+        fillOpacity: 0.6,
+      },
+    },
   }
   result.region = [
     {

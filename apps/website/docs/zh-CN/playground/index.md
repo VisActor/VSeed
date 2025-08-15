@@ -16,7 +16,7 @@ register.chartModule('vchart', VChart)
 
 const Demo = () => {
   const vseed: VSeed = {
-    chartType: 'column',
+    chartType: 'line',
     dataset: [
       { date: '2019', type: 'A', profit: 10, sales: 100 },
       { date: '2020', type: 'A', profit: 30, sales: 3200 },
@@ -29,22 +29,6 @@ const Demo = () => {
       { date: '2021', type: 'B', profit: 30, sales: 300 },
       { date: '2022', type: 'B', profit: 50, sales: 2400 },
       { date: '2023', type: 'B', profit: 40, sales: 500 },
-    ],
-    dimensions: [
-      {
-        id: 'date',
-        alias: '日期',
-        location: 'dimension',
-      },
-      {
-        id: 'type',
-        alias: '类型',
-        location: 'dimension',
-      },
-    ],
-    measures: [
-      { id: 'profit', alias: '利润' },
-      { id: 'sales', alias: '销售额' },
     ],
   }
 

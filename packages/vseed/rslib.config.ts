@@ -13,8 +13,9 @@ export default defineConfig({
     },
     {
       format: 'umd',
-      umdName: 'RslibUmdExample',
+      umdName: 'VSeed',
       output: {
+        target: 'web',
         distPath: {
           root: './dist/umd',
         },

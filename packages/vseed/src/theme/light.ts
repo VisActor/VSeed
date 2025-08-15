@@ -1,4 +1,13 @@
-import type { CustomThemeConfig, YBandAxis, YLinearAxis } from 'src/types'
+import type {
+  BackgroundColor,
+  Color,
+  CustomThemeConfig,
+  Label,
+  Legend,
+  Tooltip,
+  YBandAxis,
+  YLinearAxis,
+} from 'src/types'
 
 export const lightTheme = (): CustomThemeConfig => {
   const linearAxis: YLinearAxis = {
@@ -99,98 +108,110 @@ export const lightTheme = (): CustomThemeConfig => {
     labelBackgroundColor: '#364159',
   }
 
-  return {
-    baseConfig: {
-      vtable: {
-        backgroundColor: 'transparent',
-      },
-      vchart: {
-        backgroundColor: 'transparent',
-        color: {
-          colorScheme: [
-            '#8D72F6',
-            '#5766EC',
-            '#66A3FE',
-            '#51D5E6',
-            '#4EC0B3',
-            '#F9DF90',
-            '#F9AD71',
-            '#ED8888',
-            '#E9A0C3',
-            '#D77DD3',
-          ],
-        },
-        label: {
-          enable: true,
-        },
-        tooltip: {
-          enable: true,
-        },
-        legend: {
-          enable: true,
-          border: true,
-          maxSize: 1,
-          shapeType: 'rectRound',
-          position: 'rt',
-          labelFontColor: '#646A73',
-          labelFontSize: 12,
-          labelFontWeight: 400,
-        },
-      },
+  const baseConfig: {
+    backgroundColor?: BackgroundColor
+    color?: Color
+    label?: Label
+    tooltip?: Tooltip
+    legend?: Legend
+  } = {
+    backgroundColor: 'transparent',
+    color: {
+      colorScheme: [
+        '#8D72F6',
+        '#5766EC',
+        '#66A3FE',
+        '#51D5E6',
+        '#4EC0B3',
+        '#F9DF90',
+        '#F9AD71',
+        '#ED8888',
+        '#E9A0C3',
+        '#D77DD3',
+      ],
     },
+    label: {
+      enable: true,
+    },
+    tooltip: {
+      enable: true,
+    },
+    legend: {
+      enable: true,
+      border: true,
+      maxSize: 1,
+      shapeType: 'rectRound',
+      position: 'rt',
+      labelFontColor: '#646A73',
+      labelFontSize: 12,
+      labelFontWeight: 400,
+    },
+  }
+
+  return {
     config: {
       line: {
+        ...baseConfig,
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairLine,
       },
       column: {
+        ...baseConfig,
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
       },
       columnParallel: {
+        ...baseConfig,
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
       },
       columnPercent: {
+        ...baseConfig,
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
       },
       bar: {
+        ...baseConfig,
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
       },
       barParallel: {
+        ...baseConfig,
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
       },
       barPercent: {
+        ...baseConfig,
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
       },
       area: {
+        ...baseConfig,
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairLine,
       },
       areaPercent: {
+        ...baseConfig,
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairLine,
       },
       scatter: {
+        ...baseConfig,
         xAxis: {
           ...linearAxis,
           line: {
@@ -206,6 +227,21 @@ export const lightTheme = (): CustomThemeConfig => {
           },
         },
         crosshairLine,
+      },
+      pie: {
+        ...baseConfig,
+      },
+      donut: {
+        ...baseConfig,
+      },
+      rose: {
+        ...baseConfig,
+      },
+      roseParallel: {
+        ...baseConfig,
+      },
+      funnel: {
+        ...baseConfig,
       },
     },
   }

@@ -8,7 +8,8 @@ export const label: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
   const { advancedVSeed } = context
   const { measures, datasetReshapeInfo, locale } = advancedVSeed
-  const baseConfig = advancedVSeed.baseConfig.vchart
+  const { chartType } = advancedVSeed
+  const baseConfig = advancedVSeed.config[chartType] as { label: Label }
 
   if (!baseConfig || !baseConfig.label) {
     return result
@@ -17,7 +18,7 @@ export const label: SpecPipe = (spec, context) => {
   const { measureId, measureValue } = datasetReshapeInfo[0].foldInfo
   // const { groupId, groupName } = datasetReshapeInfo[0].unfoldInfo
   const { label } = baseConfig
-  const { enable } = label as Label
+  const { enable } = label
 
   result.label = {
     visible: enable,

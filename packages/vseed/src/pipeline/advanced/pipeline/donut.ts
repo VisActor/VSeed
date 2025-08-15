@@ -3,7 +3,6 @@ import {
   autoDimensions,
   autoMeasures,
   initAdvancedVSeed,
-  vchartBaseConfig,
   vchartTheme,
   pivotAdapter,
   reshapeTo1D1M,
@@ -22,7 +21,6 @@ export const donutAdvancedPipeline: AdvancedPipeline = [
   pivotAdapter([reshapeTo1D1M], [pivotReshapeTo1D1M]),
   encodingPie,
   donutConfig,
-  vchartBaseConfig,
   vchartTheme,
   annotation
 ]

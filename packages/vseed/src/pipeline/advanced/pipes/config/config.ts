@@ -8,7 +8,16 @@ export const lineConfig: AdvancedPipe = (advancedVSeed, context) => {
     ...advancedVSeed,
   }
 
-  const config = pick(vseed, ['xAxis', 'yAxis', 'crosshairLine']) as Config['line']
+  const config = pick(vseed, [
+    'backgroundColor',
+    'color',
+    'label',
+    'legend',
+    'tooltip',
+    'xAxis',
+    'yAxis',
+    'crosshairLine',
+  ]) as Config['line']
 
   result.config = {
     ...(result.config || {}),
@@ -27,7 +36,17 @@ export const columnConfig: AdvancedPipe = (advancedVSeed, context) => {
     ...advancedVSeed,
   }
 
-  const config = pick(vseed, ['xAxis', 'yAxis', 'crosshairRect', 'stackCornerRadius']) as Config['column']
+  const config = pick(vseed, [
+    'backgroundColor',
+    'color',
+    'label',
+    'legend',
+    'tooltip',
+    'xAxis',
+    'yAxis',
+    'crosshairRect',
+    'stackCornerRadius',
+  ]) as Config['column']
 
   result.config = {
     ...(result.config || {}),
@@ -46,7 +65,7 @@ export const pieConfig: AdvancedPipe = (advancedVSeed, context) => {
     ...advancedVSeed,
   }
 
-  const config = pick(vseed, []) as Config['pie']
+  const config = pick(vseed, ['backgroundColor', 'color', 'label', 'legend', 'tooltip']) as Config['pie']
 
   result.config = {
     ...(result.config || {}),

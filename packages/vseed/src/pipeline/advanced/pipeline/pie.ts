@@ -3,7 +3,6 @@ import {
   autoDimensions,
   autoMeasures,
   initAdvancedVSeed,
-  vchartBaseConfig,
   vchartTheme,
   pivotAdapter,
   reshapeTo1D1M,
@@ -22,7 +21,6 @@ export const pieAdvancedPipeline: AdvancedPipeline = [
   pivotAdapter([reshapeTo1D1M], [pivotReshapeTo1D1M]),
   encodingPie,
   pieConfig,
-  vchartBaseConfig,
   vchartTheme,
   annotation
 ]

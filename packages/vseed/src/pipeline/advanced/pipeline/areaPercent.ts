@@ -5,7 +5,6 @@ import {
   encodingXY,
   initAdvancedVSeed,
   reshapeTo2D1M,
-  vchartBaseConfig,
   vchartTheme,
   pivotAdapter,
   pivotReshapeTo2D1M,
@@ -23,7 +22,6 @@ export const areaPercentAdvancedPipeline: AdvancedPipeline = [
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
   areaPercentConfig,
-  vchartBaseConfig,
   vchartTheme,
   markStyle,
   annotation

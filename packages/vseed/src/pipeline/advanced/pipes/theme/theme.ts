@@ -12,15 +12,6 @@ export const vchartTheme: AdvancedPipe = (advancedVSeed, context) => {
     return result
   }
 
-  const baseConfigVChartTheme = customTheme?.[theme].baseConfig?.vchart
-  if (baseConfigVChartTheme) {
-    const baseConfigVChart = result.baseConfig?.vchart || {}
-    const mergedConfig = mergeDeep(baseConfigVChartTheme, clone(baseConfigVChart))
-    result.baseConfig = {
-      vchart: mergedConfig,
-    }
-  }
-
   const chartConfigTheme = customTheme?.[theme].config?.[chartType]
   if (chartConfigTheme) {
     const chartConfig = result.config?.[chartType] || {}
@@ -42,15 +33,6 @@ export const vtableTheme: AdvancedPipe = (advancedVSeed, context) => {
 
   if (!customTheme || !customTheme[theme]) {
     return result
-  }
-
-  const baseConfigVChartTheme = customTheme?.[theme].baseConfig?.vtable
-  if (baseConfigVChartTheme) {
-    const baseConfigVChart = result.baseConfig?.vchart || {}
-    const mergedConfig = mergeDeep(baseConfigVChartTheme, clone(baseConfigVChart))
-    result.baseConfig = {
-      vtable: mergedConfig,
-    }
   }
 
   const chartConfigTheme = customTheme?.[theme].config?.[chartType]

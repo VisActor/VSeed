@@ -2,16 +2,12 @@ import { isEmpty } from 'remeda'
 import { autoFormatter, createFormatter, findMeasureById } from '../../../../utils'
 import type { SpecPipe, Tooltip } from 'src/types'
 
-const defaultTooltip: Tooltip = {
-  enable: true,
-}
-
 export const tooltip: SpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed } = context
-  const { measures, datasetReshapeInfo } = advancedVSeed
-  const baseConfig = advancedVSeed.baseConfig.vchart as { tooltip: Tooltip }
-  const { tooltip = defaultTooltip } = baseConfig
+  const { measures, datasetReshapeInfo, chartType } = advancedVSeed
+  const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
+  const { tooltip } = baseConfig
   const { enable } = tooltip
 
   const { measureId, measureValue } = datasetReshapeInfo[0].foldInfo

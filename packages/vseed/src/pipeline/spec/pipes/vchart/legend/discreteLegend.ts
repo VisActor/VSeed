@@ -4,9 +4,9 @@ import type { Legend, SpecPipe } from 'src/types'
 export const discreteLegend: SpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed } = context
-  const { datasetReshapeInfo } = advancedVSeed
+  const { datasetReshapeInfo, chartType } = advancedVSeed
   const { unfoldInfo } = datasetReshapeInfo[0]
-  const baseConfig = advancedVSeed.baseConfig.vchart
+  const baseConfig = advancedVSeed.config[chartType] as { legend: Legend }
   if (!baseConfig || !baseConfig.legend) {
     return result
   }
@@ -21,7 +21,7 @@ export const discreteLegend: SpecPipe = (spec, context) => {
     maxSize,
     border,
     shapeType = 'rectRound',
-  } = (legend || {}) as Legend
+  } = legend || {}
 
   const orient = ['bottom', 'bottomLeft', 'bottomRight', 'bl', 'br'].includes(position)
     ? 'bottom'

@@ -1,14 +1,14 @@
 import type { ISpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { BackgroundColor, SpecPipe } from 'src/types'
 
 export const backgroundColor: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed } = context
-  const { baseConfig } = advancedVSeed
-  if (!baseConfig?.vchart) {
-    return result
-  }
-  const { backgroundColor } = baseConfig.vchart
+  const { chartType } = advancedVSeed
+  const baseConfig = advancedVSeed.config[chartType] as { backgroundColor: BackgroundColor }
+
+  const { backgroundColor } = baseConfig
+
   return {
     ...result,
     background: backgroundColor,

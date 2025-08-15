@@ -7,7 +7,9 @@ import type { Color, Legend, SpecPipe } from 'src/types'
 export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
   const result = { ...spec } as PivotChartConstructorOptions
   const { advancedVSeed } = context
-  const baseConfig = advancedVSeed.baseConfig.vchart
+  const { chartType } = advancedVSeed
+   const baseConfig = advancedVSeed.config[chartType] as { legend: Legend, color: Color }
+
   if (!baseConfig || !baseConfig.legend) {
     return result
   }
@@ -20,7 +22,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
   }, {})
 
   const { legend, color } = baseConfig
-  const { colorScheme } = color as Color
+  const { colorScheme } = color
 
   const {
     enable,
@@ -31,7 +33,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
     maxSize,
     border,
     shapeType = 'rectRound',
-  } = (legend || {}) as Legend
+  } = (legend || {})
 
   const orient = ['bottom', 'bottomLeft', 'bottomRight', 'bl', 'br'].includes(position)
     ? 'bottom'

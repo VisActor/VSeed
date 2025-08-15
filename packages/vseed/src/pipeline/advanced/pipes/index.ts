@@ -1,7 +1,6 @@
 export * from './init'
 export * from './reshape'
 export * from './encoding'
-export * from './baseConfig'
 export * from './config'
 export * from './theme'
 export * from './pivot'

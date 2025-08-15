@@ -8,13 +8,11 @@ export const pointStyle: SpecPipe = (spec, context) => {
   const { pointStyle } = markStyle
   const result = {
     ...spec,
-    point: {},
   } as IAreaChartSpec
 
   if (!pointStyle) {
     return result
   }
-
   const pointStyles = (Array.isArray(pointStyle) ? pointStyle : [pointStyle]) as PointStyle[]
 
   const customMap = pointStyles.reduce<object>((result, style, index) => {

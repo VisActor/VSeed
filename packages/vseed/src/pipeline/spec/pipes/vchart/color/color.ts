@@ -5,15 +5,16 @@ import type { Color, SpecPipe } from 'src/types'
 export const color: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
   const { advancedVSeed } = context
-  const { datasetReshapeInfo } = advancedVSeed
+  const { datasetReshapeInfo, chartType } = advancedVSeed
   const { unfoldInfo } = datasetReshapeInfo[0]
-  const baseConfig = advancedVSeed.baseConfig.vchart
+  const baseConfig = advancedVSeed.config[chartType] as { color: Color }
+
   if (!baseConfig || !baseConfig.color) {
     return result
   }
 
   const { color } = baseConfig
-  const { colorScheme, colorMapping } = color as Color
+  const { colorScheme, colorMapping } = color
   const mappingList: Array<[string, string]> = []
   if (colorMapping) {
     Object.entries(colorMapping)

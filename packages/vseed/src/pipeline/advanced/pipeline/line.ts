@@ -5,8 +5,7 @@ import {
   encodingXY,
   initAdvancedVSeed,
   reshapeTo2D1M,
-  vchartBaseConfig,
-  vchartTheme,
+  theme,
   pivotAdapter,
   pivotReshapeTo2D1M,
   lineConfig,
@@ -22,9 +21,8 @@ export const lineAdvancedPipeline: AdvancedPipeline = [
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
-  vchartBaseConfig,
   lineConfig,
-  vchartTheme,
+  theme,
   markStyle,
   annotation
 ]

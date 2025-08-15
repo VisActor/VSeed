@@ -95,6 +95,7 @@ export const yLinear: SpecPipe = (spec, context) => {
     },
     innerOffset: {
       top: LINEAR_AXIS_INNER_OFFSET_TOP,
+      // bottom: LINEAR_AXIS_INNER_OFFSET_TOP,
     },
   }
 

@@ -60,6 +60,7 @@ export const pieConfig: AdvancedPipe = (advancedVSeed, context) => {
 
 export const areaConfig: AdvancedPipe = lineConfig
 export const areaPercentConfig: AdvancedPipe = lineConfig
+export const scatterConfig: AdvancedPipe = lineConfig
 
 export const barConfig: AdvancedPipe = columnConfig
 export const barParallelConfig: AdvancedPipe = columnConfig
@@ -70,3 +71,4 @@ export const columnPercentConfig: AdvancedPipe = columnConfig
 export const donutConfig: AdvancedPipe = pieConfig
 export const roseConfig: AdvancedPipe = pieConfig
 export const roseParallelConfig: AdvancedPipe = pieConfig
+export const funnelConfig: AdvancedPipe = pieConfig

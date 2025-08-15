@@ -11,5 +11,7 @@
   "rose",
   "roseParallel",
   "pie",
-  "donut"
+  "donut",
+  "scatter",
+  "funnel"
 ]

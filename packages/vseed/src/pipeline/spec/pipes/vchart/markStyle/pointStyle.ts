@@ -8,14 +8,7 @@ export const pointStyle: SpecPipe = (spec, context) => {
   const { pointStyle } = markStyle
   const result = {
     ...spec,
-    point: {
-      state: {
-        dimension_hover: {
-          scaleX: 1.4,
-          scaleY: 1.4,
-        },
-      },
-    },
+    point: {},
   } as IAreaChartSpec
 
   if (!pointStyle) {

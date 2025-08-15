@@ -19,7 +19,11 @@ export const tooltip: SpecPipe = (spec, context) => {
 
   result.tooltip = {
     visible: enable,
+
     mark: {
+      title: {
+        value: (datum) => (datum && (datum[groupName] as string)) || '',
+      },
       content: [
         {
           visible: true,

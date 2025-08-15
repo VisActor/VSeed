@@ -5,6 +5,9 @@ import { zCrosshairLine, zCrosshairRect } from './crosshair'
 import { zStackCornerRadius } from './stackCornerRadius'
 
 export const zConfig = z.object({
+  table: z.object({}).optional(),
+  pivotTable: z.object({}).optional(),
+
   line: z
     .object({
       xAxis: zXBandAxis.optional(),
@@ -80,8 +83,14 @@ export const zConfig = z.object({
   pie: z.object({}).optional(),
   donut: z.object({}).optional(),
   dualAxis: z.object({}).optional(),
-  table: z.object({}).optional(),
-  pivotTable: z.object({}).optional(),
+  scatter: z
+    .object({
+      xAxis: zXLinearAxis.optional(),
+      yAxis: zYLinearAxis.optional(),
+      crosshairLine: zCrosshairLine.optional(),
+    })
+    .optional(),
+  funnel: z.object({}).optional(),
 })
 
 export type Config = z.infer<typeof zConfig>

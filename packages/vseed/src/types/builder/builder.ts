@@ -14,6 +14,8 @@ export interface VSeedBuilder {
   getTheme: (themeKey: string) => CustomThemeConfig
   getThemeMap: () => Record<string, CustomThemeConfig>
 
+  getColorItems: () => string[]
+
   get spec(): Spec | null
   set spec(value: Spec | null)
   get vseed(): VSeed

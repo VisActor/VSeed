@@ -27,7 +27,4 @@ git commit -m "chore: release message"
 git push
 ```
 
-需要处理的版本
-```bash
-pnpm publish:vseed
-```
+合入至main分支后, 自动触发 changesets workflow, 进行打包与发布工作.

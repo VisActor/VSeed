@@ -1,4 +1,4 @@
 import type { SpecPipeline } from 'src/types'
-import { initPivotTable } from '../pipes'
+import { initPivotTable, pivotColumns, pivotRows, pivotIndicators } from '../pipes'
 
-export const pivotTableSpecPipeline: SpecPipeline = [initPivotTable]
+export const pivotTableSpecPipeline: SpecPipeline = [initPivotTable, pivotColumns, pivotRows, pivotIndicators]

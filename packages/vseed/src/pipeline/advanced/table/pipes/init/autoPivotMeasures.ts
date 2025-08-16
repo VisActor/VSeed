@@ -1,11 +1,11 @@
 import { findAllMeasures } from 'src/pipeline/utils'
-import type { AdvancedPipe, Datum } from 'src/types'
+import type { AdvancedPipe, Datum, Measures } from 'src/types'
 
-export const autoMeasures: AdvancedPipe = (advancedVSeed, context) => {
+export const autoPivotMeasures: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset } = vseed
-  const measures = findAllMeasures(vseed.measures)
+  const measures = findAllMeasures(vseed.measures as Measures)
 
   if (!dataset) {
     throw new Error('dataset is required')
@@ -16,7 +16,7 @@ export const autoMeasures: AdvancedPipe = (advancedVSeed, context) => {
   }
 
   if (measures && measures.length > 0) {
-    result.measures = measures
+    result.measures = findAllMeasures(measures)
     return result
   }
 

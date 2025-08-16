@@ -1,5 +1,4 @@
-import type { AdvancedPipeline } from "src/types";
+import type { AdvancedPipeline } from 'src/types'
+import { locale } from '../../pipes'
 
-export const tableAdvancedPipeline: AdvancedPipeline = [
- 
-]
+export const tableAdvancedPipeline: AdvancedPipeline = [locale]

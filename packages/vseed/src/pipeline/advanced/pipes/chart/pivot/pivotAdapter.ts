@@ -1,5 +1,5 @@
 import type { AdvancedPipe, AdvancedPipeline, AdvancedPipelineContext, AdvancedVSeed } from 'src/types'
-import { execPipeline, isPivotChart } from '../../../utils'
+import { execPipeline, isPivotChart } from 'src/pipeline/utils'
 
 export const pivotAdapter = (pipeline: AdvancedPipeline, pivotPipeline: AdvancedPipeline): AdvancedPipe => {
   return (advancedVSeed, context) => {

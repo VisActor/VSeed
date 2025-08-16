@@ -1,5 +1,5 @@
 import { pick } from 'remeda'
-import type { AdvancedPipe, AdvancedVSeed, Config } from '../../../../types'
+import type { AdvancedPipe, AdvancedVSeed, Config } from 'src/types'
 
 export const lineConfig: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context

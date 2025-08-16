@@ -1,4 +1,4 @@
-import { isPivotChart } from '../../../utils'
+import { isPivotChart } from 'src/pipeline/utils'
 import type { AdvancedPipe, Datum, MeasureGroup } from 'src/types'
 
 export const autoMeasures: AdvancedPipe = (advancedVSeed, context) => {

@@ -3,8 +3,8 @@ import {
   FoldMeasureName,
   FoldMeasureValue,
   UnfoldDimensionGroup,
-} from '../../../../dataReshape/constant'
-import { dataReshapeFor1D2M } from '../../../../dataReshape'
+} from 'src/dataReshape/constant'
+import { dataReshapeFor2D1M } from 'src/dataReshape'
 import type { AdvancedPipe, Dataset, DatasetReshapeInfo, MeasureGroup } from 'src/types'
 
 /**
@@ -13,7 +13,7 @@ import type { AdvancedPipe, Dataset, DatasetReshapeInfo, MeasureGroup } from 'sr
  * @param context
  * @returns
  */
-export const pivotReshapeTo1D2M: AdvancedPipe = (advancedVSeed, context) => {
+export const pivotReshapeTo2D1M: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset } = vseed
@@ -31,6 +31,8 @@ export const pivotReshapeTo1D2M: AdvancedPipe = (advancedVSeed, context) => {
       }
     })
   }
+  const commonDimensions = dimensions.filter((dim) => dim.location === 'dimension')
+
   const newDatasets: Dataset = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
   measureGroups.forEach((measureGroup) => {
@@ -38,14 +40,12 @@ export const pivotReshapeTo1D2M: AdvancedPipe = (advancedVSeed, context) => {
     if (!measures) {
       return
     }
-
-    const commonDimensions = dimensions.filter((dim) => dim.location === 'dimension')
     const groupId = measureGroup.id
     const {
       dataset: newSubDataset,
       foldInfo,
       unfoldInfo,
-    } = dataReshapeFor1D2M(dataset, commonDimensions, measures, {
+    } = dataReshapeFor2D1M(dataset, commonDimensions, measures, {
       foldMeasureId: FoldMeasureId,
       foldMeasureName: FoldMeasureName,
       foldMeasureValue: FoldMeasureValue + groupId,

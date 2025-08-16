@@ -3,8 +3,8 @@ import {
   FoldMeasureName,
   FoldMeasureValue,
   UnfoldDimensionGroup,
-} from '../../../../dataReshape/constant'
-import { dataReshapeFor1D1M } from '../../../../dataReshape'
+} from 'src/dataReshape/constant'
+import { dataReshapeFor1D1M } from 'src/dataReshape'
 import type { AdvancedPipe, Dataset, DatasetReshapeInfo, MeasureGroup } from 'src/types'
 
 /**

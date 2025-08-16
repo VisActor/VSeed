@@ -1,5 +1,6 @@
-import type { Locale } from '../../i18n'
-import type { BackgroundColor, Dataset, Dimensions, Measures, Theme } from '../../properties'
+import { z } from 'zod'
+import { zLocale, type Locale } from '../../i18n'
+import { zBackgroundColor, zDataset, zDimensions, zMeasures, zTheme, type BackgroundColor, type Dataset, type Dimensions, type Measures, type Theme } from '../../properties'
 
 /**
  * 表格类型定义
@@ -71,3 +72,13 @@ export interface Table {
    */
   locale?: Locale
 }
+
+export const zTable = z.object({
+  chartType: z.literal('table'),
+  dataset: zDataset.optional(),
+  dimensions: zDimensions.optional(),
+  measures: zMeasures.optional(),
+  backgroundColor: zBackgroundColor.optional(),
+  theme: zTheme.optional(),
+  locale: zLocale.optional(),
+})

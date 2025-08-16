@@ -1,4 +1,4 @@
-import { dataReshapeFor2D1M } from '../../../../dataReshape'
+import { dataReshapeFor2D1M } from 'src/dataReshape'
 import type { AdvancedPipe } from 'src/types'
 
 /**

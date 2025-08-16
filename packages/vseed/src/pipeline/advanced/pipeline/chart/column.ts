@@ -11,8 +11,8 @@ import {
   markStyle,
   annotation,
   locale,
+  pivotReshapeTo2D1M,
 } from '../../pipes'
-import { pivotReshapeTo2D1M } from '../../pipes/reshape/pivotReshapeTo2D1M'
 
 export const columnAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,

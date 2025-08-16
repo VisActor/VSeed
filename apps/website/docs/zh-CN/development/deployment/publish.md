@@ -20,11 +20,11 @@ pnpm changeset version
 pnpm install
 ```
 
-提交更改, 并推送至远程仓库的main分支
+提交更改
 ```bash
 git add .
 git commit -m "chore: release message"
 git push
 ```
 
-合入至main分支后, 自动触发 changesets workflow, 进行打包与发布工作.
+PR合入至main分支后, 会自动触发 changesets workflow, 进行打包与发布工作.

@@ -1,16 +1,16 @@
-import type { AdvancedVSeed, ChartType, MeasureGroup, VSeed } from 'src/types'
+import type { AdvancedVSeed, MeasureGroup, VSeed } from 'src/types'
 
-export const isVTable = (chartType: ChartType) => {
-  return ['table', 'pivotTable'].includes(chartType)
+export const isVTable = (vseed: VSeed) => {
+  return ['table', 'pivotTable'].includes(vseed.chartType)
 }
 
-export const isVChart = (chartType: ChartType) => {
-  return !isVTable(chartType)
+export const isVChart = (vseed: VSeed): boolean => {
+  return !isVTable(vseed)
 }
 
 export const isPivotChart = (vseed: VSeed | AdvancedVSeed) => {
   const { measures, dimensions } = vseed
-  
+
   const hasRowOrColumnDimension =
     dimensions &&
     dimensions.some((dimension) => dimension.location === 'rowDimension' || dimension.location === 'columnDimension')

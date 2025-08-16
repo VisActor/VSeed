@@ -58,7 +58,7 @@ export const MeasureDataFormat = memo(() => {
         id: 'rateOfReturn',
         alias: '回报率',
         format: {
-          type: 'permille',
+          type: 'number',
           decimalPlaces: 2,
           round: 'floor',
         },

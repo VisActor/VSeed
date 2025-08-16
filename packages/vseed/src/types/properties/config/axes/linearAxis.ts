@@ -27,6 +27,8 @@ export const zXLinearAxis = z.object({
   max: z.number().optional(),
   nice: z.boolean().default(true).optional(),
   zero: z.boolean().default(true).optional(),
+  log: z.boolean().default(false).optional(),
+  logBase: z.number().default(10).optional(),
   inverse: z.boolean().default(false).optional(),
 
   label: z

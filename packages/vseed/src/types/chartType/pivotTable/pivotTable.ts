@@ -1,5 +1,18 @@
-import type { Locale } from '../../i18n'
-import type { BackgroundColor, Dataset, Dimensions, Measures, Theme } from '../../properties'
+import { z } from 'zod'
+import { zLocale, type Locale } from '../../i18n'
+import {
+  zBackgroundColor,
+  zDataset,
+  zDimensions,
+  zMeasureTree,
+  zTheme,
+  type DimensionTree,
+  type BackgroundColor,
+  type Dataset,
+  type Dimensions,
+  type Theme,
+  zMeasures,
+} from '../../properties'
 
 /**
  * 透视表类型定义
@@ -45,7 +58,7 @@ export interface PivotTable {
    * @type {Measures}
    * @example [{id: 'sales', alias: '销售额', aggregation: 'sum'}]
    */
-  measures?: Measures
+  measures?: DimensionTree
 
   /**
    * 图表的背景颜色
@@ -71,3 +84,13 @@ export interface PivotTable {
    */
   locale?: Locale
 }
+
+export const zPivotTable = z.object({
+  chartType: z.literal('pivotTable'),
+  dataset: zDataset.optional(),
+  dimensions: zDimensions.optional(),
+  measures: zMeasures.optional(),
+  backgroundColor: zBackgroundColor.optional(),
+  theme: zTheme.optional(),
+  locale: zLocale.optional(),
+})

@@ -12,7 +12,7 @@ import {
   zDimensions,
   zLabel,
   zLegend,
-  zMeasures,
+  zMeasureTree,
   zStackCornerRadius,
   zTheme,
   zTooltip,
@@ -32,7 +32,7 @@ import {
   type Dimensions,
   type Label,
   type Legend,
-  type Measures,
+  type DimensionTree,
   type StackCornerRadius,
   type Theme,
   type Tooltip,
@@ -82,10 +82,10 @@ export interface Bar {
   /**
    * 指标
    * @description 条形图指标会自动合并为一个指标, 映射到X轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {Measures}
+   * @type {DimensionTree}
    * @example [{id: "value", alias: "数值"}]
    */
-  measures?: Measures
+  measures?: DimensionTree
 
   /**
    * 图表的背景颜色
@@ -199,7 +199,7 @@ export const zBar = z.object({
   chartType: z.literal('bar'),
   dataset: zDataset.optional(),
   dimensions: zDimensions.optional(),
-  measures: zMeasures.optional(),
+  measures: zMeasureTree.optional(),
   backgroundColor: zBackgroundColor.optional(),
   color: zColor.optional(),
   label: zLabel.optional(),

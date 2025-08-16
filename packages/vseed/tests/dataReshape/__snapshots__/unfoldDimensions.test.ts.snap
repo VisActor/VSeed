@@ -23,26 +23,31 @@ exports[`unfoldMeasures > 1 dimensions, 0 measures 1`] = `
 exports[`unfoldMeasures > 1 dimensions, 1 measures 1`] = `
 [
   {
+    "__DimGroupID__": "2019-id",
     "__DimGroup__": "2019",
     "date": "2019",
     "sales": 100,
   },
   {
+    "__DimGroupID__": "2020-id",
     "__DimGroup__": "2020",
     "date": "2020",
     "sales": 3200,
   },
   {
+    "__DimGroupID__": "2021-id",
     "__DimGroup__": "2021",
     "date": "2021",
     "sales": 300,
   },
   {
+    "__DimGroupID__": "2022-id",
     "__DimGroup__": "2022",
     "date": "2022",
     "sales": 2400,
   },
   {
+    "__DimGroupID__": "2023-id",
     "__DimGroup__": "2023",
     "date": "2023",
     "sales": 500,
@@ -53,6 +58,7 @@ exports[`unfoldMeasures > 1 dimensions, 1 measures 1`] = `
 exports[`unfoldMeasures > 1 dimensions, 5 measures 1`] = `
 [
   {
+    "__DimGroupID__": "2019-id",
     "__DimGroup__": "2019",
     "count": 10,
     "date": "2019",
@@ -62,6 +68,7 @@ exports[`unfoldMeasures > 1 dimensions, 5 measures 1`] = `
     "sales": 100,
   },
   {
+    "__DimGroupID__": "2020-id",
     "__DimGroup__": "2020",
     "count": 20,
     "date": "2020",
@@ -71,6 +78,7 @@ exports[`unfoldMeasures > 1 dimensions, 5 measures 1`] = `
     "sales": 3200,
   },
   {
+    "__DimGroupID__": "2021-id",
     "__DimGroup__": "2021",
     "count": 30,
     "date": "2021",
@@ -80,6 +88,7 @@ exports[`unfoldMeasures > 1 dimensions, 5 measures 1`] = `
     "sales": 300,
   },
   {
+    "__DimGroupID__": "2022-id",
     "__DimGroup__": "2022",
     "count": 40,
     "date": "2022",
@@ -89,6 +98,7 @@ exports[`unfoldMeasures > 1 dimensions, 5 measures 1`] = `
     "sales": 2400,
   },
   {
+    "__DimGroupID__": "2023-id",
     "__DimGroup__": "2023",
     "count": 50,
     "date": "2023",
@@ -193,60 +203,70 @@ exports[`unfoldMeasures > 2 dimensions, 0 measures 2`] = `
 exports[`unfoldMeasures > 2 dimensions, 1 measures 1`] = `
 [
   {
+    "__DimGroupID__": "2019-A-id",
     "__DimGroup__": "2019-A",
     "date": "2019",
     "sales": 100,
     "type": "A",
   },
   {
+    "__DimGroupID__": "2020-A-id",
     "__DimGroup__": "2020-A",
     "date": "2020",
     "sales": 3200,
     "type": "A",
   },
   {
+    "__DimGroupID__": "2021-A-id",
     "__DimGroup__": "2021-A",
     "date": "2021",
     "sales": 300,
     "type": "A",
   },
   {
+    "__DimGroupID__": "2022-A-id",
     "__DimGroup__": "2022-A",
     "date": "2022",
     "sales": 2400,
     "type": "A",
   },
   {
+    "__DimGroupID__": "2023-A-id",
     "__DimGroup__": "2023-A",
     "date": "2023",
     "sales": 500,
     "type": "A",
   },
   {
+    "__DimGroupID__": "2019-B-id",
     "__DimGroup__": "2019-B",
     "date": "2019",
     "sales": 100,
     "type": "B",
   },
   {
+    "__DimGroupID__": "2020-B-id",
     "__DimGroup__": "2020-B",
     "date": "2020",
     "sales": 3200,
     "type": "B",
   },
   {
+    "__DimGroupID__": "2021-B-id",
     "__DimGroup__": "2021-B",
     "date": "2021",
     "sales": 300,
     "type": "B",
   },
   {
+    "__DimGroupID__": "2022-B-id",
     "__DimGroup__": "2022-B",
     "date": "2022",
     "sales": 2400,
     "type": "B",
   },
   {
+    "__DimGroupID__": "2023-B-id",
     "__DimGroup__": "2023-B",
     "date": "2023",
     "sales": 500,
@@ -258,60 +278,70 @@ exports[`unfoldMeasures > 2 dimensions, 1 measures 1`] = `
 exports[`unfoldMeasures > 2 dimensions, 1 measures 2`] = `
 [
   {
+    "__DimGroupID__": "A-id",
     "__DimGroup__": "A",
     "date": "2019",
     "sales": 100,
     "type": "A",
   },
   {
+    "__DimGroupID__": "A-id",
     "__DimGroup__": "A",
     "date": "2020",
     "sales": 3200,
     "type": "A",
   },
   {
+    "__DimGroupID__": "A-id",
     "__DimGroup__": "A",
     "date": "2021",
     "sales": 300,
     "type": "A",
   },
   {
+    "__DimGroupID__": "A-id",
     "__DimGroup__": "A",
     "date": "2022",
     "sales": 2400,
     "type": "A",
   },
   {
+    "__DimGroupID__": "A-id",
     "__DimGroup__": "A",
     "date": "2023",
     "sales": 500,
     "type": "A",
   },
   {
+    "__DimGroupID__": "B-id",
     "__DimGroup__": "B",
     "date": "2019",
     "sales": 100,
     "type": "B",
   },
   {
+    "__DimGroupID__": "B-id",
     "__DimGroup__": "B",
     "date": "2020",
     "sales": 3200,
     "type": "B",
   },
   {
+    "__DimGroupID__": "B-id",
     "__DimGroup__": "B",
     "date": "2021",
     "sales": 300,
     "type": "B",
   },
   {
+    "__DimGroupID__": "B-id",
     "__DimGroup__": "B",
     "date": "2022",
     "sales": 2400,
     "type": "B",
   },
   {
+    "__DimGroupID__": "B-id",
     "__DimGroup__": "B",
     "date": "2023",
     "sales": 500,
@@ -323,6 +353,7 @@ exports[`unfoldMeasures > 2 dimensions, 1 measures 2`] = `
 exports[`unfoldMeasures > 2 dimensions, 2 measures 1`] = `
 [
   {
+    "__DimGroupID__": "2019-A-id",
     "__DimGroup__": "2019-A",
     "date": "2019",
     "profit": 10,
@@ -330,6 +361,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 1`] = `
     "type": "A",
   },
   {
+    "__DimGroupID__": "2020-A-id",
     "__DimGroup__": "2020-A",
     "date": "2020",
     "profit": 30,
@@ -337,6 +369,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 1`] = `
     "type": "A",
   },
   {
+    "__DimGroupID__": "2021-A-id",
     "__DimGroup__": "2021-A",
     "date": "2021",
     "profit": 30,
@@ -344,6 +377,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 1`] = `
     "type": "A",
   },
   {
+    "__DimGroupID__": "2022-A-id",
     "__DimGroup__": "2022-A",
     "date": "2022",
     "profit": 50,
@@ -351,6 +385,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 1`] = `
     "type": "A",
   },
   {
+    "__DimGroupID__": "2023-A-id",
     "__DimGroup__": "2023-A",
     "date": "2023",
     "profit": 40,
@@ -358,6 +393,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 1`] = `
     "type": "A",
   },
   {
+    "__DimGroupID__": "2019-B-id",
     "__DimGroup__": "2019-B",
     "date": "2019",
     "profit": 10,
@@ -365,6 +401,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 1`] = `
     "type": "B",
   },
   {
+    "__DimGroupID__": "2020-B-id",
     "__DimGroup__": "2020-B",
     "date": "2020",
     "profit": 30,
@@ -372,6 +409,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 1`] = `
     "type": "B",
   },
   {
+    "__DimGroupID__": "2021-B-id",
     "__DimGroup__": "2021-B",
     "date": "2021",
     "profit": 30,
@@ -379,6 +417,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 1`] = `
     "type": "B",
   },
   {
+    "__DimGroupID__": "2022-B-id",
     "__DimGroup__": "2022-B",
     "date": "2022",
     "profit": 50,
@@ -386,6 +425,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 1`] = `
     "type": "B",
   },
   {
+    "__DimGroupID__": "2023-B-id",
     "__DimGroup__": "2023-B",
     "date": "2023",
     "profit": 40,
@@ -398,6 +438,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 1`] = `
 exports[`unfoldMeasures > 2 dimensions, 2 measures 2`] = `
 [
   {
+    "__DimGroupID__": "A-id",
     "__DimGroup__": "A",
     "date": "2019",
     "profit": 10,
@@ -405,6 +446,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 2`] = `
     "type": "A",
   },
   {
+    "__DimGroupID__": "A-id",
     "__DimGroup__": "A",
     "date": "2020",
     "profit": 30,
@@ -412,6 +454,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 2`] = `
     "type": "A",
   },
   {
+    "__DimGroupID__": "A-id",
     "__DimGroup__": "A",
     "date": "2021",
     "profit": 30,
@@ -419,6 +462,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 2`] = `
     "type": "A",
   },
   {
+    "__DimGroupID__": "A-id",
     "__DimGroup__": "A",
     "date": "2022",
     "profit": 50,
@@ -426,6 +470,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 2`] = `
     "type": "A",
   },
   {
+    "__DimGroupID__": "A-id",
     "__DimGroup__": "A",
     "date": "2023",
     "profit": 40,
@@ -433,6 +478,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 2`] = `
     "type": "A",
   },
   {
+    "__DimGroupID__": "B-id",
     "__DimGroup__": "B",
     "date": "2019",
     "profit": 10,
@@ -440,6 +486,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 2`] = `
     "type": "B",
   },
   {
+    "__DimGroupID__": "B-id",
     "__DimGroup__": "B",
     "date": "2020",
     "profit": 30,
@@ -447,6 +494,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 2`] = `
     "type": "B",
   },
   {
+    "__DimGroupID__": "B-id",
     "__DimGroup__": "B",
     "date": "2021",
     "profit": 30,
@@ -454,6 +502,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 2`] = `
     "type": "B",
   },
   {
+    "__DimGroupID__": "B-id",
     "__DimGroup__": "B",
     "date": "2022",
     "profit": 50,
@@ -461,6 +510,7 @@ exports[`unfoldMeasures > 2 dimensions, 2 measures 2`] = `
     "type": "B",
   },
   {
+    "__DimGroupID__": "B-id",
     "__DimGroup__": "B",
     "date": "2023",
     "profit": 40,

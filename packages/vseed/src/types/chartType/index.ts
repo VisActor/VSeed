@@ -1,6 +1,5 @@
-export type * from './table'
-export type * from './pivotTable'
-export type * from './dualAxis'
+export * from './table'
+export * from './pivotTable'
 
 export * from './line'
 export * from './column'
@@ -17,3 +16,5 @@ export * from './pie'
 export * from './donut'
 export * from './scatter'
 export * from './funnel'
+
+export type * from './dualAxis'

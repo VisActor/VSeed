@@ -23,12 +23,16 @@ import {
   lineSpecPipeline,
   pieAdvancedPipeline,
   pieSpecPipeline,
+  pivotTableAdvancedPipeline,
+  pivotTableSpecPipeline,
   roseAdvancedPipeline,
   roseParallelAdvancedPipeline,
   roseParallelSpecPipeline,
   roseSpecPipeline,
   scatterAdvancedPipeline,
   scatterSpecPipeline,
+  tableAdvancedPipeline,
+  tableSpecPipeline,
 } from '../../pipeline'
 import { Builder } from '../builder'
 
@@ -105,4 +109,14 @@ export const registerFunnel = () => {
 export const registerScatter = () => {
   Builder._advancedPipelineMap['scatter'] = scatterAdvancedPipeline
   Builder._specPipelineMap['scatter'] = scatterSpecPipeline
+}
+
+export const registerTable = () => {
+  Builder._advancedPipelineMap['table'] = tableAdvancedPipeline
+  Builder._specPipelineMap['table'] = tableSpecPipeline
+}
+
+export const registerPivotTable = () => {
+  Builder._advancedPipelineMap['pivotTable'] = pivotTableAdvancedPipeline
+  Builder._specPipelineMap['pivotTable'] = pivotTableSpecPipeline
 }

@@ -14,6 +14,8 @@ import {
   registerRoseParallel,
   registerFunnel,
   registerScatter,
+  registerTable,
+  registerPivotTable,
 } from './chartType'
 import { registerDarkTheme, registerLightTheme } from './theme'
 
@@ -34,6 +36,8 @@ export const registerAll = () => {
   registerRoseParallel()
   registerFunnel()
   registerScatter()
+  registerTable()
+  registerPivotTable()
 
   // Theme
   registerLightTheme()

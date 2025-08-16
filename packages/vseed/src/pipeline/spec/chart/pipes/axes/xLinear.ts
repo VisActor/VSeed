@@ -1,5 +1,5 @@
 import type { ISpec } from '@visactor/vchart'
-import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../constant'
+import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
 import type { SpecPipe, XLinearAxis } from 'src/types'
 import { autoFormatter } from '../../../../utils'
 

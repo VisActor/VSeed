@@ -2,27 +2,25 @@ import type { AdvancedPipeline } from 'src/types'
 import {
   autoDimensions,
   autoMeasures,
-  encodingXY,
   initAdvancedVSeed,
-  pivotReshapeTo2D1M,
-  reshapeTo2D1M,
   theme,
   pivotAdapter,
-  areaConfig,
+  reshapeTo1D1M,
+  pivotReshapeTo1D1M,
   annotation,
-  markStyle,
   locale,
-} from '../../pipes'
+  encodingFunnel,
+  funnelConfig,
+} from '../pipes'
 
-export const areaAdvancedPipeline: AdvancedPipeline = [
+export const funnelAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   locale,
   autoMeasures,
   autoDimensions,
-  pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
-  encodingXY,
-  areaConfig,
+  pivotAdapter([reshapeTo1D1M], [pivotReshapeTo1D1M]),
+  encodingFunnel,
+  funnelConfig,
   theme,
-  markStyle,
   annotation,
 ]

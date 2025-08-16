@@ -5,30 +5,15 @@ pageType: custom
 ---
 
 ```tsx
-import { useRef, useEffect } from 'react'
-import { useDark } from 'rspress/runtime'
-import VChart from '@visactor/vchart'
-import { ListTable, PivotChart, register } from '@visactor/vtable'
-import { registerAll, VSeed, Builder, isPivotChart, isVChart, isVTable, zVSeed } from '@visactor/vseed'
-
-registerAll()
-register.chartModule('vchart', VChart)
-
 const Demo = () => {
   const vseed: VSeed = {
-    chartType: 'line',
+    chartType: 'table',
     dataset: [
       { date: '2019', type: 'A', profit: 10, sales: 100 },
-      { date: '2020', type: 'A', profit: 30, sales: 3200 },
+      { date: '2020', type: 'A', profit: 30, sales: 320 },
       { date: '2021', type: 'A', profit: 30, sales: 300 },
-      { date: '2022', type: 'A', profit: 50, sales: 2400 },
+      { date: '2022', type: 'A', profit: 50, sales: 240 },
       { date: '2023', type: 'A', profit: 40, sales: 500 },
-
-      { date: '2019', type: 'B', profit: 10, sales: 100 },
-      { date: '2020', type: 'B', profit: 30, sales: 3200 },
-      { date: '2021', type: 'B', profit: 30, sales: 300 },
-      { date: '2022', type: 'B', profit: 50, sales: 2400 },
-      { date: '2023', type: 'B', profit: 40, sales: 500 },
     ],
   }
 
@@ -38,8 +23,17 @@ const Demo = () => {
     console.error('zVSeed parse error!!!')
   }
 
-  return <SimpleVSeedRender vseed={ vseed } />
+  return <SimpleVSeedRender vseed={vseed} />
 }
+
+import { useRef, useEffect } from 'react'
+import { useDark } from 'rspress/runtime'
+import VChart from '@visactor/vchart'
+import { ListTable, PivotChart, register } from '@visactor/vtable'
+import { registerAll, VSeed, Builder, isPivotChart, isVChart, isVTable, zVSeed } from '@visactor/vseed'
+
+registerAll()
+register.chartModule('vchart', VChart)
 
 const SimpleVSeedRender = (props: { vseed: VSeed }) => {
   const { vseed } = props

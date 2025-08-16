@@ -11,7 +11,7 @@ import {
   annotation,
   locale,
   donutConfig,
-} from '../../pipes'
+} from '../pipes'
 
 export const donutAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,

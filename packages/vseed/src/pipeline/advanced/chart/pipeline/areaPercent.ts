@@ -8,20 +8,20 @@ import {
   theme,
   pivotAdapter,
   pivotReshapeTo2D1M,
-  lineConfig,
+  areaPercentConfig,
   annotation,
   markStyle,
   locale,
-} from '../../pipes'
+} from '../pipes'
 
-export const lineAdvancedPipeline: AdvancedPipeline = [
+export const areaPercentAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   locale,
   autoMeasures,
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
-  lineConfig,
+  areaPercentConfig,
   theme,
   markStyle,
   annotation

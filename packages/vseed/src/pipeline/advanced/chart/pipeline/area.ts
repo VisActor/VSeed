@@ -2,26 +2,26 @@ import type { AdvancedPipeline } from 'src/types'
 import {
   autoDimensions,
   autoMeasures,
+  encodingXY,
   initAdvancedVSeed,
+  pivotReshapeTo2D1M,
+  reshapeTo2D1M,
   theme,
   pivotAdapter,
+  areaConfig,
   annotation,
   markStyle,
   locale,
-  scatterConfig,
-  reshapeTo1D2M,
-  pivotReshapeTo1D2M,
-  encodingYY,
-} from '../../pipes'
+} from '../pipes'
 
-export const scatterAdvancedPipeline: AdvancedPipeline = [
+export const areaAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   locale,
   autoMeasures,
   autoDimensions,
-  pivotAdapter([reshapeTo1D2M], [pivotReshapeTo1D2M]),
-  encodingYY,
-  scatterConfig,
+  pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
+  encodingXY,
+  areaConfig,
   theme,
   markStyle,
   annotation,

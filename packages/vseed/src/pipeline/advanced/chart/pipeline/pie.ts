@@ -7,20 +7,20 @@ import {
   pivotAdapter,
   reshapeTo1D1M,
   pivotReshapeTo1D1M,
+  encodingPie,
+  pieConfig,
   annotation,
   locale,
-  encodingFunnel,
-  funnelConfig,
-} from '../../pipes'
+} from '../pipes'
 
-export const funnelAdvancedPipeline: AdvancedPipeline = [
+export const pieAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   locale,
   autoMeasures,
   autoDimensions,
   pivotAdapter([reshapeTo1D1M], [pivotReshapeTo1D1M]),
-  encodingFunnel,
-  funnelConfig,
+  encodingPie,
+  pieConfig,
   theme,
-  annotation,
+  annotation
 ]

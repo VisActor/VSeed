@@ -4,24 +4,24 @@ import {
   autoMeasures,
   encodingXY,
   initAdvancedVSeed,
-  theme,
   reshapeTo2D1M,
-  pivotReshapeTo2D1M,
+  theme,
   pivotAdapter,
-  columnPercentConfig,
+  columnConfig,
   markStyle,
   annotation,
   locale,
-} from '../../pipes'
+  pivotReshapeTo2D1M,
+} from '../pipes'
 
-export const columnPercentAdvancedPipeline: AdvancedPipeline = [
+export const columnAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   locale,
   autoMeasures,
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
-  columnPercentConfig,
+  columnConfig,
   theme,
   markStyle,
   annotation,

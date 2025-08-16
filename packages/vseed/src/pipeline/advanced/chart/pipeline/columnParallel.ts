@@ -12,7 +12,7 @@ import {
   markStyle,
   annotation,
   locale,
-} from '../../pipes'
+} from '../pipes'
 
 export const columnParallelAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,

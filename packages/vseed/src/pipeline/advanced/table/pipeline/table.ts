@@ -1,4 +1,4 @@
 import type { AdvancedPipeline } from 'src/types'
-import { locale } from '../../chart/pipes'
+import { initAdvancedVSeed, autoDimensions, autoMeasures } from '../pipes'
 
-export const tableAdvancedPipeline: AdvancedPipeline = [locale]
+export const tableAdvancedPipeline: AdvancedPipeline = [initAdvancedVSeed, autoMeasures, autoDimensions]

@@ -10,12 +10,10 @@ import {
   encodingPie,
   pieConfig,
   annotation,
-  locale,
 } from '../pipes'
 
 export const pieAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  locale,
   autoMeasures,
   autoDimensions,
   pivotAdapter([reshapeTo1D1M], [pivotReshapeTo1D1M]),

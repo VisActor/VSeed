@@ -6,7 +6,7 @@ import type {
   Dimensions,
   Label,
   Legend,
-  Measures,
+  MeasureTree,
   Theme,
   Tooltip,
 } from '../../properties'
@@ -54,10 +54,10 @@ export interface DualAxis {
   /**
    * 指标
    * @description 双轴图如果有2组指标组, 则每个组内的所有指标分别自动合并为一个指标, 分别映射到双轴图的左右轴, 如果指标不成组, 则会当作一组指标处理.
-   * @type {Measures}
+   * @type {MeasureTree}
    * @example [{id: 'value', alias: '数值', axis: 'left'}, {id: 'growth', alias: '增长率', axis: 'right', format: 'percent'}]
    */
-  measures?: Measures
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色

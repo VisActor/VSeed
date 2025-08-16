@@ -11,12 +11,10 @@ import {
   barParallelConfig,
   markStyle,
   annotation,
-  locale,
 } from '../pipes'
 
 export const barParallelAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  locale,
   autoMeasures,
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),

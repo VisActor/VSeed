@@ -8,7 +8,7 @@ import {
   zDimensions,
   zLabel,
   zLegend,
-  zMeasures,
+  zMeasureTree,
   zTheme,
   zTooltip,
 } from '../../properties'
@@ -19,7 +19,7 @@ import type {
   Dimensions,
   Label,
   Legend,
-  Measures,
+  MeasureTree,
   Theme,
   Tooltip,
 } from '../../properties'
@@ -64,10 +64,10 @@ export interface Funnel {
   /**
    * 指标
    * @description 漏斗图的所有指标会自动合并为一个指标, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {Measures}
+   * @type {MeasureTree}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures?: Measures
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色
@@ -122,7 +122,7 @@ export const zFunnel = z.object({
   chartType: z.literal('funnel'),
   dataset: zDataset.optional(),
   dimensions: zDimensions.optional(),
-  measures: zMeasures.optional(),
+  measures: zMeasureTree.optional(),
   backgroundColor: zBackgroundColor.optional(),
   color: zColor.optional(),
   label: zLabel.optional(),

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { Dataset, FoldInfo, Measure, Measures } from 'src/types'
+import type { Dataset, FoldInfo, Measure, Measures, MeasureTree } from 'src/types'
 import { FoldMeasureId, FoldMeasureName, FoldMeasureValue, ORIGINAL_DATA } from './constant'
 import { omit } from 'remeda'
 
@@ -62,7 +62,7 @@ export const foldMeasures = (
  */
 export const foldMeasureGroups = (
   dataset: Dataset,
-  measures: Required<Measures>,
+  measures: Required<MeasureTree>,
   measureId = '__MeaId__',
   measureName = '__MeaName__',
   measureValue = '__MeaValue__',

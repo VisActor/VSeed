@@ -1,6 +1,16 @@
 import { z } from 'zod'
 import { zLocale, type Locale } from '../../i18n'
-import { zBackgroundColor, zDataset, zDimensions, zMeasures, zTheme, type BackgroundColor, type Dataset, type Dimensions, type Measures, type Theme } from '../../properties'
+import type { DimensionTree, MeasureTree } from '../../properties'
+import {
+  zBackgroundColor,
+  zDataset,
+  zDimensions,
+  zMeasureTree,
+  zTheme,
+  type BackgroundColor,
+  type Dataset,
+  type Theme,
+} from '../../properties'
 
 /**
  * 表格类型定义
@@ -38,7 +48,7 @@ export interface Table {
    * @type {Dimensions}
    * @example [{id: "name", alias: "名称"}]
    */
-  dimensions?: Dimensions
+  dimensions?: DimensionTree
 
   /**
    * 指标
@@ -46,7 +56,7 @@ export interface Table {
    * @type {Measures}
    * @example [{id: "value", alias: "数值"}]
    */
-  measures?: Measures
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色
@@ -77,7 +87,7 @@ export const zTable = z.object({
   chartType: z.literal('table'),
   dataset: zDataset.optional(),
   dimensions: zDimensions.optional(),
-  measures: zMeasures.optional(),
+  measures: zMeasureTree.optional(),
   backgroundColor: zBackgroundColor.optional(),
   theme: zTheme.optional(),
   locale: zLocale.optional(),

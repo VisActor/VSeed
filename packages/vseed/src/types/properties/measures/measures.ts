@@ -22,7 +22,6 @@ export type Measure = {
    */
   format?: NumFormat
 }
-
 export type MeasureGroup = {
   /**
    * @description 指标组id, 不能重复
@@ -38,8 +37,9 @@ export type MeasureGroup = {
    */
   children?: (Measure | MeasureGroup)[]
 }
+export type Measures = Measure[]
 
-export type Measures = (Measure | MeasureGroup)[]
+export type MeasureTree = (Measure | MeasureGroup)[]
 
 export const zMeasure = z.object({
   id: z.string(),
@@ -47,7 +47,6 @@ export const zMeasure = z.object({
   autoFormat: z.boolean().default(true).optional(),
   format: zNumFormat.default({}).optional(),
 })
-
 export const zMeasureGroup = z.object({
   id: z.string(),
   alias: z.string().optional(),
@@ -55,5 +54,5 @@ export const zMeasureGroup = z.object({
     return z.array(zMeasureGroup.or(zMeasure)).optional()
   },
 })
-
-export const zMeasures = z.array(zMeasureGroup.or(zMeasure)).optional()
+export const zMeasures = z.array(zMeasure)
+export const zMeasureTree = z.array(zMeasureGroup.or(zMeasure))

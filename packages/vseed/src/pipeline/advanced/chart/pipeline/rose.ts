@@ -8,7 +8,6 @@ import {
   pivotAdapter,
   markStyle,
   annotation,
-  locale,
   roseConfig,
   encodingRose,
   pivotReshapeTo2D1M,
@@ -16,7 +15,6 @@ import {
 
 export const roseAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  locale,
   autoMeasures,
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),

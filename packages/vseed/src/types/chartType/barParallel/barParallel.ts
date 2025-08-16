@@ -14,7 +14,7 @@ import {
   zDimensions,
   zLabel,
   zLegend,
-  zMeasures,
+  zMeasureTree,
   zStackCornerRadius,
   zTheme,
   zTooltip,
@@ -34,7 +34,7 @@ import type {
   Dimensions,
   Label,
   Legend,
-  Measures,
+  MeasureTree,
   StackCornerRadius,
   Theme,
   Tooltip,
@@ -83,10 +83,10 @@ export interface BarParallel {
   /**
    * 指标
    * @description 并列条形图指标会自动合并为一个指标, 映射到X轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {Measures}
+   * @type {MeasureTree}
    * @example [{id: 'value1', alias: '指标1'}, {id: 'value2', alias: '指标2'}]
    */
-  measures?: Measures
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色
@@ -200,7 +200,7 @@ export const zBarParallel = z.object({
   chartType: z.literal('barParallel'),
   dataset: zDataset.optional(),
   dimensions: zDimensions.optional(),
-  measures: zMeasures.optional(),
+  measures: zMeasureTree.optional(),
   backgroundColor: zBackgroundColor.optional(),
   color: zColor.optional(),
   label: zLabel.optional(),

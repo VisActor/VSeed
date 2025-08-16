@@ -8,14 +8,12 @@ import {
   reshapeTo1D1M,
   pivotReshapeTo1D1M,
   annotation,
-  locale,
   encodingFunnel,
   funnelConfig,
 } from '../pipes'
 
 export const funnelAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  locale,
   autoMeasures,
   autoDimensions,
   pivotAdapter([reshapeTo1D1M], [pivotReshapeTo1D1M]),

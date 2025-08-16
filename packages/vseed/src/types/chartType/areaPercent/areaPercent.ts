@@ -14,7 +14,7 @@ import {
   zLabel,
   zLegend,
   zLineStyle,
-  zMeasures,
+  zMeasureTree,
   zPointStyle,
   zTheme,
   zTooltip,
@@ -34,7 +34,7 @@ import type {
   Label,
   Legend,
   LineStyle,
-  Measures,
+  MeasureTree,
   PointStyle,
   Theme,
   Tooltip,
@@ -85,10 +85,10 @@ export interface AreaPercent {
   /**
    * 指标
    * @description 百分比面积图的指标会自动合并为一个指标, 映射到Y轴, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {Measures}
+   * @type {MeasureTree}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures?: Measures
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色
@@ -215,7 +215,7 @@ export const zAreaPercent = z.object({
   chartType: z.literal('areaPercent'),
   dataset: zDataset.optional(),
   dimensions: zDimensions.optional(),
-  measures: zMeasures.optional(),
+  measures: zMeasureTree.optional(),
   backgroundColor: zBackgroundColor.optional(),
   color: zColor.optional(),
   label: zLabel.optional(),

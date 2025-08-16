@@ -1,66 +1,72 @@
 import type { SpecPipeline } from 'src/types'
 import {
+  initColumn,
   dataset,
+  xBand,
+  yLinear,
   backgroundColor,
   label,
   tooltip,
   discreteLegend,
   color,
-  pivotIndicators,
+  pivotAdapter,
   initPivot,
   datasetPivot,
-  pivotAdapter,
   datasetPivotPlaceholder,
+  pivotIndicators,
   pivotDiscreteLegend,
   pivotIndicatorsAsRow,
   pivotGridStyle,
   pivotRowDimensions,
   pivotColumnDimensions,
+  stackInverse,
+  barStyle,
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationAreaBand,
   verticalCrosshairRect,
   stackCornerRadius,
-  initRoseParallel,
-  radiusAxis,
-  angleAxis,
-} from '../../pipes'
+} from '../pipes'
 
-const roseParallel: SpecPipeline = [
-  initRoseParallel,
+const column: SpecPipeline = [
+  initColumn,
   stackCornerRadius,
+  stackInverse,
   color,
   backgroundColor,
   dataset,
-  radiusAxis,
-  angleAxis,
+  xBand,
+  yLinear,
   label,
   tooltip,
-  discreteLegend,
   verticalCrosshairRect,
+  discreteLegend,
+  barStyle,
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationAreaBand,
 ]
 
-const pivotRoseParallel: SpecPipeline = [
+const pivotColumn: SpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
   datasetPivot,
   pivotIndicators([
-    initRoseParallel,
+    initColumn,
     stackCornerRadius,
+    stackInverse,
     color,
     backgroundColor,
     datasetPivotPlaceholder,
-    radiusAxis,
-    angleAxis,
+    xBand,
+    yLinear,
     label,
     tooltip,
     verticalCrosshairRect,
+    barStyle,
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,
@@ -71,4 +77,4 @@ const pivotRoseParallel: SpecPipeline = [
   pivotDiscreteLegend,
 ]
 
-export const roseParallelSpecPipeline: SpecPipeline = [pivotAdapter(roseParallel, pivotRoseParallel)]
+export const columnSpecPipeline = [pivotAdapter(column, pivotColumn)]

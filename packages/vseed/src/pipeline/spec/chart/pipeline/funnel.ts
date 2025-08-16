@@ -1,72 +1,54 @@
 import type { SpecPipeline } from 'src/types'
 import {
-  dataset,
-  xBand,
-  yLinear,
-  initLine,
   backgroundColor,
-  label,
-  tooltip,
-  discreteLegend,
   color,
-  initPivot,
+  dataset,
   datasetPivot,
   datasetPivotPlaceholder,
-  pivotDiscreteLegend,
-  pivotIndicators,
+  initPivot,
+  label,
+  discreteLegend,
   pivotAdapter,
-  pivotIndicatorsAsRow,
-  pivotGridStyle,
   pivotColumnDimensions,
+  pivotGridStyle,
+  pivotIndicators,
+  pivotIndicatorsAsRow,
+  pivotDiscreteLegend,
   pivotRowDimensions,
+  tooltip,
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationArea,
-  pointStyle,
-  lineStyle,
-  verticalCrosshairLine,
-  pointStateDimensionHover,
-} from '../../pipes'
+  initFunnel,
+} from '../pipes'
 
-const line: SpecPipeline = [
-  initLine,
+const funnel: SpecPipeline = [
+  initFunnel,
   color,
   backgroundColor,
   dataset,
-  xBand,
-  yLinear,
   label,
   tooltip,
-  verticalCrosshairLine,
   discreteLegend,
-  pointStyle,
-  pointStateDimensionHover,
-  lineStyle,
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationArea,
 ]
 
-const pivotLine: SpecPipeline = [
+const pivotFunnel: SpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
   datasetPivot,
   pivotIndicators([
-    initLine,
+    initFunnel,
     color,
     backgroundColor,
     datasetPivotPlaceholder,
-    xBand,
-    yLinear,
     label,
     tooltip,
-    verticalCrosshairLine,
-    pointStyle,
-    pointStateDimensionHover,
-    lineStyle,
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,
@@ -77,4 +59,4 @@ const pivotLine: SpecPipeline = [
   pivotDiscreteLegend,
 ]
 
-export const lineSpecPipeline: SpecPipeline = [pivotAdapter(line, pivotLine)]
+export const funnelSpecPipeline: SpecPipeline = [pivotAdapter(funnel, pivotFunnel)]

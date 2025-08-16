@@ -1,1 +1,2 @@
-export * from './pipeline'
+export * from './chart'
+export * from './table'

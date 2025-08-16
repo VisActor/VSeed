@@ -1,21 +1,21 @@
 import type { SpecPipeline } from 'src/types'
 import {
   dataset,
-  xBand,
-  yLinear,
-  initColumnParallel,
+  xLinear,
+  yBand,
+  initBarParallel,
   backgroundColor,
   label,
   tooltip,
   discreteLegend,
   color,
-  pivotIndicators,
+  datasetPivotPlaceholder,
   initPivot,
   datasetPivot,
-  pivotAdapter,
-  datasetPivotPlaceholder,
   pivotDiscreteLegend,
-  pivotIndicatorsAsRow,
+  pivotIndicators,
+  pivotAdapter,
+  pivotIndicatorsAsCol,
   pivotGridStyle,
   pivotRowDimensions,
   pivotColumnDimensions,
@@ -24,22 +24,22 @@ import {
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationAreaBand,
-  verticalCrosshairRect,
+  horizontalCrosshairRect,
   stackCornerRadius,
-} from '../../pipes'
+} from '../pipes'
 
-const columnParallel: SpecPipeline = [
-  initColumnParallel,
+const barParallel: SpecPipeline = [
+  initBarParallel,
   stackCornerRadius,
   color,
   backgroundColor,
   dataset,
-  xBand,
-  yLinear,
+  xLinear,
+  yBand,
   label,
   tooltip,
+  horizontalCrosshairRect,
   discreteLegend,
-  verticalCrosshairRect,
   barStyle,
   annotationPoint,
   annotationVerticalLine,
@@ -47,22 +47,22 @@ const columnParallel: SpecPipeline = [
   annotationAreaBand,
 ]
 
-const pivotColumnParallel: SpecPipeline = [
+const pivotBarParallel: SpecPipeline = [
   initPivot,
   pivotGridStyle,
-  pivotIndicatorsAsRow,
+  pivotIndicatorsAsCol,
   datasetPivot,
   pivotIndicators([
-    initColumnParallel,
+    initBarParallel,
     stackCornerRadius,
     color,
     backgroundColor,
     datasetPivotPlaceholder,
-    xBand,
-    yLinear,
+    yBand,
+    xLinear,
     label,
     tooltip,
-    verticalCrosshairRect,
+    horizontalCrosshairRect,
     barStyle,
     annotationPoint,
     annotationVerticalLine,
@@ -74,4 +74,4 @@ const pivotColumnParallel: SpecPipeline = [
   pivotDiscreteLegend,
 ]
 
-export const columnParallelSpecPipeline: SpecPipeline = [pivotAdapter(columnParallel, pivotColumnParallel)]
+export const barParallelSpecPipeline: SpecPipeline = [pivotAdapter(barParallel, pivotBarParallel)]

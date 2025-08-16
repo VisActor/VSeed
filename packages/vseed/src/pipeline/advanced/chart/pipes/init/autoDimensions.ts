@@ -1,11 +1,13 @@
-import type { AdvancedPipe, Datum } from 'src/types'
+import { findAllMeasures } from 'src/pipeline/utils'
+import type { AdvancedPipe, Datum, DimensionTree } from 'src/types'
 
 export const autoDimensions: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dimensions, dataset } = vseed
 
-  const { measures = [] } = advancedVSeed
+  const measures = findAllMeasures(advancedVSeed.measures as DimensionTree)
+
   if (!dataset) {
     throw new Error('dataset is required')
   }

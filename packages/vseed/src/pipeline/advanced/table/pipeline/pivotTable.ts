@@ -1,4 +1,11 @@
 import type { AdvancedPipeline } from 'src/types'
-import { autoDimensions, autoMeasures, initAdvancedVSeed } from '../../chart/pipes'
+import { theme } from '../../chart/pipes'
+import { autoDimensions, autoMeasures, initAdvancedVSeed, records } from '../pipes'
 
-export const pivotTableAdvancedPipeline: AdvancedPipeline = [initAdvancedVSeed, autoMeasures, autoDimensions]
+export const pivotTableAdvancedPipeline: AdvancedPipeline = [
+  initAdvancedVSeed,
+  autoMeasures,
+  autoDimensions,
+  records,
+  theme,
+]

@@ -1,5 +1,5 @@
 import { isPivotChart } from 'src/pipeline/utils'
-import type { AdvancedPipe, Datum, MeasureGroup } from 'src/types'
+import type { AdvancedPipe, Datum, DimensionGroup } from 'src/types'
 
 export const autoMeasures: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
@@ -44,7 +44,7 @@ export const autoMeasures: AdvancedPipe = (advancedVSeed, context) => {
 const autoMeasureGroup: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context
   const { measures } = vseed
-  const hasMeasureGroup = measures?.some((measure: MeasureGroup) => measure.children)
+  const hasMeasureGroup = measures?.some((measure: DimensionGroup) => measure.children)
 
   if (!measures) {
     return advancedVSeed
@@ -66,8 +66,8 @@ const autoMeasureGroup: AdvancedPipe = (advancedVSeed, context) => {
   }
 
   // 存在指标组, 则任意连续的独立指标成组
-  let currentGroup: MeasureGroup = createEmptyMeasureGroup()
-  const measureGroups: MeasureGroup[] = []
+  let currentGroup: DimensionGroup = createEmptyMeasureGroup()
+  const measureGroups: DimensionGroup[] = []
   for (const measure of measures) {
     if ('children' in measure) {
       // 当前指标组之前的所有独立指标成组

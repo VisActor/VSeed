@@ -19,7 +19,7 @@ import type {
   Dimensions,
   Label,
   Legend,
-  MeasureTree,
+  DimensionTree,
   Theme,
   Tooltip,
 } from '../../properties'
@@ -64,10 +64,10 @@ export interface Funnel {
   /**
    * 指标
    * @description 漏斗图的所有指标会自动合并为一个指标, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {MeasureTree}
+   * @type {DimensionTree}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures?: MeasureTree
+  measures?: DimensionTree
 
   /**
    * 图表的背景颜色

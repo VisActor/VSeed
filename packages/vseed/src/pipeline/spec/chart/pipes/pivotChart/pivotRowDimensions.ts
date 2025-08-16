@@ -1,11 +1,11 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
 import type { IBasicDimension } from '@visactor/vtable/es/ts-types/pivot-table/dimension/basic-dimension'
-import type { SpecPipe } from 'src/types'
+import type { Dimensions, SpecPipe } from 'src/types'
 
 export const pivotRowDimensions: SpecPipe = (spec, context) => {
   const result = { ...spec } as PivotChartConstructorOptions
   const { advancedVSeed } = context
-  const { dimensions } = advancedVSeed
+  const dimensions = advancedVSeed.dimensions as Dimensions
   if (!dimensions) {
     return result
   }

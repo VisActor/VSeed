@@ -6,11 +6,12 @@ import {
   zDimensions,
   zMeasureTree,
   zTheme,
-  type MeasureTree,
+  type DimensionTree,
   type BackgroundColor,
   type Dataset,
   type Dimensions,
   type Theme,
+  zMeasures,
 } from '../../properties'
 
 /**
@@ -57,7 +58,7 @@ export interface PivotTable {
    * @type {Measures}
    * @example [{id: 'sales', alias: '销售额', aggregation: 'sum'}]
    */
-  measures?: MeasureTree
+  measures?: DimensionTree
 
   /**
    * 图表的背景颜色
@@ -88,7 +89,7 @@ export const zPivotTable = z.object({
   chartType: z.literal('pivotTable'),
   dataset: zDataset.optional(),
   dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
+  measures: zMeasures.optional(),
   backgroundColor: zBackgroundColor.optional(),
   theme: zTheme.optional(),
   locale: zLocale.optional(),

@@ -30,7 +30,7 @@ import type {
   Dimensions,
   Label,
   Legend,
-  MeasureTree,
+  DimensionTree,
   PointStyle,
   Theme,
   Tooltip,
@@ -79,10 +79,10 @@ export interface Scatter {
   /**
    * 指标
    * @description 散点图的第一个指标字段会放至X轴, 其余指标会进行合并, 映射至Y轴
-   * @type {MeasureTree}
+   * @type {DimensionTree}
    * @example [{id: "value", alias: "数值"}]
    */
-  measures?: MeasureTree
+  measures?: DimensionTree
 
   /**
    * 图表的背景颜色

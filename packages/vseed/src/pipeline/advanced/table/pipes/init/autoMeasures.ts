@@ -13,7 +13,7 @@ export const autoMeasures: AdvancedPipe = (advancedVSeed, context) => {
     return result
   }
 
-  if (measures) {
+  if (measures && measures.length > 0) {
     result.measures = measures
     return result
   }

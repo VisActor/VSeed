@@ -40,7 +40,7 @@ import type {
   XBandAxis,
   YLinearAxis,
   CrosshairLine,
-  MeasureTree,
+  DimensionTree,
 } from '../../properties'
 import { z } from 'zod'
 
@@ -86,10 +86,10 @@ export interface Area {
   /**
    * 指标
    * @description 面积图的指标会自动合并为一个指标, 映射到Y轴, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {MeasureTree}
+   * @type {DimensionTree}
    * @example [{id: 'value', alias: '数值'}]
    */
-  measures?: MeasureTree
+  measures?: DimensionTree
 
   /**
    * 图表的背景颜色

@@ -3,6 +3,8 @@ pageType: doc
 ---
 
 import {
+  TableAuto,
+  PivotTableAuto,
   AreaChart,
   AreaPercentChart,
   LineChart,
@@ -18,6 +20,40 @@ import {
 # 图表类型
 
 :::info {title=图表类型} 按图表类型约定图表默认的配置, 使用`约定优于配置`的方法, 每一种图表类型有大量约定配置, 极大简化配置心智 :::
+
+## 表格
+
+<TableAuto />
+
+```json title="表格" {2}
+{
+  "chartType": "table",
+  "dataset": [
+    { "date": "2019", "type": "A", "goalProfit": 10, "profit": 10, "sales": 100, "leftCount": 1, "salesCount": 100 },
+    { "date": "2020", "type": "A", "goalProfit": 30, "profit": 30, "sales": 320, "leftCount": 2, "salesCount": 200 },
+    { "date": "2021", "type": "A", "goalProfit": 30, "profit": 30, "sales": 300, "leftCount": 3, "salesCount": 300 },
+    { "date": "2022", "type": "A", "goalProfit": 50, "profit": 50, "sales": 240, "leftCount": 4, "salesCount": 400 },
+    { "date": "2023", "type": "A", "goalProfit": 40, "profit": 40, "sales": 500, "leftCount": 5, "salesCount": 500 }
+  ]
+}
+```
+
+## 透视表
+
+<PivotTableAuto />
+
+```json title="透视表" {2}
+{
+  "chartType": "pivotTable",
+  "dataset": [
+    { "date": "2019", "type": "A", "goalProfit": 10, "profit": 10, "sales": 100, "leftCount": 1, "salesCount": 100 },
+    { "date": "2020", "type": "A", "goalProfit": 30, "profit": 30, "sales": 320, "leftCount": 2, "salesCount": 200 },
+    { "date": "2021", "type": "A", "goalProfit": 30, "profit": 30, "sales": 300, "leftCount": 3, "salesCount": 300 },
+    { "date": "2022", "type": "A", "goalProfit": 50, "profit": 50, "sales": 240, "leftCount": 4, "salesCount": 400 },
+    { "date": "2023", "type": "A", "goalProfit": 40, "profit": 40, "sales": 500, "leftCount": 5, "salesCount": 500 }
+  ]
+}
+```
 
 ## 折线图
 

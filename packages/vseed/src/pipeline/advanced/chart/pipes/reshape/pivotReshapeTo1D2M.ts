@@ -1,11 +1,6 @@
-import {
-  FoldMeasureId,
-  FoldMeasureName,
-  FoldMeasureValue,
-  UnfoldDimensionGroup,
-} from 'src/dataReshape/constant'
+import { FoldMeasureId, FoldMeasureName, FoldMeasureValue, UnfoldDimensionGroup } from 'src/dataReshape/constant'
 import { dataReshapeFor1D2M } from 'src/dataReshape'
-import type { AdvancedPipe, Dataset, DatasetReshapeInfo, MeasureGroup } from 'src/types'
+import type { AdvancedPipe, Dataset, DatasetReshapeInfo, Dimensions, DimensionGroup } from 'src/types'
 
 /**
  * 数据重塑为透视结构, 如果存在指标分组, 则将数据按组划分. 如果存在行列维度, 则生成行列树结构.
@@ -17,15 +12,16 @@ export const pivotReshapeTo1D2M: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset } = vseed
-  const { dimensions, measures } = advancedVSeed
+  const { measures } = advancedVSeed
+  const dimensions = advancedVSeed.dimensions as Dimensions
 
   if (!measures || !dimensions) {
     return result
   }
 
-  const measureGroups: MeasureGroup[] = []
+  const measureGroups: DimensionGroup[] = []
   if (measures) {
-    measures.forEach((measure: MeasureGroup) => {
+    measures.forEach((measure: DimensionGroup) => {
       if (measure.children && measure.children.length > 0) {
         measureGroups.push(measure)
       }

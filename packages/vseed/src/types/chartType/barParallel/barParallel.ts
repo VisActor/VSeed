@@ -34,7 +34,7 @@ import type {
   Dimensions,
   Label,
   Legend,
-  MeasureTree,
+  DimensionTree,
   StackCornerRadius,
   Theme,
   Tooltip,
@@ -83,10 +83,10 @@ export interface BarParallel {
   /**
    * 指标
    * @description 并列条形图指标会自动合并为一个指标, 映射到X轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {MeasureTree}
+   * @type {DimensionTree}
    * @example [{id: 'value1', alias: '指标1'}, {id: 'value2', alias: '指标2'}]
    */
-  measures?: MeasureTree
+  measures?: DimensionTree
 
   /**
    * 图表的背景颜色

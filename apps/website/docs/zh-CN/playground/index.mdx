@@ -7,7 +7,7 @@ pageType: custom
 ```tsx
 const Demo = () => {
   const vseed: VSeed = {
-    chartType: 'table',
+    chartType: 'pivotTable',
     dataset: [
       { date: '2019', type: 'A', goalProfit: 10, profit: 10, sales: 100, leftCount: 1, salesCount: 100 },
       { date: '2020', type: 'A', goalProfit: 30, profit: 30, sales: 320, leftCount: 2, salesCount: 200 },
@@ -57,12 +57,18 @@ const Demo = () => {
     ],
     dimensions: [
       {
-        id: 'date',
-        alias: '日期',
-      },
-      {
-        id: 'type',
-        alias: '类型',
+        id: "dimensionGroup",
+        alias: "维度组",
+        children: [
+          {
+            id: 'date',
+            alias: '日期',
+          },
+          {
+            id: 'type',
+            alias: '类型',
+          },
+        ]
       },
     ],
   }
@@ -114,18 +120,17 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
 
   return (
     <div
-      ref={ref}
-      style={{ height: 300, width: '100%' }}
-      onClick={() => {
+      ref= { ref }
+        style = {{ height: 300, width: '100%' }
+      }
+      onClick = {() => {
         console.group(`selected ${vseed.chartType}`)
         console.log('builder', builderRef.current)
         console.log('spec', builderRef.current.spec)
         console.log('vseed', builderRef.current.vseed)
         console.log('advancedVSeed', builderRef.current.advancedVSeed)
         console.groupEnd()
-      }}
-    >
-      {' '}
+      }}>
     </div>
   )
 }

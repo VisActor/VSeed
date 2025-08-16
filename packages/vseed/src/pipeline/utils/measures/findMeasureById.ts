@@ -1,6 +1,6 @@
 import type { Measure, MeasureGroup, Measures } from 'src/types'
 
-export const findMeasureById = (measures: Measures, id: string): Measure | undefined => {
+export const findMeasureById = (measures: Measures = [], id: string): Measure | undefined => {
   if (!measures) return undefined
 
   // Use a stack to avoid recursion
@@ -25,7 +25,7 @@ export const findMeasureById = (measures: Measures, id: string): Measure | undef
   return undefined
 }
 
-export const findFirstMeasure = (measures: Measures): Measure | undefined => {
+export const findFirstMeasure = (measures: Measures = []): Measure | undefined => {
   if (!measures) return undefined
 
   // Use a stack to avoid recursion

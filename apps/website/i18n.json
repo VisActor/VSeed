@@ -62,5 +62,9 @@
   "i18n": {
     "en-US": "i18n",
     "zh-CN": "国际化"
+  },
+  "numFormat":{
+    "en-US": "numFormat",
+    "zh-CN": "数值格式"
   }
 }

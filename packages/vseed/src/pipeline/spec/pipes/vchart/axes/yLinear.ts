@@ -39,14 +39,17 @@ export const yLinear: SpecPipe = (spec, context) => {
     inverse,
     max,
     min,
+    log,
+    logBase = 10,
   } = config
 
   const linearAxis = {
     visible,
-    type: 'linear',
+    type: log ? 'log' : 'linear',
+    base: logBase,
     orient: 'left',
     nice,
-    zero,
+    zero: log ? false : zero,
     inverse,
     max,
     min,

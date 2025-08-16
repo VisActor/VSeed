@@ -1,8 +1,8 @@
 import { z } from 'zod'
 import type { Axis } from './axis'
 
-export type XBandAxis = Omit<Axis, 'min' | 'max' | 'nice' | 'zero'>
-export type YBandAxis = Omit<Axis, 'min' | 'max' | 'nice' | 'zero'>
+export type XBandAxis = Omit<Axis, 'min' | 'max' | 'nice' | 'zero' | 'log' | 'logBase'>
+export type YBandAxis = Omit<Axis, 'min' | 'max' | 'nice' | 'zero' | 'log' | 'logBase'>
 
 export const zXBandAxis = z.object({
   visible: z.boolean().default(true).optional(),

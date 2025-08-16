@@ -13,5 +13,10 @@
     "type": "file",
     "name": "dimensions",
     "label": "dimensions"
+  },
+  {
+    "type": "file",
+    "name": "numFormat",
+    "label": "numFormat"
   }
 ]

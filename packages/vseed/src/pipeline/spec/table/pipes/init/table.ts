@@ -22,5 +22,8 @@ export const initTable: SpecPipe = (spec, context) => {
       type: 'one-by-one',
       direction: 'row',
     },
+    theme: {
+      underlayBackgroundColor: 'transparent',
+    },
   } as ListTableConstructorOptions
 }

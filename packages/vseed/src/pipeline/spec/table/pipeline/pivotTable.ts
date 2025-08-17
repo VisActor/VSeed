@@ -9,6 +9,7 @@ import {
   rowHeaderStyle,
   cornerHeaderStyle,
   frameStyle,
+  selectionStyle,
 } from '../pipes'
 
 export const pivotTableSpecPipeline: SpecPipeline = [
@@ -21,4 +22,5 @@ export const pivotTableSpecPipeline: SpecPipeline = [
   rowHeaderStyle,
   cornerHeaderStyle,
   frameStyle,
+  selectionStyle,
 ]

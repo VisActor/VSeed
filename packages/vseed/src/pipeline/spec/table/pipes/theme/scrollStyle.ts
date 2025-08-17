@@ -3,7 +3,7 @@ import type { SpecPipe } from 'src/types'
 
 export const frameStyle: SpecPipe = (spec) => {
   const result = { ...spec } as BaseTableConstructorOptions
-  if (!result.theme) result.theme = {}
+  if (!result.theme) return result
 
   result.theme.scrollStyle = {
     hoverOn: true,

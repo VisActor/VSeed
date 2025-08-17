@@ -1,34 +1,39 @@
 import type { BaseTableConstructorOptions } from '@visactor/vtable/es/ts-types'
-import type { SpecPipe } from 'src/types'
+import { color } from 'd3-color'
+import type { SpecPipe, TableConfig } from 'src/types'
 
-export const bodyStyle: SpecPipe = (spec) => {
+export const bodyStyle: SpecPipe = (spec, context) => {
   const result = { ...spec } as BaseTableConstructorOptions
-  const fontSize = 12
-  const fontColor = '#141414'
-  const borderColor = 'rgb(224, 224, 224)'
-  const backgroundColor = 'transparent'
+  const { advancedVSeed } = context
+  const { customTheme, chartType } = advancedVSeed
+  const themConfig = customTheme?.config?.[chartType] as TableConfig
 
-  const hoverCellBackgroundColor = 'rgba(66, 132, 255, 0.4)'
-  const hoverInlineRowBackgroundColor = 'rgba(66, 132, 255, 0.1)'
-  const hoverInlineColumnBackgroundColor = 'rgba(66, 132, 255, 0.1)'
+  if (!result.theme || !themConfig) return result
 
-  if (!result.theme) result.theme = {}
+  // basic
+  const borderColor = themConfig.borderColor || 'rgb(224, 224, 224)'
+  const backgroundColor = themConfig.bodyBackgroundColor || '#fff'
+  const fontColor = themConfig.bodyFontColor || '#1B1F23'
+  const fontSize = themConfig.bodyFontSize || 12
+  // Interaction
+  const hoverCellBgColor = themConfig.hoverBodyBackgroundColor || '#bedaff'
+  const hoverInlineColor = color(hoverCellBgColor)?.copy({ opacity: 0.1 }).toString()
 
   result.theme.bodyStyle = {
-    borderColor: [borderColor, borderColor],
+    borderColor: borderColor,
     borderLineWidth: 1,
     padding: [8.6, 12, 8.6, 12],
     textAlign: 'right',
     hover: {
-      cellBgColor: hoverCellBackgroundColor,
-      inlineRowBgColor: hoverInlineRowBackgroundColor,
-      inlineColumnBgColor: hoverInlineColumnBackgroundColor,
+      cellBgColor: hoverCellBgColor,
+      inlineRowBgColor: hoverInlineColor,
+      inlineColumnBgColor: hoverInlineColor,
     },
+    color: fontColor,
     fontSize: fontSize,
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontVariant: 'normal',
-    color: fontColor,
     bgColor: backgroundColor,
     lineHeight: fontSize * 1.5,
   }

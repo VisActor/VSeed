@@ -4,6 +4,7 @@ import type {
   CustomThemeConfig,
   Label,
   Legend,
+  TableConfig,
   Tooltip,
   YBandAxis,
   YLinearAxis,
@@ -146,8 +147,27 @@ export const darkTheme = (): CustomThemeConfig => {
     },
   }
 
+  const tableConfig: TableConfig = {
+    borderColor: '#4b4e53',
+
+    bodyFontSize: 12,
+    bodyFontColor: '#fdfdfd',
+    bodyBackgroundColor: 'transparent',
+
+    headerFontSize: 12,
+    headerFontColor: '#fdfdfd',
+    headerBackgroundColor: '#36393e',
+
+    hoverBodyBackgroundColor: '#4284ff66',
+    hoverHeaderBackgroundColor: '#5f5f5f88',
+    selectedBorderColor: '#3073F2',
+  }
+
   return {
     config: {
+      table: tableConfig,
+      pivotTable: tableConfig,
+
       line: {
         ...baseConfig,
         xAxis: bandAxis,

@@ -32,5 +32,8 @@ export const initPivotTable: SpecPipe = (spec, context) => {
       type: 'one-by-one',
       direction: 'row',
     },
+    theme: {
+      underlayBackgroundColor: 'transparent',
+    },
   } as PivotTableConstructorOptions
 }

@@ -1,7 +1,8 @@
 import type { BaseTableConstructorOptions } from '@visactor/vtable/es/ts-types'
+import { color } from 'd3-color'
 import type { SpecPipe, TableConfig } from 'src/types'
 
-export const frameStyle: SpecPipe = (spec, context) => {
+export const selectionStyle: SpecPipe = (spec, context) => {
   const result = { ...spec } as BaseTableConstructorOptions
   const { advancedVSeed } = context
   const { customTheme, chartType } = advancedVSeed
@@ -9,12 +10,16 @@ export const frameStyle: SpecPipe = (spec, context) => {
 
   if (!result.theme || !themConfig) return result
 
-  const borderColor = themConfig.borderColor || 'rgb(224, 224, 224)'
+  const borderColor = themConfig.selectedBorderColor || 'rgb(224, 224, 224)'
 
-  result.theme.frameStyle = {
-    borderColor,
-    borderLineWidth: 0,
-    cornerRadius: 0,
+  result.theme.selectionStyle = {
+    cellBorderColor: borderColor,
+    cellBorderLineWidth: 2,
+    cellBgColor: color(borderColor)
+      ?.copy({
+        opacity: 0.15,
+      })
+      .toString(),
   }
 
   return result

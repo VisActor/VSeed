@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.21
+
+### Patch Changes
+
+- feat: add table and pivot table
+
 ## 0.0.20
 
 ### Patch Changes

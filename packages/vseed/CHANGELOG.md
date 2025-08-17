@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.22
+
+### Patch Changes
+
+- feat: add axis sort and legend sort
+
 ## 0.0.21
 
 ### Patch Changes

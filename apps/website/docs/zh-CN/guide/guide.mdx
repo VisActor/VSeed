@@ -9,13 +9,16 @@ pageType: doc
 ```tsx direction=vertical
 import { useRef, useEffect, useState } from 'react'
 import VChart from '@visactor/vchart'
-import { registerAll, VSeed, Builder } from '@visactor/vseed'
+import { ListTable, PivotTable } from '@visactor/vtable'
+import { registerAll, VSeed, Builder, isTable, isPivotTable } from '@visactor/vseed'
 registerAll()
 
 const Demo = () => {
   const ref = useRef<HTMLDivElement>(null)
   const [chartType, setChartType] = useState('line')
   const chartTypes = [
+    'table',
+    'pivotTable',
     'line',
     'column',
     'columnPercent',
@@ -55,9 +58,17 @@ const Demo = () => {
     const builder = Builder.from(vseed)
     const spec = builder.build()
 
-    const vchart = new VChart(spec, { dom: ref.current })
-    vchart.renderSync()
-    return () => vchart.release()
+    if (isTable(vseed)) {
+      const tableInstance = new ListTable(ref.current, spec)
+      return () => tableInstance.release()
+    } else if (isPivotTable(vseed)) {
+      const tableInstance = new PivotTable(ref.current, spec)
+      return () => tableInstance.release()
+    } else {
+      const vchart = new VChart(spec, { dom: ref.current })
+      vchart.renderSync()
+      return () => vchart.release()
+    }
   }, [chartType])
 
   return (
@@ -89,7 +100,8 @@ export default Demo
 ```tsx direction=vertical
 import { useRef, useEffect, useState } from 'react'
 import VChart from '@visactor/vchart'
-import { registerAll, VSeed, Builder } from '@visactor/vseed'
+import { ListTable, PivotTable } from '@visactor/vtable'
+import { registerAll, VSeed, Builder, isTable, isPivotTable } from '@visactor/vseed'
 
 const Demo = () => {
   const ref = useRef<HTMLDivElement>(null)
@@ -167,6 +179,8 @@ const Demo = () => {
   ]
 
   const chartTypes = [
+    'table',
+    'pivotTable',
     'line',
     'column',
     'columnPercent',
@@ -211,10 +225,17 @@ const Demo = () => {
     const builder = Builder.from(vseed)
     const spec = builder.build()
     builderRef.current = builder
-    const vchart = new VChart(spec, { dom: ref.current })
-    vchart.renderSync()
-
-    return () => vchart.release()
+    if (isTable(vseed)) {
+      const tableInstance = new ListTable(ref.current, spec)
+      return () => tableInstance.release()
+    } else if (isPivotTable(vseed)) {
+      const tableInstance = new PivotTable(ref.current, spec)
+      return () => tableInstance.release()
+    } else {
+      const vchart = new VChart(spec, { dom: ref.current })
+      vchart.renderSync()
+      return () => vchart.release()
+    }
   }, [dataset, chartType])
 
   return (

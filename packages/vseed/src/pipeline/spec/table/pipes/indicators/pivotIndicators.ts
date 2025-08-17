@@ -1,4 +1,5 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
+import { intl } from 'src/i18n'
 import type { Measures, SpecPipe } from 'src/types'
 
 export const pivotIndicators: SpecPipe = (spec, context) => {
@@ -8,6 +9,7 @@ export const pivotIndicators: SpecPipe = (spec, context) => {
   return {
     ...spec,
     indicatorsAsCol: true,
+    indicatorTitle: intl.i18n`指标名称`,
     indicators: measures.map((item) => {
       return {
         cellType: 'text',

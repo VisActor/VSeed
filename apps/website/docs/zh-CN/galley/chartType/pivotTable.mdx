@@ -1,7 +1,16 @@
-import { VSeed } from '@visactor/vseed'
-import { PivotTable as VTablePivotTable } from 'components/render'
-import { memo } from 'react'
+---
+pageType: doc
+---
 
+import { PivotTableAuto, PivotTableRowDimensions, PivotTableColumnDimensions } from '@components'
+
+# pivotTable
+
+## 透视表格
+
+<PivotTableAuto />
+
+```tsx pure {3}
 export const PivotTableAuto = memo(() => {
   const vseed: VSeed = {
     chartType: 'pivotTable',
@@ -15,7 +24,13 @@ export const PivotTableAuto = memo(() => {
   }
   return <VTablePivotTable vseed={vseed} />
 })
+```
 
+## 行维度透视
+
+<PivotTableRowDimensions />
+
+```tsx pure {3}
 export const PivotTableRowDimensions = memo(() => {
   const vseed: VSeed = {
     chartType: 'pivotTable',
@@ -63,7 +78,13 @@ export const PivotTableRowDimensions = memo(() => {
   }
   return <VTablePivotTable vseed={vseed} />
 })
+```
 
+## 列维度透视
+
+<PivotTableColumnDimensions />
+
+```tsx pure {3}
 export const PivotTableColumnDimensions = memo(() => {
   const vseed: VSeed = {
     chartType: 'pivotTable',
@@ -111,3 +132,4 @@ export const PivotTableColumnDimensions = memo(() => {
   }
   return <VTablePivotTable vseed={vseed} />
 })
+```

@@ -4,7 +4,7 @@ pageType: doc
 
 import {
   TableAuto,
-  PivotTableAuto,
+  PivotTableRowDimensions,
   AreaChart,
   AreaPercentChart,
   LineChart,
@@ -15,6 +15,12 @@ import {
   ColumnParallelChart,
   ColumnPercentChart,
   PieChart,
+  RoseChart,
+  RoseParallelChart,
+  DonutChart,
+  ScatterChart,
+  FunnelChart,
+  StackedRoseChart,
 } from '@components'
 
 # 图表类型
@@ -40,7 +46,7 @@ import {
 
 ## 透视表
 
-<PivotTableAuto />
+<PivotTableRowDimensions />
 
 ```json title="透视表" {2}
 {
@@ -208,6 +214,63 @@ import {
 }
 ```
 
+## 玫瑰图
+
+<RoseChart />
+
+```tsx pure title="玫瑰图"  {3}
+export const RoseChart = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'rose',
+    dataset: [
+      { date: '2023', profit: 40 },
+      { date: '2022', profit: 50 },
+      { date: '2021', profit: 25 },
+      { date: '2020', profit: 30 },
+      { date: '2019', profit: 10 },
+    ],
+  }
+  return <VChartRender vseed={vseed} />
+})
+```
+
+## 堆叠玫瑰图
+
+<StackedRoseChart />
+
+```json title="堆叠玫瑰图"  {3}
+export const StackedRoseChart = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'rose',
+    dataset: [
+      { date: '2019', profit: 10, sales: 20 },
+      { date: '2020', profit: 30, sales: 60 },
+      { date: '2021', profit: 30, sales: 60 },
+      { date: '2022', profit: 50, sales: 100 },
+      { date: '2023', profit: 40, sales: 80 },
+    ],
+  }
+  return <VChartRender vseed={vseed} />
+})
+```
+
+## 并列玫瑰图
+
+<RoseParallelChart />
+
+```json title="分组玫瑰图"  {2}
+{
+  "chartType": "roseParallel",
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20 },
+    { "date": "2020", "profit": 30, "sales": 60 },
+    { "date": "2021", "profit": 30, "sales": 60 },
+    { "date": "2022", "profit": 50, "sales": 100 },
+    { "date": "2023", "profit": 40, "sales": 80 }
+  ]
+}
+```
+
 ## 饼图
 
 <PieChart />
@@ -223,4 +286,81 @@ import {
     { "date": "2023", "profit": 40, "sales": 80 }
   ]
 }
+```
+
+## 环形图
+
+<DonutChart />
+
+```json {2}
+{
+  "chartType": "donut",
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20 },
+    { "date": "2020", "profit": 30, "sales": 60 },
+    { "date": "2021", "profit": 30, "sales": 60 },
+    { "date": "2022", "profit": 50, "sales": 100 },
+    { "date": "2023", "profit": 40, "sales": 80 }
+  ]
+}
+```
+
+## 散点图
+
+<ScatterChart />
+
+```tsx pure {}
+export const ScatterChart = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'scatter',
+    dataset: [
+      { date: '2019', profit: 10, sales: 20 },
+      { date: '2020', profit: 30, sales: 60 },
+      { date: '2021', profit: 30, sales: 60 },
+      { date: '2022', profit: 50, sales: 100 },
+      { date: '2023', profit: 200, sales: 80 },
+    ],
+    measures: [
+      {
+        id: 'sales',
+        alias: '销售额',
+      },
+      {
+        id: 'profit',
+        alias: '利润',
+      },
+    ],
+    dimensions: [
+      {
+        id: 'date',
+        alias: '日期',
+        location: 'dimension',
+      },
+    ],
+    label: {
+      enable: false,
+    },
+  }
+  return <VChartRender vseed={vseed} />
+})
+```
+
+## 漏斗图
+
+<FunnelChart />
+
+```tsx pure {3}
+export const FunnelChart = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'funnel',
+    dataset: [
+      { date: '2022', profit: 100, sales: 100 },
+      { date: '2023', profit: 80, sales: 80 },
+      { date: '2020', profit: 60, sales: 60 },
+      { date: '2021', profit: 40, sales: 40 },
+      { date: '2019', profit: 20, sales: 20 },
+    ],
+  }
+  return <VChartRender vseed={vseed} />
+})
 ```

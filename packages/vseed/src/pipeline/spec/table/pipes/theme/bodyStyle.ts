@@ -17,7 +17,7 @@ export const bodyStyle: SpecPipe = (spec, context) => {
   const fontSize = themConfig.bodyFontSize || 12
   // Interaction
   const hoverCellBgColor = themConfig.hoverBodyBackgroundColor || '#bedaff'
-  const hoverInlineColor = color(hoverCellBgColor)?.copy({ opacity: 0.1 }).toString()
+  const hoverInlineColor = color(hoverCellBgColor)?.copy({ opacity: 0.2 }).toString()
 
   result.theme.bodyStyle = {
     borderColor: borderColor,

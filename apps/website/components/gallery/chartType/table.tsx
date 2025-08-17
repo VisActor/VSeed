@@ -36,50 +36,26 @@ export const TableBasic = memo(() => {
         alias: '利润',
       },
       {
-        id: 'table',
-        alias: '销售指标',
-        children: [
-          {
-            id: 'countInfo',
-            alias: '数量信息',
-            children: [
-              {
-                id: 'leftCount',
-                alias: '遗留数量',
-              },
-              {
-                id: 'salesCount',
-                alias: '销售数',
-              },
-            ],
-          },
-          {
-            id: 'saleInfo',
-            alias: '销售信息',
-            children: [
-              {
-                id: 'sales',
-                alias: '销售量',
-              },
-            ],
-          },
-        ],
+        id: 'sales',
+        alias: '销售量',
+      },
+      {
+        id: 'leftCount',
+        alias: '遗留数量',
+      },
+      {
+        id: 'salesCount',
+        alias: '销售数',
       },
     ],
     dimensions: [
       {
-        id: 'dimensionGroup',
-        alias: '维度组',
-        children: [
-          {
-            id: 'date',
-            alias: '日期',
-          },
-          {
-            id: 'type',
-            alias: '类型',
-          },
-        ],
+        id: 'date',
+        alias: '日期',
+      },
+      {
+        id: 'type',
+        alias: '类型',
       },
     ],
   }

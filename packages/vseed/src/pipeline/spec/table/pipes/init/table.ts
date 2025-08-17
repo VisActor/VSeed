@@ -22,6 +22,9 @@ export const initTable: SpecPipe = (spec, context) => {
       type: 'one-by-one',
       direction: 'row',
     },
+    hover: {
+      highlightMode: 'row',
+    },
     theme: {
       underlayBackgroundColor: 'transparent',
     },

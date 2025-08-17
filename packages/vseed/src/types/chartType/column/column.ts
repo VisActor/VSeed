@@ -39,6 +39,8 @@ import type {
   XBandAxis,
   YLinearAxis,
   MeasureTree,
+  SortAxis,
+  SortLegend,
 } from '../../properties'
 import { z } from 'zod'
 
@@ -130,6 +132,31 @@ export interface Column {
    * @description 数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.
    */
   yAxis?: YLinearAxis
+
+  /**
+   * @description X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+   * @example
+   * sortAxis: {
+   *   orderBy: 'profit',
+   *   order: 'asc',
+   * }
+   * sortAxis: {
+   *   customOrder:['2019', '2020', '2021']
+   * }
+   */
+  sortAxis?: SortAxis
+  /**
+   * @description 图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+   * @example
+   * sortLegend: {
+   *   orderBy: 'profit',
+   *   order: 'asc',
+   * }
+   * sortLegend: {
+   *   customOrder:['2019', '2020', '2021']
+   * }
+   */
+  sortLegend?: SortLegend
 
   /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置

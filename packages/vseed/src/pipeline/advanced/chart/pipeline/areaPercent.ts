@@ -11,6 +11,8 @@ import {
   areaPercentConfig,
   annotation,
   markStyle,
+  sortXBandAxis,
+  sortLegend,
 } from '../pipes'
 
 export const areaPercentAdvancedPipeline: AdvancedPipeline = [
@@ -19,6 +21,8 @@ export const areaPercentAdvancedPipeline: AdvancedPipeline = [
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
+  sortXBandAxis,
+  sortLegend,
   areaPercentConfig,
   theme,
   markStyle,

@@ -34,13 +34,14 @@ import type {
   Dimensions,
   Label,
   Legend,
-  DimensionTree,
   StackCornerRadius,
   Theme,
   Tooltip,
   XLinearAxis,
   YBandAxis,
   MeasureTree,
+  SortAxis,
+  SortLegend,
 } from '../../properties'
 
 /**
@@ -144,6 +145,31 @@ export interface BarPercent {
    * @default 8
    */
   stackCornerRadius?: StackCornerRadius
+
+  /**
+   * @description Y轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+   * @example
+   * sortAxis: {
+   *   orderBy: 'profit',
+   *   order: 'asc',
+   * }
+   * sortAxis: {
+   *   customOrder:['2019', '2020', '2021']
+   * }
+   */
+  sortAxis?: SortAxis
+  /**
+   * @description 图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+   * @example
+   * sortLegend: {
+   *   orderBy: 'profit',
+   *   order: 'asc',
+   * }
+   * sortLegend: {
+   *   customOrder:['2019', '2020', '2021']
+   * }
+   */
+  sortLegend?: SortLegend
 
   /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置

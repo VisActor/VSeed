@@ -63,8 +63,12 @@
     "en-US": "i18n",
     "zh-CN": "国际化"
   },
-  "numFormat":{
+  "numFormat": {
     "en-US": "numFormat",
     "zh-CN": "数值格式"
+  },
+  "analysis": {
+    "en-US": "analysis",
+    "zh-CN": "分析"
   }
 }

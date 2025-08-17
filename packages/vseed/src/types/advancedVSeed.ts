@@ -7,7 +7,7 @@ import { zEncoding } from './properties/encoding/encoding'
 import { zDatasetReshapeInfo } from './properties/datasetReshapeInfo/datasetReshapeInfo'
 import { zTheme, zCustomThemeConfig } from './properties/theme'
 import { zConfig } from './properties/config'
-import { zAnnotation, zMarkStyle } from './properties'
+import { zAnalysis, zAnnotation, zMarkStyle } from './properties'
 import { zLocale } from './i18n'
 
 export const zAdvancedVSeed = z.object({
@@ -18,6 +18,7 @@ export const zAdvancedVSeed = z.object({
   measures: zMeasureTree,
   encoding: zEncoding,
   config: zConfig,
+  analysis: zAnalysis,
   theme: zTheme,
   markStyle: zMarkStyle,
   customTheme: zCustomThemeConfig,

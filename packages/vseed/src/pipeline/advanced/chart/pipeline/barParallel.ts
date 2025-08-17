@@ -11,6 +11,8 @@ import {
   barParallelConfig,
   markStyle,
   annotation,
+  sortYBandAxis,
+  sortLegend,
 } from '../pipes'
 
 export const barParallelAdvancedPipeline: AdvancedPipeline = [
@@ -19,6 +21,8 @@ export const barParallelAdvancedPipeline: AdvancedPipeline = [
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingYX,
+  sortYBandAxis,
+  sortLegend,
   barParallelConfig,
   theme,
   markStyle,

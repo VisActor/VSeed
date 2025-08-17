@@ -11,6 +11,8 @@ import {
   barPercentConfig,
   markStyle,
   annotation,
+  sortYBandAxis,
+  sortLegend,
 } from '../pipes'
 
 export const barPercentAdvancedPipeline: AdvancedPipeline = [
@@ -19,6 +21,8 @@ export const barPercentAdvancedPipeline: AdvancedPipeline = [
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingYX,
+  sortYBandAxis,
+  sortLegend,
   barPercentConfig,
   theme,
   markStyle,

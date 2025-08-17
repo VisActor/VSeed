@@ -24,7 +24,6 @@ export const createNumFormatter = (format: NumFormat, locale: Locale = intl.getL
     roundingMode,
     roundingPriority,
   }
-  console.log('debug roundingMode', roundingMode)
 
   if (isNumber(fractionDigits)) {
     if (fractionDigits >= 0) {

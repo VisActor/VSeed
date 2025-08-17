@@ -1,1 +1,1 @@
-export { getColorItems } from './colorItems'
+export * from './colorItems'

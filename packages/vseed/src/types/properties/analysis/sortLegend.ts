@@ -1,0 +1,38 @@
+import { z } from 'zod'
+
+export const zSortLegend = z.object({
+  order: z.enum(['asc', 'desc']).default('asc'),
+  orderBy: z.string().optional(),
+  customOrder: z.array(z.any()).optional(),
+})
+
+/**
+ * @description 图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序; 排序数组遵循从左到右或从上到下的顺序
+ * @default {}
+ * @example 
+ * - order:'asc'
+ * - orderBy:'date'
+ * 或
+ * - customOrder:['2019', '2020', '2021']
+ */
+export type SortLegend = {
+  /**
+   * @description 排序顺序, 可选值为 'asc' 或 'desc'
+   * @default 'asc'
+   * @enum ['asc', 'desc']
+   * @example order:'asc'
+   */
+  order?: 'asc' | 'desc'
+  /**
+   * @description 排序依赖的字段, 可以是维度id或指标id
+   * @default ''
+   * @example 
+   * - orderBy:'date'
+   * - orderBy:'profit'
+   */
+  orderBy?: string
+  /**
+   * @description 自定义排序顺序, 该顺序将直接应用至图例, 升序从左到右或从上到下, 降序从右到左或从下到上
+   */
+  customOrder?: string[]
+}

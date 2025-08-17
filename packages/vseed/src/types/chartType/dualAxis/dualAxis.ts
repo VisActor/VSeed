@@ -6,7 +6,7 @@ import type {
   Dimensions,
   Label,
   Legend,
-  DimensionTree,
+  MeasureTree,
   Theme,
   Tooltip,
 } from '../../properties'
@@ -57,7 +57,7 @@ export interface DualAxis {
    * @type {DimensionTree}
    * @example [{id: 'value', alias: '数值', axis: 'left'}, {id: 'growth', alias: '增长率', axis: 'right', format: 'percent'}]
    */
-  measures?: DimensionTree
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色

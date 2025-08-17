@@ -30,13 +30,13 @@ import type {
   Dimensions,
   Label,
   Legend,
-  DimensionTree,
   PointStyle,
   Theme,
   Tooltip,
   CrosshairLine,
   YLinearAxis,
   XLinearAxis,
+  MeasureTree,
 } from '../../properties'
 import { z } from 'zod'
 
@@ -82,7 +82,7 @@ export interface Scatter {
    * @type {DimensionTree}
    * @example [{id: "value", alias: "数值"}]
    */
-  measures?: DimensionTree
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色

@@ -19,7 +19,7 @@ import type {
   Dimensions,
   Label,
   Legend,
-  DimensionTree,
+  MeasureTree,
   Theme,
   Tooltip,
 } from '../../properties'
@@ -68,7 +68,7 @@ export interface Pie {
    * @type {DimensionTree}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures?: DimensionTree
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色

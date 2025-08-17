@@ -12,5 +12,28 @@ export const initPivotTable: SpecPipe = (spec, context) => {
     heightMode: 'autoHeight',
     autoWrapText: true,
     columnResizeMode: 'all',
+    columnResizeType: 'column',
+    showColumnHeader: true,
+    showRowHeader: true,
+    select: {
+      highlightMode: 'cell',
+      headerSelectMode: 'inline',
+    },
+    hover: {
+      highlightMode: 'cross',
+    },
+    tooltip: {
+      isShowOverflowTextTooltip: true,
+    },
+    widthAdaptiveMode: 'all',
+    animationAppear: {
+      duration: 300,
+      delay: 250,
+      type: 'one-by-one',
+      direction: 'row',
+    },
+    theme: {
+      underlayBackgroundColor: 'transparent',
+    },
   } as PivotTableConstructorOptions
 }

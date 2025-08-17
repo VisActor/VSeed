@@ -1,12 +1,11 @@
 import { z } from 'zod'
 import { zLocale, type Locale } from '../../i18n'
+import type { Measures } from '../../properties'
 import {
   zBackgroundColor,
   zDataset,
   zDimensions,
-  zMeasureTree,
   zTheme,
-  type DimensionTree,
   type BackgroundColor,
   type Dataset,
   type Dimensions,
@@ -58,7 +57,7 @@ export interface PivotTable {
    * @type {Measures}
    * @example [{id: 'sales', alias: '销售额', aggregation: 'sum'}]
    */
-  measures?: DimensionTree
+  measures?: Measures
 
   /**
    * 图表的背景颜色

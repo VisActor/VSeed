@@ -13,5 +13,17 @@ export const initTable: SpecPipe = (spec, context) => {
     autoWrapText: true,
     columnResizeMode: 'all',
     showHeader: true,
+    tooltip: {
+      isShowOverflowTextTooltip: true,
+    },
+    animationAppear: {
+      duration: 300,
+      delay: 250,
+      type: 'one-by-one',
+      direction: 'row',
+    },
+    theme: {
+      underlayBackgroundColor: 'transparent',
+    },
   } as ListTableConstructorOptions
 }

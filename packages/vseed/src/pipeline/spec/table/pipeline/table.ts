@@ -1,4 +1,12 @@
 import type { SpecPipeline } from 'src/types'
-import { initTable, dimensionTreeToColumns, measureTreeToColumns } from '../pipes'
+import { initTable, dimensionTreeToColumns, measureTreeToColumns, bodyStyle, headerStyle, frameStyle, selectionStyle } from '../pipes'
 
-export const tableSpecPipeline: SpecPipeline = [initTable, dimensionTreeToColumns, measureTreeToColumns]
+export const tableSpecPipeline: SpecPipeline = [
+  initTable,
+  dimensionTreeToColumns,
+  measureTreeToColumns,
+  bodyStyle,
+  headerStyle,
+  frameStyle,
+  selectionStyle,
+]

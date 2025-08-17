@@ -33,12 +33,12 @@ import type {
   Dimensions,
   Label,
   Legend,
-  DimensionTree,
   StackCornerRadius,
   Theme,
   Tooltip,
   XBandAxis,
   YLinearAxis,
+  MeasureTree,
 } from '../../properties'
 import { z } from 'zod'
 
@@ -86,7 +86,7 @@ export interface ColumnParallel {
    * @type {DimensionTree}
    * @example [{id: 'value1', alias: '指标1'}, {id: 'value2', alias: '指标2'}]
    */
-  measures?: DimensionTree
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色

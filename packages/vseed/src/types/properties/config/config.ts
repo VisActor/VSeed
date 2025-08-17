@@ -9,6 +9,27 @@ import { zLabel } from './label/label'
 import { zLegend } from './legend/legend'
 import { zTooltip } from './tooltip/tooltip'
 
+export const zTableConfig = z.object({
+  // Border
+  borderColor: z.string().optional(),
+
+  // Body
+  bodyFontSize: z.number().optional(),
+  bodyFontColor: z.string().optional(),
+  bodyBackgroundColor: z.string().optional(),
+  hoverBodyBackgroundColor: z.string().optional(),
+
+  // Header
+  headerFontSize: z.number().optional(),
+  headerFontColor: z.string().optional(),
+  headerBackgroundColor: z.string().optional(),
+  hoverHeaderBackgroundColor: z.string().optional(),
+
+  // Interaction
+  selectedBorderColor: z.string().optional(),
+})
+export const zPivotTableConfig = zTableConfig
+
 export const zLineConfig = z.object({
   backgroundColor: zBackgroundColor.optional(),
   label: zLabel.optional(),
@@ -102,8 +123,8 @@ export const zFunnelConfig = z.object({
   legend: zLegend.optional(),
 })
 export const zConfig = z.object({
-  table: z.object({}).optional(),
-  pivotTable: z.object({}).optional(),
+  table: zTableConfig.optional(),
+  pivotTable: zPivotTableConfig.optional(),
 
   line: zLineConfig.optional(),
   column: zColumnConfig.optional(),
@@ -123,6 +144,9 @@ export const zConfig = z.object({
   scatter: zScatterConfig.optional(),
   funnel: zFunnelConfig.optional(),
 })
+
+export type TableConfig = z.infer<typeof zTableConfig>
+export type PivotTableConfig = z.infer<typeof zPivotTableConfig>
 
 export type LineConfig = z.infer<typeof zLineConfig>
 export type ColumnConfig = z.infer<typeof zColumnConfig>

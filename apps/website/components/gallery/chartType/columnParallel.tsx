@@ -42,12 +42,10 @@ export const CombinationColumnParallelChart = memo(() => {
           {
             id: 'sales',
             alias: 'sales',
-            location: 'measure',
           },
           {
             id: 'profit',
             alias: '利润',
-            location: 'measure',
           },
         ],
       },
@@ -58,7 +56,6 @@ export const CombinationColumnParallelChart = memo(() => {
           {
             id: 'rateOfReturn',
             alias: '回报率',
-            location: 'measure',
           },
         ],
       },

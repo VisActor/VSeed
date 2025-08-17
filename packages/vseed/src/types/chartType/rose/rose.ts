@@ -1,5 +1,7 @@
 import { z } from 'zod'
 import { zLocale, type Locale } from '../../i18n'
+import type {
+  MeasureTree} from '../../properties';
 import {
   zBackgroundColor,
   zColor,
@@ -16,7 +18,6 @@ import {
   type Dimensions,
   type Label,
   type Legend,
-  type Measures,
   type Theme,
   type Tooltip,
 } from '../../properties'
@@ -65,7 +66,7 @@ export interface Rose {
    * @type {Measures}
    * @example [{id: 'value', alias: '数值'}]
    */
-  measures?: Measures
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色

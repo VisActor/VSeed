@@ -57,18 +57,20 @@ const Demo = () => {
     ],
     dimensions: [
       {
-        id: "dimensionGroup",
-        alias: "维度组",
+        id: 'dimensionGroup',
+        alias: '维度组',
         children: [
           {
             id: 'date',
             alias: '日期',
+            location: 'rowDimension',
           },
           {
             id: 'type',
             alias: '类型',
+            location: 'rowDimension',
           },
-        ]
+        ],
       },
     ],
   }
@@ -123,18 +125,17 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
 
   return (
     <div
-      ref= { ref }
-        style = {{ height: 300, width: '100%' }
-      }
-      onClick = {() => {
+      ref={ref}
+      style={{ height: 300, width: '100%' }}
+      onClick={() => {
         console.group(`selected ${vseed.chartType}`)
         console.log('builder', builderRef.current)
         console.log('spec', builderRef.current.spec)
         console.log('vseed', builderRef.current.vseed)
         console.log('advancedVSeed', builderRef.current.advancedVSeed)
         console.groupEnd()
-      }}>
-    </div>
+      }}
+    ></div>
   )
 }
 

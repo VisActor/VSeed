@@ -40,7 +40,7 @@ import type {
   XBandAxis,
   YLinearAxis,
   CrosshairLine,
-  DimensionTree,
+  MeasureTree,
 } from '../../properties'
 import { z } from 'zod'
 
@@ -89,7 +89,7 @@ export interface Area {
    * @type {DimensionTree}
    * @example [{id: 'value', alias: '数值'}]
    */
-  measures?: DimensionTree
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色

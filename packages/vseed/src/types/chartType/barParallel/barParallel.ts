@@ -40,6 +40,7 @@ import type {
   Tooltip,
   XLinearAxis,
   YBandAxis,
+  MeasureTree,
 } from '../../properties'
 
 /**
@@ -86,7 +87,7 @@ export interface BarParallel {
    * @type {DimensionTree}
    * @example [{id: 'value1', alias: '指标1'}, {id: 'value2', alias: '指标2'}]
    */
-  measures?: DimensionTree
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色

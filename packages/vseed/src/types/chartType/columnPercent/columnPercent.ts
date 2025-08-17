@@ -33,12 +33,12 @@ import type {
   Dimensions,
   Label,
   Legend,
-  DimensionTree,
   StackCornerRadius,
   Theme,
   Tooltip,
   XBandAxis,
   YLinearAxis,
+  MeasureTree,
 } from '../../properties'
 import { z } from 'zod'
 
@@ -86,7 +86,7 @@ export interface ColumnPercent {
    * @type {DimensionTree}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures?: DimensionTree
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色

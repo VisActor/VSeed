@@ -64,12 +64,10 @@ export const CombinationRoseChart = memo(() => {
           {
             id: 'sales',
             alias: '销售额',
-            location: 'measure',
           },
           {
             id: 'profit',
             alias: '利润',
-            location: 'measure',
           },
         ],
       },
@@ -80,7 +78,6 @@ export const CombinationRoseChart = memo(() => {
           {
             id: 'rateOfReturn',
             alias: '回报率',
-            location: 'measure',
           },
         ],
       },

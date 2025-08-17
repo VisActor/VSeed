@@ -40,6 +40,7 @@ import type {
   Tooltip,
   XLinearAxis,
   YBandAxis,
+  MeasureTree,
 } from '../../properties'
 
 /**
@@ -86,7 +87,7 @@ export interface BarPercent {
    * @type {DimensionTree}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures?: DimensionTree
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色

@@ -34,13 +34,13 @@ import type {
   Label,
   Legend,
   LineStyle,
-  DimensionTree,
   PointStyle,
   Theme,
   Tooltip,
   XBandAxis,
   YLinearAxis,
   CrosshairLine,
+  MeasureTree,
 } from '../../properties'
 import { z } from 'zod'
 
@@ -88,7 +88,7 @@ export interface AreaPercent {
    * @type {DimensionTree}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures?: DimensionTree
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色

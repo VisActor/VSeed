@@ -1,4 +1,6 @@
 import { zLocale, type Locale } from '../../i18n'
+import type {
+  MeasureTree} from '../../properties';
 import {
   zAnnotationArea,
   zAnnotationHorizontalLine,
@@ -32,7 +34,6 @@ import {
   type Dimensions,
   type Label,
   type Legend,
-  type DimensionTree,
   type StackCornerRadius,
   type Theme,
   type Tooltip,
@@ -85,7 +86,7 @@ export interface Bar {
    * @type {DimensionTree}
    * @example [{id: "value", alias: "数值"}]
    */
-  measures?: DimensionTree
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色

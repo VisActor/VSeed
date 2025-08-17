@@ -38,21 +38,22 @@ export type MeasureGroup = {
   children?: (Measure | MeasureGroup)[]
 }
 export type Measures = Measure[]
-
 export type MeasureTree = (Measure | MeasureGroup)[]
 
 export const zMeasure = z.object({
   id: z.string(),
   alias: z.string().optional(),
-  autoFormat: z.boolean().default(true).optional(),
-  format: zNumFormat.default({}).optional(),
+  autoFormat: z.boolean().default(true),
+  format: zNumFormat.default({}),
 })
-export const zMeasureGroup = z.object({
+
+export const zMeasureGroup: z.ZodType<MeasureGroup> = z.object({
   id: z.string(),
   alias: z.string().optional(),
   get children() {
     return z.array(zMeasureGroup.or(zMeasure)).optional()
   },
 })
+
 export const zMeasures = z.array(zMeasure)
 export const zMeasureTree = z.array(zMeasureGroup.or(zMeasure))

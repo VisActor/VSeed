@@ -12,7 +12,7 @@ import { buildAdvanced } from './buildAdvanced'
 import { buildSpec } from './buildSpec'
 import { build } from './build'
 import { intl } from 'src/i18n'
-import { getColorItems } from './advanced'
+import { getColorIdMap, getColorItems } from './advanced'
 
 export class Builder implements VSeedBuilder {
   private _vseed: VSeed
@@ -36,6 +36,7 @@ export class Builder implements VSeedBuilder {
   getThemeMap = () => Builder._themeMap
 
   getColorItems = () => getColorItems(this)
+  getColorIdMap = () => getColorIdMap(this)
 
   get vseed() {
     return this._vseed

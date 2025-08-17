@@ -11,6 +11,8 @@ import {
   markStyle,
   annotation,
   pivotReshapeTo2D1M,
+  sortXBandAxis,
+  sortLegend,
 } from '../pipes'
 
 export const columnAdvancedPipeline: AdvancedPipeline = [
@@ -19,6 +21,8 @@ export const columnAdvancedPipeline: AdvancedPipeline = [
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
+  sortXBandAxis,
+  sortLegend,
   columnConfig,
   theme,
   markStyle,

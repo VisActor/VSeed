@@ -29,7 +29,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
     position = 'bottom',
     labelFontColor,
     labelFontSize = 12,
-    labelFontWeight,
+    labelFontWeight = 400,
     maxSize,
     border,
     shapeType = 'rectRound',

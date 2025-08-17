@@ -11,6 +11,8 @@ import {
   lineConfig,
   annotation,
   markStyle,
+  sortXBandAxis,
+  sortLegend,
 } from '../pipes'
 
 export const lineAdvancedPipeline: AdvancedPipeline = [
@@ -19,6 +21,8 @@ export const lineAdvancedPipeline: AdvancedPipeline = [
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
+  sortXBandAxis,
+  sortLegend,
   lineConfig,
   theme,
   markStyle,

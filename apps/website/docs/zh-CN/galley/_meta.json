@@ -25,6 +25,12 @@
   },
   {
     "type": "dir",
+    "name": "analysis",
+    "label": "analysis",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
     "name": "theme",
     "label": "theme",
     "collapsed": true

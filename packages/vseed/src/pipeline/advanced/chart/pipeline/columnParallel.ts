@@ -11,6 +11,8 @@ import {
   columnParallelConfig,
   markStyle,
   annotation,
+  sortXBandAxis,
+  sortLegend,
 } from '../pipes'
 
 export const columnParallelAdvancedPipeline: AdvancedPipeline = [
@@ -19,6 +21,8 @@ export const columnParallelAdvancedPipeline: AdvancedPipeline = [
   autoDimensions,
   pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
   encodingXY,
+  sortXBandAxis,
+  sortLegend,
   columnParallelConfig,
   theme,
   markStyle,

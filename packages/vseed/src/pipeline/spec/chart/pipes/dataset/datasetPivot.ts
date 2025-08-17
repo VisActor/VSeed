@@ -1,4 +1,3 @@
-import type { ISpec } from '@visactor/vchart'
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
 import type { SpecPipe } from 'src/types'
 
@@ -15,13 +14,4 @@ export const datasetPivot: SpecPipe = (spec, context) => {
     ...result,
     records: records,
   } as PivotChartConstructorOptions
-}
-
-export const datasetPivotPlaceholder: SpecPipe = (spec) => {
-  return {
-    ...spec,
-    data: {
-      id: 'placeholderDataId',
-    },
-  } as ISpec
 }

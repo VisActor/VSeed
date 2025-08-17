@@ -15,6 +15,8 @@ import {
   zLineStyle,
   zMeasureTree,
   zPointStyle,
+  zSortAxis,
+  zSortLegend,
   zTheme,
   zTooltip,
   zXBandAxis,
@@ -39,6 +41,8 @@ import type {
   XBandAxis,
   YLinearAxis,
   MeasureTree,
+  SortAxis,
+  SortLegend,
 } from '../../properties'
 import { z } from 'zod'
 
@@ -138,6 +142,31 @@ export interface Line {
   crosshairLine?: CrosshairLine
 
   /**
+   * @description X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+   * @example 
+   * sortAxis: {
+   *   orderBy: 'profit',
+   *   order: 'asc',
+   * }
+   * sortAxis: {
+   *   customOrder:['2019', '2020', '2021']
+   * }
+   */
+  sortAxis?: SortAxis
+  /**
+   * @description 图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+   * @example
+   * sortLegend: {
+   *   orderBy: 'profit',
+   *   order: 'asc',
+   * }
+   * sortLegend: {
+   *   customOrder:['2019', '2020', '2021']
+   * }
+   */
+  sortLegend?: SortLegend
+
+  /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置
    * @default light 默认为亮色主题
    * @description 内置light与dark两种主题, 用户可以通过Builder自定义主题
@@ -212,6 +241,8 @@ export const zLine = z.object({
   xAxis: zXBandAxis.optional(),
   yAxis: zYLinearAxis.optional(),
   crosshairLine: zCrosshairLine.optional(),
+  sortAxis: zSortAxis.optional(),
+  sortLegend: zSortLegend.optional(),
   theme: zTheme.optional(),
   pointStyle: zPointStyle.optional(),
   lineStyle: zLineStyle.optional(),

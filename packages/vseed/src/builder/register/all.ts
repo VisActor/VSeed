@@ -16,6 +16,7 @@ import {
   registerScatter,
   registerTable,
   registerPivotTable,
+  registerAreaRange,
 } from './chartType'
 import { registerDarkTheme, registerLightTheme } from './theme'
 
@@ -30,6 +31,7 @@ export const registerAll = () => {
   registerBarPercent()
   registerArea()
   registerAreaPercent()
+  registerAreaRange()
   registerPie()
   registerDonut()
   registerRose()

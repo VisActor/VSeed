@@ -12,6 +12,7 @@ export type ChartType =
   | 'barParallel'
   | 'area'
   | 'areaPercent'
+  | 'areaRange'
   | 'rose'
   | 'roseParallel'
   | 'pie'
@@ -32,6 +33,7 @@ export enum ChartTypeEnum {
   BarParallel = 'barParallel',
   Area = 'area',
   AreaPercent = 'areaPercent',
+  AreaRange = 'areaRange',
   Rose = 'rose',
   RoseParallel = 'roseParallel',
   Pie = 'pie',
@@ -53,6 +55,7 @@ export const zChartType = z.enum([
   'barParallel',
   'area',
   'areaPercent',
+  'areaRange',
   'rose',
   'roseParallel',
   'pie',

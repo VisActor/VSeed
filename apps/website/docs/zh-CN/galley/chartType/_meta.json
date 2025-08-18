@@ -15,5 +15,10 @@
   "pie",
   "donut",
   "scatter",
-  "funnel"
+  "funnel",
+  {
+    "type": "dir",
+    "name": "experimental",
+    "label": "experimental"
+  }
 ]

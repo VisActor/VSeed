@@ -52,5 +52,11 @@
     "name": "i18n",
     "label": "i18n",
     "collapsed": true
+  },
+    {
+    "type": "dir",
+    "name": "api",
+    "label": "api",
+    "collapsed": true
   }
 ]

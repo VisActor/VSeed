@@ -7,6 +7,7 @@ export const areaStyle: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { markStyle, encoding, dataset } = advancedVSeed
   const { areaStyle } = markStyle
+
   if (!areaStyle) {
     return spec
   }

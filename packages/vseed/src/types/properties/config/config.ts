@@ -81,6 +81,7 @@ export const zAreaConfig = z.object({
   crosshairLine: zCrosshairLine.optional(),
 })
 export const zAreaPercentConfig = zAreaConfig
+export const zAreaRangeConfig = zAreaConfig
 export const zRoseConfig = z.object({
   backgroundColor: zBackgroundColor.optional(),
   label: zLabel.optional(),
@@ -135,6 +136,7 @@ export const zConfig = z.object({
   barPercent: zBarPercentConfig.optional(),
   area: zAreaConfig.optional(),
   areaPercent: zAreaPercentConfig.optional(),
+  areaRange: zAreaRangeConfig.optional(),
 
   rose: zRoseConfig.optional(),
   roseParallel: zRoseParallelConfig.optional(),
@@ -157,6 +159,7 @@ export type BarParallelConfig = z.infer<typeof zBarParallelConfig>
 export type BarPercentConfig = z.infer<typeof zBarPercentConfig>
 export type AreaConfig = z.infer<typeof zAreaConfig>
 export type AreaPercentConfig = z.infer<typeof zAreaPercentConfig>
+export type AreaRangeConfig = z.infer<typeof zAreaRangeConfig>
 export type RoseConfig = z.infer<typeof zRoseConfig>
 export type FunnelConfig = z.infer<typeof zFunnelConfig>
 export type RoseParallelConfig = z.infer<typeof zRoseParallelConfig>

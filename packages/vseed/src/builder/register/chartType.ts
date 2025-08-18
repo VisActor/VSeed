@@ -2,6 +2,8 @@ import {
   areaAdvancedPipeline,
   areaPercentAdvancedPipeline,
   areaPercentSpecPipeline,
+  areaRangeAdvancedPipeline,
+  areaRangeSpecPipeline,
   areaSpecPipeline,
   barAdvancedPipeline,
   barParallelAdvancedPipeline,
@@ -59,6 +61,11 @@ export const registerArea = () => {
 export const registerAreaPercent = () => {
   Builder._advancedPipelineMap['areaPercent'] = areaPercentAdvancedPipeline
   Builder._specPipelineMap['areaPercent'] = areaPercentSpecPipeline
+}
+
+export const registerAreaRange = () => {
+  Builder._advancedPipelineMap['areaRange'] = areaRangeAdvancedPipeline
+  Builder._specPipelineMap['areaRange'] = areaRangeSpecPipeline
 }
 
 export const registerBarPercent = () => {

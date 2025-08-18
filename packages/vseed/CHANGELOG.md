@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.23
+
+### Patch Changes
+
+- feat: add area range and update spec api
+
 ## 0.0.22
 
 ### Patch Changes

@@ -15,5 +15,6 @@
   "pie",
   "donut",
   "scatter",
-  "funnel"
+  "funnel",
+  "experimental"
 ]

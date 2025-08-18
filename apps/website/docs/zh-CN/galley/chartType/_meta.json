@@ -1,6 +1,7 @@
 [
   "table",
   "pivotTable",
+
   "line",
   "column",
   "columnParallel",
@@ -10,11 +11,14 @@
   "barPercent",
   "area",
   "areaPercent",
+  "scatter",
+
+  "donut",
+  "pie",
+  "radar",
   "rose",
   "roseParallel",
-  "pie",
-  "donut",
-  "scatter",
+
   "funnel",
   {
     "type": "dir",

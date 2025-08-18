@@ -7,7 +7,7 @@ export const tooltip: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { measures, datasetReshapeInfo, chartType } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
-  const { tooltip } = baseConfig
+  const { tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
 
   const { measureId, measureValue } = datasetReshapeInfo[0].foldInfo

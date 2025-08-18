@@ -1,0 +1,35 @@
+---
+pageType: doc
+---
+
+import { FunnelChart } from '@components'
+
+# funnel
+
+## 漏斗图
+
+<FunnelChart />
+
+```tsx pure {3}
+export const FunnelChart = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'funnel',
+    dataset: [
+      { date: '2022', profit: 100, sales: 100 },
+      { date: '2023', profit: 80, sales: 80 },
+      { date: '2020', profit: 60, sales: 60 },
+      { date: '2021', profit: 40, sales: 40 },
+      { date: '2019', profit: 20, sales: 20 },
+    ],
+  }
+  return <VChartRender vseed={vseed} />
+})
+```
+
+## 组合漏斗图
+
+暂不支持
+
+## 透视组合漏斗图
+
+暂不支持

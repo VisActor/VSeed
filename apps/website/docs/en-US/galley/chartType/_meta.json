@@ -1,4 +1,7 @@
 [
+  "table",
+  "pivotTable",
+
   "line",
   "column",
   "columnParallel",
@@ -8,5 +11,18 @@
   "barPercent",
   "area",
   "areaPercent",
-  "pie"
+  "scatter",
+
+  "donut",
+  "pie",
+  "radar",
+  "rose",
+  "roseParallel",
+
+  "funnel",
+  {
+    "type": "dir",
+    "name": "experimental",
+    "label": "experimental"
+  }
 ]

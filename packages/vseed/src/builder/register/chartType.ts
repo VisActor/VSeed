@@ -21,12 +21,16 @@ import {
   donutSpecPipeline,
   funnelAdvancedPipeline,
   funnelSpecPipeline,
+  heatmapAdvancedPipeline,
+  heatmapSpecPipeline,
   lineAdvancedPipeline,
   lineSpecPipeline,
   pieAdvancedPipeline,
   pieSpecPipeline,
   pivotTableAdvancedPipeline,
   pivotTableSpecPipeline,
+  radarAdvancedPipeline,
+  radarSpecPipeline,
   roseAdvancedPipeline,
   roseParallelAdvancedPipeline,
   roseParallelSpecPipeline,
@@ -126,4 +130,12 @@ export const registerTable = () => {
 export const registerPivotTable = () => {
   Builder._advancedPipelineMap['pivotTable'] = pivotTableAdvancedPipeline
   Builder._specPipelineMap['pivotTable'] = pivotTableSpecPipeline
+}
+export const registerHeatmap = () => {
+  Builder._advancedPipelineMap['heatmap'] = heatmapAdvancedPipeline
+  Builder._specPipelineMap['heatmap'] = heatmapSpecPipeline
+}
+export const registerRadar = () => {
+  Builder._advancedPipelineMap['radar'] = radarAdvancedPipeline
+  Builder._specPipelineMap['radar'] = radarSpecPipeline
 }

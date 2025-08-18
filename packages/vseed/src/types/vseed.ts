@@ -15,11 +15,13 @@ import { zDonut, type Donut } from './chartType/donut'
 import type { DualAxis } from './chartType/dualAxis'
 import { zArea, type Area } from './chartType/area'
 import { zAreaPercent, type AreaPercent } from './chartType/areaPercent'
-import type { AreaRange } from './chartType'
+import type { AreaRange, Heatmap, Radar } from './chartType'
 import {
   zAreaRange,
   zFunnel,
+  zHeatmap,
   zPivotTable,
+  zRadar,
   zRoseParallel,
   zScatter,
   zTable,
@@ -31,6 +33,7 @@ import {
 export type VSeed =
   | Table
   | PivotTable
+  // cartesian
   | Line
   | Column
   | ColumnParallel
@@ -41,18 +44,24 @@ export type VSeed =
   | Area
   | AreaPercent
   | AreaRange
+  | Scatter
+  | DualAxis
+
+  // polar
   | Rose
   | RoseParallel
   | Pie
   | Donut
-  | Scatter
+  | Radar
+
+  // other
   | Funnel
-  | DualAxis
+  | Heatmap
 
 export const zVSeed = z.discriminatedUnion('chartType', [
   zTable,
   zPivotTable,
-
+  // cartesian
   zLine,
   zColumn,
   zColumnParallel,
@@ -63,11 +72,15 @@ export const zVSeed = z.discriminatedUnion('chartType', [
   zArea,
   zAreaPercent,
   zAreaRange,
+  zScatter,
+  // zDualAxis,
+  // polar
   zPie,
+  zDonut,
   zRose,
   zRoseParallel,
-  // zDualAxis,
-  zScatter,
-  zDonut,
+  zRadar,
+  // other
   zFunnel,
+  zHeatmap,
 ])

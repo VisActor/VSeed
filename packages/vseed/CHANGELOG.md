@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.24
+
+### Patch Changes
+
+- feat: add radar chart
+
 ## 0.0.23
 
 ### Patch Changes

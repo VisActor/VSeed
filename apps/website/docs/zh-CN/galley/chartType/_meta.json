@@ -16,5 +16,9 @@
   "donut",
   "scatter",
   "funnel",
-  "experimental"
+  {
+    "type": "dir",
+    "name": "experimental",
+    "label": "experimental"
+  }
 ]

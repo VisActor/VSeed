@@ -15,9 +15,10 @@ import {
   ColumnParallelChart,
   ColumnPercentChart,
   PieChart,
+  DonutChart,
+  RadarChart,
   RoseChart,
   RoseParallelChart,
-  DonutChart,
   ScatterChart,
   FunnelChart,
   StackedRoseChart,
@@ -27,7 +28,9 @@ import {
 
 :::info {title=图表类型} 按图表类型约定图表默认的配置, 使用`约定优于配置`的方法, 每一种图表类型有大量约定配置, 极大简化配置心智 :::
 
-## 表格
+## Table
+
+### 表格
 
 <TableAuto />
 
@@ -44,7 +47,7 @@ import {
 }
 ```
 
-## 透视表
+### 透视表
 
 <PivotTableRowDimensions />
 
@@ -61,7 +64,9 @@ import {
 }
 ```
 
-## 折线图
+## Cartesian
+
+### 折线图
 
 <LineChart />
 
@@ -78,7 +83,7 @@ import {
 }
 ```
 
-## 堆叠柱状图
+### 堆叠柱状图
 
 <ColumnChart />
 
@@ -95,7 +100,7 @@ import {
 }
 ```
 
-## 并列柱状图
+### 并列柱状图
 
 <ColumnParallelChart />
 
@@ -112,7 +117,7 @@ import {
 }
 ```
 
-## 百分比柱状图
+### 百分比柱状图
 
 <ColumnPercentChart />
 
@@ -129,7 +134,7 @@ import {
 }
 ```
 
-## 条形图
+### 条形图
 
 <BarChart />
 
@@ -146,7 +151,7 @@ import {
 }
 ```
 
-## 并列条形图
+### 并列条形图
 
 <BarParallelChart />
 
@@ -163,7 +168,7 @@ import {
 }
 ```
 
-## 百分比条形图
+### 百分比条形图
 
 <BarPercentChart />
 
@@ -180,7 +185,7 @@ import {
 }
 ```
 
-## 堆叠面积图
+### 堆叠面积图
 
 <AreaChart />
 
@@ -197,7 +202,7 @@ import {
 }
 ```
 
-## 百分比面积图
+### 百分比面积图
 
 <AreaPercentChart />
 
@@ -214,98 +219,7 @@ import {
 }
 ```
 
-## 玫瑰图
-
-<RoseChart />
-
-```tsx pure title="玫瑰图"  {3}
-export const RoseChart = memo(() => {
-  const vseed: VSeed = {
-    chartType: 'rose',
-    dataset: [
-      { date: '2023', profit: 40 },
-      { date: '2022', profit: 50 },
-      { date: '2021', profit: 25 },
-      { date: '2020', profit: 30 },
-      { date: '2019', profit: 10 },
-    ],
-  }
-  return <VChartRender vseed={vseed} />
-})
-```
-
-## 堆叠玫瑰图
-
-<StackedRoseChart />
-
-```json title="堆叠玫瑰图"  {3}
-export const StackedRoseChart = memo(() => {
-  const vseed: VSeed = {
-    chartType: 'rose',
-    dataset: [
-      { date: '2019', profit: 10, sales: 20 },
-      { date: '2020', profit: 30, sales: 60 },
-      { date: '2021', profit: 30, sales: 60 },
-      { date: '2022', profit: 50, sales: 100 },
-      { date: '2023', profit: 40, sales: 80 },
-    ],
-  }
-  return <VChartRender vseed={vseed} />
-})
-```
-
-## 并列玫瑰图
-
-<RoseParallelChart />
-
-```json title="分组玫瑰图"  {2}
-{
-  "chartType": "roseParallel",
-  "dataset": [
-    { "date": "2019", "profit": 10, "sales": 20 },
-    { "date": "2020", "profit": 30, "sales": 60 },
-    { "date": "2021", "profit": 30, "sales": 60 },
-    { "date": "2022", "profit": 50, "sales": 100 },
-    { "date": "2023", "profit": 40, "sales": 80 }
-  ]
-}
-```
-
-## 饼图
-
-<PieChart />
-
-```json title="饼图" {2}
-{
-  "chartType": "pie",
-  "dataset": [
-    { "date": "2019", "profit": 10, "sales": 20 },
-    { "date": "2020", "profit": 30, "sales": 60 },
-    { "date": "2021", "profit": 30, "sales": 60 },
-    { "date": "2022", "profit": 50, "sales": 100 },
-    { "date": "2023", "profit": 40, "sales": 80 }
-  ]
-}
-```
-
-## 环形图
-
-<DonutChart />
-
-```json {2}
-{
-  "chartType": "donut",
-  "dataset": [
-    { "date": "2019", "profit": 10, "sales": 20 },
-    { "date": "2020", "profit": 30, "sales": 60 },
-    { "date": "2021", "profit": 30, "sales": 60 },
-    { "date": "2022", "profit": 50, "sales": 100 },
-    { "date": "2023", "profit": 40, "sales": 80 }
-  ]
-}
-```
-
-## 散点图
+### 散点图
 
 <ScatterChart />
 
@@ -345,7 +259,116 @@ export const ScatterChart = memo(() => {
 })
 ```
 
-## 漏斗图
+## Polar
+
+### 饼图
+
+<PieChart />
+
+```json title="饼图" {2}
+{
+  "chartType": "pie",
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20 },
+    { "date": "2020", "profit": 30, "sales": 60 },
+    { "date": "2021", "profit": 30, "sales": 60 },
+    { "date": "2022", "profit": 50, "sales": 100 },
+    { "date": "2023", "profit": 40, "sales": 80 }
+  ]
+}
+```
+
+### 环形图
+
+<DonutChart />
+
+```json {2}
+{
+  "chartType": "donut",
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20 },
+    { "date": "2020", "profit": 30, "sales": 60 },
+    { "date": "2021", "profit": 30, "sales": 60 },
+    { "date": "2022", "profit": 50, "sales": 100 },
+    { "date": "2023", "profit": 40, "sales": 80 }
+  ]
+}
+```
+
+### 玫瑰图
+
+<RoseChart />
+
+```tsx pure title="玫瑰图"  {3}
+export const RoseChart = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'rose',
+    dataset: [
+      { date: '2023', profit: 40 },
+      { date: '2022', profit: 50 },
+      { date: '2021', profit: 25 },
+      { date: '2020', profit: 30 },
+      { date: '2019', profit: 10 },
+    ],
+  }
+  return <VChartRender vseed={vseed} />
+})
+```
+
+### 雷达图
+
+<RadarChart />
+
+```tsx pure title="雷达图" {3}
+export const RadarChart = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'radar',
+    dataset: [{ profit: 10, sales: 20, count: 50, rateOfReturn: 1 }],
+  }
+  return <VChartRender vseed={vseed} />
+})
+```
+
+### 堆叠玫瑰图
+
+<StackedRoseChart />
+
+```tsx pure title="堆叠玫瑰图"  {3}
+export const StackedRoseChart = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'rose',
+    dataset: [
+      { date: '2019', profit: 10, sales: 20 },
+      { date: '2020', profit: 30, sales: 60 },
+      { date: '2021', profit: 30, sales: 60 },
+      { date: '2022', profit: 50, sales: 100 },
+      { date: '2023', profit: 40, sales: 80 },
+    ],
+  }
+  return <VChartRender vseed={vseed} />
+})
+```
+
+### 并列玫瑰图
+
+<RoseParallelChart />
+
+```json title="分组玫瑰图"  {2}
+{
+  "chartType": "roseParallel",
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 20 },
+    { "date": "2020", "profit": 30, "sales": 60 },
+    { "date": "2021", "profit": 30, "sales": 60 },
+    { "date": "2022", "profit": 50, "sales": 100 },
+    { "date": "2023", "profit": 40, "sales": 80 }
+  ]
+}
+```
+
+## Other
+
+### 漏斗图
 
 <FunnelChart />
 

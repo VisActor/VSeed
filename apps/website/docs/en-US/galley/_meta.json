@@ -25,6 +25,12 @@
   },
   {
     "type": "dir",
+    "name": "analysis",
+    "label": "analysis",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
     "name": "theme",
     "label": "theme",
     "collapsed": true
@@ -45,6 +51,12 @@
     "type": "dir",
     "name": "i18n",
     "label": "i18n",
+    "collapsed": true
+  },
+    {
+    "type": "dir",
+    "name": "api",
+    "label": "api",
     "collapsed": true
   }
 ]

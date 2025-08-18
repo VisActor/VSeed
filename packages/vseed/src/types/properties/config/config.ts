@@ -9,6 +9,10 @@ import { zLabel } from './label/label'
 import { zLegend } from './legend/legend'
 import { zTooltip } from './tooltip/tooltip'
 
+/**
+ * ---
+ * zConfig by 图表类型
+ */
 export const zTableConfig = z.object({
   // Border
   borderColor: z.string().optional(),
@@ -82,22 +86,6 @@ export const zAreaConfig = z.object({
 })
 export const zAreaPercentConfig = zAreaConfig
 export const zAreaRangeConfig = zAreaConfig
-export const zRoseConfig = z.object({
-  backgroundColor: zBackgroundColor.optional(),
-  label: zLabel.optional(),
-  color: zColor.optional(),
-  tooltip: zTooltip.optional(),
-  legend: zLegend.optional(),
-})
-export const zRoseParallelConfig = zRoseConfig
-export const zPieConfig = z.object({
-  backgroundColor: zBackgroundColor.optional(),
-  label: zLabel.optional(),
-  color: zColor.optional(),
-  tooltip: zTooltip.optional(),
-  legend: zLegend.optional(),
-})
-export const zDonutConfig = zPieConfig
 export const zDualAxisConfig = z.object({
   backgroundColor: zBackgroundColor.optional(),
   label: zLabel.optional(),
@@ -116,40 +104,36 @@ export const zScatterConfig = z.object({
   yAxis: zYLinearAxis.optional(),
   crosshairLine: zCrosshairLine.optional(),
 })
-export const zFunnelConfig = z.object({
+
+// polar
+export const zRoseConfig = z.object({
   backgroundColor: zBackgroundColor.optional(),
+  label: zLabel.optional(),
   color: zColor.optional(),
   tooltip: zTooltip.optional(),
-  label: zLabel.optional(),
   legend: zLegend.optional(),
 })
-export const zConfig = z.object({
-  table: zTableConfig.optional(),
-  pivotTable: zPivotTableConfig.optional(),
-
-  line: zLineConfig.optional(),
-  column: zColumnConfig.optional(),
-  columnParallel: zColumnParallelConfig.optional(),
-  columnPercent: zColumnPercentConfig.optional(),
-  bar: zBarConfig.optional(),
-  barParallel: zBarParallelConfig.optional(),
-  barPercent: zBarPercentConfig.optional(),
-  area: zAreaConfig.optional(),
-  areaPercent: zAreaPercentConfig.optional(),
-  areaRange: zAreaRangeConfig.optional(),
-
-  rose: zRoseConfig.optional(),
-  roseParallel: zRoseParallelConfig.optional(),
-  pie: zPieConfig.optional(),
-  donut: zDonutConfig.optional(),
-  dualAxis: zDualAxisConfig.optional(),
-  scatter: zScatterConfig.optional(),
-  funnel: zFunnelConfig.optional(),
+export const zRoseParallelConfig = zRoseConfig
+export const zPieConfig = z.object({
+  backgroundColor: zBackgroundColor.optional(),
+  label: zLabel.optional(),
+  color: zColor.optional(),
+  tooltip: zTooltip.optional(),
+  legend: zLegend.optional(),
 })
+export const zDonutConfig = zPieConfig
+export const zRadarConfig = zPieConfig
+// other
+export const zFunnelConfig = zPieConfig
+export const zHeatmapConfig = zPieConfig
 
+/**
+ * ---
+ * Type config by chart type
+ */
 export type TableConfig = z.infer<typeof zTableConfig>
 export type PivotTableConfig = z.infer<typeof zPivotTableConfig>
-
+// cartesian
 export type LineConfig = z.infer<typeof zLineConfig>
 export type ColumnConfig = z.infer<typeof zColumnConfig>
 export type ColumnParallelConfig = z.infer<typeof zColumnParallelConfig>
@@ -160,12 +144,47 @@ export type BarPercentConfig = z.infer<typeof zBarPercentConfig>
 export type AreaConfig = z.infer<typeof zAreaConfig>
 export type AreaPercentConfig = z.infer<typeof zAreaPercentConfig>
 export type AreaRangeConfig = z.infer<typeof zAreaRangeConfig>
+export type ScatterConfig = z.infer<typeof zScatterConfig>
+export type DualAxisConfig = z.infer<typeof zDualAxisConfig>
+// polar
 export type RoseConfig = z.infer<typeof zRoseConfig>
-export type FunnelConfig = z.infer<typeof zFunnelConfig>
 export type RoseParallelConfig = z.infer<typeof zRoseParallelConfig>
 export type PieConfig = z.infer<typeof zPieConfig>
 export type DonutConfig = z.infer<typeof zDonutConfig>
-export type DualAxisConfig = z.infer<typeof zDualAxisConfig>
-export type ScatterConfig = z.infer<typeof zScatterConfig>
+export type RadarConfig = z.infer<typeof zRadarConfig>
+// other
+export type FunnelConfig = z.infer<typeof zFunnelConfig>
+export type HeatmapConfig = z.infer<typeof zHeatmapConfig>
 
+/**
+ * config and type
+ */
 export type Config = z.infer<typeof zConfig>
+export const zConfig = z.object({
+  table: zTableConfig.optional(),
+  pivotTable: zPivotTableConfig.optional(),
+
+  // cartesian
+  line: zLineConfig.optional(),
+  column: zColumnConfig.optional(),
+  columnParallel: zColumnParallelConfig.optional(),
+  columnPercent: zColumnPercentConfig.optional(),
+  bar: zBarConfig.optional(),
+  barParallel: zBarParallelConfig.optional(),
+  barPercent: zBarPercentConfig.optional(),
+  area: zAreaConfig.optional(),
+  areaPercent: zAreaPercentConfig.optional(),
+  areaRange: zAreaRangeConfig.optional(),
+  dualAxis: zDualAxisConfig.optional(),
+  scatter: zScatterConfig.optional(),
+
+  // polar
+  rose: zRoseConfig.optional(),
+  roseParallel: zRoseParallelConfig.optional(),
+  pie: zPieConfig.optional(),
+  donut: zDonutConfig.optional(),
+  radar: zRadarConfig.optional(),
+  // other
+  funnel: zFunnelConfig.optional(),
+  heatmap: zHeatmapConfig.optional(),
+})

@@ -166,9 +166,10 @@ export const lightTheme = (): CustomThemeConfig => {
 
   return {
     config: {
+      // table
       table: tableConfig,
       pivotTable: tableConfig,
-
+      // cartesian
       line: {
         ...baseConfig,
         xAxis: bandAxis,
@@ -253,10 +254,14 @@ export const lightTheme = (): CustomThemeConfig => {
         },
         crosshairLine,
       },
+      // polar
       pie: {
         ...baseConfig,
       },
       donut: {
+        ...baseConfig,
+      },
+      radar: {
         ...baseConfig,
       },
       rose: {
@@ -265,6 +270,7 @@ export const lightTheme = (): CustomThemeConfig => {
       roseParallel: {
         ...baseConfig,
       },
+      // other
       funnel: {
         ...baseConfig,
         color: {

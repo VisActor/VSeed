@@ -4,8 +4,6 @@ import {
   autoMeasures,
   encodingXY,
   initAdvancedVSeed,
-  pivotReshapeTo2D1M,
-  reshapeTo2D1M,
   theme,
   pivotAdapter,
   areaConfig,
@@ -13,13 +11,15 @@ import {
   markStyle,
   sortXBandAxis,
   sortLegend,
+  reshapeTo2D1M0Name,
+  pivotReshapeTo2D1M0Name,
 } from '../pipes'
 
 export const areaAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   autoMeasures,
   autoDimensions,
-  pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
+  pivotAdapter([reshapeTo2D1M0Name], [pivotReshapeTo2D1M0Name]),
   encodingXY,
   sortXBandAxis,
   sortLegend,

@@ -19,6 +19,7 @@ const Demo = () => {
   const chartTypes = [
     'table',
     'pivotTable',
+    // cartesian
     'line',
     'column',
     'columnPercent',
@@ -28,12 +29,16 @@ const Demo = () => {
     'barParallel',
     'area',
     'areaPercent',
-    'rose',
-    'roseParallel',
+    // polar
     'pie',
     'donut',
+    'radar',
+    'roseParallel',
+    'rose',
     'scatter',
+    // other
     'funnel',
+    'heatmap',
   ]
 
   const changeChartType = (c) => () => {
@@ -129,19 +134,29 @@ const Demo = () => {
       { date: '2020', region: 'C', profit: 8 },
       { date: '2020', region: 'D', profit: 7 },
       { date: '2020', region: 'E', profit: 6 },
+
+      { date: '2021', region: 'A', profit: 11 },
+      { date: '2021', region: 'B', profit: 12 },
+      { date: '2021', region: 'C', profit: 13 },
+      { date: '2021', region: 'D', profit: 14 },
+      { date: '2021', region: 'E', profit: 15 },
     ],
     // 单指标多维度
     [
       { date: '2019', region: 'east', city: 'A', profit: 10 },
       { date: '2019', region: 'east', city: 'B', profit: 30 },
-      { date: '2019', region: 'east', city: 'C', profit: 30 },
-      { date: '2019', region: 'east', city: 'D', profit: 50 },
-      { date: '2019', region: 'east', city: 'E', profit: 40 },
-      { date: '2020', region: 'east', city: 'A', profit: 10 },
-      { date: '2020', region: 'east', city: 'B', profit: 30 },
-      { date: '2020', region: 'east', city: 'C', profit: 30 },
-      { date: '2020', region: 'east', city: 'D', profit: 50 },
-      { date: '2020', region: 'east', city: 'E', profit: 40 },
+      { date: '2019', region: 'west', city: 'A', profit: 30 },
+      { date: '2019', region: 'west', city: 'B', profit: 50 },
+
+      { date: '2020', region: 'east', city: 'A', profit: 15 },
+      { date: '2020', region: 'east', city: 'B', profit: 35 },
+      { date: '2020', region: 'west', city: 'A', profit: 35 },
+      { date: '2020', region: 'west', city: 'B', profit: 55 },
+
+      { date: '2021', region: 'east', city: 'A', profit: 20 },
+      { date: '2021', region: 'east', city: 'B', profit: 40 },
+      { date: '2021', region: 'west', city: 'A', profit: 40 },
+      { date: '2021', region: 'west', city: 'B', profit: 60 },
     ],
     // 多指标零维度
     [{ profit: 1, sales: 2, discount: 0.1 }],
@@ -153,34 +168,29 @@ const Demo = () => {
       { date: '2022', profit: 50, sales: 100, discount: 0.1 },
       { date: '2023', profit: 40, sales: 80, discount: 0.1 },
     ],
-    // 多指标两维度
-    [
-      { date: '2019', type: 'A', profit: 10, sales: 20, discount: 0.1 },
-      { date: '2019', type: 'B', profit: 30, sales: 60, discount: 0.1 },
-      { date: '2019', type: 'C', profit: 30, sales: 60, discount: 0.1 },
-
-      { date: '2020', type: 'A', profit: 10, sales: 20, discount: 0.1 },
-      { date: '2020', type: 'B', profit: 30, sales: 60, discount: 0.1 },
-      { date: '2020', type: 'C', profit: 30, sales: 60, discount: 0.1 },
-    ],
     // 多指标多维度
     [
-      { date: '2019', region: 'east', city: 'A', profit: 10, sales: 20, discount: 0.1 },
-      { date: '2019', region: 'east', city: 'B', profit: 30, sales: 60, discount: 0.1 },
-      { date: '2019', region: 'east', city: 'C', profit: 30, sales: 60, discount: 0.1 },
-      { date: '2019', region: 'east', city: 'D', profit: 50, sales: 100, discount: 0.1 },
-      { date: '2019', region: 'east', city: 'E', profit: 40, sales: 80, discount: 0.1 },
-      { date: '2020', region: 'east', city: 'A', profit: 10, sales: 20, discount: 0.1 },
-      { date: '2020', region: 'east', city: 'B', profit: 30, sales: 60, discount: 0.1 },
-      { date: '2020', region: 'east', city: 'C', profit: 30, sales: 60, discount: 0.1 },
-      { date: '2020', region: 'east', city: 'D', profit: 50, sales: 100, discount: 0.1 },
-      { date: '2020', region: 'east', city: 'E', profit: 40, sales: 80, discount: 0.1 },
+      { date: '2019', region: 'east', city: 'A', profit: 10, sales: 100 },
+      { date: '2019', region: 'east', city: 'B', profit: 30, sales: 200 },
+      { date: '2019', region: 'west', city: 'A', profit: 30, sales: 300 },
+      { date: '2019', region: 'west', city: 'B', profit: 50, sales: 500 },
+
+      { date: '2020', region: 'east', city: 'A', profit: 15, sales: 100 },
+      { date: '2020', region: 'east', city: 'B', profit: 35, sales: 200 },
+      { date: '2020', region: 'west', city: 'A', profit: 35, sales: 300 },
+      { date: '2020', region: 'west', city: 'B', profit: 55, sales: 500 },
+
+      { date: '2021', region: 'east', city: 'A', profit: 20, sales: 100 },
+      { date: '2021', region: 'east', city: 'B', profit: 40, sales: 200 },
+      { date: '2021', region: 'west', city: 'A', profit: 40, sales: 300 },
+      { date: '2021', region: 'west', city: 'B', profit: 60, sales: 500 },
     ],
   ]
 
   const chartTypes = [
     'table',
     'pivotTable',
+    // cartesian
     'line',
     'column',
     'columnPercent',
@@ -190,12 +200,16 @@ const Demo = () => {
     'barParallel',
     'area',
     'areaPercent',
-    'rose',
-    'roseParallel',
+    // polar
     'pie',
     'donut',
-    'funnel',
+    'radar',
+    'roseParallel',
+    'rose',
     'scatter',
+    // other
+    'funnel',
+    'heatmap',
   ]
 
   const [chartType, setChartType] = useState('columnParallel')

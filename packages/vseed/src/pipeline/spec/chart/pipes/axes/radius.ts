@@ -7,7 +7,7 @@ export const radiusAxis: SpecPipe = (spec, context) => {
   const { dimensions, measures } = advancedVSeed
 
   if (!dimensions || !measures) {
-    return spec
+    return result
   }
 
   const is0D = dimensions.length === 0

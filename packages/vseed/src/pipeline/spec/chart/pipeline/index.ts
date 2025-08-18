@@ -1,3 +1,4 @@
+// cartesian
 export { lineSpecPipeline } from './line'
 export { columnSpecPipeline } from './column'
 export { columnParallelSpecPipeline } from './columnParallel'
@@ -8,9 +9,13 @@ export { barPercentSpecPipeline } from './barPercent'
 export { areaSpecPipeline } from './area'
 export { areaPercentSpecPipeline } from './areaPercent'
 export { areaRangeSpecPipeline } from './areaRange'
+export { scatterSpecPipeline } from './scatter'
+// polar
 export { pieSpecPipeline } from './pie'
 export { donutSpecPipeline } from './donut'
 export { roseSpecPipeline } from './rose'
 export { roseParallelSpecPipeline } from './roseParallel'
+export { radarSpecPipeline } from './radar'
+// other
 export { funnelSpecPipeline } from './funnel'
-export { scatterSpecPipeline } from './scatter'
+export { heatmapSpecPipeline } from './heatmap'

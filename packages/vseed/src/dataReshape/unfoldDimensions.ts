@@ -21,7 +21,7 @@ export const unfoldDimensions = (
   dataset: Dataset
   unfoldInfo: UnfoldInfo
 } => {
-  if (unfoldStartIndex < 0 || (unfoldStartIndex > 0 && unfoldStartIndex >= dimensions.length)) {
+  if (unfoldStartIndex < 0 || unfoldStartIndex >= dimensions.length) {
     throw new Error('unfoldStartIndex is out of range')
   }
 

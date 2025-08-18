@@ -229,6 +229,12 @@ export const lightTheme = (): CustomThemeConfig => {
         yAxis: linearAxis,
         crosshairLine,
       },
+      areaRange: {
+        ...baseConfig,
+        xAxis: bandAxis,
+        yAxis: linearAxis,
+        crosshairLine,
+      },
       scatter: {
         ...baseConfig,
         xAxis: {

@@ -51,7 +51,9 @@ export const unfoldDimensions = (
   for (let i = 0; i < dataset.length; i++) {
     const datum = dataset[i]
     const colorName = generateDimGroupName(dimensionsToBeUnfolded, datum, dimensionsSeparator)
-    const colorId = [colorName, (datum[foldMeasureId] as string) || 'id'].join(dimensionsSeparator)
+    const colorId = datum[foldMeasureId]
+      ? [colorName, datum[foldMeasureId] as string].join(dimensionsSeparator)
+      : colorName
     datum[unfoldGroupName] = colorName
     datum[unfoldGroupId] = colorId
     colorItems.push(colorId)

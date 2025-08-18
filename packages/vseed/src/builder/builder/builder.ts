@@ -1,9 +1,11 @@
 import type {
+  AdvancedPipe,
   AdvancedPipeline,
   AdvancedVSeed,
   ChartType,
   CustomThemeConfig,
   Spec,
+  SpecPipe,
   SpecPipeline,
   VSeed,
   VSeedBuilder,
@@ -30,8 +32,22 @@ export class Builder implements VSeedBuilder {
 
   buildAdvanced = () => buildAdvanced(this)
 
-  getAdvancedPipeline = (chartType: ChartType) => Builder._advancedPipelineMap[chartType] as AdvancedPipeline
-  getSpecPipeline = (chartType: ChartType) => Builder._specPipelineMap[chartType] as SpecPipeline
+  getAdvancedPipeline = (chartType: ChartType) => {
+    const customPipe = Builder._customAdvancedPipe[chartType] as AdvancedPipe
+    const pipeline = Builder._advancedPipelineMap[chartType] as AdvancedPipeline
+    if (customPipe) {
+      pipeline.push(customPipe)
+    }
+    return pipeline
+  }
+  getSpecPipeline = (chartType: ChartType) => {
+    const customPipe = Builder._customSpecPipe[chartType] as SpecPipe
+    const pipeline = Builder._specPipelineMap[chartType] as SpecPipeline
+    if (customPipe) {
+      pipeline.push(customPipe)
+    }
+    return pipeline
+  }
   getTheme = (themeKey: string) => Builder._themeMap[themeKey]
   getThemeMap = () => Builder._themeMap
 
@@ -64,6 +80,10 @@ export class Builder implements VSeedBuilder {
 
   static _advancedPipelineMap: Partial<Record<ChartType, AdvancedPipeline>> = {}
   static _specPipelineMap: Partial<Record<ChartType, SpecPipeline>> = {}
+
+  static _customAdvancedPipe: Partial<Record<ChartType, AdvancedPipe>> = {}
+  static _customSpecPipe: Partial<Record<ChartType, SpecPipe>> = {}
+
   static _themeMap: Record<string, CustomThemeConfig> = {}
   static from = (vseed: VSeed) => new Builder(vseed)
 }

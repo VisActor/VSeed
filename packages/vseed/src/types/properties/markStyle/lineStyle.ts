@@ -45,7 +45,6 @@ export type LineStyle = {
    * 折线图是否平滑
    * @description 折线图是否平滑
    * @type {boolean}
-   * @default true
    */
   lineSmooth?: boolean
 
@@ -53,28 +52,24 @@ export type LineStyle = {
    * 柱状图颜色
    * @description 柱状图颜色
    * @type {string}
-   * @default {undefined} follow series color
    */
   lineColor?: string
   /**
    * 柱状图颜色透明度
    * @description 柱状图颜色透明度
    * @type {number}
-   * @default 1
    */
   lineColorOpacity?: number
   /**
    * 柱状图边框宽度
    * @description 柱状图边框宽度
    * @type {number}
-   * @default 1
    */
   lineWidth?: number
   /**
    * 柱状图边框样式
    * @description 柱状图边框样式
    * @type {number}
-   * @default solid
    * @example solid
    * @example dashed
    * @example dotted
@@ -84,7 +79,7 @@ export type LineStyle = {
 
 export const zLineStyle = z.object({
   selector: z.union([zSelector, zSelectors]).optional(),
-  lineSmooth: z.boolean().default(true).optional(),
+  lineSmooth: z.boolean().optional(),
   lineColor: z.string().optional(),
   lineColorOpacity: z.number().optional(),
   lineWidth: z.number().optional(),

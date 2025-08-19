@@ -19,4 +19,5 @@ export * from './radar'
 export * from './rose'
 export * from './roseParallel'
 
+export * from './heatmap'
 export * from './funnel'

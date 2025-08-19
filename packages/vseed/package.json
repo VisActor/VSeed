@@ -1,6 +1,6 @@
 {
   "name": "@visactor/vseed",
-  "version": "0.0.17",
+  "version": "0.0.24",
   "type": "module",
   "exports": {
     ".": {
@@ -28,10 +28,12 @@
     "zod": "4.0.14"
   },
   "peerDependencies": {
+    "d3-color": "^3.1.0",
     "@visactor/vchart": ">2.0.0",
     "@visactor/vtable": ">1.19.0"
   },
   "devDependencies": {
+    "@types/d3-color": "^3.1.0",
     "@eslint/js": "9.30.0",
     "@rsdoctor/rspack-plugin": "1.1.10",
     "@rslib/core": "0.12.0",

@@ -12,7 +12,7 @@ import {
   zDimensions,
   zLabel,
   zLegend,
-  zMeasures,
+  zMeasureTree,
   zPointStyle,
   zTheme,
   zTooltip,
@@ -30,13 +30,13 @@ import type {
   Dimensions,
   Label,
   Legend,
-  Measures,
   PointStyle,
   Theme,
   Tooltip,
   CrosshairLine,
   YLinearAxis,
   XLinearAxis,
+  MeasureTree,
 } from '../../properties'
 import { z } from 'zod'
 
@@ -79,10 +79,10 @@ export interface Scatter {
   /**
    * 指标
    * @description 散点图的第一个指标字段会放至X轴, 其余指标会进行合并, 映射至Y轴
-   * @type {Measures}
+   * @type {DimensionTree}
    * @example [{id: "value", alias: "数值"}]
    */
-  measures?: Measures
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色
@@ -189,7 +189,7 @@ export const zScatter = z.object({
   chartType: z.literal('scatter'),
   dataset: zDataset.optional(),
   dimensions: zDimensions.optional(),
-  measures: zMeasures.optional(),
+  measures: zMeasureTree.optional(),
   backgroundColor: zBackgroundColor.optional(),
   color: zColor.optional(),
   label: zLabel.optional(),
@@ -200,9 +200,9 @@ export const zScatter = z.object({
   crosshairLine: zCrosshairLine.optional(),
   theme: zTheme.optional(),
   pointStyle: zPointStyle.optional(),
-  annotationPoint: zAnnotationPoint.optional(),
-  annotationVerticalLine: zAnnotationVerticalLine.optional(),
-  annotationHorizontalLine: zAnnotationHorizontalLine.optional(),
-  annotationArea: zAnnotationArea.optional(),
+  annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
+  annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
+  annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),
+  annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).optional(),
   locale: zLocale.optional(),
 })

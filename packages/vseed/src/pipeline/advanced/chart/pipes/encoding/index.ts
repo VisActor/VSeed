@@ -1,0 +1,8 @@
+export { encodingXY } from './encodingXY'
+export { encodingYX } from './encodingYX'
+export { encodingYY } from './encodingYY'
+export { encodingXYY } from './encodingXYY'
+export { encodingRose } from './encodingRose'
+export { encodingPie } from './encodingPie'
+export { encodingAR } from './encodingAR'
+export { encodingFunnel } from './encodingFunnel'

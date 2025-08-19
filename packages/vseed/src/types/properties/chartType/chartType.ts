@@ -3,6 +3,7 @@ import { z } from 'zod'
 export type ChartType =
   | 'table'
   | 'pivotTable'
+  // cartesian
   | 'line'
   | 'column'
   | 'columnPercent'
@@ -12,17 +13,23 @@ export type ChartType =
   | 'barParallel'
   | 'area'
   | 'areaPercent'
+  | 'areaRange'
+  | 'scatter'
+  | 'dualAxis'
+  // polar
   | 'rose'
   | 'roseParallel'
   | 'pie'
   | 'donut'
-  | 'dualAxis'
-  | 'scatter'
+  | 'radar'
+  // other
+  | 'heatmap'
   | 'funnel'
 
 export enum ChartTypeEnum {
   Table = 'table',
   PivotTable = 'pivotTable',
+  // cartesian
   Line = 'line',
   Column = 'column',
   ColumnPercent = 'columnPercent',
@@ -32,18 +39,24 @@ export enum ChartTypeEnum {
   BarParallel = 'barParallel',
   Area = 'area',
   AreaPercent = 'areaPercent',
+  AreaRange = 'areaRange',
+  DualAxis = 'dualAxis',
+  Scatter = 'scatter',
+  // polar
   Rose = 'rose',
   RoseParallel = 'roseParallel',
   Pie = 'pie',
   Donut = 'donut',
-  DualAxis = 'dualAxis',
-  Scatter = 'scatter',
+  Radar = 'radar',
+  // other
   Funnel = 'funnel',
+  Heatmap = 'heatmap',
 }
 
 export const zChartType = z.enum([
   'table',
   'pivotTable',
+  // cartesian
   'line',
   'column',
   'columnPercent',
@@ -53,11 +66,16 @@ export const zChartType = z.enum([
   'barParallel',
   'area',
   'areaPercent',
+  'areaRange',
+  'scatter',
+  'dualAxis',
+  // polar
   'rose',
   'roseParallel',
   'pie',
   'donut',
-  'dualAxis',
-  'scatter',
+  'radar',
+  // other
   'funnel',
+  'heatmap',
 ])

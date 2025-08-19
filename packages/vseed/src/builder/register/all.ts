@@ -14,11 +14,25 @@ import {
   registerRoseParallel,
   registerFunnel,
   registerScatter,
+  registerTable,
+  registerPivotTable,
+  registerAreaRange,
+  registerHeatmap,
+  registerRadar,
 } from './chartType'
 import { registerDarkTheme, registerLightTheme } from './theme'
 
 export const registerAll = () => {
-  // ChartType
+  /**
+   * ------------------
+   * ChartTypes
+   * ------------------
+   */
+
+  // table
+  registerTable()
+  registerPivotTable()
+  // cartesian
   registerLine()
   registerColumn()
   registerColumnParallel()
@@ -28,14 +42,23 @@ export const registerAll = () => {
   registerBarPercent()
   registerArea()
   registerAreaPercent()
+  registerAreaRange()
+  registerScatter()
+  // polar
   registerPie()
   registerDonut()
   registerRose()
   registerRoseParallel()
+  registerRadar()
+  // other
   registerFunnel()
-  registerScatter()
+  registerHeatmap()
 
-  // Theme
+  /**
+   * ------------------
+   * Theme
+   * ------------------
+   */
   registerLightTheme()
   registerDarkTheme()
 }

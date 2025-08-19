@@ -1,4 +1,14 @@
-import type { CustomThemeConfig, YBandAxis, YLinearAxis } from 'src/types'
+import type {
+  BackgroundColor,
+  Color,
+  CustomThemeConfig,
+  Label,
+  Legend,
+  TableConfig,
+  Tooltip,
+  YBandAxis,
+  YLinearAxis,
+} from 'src/types'
 
 export const darkTheme = (): CustomThemeConfig => {
   const linearAxis: YLinearAxis = {
@@ -97,98 +107,146 @@ export const darkTheme = (): CustomThemeConfig => {
     labelBackgroundColor: '#ffffff',
   }
 
-  return {
-    baseConfig: {
-      vtable: {
-        backgroundColor: 'transparent',
-      },
-      vchart: {
-        backgroundColor: 'transparent',
-        color: {
-          colorScheme: [
-            '#2E62F1',
-            '#4DC36A',
-            '#FF8406',
-            '#FFCC00',
-            '#4F44CF',
-            '#5AC8FA',
-            '#003A8C',
-            '#B08AE2',
-            '#FF6341',
-            '#98DD62',
-          ],
-        },
-        label: {
-          enable: true,
-        },
-        tooltip: {
-          enable: true,
-        },
-        legend: {
-          enable: true,
-          border: true,
-          maxSize: 1,
-          position: 'rt',
-          shapeType: 'rectRound',
-          labelFontColor: '#FDFDFD',
-          labelFontSize: 12,
-          labelFontWeight: 400,
-        },
-      },
+  const baseConfig: {
+    backgroundColor?: BackgroundColor
+    color?: Color
+    label?: Label
+    tooltip?: Tooltip
+    legend?: Legend
+  } = {
+    backgroundColor: 'transparent',
+    color: {
+      colorScheme: [
+        '#2E62F1',
+        '#4DC36A',
+        '#FF8406',
+        '#FFCC00',
+        '#4F44CF',
+        '#5AC8FA',
+        '#003A8C',
+        '#B08AE2',
+        '#FF6341',
+        '#98DD62',
+      ],
     },
+    label: {
+      enable: true,
+    },
+    tooltip: {
+      enable: true,
+    },
+    legend: {
+      enable: true,
+      border: true,
+      maxSize: 1,
+      position: 'rt',
+      shapeType: 'rectRound',
+      labelFontColor: '#FDFDFD',
+      labelFontSize: 12,
+      labelFontWeight: 400,
+    },
+  }
+
+  const tableConfig: TableConfig = {
+    borderColor: '#4b4e53',
+
+    bodyFontSize: 12,
+    bodyFontColor: '#fdfdfd',
+    bodyBackgroundColor: 'transparent',
+
+    headerFontSize: 12,
+    headerFontColor: '#fdfdfd',
+    headerBackgroundColor: '#36393e',
+
+    hoverBodyBackgroundColor: '#4284ff66',
+    hoverHeaderBackgroundColor: '#5f5f5f88',
+    selectedBorderColor: '#3073F2',
+  }
+
+  return {
     config: {
+      table: tableConfig,
+      pivotTable: tableConfig,
+
+      // cartesian
       line: {
+        ...baseConfig,
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairLine: crosshairLine,
       },
       column: {
+        ...baseConfig,
+
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect: crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
       },
       columnParallel: {
+        ...baseConfig,
+
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect: crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
       },
       columnPercent: {
+        ...baseConfig,
+
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect: crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
       },
       bar: {
+        ...baseConfig,
+
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect: crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
       },
       barParallel: {
+        ...baseConfig,
+
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect: crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
       },
       barPercent: {
+        ...baseConfig,
+
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect: crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
       },
       area: {
+        ...baseConfig,
+
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairLine: crosshairLine,
       },
       areaPercent: {
+        ...baseConfig,
+
+        xAxis: bandAxis,
+        yAxis: linearAxis,
+        crosshairLine: crosshairLine,
+      },
+      areaRange: {
+        ...baseConfig,
+
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairLine: crosshairLine,
       },
       scatter: {
+        ...baseConfig,
+
         xAxis: {
           ...linearAxis,
           line: {
@@ -204,6 +262,40 @@ export const darkTheme = (): CustomThemeConfig => {
           },
         },
         crosshairLine,
+      },
+      // polar
+      pie: {
+        ...baseConfig,
+      },
+      donut: {
+        ...baseConfig,
+      },
+      radar: {
+        ...baseConfig,
+      },
+      rose: {
+        ...baseConfig,
+      },
+      roseParallel: {
+        ...baseConfig,
+      },
+      // other
+      funnel: {
+        ...baseConfig,
+        color: {
+          colorScheme: [
+            '#2E62F1',
+            '#3A6EF6',
+            '#4780FA',
+            '#548CFE',
+            '#6198FF',
+            '#6FA3FF',
+            '#7CACFF',
+            '#88B7FF',
+            '#94C2FF',
+            '#A0CEFF',
+          ],
+        },
       },
     },
   }

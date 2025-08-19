@@ -13,8 +13,10 @@ import {
   zLabel,
   zLegend,
   zLineStyle,
-  zMeasures,
+  zMeasureTree,
   zPointStyle,
+  zSortAxis,
+  zSortLegend,
   zTheme,
   zTooltip,
   zXBandAxis,
@@ -32,13 +34,15 @@ import type {
   Label,
   Legend,
   LineStyle,
-  Measures,
   PointStyle,
   Theme,
   Tooltip,
   CrosshairLine,
   XBandAxis,
   YLinearAxis,
+  MeasureTree,
+  SortAxis,
+  SortLegend,
 } from '../../properties'
 import { z } from 'zod'
 
@@ -83,10 +87,10 @@ export interface Line {
   /**
    * 指标
    * @description 折线图的所有指标会自动合并为一个指标, 映射到Y轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {Measures}
+   * @type {DimensionTree}
    * @example [{id: "value", alias: "数值"}]
    */
-  measures?: Measures
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色
@@ -136,6 +140,31 @@ export interface Line {
    * @description  鼠标移动到图表上时, 显示的垂直提示线
    */
   crosshairLine?: CrosshairLine
+
+  /**
+   * @description X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+   * @example 
+   * sortAxis: {
+   *   orderBy: 'profit',
+   *   order: 'asc',
+   * }
+   * sortAxis: {
+   *   customOrder:['2019', '2020', '2021']
+   * }
+   */
+  sortAxis?: SortAxis
+  /**
+   * @description 图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+   * @example
+   * sortLegend: {
+   *   orderBy: 'profit',
+   *   order: 'asc',
+   * }
+   * sortLegend: {
+   *   customOrder:['2019', '2020', '2021']
+   * }
+   */
+  sortLegend?: SortLegend
 
   /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置
@@ -203,7 +232,7 @@ export const zLine = z.object({
   chartType: z.literal('line'),
   dataset: zDataset.optional(),
   dimensions: zDimensions.optional(),
-  measures: zMeasures.optional(),
+  measures: zMeasureTree.optional(),
   backgroundColor: zBackgroundColor.optional(),
   color: zColor.optional(),
   label: zLabel.optional(),
@@ -212,12 +241,14 @@ export const zLine = z.object({
   xAxis: zXBandAxis.optional(),
   yAxis: zYLinearAxis.optional(),
   crosshairLine: zCrosshairLine.optional(),
+  sortAxis: zSortAxis.optional(),
+  sortLegend: zSortLegend.optional(),
   theme: zTheme.optional(),
   pointStyle: zPointStyle.optional(),
   lineStyle: zLineStyle.optional(),
-  annotationPoint: zAnnotationPoint.optional(),
-  annotationVerticalLine: zAnnotationVerticalLine.optional(),
-  annotationHorizontalLine: zAnnotationHorizontalLine.optional(),
-  annotationArea: zAnnotationArea.optional(),
+  annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
+  annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
+  annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),
+  annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).optional(),
   locale: zLocale.optional(),
 })

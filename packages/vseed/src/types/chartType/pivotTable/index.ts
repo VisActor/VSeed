@@ -1,1 +1,1 @@
-export type { PivotTable } from './pivotTable'
+export * from './pivotTable'

@@ -81,10 +81,14 @@ export const dataReshapeFor1D1M = (
     )
     return { dataset: finalDataset, foldInfo, unfoldInfo }
   } else {
+    const dims =
+      measures.length === 1
+        ? ([...dimensions] as Dimension[])
+        : ([...dimensions, { id: foldMeasureName, alias: i18n`指标名称`, location: 'dimension' }] as Dimension[])
     // 展开指定的维度为指标
     const { dataset: finalDataset, unfoldInfo } = unfoldDimensions(
       foldedDataset,
-      [...dimensions, { id: foldMeasureName, alias: i18n`指标名称`, location: 'dimension' }],
+      dims,
       [{ id: foldMeasureValue, alias: i18n`指标值` }],
       0,
       unfoldDimensionGroup,

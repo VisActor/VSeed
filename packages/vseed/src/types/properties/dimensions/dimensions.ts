@@ -1,14 +1,32 @@
 import { z } from 'zod'
 
+export type Dimension = {
+  id: string
+  alias?: string
+  location?: 'dimension' | 'rowDimension' | 'columnDimension'
+}
+
+export type DimensionGroup = {
+  id: string
+  alias?: string
+  children?: (Dimension | DimensionGroup)[]
+}
+
+export type Dimensions = Dimension[]
+
+export type DimensionTree = (Dimension | DimensionGroup)[]
+
 export const zDimension = z.object({
   id: z.string(),
   alias: z.string().optional(),
-  visible: z.boolean().default(true).optional(),
-  location: z.enum(['dimension', 'rowDimension', 'columnDimension']),
+  location: z.enum(['dimension', 'rowDimension', 'columnDimension']).default('dimension'),
 })
-
-export const zDimensions = z.array(zDimension).optional()
-
-export type Dimension = z.infer<typeof zDimension>
-
-export type Dimensions = z.infer<typeof zDimensions>
+export const zDimensionGroup: z.ZodType<DimensionGroup> = z.object({
+  id: z.string(),
+  alias: z.string().optional(),
+  get children() {
+    return z.array(zDimensionGroup.or(zDimension)).optional()
+  },
+})
+export const zDimensions = z.array(zDimension)
+export const zDimensionTree = z.array(zDimensionGroup.or(zDimension))

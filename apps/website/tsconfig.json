@@ -22,6 +22,12 @@
       ],
     }
   },
+  "composite": true,
+  "references": [
+    {
+      "path": "../../packages/vseed"
+    }
+  ],
   "include": [
     "docs",
     "components",

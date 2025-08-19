@@ -1,5 +1,7 @@
 import { z } from 'zod'
 import { zLocale, type Locale } from '../../i18n'
+import type {
+  MeasureTree} from '../../properties';
 import {
   zBackgroundColor,
   zColor,
@@ -7,7 +9,7 @@ import {
   zDimensions,
   zLabel,
   zLegend,
-  zMeasures,
+  zMeasureTree,
   zTheme,
   zTooltip,
   type BackgroundColor,
@@ -16,7 +18,6 @@ import {
   type Dimensions,
   type Label,
   type Legend,
-  type Measures,
   type Theme,
   type Tooltip,
 } from '../../properties'
@@ -62,10 +63,10 @@ export interface RoseParallel {
   /**
    * 指标
    * @description 玫瑰图的指标会自动合并为一个指标, 映射到半径轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {Measures}
+   * @type {MeasureTree}
    * @example [{id: 'value', alias: '数值'}]
    */
-  measures?: Measures
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色
@@ -120,7 +121,7 @@ export const zRoseParallel = z.object({
   chartType: z.literal('roseParallel'),
   dataset: zDataset.optional(),
   dimensions: zDimensions.optional(),
-  measures: zMeasures.optional(),
+  measures: zMeasureTree.optional(),
   backgroundColor: zBackgroundColor.optional(),
   color: zColor.optional(),
   label: zLabel.optional(),

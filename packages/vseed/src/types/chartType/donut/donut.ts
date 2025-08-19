@@ -7,7 +7,7 @@ import type {
   Dimensions,
   Label,
   Legend,
-  Measures,
+  MeasureTree,
   Theme,
   Tooltip,
 } from '../../properties'
@@ -18,7 +18,7 @@ import {
   zDimensions,
   zLabel,
   zLegend,
-  zMeasures,
+  zMeasureTree,
   zTheme,
   zTooltip,
 } from '../../properties'
@@ -63,10 +63,10 @@ export interface Donut {
   /**
    * 指标
    * @description 环形图的所有指标会自动合并为一个指标, 映射到饼图的半径, 存在多个指标时, 指标名称会与其余维度合并, 并作为图例项展示.
-   * @type {Measures}
+   * @type {DimensionTree}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures?: Measures
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色
@@ -121,7 +121,7 @@ export const zDonut = z.object({
   chartType: z.literal('donut'),
   dataset: zDataset.optional(),
   dimensions: zDimensions.optional(),
-  measures: zMeasures.optional(),
+  measures: zMeasureTree.optional(),
   backgroundColor: zBackgroundColor.optional(),
   color: zColor.optional(),
   label: zLabel.optional(),

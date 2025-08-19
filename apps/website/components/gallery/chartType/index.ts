@@ -1,3 +1,6 @@
+export * from './table'
+export * from './pivotTable'
+
 export * from './line'
 export * from './column'
 export * from './columnParallel'
@@ -7,9 +10,13 @@ export * from './barParallel'
 export * from './barPercent'
 export * from './area'
 export * from './areaPercent'
+export * from './areaRange'
+export * from './scatter'
+
 export * from './pie'
 export * from './donut'
+export * from './radar'
 export * from './rose'
 export * from './roseParallel'
+
 export * from './funnel'
-export * from './scatter'

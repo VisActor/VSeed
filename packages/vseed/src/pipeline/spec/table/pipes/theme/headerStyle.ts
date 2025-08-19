@@ -1,0 +1,46 @@
+import type { BaseTableConstructorOptions } from '@visactor/vtable/es/ts-types'
+import { color } from 'd3-color'
+import type { SpecPipe, TableConfig } from 'src/types'
+
+export const headerStyle: SpecPipe = (spec, context) => {
+  const result = { ...spec } as BaseTableConstructorOptions
+  const { advancedVSeed } = context
+  const { customTheme, chartType } = advancedVSeed
+  const themConfig = customTheme?.config?.[chartType] as TableConfig
+
+  if (!result.theme || !themConfig) return result
+
+  // basic
+  const borderColor = themConfig.borderColor || 'rgb(224, 224, 224)'
+  const backgroundColor = themConfig.headerBackgroundColor || '#EEF1F5'
+  const fontColor = themConfig.headerFontColor || '#1B1F23'
+  const fontSize = themConfig.headerFontSize || 12
+  // Interaction
+  const hoverCellBgColor = themConfig.hoverHeaderBackgroundColor || '#bedaff'
+  const hoverInlineColor = themConfig.hoverHeaderBackgroundColor
+
+  result.theme.headerStyle = {
+    borderColor: borderColor,
+    borderLineWidth: 1,
+    padding: [8, 12, 8, 12],
+    textAlign: 'center',
+    hover: {
+      cellBgColor: color(hoverCellBgColor)?.copy({ opacity: 1 }).brighter(0.5).toString(),
+      inlineRowBgColor: hoverInlineColor,
+      inlineColumnBgColor: hoverInlineColor,
+    },
+    frameStyle: {
+      borderColor: [null, null, borderColor, null],
+      borderLineWidth: 1,
+    },
+    fontSize: fontSize,
+    fontVariant: 'normal',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    color: fontColor,
+    bgColor: backgroundColor,
+    lineHeight: fontSize * 1.5,
+  }
+
+  return result
+}

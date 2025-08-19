@@ -1,5 +1,53 @@
 # @visactor/vseed
 
+## 0.0.24
+
+### Patch Changes
+
+- feat: add radar chart
+
+## 0.0.23
+
+### Patch Changes
+
+- feat: add area range and update spec api
+
+## 0.0.22
+
+### Patch Changes
+
+- feat: add axis sort and legend sort
+
+## 0.0.21
+
+### Patch Changes
+
+- feat: add table and pivot table
+
+## 0.0.20
+
+### Patch Changes
+
+- feat: add table and pivot table
+
+## 0.0.19
+
+### Patch Changes
+
+- breaking-change:
+  - theme, move all base config(color, legend, label, tooltip, backgroundColor) to config
+  - format, remove round, decimalPlaces
+
+  feat:
+  - num format add fractionDigits, significantDigits, roundingPriority,roundingMode
+  - linear log and log base
+
+## 0.0.18
+
+### Patch Changes
+
+- fix: data reshape err
+
 ## 0.0.17
 
 ### Patch Changes

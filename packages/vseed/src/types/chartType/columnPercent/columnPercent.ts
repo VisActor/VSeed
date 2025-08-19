@@ -13,7 +13,7 @@ import {
   zDimensions,
   zLabel,
   zLegend,
-  zMeasures,
+  zMeasureTree,
   zStackCornerRadius,
   zTheme,
   zTooltip,
@@ -33,12 +33,14 @@ import type {
   Dimensions,
   Label,
   Legend,
-  Measures,
   StackCornerRadius,
   Theme,
   Tooltip,
   XBandAxis,
   YLinearAxis,
+  MeasureTree,
+  SortAxis,
+  SortLegend,
 } from '../../properties'
 import { z } from 'zod'
 
@@ -83,10 +85,10 @@ export interface ColumnPercent {
   /**
    * 指标
    * @description 百分比柱状图指标会自动合并为一个指标, 映射到Y轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {Measures}
+   * @type {DimensionTree}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures?: Measures
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色
@@ -145,6 +147,31 @@ export interface ColumnPercent {
   stackCornerRadius?: StackCornerRadius
 
   /**
+   * @description X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+   * @example
+   * sortAxis: {
+   *   orderBy: 'profit',
+   *   order: 'asc',
+   * }
+   * sortAxis: {
+   *   customOrder:['2019', '2020', '2021']
+   * }
+   */
+  sortAxis?: SortAxis
+  /**
+   * @description 图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+   * @example
+   * sortLegend: {
+   *   orderBy: 'profit',
+   *   order: 'asc',
+   * }
+   * sortLegend: {
+   *   customOrder:['2019', '2020', '2021']
+   * }
+   */
+  sortLegend?: SortLegend
+
+  /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置
    * @default light 默认为亮色主题
    * @description 内置light与dark两种主题, 用户可以通过Builder自定义主题
@@ -200,7 +227,7 @@ export const zColumnPercent = z.object({
   chartType: z.literal('columnPercent'),
   dataset: zDataset.optional(),
   dimensions: zDimensions.optional(),
-  measures: zMeasures.optional(),
+  measures: zMeasureTree.optional(),
   backgroundColor: zBackgroundColor.optional(),
   color: zColor.optional(),
   label: zLabel.optional(),
@@ -212,9 +239,9 @@ export const zColumnPercent = z.object({
   stackCornerRadius: zStackCornerRadius.optional(),
   theme: zTheme.optional(),
   barStyle: zBarStyle.optional(),
-  annotationPoint: zAnnotationPoint.optional(),
-  annotationVerticalLine: zAnnotationVerticalLine.optional(),
-  annotationHorizontalLine: zAnnotationHorizontalLine.optional(),
-  annotationArea: zAnnotationArea.optional(),
+  annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
+  annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
+  annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),
+  annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).optional(),
   locale: zLocale.optional(),
 })

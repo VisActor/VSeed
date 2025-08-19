@@ -57,6 +57,7 @@ export default defineConfig({
   },
   builderConfig: {
     output: {
+      sourceMap: true,
       assetPrefix: 'https://visactor.github.io/VSeed/',
     },
   },

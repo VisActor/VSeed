@@ -2,6 +2,8 @@ import {
   areaAdvancedPipeline,
   areaPercentAdvancedPipeline,
   areaPercentSpecPipeline,
+  areaRangeAdvancedPipeline,
+  areaRangeSpecPipeline,
   areaSpecPipeline,
   barAdvancedPipeline,
   barParallelAdvancedPipeline,
@@ -19,16 +21,24 @@ import {
   donutSpecPipeline,
   funnelAdvancedPipeline,
   funnelSpecPipeline,
+  heatmapAdvancedPipeline,
+  heatmapSpecPipeline,
   lineAdvancedPipeline,
   lineSpecPipeline,
   pieAdvancedPipeline,
   pieSpecPipeline,
+  pivotTableAdvancedPipeline,
+  pivotTableSpecPipeline,
+  radarAdvancedPipeline,
+  radarSpecPipeline,
   roseAdvancedPipeline,
   roseParallelAdvancedPipeline,
   roseParallelSpecPipeline,
   roseSpecPipeline,
   scatterAdvancedPipeline,
   scatterSpecPipeline,
+  tableAdvancedPipeline,
+  tableSpecPipeline,
 } from '../../pipeline'
 import { Builder } from '../builder'
 
@@ -55,6 +65,11 @@ export const registerArea = () => {
 export const registerAreaPercent = () => {
   Builder._advancedPipelineMap['areaPercent'] = areaPercentAdvancedPipeline
   Builder._specPipelineMap['areaPercent'] = areaPercentSpecPipeline
+}
+
+export const registerAreaRange = () => {
+  Builder._advancedPipelineMap['areaRange'] = areaRangeAdvancedPipeline
+  Builder._specPipelineMap['areaRange'] = areaRangeSpecPipeline
 }
 
 export const registerBarPercent = () => {
@@ -105,4 +120,22 @@ export const registerFunnel = () => {
 export const registerScatter = () => {
   Builder._advancedPipelineMap['scatter'] = scatterAdvancedPipeline
   Builder._specPipelineMap['scatter'] = scatterSpecPipeline
+}
+
+export const registerTable = () => {
+  Builder._advancedPipelineMap['table'] = tableAdvancedPipeline
+  Builder._specPipelineMap['table'] = tableSpecPipeline
+}
+
+export const registerPivotTable = () => {
+  Builder._advancedPipelineMap['pivotTable'] = pivotTableAdvancedPipeline
+  Builder._specPipelineMap['pivotTable'] = pivotTableSpecPipeline
+}
+export const registerHeatmap = () => {
+  Builder._advancedPipelineMap['heatmap'] = heatmapAdvancedPipeline
+  Builder._specPipelineMap['heatmap'] = heatmapSpecPipeline
+}
+export const registerRadar = () => {
+  Builder._advancedPipelineMap['radar'] = radarAdvancedPipeline
+  Builder._specPipelineMap['radar'] = radarSpecPipeline
 }

@@ -1,5 +1,0 @@
-export { encodingXY } from './encodingXY'
-export { encodingYX } from './encodingYX'
-export { encodingRose } from './encodingRose'
-export { encodingPie } from './encodingPie'
-export { encodingFunnel } from './encodingFunnel'

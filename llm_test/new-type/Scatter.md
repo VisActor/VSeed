@@ -1,47 +1,45 @@
 ```typescript
 /**
- * 百分比面积图类型定义
- * @description 百分比面积图，适用于展示多类别占比随时间变化的趋势，Y轴以百分比形式展示占比关系
+ * 散点图类型定义
+ * @description 散点图，适用于展示数据的分布情况，通过点的位置表示数据的数值
  * 适用场景:
- * - 时间序列的构成变化分析
- * - 多类别占比趋势对比
- * - 累积占比与单一类别占比同时展示
+ * - 分析数据的分布特征, 如数据的中心趋势, 分布范围, 异常值等
  * 数据要求:
- * - 至少1个指标字段（度量）
- * - 第一个维度会放至Y轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
- * - 所有指标会自动合并为一个指标
+ * - 至少2个数值字段（度量）
+ * - 第一个指标字段会放至X轴, 其余指标会进行合并, 映射至Y轴
+ * - 指标名称和维度名称会合并, 作为图例项展示
  * 默认开启的功能:
- * - 默认开启图例、坐标轴、百分比标签、提示信息、占比计算
+ * - 默认开启图例、坐标轴、数据点标记、提示信息、趋势线
  */
-export interface AreaPercent {
+export interface Scatter {
   /**
-   * 百分比面积图
-   * @description 百分比面积图，以百分比形式展示多类别占比随某个维度的变化
-   * @type {'areaPercent'}
-   * @example 'areaPercent'
+   * 散点图
+   * @description 散点图，适用于展示数据的分布情况，通过点的位置表示数据的数值
+   * @type {'scatter'}
+   * @example 'scatter'
    */
-  chartType: 'areaPercent'
+  chartType: 'scatter'
   /**
    * 数据集
-   * @description 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 百分比面积图的数据最终会被转换为2个维度, 1个指标.
+   * @description 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 折线图的数据最终会被转换为2个维度, 1个指标.
    * @type {Array<Record<string|number, any>>}
-   * @example [{month:'1月', category:'A', value:30}, {month:'1月', category:'B', value:70}]
+   * @example [{month:'1月', value:100}, {month:'2月', value:150}, {month:'3月', value:120}]
    */
   dataset: Dataset
 
   /**
    * 维度
-   * @description 第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
+   * @description 散点图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
    * @type {Dimensions}
-   * @example [{ id: 'month', alias: '月份' }, { id: 'year', alias: '年份' }]
+   * @example [{id: "month", alias: "月份"}]
    */
   dimensions?: Dimensions
 
   /**
    * 指标
-   * @description 百分比面积图的指标会自动合并为一个指标, 映射到Y轴, 指标名称会与其余维度合并, 作为图例项展示.
+   * @description 散点图的第一个指标字段会放至X轴, 其余指标会进行合并, 映射至Y轴
    * @type {DimensionTree}
-   * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
+   * @example [{id: "value", alias: "数值"}]
    */
   measures?: MeasureTree
 
@@ -78,9 +76,9 @@ export interface AreaPercent {
 
   /**
    * x轴
-   * @description 类目轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.
+   * @description 数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.
    */
-  xAxis?: XBandAxis
+  xAxis?: XLinearAxis
 
   /**
    * y轴
@@ -93,31 +91,6 @@ export interface AreaPercent {
    * @description  鼠标移动到图表上时, 显示的垂直提示线
    */
   crosshairLine?: CrosshairLine
-
-  /**
-   * @description X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
-   * @example
-   * sortAxis: {
-   *   orderBy: 'profit',
-   *   order: 'asc',
-   * }
-   * sortAxis: {
-   *   customOrder:['2019', '2020', '2021']
-   * }
-   */
-  sortAxis?: SortAxis
-  /**
-   * @description 图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
-   * @example
-   * sortLegend: {
-   *   orderBy: 'profit',
-   *   order: 'asc',
-   * }
-   * sortLegend: {
-   *   customOrder:['2019', '2020', '2021']
-   * }
-   */
-  sortLegend?: SortLegend
 
   /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置
@@ -138,26 +111,6 @@ export interface AreaPercent {
    * 若未配置selector, 则样式全局生效.
    */
   pointStyle?: PointStyle | PointStyle[]
-
-  /**
-   * 线图元样式
-   * @description 线图元样式配置, 用于定义图表的线图元样式, 包括线图元的颜色, 透明度, 曲线等.
-   * 支持全局样式或条件样式配置
-   * 数据筛选器
-   * 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
-   * 若未配置selector, 则样式全局生效.
-   */
-  lineStyle?: LineStyle | LineStyle[]
-
-  /**
-   * 面积图元样式
-   * @description 面积图元样式配置, 用于定义图表的面积图元样式, 包括面积图元的颜色, 透明度, 边框等.
-   * 支持全局样式或条件样式配置
-   * 数据筛选器
-   * 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
-   * 若未配置selector, 则样式全局生效.
-   */
-  areaStyle?: AreaStyle | AreaStyle[]
 
   /**
    * 标注点

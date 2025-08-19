@@ -26,6 +26,18 @@ export type XLinearAxis = {
   max?: number
 
   /**
+   * @description 是否使用对数轴, 仅对数值轴生效
+   * @default false
+   */
+  log?: boolean
+
+  /**
+   * @description 对数轴的底数, 仅对数值轴生效
+   * @default 10
+   */
+  logBase?: number
+
+  /**
    * 是否自动调整轴的刻度间隔，使刻度标签更易读
    * @description 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
    * @default true
@@ -42,7 +54,7 @@ export type XLinearAxis = {
   inverse?: boolean
 
   /**
-   * 是否在坐标轴上显示 0 值,
+   * 是否在坐标轴上强制显示 0 值,
    * @description 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
    * @default true
    * @example true

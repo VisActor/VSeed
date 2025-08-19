@@ -43,7 +43,7 @@ export interface Rose {
    * @type {Measures}
    * @example [{id: 'value', alias: '数值'}]
    */
-  measures?: Measures
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色

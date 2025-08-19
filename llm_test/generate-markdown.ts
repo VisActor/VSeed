@@ -5,6 +5,7 @@ function generateChartTypeMarkdown() {
   const chartTypes = [
     'area',
     'areaPercent',
+    'areaRange',
     'bar',
     'barParallel',
     'barPercent',
@@ -13,11 +14,15 @@ function generateChartTypeMarkdown() {
     'columnPercent',
     'donut',
     'dualAxis',
+    'funnel',
+    'heatmap',
     'line',
     'pie',
     'pivotTable',
+    'radar',
     'rose',
     'roseParallel',
+    'scatter',
     'table',
   ]
   const outputDir = path.resolve(__dirname, './new-type')
@@ -86,6 +91,11 @@ function generateChartTypeMarkdown() {
   })
 }
 
+const skipTopKeys = [
+  'Dimensions',
+  'Measures',
+]
+
 function generateComponentMarkdown() {
   const dir = path.resolve(__dirname, '../packages/vseed/src/types/properties/')
   const topKeyDir = path.resolve(__dirname, './top-key')
@@ -117,6 +127,9 @@ function generateComponentMarkdown() {
   const selectorMd = fs.readFileSync(path.resolve(__dirname, './new-type/Selector.md')).toString();
 
   topKeySet.forEach((topKey: string) => {
+    if (skipTopKeys.includes(topKey)) {
+      return
+    }
     // 首字母小写
     const topKeyLower = topKey.charAt(0).toLowerCase() + topKey.slice(1)
     let fileName: string | undefined
@@ -183,7 +196,7 @@ function generateComponentMarkdown() {
 }
 
 function generateAxisMarkdown() {
-  const axisDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/config/axis.ts')
+  const axisDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/config/axes/axis.ts')
   const fileContent = fs.readFileSync(axisDir)
   const fileContentStr = fileContent.toString()
   const outputDir = path.resolve(__dirname, './new-type')

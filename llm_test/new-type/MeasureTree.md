@@ -1,4 +1,4 @@
-### Measures
+### MeasureTree
 ```typescript
 export type Measure = {
   /**
@@ -20,7 +20,22 @@ export type Measure = {
    */
   format?: NumFormat
 }
-export type Measures = Measure[]
+export type MeasureGroup = {
+  /**
+   * @description 指标组id, 不能重复
+   */
+  id: string
+  /**
+   * @description 指标组别名, 允许重复, 未填写时, alias 为 id
+   * @default id
+   */
+  alias?: string
+  /**
+   * @description 指标组的子指标或指标组
+   */
+  children?: (Measure | MeasureGroup)[]
+}
+export type MeasureTree = (Measure | MeasureGroup)[]
 ```
 
 #### NumFormat

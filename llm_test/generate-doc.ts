@@ -3,6 +3,7 @@ import { generateMarkdown } from "./generate-markdown"
 
 async function generateDoc() {
   await generateSchema()
+  console.log('generate schema success')
   await generateMarkdown()
 }
 

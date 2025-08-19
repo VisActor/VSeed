@@ -50,3 +50,4 @@ files.forEach((file: any) => {
   }
 });
 
+console.log('generate top key success')

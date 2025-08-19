@@ -11,7 +11,7 @@
   },
   {
     "name": "measures",
-    "componentName": "Measures",
+    "componentName": "MeasureTree",
     "description": "双轴图如果有2组指标组, 则每个组内的所有指标分别自动合并为一个指标, 分别映射到双轴图的左右轴, 如果指标不成组, 则会当作一组指标处理."
   },
   {

@@ -1,6 +1,20 @@
 import { z } from 'zod';
 import { compile } from 'json-schema-to-typescript'
-import {zDataset, zDimensions, zMeasures, zBackgroundColor, zCrosshairLine, zTheme, zLocale, zCrosshairRect, zStackCornerRadius, zSelector, zSelectors} from '@visactor/vseed';
+import {
+  zDataset, 
+  zDimensions, 
+  // zMeasures, 
+  zBackgroundColor, 
+  zCrosshairLine, 
+  zTheme, 
+  zLocale, 
+  zCrosshairRect, 
+  zStackCornerRadius, 
+  zSelector, 
+  zSelectors,
+  zDimensionTree,
+  // zMeasureTree,
+} from '@visactor/vseed';
 import fs from 'fs';
 import path from 'path';
 
@@ -42,16 +56,16 @@ ${dimensionsSchema}
 \`\`\`
   `);
 
-  // Measures
-  const measuresSchema = await compile(z.toJSONSchema(zMeasures) as any, 'Measures', {
-    bannerComment: ''
-  });
-  fs.writeFileSync(path.join(__dirname, './new-type/Measures.md'), `
-### Measures
-\`\`\`typescript
-${measuresSchema}
-\`\`\`
-  `);
+//   // Measures
+//   const measuresSchema = await compile(z.toJSONSchema(zMeasures) as any, 'Measures', {
+//     bannerComment: ''
+//   });
+//   fs.writeFileSync(path.join(__dirname, './new-type/Measures.md'), `
+// ### Measures
+// \`\`\`typescript
+// ${measuresSchema}
+// \`\`\`
+//   `);
 
   // BackgroundColor
   const backgroundColorSchema = await compile(z.toJSONSchema(zBackgroundColor) as any, 'BackgroundColor', {
@@ -144,6 +158,28 @@ ${selectorSchema}
 ${selectorsSchema}
 \`\`\`
   `);
+
+  // DimensionTree
+  const dimensionTreeSchema = await compile(z.toJSONSchema(zDimensionTree) as any, 'DimensionTree', {
+    bannerComment: ''
+  });
+  fs.writeFileSync(path.join(__dirname, './new-type/DimensionTree.md'), `
+### DimensionTree
+\`\`\`typescript
+${dimensionTreeSchema}
+\`\`\`
+  `);
+
+//   // MeasureTree
+//   const measureTreeSchema = await compile(z.toJSONSchema(zMeasureTree) as any, 'MeasureTree', {
+//     bannerComment: ''
+//   });
+//   fs.writeFileSync(path.join(__dirname, './new-type/MeasureTree.md'), `
+// ### MeasureTree
+// \`\`\`typescript
+// ${measureTreeSchema}
+// \`\`\`
+//   `);
 }
 
 // generateSchema().then(() => {

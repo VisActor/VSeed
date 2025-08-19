@@ -35,7 +35,7 @@ export interface Table {
    * @type {Dimensions}
    * @example [{id: "name", alias: "名称"}]
    */
-  dimensions?: Dimensions
+  dimensions?: DimensionTree
 
   /**
    * 指标
@@ -43,7 +43,7 @@ export interface Table {
    * @type {Measures}
    * @example [{id: "value", alias: "数值"}]
    */
-  measures?: Measures
+  measures?: MeasureTree
 
   /**
    * 图表的背景颜色

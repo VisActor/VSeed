@@ -2,17 +2,17 @@
   {
     "name": "dataset",
     "componentName": "Dataset",
-    "description": "符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 条形图的数据最终会被转换为2个维度, 1个指标."
+    "description": "符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 折线图的数据最终会被转换为2个维度, 1个指标."
   },
   {
     "name": "dimensions",
     "componentName": "Dimensions",
-    "description": "第一个维度被映射到Y轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示."
+    "description": "散点图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示"
   },
   {
     "name": "measures",
     "componentName": "MeasureTree",
-    "description": "条形图指标会自动合并为一个指标, 映射到X轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示."
+    "description": "散点图的第一个指标字段会放至X轴, 其余指标会进行合并, 映射至Y轴"
   },
   {
     "name": "backgroundColor",
@@ -46,28 +46,13 @@
   },
   {
     "name": "yAxis",
-    "componentName": "YBandAxis",
-    "description": "类目轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等."
+    "componentName": "YLinearAxis",
+    "description": "数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等."
   },
   {
-    "name": "crosshairRect",
-    "componentName": "CrosshairRect",
-    "description": "水平提示框配置, 用于定义图表的水平提示框, 包括水平提示框的颜色、标签样式等."
-  },
-  {
-    "name": "stackCornerRadius",
-    "componentName": "StackCornerRadius",
-    "description": "条形图 堆叠圆角"
-  },
-  {
-    "name": "sortAxis",
-    "componentName": "SortAxis",
-    "description": "Y轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序"
-  },
-  {
-    "name": "sortLegend",
-    "componentName": "SortLegend",
-    "description": "图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序"
+    "name": "crosshairLine",
+    "componentName": "CrosshairLine",
+    "description": "鼠标移动到图表上时, 显示的垂直提示线"
   },
   {
     "name": "theme",
@@ -75,9 +60,9 @@
     "description": "内置light与dark两种主题, 用户可以通过Builder自定义主题"
   },
   {
-    "name": "barStyle",
-    "componentName": "BarStyle",
-    "description": "条形图样式配置, 用于定义图表的条形图样式, 包括条形图的颜色, 边框, 圆角等.\n支持全局样式或条件样式配置\n数据筛选器\n若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力\n若未配置selector, 则样式全局生效."
+    "name": "pointStyle",
+    "componentName": "PointStyle",
+    "description": "点图元样式配置, 用于定义图表的点图元样式, 包括点图元的颜色, 边框等.\n支持全局样式或条件样式配置\n数据筛选器\n若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力\n若未配置selector, 则样式全局生效."
   },
   {
     "name": "annotationPoint",

@@ -1,31 +1,32 @@
 ```typescript
 /**
- * 百分比面积图类型定义
- * @description 百分比面积图，适用于展示多类别占比随时间变化的趋势，Y轴以百分比形式展示占比关系
+ * 区间面积图类型定义
+ * @description 区间面积图与面积图的区别在于, 区间面积图的Y轴数据是一个区间, 而面积图的Y轴数据是一个数值. 区间面积图适用于展示数据的变化范围
  * 适用场景:
- * - 时间序列的构成变化分析
- * - 多类别占比趋势对比
- * - 累积占比与单一类别占比同时展示
+ * - 展示单一数据系列的趋势变化
+ * - 强调总量随时间的累积效果
+ * - 对比多个数据系列的总量差异
  * 数据要求:
  * - 至少1个指标字段（度量）
- * - 第一个维度会放至Y轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
+ * - 第一个维度字段映射到X轴，其余维度字段会与指标名称(存在多个指标时)合并, 作为图例项展示.
  * - 所有指标会自动合并为一个指标
  * 默认开启的功能:
- * - 默认开启图例、坐标轴、百分比标签、提示信息、占比计算
+ * - 模块开启堆叠
+ * - 默认开启图例、坐标轴、区域填充、数据标签、提示信息
  */
-export interface AreaPercent {
+export interface AreaRange {
   /**
-   * 百分比面积图
-   * @description 百分比面积图，以百分比形式展示多类别占比随某个维度的变化
-   * @type {'areaPercent'}
-   * @example 'areaPercent'
+   * 面积图
+   * @description 面积图，展示数据趋势及累积关系的图表类型
+   * @type {'area'}
+   * @example 'area'
    */
-  chartType: 'areaPercent'
+  chartType: 'areaRange'
   /**
    * 数据集
-   * @description 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 百分比面积图的数据最终会被转换为2个维度, 1个指标.
+   * @description 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 面积图的数据最终会被转换为2个维度, 1个指标.
    * @type {Array<Record<string|number, any>>}
-   * @example [{month:'1月', category:'A', value:30}, {month:'1月', category:'B', value:70}]
+   * @example [{month:'1月', value:100}, {month:'2月', value:150}, {month:'3月', value:120}]
    */
   dataset: Dataset
 
@@ -39,9 +40,9 @@ export interface AreaPercent {
 
   /**
    * 指标
-   * @description 百分比面积图的指标会自动合并为一个指标, 映射到Y轴, 指标名称会与其余维度合并, 作为图例项展示.
+   * @description 区间面积图需要2个指标, 第一个指标映射到Y轴的下边界, 第二个指标映射到Y轴的上边界, 第二个之后的指标会被忽略.
    * @type {DimensionTree}
-   * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
+   * @example [{id: 'value', alias: '数值'}]
    */
   measures?: MeasureTree
 
@@ -53,28 +54,10 @@ export interface AreaPercent {
   backgroundColor?: BackgroundColor
 
   /**
-   * 颜色
-   * @description 颜色配置, 用于定义图表的颜色方案, 包括颜色列表, 颜色映射, 颜色渐变等.
-   */
-  color?: Color
-
-  /**
    * 标签
    * @description 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
    */
   label?: Label
-
-  /**
-   * 图例
-   * @description 图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.
-   */
-  legend?: Legend
-
-  /**
-   * 提示信息
-   * @description 提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等.
-   */
-  tooltip?: Tooltip
 
   /**
    * x轴
@@ -106,18 +89,6 @@ export interface AreaPercent {
    * }
    */
   sortAxis?: SortAxis
-  /**
-   * @description 图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
-   * @example
-   * sortLegend: {
-   *   orderBy: 'profit',
-   *   order: 'asc',
-   * }
-   * sortLegend: {
-   *   customOrder:['2019', '2020', '2021']
-   * }
-   */
-  sortLegend?: SortLegend
 
   /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置

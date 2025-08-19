@@ -2,17 +2,17 @@
   {
     "name": "dataset",
     "componentName": "Dataset",
-    "description": "符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 玫瑰图的数据最终会被转换为2个维度, 1个指标."
+    "description": "符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 饼图的数据最终会被转换为1个维度, 1个指标."
   },
   {
     "name": "dimensions",
     "componentName": "Dimensions",
-    "description": "玫瑰图的第一个维度被映射到角度轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示."
+    "description": "漏斗图的所有维度会与指标名称(存在多个指标时)合并成一个维度,并作为图例项展示"
   },
   {
     "name": "measures",
     "componentName": "MeasureTree",
-    "description": "玫瑰图的指标会自动合并为一个指标, 映射到半径轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示."
+    "description": "漏斗图的所有指标会自动合并为一个指标, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示."
   },
   {
     "name": "backgroundColor",

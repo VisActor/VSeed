@@ -26,6 +26,10 @@ export const initFunnel: SpecPipe = (spec, context) => {
   result.funnel = {
     style: {
       cornerRadius: 4,
+      fill: {
+        field: encoding[0].color[0],
+        scale: 'color',
+      },
     },
     state: {
       hover: {

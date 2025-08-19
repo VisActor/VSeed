@@ -2,12 +2,11 @@ import type { ISpec } from '@visactor/vchart'
 import { isPivotChart } from 'src/pipeline/utils'
 import type { SpecPipe } from 'src/types'
 
-export const dataset: SpecPipe = (spec, context) => {
+export const datasetYX: SpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { encoding, analysis, datasetReshapeInfo } = advancedVSeed
   const { orderMapping = {} } = analysis ?? {}
   const angle = encoding[0]?.angle?.[0]
-  const x = encoding[0]?.x?.[0]
   const y = encoding[0]?.y?.[0]
   const group = encoding[0]?.group?.[0]
   const id = datasetReshapeInfo[0].id
@@ -16,20 +15,6 @@ export const dataset: SpecPipe = (spec, context) => {
   if (angle) {
     fields[angle] = {
       sortIndex: 0,
-    }
-  }
-  if (x) {
-    const order = orderMapping[x]
-    if (order) {
-      fields[x] = {
-        sortIndex: 0,
-        domain: order,
-        lockStatisticsByDomain: true,
-      }
-    } else {
-      fields[x] = {
-        sortIndex: 0,
-      }
     }
   }
   if (y) {

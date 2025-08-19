@@ -297,6 +297,9 @@ export const darkTheme = (): CustomThemeConfig => {
           ],
         },
       },
+      heatmap: {
+        ...baseConfig,
+      },
     },
   }
 }

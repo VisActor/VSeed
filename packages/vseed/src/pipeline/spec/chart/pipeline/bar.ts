@@ -1,7 +1,7 @@
 import type { SpecPipeline } from 'src/types'
 import {
   initBar,
-  dataset,
+  datasetYX,
   xLinear,
   yBand,
   backgroundColor,
@@ -32,7 +32,7 @@ const bar: SpecPipeline = [
   stackCornerRadius,
   color,
   backgroundColor,
-  dataset,
+  datasetYX,
   xLinear,
   yBand,
   label,
@@ -56,7 +56,7 @@ const pivotBar: SpecPipeline = [
     stackCornerRadius,
     color,
     backgroundColor,
-    dataset,
+    datasetYX,
     xLinear,
     yBand,
     label,

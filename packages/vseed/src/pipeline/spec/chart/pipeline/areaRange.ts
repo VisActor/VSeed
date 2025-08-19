@@ -1,6 +1,6 @@
 import type { SpecPipeline } from 'src/types'
 import {
-  dataset,
+  datasetXY,
   xBand,
   yLinear,
   backgroundColor,
@@ -33,7 +33,7 @@ const areaRange: SpecPipeline = [
     [initAreaRangeLine1, lineStyle, pointStyle, pointStateDimensionHover],
     [initAreaRangeLine2, lineStyle, pointStyle, pointStateDimensionHover],
   ),
-  dataset,
+  datasetXY,
   backgroundColor,
   xBand,
   yLinear,
@@ -57,7 +57,7 @@ const pivotAreaRange: SpecPipeline = [
       [initAreaRangeLine2, lineStyle, pointStyle, pointStateDimensionHover],
     ),
     backgroundColor,
-    dataset,
+    datasetXY,
     xBand,
     yLinear,
     label,

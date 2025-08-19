@@ -20,6 +20,7 @@ import {
   RoseChart,
   RoseParallelChart,
   ScatterChart,
+  HeatmapChart,
   FunnelChart,
   StackedRoseChart,
 } from '@components'
@@ -367,6 +368,146 @@ export const StackedRoseChart = memo(() => {
 ```
 
 ## Other
+
+### 热力图
+
+<HeatmapChart />
+
+```tsx pure {3}
+export const HeatmapChart = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'heatmap',
+    dataset: [
+      {
+        type: 'A',
+        subType: 'a',
+        value: 98,
+      },
+      {
+        type: 'A',
+        subType: 'b',
+        value: 71,
+      },
+      {
+        type: 'A',
+        subType: 'c',
+        value: 22,
+      },
+      {
+        type: 'A',
+        subType: 'd',
+        value: 49,
+      },
+      {
+        type: 'A',
+        subType: 'e',
+        value: 92,
+      },
+      {
+        type: 'B',
+        subType: 'a',
+        value: 85,
+      },
+      {
+        type: 'B',
+        subType: 'b',
+        value: 45,
+      },
+      {
+        type: 'B',
+        subType: 'c',
+        value: 19,
+      },
+      {
+        type: 'B',
+        subType: 'd',
+        value: 58,
+      },
+      {
+        type: 'B',
+        subType: 'e',
+        value: 26,
+      },
+      {
+        type: 'C',
+        subType: 'a',
+        value: 44,
+      },
+      {
+        type: 'C',
+        subType: 'b',
+        value: 23,
+      },
+      {
+        type: 'C',
+        subType: 'c',
+        value: 6,
+      },
+      {
+        type: 'C',
+        subType: 'd',
+        value: 42,
+      },
+      {
+        type: 'C',
+        subType: 'e',
+        value: 27,
+      },
+      {
+        type: 'D',
+        subType: 'a',
+        value: 79,
+      },
+      {
+        type: 'D',
+        subType: 'b',
+        value: 89,
+      },
+      {
+        type: 'D',
+        subType: 'c',
+        value: 65,
+      },
+      {
+        type: 'D',
+        subType: 'd',
+        value: 56,
+      },
+      {
+        type: 'D',
+        subType: 'e',
+        value: 1,
+      },
+      {
+        type: 'E',
+        subType: 'a',
+        value: 59,
+      },
+      {
+        type: 'E',
+        subType: 'b',
+        value: 94,
+      },
+      {
+        type: 'E',
+        subType: 'c',
+        value: 45,
+      },
+      {
+        type: 'E',
+        subType: 'd',
+        value: 80,
+      },
+      {
+        type: 'E',
+        subType: 'e',
+        value: 47,
+      },
+    ],
+  }
+  return <VChartRender vseed={vseed} />
+})
+```
 
 ### 漏斗图
 

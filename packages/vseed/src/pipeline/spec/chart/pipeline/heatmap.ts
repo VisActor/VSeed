@@ -1,17 +1,11 @@
 import type { SpecPipeline } from 'src/types'
 import {
   datasetXY,
-  xBand,
-  yLinear,
-  initLine,
   backgroundColor,
   label,
   tooltip,
-  discreteLegend,
-  color,
   initPivot,
   datasetPivot,
-  pivotDiscreteLegend,
   pivotIndicators,
   pivotAdapter,
   pivotIndicatorsAsRow,
@@ -26,19 +20,22 @@ import {
   lineStyle,
   verticalCrosshairLine,
   pointStateDimensionHover,
+  colorLegend,
+  linearColor,
+  labelColorInversion,
 } from '../pipes'
+import { initHeatmap } from '../pipes/init/heatmap'
 
 const heatmap: SpecPipeline = [
-  initLine,
-  color,
+  initHeatmap,
+  linearColor,
   backgroundColor,
   datasetXY,
-  xBand,
-  yLinear,
   label,
+  labelColorInversion,
+  colorLegend,
   tooltip,
   verticalCrosshairLine,
-  discreteLegend,
   pointStyle,
   pointStateDimensionHover,
   lineStyle,
@@ -54,13 +51,13 @@ const pivotHeatmap: SpecPipeline = [
   pivotIndicatorsAsRow,
   datasetPivot,
   pivotIndicators([
-    initLine,
-    color,
+    initHeatmap,
+    linearColor,
     backgroundColor,
     datasetXY,
-    xBand,
-    yLinear,
     label,
+    labelColorInversion,
+    colorLegend,
     tooltip,
     verticalCrosshairLine,
     pointStyle,
@@ -73,7 +70,6 @@ const pivotHeatmap: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotDiscreteLegend,
 ]
 
 export const heatmapSpecPipeline: SpecPipeline = [pivotAdapter(heatmap, pivotHeatmap)]

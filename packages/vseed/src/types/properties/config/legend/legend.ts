@@ -156,3 +156,33 @@ export const zLegend = z.object({
   labelFontColor: z.string().default('#fff').optional(),
   labelFontWeight: z.number().or(z.string()).default(400).optional(),
 })
+
+export type ColorLegend = Pick<Legend, 'position' | 'enable'>
+export const zColorLegend = z.object({
+  position: z
+    .enum([
+      'left',
+      'leftTop',
+      'leftBottom',
+      'lt',
+      'lb',
+      'top',
+      'topLeft',
+      'topRight',
+      'tl',
+      'tr',
+      'right',
+      'rightTop',
+      'rightBottom',
+      'rt',
+      'rb',
+      'bottom',
+      'bottomLeft',
+      'bottomRight',
+      'bl',
+      'br',
+    ])
+    .default('bottom')
+    .optional(),
+  enable: z.boolean().default(true).optional(),
+})

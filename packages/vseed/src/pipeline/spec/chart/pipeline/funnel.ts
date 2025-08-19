@@ -1,18 +1,16 @@
 import type { SpecPipeline } from 'src/types'
 import {
   backgroundColor,
-  color,
   datasetXY,
   datasetPivot,
   initPivot,
   label,
-  discreteLegend,
+  colorLegend,
   pivotAdapter,
   pivotColumnDimensions,
   pivotGridStyle,
   pivotIndicators,
   pivotIndicatorsAsRow,
-  pivotDiscreteLegend,
   pivotRowDimensions,
   tooltip,
   annotationPoint,
@@ -20,16 +18,17 @@ import {
   annotationHorizontalLine,
   annotationArea,
   initFunnel,
+  linearColor,
 } from '../pipes'
 
 const funnel: SpecPipeline = [
   initFunnel,
-  color,
+  linearColor,
   backgroundColor,
   datasetXY,
   label,
   tooltip,
-  discreteLegend,
+  colorLegend,
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
@@ -43,11 +42,12 @@ const pivotFunnel: SpecPipeline = [
   datasetPivot,
   pivotIndicators([
     initFunnel,
-    color,
+    linearColor,
     backgroundColor,
     datasetXY,
     label,
     tooltip,
+    colorLegend,
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,
@@ -55,7 +55,6 @@ const pivotFunnel: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotDiscreteLegend,
 ]
 
 export const funnelSpecPipeline: SpecPipeline = [pivotAdapter(funnel, pivotFunnel)]

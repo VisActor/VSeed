@@ -1,6 +1,6 @@
 import type { SpecPipeline } from 'src/types'
 import {
-  dataset,
+  datasetXY,
   backgroundColor,
   label,
   tooltip,
@@ -31,7 +31,7 @@ const roseParallel: SpecPipeline = [
   stackCornerRadius,
   color,
   backgroundColor,
-  dataset,
+  datasetXY,
   radiusAxis,
   angleAxis,
   label,
@@ -54,7 +54,7 @@ const pivotRoseParallel: SpecPipeline = [
     stackCornerRadius,
     color,
     backgroundColor,
-    dataset,
+    datasetXY,
     radiusAxis,
     angleAxis,
     label,

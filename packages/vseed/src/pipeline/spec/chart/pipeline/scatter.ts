@@ -1,6 +1,6 @@
 import type { SpecPipeline } from 'src/types'
 import {
-  dataset,
+  datasetXY,
   yLinear,
   backgroundColor,
   label,
@@ -32,7 +32,7 @@ const scatter: SpecPipeline = [
   initScatter,
   color,
   backgroundColor,
-  dataset,
+  datasetXY,
   xLinear,
   yLinear,
   label,
@@ -57,7 +57,7 @@ const pivotScatter: SpecPipeline = [
     initScatter,
     color,
     backgroundColor,
-    dataset,
+    datasetXY,
     xLinear,
     yLinear,
     label,

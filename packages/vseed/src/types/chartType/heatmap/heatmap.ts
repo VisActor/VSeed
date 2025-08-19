@@ -1,23 +1,23 @@
 import { z } from 'zod'
 import { zLocale, type Locale } from '../../i18n'
 import type {
+  ColorLegend,
+  LinearColor,
   MeasureTree} from '../../properties';
 import {
   zBackgroundColor,
-  zColor,
+  zColorLegend,
   zDataset,
   zDimensions,
   zLabel,
-  zLegend,
+  zLinearColor,
   zMeasureTree,
   zTheme,
   zTooltip,
   type BackgroundColor,
-  type Color,
   type Dataset,
   type Dimensions,
   type Label,
-  type Legend,
   type Theme,
   type Tooltip,
 } from '../../properties'
@@ -79,11 +79,10 @@ export interface Heatmap {
    * 颜色
    * @description 颜色配置, 用于定义图表的颜色方案, 包括颜色列表, 颜色映射, 颜色渐变等.
    */
-  color?: Color
+  color?: LinearColor
 
   /**
-   * 标签
-   * @description 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
+   * @description 热力图标签配置, 用于定义图表的数据标签, 自动开启标签反色, 确保标签可读性.
    */
   label?: Label
 
@@ -91,7 +90,7 @@ export interface Heatmap {
    * 图例
    * @description 热力图的颜色图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.
    */
-  legend?: Legend
+  legend?: ColorLegend
 
   /**
    * 提示信息
@@ -123,9 +122,9 @@ export const zHeatmap = z.object({
   dimensions: zDimensions.optional(),
   measures: zMeasureTree.optional(),
   backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
+  color: zLinearColor.optional(),
   label: zLabel.optional(),
-  legend: zLegend.optional(),
+  legend: zColorLegend.optional(),
   tooltip: zTooltip.optional(),
   theme: zTheme.optional(),
   locale: zLocale.optional(),

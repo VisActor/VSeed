@@ -1,6 +1,6 @@
 import type { SpecPipeline } from 'src/types'
 import {
-  dataset,
+  datasetYX,
   xLinear,
   yBand,
   initBarParallel,
@@ -32,7 +32,7 @@ const barParallel: SpecPipeline = [
   stackCornerRadius,
   color,
   backgroundColor,
-  dataset,
+  datasetYX,
   xLinear,
   yBand,
   label,
@@ -56,7 +56,7 @@ const pivotBarParallel: SpecPipeline = [
     stackCornerRadius,
     color,
     backgroundColor,
-    dataset,
+    datasetYX,
     xLinear,
     yBand,
     label,

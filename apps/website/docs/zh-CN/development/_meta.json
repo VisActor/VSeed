@@ -4,5 +4,11 @@
     "type": "dir",
     "name": "deployment",
     "label": "deployment"
+  },
+  {
+    "type": "dir",
+    "name": "tests",
+    "label": "tests",
+    "collapsed": true
   }
 ]

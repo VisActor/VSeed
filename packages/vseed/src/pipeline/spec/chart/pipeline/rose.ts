@@ -1,6 +1,6 @@
 import type { SpecPipeline } from 'src/types'
 import {
-  dataset,
+  datasetXY,
   backgroundColor,
   label,
   tooltip,
@@ -29,7 +29,7 @@ const rose: SpecPipeline = [
   stackInverse,
   color,
   backgroundColor,
-  dataset,
+  datasetXY,
   radiusAxis,
   angleAxis,
   label,
@@ -49,7 +49,7 @@ const pivotRose: SpecPipeline = [
     stackInverse,
     color,
     backgroundColor,
-    dataset,
+    datasetXY,
     radiusAxis,
     angleAxis,
     label,

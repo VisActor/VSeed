@@ -1,6 +1,6 @@
 import type { SpecPipeline } from 'src/types'
 import {
-  dataset,
+  datasetXY,
   backgroundColor,
   label,
   tooltip,
@@ -29,7 +29,7 @@ const radar: SpecPipeline = [
   initRadar,
   color,
   backgroundColor,
-  dataset,
+  datasetXY,
   radarAngleAxis,
   radarRadiusAxis,
   label,
@@ -55,7 +55,7 @@ const pivotRadar: SpecPipeline = [
     initRadar,
     color,
     backgroundColor,
-    dataset,
+    datasetXY,
     radarAngleAxis,
     radarRadiusAxis,
     label,

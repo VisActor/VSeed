@@ -19,6 +19,7 @@
   "rose",
   "roseParallel",
 
+  "heatmap",
   "funnel",
   {
     "type": "dir",

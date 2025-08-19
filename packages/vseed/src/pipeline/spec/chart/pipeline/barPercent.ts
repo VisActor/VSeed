@@ -1,7 +1,7 @@
 import type { SpecPipeline } from 'src/types'
 import {
   initBar,
-  dataset,
+  datasetYX,
   xLinear,
   yBand,
   percent,
@@ -34,7 +34,7 @@ const barPercent: SpecPipeline = [
   color,
   backgroundColor,
   percent,
-  dataset,
+  datasetYX,
   xLinear,
   yBand,
   label,
@@ -59,7 +59,7 @@ const pivotBarPercent: SpecPipeline = [
     color,
     backgroundColor,
     percent,
-    dataset,
+    datasetYX,
     yBand,
     xLinear,
     label,

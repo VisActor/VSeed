@@ -1,7 +1,7 @@
 import type { SpecPipeline } from 'src/types'
 import {
   initColumn,
-  dataset,
+  datasetXY,
   xBand,
   yLinear,
   backgroundColor,
@@ -34,7 +34,7 @@ const column: SpecPipeline = [
   stackInverse,
   color,
   backgroundColor,
-  dataset,
+  datasetXY,
   xBand,
   yLinear,
   label,
@@ -59,7 +59,7 @@ const pivotColumn: SpecPipeline = [
     stackInverse,
     color,
     backgroundColor,
-    dataset,
+    datasetXY,
     xBand,
     yLinear,
     label,

@@ -1,6 +1,6 @@
 import type { SpecPipeline } from 'src/types'
 import {
-  dataset,
+  datasetXY,
   xBand,
   yLinear,
   initLine,
@@ -32,7 +32,7 @@ const heatmap: SpecPipeline = [
   initLine,
   color,
   backgroundColor,
-  dataset,
+  datasetXY,
   xBand,
   yLinear,
   label,
@@ -57,7 +57,7 @@ const pivotHeatmap: SpecPipeline = [
     initLine,
     color,
     backgroundColor,
-    dataset,
+    datasetXY,
     xBand,
     yLinear,
     label,

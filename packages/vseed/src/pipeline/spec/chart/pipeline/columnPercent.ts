@@ -1,7 +1,7 @@
 import type { SpecPipeline } from 'src/types'
 import {
   initColumn,
-  dataset,
+  datasetXY,
   xBand,
   yLinear,
   percent,
@@ -36,7 +36,7 @@ const columnPercent: SpecPipeline = [
   color,
   backgroundColor,
   percent,
-  dataset,
+  datasetXY,
   xBand,
   yLinear,
   label,
@@ -62,7 +62,7 @@ const pivotColumnPercent: SpecPipeline = [
     color,
     percent,
     backgroundColor,
-    dataset,
+    datasetXY,
     xBand,
     yLinear,
     label,

@@ -4,7 +4,7 @@ import { VChartRender } from 'components/render/Chart'
 
 export const Dataset20K = memo(() => {
   const vseed: VSeed = {
-    chartType: 'column',
+    chartType: 'scatter',
     measures: [{ id: '250820161421052' }, { id: '250820161421061' }],
     dimensions: [
       { id: '250820161421039' },
@@ -99546,6 +99546,9 @@ export const Dataset20K = memo(() => {
         '250820161421423': '办公用-器具-10003836',
       },
     ],
+    label:{
+      enable: false,
+    }
   }
   return <VChartRender vseed={vseed} />
 })

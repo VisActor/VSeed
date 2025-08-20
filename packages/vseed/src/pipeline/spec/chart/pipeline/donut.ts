@@ -20,6 +20,7 @@ import {
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationArea,
+  progressive,
 } from '../pipes'
 
 const donut: SpecPipeline = [
@@ -27,6 +28,7 @@ const donut: SpecPipeline = [
   color,
   backgroundColor,
   datasetXY,
+  progressive,
   label,
   tooltip,
   discreteLegend,
@@ -46,6 +48,7 @@ const pivotDonut: SpecPipeline = [
     color,
     backgroundColor,
     datasetXY,
+    progressive,
     label,
     tooltip,
     annotationPoint,

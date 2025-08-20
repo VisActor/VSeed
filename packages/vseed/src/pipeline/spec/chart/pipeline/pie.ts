@@ -20,6 +20,7 @@ import {
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationArea,
+  progressive,
 } from '../pipes'
 
 const pie: SpecPipeline = [
@@ -27,6 +28,7 @@ const pie: SpecPipeline = [
   color,
   backgroundColor,
   datasetXY,
+  progressive,
   label,
   tooltip,
   discreteLegend,
@@ -46,6 +48,7 @@ const pivotPie: SpecPipeline = [
     color,
     backgroundColor,
     datasetXY,
+    progressive,
     label,
     tooltip,
     annotationPoint,

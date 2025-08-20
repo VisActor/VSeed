@@ -27,6 +27,7 @@ import {
   annotationAreaBand,
   verticalCrosshairRect,
   stackCornerRadius,
+  progressive,
 } from '../pipes'
 
 const columnPercent: SpecPipeline = [
@@ -37,6 +38,7 @@ const columnPercent: SpecPipeline = [
   backgroundColor,
   percent,
   datasetXY,
+  progressive,
   xBand,
   yLinear,
   label,
@@ -63,6 +65,7 @@ const pivotColumnPercent: SpecPipeline = [
     percent,
     backgroundColor,
     datasetXY,
+    progressive,
     xBand,
     yLinear,
     label,

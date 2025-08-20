@@ -26,6 +26,7 @@ import {
   annotationAreaBand,
   verticalCrosshairRect,
   stackCornerRadius,
+  progressive,
 } from '../pipes'
 
 const column: SpecPipeline = [
@@ -35,6 +36,7 @@ const column: SpecPipeline = [
   color,
   backgroundColor,
   datasetXY,
+  progressive,
   xBand,
   yLinear,
   label,
@@ -60,6 +62,7 @@ const pivotColumn: SpecPipeline = [
     color,
     backgroundColor,
     datasetXY,
+    progressive,
     xBand,
     yLinear,
     label,

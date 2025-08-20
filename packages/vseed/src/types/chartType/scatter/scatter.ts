@@ -199,7 +199,7 @@ export const zScatter = z.object({
   yAxis: zYLinearAxis.optional(),
   crosshairLine: zCrosshairLine.optional(),
   theme: zTheme.optional(),
-  pointStyle: zPointStyle.optional(),
+  pointStyle: z.array(zPointStyle).or(zPointStyle).optional(),
   annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
   annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
   annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),

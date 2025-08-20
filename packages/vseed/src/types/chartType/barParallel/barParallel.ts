@@ -238,7 +238,7 @@ export const zBarParallel = z.object({
   crosshairRect: zCrosshairRect.optional(),
   stackCornerRadius: zStackCornerRadius.optional(),
   theme: zTheme.optional(),
-  barStyle: zBarStyle.optional(),
+  barStyle: z.array(zBarStyle).or(zBarStyle).optional(),
   annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
   annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
   annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),

@@ -34,9 +34,12 @@ export const pointStyle: SpecPipe = (spec, context) => {
           size: pointSize,
           fill: pointColor,
           fillOpacity: pointColorOpacity,
-          stroke: pointBorderColor,
-          lineWidth: pointBorderWidth,
-          lineDash: lineDash,
+          innerBorder: {
+            stroke: pointBorderColor,
+            lineWidth: pointBorderWidth,
+            distance: (pointBorderWidth || 0) / 2,
+            lineDash: lineDash,
+          },
         },
       },
     }

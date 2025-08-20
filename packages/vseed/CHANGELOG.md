@@ -1,5 +1,14 @@
 # @visactor/vseed
 
+## 0.0.25
+
+### Patch Changes
+
+- feat: add heatmap
+- feat: optimize the zero dimensions style in line\area chart
+- fix: stroke error in pie and donut
+- feat: optimize the linear color in funnel
+
 ## 0.0.24
 
 ### Patch Changes

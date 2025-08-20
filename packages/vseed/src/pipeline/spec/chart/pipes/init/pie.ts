@@ -10,7 +10,7 @@ export const initPie: SpecPipe = (spec, context) => {
     return result
   }
 
-  const showStroke = dataset.length > 20
+  const showStroke = dataset.length <= 30
 
   result.type = 'pie'
   result.outerRadius = 0.8

@@ -4,15 +4,17 @@ import type { BarStyle, Datum, SpecPipe } from 'src/types'
 
 export const barStyle: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const { markStyle } = advancedVSeed
+  const { markStyle, dataset } = advancedVSeed
   const { barStyle } = markStyle
+
+  const showStroke = dataset.length <= 100
 
   const result = {
     ...spec,
     bar: {
       style: {
         stroke: '#fff',
-        lineWidth: 1,
+        lineWidth: showStroke ? 1 : 0,
       },
       state: {
         hover: {

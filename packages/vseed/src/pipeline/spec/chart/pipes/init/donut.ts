@@ -9,7 +9,7 @@ export const initDonut: SpecPipe = (spec, context) => {
   if (!encoding[0].angle || !encoding[0].radius || !encoding[0].group) {
     return result
   }
-  const showStroke = dataset.length > 20
+  const showStroke = dataset.length <= 30
 
   result.type = 'pie'
   result.outerRadius = 0.8

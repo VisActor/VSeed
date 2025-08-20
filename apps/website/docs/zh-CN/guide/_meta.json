@@ -1,1 +1,8 @@
-["guide", "quickStart"]
+[
+  "quickStart",
+  {
+    "type": "dir",
+    "name": "intro",
+    "label": "功能概览"
+  }
+]

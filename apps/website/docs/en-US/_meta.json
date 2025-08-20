@@ -1,12 +1,12 @@
 [
   {
     "text": "Guide",
-    "link": "/guide/quickStart",
+    "link": "/guide/intro",
     "activeMatch": "/guide/"
   },
   {
     "text": "Examples",
-    "link": "/galley/chartType/line",
+    "link": "/galley/chartType",
     "activeMatch": "/galley"
   },
   {

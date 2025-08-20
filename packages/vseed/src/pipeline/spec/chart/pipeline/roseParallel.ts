@@ -24,6 +24,7 @@ import {
   initRoseParallel,
   radiusAxis,
   angleAxis,
+  progressive,
 } from '../pipes'
 
 const roseParallel: SpecPipeline = [
@@ -32,6 +33,7 @@ const roseParallel: SpecPipeline = [
   color,
   backgroundColor,
   datasetXY,
+  progressive,
   radiusAxis,
   angleAxis,
   label,
@@ -55,6 +57,7 @@ const pivotRoseParallel: SpecPipeline = [
     color,
     backgroundColor,
     datasetXY,
+    progressive,
     radiusAxis,
     angleAxis,
     label,

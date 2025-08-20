@@ -21,6 +21,7 @@ import {
   initRose,
   radiusAxis,
   angleAxis,
+  progressive,
 } from '../pipes'
 
 const rose: SpecPipeline = [
@@ -30,6 +31,7 @@ const rose: SpecPipeline = [
   color,
   backgroundColor,
   datasetXY,
+  progressive,
   radiusAxis,
   angleAxis,
   label,
@@ -50,6 +52,7 @@ const pivotRose: SpecPipeline = [
     color,
     backgroundColor,
     datasetXY,
+    progressive,
     radiusAxis,
     angleAxis,
     label,

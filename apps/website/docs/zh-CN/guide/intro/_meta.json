@@ -9,5 +9,5 @@
   "internationalization",
   "crossPlatformRender",
   "separateBuild",
-  "performance",
+  "performance"
 ]

@@ -59,9 +59,15 @@ export const VChartRender = memo((props: { vseed: VSeed }) => {
     builderRef.current = builder
 
     const spec = builder.build() as ISpec
-    const vchart = new VChart(spec, { dom: ref.current })
+    console.log('builder performance', builder.performance)
 
+    const start = performance.now()
+    console.log('render Start')
+    const vchart = new VChart(spec, { dom: ref.current })
     vchart.renderSync()
+    const end = performance.now()
+
+    console.log('render time', end - start)
 
     return () => vchart.release()
   }, [dark])

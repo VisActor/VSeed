@@ -5,7 +5,7 @@ import type { SpecPipe, Tooltip } from 'src/types'
 export const tooltip: SpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed } = context
-  const { measures, datasetReshapeInfo, chartType } = advancedVSeed
+  const { measures, datasetReshapeInfo, chartType, locale } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
@@ -42,7 +42,7 @@ export const tooltip: SpecPipe = (spec, context) => {
               return formatter(value)
             }
             if (autoFormat) {
-              return autoFormatter(value)
+              return autoFormatter(value, locale)
             }
             return String(value)
           },
@@ -72,7 +72,7 @@ export const tooltip: SpecPipe = (spec, context) => {
               return formatter(value)
             }
             if (autoFormat) {
-              return autoFormatter(value)
+              return autoFormatter(value, locale)
             }
             return String(value)
           },

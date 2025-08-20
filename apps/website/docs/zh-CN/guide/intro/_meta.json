@@ -8,5 +8,6 @@
   "annotation",
   "internationalization",
   "crossPlatformRender",
-  "separateBuild"
+  "separateBuild",
+  "performance",
 ]

@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.26
+
+### Patch Changes
+
+- fix: same alias error in parallel chart
+
 ## 0.0.25
 
 ### Patch Changes

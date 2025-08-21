@@ -35,7 +35,7 @@ export const annotationPoint: SpecPipe = (spec, context) => {
     } = annotationPoint
 
     const dataset = advancedVSeed.dataset.flat()
-    const selectedData = dataset.filter((datum) => selector(datum, selectorPoint))
+    const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
 
     return selectedData.map((datum) => {
       return {

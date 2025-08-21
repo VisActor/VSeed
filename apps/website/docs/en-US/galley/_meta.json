@@ -1,14 +1,14 @@
 [
   {
     "type": "dir",
-    "name": "chartType",
-    "label": "chartType",
+    "name": "dataConfig",
+    "label": "dataConfig",
     "collapsed": true
   },
   {
     "type": "dir",
-    "name": "dataConfig",
-    "label": "dataConfig",
+    "name": "chartType",
+    "label": "chartType",
     "collapsed": true
   },
   {
@@ -53,7 +53,7 @@
     "label": "i18n",
     "collapsed": true
   },
-    {
+  {
     "type": "dir",
     "name": "api",
     "label": "api",

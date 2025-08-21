@@ -1,6 +1,6 @@
 {
   "name": "@visactor/vseed",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "type": "module",
   "exports": {
     ".": {
@@ -40,6 +40,8 @@
     "globals": "16.2.0",
     "typescript": "5.8.3",
     "typescript-eslint": "8.35.1",
-    "vitest": "3.2.4"
+    "vitest": "3.2.4",
+    "@visactor/vtable": "latest",
+    "@visactor/vchart": "latest"
   }
 }

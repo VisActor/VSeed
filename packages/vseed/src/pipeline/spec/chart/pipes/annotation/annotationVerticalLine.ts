@@ -97,7 +97,7 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
       return xValueArr.map(generateOneMarkLine)
     }
 
-    const selectedData = dataset.filter((datum) => selector(datum, selectorPoint))
+    const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
 
     return selectedData.map((datum) => {
       const x = encoding[0]?.x?.[0]

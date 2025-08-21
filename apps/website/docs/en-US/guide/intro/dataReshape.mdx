@@ -4,6 +4,10 @@ pageType: doc
 
 # 数据重塑
 
+:::info
+数据和图表类型是完全解耦的, 无论有多少维度或指标, VSeed 都可以始终重塑它们. 代价可能是图表的语义不佳, 但这是值得的.
+:::
+
 ```tsx direction=vertical
 import { useRef, useEffect, useState } from 'react'
 import VChart from '@visactor/vchart'

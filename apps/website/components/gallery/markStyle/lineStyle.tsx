@@ -42,7 +42,7 @@ export const SelectorLinePartialDatum = memo(() => {
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
     lineStyle: {
-      selector: [{ date: '2019' }, { sales: 60 }],
+      selector: [ { sales: 60 }],
       lineColor: 'red',
       lineWidth: 2,
       lineStyle: 'solid',

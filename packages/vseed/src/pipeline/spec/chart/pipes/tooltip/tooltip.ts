@@ -1,6 +1,6 @@
 import { isEmpty } from 'remeda'
 import { autoFormatter, createFormatter, findMeasureById } from '../../../../utils'
-import type { SpecPipe, Tooltip } from 'src/types'
+import type { Datum, SpecPipe, Tooltip } from 'src/types'
 
 export const tooltip: SpecPipe = (spec, context) => {
   const result = { ...spec }
@@ -25,8 +25,15 @@ export const tooltip: SpecPipe = (spec, context) => {
           visible: true,
           hasShape: true,
           shapeType: 'rectRound',
-          key: (datum) => (datum && item.alias) || datum[item.id] || '',
-          value: (datum) => (datum && (datum[item.id] as string)) || '',
+          key: (datum: unknown) => {
+            if (item.alias || item.id) {
+              return item.alias || item.id
+            }
+            return (datum as Datum) && ((datum as Datum)[item.id] as string)
+          },
+          value: (datum: unknown) => {
+            return (datum as Datum) && ((datum as Datum)[item.id] as string)
+          },
         })),
         {
           visible: true,

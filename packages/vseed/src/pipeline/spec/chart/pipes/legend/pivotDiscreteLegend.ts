@@ -8,7 +8,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
   const result = { ...spec } as PivotChartConstructorOptions
   const { advancedVSeed } = context
   const { chartType } = advancedVSeed
-   const baseConfig = advancedVSeed.config[chartType] as { legend: Legend, color: Color }
+  const baseConfig = advancedVSeed.config[chartType] as { legend: Legend; color: Color }
 
   if (!baseConfig || !baseConfig.legend) {
     return result
@@ -33,7 +33,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
     maxSize,
     border,
     shapeType = 'rectRound',
-  } = (legend || {})
+  } = legend || {}
 
   const orient = ['bottom', 'bottomLeft', 'bottomRight', 'bl', 'br'].includes(position)
     ? 'bottom'
@@ -72,6 +72,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
 
     item: {
       focus: true,
+      maxWidth: 260,
       focusIconStyle: {
         size: labelFontSize + 2,
         fill: labelFontColor,

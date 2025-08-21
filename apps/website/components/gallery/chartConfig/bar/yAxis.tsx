@@ -104,7 +104,7 @@ export const BarYAxisEnable = memo(() => {
       labelAutoLimit: true,
       labelAutoRotate: false,
       labelAutoHideGap: 0,
-      labelAutoLimitLength: 100,
+      labelAutoLimitLength: 80,
       labelAutoRotateAngleRange: [0, -45, -90],
       line: {
         visible: true,

@@ -19,7 +19,7 @@ export const annotationPoint: SpecPipe = (spec, context) => {
     const {
       selector: selectorPoint,
       text = '',
-      textColor = '#ffffff',
+      textColor = '#cccccc',
       textFontSize = 12,
       textFontWeight = 400,
       textAlign = 'center',
@@ -59,12 +59,14 @@ export const annotationPoint: SpecPipe = (spec, context) => {
           offsetY,
           offsetX,
           text: {
-            visible: true,
             text: text,
             style: {
+              visible: true,
               textAlign: textAlign,
               textBaseline: textBaseline,
               fill: textColor,
+              stroke: backgroundColor,
+              lineWidth: 1,
               fontSize: textFontSize,
               fontWeight: textFontWeight,
             },
@@ -75,7 +77,7 @@ export const annotationPoint: SpecPipe = (spec, context) => {
                 cornerRadius: backgroundBorderRadius ?? 4,
                 fill: backgroundColor,
                 stroke: backgroundBorderColor,
-                strokeWidth: backgroundBorderWidth,
+                lineWidth: backgroundBorderWidth,
               },
             },
           },

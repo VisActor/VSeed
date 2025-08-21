@@ -104,7 +104,7 @@ export const ColumnXAxisEnable = memo(() => {
       labelAutoLimit: true,
       labelAutoRotate: true,
       labelAutoHideGap: 5,
-      labelAutoLimitLength: 100,
+      labelAutoLimitLength: 80,
       labelAutoRotateAngleRange: [0, -45, -90],
       line: {
         visible: true,

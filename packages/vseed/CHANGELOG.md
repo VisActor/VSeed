@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.31
+
+### Patch Changes
+
+- fix: optimize the ui and style
+
 ## 0.0.30
 
 ### Patch Changes

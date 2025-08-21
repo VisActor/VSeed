@@ -16,7 +16,7 @@ export const rowHeaderStyle: SpecPipe = (spec, context) => {
   const fontSize = themConfig.headerFontSize || 12
   // Interaction
   const hoverCellBgColor = themConfig.hoverHeaderBackgroundColor || '#bedaff'
-  const hoverInlineColor = themConfig.hoverBodyInlineBackgroundColor || '#bedaff'
+  const hoverInlineColor = themConfig.hoverHeaderInlineBackgroundColor || '#bedaff'
 
   result.theme.rowHeaderStyle = {
     borderColor: borderColor,

@@ -24,6 +24,7 @@ export {
   registerRadar,
 } from './builder/register/chartType'
 
+export * from './pipeline/utils'
 export * from './types'
 export * from './dataReshape'
 export * from './dataSelector'

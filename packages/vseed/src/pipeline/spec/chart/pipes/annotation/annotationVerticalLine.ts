@@ -78,6 +78,7 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
           fill: textColor,
           fontSize: textFontSize,
           fontWeight: textFontWeight,
+          dy: textFontSize,
         },
         labelBackground: {
           visible: backgroundVisible,

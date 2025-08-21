@@ -73,6 +73,7 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
           position: positionMap[textPosition],
           style: {
             visible: true,
+            dy: textFontSize,
             stroke: backgroundColor,
             lineWidth: 1,
             textAlign: textAlign,

@@ -93,6 +93,7 @@ export const discreteLegend: SpecPipe = (spec, context) => {
         },
       },
     },
+    padding: 0,
   }
   return result
 }

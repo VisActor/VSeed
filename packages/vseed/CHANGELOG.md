@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.28
+
+### Patch Changes
+
+- feat: remove d3 color
+
 ## 0.0.27
 
 ### Patch Changes

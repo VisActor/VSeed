@@ -1,12 +1,12 @@
 [
   {
     "text": "介绍",
-    "link": "/guide/guide",
+    "link": "/guide/intro",
     "activeMatch": "/guide/"
   },
   {
     "text": "示例",
-    "link": "/galley/chartType",
+    "link": "/galley/dataConfig/dataset",
     "activeMatch": "/galley"
   },
   {

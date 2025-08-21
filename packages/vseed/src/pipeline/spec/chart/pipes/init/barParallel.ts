@@ -13,7 +13,7 @@ export const initBarParallel: SpecPipe = (spec, context) => {
 
   result.type = 'bar'
   result.direction = 'horizontal'
-  result.yField = [encoding[0].y[0], unfoldInfo.groupName] as string[]
+  result.yField = [encoding[0].y[0], unfoldInfo.groupId] as string[]
   result.xField = encoding[0].x[0]
   result.seriesField = encoding[0].group[0]
   result.padding = 0

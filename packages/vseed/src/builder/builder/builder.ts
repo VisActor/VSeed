@@ -20,6 +20,7 @@ export class Builder implements VSeedBuilder {
   private _vseed: VSeed
   private _advancedVSeed: AdvancedVSeed | null = null
   private _spec: Spec | null = null
+  private _performance: Record<string, string | number> = {}
 
   constructor(vseed: VSeed) {
     this._vseed = vseed
@@ -76,6 +77,14 @@ export class Builder implements VSeedBuilder {
 
   set spec(value) {
     this._spec = value
+  }
+
+  get performance() {
+    return this._performance
+  }
+
+  set performance(value) {
+    this._performance = value
   }
 
   static _advancedPipelineMap: Partial<Record<ChartType, AdvancedPipeline>> = {}

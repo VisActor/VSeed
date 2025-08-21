@@ -45,14 +45,12 @@ export type AreaStyle = {
    * 面积图元的颜色
    * @description 面积图元的颜色
    * @type {string}
-   * @default {undefined} follow series color
    */
   areaColor?: string
   /**
    * 面积图元的颜色透明度
    * @description 面积图元的颜色透明度
    * @type {number}
-   * @default 1
    */
   areaColorOpacity?: number
 }

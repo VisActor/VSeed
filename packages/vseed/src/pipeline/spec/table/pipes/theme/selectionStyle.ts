@@ -1,5 +1,4 @@
 import type { BaseTableConstructorOptions } from '@visactor/vtable/es/ts-types'
-import { color } from 'd3-color'
 import type { SpecPipe, TableConfig } from 'src/types'
 
 export const selectionStyle: SpecPipe = (spec, context) => {
@@ -11,15 +10,12 @@ export const selectionStyle: SpecPipe = (spec, context) => {
   if (!result.theme || !themConfig) return result
 
   const borderColor = themConfig.selectedBorderColor || 'rgb(224, 224, 224)'
+  const backgroundColor = themConfig.selectedBackgroundColor || 'rgb(224, 224, 224, 0.5)'
 
   result.theme.selectionStyle = {
     cellBorderColor: borderColor,
     cellBorderLineWidth: 2,
-    cellBgColor: color(borderColor)
-      ?.copy({
-        opacity: 0.15,
-      })
-      .toString(),
+    cellBgColor: backgroundColor,
   }
 
   return result

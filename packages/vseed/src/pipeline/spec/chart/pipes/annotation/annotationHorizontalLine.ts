@@ -100,7 +100,7 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
       return yValueArr.map(generateOneMarkLine)
     }
 
-    const selectedData = dataset.filter((datum) => selector(datum, selectorPoint))
+    const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
 
     return selectedData.map((datum) => {
       const y = encoding[0]?.y?.[0]

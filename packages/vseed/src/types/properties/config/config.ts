@@ -21,16 +21,21 @@ export const zTableConfig = z.object({
   bodyFontSize: z.number().optional(),
   bodyFontColor: z.string().optional(),
   bodyBackgroundColor: z.string().optional(),
+  // Body interaction
   hoverBodyBackgroundColor: z.string().optional(),
+  hoverBodyInlineBackgroundColor: z.string().optional(),
 
   // Header
   headerFontSize: z.number().optional(),
   headerFontColor: z.string().optional(),
   headerBackgroundColor: z.string().optional(),
+  // Header interaction
   hoverHeaderBackgroundColor: z.string().optional(),
+  hoverHeaderInlineBackgroundColor: z.string().optional(),
 
   // Interaction
   selectedBorderColor: z.string().optional(),
+  selectedBackgroundColor: z.string().optional(),
 })
 export const zPivotTableConfig = zTableConfig
 

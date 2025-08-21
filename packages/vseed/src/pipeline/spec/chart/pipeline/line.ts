@@ -26,6 +26,7 @@ import {
   lineStyle,
   verticalCrosshairLine,
   pointStateDimensionHover,
+  progressive,
 } from '../pipes'
 
 const line: SpecPipeline = [
@@ -33,6 +34,7 @@ const line: SpecPipeline = [
   color,
   backgroundColor,
   datasetXY,
+  progressive,
   xBand,
   yLinear,
   label,
@@ -58,6 +60,7 @@ const pivotLine: SpecPipeline = [
     color,
     backgroundColor,
     datasetXY,
+    progressive,
     xBand,
     yLinear,
     label,

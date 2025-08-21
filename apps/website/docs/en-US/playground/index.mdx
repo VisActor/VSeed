@@ -7,13 +7,17 @@ pageType: custom
 ```tsx
 const Demo = () => {
   const vseed: VSeed = {
-    chartType: 'area',
-    dataset: [{ a: 10, b: 20, c: 30, d: 40, e: 50 }],
-    sortLegend: {
-      order: 'desc',
-      orderBy: 'profit',
-    },
-  }
+  "chartType": "bar",
+  "dataset": [
+      { "date": "2019", "goalProfit": 10, "profit": 10, "sales": 100, "leftCount": 1, "salesCount": 100 },
+      { "date": "2020", "goalProfit": 30, "profit": 30, "sales": 320, "leftCount": 2, "salesCount": 200 },
+      { "date": "2021", "goalProfit": 30, "profit": 30, "sales": 300, "leftCount": 3, "salesCount": 300 },
+      { "date": "2022", "goalProfit": 50, "profit": 50, "sales": 240, "leftCount": 4, "salesCount": 400 },
+      { "date": "2023", "goalProfit": 40, "profit": 40, "sales": 500, "leftCount": 5, "salesCount": 500 }
+  ],
+  "dimensions": [{ "id": "date" }],
+  "measures":   [{ "id": "profit" }],
+}
 
   if (zVSeed.safeParse(vseed).success) {
     console.log('zVSeed parse success!!!')
@@ -44,8 +48,9 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
     }
     const theme = dark ? 'dark' : 'light'
     const builder = Builder.from({ ...vseed, theme })
-    console.log('builder', builder)
     const spec = builder.build()
+    console.log('builder', builder)
+    console.log('builder performance', builder.performance)
 
     builderRef.current = builder
     if (isPivotChart(vseed)) {

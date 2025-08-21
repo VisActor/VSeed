@@ -12,7 +12,7 @@ export const initRoseParallel: SpecPipe = (spec, context) => {
   }
 
   result.type = 'rose'
-  result.categoryField = [encoding[0].angle[0], unfoldInfo.groupName]
+  result.categoryField = [encoding[0].angle[0], unfoldInfo.groupId]
   result.valueField = encoding[0].radius[0]
   result.seriesField = encoding[0].group[0]
   result.padding = 0

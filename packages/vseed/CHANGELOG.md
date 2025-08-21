@@ -1,5 +1,44 @@
 # @visactor/vseed
 
+## 0.0.30
+
+### Patch Changes
+
+- fix: selector relation ship err
+
+## 0.0.29
+
+### Patch Changes
+
+- feat: optimize pipeline register
+
+## 0.0.28
+
+### Patch Changes
+
+- feat: remove d3 color
+
+## 0.0.27
+
+### Patch Changes
+
+- fix: zod types err
+
+## 0.0.26
+
+### Patch Changes
+
+- fix: same alias error in parallel chart
+
+## 0.0.25
+
+### Patch Changes
+
+- feat: add heatmap
+- feat: optimize the zero dimensions style in line\area chart
+- fix: stroke error in pie and donut
+- feat: optimize the linear color in funnel
+
 ## 0.0.24
 
 ### Patch Changes

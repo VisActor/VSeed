@@ -28,6 +28,7 @@ import {
   lineStyle,
   areaStyle,
   verticalCrosshairLine,
+  progressive,
 } from '../pipes'
 
 const areaPercent: SpecPipeline = [
@@ -37,6 +38,7 @@ const areaPercent: SpecPipeline = [
   backgroundColor,
   percent,
   datasetXY,
+  progressive,
   xBand,
   yLinear,
   label,
@@ -65,6 +67,7 @@ const pivotAreaPercent: SpecPipeline = [
     backgroundColor,
     percent,
     datasetXY,
+    progressive,
     xBand,
     yLinear,
     label,

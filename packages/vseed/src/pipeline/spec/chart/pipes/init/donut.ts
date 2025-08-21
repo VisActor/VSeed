@@ -4,11 +4,12 @@ import type { SpecPipe } from 'src/types'
 export const initDonut: SpecPipe = (spec, context) => {
   const result = { ...spec } as IPieChartSpec
   const { advancedVSeed } = context
-  const { encoding } = advancedVSeed
+  const { encoding, dataset } = advancedVSeed
 
   if (!encoding[0].angle || !encoding[0].radius || !encoding[0].group) {
     return result
   }
+  const showStroke = dataset.length <= 30
 
   result.type = 'pie'
   result.outerRadius = 0.8
@@ -26,7 +27,7 @@ export const initDonut: SpecPipe = (spec, context) => {
   result.pie = {
     style: {
       stroke: '#ffffff',
-      lineWidth: 1,
+      lineWidth: showStroke ? 1 : 0,
     },
     state: {
       hover: {

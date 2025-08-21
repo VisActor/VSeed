@@ -45,35 +45,30 @@ export type BarStyle = {
    * 柱状图颜色
    * @description 柱状图颜色
    * @type {string}
-   * @default #000000
    */
   barColor?: string
   /**
    * 柱状图颜色透明度
    * @description 柱状图颜色透明度
    * @type {number}
-   * @default 1
    */
   barColorOpacity?: number
   /**
    * 柱状图边框颜色
    * @description 柱状图边框颜色
    * @type {string}
-   * @default #000000
    */
   barBorderColor?: string
   /**
    * 柱状图边框宽度
    * @description 柱状图边框宽度
    * @type {number}
-   * @default 0
    */
   barBorderWidth?: number
   /**
    * 柱状图边框样式
    * @description 柱状图边框样式
    * @type {number}
-   * @default solid
    * @example solid
    * @example dashed
    * @example dotted
@@ -83,7 +78,6 @@ export type BarStyle = {
    * 柱状图圆角
    * @description 柱状图圆角
    * @type {number | number[]}
-   * @default 0
    * @example 4
    * @example [0, 0, 10, 10]
    */

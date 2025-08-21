@@ -143,7 +143,7 @@ export interface Line {
 
   /**
    * @description X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
-   * @example 
+   * @example
    * sortAxis: {
    *   orderBy: 'profit',
    *   order: 'asc',
@@ -244,8 +244,8 @@ export const zLine = z.object({
   sortAxis: zSortAxis.optional(),
   sortLegend: zSortLegend.optional(),
   theme: zTheme.optional(),
-  pointStyle: zPointStyle.optional(),
-  lineStyle: zLineStyle.optional(),
+  pointStyle: z.array(zPointStyle).or(zPointStyle).optional(),
+  lineStyle: z.array(zLineStyle).or(zLineStyle).optional(),
   annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
   annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
   annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),

@@ -1,0 +1,13 @@
+[
+  "chartTypeSwitch",
+  "dataReshape",
+  "pivotAndCombine",
+  "dataFormat",
+  "dataAnalysis",
+  "conditionalStyle",
+  "annotation",
+  "internationalization",
+  "crossPlatformRender",
+  "separateBuild",
+  "performance"
+]

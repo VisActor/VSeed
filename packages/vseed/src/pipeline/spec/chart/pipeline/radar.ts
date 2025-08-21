@@ -23,6 +23,7 @@ import {
   areaStyle,
   radarAngleAxis,
   radarRadiusAxis,
+  progressive,
 } from '../pipes'
 
 const radar: SpecPipeline = [
@@ -30,6 +31,7 @@ const radar: SpecPipeline = [
   color,
   backgroundColor,
   datasetXY,
+  progressive,
   radarAngleAxis,
   radarRadiusAxis,
   label,
@@ -56,6 +58,7 @@ const pivotRadar: SpecPipeline = [
     color,
     backgroundColor,
     datasetXY,
+    progressive,
     radarAngleAxis,
     radarRadiusAxis,
     label,

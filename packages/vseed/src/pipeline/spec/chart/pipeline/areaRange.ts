@@ -24,6 +24,7 @@ import {
   pointStyle,
   pointStateDimensionHover,
   areaStyle,
+  progressive,
 } from '../pipes'
 import { initAreaRangeLine1, initAreaRangeLine2 } from '../pipes/init/areaRange'
 
@@ -34,6 +35,8 @@ const areaRange: SpecPipeline = [
     [initAreaRangeLine2, lineStyle, pointStyle, pointStateDimensionHover],
   ),
   datasetXY,
+  progressive,
+
   backgroundColor,
   xBand,
   yLinear,
@@ -58,6 +61,7 @@ const pivotAreaRange: SpecPipeline = [
     ),
     backgroundColor,
     datasetXY,
+    progressive,
     xBand,
     yLinear,
     label,

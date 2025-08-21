@@ -39,7 +39,7 @@ export const SelectorAreaPartialDatum = memo(() => {
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
     areaStyle: {
-      selector: [{ date: '2019' }, { sales: 60 }],
+      selector: [ { sales: 60 }],
       areaColor: 'red',
     },
     dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],

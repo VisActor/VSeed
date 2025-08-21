@@ -160,12 +160,11 @@ export const darkTheme = (): CustomThemeConfig => {
 
     hoverBodyBackgroundColor: '#4284ff66',
     hoverBodyInlineBackgroundColor: '#4284ff10',
-
     hoverHeaderBackgroundColor: '#6f7984cc',
     hoverHeaderInlineBackgroundColor: '#4b4f54',
 
-    selectedBorderColor: '#3073F2',
-    selectedBackgroundColor: '#3073F210',
+    selectedBorderColor: '#3073f2',
+    selectedBackgroundColor: '#4284ff33',
   }
 
   return {

@@ -1,5 +1,6 @@
 export { Builder } from './builder'
 export { registerAll } from './builder/register/all'
+export { updateAdvanced, updateSpec } from './builder/register/custom'
 export { registerDarkTheme, registerLightTheme, registerCustomTheme } from './builder/register/theme'
 export {
   registerArea,
@@ -24,7 +25,7 @@ export {
   registerRadar,
 } from './builder/register/chartType'
 
-export * from './pipeline/utils'
+export * from './pipeline'
 export * from './types'
 export * from './dataReshape'
 export * from './dataSelector'

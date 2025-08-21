@@ -5,12 +5,12 @@ import type { SpecPipe, Tooltip } from 'src/types'
 export const tooltip: SpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed } = context
-  const { measures, datasetReshapeInfo, chartType, locale } = advancedVSeed
+  const { measures, datasetReshapeInfo, chartType, locale, dimensions } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
 
-  const { measureId, measureValue } = datasetReshapeInfo[0].foldInfo
+  const { measureId, measureValue, measureName } = datasetReshapeInfo[0].foldInfo
   const { groupName } = datasetReshapeInfo[0].unfoldInfo
 
   result.tooltip = {
@@ -18,12 +18,20 @@ export const tooltip: SpecPipe = (spec, context) => {
 
     mark: {
       title: {
-        value: (datum) => (datum && (datum[groupName] as string)) || '',
+        visible: true,
       },
       content: [
+        ...dimensions.map((item) => ({
+          visible: true,
+          hasShape: true,
+          shapeType: 'rectRound',
+          key: (datum) => (datum && item.alias) || datum[item.id] || '',
+          value: (datum) => (datum && (datum[item.id] as string)) || '',
+        })),
         {
           visible: true,
-          key: (datum) => (datum && (datum[groupName] as string)) || '',
+          hasShape: true,
+          key: (datum) => (datum && (datum[measureName || groupName] as string)) || '',
           value: (datum) => {
             if (!datum) {
               return ''
@@ -76,6 +84,7 @@ export const tooltip: SpecPipe = (spec, context) => {
             }
             return String(value)
           },
+          shapeType: 'rectRound',
         },
       ],
     },

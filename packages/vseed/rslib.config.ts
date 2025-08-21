@@ -14,10 +14,10 @@ export default defineConfig({
     {
       format: 'umd',
       umdName: 'VSeed',
-      performance:{
-        chunkSplit:{
+      performance: {
+        chunkSplit: {
           strategy: 'all-in-one',
-        }
+        },
       },
       output: {
         target: 'web',
@@ -29,5 +29,7 @@ export default defineConfig({
   ],
   output: {
     sourceMap: true,
+    // enable after release 1.0.0
+    // minify: true
   },
 })

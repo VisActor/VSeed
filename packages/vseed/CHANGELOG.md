@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.30
+
+### Patch Changes
+
+- fix: selector relation ship err
+
 ## 0.0.29
 
 ### Patch Changes

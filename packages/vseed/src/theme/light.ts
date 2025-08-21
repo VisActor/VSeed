@@ -50,7 +50,7 @@ export const lightTheme = (): CustomThemeConfig => {
     labelAutoHide: true,
     labelAutoHideGap: 4,
     labelAutoLimit: true,
-    labelAutoLimitLength: 100,
+    labelAutoLimitLength: 80,
     labelAutoRotate: false,
     labelAutoRotateAngleRange: [0, -45, -90],
     label: {

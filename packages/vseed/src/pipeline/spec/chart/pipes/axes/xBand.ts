@@ -33,7 +33,7 @@ export const xBand: SpecPipe = (spec, context) => {
     labelAutoHide,
     labelAutoHideGap,
     labelAutoLimit,
-    labelAutoLimitLength,
+    labelAutoLimitLength = 80,
     labelAutoRotate,
     labelAutoRotateAngleRange,
   } = config
@@ -44,7 +44,7 @@ export const xBand: SpecPipe = (spec, context) => {
     visible,
     type: 'band',
     orient: 'bottom',
-    maxHeight: labelAutoLimitLength,
+    maxHeight: labelAutoLimitLength + 60,
     sampling,
     hover: true,
     label: {

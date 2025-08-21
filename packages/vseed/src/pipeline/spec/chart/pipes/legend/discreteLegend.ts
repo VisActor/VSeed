@@ -61,6 +61,7 @@ export const discreteLegend: SpecPipe = (spec, context) => {
       : undefined,
     item: {
       focus: true,
+      maxWidth: 260,
       focusIconStyle: {
         size: labelFontSize + 2,
         fill: labelFontColor,

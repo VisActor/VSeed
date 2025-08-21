@@ -31,7 +31,7 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
       xValue,
       text = '',
       textPosition = 'insideEnd',
-      textColor = '#ffffff',
+      textColor = '#cccccc',
       textFontSize = 12,
       textFontWeight = 400,
       textAlign = 'right',
@@ -58,8 +58,8 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
       offsetX,
       offsetY,
       line: {
-        visible: lineVisible,
         style: {
+          visible: lineVisible,
           stroke: lineColor,
           lineStyle: lineStyle,
           lineWidth: lineWidth,
@@ -71,6 +71,8 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
         position: positionMap[textPosition],
         style: {
           visible: true,
+          stroke: backgroundColor,
+          lineWidth: 1,
           textAlign: textAlign,
           textBaseline: textBaseline,
           fill: textColor,
@@ -84,13 +86,14 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
             cornerRadius: backgroundBorderRadius ?? 4,
             fill: backgroundColor,
             stroke: backgroundBorderColor,
-            strokeWidth: backgroundBorderWidth,
+            lineWidth: backgroundBorderWidth,
           },
         },
       },
       endSymbol: {
         visible: true,
         style: {
+          dy: 4,
           fill: lineColor,
         },
       },

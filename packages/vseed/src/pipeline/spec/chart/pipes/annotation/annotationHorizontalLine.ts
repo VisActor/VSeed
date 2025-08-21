@@ -60,8 +60,8 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
         offsetY,
         zIndex: ANNOTATION_Z_INDEX,
         line: {
-          visible: lineVisible,
           style: {
+            visible: lineVisible,
             stroke: lineColor,
             lineStyle: lineStyle,
             lineWidth: lineWidth,
@@ -73,6 +73,8 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
           position: positionMap[textPosition],
           style: {
             visible: true,
+            stroke: backgroundColor,
+            lineWidth: 1,
             textAlign: textAlign,
             textBaseline: textBaseline,
             fill: textColor,
@@ -86,13 +88,14 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
               cornerRadius: backgroundBorderRadius ?? 4,
               fill: backgroundColor,
               stroke: backgroundBorderColor,
-              strokeWidth: backgroundBorderWidth,
+              lineWidth: backgroundBorderWidth,
             },
           },
         },
         endSymbol: {
           visible: true,
           style: {
+            dx: -4,
             fill: lineColor,
           },
         },

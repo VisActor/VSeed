@@ -53,7 +53,7 @@ const Demo = () => {
           stops: [
             {
               offset: 0,
-              color: 'rgba(0,0,255,1)',
+              color: '#5766EC',
             },
             {
               offset: percent,
@@ -61,11 +61,11 @@ const Demo = () => {
             },
             {
               offset: percent,
-              color: 'rgba(255,0,255,0)',
+              color: 'rgba(0,0,255,0)',
             },
             {
               offset: 1,
-              color: 'rgba(255,0,255,1)',
+              color: '#2ef1adff',
             },
           ],
         },
@@ -84,19 +84,19 @@ const Demo = () => {
           stops: [
             {
               offset: 0,
-              color: 'blue',
+              color: '#5766EC',
             },
             {
               offset: percent,
-              color: 'blue',
+              color: '#5766EC',
             },
             {
               offset: percent,
-              color: 'red',
+              color: '#2ef1adff',
             },
             {
               offset: 1,
-              color: 'red',
+              color: '#2ef1adff',
             },
           ],
         },
@@ -117,6 +117,16 @@ const Demo = () => {
     spec.markLine[0].endSymbol = {
       visible: false,
     }
+    spec.tooltip.dimension.content = spec.tooltip.dimension.content.map((item) => {
+      return {
+        ...item,
+        shapeFill: (a) => {
+          console.log(a)
+          return '#5766EC'
+        },
+      }
+    })
+
     return spec
   })
   if (zVSeed.safeParse(vseed).success) {

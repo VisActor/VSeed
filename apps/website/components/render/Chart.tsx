@@ -59,15 +59,15 @@ export const VChartRender = memo((props: { vseed: VSeed }) => {
     builderRef.current = builder
 
     const spec = builder.build() as ISpec
-    console.log('builder performance', builder.performance)
+    console.group(`render ${vseed.chartType}`)
+    console.info('builder performance', builder.performance)
 
     const start = performance.now()
-    console.log('render Start')
     const vchart = new VChart(spec, { dom: ref.current })
     vchart.renderSync()
     const end = performance.now()
-
-    console.log('render time', end - start)
+    console.info('render time', end - start)
+    console.groupEnd()
 
     return () => vchart.release()
   }, [dark])
@@ -76,10 +76,10 @@ export const VChartRender = memo((props: { vseed: VSeed }) => {
     <div
       onClick={() => {
         console.group(`selected ${vseed.chartType}`)
-        console.log('builder', builderRef.current)
-        console.log('spec', builderRef.current.spec)
-        console.log('vseed', builderRef.current.vseed)
-        console.log('advancedVSeed', builderRef.current.advancedVSeed)
+        console.info('builder', builderRef.current)
+        console.info('spec', builderRef.current.spec)
+        console.info('vseed', builderRef.current.vseed)
+        console.info('advancedVSeed', builderRef.current.advancedVSeed)
         console.groupEnd()
       }}
       style={{

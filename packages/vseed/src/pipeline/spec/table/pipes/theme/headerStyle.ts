@@ -1,5 +1,4 @@
 import type { BaseTableConstructorOptions } from '@visactor/vtable/es/ts-types'
-import { color } from 'd3-color'
 import type { SpecPipe, TableConfig } from 'src/types'
 
 export const headerStyle: SpecPipe = (spec, context) => {
@@ -17,7 +16,7 @@ export const headerStyle: SpecPipe = (spec, context) => {
   const fontSize = themConfig.headerFontSize || 12
   // Interaction
   const hoverCellBgColor = themConfig.hoverHeaderBackgroundColor || '#bedaff'
-  const hoverInlineColor = themConfig.hoverHeaderBackgroundColor
+  const hoverInlineColor = themConfig.hoverHeaderInlineBackgroundColor || '#bedaff'
 
   result.theme.headerStyle = {
     borderColor: borderColor,
@@ -25,7 +24,7 @@ export const headerStyle: SpecPipe = (spec, context) => {
     padding: [8, 12, 8, 12],
     textAlign: 'center',
     hover: {
-      cellBgColor: color(hoverCellBgColor)?.copy({ opacity: 1 }).brighter(0.5).toString(),
+      cellBgColor: hoverCellBgColor,
       inlineRowBgColor: hoverInlineColor,
       inlineColumnBgColor: hoverInlineColor,
     },

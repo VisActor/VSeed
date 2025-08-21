@@ -1,23 +1,22 @@
 import type { BaseTableConstructorOptions } from '@visactor/vtable/es/ts-types'
-import { color } from 'd3-color'
 import type { SpecPipe, TableConfig } from 'src/types'
 
 export const bodyStyle: SpecPipe = (spec, context) => {
   const result = { ...spec } as BaseTableConstructorOptions
   const { advancedVSeed } = context
   const { customTheme, chartType } = advancedVSeed
-  const themConfig = customTheme?.config?.[chartType] as TableConfig
+  const themeConfig = customTheme?.config?.[chartType] as TableConfig
 
-  if (!result.theme || !themConfig) return result
+  if (!result.theme || !themeConfig) return result
 
   // basic
-  const borderColor = themConfig.borderColor || 'rgb(224, 224, 224)'
-  const backgroundColor = themConfig.bodyBackgroundColor || '#fff'
-  const fontColor = themConfig.bodyFontColor || '#1B1F23'
-  const fontSize = themConfig.bodyFontSize || 12
+  const borderColor = themeConfig.borderColor || 'rgb(224, 224, 224)'
+  const backgroundColor = themeConfig.bodyBackgroundColor || '#fff'
+  const fontColor = themeConfig.bodyFontColor || '#1B1F23'
+  const fontSize = themeConfig.bodyFontSize || 12
   // Interaction
-  const hoverCellBgColor = themConfig.hoverBodyBackgroundColor || '#bedaff'
-  const hoverInlineColor = color(hoverCellBgColor)?.copy({ opacity: 0.2 }).toString()
+  const hoverCellBgColor = themeConfig.hoverBodyBackgroundColor || '#bedaff'
+  const hoverInlineColor = themeConfig.hoverBodyInlineBackgroundColor || '#bedaff'
 
   result.theme.bodyStyle = {
     borderColor: borderColor,

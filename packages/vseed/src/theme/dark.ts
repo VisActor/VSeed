@@ -159,8 +159,13 @@ export const darkTheme = (): CustomThemeConfig => {
     headerBackgroundColor: '#36393e',
 
     hoverBodyBackgroundColor: '#4284ff66',
-    hoverHeaderBackgroundColor: '#5f5f5f88',
+    hoverBodyInlineBackgroundColor: '#4284ff10',
+
+    hoverHeaderBackgroundColor: '#6f7984cc',
+    hoverHeaderInlineBackgroundColor: '#4b4f54',
+
     selectedBorderColor: '#3073F2',
+    selectedBackgroundColor: '#3073F210',
   }
 
   return {

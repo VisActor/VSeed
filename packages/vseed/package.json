@@ -1,6 +1,6 @@
 {
   "name": "@visactor/vseed",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "type": "module",
   "exports": {
     ".": {
@@ -28,7 +28,6 @@
     "zod": "4.0.14"
   },
   "peerDependencies": {
-    "d3-color": "^3.1.0",
     "@visactor/vchart": ">2.0.0",
     "@visactor/vtable": ">1.19.0"
   },

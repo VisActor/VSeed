@@ -160,8 +160,11 @@ export const lightTheme = (): CustomThemeConfig => {
     headerBackgroundColor: '#f6f7f9',
 
     hoverBodyBackgroundColor: '#bedaff',
-    hoverHeaderBackgroundColor: '#D9DDE488',
-    selectedBorderColor: '#4080ff',
+    hoverBodyInlineBackgroundColor: '#bedaff33',
+    hoverHeaderBackgroundColor: '#D9DDE4',
+    hoverHeaderInlineBackgroundColor: '#D9DDE455',
+    selectedBorderColor: '#4080ffee',
+    selectedBackgroundColor: '#4080ff10',
   }
 
   return {

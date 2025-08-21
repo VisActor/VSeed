@@ -1,5 +1,4 @@
 import type { BaseTableConstructorOptions } from '@visactor/vtable/es/ts-types'
-import { color } from 'd3-color'
 import type { SpecPipe, TableConfig } from 'src/types'
 
 export const cornerHeaderStyle: SpecPipe = (spec, context) => {
@@ -16,8 +15,8 @@ export const cornerHeaderStyle: SpecPipe = (spec, context) => {
   const fontColor = themConfig.headerFontColor || '#1B1F23'
   const fontSize = themConfig.headerFontSize || 12
   // Interaction
-  const hoverCellBgColor = themConfig.hoverHeaderBackgroundColor || '#bedaff'
-  const hoverInlineColor = themConfig.hoverHeaderBackgroundColor
+  const hoverInlineColor = themConfig.hoverHeaderInlineBackgroundColor
+  const hoverCellColor = themConfig.hoverHeaderBackgroundColor
 
   result.theme.cornerHeaderStyle = {
     borderColor: [borderColor, borderColor],
@@ -25,7 +24,7 @@ export const cornerHeaderStyle: SpecPipe = (spec, context) => {
     padding: [8, 12, 8, 12],
     textAlign: 'left',
     hover: {
-      cellBgColor: color(hoverCellBgColor)?.copy({ opacity: 1 }).brighter(0.5).toString(),
+      cellBgColor: hoverCellColor,
       inlineRowBgColor: hoverInlineColor,
       inlineColumnBgColor: hoverInlineColor,
     },

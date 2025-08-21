@@ -182,12 +182,20 @@ const Demo = () => {
         { date: '2023', profit: 40, sales: 500 },
         { date: '2024', profit: 70, sales: 100 },
       ],
-      annotationArea: {
-        selector: [{ date: '2022' }, { date: '2023' }],
-        text: '22~23年',
-        textPosition: 'top',
-        textAlign: 'center',
-      },
+      annotationArea: [
+        {
+          selector: [{ date: '2021' }],
+          text: '22~23年',
+          textPosition: 'top',
+          textAlign: 'center',
+        },
+        {
+          selector: [{ date: '2022' }],
+          text: '22~23年',
+          textPosition: 'top',
+          textAlign: 'center',
+        },
+      ],
     }
 
     const spec = Builder.from(vseed).build()

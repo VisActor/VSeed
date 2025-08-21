@@ -15,6 +15,8 @@ export const selector = (vchartDatum: Datum, selector: Selector | Selectors | un
     return true
   }
 
+  const selectorMode = 'And'
+
   // 过滤掉 vchart 相关字段
   const vchartKeys = Object.keys(vchartDatum).filter((k) => k.toLocaleLowerCase().startsWith('__vchart'))
   const datum = omit(vchartDatum, vchartKeys) as Datum
@@ -22,7 +24,7 @@ export const selector = (vchartDatum: Datum, selector: Selector | Selectors | un
   // 统一处理选择器为数组
   const selectors = (Array.isArray(selector) ? selector : [selector]) as Selectors
 
-  for (const selector of selectors) {
+  return selectors[selectorMode === 'And' ? 'every' : 'some']((selector) => {
     // 1. 字符串或数字
     if (isValueSelector(selector)) {
       if (Object.values(datum).find((v) => v === selector)) {
@@ -105,9 +107,9 @@ export const selector = (vchartDatum: Datum, selector: Selector | Selectors | un
         return true
       }
     }
-  }
 
-  return false
+    return false
+  })
 }
 
 export const isValueSelector = (selector: Selector): selector is ValueSelector => {

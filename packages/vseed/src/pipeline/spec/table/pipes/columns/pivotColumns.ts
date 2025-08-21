@@ -1,3 +1,4 @@
+import type { PivotTableConstructorOptions } from '@visactor/vtable'
 import type { Dimensions, SpecPipe } from 'src/types'
 
 export const pivotColumns: SpecPipe = (spec, context) => {
@@ -14,5 +15,5 @@ export const pivotColumns: SpecPipe = (spec, context) => {
         width: 'auto',
       }
     }),
-  }
+  } as PivotTableConstructorOptions
 }

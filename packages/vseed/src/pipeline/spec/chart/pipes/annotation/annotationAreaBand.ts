@@ -51,7 +51,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
     } = annotationArea
 
     const dataset = advancedVSeed.dataset.flat()
-    const selectedData = dataset.filter((datum) => selector(datum, selectorPoint))
+    const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
 
     return {
       zIndex: ANNOTATION_Z_INDEX,

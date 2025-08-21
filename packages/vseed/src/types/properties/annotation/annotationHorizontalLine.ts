@@ -171,4 +171,6 @@ export const zAnnotationHorizontalLine = z.object({
   backgroundBorderWidth: z.number().default(1).optional(),
   backgroundBorderRadius: z.number().default(4).optional(),
   backgroundPadding: z.number().optional(),
+  offsetX: z.number().default(0),
+  offsetY: z.number().default(0),
 })

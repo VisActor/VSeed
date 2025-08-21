@@ -62,14 +62,14 @@ export type AnnotationVerticalLine = {
    */
   textBaseline?: 'top' | 'middle' | 'bottom'
   /**
-   * 文本Y方向的, 偏移量
+   * 标注线Y方向的, 偏移量
    * @description 文本Y方向的, 偏移量, 支持正负
    * @default 0
    * @example offsetY: 10
    */
   offsetY?: number
   /**
-   * 文本X方向的, 偏移量
+   * 标注线X方向的, 偏移量
    * @description 文本X方向的, 偏移量, 支持正负
    * @default 0
    * @example offsetX: -10
@@ -170,4 +170,6 @@ export const zAnnotationVerticalLine = z.object({
   backgroundBorderWidth: z.number().default(1).optional(),
   backgroundBorderRadius: z.number().default(4).optional(),
   backgroundPadding: z.number().optional(),
+  offsetX: z.number().default(0),
+  offsetY: z.number().default(0),
 })

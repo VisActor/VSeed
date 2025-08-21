@@ -27,10 +27,7 @@
     "remeda": "^2.28.0",
     "zod": "4.0.14"
   },
-  "peerDependencies": {
-    "@visactor/vchart": ">2.0.0",
-    "@visactor/vtable": ">1.19.0"
-  },
+  "sideEffects": false,
   "devDependencies": {
     "@types/d3-color": "^3.1.0",
     "@eslint/js": "9.30.0",

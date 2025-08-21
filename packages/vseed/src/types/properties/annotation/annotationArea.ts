@@ -59,6 +59,22 @@ export type AnnotationArea = {
    * @example 'middle'
    */
   textBaseline?: 'top' | 'middle' | 'bottom'
+
+  /**
+   * Y方向的, 偏移量
+   * @description 文本Y方向的, 偏移量, 支持正负
+   * @default 0
+   * @example offsetY: 10
+   */
+  offsetY?: number
+  /**
+   * X方向的, 偏移量
+   * @description 文本X方向的, 偏移量, 支持正负
+   * @default 0
+   * @example offsetX: -10
+   */
+  offsetX?: number
+
   /**
    * 背景可见
    * @description 背景可见
@@ -173,4 +189,6 @@ export const zAnnotationArea = z.object({
   areaBorderRadius: z.number().default(4).optional(),
 
   outerPadding: z.number().optional(),
+  offsetX: z.number().optional(),
+  offsetY: z.number().optional(),
 })

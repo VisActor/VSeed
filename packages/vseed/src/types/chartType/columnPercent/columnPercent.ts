@@ -39,7 +39,7 @@ import type {
   XBandAxis,
   YLinearAxis,
   MeasureTree,
-  SortAxis,
+  Sort,
   SortLegend,
 } from '../../properties'
 import { z } from 'zod'
@@ -149,15 +149,15 @@ export interface ColumnPercent {
   /**
    * @description X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
    * @example
-   * sortAxis: {
+   * sort: {
    *   orderBy: 'profit',
    *   order: 'asc',
    * }
-   * sortAxis: {
+   * sort: {
    *   customOrder:['2019', '2020', '2021']
    * }
    */
-  sortAxis?: SortAxis
+  sort?: Sort
   /**
    * @description 图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
    * @example

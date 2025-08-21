@@ -25,7 +25,7 @@ export const SortAxisByMeasure = memo(() => {
         ],
       },
     ],
-    sortAxis: {
+    sort: {
       order: 'desc',
       orderBy: 'sales',
     },
@@ -49,7 +49,7 @@ export const SortAxisByDimension = memo(() => {
       { id: 'sales', alias: '销售额' },
       { id: 'count', alias: '数量' },
     ],
-    sortAxis: {
+    sort: {
       order: 'desc',
       orderBy: 'date',
     },
@@ -73,7 +73,7 @@ export const SortAxisByCustom = memo(() => {
       { id: 'sales', alias: '销售额' },
       { id: 'count', alias: '数量' },
     ],
-    sortAxis: {
+    sort: {
       customOrder: ['2022', '2023', '2021', '2020', '2019'],
     },
   }

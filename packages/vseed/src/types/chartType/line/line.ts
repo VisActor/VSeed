@@ -15,7 +15,7 @@ import {
   zLineStyle,
   zMeasureTree,
   zPointStyle,
-  zSortAxis,
+  zSort,
   zSortLegend,
   zTheme,
   zTooltip,
@@ -41,7 +41,7 @@ import type {
   XBandAxis,
   YLinearAxis,
   MeasureTree,
-  SortAxis,
+  Sort,
   SortLegend,
 } from '../../properties'
 import { z } from 'zod'
@@ -144,15 +144,15 @@ export interface Line {
   /**
    * @description X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
    * @example
-   * sortAxis: {
+   * sort: {
    *   orderBy: 'profit',
    *   order: 'asc',
    * }
-   * sortAxis: {
+   * sort: {
    *   customOrder:['2019', '2020', '2021']
    * }
    */
-  sortAxis?: SortAxis
+  sort?: Sort
   /**
    * @description 图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
    * @example
@@ -241,7 +241,7 @@ export const zLine = z.object({
   xAxis: zXBandAxis.optional(),
   yAxis: zYLinearAxis.optional(),
   crosshairLine: zCrosshairLine.optional(),
-  sortAxis: zSortAxis.optional(),
+  sort: zSort.optional(),
   sortLegend: zSortLegend.optional(),
   theme: zTheme.optional(),
   pointStyle: z.array(zPointStyle).or(zPointStyle).optional(),

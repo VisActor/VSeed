@@ -1,11 +1,10 @@
 import { sort, unique } from 'remeda'
-import { ORIGINAL_DATA } from 'src/dataReshape'
-import type { AdvancedPipe, Dataset, Datum, Line, SortAxis, SortLegend } from 'src/types'
+import type { AdvancedPipe, Dataset, Datum, Line, Sort, SortLegend } from 'src/types'
 
 export const sortXBandAxis: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
-  const { sortAxis, dataset } = vseed as Line
+  const { sort: sortAxis, dataset } = vseed as Line
   const { encoding } = advancedVSeed
   const xField = encoding?.[0]?.x?.[0]
   if (!sortAxis || !xField) {
@@ -24,7 +23,7 @@ export const sortXBandAxis: AdvancedPipe = (advancedVSeed, context) => {
 export const sortYBandAxis: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
-  const { sortAxis, dataset } = vseed as Line
+  const { sort: sortAxis, dataset } = vseed as Line
   const { encoding } = advancedVSeed
   const yField = encoding?.[0]?.y?.[0]
   if (!sortAxis || !yField) {
@@ -77,13 +76,13 @@ export const sortLegend: AdvancedPipe = (advancedVSeed, context) => {
   return result
 }
 
-const calcOrder = (sortAxis: SortAxis | SortLegend, id: string, dataset: Dataset): string[] => {
-  if (sortAxis.customOrder) {
-    return sortAxis.customOrder
+const calcOrder = (sortConfig: Sort | SortLegend, id: string, dataset: Dataset): string[] => {
+  if (sortConfig.customOrder) {
+    return sortConfig.customOrder
   }
 
-  const order = sortAxis.order || 'asc'
-  const orderBy = sortAxis.orderBy
+  const order = sortConfig.order || 'asc'
+  const orderBy = sortConfig.orderBy
 
   const res = sort(dataset, (a, b) => {
     const aValue = a[orderBy || id] as string | number

@@ -1,5 +1,12 @@
 # website
 
+## 0.0.29
+
+### Patch Changes
+
+- Updated dependencies
+  - @visactor/vseed@0.0.29
+
 ## 0.0.28
 
 ### Patch Changes

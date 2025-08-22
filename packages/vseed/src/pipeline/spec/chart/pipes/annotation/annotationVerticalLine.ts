@@ -94,6 +94,7 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
       },
       endSymbol: {
         visible: true,
+        size: 10 + lineWidth,
         style: {
           dy: 4,
           fill: lineColor,

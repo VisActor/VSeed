@@ -35,7 +35,7 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
       textColor = '#ffffff',
       textFontSize = 12,
       textFontWeight = 400,
-      textAlign = 'center',
+      textAlign = 'right',
       textBaseline = 'top',
       backgroundBorderColor,
       backgroundBorderRadius = 4,
@@ -96,6 +96,7 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
         },
         endSymbol: {
           visible: true,
+          size: 10 + lineWidth,
           style: {
             dx: -4,
             fill: lineColor,

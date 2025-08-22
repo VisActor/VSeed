@@ -1,7 +1,6 @@
 import * as path from 'node:path'
 import { defineConfig } from 'rspress/config'
 import { pluginPlayground } from '@rspress/plugin-playground'
-
 const isDev = process.env.NODE_ENV === 'development'
 
 export default defineConfig({

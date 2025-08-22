@@ -1,7 +1,7 @@
 {
   "name": "website",
   "private": true,
-  "version": "0.0.32",
+  "version": "0.0.33",
   "scripts": {
     "build": "rspress build",
     "dev": "rspress dev",

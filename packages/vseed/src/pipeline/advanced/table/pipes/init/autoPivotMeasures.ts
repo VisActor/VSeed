@@ -15,7 +15,7 @@ export const autoPivotMeasures: AdvancedPipe = (advancedVSeed, context) => {
     return result
   }
 
-  if (measures && measures.length > 0) {
+  if (measures) {
     result.measures = findAllMeasures(measures)
     return result
   }

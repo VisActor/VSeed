@@ -12,38 +12,40 @@ import VChart from '@visactor/vchart'
 import { registerColumnParallel, VSeed, Builder, registerCustomTheme } from '@visactor/vseed'
 
 registerColumnParallel()
-registerCustomTheme('cyberpunk', {
-  baseConfig: {
-    vtable: {
-      backgroundColor: '#000000',
+registerCustomTheme('cyberpunk', (defaultTheme) => {
+  // 默认提供浅色和深色, 可以基于默认主题, 进行增量的二次配置
+  const cyberpunk = {
+    config: {
+      ...defaultTheme.lightTheme.config,
     },
-    vchart: {
-      backgroundColor: '#000000',
-      color: {
-        colorScheme: [
-          '#FF2A8A', // 霓虹玫红（抖音主色变体）
-          '#8D00FF', // 炫光紫（赛博核心）
-          '#00F0FF', // 荧光蓝（抖音蓝升级）
-          '#05F8B6', // 赛博青（霓虹青绿）
-          '#D600FF', // 脉冲紫（渐变过渡）
-          '#FFE800', // 数字柠檬黄（高亮点缀）
-          '#FF005D', // 抖音热粉（视觉焦点）
-          '#00E4FF', // 全息蓝（透明感）
-          '#C95BFF', // 幻彩紫（渐变衔接）
-          '#FF5A00', // 故障橙（赛博点缀）
-        ]
-      },
-      label: {
-        enable: true,
-      },
-      tooltip: {
-        enable: true,
-      },
-      legend: {
-        enable: true,
-      },
-    },
-  },
+  }
+  console.info('defaultTheme', defaultTheme)
+
+  const colorScheme = [
+    '#FF2A8A', // 霓虹玫红（抖音主色变体）
+    '#8D00FF', // 炫光紫（赛博核心）
+    '#00F0FF', // 荧光蓝（抖音蓝升级）
+    '#05F8B6', // 赛博青（霓虹青绿）
+    '#D600FF', // 脉冲紫（渐变过渡）
+    '#FFE800', // 数字柠檬黄（高亮点缀）
+    '#FF005D', // 抖音热粉（视觉焦点）
+    '#00E4FF', // 全息蓝（透明感）
+    '#C95BFF', // 幻彩紫（渐变衔接）
+    '#FF5A00', // 故障橙（赛博点缀）
+  ]
+
+  // by chart type
+  cyberpunk.config.bar.color.colorScheme = colorScheme
+  cyberpunk.config.barPercent.color.colorScheme = colorScheme
+  cyberpunk.config.barParallel.color.colorScheme = colorScheme
+  cyberpunk.config.column.color.colorScheme = colorScheme
+  cyberpunk.config.columnParallel.color.colorScheme = colorScheme
+  cyberpunk.config.columnPercent.color.colorScheme = colorScheme
+  cyberpunk.config.line.color.colorScheme = colorScheme
+  cyberpunk.config.area.color.colorScheme = colorScheme
+  cyberpunk.config.areaPercent.color.colorScheme = colorScheme
+
+  return cyberpunk
 })
 
 function Demo() {
@@ -75,9 +77,7 @@ function Demo() {
     return () => vchart.release()
   })
 
-  return (
-    <div ref= { ref } style = {{ height: 300, width: '100%' }}></div>
-  )
+  return <div ref={ref} style={{ height: 300, width: '100%' }}></div>
 }
 
 export default Demo

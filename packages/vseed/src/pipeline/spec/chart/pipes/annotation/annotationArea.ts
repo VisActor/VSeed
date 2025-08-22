@@ -36,18 +36,21 @@ export const annotationArea: SpecPipe = (spec, context) => {
       textFontWeight = 400,
       textAlign = 'center',
       textBaseline = 'top',
-      backgroundBorderColor,
-      backgroundBorderRadius = 4,
-      backgroundBorderWidth = 1,
-      backgroundColor = '#191d24',
-      backgroundPadding = 10,
+
       backgroundVisible = true,
-      outerPadding = 4,
+      backgroundColor = '#191d24',
+      backgroundBorderColor = '#191d24',
+      backgroundBorderWidth = 1,
+      backgroundBorderRadius = 4,
+      backgroundPadding = 4,
+
       areaColor = '#888888',
       areaColorOpacity = 0.15,
-      areaBorderColor,
-      areaBorderRadius,
-      areaBorderWidth,
+      areaBorderColor = '#888888',
+      areaBorderRadius = 4,
+      areaBorderWidth = 1,
+
+      outerPadding = 4,
       offsetX = 0,
       offsetY = 0,
     } = annotationArea
@@ -147,6 +150,7 @@ export const annotationArea: SpecPipe = (spec, context) => {
         visible: true,
         text: text,
         style: {
+          dy: textFontSize,
           textAlign: textAlign,
           textBaseline: textBaseline,
           fill: textColor,
@@ -160,6 +164,7 @@ export const annotationArea: SpecPipe = (spec, context) => {
           visible: backgroundVisible,
           padding: backgroundPadding,
           style: {
+            dy: textFontSize,
             cornerRadius: backgroundBorderRadius ?? 4,
             fill: backgroundColor,
             stroke: backgroundBorderColor,

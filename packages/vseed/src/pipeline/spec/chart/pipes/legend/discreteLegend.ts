@@ -18,7 +18,7 @@ export const discreteLegend: SpecPipe = (spec, context) => {
     labelFontColor,
     labelFontSize = 12,
     labelFontWeight,
-    maxSize,
+    maxSize = 1,
     border,
     shapeType = 'rectRound',
   } = legend || {}
@@ -40,8 +40,8 @@ export const discreteLegend: SpecPipe = (spec, context) => {
   result.legends = {
     type: 'discrete',
     visible: enable,
-    maxCol: maxSize,
-    maxRow: maxSize,
+    maxCol: Math.max(1, maxSize),
+    maxRow: Math.max(1, maxSize),
     autoPage: true,
     orient,
     position: legendPosition,
@@ -61,7 +61,7 @@ export const discreteLegend: SpecPipe = (spec, context) => {
       : undefined,
     item: {
       focus: true,
-      maxWidth: 260,
+      maxWidth: '30%',
       focusIconStyle: {
         size: labelFontSize + 2,
         fill: labelFontColor,

@@ -19,7 +19,7 @@ export const annotationPoint: SpecPipe = (spec, context) => {
     const {
       selector: selectorPoint,
       text = '',
-      textColor = '#cccccc',
+      textColor = '#ffffff',
       textFontSize = 12,
       textFontWeight = 400,
       textAlign = 'center',

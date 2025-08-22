@@ -3,8 +3,8 @@ import type { Encoding } from 'src/types'
 
 export const encodingXYY: AdvancedPipe = (advancedVSeed) => {
   const result = { ...advancedVSeed }
-  const { datasetReshapeInfo, dimensions, measures } = advancedVSeed
-  if (!datasetReshapeInfo || !dimensions || !measures) {
+  const { datasetReshapeInfo, measures } = advancedVSeed
+  if (!datasetReshapeInfo || !measures) {
     return result
   }
 

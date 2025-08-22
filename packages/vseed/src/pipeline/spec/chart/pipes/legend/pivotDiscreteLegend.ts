@@ -30,7 +30,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
     labelFontColor,
     labelFontSize = 12,
     labelFontWeight = 400,
-    maxSize,
+    maxSize = 1,
     border,
     shapeType = 'rectRound',
   } = legend || {}
@@ -54,8 +54,8 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
     type: 'discrete',
     orient,
     position: legendPosition,
-    maxCol: maxSize,
-    maxRow: maxSize,
+    maxCol: Math.max(1, maxSize),
+    maxRow: Math.max(1, maxSize),
     data: colorItems.map((d, index) => ({
       label: d,
       shape: {
@@ -72,7 +72,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
 
     item: {
       focus: true,
-      maxWidth: 260,
+      maxWidth: '30%',
       focusIconStyle: {
         size: labelFontSize + 2,
         fill: labelFontColor,

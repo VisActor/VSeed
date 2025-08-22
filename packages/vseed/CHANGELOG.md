@@ -1,5 +1,13 @@
 # @visactor/vseed
 
+## 0.0.32
+
+### Patch Changes
+
+- fix: annotation default style 
+- docs: more comments in annotation for llm
+- fix: legend max size err
+
 ## 0.0.31
 
 ### Patch Changes

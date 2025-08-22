@@ -8,9 +8,10 @@ export const encodingXY: AdvancedPipe = (advancedVSeed) => {
     return result
   }
 
-  const xDimension = (dimensions as Dimensions).find(
-    (item) => item.location !== 'rowDimension' && item.location !== 'columnDimension',
-  )
+  const xDimension =
+    (dimensions as Dimensions).find(
+      (item) => item.location !== 'rowDimension' && item.location !== 'columnDimension',
+    ) || dimensions[0]
 
   const isZeroDimension = dimensions.length === 0
 

@@ -8,9 +8,10 @@ export const encodingAR: AdvancedPipe = (advancedVSeed) => {
     return result
   }
 
-  const angleDimension = (dimensions as Dimensions).find(
-    (item) => item.location !== 'rowDimension' && item.location !== 'columnDimension',
-  )
+  const angleDimension =
+    (dimensions as Dimensions).find(
+      (item) => item.location !== 'rowDimension' && item.location !== 'columnDimension',
+    ) || dimensions[0]
 
   const isZeroDimension = dimensions.length === 0
 

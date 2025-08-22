@@ -1,6 +1,6 @@
 import type { AdvancedPipelineContext, AdvancedVSeed } from 'src/types'
 import { execPipeline } from '../../pipeline'
-import type { Builder } from './builder'
+import { Builder } from './builder'
 
 export const buildAdvanced = (builder: Builder): AdvancedVSeed | null => {
   const start = typeof performance !== 'undefined' ? performance.now() : Date.now()
@@ -9,14 +9,14 @@ export const buildAdvanced = (builder: Builder): AdvancedVSeed | null => {
     throw new Error('chartType is nil in buildAdvanced')
   }
 
-  const pipeline = builder.getAdvancedPipeline(chartType)
+  const pipeline = Builder.getAdvancedPipeline(chartType)
   if (!pipeline) {
     throw new Error(`no advanced pipeline for chartType ${chartType}`)
   }
 
   const context: AdvancedPipelineContext = {
     vseed: builder.vseed,
-    customTheme: builder.getThemeMap(),
+    customTheme: Builder.getThemeMap(),
   }
 
   try {

@@ -1,10 +1,16 @@
 # @visactor/vseed
 
+## 0.0.33
+
+### Patch Changes
+
+- feat: allow empty dimensions and measures
+
 ## 0.0.32
 
 ### Patch Changes
 
-- fix: annotation default style 
+- fix: annotation default style
 - docs: more comments in annotation for llm
 - fix: legend max size err
 

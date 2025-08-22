@@ -3,8 +3,8 @@ import type { Encoding } from 'src/types'
 
 export const encodingFunnel: AdvancedPipe = (advancedVSeed) => {
   const result = { ...advancedVSeed }
-  const { datasetReshapeInfo, dimensions } = advancedVSeed
-  if (!datasetReshapeInfo || !dimensions) {
+  const { datasetReshapeInfo } = advancedVSeed
+  if (!datasetReshapeInfo) {
     return result
   }
 

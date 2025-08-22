@@ -72,7 +72,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
 
     item: {
       focus: true,
-      maxWidth: 260,
+      maxWidth: '30%',
       focusIconStyle: {
         size: labelFontSize + 2,
         fill: labelFontColor,

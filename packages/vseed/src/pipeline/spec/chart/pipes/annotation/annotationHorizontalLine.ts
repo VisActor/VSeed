@@ -37,16 +37,19 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
       textFontWeight = 400,
       textAlign = 'right',
       textBaseline = 'top',
-      backgroundBorderColor,
-      backgroundBorderRadius = 4,
-      backgroundBorderWidth = 1,
-      backgroundColor = '#212121',
-      backgroundPadding = 2,
-      backgroundVisible = true,
+
       lineColor = '#212121',
       lineStyle = 'dashed',
       lineVisible = true,
       lineWidth = 1,
+
+      backgroundVisible = true,
+      backgroundColor = '#212121',
+      backgroundBorderColor = '#212121',
+      backgroundBorderRadius = 4,
+      backgroundBorderWidth = 1,
+      backgroundPadding = 2,
+
       offsetX = 0,
       offsetY = 0,
     } = annotationVerticalLine

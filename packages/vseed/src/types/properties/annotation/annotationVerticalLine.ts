@@ -136,16 +136,22 @@ export const zAnnotationVerticalLine = z.object({
   textFontWeight: z.number().default(400).optional(),
   textAlign: z.enum(['left', 'right', 'center']).default('right').optional(),
   textBaseline: z.enum(['top', 'middle', 'bottom']).default('top').optional(),
-  lineVisible: z.boolean().optional(),
-  lineColor: z.string().optional(),
-  lineWidth: z.number().optional(),
-  lineStyle: z.union([z.literal('solid'), z.literal('dashed'), z.literal('dotted')]).optional(),
+
+  lineVisible: z.boolean().default(true).optional(),
+  lineColor: z.string().default('#212121').optional(),
+  lineWidth: z.number().default(1).optional(),
+  lineStyle: z
+    .union([z.literal('solid'), z.literal('dashed'), z.literal('dotted')])
+    .default('dashed')
+    .optional(),
+
   backgroundVisible: z.boolean().default(true).optional(),
   backgroundColor: z.string().default('#212121').optional(),
-  backgroundBorderColor: z.string().optional(),
-  backgroundBorderWidth: z.number().default(1).optional(),
+  backgroundBorderColor: z.string().default('#212121').optional(),
   backgroundBorderRadius: z.number().default(4).optional(),
-  backgroundPadding: z.number().optional(),
+  backgroundBorderWidth: z.number().default(1).optional(),
+  backgroundPadding: z.number().default(2).optional(),
+
   offsetX: z.number().default(0),
   offsetY: z.number().default(0),
 })

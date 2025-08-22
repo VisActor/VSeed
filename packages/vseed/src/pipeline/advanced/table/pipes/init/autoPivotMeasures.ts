@@ -6,7 +6,6 @@ export const autoPivotMeasures: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context
   const { dataset } = vseed
   const measures = findAllMeasures(vseed.measures as Measures)
-
   if (!dataset) {
     throw new Error('dataset is required')
   }
@@ -15,7 +14,7 @@ export const autoPivotMeasures: AdvancedPipe = (advancedVSeed, context) => {
     return result
   }
 
-  if (measures) {
+  if (vseed.measures) {
     result.measures = findAllMeasures(measures)
     return result
   }

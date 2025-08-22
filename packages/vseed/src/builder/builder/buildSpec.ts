@@ -1,5 +1,5 @@
 import type { Spec } from 'src/types'
-import type { Builder } from './builder'
+import { Builder } from './builder'
 import type { AdvancedVSeed, SpecPipelineContext } from 'src/types'
 import { execPipeline } from '../../pipeline'
 
@@ -11,7 +11,7 @@ export const buildSpec = (builder: Builder, advancedVSeed: AdvancedVSeed): Spec 
     throw new Error('chartType is nil in buildSpec')
   }
 
-  const pipeline = builder.getSpecPipeline(chartType)
+  const pipeline = Builder.getSpecPipeline(chartType)
   if (!pipeline) {
     throw new Error(`no spec pipeline for chartType ${chartType}`)
   }

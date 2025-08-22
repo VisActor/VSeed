@@ -7,93 +7,62 @@ pageType: custom
 ```tsx
 const Demo = () => {
   const vseed: VSeed = {
-    chartType: 'line',
+    chartType: 'pie',
     dataset: [
       {
-        人效提升: 45,
-        季度: 'Q1',
+        entry_category: '首页',
+        UV: 1200,
+        PV: 3000,
       },
       {
-        人效提升: 90,
-        季度: 'Q2',
+        entry_category: '活动页',
+        UV: 800,
+        PV: 2000,
       },
       {
-        人效提升: 141.55,
-        季度: 'Q3',
+        entry_category: '搜索页',
+        UV: 600,
+        PV: 1500,
       },
       {
-        人效提升: 170,
-        季度: 'Q4(预测)',
+        entry_category: '推荐页',
+        UV: 400,
+        PV: 1000,
       },
       {
-        人效提升: 195,
-        季度: 'Q1(预测)',
-      },
-      {
-        人效提升: 215,
-        季度: 'Q2(预测)',
+        entry_category: '分类页',
+        UV: 300,
+        PV: 800,
       },
     ],
     dimensions: [
       {
-        id: '季度',
-        alias: '季度时间',
+        alias: 'Entry Category',
+        id: 'entry_category',
       },
     ],
     measures: [
       {
-        id: '人效提升',
-        alias: '写接口diff&函数diff人效提升',
+        id: 'traffic',
+        alias: 'Traffic Metrics',
+        children: [
+          {
+            alias: 'Unique Visitors',
+            id: 'UV',
+          },
+        ],
+      },
+      {
+        id: 'traffic2',
+        alias: 'Traffic2 Metrics',
+        children: [
+          {
+            alias: 'Page Views',
+            id: 'PV',
+          },
+        ],
       },
     ],
-    annotationVerticalLine: {
-      xValue: ['Q3', 'Q4(预测)'],
-      text: '实际 | 预测',
-      textPosition: 'outsideEnd',
-      textColor: '#666666',
-      textFontSize: 12,
-      textFontWeight: 400,
-      textAlign: 'center',
-      textBaseline: 'top',
-      offsetY: 0,
-      offsetX: 0,
-      lineVisible: true,
-      lineColor: 'gray',
-      lineWidth: 1,
-      lineStyle: 'dashed',
-      backgroundVisible: false,
-    },
-    label: {
-      enable: true,
-    },
-    yAxis: {
-      grid: {
-        visible: true,
-        gridColor: 'rgba(54, 65, 89, 0.15)',
-        gridWidth: 0.5,
-      },
-    },
-    legend: {
-      enable: true,
-    },
-    lineStyle: {
-      selector: {
-        field: '季度',
-        operator: 'in',
-        value: ['Q4(预测)', 'Q1(预测)', 'Q2(预测)'],
-      },
-      lineColor: 'blue',
-      lineStyle: 'dashed',
-    },
-    pointStyle: {
-      selector: {
-        field: '季度',
-        operator: '==',
-        value: 'Q3',
-      },
-      pointColor: 'red',
-    },
-    locale: 'zh-CN',
   }
 
   if (zVSeed.safeParse(vseed).success) {
@@ -109,7 +78,17 @@ import { useRef, useEffect } from 'react'
 import { useDark } from 'rspress/runtime'
 import VChart from '@visactor/vchart'
 import { ListTable, PivotTable, PivotChart, register } from '@visactor/vtable'
-import { registerAll, VSeed, Builder, isPivotChart, isVChart, isPivotTable, isTable, zVSeed } from '@visactor/vseed'
+import {
+  registerAll,
+  VSeed,
+  Builder,
+  isPivotChart,
+  isVChart,
+  isPivotTable,
+  isTable,
+  zVSeed,
+  UnfoldDimensionGroupId,
+} from '@visactor/vseed'
 
 registerAll()
 register.chartModule('vchart', VChart)
@@ -132,6 +111,16 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
     builderRef.current = builder
     if (isPivotChart(vseed)) {
       const tableInstance = new PivotChart(ref.current, spec)
+      tableInstance.on('legend_item_click', (args) => {
+        console.log('LEGEND_ITEM_CLICK', args)
+        tableInstance.updateFilterRules([
+          {
+            filterKey: UnfoldDimensionGroupId,
+            filteredValues: args.value,
+          },
+        ])
+      })
+
       return () => tableInstance.release()
     } else if (isVChart(vseed)) {
       const vchart = new VChart(spec, { dom: ref.current })

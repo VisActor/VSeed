@@ -25,7 +25,7 @@ export const isPivotChart = (vseed: VSeed) => {
   const hasRowOrColumnDimension =
     dimensions &&
     dimensions.some((dimension) => dimension.location === 'rowDimension' || dimension.location === 'columnDimension')
-  const hasMeasureGroup = measures && measures.find((measure: DimensionGroup) => measure && measure.children)
+  const hasMeasureGroup = measures && measures.some((measure: DimensionGroup) => measure && measure.children)
 
   return hasRowOrColumnDimension || hasMeasureGroup
 }

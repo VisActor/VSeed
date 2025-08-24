@@ -1,5 +1,5 @@
 import { isPivotChart } from 'src/pipeline/utils'
-import type { AdvancedPipe, Datum, DimensionGroup } from 'src/types'
+import type { AdvancedPipe, Datum, DimensionGroup, MeasureGroup, MeasureTree } from 'src/types'
 
 export const autoMeasures: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
@@ -19,7 +19,7 @@ export const autoMeasures: AdvancedPipe = (advancedVSeed, context) => {
   }
 
   if (measures) {
-    result.measures = measures
+    result.measures = measures as MeasureTree
     return result
   }
 
@@ -43,8 +43,10 @@ export const autoMeasures: AdvancedPipe = (advancedVSeed, context) => {
 
 const autoMeasureGroup: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context
-  const { measures } = vseed
-  const hasMeasureGroup = measures?.some((measure: DimensionGroup) => measure.children)
+  const { measures } = vseed as {
+    measures?: MeasureGroup[]
+  }
+  const hasMeasureGroup = measures?.some((measure) => measure.children)
 
   if (!measures) {
     return advancedVSeed

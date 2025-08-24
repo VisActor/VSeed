@@ -10,8 +10,8 @@ import {
   sortXBandAxis,
   sortLegend,
   reshapeTo2D2M,
-  pivotReshapeTo2D1M,
   encodingXYY,
+  pivotReshapeTo2D2M,
 } from '../pipes'
 import { autoDualMeasures } from '../pipes/init/autoDualMeasures'
 
@@ -19,7 +19,7 @@ export const dualAxisAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   autoDualMeasures,
   autoDimensions,
-  pivotAdapter([reshapeTo2D2M], [pivotReshapeTo2D1M]),
+  pivotAdapter([reshapeTo2D2M], [pivotReshapeTo2D2M]),
   encodingXYY,
   sortXBandAxis,
   sortLegend,

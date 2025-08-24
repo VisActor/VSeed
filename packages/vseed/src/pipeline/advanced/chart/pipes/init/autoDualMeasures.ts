@@ -1,3 +1,4 @@
+import { isNullish } from 'remeda'
 import type { AdvancedPipe, Datum, DualMeasures, MeasureGroup, MeasureTree } from 'src/types'
 
 export const autoDualMeasures: AdvancedPipe = (advancedVSeed, context) => {
@@ -88,9 +89,10 @@ const dualMeasuresToMeasureTree = (dualMeasures: DualMeasures): MeasureTree => {
       })
     }
 
+    const id = [primaryAlias, secondaryAlias, index].filter((d) => !isNullish(d)).join('-')
     return {
-      id: `${primaryAlias}-${secondaryAlias}-${index}`,
-      alias: `${primaryAlias}-${secondaryAlias}-${index}`,
+      id,
+      alias: id,
       children: groupChildren,
     }
   })

@@ -4,8 +4,8 @@ export type DualMeasure = {
   primaryAlias?: string
   primaryMeasures?: Measure | Measure[]
 
-  secondaryMeasures?: Measure | Measure[]
   secondaryAlias?: string
+  secondaryMeasures?: Measure | Measure[]
 }
 
 export type DualMeasures = DualMeasure[]

@@ -21,16 +21,28 @@ export const CombinationDualAxisChart = memo(() => {
   const vseed: VSeed = {
     chartType: 'dualAxis',
     dataset: [
-      { date: '2019', category: 'Grocery',   profit: 10, sales: 100 , ratio: 0.1},
-      { date: '2020', category: 'Beverages', profit: 30, sales: 3200, ratio: 0.2},
-      { date: '2021', category: 'Dairy',     profit: 30, sales: 300,  ratio: 0.3},
-      { date: '2022', category: 'Household', profit: 50, sales: 2400, ratio: 0.4},
-      { date: '2023', category: 'Personal',  profit: 40, sales: 500,  ratio: 0.5},
-      { date: '2019', category: 'Grocery',   profit: 10, sales: 100,  ratio: 0.1},
-      { date: '2020', category: 'Beverages', profit: 30, sales: 3200, ratio: 0.2},  
-      { date: '2021', category: 'Dairy',     profit: 30, sales: 300,  ratio: 0.3},
-      { date: '2022', category: 'Household', profit: 50, sales: 2400, ratio: 0.4},
-      { date: '2023', category: 'Personal',  profit: 40, sales: 500,  ratio: 0.5},
+      { date: '2019', category: 'Grocery', profit: 10, sales: 100, ratio: 0.1 },
+      { date: '2020', category: 'Beverages', profit: 30, sales: 3200, ratio: 0.2 },
+      { date: '2021', category: 'Dairy', profit: 30, sales: 300, ratio: 0.3 },
+      { date: '2022', category: 'Household', profit: 50, sales: 2400, ratio: 0.4 },
+      { date: '2023', category: 'Personal', profit: 40, sales: 500, ratio: 0.5 },
+      { date: '2019', category: 'Grocery', profit: 10, sales: 100, ratio: 0.1 },
+      { date: '2020', category: 'Beverages', profit: 30, sales: 3200, ratio: 0.2 },
+      { date: '2021', category: 'Dairy', profit: 30, sales: 300, ratio: 0.3 },
+      { date: '2022', category: 'Household', profit: 50, sales: 2400, ratio: 0.4 },
+      { date: '2023', category: 'Personal', profit: 40, sales: 500, ratio: 0.5 },
+    ],
+    measures: [
+      {
+        primaryAlias: 'profit',
+        secondaryAlias: 'sales',
+        primaryMeasures: [{ id: 'profit' }],
+        secondaryMeasures: [{ id: 'sales' }],
+      },
+      {
+        primaryAlias: 'ratio',
+        primaryMeasures: [{ id: 'ratio' }],
+      },
     ],
   }
   return <PivotChart vseed={vseed} />

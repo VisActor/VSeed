@@ -55,7 +55,6 @@ export const pivotReshapeTo2D1M: AdvancedPipe = (advancedVSeed, context) => {
     newDatasets.push(newSubDataset)
     datasetReshapeInfo.push(reshapeInfo)
   })
-
   return {
     ...result,
     dataset: newDatasets,

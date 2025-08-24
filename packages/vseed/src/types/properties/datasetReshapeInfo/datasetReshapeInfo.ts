@@ -33,7 +33,6 @@ export const zDatasetReshapeInfo = z.array(
     foldInfo: zFoldInfo,
     foldInfoList: z.array(zFoldInfo).optional(),
     unfoldInfo: zUnfoldInfo,
-    unfoldInfoList: z.array(zUnfoldInfo).optional(),
   }),
 )
 

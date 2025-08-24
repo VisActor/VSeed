@@ -15,7 +15,12 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
   }
 
   const { datasetReshapeInfo } = advancedVSeed
-  const colorItems = unique(datasetReshapeInfo.flatMap((d) => d.unfoldInfo.colorItems))
+
+  const colorItems = unique(
+    datasetReshapeInfo.flatMap((d) => {
+      return d.unfoldInfo.colorItems
+    }),
+  )
 
   const colorIdMap = datasetReshapeInfo.reduce<Record<string, string>>((prev, cur) => {
     return { ...prev, ...cur.unfoldInfo.colorIdMap }

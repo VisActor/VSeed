@@ -1,8 +1,8 @@
-import type { ILineChartSpec } from '@visactor/vchart'
+import type { ILineSeriesSpec } from '@visactor/vchart'
 import type { SpecPipe } from 'src/types'
 
 export const progressive: SpecPipe = (spec, context) => {
-  const result = { ...spec } as ILineChartSpec
+  const result = { ...spec } as ILineSeriesSpec
   const { advancedVSeed } = context
   const { dataset } = advancedVSeed
   const size = dataset.length

@@ -7,60 +7,39 @@ pageType: custom
 ```tsx
 const Demo = () => {
   const vseed: VSeed = {
-    chartType: 'pie',
+    chartType: 'dualAxis',
     dataset: [
+      { date: '2019', region: 'A', profit: 1 },
+      { date: '2019', region: 'B', profit: 2 },
+      { date: '2019', region: 'C', profit: 3 },
+      { date: '2019', region: 'D', profit: 4 },
+      { date: '2019', region: 'E', profit: 5 },
+
+      { date: '2020', region: 'A', profit: 10 },
+      { date: '2020', region: 'B', profit: 9 },
+      { date: '2020', region: 'C', profit: 8 },
+      { date: '2020', region: 'D', profit: 7 },
+      { date: '2020', region: 'E', profit: 6 },
+
+      { date: '2021', region: 'A', profit: 11 },
+      { date: '2021', region: 'B', profit: 12 },
+      { date: '2021', region: 'C', profit: 13 },
+      { date: '2021', region: 'D', profit: 14 },
+      { date: '2021', region: 'E', profit: 15 },
+    ],
+    measures: [
       {
-        entry_category: '首页',
-        UV: 1200,
-        PV: 3000,
-      },
-      {
-        entry_category: '活动页',
-        UV: 800,
-        PV: 2000,
-      },
-      {
-        entry_category: '搜索页',
-        UV: 600,
-        PV: 1500,
-      },
-      {
-        entry_category: '推荐页',
-        UV: 400,
-        PV: 1000,
-      },
-      {
-        entry_category: '分类页',
-        UV: 300,
-        PV: 800,
+        primaryMeasures: [{ id: 'profit' }],
       },
     ],
     dimensions: [
       {
-        alias: 'Entry Category',
-        id: 'entry_category',
-      },
-    ],
-    measures: [
-      {
-        id: 'traffic',
-        alias: 'Traffic Metrics',
-        children: [
-          {
-            alias: 'Unique Visitors',
-            id: 'UV',
-          },
-        ],
+        id: 'date',
+        location: 'dimension',
       },
       {
-        id: 'traffic2',
-        alias: 'Traffic2 Metrics',
-        children: [
-          {
-            alias: 'Page Views',
-            id: 'PV',
-          },
-        ],
+        id: 'region',
+        location: 'columnDimension',
       },
     ],
   }

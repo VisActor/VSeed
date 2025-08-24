@@ -31,7 +31,7 @@ export const reshapeTo2D2M: AdvancedPipe = (advancedVSeed, context) => {
   const unfoldInfoList: UnfoldInfo[] = []
 
   const primaryMeasures = measures[0] as MeasureGroup
-  const secondaryMeasures = measures[1] as MeasureGroup
+  const secondaryMeasures = (measures[1] || measures[0]) as MeasureGroup
 
   if (primaryMeasures && primaryMeasures.children) {
     const {
@@ -59,6 +59,13 @@ export const reshapeTo2D2M: AdvancedPipe = (advancedVSeed, context) => {
     unfoldInfoList.push(unfoldInfo)
   }
 
+  const unfoldInfo: UnfoldInfo = {
+    groupName: unfoldInfoList[0].groupName,
+    groupId: unfoldInfoList[0].groupId,
+    colorItems: unfoldInfoList.flatMap((d) => d.colorItems),
+    colorIdMap: unfoldInfoList.reduce((prev, cur) => ({ ...prev, ...cur.colorIdMap }), {}),
+  }
+
   return {
     ...result,
     dataset: datasets,
@@ -66,9 +73,8 @@ export const reshapeTo2D2M: AdvancedPipe = (advancedVSeed, context) => {
       {
         id: '2D2M',
         foldInfo: foldInfoList[0],
-        unfoldInfo: unfoldInfoList[0],
         foldInfoList: foldInfoList,
-        unfoldInfoList: unfoldInfoList,
+        unfoldInfo: unfoldInfo,
       },
     ],
   }

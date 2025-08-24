@@ -30,7 +30,7 @@ export const pivotReshapeTo2D2M: AdvancedPipe = (advancedVSeed, context) => {
   const datasetList: Dataset[] = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
-  measures.forEach((measureGroup: MeasureGroup) => {
+  measures.forEach((measureGroup: MeasureGroup, index) => {
     const measures = measureGroup.children || []
     if (measures.length === 0) {
       throw new Error('measures can not be empty')
@@ -44,7 +44,7 @@ export const pivotReshapeTo2D2M: AdvancedPipe = (advancedVSeed, context) => {
     const unfoldInfoList: UnfoldInfo[] = []
 
     const primaryMeasures = measures[0] as MeasureGroup
-    const secondaryMeasures = measures[1] as MeasureGroup
+    const secondaryMeasures = (measures[1] || measures[0]) as MeasureGroup
 
     if (primaryMeasures && primaryMeasures.children) {
       const {
@@ -52,7 +52,7 @@ export const pivotReshapeTo2D2M: AdvancedPipe = (advancedVSeed, context) => {
         foldInfo,
         unfoldInfo,
       } = dataReshapeFor2D1M(dataset, commonDimensions, primaryMeasures.children, {
-        foldMeasureValue: FoldPrimaryMeasureValue,
+        foldMeasureValue: `${FoldPrimaryMeasureValue}${index}`,
       })
       datasets.push(newDatasets)
       foldInfoList.push(foldInfo)
@@ -65,22 +65,32 @@ export const pivotReshapeTo2D2M: AdvancedPipe = (advancedVSeed, context) => {
         foldInfo,
         unfoldInfo,
       } = dataReshapeFor2D1M(dataset, commonDimensions, secondaryMeasures.children, {
-        foldMeasureValue: FoldSecondaryMeasureValue,
+        foldMeasureValue: `${FoldSecondaryMeasureValue}${index}`,
       })
       datasets.push(newDatasets)
       foldInfoList.push(foldInfo)
       unfoldInfoList.push(unfoldInfo)
     }
 
-    datasetList.push(datasets)
-    datasetReshapeInfo.push({
-      id: '2D2M',
+    datasetList.push(datasets.flat(2))
+
+    const unfoldInfo: UnfoldInfo = {
+      groupName: unfoldInfoList[0].groupName,
+      groupId: unfoldInfoList[0].groupId,
+      colorItems: unfoldInfoList.flatMap((d) => d.colorItems),
+      colorIdMap: unfoldInfoList.reduce((prev, cur) => ({ ...prev, ...cur.colorIdMap }), {}),
+    }
+
+    const reshapeInfo = {
+      id: `2D2M-${index}`,
       foldInfo: foldInfoList[0],
-      unfoldInfo: unfoldInfoList[0],
+      unfoldInfo: unfoldInfo,
       foldInfoList: foldInfoList,
-      unfoldInfoList: unfoldInfoList,
-    })
+    }
+
+    datasetReshapeInfo.push(reshapeInfo)
   })
+
   return {
     ...result,
     dataset: datasetList,

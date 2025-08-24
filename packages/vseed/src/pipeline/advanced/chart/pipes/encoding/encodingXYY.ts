@@ -16,14 +16,14 @@ export const encodingXYY: AdvancedPipe = (advancedVSeed) => {
   const isZeroDimension = dimensions.length === 0
 
   const encoding = datasetReshapeInfo.reduce<Encoding>((prev, cur) => {
-    const { foldInfoList, unfoldInfoList } = cur as {
+    const { foldInfoList, unfoldInfo } = cur as {
       foldInfoList: FoldInfo[]
-      unfoldInfoList: UnfoldInfo[]
+      unfoldInfo: UnfoldInfo
     }
 
     const x = [isZeroDimension ? foldInfoList[0].measureName : xDimension?.id]
     const y = foldInfoList.map((d) => d.measureValue)
-    const group = [unfoldInfoList[0].groupId]
+    const group = [unfoldInfo.groupId]
     const color = [foldInfoList[0].measureName]
 
     return [

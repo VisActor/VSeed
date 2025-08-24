@@ -1,4 +1,4 @@
-import { isEmpty } from 'remeda'
+import { isEmpty, isNullish } from 'remeda'
 import { autoFormatter, createFormatter, findMeasureById } from '../../../../utils'
 import type { Datum, FoldInfo, SpecPipe, Tooltip, UnfoldInfo } from 'src/types'
 
@@ -109,6 +109,10 @@ export const tooltipSecondary: SpecPipe = (spec, context) => {
   const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
+
+  if (isNullish(datasetReshapeInfo[0].foldInfoList?.[1])) {
+    return result
+  }
 
   const foldInfoList = datasetReshapeInfo[0].foldInfoList as FoldInfo[]
   const unfoldInfo = datasetReshapeInfo[0].unfoldInfo as UnfoldInfo

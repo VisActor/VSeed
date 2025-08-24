@@ -9,27 +9,28 @@ const Demo = () => {
   const vseed: VSeed = {
     chartType: 'dualAxis',
     dataset: [
-      { date: '2019', type: 'A', profit: 1, sales: 100 },
-      { date: '2020', type: 'A', profit: 2, sales: 100 },
-      { date: '2021', type: 'A', profit: 3, sales: 100 },
-      { date: '2022', type: 'A', profit: 4, sales: 100 },
-      { date: '2023', type: 'A', profit: 5, sales: 100 },
+      { date: '2019', type: 'A', profit: 1, sales: 10 },
+      { date: '2020', type: 'A', profit: 2, sales: 20 },
+      { date: '2021', type: 'A', profit: 10, sales: 80 },
+      { date: '2022', type: 'A', profit: 4, sales: 40 },
+      { date: '2023', type: 'A', profit: 5, sales: 50 },
 
-      { date: '2019', type: 'B', profit: 1, sales: 100 },
-      { date: '2020', type: 'B', profit: 2, sales: 100 },
-      { date: '2021', type: 'B', profit: 3, sales: 100 },
-      { date: '2022', type: 'B', profit: 4, sales: 100 },
-      { date: '2023', type: 'B', profit: 5, sales: 100 },
+      { date: '2019', type: 'B', profit: 1, sales: 10 },
+      { date: '2020', type: 'B', profit: 2, sales: 20 },
+      { date: '2021', type: 'B', profit: 0, sales: 0 },
+      { date: '2022', type: 'B', profit: 4, sales: 40 },
+      { date: '2023', type: 'B', profit: 5, sales: 50 },
     ],
+    label: {
+      enable: false,
+    },
     dualChartType: {
       primary: 'columnParallel',
-      secondary: 'scatter',
+      secondary: 'line',
     },
     measures: [
-      {
-        primaryMeasures: [{ id: 'profit' }],
-        secondaryMeasures: [{ id: 'sales' }],
-      },
+      { id: 'profit', alias: '利润' },
+      { id: 'sales', alias: '销售额' },
     ],
     dimensions: [
       {

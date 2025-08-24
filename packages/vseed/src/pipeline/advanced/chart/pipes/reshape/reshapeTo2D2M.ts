@@ -31,7 +31,7 @@ export const reshapeTo2D2M: AdvancedPipe = (advancedVSeed, context) => {
   const unfoldInfoList: UnfoldInfo[] = []
 
   const primaryMeasures = measures[0] as MeasureGroup
-  const secondaryMeasures = (measures[1] || measures[0]) as MeasureGroup
+  const secondaryMeasures = (measures[1] || []) as MeasureGroup
 
   if (primaryMeasures && primaryMeasures.children) {
     const {

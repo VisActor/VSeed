@@ -1,4 +1,5 @@
 import type { Dimensions, DimensionGroup, DimensionTree, VSeed } from 'src/types'
+import { measureDepth } from './measures'
 
 export const isTable = (vseed: VSeed) => {
   return vseed.chartType === 'table'
@@ -17,6 +18,22 @@ export const isPivotChart = (vseed: VSeed) => {
     return false
   }
 
+  if (vseed.chartType === 'dualAxis') {
+    if (vseed.measures) {
+      const depth = measureDepth(vseed.measures)
+      if (depth === 3) {
+        return true
+      }
+      return false
+    }
+
+    if (vseed.dualMeasures && vseed.dualMeasures.length > 1) {
+      return true
+    }
+
+    return false
+  }
+
   const { measures = [], dimensions = [] } = vseed as {
     measures: DimensionTree
     dimensions: Dimensions
@@ -28,7 +45,5 @@ export const isPivotChart = (vseed: VSeed) => {
 
   const hasMeasureGroup = measures && measures.some((measure: DimensionGroup) => measure && measure.children)
 
-  const hasMultipleDualAxis = vseed.chartType === 'dualAxis' && measures.length > 1
-
-  return hasRowOrColumnDimension || hasMeasureGroup || hasMultipleDualAxis
+  return hasRowOrColumnDimension || hasMeasureGroup
 }

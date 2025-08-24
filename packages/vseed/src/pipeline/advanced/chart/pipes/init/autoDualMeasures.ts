@@ -1,13 +1,13 @@
 import { isNullish } from 'remeda'
-import type { AdvancedPipe, Datum, DualMeasures, MeasureGroup, MeasureTree } from 'src/types'
+import { measureDepth } from 'src/pipeline/utils'
+import type { AdvancedPipe, Datum, DualAxis, DualMeasures, MeasureGroup, MeasureTree } from 'src/types'
 
 export const autoDualMeasures: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
-  const { vseed } = context
-  const { measures, dataset } = vseed
-
-  // TODO: DualMeasures 只是一个语法糖, 也应该支持和其他图表类型一致的measures.
-  const dualMeasures = measures as DualMeasures
+  const { vseed } = context as {
+    vseed: DualAxis
+  }
+  const { dataset, dualMeasures, measures } = vseed
 
   if (!dataset) {
     throw new Error('dataset is required')
@@ -17,8 +17,12 @@ export const autoDualMeasures: AdvancedPipe = (advancedVSeed, context) => {
     return result
   }
 
-  if (measures) {
+  if (dualMeasures) {
     result.measures = dualMeasuresToMeasureTree(dualMeasures)
+    return result
+  }
+  if (measures && measureDepth(measures) > 1) {
+    result.measures = measures
     return result
   }
 
@@ -28,14 +32,16 @@ export const autoDualMeasures: AdvancedPipe = (advancedVSeed, context) => {
     return { ...prev, ...cur }
   }, {})
 
-  const newMeasures = Object.keys(sample)
-    .filter((key) => {
-      return top100dataset.some((item) => typeof item[key] === 'number') && !['', null, undefined].includes(key)
-    })
-    .map((measure) => ({
-      id: measure,
-      alias: measure,
-    }))
+  const newMeasures =
+    measures ||
+    Object.keys(sample)
+      .filter((key) => {
+        return top100dataset.some((item) => typeof item[key] === 'number') && !['', null, undefined].includes(key)
+      })
+      .map((measure) => ({
+        id: measure,
+        alias: measure,
+      }))
 
   if (newMeasures.length === 0) {
     result.measures = []

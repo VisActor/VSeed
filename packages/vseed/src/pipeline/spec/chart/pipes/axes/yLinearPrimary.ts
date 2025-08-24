@@ -2,6 +2,7 @@ import type { ISpec } from '@visactor/vchart'
 import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
 import { autoFormatter } from '../../../../utils'
 import type { SpecPipe, YLinearAxis } from 'src/types'
+import { isEmpty } from 'remeda'
 
 export const yLinearPrimary: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
@@ -10,6 +11,9 @@ export const yLinearPrimary: SpecPipe = (spec, context) => {
   const { locale, datasetReshapeInfo } = advancedVSeed
   const config = advancedVSeed.config?.[chartType as 'dualAxis']?.primaryYAxis as YLinearAxis
 
+  if (datasetReshapeInfo[0].foldInfoList?.[0] && isEmpty(datasetReshapeInfo[0].foldInfoList[0].foldMap)) {
+    return result
+  }
   const id = `${datasetReshapeInfo[0].id}-primary-axis`
   const seriesId = `${datasetReshapeInfo[0].id}-primary-series`
 

@@ -2,7 +2,7 @@ import type { ILineChartSpec } from '@visactor/vchart'
 import type { ILineLikeLabelSpec } from '@visactor/vchart/esm/series/mixin/interface'
 import { autoFormatter, createFormatter, findMeasureById } from '../../../../utils'
 import type { Datum, FoldInfo, Label, SpecPipe } from 'src/types'
-import { isEmpty } from 'remeda'
+import { isEmpty, isNullish } from 'remeda'
 
 export const labelPrimary: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
@@ -62,7 +62,9 @@ export const labelSecondary: SpecPipe = (spec, context) => {
   if (!baseConfig || !baseConfig.label) {
     return result
   }
-
+  if (isNullish(datasetReshapeInfo[0].foldInfoList?.[1])) {
+    return result
+  }
   const foldInfoList = datasetReshapeInfo[0].foldInfoList as FoldInfo[]
 
   const { measureId, measureValue } = foldInfoList[1]

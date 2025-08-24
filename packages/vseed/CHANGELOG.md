@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.34
+
+### Patch Changes
+
+- feat: add dual axis
+
 ## 0.0.33
 
 ### Patch Changes

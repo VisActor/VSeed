@@ -1,1 +1,2 @@
-export * from './area'
+export type * from './area'
+export { zArea } from './zArea'

@@ -1,6 +1,4 @@
-import { z } from 'zod'
 import type { NumFormat } from './format/numFormat'
-import { zNumFormat } from './format/numFormat'
 
 export type Measure = {
   /**
@@ -16,7 +14,7 @@ export type Measure = {
    * @description 自动数值格式化
    * 开启后, 图表的数据标签、提示信息, 会根据指标的数值, 自动根据语言环境, 选择合适的格式化方式
    * 格式化规则为设置为十进制数值, 开启compact notation, 最小0位小数, 最大2位小数, 自动四舍五入, 使用浏览器提供的 Intl.NumberFormatOptions 实现该逻辑.
-   * 例如: 
+   * 例如:
    * 当locale为zh-CN: 749740.264会被自动格式化为74.45万
    * 当locale为en-US: 749740.264会被自动格式化为744.5K
    * @default true
@@ -44,21 +42,3 @@ export type MeasureGroup = {
 }
 export type Measures = Measure[]
 export type MeasureTree = (Measure | MeasureGroup)[]
-
-export const zMeasure = z.object({
-  id: z.string(),
-  alias: z.string().optional(),
-  autoFormat: z.boolean().default(true),
-  format: zNumFormat.default({}),
-})
-
-export const zMeasureGroup: z.ZodType<MeasureGroup> = z.object({
-  id: z.string(),
-  alias: z.string().optional(),
-  get children() {
-    return z.array(zMeasureGroup.or(zMeasure)).optional()
-  },
-})
-
-export const zMeasures = z.array(zMeasure)
-export const zMeasureTree = z.array(zMeasureGroup.or(zMeasure))

@@ -13,6 +13,9 @@ export const color: SpecPipe = (spec, context) => {
     return result
   }
 
+  const colorItems = unfoldInfo.colorItems
+  const colorIdMap = unfoldInfo.colorIdMap
+
   const { color } = baseConfig
   const { colorScheme, colorMapping } = color
   const mappingList: Array<[string, string]> = []
@@ -20,7 +23,7 @@ export const color: SpecPipe = (spec, context) => {
     Object.entries(colorMapping)
       .sort((a, b) => a[0].split(Separator).length - b[0].split(Separator).length)
       .forEach(([key, value]) => {
-        const idMap = Object.entries(unfoldInfo.colorIdMap).filter(([_, v]) => v.includes(key))
+        const idMap = Object.entries(colorIdMap).filter(([_, v]) => v.includes(key))
 
         for (const [colorId] of idMap) {
           mappingList.push([colorId, value])
@@ -30,7 +33,7 @@ export const color: SpecPipe = (spec, context) => {
 
   result.color = {
     type: 'ordinal',
-    domain: unfoldInfo.colorItems,
+    domain: colorItems,
     range: colorScheme,
     specified: Object.fromEntries(mappingList),
   } as ILineChartSpec['color']

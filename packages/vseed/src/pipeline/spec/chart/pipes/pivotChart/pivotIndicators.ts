@@ -16,7 +16,12 @@ export const pivotIndicators =
       const measure = measures?.find((d) => d.id === reshapeInfo.id)
 
       const newEncoding = [encoding[index]]
-      const newDatasetReshapeInfo = [{ ...reshapeInfo, unfoldInfo: { ...reshapeInfo.unfoldInfo, colorItems } }]
+      const newDatasetReshapeInfo = [
+        {
+          ...reshapeInfo,
+          unfoldInfo: { ...reshapeInfo.unfoldInfo, colorItems },
+        },
+      ]
       const newContext: SpecPipelineContext = {
         ...context,
         advancedVSeed: {

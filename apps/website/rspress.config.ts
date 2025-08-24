@@ -20,12 +20,12 @@ export default defineConfig({
       title: 'VisActor VSeed',
       description: 'VisActor VSeed',
     },
-    {
-      lang: 'en-US',
-      label: 'English',
-      title: 'VisActor VSeed',
-      description: 'VisActor VSeed',
-    },
+    // {
+    //   lang: 'en-US',
+    //   label: 'English',
+    //   title: 'VisActor VSeed',
+    //   description: 'VisActor VSeed',
+    // },
   ],
   themeConfig: {
     socialLinks: [

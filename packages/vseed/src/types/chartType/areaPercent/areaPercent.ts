@@ -1,26 +1,5 @@
 import type { Locale } from '../../i18n'
-import { zLocale } from '../../i18n'
-import {
-  zAnnotationArea,
-  zAnnotationHorizontalLine,
-  zAnnotationPoint,
-  zAnnotationVerticalLine,
-  zAreaStyle,
-  zBackgroundColor,
-  zColor,
-  zCrosshairLine,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLegend,
-  zLineStyle,
-  zMeasureTree,
-  zPointStyle,
-  zTheme,
-  zTooltip,
-  zXBandAxis,
-  zYLinearAxis,
-} from '../../properties'
+
 import type {
   AnnotationArea,
   AnnotationHorizontalLine,
@@ -44,7 +23,6 @@ import type {
   Sort,
   SortLegend,
 } from '../../properties'
-import { z } from 'zod'
 
 /**
  * 百分比面积图类型定义
@@ -237,27 +215,3 @@ export interface AreaPercent {
    */
   locale?: Locale
 }
-
-export const zAreaPercent = z.object({
-  chartType: z.literal('areaPercent'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
-  label: zLabel.optional(),
-  legend: zLegend.optional(),
-  tooltip: zTooltip.optional(),
-  xAxis: zXBandAxis.optional(),
-  yAxis: zYLinearAxis.optional(),
-  crosshairLine: zCrosshairLine.optional(),
-  theme: zTheme.optional(),
-  pointStyle: z.array(zPointStyle).or(zPointStyle).optional(),
-  lineStyle: z.array(zLineStyle).or(zLineStyle).optional(),
-  areaStyle: z.array(zAreaStyle).or(zAreaStyle).optional(),
-  annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
-  annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
-  annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),
-  annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).optional(),
-  locale: zLocale.optional(),
-})

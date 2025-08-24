@@ -1,4 +1,4 @@
-import type { AdvancedPipe, Datum } from 'src/types'
+import type { AdvancedPipe, Datum, MeasureTree } from 'src/types'
 
 export const autoMeasures: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
@@ -14,7 +14,7 @@ export const autoMeasures: AdvancedPipe = (advancedVSeed, context) => {
   }
 
   if (measures) {
-    result.measures = measures
+    result.measures = measures as MeasureTree
     return result
   }
 

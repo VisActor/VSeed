@@ -267,6 +267,13 @@ export const darkTheme = (): CustomThemeConfig => {
         },
         crosshairLine,
       },
+      dualAxis: {
+        ...baseConfig,
+        xAxis: bandAxis,
+        primaryYAxis: linearAxis,
+        secondaryYAxis: linearAxis,
+        crosshairRect,
+      },
       // polar
       pie: {
         ...baseConfig,

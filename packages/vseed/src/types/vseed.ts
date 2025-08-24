@@ -18,6 +18,7 @@ import { zAreaPercent, type AreaPercent } from './chartType/areaPercent'
 import type { AreaRange, Heatmap, Radar } from './chartType'
 import {
   zAreaRange,
+  zDualAxis,
   zFunnel,
   zHeatmap,
   zPivotTable,
@@ -31,8 +32,10 @@ import {
 } from './chartType'
 
 export type VSeed =
+  // table
   | Table
   | PivotTable
+
   // cartesian
   | Line
   | Column
@@ -73,7 +76,7 @@ export const zVSeed = z.discriminatedUnion('chartType', [
   zAreaPercent,
   zAreaRange,
   zScatter,
-  // zDualAxis,
+  zDualAxis,
   // polar
   zPie,
   zDonut,

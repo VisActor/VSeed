@@ -25,7 +25,10 @@ export const isPivotChart = (vseed: VSeed) => {
   const hasRowOrColumnDimension =
     dimensions &&
     dimensions.some((dimension) => dimension.location === 'rowDimension' || dimension.location === 'columnDimension')
+
   const hasMeasureGroup = measures && measures.some((measure: DimensionGroup) => measure && measure.children)
 
-  return hasRowOrColumnDimension || hasMeasureGroup
+  const hasMultipleDualAxis = vseed.chartType === 'dualAxis' && measures.length > 1
+
+  return hasRowOrColumnDimension || hasMeasureGroup || hasMultipleDualAxis
 }

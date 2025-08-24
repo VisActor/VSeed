@@ -1,8 +1,11 @@
 import type { Measure } from './measures'
 
 export type DualMeasure = {
-  primaryMeasures: Measure | Measure[]
-  secondaryMeasures: Measure | Measure[]
+  primaryAlias?: string
+  primaryMeasures?: Measure | Measure[]
+
+  secondaryMeasures?: Measure | Measure[]
+  secondaryAlias?: string
 }
 
 export type DualMeasures = DualMeasure[]

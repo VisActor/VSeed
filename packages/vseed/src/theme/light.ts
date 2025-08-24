@@ -258,6 +258,13 @@ export const lightTheme = (): CustomThemeConfig => {
         },
         crosshairLine,
       },
+      dualAxis: {
+        ...baseConfig,
+        xAxis: bandAxis,
+        primaryYAxis: linearAxis,
+        secondaryYAxis: linearAxis,
+        crosshairRect,
+      },
       // polar
       pie: {
         ...baseConfig,

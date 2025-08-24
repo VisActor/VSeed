@@ -263,6 +263,10 @@ export const lightTheme = (): CustomThemeConfig => {
         xAxis: bandAxis,
         primaryYAxis: linearAxis,
         secondaryYAxis: linearAxis,
+        dualChartType: {
+          primary: 'column',
+          secondary: 'line',
+        },
         crosshairRect,
       },
       // polar

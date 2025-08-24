@@ -6,7 +6,12 @@ export const dualChartTypePrimary: SpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const { datasetReshapeInfo } = advancedVSeed
-  const config = advancedVSeed.config?.[chartType as 'dualAxis']?.dualChartType as DualChartType
+  const config =
+    advancedVSeed.config?.[chartType as 'dualAxis']?.dualChartType ||
+    ({
+      primary: 'column',
+      secondary: 'line',
+    } as DualChartType)
 
   if (Array.isArray(config)) {
     return result
@@ -61,7 +66,12 @@ export const dualChartTypeSecondary: SpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const { datasetReshapeInfo } = advancedVSeed
-  const config = advancedVSeed.config?.[chartType as 'dualAxis']?.dualChartType as DualChartType
+  const config =
+    advancedVSeed.config?.[chartType as 'dualAxis']?.dualChartType ||
+    ({
+      primary: 'column',
+      secondary: 'line',
+    } as DualChartType)
 
   if (Array.isArray(config)) {
     return result

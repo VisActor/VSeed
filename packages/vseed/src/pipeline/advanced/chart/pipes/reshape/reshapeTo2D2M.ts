@@ -72,6 +72,7 @@ export const reshapeTo2D2M: AdvancedPipe = (advancedVSeed, context) => {
     datasetReshapeInfo: [
       {
         id: '2D2M',
+        index: 0,
         foldInfo: foldInfoList[0],
         foldInfoList: foldInfoList,
         unfoldInfo: unfoldInfo,

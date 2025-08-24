@@ -31,7 +31,7 @@ export const pivotReshapeTo2D1M0Name: AdvancedPipe = (advancedVSeed, context) =>
 
   const newDatasets: Dataset = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
-  measureGroups.forEach((measureGroup) => {
+  measureGroups.forEach((measureGroup, index) => {
     const measures = measureGroup.children
     if (!measures) {
       return
@@ -49,6 +49,7 @@ export const pivotReshapeTo2D1M0Name: AdvancedPipe = (advancedVSeed, context) =>
     })
     const reshapeInfo = {
       id: groupId,
+      index,
       foldInfo,
       unfoldInfo,
     }

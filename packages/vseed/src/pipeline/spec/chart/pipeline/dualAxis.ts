@@ -35,16 +35,18 @@ import {
   tooltipPrimary,
   tooltipSecondary,
   yLinearPrimary,
+  dualChartTypePrimary,
+  dualChartTypeSecondary,
 } from '../pipes'
 
 const dualAxis: SpecPipeline = [
   series(
     [
       initDualAxisPrimary,
+      dualChartTypePrimary,
       datasetPrimary,
       labelPrimary,
       tooltipPrimary,
-
       progressive,
 
       barStyle,
@@ -55,6 +57,7 @@ const dualAxis: SpecPipeline = [
     ],
     [
       initDualAxisSecondary,
+      dualChartTypeSecondary,
       datasetSecondary,
       labelSecondary,
       tooltipSecondary,

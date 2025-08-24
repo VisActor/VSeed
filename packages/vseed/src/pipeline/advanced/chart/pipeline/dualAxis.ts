@@ -4,7 +4,6 @@ import {
   initAdvancedVSeed,
   theme,
   pivotAdapter,
-  lineConfig,
   annotation,
   markStyle,
   sortXBandAxis,
@@ -12,6 +11,7 @@ import {
   reshapeTo2D2M,
   encodingXYY,
   pivotReshapeTo2D2M,
+  dualAxisConfig,
 } from '../pipes'
 import { autoDualMeasures } from '../pipes/init/autoDualMeasures'
 
@@ -23,7 +23,7 @@ export const dualAxisAdvancedPipeline: AdvancedPipeline = [
   encodingXYY,
   sortXBandAxis,
   sortLegend,
-  lineConfig,
+  dualAxisConfig,
   theme,
   markStyle,
   annotation

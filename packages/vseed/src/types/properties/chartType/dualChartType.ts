@@ -1,31 +1,11 @@
 import { z } from 'zod'
 
 export const zDualChartType = z.object({
-  main: z
-    .enum([
-      // cartesian
-      'line',
-      'column',
-      'columnPercent',
-      'columnParallel',
-
-      'area',
-      'areaPercent',
-      'areaRange',
-    ])
+  primary: z
+    .enum(['line', 'column', 'columnPercent', 'columnParallel', 'area', 'areaPercent', 'scatter'])
     .default('column'),
   secondary: z
-    .enum([
-      // cartesian
-      'line',
-      'column',
-      'columnPercent',
-      'columnParallel',
-
-      'area',
-      'areaPercent',
-      'areaRange',
-    ])
+    .enum(['line', 'column', 'columnPercent', 'columnParallel', 'area', 'areaPercent', 'scatter'])
     .default('line'),
 })
 

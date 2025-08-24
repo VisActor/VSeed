@@ -83,6 +83,7 @@ export const pivotReshapeTo2D2M: AdvancedPipe = (advancedVSeed, context) => {
 
     const reshapeInfo = {
       id: `2D2M-${index}`,
+      index,
       foldInfo: foldInfoList[0],
       unfoldInfo: unfoldInfo,
       foldInfoList: foldInfoList,

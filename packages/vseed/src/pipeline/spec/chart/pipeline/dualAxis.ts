@@ -61,7 +61,6 @@ const dualAxis: SpecPipeline = [
       datasetSecondary,
       labelSecondary,
       tooltipSecondary,
-
       progressive,
 
       barStyle,
@@ -95,6 +94,7 @@ const pivotDualAxis: SpecPipeline = [
     series(
       [
         initDualAxisPrimary,
+        dualChartTypePrimary,
         datasetPrimary,
         labelPrimary,
         tooltipPrimary,
@@ -108,6 +108,7 @@ const pivotDualAxis: SpecPipeline = [
       ],
       [
         initDualAxisSecondary,
+        dualChartTypeSecondary,
         datasetSecondary,
         labelSecondary,
         tooltipSecondary,

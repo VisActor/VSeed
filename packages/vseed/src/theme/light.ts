@@ -262,7 +262,7 @@ export const lightTheme = (): CustomThemeConfig => {
         ...baseConfig,
         xAxis: bandAxis,
         primaryYAxis: linearAxis,
-        secondaryYAxis: linearAxis,
+        secondaryYAxis: { ...linearAxis, grid: { visible: false } },
         dualChartType: {
           primary: 'column',
           secondary: 'line',

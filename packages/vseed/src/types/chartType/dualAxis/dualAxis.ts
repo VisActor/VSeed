@@ -143,7 +143,6 @@ export interface DualAxis {
    */
   dualMeasures?: DualMeasures
 
-
   /**
    * @description 双轴图的主次轴的图表类型, 用于定义双轴图的类型, 包括折线图, 柱状图, 面积图等, 当measures有多组时, dualChartType可以配置为数组, 每项对应一个双轴图的子图表类型.
    * @example
@@ -189,8 +188,8 @@ export interface DualAxis {
   tooltip?: Tooltip
 
   /**
-   * 水平提示框
-   * @description 水平提示框配置, 用于定义图表的水平提示框, 包括水平提示框的颜色、标签样式等.
+   * 垂直提示框
+   * @description 垂直提示框配置, 用于定义图表的垂直提示框, 包括垂直提示框的颜色、标签样式等.
    */
   crosshairRect?: CrosshairRect
 

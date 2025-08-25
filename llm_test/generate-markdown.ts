@@ -114,7 +114,9 @@ function generateComponentMarkdown() {
     const keyPathList = JSON.parse(keyPaths.toString())
     keyPathList.forEach((keyPath: any) => {
       topKeySet.add(keyPath.componentName)
-      topKeyDesc[keyPath.componentName] = keyPath.description
+      if (keyPath.description) {
+        topKeyDesc[keyPath.componentName] = keyPath.description
+      }
     })
   })
 

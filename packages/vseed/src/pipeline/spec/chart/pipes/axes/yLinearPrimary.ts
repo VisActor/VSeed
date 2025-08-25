@@ -9,7 +9,10 @@ export const yLinearPrimary: SpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const { locale, datasetReshapeInfo } = advancedVSeed
-  const config = advancedVSeed.config?.[chartType as 'dualAxis']?.primaryYAxis as YLinearAxis
+  // TODO: default config missing
+  const index = datasetReshapeInfo[0].index
+  const primaryYAxis = advancedVSeed.config?.[chartType as 'dualAxis']?.primaryYAxis as YLinearAxis | YLinearAxis[]
+  const config = Array.isArray(primaryYAxis) ? primaryYAxis[index] || primaryYAxis[0] : primaryYAxis
 
   if (datasetReshapeInfo[0].foldInfoList?.[0] && isEmpty(datasetReshapeInfo[0].foldInfoList[0].foldMap)) {
     return result

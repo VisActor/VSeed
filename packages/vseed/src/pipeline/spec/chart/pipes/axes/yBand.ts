@@ -50,7 +50,7 @@ export const yBand: SpecPipe = (spec, context) => {
     label: {
       visible: label?.visible,
       flush: true,
-      containerAlign: 'left',
+      containerAlign: 'right',
       space: 8,
       style: {
         maxLineWidth: labelAutoLimitLength,

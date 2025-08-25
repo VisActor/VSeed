@@ -12,7 +12,7 @@ export const yLinearSecondary: SpecPipe = (spec, context) => {
   // TODO: default config missing
   const index = datasetReshapeInfo[0].index
   const secondaryYAxis = advancedVSeed.config?.[chartType as 'dualAxis']?.secondaryYAxis as YLinearAxis | YLinearAxis[]
-  const config = Array.isArray(secondaryYAxis) ? secondaryYAxis[index] : secondaryYAxis
+  const config = Array.isArray(secondaryYAxis) ? secondaryYAxis[index] || secondaryYAxis[0] : secondaryYAxis
 
   if (isNullish(datasetReshapeInfo[0].foldInfoList?.[1])) {
     return result

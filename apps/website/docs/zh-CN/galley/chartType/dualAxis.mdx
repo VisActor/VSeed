@@ -383,7 +383,7 @@ export const DualChartTypeArray = memo(() => {
 
 <DualYAxisArray />
 
-```tsx pure {4}
+```tsx pure {4-31}
 export const DualYAxisArray = memo(() => {
   const vseed: VSeed = {
     chartType: 'dualAxis',
@@ -397,7 +397,7 @@ export const DualYAxisArray = memo(() => {
       {
         title: {
           visible: true,
-          titleText: '销售额',
+          titleText: '比率',
         },
       },
     ],
@@ -405,7 +405,7 @@ export const DualYAxisArray = memo(() => {
       {
         title: {
           visible: true,
-          titleText: '比率',
+          titleText: '销售额',
         },
       },
       {

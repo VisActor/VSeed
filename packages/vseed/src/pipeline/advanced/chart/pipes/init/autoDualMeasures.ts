@@ -1,4 +1,3 @@
-import { isNullish } from 'remeda'
 import { measureDepth } from 'src/pipeline/utils'
 import type { AdvancedPipe, Datum, DualAxis, DualMeasures, MeasureGroup, MeasureTree } from 'src/types'
 
@@ -75,27 +74,31 @@ export const autoDualMeasures: AdvancedPipe = (advancedVSeed, context) => {
 
 const dualMeasuresToMeasureTree = (dualMeasures: DualMeasures): MeasureTree => {
   const measureTree = dualMeasures.map((item, index): MeasureGroup => {
-    const { primaryMeasures, secondaryMeasures, primaryAlias, secondaryAlias } = item
+    const { primaryMeasures, secondaryMeasures } = item
     const groupChildren: MeasureGroup[] = []
 
+    let id: string = ''
     if (primaryMeasures) {
       const arrPrimaryMeasures = Array.isArray(primaryMeasures) ? primaryMeasures : [primaryMeasures]
+      const alias = arrPrimaryMeasures.map((item) => item.alias || item.id).toString()
+      id += alias
       groupChildren.push({
         id: `${index}-primary`,
-        alias: primaryAlias || arrPrimaryMeasures.map((item) => item.alias || item.id).toString(),
+        alias: arrPrimaryMeasures.map((item) => item.alias || item.id).toString(),
         children: arrPrimaryMeasures,
       })
     }
     if (secondaryMeasures) {
       const arrSecondaryMeasures = Array.isArray(secondaryMeasures) ? secondaryMeasures : [secondaryMeasures]
+      const alias = arrSecondaryMeasures.map((item) => item.alias || item.id).toString()
+      id += alias
       groupChildren.push({
         id: `${index}-secondary`,
-        alias: secondaryAlias || arrSecondaryMeasures.map((item) => item.alias || item.id).toString(),
+        alias: arrSecondaryMeasures.map((item) => item.alias || item.id).toString(),
         children: arrSecondaryMeasures,
       })
     }
 
-    const id = [primaryAlias, secondaryAlias, index].filter((d) => !isNullish(d)).join('-')
     return {
       id,
       alias: id,

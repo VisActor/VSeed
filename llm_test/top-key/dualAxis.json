@@ -2,22 +2,42 @@
   {
     "name": "dataset",
     "componentName": "Dataset",
-    "description": "符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 双轴图的数据最终会被转换为2个维度, 1或2个指标(取决于用户是否配置了指标组)."
+    "description": "数据集, 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 双轴图的数据最终会被转换为2个维度, 1或2个指标(取决于用户是否配置了指标组)."
   },
   {
     "name": "dimensions",
     "componentName": "Dimensions",
-    "description": "第一个维度会放至X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示."
+    "description": "维度, 第一个维度会放至X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示."
   },
   {
     "name": "measures",
     "componentName": "MeasureTree",
-    "description": "双轴图如果有2组指标组, 则每个组内的所有指标分别自动合并为一个指标, 分别映射到双轴图的左右轴, 如果指标不成组, 则会当作一组指标处理."
+    "description": "双轴图指标\nmeasures可以使用2个指标组, 代表普通双轴图的主轴和次轴指标, 每个指标组内的指标会自动合并为一个指标.\nmeasures可以使用1个指标组, 再嵌套2个指标组, 绘制组合双轴图. 最外层的每一个组, 代表一个双轴图, 它们会纵向排列."
+  },
+  {
+    "name": "dualMeasures",
+    "componentName": "DualMeasures",
+    "description": "双轴图指标, 是measures的简化形式\n组合的双轴图指标配置, 每个对象都代表一个双轴图, 双轴图之间纵向排列, 必须是数组.\n每个配置对象内, primaryMeasures代表所有的主轴指标, secondaryMeasures代表所有的次轴指标, primaryMeasures和secondaryMeasures可配置为数组或一个对象\nprimaryMeasures 如果是多个指标, 则会自动合并\nsecondaryMeasures 如果是多个指标, 则会自动合并"
+  },
+  {
+    "name": "dualChartType",
+    "componentName": "DualChartType",
+    "description": "双轴图的主次轴的图表类型, 用于定义双轴图的类型, 包括折线图, 柱状图, 面积图等, 当measures有多组时, dualChartType可以配置为数组, 每项对应一个双轴图的子图表类型."
+  },
+  {
+    "name": "primaryYAxis",
+    "componentName": "YLinearAxis",
+    "description": "双轴图的主Y轴配置, 用于定义双轴图的主Y轴, 包括主Y轴的位置, 样式等. 当measures有多组时, primaryYAxis可以配置为数组, 每项对应一个双轴图的主Y轴."
+  },
+  {
+    "name": "secondaryYAxis",
+    "componentName": "YLinearAxis",
+    "description": "双轴图的次Y轴配置, 用于定义双轴图的次Y轴, 包括次Y轴的位置, 样式等. 当measures有多组时, secondaryYAxis可以配置为数组, 每项对应一个双轴图的次Y轴."
   },
   {
     "name": "backgroundColor",
     "componentName": "BackgroundColor",
-    "description": "背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'"
+    "description": "图表的背景颜色, 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'"
   },
   {
     "name": "color",
@@ -40,13 +60,61 @@
     "description": "提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等."
   },
   {
+    "name": "crosshairRect",
+    "componentName": "CrosshairRect"
+  },
+  {
+    "name": "sort",
+    "componentName": "Sort"
+  },
+  {
+    "name": "sortLegend",
+    "componentName": "SortLegend"
+  },
+  {
     "name": "theme",
     "componentName": "Theme",
-    "description": "内置light与dark两种主题, 用户可以通过Builder自定义主题"
+    "description": "图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置, 内置light与dark两种主题, 用户可以通过Builder自定义主题"
+  },
+  {
+    "name": "barStyle",
+    "componentName": "BarStyle"
+  },
+  {
+    "name": "lineStyle",
+    "componentName": "LineStyle"
+  },
+  {
+    "name": "pointStyle",
+    "componentName": "PointStyle"
+  },
+  {
+    "name": "areaStyle",
+    "componentName": "AreaStyle"
+  },
+  {
+    "name": "annotationPoint",
+    "componentName": "AnnotationPoint",
+    "description": "标注点配置, 根据选择的数据, 定义图表的标注点, 包括标注点的位置, 格式, 样式等."
+  },
+  {
+    "name": "annotationVerticalLine",
+    "componentName": "AnnotationVerticalLine",
+    "description": "标注垂直线配置, 根据选择的数据, 定义图表的标注垂直线, 包括标注垂直线的位置, 样式等."
+  },
+  {
+    "name": "annotationHorizontalLine",
+    "componentName": "AnnotationHorizontalLine",
+    "description": "标注水平线配置, 根据选择的数据, 定义图表的标注水平线, 包括标注水平线的位置, 样式等."
+  },
+  {
+    "name": "annotationArea",
+    "componentName": "AnnotationArea",
+    "description": "标注区域配置, 根据选择的数据, 定义图表的标注区域, 包括标注区域的位置, 样式等."
   },
   {
     "name": "locale",
     "componentName": "Locale",
-    "description": "图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言"
+    "description": "国际化配置, 图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言"
   }
 ]

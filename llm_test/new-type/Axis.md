@@ -52,7 +52,7 @@ export type Axis = {
   inverse?: boolean
 
   /**
-   * 是否在坐标轴上强制显示 0 值,
+   * 是否在坐标轴上显示 0 值,
    * @description 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
    * @default true
    * @example true
@@ -94,7 +94,7 @@ export type Axis = {
   /**
    * 轴标签, 自动限制长度的最大长度
    * @description 当标签文本长度超过最大长度时, 超出部分省略号表示, 鼠标悬浮后可见标签. 仅对类目轴生效.
-   * @default 100
+   * @default 80
    */
   labelAutoLimitLength?: number
 

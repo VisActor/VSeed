@@ -49,42 +49,36 @@ export type PointStyle = {
    * 点大小
    * @description 点大小
    * @type {number}
-   * @default 10
    */
   pointSize?: number
   /**
    * 柱状图颜色
    * @description 柱状图颜色
    * @type {string}
-   * @default #000000
    */
   pointColor?: string
   /**
    * 柱状图颜色透明度
    * @description 柱状图颜色透明度
    * @type {number}
-   * @default 1
    */
   pointColorOpacity?: number
   /**
    * 柱状图边框颜色
    * @description 柱状图边框颜色
    * @type {string}
-   * @default #000000
    */
   pointBorderColor?: string
   /**
    * 柱状图边框宽度
    * @description 柱状图边框宽度
    * @type {number}
-   * @default 0
    */
   pointBorderWidth?: number
   /**
    * 柱状图边框样式
    * @description 柱状图边框样式
    * @type {number}
-   * @default solid
    * @example solid
    * @example dashed
    * @example dotted

@@ -1,7 +1,7 @@
-### SortAxis
+### Sort
 X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
 ```typescript
-export type SortAxis = {
+export type Sort = {
   /**
    * @description 排序顺序, 可选值为 'asc' 或 'desc'
    * @default 'asc'

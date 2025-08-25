@@ -40,8 +40,8 @@
     "description": "鼠标移动到图表上时, 显示的垂直提示线"
   },
   {
-    "name": "sortAxis",
-    "componentName": "SortAxis",
+    "name": "sort",
+    "componentName": "Sort",
     "description": "X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序"
   },
   {

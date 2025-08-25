@@ -60,8 +60,8 @@
     "description": "条形图 堆叠圆角"
   },
   {
-    "name": "sortAxis",
-    "componentName": "SortAxis",
+    "name": "sort",
+    "componentName": "Sort",
     "description": "X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序"
   },
   {

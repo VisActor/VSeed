@@ -3,17 +3,14 @@
 ```typescript
 export type AnnotationHorizontalLine = {
   /**
-   * 依赖选择的数据, 进行数据标记.
+   * @description 依赖选择的数据, 进行数据标记.
    */
   selector?: Selector | Selectors
   /**
-   * 固定的y值, 用于标注水平线
-   * @description 类目轴在y方向, 则可输入维值, 数值轴在y方向, 则可输入具体的数值
-   * @default []
+   * @description  固定的y值, 用于标注水平线, 类目轴在y方向, 则可输入维值, 数值轴在y方向, 则可输入具体的数值
    */
   yValue?: (number | string) | (number | string)[]
   /**
-   * 标注的文本
    * @description 标注的文本
    * @default ''
    * @example '标注文本'
@@ -22,127 +19,105 @@ export type AnnotationHorizontalLine = {
   /**
    * 文本位置
    * @description 标注线的标签位置（标签相对线的相对位置）。
-   * @default 'insideEnd'
    * @example 'outsideEnd'
    */
   textPosition?: 'outsideStart' | 'outsideEnd' | 'outsideMiddle' | 'insideStart' | 'insideMiddle' | 'insideEnd'
   /**
-   * 文本颜色
    * @description 文本颜色
-   * @default '#ffffff'
    * @example 'red'
    */
   textColor?: string
   /**
-   * 文本字体大小
    * @description 文本字体大小
-   * @default 12
    * @example 12
    */
   textFontSize?: number
   /**
-   * 文本字体重量
    * @description 文本字体重量
-   * @default 400
    * @example 400
    */
   textFontWeight?: number
-
   /**
-   * 文本对齐方式
-   * @description 文本对齐方式
-   * @default 'left'
-   * @example 'center'
+   * @description 文本对齐方式, 一般情况下, 无需设置
+   * 建议设置为'right', 这样可以确保文本在标注线的左侧
+   * right: 文本在参考线的左侧, 文本的右侧边缘对齐(水平)标注线的终点
+   * left: 文本在参考线的右侧, 文本的左侧边缘对齐(水平)标注线的终点
+   * center: 文本在参考线的中心, 文本的中心对齐(水平)标注线的终点
+   * @example 'right'
    */
   textAlign?: 'left' | 'right' | 'center'
   /**
-   * 文本垂直对齐方式
-   * @description 文本垂直对齐方式
-   * @default 'bottom'
-   * @example 'middle'
+   * @description 文本垂直对齐方式, 一般情况下, 无需设置
+   * 建议设置为'top', 这样可以确保文本完整的显示在图表的可见区域
+   * top: 文本在参考线的底部, 文本的顶部边缘对齐(水平)标注线
+   * middle: 文本在参考线的中心, 文本的中心对齐(水平)标注线
+   * bottom: 文本在参考线的顶部, 文本的底部边缘对齐(水平)标注线
+   * @example 'top'
    */
   textBaseline?: 'top' | 'middle' | 'bottom'
   /**
-   * 文本Y方向的, 偏移量
-   * @description 文本Y方向的, 偏移量, 支持正负
-   * @default 0
-   * @example offsetY: 10
+   * @description (水平)标注线整体在Y方向的偏移像素距离, 一般情况下, 无需设置
+   * 负值则整体向上偏移, 例如设置为-10, 则整个(水平)标注线组件包括文本、箭头、线段, 一起向上偏移10像素
+   * 正值则整体向下偏移, 例如设置为10, 则整个(水平)标注线组件包括文本、箭头、线段, 一起向下偏移10像素
+   * @example offsetY: 0
    */
   offsetY?: number
   /**
-   * 文本X方向的, 偏移量
-   * @description 文本X方向的, 偏移量, 支持正负
-   * @default 0
-   * @example offsetX: -10
+   * @description (水平)标注线整体在X方向的偏移像素距离, 一般情况下, 无需设置
+   * 负值则整体向左偏移, 例如设置为-10, 则整个(水平)标注线组件包括文本、箭头、线段, 一起向左偏移10像素
+   * 正值则整体向右偏移, 例如设置为10, 则整个(水平)标注线组件包括文本、箭头、线段, 一起向右偏移10像素
+   * @example offsetX: 0
    */
   offsetX?: number
   /**
    * 线可见
    * @description 线可见
-   * @default true
    * @example true
    */
   lineVisible?: boolean
   /**
-   * 线颜色
    * @description 线颜色
-   * @default 'red'
    * @example 'red'
    */
   lineColor?: string
   /**
-   * 线宽度
    * @description 线宽度
-   * @default 2
    * @example 2
    */
   lineWidth?: number
   /**
-   * 线样式
    * @description 线样式
-   * @default 'solid'
    * @example 'solid'
    */
   lineStyle?: 'solid' | 'dashed' | 'dotted'
   /**
-   * 背景可见
    * @description 背景可见
-   * @default true
    * @example true
    */
   backgroundVisible?: boolean
   /**
-   * 背景颜色
    * @description 背景颜色
-   * @default '#212121'
    * @example 'red'
    */
   backgroundColor?: string
   /**
-   * 背景边框颜色
    * @description 背景边框颜色
-   * @default 'red'
    * @example 'red'
    */
   backgroundBorderColor?: string
   /**
    * 背景边框宽度
    * @description 背景边框宽度
-   * @default 1
    * @example 2
    */
   backgroundBorderWidth?: number
   /**
-   * 背景边框圆角
    * @description 背景边框圆角
-   * @default 4
    * @example 4
    */
   backgroundBorderRadius?: number
   /**
-   * 背景内边距
    * @description 背景内边距
-   * @default 4
    * @example 4
    */
   backgroundPadding?: number

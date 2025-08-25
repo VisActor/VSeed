@@ -68,7 +68,7 @@ export type XBandAxis = {
   /**
    * 轴标签, 自动限制长度的最大长度
    * @description 当标签文本长度超过最大长度时, 超出部分省略号表示, 鼠标悬浮后可见标签. 仅对类目轴生效.
-   * @default 100
+   * @default 80
    */
   labelAutoLimitLength?: number
 

@@ -17,80 +17,187 @@
  */
 export interface DualAxis {
   /**
-   * 双轴图
    * @description 双轴图，展示两个不同量级指标对比关系的复合图表
-   * @type {'dualAxis'}
    * @example 'dualAxis'
    */
   chartType: 'dualAxis'
+
   /**
-   * 数据集
-   * @description 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 双轴图的数据最终会被转换为2个维度, 1或2个指标(取决于用户是否配置了指标组).
-   * @type {Array<Record<string|number, any>>}
+   * @description 数据集, 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 双轴图的数据最终会被转换为2个维度, 1或2个指标(取决于用户是否配置了指标组).
    * @example [{month:'1月', value:100, growth:0.2}, {month:'2月', value:150, growth:0.5}]
    */
   dataset: Dataset
 
   /**
-   * 维度
-   * @description 第一个维度会放至X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
-   * @type {Dimensions}
+   * @description 维度, 第一个维度会放至X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
    * @example [{id: 'month', alias: '月份'}]
    */
   dimensions?: Dimensions
 
   /**
-   * 指标
-   * @description 双轴图如果有2组指标组, 则每个组内的所有指标分别自动合并为一个指标, 分别映射到双轴图的左右轴, 如果指标不成组, 则会当作一组指标处理.
-   * @type {DimensionTree}
-   * @example [{id: 'value', alias: '数值', axis: 'left'}, {id: 'growth', alias: '增长率', axis: 'right', format: 'percent'}]
+   * @description 双轴图指标
+   * measures可以使用2个指标组, 代表普通双轴图的主轴和次轴指标, 每个指标组内的指标会自动合并为一个指标.
+   * measures可以使用1个指标组, 再嵌套2个指标组, 绘制组合双轴图. 最外层的每一个组, 代表一个双轴图, 它们会纵向排列.
+   * @example
+   * 普通双轴图
+   * [
+   *   {
+   *     id: "primaryAxis",
+   *     alias: '主轴',
+   *     children: [{id: 'profit', alias: '利润'}, {id: 'sales', alias: '销售额'}]
+   *   },
+   *   {
+   *     id: "secondaryAxis",
+   *     alias: '次轴',
+   *     children: [{id: 'growth', alias: '增长率'}, {id: 'returnRatio', alias: '回报率'}]
+   *   }
+   * ]
+   * 组合双轴图
+   * [
+   *   {
+   *     id: "first",
+   *     alias: "第一个双轴图",
+   *     children: [
+   *      {
+   *        id: "primaryAxis",
+   *        alias: '主轴',
+   *        children: [{id: 'profit', alias: '利润'}, {id: 'sales', alias: '销售额'}]
+   *      },
+   *      {
+   *        id: "secondaryAxis",
+   *        alias: '次轴',
+   *        children: [{id: 'growth', alias: '增长率'}, {id: 'returnRatio', alias: '回报率'}]
+   *      },
+   *     ]
+   *   },
+   *   {
+   *     id: "second",
+   *     alias: "第二个双轴图",
+   *     children: [
+   *      {
+   *        id: "primaryAxis2",
+   *        alias: '主轴',
+   *        children: [{id: 'profit2', alias: '利润'}, {id: 'sales2', alias: '销售额'}]
+   *      },
+   *      {
+   *        id: "secondaryAxis2",
+   *        alias: '次轴',
+   *        children: [{id: 'growth2', alias: '增长率'}, {id: 'returnRatio2', alias: '回报率'}]
+   *      },
+   *     ]
+   *   },
+   * ]
    */
   measures?: MeasureTree
+  /**
+   * @description 双轴图指标, 是measures的简化形式
+   * 组合的双轴图指标配置, 每个对象都代表一个双轴图, 双轴图之间纵向排列, 必须是数组.
+   * 每个配置对象内, primaryMeasures代表所有的主轴指标, secondaryMeasures代表所有的次轴指标, primaryMeasures和secondaryMeasures可配置为数组或一个对象
+   * primaryMeasures 如果是多个指标, 则会自动合并
+   * secondaryMeasures 如果是多个指标, 则会自动合并
+   * @example
+   * 如下示例配置了一个双轴图, 主轴有1个value指标, 次轴有1个growth指标
+   * [
+   *   {
+   *     primaryMeasures:   {id: 'value', alias: '数值'}
+   *     secondaryMeasures: {id: 'growth', alias: '增长率'}
+   *   }
+   * ]
+   * 如下示例配置了2个纵向排列的双轴图, 第一个双轴图, 主轴有1个value指标, 次轴有一个growth指标, 第二个双轴图, 主轴有2个指标: profit与sales, 次轴有一个returnRatio指标
+   * [
+   *   {
+   *     primaryMeasures:  {id: 'value', alias: '数值'}
+   *     secondaryMeasures: {id: 'growth', alias: '增长率'}
+   *   },
+   *   {
+   *     primaryMeasures:   [{id: 'profit', alias: '利润'}, {id: 'sales', alias: '销售额'}],
+   *     secondaryMeasures: [{id: 'returnRatio', alias: '回报率'}]
+   *   }
+   * ]
+   */
+  dualMeasures?: DualMeasures
+
 
   /**
-   * 图表的背景颜色
+   * @description 双轴图的主次轴的图表类型, 用于定义双轴图的类型, 包括折线图, 柱状图, 面积图等, 当measures有多组时, dualChartType可以配置为数组, 每项对应一个双轴图的子图表类型.
+   * @example
+   * {primary: 'line', secondary: 'bar'}
+   * [{primary: 'line', secondary: 'bar'}, {primary: 'column', secondary: 'area'}]
+   */
+  dualChartType?: DualChartType | DualChartType[]
+
+  /**
+   * @description 双轴图的主Y轴配置, 用于定义双轴图的主Y轴, 包括主Y轴的位置, 样式等. 当measures有多组时, primaryYAxis可以配置为数组, 每项对应一个双轴图的主Y轴.
+   */
+  primaryYAxis?: YLinearAxis | YLinearAxis[]
+
+  /**
+   * @description 双轴图的次Y轴配置, 用于定义双轴图的次Y轴, 包括次Y轴的位置, 样式等. 当measures有多组时, secondaryYAxis可以配置为数组, 每项对应一个双轴图的次Y轴.
+   */
+  secondaryYAxis?: YLinearAxis | YLinearAxis[]
+
+  /**
    * @default transparent 默认为透明背景
-   * @description 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
+   * @description 图表的背景颜色, 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
    */
   backgroundColor?: BackgroundColor
 
   /**
-   * 颜色
    * @description 颜色配置, 用于定义图表的颜色方案, 包括颜色列表, 颜色映射, 颜色渐变等.
    */
   color?: Color
 
   /**
-   * 标签
    * @description 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
    */
   label?: Label
 
   /**
-   * 图例
    * @description 图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.
    */
   legend?: Legend
 
   /**
-   * 提示信息
    * @description 提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等.
    */
   tooltip?: Tooltip
 
+  crosshairRect?: CrosshairRect
+  sort?: Sort
+  sortLegend?: SortLegend
+
   /**
-   * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置
+   * @description 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置, 内置light与dark两种主题, 用户可以通过Builder自定义主题
    * @default light 默认为亮色主题
-   * @description 内置light与dark两种主题, 用户可以通过Builder自定义主题
    * @example 'dark'
    * @example 'light'
    * @example 'customThemeName'
    */
   theme?: Theme
 
+  barStyle?: BarStyle | BarStyle[]
+  lineStyle?: LineStyle | LineStyle[]
+  pointStyle?: PointStyle | PointStyle[]
+  areaStyle?: AreaStyle | AreaStyle[]
+
   /**
-   * 语言
-   * @description 图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言
+   * @description 标注点配置, 根据选择的数据, 定义图表的标注点, 包括标注点的位置, 格式, 样式等.
+   */
+  annotationPoint?: AnnotationPoint | AnnotationPoint[]
+  /**
+   * @description 标注垂直线配置, 根据选择的数据, 定义图表的标注垂直线, 包括标注垂直线的位置, 样式等.
+   */
+  annotationVerticalLine?: AnnotationVerticalLine | AnnotationVerticalLine[]
+  /**
+   * @description 标注水平线配置, 根据选择的数据, 定义图表的标注水平线, 包括标注水平线的位置, 样式等.
+   */
+  annotationHorizontalLine?: AnnotationHorizontalLine | AnnotationHorizontalLine[]
+  /**
+   * @description 标注区域配置, 根据选择的数据, 定义图表的标注区域, 包括标注区域的位置, 样式等.
+   */
+  annotationArea?: AnnotationArea | AnnotationArea[]
+  /**
+   * @description 国际化配置, 图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言
    * @default 'zh-CN'
    */
   locale?: Locale

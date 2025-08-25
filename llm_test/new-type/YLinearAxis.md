@@ -54,7 +54,7 @@ export type YLinearAxis = {
   inverse?: boolean
 
   /**
-   * 是否在坐标轴上强制显示 0 值,
+   * 是否在坐标轴上显示 0 值,
    * @description 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
    * @default true
    * @example true

@@ -10,6 +10,7 @@ export { areaSpecPipeline } from './area'
 export { areaPercentSpecPipeline } from './areaPercent'
 export { areaRangeSpecPipeline } from './areaRange'
 export { scatterSpecPipeline } from './scatter'
+export { dualAxisSpecPipeline } from './dualAxis'
 // polar
 export { pieSpecPipeline } from './pie'
 export { donutSpecPipeline } from './donut'

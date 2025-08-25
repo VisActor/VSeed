@@ -1,23 +1,4 @@
 import type { Locale } from '../../i18n'
-import { zLocale } from '../../i18n'
-import {
-  zAnnotationArea,
-  zAnnotationHorizontalLine,
-  zAnnotationPoint,
-  zAnnotationVerticalLine,
-  zAreaStyle,
-  zBackgroundColor,
-  zCrosshairLine,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLineStyle,
-  zMeasureTree,
-  zPointStyle,
-  zTheme,
-  zXBandAxis,
-  zYLinearAxis,
-} from '../../properties'
 import type {
   AnnotationArea,
   AnnotationHorizontalLine,
@@ -34,10 +15,9 @@ import type {
   XBandAxis,
   YLinearAxis,
   CrosshairLine,
-  SortAxis,
+  Sort,
   MeasureTree,
 } from '../../properties'
-import { z } from 'zod'
 
 /**
  * 区间面积图类型定义
@@ -120,15 +100,15 @@ export interface AreaRange {
   /**
    * @description X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
    * @example
-   * sortAxis: {
+   * sort: {
    *   orderBy: 'profit',
    *   order: 'asc',
    * }
-   * sortAxis: {
+   * sort: {
    *   customOrder:['2019', '2020', '2021']
    * }
    */
-  sortAxis?: SortAxis
+  sort?: Sort
 
   /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置
@@ -201,24 +181,3 @@ export interface AreaRange {
    */
   locale?: Locale
 }
-
-export const zAreaRange = z.object({
-  chartType: z.literal('areaRange'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  label: zLabel.optional(),
-  xAxis: zXBandAxis.optional(),
-  yAxis: zYLinearAxis.optional(),
-  crosshairLine: zCrosshairLine.optional(),
-  theme: zTheme.optional(),
-  pointStyle: z.array(zPointStyle).or(zPointStyle).optional(),
-  lineStyle: z.array(zLineStyle).or(zLineStyle).optional(),
-  areaStyle: z.array(zAreaStyle).or(zAreaStyle).optional(),
-  annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
-  annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
-  annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),
-  annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).optional(),
-  locale: zLocale.optional(),
-})

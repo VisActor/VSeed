@@ -1,7 +1,10 @@
 // Reshape Measures
 export const FoldMeasureName = '__MeaName__'
-export const FoldMeasureValue = '__MeaValue__'
 export const FoldMeasureId = '__MeaId__'
+export const FoldMeasureValue = '__MeaValue__'
+
+export const FoldPrimaryMeasureValue = '__MeaPrimaryValue__'
+export const FoldSecondaryMeasureValue = '__MeaSecondaryValue__'
 
 // Reshape Dimensions
 export const UnfoldDimensionGroup = '__DimGroup__'

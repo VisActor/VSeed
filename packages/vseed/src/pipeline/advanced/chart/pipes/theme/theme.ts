@@ -1,4 +1,4 @@
-import { clone, mergeDeep, omit } from 'remeda'
+import { clone, mergeDeep } from 'remeda'
 import type { AdvancedPipe, AdvancedVSeed } from 'src/types'
 
 export const theme: AdvancedPipe = (advancedVSeed, context) => {

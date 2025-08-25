@@ -8,14 +8,19 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
   const result = { ...spec } as PivotChartConstructorOptions
   const { advancedVSeed } = context
   const { chartType } = advancedVSeed
-   const baseConfig = advancedVSeed.config[chartType] as { legend: Legend, color: Color }
+  const baseConfig = advancedVSeed.config[chartType] as { legend: Legend; color: Color }
 
   if (!baseConfig || !baseConfig.legend) {
     return result
   }
 
   const { datasetReshapeInfo } = advancedVSeed
-  const colorItems = unique(datasetReshapeInfo.flatMap((d) => d.unfoldInfo.colorItems))
+
+  const colorItems = unique(
+    datasetReshapeInfo.flatMap((d) => {
+      return d.unfoldInfo.colorItems
+    }),
+  )
 
   const colorIdMap = datasetReshapeInfo.reduce<Record<string, string>>((prev, cur) => {
     return { ...prev, ...cur.unfoldInfo.colorIdMap }
@@ -30,10 +35,10 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
     labelFontColor,
     labelFontSize = 12,
     labelFontWeight = 400,
-    maxSize,
+    maxSize = 1,
     border,
     shapeType = 'rectRound',
-  } = (legend || {})
+  } = legend || {}
 
   const orient = ['bottom', 'bottomLeft', 'bottomRight', 'bl', 'br'].includes(position)
     ? 'bottom'
@@ -54,8 +59,8 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
     type: 'discrete',
     orient,
     position: legendPosition,
-    maxCol: maxSize,
-    maxRow: maxSize,
+    maxCol: Math.max(1, maxSize),
+    maxRow: Math.max(1, maxSize),
     data: colorItems.map((d, index) => ({
       label: d,
       shape: {
@@ -72,6 +77,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
 
     item: {
       focus: true,
+      maxWidth: '30%',
       focusIconStyle: {
         size: labelFontSize + 2,
         fill: labelFontColor,

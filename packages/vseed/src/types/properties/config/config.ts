@@ -8,6 +8,7 @@ import { zColor } from './color/color'
 import { zLabel } from './label/label'
 import { zLegend } from './legend/legend'
 import { zTooltip } from './tooltip/tooltip'
+import { zDualChartType } from '../chartType'
 
 /**
  * ---
@@ -97,6 +98,13 @@ export const zDualAxisConfig = z.object({
   color: zColor.optional(),
   tooltip: zTooltip.optional(),
   legend: zLegend.optional(),
+
+  dualChartType: z.array(zDualChartType).or(zDualChartType).optional(),
+  primaryYAxis: z.array(zYLinearAxis).or(zYLinearAxis).optional(),
+  secondaryYAxis: z.array(zYLinearAxis).or(zYLinearAxis).optional(),
+
+  xAxis: zXBandAxis.optional(),
+  crosshairRect: zCrosshairRect.optional(),
 })
 export const zScatterConfig = z.object({
   backgroundColor: zBackgroundColor.optional(),
@@ -180,8 +188,8 @@ export const zConfig = z.object({
   area: zAreaConfig.optional(),
   areaPercent: zAreaPercentConfig.optional(),
   areaRange: zAreaRangeConfig.optional(),
-  dualAxis: zDualAxisConfig.optional(),
   scatter: zScatterConfig.optional(),
+  dualAxis: zDualAxisConfig.optional(),
 
   // polar
   rose: zRoseConfig.optional(),

@@ -36,18 +36,23 @@ export const annotationArea: SpecPipe = (spec, context) => {
       textFontWeight = 400,
       textAlign = 'center',
       textBaseline = 'top',
-      backgroundBorderColor,
-      backgroundBorderRadius = 4,
-      backgroundBorderWidth = 1,
-      backgroundColor = '#191d24',
-      backgroundPadding = 10,
+
       backgroundVisible = true,
-      outerPadding = 4,
+      backgroundColor = '#191d24',
+      backgroundBorderColor = '#191d24',
+      backgroundBorderWidth = 1,
+      backgroundBorderRadius = 4,
+      backgroundPadding = 4,
+
       areaColor = '#888888',
       areaColorOpacity = 0.15,
-      areaBorderColor,
-      areaBorderRadius,
-      areaBorderWidth,
+      areaBorderColor = '#888888',
+      areaBorderRadius = 4,
+      areaBorderWidth = 1,
+
+      outerPadding = 4,
+      offsetX = 0,
+      offsetY = 0,
     } = annotationArea
 
     const dataset = advancedVSeed.dataset.flat()
@@ -56,6 +61,8 @@ export const annotationArea: SpecPipe = (spec, context) => {
     return {
       zIndex: ANNOTATION_Z_INDEX,
       regionRelative: true,
+      offsetX,
+      offsetY,
       positions: (data: Datum[], context: ICartesianSeries) => {
         const positionData = data.filter((item) => selectedData.some((datum) => isSubset(datum, item)))
         const xyList = positionData.map((datum) => context.dataToPosition(datum) as { x: number; y: number })
@@ -143,9 +150,12 @@ export const annotationArea: SpecPipe = (spec, context) => {
         visible: true,
         text: text,
         style: {
+          dy: textFontSize,
           textAlign: textAlign,
           textBaseline: textBaseline,
           fill: textColor,
+          stroke: backgroundColor,
+          lineWidth: 1,
           fontSize: textFontSize,
           fontWeight: textFontWeight,
         },
@@ -154,10 +164,11 @@ export const annotationArea: SpecPipe = (spec, context) => {
           visible: backgroundVisible,
           padding: backgroundPadding,
           style: {
+            dy: textFontSize,
             cornerRadius: backgroundBorderRadius ?? 4,
             fill: backgroundColor,
             stroke: backgroundBorderColor,
-            strokeWidth: backgroundBorderWidth,
+            lineWidth: backgroundBorderWidth,
           },
         },
       },
@@ -167,7 +178,7 @@ export const annotationArea: SpecPipe = (spec, context) => {
           fill: areaColor,
           fillOpacity: areaColorOpacity,
           stroke: areaBorderColor,
-          strokeWidth: areaBorderWidth,
+          lineWidth: areaBorderWidth,
           cornerRadius: areaBorderRadius,
         },
       },

@@ -1,3 +1,3 @@
-export * from './sortAxis'
+export * from './sort'
 export * from './sortLegend'
 export * from './analysis'

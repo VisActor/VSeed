@@ -12,6 +12,7 @@ export * from './area'
 export * from './areaPercent'
 export * from './areaRange'
 export * from './scatter'
+export * from './dualAxis'
 
 export * from './pie'
 export * from './donut'

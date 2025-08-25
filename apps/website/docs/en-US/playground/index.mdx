@@ -7,17 +7,38 @@ pageType: custom
 ```tsx
 const Demo = () => {
   const vseed: VSeed = {
-  "chartType": "bar",
-  "dataset": [
-      { "date": "2019", "goalProfit": 10, "profit": 10, "sales": 100, "leftCount": 1, "salesCount": 100 },
-      { "date": "2020", "goalProfit": 30, "profit": 30, "sales": 320, "leftCount": 2, "salesCount": 200 },
-      { "date": "2021", "goalProfit": 30, "profit": 30, "sales": 300, "leftCount": 3, "salesCount": 300 },
-      { "date": "2022", "goalProfit": 50, "profit": 50, "sales": 240, "leftCount": 4, "salesCount": 400 },
-      { "date": "2023", "goalProfit": 40, "profit": 40, "sales": 500, "leftCount": 5, "salesCount": 500 }
-  ],
-  "dimensions": [{ "id": "date" }],
-  "measures":   [{ "id": "profit" }],
-}
+    chartType: 'columnParallel',
+    dataset: [
+      {
+        '250821184115319': '2019',
+        '250821184115368': '办公用品',
+        '250821184115377': '744498.7199999995',
+        '250821184115386': '130481.6800000001',
+        '250821184115395': '2957',
+      },
+      {
+        '250821184115319': '2019',
+        '250821184115368': '技术',
+        '250821184115377': '749740.2640000004',
+        '250821184115386': '99849.34399999998',
+        '250821184115395': '1060',
+      },
+    ],
+    dimensions: [
+      { id: '250821184115319', alias: '日期' },
+      { id: '250821184115368', alias: '类别' },
+    ],
+    measures: [
+      { id: '250821184115377', alias: '销售额' },
+      { id: '250821184115395', alias: '数量' },
+      { id: '250821184115386', alias: '利润' },
+    ],
+    annotationArea: {
+      selector: '2019',
+      text: '顶部对齐',
+      offsetX: 1000,
+    },
+  }
 
   if (zVSeed.safeParse(vseed).success) {
     console.log('zVSeed parse success!!!')

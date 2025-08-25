@@ -21,7 +21,7 @@ export const autoMeasuresBy2M1Group: AdvancedPipe = (advancedVSeed, context) => 
   }
 
   if (measures) {
-    result.measures = auto2M1Group(measures)
+    result.measures = auto2M1Group(measures as MeasureTree)
     return result
   }
 

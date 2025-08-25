@@ -1,5 +1,5 @@
 import { findFirstMeasure } from 'src/pipeline/utils'
-import type { AdvancedPipe } from 'src/types'
+import type { AdvancedPipe, FoldInfo, UnfoldInfo } from 'src/types'
 import type { Encoding } from 'src/types'
 
 export const encodingYY: AdvancedPipe = (advancedVSeed) => {
@@ -11,7 +11,10 @@ export const encodingYY: AdvancedPipe = (advancedVSeed) => {
 
   const firstMeasure = findFirstMeasure(measures)
   const encoding = datasetReshapeInfo.reduce<Encoding>((prev, cur) => {
-    const { foldInfo, unfoldInfo } = cur
+    const { foldInfo, unfoldInfo } = cur as {
+      foldInfo: FoldInfo
+      unfoldInfo: UnfoldInfo
+    }
 
     const x = [firstMeasure?.id]
     const y = [foldInfo.measureValue]

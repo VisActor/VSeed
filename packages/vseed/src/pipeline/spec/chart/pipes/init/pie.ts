@@ -32,7 +32,6 @@ export const initPie: SpecPipe = (spec, context) => {
     },
     state: {
       hover: {
-        centerOffset: 5,
         outerRadius: result.outerRadius * 1.1,
       },
     },

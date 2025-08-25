@@ -1,26 +1,5 @@
 import type { Locale } from '../../i18n'
-import { zLocale } from '../../i18n'
-import {
-  zAnnotationArea,
-  zAnnotationHorizontalLine,
-  zAnnotationPoint,
-  zAnnotationVerticalLine,
-  zAreaStyle,
-  zBackgroundColor,
-  zColor,
-  zCrosshairLine,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLegend,
-  zLineStyle,
-  zMeasureTree,
-  zPointStyle,
-  zTheme,
-  zTooltip,
-  zXBandAxis,
-  zYLinearAxis,
-} from '../../properties'
+
 import type {
   AnnotationArea,
   AnnotationHorizontalLine,
@@ -41,10 +20,9 @@ import type {
   YLinearAxis,
   CrosshairLine,
   MeasureTree,
-  SortAxis,
+  Sort,
   SortLegend,
 } from '../../properties'
-import { z } from 'zod'
 
 /**
  * 面积图类型定义
@@ -145,15 +123,15 @@ export interface Area {
   /**
    * @description X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
    * @example
-   * sortAxis: {
+   * sort: {
    *   orderBy: 'profit',
    *   order: 'asc',
    * }
-   * sortAxis: {
+   * sort: {
    *   customOrder:['2019', '2020', '2021']
    * }
    */
-  sortAxis?: SortAxis
+  sort?: Sort
   /**
    * @description 图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
    * @example
@@ -238,27 +216,3 @@ export interface Area {
    */
   locale?: Locale
 }
-
-export const zArea = z.object({
-  chartType: z.literal('area'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
-  label: zLabel.optional(),
-  legend: zLegend.optional(),
-  tooltip: zTooltip.optional(),
-  xAxis: zXBandAxis.optional(),
-  yAxis: zYLinearAxis.optional(),
-  crosshairLine: zCrosshairLine.optional(),
-  theme: zTheme.optional(),
-  pointStyle: z.array(zPointStyle).or(zPointStyle).optional(),
-  lineStyle: z.array(zLineStyle).or(zLineStyle).optional(),
-  areaStyle: z.array(zAreaStyle).or(zAreaStyle).optional(),
-  annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
-  annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
-  annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),
-  annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).optional(),
-  locale: zLocale.optional(),
-})

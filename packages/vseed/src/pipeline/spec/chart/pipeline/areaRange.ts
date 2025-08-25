@@ -25,22 +25,24 @@ import {
   pointStateDimensionHover,
   areaStyle,
   progressive,
+  tooltipAreaRange,
+  tooltipDisable,
 } from '../pipes'
 import { initAreaRangeLine1, initAreaRangeLine2 } from '../pipes/init/areaRange'
 
 const areaRange: SpecPipeline = [
   series(
     [initAreaRange, areaStyle],
-    [initAreaRangeLine1, lineStyle, pointStyle, pointStateDimensionHover],
-    [initAreaRangeLine2, lineStyle, pointStyle, pointStateDimensionHover],
+    [initAreaRangeLine1, lineStyle, pointStyle, pointStateDimensionHover, tooltipDisable],
+    [initAreaRangeLine2, lineStyle, pointStyle, pointStateDimensionHover, tooltipDisable],
   ),
   datasetXY,
   progressive,
-
   backgroundColor,
   xBand,
   yLinear,
   label,
+  tooltipAreaRange,
   verticalCrosshairLine,
   annotationPoint,
   annotationVerticalLine,
@@ -56,8 +58,8 @@ const pivotAreaRange: SpecPipeline = [
   pivotIndicators([
     series(
       [initAreaRange, areaStyle],
-      [initAreaRangeLine1, lineStyle, pointStyle, pointStateDimensionHover],
-      [initAreaRangeLine2, lineStyle, pointStyle, pointStateDimensionHover],
+      [initAreaRangeLine1, lineStyle, pointStyle, pointStateDimensionHover, tooltipDisable],
+      [initAreaRangeLine2, lineStyle, pointStyle, pointStateDimensionHover, tooltipDisable],
     ),
     backgroundColor,
     datasetXY,
@@ -65,6 +67,7 @@ const pivotAreaRange: SpecPipeline = [
     xBand,
     yLinear,
     label,
+    tooltipAreaRange,
     verticalCrosshairLine,
     annotationPoint,
     annotationVerticalLine,

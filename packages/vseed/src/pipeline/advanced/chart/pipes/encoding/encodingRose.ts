@@ -1,4 +1,4 @@
-import type { AdvancedPipe, Dimensions } from 'src/types'
+import type { AdvancedPipe, Dimensions, FoldInfo, UnfoldInfo } from 'src/types'
 import type { Encoding } from 'src/types'
 
 export const encodingRose: AdvancedPipe = (advancedVSeed) => {
@@ -8,15 +8,19 @@ export const encodingRose: AdvancedPipe = (advancedVSeed) => {
     return result
   }
 
-  const angleDimension = (dimensions as Dimensions).find(
-    (item) => item.location !== 'rowDimension' && item.location !== 'columnDimension',
-  )
+  const angleDimension =
+    (dimensions as Dimensions).find(
+      (item) => item.location !== 'rowDimension' && item.location !== 'columnDimension',
+    ) || dimensions[0]
 
   const is1D1M = dimensions.length === 1 && measures.length === 1
   const isZeroDimension = dimensions.length === 0
 
   const encoding = datasetReshapeInfo.reduce<Encoding>((prev, cur) => {
-    const { foldInfo, unfoldInfo } = cur
+    const { foldInfo, unfoldInfo } = cur as {
+      foldInfo: FoldInfo
+      unfoldInfo: UnfoldInfo
+    }
 
     const radius = [foldInfo.measureValue]
     const angle = [isZeroDimension ? foldInfo.measureName : angleDimension?.id]

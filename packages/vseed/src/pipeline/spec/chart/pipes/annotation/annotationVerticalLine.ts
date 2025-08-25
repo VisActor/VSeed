@@ -36,16 +36,21 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
       textFontWeight = 400,
       textAlign = 'right',
       textBaseline = 'top',
-      backgroundBorderColor,
+
+      backgroundVisible = true,
+      backgroundBorderColor = '#212121',
+      backgroundColor = '#212121',
       backgroundBorderRadius = 4,
       backgroundBorderWidth = 1,
-      backgroundColor = '#212121',
       backgroundPadding = 2,
-      backgroundVisible = true,
-      lineColor = '#212121',
-      lineStyle = 'dashed',
+
       lineVisible = true,
+      lineColor = '#212121',
       lineWidth = 1,
+      lineStyle = 'dashed',
+
+      offsetX = 0,
+      offsetY = 0,
     } = annotationVerticalLine
 
     const dataset = advancedVSeed.dataset.flat()
@@ -53,9 +58,11 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
     const generateOneMarkLine = (x: number | string) => ({
       x: x as string,
       zIndex: ANNOTATION_Z_INDEX,
+      offsetX,
+      offsetY,
       line: {
-        visible: lineVisible,
         style: {
+          visible: lineVisible,
           stroke: lineColor,
           lineStyle: lineStyle,
           lineWidth: lineWidth,
@@ -67,26 +74,32 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
         position: positionMap[textPosition],
         style: {
           visible: true,
+          stroke: backgroundColor,
+          lineWidth: 1,
           textAlign: textAlign,
           textBaseline: textBaseline,
           fill: textColor,
           fontSize: textFontSize,
           fontWeight: textFontWeight,
+          dy: textFontSize,
         },
         labelBackground: {
           visible: backgroundVisible,
           padding: backgroundPadding,
           style: {
+            dy: textFontSize,
             cornerRadius: backgroundBorderRadius ?? 4,
             fill: backgroundColor,
             stroke: backgroundBorderColor,
-            strokeWidth: backgroundBorderWidth,
+            lineWidth: backgroundBorderWidth,
           },
         },
       },
       endSymbol: {
         visible: true,
+        size: 10 + lineWidth,
         style: {
+          dy: 4,
           fill: lineColor,
         },
       },

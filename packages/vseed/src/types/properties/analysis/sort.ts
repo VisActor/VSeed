@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-export const zSortAxis = z.object({
+export const zSort = z.object({
   order: z.enum(['asc', 'desc']).default('asc'),
   orderBy: z.string().optional(),
   customOrder: z.array(z.any()).optional(),
@@ -15,7 +15,7 @@ export const zSortAxis = z.object({
  * 或
  * - customOrder:['2019', '2020', '2021']
  */
-export type SortAxis = {
+export type Sort = {
   /**
    * @description 排序顺序, 可选值为 'asc' 或 'desc'
    * @default 'asc'

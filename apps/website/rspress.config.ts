@@ -1,7 +1,6 @@
 import * as path from 'node:path'
 import { defineConfig } from 'rspress/config'
 import { pluginPlayground } from '@rspress/plugin-playground'
-
 const isDev = process.env.NODE_ENV === 'development'
 
 export default defineConfig({
@@ -21,12 +20,12 @@ export default defineConfig({
       title: 'VisActor VSeed',
       description: 'VisActor VSeed',
     },
-    {
-      lang: 'en-US',
-      label: 'English',
-      title: 'VisActor VSeed',
-      description: 'VisActor VSeed',
-    },
+    // {
+    //   lang: 'en-US',
+    //   label: 'English',
+    //   title: 'VisActor VSeed',
+    //   description: 'VisActor VSeed',
+    // },
   ],
   themeConfig: {
     socialLinks: [

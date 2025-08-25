@@ -16,7 +16,7 @@ export const autoPivotDimensions: AdvancedPipe = (advancedVSeed, context) => {
     return result
   }
 
-  if (dimensions && dimensions.length > 0) {
+  if (dimensions) {
     const newDimensions = findAllDimensions(dimensions) as Dimensions
     result.dimensions = newDimensions.map((item, index) => {
       if (item.location === 'rowDimension' || item.location === 'columnDimension') {

@@ -49,7 +49,7 @@ export const darkTheme = (): CustomThemeConfig => {
     labelAutoHide: true,
     labelAutoHideGap: 4,
     labelAutoLimit: true,
-    labelAutoLimitLength: 100,
+    labelAutoLimitLength: 80,
     labelAutoRotate: false,
     labelAutoRotateAngleRange: [0, -45, -90],
     label: {
@@ -266,6 +266,17 @@ export const darkTheme = (): CustomThemeConfig => {
           },
         },
         crosshairLine,
+      },
+      dualAxis: {
+        ...baseConfig,
+        xAxis: bandAxis,
+        primaryYAxis: linearAxis,
+        secondaryYAxis: { ...linearAxis, grid: { visible: false } },
+        dualChartType: {
+          primary: 'column',
+          secondary: 'line',
+        },
+        crosshairRect,
       },
       // polar
       pie: {

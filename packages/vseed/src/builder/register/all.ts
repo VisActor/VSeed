@@ -19,16 +19,11 @@ import {
   registerAreaRange,
   registerHeatmap,
   registerRadar,
+  registerDualAxis,
 } from './chartType'
 import { registerDarkTheme, registerLightTheme } from './theme'
 
 export const registerAll = () => {
-  /**
-   * ------------------
-   * ChartTypes
-   * ------------------
-   */
-
   // table
   registerTable()
   registerPivotTable()
@@ -44,6 +39,7 @@ export const registerAll = () => {
   registerAreaPercent()
   registerAreaRange()
   registerScatter()
+  registerDualAxis()
   // polar
   registerPie()
   registerDonut()
@@ -53,12 +49,7 @@ export const registerAll = () => {
   // other
   registerFunnel()
   registerHeatmap()
-
-  /**
-   * ------------------
-   * Theme
-   * ------------------
-   */
+  // theme
   registerLightTheme()
   registerDarkTheme()
 }

@@ -1,3 +1,4 @@
+// table
 export * from './table'
 export * from './pivotTable'
 
@@ -13,7 +14,7 @@ export * from './area'
 export * from './areaPercent'
 export * from './areaRange'
 export * from './scatter'
-export type * from './dualAxis'
+export * from './dualAxis'
 
 // polar
 export * from './rose'

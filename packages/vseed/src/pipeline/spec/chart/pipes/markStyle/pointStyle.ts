@@ -16,7 +16,7 @@ export const pointStyle: SpecPipe = (spec, context) => {
   const pointStyles = (Array.isArray(pointStyle) ? pointStyle : [pointStyle]) as PointStyle[]
 
   const customMap = pointStyles.reduce<object>((result, style, index) => {
-    const { pointBorderColor, pointBorderStyle, pointBorderWidth, pointColor, pointColorOpacity, pointSize } = style
+    const { pointBorderColor, pointBorderStyle, pointBorderWidth = 1, pointColor, pointColorOpacity, pointSize } = style
 
     const lineDash = pointBorderStyle === 'dashed' ? [5, 2] : pointBorderStyle === 'dotted' ? [2, 5] : [0, 0]
     return {

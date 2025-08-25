@@ -16,8 +16,11 @@ export const autoDimensions: AdvancedPipe = (advancedVSeed, context) => {
     return result
   }
 
-  if (dimensions && dimensions.length > 0) {
-    result.dimensions = dimensions
+  if (dimensions) {
+    result.dimensions = dimensions.map((dim) => ({
+      location: 'dimension',
+      ...dim,
+    }))
     return result
   }
 

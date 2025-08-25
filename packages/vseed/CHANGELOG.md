@@ -1,5 +1,37 @@
 # @visactor/vseed
 
+## 0.0.35
+
+### Patch Changes
+
+- feat: optimize the dual axis
+
+## 0.0.34
+
+### Patch Changes
+
+- feat: add dual axis
+
+## 0.0.33
+
+### Patch Changes
+
+- feat: allow empty dimensions and measures
+
+## 0.0.32
+
+### Patch Changes
+
+- fix: annotation default style
+- docs: more comments in annotation for llm
+- fix: legend max size err
+
+## 0.0.31
+
+### Patch Changes
+
+- fix: optimize the ui and style
+
 ## 0.0.30
 
 ### Patch Changes

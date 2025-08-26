@@ -123,14 +123,10 @@ export const PivotDualAxisChart = memo(() => {
     ],
     dualMeasures: [
       {
-        primaryAlias: 'profit',
-        secondaryAlias: 'sales',
         primaryMeasures: [{ id: 'profit' }],
         secondaryMeasures: [{ id: 'sales' }],
       },
       {
-        primaryAlias: 'ratio',
-        secondaryAlias: 'returnRatio',
         primaryMeasures: [{ id: 'ratio' }],
         secondaryMeasures: [{ id: 'returnRatio' }],
       },
@@ -217,6 +213,86 @@ export const DualChartTypeArray = memo(() => {
       { date: '2022', profit: 50, sales: 2400, ratio: 30, returnRatio: 24 },
       { date: '2023', profit: 40, sales: 500, ratio: 305, returnRatio: 305 },
     ],
+    dimensions: [
+      {
+        id: 'date',
+        alias: '日期',
+        location: 'dimension',
+      },
+    ],
+  }
+  return <PivotChart vseed={vseed} />
+})
+
+export const DualYAxisArray = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'dualAxis',
+    primaryYAxis: [
+      {
+        title: {
+          visible: true,
+          titleText: '利润',
+        },
+      },
+      {
+        title: {
+          visible: true,
+          titleText: '销售额',
+        },
+      },
+    ],
+    secondaryYAxis: [
+      {
+        title: {
+          visible: true,
+          titleText: '比率',
+        },
+      },
+      {
+        title: {
+          visible: true,
+          titleText: '回报率',
+        },
+      },
+    ],
+    measures: [
+      {
+        id: 'first',
+        alias: '第一个双轴图',
+        children: [
+          {
+            id: 'secondary-profit',
+            children: [{ id: 'profit', alias: '利润' }],
+          },
+          {
+            id: 'primary-sales',
+            children: [{ id: 'sales', alias: '销售额' }],
+          },
+        ],
+      },
+      {
+        id: 'second',
+        alias: '第一个双轴图',
+        children: [
+          {
+            id: 'primary-ratio',
+            children: [{ id: 'ratio', alias: '比率' }],
+          },
+          {
+            id: 'returnRatio',
+            children: [{ id: 'returnRatio', alias: '回报率' }],
+          },
+        ],
+      },
+    ],
+    dataset: [
+      { date: '2019', profit: 10, sales: 100, ratio: 301, returnRatio: 301 },
+      { date: '2020', profit: 30, sales: 3200, ratio: 32, returnRatio: 30 },
+      { date: '2021', profit: 30, sales: 300, ratio: 103, returnRatio: 503 },
+      { date: '2022', profit: 50, sales: 2400, ratio: 30, returnRatio: 24 },
+      { date: '2023', profit: 40, sales: 500, ratio: 305, returnRatio: 305 },
+    ],
+
     dimensions: [
       {
         id: 'date',

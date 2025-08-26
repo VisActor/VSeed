@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.36
+
+### Patch Changes
+
+- feat: optimize the override theme config
+
 ## 0.0.35
 
 ### Patch Changes

@@ -14,6 +14,9 @@ import {
   zSelectors,
   zDimensionTree,
   // zMeasureTree,
+  zColorLegend,
+  zDualMeasures,
+  zDualChartType
 } from '@visactor/vseed';
 import fs from 'fs';
 import path from 'path';
@@ -180,6 +183,42 @@ ${dimensionTreeSchema}
 // ${measureTreeSchema}
 // \`\`\`
 //   `);
+
+  // ColorLegend
+  const colorLegendSchema = await compile(z.toJSONSchema(zColorLegend) as any, 'ColorLegend', {
+    bannerComment: ''
+  });
+  fs.writeFileSync(path.join(__dirname, './new-type/ColorLegend.md'), `
+### ColorLegend
+${topKeyDesc['ColorLegend']}
+\`\`\`typescript
+${colorLegendSchema}
+\`\`\`
+  `);
+
+  // DualMeasures
+  const dualMeasuresSchema = await compile(z.toJSONSchema(zDualMeasures) as any, 'DualMeasures', {
+    bannerComment: ''
+  });
+  fs.writeFileSync(path.join(__dirname, './new-type/DualMeasures.md'), `
+### DualMeasures
+${topKeyDesc['DualMeasures']}
+\`\`\`typescript
+${dualMeasuresSchema}
+\`\`\`
+  `);
+
+  // DualChartType
+  const dualChartTypeSchema = await compile(z.toJSONSchema(zDualChartType) as any, 'DualChartType', {
+    bannerComment: ''
+  });
+  fs.writeFileSync(path.join(__dirname, './new-type/DualChartType.md'), `
+### DualChartType
+${topKeyDesc['DualChartType']}
+\`\`\`typescript
+${dualChartTypeSchema}
+\`\`\`
+  `);
 }
 
 // generateSchema().then(() => {

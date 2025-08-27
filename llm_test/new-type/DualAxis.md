@@ -117,7 +117,6 @@ export interface DualAxis {
    */
   dualMeasures?: DualMeasures
 
-
   /**
    * @description 双轴图的主次轴的图表类型, 用于定义双轴图的类型, 包括折线图, 柱状图, 面积图等, 当measures有多组时, dualChartType可以配置为数组, 每项对应一个双轴图的子图表类型.
    * @example
@@ -162,8 +161,35 @@ export interface DualAxis {
    */
   tooltip?: Tooltip
 
+  /**
+   * 垂直提示框
+   * @description 垂直提示框配置, 用于定义图表的垂直提示框, 包括垂直提示框的颜色、标签样式等.
+   */
   crosshairRect?: CrosshairRect
+
+  /**
+   * @description X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+   * @example
+   * sort: {
+   *   orderBy: 'profit',
+   *   order: 'asc',
+   * }
+   * sort: {
+   *   customOrder:['2019', '2020', '2021']
+   * }
+   */
   sort?: Sort
+  /**
+   * @description 图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+   * @example
+   * sortLegend: {
+   *   orderBy: 'profit',
+   *   order: 'asc',
+   * }
+   * sortLegend: {
+   *   customOrder:['2019', '2020', '2021']
+   * }
+   */
   sortLegend?: SortLegend
 
   /**
@@ -175,9 +201,41 @@ export interface DualAxis {
    */
   theme?: Theme
 
+  /**
+   * 矩形图元样式
+   * @description 条形图样式配置, 用于定义图表的条形图样式, 包括条形图的颜色, 边框, 圆角等.
+   * 支持全局样式或条件样式配置
+   * 数据筛选器
+   * 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
+   * 若未配置selector, 则样式全局生效.
+   */
   barStyle?: BarStyle | BarStyle[]
+  /**
+   * 线图元样式
+   * @description 线图元样式配置, 用于定义图表的线图元样式, 包括线图元的颜色, 透明度, 曲线等.
+   * 支持全局样式或条件样式配置
+   * 数据筛选器
+   * 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
+   * 若未配置selector, 则样式全局生效.
+   */
   lineStyle?: LineStyle | LineStyle[]
+  /**
+   * 点图元样式
+   * @description 点图元样式配置, 用于定义图表的点图元样式, 包括点图元的颜色, 边框等.
+   * 支持全局样式或条件样式配置
+   * 数据筛选器
+   * 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
+   * 若未配置selector, 则样式全局生效.
+   */
   pointStyle?: PointStyle | PointStyle[]
+  /**
+   * 面积图元样式
+   * @description 面积图元样式配置, 用于定义图表的面积图元样式, 包括面积图元的颜色, 透明度, 边框等.
+   * 支持全局样式或条件样式配置
+   * 数据筛选器
+   * 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
+   * 若未配置selector, 则样式全局生效.
+   */
   areaStyle?: AreaStyle | AreaStyle[]
 
   /**

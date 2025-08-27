@@ -54,7 +54,7 @@ export type YLinearAxis = {
   inverse?: boolean
 
   /**
-   * 是否在坐标轴上显示 0 值,
+   * 是否在坐标轴上强制显示 0 值,
    * @description 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
    * @default true
    * @example true
@@ -74,22 +74,18 @@ export type YLinearAxis = {
     visible?: boolean
     /**
      * 标签颜色
-     * @default '#797B85'
      */
     labelColor?: string
     /**
      * 标签字体大小
-     * @default 12
      */
     labelFontSize?: number
     /**
      * 标签字体粗细
-     * @default 400
      */
     labelFontWeight?: number
     /**
      * 标签旋转角度
-     * @default 0
      */
     labelAngle?: number
   }
@@ -111,7 +107,6 @@ export type YLinearAxis = {
     visible?: boolean
     /**
      * 轴线颜色
-     * @default 'rgba(54, 65, 89, 0.30)'
      */
     lineColor?: string
     /**
@@ -138,12 +133,10 @@ export type YLinearAxis = {
     tickInside?: boolean
     /**
      * 刻度颜色
-     * @default 'rgba(54, 65, 89, 0.30)'
      */
     tickColor?: string
     /**
      * 刻度尺寸
-     * @default 4
      */
     tickSize?: number
   }
@@ -160,22 +153,18 @@ export type YLinearAxis = {
     visible?: boolean
     /**
      * 标题文本, 默认跟随字段配置
-     * @default ''
      */
     titleText?: string
     /**
      * 标题颜色
-     * @default '#646A73'
      */
     titleColor?: string
     /**
      * 标题字体大小
-     * @default 12
      */
     titleFontSize?: number
     /**
      * 标题字体粗细
-     * @default 400
      */
     titleFontWeight?: number
   }
@@ -188,12 +177,10 @@ export type YLinearAxis = {
     visible?: boolean
     /**
      * 网格线颜色
-     * @default 'rgba(54, 65, 89, 0.15)'
      */
     gridColor?: string
     /**
      * 网格线宽度
-     * @default 0.5
      */
     gridWidth?: number
   }

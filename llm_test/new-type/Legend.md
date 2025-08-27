@@ -16,25 +16,21 @@ export type Legend = {
   border?: boolean
   /**
    * 图例字体大小
-   * @default 12
    * @example labelFontSize: 10
    */
   labelFontSize?: number
   /**
    * 图例字体颜色
-   * @default '#fff'
    * @example labelFontColor: '#212121'
    */
   labelFontColor?: string
   /**
    * 图例字体粗细
-   * @default 400
    * @example labelFontWeight: 400
    */
   labelFontWeight?: number | string
   /**
    * 图例形状
-   * @default 'rectRound'
    * @example shapeType: 'circle'
    */
   shapeType?:

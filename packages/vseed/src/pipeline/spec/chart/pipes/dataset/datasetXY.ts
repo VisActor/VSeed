@@ -5,7 +5,7 @@ import type { SpecPipe } from 'src/types'
 export const datasetXY: SpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { encoding, analysis, datasetReshapeInfo } = advancedVSeed
-  const { orderMapping = {} } = analysis ?? {}
+  const orderMapping = analysis?.orderMapping || {}
   const angle = encoding[0]?.angle?.[0]
   const x = encoding[0]?.x?.[0]
   const group = encoding[0]?.group?.[0]

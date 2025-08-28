@@ -58,6 +58,9 @@ export const annotationArea: SpecPipe = (spec, context) => {
     const dataset = advancedVSeed.dataset.flat()
     const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
 
+    const labelPosition = positionMap[textPosition || 'top']
+    const isBottom = labelPosition.toLocaleLowerCase().includes('bottom')
+
     return {
       zIndex: ANNOTATION_Z_INDEX,
       regionRelative: true,
@@ -146,11 +149,11 @@ export const annotationArea: SpecPipe = (spec, context) => {
         return []
       },
       label: {
-        position: positionMap[textPosition || 'top'],
+        position: labelPosition,
         visible: true,
         text: text,
         style: {
-          dy: textFontSize,
+          dy: isBottom ? -(textFontSize || 12) * 2 : textFontSize,
           textAlign: textAlign,
           textBaseline: textBaseline,
           fill: textColor,
@@ -164,7 +167,7 @@ export const annotationArea: SpecPipe = (spec, context) => {
           visible: textBackgroundVisible,
           padding: textBackgroundPadding,
           style: {
-            dy: textFontSize,
+            dy: isBottom ? -(textFontSize || 12) * 2 : textFontSize,
             cornerRadius: textBackgroundBorderRadius ?? 4,
             fill: textBackgroundColor,
             stroke: textBackgroundBorderColor,

@@ -1,7 +1,7 @@
 import * as path from 'node:path'
-import { defineConfig } from 'rspress/config'
+import { defineConfig } from '@rspress/core'
 import { pluginPlayground } from '@rspress/plugin-playground'
-const isDev = process.env.NODE_ENV === 'development'
+// const isDev = process.env.NODE_ENV === 'development'
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
@@ -9,7 +9,7 @@ export default defineConfig({
   globalStyles: path.join(__dirname, 'components/styles/index.css'),
   plugins: [
     pluginPlayground({
-      include: ['@visactor/vchart', '@visactor/vtable', '@visactor/vseed', 'rspress/runtime'],
+      include: ['@visactor/vchart', '@visactor/vtable', '@visactor/vseed', '@rspress/core/runtime'],
     }),
   ],
   lang: 'zh-CN',
@@ -59,5 +59,8 @@ export default defineConfig({
       sourceMap: true,
       assetPrefix: 'https://visactor.github.io/VSeed/',
     },
+  },
+  ssg: {
+    experimentalWorker: true,
   },
 })

@@ -1,0 +1,22 @@
+[
+  {
+    "type": "file",
+    "name": "tickColor",
+    "label": "tickColor "
+  },
+  {
+    "type": "file",
+    "name": "tickInside",
+    "label": "tickInside "
+  },
+  {
+    "type": "file",
+    "name": "tickSize",
+    "label": "tickSize "
+  },
+  {
+    "type": "file",
+    "name": "visible",
+    "label": "visible "
+  }
+]

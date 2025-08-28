@@ -1,0 +1,13 @@
+[
+  {
+    "type": "file",
+    "name": "colorScheme",
+    "label": "colorScheme "
+  },
+  {
+    "type": "dir",
+    "name": "colorMapping",
+    "label": "colorMapping ",
+    "collapsed": true
+  }
+]

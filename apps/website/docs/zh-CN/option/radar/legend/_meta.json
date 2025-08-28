@@ -1,0 +1,42 @@
+[
+  {
+    "type": "file",
+    "name": "border",
+    "label": "border "
+  },
+  {
+    "type": "file",
+    "name": "enable",
+    "label": "enable "
+  },
+  {
+    "type": "file",
+    "name": "labelFontColor",
+    "label": "labelFontColor "
+  },
+  {
+    "type": "file",
+    "name": "labelFontSize",
+    "label": "labelFontSize "
+  },
+  {
+    "type": "file",
+    "name": "labelFontWeight",
+    "label": "labelFontWeight "
+  },
+  {
+    "type": "file",
+    "name": "maxSize",
+    "label": "maxSize "
+  },
+  {
+    "type": "file",
+    "name": "position",
+    "label": "position "
+  },
+  {
+    "type": "file",
+    "name": "shapeType",
+    "label": "shapeType "
+  }
+]

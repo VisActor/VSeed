@@ -2,7 +2,7 @@ import { useRef, useEffect, memo } from 'react'
 import VChart from '@visactor/vchart'
 import { register, PivotChart as VTablePivotChart, PivotChartConstructorOptions } from '@visactor/vtable'
 import { registerAll, VSeed, Builder, UnfoldDimensionGroupId } from '@visactor/vseed'
-import { useDark } from 'rspress/runtime'
+import { useDark } from '@rspress/core/runtime'
 
 register.chartModule('vchart', VChart)
 registerAll()

@@ -1,0 +1,14 @@
+[
+  {
+    "type": "dir",
+    "name": "primaryMeasures",
+    "label": "primaryMeasures ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "secondaryMeasures",
+    "label": "secondaryMeasures ",
+    "collapsed": true
+  }
+]

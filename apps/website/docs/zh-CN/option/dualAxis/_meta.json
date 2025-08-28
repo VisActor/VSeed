@@ -1,0 +1,154 @@
+[
+  {
+    "type": "file",
+    "name": "backgroundColor",
+    "label": "backgroundColor "
+  },
+  {
+    "type": "file",
+    "name": "chartType",
+    "label": "chartType "
+  },
+  {
+    "type": "file",
+    "name": "locale",
+    "label": "locale "
+  },
+  {
+    "type": "file",
+    "name": "theme",
+    "label": "theme "
+  },
+  {
+    "type": "dir",
+    "name": "annotationArea",
+    "label": "annotationArea ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "annotationHorizontalLine",
+    "label": "annotationHorizontalLine ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "annotationPoint",
+    "label": "annotationPoint ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "annotationVerticalLine",
+    "label": "annotationVerticalLine ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "areaStyle",
+    "label": "areaStyle ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "barStyle",
+    "label": "barStyle ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "color",
+    "label": "color ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "crosshairRect",
+    "label": "crosshairRect ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dataset",
+    "label": "dataset ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dimensions",
+    "label": "dimensions ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dualChartType",
+    "label": "dualChartType ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dualMeasures",
+    "label": "dualMeasures ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "label",
+    "label": "label ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "legend",
+    "label": "legend ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "lineStyle",
+    "label": "lineStyle ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "measures",
+    "label": "measures ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "pointStyle",
+    "label": "pointStyle ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "primaryYAxis",
+    "label": "primaryYAxis ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "secondaryYAxis",
+    "label": "secondaryYAxis ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "sort",
+    "label": "sort ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "sortLegend",
+    "label": "sortLegend ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "tooltip",
+    "label": "tooltip ",
+    "collapsed": true
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "type": "file",
+    "name": "inverse",
+    "label": "inverse "
+  },
+  {
+    "type": "file",
+    "name": "log",
+    "label": "log "
+  },
+  {
+    "type": "file",
+    "name": "logBase",
+    "label": "logBase "
+  },
+  {
+    "type": "file",
+    "name": "max",
+    "label": "max "
+  },
+  {
+    "type": "file",
+    "name": "min",
+    "label": "min "
+  },
+  {
+    "type": "file",
+    "name": "nice",
+    "label": "nice "
+  },
+  {
+    "type": "file",
+    "name": "visible",
+    "label": "visible "
+  },
+  {
+    "type": "file",
+    "name": "zero",
+    "label": "zero "
+  },
+  {
+    "type": "dir",
+    "name": "grid",
+    "label": "grid ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "label",
+    "label": "label ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "line",
+    "label": "line ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "tick",
+    "label": "tick ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "title",
+    "label": "title ",
+    "collapsed": true
+  }
+]

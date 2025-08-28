@@ -28,6 +28,4 @@ export const zAnnotationArea = z.object({
   areaBorderRadius: z.number().default(4).nullish(),
 
   outerPadding: z.number().default(4).nullish(),
-  offsetX: z.number().default(0).nullish(),
-  offsetY: z.number().default(0).nullish(),
 })

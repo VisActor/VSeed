@@ -1,0 +1,52 @@
+[
+  {
+    "type": "file",
+    "name": "fractionDigits",
+    "label": "fractionDigits "
+  },
+  {
+    "type": "file",
+    "name": "prefix",
+    "label": "prefix "
+  },
+  {
+    "type": "file",
+    "name": "ratio",
+    "label": "ratio "
+  },
+  {
+    "type": "file",
+    "name": "roundingMode",
+    "label": "roundingMode "
+  },
+  {
+    "type": "file",
+    "name": "roundingPriority",
+    "label": "roundingPriority "
+  },
+  {
+    "type": "file",
+    "name": "significantDigits",
+    "label": "significantDigits "
+  },
+  {
+    "type": "file",
+    "name": "suffix",
+    "label": "suffix "
+  },
+  {
+    "type": "file",
+    "name": "symbol",
+    "label": "symbol "
+  },
+  {
+    "type": "file",
+    "name": "thousandSeparator",
+    "label": "thousandSeparator "
+  },
+  {
+    "type": "file",
+    "name": "type",
+    "label": "type "
+  }
+]

@@ -48,9 +48,6 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
       lineColor = '#212121',
       lineWidth = 1,
       lineStyle = 'dashed',
-
-      offsetX = 0,
-      offsetY = 0,
     } = annotationVerticalLine
 
     const dataset = advancedVSeed.dataset.flat()
@@ -58,8 +55,6 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
     const generateOneMarkLine = (x: number | string) => ({
       x: x as string,
       zIndex: ANNOTATION_Z_INDEX,
-      offsetX,
-      offsetY,
       line: {
         style: {
           visible: lineVisible,

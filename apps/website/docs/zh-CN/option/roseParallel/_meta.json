@@ -1,0 +1,64 @@
+[
+  {
+    "type": "file",
+    "name": "backgroundColor",
+    "label": "backgroundColor "
+  },
+  {
+    "type": "file",
+    "name": "chartType",
+    "label": "chartType "
+  },
+  {
+    "type": "file",
+    "name": "locale",
+    "label": "locale "
+  },
+  {
+    "type": "file",
+    "name": "theme",
+    "label": "theme "
+  },
+  {
+    "type": "dir",
+    "name": "color",
+    "label": "color ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dataset",
+    "label": "dataset ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dimensions",
+    "label": "dimensions ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "label",
+    "label": "label ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "legend",
+    "label": "legend ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "measures",
+    "label": "measures ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "tooltip",
+    "label": "tooltip ",
+    "collapsed": true
+  }
+]

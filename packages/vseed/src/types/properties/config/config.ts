@@ -15,6 +15,8 @@ import { zDualChartType } from '../chartType'
  * zConfig by 图表类型
  */
 export const zTableConfig = z.object({
+  backgroundColor: zBackgroundColor.optional(),
+
   // Border
   borderColor: z.string().optional(),
 

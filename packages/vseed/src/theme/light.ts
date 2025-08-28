@@ -166,6 +166,8 @@ export const lightTheme = (): CustomThemeConfig => {
 
     selectedBorderColor: '#4080ff',
     selectedBackgroundColor: '#bedaff33',
+
+    backgroundColor: 'transparent',
   }
 
   return {

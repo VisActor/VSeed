@@ -4,6 +4,8 @@ import type { SpecPipe } from 'src/types'
 export const initTable: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { dataset } = advancedVSeed
+  const { config } = advancedVSeed
+  const { backgroundColor = 'transparent' } = config.table || {}
 
   return {
     ...spec,
@@ -26,7 +28,7 @@ export const initTable: SpecPipe = (spec, context) => {
       highlightMode: 'row',
     },
     theme: {
-      underlayBackgroundColor: 'transparent',
+      underlayBackgroundColor: backgroundColor,
     },
   } as ListTableConstructorOptions
 }

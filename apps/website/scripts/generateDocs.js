@@ -175,9 +175,8 @@ function generateMetaJsonRecursive(directory) {
       dirsForMeta.push({ type: 'dir', name: entry.name, label: `${entry.name} `, collapsed: true })
     } else if (entry.isFile() && (entry.name.endsWith('.md') || entry.name.endsWith('.mdx'))) {
       const name = entry.name.replace(/\.mdx?$/, '')
-      // A file is not listed if a directory with the same name exists,
-      // except in the root directory (for top-level chart files like `bar.md`).
-      if (!subdirectories.has(name) || isRoot) {
+      // A file is not listed if a directory with the same name exists.
+      if (!subdirectories.has(name)) {
         filesForMeta.push({ type: 'file', name: name, label: `${name} ` })
       }
     }

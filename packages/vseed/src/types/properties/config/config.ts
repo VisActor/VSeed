@@ -15,124 +15,126 @@ import { zDualChartType } from '../chartType'
  * zConfig by 图表类型
  */
 export const zTableConfig = z.object({
+  backgroundColor: zBackgroundColor.nullish(),
+
   // Border
-  borderColor: z.string().optional(),
+  borderColor: z.string().nullish(),
 
   // Body
-  bodyFontSize: z.number().optional(),
-  bodyFontColor: z.string().optional(),
-  bodyBackgroundColor: z.string().optional(),
+  bodyFontSize: z.number().nullish(),
+  bodyFontColor: z.string().nullish(),
+  bodyBackgroundColor: z.string().nullish(),
   // Body interaction
-  hoverBodyBackgroundColor: z.string().optional(),
-  hoverBodyInlineBackgroundColor: z.string().optional(),
+  hoverBodyBackgroundColor: z.string().nullish(),
+  hoverBodyInlineBackgroundColor: z.string().nullish(),
 
   // Header
-  headerFontSize: z.number().optional(),
-  headerFontColor: z.string().optional(),
-  headerBackgroundColor: z.string().optional(),
+  headerFontSize: z.number().nullish(),
+  headerFontColor: z.string().nullish(),
+  headerBackgroundColor: z.string().nullish(),
   // Header interaction
-  hoverHeaderBackgroundColor: z.string().optional(),
-  hoverHeaderInlineBackgroundColor: z.string().optional(),
+  hoverHeaderBackgroundColor: z.string().nullish(),
+  hoverHeaderInlineBackgroundColor: z.string().nullish(),
 
   // Interaction
-  selectedBorderColor: z.string().optional(),
-  selectedBackgroundColor: z.string().optional(),
+  selectedBorderColor: z.string().nullish(),
+  selectedBackgroundColor: z.string().nullish(),
 })
 export const zPivotTableConfig = zTableConfig
 
 export const zLineConfig = z.object({
-  backgroundColor: zBackgroundColor.optional(),
-  label: zLabel.optional(),
-  color: zColor.optional(),
-  tooltip: zTooltip.optional(),
-  legend: zLegend.optional(),
+  backgroundColor: zBackgroundColor.nullish(),
+  label: zLabel.nullish(),
+  color: zColor.nullish(),
+  tooltip: zTooltip.nullish(),
+  legend: zLegend.nullish(),
 
-  xAxis: zXBandAxis.optional(),
-  yAxis: zYLinearAxis.optional(),
-  crosshairLine: zCrosshairLine.optional(),
+  xAxis: zXBandAxis.nullish(),
+  yAxis: zYLinearAxis.nullish(),
+  crosshairLine: zCrosshairLine.nullish(),
 })
 export const zColumnConfig = z.object({
-  backgroundColor: zBackgroundColor.optional(),
-  label: zLabel.optional(),
-  color: zColor.optional(),
-  tooltip: zTooltip.optional(),
-  legend: zLegend.optional(),
+  backgroundColor: zBackgroundColor.nullish(),
+  label: zLabel.nullish(),
+  color: zColor.nullish(),
+  tooltip: zTooltip.nullish(),
+  legend: zLegend.nullish(),
 
-  xAxis: zXBandAxis.optional(),
-  yAxis: zYLinearAxis.optional(),
-  crosshairRect: zCrosshairRect.optional(),
-  stackCornerRadius: zStackCornerRadius.optional(),
+  xAxis: zXBandAxis.nullish(),
+  yAxis: zYLinearAxis.nullish(),
+  crosshairRect: zCrosshairRect.nullish(),
+  stackCornerRadius: zStackCornerRadius.nullish(),
 })
 export const zColumnParallelConfig = zColumnConfig
 export const zColumnPercentConfig = zColumnConfig
 export const zBarConfig = z.object({
-  backgroundColor: zBackgroundColor.optional(),
-  label: zLabel.optional(),
-  color: zColor.optional(),
-  tooltip: zTooltip.optional(),
-  legend: zLegend.optional(),
+  backgroundColor: zBackgroundColor.nullish(),
+  label: zLabel.nullish(),
+  color: zColor.nullish(),
+  tooltip: zTooltip.nullish(),
+  legend: zLegend.nullish(),
 
-  xAxis: zXLinearAxis.optional(),
-  yAxis: zYBandAxis.optional(),
-  crosshairRect: zCrosshairRect.optional(),
-  stackCornerRadius: zStackCornerRadius.optional(),
+  xAxis: zXLinearAxis.nullish(),
+  yAxis: zYBandAxis.nullish(),
+  crosshairRect: zCrosshairRect.nullish(),
+  stackCornerRadius: zStackCornerRadius.nullish(),
 })
 export const zBarParallelConfig = zBarConfig
 export const zBarPercentConfig = zBarConfig
 export const zAreaConfig = z.object({
-  backgroundColor: zBackgroundColor.optional(),
-  label: zLabel.optional(),
-  color: zColor.optional(),
-  tooltip: zTooltip.optional(),
-  legend: zLegend.optional(),
+  backgroundColor: zBackgroundColor.nullish(),
+  label: zLabel.nullish(),
+  color: zColor.nullish(),
+  tooltip: zTooltip.nullish(),
+  legend: zLegend.nullish(),
 
-  xAxis: zXBandAxis.optional(),
-  yAxis: zYLinearAxis.optional(),
-  crosshairLine: zCrosshairLine.optional(),
+  xAxis: zXBandAxis.nullish(),
+  yAxis: zYLinearAxis.nullish(),
+  crosshairLine: zCrosshairLine.nullish(),
 })
 export const zAreaPercentConfig = zAreaConfig
 export const zAreaRangeConfig = zAreaConfig
 export const zDualAxisConfig = z.object({
-  backgroundColor: zBackgroundColor.optional(),
-  label: zLabel.optional(),
-  color: zColor.optional(),
-  tooltip: zTooltip.optional(),
-  legend: zLegend.optional(),
+  backgroundColor: zBackgroundColor.nullish(),
+  label: zLabel.nullish(),
+  color: zColor.nullish(),
+  tooltip: zTooltip.nullish(),
+  legend: zLegend.nullish(),
 
-  dualChartType: z.array(zDualChartType).or(zDualChartType).optional(),
-  primaryYAxis: z.array(zYLinearAxis).or(zYLinearAxis).optional(),
-  secondaryYAxis: z.array(zYLinearAxis).or(zYLinearAxis).optional(),
+  dualChartType: z.array(zDualChartType).or(zDualChartType).nullish(),
+  primaryYAxis: z.array(zYLinearAxis).or(zYLinearAxis).nullish(),
+  secondaryYAxis: z.array(zYLinearAxis).or(zYLinearAxis).nullish(),
 
-  xAxis: zXBandAxis.optional(),
-  crosshairRect: zCrosshairRect.optional(),
+  xAxis: zXBandAxis.nullish(),
+  crosshairRect: zCrosshairRect.nullish(),
 })
 export const zScatterConfig = z.object({
-  backgroundColor: zBackgroundColor.optional(),
-  label: zLabel.optional(),
-  color: zColor.optional(),
-  tooltip: zTooltip.optional(),
-  legend: zLegend.optional(),
+  backgroundColor: zBackgroundColor.nullish(),
+  label: zLabel.nullish(),
+  color: zColor.nullish(),
+  tooltip: zTooltip.nullish(),
+  legend: zLegend.nullish(),
 
-  xAxis: zXLinearAxis.optional(),
-  yAxis: zYLinearAxis.optional(),
-  crosshairLine: zCrosshairLine.optional(),
+  xAxis: zXLinearAxis.nullish(),
+  yAxis: zYLinearAxis.nullish(),
+  crosshairLine: zCrosshairLine.nullish(),
 })
 
 // polar
 export const zRoseConfig = z.object({
-  backgroundColor: zBackgroundColor.optional(),
-  label: zLabel.optional(),
-  color: zColor.optional(),
-  tooltip: zTooltip.optional(),
-  legend: zLegend.optional(),
+  backgroundColor: zBackgroundColor.nullish(),
+  label: zLabel.nullish(),
+  color: zColor.nullish(),
+  tooltip: zTooltip.nullish(),
+  legend: zLegend.nullish(),
 })
 export const zRoseParallelConfig = zRoseConfig
 export const zPieConfig = z.object({
-  backgroundColor: zBackgroundColor.optional(),
-  label: zLabel.optional(),
-  color: zColor.optional(),
-  tooltip: zTooltip.optional(),
-  legend: zLegend.optional(),
+  backgroundColor: zBackgroundColor.nullish(),
+  label: zLabel.nullish(),
+  color: zColor.nullish(),
+  tooltip: zTooltip.nullish(),
+  legend: zLegend.nullish(),
 })
 export const zDonutConfig = zPieConfig
 export const zRadarConfig = zPieConfig
@@ -174,30 +176,30 @@ export type HeatmapConfig = z.infer<typeof zHeatmapConfig>
  */
 export type Config = z.infer<typeof zConfig>
 export const zConfig = z.object({
-  table: zTableConfig.optional(),
-  pivotTable: zPivotTableConfig.optional(),
+  table: zTableConfig.nullish(),
+  pivotTable: zPivotTableConfig.nullish(),
 
   // cartesian
-  line: zLineConfig.optional(),
-  column: zColumnConfig.optional(),
-  columnParallel: zColumnParallelConfig.optional(),
-  columnPercent: zColumnPercentConfig.optional(),
-  bar: zBarConfig.optional(),
-  barParallel: zBarParallelConfig.optional(),
-  barPercent: zBarPercentConfig.optional(),
-  area: zAreaConfig.optional(),
-  areaPercent: zAreaPercentConfig.optional(),
-  areaRange: zAreaRangeConfig.optional(),
-  scatter: zScatterConfig.optional(),
-  dualAxis: zDualAxisConfig.optional(),
+  line: zLineConfig.nullish(),
+  column: zColumnConfig.nullish(),
+  columnParallel: zColumnParallelConfig.nullish(),
+  columnPercent: zColumnPercentConfig.nullish(),
+  bar: zBarConfig.nullish(),
+  barParallel: zBarParallelConfig.nullish(),
+  barPercent: zBarPercentConfig.nullish(),
+  area: zAreaConfig.nullish(),
+  areaPercent: zAreaPercentConfig.nullish(),
+  areaRange: zAreaRangeConfig.nullish(),
+  scatter: zScatterConfig.nullish(),
+  dualAxis: zDualAxisConfig.nullish(),
 
   // polar
-  rose: zRoseConfig.optional(),
-  roseParallel: zRoseParallelConfig.optional(),
-  pie: zPieConfig.optional(),
-  donut: zDonutConfig.optional(),
-  radar: zRadarConfig.optional(),
+  rose: zRoseConfig.nullish(),
+  roseParallel: zRoseParallelConfig.nullish(),
+  pie: zPieConfig.nullish(),
+  donut: zDonutConfig.nullish(),
+  radar: zRadarConfig.nullish(),
   // other
-  funnel: zFunnelConfig.optional(),
-  heatmap: zHeatmapConfig.optional(),
+  funnel: zFunnelConfig.nullish(),
+  heatmap: zHeatmapConfig.nullish(),
 })

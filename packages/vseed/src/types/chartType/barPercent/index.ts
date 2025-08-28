@@ -1,1 +1,2 @@
-export * from './barPercent'
+export type * from './barPercent'
+export * from './zBarPercent'

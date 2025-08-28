@@ -1,17 +1,6 @@
-import { z } from 'zod'
-import { zLocale, type Locale } from '../../i18n'
-import type {
-  MeasureTree} from '../../properties';
+import { type Locale } from '../../i18n'
+import type { MeasureTree } from '../../properties'
 import {
-  zBackgroundColor,
-  zColor,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLegend,
-  zMeasureTree,
-  zTheme,
-  zTooltip,
   type BackgroundColor,
   type Color,
   type Dataset,
@@ -116,17 +105,3 @@ export interface Rose {
    */
   locale?: Locale
 }
-
-export const zRose = z.object({
-  chartType: z.literal('rose'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
-  label: zLabel.optional(),
-  legend: zLegend.optional(),
-  tooltip: zTooltip.optional(),
-  theme: zTheme.optional(),
-  locale: zLocale.optional(),
-})

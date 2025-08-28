@@ -1,1 +1,2 @@
-export * from './column'
+export type * from './column'
+export * from './zColumn'

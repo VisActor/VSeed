@@ -1,19 +1,6 @@
-import { z } from 'zod'
-import { zLocale, type Locale } from '../../i18n'
-import type {
-  ColorLegend,
-  LinearColor,
-  MeasureTree} from '../../properties';
+import { type Locale } from '../../i18n'
+import type { ColorLegend, LinearColor, MeasureTree } from '../../properties'
 import {
-  zBackgroundColor,
-  zColorLegend,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLinearColor,
-  zMeasureTree,
-  zTheme,
-  zTooltip,
   type BackgroundColor,
   type Dataset,
   type Dimensions,
@@ -115,17 +102,3 @@ export interface Heatmap {
    */
   locale?: Locale
 }
-
-export const zHeatmap = z.object({
-  chartType: z.literal('heatmap'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zLinearColor.optional(),
-  label: zLabel.optional(),
-  legend: zColorLegend.optional(),
-  tooltip: zTooltip.optional(),
-  theme: zTheme.optional(),
-  locale: zLocale.optional(),
-})

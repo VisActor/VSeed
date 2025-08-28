@@ -4,8 +4,8 @@ import type { SpecPipe, TableConfig } from 'src/types'
 export const bodyStyle: SpecPipe = (spec, context) => {
   const result = { ...spec } as BaseTableConstructorOptions
   const { advancedVSeed } = context
-  const { customTheme, chartType } = advancedVSeed
-  const themeConfig = customTheme?.config?.[chartType] as TableConfig
+  const { chartType, config } = advancedVSeed
+  const themeConfig = config?.[chartType] as TableConfig
 
   if (!result.theme || !themeConfig) return result
 

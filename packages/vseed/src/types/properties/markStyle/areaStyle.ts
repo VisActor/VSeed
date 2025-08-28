@@ -56,7 +56,7 @@ export type AreaStyle = {
 }
 
 export const zAreaStyle = z.object({
-  selector: z.union([zSelector, zSelectors]).optional(),
-  areaColor: z.string().optional(),
-  areaColorOpacity: z.number().optional(),
+  selector: z.union([zSelector, zSelectors]).nullish(),
+  areaColor: z.string().nullish(),
+  areaColorOpacity: z.number().nullish(),
 })

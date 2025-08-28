@@ -5,7 +5,7 @@ import type { SpecPipe } from 'src/types'
 export const datasetPrimary: SpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { encoding, analysis, datasetReshapeInfo } = advancedVSeed
-  const { orderMapping = {} } = analysis ?? {}
+  const orderMapping = analysis?.orderMapping || {}
   const x = encoding[0]?.x?.[0]
   const group = encoding[0]?.group?.[0]
   const id = datasetReshapeInfo[0].id
@@ -47,7 +47,7 @@ export const datasetPrimary: SpecPipe = (spec, context) => {
     data: {
       id: `${id}-primary-dataset`,
       // 透视表不使用 dataValues
-      values: isPivotChart(vseed) ? undefined : advancedVSeed.dataset[0],
+      values: isPivotChart(vseed) ? undefined : advancedVSeed.dataset,
       fields: fields,
     },
   } as ISpec
@@ -56,7 +56,7 @@ export const datasetPrimary: SpecPipe = (spec, context) => {
 export const datasetSecondary: SpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { encoding, analysis, datasetReshapeInfo } = advancedVSeed
-  const { orderMapping = {} } = analysis ?? {}
+  const orderMapping = analysis?.orderMapping || {}
   const x = encoding[0]?.x?.[0]
   const group = encoding[0]?.group?.[0]
   const id = datasetReshapeInfo[0].id
@@ -98,7 +98,7 @@ export const datasetSecondary: SpecPipe = (spec, context) => {
     data: {
       id: `${id}-secondary-dataset`,
       // 透视表不使用 dataValues
-      values: isPivotChart(vseed) ? undefined : advancedVSeed.dataset[1],
+      values: isPivotChart(vseed) ? undefined : advancedVSeed.dataset,
       fields: fields,
     },
   } as ISpec

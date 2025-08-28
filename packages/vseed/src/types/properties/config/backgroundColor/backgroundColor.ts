@@ -1,5 +1,5 @@
 import { z } from 'zod'
-export const zBackgroundColor = z.string().default('transparent').optional()
+export const zBackgroundColor = z.string().default('transparent').nullish()
 
 /**
  * 图表的背景颜色

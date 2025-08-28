@@ -1,1 +1,2 @@
-export * from './donut'
+export type * from './donut'
+export * from './zDonut'

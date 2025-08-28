@@ -4,8 +4,8 @@ import type { SpecPipe, TableConfig } from 'src/types'
 export const cornerHeaderStyle: SpecPipe = (spec, context) => {
   const result = { ...spec } as BaseTableConstructorOptions
   const { advancedVSeed } = context
-  const { customTheme, chartType } = advancedVSeed
-  const themConfig = customTheme?.config?.[chartType] as TableConfig
+  const { config, chartType } = advancedVSeed
+  const themConfig = config?.[chartType] as TableConfig
 
   if (!result.theme || !themConfig) return result
 
@@ -24,9 +24,9 @@ export const cornerHeaderStyle: SpecPipe = (spec, context) => {
     padding: [8, 12, 8, 12],
     textAlign: 'left',
     hover: {
-      cellBgColor: hoverCellColor,
-      inlineRowBgColor: hoverInlineColor,
-      inlineColumnBgColor: hoverInlineColor,
+      cellBgColor: hoverCellColor || undefined,
+      inlineRowBgColor: hoverInlineColor || undefined,
+      inlineColumnBgColor: hoverInlineColor || undefined,
     },
     frameStyle: {
       borderColor: [null, borderColor, borderColor, null],

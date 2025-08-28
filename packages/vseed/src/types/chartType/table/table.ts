@@ -28,14 +28,12 @@ import {
  */
 export interface Table {
   /**
-   * 表格
    * @description 标准表格组件，用于展示详细数据
    * @type {'table'}
    * @example 'table'
    */
   chartType: 'table'
   /**
-   * 数据集
    * @description 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, 一个字段对应一列, 一个记录对应一行
    * @type {Array<Record<string|number, any>>}
    * @example [{id: 1, name: "A", value: 100}, {id: 2, name: "B", value: 200}]
@@ -43,7 +41,6 @@ export interface Table {
   dataset: Dataset
 
   /**
-   * 维度
    * @description 表格的每个维度会对应一列
    * @type {Dimensions}
    * @example [{id: "name", alias: "名称"}]
@@ -51,7 +48,6 @@ export interface Table {
   dimensions?: DimensionTree
 
   /**
-   * 指标
    * @description 表格的每个指标会对应一行, 并且天生支持指标组合.
    * @type {Measures}
    * @example [{id: "value", alias: "数值"}]
@@ -64,6 +60,51 @@ export interface Table {
    * @description 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
    */
   backgroundColor?: BackgroundColor
+
+  /**
+   * @description 表格的边框颜色
+   */
+  borderColor?: string
+  /**
+   * @description 表格体的字体大小
+   */
+  bodyFontSize?: number
+  /**
+   * @description 表格体的字体颜色
+   */
+  bodyFontColor?: string
+  /**
+   * @description 表格体的背景颜色
+   */
+  bodyBackgroundColor?: string
+  /**
+   * @description 列表头的字体大小
+   */
+  headerFontSize?: number
+  /**
+   * @description 列表头的字体颜色
+   */
+  headerFontColor?: string
+  /**
+   * @description 列表头的背景颜色
+   */
+  headerBackgroundColor?: string
+  /**
+   * @description 鼠标悬浮在列表头的单元格时的背景颜色, 用于突出显示鼠标所在的单元格
+   */
+  hoverHeaderBackgroundColor?: string
+  /**
+   * @description 鼠标悬浮在列表头的时, 整行的单元格的背景颜色, 用于突出显示鼠标所在的行
+   */
+  hoverHeaderInlineBackgroundColor?: string
+  /**
+   * @description 选中的单元格的边框颜色, 用于突出显示选中的单元格
+   */
+  selectedBorderColor?: string
+  /**
+   * @description 选中的单元格的背景颜色, 用于突出显示选中的单元格
+   */
+  selectedBackgroundColor?: string
 
   /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置

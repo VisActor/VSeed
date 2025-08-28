@@ -1,4 +1,4 @@
-import { clone, isObjectType, merge, mergeDeep } from 'remeda'
+import { clone, isNullish, isNumber, isObjectType, isString, merge, mergeDeep } from 'remeda'
 import type { AdvancedPipe, AdvancedVSeed } from 'src/types'
 
 export const theme: AdvancedPipe = (advancedVSeed, context) => {
@@ -42,10 +42,14 @@ export const theme: AdvancedPipe = (advancedVSeed, context) => {
   return result
 }
 
-const mergeArray = <Destination extends Array<object>, Source extends object>(
+const mergeArray = <Destination extends Array<object>, Source extends object | number | string | undefined>(
   arr: Destination,
   themeItem: Source,
 ): Destination => {
+  if (isNullish(themeItem) || isString(themeItem) || isNumber(themeItem)) {
+    return arr
+  }
+
   if (!Array.isArray(arr)) {
     return arr
   }

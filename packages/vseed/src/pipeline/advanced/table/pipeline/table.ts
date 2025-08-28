@@ -7,6 +7,6 @@ export const tableAdvancedPipeline: AdvancedPipeline = [
   autoMeasures,
   autoDimensions,
   records,
-  theme,
   tableConfig,
+  theme,
 ]

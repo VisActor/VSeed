@@ -4,8 +4,8 @@ import type { SpecPipe, TableConfig } from 'src/types'
 export const cornerHeaderStyle: SpecPipe = (spec, context) => {
   const result = { ...spec } as BaseTableConstructorOptions
   const { advancedVSeed } = context
-  const { customTheme, chartType } = advancedVSeed
-  const themConfig = customTheme?.config?.[chartType] as TableConfig
+  const { config, chartType } = advancedVSeed
+  const themConfig = config?.[chartType] as TableConfig
 
   if (!result.theme || !themConfig) return result
 

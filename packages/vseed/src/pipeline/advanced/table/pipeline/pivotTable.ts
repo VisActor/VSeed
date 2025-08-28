@@ -7,6 +7,6 @@ export const pivotTableAdvancedPipeline: AdvancedPipeline = [
   autoPivotMeasures,
   autoPivotDimensions,
   records,
-  theme,
   pivotTableConfig,
+  theme,
 ]

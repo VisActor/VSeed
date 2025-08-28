@@ -1,0 +1,118 @@
+[
+  {
+    "type": "dir",
+    "name": "color",
+    "label": "color ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "label",
+    "label": "label ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "legend",
+    "label": "legend ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "sort",
+    "label": "sort ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "sortLegend",
+    "label": "sortLegend ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "tooltip",
+    "label": "tooltip ",
+    "collapsed": true
+  },
+  {
+    "type": "file",
+    "name": "annotationArea",
+    "label": "annotationArea "
+  },
+  {
+    "type": "file",
+    "name": "annotationHorizontalLine",
+    "label": "annotationHorizontalLine "
+  },
+  {
+    "type": "file",
+    "name": "annotationPoint",
+    "label": "annotationPoint "
+  },
+  {
+    "type": "file",
+    "name": "annotationVerticalLine",
+    "label": "annotationVerticalLine "
+  },
+  {
+    "type": "file",
+    "name": "backgroundColor",
+    "label": "backgroundColor "
+  },
+  {
+    "type": "file",
+    "name": "chartType",
+    "label": "chartType "
+  },
+  {
+    "type": "file",
+    "name": "crosshairLine",
+    "label": "crosshairLine "
+  },
+  {
+    "type": "file",
+    "name": "dataset",
+    "label": "dataset "
+  },
+  {
+    "type": "file",
+    "name": "dimensions",
+    "label": "dimensions "
+  },
+  {
+    "type": "file",
+    "name": "lineStyle",
+    "label": "lineStyle "
+  },
+  {
+    "type": "file",
+    "name": "locale",
+    "label": "locale "
+  },
+  {
+    "type": "file",
+    "name": "measures",
+    "label": "measures "
+  },
+  {
+    "type": "file",
+    "name": "pointStyle",
+    "label": "pointStyle "
+  },
+  {
+    "type": "file",
+    "name": "theme",
+    "label": "theme "
+  },
+  {
+    "type": "file",
+    "name": "xAxis",
+    "label": "xAxis "
+  },
+  {
+    "type": "file",
+    "name": "yAxis",
+    "label": "yAxis "
+  }
+]

@@ -5,6 +5,11 @@
     "activeMatch": "/guide/"
   },
   {
+    "text": "配置项",
+    "link": "/option/index",
+    "activeMatch": "/option/"
+  },
+  {
     "text": "示例",
     "link": "/galley/dataConfig/dataset",
     "activeMatch": "/galley"

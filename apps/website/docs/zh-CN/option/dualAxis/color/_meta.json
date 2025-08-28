@@ -1,0 +1,12 @@
+[
+  {
+    "type": "file",
+    "name": "colorMapping",
+    "label": "colorMapping "
+  },
+  {
+    "type": "file",
+    "name": "colorScheme",
+    "label": "colorScheme "
+  }
+]

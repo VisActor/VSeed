@@ -14,6 +14,7 @@
     "build": "pnpm -r build",
     "build:rsdoctor": "pnpm --filter=@visactor/vseed run build:rsdoctor",
     "test": "pnpm -r test",
+    "build:docs": "node ./apps/website/scripts/generateDocs.js",
     "publish:vseed": "pnpm run build && pnpm publish -r --access=public",
     "ci:publish": "pnpm run build &&pnpm publish -r --access=public"
   },

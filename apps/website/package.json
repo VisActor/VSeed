@@ -17,6 +17,7 @@
     "zustand": "5.0.6"
   },
   "devDependencies": {
+    "ts-morph": "latest",
     "@eslint/js": "9.30.0",
     "@rspress/plugin-playground": "1.45.0",
     "@types/node": "22.16.5",

@@ -1,0 +1,27 @@
+[
+  {
+    "type": "file",
+    "name": "field",
+    "label": "field "
+  },
+  {
+    "type": "file",
+    "name": "op",
+    "label": "op "
+  },
+  {
+    "type": "file",
+    "name": "operator",
+    "label": "operator "
+  },
+  {
+    "type": "file",
+    "name": "selector",
+    "label": "selector "
+  },
+  {
+    "type": "file",
+    "name": "value",
+    "label": "value "
+  }
+]

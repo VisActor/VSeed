@@ -1,27 +1,77 @@
 [
   {
     "type": "file",
+    "name": "inverse",
+    "label": "inverse "
+  },
+  {
+    "type": "file",
+    "name": "labelAutoHide",
+    "label": "labelAutoHide "
+  },
+  {
+    "type": "file",
+    "name": "labelAutoHideGap",
+    "label": "labelAutoHideGap "
+  },
+  {
+    "type": "file",
+    "name": "labelAutoLimit",
+    "label": "labelAutoLimit "
+  },
+  {
+    "type": "file",
+    "name": "labelAutoLimitLength",
+    "label": "labelAutoLimitLength "
+  },
+  {
+    "type": "file",
+    "name": "labelAutoRotate",
+    "label": "labelAutoRotate "
+  },
+  {
+    "type": "file",
+    "name": "labelAutoRotateAngleRange",
+    "label": "labelAutoRotateAngleRange "
+  },
+  {
+    "type": "file",
+    "name": "visible",
+    "label": "visible "
+  },
+  {
+    "type": "file",
+    "name": "yAxis",
+    "label": "yAxis "
+  },
+  {
+    "type": "dir",
     "name": "grid",
-    "label": "grid "
+    "label": "grid ",
+    "collapsed": true
   },
   {
-    "type": "file",
+    "type": "dir",
     "name": "label",
-    "label": "label "
+    "label": "label ",
+    "collapsed": true
   },
   {
-    "type": "file",
+    "type": "dir",
     "name": "line",
-    "label": "line "
+    "label": "line ",
+    "collapsed": true
   },
   {
-    "type": "file",
+    "type": "dir",
     "name": "tick",
-    "label": "tick "
+    "label": "tick ",
+    "collapsed": true
   },
   {
-    "type": "file",
+    "type": "dir",
     "name": "title",
-    "label": "title "
+    "label": "title ",
+    "collapsed": true
   }
 ]

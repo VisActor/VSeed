@@ -1,8 +1,89 @@
 [
   {
     "type": "file",
+    "name": "backgroundColor",
+    "label": "backgroundColor "
+  },
+  {
+    "type": "file",
+    "name": "bodyBackgroundColor",
+    "label": "bodyBackgroundColor "
+  },
+  {
+    "type": "file",
+    "name": "bodyFontColor",
+    "label": "bodyFontColor "
+  },
+  {
+    "type": "file",
+    "name": "bodyFontSize",
+    "label": "bodyFontSize "
+  },
+  {
+    "type": "file",
+    "name": "borderColor",
+    "label": "borderColor "
+  },
+  {
+    "type": "file",
+    "name": "chartType",
+    "label": "chartType "
+  },
+  {
+    "type": "file",
+    "name": "headerBackgroundColor",
+    "label": "headerBackgroundColor "
+  },
+  {
+    "type": "file",
+    "name": "headerFontColor",
+    "label": "headerFontColor "
+  },
+  {
+    "type": "file",
+    "name": "headerFontSize",
+    "label": "headerFontSize "
+  },
+  {
+    "type": "file",
+    "name": "hoverHeaderBackgroundColor",
+    "label": "hoverHeaderBackgroundColor "
+  },
+  {
+    "type": "file",
+    "name": "hoverHeaderInlineBackgroundColor",
+    "label": "hoverHeaderInlineBackgroundColor "
+  },
+  {
+    "type": "file",
+    "name": "locale",
+    "label": "locale "
+  },
+  {
+    "type": "file",
+    "name": "selectedBackgroundColor",
+    "label": "selectedBackgroundColor "
+  },
+  {
+    "type": "file",
+    "name": "selectedBorderColor",
+    "label": "selectedBorderColor "
+  },
+  {
+    "type": "file",
+    "name": "table",
+    "label": "table "
+  },
+  {
+    "type": "file",
+    "name": "theme",
+    "label": "theme "
+  },
+  {
+    "type": "dir",
     "name": "dataset",
-    "label": "dataset "
+    "label": "dataset ",
+    "collapsed": true
   },
   {
     "type": "dir",

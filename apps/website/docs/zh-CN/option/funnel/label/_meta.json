@@ -1,0 +1,12 @@
+[
+  {
+    "type": "file",
+    "name": "enable",
+    "label": "enable "
+  },
+  {
+    "type": "file",
+    "name": "label",
+    "label": "label "
+  }
+]

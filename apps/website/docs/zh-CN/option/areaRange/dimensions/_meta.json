@@ -1,0 +1,22 @@
+[
+  {
+    "type": "file",
+    "name": "alias",
+    "label": "alias "
+  },
+  {
+    "type": "file",
+    "name": "dimensions",
+    "label": "dimensions "
+  },
+  {
+    "type": "file",
+    "name": "id",
+    "label": "id "
+  },
+  {
+    "type": "file",
+    "name": "location",
+    "label": "location "
+  }
+]

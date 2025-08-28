@@ -1,0 +1,12 @@
+[
+  {
+    "type": "file",
+    "name": "color",
+    "label": "color "
+  },
+  {
+    "type": "file",
+    "name": "colorScheme",
+    "label": "colorScheme "
+  }
+]

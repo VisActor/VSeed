@@ -1,0 +1,22 @@
+[
+  {
+    "type": "file",
+    "name": "grid",
+    "label": "grid "
+  },
+  {
+    "type": "file",
+    "name": "gridColor",
+    "label": "gridColor "
+  },
+  {
+    "type": "file",
+    "name": "gridWidth",
+    "label": "gridWidth "
+  },
+  {
+    "type": "file",
+    "name": "visible",
+    "label": "visible "
+  }
+]

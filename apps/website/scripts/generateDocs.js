@@ -75,13 +75,17 @@ function processChartType(project, chartName) {
   // Generate a markdown file for the chart type itself
   const jsDocs = chartInterface.getJsDocs()
   const tags = parseJsDocTags(jsDocs)
-  const mdPath = path.join(outputDir, `${chartName}.md`)
+
+  const chartDir = path.join(outputDir, chartName)
+  ensureDir(chartDir)
+
+  const mdPath = path.join(chartDir, `${chartName}.md`)
   fs.writeFileSync(mdPath, generateMarkdown(chartName, tags), 'utf-8')
 
   // Process all properties of the interface recursively
-  processInterface(project, chartInterface, outputDir, [chartName])
+  processInterface(project, chartInterface, chartDir, [])
 
-  console.log(`文档生成完成 for ${chartName}, 目录：`, path.join(outputDir, chartName))
+  console.log(`文档生成完成 for ${chartName}, 目录：`, chartDir)
 }
 
 // ==================================================================================
@@ -107,27 +111,28 @@ function processInterface(project, interfaceDec, baseDir, parentPath = []) {
     }
   })
 
-  if (simpleProps.length > 0) {
-    const mdPath = path.join(baseDir, ...parentPath.slice(0, -1), `${parentPath[parentPath.length - 1]}.md`)
-    const simplePropsMd = simpleProps
-      .map((prop) => {
-        const propName = prop.getName()
-        const jsDocs = prop.getJsDocs()
-        const tags = parseJsDocTags(jsDocs)
-        const propType = prop.getType()
-        let propTypeText
+  const currentDir = path.join(baseDir, ...parentPath)
+  ensureDir(currentDir)
 
-        if (propType.isUnion() && propType.getUnionTypes().every((t) => t.isLiteral())) {
-          propTypeText = propType.getUnionTypes().map((t) => t.getText()).join(' | ')
-        } else {
-          propTypeText = propType.getText(prop).replace(/\n/g, ' ').replace(/\s+/g, ' ')
-        }
-        return generateMarkdown(propName, tags, propTypeText)
-      })
-      .join('\n\n---\n\n')
+  simpleProps.forEach((prop) => {
+    const propName = prop.getName()
+    const mdPath = path.join(currentDir, `${propName}.md`)
+    const jsDocs = prop.getJsDocs()
+    const tags = parseJsDocTags(jsDocs)
+    const propType = prop.getType()
+    let propTypeText
 
-    fs.appendFileSync(mdPath, `\n\n## 属性\n\n${simplePropsMd}`)
-  }
+    if (propType.isUnion() && propType.getUnionTypes().every((t) => t.isLiteral())) {
+      propTypeText = propType
+        .getUnionTypes()
+        .map((t) => t.getText())
+        .join(' | ')
+    } else {
+      propTypeText = propType.getText(prop).replace(/\n/g, ' ').replace(/\s+/g, ' ')
+    }
+    const markdownContent = generateMarkdown(propName, tags, propTypeText)
+    fs.writeFileSync(mdPath, markdownContent, 'utf-8')
+  })
 
   complexProps.forEach((prop) => {
     processProperty(project, prop, baseDir, parentPath)
@@ -143,11 +148,11 @@ function processProperty(project, prop, baseDir, parentPath) {
   const jsDocs = prop.getJsDocs()
   const tags = parseJsDocTags(jsDocs)
 
-  const currentDir = path.join(baseDir, ...parentPath)
-  ensureDir(currentDir)
+  const propDir = path.join(baseDir, ...parentPath, propName)
+  ensureDir(propDir)
 
   // Always create a markdown file for the property itself
-  const mdPath = path.join(currentDir, `${propName}.md`)
+  const mdPath = path.join(propDir, `${propName}.md`)
   fs.writeFileSync(mdPath, generateMarkdown(propName, tags), 'utf-8')
 
   if (!typeNode) {
@@ -195,7 +200,7 @@ function generateMarkdown(propName, tags, propType) {
   const description = (tags.description || []).join('\n\n') || '无描述'
 
   if (propType) {
-    return `### ${propName}\n\n**类型:** \`${propType}\`\n\n**描述:**\n${description}`
+    return `# ${propName}\n\n**类型:** \`${propType}\`\n\n## 描述\n${description}`
   }
 
   const example = (tags.example || []).join('\n\n') || '无示例'

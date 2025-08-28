@@ -1,33 +1,28 @@
 [
   {
     "type": "file",
-    "name": "crosshairLine",
-    "label": "crosshairLine "
+    "name": "backgroundColor",
+    "label": "backgroundColor "
   },
   {
     "type": "file",
-    "name": "dataset",
-    "label": "dataset "
+    "name": "chartType",
+    "label": "chartType "
   },
   {
     "type": "file",
-    "name": "dimensions",
-    "label": "dimensions "
+    "name": "locale",
+    "label": "locale "
   },
   {
     "type": "file",
-    "name": "label",
-    "label": "label "
+    "name": "scatter",
+    "label": "scatter "
   },
   {
     "type": "file",
-    "name": "legend",
-    "label": "legend "
-  },
-  {
-    "type": "file",
-    "name": "tooltip",
-    "label": "tooltip "
+    "name": "theme",
+    "label": "theme "
   },
   {
     "type": "dir",
@@ -61,6 +56,36 @@
   },
   {
     "type": "dir",
+    "name": "crosshairLine",
+    "label": "crosshairLine ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dataset",
+    "label": "dataset ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dimensions",
+    "label": "dimensions ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "label",
+    "label": "label ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "legend",
+    "label": "legend ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
     "name": "measures",
     "label": "measures ",
     "collapsed": true
@@ -69,6 +94,12 @@
     "type": "dir",
     "name": "pointStyle",
     "label": "pointStyle ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "tooltip",
+    "label": "tooltip ",
     "collapsed": true
   },
   {

@@ -1,28 +1,28 @@
 [
   {
     "type": "file",
-    "name": "crosshairLine",
-    "label": "crosshairLine "
+    "name": "areaRange",
+    "label": "areaRange "
   },
   {
     "type": "file",
-    "name": "dataset",
-    "label": "dataset "
+    "name": "backgroundColor",
+    "label": "backgroundColor "
   },
   {
     "type": "file",
-    "name": "dimensions",
-    "label": "dimensions "
+    "name": "chartType",
+    "label": "chartType "
   },
   {
     "type": "file",
-    "name": "label",
-    "label": "label "
+    "name": "locale",
+    "label": "locale "
   },
   {
     "type": "file",
-    "name": "sort",
-    "label": "sort "
+    "name": "theme",
+    "label": "theme "
   },
   {
     "type": "dir",
@@ -56,6 +56,30 @@
   },
   {
     "type": "dir",
+    "name": "crosshairLine",
+    "label": "crosshairLine ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dataset",
+    "label": "dataset ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dimensions",
+    "label": "dimensions ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "label",
+    "label": "label ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
     "name": "lineStyle",
     "label": "lineStyle ",
     "collapsed": true
@@ -70,6 +94,12 @@
     "type": "dir",
     "name": "pointStyle",
     "label": "pointStyle ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "sort",
+    "label": "sort ",
     "collapsed": true
   },
   {

@@ -1,0 +1,32 @@
+[
+  {
+    "type": "file",
+    "name": "title",
+    "label": "title "
+  },
+  {
+    "type": "file",
+    "name": "titleColor",
+    "label": "titleColor "
+  },
+  {
+    "type": "file",
+    "name": "titleFontSize",
+    "label": "titleFontSize "
+  },
+  {
+    "type": "file",
+    "name": "titleFontWeight",
+    "label": "titleFontWeight "
+  },
+  {
+    "type": "file",
+    "name": "titleText",
+    "label": "titleText "
+  },
+  {
+    "type": "file",
+    "name": "visible",
+    "label": "visible "
+  }
+]

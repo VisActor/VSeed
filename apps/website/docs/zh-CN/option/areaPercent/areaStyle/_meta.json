@@ -1,7 +1,23 @@
 [
   {
     "type": "file",
+    "name": "areaColor",
+    "label": "areaColor "
+  },
+  {
+    "type": "file",
+    "name": "areaColorOpacity",
+    "label": "areaColorOpacity "
+  },
+  {
+    "type": "file",
+    "name": "areaStyle",
+    "label": "areaStyle "
+  },
+  {
+    "type": "dir",
     "name": "selector",
-    "label": "selector "
+    "label": "selector ",
+    "collapsed": true
   }
 ]

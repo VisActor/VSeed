@@ -1,0 +1,22 @@
+[
+  {
+    "type": "file",
+    "name": "customOrder",
+    "label": "customOrder "
+  },
+  {
+    "type": "file",
+    "name": "order",
+    "label": "order "
+  },
+  {
+    "type": "file",
+    "name": "orderBy",
+    "label": "orderBy "
+  },
+  {
+    "type": "file",
+    "name": "sort",
+    "label": "sort "
+  }
+]

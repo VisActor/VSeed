@@ -1,7 +1,18 @@
 [
   {
     "type": "file",
+    "name": "color",
+    "label": "color "
+  },
+  {
+    "type": "file",
+    "name": "colorScheme",
+    "label": "colorScheme "
+  },
+  {
+    "type": "dir",
     "name": "colorMapping",
-    "label": "colorMapping "
+    "label": "colorMapping ",
+    "collapsed": true
   }
 ]

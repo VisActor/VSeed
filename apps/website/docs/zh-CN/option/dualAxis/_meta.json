@@ -1,48 +1,28 @@
 [
   {
     "type": "file",
-    "name": "crosshairRect",
-    "label": "crosshairRect "
+    "name": "backgroundColor",
+    "label": "backgroundColor "
   },
   {
     "type": "file",
-    "name": "dataset",
-    "label": "dataset "
+    "name": "chartType",
+    "label": "chartType "
   },
   {
     "type": "file",
-    "name": "dimensions",
-    "label": "dimensions "
+    "name": "dualAxis",
+    "label": "dualAxis "
   },
   {
     "type": "file",
-    "name": "dualChartType",
-    "label": "dualChartType "
+    "name": "locale",
+    "label": "locale "
   },
   {
     "type": "file",
-    "name": "label",
-    "label": "label "
-  },
-  {
-    "type": "file",
-    "name": "legend",
-    "label": "legend "
-  },
-  {
-    "type": "file",
-    "name": "sort",
-    "label": "sort "
-  },
-  {
-    "type": "file",
-    "name": "sortLegend",
-    "label": "sortLegend "
-  },
-  {
-    "type": "file",
-    "name": "tooltip",
-    "label": "tooltip "
+    "name": "theme",
+    "label": "theme "
   },
   {
     "type": "dir",
@@ -88,8 +68,44 @@
   },
   {
     "type": "dir",
+    "name": "crosshairRect",
+    "label": "crosshairRect ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dataset",
+    "label": "dataset ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dimensions",
+    "label": "dimensions ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dualChartType",
+    "label": "dualChartType ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
     "name": "dualMeasures",
     "label": "dualMeasures ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "label",
+    "label": "label ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "legend",
+    "label": "legend ",
     "collapsed": true
   },
   {
@@ -120,6 +136,24 @@
     "type": "dir",
     "name": "secondaryYAxis",
     "label": "secondaryYAxis ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "sort",
+    "label": "sort ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "sortLegend",
+    "label": "sortLegend ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "tooltip",
+    "label": "tooltip ",
     "collapsed": true
   }
 ]

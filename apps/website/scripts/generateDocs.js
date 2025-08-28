@@ -90,16 +90,49 @@ function processChartType(project, chartName) {
 
 function processInterface(project, interfaceDec, baseDir, parentPath = []) {
   const props = interfaceDec.getProperties()
+
+  const simpleProps = []
+  const complexProps = []
+
   props.forEach((prop) => {
     if (prop.getName().startsWith('[Symbol')) {
       return
     }
+    const typeNode = prop.getTypeNode()
+    const typesToProcess = typeNode ? extractObjectTypes(typeNode.getType()) : []
+    if (typesToProcess.length > 0) {
+      complexProps.push(prop)
+    } else {
+      simpleProps.push(prop)
+    }
+  })
+
+  if (simpleProps.length > 0) {
+    const mdPath = path.join(baseDir, ...parentPath.slice(0, -1), `${parentPath[parentPath.length - 1]}.md`)
+    const simplePropsMd = simpleProps
+      .map((prop) => {
+        const propName = prop.getName()
+        const jsDocs = prop.getJsDocs()
+        const tags = parseJsDocTags(jsDocs)
+        const propType = prop.getType().getText().replace(/\n/g, ' ').replace(/\s+/g, ' ')
+        const description = (tags.description || []).join('\n\n') || '无描述'
+        return `### ${propName}\n\n**Type:** \`${propType}\`\n\n**Description:**\n${description}`
+      })
+      .join('\n\n---\n\n')
+
+    fs.appendFileSync(mdPath, `\n\n## Properties\n\n${simplePropsMd}`)
+  }
+
+  complexProps.forEach((prop) => {
     processProperty(project, prop, baseDir, parentPath)
   })
 }
 
 function processProperty(project, prop, baseDir, parentPath) {
   const propName = prop.getName()
+  if (propName === 'children' && parentPath.includes('children')) {
+    return
+  }
   const typeNode = prop.getTypeNode()
   const jsDocs = prop.getJsDocs()
   const tags = parseJsDocTags(jsDocs)
@@ -116,23 +149,14 @@ function processProperty(project, prop, baseDir, parentPath) {
   }
 
   const newParentPath = [...parentPath, propName]
-  const type = typeNode.getType()
 
-  if (type.isString() || type.isNumber() || type.isBoolean()) {
+  if (newParentPath.length > 20) {
     return
   }
 
-  let typesToProcess = []
-  if (type.isUnion()) {
-    typesToProcess = type.getUnionTypes().filter((t) => t.isObject())
-  } else if (type.isArray()) {
-    const elType = type.getArrayElementType()
-    if (elType && elType.isObject()) {
-      typesToProcess = [elType]
-    }
-  } else if (type.isObject()) {
-    typesToProcess = [type]
-  }
+  const type = typeNode.getType()
+
+  const typesToProcess = extractObjectTypes(type)
 
   if (typesToProcess.length > 0) {
     const allProperties = typesToProcess.flatMap((t) => t.getApparentProperties())
@@ -221,6 +245,22 @@ function generateMetaJsonRecursive(directory) {
 // ==================================================================================
 // Utility Helpers
 // ==================================================================================
+
+function extractObjectTypes(type) {
+  if (!type) {
+    return []
+  }
+  if (type.isObject() && !type.isArray() && !type.isUnion()) {
+    return [type]
+  }
+  if (type.isUnion()) {
+    return type.getUnionTypes().flatMap((t) => extractObjectTypes(t))
+  }
+  if (type.isArray()) {
+    return extractObjectTypes(type.getArrayElementType())
+  }
+  return []
+}
 
 function parseJsDocTags(jsDocs) {
   const tags = {}

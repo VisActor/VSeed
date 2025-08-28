@@ -7,6 +7,24 @@
   },
   {
     "type": "dir",
+    "name": "dataset",
+    "label": "dataset ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dimensions",
+    "label": "dimensions ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dualMeasures",
+    "label": "dualMeasures ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
     "name": "label",
     "label": "label ",
     "collapsed": true
@@ -19,6 +37,18 @@
   },
   {
     "type": "dir",
+    "name": "locale",
+    "label": "locale ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "measures",
+    "label": "measures ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
     "name": "sort",
     "label": "sort ",
     "collapsed": true
@@ -27,6 +57,12 @@
     "type": "dir",
     "name": "sortLegend",
     "label": "sortLegend ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "theme",
+    "label": "theme ",
     "collapsed": true
   },
   {
@@ -82,38 +118,13 @@
   },
   {
     "type": "file",
-    "name": "dataset",
-    "label": "dataset "
-  },
-  {
-    "type": "file",
-    "name": "dimensions",
-    "label": "dimensions "
-  },
-  {
-    "type": "file",
     "name": "dualChartType",
     "label": "dualChartType "
   },
   {
     "type": "file",
-    "name": "dualMeasures",
-    "label": "dualMeasures "
-  },
-  {
-    "type": "file",
     "name": "lineStyle",
     "label": "lineStyle "
-  },
-  {
-    "type": "file",
-    "name": "locale",
-    "label": "locale "
-  },
-  {
-    "type": "file",
-    "name": "measures",
-    "label": "measures "
   },
   {
     "type": "file",
@@ -129,10 +140,5 @@
     "type": "file",
     "name": "secondaryYAxis",
     "label": "secondaryYAxis "
-  },
-  {
-    "type": "file",
-    "name": "theme",
-    "label": "theme "
   }
 ]

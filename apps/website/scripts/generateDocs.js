@@ -121,23 +121,19 @@ function processProperty(project, prop, baseDir, parentPath) {
     const fakeInterface = { getProperties: () => members }
     processInterface(project, fakeInterface, baseDir, newParentPath)
   } else if (kind === SyntaxKind.TypeReference) {
-    // It's a reference to another interface or type alias
-    const typeName = typeNode.getText()
-    const refInterface = getInterfaceFromProject(project, typeName)
+    // It's a reference to another interface or type alias, like `Omit<...>`
+    const type = typeNode.getType()
+    const properties = type.getApparentProperties()
 
-    if (refInterface) {
-      processInterface(project, refInterface, baseDir, newParentPath)
-      return
-    }
+    const propertyDeclarations = properties
+      .flatMap((p) => p.getDeclarations())
+      .filter((d) => d && (d.getKind() === SyntaxKind.PropertySignature || d.getKind() === SyntaxKind.PropertyDeclaration))
 
-    const typeAlias = getTypeAliasFromProject(project, typeName)
-    if (typeAlias) {
-      const aliasTypeNode = typeAlias.getTypeNode()
-      if (aliasTypeNode && aliasTypeNode.getKind() === SyntaxKind.TypeLiteral) {
-        const members = aliasTypeNode.getMembers().filter((m) => m.getKind() === SyntaxKind.PropertySignature)
-        const fakeInterface = { getProperties: () => members }
-        processInterface(project, fakeInterface, baseDir, newParentPath)
+    if (propertyDeclarations.length > 0) {
+      const fakeInterface = {
+        getProperties: () => propertyDeclarations,
       }
+      processInterface(project, fakeInterface, baseDir, newParentPath)
     }
   }
 }

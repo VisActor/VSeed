@@ -1,5 +1,35 @@
 [
   {
+    "type": "dir",
+    "name": "dataset",
+    "label": "dataset ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dimensions",
+    "label": "dimensions ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "locale",
+    "label": "locale ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "measures",
+    "label": "measures ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "theme",
+    "label": "theme ",
+    "collapsed": true
+  },
+  {
     "type": "file",
     "name": "backgroundColor",
     "label": "backgroundColor "
@@ -31,16 +61,6 @@
   },
   {
     "type": "file",
-    "name": "dataset",
-    "label": "dataset "
-  },
-  {
-    "type": "file",
-    "name": "dimensions",
-    "label": "dimensions "
-  },
-  {
-    "type": "file",
     "name": "headerBackgroundColor",
     "label": "headerBackgroundColor "
   },
@@ -66,16 +86,6 @@
   },
   {
     "type": "file",
-    "name": "locale",
-    "label": "locale "
-  },
-  {
-    "type": "file",
-    "name": "measures",
-    "label": "measures "
-  },
-  {
-    "type": "file",
     "name": "selectedBackgroundColor",
     "label": "selectedBackgroundColor "
   },
@@ -83,10 +93,5 @@
     "type": "file",
     "name": "selectedBorderColor",
     "label": "selectedBorderColor "
-  },
-  {
-    "type": "file",
-    "name": "theme",
-    "label": "theme "
   }
 ]

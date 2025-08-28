@@ -7,8 +7,44 @@
   },
   {
     "type": "dir",
+    "name": "dataset",
+    "label": "dataset ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dimensions",
+    "label": "dimensions ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
     "name": "label",
     "label": "label ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "legend",
+    "label": "legend ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "locale",
+    "label": "locale ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "measures",
+    "label": "measures ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "theme",
+    "label": "theme ",
     "collapsed": true
   },
   {
@@ -26,35 +62,5 @@
     "type": "file",
     "name": "chartType",
     "label": "chartType "
-  },
-  {
-    "type": "file",
-    "name": "dataset",
-    "label": "dataset "
-  },
-  {
-    "type": "file",
-    "name": "dimensions",
-    "label": "dimensions "
-  },
-  {
-    "type": "file",
-    "name": "legend",
-    "label": "legend "
-  },
-  {
-    "type": "file",
-    "name": "locale",
-    "label": "locale "
-  },
-  {
-    "type": "file",
-    "name": "measures",
-    "label": "measures "
-  },
-  {
-    "type": "file",
-    "name": "theme",
-    "label": "theme "
   }
 ]

@@ -1,0 +1,12 @@
+[
+  {
+    "type": "file",
+    "name": "[Symbol.unscopables]",
+    "label": "[Symbol.unscopables] "
+  },
+  {
+    "type": "file",
+    "name": "length",
+    "label": "length "
+  }
+]

@@ -7,6 +7,18 @@
   },
   {
     "type": "dir",
+    "name": "dataset",
+    "label": "dataset ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "dimensions",
+    "label": "dimensions ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
     "name": "label",
     "label": "label ",
     "collapsed": true
@@ -15,6 +27,18 @@
     "type": "dir",
     "name": "legend",
     "label": "legend ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "locale",
+    "label": "locale ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "measures",
+    "label": "measures ",
     "collapsed": true
   },
   {
@@ -31,8 +55,26 @@
   },
   {
     "type": "dir",
+    "name": "theme",
+    "label": "theme ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
     "name": "tooltip",
     "label": "tooltip ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "xAxis",
+    "label": "xAxis ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "yAxis",
+    "label": "yAxis ",
     "collapsed": true
   },
   {
@@ -77,42 +119,7 @@
   },
   {
     "type": "file",
-    "name": "dataset",
-    "label": "dataset "
-  },
-  {
-    "type": "file",
-    "name": "dimensions",
-    "label": "dimensions "
-  },
-  {
-    "type": "file",
-    "name": "locale",
-    "label": "locale "
-  },
-  {
-    "type": "file",
-    "name": "measures",
-    "label": "measures "
-  },
-  {
-    "type": "file",
     "name": "stackCornerRadius",
     "label": "stackCornerRadius "
-  },
-  {
-    "type": "file",
-    "name": "theme",
-    "label": "theme "
-  },
-  {
-    "type": "file",
-    "name": "xAxis",
-    "label": "xAxis "
-  },
-  {
-    "type": "file",
-    "name": "yAxis",
-    "label": "yAxis "
   }
 ]

@@ -31,7 +31,7 @@
 
 ### backgroundColor
 
-**类型:** `import("/Users/bytedance/Projects/VSeed/packages/vseed/src/types/properties/config/backgroundColor/backgroundColor").BackgroundColor`
+**类型:** `BackgroundColor`
 
 **描述:**
 图表的背景颜色
@@ -42,7 +42,7 @@
 
 ### theme
 
-**类型:** `import("/Users/bytedance/Projects/VSeed/packages/vseed/src/types/properties/theme/theme").Theme | undefined`
+**类型:** `Theme | undefined`
 
 **描述:**
 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置
@@ -53,7 +53,7 @@
 
 ### locale
 
-**类型:** `import("/Users/bytedance/Projects/VSeed/packages/vseed/src/types/i18n/i18n").Locale | undefined`
+**类型:** `Locale | undefined`
 
 **描述:**
 语言

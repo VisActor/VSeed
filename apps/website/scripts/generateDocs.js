@@ -114,8 +114,15 @@ function processInterface(project, interfaceDec, baseDir, parentPath = []) {
         const propName = prop.getName()
         const jsDocs = prop.getJsDocs()
         const tags = parseJsDocTags(jsDocs)
-        const propType = prop.getType().getText().replace(/\n/g, ' ').replace(/\s+/g, ' ')
-        return generateMarkdown(propName, tags, propType)
+        const propType = prop.getType()
+        let propTypeText
+
+        if (propType.isUnion() && propType.getUnionTypes().every((t) => t.isLiteral())) {
+          propTypeText = propType.getUnionTypes().map((t) => t.getText()).join(' | ')
+        } else {
+          propTypeText = propType.getText(prop).replace(/\n/g, ' ').replace(/\s+/g, ' ')
+        }
+        return generateMarkdown(propName, tags, propTypeText)
       })
       .join('\n\n---\n\n')
 

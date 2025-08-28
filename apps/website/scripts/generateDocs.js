@@ -157,7 +157,9 @@ function generatePropertyMarkdown(prop, level, project, visited = new Set()) {
         const declarations = p.getDeclarations()
         return declarations || []
       })
-      .filter((d) => d && (d.getKind() === SyntaxKind.PropertySignature || d.getKind() === SyntaxKind.PropertyDeclaration))
+      .filter(
+        (d) => d && (d.getKind() === SyntaxKind.PropertySignature || d.getKind() === SyntaxKind.PropertyDeclaration),
+      )
 
     const uniqueDeclarations = [...new Map(propertyDeclarations.map((item) => [item.getName(), item])).values()]
 
@@ -274,26 +276,6 @@ function parseJsDocTags(jsDocs) {
     })
   })
   return tags
-}
-
-function getInterfaceFromProject(project, name) {
-  for (const sourceFile of project.getSourceFiles()) {
-    const iface = sourceFile.getInterface(name)
-    if (iface) {
-      return iface
-    }
-  }
-  return undefined
-}
-
-function getTypeAliasFromProject(project, typeAliasName) {
-  for (const sourceFile of project.getSourceFiles()) {
-    const alias = sourceFile.getTypeAlias(typeAliasName)
-    if (alias) {
-      return alias
-    }
-  }
-  return null
 }
 
 function ensureDir(dir) {

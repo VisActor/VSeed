@@ -36,11 +36,11 @@ export default defineConfig({
       },
     ],
     locales: [
-      {
-        lang: 'en-US',
-        label: 'English',
-        outlineTitle: 'ON THIS Page',
-      },
+      // {
+      //   lang: 'en-US',
+      //   label: 'English',
+      //   outlineTitle: 'ON THIS Page',
+      // },
       {
         lang: 'zh-CN',
         label: '简体中文',

@@ -1,6 +1,9 @@
 # chartType
 
-**类型:** `"table"`
+**Type:** `"table"`
 
-## 描述
+**Description:**
 标准表格组件，用于展示详细数据
+
+---
+

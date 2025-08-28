@@ -1,6 +1,9 @@
 # headerBackgroundColor
 
-**类型:** `string | undefined`
+**Type:** `string | undefined`
 
-## 描述
+**Description:**
 列表头的背景颜色
+
+---
+

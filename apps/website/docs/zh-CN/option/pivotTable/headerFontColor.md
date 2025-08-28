@@ -1,6 +1,9 @@
 # headerFontColor
 
-**类型:** `string | undefined`
+**Type:** `string | undefined`
 
-## 描述
+**Description:**
 行表头、列表头的字体颜色
+
+---
+

@@ -1,6 +1,0 @@
-# yValue
-
-**类型:** `string | number | (string | number)[] | undefined`
-
-## 描述
-固定的y值, 用于标注水平线, 类目轴在y方向, 则可输入维值, 数值轴在y方向, 则可输入具体的数值

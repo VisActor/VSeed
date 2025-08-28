@@ -1,6 +1,9 @@
 # headerFontSize
 
-**类型:** `number | undefined`
+**Type:** `number | undefined`
 
-## 描述
+**Description:**
 行表头、列表头的字体大小
+
+---
+

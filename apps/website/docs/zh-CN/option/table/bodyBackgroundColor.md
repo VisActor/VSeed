@@ -1,6 +1,9 @@
 # bodyBackgroundColor
 
-**类型:** `string | undefined`
+**Type:** `string | undefined`
 
-## 描述
+**Description:**
 表格体的背景颜色
+
+---
+

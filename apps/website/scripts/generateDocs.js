@@ -82,8 +82,19 @@ function processChartType(project, chartName) {
   const mdPath = path.join(chartDir, 'index.md')
   fs.writeFileSync(mdPath, generateMarkdown(chartName, tags), 'utf-8')
 
-  // Process all properties of the interface recursively
-  processInterface(project, chartInterface, chartDir, [])
+  // Process all properties of the interface.
+  const props = chartInterface.getProperties()
+  props.forEach((prop) => {
+    const propName = prop.getName()
+    if (propName.startsWith('[Symbol')) {
+      return
+    }
+    const propMdPath = path.join(chartDir, `${propName}.md`)
+    const markdownContent = generatePropertyMarkdown(prop, 1, project)
+    if (markdownContent) {
+      fs.writeFileSync(propMdPath, markdownContent, 'utf-8')
+    }
+  })
 
   console.log(`文档生成完成 for ${chartName}, 目录：`, chartDir)
 }
@@ -92,82 +103,44 @@ function processChartType(project, chartName) {
 // Recursive AST Processing
 // ==================================================================================
 
-function processInterface(project, interfaceDec, baseDir, parentPath = []) {
-  const props = interfaceDec.getProperties()
-
-  const simpleProps = []
-  const complexProps = []
-
-  props.forEach((prop) => {
-    if (prop.getName().startsWith('[Symbol')) {
-      return
-    }
-    const typeNode = prop.getTypeNode()
-    const typesToProcess = typeNode ? extractObjectTypes(typeNode.getType()) : []
-    if (prop.getName() !== 'children' && typesToProcess.length > 0) {
-      complexProps.push(prop)
-    } else {
-      simpleProps.push(prop)
-    }
-  })
-
-  const currentDir = path.join(baseDir, ...parentPath)
-  ensureDir(currentDir)
-
-  simpleProps.forEach((prop) => {
-    const propName = prop.getName()
-    const mdPath = path.join(currentDir, `${propName}.md`)
-    const jsDocs = prop.getJsDocs()
-    const tags = parseJsDocTags(jsDocs)
-    const propType = prop.getType()
-    let propTypeText
-
-    if (propType.isUnion() && propType.getUnionTypes().every((t) => t.isLiteral())) {
-      propTypeText = propType
-        .getUnionTypes()
-        .map((t) => t.getText())
-        .join(' | ')
-    } else {
-      propTypeText = propType.getText(prop).replace(/\n/g, ' ').replace(/\s+/g, ' ')
-    }
-    const markdownContent = generateMarkdown(propName, tags, propTypeText)
-    fs.writeFileSync(mdPath, markdownContent, 'utf-8')
-  })
-
-  complexProps.forEach((prop) => {
-    processProperty(project, prop, baseDir, parentPath)
-  })
-}
-
-function processProperty(project, prop, baseDir, parentPath) {
-  const propName = prop.getName()
-  if (propName === 'children' && parentPath.includes('children')) {
-    return
+function generatePropertyMarkdown(prop, level, project, visited = new Set()) {
+  if (!prop || !prop.getName) {
+    return ''
   }
-  const typeNode = prop.getTypeNode()
+  const propName = prop.getName()
+  if (propName.startsWith('[Symbol')) {
+    return ''
+  }
+
+  // To prevent infinite recursion for some cases like `children` -> `children`
+  if (level > 10 || visited.has(propName)) {
+    return ''
+  }
+  visited.add(propName)
+
   const jsDocs = prop.getJsDocs()
   const tags = parseJsDocTags(jsDocs)
+  const propType = prop.getType()
+  let propTypeText
 
-  const propDir = path.join(baseDir, ...parentPath, propName)
-  ensureDir(propDir)
-
-  // Always create a markdown file for the property itself
-  const mdPath = path.join(propDir, 'index.md')
-  fs.writeFileSync(mdPath, generateMarkdown(propName, tags), 'utf-8')
-
-  if (!typeNode) {
-    return // Leaf property, no need to recurse
+  if (propType.isUnion() && propType.getUnionTypes().every((t) => t.isLiteral())) {
+    propTypeText = propType
+      .getUnionTypes()
+      .map((t) => t.getText())
+      .join(' | ')
+  } else {
+    propTypeText = propType.getText(prop).replace(/\\n/g, ' ').replace(/\\s+/g, ' ')
   }
 
-  const newParentPath = [...parentPath, propName]
+  let markdown = `${'#'.repeat(level)} ${propName}\n\n`
+  markdown += `**Type:** \`${propTypeText}\`\n\n`
+  const description = (tags.description || []).join('\n\n') || 'No description'
+  markdown += `**Description:**\n${description.replace(/\n/g, '\n  ')}`
+  
+  // Add separator between properties
+  markdown += '\n\n---\n\n'
 
-  if (newParentPath.length > 20) {
-    return
-  }
-
-  const type = typeNode.getType()
-
-  const typesToProcess = extractObjectTypes(type)
+  const typesToProcess = extractObjectTypes(propType)
 
   if (typesToProcess.length > 0) {
     const allProperties = typesToProcess.flatMap((t) => t.getApparentProperties())
@@ -177,19 +150,18 @@ function processProperty(project, prop, baseDir, parentPath) {
         const declarations = p.getDeclarations()
         return declarations || []
       })
-      .filter(
-        (d) => d && (d.getKind() === SyntaxKind.PropertySignature || d.getKind() === SyntaxKind.PropertyDeclaration),
-      )
+      .filter((d) => d && (d.getKind() === SyntaxKind.PropertySignature || d.getKind() === SyntaxKind.PropertyDeclaration))
 
     const uniqueDeclarations = [...new Map(propertyDeclarations.map((item) => [item.getName(), item])).values()]
 
     if (uniqueDeclarations.length > 0) {
-      const fakeInterface = {
-        getProperties: () => uniqueDeclarations,
-      }
-      processInterface(project, fakeInterface, baseDir, newParentPath)
+      markdown += '\n'
+      uniqueDeclarations.forEach((subProp) => {
+        markdown += generatePropertyMarkdown(subProp, level + 1, project, new Set(visited))
+      })
     }
   }
+  return markdown
 }
 
 // ==================================================================================

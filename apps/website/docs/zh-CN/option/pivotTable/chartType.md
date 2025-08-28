@@ -1,6 +1,9 @@
 # chartType
 
-**类型:** `"pivotTable"`
+**Type:** `"pivotTable"`
 
-## 描述
+**Description:**
 透视表，适用于多维度数据交叉分析场景
+
+---
+

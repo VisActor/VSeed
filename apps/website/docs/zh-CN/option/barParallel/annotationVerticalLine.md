@@ -7,9 +7,6 @@
   
   标注垂直线配置, 根据选择的数据, 定义图表的标注垂直线, 包括标注垂直线的位置, 样式等.
 
-**示例:**
-无示例
-
 
 ## selector
 
@@ -18,49 +15,22 @@
 **描述:**
 依赖选择的数据, 进行数据标记.
 
-**示例:**
-无示例
-
 
 ### field
 
 **Type:** `string`
 
-**描述:**
-No description
-
-**示例:**
-无示例
-
 ### operator
 
 **Type:** `"in" | "not in" | undefined`
-
-**描述:**
-No description
-
-**示例:**
-无示例
 
 ### op
 
 **Type:** `"in" | "not in" | undefined`
 
-**描述:**
-No description
-
-**示例:**
-无示例
-
 ### value
 
 **Type:** `string | number | (string | number)[]`
-
-**描述:**
-No description
-
-**示例:**
-无示例
 
 ## xValue
 
@@ -68,9 +38,6 @@ No description
 
 **描述:**
 固定的x值, 用于标注垂直线, 类目轴在x方向, 则可输入维值, 数值轴在x方向, 则可输入具体的数值
-
-**示例:**
-无示例
 
 ## text
 

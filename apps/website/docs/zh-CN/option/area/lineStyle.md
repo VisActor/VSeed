@@ -11,9 +11,6 @@
   若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
   若未配置selector, 则样式全局生效.
 
-**示例:**
-无示例
-
 
 ## selector
 
@@ -65,41 +62,17 @@
 
 **Type:** `string`
 
-**描述:**
-No description
-
-**示例:**
-无示例
-
 ### operator
 
 **Type:** `"in" | "not in" | undefined`
-
-**描述:**
-No description
-
-**示例:**
-无示例
 
 ### op
 
 **Type:** `"in" | "not in" | undefined`
 
-**描述:**
-No description
-
-**示例:**
-无示例
-
 ### value
 
 **Type:** `string | number | (string | number)[]`
-
-**描述:**
-No description
-
-**示例:**
-无示例
 
 ## lineSmooth
 
@@ -110,9 +83,6 @@ No description
   
   折线图是否平滑
 
-**示例:**
-无示例
-
 ## lineColor
 
 **Type:** `string | undefined`
@@ -121,9 +91,6 @@ No description
 柱状图颜色
   
   柱状图颜色
-
-**示例:**
-无示例
 
 ## lineColorOpacity
 
@@ -134,9 +101,6 @@ No description
   
   柱状图颜色透明度
 
-**示例:**
-无示例
-
 ## lineWidth
 
 **Type:** `number | undefined`
@@ -145,7 +109,4 @@ No description
 柱状图边框宽度
   
   柱状图边框宽度
-
-**示例:**
-无示例
 

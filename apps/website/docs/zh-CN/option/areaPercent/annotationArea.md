@@ -7,9 +7,6 @@
   
   标注区域配置, 根据选择的数据, 定义图表的标注区域, 包括标注区域的位置, 样式等.
 
-**示例:**
-无示例
-
 
 ## selector
 
@@ -18,49 +15,22 @@
 **描述:**
 依赖选择的数据, 进行数据标记.
 
-**示例:**
-无示例
-
 
 ### field
 
 **Type:** `string`
 
-**描述:**
-No description
-
-**示例:**
-无示例
-
 ### operator
 
 **Type:** `"in" | "not in" | undefined`
-
-**描述:**
-No description
-
-**示例:**
-无示例
 
 ### op
 
 **Type:** `"in" | "not in" | undefined`
 
-**描述:**
-No description
-
-**示例:**
-无示例
-
 ### value
 
 **Type:** `string | number | (string | number)[]`
-
-**描述:**
-No description
-
-**示例:**
-无示例
 
 ## text
 

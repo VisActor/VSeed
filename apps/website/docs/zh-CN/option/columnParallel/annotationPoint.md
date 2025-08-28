@@ -7,9 +7,6 @@
   
   标注点配置, 根据选择的数据, 定义图表的标注点, 包括标注点的位置, 格式, 样式等.
 
-**示例:**
-无示例
-
 
 ## selector
 
@@ -18,49 +15,22 @@
 **描述:**
 标注点的选择器, 用于选择数据点.
 
-**示例:**
-无示例
-
 
 ### field
 
 **Type:** `string`
 
-**描述:**
-No description
-
-**示例:**
-无示例
-
 ### operator
 
 **Type:** `"in" | "not in" | undefined`
-
-**描述:**
-No description
-
-**示例:**
-无示例
 
 ### op
 
 **Type:** `"in" | "not in" | undefined`
 
-**描述:**
-No description
-
-**示例:**
-无示例
-
 ### value
 
 **Type:** `string | number | (string | number)[]`
-
-**描述:**
-No description
-
-**示例:**
-无示例
 
 ## text
 

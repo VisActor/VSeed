@@ -34,12 +34,6 @@
 
 **Type:** `Measure | Measure[] | undefined`
 
-**描述:**
-No description
-
-**示例:**
-无示例
-
 
 ### id
 
@@ -48,18 +42,12 @@ No description
 **描述:**
 指标id, 不能重复
 
-**示例:**
-无示例
-
 ### alias
 
 **Type:** `string | undefined`
 
 **描述:**
 指标别名, 允许重复, 未填写时, alias 为 id
-
-**示例:**
-无示例
 
 ### autoFormat
 
@@ -73,18 +61,12 @@ No description
   当locale为zh-CN: 749740.264会被自动格式化为74.45万
   当locale为en-US: 749740.264会被自动格式化为744.5K
 
-**示例:**
-无示例
-
 ### format
 
 **Type:** `NumFormat | undefined`
 
 **描述:**
 指标的数值格式化, 会自动应用于label、tooltip
-
-**示例:**
-无示例
 
 
 #### type
@@ -93,9 +75,6 @@ No description
 
 **描述:**
 数字格式化类型, 支持数值(十进制)、百分比(%)、千分比(‰)、科学计数法
-
-**示例:**
-无示例
 
 #### ratio
 
@@ -130,9 +109,6 @@ No description
 **描述:**
 数值格式化千分位分隔符
 
-**示例:**
-无示例
-
 #### suffix
 
 **Type:** `string | undefined`
@@ -140,18 +116,12 @@ No description
 **描述:**
 数值格式化后缀
 
-**示例:**
-无示例
-
 #### prefix
 
 **Type:** `string | undefined`
 
 **描述:**
 数值格式化前缀
-
-**示例:**
-无示例
 
 #### fractionDigits
 
@@ -202,20 +172,11 @@ No description
 
 **描述:**
 数值格式化舍入模式, 使用浏览器提供的 Intl.NumberFormat 进行格式化, 规则同 Intl.NumberFormat 中的 roundingMode
-
-**示例:**
-无示例
 
 ## secondaryMeasures
 
 **Type:** `Measure | Measure[] | undefined`
 
-**描述:**
-No description
-
-**示例:**
-无示例
-
 
 ### id
 
@@ -224,18 +185,12 @@ No description
 **描述:**
 指标id, 不能重复
 
-**示例:**
-无示例
-
 ### alias
 
 **Type:** `string | undefined`
 
 **描述:**
 指标别名, 允许重复, 未填写时, alias 为 id
-
-**示例:**
-无示例
 
 ### autoFormat
 
@@ -249,18 +204,12 @@ No description
   当locale为zh-CN: 749740.264会被自动格式化为74.45万
   当locale为en-US: 749740.264会被自动格式化为744.5K
 
-**示例:**
-无示例
-
 ### format
 
 **Type:** `NumFormat | undefined`
 
 **描述:**
 指标的数值格式化, 会自动应用于label、tooltip
-
-**示例:**
-无示例
 
 
 #### type
@@ -269,9 +218,6 @@ No description
 
 **描述:**
 数字格式化类型, 支持数值(十进制)、百分比(%)、千分比(‰)、科学计数法
-
-**示例:**
-无示例
 
 #### ratio
 
@@ -306,9 +252,6 @@ No description
 **描述:**
 数值格式化千分位分隔符
 
-**示例:**
-无示例
-
 #### suffix
 
 **Type:** `string | undefined`
@@ -316,18 +259,12 @@ No description
 **描述:**
 数值格式化后缀
 
-**示例:**
-无示例
-
 #### prefix
 
 **Type:** `string | undefined`
 
 **描述:**
 数值格式化前缀
-
-**示例:**
-无示例
 
 #### fractionDigits
 
@@ -378,7 +315,4 @@ No description
 
 **描述:**
 数值格式化舍入模式, 使用浏览器提供的 Intl.NumberFormat 进行格式化, 规则同 Intl.NumberFormat 中的 roundingMode
-
-**示例:**
-无示例
 

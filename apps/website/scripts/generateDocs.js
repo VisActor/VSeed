@@ -130,9 +130,6 @@ function generateMarkdownContent(node, project, level = 1, visited = new Set()) 
 
   let markdown = `${'#'.repeat(level)} ${name}\n\n`
 
-  const description = (tags.description || []).join('\n\n') || 'No description'
-  const example = (tags.example || []).join('\n\n') || '无示例'
-
   if (isProperty) {
     const propType = node.getType()
     let propTypeText
@@ -148,10 +145,17 @@ function generateMarkdownContent(node, project, level = 1, visited = new Set()) 
     markdown += `**Type:** \`${propTypeText}\`\n\n`
   }
 
-  markdown += `**描述:**\n${description.replace(/\n/g, '\n  ')}`
-  markdown += '\n\n'
-  markdown += `**示例:**\n${example.replace(/\n/g, '\n  ')}`
-  markdown += '\n\n'
+  const description = (tags.description || []).join('\n\n') || ''
+  const example = (tags.example || []).join('\n\n') || ''
+
+  if (description) {
+    markdown += `**描述:**\n${description.replace(/\n/g, '\n  ')}`
+    markdown += '\n\n'
+  }
+  if (example) {
+    markdown += `**示例:**\n${example.replace(/\n/g, '\n  ')}`
+    markdown += '\n\n'
+  }
 
   if (isProperty) {
     const propType = node.getType()

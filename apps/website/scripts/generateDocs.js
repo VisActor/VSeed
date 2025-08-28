@@ -116,12 +116,12 @@ function generatePropertyMarkdown(prop, level, project, visited = new Set()) {
   if (level > 10 || visited.has(propName)) {
     return ''
   }
-  
+
   // Stop recursion for children of measures to prevent infinite nesting
   if (visited.has('measures') && visited.has('children')) {
     return ''
   }
-  
+
   visited.add(propName)
 
   const jsDocs = prop.getJsDocs()
@@ -141,9 +141,10 @@ function generatePropertyMarkdown(prop, level, project, visited = new Set()) {
   let markdown = `${'#'.repeat(level)} ${propName}\n\n`
   markdown += `**Type:** \`${propTypeText}\`\n\n`
   const description = (tags.description || []).join('\n\n') || 'No description'
-  markdown += `**Description:**\n${description.replace(/\n/g, '\n  ')}`
-  
-  // Add separator between properties
+  const example = (tags.example || []).join('\n\n') || '无示例'
+  markdown += `**描述:**\n${description.replace(/\n/g, '\n  ')}`
+  markdown += '\n\n'
+  markdown += `**示例:**\n${example.replace(/\n/g, '\n  ')}`
   markdown += '\n\n'
 
   const typesToProcess = extractObjectTypes(propType)
@@ -184,7 +185,7 @@ function generateMarkdown(propName, tags, propType) {
   const example = (tags.example || []).join('\n\n') || '无示例'
   const type = (tags.type || []).join('\n\n') || '无类型'
 
-  return `# ${propName}\n## 描述\n${description}\n`
+  return `# ${propName}\n## 描述\n${description}\n\n## 示例\n${example}\n\n`
 }
 
 function generateMetaJsonRecursive(directory) {

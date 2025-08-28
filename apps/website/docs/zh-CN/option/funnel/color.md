@@ -2,16 +2,22 @@
 
 **Type:** `LinearColor | undefined`
 
-**Description:**
+**描述:**
 线性渐变颜色配置, 用于定义图表的颜色方案
+
+**示例:**
+无示例
 
 
 ## colorScheme
 
 **Type:** `string[] | undefined`
 
-**Description:**
-线性渐变颜色配色方案
+**描述:**
+
   
-  线性渐变颜色配色方案用于定义图表中不同元素的颜色
+  线性渐变颜色配色方案, 线性渐变颜色配色方案用于定义图表中不同元素的颜色
+
+**示例:**
+['#FFCDD2,#F8BBD0,#E1BEE7,#D1C4E9,#C5CAE9,#BBDEFB,#B3E5FC,#B2EBF2,#B2DFDB,#C8E6C9,#DCEDC8,#F0F4C3,#FFF9C4,#FFECB3,#FFE0B2']
 

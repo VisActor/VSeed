@@ -2,6 +2,9 @@
 
 **Type:** `string | undefined`
 
-**Description:**
+**描述:**
 表格体的背景颜色
+
+**示例:**
+无示例
 

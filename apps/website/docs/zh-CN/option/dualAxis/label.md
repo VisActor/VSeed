@@ -2,14 +2,20 @@
 
 **Type:** `Label | undefined`
 
-**Description:**
+**描述:**
 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
+
+**示例:**
+无示例
 
 
 ## enable
 
 **Type:** `false | true`
 
-**Description:**
+**描述:**
 标签功能是否开启
+
+**示例:**
+无示例
 

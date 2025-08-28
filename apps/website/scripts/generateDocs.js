@@ -147,14 +147,24 @@ function generateMarkdownContent(node, project, level = 1, visited = new Set()) 
 
   const description = (tags.description || []).join('\n\n') || ''
   const example = (tags.example || []).join('\n\n') || ''
+  const recommend = (tags.recommend || []).join('\n\n') || ''
+  const note = (tags.note || []).join('\n\n') || ''
 
+  if (recommend) {
+    markdown += `:::info{title=推荐}\n${recommend.replace(/\n/g, '\n\n').replace(/\-/g, '\\-')}:::`
+    markdown += '\n\n\n \n\n'
+  }
   if (description) {
-    markdown += `**描述:**\n${description.replace(/\n/g, '\n  ')}`
-    markdown += '\n\n'
+    markdown += `:::tip{title=描述}\n${description.replace(/\n/g, '\n\n').replace(/\-/g, '\\-')}:::`
+    markdown += '\n\n\n \n\n'
   }
   if (example) {
-    markdown += `**示例:**\n${example.replace(/\n/g, '\n  ')}`
-    markdown += '\n\n'
+    markdown += `**示例:**\n${example.replace(/\n/g, '\n')}`
+    markdown += '\n\n\n \n\n'
+  }
+  if (note) {
+    markdown += `:::note{title=注意}\n${note.replace(/\n/g, '\n\n').replace(/\-/g, '\\-')}:::`
+    markdown += '\n\n\n \n\n'
   }
 
   if (isProperty) {

@@ -2,6 +2,9 @@
 
 **Type:** `string | undefined`
 
-**描述:**
-列表头的字体颜色
+:::tip{title=描述}
+列表头的字体颜色:::
+
+
+ 
 

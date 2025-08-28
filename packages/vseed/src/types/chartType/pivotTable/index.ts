@@ -1,2 +1,2 @@
-export * from './pivotTable'
+export type * from './pivotTable'
 export * from './zPivotTable'

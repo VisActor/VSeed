@@ -1,2 +1,2 @@
-export * from './table'
+export type * from './table'
 export * from './zTable'

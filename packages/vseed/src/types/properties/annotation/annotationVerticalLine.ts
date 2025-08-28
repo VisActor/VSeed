@@ -1,5 +1,4 @@
-import { zSelector, zSelectors, type Selector, type Selectors } from '../../dataSelector'
-import { z } from 'zod'
+import { type Selector, type Selectors } from '../../dataSelector'
 
 /**
  * @description 垂直标注线, 根据用户设置的selector 或 xValue, 从下向上绘制一条末尾有箭头的线, 标签默认在标注线终点的正左侧
@@ -95,63 +94,30 @@ export type AnnotationVerticalLine = {
    * @description 背景可见
    * @example true
    */
-  backgroundVisible?: boolean
+  textBackgroundVisible?: boolean
   /**
    * @description 背景颜色
    * @example 'red'
    */
-  backgroundColor?: string
+  textBackgroundColor?: string
   /**
    * @description 背景边框颜色
    * @example 'red'
    */
-  backgroundBorderColor?: string
+  textBackgroundBorderColor?: string
   /**
    * @description 背景边框宽度
    * @example 2
    */
-  backgroundBorderWidth?: number
+  textBackgroundBorderWidth?: number
   /**
    * @description 背景边框圆角
    * @example 4
    */
-  backgroundBorderRadius?: number
+  textBackgroundBorderRadius?: number
   /**
    * @description 背景内边距
    * @example 4
    */
-  backgroundPadding?: number
+  textBackgroundPadding?: number
 }
-
-export const zAnnotationVerticalLine = z.object({
-  selector: z.union([zSelector, zSelectors]).nullish(),
-  xValue: z.union([z.number(), z.string(), z.array(z.union([z.number(), z.string()]))]).nullish(),
-  text: z.string().or(z.array(z.string())).nullish(),
-  textPosition: z
-    .enum(['outsideStart', 'outsideEnd', 'outsideMiddle', 'insideStart', 'insideMiddle', 'insideEnd'])
-    .default('insideEnd')
-    .nullish(),
-  textColor: z.string().default('#ffffff').nullish(),
-  textFontSize: z.number().default(12).nullish(),
-  textFontWeight: z.number().default(400).nullish(),
-  textAlign: z.enum(['left', 'right', 'center']).default('right').nullish(),
-  textBaseline: z.enum(['top', 'middle', 'bottom']).default('top').nullish(),
-
-  lineVisible: z.boolean().default(true).nullish(),
-  lineColor: z.string().default('#212121').nullish(),
-  lineWidth: z.number().default(1).nullish(),
-  lineStyle: z
-    .union([z.literal('solid'), z.literal('dashed'), z.literal('dotted')])
-    .default('dashed')
-    .nullish(),
-
-  backgroundVisible: z.boolean().default(true).nullish(),
-  backgroundColor: z.string().default('#212121').nullish(),
-  backgroundBorderColor: z.string().default('#212121').nullish(),
-  backgroundBorderRadius: z.number().default(4).nullish(),
-  backgroundBorderWidth: z.number().default(1).nullish(),
-  backgroundPadding: z.number().default(2).nullish(),
-
-  offsetX: z.number().default(0),
-  offsetY: z.number().default(0),
-})

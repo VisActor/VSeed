@@ -1,8 +1,9 @@
 import { z } from 'zod'
-import { zAnnotationPoint } from './annotationPoint'
-import { zAnnotationVerticalLine } from './annotationVerticalLine'
-import { zAnnotationHorizontalLine } from './annotationHorizontalLine'
-import { zAnnotationArea } from './annotationArea'
+import { zAnnotationPoint } from './zAnnotationPoint'
+import { zAnnotationVerticalLine } from './zAnnotationVerticalLine'
+import { zAnnotationHorizontalLine } from './zAnnotationHorizontalLine'
+import { zAnnotationArea } from './zAnnotationArea'
+
 
 export const zAnnotation = z.object({
   annotationPoint: zAnnotationPoint.or(z.array(zAnnotationPoint)).nullish(),

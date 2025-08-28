@@ -1,5 +1,4 @@
-import { zSelector, zSelectors, type Selector, type Selectors } from '../../dataSelector'
-import { z } from 'zod'
+import { type Selector, type Selectors } from '../../dataSelector'
 /**
  * @description 标注点, 根据用户设置的selector, 在数据点的左下方, 显示一个带有背景的标签.
  */
@@ -48,6 +47,37 @@ export type AnnotationPoint = {
    */
   textBaseline?: 'top' | 'middle' | 'bottom'
   /**
+   * @description 背景可见
+   * @example true
+   */
+  textBackgroundVisible?: boolean
+  /**
+   * @description 背景颜色
+   * @example 'red'
+   */
+  textBackgroundColor?: string
+  /**
+   * @description 背景边框颜色
+   * @example 'red'
+   */
+  textBackgroundBorderColor?: string
+  /**
+   * @description 背景边框宽度
+   * @example 2
+   */
+  textBackgroundBorderWidth?: number
+  /**
+   * @description 背景边框圆角
+   * @example 4
+   */
+  textBackgroundBorderRadius?: number
+  /**
+   * @description 背景内边距
+   * @example 4
+   */
+  textBackgroundPadding?: number
+
+  /**
    * @description 标注点整体在Y方向的偏移像素距离, 当标注点在图表上方(数值较大时)时, 建议设置为正值, 标注点在图表下方(数值较小时)时, 建议设置为负值.
    * 负值则整体向上偏移, 例如设置为-10, 则整个标注点组件包括文本、文本背景, 一起向上偏移10像素
    * 正值则整体向下偏移, 例如设置为10, 则整个标注点组件包括文本、文本背景, 一起向下偏移10像素
@@ -61,52 +91,4 @@ export type AnnotationPoint = {
    * @example offsetX: 5, 标注点整体向右偏移5像素
    */
   offsetX?: number
-  /**
-   * @description 背景可见
-   * @example true
-   */
-  backgroundVisible?: boolean
-  /**
-   * @description 背景颜色
-   * @example 'red'
-   */
-  backgroundColor?: string
-  /**
-   * @description 背景边框颜色
-   * @example 'red'
-   */
-  backgroundBorderColor?: string
-  /**
-   * @description 背景边框宽度
-   * @example 2
-   */
-  backgroundBorderWidth?: number
-  /**
-   * @description 背景边框圆角
-   * @example 4
-   */
-  backgroundBorderRadius?: number
-  /**
-   * @description 背景内边距
-   * @example 4
-   */
-  backgroundPadding?: number
 }
-
-export const zAnnotationPoint = z.object({
-  selector: z.union([zSelector, zSelectors]),
-  text: z.string().or(z.array(z.string())).nullish(),
-  textColor: z.string().default('#ffffff').nullish(),
-  textFontSize: z.number().default(12).nullish(),
-  textFontWeight: z.number().default(400).nullish(),
-  textAlign: z.enum(['left', 'right', 'center']).default('center').nullish(),
-  textBaseline: z.enum(['top', 'middle', 'bottom']).default('middle').nullish(),
-  backgroundVisible: z.boolean().default(true).nullish(),
-  backgroundColor: z.string().default('#212121').nullish(),
-  backgroundBorderColor: z.string().nullish(),
-  backgroundBorderWidth: z.number().default(1).nullish(),
-  backgroundBorderRadius: z.number().default(4).nullish(),
-  backgroundPadding: z.number().nullish(),
-  offsetY: z.number().default(0).nullish(),
-  offsetX: z.number().default(0).nullish(),
-})

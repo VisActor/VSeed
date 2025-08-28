@@ -1,5 +1,8 @@
 import type { NumFormat } from './format/numFormat'
 
+/**
+ * @description 指标
+ */
 export type Measure = {
   /**
    * @description 指标id, 不能重复

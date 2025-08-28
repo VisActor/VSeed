@@ -3,38 +3,38 @@
 依赖选择的数据, 进行数据标记.
 
 
-## Properties
+## 属性·
 
 ### field
 
-**Type:** `string`
+**类型:** `string`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### operator
 
-**Type:** `"in" | "not in" | undefined`
+**类型:** `"in" | "not in" | undefined`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### op
 
-**Type:** `"in" | "not in" | undefined`
+**类型:** `"in" | "not in" | undefined`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### value
 
-**Type:** `string | number | (string | number)[]`
+**类型:** `string | number | (string | number)[]`
 
-**Description:**
+**描述:**
 无描述

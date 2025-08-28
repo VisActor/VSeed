@@ -3,47 +3,47 @@
 X轴标题
 
 
-## Properties
+## 属性·
 
 ### visible
 
-**Type:** `boolean | undefined`
+**类型:** `boolean | undefined`
 
-**Description:**
+**描述:**
 标题是否可见
 
 ---
 
 ### titleText
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 标题文本, 默认跟随字段配置
 
 ---
 
 ### titleColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 标题颜色
 
 ---
 
 ### titleFontSize
 
-**Type:** `number | undefined`
+**类型:** `number | undefined`
 
-**Description:**
+**描述:**
 标题字体大小
 
 ---
 
 ### titleFontWeight
 
-**Type:** `number | undefined`
+**类型:** `number | undefined`
 
-**Description:**
+**描述:**
 标题字体粗细

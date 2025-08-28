@@ -5,47 +5,47 @@
 鼠标移动到图表上时, 显示的垂直提示线
 
 
-## Properties
+## 属性·
 
 ### visible
 
-**Type:** `boolean | undefined`
+**类型:** `boolean | undefined`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### lineColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### labelColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### labelVisible
 
-**Type:** `boolean | undefined`
+**类型:** `boolean | undefined`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### labelBackgroundColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 无描述

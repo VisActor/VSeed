@@ -9,13 +9,13 @@
 若未配置selector, 则样式全局生效.
 
 
-## Properties
+## 属性·
 
 ### pointSize
 
-**Type:** `number | undefined`
+**类型:** `number | undefined`
 
-**Description:**
+**描述:**
 点大小
 
 点大小
@@ -24,9 +24,9 @@
 
 ### pointColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 点图元颜色
 
 点图元颜色
@@ -35,9 +35,9 @@
 
 ### pointColorOpacity
 
-**Type:** `number | undefined`
+**类型:** `number | undefined`
 
-**Description:**
+**描述:**
 点图元颜色透明度
 
 点图元颜色透明度
@@ -46,9 +46,9 @@
 
 ### pointBorderColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 点图元边框颜色
 
 点图元边框颜色
@@ -57,9 +57,9 @@
 
 ### pointBorderWidth
 
-**Type:** `number | undefined`
+**类型:** `number | undefined`
 
-**Description:**
+**描述:**
 点图元边框宽度
 
 点图元边框宽度
@@ -68,9 +68,9 @@
 
 ### pointBorderStyle
 
-**Type:** `"solid" | "dashed" | "dotted" | undefined`
+**类型:** `"solid" | "dashed" | "dotted" | undefined`
 
-**Description:**
+**描述:**
 点图元边框样式
 
 点图元边框样式

@@ -9,13 +9,13 @@
 若未配置selector, 则样式全局生效.
 
 
-## Properties
+## 属性·
 
 ### lineSmooth
 
-**Type:** `boolean | undefined`
+**类型:** `boolean | undefined`
 
-**Description:**
+**描述:**
 折线图是否平滑
 
 折线图是否平滑
@@ -24,9 +24,9 @@
 
 ### lineColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 柱状图颜色
 
 柱状图颜色
@@ -35,9 +35,9 @@
 
 ### lineColorOpacity
 
-**Type:** `number | undefined`
+**类型:** `number | undefined`
 
-**Description:**
+**描述:**
 柱状图颜色透明度
 
 柱状图颜色透明度
@@ -46,9 +46,9 @@
 
 ### lineWidth
 
-**Type:** `number | undefined`
+**类型:** `number | undefined`
 
-**Description:**
+**描述:**
 柱状图边框宽度
 
 柱状图边框宽度
@@ -57,9 +57,9 @@
 
 ### lineStyle
 
-**Type:** `"solid" | "dashed" | "dotted" | undefined`
+**类型:** `"solid" | "dashed" | "dotted" | undefined`
 
-**Description:**
+**描述:**
 柱状图边框样式
 
 柱状图边框样式

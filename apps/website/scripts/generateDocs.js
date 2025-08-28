@@ -115,12 +115,11 @@ function processInterface(project, interfaceDec, baseDir, parentPath = []) {
         const jsDocs = prop.getJsDocs()
         const tags = parseJsDocTags(jsDocs)
         const propType = prop.getType().getText().replace(/\n/g, ' ').replace(/\s+/g, ' ')
-        const description = (tags.description || []).join('\n\n') || '无描述'
-        return `### ${propName}\n\n**Type:** \`${propType}\`\n\n**Description:**\n${description}`
+        return generateMarkdown(propName, tags, propType)
       })
       .join('\n\n---\n\n')
 
-    fs.appendFileSync(mdPath, `\n\n## Properties\n\n${simplePropsMd}`)
+    fs.appendFileSync(mdPath, `\n\n## 属性·\n\n${simplePropsMd}`)
   }
 
   complexProps.forEach((prop) => {
@@ -185,8 +184,13 @@ function processProperty(project, prop, baseDir, parentPath) {
 // File & Metadata Generation
 // ==================================================================================
 
-function generateMarkdown(propName, tags) {
+function generateMarkdown(propName, tags, propType) {
   const description = (tags.description || []).join('\n\n') || '无描述'
+
+  if (propType) {
+    return `### ${propName}\n\n**类型:** \`${propType}\`\n\n**描述:**\n${description}`
+  }
+
   const example = (tags.example || []).join('\n\n') || '无示例'
   const type = (tags.type || []).join('\n\n') || '无类型'
 

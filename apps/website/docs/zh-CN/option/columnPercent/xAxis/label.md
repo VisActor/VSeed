@@ -3,47 +3,47 @@
 X轴刻度标签
 
 
-## Properties
+## 属性·
 
 ### visible
 
-**Type:** `boolean | undefined`
+**类型:** `boolean | undefined`
 
-**Description:**
+**描述:**
 标签是否可见
 
 ---
 
 ### labelColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 标签颜色
 
 ---
 
 ### labelFontSize
 
-**Type:** `number | undefined`
+**类型:** `number | undefined`
 
-**Description:**
+**描述:**
 标签字体大小
 
 ---
 
 ### labelFontWeight
 
-**Type:** `number | undefined`
+**类型:** `number | undefined`
 
-**Description:**
+**描述:**
 标签字体粗细
 
 ---
 
 ### labelAngle
 
-**Type:** `number | undefined`
+**类型:** `number | undefined`
 
-**Description:**
+**描述:**
 标签旋转角度

@@ -3,11 +3,11 @@
 热力图标签配置, 用于定义图表的数据标签, 自动开启标签反色, 确保标签可读性.
 
 
-## Properties
+## 属性·
 
 ### enable
 
-**Type:** `boolean`
+**类型:** `boolean`
 
-**Description:**
+**描述:**
 标签功能是否开启

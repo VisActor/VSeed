@@ -3,29 +3,29 @@
 无描述
 
 
-## Properties
+## 属性·
 
 ### id
 
-**Type:** `string`
+**类型:** `string`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### alias
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### location
 
-**Type:** `"dimension" | "rowDimension" | "columnDimension" | undefined`
+**类型:** `"dimension" | "rowDimension" | "columnDimension" | undefined`
 
-**Description:**
+**描述:**
 无描述

@@ -3,29 +3,29 @@
 X轴网格线
 
 
-## Properties
+## 属性·
 
 ### visible
 
-**Type:** `boolean | undefined`
+**类型:** `boolean | undefined`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### gridColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 网格线颜色
 
 ---
 
 ### gridWidth
 
-**Type:** `number | undefined`
+**类型:** `number | undefined`
 
-**Description:**
+**描述:**
 网格线宽度

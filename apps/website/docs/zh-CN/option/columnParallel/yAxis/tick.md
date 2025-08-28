@@ -3,38 +3,38 @@
 X轴刻度
 
 
-## Properties
+## 属性·
 
 ### visible
 
-**Type:** `boolean | undefined`
+**类型:** `boolean | undefined`
 
-**Description:**
+**描述:**
 刻度是否可见
 
 ---
 
 ### tickInside
 
-**Type:** `boolean | undefined`
+**类型:** `boolean | undefined`
 
-**Description:**
+**描述:**
 刻度是否朝内
 
 ---
 
 ### tickColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 刻度颜色
 
 ---
 
 ### tickSize
 
-**Type:** `number | undefined`
+**类型:** `number | undefined`
 
-**Description:**
+**描述:**
 刻度尺寸

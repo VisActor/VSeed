@@ -5,47 +5,47 @@
 水平提示框配置, 用于定义图表的水平提示框, 包括水平提示框的颜色、标签样式等.
 
 
-## Properties
+## 属性·
 
 ### visible
 
-**Type:** `boolean | undefined`
+**类型:** `boolean | undefined`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### rectColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### labelColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### labelVisible
 
-**Type:** `boolean | undefined`
+**类型:** `boolean | undefined`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### labelBackgroundColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 无描述

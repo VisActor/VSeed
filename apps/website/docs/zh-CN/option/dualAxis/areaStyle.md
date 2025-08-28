@@ -9,13 +9,13 @@
 若未配置selector, 则样式全局生效.
 
 
-## Properties
+## 属性·
 
 ### areaColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 面积图元的颜色
 
 面积图元的颜色
@@ -24,9 +24,9 @@
 
 ### areaColorOpacity
 
-**Type:** `number | undefined`
+**类型:** `number | undefined`
 
-**Description:**
+**描述:**
 面积图元的颜色透明度
 
 面积图元的颜色透明度

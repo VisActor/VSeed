@@ -9,13 +9,13 @@
 若未配置selector, 则样式全局生效.
 
 
-## Properties
+## 属性·
 
 ### barColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 柱状图颜色
 
 柱状图颜色
@@ -24,9 +24,9 @@
 
 ### barColorOpacity
 
-**Type:** `number | undefined`
+**类型:** `number | undefined`
 
-**Description:**
+**描述:**
 柱状图颜色透明度
 
 柱状图颜色透明度
@@ -35,9 +35,9 @@
 
 ### barBorderColor
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 柱状图边框颜色
 
 柱状图边框颜色
@@ -46,9 +46,9 @@
 
 ### barBorderWidth
 
-**Type:** `number | undefined`
+**类型:** `number | undefined`
 
-**Description:**
+**描述:**
 柱状图边框宽度
 
 柱状图边框宽度
@@ -57,9 +57,9 @@
 
 ### barBorderStyle
 
-**Type:** `"solid" | "dashed" | "dotted" | undefined`
+**类型:** `"solid" | "dashed" | "dotted" | undefined`
 
-**Description:**
+**描述:**
 柱状图边框样式
 
 柱状图边框样式
@@ -68,9 +68,9 @@
 
 ### barRadius
 
-**Type:** `number | number[] | undefined`
+**类型:** `number | number[] | undefined`
 
-**Description:**
+**描述:**
 柱状图圆角
 
 柱状图圆角

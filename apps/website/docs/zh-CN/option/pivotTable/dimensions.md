@@ -3,29 +3,29 @@
 透视表的行维度和列维度，会自动对数据进行处理为树形结构, 并映射到行和列轴, 可以通过 location : "rowDimension" | "columnDimension" 来控制一维度的映射位置
 
 
-## Properties
+## 属性·
 
 ### id
 
-**Type:** `string`
+**类型:** `string`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### alias
 
-**Type:** `string | undefined`
+**类型:** `string | undefined`
 
-**Description:**
+**描述:**
 无描述
 
 ---
 
 ### location
 
-**Type:** `"dimension" | "rowDimension" | "columnDimension" | undefined`
+**类型:** `"dimension" | "rowDimension" | "columnDimension" | undefined`
 
-**Description:**
+**描述:**
 无描述

@@ -47,7 +47,7 @@ export const datasetPrimary: SpecPipe = (spec, context) => {
     data: {
       id: `${id}-primary-dataset`,
       // 透视表不使用 dataValues
-      values: isPivotChart(vseed) ? undefined : advancedVSeed.dataset[0],
+      values: isPivotChart(vseed) ? undefined : advancedVSeed.dataset,
       fields: fields,
     },
   } as ISpec
@@ -98,7 +98,7 @@ export const datasetSecondary: SpecPipe = (spec, context) => {
     data: {
       id: `${id}-secondary-dataset`,
       // 透视表不使用 dataValues
-      values: isPivotChart(vseed) ? undefined : advancedVSeed.dataset[1],
+      values: isPivotChart(vseed) ? undefined : advancedVSeed.dataset,
       fields: fields,
     },
   } as ISpec

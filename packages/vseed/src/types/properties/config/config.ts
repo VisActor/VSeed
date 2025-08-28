@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { zXBandAxis, zYBandAxis } from './axes/bandAxis'
 import { zXLinearAxis, zYLinearAxis } from './axes/linearAxis'
-import { zCrosshairLine, zCrosshairRect } from './crosshair/crosshair'
+import { zCrosshairLine, zCrosshairRect } from './crosshair'
 import { zStackCornerRadius } from './stackCornerRadius/stackCornerRadius'
 import { zBackgroundColor } from './backgroundColor/backgroundColor'
 import { zColor } from './color/color'

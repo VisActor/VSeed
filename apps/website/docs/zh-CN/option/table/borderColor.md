@@ -1,6 +1,10 @@
 # borderColor
 
-**类型:** `string | undefined`
+**Type:** `string | undefined`
 
-## 描述
-表格的边框颜色
+:::tip{title=描述}
+表格的边框颜色:::
+
+
+ 
+

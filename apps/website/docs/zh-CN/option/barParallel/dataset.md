@@ -1,0 +1,20 @@
+# dataset
+
+**Type:** `Record<string | number, any>[]`
+
+:::tip{title=描述}
+数据集
+
+
+
+符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 并列条形图的数据最终会被转换为2个维度, 1个指标.:::
+
+
+ 
+
+**示例:**
+[{category:'A', value1:100, value2:200}, {category:'B', value1:150, value2:250}]
+
+
+ 
+

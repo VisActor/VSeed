@@ -1,6 +1,10 @@
 # headerBackgroundColor
 
-**类型:** `string | undefined`
+**Type:** `string | undefined`
 
-## 描述
-列表头的背景颜色
+:::tip{title=描述}
+列表头的背景颜色:::
+
+
+ 
+

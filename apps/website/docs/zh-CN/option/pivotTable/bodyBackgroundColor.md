@@ -1,6 +1,10 @@
 # bodyBackgroundColor
 
-**类型:** `string | undefined`
+**Type:** `string | undefined`
 
-## 描述
-表格体的背景颜色
+:::tip{title=描述}
+表格体的背景颜色:::
+
+
+ 
+

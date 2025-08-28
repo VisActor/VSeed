@@ -1,8 +1,20 @@
 # chartType
 
-**类型:** `"columnParallel"`
+**Type:** `"columnParallel"`
 
-## 描述
+:::tip{title=描述}
 并列柱状图
 
-并列柱状图，适用于多指标并行对比场景
+
+
+并列柱状图，适用于多指标并行对比场景:::
+
+
+ 
+
+**示例:**
+'columnParallel'
+
+
+ 
+

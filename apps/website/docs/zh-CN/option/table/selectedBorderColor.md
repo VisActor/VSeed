@@ -1,6 +1,10 @@
 # selectedBorderColor
 
-**类型:** `string | undefined`
+**Type:** `string | undefined`
 
-## 描述
-选中的单元格的边框颜色, 用于突出显示选中的单元格
+:::tip{title=描述}
+选中的单元格的边框颜色, 用于突出显示选中的单元格:::
+
+
+ 
+

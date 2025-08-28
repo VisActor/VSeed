@@ -73,53 +73,65 @@ function processChartType(project, chartName) {
   }
 
   // Generate a markdown file for the chart type itself
-  const jsDocs = chartInterface.getJsDocs()
-  const tags = parseJsDocTags(jsDocs)
-
   const chartDir = path.join(outputDir, chartName)
   ensureDir(chartDir)
 
   const mdPath = path.join(chartDir, 'index.md')
-  fs.writeFileSync(mdPath, generateMarkdown(chartName, tags), 'utf-8')
+  fs.writeFileSync(mdPath, generateMarkdownContent(chartInterface, project), 'utf-8')
 
-  // Process all properties of the interface recursively
-  processInterface(project, chartInterface, chartDir, [])
+  // Process all properties of the interface.
+  const props = chartInterface.getProperties()
+  props.forEach((prop) => {
+    const propName = prop.getName()
+    if (propName.startsWith('[Symbol')) {
+      return
+    }
+    const propMdPath = path.join(chartDir, `${propName}.md`)
+    const markdownContent = generateMarkdownContent(prop, project)
+    if (markdownContent) {
+      fs.writeFileSync(propMdPath, markdownContent, 'utf-8')
+    }
+  })
 
   console.log(`文档生成完成 for ${chartName}, 目录：`, chartDir)
 }
 
 // ==================================================================================
-// Recursive AST Processing
+// Markdown Generation
 // ==================================================================================
+function generateMarkdownContent(node, project, level = 1, visited = new Set()) {
+  const isInterface = node.getKind() === SyntaxKind.InterfaceDeclaration
+  const isProperty =
+    node.getKind() === SyntaxKind.PropertySignature || node.getKind() === SyntaxKind.PropertyDeclaration
 
-function processInterface(project, interfaceDec, baseDir, parentPath = []) {
-  const props = interfaceDec.getProperties()
+  if (!isInterface && !isProperty) {
+    return ''
+  }
 
-  const simpleProps = []
-  const complexProps = []
+  const name = node.getName()
+  if (name.startsWith('[Symbol')) {
+    return ''
+  }
 
-  props.forEach((prop) => {
-    if (prop.getName().startsWith('[Symbol')) {
-      return
-    }
-    const typeNode = prop.getTypeNode()
-    const typesToProcess = typeNode ? extractObjectTypes(typeNode.getType()) : []
-    if (prop.getName() !== 'children' && typesToProcess.length > 0) {
-      complexProps.push(prop)
-    } else {
-      simpleProps.push(prop)
-    }
-  })
+  // To prevent infinite recursion for some cases like `children` -> `children`
+  if (level > 10 || visited.has(name)) {
+    return ''
+  }
 
-  const currentDir = path.join(baseDir, ...parentPath)
-  ensureDir(currentDir)
+  // Stop recursion for children of measures to prevent infinite nesting
+  if (visited.has('measures') && visited.has('children')) {
+    return ''
+  }
 
-  simpleProps.forEach((prop) => {
-    const propName = prop.getName()
-    const mdPath = path.join(currentDir, `${propName}.md`)
-    const jsDocs = prop.getJsDocs()
-    const tags = parseJsDocTags(jsDocs)
-    const propType = prop.getType()
+  visited.add(name)
+
+  const jsDocs = node.getJsDocs()
+  const tags = parseJsDocTags(jsDocs)
+
+  let markdown = `${'#'.repeat(level)} ${name}\n\n`
+
+  if (isProperty) {
+    const propType = node.getType()
     let propTypeText
 
     if (propType.isUnion() && propType.getUnionTypes().every((t) => t.isLiteral())) {
@@ -128,86 +140,65 @@ function processInterface(project, interfaceDec, baseDir, parentPath = []) {
         .map((t) => t.getText())
         .join(' | ')
     } else {
-      propTypeText = propType.getText(prop).replace(/\n/g, ' ').replace(/\s+/g, ' ')
+      propTypeText = propType.getText(node).replace(/\n/g, ' ').replace(/\s+/g, ' ')
     }
-    const markdownContent = generateMarkdown(propName, tags, propTypeText)
-    fs.writeFileSync(mdPath, markdownContent, 'utf-8')
-  })
-
-  complexProps.forEach((prop) => {
-    processProperty(project, prop, baseDir, parentPath)
-  })
-}
-
-function processProperty(project, prop, baseDir, parentPath) {
-  const propName = prop.getName()
-  if (propName === 'children' && parentPath.includes('children')) {
-    return
-  }
-  const typeNode = prop.getTypeNode()
-  const jsDocs = prop.getJsDocs()
-  const tags = parseJsDocTags(jsDocs)
-
-  const propDir = path.join(baseDir, ...parentPath, propName)
-  ensureDir(propDir)
-
-  // Always create a markdown file for the property itself
-  const mdPath = path.join(propDir, 'index.md')
-  fs.writeFileSync(mdPath, generateMarkdown(propName, tags), 'utf-8')
-
-  if (!typeNode) {
-    return // Leaf property, no need to recurse
+    markdown += `**Type:** \`${propTypeText}\`\n\n`
   }
 
-  const newParentPath = [...parentPath, propName]
+  const description = (tags.description || []).join('\n\n') || ''
+  const example = (tags.example || []).join('\n\n') || ''
+  const recommend = (tags.recommend || []).join('\n\n') || ''
+  const note = (tags.note || []).join('\n\n') || ''
 
-  if (newParentPath.length > 20) {
-    return
+  if (recommend) {
+    markdown += `:::info{title=推荐}\n${recommend.replace(/\n/g, '\n\n').replace(/\-/g, '\\-')}:::`
+    markdown += '\n\n\n \n\n'
+  }
+  if (description) {
+    markdown += `:::tip{title=描述}\n${description.replace(/\n/g, '\n\n').replace(/\-/g, '\\-')}:::`
+    markdown += '\n\n\n \n\n'
+  }
+  if (example) {
+    markdown += `**示例:**\n${example.replace(/\n/g, '\n')}`
+    markdown += '\n\n\n \n\n'
+  }
+  if (note) {
+    markdown += `:::note{title=注意}\n${note.replace(/\n/g, '\n\n').replace(/\-/g, '\\-')}:::`
+    markdown += '\n\n\n \n\n'
   }
 
-  const type = typeNode.getType()
+  if (isProperty) {
+    const propType = node.getType()
+    const typesToProcess = extractObjectTypes(propType)
 
-  const typesToProcess = extractObjectTypes(type)
+    if (typesToProcess.length > 0) {
+      const allProperties = typesToProcess.flatMap((t) => t.getApparentProperties())
 
-  if (typesToProcess.length > 0) {
-    const allProperties = typesToProcess.flatMap((t) => t.getApparentProperties())
+      const propertyDeclarations = allProperties
+        .flatMap((p) => {
+          const declarations = p.getDeclarations()
+          return declarations || []
+        })
+        .filter(
+          (d) => d && (d.getKind() === SyntaxKind.PropertySignature || d.getKind() === SyntaxKind.PropertyDeclaration),
+        )
 
-    const propertyDeclarations = allProperties
-      .flatMap((p) => {
-        const declarations = p.getDeclarations()
-        return declarations || []
-      })
-      .filter(
-        (d) => d && (d.getKind() === SyntaxKind.PropertySignature || d.getKind() === SyntaxKind.PropertyDeclaration),
-      )
+      const uniqueDeclarations = [...new Map(propertyDeclarations.map((item) => [item.getName(), item])).values()]
 
-    const uniqueDeclarations = [...new Map(propertyDeclarations.map((item) => [item.getName(), item])).values()]
-
-    if (uniqueDeclarations.length > 0) {
-      const fakeInterface = {
-        getProperties: () => uniqueDeclarations,
+      if (uniqueDeclarations.length > 0) {
+        markdown += '\n'
+        uniqueDeclarations.forEach((subProp) => {
+          markdown += generateMarkdownContent(subProp, project, level + 1, new Set(visited))
+        })
       }
-      processInterface(project, fakeInterface, baseDir, newParentPath)
     }
   }
+  return markdown
 }
 
 // ==================================================================================
 // File & Metadata Generation
 // ==================================================================================
-
-function generateMarkdown(propName, tags, propType) {
-  const description = (tags.description || []).join('\n\n') || '无描述'
-
-  if (propType) {
-    return `# ${propName}\n\n**类型:** \`${propType}\`\n\n## 描述\n${description}`
-  }
-
-  const example = (tags.example || []).join('\n\n') || '无示例'
-  const type = (tags.type || []).join('\n\n') || '无类型'
-
-  return `# ${propName}\n## 描述\n${description}\n`
-}
 
 function generateMetaJsonRecursive(directory) {
   // 1. Recurse into subdirectories first to build from the bottom up.
@@ -295,26 +286,6 @@ function parseJsDocTags(jsDocs) {
     })
   })
   return tags
-}
-
-function getInterfaceFromProject(project, name) {
-  for (const sourceFile of project.getSourceFiles()) {
-    const iface = sourceFile.getInterface(name)
-    if (iface) {
-      return iface
-    }
-  }
-  return undefined
-}
-
-function getTypeAliasFromProject(project, typeAliasName) {
-  for (const sourceFile of project.getSourceFiles()) {
-    const alias = sourceFile.getTypeAlias(typeAliasName)
-    if (alias) {
-      return alias
-    }
-  }
-  return null
 }
 
 function ensureDir(dir) {

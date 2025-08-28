@@ -8,12 +8,16 @@ import { type BackgroundColor, type Dataset, type Theme } from '../../properties
  * - 需要展示详细数据明细
  * - 数据项需要精确比对
  * - 展示多维度数据属性
+ * @note 
  * 数据要求:
  * - 至少1个维度字段
  * - 至少1个度量字段
  * - 维度字段会作为表格的列标题
  * 默认开启的功能:
  * - 默认开启排序、筛选、分页功能
+ * @recommend 
+ * - 推荐字段配置: `任意`个指标, `任意`个维度
+ * - 支持数据重塑: 至少`任意`个指标, `任意`个维度
  */
 export interface Table {
   /**

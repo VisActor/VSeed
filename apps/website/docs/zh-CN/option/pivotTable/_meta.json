@@ -31,6 +31,16 @@
   },
   {
     "type": "file",
+    "name": "dataset",
+    "label": "dataset "
+  },
+  {
+    "type": "file",
+    "name": "dimensions",
+    "label": "dimensions "
+  },
+  {
+    "type": "file",
     "name": "headerBackgroundColor",
     "label": "headerBackgroundColor "
   },
@@ -61,6 +71,11 @@
   },
   {
     "type": "file",
+    "name": "measures",
+    "label": "measures "
+  },
+  {
+    "type": "file",
     "name": "selectedBackgroundColor",
     "label": "selectedBackgroundColor "
   },
@@ -73,23 +88,5 @@
     "type": "file",
     "name": "theme",
     "label": "theme "
-  },
-  {
-    "type": "dir",
-    "name": "dataset",
-    "label": "dataset ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "dimensions",
-    "label": "dimensions ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "measures",
-    "label": "measures ",
-    "collapsed": true
   }
 ]

@@ -1,25 +1,6 @@
-import { zLocale, type Locale } from '../../i18n'
+import { type Locale } from '../../i18n'
 import type { MeasureTree, Sort, SortLegend } from '../../properties'
-import {
-  zAnnotationArea,
-  zAnnotationHorizontalLine,
-  zAnnotationPoint,
-  zAnnotationVerticalLine,
-  zBackgroundColor,
-  zBarStyle,
-  zColor,
-  zCrosshairRect,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLegend,
-  zMeasureTree,
-  zStackCornerRadius,
-  zTheme,
-  zTooltip,
-  zXLinearAxis,
-  zYBandAxis,
-} from '../../properties'
+
 import {
   type AnnotationArea,
   type AnnotationHorizontalLine,
@@ -39,7 +20,6 @@ import {
   type XLinearAxis,
   type YBandAxis,
 } from '../../properties'
-import { z } from 'zod'
 
 /**
  * 条形图类型定义
@@ -219,26 +199,3 @@ export interface Bar {
    */
   locale?: Locale
 }
-
-export const zBar = z.object({
-  chartType: z.literal('bar'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
-  label: zLabel.optional(),
-  legend: zLegend.optional(),
-  tooltip: zTooltip.optional(),
-  xAxis: zXLinearAxis.optional(),
-  yAxis: zYBandAxis.optional(),
-  crosshairRect: zCrosshairRect.optional(),
-  stackCornerRadius: zStackCornerRadius.optional(),
-  theme: zTheme.optional(),
-  barStyle: z.array(zBarStyle).or(zBarStyle).optional(),
-  annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
-  annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
-  annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),
-  annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).optional(),
-  locale: zLocale.optional(),
-})

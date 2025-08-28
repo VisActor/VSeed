@@ -1,1 +1,2 @@
-export * from './roseParallel'
+export type * from './roseParallel'
+export * from './zRoseParallel'

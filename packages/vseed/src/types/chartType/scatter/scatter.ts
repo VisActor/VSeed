@@ -1,24 +1,5 @@
 import type { Locale } from '../../i18n'
-import { zLocale } from '../../i18n'
-import {
-  zAnnotationArea,
-  zAnnotationHorizontalLine,
-  zAnnotationPoint,
-  zAnnotationVerticalLine,
-  zBackgroundColor,
-  zColor,
-  zCrosshairLine,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLegend,
-  zMeasureTree,
-  zPointStyle,
-  zTheme,
-  zTooltip,
-  zXLinearAxis,
-  zYLinearAxis,
-} from '../../properties'
+
 import type {
   AnnotationArea,
   AnnotationHorizontalLine,
@@ -38,7 +19,6 @@ import type {
   XLinearAxis,
   MeasureTree,
 } from '../../properties'
-import { z } from 'zod'
 
 /**
  * 散点图类型定义
@@ -184,25 +164,3 @@ export interface Scatter {
    */
   locale?: Locale
 }
-
-export const zScatter = z.object({
-  chartType: z.literal('scatter'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
-  label: zLabel.optional(),
-  legend: zLegend.optional(),
-  tooltip: zTooltip.optional(),
-  xAxis: zXLinearAxis.optional(),
-  yAxis: zYLinearAxis.optional(),
-  crosshairLine: zCrosshairLine.optional(),
-  theme: zTheme.optional(),
-  pointStyle: z.array(zPointStyle).or(zPointStyle).optional(),
-  annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
-  annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
-  annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),
-  annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).optional(),
-  locale: zLocale.optional(),
-})

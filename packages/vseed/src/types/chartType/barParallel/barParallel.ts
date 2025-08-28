@@ -1,26 +1,5 @@
-import { z } from 'zod'
 import type { Locale } from '../../i18n'
-import { zLocale } from '../../i18n'
-import {
-  zAnnotationArea,
-  zAnnotationHorizontalLine,
-  zAnnotationPoint,
-  zAnnotationVerticalLine,
-  zBackgroundColor,
-  zBarStyle,
-  zColor,
-  zCrosshairRect,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLegend,
-  zMeasureTree,
-  zStackCornerRadius,
-  zTheme,
-  zTooltip,
-  zXLinearAxis,
-  zYBandAxis,
-} from '../../properties'
+
 import type {
   AnnotationArea,
   AnnotationHorizontalLine,
@@ -222,26 +201,3 @@ export interface BarParallel {
    */
   locale?: Locale
 }
-
-export const zBarParallel = z.object({
-  chartType: z.literal('barParallel'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
-  label: zLabel.optional(),
-  legend: zLegend.optional(),
-  tooltip: zTooltip.optional(),
-  xAxis: zXLinearAxis.optional(),
-  yAxis: zYBandAxis.optional(),
-  crosshairRect: zCrosshairRect.optional(),
-  stackCornerRadius: zStackCornerRadius.optional(),
-  theme: zTheme.optional(),
-  barStyle: z.array(zBarStyle).or(zBarStyle).optional(),
-  annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
-  annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
-  annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),
-  annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).optional(),
-  locale: zLocale.optional(),
-})

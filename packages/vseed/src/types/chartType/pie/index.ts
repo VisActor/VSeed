@@ -1,1 +1,2 @@
-export * from './pie'
+export type * from './pie'
+export * from './zPie'

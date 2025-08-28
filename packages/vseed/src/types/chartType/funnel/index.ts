@@ -1,1 +1,2 @@
-export * from './funnel'
+export type * from './funnel'
+export * from './zFunnel'

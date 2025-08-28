@@ -14,6 +14,7 @@
     "@visactor/vseed": "workspace:*",
     "@visactor/vchart": "2.0.3",
     "@visactor/vtable": "1.19.4",
+    "react": "19.1.1",
     "zustand": "5.0.6"
   },
   "devDependencies": {

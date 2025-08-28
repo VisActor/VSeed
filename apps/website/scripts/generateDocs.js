@@ -3,8 +3,18 @@ const fs = require('fs')
 const { Project, SyntaxKind } = require('ts-morph')
 
 const outputDir = path.resolve(__dirname, '../docs/zh-CN/option')
-// const outputDir = path.resolve(__dirname, './docs')
+const chartTypesDir = path.resolve(__dirname, '../../../packages/vseed/src/types/chartType')
 const tsConfigPath = path.resolve(__dirname, '../../../packages/vseed/tsconfig.json')
+
+// 生成Markdown内容
+function generateMarkdown(propName, tags) {
+  const description = (tags.description || []).join('\n\n') || '无描述'
+  const example = (tags.example || []).join('\n\n') || '无示例'
+  const type = (tags.type || []).join('\n\n') || '无类型'
+
+  return `# ${propName}\n## 描述\n${description}\n`
+}
+
 // 确保目录存在
 function ensureDir(dir) {
   if (!fs.existsSync(dir)) {
@@ -26,15 +36,6 @@ function parseJsDocTags(jsDocs) {
     })
   })
   return tags
-}
-
-// 生成Markdown内容
-function generateMarkdown(propName, tags) {
-  const description = (tags.description || []).join('\n\n') || '无描述'
-  const example = (tags.example || []).join('\n\n') || '无示例'
-  const type = (tags.type || []).join('\n\n') || '无类型'
-
-  return `# ${propName}\n## 描述\n${description}\n`
 }
 
 function getInterfaceFromProject(project, name) {
@@ -172,7 +173,7 @@ function generateMetaJsonRecursive(directory) {
       })
     } else if (entry.isFile() && (entry.name.endsWith('.md') || entry.name.endsWith('.mdx'))) {
       const name = entry.name.replace(/\.mdx?$/, '')
-      if (!dirNames.has(name)) {
+      if (!dirNames.has(name) || isRoot) {
         files.push({
           type: 'file',
           name: name,
@@ -209,7 +210,6 @@ function main() {
     tsConfigFilePath: tsConfigPath,
   })
 
-  const chartTypesDir = path.resolve(__dirname, '../../../packages/vseed/src/types/chartType')
   const chartTypeFolders = fs
     .readdirSync(chartTypesDir, { withFileTypes: true })
     .filter((dirent) => dirent.isDirectory())
@@ -244,6 +244,11 @@ function main() {
       console.error(`未找到可导出的接口 in ${inputFile}`)
       return
     }
+
+    const jsDocs = chartInterface.getJsDocs()
+    const tags = parseJsDocTags(jsDocs)
+    const mdPath = path.join(outputDir, `${chartName}.md`)
+    fs.writeFileSync(mdPath, generateMarkdown(chartName, tags), 'utf-8')
 
     processInterface(project, chartInterface, outputDir, [chartName])
 

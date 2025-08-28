@@ -24,7 +24,9 @@ import type {
 
 /**
  * 折线图类型定义
- * @description 折线图，适用于展示数据随时间或有序类别变化的趋势，通过线段连接数据点形成趋势线
+ * @description 
+ * 折线图，适用于展示数据随时间或有序类别变化的趋势，通过线段连接数据点形成趋势线
+ * @note 
  * 适用场景:
  * - 展示时间序列数据的变化趋势
  * - 比较多个数据系列的趋势对比
@@ -40,7 +42,7 @@ export interface Line {
   /**
    * 折线图
    * @description 折线图，适用于展示数据随时间或有序类别变化的趋势
-   * @type {'line'}
+   * @type {string}
    * @example 'line'
    */
   chartType: 'line'

@@ -2,14 +2,14 @@ import { z } from 'zod'
 
 export const zEncoding = z.array(
   z.object({
-    x: z.array(z.string()).optional(),
-    y: z.array(z.string()).optional(),
-    color: z.array(z.string()).optional(),
-    group: z.array(z.string()).optional(),
-    angle: z.array(z.string()).optional(),
-    radius: z.array(z.string()).optional(),
-    tooltip: z.array(z.string()).optional(),
-    size: z.array(z.string()).optional(),
+    x: z.array(z.string()).nullish(),
+    y: z.array(z.string()).nullish(),
+    color: z.array(z.string()).nullish(),
+    group: z.array(z.string()).nullish(),
+    angle: z.array(z.string()).nullish(),
+    radius: z.array(z.string()).nullish(),
+    tooltip: z.array(z.string()).nullish(),
+    size: z.array(z.string()).nullish(),
   }),
 )
 

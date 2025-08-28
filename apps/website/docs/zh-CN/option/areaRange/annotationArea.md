@@ -7,8 +7,6 @@
   
   标注区域配置, 根据选择的数据, 定义图表的标注区域, 包括标注区域的位置, 样式等.
 
----
-
 
 ## selector
 
@@ -16,8 +14,6 @@
 
 **Description:**
 依赖选择的数据, 进行数据标记.
-
----
 
 
 ### field
@@ -27,16 +23,12 @@
 **Description:**
 No description
 
----
-
 ### operator
 
 **Type:** `"in" | "not in" | undefined`
 
 **Description:**
 No description
-
----
 
 ### op
 
@@ -45,16 +37,12 @@ No description
 **Description:**
 No description
 
----
-
 ### value
 
 **Type:** `string | number | (string | number)[]`
 
 **Description:**
 No description
-
----
 
 ## text
 
@@ -63,16 +51,12 @@ No description
 **Description:**
 标注的文本
 
----
-
 ## textPosition
 
 **Type:** `"left" | "top" | "topLeft" | "topRight" | "right" | "bottom" | "bottomLeft" | "bottomRight" | undefined`
 
 **Description:**
 文本位置
-
----
 
 ## textColor
 
@@ -81,8 +65,6 @@ No description
 **Description:**
 文本颜色
 
----
-
 ## textFontSize
 
 **Type:** `number | undefined`
@@ -90,16 +72,12 @@ No description
 **Description:**
 文本字体大小
 
----
-
 ## textFontWeight
 
 **Type:** `number | undefined`
 
 **Description:**
 文本字体重量
-
----
 
 ## textAlign
 
@@ -112,8 +90,6 @@ No description
   left: 文本在标注面的右侧, 文本的左侧边缘对齐标注面
   center: 文本在标注面的中心, 文本的中心对齐标注面
 
----
-
 ## textBaseline
 
 **Type:** `"top" | "bottom" | "middle" | undefined`
@@ -125,8 +101,6 @@ No description
   middle: 文本在标注面的中心, 文本的中心对齐标注面
   bottom: 文本在标注面的顶部, 文本的底部边缘对齐标注面
 
----
-
 ## textBackgroundVisible
 
 **Type:** `boolean | undefined`
@@ -134,16 +108,12 @@ No description
 **Description:**
 背景可见
 
----
-
 ## textBackgroundColor
 
 **Type:** `string | undefined`
 
 **Description:**
 背景颜色
-
----
 
 ## textBackgroundBorderColor
 
@@ -154,16 +124,12 @@ No description
   
   背景边框颜色
 
----
-
 ## textBackgroundBorderWidth
 
 **Type:** `number | undefined`
 
 **Description:**
 背景边框宽度
-
----
 
 ## textBackgroundBorderRadius
 
@@ -174,16 +140,12 @@ No description
   
   背景边框圆角
 
----
-
 ## textBackgroundPadding
 
 **Type:** `number | undefined`
 
 **Description:**
 背景内边距
-
----
 
 ## areaColor
 
@@ -192,16 +154,12 @@ No description
 **Description:**
 标注面区域颜色
 
----
-
 ## areaColorOpacity
 
 **Type:** `number | undefined`
 
 **Description:**
 标注面区域颜色透明度
-
----
 
 ## areaBorderColor
 
@@ -210,16 +168,12 @@ No description
 **Description:**
 标注面区域边框颜色
 
----
-
 ## areaBorderWidth
 
 **Type:** `number | undefined`
 
 **Description:**
 标注面区域边框宽度
-
----
 
 ## areaBorderRadius
 
@@ -228,14 +182,10 @@ No description
 **Description:**
 标注面区域边框圆角
 
----
-
 ## outerPadding
 
 **Type:** `number | undefined`
 
 **Description:**
 标注面区域的边距
-
----
 

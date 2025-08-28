@@ -11,8 +11,6 @@
   若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
   若未配置selector, 则样式全局生效.
 
----
-
 
 ## selector
 
@@ -24,8 +22,6 @@
   若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
   若未配置selector, 则样式全局生效.
 
----
-
 
 ### field
 
@@ -34,16 +30,12 @@
 **Description:**
 No description
 
----
-
 ### operator
 
 **Type:** `"in" | "not in" | undefined`
 
 **Description:**
 No description
-
----
 
 ### op
 
@@ -52,16 +44,12 @@ No description
 **Description:**
 No description
 
----
-
 ### value
 
 **Type:** `string | number | (string | number)[]`
 
 **Description:**
 No description
-
----
 
 ## areaColor
 
@@ -72,8 +60,6 @@ No description
   
   面积图元的颜色
 
----
-
 ## areaColorOpacity
 
 **Type:** `number | undefined`
@@ -82,6 +68,4 @@ No description
 面积图元的颜色透明度
   
   面积图元的颜色透明度
-
----
 

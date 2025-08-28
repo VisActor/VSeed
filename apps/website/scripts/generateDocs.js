@@ -117,8 +117,8 @@ function generatePropertyMarkdown(prop, level, project, visited = new Set()) {
     return ''
   }
   
-  // Stop recursion for specific properties that shouldn't have sub-content
-  if (propName === 'children' && visited.has('measures')) {
+  // Stop recursion for children of measures to prevent infinite nesting
+  if (visited.has('measures') && visited.has('children')) {
     return ''
   }
   
@@ -144,7 +144,7 @@ function generatePropertyMarkdown(prop, level, project, visited = new Set()) {
   markdown += `**Description:**\n${description.replace(/\n/g, '\n  ')}`
   
   // Add separator between properties
-  markdown += '\n\n---\n\n'
+  markdown += '\n\n'
 
   const typesToProcess = extractObjectTypes(propType)
 

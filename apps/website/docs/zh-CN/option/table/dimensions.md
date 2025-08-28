@@ -5,8 +5,6 @@
 **Description:**
 表格的每个维度会对应一列
 
----
-
 
 ## id
 
@@ -15,16 +13,12 @@
 **Description:**
 No description
 
----
-
 ## alias
 
 **Type:** `string | undefined`
 
 **Description:**
 No description
-
----
 
 ## location
 
@@ -33,16 +27,12 @@ No description
 **Description:**
 No description
 
----
-
 ## children
 
 **Type:** `(Dimension | DimensionGroup)[] | undefined`
 
 **Description:**
 No description
-
----
 
 
 ### id
@@ -52,8 +42,6 @@ No description
 **Description:**
 No description
 
----
-
 ### alias
 
 **Type:** `string | undefined`
@@ -61,14 +49,10 @@ No description
 **Description:**
 No description
 
----
-
 ### location
 
 **Type:** `"dimension" | "rowDimension" | "columnDimension" | undefined`
 
 **Description:**
 No description
-
----
 

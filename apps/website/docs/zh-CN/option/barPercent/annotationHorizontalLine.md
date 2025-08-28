@@ -7,8 +7,6 @@
   
   标注水平线配置, 根据选择的数据, 定义图表的标注水平线, 包括标注水平线的位置, 样式等.
 
----
-
 
 ## selector
 
@@ -16,8 +14,6 @@
 
 **Description:**
 依赖选择的数据, 进行数据标记.
-
----
 
 
 ### field
@@ -27,16 +23,12 @@
 **Description:**
 No description
 
----
-
 ### operator
 
 **Type:** `"in" | "not in" | undefined`
 
 **Description:**
 No description
-
----
 
 ### op
 
@@ -45,16 +37,12 @@ No description
 **Description:**
 No description
 
----
-
 ### value
 
 **Type:** `string | number | (string | number)[]`
 
 **Description:**
 No description
-
----
 
 ## yValue
 
@@ -63,16 +51,12 @@ No description
 **Description:**
 固定的y值, 用于标注水平线, 类目轴在y方向, 则可输入维值, 数值轴在y方向, 则可输入具体的数值
 
----
-
 ## text
 
 **Type:** `string | string[] | undefined`
 
 **Description:**
 标注的文本
-
----
 
 ## textPosition
 
@@ -83,16 +67,12 @@ No description
   
   标注线的标签位置（标签相对线的相对位置）。
 
----
-
 ## textColor
 
 **Type:** `string | undefined`
 
 **Description:**
 文本颜色
-
----
 
 ## textFontSize
 
@@ -101,16 +81,12 @@ No description
 **Description:**
 文本字体大小
 
----
-
 ## textFontWeight
 
 **Type:** `number | undefined`
 
 **Description:**
 文本字体重量
-
----
 
 ## textAlign
 
@@ -123,8 +99,6 @@ No description
   left: 文本在参考线的右侧, 文本的左侧边缘对齐(水平)标注线的终点
   center: 文本在参考线的中心, 文本的中心对齐(水平)标注线的终点
 
----
-
 ## textBaseline
 
 **Type:** `"top" | "bottom" | "middle" | undefined`
@@ -136,16 +110,12 @@ No description
   middle: 文本在参考线的中心, 文本的中心对齐(水平)标注线
   bottom: 文本在参考线的顶部, 文本的底部边缘对齐(水平)标注线
 
----
-
 ## textBackgroundVisible
 
 **Type:** `boolean | undefined`
 
 **Description:**
 背景可见
-
----
 
 ## textBackgroundColor
 
@@ -154,16 +124,12 @@ No description
 **Description:**
 背景颜色
 
----
-
 ## textBackgroundBorderColor
 
 **Type:** `string | undefined`
 
 **Description:**
 背景边框颜色
-
----
 
 ## textBackgroundBorderWidth
 
@@ -174,8 +140,6 @@ No description
   
   背景边框宽度
 
----
-
 ## textBackgroundBorderRadius
 
 **Type:** `number | undefined`
@@ -183,16 +147,12 @@ No description
 **Description:**
 背景边框圆角
 
----
-
 ## textBackgroundPadding
 
 **Type:** `number | undefined`
 
 **Description:**
 背景内边距
-
----
 
 ## lineVisible
 
@@ -203,16 +163,12 @@ No description
   
   线可见
 
----
-
 ## lineColor
 
 **Type:** `string | undefined`
 
 **Description:**
 线颜色
-
----
 
 ## lineWidth
 
@@ -221,14 +177,10 @@ No description
 **Description:**
 线宽度
 
----
-
 ## lineStyle
 
 **Type:** `"solid" | "dashed" | "dotted" | undefined`
 
 **Description:**
 线样式
-
----
 

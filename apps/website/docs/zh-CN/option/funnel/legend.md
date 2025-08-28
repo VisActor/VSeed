@@ -5,8 +5,6 @@
 **Description:**
 颜色图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.
 
----
-
 
 ## position
 
@@ -15,14 +13,10 @@
 **Description:**
 图例位置
 
----
-
 ## enable
 
 **Type:** `boolean | undefined`
 
 **Description:**
 图例功能是否开启
-
----
 

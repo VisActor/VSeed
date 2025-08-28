@@ -7,8 +7,6 @@ y轴
   
   数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.
 
----
-
 
 ## min
 
@@ -19,8 +17,6 @@ y轴
   
   优先级高于 nice 与 zero
 
----
-
 ## max
 
 **Type:** `number | undefined`
@@ -29,8 +25,6 @@ y轴
 轴的最大值
   
   优先级高于 nice 与 zero
-
----
 
 ## nice
 
@@ -41,8 +35,6 @@ y轴
   
   当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
 
----
-
 ## zero
 
 **Type:** `boolean | undefined`
@@ -52,16 +44,12 @@ y轴
   
   当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
 
----
-
 ## log
 
 **Type:** `boolean | undefined`
 
 **Description:**
 是否使用对数轴, 仅对数值轴生效
-
----
 
 ## logBase
 
@@ -70,16 +58,12 @@ y轴
 **Description:**
 对数轴的底数, 仅对数值轴生效
 
----
-
 ## visible
 
 **Type:** `boolean | undefined`
 
 **Description:**
 轴是否可见
-
----
 
 ## inverse
 
@@ -90,16 +74,12 @@ y轴
   
   仅对数值轴生效
 
----
-
 ## label
 
 **Type:** `{ visible?: boolean; labelColor?: string; labelFontSize?: number; labelFontWeight?: number; labelAngle?: number; } | undefined`
 
 **Description:**
 X轴刻度标签
-
----
 
 
 ### visible
@@ -109,16 +89,12 @@ X轴刻度标签
 **Description:**
 标签是否可见
 
----
-
 ### labelColor
 
 **Type:** `string | undefined`
 
 **Description:**
 标签颜色
-
----
 
 ### labelFontSize
 
@@ -127,16 +103,12 @@ X轴刻度标签
 **Description:**
 标签字体大小
 
----
-
 ### labelFontWeight
 
 **Type:** `number | undefined`
 
 **Description:**
 标签字体粗细
-
----
 
 ### labelAngle
 
@@ -145,16 +117,12 @@ X轴刻度标签
 **Description:**
 标签旋转角度
 
----
-
 ## line
 
 **Type:** `{ visible?: boolean; lineColor?: string; lineWidth?: number; } | undefined`
 
 **Description:**
 X轴线
-
----
 
 
 ### visible
@@ -164,16 +132,12 @@ X轴线
 **Description:**
 轴线是否可见
 
----
-
 ### lineColor
 
 **Type:** `string | undefined`
 
 **Description:**
 轴线颜色
-
----
 
 ### lineWidth
 
@@ -182,16 +146,12 @@ X轴线
 **Description:**
 轴线宽度
 
----
-
 ## tick
 
 **Type:** `{ visible?: boolean; tickInside?: boolean; tickColor?: string; tickSize?: number; } | undefined`
 
 **Description:**
 X轴刻度
-
----
 
 
 ### visible
@@ -201,16 +161,12 @@ X轴刻度
 **Description:**
 刻度是否可见
 
----
-
 ### tickInside
 
 **Type:** `boolean | undefined`
 
 **Description:**
 刻度是否朝内
-
----
 
 ### tickColor
 
@@ -219,8 +175,6 @@ X轴刻度
 **Description:**
 刻度颜色
 
----
-
 ### tickSize
 
 **Type:** `number | undefined`
@@ -228,16 +182,12 @@ X轴刻度
 **Description:**
 刻度尺寸
 
----
-
 ## title
 
 **Type:** `{ visible?: boolean; titleText?: string; titleColor?: string; titleFontSize?: number; titleFontWeight?: number; } | undefined`
 
 **Description:**
 X轴标题
-
----
 
 
 ### visible
@@ -247,16 +197,12 @@ X轴标题
 **Description:**
 标题是否可见
 
----
-
 ### titleText
 
 **Type:** `string | undefined`
 
 **Description:**
 标题文本, 默认跟随字段配置
-
----
 
 ### titleColor
 
@@ -265,16 +211,12 @@ X轴标题
 **Description:**
 标题颜色
 
----
-
 ### titleFontSize
 
 **Type:** `number | undefined`
 
 **Description:**
 标题字体大小
-
----
 
 ### titleFontWeight
 
@@ -283,16 +225,12 @@ X轴标题
 **Description:**
 标题字体粗细
 
----
-
 ## grid
 
 **Type:** `{ visible?: boolean; gridColor?: string; gridWidth?: number; } | undefined`
 
 **Description:**
 X轴网格线
-
----
 
 
 ### visible
@@ -302,8 +240,6 @@ X轴网格线
 **Description:**
 No description
 
----
-
 ### gridColor
 
 **Type:** `string | undefined`
@@ -311,14 +247,10 @@ No description
 **Description:**
 网格线颜色
 
----
-
 ### gridWidth
 
 **Type:** `number | undefined`
 
 **Description:**
 网格线宽度
-
----
 

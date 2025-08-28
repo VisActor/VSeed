@@ -7,8 +7,6 @@
   
   标注垂直线配置, 根据选择的数据, 定义图表的标注垂直线, 包括标注垂直线的位置, 样式等.
 
----
-
 
 ## selector
 
@@ -16,8 +14,6 @@
 
 **Description:**
 依赖选择的数据, 进行数据标记.
-
----
 
 
 ### field
@@ -27,16 +23,12 @@
 **Description:**
 No description
 
----
-
 ### operator
 
 **Type:** `"in" | "not in" | undefined`
 
 **Description:**
 No description
-
----
 
 ### op
 
@@ -45,16 +37,12 @@ No description
 **Description:**
 No description
 
----
-
 ### value
 
 **Type:** `string | number | (string | number)[]`
 
 **Description:**
 No description
-
----
 
 ## xValue
 
@@ -63,16 +51,12 @@ No description
 **Description:**
 固定的x值, 用于标注垂直线, 类目轴在x方向, 则可输入维值, 数值轴在x方向, 则可输入具体的数值
 
----
-
 ## text
 
 **Type:** `string | string[] | undefined`
 
 **Description:**
 标注的文本
-
----
 
 ## textPosition
 
@@ -81,16 +65,12 @@ No description
 **Description:**
 文本位置, 标注线的标签位置（标签相对线的相对位置）。
 
----
-
 ## textColor
 
 **Type:** `string | undefined`
 
 **Description:**
 文本颜色
-
----
 
 ## textFontSize
 
@@ -99,16 +79,12 @@ No description
 **Description:**
 文本字体大小
 
----
-
 ## textFontWeight
 
 **Type:** `number | undefined`
 
 **Description:**
 文本字体重量
-
----
 
 ## textAlign
 
@@ -121,8 +97,6 @@ No description
   left: 文本在参考线的右侧, 文本的左侧边缘对齐(垂直)标注线
   center: 文本在参考线的中心, 文本的中心对齐(垂直)标注线
 
----
-
 ## textBaseline
 
 **Type:** `"top" | "bottom" | "middle" | undefined`
@@ -134,16 +108,12 @@ No description
   middle: 文本在参考线的中心, 文本的中心对齐(垂直)标注线的终点
   bottom: 文本在参考线的顶部, 文本的底部边缘对齐(垂直)标注线的终点
 
----
-
 ## lineVisible
 
 **Type:** `boolean | undefined`
 
 **Description:**
 线可见
-
----
 
 ## lineColor
 
@@ -152,16 +122,12 @@ No description
 **Description:**
 线颜色
 
----
-
 ## lineWidth
 
 **Type:** `number | undefined`
 
 **Description:**
 线宽度
-
----
 
 ## lineStyle
 
@@ -170,16 +136,12 @@ No description
 **Description:**
 线样式
 
----
-
 ## textBackgroundVisible
 
 **Type:** `boolean | undefined`
 
 **Description:**
 背景可见
-
----
 
 ## textBackgroundColor
 
@@ -188,16 +150,12 @@ No description
 **Description:**
 背景颜色
 
----
-
 ## textBackgroundBorderColor
 
 **Type:** `string | undefined`
 
 **Description:**
 背景边框颜色
-
----
 
 ## textBackgroundBorderWidth
 
@@ -206,8 +164,6 @@ No description
 **Description:**
 背景边框宽度
 
----
-
 ## textBackgroundBorderRadius
 
 **Type:** `number | undefined`
@@ -215,14 +171,10 @@ No description
 **Description:**
 背景边框圆角
 
----
-
 ## textBackgroundPadding
 
 **Type:** `number | undefined`
 
 **Description:**
 背景内边距
-
----
 

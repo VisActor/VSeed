@@ -11,8 +11,6 @@
   若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
   若未配置selector, 则样式全局生效.
 
----
-
 
 ## selector
 
@@ -24,8 +22,6 @@
   若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
   若未配置selector, 则样式全局生效.
 
----
-
 
 ### field
 
@@ -34,16 +30,12 @@
 **Description:**
 No description
 
----
-
 ### operator
 
 **Type:** `"in" | "not in" | undefined`
 
 **Description:**
 No description
-
----
 
 ### op
 
@@ -52,16 +44,12 @@ No description
 **Description:**
 No description
 
----
-
 ### value
 
 **Type:** `string | number | (string | number)[]`
 
 **Description:**
 No description
-
----
 
 ## barColor
 
@@ -72,8 +60,6 @@ No description
   
   柱状图颜色
 
----
-
 ## barColorOpacity
 
 **Type:** `number | undefined`
@@ -82,8 +68,6 @@ No description
 柱状图颜色透明度
   
   柱状图颜色透明度
-
----
 
 ## barBorderColor
 
@@ -94,8 +78,6 @@ No description
   
   柱状图边框颜色
 
----
-
 ## barBorderWidth
 
 **Type:** `number | undefined`
@@ -104,8 +86,6 @@ No description
 柱状图边框宽度
   
   柱状图边框宽度
-
----
 
 ## barBorderStyle
 
@@ -116,8 +96,6 @@ No description
   
   柱状图边框样式
 
----
-
 ## barRadius
 
 **Type:** `number | number[] | undefined`
@@ -126,6 +104,4 @@ No description
 柱状图圆角
   
   柱状图圆角
-
----
 

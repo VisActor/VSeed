@@ -60,7 +60,5 @@ export default defineConfig({
       assetPrefix: 'https://visactor.github.io/VSeed/',
     },
   },
-  ssg: {
-    experimentalWorker: true,
-  },
+  ssg: false
 })

@@ -119,7 +119,7 @@ function processInterface(project, interfaceDec, baseDir, parentPath = []) {
       })
       .join('\n\n---\n\n')
 
-    fs.appendFileSync(mdPath, `\n\n## 属性·\n\n${simplePropsMd}`)
+    fs.appendFileSync(mdPath, `\n\n## 属性\n\n${simplePropsMd}`)
   }
 
   complexProps.forEach((prop) => {

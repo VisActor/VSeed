@@ -116,6 +116,12 @@ function generatePropertyMarkdown(prop, level, project, visited = new Set()) {
   if (level > 10 || visited.has(propName)) {
     return ''
   }
+  
+  // Stop recursion for specific properties that shouldn't have sub-content
+  if (propName === 'children' && visited.has('measures')) {
+    return ''
+  }
+  
   visited.add(propName)
 
   const jsDocs = prop.getJsDocs()

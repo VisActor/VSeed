@@ -1,17 +1,6 @@
-import { z } from 'zod'
-import { zLocale, type Locale } from '../../i18n'
+import { type Locale } from '../../i18n'
 import type { Measures } from '../../properties'
-import {
-  zBackgroundColor,
-  zDataset,
-  zDimensions,
-  zTheme,
-  type BackgroundColor,
-  type Dataset,
-  type Dimensions,
-  type Theme,
-  zMeasures,
-} from '../../properties'
+import { type BackgroundColor, type Dataset, type Dimensions, type Theme } from '../../properties'
 
 /**
  * 透视表类型定义
@@ -123,13 +112,3 @@ export interface PivotTable {
    */
   locale?: Locale
 }
-
-export const zPivotTable = z.object({
-  chartType: z.literal('pivotTable'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasures.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  theme: zTheme.optional(),
-  locale: zLocale.optional(),
-})

@@ -1,19 +1,8 @@
-import { z } from 'zod'
-import { zLocale, type Locale } from '../../i18n'
+import { type Locale } from '../../i18n'
 import type { DimensionTree, MeasureTree } from '../../properties'
-import {
-  zBackgroundColor,
-  zDataset,
-  zDimensions,
-  zMeasureTree,
-  zTheme,
-  type BackgroundColor,
-  type Dataset,
-  type Theme,
-} from '../../properties'
+import { type BackgroundColor, type Dataset, type Theme } from '../../properties'
 
 /**
- * 表格类型定义
  * @description 表格，适用于详细数据展示场景，行列分明，便于查看具体数值
  * 适用场景:
  * - 需要展示详细数据明细
@@ -55,7 +44,6 @@ export interface Table {
   measures?: MeasureTree
 
   /**
-   * 图表的背景颜色
    * @default transparent 默认为透明背景
    * @description 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
    */
@@ -107,9 +95,8 @@ export interface Table {
   selectedBackgroundColor?: string
 
   /**
-   * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置
    * @default light 默认为亮色主题
-   * @description 内置light与dark两种主题, 用户可以通过Builder自定义主题
+   * @description 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置, 内置light与dark两种主题, 用户可以通过Builder自定义主题
    * @example 'dark'
    * @example 'light'
    * @example 'customThemeName'
@@ -117,19 +104,8 @@ export interface Table {
   theme?: Theme
 
   /**
-   * 语言
    * @description 图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言
    * @default 'zh-CN'
    */
   locale?: Locale
 }
-
-export const zTable = z.object({
-  chartType: z.literal('table'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  theme: zTheme.optional(),
-  locale: zLocale.optional(),
-})

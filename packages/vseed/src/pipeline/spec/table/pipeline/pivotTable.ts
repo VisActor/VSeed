@@ -11,6 +11,7 @@ import {
   frameStyle,
   selectionStyle,
 } from '../pipes'
+import { dataConfig } from '../pipes/indicators/pivotDataConfig'
 
 export const pivotTableSpecPipeline: SpecPipeline = [
   initPivotTable,
@@ -23,4 +24,5 @@ export const pivotTableSpecPipeline: SpecPipeline = [
   cornerHeaderStyle,
   frameStyle,
   selectionStyle,
+  dataConfig,
 ]

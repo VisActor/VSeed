@@ -1,48 +1,27 @@
 import type { ColumnsDefine, ListTableConstructorOptions } from '@visactor/vtable'
-import type { FieldFormat } from '@visactor/vtable/es/ts-types'
-import { isEmpty } from 'remeda'
-import { autoFormatter, createFormatter, isMeasure } from 'src/pipeline/utils'
-import type { MeasureGroup, Measure, MeasureTree, SpecPipe, Datum, Locale } from 'src/types'
+import { isMeasure } from 'src/pipeline/utils'
+import type { Dimension, DimensionGroup, DimensionTree, SpecPipe } from 'src/types'
 
-export const measureTreeToColumns: SpecPipe = (spec, context) => {
+export const dimensionTreeToColumns: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const { locale } = advancedVSeed
-  const measures = (advancedVSeed as unknown as { measures: MeasureTree }).measures
+  const dimensions = (advancedVSeed as unknown as { dimensions: DimensionTree }).dimensions
   const result = { ...spec } as ListTableConstructorOptions
-
-  const eachNode = (node: Measure | MeasureGroup) => {
+  const eachNode = (node: Dimension | DimensionGroup) => {
     if (isMeasure(node)) {
       return {
         width: 'auto',
-        fieldFormat: fieldFormat(node, locale),
       }
     }
 
     return {}
   }
-  const columns = treeTreeToColumns<Measure, MeasureGroup>(measures, eachNode)
+  const columns = treeTreeToColumns<Dimension, DimensionGroup>(dimensions, eachNode)
+
   return {
     ...result,
     columns: [...(result.columns || []), ...columns] as ListTableConstructorOptions['columns'],
   }
 }
-
-const fieldFormat =
-  (node: Measure, locale: Locale): FieldFormat =>
-  (datum: Datum) => {
-    const { format = {}, autoFormat = true, id } = node
-    const value = datum[id] as number | string | undefined
-    if (!isEmpty(format)) {
-      const formatter = createFormatter(format)
-      return formatter(value)
-    }
-
-    if (autoFormat) {
-      return autoFormatter(value, locale)
-    }
-
-    return
-  }
 
 const treeTreeToColumns = <
   T extends { id: string; alias?: string },

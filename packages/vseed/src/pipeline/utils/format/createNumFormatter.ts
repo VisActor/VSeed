@@ -44,7 +44,7 @@ export const createNumFormatter = (format: NumFormat, locale: Locale = intl.getL
     let num = Number(value)
     let typeSymbol = ''
     if (Number.isNaN(num)) {
-      return num.toString()
+      return String(value)
     }
 
     // apply ratio for percent/permille

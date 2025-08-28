@@ -28,14 +28,14 @@ export const zSelector = z.union([
   z.number(),
   z.object({
     field: z.string(),
-    operator: z.enum(['=', '==', '!=', '>', '<', '>=', '<=', 'between']).optional(),
-    op: z.enum(['=', '==', '!=', '>', '<', '>=', '<=', 'between']).optional(),
+    operator: z.enum(['=', '==', '!=', '>', '<', '>=', '<=', 'between']).nullish(),
+    op: z.enum(['=', '==', '!=', '>', '<', '>=', '<=', 'between']).nullish(),
     value: z.union([z.string(), z.number(), z.array(z.union([z.string(), z.number()]))]),
   }),
   z.object({
     field: z.string(),
-    operator: z.enum(['in', 'not in']).optional(),
-    op: z.enum(['in', 'not in']).optional(),
+    operator: z.enum(['in', 'not in']).nullish(),
+    op: z.enum(['in', 'not in']).nullish(),
     value: z.union([z.string(), z.number(), z.array(z.union([z.string(), z.number()]))]),
   }),
 ])

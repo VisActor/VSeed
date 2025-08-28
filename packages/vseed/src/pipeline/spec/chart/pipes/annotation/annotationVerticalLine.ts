@@ -71,7 +71,7 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
       },
       label: {
         text: text,
-        position: positionMap[textPosition],
+        position: positionMap[textPosition || 'insideEnd'],
         style: {
           visible: true,
           stroke: backgroundColor,
@@ -97,7 +97,7 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
       },
       endSymbol: {
         visible: true,
-        size: 10 + lineWidth,
+        size: 10 + (lineWidth || 1),
         style: {
           dy: 4,
           fill: lineColor,

@@ -83,8 +83,8 @@ export const annotationArea: SpecPipe = (spec, context) => {
         if (typeof xAxisHelper?.getBandwidth === 'function') {
           const yScale = yAxisHelper.getScale()
 
-          const minX = Math.min(...xyList.map((item) => item.x)) - outerPadding
-          const maxX = Math.max(...xyList.map((item) => item.x)) + outerPadding
+          const minX = Math.min(...xyList.map((item) => item.x)) - (outerPadding || 4)
+          const maxX = Math.max(...xyList.map((item) => item.x)) + (outerPadding || 4)
           const minY = Math.min(...yScale.range())
           const maxY = Math.max(...yScale.range())
           return [
@@ -114,8 +114,8 @@ export const annotationArea: SpecPipe = (spec, context) => {
         if (typeof yAxisHelper?.getBandwidth === 'function') {
           const xScale = xAxisHelper.getScale()
 
-          const minY = Math.min(...xyList.map((item) => item.y)) - outerPadding
-          const maxY = Math.max(...xyList.map((item) => item.y)) + outerPadding
+          const minY = Math.min(...xyList.map((item) => item.y)) - (outerPadding || 4)
+          const maxY = Math.max(...xyList.map((item) => item.y)) + (outerPadding || 4)
           const minX = Math.min(...xScale.range())
           const maxX = Math.max(...xScale.range())
 
@@ -146,7 +146,7 @@ export const annotationArea: SpecPipe = (spec, context) => {
         return []
       },
       label: {
-        position: positionMap[textPosition],
+        position: positionMap[textPosition || 'top'],
         visible: true,
         text: text,
         style: {

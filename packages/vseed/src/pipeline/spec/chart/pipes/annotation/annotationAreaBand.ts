@@ -85,8 +85,8 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           const xBandWidth = xAxisHelper?.getBandwidth?.(depth - 1)
           const yScale = yAxisHelper.getScale()
 
-          const minX = Math.min(...xyList.map((item) => item.x)) - outerPadding
-          const maxX = Math.max(...xyList.map((item) => item.x)) + xBandWidth + outerPadding
+          const minX = Math.min(...xyList.map((item) => item.x)) - (outerPadding || 4)
+          const maxX = Math.max(...xyList.map((item) => item.x)) + xBandWidth + (outerPadding || 4)
           const minY = Math.min(...yScale.range())
           const maxY = Math.max(...yScale.range())
           return [
@@ -118,8 +118,8 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           const yBandWidth = yAxisHelper?.getBandwidth?.(depth - 1)
           const xScale = xAxisHelper.getScale()
 
-          const minY = Math.min(...xyList.map((item) => item.y)) - outerPadding
-          const maxY = Math.max(...xyList.map((item) => item.y)) + yBandWidth + outerPadding
+          const minY = Math.min(...xyList.map((item) => item.y)) - (outerPadding || 4)
+          const maxY = Math.max(...xyList.map((item) => item.y)) + yBandWidth + (outerPadding || 4)
           const minX = Math.min(...xScale.range())
           const maxX = Math.max(...xScale.range())
 
@@ -150,7 +150,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
         return []
       },
       label: {
-        position: positionMap[textPosition],
+        position: positionMap[textPosition || 'top'],
         visible: true,
         text: text,
         style: {

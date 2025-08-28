@@ -124,33 +124,33 @@ export type AnnotationVerticalLine = {
 }
 
 export const zAnnotationVerticalLine = z.object({
-  selector: z.union([zSelector, zSelectors]).optional(),
-  xValue: z.union([z.number(), z.string(), z.array(z.union([z.number(), z.string()]))]).optional(),
-  text: z.string().or(z.array(z.string())).optional(),
+  selector: z.union([zSelector, zSelectors]).nullish(),
+  xValue: z.union([z.number(), z.string(), z.array(z.union([z.number(), z.string()]))]).nullish(),
+  text: z.string().or(z.array(z.string())).nullish(),
   textPosition: z
     .enum(['outsideStart', 'outsideEnd', 'outsideMiddle', 'insideStart', 'insideMiddle', 'insideEnd'])
     .default('insideEnd')
-    .optional(),
-  textColor: z.string().default('#ffffff').optional(),
-  textFontSize: z.number().default(12).optional(),
-  textFontWeight: z.number().default(400).optional(),
-  textAlign: z.enum(['left', 'right', 'center']).default('right').optional(),
-  textBaseline: z.enum(['top', 'middle', 'bottom']).default('top').optional(),
+    .nullish(),
+  textColor: z.string().default('#ffffff').nullish(),
+  textFontSize: z.number().default(12).nullish(),
+  textFontWeight: z.number().default(400).nullish(),
+  textAlign: z.enum(['left', 'right', 'center']).default('right').nullish(),
+  textBaseline: z.enum(['top', 'middle', 'bottom']).default('top').nullish(),
 
-  lineVisible: z.boolean().default(true).optional(),
-  lineColor: z.string().default('#212121').optional(),
-  lineWidth: z.number().default(1).optional(),
+  lineVisible: z.boolean().default(true).nullish(),
+  lineColor: z.string().default('#212121').nullish(),
+  lineWidth: z.number().default(1).nullish(),
   lineStyle: z
     .union([z.literal('solid'), z.literal('dashed'), z.literal('dotted')])
     .default('dashed')
-    .optional(),
+    .nullish(),
 
-  backgroundVisible: z.boolean().default(true).optional(),
-  backgroundColor: z.string().default('#212121').optional(),
-  backgroundBorderColor: z.string().default('#212121').optional(),
-  backgroundBorderRadius: z.number().default(4).optional(),
-  backgroundBorderWidth: z.number().default(1).optional(),
-  backgroundPadding: z.number().default(2).optional(),
+  backgroundVisible: z.boolean().default(true).nullish(),
+  backgroundColor: z.string().default('#212121').nullish(),
+  backgroundBorderColor: z.string().default('#212121').nullish(),
+  backgroundBorderRadius: z.number().default(4).nullish(),
+  backgroundBorderWidth: z.number().default(1).nullish(),
+  backgroundPadding: z.number().default(2).nullish(),
 
   offsetX: z.number().default(0),
   offsetY: z.number().default(0),

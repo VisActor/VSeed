@@ -6,11 +6,6 @@
   },
   {
     "type": "file",
-    "name": "barParallel",
-    "label": "barParallel "
-  },
-  {
-    "type": "file",
     "name": "chartType",
     "label": "chartType "
   },

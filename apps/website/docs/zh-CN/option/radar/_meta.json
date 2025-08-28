@@ -16,11 +16,6 @@
   },
   {
     "type": "file",
-    "name": "radar",
-    "label": "radar "
-  },
-  {
-    "type": "file",
     "name": "theme",
     "label": "theme "
   },

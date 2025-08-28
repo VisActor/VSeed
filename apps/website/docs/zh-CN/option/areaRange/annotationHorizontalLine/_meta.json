@@ -1,11 +1,6 @@
 [
   {
     "type": "file",
-    "name": "annotationHorizontalLine",
-    "label": "annotationHorizontalLine "
-  },
-  {
-    "type": "file",
     "name": "lineColor",
     "label": "lineColor "
   },

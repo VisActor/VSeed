@@ -71,11 +71,6 @@
   },
   {
     "type": "file",
-    "name": "table",
-    "label": "table "
-  },
-  {
-    "type": "file",
     "name": "theme",
     "label": "theme "
   },

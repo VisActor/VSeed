@@ -1,11 +1,6 @@
 [
   {
     "type": "file",
-    "name": "grid",
-    "label": "grid "
-  },
-  {
-    "type": "file",
     "name": "gridColor",
     "label": "gridColor "
   },

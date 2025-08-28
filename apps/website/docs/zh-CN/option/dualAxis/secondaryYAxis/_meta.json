@@ -31,11 +31,6 @@
   },
   {
     "type": "file",
-    "name": "secondaryYAxis",
-    "label": "secondaryYAxis "
-  },
-  {
-    "type": "file",
     "name": "visible",
     "label": "visible "
   },

@@ -26,11 +26,6 @@
   },
   {
     "type": "file",
-    "name": "legend",
-    "label": "legend "
-  },
-  {
-    "type": "file",
     "name": "maxSize",
     "label": "maxSize "
   },

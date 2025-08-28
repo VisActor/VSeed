@@ -11,11 +11,6 @@
   },
   {
     "type": "file",
-    "name": "columnPercent",
-    "label": "columnPercent "
-  },
-  {
-    "type": "file",
     "name": "locale",
     "label": "locale "
   },

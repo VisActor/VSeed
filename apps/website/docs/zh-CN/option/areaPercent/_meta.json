@@ -1,11 +1,6 @@
 [
   {
     "type": "file",
-    "name": "areaPercent",
-    "label": "areaPercent "
-  },
-  {
-    "type": "file",
     "name": "backgroundColor",
     "label": "backgroundColor "
   },

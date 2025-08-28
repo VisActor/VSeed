@@ -36,11 +36,6 @@
   },
   {
     "type": "file",
-    "name": "xAxis",
-    "label": "xAxis "
-  },
-  {
-    "type": "file",
     "name": "zero",
     "label": "zero "
   },

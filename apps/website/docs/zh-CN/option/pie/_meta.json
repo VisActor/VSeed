@@ -16,11 +16,6 @@
   },
   {
     "type": "file",
-    "name": "pie",
-    "label": "pie "
-  },
-  {
-    "type": "file",
     "name": "theme",
     "label": "theme "
   },

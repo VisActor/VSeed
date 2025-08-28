@@ -1,11 +1,6 @@
 [
   {
     "type": "file",
-    "name": "area",
-    "label": "area "
-  },
-  {
-    "type": "file",
     "name": "backgroundColor",
     "label": "backgroundColor "
   },

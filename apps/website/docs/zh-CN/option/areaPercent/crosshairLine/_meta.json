@@ -1,11 +1,6 @@
 [
   {
     "type": "file",
-    "name": "crosshairLine",
-    "label": "crosshairLine "
-  },
-  {
-    "type": "file",
     "name": "labelBackgroundColor",
     "label": "labelBackgroundColor "
   },

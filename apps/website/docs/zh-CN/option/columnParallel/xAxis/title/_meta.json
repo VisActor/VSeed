@@ -1,11 +1,6 @@
 [
   {
     "type": "file",
-    "name": "title",
-    "label": "title "
-  },
-  {
-    "type": "file",
     "name": "titleColor",
     "label": "titleColor "
   },

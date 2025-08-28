@@ -1,10 +1,5 @@
 [
   {
-    "type": "file",
-    "name": "dualMeasures",
-    "label": "dualMeasures "
-  },
-  {
     "type": "dir",
     "name": "primaryMeasures",
     "label": "primaryMeasures ",

@@ -11,11 +11,6 @@
   },
   {
     "type": "file",
-    "name": "heatmap",
-    "label": "heatmap "
-  },
-  {
-    "type": "file",
     "name": "locale",
     "label": "locale "
   },

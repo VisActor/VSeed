@@ -1,11 +1,6 @@
 [
   {
     "type": "file",
-    "name": "annotationArea",
-    "label": "annotationArea "
-  },
-  {
-    "type": "file",
     "name": "areaBorderColor",
     "label": "areaBorderColor "
   },

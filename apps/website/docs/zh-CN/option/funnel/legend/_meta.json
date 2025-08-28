@@ -6,11 +6,6 @@
   },
   {
     "type": "file",
-    "name": "legend",
-    "label": "legend "
-  },
-  {
-    "type": "file",
     "name": "position",
     "label": "position "
   }

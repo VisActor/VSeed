@@ -15,11 +15,6 @@
     "label": "id "
   },
   {
-    "type": "file",
-    "name": "secondaryMeasures",
-    "label": "secondaryMeasures "
-  },
-  {
     "type": "dir",
     "name": "format",
     "label": "format ",

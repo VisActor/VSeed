@@ -30,11 +30,6 @@
     "label": "pointSize "
   },
   {
-    "type": "file",
-    "name": "pointStyle",
-    "label": "pointStyle "
-  },
-  {
     "type": "dir",
     "name": "selector",
     "label": "selector ",

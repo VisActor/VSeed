@@ -30,11 +30,6 @@
     "label": "barRadius "
   },
   {
-    "type": "file",
-    "name": "barStyle",
-    "label": "barStyle "
-  },
-  {
     "type": "dir",
     "name": "selector",
     "label": "selector ",

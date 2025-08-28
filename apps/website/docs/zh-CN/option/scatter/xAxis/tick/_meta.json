@@ -1,11 +1,6 @@
 [
   {
     "type": "file",
-    "name": "tick",
-    "label": "tick "
-  },
-  {
-    "type": "file",
     "name": "tickColor",
     "label": "tickColor "
   },

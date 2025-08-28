@@ -1,11 +1,6 @@
 [
   {
     "type": "file",
-    "name": "line",
-    "label": "line "
-  },
-  {
-    "type": "file",
     "name": "lineColor",
     "label": "lineColor "
   },

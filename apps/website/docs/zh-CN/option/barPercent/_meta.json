@@ -6,11 +6,6 @@
   },
   {
     "type": "file",
-    "name": "barPercent",
-    "label": "barPercent "
-  },
-  {
-    "type": "file",
     "name": "chartType",
     "label": "chartType "
   },

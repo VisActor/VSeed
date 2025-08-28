@@ -79,7 +79,7 @@ function processChartType(project, chartName) {
   const chartDir = path.join(outputDir, chartName)
   ensureDir(chartDir)
 
-  const mdPath = path.join(chartDir, `${chartName}.md`)
+  const mdPath = path.join(chartDir, 'index.md')
   fs.writeFileSync(mdPath, generateMarkdown(chartName, tags), 'utf-8')
 
   // Process all properties of the interface recursively
@@ -152,7 +152,7 @@ function processProperty(project, prop, baseDir, parentPath) {
   ensureDir(propDir)
 
   // Always create a markdown file for the property itself
-  const mdPath = path.join(propDir, `${propName}.md`)
+  const mdPath = path.join(propDir, 'index.md')
   fs.writeFileSync(mdPath, generateMarkdown(propName, tags), 'utf-8')
 
   if (!typeNode) {
@@ -226,7 +226,7 @@ function generateMetaJsonRecursive(directory) {
   const filesForMeta = []
 
   entries.forEach((entry) => {
-    if (entry.name === '_meta.json' || (isRoot && (entry.name === 'index.md' || entry.name === 'index.mdx'))) {
+    if (entry.name === '_meta.json' || entry.name === 'index.md' || entry.name === 'index.mdx') {
       return
     }
 

@@ -11,11 +11,6 @@
   },
   {
     "type": "file",
-    "name": "column",
-    "label": "column "
-  },
-  {
-    "type": "file",
     "name": "locale",
     "label": "locale "
   },

@@ -1,11 +1,6 @@
 [
   {
     "type": "file",
-    "name": "format",
-    "label": "format "
-  },
-  {
-    "type": "file",
     "name": "fractionDigits",
     "label": "fractionDigits "
   },

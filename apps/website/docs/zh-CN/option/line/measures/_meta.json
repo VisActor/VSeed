@@ -15,11 +15,6 @@
     "label": "id "
   },
   {
-    "type": "file",
-    "name": "measures",
-    "label": "measures "
-  },
-  {
     "type": "dir",
     "name": "children",
     "label": "children ",

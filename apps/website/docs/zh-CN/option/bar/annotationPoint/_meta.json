@@ -1,11 +1,6 @@
 [
   {
     "type": "file",
-    "name": "annotationPoint",
-    "label": "annotationPoint "
-  },
-  {
-    "type": "file",
     "name": "offsetX",
     "label": "offsetX "
   },

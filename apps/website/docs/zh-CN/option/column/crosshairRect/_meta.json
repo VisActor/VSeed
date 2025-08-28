@@ -1,11 +1,6 @@
 [
   {
     "type": "file",
-    "name": "crosshairRect",
-    "label": "crosshairRect "
-  },
-  {
-    "type": "file",
     "name": "labelBackgroundColor",
     "label": "labelBackgroundColor "
   },

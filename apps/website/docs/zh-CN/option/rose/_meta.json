@@ -16,11 +16,6 @@
   },
   {
     "type": "file",
-    "name": "rose",
-    "label": "rose "
-  },
-  {
-    "type": "file",
     "name": "theme",
     "label": "theme "
   },

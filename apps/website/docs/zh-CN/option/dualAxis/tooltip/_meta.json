@@ -3,10 +3,5 @@
     "type": "file",
     "name": "enable",
     "label": "enable "
-  },
-  {
-    "type": "file",
-    "name": "tooltip",
-    "label": "tooltip "
   }
 ]

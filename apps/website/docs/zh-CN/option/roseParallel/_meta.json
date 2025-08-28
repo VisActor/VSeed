@@ -16,11 +16,6 @@
   },
   {
     "type": "file",
-    "name": "roseParallel",
-    "label": "roseParallel "
-  },
-  {
-    "type": "file",
     "name": "theme",
     "label": "theme "
   },

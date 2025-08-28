@@ -40,11 +40,6 @@
     "label": "visible "
   },
   {
-    "type": "file",
-    "name": "yAxis",
-    "label": "yAxis "
-  },
-  {
     "type": "dir",
     "name": "grid",
     "label": "grid ",

@@ -40,11 +40,6 @@
     "label": "visible "
   },
   {
-    "type": "file",
-    "name": "xAxis",
-    "label": "xAxis "
-  },
-  {
     "type": "dir",
     "name": "grid",
     "label": "grid ",

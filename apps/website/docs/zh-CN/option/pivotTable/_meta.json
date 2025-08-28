@@ -61,11 +61,6 @@
   },
   {
     "type": "file",
-    "name": "pivotTable",
-    "label": "pivotTable "
-  },
-  {
-    "type": "file",
     "name": "selectedBackgroundColor",
     "label": "selectedBackgroundColor "
   },

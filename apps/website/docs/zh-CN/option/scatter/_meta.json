@@ -16,11 +16,6 @@
   },
   {
     "type": "file",
-    "name": "scatter",
-    "label": "scatter "
-  },
-  {
-    "type": "file",
     "name": "theme",
     "label": "theme "
   },

@@ -36,11 +36,6 @@
   },
   {
     "type": "file",
-    "name": "yAxis",
-    "label": "yAxis "
-  },
-  {
-    "type": "file",
     "name": "zero",
     "label": "zero "
   },

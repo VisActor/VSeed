@@ -16,11 +16,6 @@
   },
   {
     "type": "file",
-    "name": "selector",
-    "label": "selector "
-  },
-  {
-    "type": "file",
     "name": "value",
     "label": "value "
   }

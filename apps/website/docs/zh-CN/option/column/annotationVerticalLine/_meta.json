@@ -1,11 +1,6 @@
 [
   {
     "type": "file",
-    "name": "annotationVerticalLine",
-    "label": "annotationVerticalLine "
-  },
-  {
-    "type": "file",
     "name": "lineColor",
     "label": "lineColor "
   },

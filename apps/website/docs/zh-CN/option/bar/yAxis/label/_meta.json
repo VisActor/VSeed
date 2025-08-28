@@ -1,11 +1,6 @@
 [
   {
     "type": "file",
-    "name": "label",
-    "label": "label "
-  },
-  {
-    "type": "file",
     "name": "labelAngle",
     "label": "labelAngle "
   },

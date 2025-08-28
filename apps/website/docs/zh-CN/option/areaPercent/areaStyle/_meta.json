@@ -10,11 +10,6 @@
     "label": "areaColorOpacity "
   },
   {
-    "type": "file",
-    "name": "areaStyle",
-    "label": "areaStyle "
-  },
-  {
     "type": "dir",
     "name": "selector",
     "label": "selector ",

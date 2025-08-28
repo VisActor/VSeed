@@ -56,20 +56,7 @@ export type AnnotationVerticalLine = {
    * @example 'top'
    */
   textBaseline?: 'top' | 'middle' | 'bottom'
-  /**
-   * @description (垂直)标注线整体在Y方向的偏移像素距离, 一般情况下, 无需设置
-   * 负值则整体向上偏移, 例如设置为-10, 则整个标注线组件包括文本、箭头、线段, 一起向上偏移10像素
-   * 正值则整体向下偏移, 例如设置为10, 则整个标注线组件包括文本、箭头、线段, 一起向下偏移10像素
-   * @example offsetY: 0
-   */
-  offsetY?: number
-  /**
-   * @description (垂直)标注线整体在X方向的偏移像素距离, 一般情况下, 无需设置
-   * 负值则整体向左偏移, 例如设置为-10, 则整个标注线组件包括文本、箭头、线段, 一起向左偏移10像素
-   * 正值则整体向右偏移, 例如设置为10, 则整个标注线组件包括文本、箭头、线段, 一起向右偏移10像素
-   * @example offsetX: 0
-   */
-  offsetX?: number
+
   /**
    * @description 线可见
    * @example true

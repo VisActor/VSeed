@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.37",
   "scripts": {
-    "build": "NODE_OPTIONS=--max-old-space-size=20240 RSPRESS_SSG_WORKER_THREAD_COUNT=4 rspress build",
+    "build": "rspress build",
     "dev": "rspress dev",
     "format": "prettier --write .",
     "lint": "eslint .",

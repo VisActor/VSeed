@@ -73,14 +73,11 @@ function processChartType(project, chartName) {
   }
 
   // Generate a markdown file for the chart type itself
-  const jsDocs = chartInterface.getJsDocs()
-  const tags = parseJsDocTags(jsDocs)
-
   const chartDir = path.join(outputDir, chartName)
   ensureDir(chartDir)
 
   const mdPath = path.join(chartDir, 'index.md')
-  fs.writeFileSync(mdPath, generateMarkdown(chartName, tags), 'utf-8')
+  fs.writeFileSync(mdPath, generateMarkdownContent(chartInterface, project), 'utf-8')
 
   // Process all properties of the interface.
   const props = chartInterface.getProperties()
@@ -90,7 +87,7 @@ function processChartType(project, chartName) {
       return
     }
     const propMdPath = path.join(chartDir, `${propName}.md`)
-    const markdownContent = generatePropertyMarkdown(prop, 1, project)
+    const markdownContent = generateMarkdownContent(prop, project)
     if (markdownContent) {
       fs.writeFileSync(propMdPath, markdownContent, 'utf-8')
     }
@@ -100,20 +97,24 @@ function processChartType(project, chartName) {
 }
 
 // ==================================================================================
-// Recursive AST Processing
+// Markdown Generation
 // ==================================================================================
+function generateMarkdownContent(node, project, level = 1, visited = new Set()) {
+  const isInterface = node.getKind() === SyntaxKind.InterfaceDeclaration
+  const isProperty =
+    node.getKind() === SyntaxKind.PropertySignature || node.getKind() === SyntaxKind.PropertyDeclaration
 
-function generatePropertyMarkdown(prop, level, project, visited = new Set()) {
-  if (!prop || !prop.getName) {
+  if (!isInterface && !isProperty) {
     return ''
   }
-  const propName = prop.getName()
-  if (propName.startsWith('[Symbol')) {
+
+  const name = node.getName()
+  if (name.startsWith('[Symbol')) {
     return ''
   }
 
   // To prevent infinite recursion for some cases like `children` -> `children`
-  if (level > 10 || visited.has(propName)) {
+  if (level > 10 || visited.has(name)) {
     return ''
   }
 
@@ -122,52 +123,60 @@ function generatePropertyMarkdown(prop, level, project, visited = new Set()) {
     return ''
   }
 
-  visited.add(propName)
+  visited.add(name)
 
-  const jsDocs = prop.getJsDocs()
+  const jsDocs = node.getJsDocs()
   const tags = parseJsDocTags(jsDocs)
-  const propType = prop.getType()
-  let propTypeText
 
-  if (propType.isUnion() && propType.getUnionTypes().every((t) => t.isLiteral())) {
-    propTypeText = propType
-      .getUnionTypes()
-      .map((t) => t.getText())
-      .join(' | ')
-  } else {
-    propTypeText = propType.getText(prop).replace(/\\n/g, ' ').replace(/\\s+/g, ' ')
-  }
+  let markdown = `${'#'.repeat(level)} ${name}\n\n`
 
-  let markdown = `${'#'.repeat(level)} ${propName}\n\n`
-  markdown += `**Type:** \`${propTypeText}\`\n\n`
   const description = (tags.description || []).join('\n\n') || 'No description'
   const example = (tags.example || []).join('\n\n') || '无示例'
+
+  if (isProperty) {
+    const propType = node.getType()
+    let propTypeText
+
+    if (propType.isUnion() && propType.getUnionTypes().every((t) => t.isLiteral())) {
+      propTypeText = propType
+        .getUnionTypes()
+        .map((t) => t.getText())
+        .join(' | ')
+    } else {
+      propTypeText = propType.getText(node).replace(/\n/g, ' ').replace(/\s+/g, ' ')
+    }
+    markdown += `**Type:** \`${propTypeText}\`\n\n`
+  }
+
   markdown += `**描述:**\n${description.replace(/\n/g, '\n  ')}`
   markdown += '\n\n'
   markdown += `**示例:**\n${example.replace(/\n/g, '\n  ')}`
   markdown += '\n\n'
 
-  const typesToProcess = extractObjectTypes(propType)
+  if (isProperty) {
+    const propType = node.getType()
+    const typesToProcess = extractObjectTypes(propType)
 
-  if (typesToProcess.length > 0) {
-    const allProperties = typesToProcess.flatMap((t) => t.getApparentProperties())
+    if (typesToProcess.length > 0) {
+      const allProperties = typesToProcess.flatMap((t) => t.getApparentProperties())
 
-    const propertyDeclarations = allProperties
-      .flatMap((p) => {
-        const declarations = p.getDeclarations()
-        return declarations || []
-      })
-      .filter(
-        (d) => d && (d.getKind() === SyntaxKind.PropertySignature || d.getKind() === SyntaxKind.PropertyDeclaration),
-      )
+      const propertyDeclarations = allProperties
+        .flatMap((p) => {
+          const declarations = p.getDeclarations()
+          return declarations || []
+        })
+        .filter(
+          (d) => d && (d.getKind() === SyntaxKind.PropertySignature || d.getKind() === SyntaxKind.PropertyDeclaration),
+        )
 
-    const uniqueDeclarations = [...new Map(propertyDeclarations.map((item) => [item.getName(), item])).values()]
+      const uniqueDeclarations = [...new Map(propertyDeclarations.map((item) => [item.getName(), item])).values()]
 
-    if (uniqueDeclarations.length > 0) {
-      markdown += '\n'
-      uniqueDeclarations.forEach((subProp) => {
-        markdown += generatePropertyMarkdown(subProp, level + 1, project, new Set(visited))
-      })
+      if (uniqueDeclarations.length > 0) {
+        markdown += '\n'
+        uniqueDeclarations.forEach((subProp) => {
+          markdown += generateMarkdownContent(subProp, project, level + 1, new Set(visited))
+        })
+      }
     }
   }
   return markdown
@@ -176,19 +185,6 @@ function generatePropertyMarkdown(prop, level, project, visited = new Set()) {
 // ==================================================================================
 // File & Metadata Generation
 // ==================================================================================
-
-function generateMarkdown(propName, tags, propType) {
-  const description = (tags.description || []).join('\n\n') || '无描述'
-
-  if (propType) {
-    return `# ${propName}\n\n**类型:** \`${propType}\`\n\n## 描述\n${description}`
-  }
-
-  const example = (tags.example || []).join('\n\n') || '无示例'
-  const type = (tags.type || []).join('\n\n') || '无类型'
-
-  return `# ${propName}\n## 描述\n${description}\n\n## 示例\n${example}\n\n`
-}
 
 function generateMetaJsonRecursive(directory) {
   // 1. Recurse into subdirectories first to build from the bottom up.

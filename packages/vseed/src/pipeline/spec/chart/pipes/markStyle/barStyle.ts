@@ -13,7 +13,6 @@ export const barStyle: SpecPipe = (spec, context) => {
     ...spec,
     bar: {
       style: {
-        stroke: '#fff',
         lineWidth: showStroke ? 1 : 0,
       },
       state: {

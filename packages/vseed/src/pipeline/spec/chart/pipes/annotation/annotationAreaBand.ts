@@ -89,6 +89,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           const maxX = Math.max(...xyList.map((item) => item.x)) + xBandWidth + (outerPadding || 4)
           const minY = Math.min(...yScale.range())
           const maxY = Math.max(...yScale.range())
+
           return [
             // 左上
             {

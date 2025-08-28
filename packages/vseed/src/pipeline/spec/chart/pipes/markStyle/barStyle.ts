@@ -4,7 +4,7 @@ import type { BarStyle, Datum, SpecPipe } from 'src/types'
 
 export const barStyle: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const { markStyle, dataset } = advancedVSeed
+  const { markStyle, dataset = [] } = advancedVSeed
   const { barStyle } = markStyle
 
   const showStroke = dataset.length <= 100

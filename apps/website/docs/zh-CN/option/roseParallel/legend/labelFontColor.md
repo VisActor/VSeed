@@ -1,3 +1,3 @@
 # labelFontColor
 ## 描述
-无描述
+图例字体颜色

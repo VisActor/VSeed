@@ -1,0 +1,43 @@
+[
+  {
+    "type": "file",
+    "name": "length",
+    "label": "length "
+  },
+  {
+    "type": "file",
+    "name": "pointBorderColor",
+    "label": "pointBorderColor "
+  },
+  {
+    "type": "file",
+    "name": "pointBorderStyle",
+    "label": "pointBorderStyle "
+  },
+  {
+    "type": "file",
+    "name": "pointBorderWidth",
+    "label": "pointBorderWidth "
+  },
+  {
+    "type": "file",
+    "name": "pointColor",
+    "label": "pointColor "
+  },
+  {
+    "type": "file",
+    "name": "pointColorOpacity",
+    "label": "pointColorOpacity "
+  },
+  {
+    "type": "file",
+    "name": "pointSize",
+    "label": "pointSize "
+  },
+  {
+    "type": "dir",
+    "name": "selector",
+    "label": "selector ",
+    "collapsed": true
+  }
+]

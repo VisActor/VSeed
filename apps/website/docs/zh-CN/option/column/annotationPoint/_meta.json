@@ -1,0 +1,84 @@
+[
+  {
+    "type": "file",
+    "name": "length",
+    "label": "length "
+  },
+  {
+    "type": "file",
+    "name": "offsetX",
+    "label": "offsetX "
+  },
+  {
+    "type": "file",
+    "name": "offsetY",
+    "label": "offsetY "
+  },
+  {
+    "type": "file",
+    "name": "textAlign",
+    "label": "textAlign "
+  },
+  {
+    "type": "file",
+    "name": "textBackgroundBorderColor",
+    "label": "textBackgroundBorderColor "
+  },
+  {
+    "type": "file",
+    "name": "textBackgroundBorderRadius",
+    "label": "textBackgroundBorderRadius "
+  },
+  {
+    "type": "file",
+    "name": "textBackgroundBorderWidth",
+    "label": "textBackgroundBorderWidth "
+  },
+  {
+    "type": "file",
+    "name": "textBackgroundColor",
+    "label": "textBackgroundColor "
+  },
+  {
+    "type": "file",
+    "name": "textBackgroundPadding",
+    "label": "textBackgroundPadding "
+  },
+  {
+    "type": "file",
+    "name": "textBackgroundVisible",
+    "label": "textBackgroundVisible "
+  },
+  {
+    "type": "file",
+    "name": "textBaseline",
+    "label": "textBaseline "
+  },
+  {
+    "type": "file",
+    "name": "textColor",
+    "label": "textColor "
+  },
+  {
+    "type": "file",
+    "name": "textFontSize",
+    "label": "textFontSize "
+  },
+  {
+    "type": "file",
+    "name": "textFontWeight",
+    "label": "textFontWeight "
+  },
+  {
+    "type": "dir",
+    "name": "selector",
+    "label": "selector ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "text",
+    "label": "text ",
+    "collapsed": true
+  }
+]

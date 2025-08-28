@@ -1,3 +1,3 @@
 # labelFontSize
 ## 描述
-无描述
+标签字体大小

@@ -1,31 +1,6 @@
 [
   {
     "type": "file",
-    "name": "annotationArea",
-    "label": "annotationArea "
-  },
-  {
-    "type": "file",
-    "name": "annotationHorizontalLine",
-    "label": "annotationHorizontalLine "
-  },
-  {
-    "type": "file",
-    "name": "annotationPoint",
-    "label": "annotationPoint "
-  },
-  {
-    "type": "file",
-    "name": "annotationVerticalLine",
-    "label": "annotationVerticalLine "
-  },
-  {
-    "type": "file",
-    "name": "areaStyle",
-    "label": "areaStyle "
-  },
-  {
-    "type": "file",
     "name": "backgroundColor",
     "label": "backgroundColor "
   },
@@ -41,18 +16,52 @@
   },
   {
     "type": "file",
-    "name": "lineStyle",
-    "label": "lineStyle "
+    "name": "dataset",
+    "label": "dataset "
   },
   {
     "type": "file",
-    "name": "pointStyle",
-    "label": "pointStyle "
+    "name": "locale",
+    "label": "locale "
+  },
+  {
+    "type": "file",
+    "name": "measures",
+    "label": "measures "
+  },
+  {
+    "type": "file",
+    "name": "theme",
+    "label": "theme "
   },
   {
     "type": "dir",
-    "name": "dataset",
-    "label": "dataset ",
+    "name": "annotationArea",
+    "label": "annotationArea ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "annotationHorizontalLine",
+    "label": "annotationHorizontalLine ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "annotationPoint",
+    "label": "annotationPoint ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "annotationVerticalLine",
+    "label": "annotationVerticalLine ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "areaStyle",
+    "label": "areaStyle ",
     "collapsed": true
   },
   {
@@ -69,26 +78,20 @@
   },
   {
     "type": "dir",
-    "name": "locale",
-    "label": "locale ",
+    "name": "lineStyle",
+    "label": "lineStyle ",
     "collapsed": true
   },
   {
     "type": "dir",
-    "name": "measures",
-    "label": "measures ",
+    "name": "pointStyle",
+    "label": "pointStyle ",
     "collapsed": true
   },
   {
     "type": "dir",
     "name": "sort",
     "label": "sort ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "theme",
-    "label": "theme ",
     "collapsed": true
   },
   {

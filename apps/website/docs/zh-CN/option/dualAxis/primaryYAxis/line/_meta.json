@@ -1,0 +1,17 @@
+[
+  {
+    "type": "file",
+    "name": "lineColor",
+    "label": "lineColor "
+  },
+  {
+    "type": "file",
+    "name": "lineWidth",
+    "label": "lineWidth "
+  },
+  {
+    "type": "file",
+    "name": "visible",
+    "label": "visible "
+  }
+]

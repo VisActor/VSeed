@@ -1,0 +1,38 @@
+[
+  {
+    "type": "file",
+    "name": "length",
+    "label": "length "
+  },
+  {
+    "type": "file",
+    "name": "lineColor",
+    "label": "lineColor "
+  },
+  {
+    "type": "file",
+    "name": "lineColorOpacity",
+    "label": "lineColorOpacity "
+  },
+  {
+    "type": "file",
+    "name": "lineSmooth",
+    "label": "lineSmooth "
+  },
+  {
+    "type": "file",
+    "name": "lineStyle",
+    "label": "lineStyle "
+  },
+  {
+    "type": "file",
+    "name": "lineWidth",
+    "label": "lineWidth "
+  },
+  {
+    "type": "dir",
+    "name": "selector",
+    "label": "selector ",
+    "collapsed": true
+  }
+]

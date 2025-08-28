@@ -91,6 +91,9 @@ function processChartType(project, chartName) {
 function processInterface(project, interfaceDec, baseDir, parentPath = []) {
   const props = interfaceDec.getProperties()
   props.forEach((prop) => {
+    if (prop.getName().startsWith('[Symbol')) {
+      return
+    }
     processProperty(project, prop, baseDir, parentPath)
   })
 }
@@ -113,27 +116,41 @@ function processProperty(project, prop, baseDir, parentPath) {
   }
 
   const newParentPath = [...parentPath, propName]
-  const kind = typeNode.getKind()
+  const type = typeNode.getType()
 
-  if (kind === SyntaxKind.TypeLiteral) {
-    // It's an inline object type: { key: value, ... }
-    const members = typeNode.getMembers().filter((m) => m.getKind() === SyntaxKind.PropertySignature)
-    const fakeInterface = { getProperties: () => members }
-    processInterface(project, fakeInterface, baseDir, newParentPath)
-  } else if (kind === SyntaxKind.TypeReference) {
-    // It's a reference to another interface or type alias, like `Omit<...>`
-    const type = typeNode.getType()
-    const properties = type.getApparentProperties()
+  if (type.isString() || type.isNumber() || type.isBoolean()) {
+    return
+  }
 
-    const propertyDeclarations = properties
-      .flatMap((p) => p.getDeclarations())
+  let typesToProcess = []
+  if (type.isUnion()) {
+    typesToProcess = type.getUnionTypes().filter((t) => t.isObject())
+  } else if (type.isArray()) {
+    const elType = type.getArrayElementType()
+    if (elType && elType.isObject()) {
+      typesToProcess = [elType]
+    }
+  } else if (type.isObject()) {
+    typesToProcess = [type]
+  }
+
+  if (typesToProcess.length > 0) {
+    const allProperties = typesToProcess.flatMap((t) => t.getApparentProperties())
+
+    const propertyDeclarations = allProperties
+      .flatMap((p) => {
+        const declarations = p.getDeclarations()
+        return declarations || []
+      })
       .filter(
         (d) => d && (d.getKind() === SyntaxKind.PropertySignature || d.getKind() === SyntaxKind.PropertyDeclaration),
       )
 
-    if (propertyDeclarations.length > 0) {
+    const uniqueDeclarations = [...new Map(propertyDeclarations.map((item) => [item.getName(), item])).values()]
+
+    if (uniqueDeclarations.length > 0) {
       const fakeInterface = {
-        getProperties: () => propertyDeclarations,
+        getProperties: () => uniqueDeclarations,
       }
       processInterface(project, fakeInterface, baseDir, newParentPath)
     }
@@ -208,6 +225,10 @@ function generateMetaJsonRecursive(directory) {
 function parseJsDocTags(jsDocs) {
   const tags = {}
   jsDocs.forEach((jsDoc) => {
+    const description = jsDoc.getDescription()
+    if (description) {
+      tags.description = [description.trim()]
+    }
     jsDoc.getTags().forEach((tag) => {
       const tagName = tag.getTagName()
       const tagText = tag.getCommentText() || ''

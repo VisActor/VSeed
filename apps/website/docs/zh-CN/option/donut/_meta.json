@@ -10,15 +10,29 @@
     "label": "chartType "
   },
   {
-    "type": "dir",
-    "name": "color",
-    "label": "color ",
-    "collapsed": true
+    "type": "file",
+    "name": "dataset",
+    "label": "dataset "
+  },
+  {
+    "type": "file",
+    "name": "locale",
+    "label": "locale "
+  },
+  {
+    "type": "file",
+    "name": "measures",
+    "label": "measures "
+  },
+  {
+    "type": "file",
+    "name": "theme",
+    "label": "theme "
   },
   {
     "type": "dir",
-    "name": "dataset",
-    "label": "dataset ",
+    "name": "color",
+    "label": "color ",
     "collapsed": true
   },
   {
@@ -37,24 +51,6 @@
     "type": "dir",
     "name": "legend",
     "label": "legend ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "locale",
-    "label": "locale ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "measures",
-    "label": "measures ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "theme",
-    "label": "theme ",
     "collapsed": true
   },
   {

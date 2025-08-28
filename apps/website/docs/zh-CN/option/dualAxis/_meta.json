@@ -1,16 +1,6 @@
 [
   {
     "type": "file",
-    "name": "backgroundColor",
-    "label": "backgroundColor "
-  },
-  {
-    "type": "file",
-    "name": "chartType",
-    "label": "chartType "
-  },
-  {
-    "type": "file",
     "name": "crosshairRect",
     "label": "crosshairRect "
   },
@@ -21,18 +11,38 @@
   },
   {
     "type": "file",
-    "name": "locale",
-    "label": "locale "
+    "name": "dimensions",
+    "label": "dimensions "
   },
   {
     "type": "file",
-    "name": "measures",
-    "label": "measures "
+    "name": "dualChartType",
+    "label": "dualChartType "
   },
   {
     "type": "file",
-    "name": "theme",
-    "label": "theme "
+    "name": "label",
+    "label": "label "
+  },
+  {
+    "type": "file",
+    "name": "legend",
+    "label": "legend "
+  },
+  {
+    "type": "file",
+    "name": "sort",
+    "label": "sort "
+  },
+  {
+    "type": "file",
+    "name": "sortLegend",
+    "label": "sortLegend "
+  },
+  {
+    "type": "file",
+    "name": "tooltip",
+    "label": "tooltip "
   },
   {
     "type": "dir",
@@ -78,38 +88,20 @@
   },
   {
     "type": "dir",
-    "name": "dimensions",
-    "label": "dimensions ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "dualChartType",
-    "label": "dualChartType ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
     "name": "dualMeasures",
     "label": "dualMeasures ",
     "collapsed": true
   },
   {
     "type": "dir",
-    "name": "label",
-    "label": "label ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "legend",
-    "label": "legend ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
     "name": "lineStyle",
     "label": "lineStyle ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "measures",
+    "label": "measures ",
     "collapsed": true
   },
   {
@@ -128,24 +120,6 @@
     "type": "dir",
     "name": "secondaryYAxis",
     "label": "secondaryYAxis ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "sort",
-    "label": "sort ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "sortLegend",
-    "label": "sortLegend ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "tooltip",
-    "label": "tooltip ",
     "collapsed": true
   }
 ]

@@ -15,3 +15,40 @@
 - 两组指标字段可分别映射到左右两个Y轴, 一个指标组内的所有会自动合并为一个指标
 默认开启的功能:
 - 默认开启坐标轴、图例、数据标签、提示信息
+
+
+## Properties
+
+### chartType
+
+**Type:** `"dualAxis"`
+
+**Description:**
+双轴图，展示两个不同量级指标对比关系的复合图表
+
+---
+
+### backgroundColor
+
+**Type:** `import("/Users/bytedance/Projects/VSeed/packages/vseed/src/types/properties/config/backgroundColor/backgroundColor").BackgroundColor`
+
+**Description:**
+图表的背景颜色, 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
+
+---
+
+### theme
+
+**Type:** `import("/Users/bytedance/Projects/VSeed/packages/vseed/src/types/properties/theme/theme").Theme | undefined`
+
+**Description:**
+图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置, 内置light与dark两种主题, 用户可以通过Builder自定义主题
+
+---
+
+### locale
+
+**Type:** `import("/Users/bytedance/Projects/VSeed/packages/vseed/src/types/i18n/i18n").Locale | undefined`
+
+**Description:**
+国际化配置, 图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言

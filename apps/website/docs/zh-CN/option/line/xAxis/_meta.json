@@ -1,72 +1,27 @@
 [
   {
     "type": "file",
-    "name": "inverse",
-    "label": "inverse "
-  },
-  {
-    "type": "file",
-    "name": "labelAutoHide",
-    "label": "labelAutoHide "
-  },
-  {
-    "type": "file",
-    "name": "labelAutoHideGap",
-    "label": "labelAutoHideGap "
-  },
-  {
-    "type": "file",
-    "name": "labelAutoLimit",
-    "label": "labelAutoLimit "
-  },
-  {
-    "type": "file",
-    "name": "labelAutoLimitLength",
-    "label": "labelAutoLimitLength "
-  },
-  {
-    "type": "file",
-    "name": "labelAutoRotate",
-    "label": "labelAutoRotate "
-  },
-  {
-    "type": "file",
-    "name": "labelAutoRotateAngleRange",
-    "label": "labelAutoRotateAngleRange "
-  },
-  {
-    "type": "file",
-    "name": "visible",
-    "label": "visible "
-  },
-  {
-    "type": "dir",
     "name": "grid",
-    "label": "grid ",
-    "collapsed": true
+    "label": "grid "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "label",
-    "label": "label ",
-    "collapsed": true
+    "label": "label "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "line",
-    "label": "line ",
-    "collapsed": true
+    "label": "line "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "tick",
-    "label": "tick ",
-    "collapsed": true
+    "label": "tick "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "title",
-    "label": "title ",
-    "collapsed": true
+    "label": "title "
   }
 ]

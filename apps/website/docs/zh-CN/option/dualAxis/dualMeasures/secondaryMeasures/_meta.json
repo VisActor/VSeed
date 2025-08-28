@@ -1,28 +1,7 @@
 [
   {
     "type": "file",
-    "name": "alias",
-    "label": "alias "
-  },
-  {
-    "type": "file",
-    "name": "autoFormat",
-    "label": "autoFormat "
-  },
-  {
-    "type": "file",
-    "name": "id",
-    "label": "id "
-  },
-  {
-    "type": "file",
-    "name": "length",
-    "label": "length "
-  },
-  {
-    "type": "dir",
     "name": "format",
-    "label": "format ",
-    "collapsed": true
+    "label": "format "
   }
 ]

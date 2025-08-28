@@ -1,44 +1,7 @@
 [
   {
     "type": "file",
-    "name": "barBorderColor",
-    "label": "barBorderColor "
-  },
-  {
-    "type": "file",
-    "name": "barBorderStyle",
-    "label": "barBorderStyle "
-  },
-  {
-    "type": "file",
-    "name": "barBorderWidth",
-    "label": "barBorderWidth "
-  },
-  {
-    "type": "file",
-    "name": "barColor",
-    "label": "barColor "
-  },
-  {
-    "type": "file",
-    "name": "barColorOpacity",
-    "label": "barColorOpacity "
-  },
-  {
-    "type": "file",
-    "name": "length",
-    "label": "length "
-  },
-  {
-    "type": "dir",
-    "name": "barRadius",
-    "label": "barRadius ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
     "name": "selector",
-    "label": "selector ",
-    "collapsed": true
+    "label": "selector "
   }
 ]

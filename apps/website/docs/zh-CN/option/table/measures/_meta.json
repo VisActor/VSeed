@@ -1,0 +1,13 @@
+[
+  {
+    "type": "file",
+    "name": "format",
+    "label": "format "
+  },
+  {
+    "type": "dir",
+    "name": "children",
+    "label": "children ",
+    "collapsed": true
+  }
+]

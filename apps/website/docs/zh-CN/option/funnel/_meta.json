@@ -1,13 +1,8 @@
 [
   {
     "type": "file",
-    "name": "backgroundColor",
-    "label": "backgroundColor "
-  },
-  {
-    "type": "file",
-    "name": "chartType",
-    "label": "chartType "
+    "name": "color",
+    "label": "color "
   },
   {
     "type": "file",
@@ -16,47 +11,28 @@
   },
   {
     "type": "file",
-    "name": "locale",
-    "label": "locale "
-  },
-  {
-    "type": "file",
-    "name": "measures",
-    "label": "measures "
-  },
-  {
-    "type": "file",
-    "name": "theme",
-    "label": "theme "
-  },
-  {
-    "type": "dir",
-    "name": "color",
-    "label": "color ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
     "name": "dimensions",
-    "label": "dimensions ",
-    "collapsed": true
+    "label": "dimensions "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "label",
-    "label": "label ",
-    "collapsed": true
+    "label": "label "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "legend",
-    "label": "legend ",
-    "collapsed": true
+    "label": "legend "
+  },
+  {
+    "type": "file",
+    "name": "tooltip",
+    "label": "tooltip "
   },
   {
     "type": "dir",
-    "name": "tooltip",
-    "label": "tooltip ",
+    "name": "measures",
+    "label": "measures ",
     "collapsed": true
   }
 ]

@@ -7,3 +7,70 @@
 数据筛选器
 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
 若未配置selector, 则样式全局生效.
+
+
+## Properties
+
+### barColor
+
+**Type:** `string | undefined`
+
+**Description:**
+柱状图颜色
+
+柱状图颜色
+
+---
+
+### barColorOpacity
+
+**Type:** `number | undefined`
+
+**Description:**
+柱状图颜色透明度
+
+柱状图颜色透明度
+
+---
+
+### barBorderColor
+
+**Type:** `string | undefined`
+
+**Description:**
+柱状图边框颜色
+
+柱状图边框颜色
+
+---
+
+### barBorderWidth
+
+**Type:** `number | undefined`
+
+**Description:**
+柱状图边框宽度
+
+柱状图边框宽度
+
+---
+
+### barBorderStyle
+
+**Type:** `"solid" | "dashed" | "dotted" | undefined`
+
+**Description:**
+柱状图边框样式
+
+柱状图边框样式
+
+---
+
+### barRadius
+
+**Type:** `number | number[] | undefined`
+
+**Description:**
+柱状图圆角
+
+柱状图圆角

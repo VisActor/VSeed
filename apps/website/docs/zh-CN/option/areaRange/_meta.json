@@ -1,16 +1,6 @@
 [
   {
     "type": "file",
-    "name": "backgroundColor",
-    "label": "backgroundColor "
-  },
-  {
-    "type": "file",
-    "name": "chartType",
-    "label": "chartType "
-  },
-  {
-    "type": "file",
     "name": "crosshairLine",
     "label": "crosshairLine "
   },
@@ -21,18 +11,18 @@
   },
   {
     "type": "file",
-    "name": "locale",
-    "label": "locale "
+    "name": "dimensions",
+    "label": "dimensions "
   },
   {
     "type": "file",
-    "name": "measures",
-    "label": "measures "
+    "name": "label",
+    "label": "label "
   },
   {
     "type": "file",
-    "name": "theme",
-    "label": "theme "
+    "name": "sort",
+    "label": "sort "
   },
   {
     "type": "dir",
@@ -66,32 +56,20 @@
   },
   {
     "type": "dir",
-    "name": "dimensions",
-    "label": "dimensions ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "label",
-    "label": "label ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
     "name": "lineStyle",
     "label": "lineStyle ",
     "collapsed": true
   },
   {
     "type": "dir",
-    "name": "pointStyle",
-    "label": "pointStyle ",
+    "name": "measures",
+    "label": "measures ",
     "collapsed": true
   },
   {
     "type": "dir",
-    "name": "sort",
-    "label": "sort ",
+    "name": "pointStyle",
+    "label": "pointStyle ",
     "collapsed": true
   },
   {

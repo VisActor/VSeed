@@ -83,11 +83,11 @@ export type PointStyle = {
 }
 
 export const zPointStyle = z.object({
-  selector: z.union([zSelector, zSelectors]).optional(),
-  pointSize: z.number().optional(),
-  pointColor: z.string().optional(),
-  pointColorOpacity: z.number().optional(),
-  pointBorderColor: z.string().optional(),
-  pointBorderWidth: z.number().optional(),
-  pointBorderStyle: z.union([z.enum(['solid', 'dashed', 'dotted'])]).optional(),
+  selector: z.union([zSelector, zSelectors]).nullish(),
+  pointSize: z.number().nullish(),
+  pointColor: z.string().nullish(),
+  pointColorOpacity: z.number().nullish(),
+  pointBorderColor: z.string().nullish(),
+  pointBorderWidth: z.number().nullish(),
+  pointBorderStyle: z.union([z.enum(['solid', 'dashed', 'dotted'])]).nullish(),
 })

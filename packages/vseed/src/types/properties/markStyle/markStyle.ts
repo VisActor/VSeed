@@ -5,10 +5,10 @@ import { zLineStyle } from './lineStyle'
 import { zAreaStyle } from './areaStyle'
 
 export const zMarkStyle = z.object({
-  barStyle: zBarStyle.or(z.array(zBarStyle)).optional(),
-  pointStyle: zPointStyle.or(z.array(zPointStyle)).optional(),
-  lineStyle: zLineStyle.or(z.array(zLineStyle)).optional(),
-  areaStyle: zAreaStyle.or(z.array(zAreaStyle)).optional(),
+  barStyle: zBarStyle.or(z.array(zBarStyle)).nullish(),
+  pointStyle: zPointStyle.or(z.array(zPointStyle)).nullish(),
+  lineStyle: zLineStyle.or(z.array(zLineStyle)).nullish(),
+  areaStyle: zAreaStyle.or(z.array(zAreaStyle)).nullish(),
 })
 
 export type MarkStyle = z.infer<typeof zMarkStyle>

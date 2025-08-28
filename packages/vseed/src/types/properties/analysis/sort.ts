@@ -2,8 +2,8 @@ import { z } from 'zod'
 
 export const zSort = z.object({
   order: z.enum(['asc', 'desc']).default('asc'),
-  orderBy: z.string().optional(),
-  customOrder: z.array(z.any()).optional(),
+  orderBy: z.string().nullish(),
+  customOrder: z.array(z.any()).nullish(),
 })
 
 /**

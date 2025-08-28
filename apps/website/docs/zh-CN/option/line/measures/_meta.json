@@ -11,14 +11,13 @@
   },
   {
     "type": "file",
-    "name": "id",
-    "label": "id "
+    "name": "children",
+    "label": "children "
   },
   {
-    "type": "dir",
-    "name": "children",
-    "label": "children ",
-    "collapsed": true
+    "type": "file",
+    "name": "id",
+    "label": "id "
   },
   {
     "type": "dir",

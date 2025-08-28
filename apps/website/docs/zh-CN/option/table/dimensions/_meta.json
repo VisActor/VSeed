@@ -6,6 +6,11 @@
   },
   {
     "type": "file",
+    "name": "children",
+    "label": "children "
+  },
+  {
+    "type": "file",
     "name": "id",
     "label": "id "
   },
@@ -13,11 +18,5 @@
     "type": "file",
     "name": "location",
     "label": "location "
-  },
-  {
-    "type": "dir",
-    "name": "children",
-    "label": "children ",
-    "collapsed": true
   }
 ]

@@ -104,7 +104,7 @@ function processInterface(project, interfaceDec, baseDir, parentPath = []) {
     }
     const typeNode = prop.getTypeNode()
     const typesToProcess = typeNode ? extractObjectTypes(typeNode.getType()) : []
-    if (typesToProcess.length > 0) {
+    if (prop.getName() !== 'children' && typesToProcess.length > 0) {
       complexProps.push(prop)
     } else {
       simpleProps.push(prop)

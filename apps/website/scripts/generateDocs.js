@@ -127,7 +127,9 @@ function processProperty(project, prop, baseDir, parentPath) {
 
     const propertyDeclarations = properties
       .flatMap((p) => p.getDeclarations())
-      .filter((d) => d && (d.getKind() === SyntaxKind.PropertySignature || d.getKind() === SyntaxKind.PropertyDeclaration))
+      .filter(
+        (d) => d && (d.getKind() === SyntaxKind.PropertySignature || d.getKind() === SyntaxKind.PropertyDeclaration),
+      )
 
     if (propertyDeclarations.length > 0) {
       const fakeInterface = {
@@ -186,7 +188,7 @@ function generateMetaJsonRecursive(directory) {
   dirsForMeta.sort((a, b) => a.name.localeCompare(b.name))
   filesForMeta.sort((a, b) => a.name.localeCompare(b.name))
 
-  let meta = [...dirsForMeta, ...filesForMeta]
+  let meta = [...filesForMeta, ...dirsForMeta]
 
   // 4. Add the root index file.
   if (isRoot) {

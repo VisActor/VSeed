@@ -1,5 +1,75 @@
 [
   {
+    "type": "file",
+    "name": "annotationArea",
+    "label": "annotationArea "
+  },
+  {
+    "type": "file",
+    "name": "annotationHorizontalLine",
+    "label": "annotationHorizontalLine "
+  },
+  {
+    "type": "file",
+    "name": "annotationPoint",
+    "label": "annotationPoint "
+  },
+  {
+    "type": "file",
+    "name": "annotationVerticalLine",
+    "label": "annotationVerticalLine "
+  },
+  {
+    "type": "file",
+    "name": "areaStyle",
+    "label": "areaStyle "
+  },
+  {
+    "type": "file",
+    "name": "backgroundColor",
+    "label": "backgroundColor "
+  },
+  {
+    "type": "file",
+    "name": "barStyle",
+    "label": "barStyle "
+  },
+  {
+    "type": "file",
+    "name": "chartType",
+    "label": "chartType "
+  },
+  {
+    "type": "file",
+    "name": "crosshairRect",
+    "label": "crosshairRect "
+  },
+  {
+    "type": "file",
+    "name": "dualChartType",
+    "label": "dualChartType "
+  },
+  {
+    "type": "file",
+    "name": "lineStyle",
+    "label": "lineStyle "
+  },
+  {
+    "type": "file",
+    "name": "pointStyle",
+    "label": "pointStyle "
+  },
+  {
+    "type": "file",
+    "name": "primaryYAxis",
+    "label": "primaryYAxis "
+  },
+  {
+    "type": "file",
+    "name": "secondaryYAxis",
+    "label": "secondaryYAxis "
+  },
+  {
     "type": "dir",
     "name": "color",
     "label": "color ",
@@ -70,75 +140,5 @@
     "name": "tooltip",
     "label": "tooltip ",
     "collapsed": true
-  },
-  {
-    "type": "file",
-    "name": "annotationArea",
-    "label": "annotationArea "
-  },
-  {
-    "type": "file",
-    "name": "annotationHorizontalLine",
-    "label": "annotationHorizontalLine "
-  },
-  {
-    "type": "file",
-    "name": "annotationPoint",
-    "label": "annotationPoint "
-  },
-  {
-    "type": "file",
-    "name": "annotationVerticalLine",
-    "label": "annotationVerticalLine "
-  },
-  {
-    "type": "file",
-    "name": "areaStyle",
-    "label": "areaStyle "
-  },
-  {
-    "type": "file",
-    "name": "backgroundColor",
-    "label": "backgroundColor "
-  },
-  {
-    "type": "file",
-    "name": "barStyle",
-    "label": "barStyle "
-  },
-  {
-    "type": "file",
-    "name": "chartType",
-    "label": "chartType "
-  },
-  {
-    "type": "file",
-    "name": "crosshairRect",
-    "label": "crosshairRect "
-  },
-  {
-    "type": "file",
-    "name": "dualChartType",
-    "label": "dualChartType "
-  },
-  {
-    "type": "file",
-    "name": "lineStyle",
-    "label": "lineStyle "
-  },
-  {
-    "type": "file",
-    "name": "pointStyle",
-    "label": "pointStyle "
-  },
-  {
-    "type": "file",
-    "name": "primaryYAxis",
-    "label": "primaryYAxis "
-  },
-  {
-    "type": "file",
-    "name": "secondaryYAxis",
-    "label": "secondaryYAxis "
   }
 ]

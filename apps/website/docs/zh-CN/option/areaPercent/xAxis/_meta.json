@@ -1,35 +1,5 @@
 [
   {
-    "type": "dir",
-    "name": "grid",
-    "label": "grid ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "label",
-    "label": "label ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "line",
-    "label": "line ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "tick",
-    "label": "tick ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "title",
-    "label": "title ",
-    "collapsed": true
-  },
-  {
     "type": "file",
     "name": "inverse",
     "label": "inverse "
@@ -68,5 +38,35 @@
     "type": "file",
     "name": "visible",
     "label": "visible "
+  },
+  {
+    "type": "dir",
+    "name": "grid",
+    "label": "grid ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "label",
+    "label": "label ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "line",
+    "label": "line ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "tick",
+    "label": "tick ",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "title",
+    "label": "title ",
+    "collapsed": true
   }
 ]

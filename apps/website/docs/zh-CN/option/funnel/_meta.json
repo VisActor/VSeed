@@ -1,5 +1,15 @@
 [
   {
+    "type": "file",
+    "name": "backgroundColor",
+    "label": "backgroundColor "
+  },
+  {
+    "type": "file",
+    "name": "chartType",
+    "label": "chartType "
+  },
+  {
     "type": "dir",
     "name": "color",
     "label": "color ",
@@ -52,15 +62,5 @@
     "name": "tooltip",
     "label": "tooltip ",
     "collapsed": true
-  },
-  {
-    "type": "file",
-    "name": "backgroundColor",
-    "label": "backgroundColor "
-  },
-  {
-    "type": "file",
-    "name": "chartType",
-    "label": "chartType "
   }
 ]

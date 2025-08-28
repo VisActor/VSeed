@@ -1,17 +1,5 @@
-import { z } from 'zod'
 import type { Locale } from '../../i18n'
-import { zLocale } from '../../i18n'
-import {
-  zBackgroundColor,
-  zColor,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLegend,
-  zMeasureTree,
-  zTheme,
-  zTooltip,
-} from '../../properties'
+
 import type {
   BackgroundColor,
   Color,
@@ -118,17 +106,3 @@ export interface Pie {
    */
   locale?: Locale
 }
-
-export const zPie = z.object({
-  chartType: z.literal('pie'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
-  label: zLabel.optional(),
-  legend: zLegend.optional(),
-  tooltip: zTooltip.optional(),
-  theme: zTheme.optional(),
-  locale: zLocale.optional(),
-})

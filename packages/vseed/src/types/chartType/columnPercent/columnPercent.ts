@@ -1,25 +1,4 @@
 import type { Locale } from '../../i18n'
-import { zLocale } from '../../i18n'
-import {
-  zAnnotationArea,
-  zAnnotationHorizontalLine,
-  zAnnotationPoint,
-  zAnnotationVerticalLine,
-  zBackgroundColor,
-  zBarStyle,
-  zColor,
-  zCrosshairRect,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLegend,
-  zMeasureTree,
-  zStackCornerRadius,
-  zTheme,
-  zTooltip,
-  zXBandAxis,
-  zYLinearAxis,
-} from '../../properties'
 import type {
   AnnotationArea,
   AnnotationHorizontalLine,
@@ -42,7 +21,6 @@ import type {
   Sort,
   SortLegend,
 } from '../../properties'
-import { z } from 'zod'
 
 /**
  * 百分比柱状图类型定义
@@ -222,26 +200,3 @@ export interface ColumnPercent {
    */
   locale?: Locale
 }
-
-export const zColumnPercent = z.object({
-  chartType: z.literal('columnPercent'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
-  label: zLabel.optional(),
-  legend: zLegend.optional(),
-  tooltip: zTooltip.optional(),
-  xAxis: zXBandAxis.optional(),
-  yAxis: zYLinearAxis.optional(),
-  crosshairRect: zCrosshairRect.optional(),
-  stackCornerRadius: zStackCornerRadius.optional(),
-  theme: zTheme.optional(),
-  barStyle: z.array(zBarStyle).or(zBarStyle).optional(),
-  annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
-  annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
-  annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),
-  annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).optional(),
-  locale: zLocale.optional(),
-})

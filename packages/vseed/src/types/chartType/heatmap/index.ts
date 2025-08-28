@@ -1,1 +1,2 @@
-export * from './heatmap'
+export type * from './heatmap'
+export * from './zHeatmap'

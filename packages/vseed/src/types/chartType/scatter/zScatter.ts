@@ -1,0 +1,43 @@
+import { z } from 'zod'
+import { zLocale } from '../../i18n'
+import {
+  zAnnotationArea,
+  zAnnotationHorizontalLine,
+  zAnnotationPoint,
+  zAnnotationVerticalLine,
+  zBackgroundColor,
+  zColor,
+  zCrosshairLine,
+  zDataset,
+  zDimensions,
+  zLabel,
+  zLegend,
+  zMeasureTree,
+  zPointStyle,
+  zTheme,
+  zTooltip,
+  zXLinearAxis,
+  zYLinearAxis,
+} from '../../properties'
+
+export const zScatter = z.object({
+  chartType: z.literal('scatter'),
+  dataset: zDataset.nullish(),
+  dimensions: zDimensions.nullish(),
+  measures: zMeasureTree.nullish(),
+  backgroundColor: zBackgroundColor.nullish(),
+  color: zColor.nullish(),
+  label: zLabel.nullish(),
+  legend: zLegend.nullish(),
+  tooltip: zTooltip.nullish(),
+  xAxis: zXLinearAxis.nullish(),
+  yAxis: zYLinearAxis.nullish(),
+  crosshairLine: zCrosshairLine.nullish(),
+  theme: zTheme.nullish(),
+  pointStyle: z.array(zPointStyle).or(zPointStyle).nullish(),
+  annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).nullish(),
+  annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).nullish(),
+  annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).nullish(),
+  annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).nullish(),
+  locale: zLocale.nullish(),
+})

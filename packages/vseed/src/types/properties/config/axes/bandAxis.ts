@@ -5,53 +5,53 @@ export type XBandAxis = Omit<Axis, 'min' | 'max' | 'nice' | 'zero' | 'log' | 'lo
 export type YBandAxis = Omit<Axis, 'min' | 'max' | 'nice' | 'zero' | 'log' | 'logBase'>
 
 export const zXBandAxis = z.object({
-  visible: z.boolean().default(true).optional(),
+  visible: z.boolean().default(true).nullish(),
 
-  labelAutoHide: z.boolean().default(true).optional(),
-  labelAutoHideGap: z.number().default(0).optional(),
-  labelAutoRotate: z.boolean().default(true).optional(),
-  labelAutoRotateAngleRange: z.array(z.number()).default([0, -45, -90]).optional(),
-  labelAutoLimit: z.boolean().default(true).optional(),
-  labelAutoLimitLength: z.number().default(100).optional(),
+  labelAutoHide: z.boolean().default(true).nullish(),
+  labelAutoHideGap: z.number().default(0).nullish(),
+  labelAutoRotate: z.boolean().default(true).nullish(),
+  labelAutoRotateAngleRange: z.array(z.number()).default([0, -45, -90]).nullish(),
+  labelAutoLimit: z.boolean().default(true).nullish(),
+  labelAutoLimitLength: z.number().default(100).nullish(),
   label: z
     .object({
-      visible: z.boolean().default(true).optional(),
-      labelColor: z.string().default('#797B85').optional(),
-      labelFontSize: z.number().default(12).optional(),
-      labelFontWeight: z.number().default(400).optional(),
-      labelAngle: z.number().default(0).optional(),
+      visible: z.boolean().default(true).nullish(),
+      labelColor: z.string().default('#797B85').nullish(),
+      labelFontSize: z.number().default(12).nullish(),
+      labelFontWeight: z.number().default(400).nullish(),
+      labelAngle: z.number().default(0).nullish(),
     })
-    .optional(),
+    .nullish(),
   line: z
     .object({
-      visible: z.boolean().default(true).optional(),
-      lineColor: z.string().default('rgba(54, 65, 89, 0.30)').optional(),
-      lineWidth: z.number().default(1).optional(),
+      visible: z.boolean().default(true).nullish(),
+      lineColor: z.string().default('rgba(54, 65, 89, 0.30)').nullish(),
+      lineWidth: z.number().default(1).nullish(),
     })
-    .optional(),
+    .nullish(),
   tick: z
     .object({
-      visible: z.boolean().default(true).optional(),
-      tickInside: z.boolean().default(false).optional(),
-      tickColor: z.string().default('rgba(54, 65, 89, 0.30)').optional(),
-      tickSize: z.number().default(4).optional(),
+      visible: z.boolean().default(true).nullish(),
+      tickInside: z.boolean().default(false).nullish(),
+      tickColor: z.string().default('rgba(54, 65, 89, 0.30)').nullish(),
+      tickSize: z.number().default(4).nullish(),
     })
-    .optional(),
+    .nullish(),
   title: z
     .object({
-      visible: z.boolean().default(false).optional(),
-      titleText: z.string().default('').optional(),
-      titleColor: z.string().default('#646A73').optional(),
-      titleFontSize: z.number().default(12).optional(),
-      titleFontWeight: z.number().default(400).optional(),
+      visible: z.boolean().default(false).nullish(),
+      titleText: z.string().default('').nullish(),
+      titleColor: z.string().default('#646A73').nullish(),
+      titleFontSize: z.number().default(12).nullish(),
+      titleFontWeight: z.number().default(400).nullish(),
     })
-    .optional(),
+    .nullish(),
   grid: z
     .object({
-      visible: z.boolean().default(false).optional(),
-      gridColor: z.string().default('rgba(54, 65, 89, 0.15)').optional(),
-      gridWidth: z.number().default(0.5).optional(),
+      visible: z.boolean().default(false).nullish(),
+      gridColor: z.string().default('rgba(54, 65, 89, 0.15)').nullish(),
+      gridWidth: z.number().default(0.5).nullish(),
     })
-    .optional(),
+    .nullish(),
 })
 export const zYBandAxis = zXBandAxis

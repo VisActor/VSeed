@@ -15,7 +15,11 @@ export const verticalCrosshairLine: SpecPipe = (spec, context) => {
     result.crosshair = {}
   }
 
-  const { visible = true, lineColor, labelColor, labelVisible, labelBackgroundColor } = config
+  const visible = config.visible || true
+  const lineColor = config.lineColor || undefined
+  const labelColor = config.labelColor || undefined
+  const labelVisible = config.labelVisible || undefined
+  const labelBackgroundColor = config.labelBackgroundColor || undefined
 
   const crosshair = result.crosshair as ICartesianCrosshairSpec
   crosshair.xField = {

@@ -1,17 +1,5 @@
-import { z } from 'zod'
 import type { Locale } from '../../i18n'
-import { zLocale } from '../../i18n'
-import {
-  zBackgroundColor,
-  zColorLegend,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLinearColor,
-  zMeasureTree,
-  zTheme,
-  zTooltip,
-} from '../../properties'
+
 import type {
   BackgroundColor,
   ColorLegend,
@@ -114,17 +102,3 @@ export interface Funnel {
    */
   locale?: Locale
 }
-
-export const zFunnel = z.object({
-  chartType: z.literal('funnel'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zLinearColor.optional(),
-  label: zLabel.optional(),
-  legend: zColorLegend.optional(),
-  tooltip: zTooltip.optional(),
-  theme: zTheme.optional(),
-  locale: zLocale.optional(),
-})

@@ -1,1 +1,2 @@
-export * from './columnPercent'
+export type * from './columnPercent'
+export * from './zColumnPercent'

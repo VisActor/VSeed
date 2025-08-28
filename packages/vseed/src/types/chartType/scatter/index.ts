@@ -1,1 +1,2 @@
-export * from './scatter'
+export type * from './scatter'
+export * from './zScatter'

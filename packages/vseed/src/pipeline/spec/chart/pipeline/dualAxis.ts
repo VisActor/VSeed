@@ -21,7 +21,6 @@ import {
   lineStyle,
   pointStateDimensionHover,
   progressive,
-  series,
   datasetPrimary,
   datasetSecondary,
   areaStyle,
@@ -37,10 +36,11 @@ import {
   yLinearPrimary,
   dualChartTypePrimary,
   dualChartTypeSecondary,
+  seriesDualAxis,
 } from '../pipes'
 
 const dualAxis: SpecPipeline = [
-  series(
+  seriesDualAxis(
     [
       initDualAxisPrimary,
       dualChartTypePrimary,
@@ -91,7 +91,7 @@ const pivotDualAxis: SpecPipeline = [
   pivotIndicatorsAsRow,
   datasetPivot,
   pivotIndicators([
-    series(
+    seriesDualAxis(
       [
         initDualAxisPrimary,
         dualChartTypePrimary,

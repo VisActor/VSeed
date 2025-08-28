@@ -4,7 +4,8 @@ import type { SpecPipe } from 'src/types'
 export const initPivotTable: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { dataset } = advancedVSeed
-
+  const { config } = advancedVSeed
+  const { backgroundColor = 'transparent' } = config.pivotTable || {}
   return {
     ...spec,
     records: dataset,
@@ -33,7 +34,7 @@ export const initPivotTable: SpecPipe = (spec, context) => {
       direction: 'row',
     },
     theme: {
-      underlayBackgroundColor: 'transparent',
+      underlayBackgroundColor: backgroundColor,
     },
   } as PivotTableConstructorOptions
 }

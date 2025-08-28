@@ -1,1 +1,1 @@
-export { series } from './series'
+export { series, seriesDualAxis } from './series'

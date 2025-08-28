@@ -1,1 +1,2 @@
-export * from './radar'
+export type * from './radar'
+export * from './zRadar'

@@ -1,1 +1,2 @@
-export * from './barParallel'
+export type * from './barParallel'
+export * from './zBarParallel'

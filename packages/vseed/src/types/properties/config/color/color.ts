@@ -1,12 +1,12 @@
 import { z } from 'zod'
 
 export const zColor = z.object({
-  colorScheme: z.array(z.string()).optional(),
-  colorMapping: z.record(z.string(), z.string()).optional(),
+  colorScheme: z.array(z.string()).nullish(),
+  colorMapping: z.record(z.string(), z.string()).nullish(),
 })
 
 export const zLinearColor = z.object({
-  colorScheme: z.array(z.string()).optional(),
+  colorScheme: z.array(z.string()).nullish(),
 })
 
 export type Color = {

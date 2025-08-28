@@ -24,9 +24,9 @@ export const cornerHeaderStyle: SpecPipe = (spec, context) => {
     padding: [8, 12, 8, 12],
     textAlign: 'left',
     hover: {
-      cellBgColor: hoverCellColor,
-      inlineRowBgColor: hoverInlineColor,
-      inlineColumnBgColor: hoverInlineColor,
+      cellBgColor: hoverCellColor || undefined,
+      inlineRowBgColor: hoverInlineColor || undefined,
+      inlineColumnBgColor: hoverInlineColor || undefined,
     },
     frameStyle: {
       borderColor: [null, borderColor, borderColor, null],

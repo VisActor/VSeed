@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const zTooltip = z.object({
-  enable: z.boolean().default(true).optional(),
+  enable: z.boolean().default(true).nullish(),
 })
 
 export type Tooltip = {

@@ -42,7 +42,7 @@ export const theme: AdvancedPipe = (advancedVSeed, context) => {
   return result
 }
 
-const mergeArray = <Destination extends Array<object>, Source extends object | number | string | undefined>(
+const mergeArray = <Destination extends Array<object>, Source extends object | number | string | undefined | null>(
   arr: Destination,
   themeItem: Source,
 ): Destination => {

@@ -2,7 +2,7 @@
 
 **Type:** `PointStyle | PointStyle[] | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 点图元样式
 
 
@@ -18,14 +18,11 @@
 若未配置selector, 则样式全局生效.:::
 
 
- 
-
-
 ## selector
 
 **Type:** `Selector | Selectors | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 数据选择器
 
 
@@ -34,10 +31,7 @@
 
 若未配置selector, 则样式全局生效.:::
 
-
- 
-
-**示例:**
+**示例**
 数值选择器
 selector = "tool"
 selector = ["tool", "book"]
@@ -73,8 +67,6 @@ value: [100, 300]
 }
 
 
- 
-
 
 ### field
 
@@ -96,93 +88,73 @@ value: [100, 300]
 
 **Type:** `number | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 点大小
 
 
 
 点大小:::
 
-
- 
-
 ## pointColor
 
 **Type:** `string | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 点图元颜色
 
 
 
 点图元颜色:::
 
-
- 
-
 ## pointColorOpacity
 
 **Type:** `number | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 点图元颜色透明度
 
 
 
 点图元颜色透明度:::
 
-
- 
-
 ## pointBorderColor
 
 **Type:** `string | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 点图元边框颜色
 
 
 
 点图元边框颜色:::
 
-
- 
-
 ## pointBorderWidth
 
 **Type:** `number | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 点图元边框宽度
 
 
 
 点图元边框宽度:::
 
-
- 
-
 ## pointBorderStyle
 
 **Type:** `"solid" | "dashed" | "dotted" | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 点图元边框样式
 
 
 
 点图元边框样式:::
 
-
- 
-
-**示例:**
+**示例**
 solid
 
 dashed
 
 dotted
 
-
- 
 

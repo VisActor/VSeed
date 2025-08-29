@@ -145,26 +145,47 @@ function generateMarkdownContent(node, project, level = 1, visited = new Set()) 
     markdown += `**Type:** \`${propTypeText}\`\n\n`
   }
 
-  const description = (tags.description || []).join('\n\n') || ''
-  const example = (tags.example || []).join('\n\n') || ''
-  const recommend = (tags.recommend || []).join('\n\n') || ''
-  const note = (tags.note || []).join('\n\n') || ''
+  const description = (tags.description || []).join('\n\n').replace(/\n/g, '\n\n').replace(/\-/g, '\\-') || ''
+  const example = (tags.example || []).join('\n\n').replace(/\n/g, '\n').replace(/\-/g, '\\-') || ''
+  const recommend = (tags.recommend || []).join('\n\n').replace(/\n/g, '\n\n').replace(/\-/g, '\\-') || ''
+  const note = (tags.note || []).join('\n\n').replace(/\n/g, '\n\n').replace(/\-/g, '\\-') || ''
+
+  const danger = (tags.danger || []).join('\n\n').replace(/\n/g, '\n\n').replace(/\-/g, '\\-') || ''
+  const info = (tags.info || []).join('\n\n').replace(/\n/g, '\n\n').replace(/\-/g, '\\-') || ''
+  const warning = (tags.warning || []).join('\n\n').replace(/\n/g, '\n\n').replace(/\-/g, '\\-') || ''
+  const tip = (tags.tip || []).join('\n\n'.replace(/\n/g, '\n\n').replace(/\-/g, '\\-')) || ''
 
   if (recommend) {
-    markdown += `:::info{title=推荐}\n${recommend.replace(/\n/g, '\n\n').replace(/\-/g, '\\-')}:::`
-    markdown += '\n\n\n \n\n'
+    markdown += `:::info{title=推荐}\n${recommend}:::`
+    markdown += '\n\n'
   }
   if (description) {
-    markdown += `:::tip{title=描述}\n${description.replace(/\n/g, '\n\n').replace(/\-/g, '\\-')}:::`
-    markdown += '\n\n\n \n\n'
+    markdown += `:::note{title=描述}\n${description}:::`
+    markdown += '\n\n'
   }
   if (example) {
-    markdown += `**示例:**\n${example.replace(/\n/g, '\n')}`
-    markdown += '\n\n\n \n\n'
+    markdown += `**示例**\n${example}\n`
+    markdown += '\n\n'
+  }
+  if (info) {
+    markdown += `:::info{title=Info}\n${info}:::`
+    markdown += '\n\n'
+  }
+  if (tip) {
+    markdown += `:::tip{title=Tip}\n${tip}:::`
+    markdown += '\n\n'
   }
   if (note) {
-    markdown += `:::note{title=注意}\n${note.replace(/\n/g, '\n\n').replace(/\-/g, '\\-')}:::`
-    markdown += '\n\n\n \n\n'
+    markdown += `:::note{title=Note}\n${note}:::`
+    markdown += '\n\n'
+  }
+  if (warning) {
+    markdown += `:::warning{title=Warning}\n${warning}:::`
+    markdown += '\n\n'
+  }
+  if (danger) {
+    markdown += `:::danger{title=Danger}\n${danger}:::`
+    markdown += '\n\n'
   }
 
   if (isProperty) {

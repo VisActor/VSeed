@@ -2,7 +2,7 @@
 
 **Type:** `BarStyle | BarStyle[] | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 矩形图元样式
 
 
@@ -18,14 +18,11 @@
 若未配置selector, 则样式全局生效.:::
 
 
- 
-
-
 ## selector
 
 **Type:** `Selector | Selectors | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 数据选择器
 
 
@@ -34,10 +31,7 @@
 
 若未配置selector, 则样式全局生效.:::
 
-
- 
-
-**示例:**
+**示例**
 数值选择器
 selector = "tool"
 selector = ["tool", "book"]
@@ -73,8 +67,6 @@ value: [100, 300]
 }
 
 
- 
-
 
 ### field
 
@@ -96,73 +88,58 @@ value: [100, 300]
 
 **Type:** `string | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 柱状图颜色
 
 
 
 柱状图颜色:::
 
-
- 
-
 ## barColorOpacity
 
 **Type:** `number | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 柱状图颜色透明度
 
 
 
 柱状图颜色透明度:::
 
-
- 
-
 ## barBorderColor
 
 **Type:** `string | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 柱状图边框颜色
 
 
 
 柱状图边框颜色:::
 
-
- 
-
 ## barBorderWidth
 
 **Type:** `number | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 柱状图边框宽度
 
 
 
 柱状图边框宽度:::
 
-
- 
-
 ## barBorderStyle
 
 **Type:** `"solid" | "dashed" | "dotted" | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 柱状图边框样式
 
 
 
 柱状图边框样式:::
 
-
- 
-
-**示例:**
+**示例**
 solid
 
 dashed
@@ -170,27 +147,20 @@ dashed
 dotted
 
 
- 
-
 ## barRadius
 
 **Type:** `number | number[] | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 柱状图圆角
 
 
 
 柱状图圆角:::
 
-
- 
-
-**示例:**
+**示例**
 4
 
 [0, 0, 10, 10]
 
-
- 
 

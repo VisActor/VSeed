@@ -2,7 +2,7 @@
 
 **Type:** `AreaStyle | AreaStyle[] | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 面积图元样式
 
 
@@ -18,14 +18,11 @@
 若未配置selector, 则样式全局生效.:::
 
 
- 
-
-
 ## selector
 
 **Type:** `Selector | Selectors | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 数据选择器
 
 
@@ -34,10 +31,7 @@
 
 若未配置selector, 则样式全局生效.:::
 
-
- 
-
-**示例:**
+**示例**
 数值选择器
 selector = "tool"
 selector = ["tool", "book"]
@@ -73,8 +67,6 @@ value: [100, 300]
 }
 
 
- 
-
 
 ### field
 
@@ -96,27 +88,21 @@ value: [100, 300]
 
 **Type:** `string | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 面积图元的颜色
 
 
 
 面积图元的颜色:::
 
-
- 
-
 ## areaColorOpacity
 
 **Type:** `number | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 面积图元的颜色透明度
 
 
 
 面积图元的颜色透明度:::
-
-
- 
 

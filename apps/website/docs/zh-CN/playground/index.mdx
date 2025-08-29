@@ -7,61 +7,49 @@ pageType: custom
 ```tsx
 const Demo = () => {
   const vseed: VSeed = {
-    chartType: 'dualAxis',
-    dualChartType: [
-      {
-        primary: 'area',
-        secondary: 'scatter',
-      },
-      {
-        primary: 'columnPercent',
-        secondary: 'line',
-      },
-    ],
-    measures: [
-      {
-        id: 'first',
-        alias: '第一个双轴图',
-        children: [
-          {
-            id: 'secondary-profit',
-            children: [{ id: 'profit', alias: '利润' }],
-          },
-          {
-            id: 'primary-sales',
-            children: [{ id: 'sales', alias: '销售额' }],
-          },
-        ],
-      },
-      {
-        id: 'second',
-        alias: '第一个双轴图',
-        children: [
-          {
-            id: 'primary-ratio',
-            children: [{ id: 'ratio', alias: '比率' }],
-          },
-          {
-            id: 'returnRatio',
-            children: [{ id: 'returnRatio', alias: '回报率' }],
-          },
-        ],
-      },
-    ],
+    chartType: 'line',
     dataset: [
-      { date: '2019', profit: 10, sales: 100, ratio: 301, returnRatio: 301 },
-      { date: '2020', profit: 30, sales: 3200, ratio: 32, returnRatio: 30 },
-      { date: '2021', profit: 30, sales: 300, ratio: 103, returnRatio: 503 },
-      { date: '2022', profit: 50, sales: 2400, ratio: 30, returnRatio: 24 },
-      { date: '2023', profit: 40, sales: 500, ratio: 305, returnRatio: 305 },
+      { dt: '2023-05-01', queue_business_type: 'A', hit_low: 0, hit_high: 1, dist_log_cnt: 120 },
+      { dt: '2023-05-15', queue_business_type: 'B', hit_low: 1, hit_high: 0, dist_log_cnt: 95 },
+      { dt: '2023-06-01', queue_business_type: 'A', hit_low: 0, hit_high: 0, dist_log_cnt: 110 },
+      { dt: '2023-06-15', queue_business_type: 'B', hit_low: 0, hit_high: 0, dist_log_cnt: 105 },
+      { dt: '2023-07-01', queue_business_type: 'A', hit_low: 0, hit_high: 1, dist_log_cnt: 130 },
+      { dt: '2023-07-15', queue_business_type: 'B', hit_low: 1, hit_high: 0, dist_log_cnt: 90 },
+      { dt: '2023-08-01', queue_business_type: 'A', hit_low: 0, hit_high: 0, dist_log_cnt: 115 },
+      { dt: '2023-08-15', queue_business_type: 'B', hit_low: 0, hit_high: 0, dist_log_cnt: 100 },
+      { dt: '2023-09-01', queue_business_type: 'A', hit_low: 0, hit_high: 1, dist_log_cnt: 140 },
+      { dt: '2023-09-15', queue_business_type: 'B', hit_low: 1, hit_high: 0, dist_log_cnt: 85 },
+      { dt: '2023-10-01', queue_business_type: 'A', hit_low: 0, hit_high: 0, dist_log_cnt: 125 },
+      { dt: '2023-10-15', queue_business_type: 'B', hit_low: 0, hit_high: 0, dist_log_cnt: 95 },
     ],
     dimensions: [
+      { id: 'dt', alias: '日期', visible: true, location: 'dimension' },
+      { id: 'queue_business_type', alias: '业务类型', visible: true, location: 'dimension' },
+    ],
+    measures: [{ id: 'dist_log_cnt', alias: '日志计数' }],
+    annotationPoint: [
       {
-        id: 'date',
-        alias: '日期',
-        location: 'dimension',
+        selector: {
+          field: 'hit_high',
+          operator: '=',
+          value: 1,
+        },
+        text: '1',
+        backgroundColor: 'red',
+        backgroundVisible: true,
+      },
+      {
+        selector: {
+          field: 'hit_low',
+          operator: '=',
+          value: 1,
+        },
+        text: '1',
+        backgroundColor: '#1f77b4',
+        backgroundVisible: true,
       },
     ],
+    legend: { enable: true, position: 'top', maxSize: 2 },
   }
 
   if (zVSeed.safeParse(vseed).success) {

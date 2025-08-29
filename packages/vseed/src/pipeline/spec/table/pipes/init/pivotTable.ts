@@ -26,6 +26,9 @@ export const initPivotTable: SpecPipe = (spec, context) => {
     tooltip: {
       isShowOverflowTextTooltip: true,
     },
+    corner: {
+      titleOnDimension: 'all',
+    },
     widthAdaptiveMode: 'all',
     animationAppear: {
       duration: 300,

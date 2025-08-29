@@ -95,7 +95,6 @@ export type AnnotationArea = {
   areaColorOpacity?: number
   /**
    * @description 标注面区域边框颜色
-   * @default 'red'
    * @example 'red'
    */
   areaBorderColor?: number

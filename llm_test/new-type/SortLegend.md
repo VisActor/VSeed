@@ -11,7 +11,6 @@ export type SortLegend = {
   order?: 'asc' | 'desc'
   /**
    * @description 排序依赖的字段, 可以是维度id或指标id
-   * @default ''
    * @example 
    * - orderBy:'date'
    * - orderBy:'profit'

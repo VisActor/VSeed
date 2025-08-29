@@ -46,6 +46,37 @@ export type AnnotationPoint = {
    */
   textBaseline?: 'top' | 'middle' | 'bottom'
   /**
+   * @description 背景可见
+   * @example true
+   */
+  textBackgroundVisible?: boolean
+  /**
+   * @description 背景颜色
+   * @example 'red'
+   */
+  textBackgroundColor?: string
+  /**
+   * @description 背景边框颜色
+   * @example 'red'
+   */
+  textBackgroundBorderColor?: string
+  /**
+   * @description 背景边框宽度
+   * @example 2
+   */
+  textBackgroundBorderWidth?: number
+  /**
+   * @description 背景边框圆角
+   * @example 4
+   */
+  textBackgroundBorderRadius?: number
+  /**
+   * @description 背景内边距
+   * @example 4
+   */
+  textBackgroundPadding?: number
+
+  /**
    * @description 标注点整体在Y方向的偏移像素距离, 当标注点在图表上方(数值较大时)时, 建议设置为正值, 标注点在图表下方(数值较小时)时, 建议设置为负值.
    * 负值则整体向上偏移, 例如设置为-10, 则整个标注点组件包括文本、文本背景, 一起向上偏移10像素
    * 正值则整体向下偏移, 例如设置为10, 则整个标注点组件包括文本、文本背景, 一起向下偏移10像素
@@ -59,36 +90,6 @@ export type AnnotationPoint = {
    * @example offsetX: 5, 标注点整体向右偏移5像素
    */
   offsetX?: number
-  /**
-   * @description 背景可见
-   * @example true
-   */
-  backgroundVisible?: boolean
-  /**
-   * @description 背景颜色
-   * @example 'red'
-   */
-  backgroundColor?: string
-  /**
-   * @description 背景边框颜色
-   * @example 'red'
-   */
-  backgroundBorderColor?: string
-  /**
-   * @description 背景边框宽度
-   * @example 2
-   */
-  backgroundBorderWidth?: number
-  /**
-   * @description 背景边框圆角
-   * @example 4
-   */
-  backgroundBorderRadius?: number
-  /**
-   * @description 背景内边距
-   * @example 4
-   */
-  backgroundPadding?: number
 }
 ```
 
@@ -99,14 +100,14 @@ export type Selector =
   | number
   | {
       field: string;
-      operator?: "=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between";
-      op?: "=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between";
+      operator?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
+      op?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
       value: string | number | (string | number)[];
     }
   | {
       field: string;
-      operator?: "in" | "not in";
-      op?: "in" | "not in";
+      operator?: ("in" | "not in") | null;
+      op?: ("in" | "not in") | null;
       value: string | number | (string | number)[];
     };
 
@@ -119,14 +120,14 @@ export type Selectors = (
   | number
   | {
       field: string;
-      operator?: "=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between";
-      op?: "=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between";
+      operator?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
+      op?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
       value: string | number | (string | number)[];
     }
   | {
       field: string;
-      operator?: "in" | "not in";
-      op?: "in" | "not in";
+      operator?: ("in" | "not in") | null;
+      op?: ("in" | "not in") | null;
       value: string | number | (string | number)[];
     }
 )[];

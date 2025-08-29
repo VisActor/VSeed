@@ -96,14 +96,14 @@ export type Selector =
   | number
   | {
       field: string;
-      operator?: "=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between";
-      op?: "=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between";
+      operator?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
+      op?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
       value: string | number | (string | number)[];
     }
   | {
       field: string;
-      operator?: "in" | "not in";
-      op?: "in" | "not in";
+      operator?: ("in" | "not in") | null;
+      op?: ("in" | "not in") | null;
       value: string | number | (string | number)[];
     };
 
@@ -116,14 +116,14 @@ export type Selectors = (
   | number
   | {
       field: string;
-      operator?: "=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between";
-      op?: "=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between";
+      operator?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
+      op?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
       value: string | number | (string | number)[];
     }
   | {
       field: string;
-      operator?: "in" | "not in";
-      op?: "in" | "not in";
+      operator?: ("in" | "not in") | null;
+      op?: ("in" | "not in") | null;
       value: string | number | (string | number)[];
     }
 )[];

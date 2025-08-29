@@ -52,32 +52,32 @@ export type PointStyle = {
    */
   pointSize?: number
   /**
-   * 柱状图颜色
-   * @description 柱状图颜色
+   * 点图元颜色
+   * @description 点图元颜色
    * @type {string}
    */
   pointColor?: string
   /**
-   * 柱状图颜色透明度
-   * @description 柱状图颜色透明度
+   * 点图元颜色透明度
+   * @description 点图元颜色透明度
    * @type {number}
    */
   pointColorOpacity?: number
   /**
-   * 柱状图边框颜色
-   * @description 柱状图边框颜色
+   * 点图元边框颜色
+   * @description 点图元边框颜色
    * @type {string}
    */
   pointBorderColor?: string
   /**
-   * 柱状图边框宽度
-   * @description 柱状图边框宽度
+   * 点图元边框宽度
+   * @description 点图元边框宽度
    * @type {number}
    */
   pointBorderWidth?: number
   /**
-   * 柱状图边框样式
-   * @description 柱状图边框样式
+   * 点图元边框样式
+   * @description 点图元边框样式
    * @type {number}
    * @example solid
    * @example dashed
@@ -94,14 +94,14 @@ export type Selector =
   | number
   | {
       field: string;
-      operator?: "=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between";
-      op?: "=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between";
+      operator?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
+      op?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
       value: string | number | (string | number)[];
     }
   | {
       field: string;
-      operator?: "in" | "not in";
-      op?: "in" | "not in";
+      operator?: ("in" | "not in") | null;
+      op?: ("in" | "not in") | null;
       value: string | number | (string | number)[];
     };
 
@@ -114,14 +114,14 @@ export type Selectors = (
   | number
   | {
       field: string;
-      operator?: "=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between";
-      op?: "=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between";
+      operator?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
+      op?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
       value: string | number | (string | number)[];
     }
   | {
       field: string;
-      operator?: "in" | "not in";
-      op?: "in" | "not in";
+      operator?: ("in" | "not in") | null;
+      op?: ("in" | "not in") | null;
       value: string | number | (string | number)[];
     }
 )[];

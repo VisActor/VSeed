@@ -4,27 +4,30 @@
 ```typescript
 export interface ColorLegend {
   position?:
-    | "left"
-    | "leftTop"
-    | "leftBottom"
-    | "lt"
-    | "lb"
-    | "top"
-    | "topLeft"
-    | "topRight"
-    | "tl"
-    | "tr"
-    | "right"
-    | "rightTop"
-    | "rightBottom"
-    | "rt"
-    | "rb"
-    | "bottom"
-    | "bottomLeft"
-    | "bottomRight"
-    | "bl"
-    | "br";
-  enable?: boolean;
+    | (
+        | "left"
+        | "leftTop"
+        | "leftBottom"
+        | "lt"
+        | "lb"
+        | "top"
+        | "topLeft"
+        | "topRight"
+        | "tl"
+        | "tr"
+        | "right"
+        | "rightTop"
+        | "rightBottom"
+        | "rt"
+        | "rb"
+        | "bottom"
+        | "bottomLeft"
+        | "bottomRight"
+        | "bl"
+        | "br"
+      )
+    | null;
+  enable?: boolean | null;
 }
 
 ```

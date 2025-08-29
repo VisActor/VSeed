@@ -29,7 +29,4 @@ export const zAnnotationVerticalLine = z.object({
     .union([z.literal('solid'), z.literal('dashed'), z.literal('dotted')])
     .default('dashed')
     .nullish(),
-
-  offsetX: z.number().default(0),
-  offsetY: z.number().default(0),
 })

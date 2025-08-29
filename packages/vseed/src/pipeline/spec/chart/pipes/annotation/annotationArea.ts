@@ -51,8 +51,6 @@ export const annotationArea: SpecPipe = (spec, context) => {
       areaBorderWidth = 1,
 
       outerPadding = 4,
-      offsetX = 0,
-      offsetY = 0,
     } = annotationArea
 
     const dataset = advancedVSeed.dataset.flat()
@@ -64,8 +62,6 @@ export const annotationArea: SpecPipe = (spec, context) => {
     return {
       zIndex: ANNOTATION_Z_INDEX,
       regionRelative: true,
-      offsetX,
-      offsetY,
       positions: (data: Datum[], context: ICartesianSeries) => {
         const positionData = data.filter((item) => selectedData.some((datum) => isSubset(datum, item)))
         const xyList = positionData.map((datum) => context.dataToPosition(datum) as { x: number; y: number })

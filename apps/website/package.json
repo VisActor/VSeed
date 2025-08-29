@@ -10,15 +10,16 @@
     "preview": "rspress preview"
   },
   "dependencies": {
-    "rspress": "1.45.0",
+    "rspress": "1.45.3",
     "@visactor/vseed": "workspace:*",
     "@visactor/vchart": "2.0.3",
     "@visactor/vtable": "1.19.4",
     "zustand": "5.0.6"
   },
   "devDependencies": {
+    "ts-morph": "26.0.0",
     "@eslint/js": "9.30.0",
-    "@rspress/plugin-playground": "1.45.0",
+    "@rspress/plugin-playground": "1.45.3",
     "@types/node": "22.16.5",
     "eslint": "9.30.0",
     "globals": "16.2.0",

@@ -1,0 +1,57 @@
+[
+  {
+    "type": "file",
+    "name": "backgroundColor",
+    "label": "backgroundColor "
+  },
+  {
+    "type": "file",
+    "name": "chartType",
+    "label": "chartType "
+  },
+  {
+    "type": "file",
+    "name": "color",
+    "label": "color "
+  },
+  {
+    "type": "file",
+    "name": "dataset",
+    "label": "dataset "
+  },
+  {
+    "type": "file",
+    "name": "dimensions",
+    "label": "dimensions "
+  },
+  {
+    "type": "file",
+    "name": "label",
+    "label": "label "
+  },
+  {
+    "type": "file",
+    "name": "legend",
+    "label": "legend "
+  },
+  {
+    "type": "file",
+    "name": "locale",
+    "label": "locale "
+  },
+  {
+    "type": "file",
+    "name": "measures",
+    "label": "measures "
+  },
+  {
+    "type": "file",
+    "name": "theme",
+    "label": "theme "
+  },
+  {
+    "type": "file",
+    "name": "tooltip",
+    "label": "tooltip "
+  }
+]

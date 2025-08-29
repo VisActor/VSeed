@@ -12,10 +12,11 @@
     "dev": "pnpm -r --color --parallel dev",
     "dev:rsdoctor": "pnpm --filter=@visactor/vseed run dev:rsdoctor",
     "build": "pnpm -r build",
+    "build:vseed": "pnpm --filter=@visactor/vseed run build",
     "build:rsdoctor": "pnpm --filter=@visactor/vseed run build:rsdoctor",
+    "build:docs": "node ./apps/website/scripts/generateDocs.js",
     "test": "pnpm -r test",
-    "publish:vseed": "pnpm run build && pnpm publish -r --access=public",
-    "ci:publish": "pnpm run build &&pnpm publish -r --access=public"
+    "publish:vseed": "pnpm run build:vseed && pnpm publish --filter=@visactor/vseed --access=public"
   },
   "workspaces": [
     "apps/*",

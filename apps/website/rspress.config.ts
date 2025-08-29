@@ -1,7 +1,7 @@
 import * as path from 'node:path'
 import { defineConfig } from 'rspress/config'
 import { pluginPlayground } from '@rspress/plugin-playground'
-const isDev = process.env.NODE_ENV === 'development'
+// const isDev = process.env.NODE_ENV === 'development'
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
@@ -36,17 +36,20 @@ export default defineConfig({
       },
     ],
     locales: [
-      {
-        lang: 'en-US',
-        label: 'English',
-        outlineTitle: 'ON THIS Page',
-      },
+      // {
+      //   lang: 'en-US',
+      //   label: 'English',
+      //   outlineTitle: 'ON THIS Page',
+      // },
       {
         lang: 'zh-CN',
         label: '简体中文',
         outlineTitle: '目录',
       },
     ],
+  },
+  markdown: {
+    showLineNumbers: true,
   },
   title: 'VisActor/VSeed',
   icon: '/logo.svg',

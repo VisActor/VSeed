@@ -49,9 +49,6 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
       textBackgroundBorderRadius = 4,
       textBackgroundBorderWidth = 1,
       textBackgroundPadding = 2,
-
-      offsetX = 0,
-      offsetY = 0,
     } = annotationVerticalLine
 
     const dataset = advancedVSeed.dataset.flat()
@@ -59,8 +56,6 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
     const generateOneMarkLine = (y: string | number) => {
       return {
         y,
-        offsetX,
-        offsetY,
         zIndex: ANNOTATION_Z_INDEX,
         line: {
           style: {

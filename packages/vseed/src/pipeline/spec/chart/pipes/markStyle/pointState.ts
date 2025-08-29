@@ -13,6 +13,11 @@ export const pointStateDimensionHover: SpecPipe = (spec) => {
         dimension_hover: {
           scaleX: 1.4,
           scaleY: 1.4,
+          outerBorder: {
+            lineWidth: 4,
+            strokeOpacity: 0.25,
+            distance: 2,
+          },
         },
       },
     },

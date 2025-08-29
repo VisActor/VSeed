@@ -9,12 +9,16 @@ import { type BackgroundColor, type Dataset, type Dimensions, type Theme } from 
  * - 复杂多维数据统计分析
  * - 数据钻取与聚合展示
  * - 业务报表生成与数据探索
+ * @warning 
  * 数据要求:
  * - 至少1个行维度 或 1个列维度 或 1个指标
  * - 数据必须已聚合
  * - 数据可被分组
  * 默认开启的功能:
  * - 默认开启行列排序、数据筛选、聚合计算、小计/总计
+ * @recommend 
+ * - 推荐字段配置: `1`个指标, `1`个维度
+ * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
 export interface PivotTable {
   /**

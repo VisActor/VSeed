@@ -1,1 +1,2 @@
-export * from './crosshair'
+export type * from './crosshair'
+export * from './zCrosshair'

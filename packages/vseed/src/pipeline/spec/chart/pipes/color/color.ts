@@ -1,5 +1,4 @@
 import type { ILineChartSpec } from '@visactor/vchart'
-import { Separator } from 'src/dataReshape'
 import type { Color, SpecPipe } from 'src/types'
 
 export const color: SpecPipe = (spec, context) => {
@@ -18,24 +17,76 @@ export const color: SpecPipe = (spec, context) => {
 
   const { color } = baseConfig
   const { colorScheme, colorMapping } = color
-  const mappingList: Array<[string, string]> = []
-  if (colorMapping) {
-    Object.entries(colorMapping)
-      .sort((a, b) => a[0].split(Separator).length - b[0].split(Separator).length)
-      .forEach(([key, value]) => {
-        const idMap = Object.entries(colorIdMap).filter(([_, v]) => v.includes(key))
-
-        for (const [colorId] of idMap) {
-          mappingList.push([colorId, value])
-        }
-      })
-  }
 
   result.color = {
     type: 'ordinal',
     domain: colorItems,
     range: colorScheme,
-    specified: Object.fromEntries(mappingList),
+    specified: createSpecifiedForColorMapping(colorMapping, colorIdMap, colorItems),
   } as ILineChartSpec['color']
   return result
+}
+
+const createSpecifiedForColorMapping = (
+  colorMapping?: Record<string, string>,
+  colorIdMap?: Record<string, string>,
+  colorItems?: string[],
+) => {
+  if (!colorMapping || !colorIdMap || !colorItems) {
+    return undefined
+  }
+
+  const matchedList: string[] = []
+
+  // 名称越长优先级越高: 按名称长度降, 优先匹配名称长的, 避免一个短的名称匹配到了超多个长的
+  const colors = Object.entries(colorMapping).sort((a, b) => b[0].length - a[0].length)
+  // 准确匹配
+  const accurateMap = colors.reduce(
+    (prev, cur) => {
+      const name = cur[0]
+      const colorValue = cur[1]
+
+      const accurateMatchedList = Object.entries(colorIdMap).filter(([colorKey, colorAlias]) => {
+        return colorKey === name || colorAlias === name
+      })
+      accurateMatchedList.forEach((item) => {
+        prev[item[0]] = colorValue
+        matchedList.push(name)
+      })
+
+      return prev
+    },
+    {} as Record<string, string>,
+  )
+
+  // 模糊匹配
+  const fuzzyMap = colors.reduce(
+    (prev, cur) => {
+      const name = cur[0]
+      const colorValue = cur[1]
+      if (matchedList.includes(name)) {
+        return prev
+      }
+
+      const fuzzyMatchedList = Object.entries(colorIdMap).filter(([colorKey, colorAlias]) => {
+        return colorKey.includes(name) || colorAlias.includes(name)
+      })
+      fuzzyMatchedList.forEach((item) => {
+        // 已经匹配有值, 则不重复匹配
+        if (prev[item[0]]) {
+          return
+        }
+        prev[item[0]] = colorValue
+      })
+
+      return prev
+    },
+    {} as Record<string, string>,
+  )
+
+  // 合并, 准确匹配的优先级高
+  return {
+    ...fuzzyMap,
+    ...accurateMap,
+  }
 }

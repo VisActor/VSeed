@@ -2,13 +2,13 @@
 
 ## 环境准备
 
-[Node Install](https://nodejs.org/zh-cn/download)
+[Node Download](https://nodejs.org/zh-cn/download)
 ```bash title="node"
 nvm install 20
 nvm use 20
 ```
 
-[Pnpm Install](https://pnpm.io/zh/installation#%E4%BD%BF%E7%94%A8-corepack)
+[Pnpm Download](https://pnpm.io/zh/installation#%E4%BD%BF%E7%94%A8-corepack)
 > `package.json`中配置`packageManager`为`pnpm@10.13.1`, `corepack`会自动安装该版本
 ```bash title="pnpm"
 corepack enable pnpm

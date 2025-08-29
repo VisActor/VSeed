@@ -1,4 +1,4 @@
-import { useDark } from '@rspress/core/runtime'
+import { useDark } from 'rspress/runtime'
 
 import { useRef, useEffect, memo } from 'react'
 import VChart, { ISpec } from '@visactor/vchart'

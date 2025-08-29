@@ -1,7 +1,7 @@
 import { useRef, useEffect, memo } from 'react'
 import { PivotTable as VTablePivotTable, PivotTableConstructorOptions } from '@visactor/vtable'
 import { registerAll, VSeed, Builder, UnfoldDimensionGroupId } from '@visactor/vseed'
-import { useDark } from '@rspress/core/runtime'
+import { useDark } from 'rspress/runtime'
 
 registerAll()
 

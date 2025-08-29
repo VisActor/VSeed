@@ -78,10 +78,10 @@ export type LineStyle = {
 }
 
 export const zLineStyle = z.object({
-  selector: z.union([zSelector, zSelectors]).optional(),
-  lineSmooth: z.boolean().optional(),
-  lineColor: z.string().optional(),
-  lineColorOpacity: z.number().optional(),
-  lineWidth: z.number().optional(),
-  lineStyle: z.union([z.enum(['solid', 'dashed', 'dotted'])]).optional(),
+  selector: z.union([zSelector, zSelectors]).nullish(),
+  lineSmooth: z.boolean().nullish(),
+  lineColor: z.string().nullish(),
+  lineColorOpacity: z.number().nullish(),
+  lineWidth: z.number().nullish(),
+  lineStyle: z.union([z.enum(['solid', 'dashed', 'dotted'])]).nullish(),
 })

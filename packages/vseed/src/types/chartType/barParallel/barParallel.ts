@@ -1,26 +1,5 @@
-import { z } from 'zod'
 import type { Locale } from '../../i18n'
-import { zLocale } from '../../i18n'
-import {
-  zAnnotationArea,
-  zAnnotationHorizontalLine,
-  zAnnotationPoint,
-  zAnnotationVerticalLine,
-  zBackgroundColor,
-  zBarStyle,
-  zColor,
-  zCrosshairRect,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLegend,
-  zMeasureTree,
-  zStackCornerRadius,
-  zTheme,
-  zTooltip,
-  zXLinearAxis,
-  zYBandAxis,
-} from '../../properties'
+
 import type {
   AnnotationArea,
   AnnotationHorizontalLine,
@@ -51,12 +30,16 @@ import type {
  * - 类别名称较长时的多指标对比
  * - 排名与数值同时展示的横向比较
  * - 多维度数据的并列分析
+ * @warning 
  * 数据要求:
  * - 至少1个指标字段（度量）
  * - 第一个维度会放至Y轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
  * - 所有指标会自动合并为一个指标
  * 默认开启的功能:
  * - 默认开启图例、坐标轴、数据标签、提示信息
+ * @recommend 
+ * - 推荐字段配置: `1`个指标, `2`个维度
+ * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
 export interface BarParallel {
   /**
@@ -222,26 +205,3 @@ export interface BarParallel {
    */
   locale?: Locale
 }
-
-export const zBarParallel = z.object({
-  chartType: z.literal('barParallel'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
-  label: zLabel.optional(),
-  legend: zLegend.optional(),
-  tooltip: zTooltip.optional(),
-  xAxis: zXLinearAxis.optional(),
-  yAxis: zYBandAxis.optional(),
-  crosshairRect: zCrosshairRect.optional(),
-  stackCornerRadius: zStackCornerRadius.optional(),
-  theme: zTheme.optional(),
-  barStyle: z.array(zBarStyle).or(zBarStyle).optional(),
-  annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
-  annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
-  annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),
-  annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).optional(),
-  locale: zLocale.optional(),
-})

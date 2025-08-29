@@ -1,17 +1,5 @@
-import { z } from 'zod'
 import type { Locale } from '../../i18n'
-import { zLocale } from '../../i18n'
-import {
-  zBackgroundColor,
-  zColorLegend,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLinearColor,
-  zMeasureTree,
-  zTheme,
-  zTooltip,
-} from '../../properties'
+
 import type {
   BackgroundColor,
   ColorLegend,
@@ -30,12 +18,16 @@ import type {
  * 适用场景:
  * 漏斗图适用场景:
  * - 适合用来分析具有多个连续、规范化步骤的流程，并清晰地展示在每个环节的数据流失或转化情况
+ * @warning 
  * 数据要求:
  * - 至少1个数值字段（指标）
  * - 所有维度会与指标名称(存在多个指标时)合并成一个维度, 作为图例项展示
  * - 所有指标会自动合并为一个指标
  * 默认开启的功能:
  * - 默认开启图例、数据标签、提示信息、占比计算
+ * @recommend 
+ * - 推荐字段配置: `1`个指标, `1`个维度
+ * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
 export interface Funnel {
   /**
@@ -114,17 +106,3 @@ export interface Funnel {
    */
   locale?: Locale
 }
-
-export const zFunnel = z.object({
-  chartType: z.literal('funnel'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zLinearColor.optional(),
-  label: zLabel.optional(),
-  legend: zColorLegend.optional(),
-  tooltip: zTooltip.optional(),
-  theme: zTheme.optional(),
-  locale: zLocale.optional(),
-})

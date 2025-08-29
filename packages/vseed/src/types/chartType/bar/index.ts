@@ -1,1 +1,2 @@
-export * from './bar'
+export type * from './bar'
+export * from './zBar'

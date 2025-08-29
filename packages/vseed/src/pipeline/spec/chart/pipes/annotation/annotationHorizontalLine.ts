@@ -43,15 +43,12 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
       lineVisible = true,
       lineWidth = 1,
 
-      backgroundVisible = true,
-      backgroundColor = '#212121',
-      backgroundBorderColor = '#212121',
-      backgroundBorderRadius = 4,
-      backgroundBorderWidth = 1,
-      backgroundPadding = 2,
-
-      offsetX = 0,
-      offsetY = 0,
+      textBackgroundVisible = true,
+      textBackgroundColor = '#212121',
+      textBackgroundBorderColor = '#212121',
+      textBackgroundBorderRadius = 4,
+      textBackgroundBorderWidth = 1,
+      textBackgroundPadding = 2,
     } = annotationVerticalLine
 
     const dataset = advancedVSeed.dataset.flat()
@@ -59,8 +56,6 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
     const generateOneMarkLine = (y: string | number) => {
       return {
         y,
-        offsetX,
-        offsetY,
         zIndex: ANNOTATION_Z_INDEX,
         line: {
           style: {
@@ -73,11 +68,11 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
         },
         label: {
           text: text,
-          position: positionMap[textPosition],
+          position: positionMap[textPosition || 'insideEnd'],
           style: {
             visible: true,
             dy: textFontSize,
-            stroke: backgroundColor,
+            stroke: textBackgroundColor,
             lineWidth: 1,
             textAlign: textAlign,
             textBaseline: textBaseline,
@@ -86,20 +81,20 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
             fontWeight: textFontWeight,
           },
           labelBackground: {
-            visible: backgroundVisible,
-            padding: backgroundPadding,
+            visible: textBackgroundVisible,
+            padding: textBackgroundPadding,
             style: {
               dy: textFontSize,
-              cornerRadius: backgroundBorderRadius ?? 4,
-              fill: backgroundColor,
-              stroke: backgroundBorderColor,
-              lineWidth: backgroundBorderWidth,
+              cornerRadius: textBackgroundBorderRadius ?? 4,
+              fill: textBackgroundColor,
+              stroke: textBackgroundBorderColor,
+              lineWidth: textBackgroundBorderWidth,
             },
           },
         },
         endSymbol: {
           visible: true,
-          size: 10 + lineWidth,
+          size: 10 + (lineWidth || 1),
           style: {
             dx: -4,
             fill: lineColor,

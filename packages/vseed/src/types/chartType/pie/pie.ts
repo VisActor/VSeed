@@ -1,17 +1,5 @@
-import { z } from 'zod'
 import type { Locale } from '../../i18n'
-import { zLocale } from '../../i18n'
-import {
-  zBackgroundColor,
-  zColor,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLegend,
-  zMeasureTree,
-  zTheme,
-  zTooltip,
-} from '../../properties'
+
 import type {
   BackgroundColor,
   Color,
@@ -31,12 +19,16 @@ import type {
  * - 展示分类数据的占比分布
  * - 强调数据的整体与部分关系
  * - 类别数量较少（建议不超过6个）的占比分析
+ * @warning 
  * 数据要求:
  * - 至少1个数值字段（度量）
  * - 所有维度会与指标名称(存在多个指标时)合并成一个维度, 作为图例项展示
  * - 所有指标会自动合并为一个指标
  * 默认开启的功能:
  * - 默认开启图例、数据标签、提示信息、占比计算
+ * @recommend 
+ * - 推荐字段配置: `1`个指标, `1`个维度
+ * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
 export interface Pie {
   /**
@@ -118,17 +110,3 @@ export interface Pie {
    */
   locale?: Locale
 }
-
-export const zPie = z.object({
-  chartType: z.literal('pie'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
-  label: zLabel.optional(),
-  legend: zLegend.optional(),
-  tooltip: zTooltip.optional(),
-  theme: zTheme.optional(),
-  locale: zLocale.optional(),
-})

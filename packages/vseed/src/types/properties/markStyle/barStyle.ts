@@ -85,11 +85,11 @@ export type BarStyle = {
 }
 
 export const zBarStyle = z.object({
-  selector: z.union([zSelector, zSelectors]).optional(),
-  barColor: z.string().optional(),
-  barColorOpacity: z.number().optional(),
-  barBorderColor: z.string().optional(),
-  barBorderWidth: z.number().optional(),
-  barBorderStyle: z.union([z.literal('solid'), z.literal('dashed'), z.literal('dotted')]).optional(),
-  barRadius: z.union([z.number(), z.array(z.number())]).optional(),
+  selector: z.union([zSelector, zSelectors]).nullish(),
+  barColor: z.string().nullish(),
+  barColorOpacity: z.number().nullish(),
+  barBorderColor: z.string().nullish(),
+  barBorderWidth: z.number().nullish(),
+  barBorderStyle: z.union([z.literal('solid'), z.literal('dashed'), z.literal('dotted')]).nullish(),
+  barRadius: z.union([z.number(), z.array(z.number())]).nullish(),
 })

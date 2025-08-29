@@ -166,6 +166,8 @@ export const lightTheme = (): CustomThemeConfig => {
 
     selectedBorderColor: '#4080ff',
     selectedBackgroundColor: '#bedaff33',
+
+    backgroundColor: 'transparent',
   }
 
   return {
@@ -185,42 +187,42 @@ export const lightTheme = (): CustomThemeConfig => {
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect,
-        stackCornerRadius: [4, 4, 0, 0],
+        stackCornerRadius: [4, 4, 4, 4],
       },
       columnParallel: {
         ...baseConfig,
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect,
-        stackCornerRadius: [4, 4, 0, 0],
+        stackCornerRadius: [4, 4, 4, 4],
       },
       columnPercent: {
         ...baseConfig,
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect,
-        stackCornerRadius: [4, 4, 0, 0],
+        stackCornerRadius: [4, 4, 4, 4],
       },
       bar: {
         ...baseConfig,
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect,
-        stackCornerRadius: [0, 4, 4, 0],
+        stackCornerRadius: [4, 4, 4, 4],
       },
       barParallel: {
         ...baseConfig,
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect,
-        stackCornerRadius: [0, 4, 4, 0],
+        stackCornerRadius: [4, 4, 4, 4],
       },
       barPercent: {
         ...baseConfig,
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect,
-        stackCornerRadius: [0, 4, 4, 0],
+        stackCornerRadius: [4, 4, 4, 4],
       },
       area: {
         ...baseConfig,

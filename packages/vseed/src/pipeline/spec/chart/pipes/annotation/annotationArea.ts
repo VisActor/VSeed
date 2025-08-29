@@ -37,12 +37,12 @@ export const annotationArea: SpecPipe = (spec, context) => {
       textAlign = 'center',
       textBaseline = 'top',
 
-      backgroundVisible = true,
-      backgroundColor = '#191d24',
-      backgroundBorderColor = '#191d24',
-      backgroundBorderWidth = 1,
-      backgroundBorderRadius = 4,
-      backgroundPadding = 4,
+      textBackgroundVisible = true,
+      textBackgroundColor = '#191d24',
+      textBackgroundBorderColor = '#191d24',
+      textBackgroundBorderWidth = 1,
+      textBackgroundBorderRadius = 4,
+      textBackgroundPadding = 4,
 
       areaColor = '#888888',
       areaColorOpacity = 0.15,
@@ -51,18 +51,17 @@ export const annotationArea: SpecPipe = (spec, context) => {
       areaBorderWidth = 1,
 
       outerPadding = 4,
-      offsetX = 0,
-      offsetY = 0,
     } = annotationArea
 
     const dataset = advancedVSeed.dataset.flat()
     const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
 
+    const labelPosition = positionMap[textPosition || 'top']
+    const isBottom = labelPosition.toLocaleLowerCase().includes('bottom')
+
     return {
       zIndex: ANNOTATION_Z_INDEX,
       regionRelative: true,
-      offsetX,
-      offsetY,
       positions: (data: Datum[], context: ICartesianSeries) => {
         const positionData = data.filter((item) => selectedData.some((datum) => isSubset(datum, item)))
         const xyList = positionData.map((datum) => context.dataToPosition(datum) as { x: number; y: number })
@@ -83,8 +82,8 @@ export const annotationArea: SpecPipe = (spec, context) => {
         if (typeof xAxisHelper?.getBandwidth === 'function') {
           const yScale = yAxisHelper.getScale()
 
-          const minX = Math.min(...xyList.map((item) => item.x)) - outerPadding
-          const maxX = Math.max(...xyList.map((item) => item.x)) + outerPadding
+          const minX = Math.min(...xyList.map((item) => item.x)) - (outerPadding || 4)
+          const maxX = Math.max(...xyList.map((item) => item.x)) + (outerPadding || 4)
           const minY = Math.min(...yScale.range())
           const maxY = Math.max(...yScale.range())
           return [
@@ -114,8 +113,8 @@ export const annotationArea: SpecPipe = (spec, context) => {
         if (typeof yAxisHelper?.getBandwidth === 'function') {
           const xScale = xAxisHelper.getScale()
 
-          const minY = Math.min(...xyList.map((item) => item.y)) - outerPadding
-          const maxY = Math.max(...xyList.map((item) => item.y)) + outerPadding
+          const minY = Math.min(...xyList.map((item) => item.y)) - (outerPadding || 4)
+          const maxY = Math.max(...xyList.map((item) => item.y)) + (outerPadding || 4)
           const minX = Math.min(...xScale.range())
           const maxX = Math.max(...xScale.range())
 
@@ -146,29 +145,29 @@ export const annotationArea: SpecPipe = (spec, context) => {
         return []
       },
       label: {
-        position: positionMap[textPosition],
+        position: labelPosition,
         visible: true,
         text: text,
         style: {
-          dy: textFontSize,
+          dy: isBottom ? -(textFontSize || 12) * 2 : textFontSize,
           textAlign: textAlign,
           textBaseline: textBaseline,
           fill: textColor,
-          stroke: backgroundColor,
+          stroke: textBackgroundColor,
           lineWidth: 1,
           fontSize: textFontSize,
           fontWeight: textFontWeight,
         },
 
         labelBackground: {
-          visible: backgroundVisible,
-          padding: backgroundPadding,
+          visible: textBackgroundVisible,
+          padding: textBackgroundPadding,
           style: {
-            dy: textFontSize,
-            cornerRadius: backgroundBorderRadius ?? 4,
-            fill: backgroundColor,
-            stroke: backgroundBorderColor,
-            lineWidth: backgroundBorderWidth,
+            dy: isBottom ? -(textFontSize || 12) * 2 : textFontSize,
+            cornerRadius: textBackgroundBorderRadius ?? 4,
+            fill: textBackgroundColor,
+            stroke: textBackgroundBorderColor,
+            lineWidth: textBackgroundBorderWidth,
           },
         },
       },

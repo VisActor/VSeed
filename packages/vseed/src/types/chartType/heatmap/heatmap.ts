@@ -1,19 +1,6 @@
-import { z } from 'zod'
-import { zLocale, type Locale } from '../../i18n'
-import type {
-  ColorLegend,
-  LinearColor,
-  MeasureTree} from '../../properties';
+import { type Locale } from '../../i18n'
+import type { ColorLegend, LinearColor, MeasureTree } from '../../properties'
 import {
-  zBackgroundColor,
-  zColorLegend,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLinearColor,
-  zMeasureTree,
-  zTheme,
-  zTooltip,
   type BackgroundColor,
   type Dataset,
   type Dimensions,
@@ -29,12 +16,16 @@ import {
  * - 大规模二维数据的密度和强度展示
  * - 分类与数值的关联分析
  * - 时间序列与类别的交叉对比
+ * @warning 
  * 数据要求:
  * - 至少2个维度字段，用于确定热力图的行和列
  * - 至少1个数值字段（度量），用于映射颜色深浅
  * - 支持多个指标时，通常选择一个指标进行颜色映射
  * 默认开启的功能:
  * - 默认开启图例、坐标轴、数据标签、提示信息、数值缩放
+ * @recommend 
+ * - 推荐字段配置: `1`个指标, `2`个维度
+ * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
 export interface Heatmap {
   /**
@@ -115,17 +106,3 @@ export interface Heatmap {
    */
   locale?: Locale
 }
-
-export const zHeatmap = z.object({
-  chartType: z.literal('heatmap'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zLinearColor.optional(),
-  label: zLabel.optional(),
-  legend: zColorLegend.optional(),
-  tooltip: zTooltip.optional(),
-  theme: zTheme.optional(),
-  locale: zLocale.optional(),
-})

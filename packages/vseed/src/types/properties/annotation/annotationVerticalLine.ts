@@ -1,5 +1,4 @@
-import { zSelector, zSelectors, type Selector, type Selectors } from '../../dataSelector'
-import { z } from 'zod'
+import { type Selector, type Selectors } from '../../dataSelector'
 
 /**
  * @description 垂直标注线, 根据用户设置的selector 或 xValue, 从下向上绘制一条末尾有箭头的线, 标签默认在标注线终点的正左侧
@@ -57,20 +56,7 @@ export type AnnotationVerticalLine = {
    * @example 'top'
    */
   textBaseline?: 'top' | 'middle' | 'bottom'
-  /**
-   * @description (垂直)标注线整体在Y方向的偏移像素距离, 一般情况下, 无需设置
-   * 负值则整体向上偏移, 例如设置为-10, 则整个标注线组件包括文本、箭头、线段, 一起向上偏移10像素
-   * 正值则整体向下偏移, 例如设置为10, 则整个标注线组件包括文本、箭头、线段, 一起向下偏移10像素
-   * @example offsetY: 0
-   */
-  offsetY?: number
-  /**
-   * @description (垂直)标注线整体在X方向的偏移像素距离, 一般情况下, 无需设置
-   * 负值则整体向左偏移, 例如设置为-10, 则整个标注线组件包括文本、箭头、线段, 一起向左偏移10像素
-   * 正值则整体向右偏移, 例如设置为10, 则整个标注线组件包括文本、箭头、线段, 一起向右偏移10像素
-   * @example offsetX: 0
-   */
-  offsetX?: number
+
   /**
    * @description 线可见
    * @example true
@@ -95,63 +81,30 @@ export type AnnotationVerticalLine = {
    * @description 背景可见
    * @example true
    */
-  backgroundVisible?: boolean
+  textBackgroundVisible?: boolean
   /**
    * @description 背景颜色
    * @example 'red'
    */
-  backgroundColor?: string
+  textBackgroundColor?: string
   /**
    * @description 背景边框颜色
    * @example 'red'
    */
-  backgroundBorderColor?: string
+  textBackgroundBorderColor?: string
   /**
    * @description 背景边框宽度
    * @example 2
    */
-  backgroundBorderWidth?: number
+  textBackgroundBorderWidth?: number
   /**
    * @description 背景边框圆角
    * @example 4
    */
-  backgroundBorderRadius?: number
+  textBackgroundBorderRadius?: number
   /**
    * @description 背景内边距
    * @example 4
    */
-  backgroundPadding?: number
+  textBackgroundPadding?: number
 }
-
-export const zAnnotationVerticalLine = z.object({
-  selector: z.union([zSelector, zSelectors]).optional(),
-  xValue: z.union([z.number(), z.string(), z.array(z.union([z.number(), z.string()]))]).optional(),
-  text: z.string().or(z.array(z.string())).optional(),
-  textPosition: z
-    .enum(['outsideStart', 'outsideEnd', 'outsideMiddle', 'insideStart', 'insideMiddle', 'insideEnd'])
-    .default('insideEnd')
-    .optional(),
-  textColor: z.string().default('#ffffff').optional(),
-  textFontSize: z.number().default(12).optional(),
-  textFontWeight: z.number().default(400).optional(),
-  textAlign: z.enum(['left', 'right', 'center']).default('right').optional(),
-  textBaseline: z.enum(['top', 'middle', 'bottom']).default('top').optional(),
-
-  lineVisible: z.boolean().default(true).optional(),
-  lineColor: z.string().default('#212121').optional(),
-  lineWidth: z.number().default(1).optional(),
-  lineStyle: z
-    .union([z.literal('solid'), z.literal('dashed'), z.literal('dotted')])
-    .default('dashed')
-    .optional(),
-
-  backgroundVisible: z.boolean().default(true).optional(),
-  backgroundColor: z.string().default('#212121').optional(),
-  backgroundBorderColor: z.string().default('#212121').optional(),
-  backgroundBorderRadius: z.number().default(4).optional(),
-  backgroundBorderWidth: z.number().default(1).optional(),
-  backgroundPadding: z.number().default(2).optional(),
-
-  offsetX: z.number().default(0),
-  offsetY: z.number().default(0),
-})

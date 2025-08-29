@@ -37,12 +37,12 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
       textAlign = 'center',
       textBaseline = 'top',
 
-      backgroundVisible = true,
-      backgroundColor = '#191d24',
-      backgroundBorderColor = '#191d24',
-      backgroundBorderWidth = 1,
-      backgroundBorderRadius = 4,
-      backgroundPadding = 4,
+      textBackgroundVisible = true,
+      textBackgroundColor = '#191d24',
+      textBackgroundBorderColor = '#191d24',
+      textBackgroundBorderWidth = 1,
+      textBackgroundBorderRadius = 4,
+      textBackgroundPadding = 4,
 
       areaColor = '#888888',
       areaColorOpacity = 0.15,
@@ -51,8 +51,6 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
       areaBorderWidth = 1,
 
       outerPadding = 4,
-      offsetX = 0,
-      offsetY = 0,
     } = annotationArea
 
     const dataset = advancedVSeed.dataset.flat()
@@ -61,8 +59,6 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
     return {
       zIndex: ANNOTATION_Z_INDEX,
       regionRelative: true,
-      offsetX,
-      offsetY,
       positions: (data: Datum[], context: ICartesianSeries) => {
         const positionData = data.filter((item) => selectedData.some((datum) => isSubset(datum, item)))
         const xyList = positionData.map((datum) => context.dataToPosition(datum) as { x: number; y: number })
@@ -85,10 +81,11 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           const xBandWidth = xAxisHelper?.getBandwidth?.(depth - 1)
           const yScale = yAxisHelper.getScale()
 
-          const minX = Math.min(...xyList.map((item) => item.x)) - outerPadding
-          const maxX = Math.max(...xyList.map((item) => item.x)) + xBandWidth + outerPadding
+          const minX = Math.min(...xyList.map((item) => item.x)) - (outerPadding || 4)
+          const maxX = Math.max(...xyList.map((item) => item.x)) + xBandWidth + (outerPadding || 4)
           const minY = Math.min(...yScale.range())
           const maxY = Math.max(...yScale.range())
+
           return [
             // 左上
             {
@@ -118,8 +115,8 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           const yBandWidth = yAxisHelper?.getBandwidth?.(depth - 1)
           const xScale = xAxisHelper.getScale()
 
-          const minY = Math.min(...xyList.map((item) => item.y)) - outerPadding
-          const maxY = Math.max(...xyList.map((item) => item.y)) + yBandWidth + outerPadding
+          const minY = Math.min(...xyList.map((item) => item.y)) - (outerPadding || 4)
+          const maxY = Math.max(...xyList.map((item) => item.y)) + yBandWidth + (outerPadding || 4)
           const minX = Math.min(...xScale.range())
           const maxX = Math.max(...xScale.range())
 
@@ -150,14 +147,14 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
         return []
       },
       label: {
-        position: positionMap[textPosition],
+        position: positionMap[textPosition || 'top'],
         visible: true,
         text: text,
         style: {
           dy: textFontSize,
           textAlign: textAlign,
           textBaseline: textBaseline,
-          stroke: backgroundColor,
+          stroke: textBackgroundColor,
           lineWidth: 1,
           fill: textColor,
           fontSize: textFontSize,
@@ -165,14 +162,14 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
         },
 
         labelBackground: {
-          visible: backgroundVisible,
-          padding: backgroundPadding,
+          visible: textBackgroundVisible,
+          padding: textBackgroundPadding,
           style: {
             dy: textFontSize,
-            cornerRadius: backgroundBorderRadius ?? 4,
-            fill: backgroundColor,
-            stroke: backgroundBorderColor,
-            lineWidth: backgroundBorderWidth,
+            cornerRadius: textBackgroundBorderRadius ?? 4,
+            fill: textBackgroundColor,
+            stroke: textBackgroundBorderColor,
+            lineWidth: textBackgroundBorderWidth,
           },
         },
       },

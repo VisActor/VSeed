@@ -2,8 +2,8 @@ import { z } from 'zod'
 
 export const zSort = z.object({
   order: z.enum(['asc', 'desc']).default('asc'),
-  orderBy: z.string().optional(),
-  customOrder: z.array(z.any()).optional(),
+  orderBy: z.string().nullish(),
+  customOrder: z.array(z.any()).nullish(),
 })
 
 /**
@@ -18,7 +18,6 @@ export const zSort = z.object({
 export type Sort = {
   /**
    * @description 排序顺序, 可选值为 'asc' 或 'desc'
-   * @default 'asc'
    * @enum ['asc', 'desc']
    * @example order:'asc'
    */
@@ -26,7 +25,6 @@ export type Sort = {
 
   /**
    * @description 排序依赖的字段, 可以是维度id或指标id
-   * @default ''
    * @example 
    * - orderBy:'date'
    * - orderBy:'profit'

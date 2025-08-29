@@ -93,9 +93,9 @@ export type Legend = {
 }
 
 export const zLegend = z.object({
-  enable: z.boolean().default(true).optional(),
-  border: z.boolean().default(true).optional(),
-  maxSize: z.number().default(1).optional(),
+  enable: z.boolean().default(true).nullish(),
+  border: z.boolean().default(true).nullish(),
+  maxSize: z.number().default(1).nullish(),
   shapeType: z
     .enum([
       'circle',
@@ -122,7 +122,7 @@ export const zLegend = z.object({
       'roundLine',
     ])
     .default('rectRound')
-    .optional(),
+    .nullish(),
   position: z
     .enum([
       'left',
@@ -147,10 +147,10 @@ export const zLegend = z.object({
       'br',
     ])
     .default('bottom')
-    .optional(),
-  labelFontSize: z.number().default(12).optional(),
-  labelFontColor: z.string().default('#fff').optional(),
-  labelFontWeight: z.number().or(z.string()).default(400).optional(),
+    .nullish(),
+  labelFontSize: z.number().default(12).nullish(),
+  labelFontColor: z.string().default('#fff').nullish(),
+  labelFontWeight: z.number().or(z.string()).default(400).nullish(),
 })
 
 export type ColorLegend = Pick<Legend, 'position' | 'enable'>
@@ -179,6 +179,6 @@ export const zColorLegend = z.object({
       'br',
     ])
     .default('bottom')
-    .optional(),
-  enable: z.boolean().default(true).optional(),
+    .nullish(),
+  enable: z.boolean().default(true).nullish(),
 })

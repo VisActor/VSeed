@@ -1,26 +1,5 @@
-import { z } from 'zod'
 import type { Locale } from '../../i18n'
-import { zLocale } from '../../i18n'
-import {
-  zAnnotationArea,
-  zAnnotationHorizontalLine,
-  zAnnotationPoint,
-  zAnnotationVerticalLine,
-  zBackgroundColor,
-  zBarStyle,
-  zColor,
-  zCrosshairRect,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLegend,
-  zMeasureTree,
-  zStackCornerRadius,
-  zTheme,
-  zTooltip,
-  zXLinearAxis,
-  zYBandAxis,
-} from '../../properties'
+
 import type {
   AnnotationArea,
   AnnotationHorizontalLine,
@@ -51,12 +30,16 @@ import type {
  * - 类别名称较长时的占比对比
  * - 多维度数据的横向构成分析
  * - 排名与占比同时展示的场景
+ * @warning 
  * 数据要求:
  * - 至少1个维度字段和1个度量字段
  * - 所有类别占比之和为100%
  * - 支持多系列堆叠展示占比关系
  * 默认开启的功能:
  * - 默认开启图例、坐标轴、百分比标签、提示信息、占比计算
+ * @recommend 
+ * - 推荐字段配置: `1`个指标, `2`个维度
+ * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
 export interface BarPercent {
   /**
@@ -222,26 +205,3 @@ export interface BarPercent {
    */
   locale?: Locale
 }
-
-export const zBarPercent = z.object({
-  chartType: z.literal('barPercent'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
-  label: zLabel.optional(),
-  legend: zLegend.optional(),
-  tooltip: zTooltip.optional(),
-  xAxis: zXLinearAxis.optional(),
-  yAxis: zYBandAxis.optional(),
-  crosshairRect: zCrosshairRect.optional(),
-  stackCornerRadius: zStackCornerRadius.optional(),
-  theme: zTheme.optional(),
-  barStyle: z.array(zBarStyle).or(zBarStyle).optional(),
-  annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
-  annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
-  annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),
-  annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).optional(),
-  locale: zLocale.optional(),
-})

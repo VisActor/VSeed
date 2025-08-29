@@ -48,32 +48,32 @@ export type PointStyle = {
    */
   pointSize?: number
   /**
-   * 柱状图颜色
-   * @description 柱状图颜色
+   * 点图元颜色
+   * @description 点图元颜色
    * @type {string}
    */
   pointColor?: string
   /**
-   * 柱状图颜色透明度
-   * @description 柱状图颜色透明度
+   * 点图元颜色透明度
+   * @description 点图元颜色透明度
    * @type {number}
    */
   pointColorOpacity?: number
   /**
-   * 柱状图边框颜色
-   * @description 柱状图边框颜色
+   * 点图元边框颜色
+   * @description 点图元边框颜色
    * @type {string}
    */
   pointBorderColor?: string
   /**
-   * 柱状图边框宽度
-   * @description 柱状图边框宽度
+   * 点图元边框宽度
+   * @description 点图元边框宽度
    * @type {number}
    */
   pointBorderWidth?: number
   /**
-   * 柱状图边框样式
-   * @description 柱状图边框样式
+   * 点图元边框样式
+   * @description 点图元边框样式
    * @type {number}
    * @example solid
    * @example dashed
@@ -83,11 +83,11 @@ export type PointStyle = {
 }
 
 export const zPointStyle = z.object({
-  selector: z.union([zSelector, zSelectors]).optional(),
-  pointSize: z.number().optional(),
-  pointColor: z.string().optional(),
-  pointColorOpacity: z.number().optional(),
-  pointBorderColor: z.string().optional(),
-  pointBorderWidth: z.number().optional(),
-  pointBorderStyle: z.union([z.enum(['solid', 'dashed', 'dotted'])]).optional(),
+  selector: z.union([zSelector, zSelectors]).nullish(),
+  pointSize: z.number().nullish(),
+  pointColor: z.string().nullish(),
+  pointColorOpacity: z.number().nullish(),
+  pointBorderColor: z.string().nullish(),
+  pointBorderWidth: z.number().nullish(),
+  pointBorderStyle: z.union([z.enum(['solid', 'dashed', 'dotted'])]).nullish(),
 })

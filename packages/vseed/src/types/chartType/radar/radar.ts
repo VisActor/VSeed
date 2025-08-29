@@ -1,17 +1,6 @@
-import { z } from 'zod'
-import { zLocale, type Locale } from '../../i18n'
-import type {
-  MeasureTree} from '../../properties';
+import { type Locale } from '../../i18n'
+import type { MeasureTree } from '../../properties'
 import {
-  zBackgroundColor,
-  zColor,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLegend,
-  zMeasureTree,
-  zTheme,
-  zTooltip,
   type BackgroundColor,
   type Color,
   type Dataset,
@@ -29,12 +18,16 @@ import {
  * - 多维度数据的综合表现对比
  * - 多个对象在多个指标上的性能评估
  * - 分类数据的多维度特征展示
+ * @warning 
  * 数据要求:
  * - 至少1个数值字段（度量）
  * - 第一个维度作为雷达图的各个维度轴，其他维度作为不同的系列进行对比
  * - 支持多个指标分别作为不同的系列展示
  * 默认开启的功能:
  * - 默认开启图例、雷达坐标系、数据标签、提示信息、数值缩放
+ * @recommend 
+ * - 推荐字段配置: `1`个指标, `1`个维度
+ * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
 export interface Radar {
   /**
@@ -116,17 +109,3 @@ export interface Radar {
    */
   locale?: Locale
 }
-
-export const zRadar = z.object({
-  chartType: z.literal('radar'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
-  label: zLabel.optional(),
-  legend: zLegend.optional(),
-  tooltip: zTooltip.optional(),
-  theme: zTheme.optional(),
-  locale: zLocale.optional(),
-})

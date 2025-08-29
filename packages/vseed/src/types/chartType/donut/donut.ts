@@ -1,5 +1,4 @@
-import { z } from 'zod'
-import { zLocale, type Locale } from '../../i18n'
+import { type Locale } from '../../i18n'
 import type {
   BackgroundColor,
   Color,
@@ -11,17 +10,7 @@ import type {
   Theme,
   Tooltip,
 } from '../../properties'
-import {
-  zBackgroundColor,
-  zColor,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLegend,
-  zMeasureTree,
-  zTheme,
-  zTooltip,
-} from '../../properties'
+
 /**
  * 环形图类型定义
  * @description 环形图，适用于展示单一维度数据的占比关系，中心留有空白区域可展示汇总信息
@@ -29,12 +18,16 @@ import {
  * - 需要同时展示整体数据和各部分占比
  * - 强调数据的整体与部分关系
  * - 中心区域需要展示关键指标或标题
+ * @warning 
  * 数据要求:
  * - 至少1个指标字段（度量）
  * - 所有维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
  * - 所有指标会自动合并为一个指标
  * 默认开启的功能:
  * - 默认开启图例、数据标签、提示信息、占比计算、中心文本
+ * @recommend 
+ * - 推荐字段配置: `1`个指标, `2`个维度
+ * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
 export interface Donut {
   /**
@@ -116,17 +109,3 @@ export interface Donut {
    */
   locale?: Locale
 }
-
-export const zDonut = z.object({
-  chartType: z.literal('donut'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
-  label: zLabel.optional(),
-  legend: zLegend.optional(),
-  tooltip: zTooltip.optional(),
-  theme: zTheme.optional(),
-  locale: zLocale.optional(),
-})

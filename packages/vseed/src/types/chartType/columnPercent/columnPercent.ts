@@ -1,25 +1,4 @@
 import type { Locale } from '../../i18n'
-import { zLocale } from '../../i18n'
-import {
-  zAnnotationArea,
-  zAnnotationHorizontalLine,
-  zAnnotationPoint,
-  zAnnotationVerticalLine,
-  zBackgroundColor,
-  zBarStyle,
-  zColor,
-  zCrosshairRect,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLegend,
-  zMeasureTree,
-  zStackCornerRadius,
-  zTheme,
-  zTooltip,
-  zXBandAxis,
-  zYLinearAxis,
-} from '../../properties'
 import type {
   AnnotationArea,
   AnnotationHorizontalLine,
@@ -42,7 +21,6 @@ import type {
   Sort,
   SortLegend,
 } from '../../properties'
-import { z } from 'zod'
 
 /**
  * 百分比柱状图类型定义
@@ -51,12 +29,16 @@ import { z } from 'zod'
  * - 不同类别数据的占比对比
  * - 多维度数据的构成分析
  * - 时间序列的占比变化趋势
+ * @warning 
  * 数据要求:
  * - 至少1个指标字段（度量）
  * - 第一个维度会放至X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
  * - 所有指标会自动合并为一个指标
  * 默认开启的功能:
  * - 默认开启图例、坐标轴、百分比标签、提示信息、占比计算
+ * @recommend 
+ * - 推荐字段配置: `1`个指标, `2`个维度
+ * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
 export interface ColumnPercent {
   /**
@@ -222,26 +204,3 @@ export interface ColumnPercent {
    */
   locale?: Locale
 }
-
-export const zColumnPercent = z.object({
-  chartType: z.literal('columnPercent'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
-  label: zLabel.optional(),
-  legend: zLegend.optional(),
-  tooltip: zTooltip.optional(),
-  xAxis: zXBandAxis.optional(),
-  yAxis: zYLinearAxis.optional(),
-  crosshairRect: zCrosshairRect.optional(),
-  stackCornerRadius: zStackCornerRadius.optional(),
-  theme: zTheme.optional(),
-  barStyle: z.array(zBarStyle).or(zBarStyle).optional(),
-  annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).optional(),
-  annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).optional(),
-  annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).optional(),
-  annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).optional(),
-  locale: zLocale.optional(),
-})

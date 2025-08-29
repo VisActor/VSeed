@@ -1,17 +1,6 @@
-import { z } from 'zod'
-import { zLocale, type Locale } from '../../i18n'
-import type {
-  MeasureTree} from '../../properties';
+import { type Locale } from '../../i18n'
+import type { MeasureTree } from '../../properties'
 import {
-  zBackgroundColor,
-  zColor,
-  zDataset,
-  zDimensions,
-  zLabel,
-  zLegend,
-  zMeasureTree,
-  zTheme,
-  zTooltip,
   type BackgroundColor,
   type Color,
   type Dataset,
@@ -29,12 +18,16 @@ import {
  * - 多维度数据的分布对比
  * - 周期性数据的强弱比较
  * - 分类数据的数值与占比同时展示
+ * @warning 
  * 数据要求:
  * - 至少1个数值字段（度量）
  * - 第一个维度会放至角度轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
  * - 所有指标会自动合并为一个指标
  * 默认开启的功能:
  * - 默认开启图例、极坐标系、数据标签、提示信息、数值缩放
+ * @recommend 
+ * - 推荐字段配置: `1`个指标, `1`个维度
+ * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
 export interface Rose {
   /**
@@ -116,17 +109,3 @@ export interface Rose {
    */
   locale?: Locale
 }
-
-export const zRose = z.object({
-  chartType: z.literal('rose'),
-  dataset: zDataset.optional(),
-  dimensions: zDimensions.optional(),
-  measures: zMeasureTree.optional(),
-  backgroundColor: zBackgroundColor.optional(),
-  color: zColor.optional(),
-  label: zLabel.optional(),
-  legend: zLegend.optional(),
-  tooltip: zTooltip.optional(),
-  theme: zTheme.optional(),
-  locale: zLocale.optional(),
-})

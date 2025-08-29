@@ -9,7 +9,7 @@ import { type BackgroundColor, type Dataset, type Dimensions, type Theme } from 
  * - 复杂多维数据统计分析
  * - 数据钻取与聚合展示
  * - 业务报表生成与数据探索
- * @note 
+ * @warning 
  * 数据要求:
  * - 至少1个行维度 或 1个列维度 或 1个指标
  * - 数据必须已聚合

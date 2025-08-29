@@ -8,7 +8,7 @@ import { type BackgroundColor, type Dataset, type Theme } from '../../properties
  * - 需要展示详细数据明细
  * - 数据项需要精确比对
  * - 展示多维度数据属性
- * @note 
+ * @warning 
  * 数据要求:
  * - 至少1个维度字段
  * - 至少1个度量字段

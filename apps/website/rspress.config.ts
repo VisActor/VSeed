@@ -48,6 +48,9 @@ export default defineConfig({
       },
     ],
   },
+  markdown: {
+    showLineNumbers: true,
+  },
   title: 'VisActor/VSeed',
   icon: '/logo.svg',
   logoText: 'VisActor VSeed',

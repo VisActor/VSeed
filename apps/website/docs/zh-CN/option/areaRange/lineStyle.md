@@ -2,7 +2,7 @@
 
 **Type:** `LineStyle | LineStyle[] | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 线图元样式
 
 
@@ -18,14 +18,11 @@
 若未配置selector, 则样式全局生效.:::
 
 
- 
-
-
 ## selector
 
 **Type:** `Selector | Selectors | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 数据选择器
 
 
@@ -34,10 +31,7 @@
 
 若未配置selector, 则样式全局生效.:::
 
-
- 
-
-**示例:**
+**示例**
 数值选择器
 selector = "tool"
 selector = ["tool", "book"]
@@ -73,8 +67,6 @@ value: [100, 300]
 }
 
 
- 
-
 
 ### field
 
@@ -96,55 +88,43 @@ value: [100, 300]
 
 **Type:** `boolean | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 折线图是否平滑
 
 
 
 折线图是否平滑:::
 
-
- 
-
 ## lineColor
 
 **Type:** `string | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 柱状图颜色
 
 
 
 柱状图颜色:::
 
-
- 
-
 ## lineColorOpacity
 
 **Type:** `number | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 柱状图颜色透明度
 
 
 
 柱状图颜色透明度:::
 
-
- 
-
 ## lineWidth
 
 **Type:** `number | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 柱状图边框宽度
 
 
 
 柱状图边框宽度:::
-
-
- 
 

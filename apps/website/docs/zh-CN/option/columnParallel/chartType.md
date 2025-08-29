@@ -2,19 +2,14 @@
 
 **Type:** `"columnParallel"`
 
-:::tip{title=描述}
+:::note{title=描述}
 并列柱状图
 
 
 
 并列柱状图，适用于多指标并行对比场景:::
 
-
- 
-
-**示例:**
+**示例**
 'columnParallel'
 
-
- 
 

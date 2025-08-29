@@ -2,9 +2,6 @@
 
 **Type:** `string | undefined`
 
-:::tip{title=描述}
+:::note{title=描述}
 表格体的背景颜色:::
-
-
- 
 

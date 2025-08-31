@@ -1,8 +1,9 @@
 import type { IBarSeriesSpec, ISeriesSpec } from '@visactor/vchart'
+import { DUAL_AXIS_CHART_COLUMN_Z_INDEX, DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX } from 'src/pipeline/utils/constant'
 import type { DualChartType, SpecPipe } from 'src/types'
 
 export const dualChartTypePrimary: SpecPipe = (spec, context) => {
-  const result = { ...spec } as ISeriesSpec
+  const result = { ...spec, zIndex: DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX } as ISeriesSpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const { datasetReshapeInfo } = advancedVSeed
@@ -16,14 +17,17 @@ export const dualChartTypePrimary: SpecPipe = (spec, context) => {
     } as DualChartType)
 
   const primary = Array.isArray(config) ? config[index].primary || config[0].primary : config.primary
-
-  switch (primary) {
+  const secondary = Array.isArray(config) ? config[index].secondary || config[0].secondary : config.secondary
+  const bothColumn = primary === 'column' && secondary === 'column'
+  const type = bothColumn ? 'columnParallel' : primary
+  switch (type) {
     case 'line': {
       result.type = 'line'
       break
     }
     case 'column': {
       result.type = 'bar'
+      result.zIndex = DUAL_AXIS_CHART_COLUMN_Z_INDEX
       break
     }
     case 'columnParallel': {
@@ -34,6 +38,7 @@ export const dualChartTypePrimary: SpecPipe = (spec, context) => {
         columnSpec.xField = [columnSpec.xField, datasetReshapeInfo[0].unfoldInfo.groupId]
       }
       columnSpec.type = 'bar'
+      result.zIndex = DUAL_AXIS_CHART_COLUMN_Z_INDEX
       break
     }
     // @ts-expect-error  'columnPercent' 和 'areaPercent' 会改变轴值域为[0,1], VTable不支持.
@@ -64,7 +69,7 @@ export const dualChartTypePrimary: SpecPipe = (spec, context) => {
 }
 
 export const dualChartTypeSecondary: SpecPipe = (spec, context) => {
-  const result = { ...spec } as ISeriesSpec
+  const result = { ...spec, zIndex: DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX } as ISeriesSpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const { datasetReshapeInfo } = advancedVSeed
@@ -76,15 +81,19 @@ export const dualChartTypeSecondary: SpecPipe = (spec, context) => {
     } as DualChartType)
 
   const index = datasetReshapeInfo[0].index
+  const primary = Array.isArray(config) ? config[index].primary || config[0].primary : config.primary
   const secondary = Array.isArray(config) ? config[index].secondary || config[0].secondary : config.secondary
+  const bothColumn = primary === 'column' && secondary === 'column'
+  const type = bothColumn ? 'columnParallel' : primary
 
-  switch (secondary) {
+  switch (type) {
     case 'line': {
       result.type = 'line'
       break
     }
     case 'column': {
       result.type = 'bar'
+      result.zIndex = DUAL_AXIS_CHART_COLUMN_Z_INDEX
       break
     }
     case 'columnParallel': {
@@ -95,6 +104,7 @@ export const dualChartTypeSecondary: SpecPipe = (spec, context) => {
         columnSpec.xField = [columnSpec.xField, datasetReshapeInfo[0].unfoldInfo.groupId]
       }
       columnSpec.type = 'bar'
+      result.zIndex = DUAL_AXIS_CHART_COLUMN_Z_INDEX
       break
     }
     // @ts-expect-error  'columnPercent' 和 'areaPercent' 会改变轴值域为[0,1], VTable不支持.

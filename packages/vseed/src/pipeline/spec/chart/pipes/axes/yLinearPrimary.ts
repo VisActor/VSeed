@@ -12,19 +12,22 @@ export const yLinearPrimary: SpecPipe = (spec, context) => {
   // TODO: default config missing
   const index = datasetReshapeInfo[0].index
   const primaryYAxis = advancedVSeed.config?.[chartType as 'dualAxis']?.primaryYAxis as YLinearAxis | YLinearAxis[]
-  const config = Array.isArray(primaryYAxis) ? primaryYAxis[index] || primaryYAxis[0] : primaryYAxis
+  const yAxisConfig = Array.isArray(primaryYAxis) ? primaryYAxis[index] || primaryYAxis[0] : primaryYAxis
+  const alignTicks = advancedVSeed.config?.[chartType as 'dualAxis']?.alignTicks as boolean | boolean[]
+  const alignTicksConfig = Array.isArray(alignTicks) ? alignTicks[index] || alignTicks[0] : alignTicks
 
   if (datasetReshapeInfo[0].foldInfoList?.[0] && isEmpty(datasetReshapeInfo[0].foldInfoList[0].foldMap)) {
     return result
   }
   const id = `${datasetReshapeInfo[0].id}-primary-axis`
-  const seriesId = `${datasetReshapeInfo[0].id}-primary-series`
+  const seriesIds = [`${datasetReshapeInfo[0].id}-primary-series`, `${datasetReshapeInfo[0].id}-secondary-series`]
+  const seriesId = alignTicksConfig ? seriesIds : seriesIds[0]
 
   if (!result.axes) {
     result.axes = []
   }
 
-  if (!config) {
+  if (!yAxisConfig) {
     result.axes = [
       ...result.axes,
       {
@@ -33,11 +36,6 @@ export const yLinearPrimary: SpecPipe = (spec, context) => {
         seriesId,
         type: 'linear',
         orient: 'left',
-        sync: {
-          axisId: `${datasetReshapeInfo[0].id}-secondary-axis`,
-          tickAlign: false,
-          zeroAlign: true,
-        },
       },
     ] as ISpec['axes']
     return result
@@ -58,17 +56,12 @@ export const yLinearPrimary: SpecPipe = (spec, context) => {
     min,
     log,
     logBase = 10,
-  } = config
+  } = yAxisConfig
 
   const linearAxis = {
     visible,
     id,
     seriesId,
-    sync: {
-      axisId: `${datasetReshapeInfo[0].id}-secondary-axis`,
-      tickAlign: false,
-      zeroAlign: true,
-    },
 
     type: log ? 'log' : 'linear',
     base: logBase,

@@ -84,7 +84,7 @@ export const dualChartTypeSecondary: SpecPipe = (spec, context) => {
   const primary = Array.isArray(config) ? config[index].primary || config[0].primary : config.primary
   const secondary = Array.isArray(config) ? config[index].secondary || config[0].secondary : config.secondary
   const bothColumn = primary === 'column' && secondary === 'column'
-  const type = bothColumn ? 'columnParallel' : primary
+  const type = bothColumn ? 'columnParallel' : secondary
 
   switch (type) {
     case 'line': {

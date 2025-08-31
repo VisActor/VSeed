@@ -1,6 +1,11 @@
 [
   {
     "type": "file",
+    "name": "alignTicks",
+    "label": "alignTicks "
+  },
+  {
+    "type": "file",
     "name": "annotationArea",
     "label": "annotationArea "
   },

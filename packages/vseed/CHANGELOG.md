@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.0.39
+
+### Patch Changes
+
+- fix: 35/42 issues
+
 ## 0.0.38
 
 ### Patch Changes

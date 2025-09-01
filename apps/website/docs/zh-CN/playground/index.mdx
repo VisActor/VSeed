@@ -19,6 +19,20 @@ const Demo = () => {
       { ByteIO: 4, TEA全埋点: 5, dimension: '实时性', 统一追踪方案: 5 },
       { ByteIO: 5, TEA全埋点: 3, dimension: '隐私合规', 统一追踪方案: 5 },
     ],
+    areaStyle: [
+      {
+        selector: 'ByteIO',
+        areaVisible: true,
+      },
+      {
+        selector: 'TEA全埋点',
+        areaVisible: false,
+      },
+      {
+        selector: '统一追踪方案',
+        areaVisible: false,
+      },
+    ],
     dimensions: [{ alias: '评估维度', id: 'dimension' }],
     measures: [
       { alias: 'ByteIO可视化方案评分', id: 'ByteIO' },

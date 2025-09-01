@@ -106,6 +106,17 @@ same as operator:::
 :::note{title=描述}
 选择数据项中维度字段的值, 支持数组:::
 
+## areaVisible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+面积图元是否可见
+
+
+
+面积图元是否可见:::
+
 ## areaColor
 
 **Type:** `string | undefined`

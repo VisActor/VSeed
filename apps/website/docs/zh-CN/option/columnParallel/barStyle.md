@@ -106,60 +106,47 @@ same as operator:::
 :::note{title=描述}
 选择数据项中维度字段的值, 支持数组:::
 
+## barVisible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+柱图元(矩形图元)是否可见:::
+
 ## barColor
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-柱状图颜色
-
-
-
-柱状图颜色:::
+柱图元(矩形图元)颜色:::
 
 ## barColorOpacity
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-柱状图颜色透明度
-
-
-
-柱状图颜色透明度:::
+柱图元(矩形图元)颜色透明度:::
 
 ## barBorderColor
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-柱状图边框颜色
-
-
-
-柱状图边框颜色:::
+柱图元(矩形图元)边框颜色:::
 
 ## barBorderWidth
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-柱状图边框宽度
-
-
-
-柱状图边框宽度:::
+柱图元(矩形图元)边框宽度:::
 
 ## barBorderStyle
 
 **Type:** `"solid" | "dashed" | "dotted" | undefined`
 
 :::note{title=描述}
-柱状图边框样式
-
-
-
-柱状图边框样式:::
+柱图元(矩形图元)边框样式:::
 
 **示例**
 solid
@@ -174,11 +161,7 @@ dotted
 **Type:** `number | number[] | undefined`
 
 :::note{title=描述}
-柱状图圆角
-
-
-
-柱状图圆角:::
+柱图元(矩形图元)圆角:::
 
 **示例**
 4

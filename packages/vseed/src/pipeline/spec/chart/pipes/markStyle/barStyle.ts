@@ -30,7 +30,15 @@ export const barStyle: SpecPipe = (spec, context) => {
   const barStyles = (Array.isArray(barStyle) ? barStyle : [barStyle]) as BarStyle[]
 
   const customMap = barStyles.reduce<object>((result, style, index) => {
-    const { barBorderColor, barBorderStyle, barBorderWidth = 1, barColor, barColorOpacity, barRadius } = style
+    const {
+      barBorderColor,
+      barBorderStyle,
+      barBorderWidth = 1,
+      barColor,
+      barColorOpacity,
+      barRadius,
+      barVisible = true,
+    } = style
 
     const lineDash = barBorderStyle === 'dashed' ? [5, 2] : barBorderStyle === 'dotted' ? [2, 5] : [0, 0]
     return {
@@ -45,6 +53,7 @@ export const barStyle: SpecPipe = (spec, context) => {
           return false
         },
         style: {
+          visible: barVisible,
           fill: barColor,
           fillOpacity: barColorOpacity,
           cornerRadius: barRadius,

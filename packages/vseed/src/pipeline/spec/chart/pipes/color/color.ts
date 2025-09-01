@@ -27,7 +27,7 @@ export const color: SpecPipe = (spec, context) => {
   return result
 }
 
-const createSpecifiedForColorMapping = (
+export const createSpecifiedForColorMapping = (
   colorMapping?: Record<string, string>,
   colorIdMap?: Record<string, string>,
   colorItems?: string[],

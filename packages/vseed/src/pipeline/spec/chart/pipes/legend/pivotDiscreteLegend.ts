@@ -3,6 +3,7 @@ import type { PivotChartConstructorOptions } from '@visactor/vtable'
 import type { IDiscreteTableLegendOption } from '@visactor/vtable/es/ts-types/component/legend'
 import { unique } from 'remeda'
 import type { Color, Legend, SpecPipe } from 'src/types'
+import { createSpecifiedForColorMapping } from '../color/color'
 
 export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
   const result = { ...spec } as PivotChartConstructorOptions
@@ -27,7 +28,9 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
   }, {})
 
   const { legend, color } = baseConfig
-  const { colorScheme } = color
+  const { colorScheme, colorMapping } = color
+
+  const colorSpecified = createSpecifiedForColorMapping(colorMapping, colorIdMap, colorItems)
 
   const {
     enable,
@@ -61,19 +64,22 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
     position: legendPosition,
     maxCol: Math.max(1, maxSize),
     maxRow: Math.max(1, maxSize),
-    data: colorItems.map((d, index) => ({
-      label: d,
-      shape: {
-        outerBorder: border
-          ? {
-              stroke: colorScheme?.[index % colorScheme.length],
-              distance: 3,
-              lineWidth: 1,
-            }
-          : undefined,
-        fill: colorScheme?.[index % colorScheme.length],
-      },
-    })),
+    data: colorItems.map((d, index) => {
+      const color = colorSpecified?.[d] ?? colorScheme?.[index % colorScheme.length]
+      return {
+        label: d,
+        shape: {
+          outerBorder: border
+            ? {
+                stroke: color,
+                distance: 3,
+                lineWidth: 1,
+              }
+            : undefined,
+          fill: color,
+        },
+      }
+    }),
 
     item: {
       focus: true,

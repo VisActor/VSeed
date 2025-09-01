@@ -106,6 +106,13 @@ same as operator:::
 :::note{title=描述}
 选择数据项中维度字段的值, 支持数组:::
 
+## pointVisible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+点是否可见:::
+
 ## pointSize
 
 **Type:** `number | undefined`

@@ -7,111 +7,62 @@ pageType: custom
 ```tsx
 const Demo = () => {
   const vseed: VSeed = {
-    "chartType": "column",
-    "dataset": [
-      {
-        "hardware_revenue": 155.6,
-        "platform_revenue": 828,
-        "quarter": "2023 Q4",
-        "total_revenue": 984.4
-      },
-      {
-        "hardware_revenue": 168.2,
-        "platform_revenue": 800,
-        "quarter": "2024 Q1",
-        "total_revenue": 968.2
-      },
-      {
-        "hardware_revenue": 172.2,
-        "platform_revenue": 890,
-        "quarter": "2024 Q2",
-        "total_revenue": 1062.2
-      },
-      {
-        "hardware_revenue": 221,
-        "platform_revenue": 980,
-        "quarter": "2024 Q3",
-        "total_revenue": 1201
-      },
-      {
-        "hardware_revenue": 150.7,
-        "platform_revenue": 870,
-        "quarter": "2024 Q4",
-        "total_revenue": 1020.7
-      },
-      {
-        "hardware_revenue": 161,
-        "platform_revenue": 950,
-        "quarter": "2025 Q1",
-        "total_revenue": 1111
-      }
+    chartType: 'dualAxis',
+    dataset: [
+      { date: '2019', profit: 10, sales: 20, count: 50, type: 'A' },
+      { date: '2020', profit: 30, sales: 60, count: 50, type: 'A' },
+      { date: '2021', profit: 30, sales: 60, count: 50, type: 'B' },
+      { date: '2022', profit: 50, sales: 100, count: 50, type: 'B' },
     ],
-    "dimensions": [
+    lineStyle: {
+      lineSmooth: true,
+    },
+    annotationPoint: [
       {
-        "alias": "季度",
-        "id": "quarter"
-      }
-    ],
-    "measures": [
-      {
-        "id": "primary",
-        "children": [
+        selector: [
           {
-            "alias": "平台收入",
-            "id": "platform_revenue"
+            field: 'sales',
+            operator: '<=',
+            value: 80,
           },
-          {
-            "alias": "硬件收入",
-            "id": "hardware_revenue"
-          }
-        ]
+        ],
+        text: '销售额<=80',
+        textAlign: 'left',
+        // offsetX: -15,
       },
       {
-        "id": "secondary",
-        "children": [
+        selector: [
           {
-            "alias": "总收入",
-            "id": "total_revenue"
-          }
-        ]
-      }
-    ],
-    // measures: [
-    //   {
-    //     "alias": "平台收入",
-    //     "id": "platform_revenue"
-    //   },
-    //   {
-    //     "alias": "硬件收入",
-    //     "id": "hardware_revenue"
-    //   }
-    // ],
-    "color": {
-      "colorMapping": {
-        "platform_revenue": "#00008B",
-        "hardware_revenue": "#ADD8E6",
-        "total_revenue": "#FF0000"
-      }
-    },
-    "label": {
-      "enable": true
-    },
-    "theme": "light",
-    "annotationArea": {
-      "selector": {
-        "field": "quarter",
-        "value": "2023 Q4"
+            field: 'date',
+            operator: 'in',
+            value: '2021',
+          },
+        ],
+        text: '2021 年',
+        textAlign: 'left',
+        // offsetX: 0,
       },
-      "text": "数据来源：ROKU财报",
-      "textPosition": "bottom",
-      "textColor": "black",
-      "textFontSize": 12,
-      "textFontWeight": 400,
-      "textAlign": "center",
-      "textBaseline": "top",
-      "textBackgroundVisible": false
-    },
-    "locale": "zh-CN"
+    ],
+    dimensions: [
+      { id: 'date', alias: '日期', location: 'dimension' },
+      // { id: 'type', alias: '类型', location: 'rowDimension' }
+    ],
+    dualMeasures: [
+      {
+        primaryMeasures: [
+          { id: 'profit', alias: '利润' },
+          { id: 'sales', alias: '销售额' },
+        ],
+        secondaryMeasures: [{ id: 'count', alias: '数量' }],
+      },
+      {
+        primaryMeasures: [
+          { id: 'profit', alias: '利润' },
+          { id: 'sales', alias: '销售额' },
+        ],
+        secondaryMeasures: [{ id: 'count', alias: '数量' }],
+      },
+    ],
   }
 
   if (zVSeed.safeParse(vseed).success) {

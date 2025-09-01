@@ -16,7 +16,8 @@ export const areaStyle: SpecPipe = (spec, context) => {
   const areaStyles = (Array.isArray(areaStyle) ? areaStyle : [areaStyle]) as AreaStyle[]
 
   const group = encoding[0]?.group?.[0]
-  const lineGroups = groupBy(dataset, (d) => d[group ?? ''] as string)
+
+  const areaGroups = groupBy(dataset, (d) => d[group ?? ''] as string)
 
   const customMap = areaStyles.reduce<object>((result, style, index) => {
     const { areaColor, areaColorOpacity } = style
@@ -27,7 +28,7 @@ export const areaStyle: SpecPipe = (spec, context) => {
         // 优先级: 后者覆盖前者
         level: index + 1,
         filter: (datum: Datum) => {
-          const lineData = lineGroups[datum[group ?? ''] as string]
+          const lineData = areaGroups[datum[group ?? ''] as string]
           for (const d of lineData) {
             if (selector(d, style.selector)) {
               return true

@@ -46,39 +46,37 @@ export type PointStyle = {
   selector?: Selector | Selectors
 
   /**
+   * @description 点是否可见
+   */
+  pointVisible?: boolean
+  /**
    * 点大小
    * @description 点大小
-   * @type {number}
    */
   pointSize?: number
   /**
    * 点图元颜色
    * @description 点图元颜色
-   * @type {string}
    */
   pointColor?: string
   /**
    * 点图元颜色透明度
    * @description 点图元颜色透明度
-   * @type {number}
    */
   pointColorOpacity?: number
   /**
    * 点图元边框颜色
    * @description 点图元边框颜色
-   * @type {string}
    */
   pointBorderColor?: string
   /**
    * 点图元边框宽度
    * @description 点图元边框宽度
-   * @type {number}
    */
   pointBorderWidth?: number
   /**
    * 点图元边框样式
    * @description 点图元边框样式
-   * @type {number}
    * @example solid
    * @example dashed
    * @example dotted

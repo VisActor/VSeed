@@ -6,14 +6,14 @@
  * - 多维度数据的综合表现对比
  * - 多个对象在多个指标上的性能评估
  * - 分类数据的多维度特征展示
- * @warning 
+ * @warning
  * 数据要求:
  * - 至少1个数值字段（度量）
  * - 第一个维度作为雷达图的各个维度轴，其他维度作为不同的系列进行对比
  * - 支持多个指标分别作为不同的系列展示
  * 默认开启的功能:
  * - 默认开启图例、雷达坐标系、数据标签、提示信息、数值缩放
- * @recommend 
+ * @recommend
  * - 推荐字段配置: `1`个指标, `1`个维度
  * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
@@ -89,6 +89,33 @@ export interface Radar {
    * @example 'customThemeName'
    */
   theme?: Theme
+
+  /**
+   * @description 点图元样式配置, 用于定义图表的点图元样式, 包括点图元的颜色, 边框等.
+   * 支持全局样式或条件样式配置
+   * 数据筛选器
+   * 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
+   * 若未配置selector, 则样式全局生效.
+   */
+  pointStyle?: PointStyle | PointStyle[]
+
+  /**
+   * @description 线图元样式配置, 用于定义图表的线图元样式, 包括线图元的颜色, 透明度, 曲线等.
+   * 支持全局样式或条件样式配置
+   * 数据筛选器
+   * 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
+   * 若未配置selector, 则样式全局生效.
+   */
+  lineStyle?: LineStyle | LineStyle[]
+
+  /**
+   * @description 面积图元样式配置, 用于定义图表的面积图元样式, 包括面积图元的颜色, 透明度, 边框等.
+   * 支持全局样式或条件样式配置
+   * 数据筛选器
+   * 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
+   * 若未配置selector, 则样式全局生效.
+   */
+  areaStyle?: AreaStyle | AreaStyle[]
 
   /**
    * 语言

@@ -46,15 +46,19 @@ export type AreaStyle = {
   selector?: Selector | Selectors
 
   /**
+   * 面积图元是否可见
+   * @description 面积图元是否可见
+   */
+  areaVisible?: boolean
+
+  /**
    * 面积图元的颜色
    * @description 面积图元的颜色
-   * @type {string}
    */
   areaColor?: string
   /**
    * 面积图元的颜色透明度
    * @description 面积图元的颜色透明度
-   * @type {number}
    */
   areaColorOpacity?: number
 }

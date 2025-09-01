@@ -7,7 +7,7 @@
  * - 相关性指标的趋势比较
  * - 需要同时展示数值和增长率等复合指标
  * - 支持不同类型图表组合（如折线图+柱状图/ 折线图+面积图/ 面积图+柱状图）
- * @warning 
+ * @warning
  * 数据要求:
  * - 至少1个指标字段（度量）
  * - 支持指标组, 第一组指标会放置(主轴)左轴, 第二组指标会放置(次轴)右轴
@@ -15,7 +15,7 @@
  * - 两组指标字段可分别映射到左右两个Y轴, 一个指标组内的所有会自动合并为一个指标
  * 默认开启的功能:
  * - 默认开启坐标轴、图例、数据标签、提示信息
- * @recommend 
+ * @recommend
  * - 推荐字段配置: `2`个指标, `2`个维度
  * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
@@ -128,6 +128,12 @@ export interface DualAxis {
    * [{primary: 'line', secondary: 'bar'}, {primary: 'column', secondary: 'area'}]
    */
   dualChartType?: DualChartType | DualChartType[]
+
+  /**
+   * @description 用于定义双轴图的两根轴的刻度是否对齐, 当measures有多组时, alignTicks可以配置为数组, 每项对应一个双轴图的刻度是否对齐.
+   * @example {"chartType":"dualAxis","dataset":[{"date":"2019","profit":10,"sales":100},{"date":"2020","profit":30,"sales":200},{"date":"2021","profit":30,"sales":300},{"date":"2022","profit":50,"sales":500}],"alignTicks":[false,true],"dualMeasures":[{"primaryMeasures":[{"id":"profit"}],"secondaryMeasures":[{"id":"sales"}]},{"primaryMeasures":[{"id":"profit"}],"secondaryMeasures":[{"id":"sales"}]}]}
+   */
+  alignTicks?: boolean | boolean[]
 
   /**
    * @description 双轴图的主Y轴配置, 用于定义双轴图的主Y轴, 包括主Y轴的位置, 样式等. 当measures有多组时, primaryYAxis可以配置为数组, 每项对应一个双轴图的主Y轴.

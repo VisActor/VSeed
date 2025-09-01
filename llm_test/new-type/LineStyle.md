@@ -46,37 +46,30 @@ export type LineStyle = {
   selector?: Selector | Selectors
 
   /**
-   * 折线图是否平滑
-   * @description 折线图是否平滑
+   * @description 线段是否可见
+   */
+  lineVisible?: boolean
+  /**
+   * @description 线段是否平滑
    * @type {boolean}
    */
   lineSmooth?: boolean
 
   /**
-   * 柱状图颜色
-   * @description 柱状图颜色
-   * @type {string}
+   * @description 线段颜色
    */
   lineColor?: string
   /**
-   * 柱状图颜色透明度
-   * @description 柱状图颜色透明度
-   * @type {number}
+   * @description 线段颜色透明度
    */
   lineColorOpacity?: number
   /**
-   * 柱状图边框宽度
-   * @description 柱状图边框宽度
-   * @type {number}
+   * @description 线段宽度
    */
   lineWidth?: number
   /**
-   * 柱状图边框样式
-   * @description 柱状图边框样式
-   * @type {number}
-   * @example solid
-   * @example dashed
-   * @example dotted
+   * @description 线段样式
+   * @example `lineStyle: 'solid'`
    */
   lineStyle?: 'solid' | 'dashed' | 'dotted'
 }

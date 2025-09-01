@@ -92,12 +92,12 @@
   {
     "name": "annotationVerticalLine",
     "componentName": "AnnotationVerticalLine",
-    "description": "标注垂直线配置, 根据选择的数据, 定义图表的标注垂直线, 包括标注垂直线的位置, 样式等."
+    "description": "垂直标注线配置, 根据选择的数据, 定义图表的标注垂直线, 包括标注垂直线的位置, 样式等."
   },
   {
     "name": "annotationHorizontalLine",
     "componentName": "AnnotationHorizontalLine",
-    "description": "标注水平线配置, 根据选择的数据, 定义图表的标注水平线, 包括标注水平线的位置, 样式等."
+    "description": "水平标注线配置, 根据选择的数据, 定义图表的标注水平线, 包括标注水平线的位置, 样式等."
   },
   {
     "name": "annotationArea",

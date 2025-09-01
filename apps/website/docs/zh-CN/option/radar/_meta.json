@@ -1,6 +1,11 @@
 [
   {
     "type": "file",
+    "name": "areaStyle",
+    "label": "areaStyle "
+  },
+  {
+    "type": "file",
     "name": "backgroundColor",
     "label": "backgroundColor "
   },
@@ -36,6 +41,11 @@
   },
   {
     "type": "file",
+    "name": "lineStyle",
+    "label": "lineStyle "
+  },
+  {
+    "type": "file",
     "name": "locale",
     "label": "locale "
   },
@@ -43,6 +53,11 @@
     "type": "file",
     "name": "measures",
     "label": "measures "
+  },
+  {
+    "type": "file",
+    "name": "pointStyle",
+    "label": "pointStyle "
   },
   {
     "type": "file",

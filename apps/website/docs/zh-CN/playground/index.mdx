@@ -7,61 +7,37 @@ pageType: custom
 ```tsx
 const Demo = () => {
   const vseed: VSeed = {
-    chartType: 'dualAxis',
+    chartType: 'radar',
     dataset: [
-      { date: '2019', profit: 10, sales: 20, count: 50, type: 'A' },
-      { date: '2020', profit: 30, sales: 60, count: 50, type: 'A' },
-      { date: '2021', profit: 30, sales: 60, count: 50, type: 'B' },
-      { date: '2022', profit: 50, sales: 100, count: 50, type: 'B' },
+      { ByteIO: 3, TEA全埋点: 5, dimension: '埋点覆盖率', 统一追踪方案: 4 },
+      { ByteIO: 5, TEA全埋点: 3, dimension: '数据准确性', 统一追踪方案: 5 },
+      { ByteIO: 5, TEA全埋点: 2, dimension: '业务理解度', 统一追踪方案: 4 },
+      { ByteIO: 5, TEA全埋点: 2, dimension: '配置灵活性', 统一追踪方案: 4 },
+      { ByteIO: 3, TEA全埋点: 3, dimension: '跨平台能力', 统一追踪方案: 5 },
+      { ByteIO: 3, TEA全埋点: 2, dimension: '链路追踪', 统一追踪方案: 5 },
+      { ByteIO: 5, TEA全埋点: 3, dimension: '性能影响', 统一追踪方案: 4 },
+      { ByteIO: 4, TEA全埋点: 5, dimension: '实时性', 统一追踪方案: 5 },
+      { ByteIO: 5, TEA全埋点: 3, dimension: '隐私合规', 统一追踪方案: 5 },
     ],
-    lineStyle: {
-      lineSmooth: true,
-    },
-    annotationPoint: [
+    areaStyle: [
       {
-        selector: [
-          {
-            field: 'sales',
-            operator: '<=',
-            value: 80,
-          },
-        ],
-        text: '销售额<=80',
-        textAlign: 'left',
-        // offsetX: -15,
+        selector: 'ByteIO',
+        areaVisible: true,
       },
       {
-        selector: [
-          {
-            field: 'date',
-            operator: 'in',
-            value: '2021',
-          },
-        ],
-        text: '2021 年',
-        textAlign: 'left',
-        // offsetX: 0,
+        selector: 'TEA全埋点',
+        areaVisible: false,
+      },
+      {
+        selector: '统一追踪方案',
+        areaVisible: false,
       },
     ],
-    dimensions: [
-      { id: 'date', alias: '日期', location: 'dimension' },
-      // { id: 'type', alias: '类型', location: 'rowDimension' }
-    ],
-    dualMeasures: [
-      {
-        primaryMeasures: [
-          { id: 'profit', alias: '利润' },
-          { id: 'sales', alias: '销售额' },
-        ],
-        secondaryMeasures: [{ id: 'count', alias: '数量' }],
-      },
-      {
-        primaryMeasures: [
-          { id: 'profit', alias: '利润' },
-          { id: 'sales', alias: '销售额' },
-        ],
-        secondaryMeasures: [{ id: 'count', alias: '数量' }],
-      },
+    dimensions: [{ alias: '评估维度', id: 'dimension' }],
+    measures: [
+      { alias: 'ByteIO可视化方案评分', id: 'ByteIO' },
+      { alias: 'TEA全埋点方案评分', id: 'TEA全埋点' },
+      { alias: '统一追踪方案评分', id: '统一追踪方案' },
     ],
   }
 

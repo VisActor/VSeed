@@ -9,7 +9,12 @@ export const areaStyle: SpecPipe = (spec, context) => {
   const { areaStyle } = markStyle
 
   if (!areaStyle) {
-    return spec
+    return {
+      ...spec,
+      area: {
+        visible: true,
+      },
+    }
   }
   const result = { ...spec } as IAreaChartSpec
 
@@ -20,7 +25,7 @@ export const areaStyle: SpecPipe = (spec, context) => {
   const areaGroups = groupBy(dataset, (d) => d[group ?? ''] as string)
 
   const customMap = areaStyles.reduce<object>((result, style, index) => {
-    const { areaColor, areaColorOpacity } = style
+    const { areaColor, areaColorOpacity, areaVisible = true } = style
 
     return {
       ...result,
@@ -37,6 +42,7 @@ export const areaStyle: SpecPipe = (spec, context) => {
           return false
         },
         style: {
+          visible: areaVisible,
           fill: areaColor,
           fillOpacity: areaColorOpacity,
         },
@@ -47,6 +53,7 @@ export const areaStyle: SpecPipe = (spec, context) => {
   return {
     ...result,
     area: {
+      visible: true,
       state: {
         ...customMap,
       },

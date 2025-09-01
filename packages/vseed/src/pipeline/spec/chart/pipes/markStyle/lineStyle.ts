@@ -18,10 +18,10 @@ export const lineStyle: SpecPipe = (spec, context) => {
   const lineGroups = groupBy(dataset, (d) => d[group ?? ''] as string)
 
   const customMap = lineStyles.reduce<object>((result, style, index) => {
-    const { lineColor, lineColorOpacity, lineSmooth, lineStyle, lineWidth } = style
+    const { lineColor, lineColorOpacity, lineSmooth, lineStyle, lineWidth = 2, lineVisible = true } = style
 
-    const dashSegment = (lineWidth ?? 2) * 2
-    const dashGap = lineWidth ?? 2
+    const dashSegment = lineWidth * 2
+    const dashGap = lineWidth
 
     const lineDash =
       lineStyle === 'dashed' ? [dashSegment, dashSegment] : lineStyle === 'dotted' ? [dashGap / 2, dashGap * 2] : [0, 0]
@@ -43,6 +43,7 @@ export const lineStyle: SpecPipe = (spec, context) => {
           return false
         },
         style: {
+          visible: lineVisible,
           curveType: curveType,
           strokeOpacity: lineColorOpacity,
           stroke: lineColor,

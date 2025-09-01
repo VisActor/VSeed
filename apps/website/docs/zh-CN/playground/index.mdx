@@ -7,24 +7,111 @@ pageType: custom
 ```tsx
 const Demo = () => {
   const vseed: VSeed = {
-    chartType: 'radar',
-    dataset: [
-      { ByteIO: 3, TEA全埋点: 5, dimension: '埋点覆盖率', 统一追踪方案: 4 },
-      { ByteIO: 5, TEA全埋点: 3, dimension: '数据准确性', 统一追踪方案: 5 },
-      { ByteIO: 5, TEA全埋点: 2, dimension: '业务理解度', 统一追踪方案: 4 },
-      { ByteIO: 5, TEA全埋点: 2, dimension: '配置灵活性', 统一追踪方案: 4 },
-      { ByteIO: 3, TEA全埋点: 3, dimension: '跨平台能力', 统一追踪方案: 5 },
-      { ByteIO: 3, TEA全埋点: 2, dimension: '链路追踪', 统一追踪方案: 5 },
-      { ByteIO: 5, TEA全埋点: 3, dimension: '性能影响', 统一追踪方案: 4 },
-      { ByteIO: 4, TEA全埋点: 5, dimension: '实时性', 统一追踪方案: 5 },
-      { ByteIO: 5, TEA全埋点: 3, dimension: '隐私合规', 统一追踪方案: 5 },
+    "chartType": "column",
+    "dataset": [
+      {
+        "hardware_revenue": 155.6,
+        "platform_revenue": 828,
+        "quarter": "2023 Q4",
+        "total_revenue": 984.4
+      },
+      {
+        "hardware_revenue": 168.2,
+        "platform_revenue": 800,
+        "quarter": "2024 Q1",
+        "total_revenue": 968.2
+      },
+      {
+        "hardware_revenue": 172.2,
+        "platform_revenue": 890,
+        "quarter": "2024 Q2",
+        "total_revenue": 1062.2
+      },
+      {
+        "hardware_revenue": 221,
+        "platform_revenue": 980,
+        "quarter": "2024 Q3",
+        "total_revenue": 1201
+      },
+      {
+        "hardware_revenue": 150.7,
+        "platform_revenue": 870,
+        "quarter": "2024 Q4",
+        "total_revenue": 1020.7
+      },
+      {
+        "hardware_revenue": 161,
+        "platform_revenue": 950,
+        "quarter": "2025 Q1",
+        "total_revenue": 1111
+      }
     ],
-    dimensions: [{ alias: '评估维度', id: 'dimension' }],
-    measures: [
-      { alias: 'ByteIO可视化方案评分', id: 'ByteIO' },
-      { alias: 'TEA全埋点方案评分', id: 'TEA全埋点' },
-      { alias: '统一追踪方案评分', id: '统一追踪方案' },
+    "dimensions": [
+      {
+        "alias": "季度",
+        "id": "quarter"
+      }
     ],
+    "measures": [
+      {
+        "id": "primary",
+        "children": [
+          {
+            "alias": "平台收入",
+            "id": "platform_revenue"
+          },
+          {
+            "alias": "硬件收入",
+            "id": "hardware_revenue"
+          }
+        ]
+      },
+      {
+        "id": "secondary",
+        "children": [
+          {
+            "alias": "总收入",
+            "id": "total_revenue"
+          }
+        ]
+      }
+    ],
+    // measures: [
+    //   {
+    //     "alias": "平台收入",
+    //     "id": "platform_revenue"
+    //   },
+    //   {
+    //     "alias": "硬件收入",
+    //     "id": "hardware_revenue"
+    //   }
+    // ],
+    "color": {
+      "colorMapping": {
+        "platform_revenue": "#00008B",
+        "hardware_revenue": "#ADD8E6",
+        "total_revenue": "#FF0000"
+      }
+    },
+    "label": {
+      "enable": true
+    },
+    "theme": "light",
+    "annotationArea": {
+      "selector": {
+        "field": "quarter",
+        "value": "2023 Q4"
+      },
+      "text": "数据来源：ROKU财报",
+      "textPosition": "bottom",
+      "textColor": "black",
+      "textFontSize": 12,
+      "textFontWeight": 400,
+      "textAlign": "center",
+      "textBaseline": "top",
+      "textBackgroundVisible": false
+    },
+    "locale": "zh-CN"
   }
 
   if (zVSeed.safeParse(vseed).success) {

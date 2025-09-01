@@ -106,47 +106,38 @@ same as operator:::
 :::note{title=描述}
 选择数据项中维度字段的值, 支持数组:::
 
+## lineVisible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+线段是否可见:::
+
 ## lineSmooth
 
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
-折线图是否平滑
-
-
-
-折线图是否平滑:::
+线段是否平滑:::
 
 ## lineColor
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-柱状图颜色
-
-
-
-柱状图颜色:::
+线段颜色:::
 
 ## lineColorOpacity
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-柱状图颜色透明度
-
-
-
-柱状图颜色透明度:::
+线段颜色透明度:::
 
 ## lineWidth
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-柱状图边框宽度
-
-
-
-柱状图边框宽度:::
+线段宽度:::
 

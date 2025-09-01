@@ -7,49 +7,38 @@ pageType: custom
 ```tsx
 const Demo = () => {
   const vseed: VSeed = {
-    chartType: 'line',
+    chartType: 'radar',
     dataset: [
-      { dt: '2023-05-01', queue_business_type: 'A', hit_low: 0, hit_high: 1, dist_log_cnt: 120 },
-      { dt: '2023-05-15', queue_business_type: 'B', hit_low: 1, hit_high: 0, dist_log_cnt: 95 },
-      { dt: '2023-06-01', queue_business_type: 'A', hit_low: 0, hit_high: 0, dist_log_cnt: 110 },
-      { dt: '2023-06-15', queue_business_type: 'B', hit_low: 0, hit_high: 0, dist_log_cnt: 105 },
-      { dt: '2023-07-01', queue_business_type: 'A', hit_low: 0, hit_high: 1, dist_log_cnt: 130 },
-      { dt: '2023-07-15', queue_business_type: 'B', hit_low: 1, hit_high: 0, dist_log_cnt: 90 },
-      { dt: '2023-08-01', queue_business_type: 'A', hit_low: 0, hit_high: 0, dist_log_cnt: 115 },
-      { dt: '2023-08-15', queue_business_type: 'B', hit_low: 0, hit_high: 0, dist_log_cnt: 100 },
-      { dt: '2023-09-01', queue_business_type: 'A', hit_low: 0, hit_high: 1, dist_log_cnt: 140 },
-      { dt: '2023-09-15', queue_business_type: 'B', hit_low: 1, hit_high: 0, dist_log_cnt: 85 },
-      { dt: '2023-10-01', queue_business_type: 'A', hit_low: 0, hit_high: 0, dist_log_cnt: 125 },
-      { dt: '2023-10-15', queue_business_type: 'B', hit_low: 0, hit_high: 0, dist_log_cnt: 95 },
+      { ByteIO: 3, TEA全埋点: 5, dimension: '埋点覆盖率', 统一追踪方案: 4 },
+      { ByteIO: 5, TEA全埋点: 3, dimension: '数据准确性', 统一追踪方案: 5 },
+      { ByteIO: 5, TEA全埋点: 2, dimension: '业务理解度', 统一追踪方案: 4 },
+      { ByteIO: 5, TEA全埋点: 2, dimension: '配置灵活性', 统一追踪方案: 4 },
+      { ByteIO: 3, TEA全埋点: 3, dimension: '跨平台能力', 统一追踪方案: 5 },
+      { ByteIO: 3, TEA全埋点: 2, dimension: '链路追踪', 统一追踪方案: 5 },
+      { ByteIO: 5, TEA全埋点: 3, dimension: '性能影响', 统一追踪方案: 4 },
+      { ByteIO: 4, TEA全埋点: 5, dimension: '实时性', 统一追踪方案: 5 },
+      { ByteIO: 5, TEA全埋点: 3, dimension: '隐私合规', 统一追踪方案: 5 },
     ],
-    dimensions: [
-      { id: 'dt', alias: '日期', visible: true, location: 'dimension' },
-      { id: 'queue_business_type', alias: '业务类型', visible: true, location: 'dimension' },
-    ],
-    measures: [{ id: 'dist_log_cnt', alias: '日志计数' }],
-    annotationPoint: [
+    areaStyle: [
       {
-        selector: {
-          field: 'hit_high',
-          operator: '=',
-          value: 1,
-        },
-        text: '1',
-        backgroundColor: 'red',
-        backgroundVisible: true,
+        selector: 'ByteIO',
+        areaVisible: true,
       },
       {
-        selector: {
-          field: 'hit_low',
-          operator: '=',
-          value: 1,
-        },
-        text: '1',
-        backgroundColor: '#1f77b4',
-        backgroundVisible: true,
+        selector: 'TEA全埋点',
+        areaVisible: false,
+      },
+      {
+        selector: '统一追踪方案',
+        areaVisible: false,
       },
     ],
-    legend: { enable: true, position: 'top', maxSize: 2 },
+    dimensions: [{ alias: '评估维度', id: 'dimension' }],
+    measures: [
+      { alias: 'ByteIO可视化方案评分', id: 'ByteIO' },
+      { alias: 'TEA全埋点方案评分', id: 'TEA全埋点' },
+      { alias: '统一追踪方案评分', id: '统一追踪方案' },
+    ],
   }
 
   if (zVSeed.safeParse(vseed).success) {

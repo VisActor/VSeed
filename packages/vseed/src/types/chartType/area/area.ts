@@ -165,7 +165,6 @@ export interface Area {
   theme?: Theme
 
   /**
-   * 点图元样式
    * @description 点图元样式配置, 用于定义图表的点图元样式, 包括点图元的颜色, 边框等.
    * 支持全局样式或条件样式配置
    * 数据筛选器
@@ -175,7 +174,6 @@ export interface Area {
   pointStyle?: PointStyle | PointStyle[]
 
   /**
-   * 线图元样式
    * @description 线图元样式配置, 用于定义图表的线图元样式, 包括线图元的颜色, 透明度, 曲线等.
    * 支持全局样式或条件样式配置
    * 数据筛选器
@@ -185,7 +183,6 @@ export interface Area {
   lineStyle?: LineStyle | LineStyle[]
 
   /**
-   * 面积图元样式
    * @description 面积图元样式配置, 用于定义图表的面积图元样式, 包括面积图元的颜色, 透明度, 边框等.
    * 支持全局样式或条件样式配置
    * 数据筛选器
@@ -195,20 +192,17 @@ export interface Area {
   areaStyle?: AreaStyle | AreaStyle[]
 
   /**
-   * 标注点
    * @description 标注点配置, 根据选择的数据, 定义图表的标注点, 包括标注点的位置, 格式, 样式等.
    */
   annotationPoint?: AnnotationPoint | AnnotationPoint[]
 
   /**
-   * 标注垂直线
-   * @description 标注垂直线配置, 根据选择的数据, 定义图表的标注垂直线, 包括标注垂直线的位置, 样式等.
+   * @description 垂直标注线配置, 根据选择的数据, 定义图表的标注垂直线, 包括标注垂直线的位置, 样式等.
    */
   annotationVerticalLine?: AnnotationVerticalLine | AnnotationVerticalLine[]
 
   /**
-   * 标注水平线
-   * @description 标注水平线配置, 根据选择的数据, 定义图表的标注水平线, 包括标注水平线的位置, 样式等.
+   * @description 水平标注线配置, 根据选择的数据, 定义图表的标注水平线, 包括标注水平线的位置, 样式等.
    */
   annotationHorizontalLine?: AnnotationHorizontalLine | AnnotationHorizontalLine[]
 

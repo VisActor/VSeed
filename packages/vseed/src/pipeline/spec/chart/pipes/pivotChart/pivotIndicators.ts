@@ -1,6 +1,6 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
 import { execPipeline } from '../../../../utils'
-import type { SpecPipe, SpecPipeline, SpecPipelineContext } from 'src/types'
+import type { Dataset, SpecPipe, SpecPipeline, SpecPipelineContext } from 'src/types'
 import { unique } from 'remeda'
 
 export const pivotIndicators =
@@ -8,14 +8,14 @@ export const pivotIndicators =
   (spec, context) => {
     const result = { ...spec } as PivotChartConstructorOptions
     const { advancedVSeed } = context
-    const { measures, datasetReshapeInfo, encoding } = advancedVSeed
+    const { measures, datasetReshapeInfo, encoding, dataset } = advancedVSeed
 
     const colorItems = unique(datasetReshapeInfo.flatMap((d) => d.unfoldInfo.colorItems))
 
     const indicators = datasetReshapeInfo.map((reshapeInfo, index) => {
       const measure = measures?.find((d) => d.id === reshapeInfo.id)
-
       const newEncoding = [encoding[index]]
+      const newDataset = dataset[index] as Dataset
       const newDatasetReshapeInfo = [
         {
           ...reshapeInfo,
@@ -27,6 +27,7 @@ export const pivotIndicators =
         advancedVSeed: {
           ...advancedVSeed,
           datasetReshapeInfo: newDatasetReshapeInfo,
+          dataset: newDataset,
           encoding: newEncoding,
         },
       }

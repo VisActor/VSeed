@@ -37,6 +37,7 @@ import {
   dualChartTypePrimary,
   dualChartTypeSecondary,
   seriesDualAxis,
+  series,
 } from '../pipes'
 
 const dualAxis: SpecPipeline = [
@@ -91,7 +92,7 @@ const pivotDualAxis: SpecPipeline = [
   pivotIndicatorsAsRow,
   datasetPivot,
   pivotIndicators([
-    seriesDualAxis(
+    series(
       [
         initDualAxisPrimary,
         dualChartTypePrimary,

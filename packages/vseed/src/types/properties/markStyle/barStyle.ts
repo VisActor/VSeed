@@ -42,32 +42,31 @@ export type BarStyle = {
   selector?: Selector | Selectors
 
   /**
-   * 柱状图颜色
-   * @description 柱状图颜色
+   * @description 柱图元(矩形图元)是否可见
+   */
+  barVisible?: boolean
+  /**
+   * @description 柱图元(矩形图元)颜色
    * @type {string}
    */
   barColor?: string
   /**
-   * 柱状图颜色透明度
-   * @description 柱状图颜色透明度
+   * @description 柱图元(矩形图元)颜色透明度
    * @type {number}
    */
   barColorOpacity?: number
   /**
-   * 柱状图边框颜色
-   * @description 柱状图边框颜色
+   * @description 柱图元(矩形图元)边框颜色
    * @type {string}
    */
   barBorderColor?: string
   /**
-   * 柱状图边框宽度
-   * @description 柱状图边框宽度
+   * @description 柱图元(矩形图元)边框宽度
    * @type {number}
    */
   barBorderWidth?: number
   /**
-   * 柱状图边框样式
-   * @description 柱状图边框样式
+   * @description 柱图元(矩形图元)边框样式
    * @type {number}
    * @example solid
    * @example dashed
@@ -75,8 +74,7 @@ export type BarStyle = {
    */
   barBorderStyle?: 'solid' | 'dashed' | 'dotted'
   /**
-   * 柱状图圆角
-   * @description 柱状图圆角
+   * @description 柱图元(矩形图元)圆角
    * @type {number | number[]}
    * @example 4
    * @example [0, 0, 10, 10]
@@ -86,6 +84,7 @@ export type BarStyle = {
 
 export const zBarStyle = z.object({
   selector: z.union([zSelector, zSelectors]).nullish(),
+  barVisible: z.boolean().nullish(),
   barColor: z.string().nullish(),
   barColorOpacity: z.number().nullish(),
   barBorderColor: z.string().nullish(),

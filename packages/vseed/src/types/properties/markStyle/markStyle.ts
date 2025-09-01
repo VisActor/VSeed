@@ -2,7 +2,7 @@ import { z } from 'zod'
 import { zBarStyle } from './barStyle'
 import { zPointStyle } from './pointStyle'
 import { zLineStyle } from './lineStyle'
-import { zAreaStyle } from './areaStyle'
+import { zAreaStyle } from './zAreaStyle'
 
 export const zMarkStyle = z.object({
   barStyle: zBarStyle.or(z.array(zBarStyle)).nullish(),

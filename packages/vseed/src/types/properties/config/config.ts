@@ -102,6 +102,7 @@ export const zDualAxisConfig = z.object({
   legend: zLegend.nullish(),
 
   dualChartType: z.array(zDualChartType).or(zDualChartType).nullish(),
+  alignTicks: z.array(z.boolean()).or(z.boolean()).nullish(),
   primaryYAxis: z.array(zYLinearAxis).or(zYLinearAxis).nullish(),
   secondaryYAxis: z.array(zYLinearAxis).or(zYLinearAxis).nullish(),
 

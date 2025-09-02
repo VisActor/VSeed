@@ -26,6 +26,7 @@ export const unfoldDimensions = (
   }
 
   const dimensionsToBeUnfolded = dimensions.slice(unfoldStartIndex)
+  const dimensionsToBeRemain = dimensions.slice(0, unfoldStartIndex)
   const unfoldInfo: UnfoldInfo = {
     groupName: unfoldGroupName,
     groupId: unfoldGroupId,
@@ -58,6 +59,16 @@ export const unfoldDimensions = (
     datum[unfoldGroupId] = colorId
     colorItems.push(colorId)
     colorMap[colorId] = colorName
+
+    // TODO: 维值 特殊值统一转换
+    if (dimensionsToBeRemain.length > 0) {
+      for (const dim of dimensionsToBeRemain) {
+        const dimValue = datum[dim.id] as string | number | null | undefined
+        if (typeof dimValue === 'number') {
+          datum[dim.id] = String(dimValue)
+        }
+      }
+    }
   }
 
   unfoldInfo.colorItems = unique(colorItems)

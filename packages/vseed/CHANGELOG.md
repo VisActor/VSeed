@@ -1,5 +1,12 @@
 # @visactor/vseed
 
+## 0.0.40
+
+### Patch Changes
+
+- - feat: number dim to string
+  - fix: optimize the view in column parallel with same dimensions
+
 ## 0.0.39
 
 ### Patch Changes

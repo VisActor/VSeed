@@ -1,8 +1,8 @@
 import type { VSeed } from '@visactor/vseed'
 import { Builder, registerAll } from '@visactor/vseed'
-import vseed from './columnPercent1.json'
+import vseed from './column2.json'
 
-test('columnPercent1', () => {
+test('column2', () => {
   registerAll()
   const builder = Builder.from(vseed as VSeed)
   const advanced = builder.buildAdvanced()

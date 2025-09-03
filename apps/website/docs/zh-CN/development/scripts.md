@@ -11,7 +11,9 @@
     "build:vseed": "pnpm --filter=@visactor/vseed run build",
     "build:rsdoctor": "pnpm --filter=@visactor/vseed run build:rsdoctor",
     "build:docs": "node ./apps/website/scripts/generateDocs.js",
+    "build:test": "pnpm --filter=@visactor/vseed run build:test",
     "test": "pnpm -r test",
+    "test:coverage": "pnpm --filter=@visactor/vseed run test:coverage",
     "publish:vseed": "pnpm run build:vseed && pnpm publish --filter=@visactor/vseed --access=public"
   }
 }
@@ -35,6 +37,14 @@ pnpm dev
 
 ```bash
 pnpm test
+```
+
+### test:coverage
+
+执行单元测试并生成覆盖率报告
+
+```bash
+pnpm test:coverage
 ```
 
 ## 构建
@@ -61,6 +71,14 @@ pnpm build:vseed
 
 ```bash
 pnpm build:docs
+```
+
+### build:test
+
+构建 `@visactor/vseed` 项目的测试代码, 测试代码会自动生成到 `packages/vseed/test` 目录下
+
+```bash
+pnpm build:test
 ```
 
 ## 构建分析

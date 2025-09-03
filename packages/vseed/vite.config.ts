@@ -19,7 +19,7 @@ export default defineConfig({
         '**/*.config.*',
         'scripts/**'
       ],
-      reporter: ['text', 'json', 'html'],
+      reporter: ['text', 'json', 'html', 'json-summary'],
       reportsDirectory: './coverage',
     },
     typecheck: {

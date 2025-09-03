@@ -2,7 +2,7 @@
   "include": [
     ".",
     "../src",
-    "../vitest.setup.ts"
+    "./rstestEnv.d.ts"
   ],
   "compilerOptions": {
     "paths": {

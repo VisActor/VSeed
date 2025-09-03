@@ -22,7 +22,7 @@
     "build:rsdoctor": "RSDOCTOR=true rsbuild build",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "test": "vitest run"
+    "test": "rstest"
   },
   "dependencies": {
     "remeda": "^2.28.0",
@@ -30,18 +30,19 @@
   },
   "sideEffects": false,
   "devDependencies": {
-    "@types/d3-color": "^3.1.0",
     "@eslint/js": "9.30.0",
     "@rsdoctor/rspack-plugin": "1.1.10",
     "@rslib/core": "0.12.0",
+    "@rstest/core": "^0.3.2",
+    "@types/d3-color": "^3.1.0",
     "@types/node": "^22.16.5",
     "@typescript-eslint/eslint-plugin": "8.38.0",
+    "@visactor/vchart": "latest",
+    "@visactor/vtable": "latest",
     "eslint": "9.30.0",
     "globals": "16.2.0",
     "typescript": "5.8.3",
     "typescript-eslint": "8.35.1",
-    "vitest": "3.2.4",
-    "@visactor/vtable": "latest",
-    "@visactor/vchart": "latest"
+    "vitest": "3.2.4"
   }
 }

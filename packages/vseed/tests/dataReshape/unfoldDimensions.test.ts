@@ -1,4 +1,3 @@
-import { describe, expect, test } from 'vitest'
 import type { Dimension } from '@visactor/vseed'
 import { unfoldDimensions, type Dataset, type Measure } from '@visactor/vseed'
 
@@ -35,7 +34,7 @@ describe('unfoldMeasures', () => {
     const measures: Measure[] = []
     const dimensions: Dimension[] = [{ id: 'date', alias: 'Date', location: 'dimension' }]
     const result0 = unfoldDimensions(dataset, dimensions, measures, 0)
-    expect(result0.dataset as Dataset).matchSnapshot()
+    expect(result0.dataset).matchSnapshot()
   })
 
   test('1 dimensions, 1 measures', () => {
@@ -49,7 +48,7 @@ describe('unfoldMeasures', () => {
     const measures: Measure[] = [{ id: 'sales', alias: 'Sales' }]
     const dimensions: Dimension[] = [{ id: 'date', alias: 'Date', location: 'dimension' }]
     const result0 = unfoldDimensions(dataset, dimensions, measures, 0)
-    expect(result0.dataset as Dataset).matchSnapshot()
+    expect(result0.dataset).matchSnapshot()
 
     expect(() => unfoldDimensions(dataset, dimensions, measures, 1)).toThrowError('unfoldStartIndex is out of range')
   })
@@ -106,7 +105,7 @@ describe('unfoldMeasures', () => {
     ]
     const dimensions: Dimension[] = [{ id: 'date', alias: 'Date', location: 'dimension' }]
     const result0 = unfoldDimensions(dataset, dimensions, measures, 0)
-    expect(result0.dataset as Dataset).matchSnapshot()
+    expect(result0.dataset).matchSnapshot()
 
     expect(() => unfoldDimensions(dataset, dimensions, measures, 1)).toThrowError('unfoldStartIndex is out of range')
   })
@@ -134,10 +133,10 @@ describe('unfoldMeasures', () => {
       { id: 'type', alias: 'Type', location: 'dimension' },
     ]
     const result0 = unfoldDimensions(dataset, dimensions, measures, 0)
-    expect(result0.dataset as Dataset).matchSnapshot()
+    expect(result0.dataset).matchSnapshot()
 
     const result1 = unfoldDimensions(dataset, dimensions, measures, 1)
-    expect(result1.dataset as Dataset).matchSnapshot()
+    expect(result1.dataset).matchSnapshot()
   })
 
   test('2 dimensions, 1 measures', () => {
@@ -159,10 +158,10 @@ describe('unfoldMeasures', () => {
       { id: 'type', alias: 'Type', location: 'dimension' },
     ]
     const result0 = unfoldDimensions(dataset, dimensions, measures, 0)
-    expect(result0.dataset as Dataset).matchSnapshot()
+    expect(result0.dataset).matchSnapshot()
 
     const result1 = unfoldDimensions(dataset, dimensions, measures, 1)
-    expect(result1.dataset as Dataset).matchSnapshot()
+    expect(result1.dataset).matchSnapshot()
   })
 
   test('2 dimensions, 0 measures', () => {
@@ -184,9 +183,9 @@ describe('unfoldMeasures', () => {
       { id: 'type', alias: 'Type', location: 'dimension' },
     ]
     const result0 = unfoldDimensions(dataset, dimensions, measures, 0)
-    expect(result0.dataset as Dataset).matchSnapshot()
+    expect(result0.dataset).matchSnapshot()
 
     const result1 = unfoldDimensions(dataset, dimensions, measures, 1)
-    expect(result1.dataset as Dataset).matchSnapshot()
+    expect(result1.dataset).matchSnapshot()
   })
 })

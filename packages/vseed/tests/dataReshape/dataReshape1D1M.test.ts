@@ -1,5 +1,4 @@
 import { dataReshapeFor1D1M, type Dataset, type Dimension, type Measure } from '@visactor/vseed'
-import { describe, expect, test } from 'vitest'
 
 describe('dataReshape', () => {
   // zero dimensions

@@ -1,0 +1,50 @@
+{
+  "chartType": "pie",
+  "dataset": [
+    {
+      "date": "2019",
+      "type": "A",
+      "goalProfit": 10,
+      "profit": 10,
+      "sales": 100,
+      "leftCount": 1,
+      "salesCount": 100
+    },
+    {
+      "date": "2020",
+      "type": "A",
+      "goalProfit": 30,
+      "profit": 30,
+      "sales": 320,
+      "leftCount": 2,
+      "salesCount": 200
+    },
+    {
+      "date": "2021",
+      "type": "A",
+      "goalProfit": 30,
+      "profit": 30,
+      "sales": 300,
+      "leftCount": 3,
+      "salesCount": 300
+    },
+    {
+      "date": "2022",
+      "type": "A",
+      "goalProfit": 50,
+      "profit": 50,
+      "sales": 240,
+      "leftCount": 4,
+      "salesCount": 400
+    },
+    {
+      "date": "2023",
+      "type": "A",
+      "goalProfit": 40,
+      "profit": 40,
+      "sales": 500,
+      "leftCount": 5,
+      "salesCount": 500
+    }
+  ]
+}

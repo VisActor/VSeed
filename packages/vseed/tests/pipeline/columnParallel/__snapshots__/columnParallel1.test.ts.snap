@@ -1,11 +1,11 @@
 // Rstest Snapshot v1
 
-exports[`column1 1`] = `
+exports[`columnParallel1 1`] = `
 {
   "annotation": {},
-  "chartType": "column",
+  "chartType": "columnParallel",
   "config": {
-    "column": {
+    "columnParallel": {
       "backgroundColor": "transparent",
       "color": {
         "colorScheme": [
@@ -131,7 +131,7 @@ exports[`column1 1`] = `
   },
   "customTheme": {
     "config": {
-      "column": {
+      "columnParallel": {
         "backgroundColor": "transparent",
         "color": {
           "colorScheme": [
@@ -824,7 +824,7 @@ exports[`column1 1`] = `
 }
 `;
 
-exports[`column1 2`] = `
+exports[`columnParallel1 2`] = `
 {
   "animation": true,
   "axes": [
@@ -1563,7 +1563,6 @@ exports[`column1 2`] = `
     4,
     4,
   ],
-  "stackInverse": true,
   "tooltip": {
     "dimension": {
       "content": [
@@ -1605,7 +1604,10 @@ exports[`column1 2`] = `
     "visible": true,
   },
   "type": "bar",
-  "xField": "date",
+  "xField": [
+    "date",
+    "__DimGroupID__",
+  ],
   "yField": "__MeaValue__",
 }
 `;

@@ -1,11 +1,11 @@
 // Rstest Snapshot v1
 
-exports[`column1 1`] = `
+exports[`columnPercent1 1`] = `
 {
   "annotation": {},
-  "chartType": "column",
+  "chartType": "columnPercent",
   "config": {
-    "column": {
+    "columnPercent": {
       "backgroundColor": "transparent",
       "color": {
         "colorScheme": [
@@ -131,7 +131,7 @@ exports[`column1 1`] = `
   },
   "customTheme": {
     "config": {
-      "column": {
+      "columnPercent": {
         "backgroundColor": "transparent",
         "color": {
           "colorScheme": [
@@ -824,7 +824,7 @@ exports[`column1 1`] = `
 }
 `;
 
-exports[`column1 2`] = `
+exports[`columnPercent1 2`] = `
 {
   "animation": true,
   "axes": [
@@ -1551,6 +1551,7 @@ exports[`column1 2`] = `
     "visible": true,
   },
   "padding": 0,
+  "percent": true,
   "region": [
     {
       "clip": true,

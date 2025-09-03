@@ -1,11 +1,11 @@
 // Rstest Snapshot v1
 
-exports[`column1 1`] = `
+exports[`pie1 1`] = `
 {
   "annotation": {},
-  "chartType": "column",
+  "chartType": "pie",
   "config": {
-    "column": {
+    "pie": {
       "backgroundColor": "transparent",
       "color": {
         "colorScheme": [
@@ -21,13 +21,6 @@ exports[`column1 1`] = `
           "#D77DD3",
         ],
       },
-      "crosshairRect": {
-        "labelBackgroundColor": "#364159",
-        "labelColor": "#ffffff",
-        "labelVisible": true,
-        "rectColor": "#3641594d",
-        "visible": true,
-      },
       "label": {
         "enable": true,
       },
@@ -41,97 +34,14 @@ exports[`column1 1`] = `
         "position": "rt",
         "shapeType": "rectRound",
       },
-      "stackCornerRadius": [
-        4,
-        4,
-        4,
-        4,
-      ],
       "tooltip": {
         "enable": true,
-      },
-      "xAxis": {
-        "grid": {
-          "gridColor": "#36415926",
-          "gridWidth": 0.5,
-          "visible": false,
-        },
-        "label": {
-          "labelAngle": 0,
-          "labelColor": "#797B85",
-          "labelFontSize": 12,
-          "labelFontWeight": 400,
-          "visible": true,
-        },
-        "labelAutoHide": true,
-        "labelAutoHideGap": 4,
-        "labelAutoLimit": true,
-        "labelAutoLimitLength": 80,
-        "labelAutoRotate": false,
-        "labelAutoRotateAngleRange": [
-          0,
-          -45,
-          -90,
-        ],
-        "line": {
-          "lineColor": "#3641594d",
-          "lineWidth": 1,
-          "visible": true,
-        },
-        "tick": {
-          "tickColor": "#3641594d",
-          "tickInside": false,
-          "tickSize": 4,
-          "visible": false,
-        },
-        "title": {
-          "titleColor": "#646A73",
-          "titleFontSize": 12,
-          "titleFontWeight": 400,
-          "titleText": "",
-          "visible": false,
-        },
-      },
-      "yAxis": {
-        "grid": {
-          "gridColor": "#36415926",
-          "gridWidth": 0.5,
-          "visible": true,
-        },
-        "inverse": false,
-        "label": {
-          "labelAngle": 0,
-          "labelColor": "#797B85",
-          "labelFontSize": 12,
-          "labelFontWeight": 400,
-          "visible": true,
-        },
-        "line": {
-          "lineColor": "#3641594d",
-          "lineWidth": 1,
-          "visible": false,
-        },
-        "nice": true,
-        "tick": {
-          "tickColor": "#3641594d",
-          "tickInside": false,
-          "tickSize": 4,
-          "visible": false,
-        },
-        "title": {
-          "titleColor": "#646A73",
-          "titleFontSize": 12,
-          "titleFontWeight": 400,
-          "titleText": "",
-          "visible": false,
-        },
-        "zero": true,
       },
     },
   },
   "customTheme": {
     "config": {
-      "column": {
+      "pie": {
         "backgroundColor": "transparent",
         "color": {
           "colorScheme": [
@@ -147,13 +57,6 @@ exports[`column1 1`] = `
             "#D77DD3",
           ],
         },
-        "crosshairRect": {
-          "labelBackgroundColor": "#364159",
-          "labelColor": "#ffffff",
-          "labelVisible": true,
-          "rectColor": "#3641594d",
-          "visible": true,
-        },
         "label": {
           "enable": true,
         },
@@ -167,99 +70,16 @@ exports[`column1 1`] = `
           "position": "rt",
           "shapeType": "rectRound",
         },
-        "stackCornerRadius": [
-          4,
-          4,
-          4,
-          4,
-        ],
         "tooltip": {
           "enable": true,
-        },
-        "xAxis": {
-          "grid": {
-            "gridColor": "#36415926",
-            "gridWidth": 0.5,
-            "visible": false,
-          },
-          "label": {
-            "labelAngle": 0,
-            "labelColor": "#797B85",
-            "labelFontSize": 12,
-            "labelFontWeight": 400,
-            "visible": true,
-          },
-          "labelAutoHide": true,
-          "labelAutoHideGap": 4,
-          "labelAutoLimit": true,
-          "labelAutoLimitLength": 80,
-          "labelAutoRotate": false,
-          "labelAutoRotateAngleRange": [
-            0,
-            -45,
-            -90,
-          ],
-          "line": {
-            "lineColor": "#3641594d",
-            "lineWidth": 1,
-            "visible": true,
-          },
-          "tick": {
-            "tickColor": "#3641594d",
-            "tickInside": false,
-            "tickSize": 4,
-            "visible": false,
-          },
-          "title": {
-            "titleColor": "#646A73",
-            "titleFontSize": 12,
-            "titleFontWeight": 400,
-            "titleText": "",
-            "visible": false,
-          },
-        },
-        "yAxis": {
-          "grid": {
-            "gridColor": "#36415926",
-            "gridWidth": 0.5,
-            "visible": true,
-          },
-          "inverse": false,
-          "label": {
-            "labelAngle": 0,
-            "labelColor": "#797B85",
-            "labelFontSize": 12,
-            "labelFontWeight": 400,
-            "visible": true,
-          },
-          "line": {
-            "lineColor": "#3641594d",
-            "lineWidth": 1,
-            "visible": false,
-          },
-          "nice": true,
-          "tick": {
-            "tickColor": "#3641594d",
-            "tickInside": false,
-            "tickSize": 4,
-            "visible": false,
-          },
-          "title": {
-            "titleColor": "#646A73",
-            "titleFontSize": 12,
-            "titleFontWeight": 400,
-            "titleText": "",
-            "visible": false,
-          },
-          "zero": true,
         },
       },
     },
   },
   "dataset": [
     {
-      "__DimGroupID__": "A-goalProfit-goalProfit",
-      "__DimGroup__": "A-goalProfit",
+      "__DimGroupID__": "2019-A-goalProfit-goalProfit",
+      "__DimGroup__": "2019-A-goalProfit",
       "__MeaId__": "goalProfit",
       "__MeaName__": "goalProfit",
       "__MeaValue__": 10,
@@ -277,8 +97,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-profit-profit",
-      "__DimGroup__": "A-profit",
+      "__DimGroupID__": "2019-A-profit-profit",
+      "__DimGroup__": "2019-A-profit",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 10,
@@ -296,8 +116,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-sales-sales",
-      "__DimGroup__": "A-sales",
+      "__DimGroupID__": "2019-A-sales-sales",
+      "__DimGroup__": "2019-A-sales",
       "__MeaId__": "sales",
       "__MeaName__": "sales",
       "__MeaValue__": 100,
@@ -315,8 +135,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-leftCount-leftCount",
-      "__DimGroup__": "A-leftCount",
+      "__DimGroupID__": "2019-A-leftCount-leftCount",
+      "__DimGroup__": "2019-A-leftCount",
       "__MeaId__": "leftCount",
       "__MeaName__": "leftCount",
       "__MeaValue__": 1,
@@ -334,8 +154,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-salesCount-salesCount",
-      "__DimGroup__": "A-salesCount",
+      "__DimGroupID__": "2019-A-salesCount-salesCount",
+      "__DimGroup__": "2019-A-salesCount",
       "__MeaId__": "salesCount",
       "__MeaName__": "salesCount",
       "__MeaValue__": 100,
@@ -353,8 +173,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-goalProfit-goalProfit",
-      "__DimGroup__": "A-goalProfit",
+      "__DimGroupID__": "2020-A-goalProfit-goalProfit",
+      "__DimGroup__": "2020-A-goalProfit",
       "__MeaId__": "goalProfit",
       "__MeaName__": "goalProfit",
       "__MeaValue__": 30,
@@ -372,8 +192,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-profit-profit",
-      "__DimGroup__": "A-profit",
+      "__DimGroupID__": "2020-A-profit-profit",
+      "__DimGroup__": "2020-A-profit",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 30,
@@ -391,8 +211,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-sales-sales",
-      "__DimGroup__": "A-sales",
+      "__DimGroupID__": "2020-A-sales-sales",
+      "__DimGroup__": "2020-A-sales",
       "__MeaId__": "sales",
       "__MeaName__": "sales",
       "__MeaValue__": 320,
@@ -410,8 +230,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-leftCount-leftCount",
-      "__DimGroup__": "A-leftCount",
+      "__DimGroupID__": "2020-A-leftCount-leftCount",
+      "__DimGroup__": "2020-A-leftCount",
       "__MeaId__": "leftCount",
       "__MeaName__": "leftCount",
       "__MeaValue__": 2,
@@ -429,8 +249,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-salesCount-salesCount",
-      "__DimGroup__": "A-salesCount",
+      "__DimGroupID__": "2020-A-salesCount-salesCount",
+      "__DimGroup__": "2020-A-salesCount",
       "__MeaId__": "salesCount",
       "__MeaName__": "salesCount",
       "__MeaValue__": 200,
@@ -448,8 +268,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-goalProfit-goalProfit",
-      "__DimGroup__": "A-goalProfit",
+      "__DimGroupID__": "2021-A-goalProfit-goalProfit",
+      "__DimGroup__": "2021-A-goalProfit",
       "__MeaId__": "goalProfit",
       "__MeaName__": "goalProfit",
       "__MeaValue__": 30,
@@ -467,8 +287,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-profit-profit",
-      "__DimGroup__": "A-profit",
+      "__DimGroupID__": "2021-A-profit-profit",
+      "__DimGroup__": "2021-A-profit",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 30,
@@ -486,8 +306,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-sales-sales",
-      "__DimGroup__": "A-sales",
+      "__DimGroupID__": "2021-A-sales-sales",
+      "__DimGroup__": "2021-A-sales",
       "__MeaId__": "sales",
       "__MeaName__": "sales",
       "__MeaValue__": 300,
@@ -505,8 +325,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-leftCount-leftCount",
-      "__DimGroup__": "A-leftCount",
+      "__DimGroupID__": "2021-A-leftCount-leftCount",
+      "__DimGroup__": "2021-A-leftCount",
       "__MeaId__": "leftCount",
       "__MeaName__": "leftCount",
       "__MeaValue__": 3,
@@ -524,8 +344,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-salesCount-salesCount",
-      "__DimGroup__": "A-salesCount",
+      "__DimGroupID__": "2021-A-salesCount-salesCount",
+      "__DimGroup__": "2021-A-salesCount",
       "__MeaId__": "salesCount",
       "__MeaName__": "salesCount",
       "__MeaValue__": 300,
@@ -543,8 +363,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-goalProfit-goalProfit",
-      "__DimGroup__": "A-goalProfit",
+      "__DimGroupID__": "2022-A-goalProfit-goalProfit",
+      "__DimGroup__": "2022-A-goalProfit",
       "__MeaId__": "goalProfit",
       "__MeaName__": "goalProfit",
       "__MeaValue__": 50,
@@ -562,8 +382,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-profit-profit",
-      "__DimGroup__": "A-profit",
+      "__DimGroupID__": "2022-A-profit-profit",
+      "__DimGroup__": "2022-A-profit",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 50,
@@ -581,8 +401,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-sales-sales",
-      "__DimGroup__": "A-sales",
+      "__DimGroupID__": "2022-A-sales-sales",
+      "__DimGroup__": "2022-A-sales",
       "__MeaId__": "sales",
       "__MeaName__": "sales",
       "__MeaValue__": 240,
@@ -600,8 +420,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-leftCount-leftCount",
-      "__DimGroup__": "A-leftCount",
+      "__DimGroupID__": "2022-A-leftCount-leftCount",
+      "__DimGroup__": "2022-A-leftCount",
       "__MeaId__": "leftCount",
       "__MeaName__": "leftCount",
       "__MeaValue__": 4,
@@ -619,8 +439,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-salesCount-salesCount",
-      "__DimGroup__": "A-salesCount",
+      "__DimGroupID__": "2022-A-salesCount-salesCount",
+      "__DimGroup__": "2022-A-salesCount",
       "__MeaId__": "salesCount",
       "__MeaName__": "salesCount",
       "__MeaValue__": 400,
@@ -638,8 +458,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-goalProfit-goalProfit",
-      "__DimGroup__": "A-goalProfit",
+      "__DimGroupID__": "2023-A-goalProfit-goalProfit",
+      "__DimGroup__": "2023-A-goalProfit",
       "__MeaId__": "goalProfit",
       "__MeaName__": "goalProfit",
       "__MeaValue__": 40,
@@ -657,8 +477,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-profit-profit",
-      "__DimGroup__": "A-profit",
+      "__DimGroupID__": "2023-A-profit-profit",
+      "__DimGroup__": "2023-A-profit",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 40,
@@ -676,8 +496,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-sales-sales",
-      "__DimGroup__": "A-sales",
+      "__DimGroupID__": "2023-A-sales-sales",
+      "__DimGroup__": "2023-A-sales",
       "__MeaId__": "sales",
       "__MeaName__": "sales",
       "__MeaValue__": 500,
@@ -695,8 +515,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-leftCount-leftCount",
-      "__DimGroup__": "A-leftCount",
+      "__DimGroupID__": "2023-A-leftCount-leftCount",
+      "__DimGroup__": "2023-A-leftCount",
       "__MeaId__": "leftCount",
       "__MeaName__": "leftCount",
       "__MeaValue__": 5,
@@ -714,8 +534,8 @@ exports[`column1 1`] = `
       "type": "A",
     },
     {
-      "__DimGroupID__": "A-salesCount-salesCount",
-      "__DimGroup__": "A-salesCount",
+      "__DimGroupID__": "2023-A-salesCount-salesCount",
+      "__DimGroup__": "2023-A-salesCount",
       "__MeaId__": "salesCount",
       "__MeaName__": "salesCount",
       "__MeaValue__": 500,
@@ -747,22 +567,62 @@ exports[`column1 1`] = `
         "measureName": "__MeaName__",
         "measureValue": "__MeaValue__",
       },
-      "id": "2D1M",
+      "id": "1D1M",
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "A-goalProfit-goalProfit": "A-goalProfit",
-          "A-leftCount-leftCount": "A-leftCount",
-          "A-profit-profit": "A-profit",
-          "A-sales-sales": "A-sales",
-          "A-salesCount-salesCount": "A-salesCount",
+          "2019-A-goalProfit-goalProfit": "2019-A-goalProfit",
+          "2019-A-leftCount-leftCount": "2019-A-leftCount",
+          "2019-A-profit-profit": "2019-A-profit",
+          "2019-A-sales-sales": "2019-A-sales",
+          "2019-A-salesCount-salesCount": "2019-A-salesCount",
+          "2020-A-goalProfit-goalProfit": "2020-A-goalProfit",
+          "2020-A-leftCount-leftCount": "2020-A-leftCount",
+          "2020-A-profit-profit": "2020-A-profit",
+          "2020-A-sales-sales": "2020-A-sales",
+          "2020-A-salesCount-salesCount": "2020-A-salesCount",
+          "2021-A-goalProfit-goalProfit": "2021-A-goalProfit",
+          "2021-A-leftCount-leftCount": "2021-A-leftCount",
+          "2021-A-profit-profit": "2021-A-profit",
+          "2021-A-sales-sales": "2021-A-sales",
+          "2021-A-salesCount-salesCount": "2021-A-salesCount",
+          "2022-A-goalProfit-goalProfit": "2022-A-goalProfit",
+          "2022-A-leftCount-leftCount": "2022-A-leftCount",
+          "2022-A-profit-profit": "2022-A-profit",
+          "2022-A-sales-sales": "2022-A-sales",
+          "2022-A-salesCount-salesCount": "2022-A-salesCount",
+          "2023-A-goalProfit-goalProfit": "2023-A-goalProfit",
+          "2023-A-leftCount-leftCount": "2023-A-leftCount",
+          "2023-A-profit-profit": "2023-A-profit",
+          "2023-A-sales-sales": "2023-A-sales",
+          "2023-A-salesCount-salesCount": "2023-A-salesCount",
         },
         "colorItems": [
-          "A-goalProfit-goalProfit",
-          "A-profit-profit",
-          "A-sales-sales",
-          "A-leftCount-leftCount",
-          "A-salesCount-salesCount",
+          "2019-A-goalProfit-goalProfit",
+          "2019-A-profit-profit",
+          "2019-A-sales-sales",
+          "2019-A-leftCount-leftCount",
+          "2019-A-salesCount-salesCount",
+          "2020-A-goalProfit-goalProfit",
+          "2020-A-profit-profit",
+          "2020-A-sales-sales",
+          "2020-A-leftCount-leftCount",
+          "2020-A-salesCount-salesCount",
+          "2021-A-goalProfit-goalProfit",
+          "2021-A-profit-profit",
+          "2021-A-sales-sales",
+          "2021-A-leftCount-leftCount",
+          "2021-A-salesCount-salesCount",
+          "2022-A-goalProfit-goalProfit",
+          "2022-A-profit-profit",
+          "2022-A-sales-sales",
+          "2022-A-leftCount-leftCount",
+          "2022-A-salesCount-salesCount",
+          "2023-A-goalProfit-goalProfit",
+          "2023-A-profit-profit",
+          "2023-A-sales-sales",
+          "2023-A-leftCount-leftCount",
+          "2023-A-salesCount-salesCount",
         ],
         "groupId": "__DimGroupID__",
         "groupName": "__DimGroup__",
@@ -783,22 +643,21 @@ exports[`column1 1`] = `
   ],
   "encoding": [
     {
+      "angle": [
+        "__DimGroupID__",
+      ],
       "color": [
-        "__MeaName__",
+        "__DimGroupID__",
       ],
       "group": [
         "__DimGroupID__",
       ],
-      "x": [
-        "date",
-      ],
-      "y": [
+      "radius": [
         "__MeaValue__",
       ],
     },
   ],
   "locale": "zh-CN",
-  "markStyle": {},
   "measures": [
     {
       "alias": "goalProfit",
@@ -824,155 +683,38 @@ exports[`column1 1`] = `
 }
 `;
 
-exports[`column1 2`] = `
+exports[`pie1 2`] = `
 {
   "animation": true,
-  "axes": [
-    {
-      "domainLine": {
-        "style": {
-          "lineWidth": 1,
-          "stroke": "#3641594d",
-        },
-        "visible": true,
-      },
-      "grid": {
-        "style": {
-          "lineWidth": 0.5,
-          "stroke": "#36415926",
-        },
-        "visible": false,
-      },
-      "hover": true,
-      "label": {
-        "autoHide": true,
-        "autoHideMethod": "greedy",
-        "autoHideSeparation": 4,
-        "autoLimit": true,
-        "autoRotate": false,
-        "autoRotateAngle": [
-          0,
-          -45,
-          -90,
-        ],
-        "flush": true,
-        "lastVisible": true,
-        "minGap": 4,
-        "space": 8,
-        "style": {
-          "angle": 0,
-          "fill": "#797B85",
-          "fontSize": 12,
-          "fontWeight": 400,
-          "maxLineWidth": 80,
-        },
-        "visible": true,
-      },
-      "maxHeight": 140,
-      "orient": "bottom",
-      "paddingInner": [
-        0.15,
-        0.1,
-      ],
-      "paddingOuter": [
-        0.075,
-        0.1,
-      ],
-      "sampling": false,
-      "tick": {
-        "inside": false,
-        "style": {
-          "stroke": "#3641594d",
-        },
-        "tickSize": 4,
-        "visible": false,
-      },
-      "title": {
-        "style": {
-          "fill": "#646A73",
-          "fontSize": 12,
-          "fontWeight": 400,
-        },
-        "text": "",
-        "visible": false,
-      },
-      "type": "band",
-      "visible": true,
-    },
-    {
-      "base": 10,
-      "domainLine": {
-        "style": {
-          "lineWidth": 1,
-          "stroke": "#3641594d",
-        },
-        "visible": false,
-      },
-      "grid": {
-        "style": {
-          "lineWidth": 0.5,
-          "stroke": "#36415926",
-        },
-        "visible": true,
-      },
-      "innerOffset": {
-        "top": 7,
-      },
-      "inverse": false,
-      "label": {
-        "formatMethod": [Function],
-        "style": {
-          "angle": 0,
-          "fill": "#797B85",
-          "fontSize": 12,
-          "fontWeight": 400,
-        },
-        "visible": true,
-      },
-      "max": undefined,
-      "min": undefined,
-      "nice": true,
-      "orient": "left",
-      "tick": {
-        "inside": false,
-        "style": {
-          "stroke": "#3641594d",
-        },
-        "tickSize": 4,
-        "visible": false,
-      },
-      "title": {
-        "style": {
-          "fill": "#646A73",
-          "fontSize": 12,
-          "fontWeight": 400,
-        },
-        "text": "",
-        "visible": false,
-      },
-      "type": "linear",
-      "visible": true,
-      "zero": true,
-    },
-  ],
   "background": "transparent",
-  "bar": {
-    "state": {
-      "hover": {
-        "fillOpacity": 0.6,
-      },
-    },
-    "style": {
-      "lineWidth": 1,
-    },
-  },
+  "categoryField": "__DimGroupID__",
   "color": {
     "domain": [
-      "A-goalProfit-goalProfit",
-      "A-profit-profit",
-      "A-sales-sales",
-      "A-leftCount-leftCount",
-      "A-salesCount-salesCount",
+      "2019-A-goalProfit-goalProfit",
+      "2019-A-profit-profit",
+      "2019-A-sales-sales",
+      "2019-A-leftCount-leftCount",
+      "2019-A-salesCount-salesCount",
+      "2020-A-goalProfit-goalProfit",
+      "2020-A-profit-profit",
+      "2020-A-sales-sales",
+      "2020-A-leftCount-leftCount",
+      "2020-A-salesCount-salesCount",
+      "2021-A-goalProfit-goalProfit",
+      "2021-A-profit-profit",
+      "2021-A-sales-sales",
+      "2021-A-leftCount-leftCount",
+      "2021-A-salesCount-salesCount",
+      "2022-A-goalProfit-goalProfit",
+      "2022-A-profit-profit",
+      "2022-A-sales-sales",
+      "2022-A-leftCount-leftCount",
+      "2022-A-salesCount-salesCount",
+      "2023-A-goalProfit-goalProfit",
+      "2023-A-profit-profit",
+      "2023-A-sales-sales",
+      "2023-A-leftCount-leftCount",
+      "2023-A-salesCount-salesCount",
     ],
     "range": [
       "#8D72F6",
@@ -989,45 +731,17 @@ exports[`column1 2`] = `
     "specified": undefined,
     "type": "ordinal",
   },
-  "crosshair": {
-    "xField": {
-      "label": {
-        "labelBackground": {
-          "style": {
-            "fill": "#364159",
-          },
-          "visible": true,
-        },
-        "style": {
-          "fill": "#ffffff",
-        },
-        "visible": true,
-      },
-      "line": {
-        "style": {
-          "fill": "#3641594d",
-          "lineWidth": 0,
-          "opacity": 0.2,
-        },
-        "type": "rect",
-      },
-      "visible": true,
-    },
-  },
   "data": {
     "fields": {
       "__DimGroupID__": {
         "sortIndex": 0,
       },
-      "date": {
-        "sortIndex": 0,
-      },
     },
-    "id": "2D1M",
+    "id": "1D1M",
     "values": [
       {
-        "__DimGroupID__": "A-goalProfit-goalProfit",
-        "__DimGroup__": "A-goalProfit",
+        "__DimGroupID__": "2019-A-goalProfit-goalProfit",
+        "__DimGroup__": "2019-A-goalProfit",
         "__MeaId__": "goalProfit",
         "__MeaName__": "goalProfit",
         "__MeaValue__": 10,
@@ -1045,8 +759,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-profit-profit",
-        "__DimGroup__": "A-profit",
+        "__DimGroupID__": "2019-A-profit-profit",
+        "__DimGroup__": "2019-A-profit",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 10,
@@ -1064,8 +778,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-sales-sales",
-        "__DimGroup__": "A-sales",
+        "__DimGroupID__": "2019-A-sales-sales",
+        "__DimGroup__": "2019-A-sales",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
         "__MeaValue__": 100,
@@ -1083,8 +797,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-leftCount-leftCount",
-        "__DimGroup__": "A-leftCount",
+        "__DimGroupID__": "2019-A-leftCount-leftCount",
+        "__DimGroup__": "2019-A-leftCount",
         "__MeaId__": "leftCount",
         "__MeaName__": "leftCount",
         "__MeaValue__": 1,
@@ -1102,8 +816,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-salesCount-salesCount",
-        "__DimGroup__": "A-salesCount",
+        "__DimGroupID__": "2019-A-salesCount-salesCount",
+        "__DimGroup__": "2019-A-salesCount",
         "__MeaId__": "salesCount",
         "__MeaName__": "salesCount",
         "__MeaValue__": 100,
@@ -1121,8 +835,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-goalProfit-goalProfit",
-        "__DimGroup__": "A-goalProfit",
+        "__DimGroupID__": "2020-A-goalProfit-goalProfit",
+        "__DimGroup__": "2020-A-goalProfit",
         "__MeaId__": "goalProfit",
         "__MeaName__": "goalProfit",
         "__MeaValue__": 30,
@@ -1140,8 +854,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-profit-profit",
-        "__DimGroup__": "A-profit",
+        "__DimGroupID__": "2020-A-profit-profit",
+        "__DimGroup__": "2020-A-profit",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 30,
@@ -1159,8 +873,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-sales-sales",
-        "__DimGroup__": "A-sales",
+        "__DimGroupID__": "2020-A-sales-sales",
+        "__DimGroup__": "2020-A-sales",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
         "__MeaValue__": 320,
@@ -1178,8 +892,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-leftCount-leftCount",
-        "__DimGroup__": "A-leftCount",
+        "__DimGroupID__": "2020-A-leftCount-leftCount",
+        "__DimGroup__": "2020-A-leftCount",
         "__MeaId__": "leftCount",
         "__MeaName__": "leftCount",
         "__MeaValue__": 2,
@@ -1197,8 +911,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-salesCount-salesCount",
-        "__DimGroup__": "A-salesCount",
+        "__DimGroupID__": "2020-A-salesCount-salesCount",
+        "__DimGroup__": "2020-A-salesCount",
         "__MeaId__": "salesCount",
         "__MeaName__": "salesCount",
         "__MeaValue__": 200,
@@ -1216,8 +930,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-goalProfit-goalProfit",
-        "__DimGroup__": "A-goalProfit",
+        "__DimGroupID__": "2021-A-goalProfit-goalProfit",
+        "__DimGroup__": "2021-A-goalProfit",
         "__MeaId__": "goalProfit",
         "__MeaName__": "goalProfit",
         "__MeaValue__": 30,
@@ -1235,8 +949,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-profit-profit",
-        "__DimGroup__": "A-profit",
+        "__DimGroupID__": "2021-A-profit-profit",
+        "__DimGroup__": "2021-A-profit",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 30,
@@ -1254,8 +968,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-sales-sales",
-        "__DimGroup__": "A-sales",
+        "__DimGroupID__": "2021-A-sales-sales",
+        "__DimGroup__": "2021-A-sales",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
         "__MeaValue__": 300,
@@ -1273,8 +987,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-leftCount-leftCount",
-        "__DimGroup__": "A-leftCount",
+        "__DimGroupID__": "2021-A-leftCount-leftCount",
+        "__DimGroup__": "2021-A-leftCount",
         "__MeaId__": "leftCount",
         "__MeaName__": "leftCount",
         "__MeaValue__": 3,
@@ -1292,8 +1006,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-salesCount-salesCount",
-        "__DimGroup__": "A-salesCount",
+        "__DimGroupID__": "2021-A-salesCount-salesCount",
+        "__DimGroup__": "2021-A-salesCount",
         "__MeaId__": "salesCount",
         "__MeaName__": "salesCount",
         "__MeaValue__": 300,
@@ -1311,8 +1025,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-goalProfit-goalProfit",
-        "__DimGroup__": "A-goalProfit",
+        "__DimGroupID__": "2022-A-goalProfit-goalProfit",
+        "__DimGroup__": "2022-A-goalProfit",
         "__MeaId__": "goalProfit",
         "__MeaName__": "goalProfit",
         "__MeaValue__": 50,
@@ -1330,8 +1044,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-profit-profit",
-        "__DimGroup__": "A-profit",
+        "__DimGroupID__": "2022-A-profit-profit",
+        "__DimGroup__": "2022-A-profit",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 50,
@@ -1349,8 +1063,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-sales-sales",
-        "__DimGroup__": "A-sales",
+        "__DimGroupID__": "2022-A-sales-sales",
+        "__DimGroup__": "2022-A-sales",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
         "__MeaValue__": 240,
@@ -1368,8 +1082,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-leftCount-leftCount",
-        "__DimGroup__": "A-leftCount",
+        "__DimGroupID__": "2022-A-leftCount-leftCount",
+        "__DimGroup__": "2022-A-leftCount",
         "__MeaId__": "leftCount",
         "__MeaName__": "leftCount",
         "__MeaValue__": 4,
@@ -1387,8 +1101,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-salesCount-salesCount",
-        "__DimGroup__": "A-salesCount",
+        "__DimGroupID__": "2022-A-salesCount-salesCount",
+        "__DimGroup__": "2022-A-salesCount",
         "__MeaId__": "salesCount",
         "__MeaName__": "salesCount",
         "__MeaValue__": 400,
@@ -1406,8 +1120,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-goalProfit-goalProfit",
-        "__DimGroup__": "A-goalProfit",
+        "__DimGroupID__": "2023-A-goalProfit-goalProfit",
+        "__DimGroup__": "2023-A-goalProfit",
         "__MeaId__": "goalProfit",
         "__MeaName__": "goalProfit",
         "__MeaValue__": 40,
@@ -1425,8 +1139,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-profit-profit",
-        "__DimGroup__": "A-profit",
+        "__DimGroupID__": "2023-A-profit-profit",
+        "__DimGroup__": "2023-A-profit",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 40,
@@ -1444,8 +1158,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-sales-sales",
-        "__DimGroup__": "A-sales",
+        "__DimGroupID__": "2023-A-sales-sales",
+        "__DimGroup__": "2023-A-sales",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
         "__MeaValue__": 500,
@@ -1463,8 +1177,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-leftCount-leftCount",
-        "__DimGroup__": "A-leftCount",
+        "__DimGroupID__": "2023-A-leftCount-leftCount",
+        "__DimGroup__": "2023-A-leftCount",
         "__MeaId__": "leftCount",
         "__MeaName__": "leftCount",
         "__MeaValue__": 5,
@@ -1482,8 +1196,8 @@ exports[`column1 2`] = `
         "type": "A",
       },
       {
-        "__DimGroupID__": "A-salesCount-salesCount",
-        "__DimGroup__": "A-salesCount",
+        "__DimGroupID__": "2023-A-salesCount-salesCount",
+        "__DimGroup__": "2023-A-salesCount",
         "__MeaId__": "salesCount",
         "__MeaName__": "salesCount",
         "__MeaValue__": 500,
@@ -1502,7 +1216,7 @@ exports[`column1 2`] = `
       },
     ],
   },
-  "direction": "vertical",
+  "innerRadius": 0,
   "label": {
     "formatMethod": [Function],
     "visible": true,
@@ -1550,20 +1264,26 @@ exports[`column1 2`] = `
     "type": "discrete",
     "visible": true,
   },
+  "outerRadius": 0.8,
   "padding": 0,
+  "pie": {
+    "state": {
+      "hover": {
+        "outerRadius": 0.8800000000000001,
+      },
+    },
+    "style": {
+      "centerOffset": 0,
+      "lineWidth": 1,
+      "stroke": "#ffffff",
+    },
+  },
   "region": [
     {
       "clip": true,
     },
   ],
   "seriesField": "__DimGroupID__",
-  "stackCornerRadius": [
-    4,
-    4,
-    4,
-    4,
-  ],
-  "stackInverse": true,
   "tooltip": {
     "dimension": {
       "content": [
@@ -1604,8 +1324,7 @@ exports[`column1 2`] = `
     },
     "visible": true,
   },
-  "type": "bar",
-  "xField": "date",
-  "yField": "__MeaValue__",
+  "type": "pie",
+  "valueField": "__MeaValue__",
 }
 `;

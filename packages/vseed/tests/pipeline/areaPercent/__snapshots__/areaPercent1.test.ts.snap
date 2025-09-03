@@ -1,11 +1,11 @@
 // Rstest Snapshot v1
 
-exports[`column1 1`] = `
+exports[`areaPercent1 1`] = `
 {
   "annotation": {},
-  "chartType": "column",
+  "chartType": "areaPercent",
   "config": {
-    "column": {
+    "areaPercent": {
       "backgroundColor": "transparent",
       "color": {
         "colorScheme": [
@@ -21,11 +21,11 @@ exports[`column1 1`] = `
           "#D77DD3",
         ],
       },
-      "crosshairRect": {
+      "crosshairLine": {
         "labelBackgroundColor": "#364159",
         "labelColor": "#ffffff",
         "labelVisible": true,
-        "rectColor": "#3641594d",
+        "lineColor": "#3641594d",
         "visible": true,
       },
       "label": {
@@ -41,12 +41,6 @@ exports[`column1 1`] = `
         "position": "rt",
         "shapeType": "rectRound",
       },
-      "stackCornerRadius": [
-        4,
-        4,
-        4,
-        4,
-      ],
       "tooltip": {
         "enable": true,
       },
@@ -131,7 +125,7 @@ exports[`column1 1`] = `
   },
   "customTheme": {
     "config": {
-      "column": {
+      "areaPercent": {
         "backgroundColor": "transparent",
         "color": {
           "colorScheme": [
@@ -147,11 +141,11 @@ exports[`column1 1`] = `
             "#D77DD3",
           ],
         },
-        "crosshairRect": {
+        "crosshairLine": {
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "lineColor": "#3641594d",
           "visible": true,
         },
         "label": {
@@ -167,12 +161,6 @@ exports[`column1 1`] = `
           "position": "rt",
           "shapeType": "rectRound",
         },
-        "stackCornerRadius": [
-          4,
-          4,
-          4,
-          4,
-        ],
         "tooltip": {
           "enable": true,
         },
@@ -824,9 +812,12 @@ exports[`column1 1`] = `
 }
 `;
 
-exports[`column1 2`] = `
+exports[`areaPercent1 2`] = `
 {
   "animation": true,
+  "area": {
+    "visible": true,
+  },
   "axes": [
     {
       "domainLine": {
@@ -956,16 +947,6 @@ exports[`column1 2`] = `
     },
   ],
   "background": "transparent",
-  "bar": {
-    "state": {
-      "hover": {
-        "fillOpacity": 0.6,
-      },
-    },
-    "style": {
-      "lineWidth": 1,
-    },
-  },
   "color": {
     "domain": [
       "A-goalProfit-goalProfit",
@@ -1005,11 +986,15 @@ exports[`column1 2`] = `
       },
       "line": {
         "style": {
-          "fill": "#3641594d",
-          "lineWidth": 0,
-          "opacity": 0.2,
+          "lineDash": [
+            4,
+            2,
+          ],
+          "lineWidth": 1,
+          "opacity": 1,
+          "stroke": "#3641594d",
         },
-        "type": "rect",
+        "type": "line",
       },
       "visible": true,
     },
@@ -1551,18 +1536,13 @@ exports[`column1 2`] = `
     "visible": true,
   },
   "padding": 0,
+  "percent": true,
   "region": [
     {
       "clip": true,
     },
   ],
   "seriesField": "__DimGroupID__",
-  "stackCornerRadius": [
-    4,
-    4,
-    4,
-    4,
-  ],
   "stackInverse": true,
   "tooltip": {
     "dimension": {
@@ -1604,7 +1584,7 @@ exports[`column1 2`] = `
     },
     "visible": true,
   },
-  "type": "bar",
+  "type": "area",
   "xField": "date",
   "yField": "__MeaValue__",
 }

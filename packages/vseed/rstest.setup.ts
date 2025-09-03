@@ -1,0 +1,1 @@
+import 'rstest-canvas-mock'

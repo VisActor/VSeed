@@ -6,7 +6,7 @@ describe('foldMeasures', () => {
     const dataset: Dataset = []
     const measures: Measure[] = []
     const result = foldMeasures(dataset, measures)
-    const newDataset = result.dataset as Dataset
+    const newDataset = result.dataset
     expect(newDataset.length).toBe(dataset.length * measures.length)
     expect(result).toMatchSnapshot()
   })
@@ -15,7 +15,7 @@ describe('foldMeasures', () => {
     const dataset: Dataset = [{ profit: 10 }]
     const measures: Measure[] = [{ id: 'profit', alias: 'Profit' }]
     const result = foldMeasures(dataset, measures)
-    const newDataset = result.dataset as Dataset
+    const newDataset = result.dataset
     expect(newDataset.length).toBe(dataset.length * measures.length)
     expect(result).toMatchSnapshot()
   })
@@ -27,15 +27,13 @@ describe('foldMeasures', () => {
       { id: 'sales', alias: 'Sales' },
     ]
     const result = foldMeasures(dataset, measures)
-    const newDataset = result.dataset as Dataset
+    const newDataset = result.dataset
     expect(newDataset.length).toBe(dataset.length * measures.length)
     expect(result).toMatchSnapshot()
   })
 
   test('0 dimensions, 5 measures', () => {
-    const dataset: Dataset = [
-      { profit: 10, sales: 100, number: 1, price: 100, cost: 33 },
-    ]
+    const dataset: Dataset = [{ profit: 10, sales: 100, number: 1, price: 100, cost: 33 }]
     const measures: Measure[] = [
       { id: 'profit', alias: 'Profit' },
       { id: 'sales', alias: 'Sales' },
@@ -44,7 +42,7 @@ describe('foldMeasures', () => {
       { id: 'cost', alias: 'Cost' },
     ]
     const result = foldMeasures(dataset, measures)
-    const newDataset = result.dataset as Dataset
+    const newDataset = result.dataset
     expect(newDataset.length).toBe(dataset.length * measures.length)
     expect(result).toMatchSnapshot()
   })
@@ -64,7 +62,7 @@ describe('foldMeasures', () => {
     ]
     const measures: Measure[] = [{ id: 'profit', alias: 'Profit' }]
     const result = foldMeasures(dataset, measures)
-    const newDataset = result.dataset as Dataset
+    const newDataset = result.dataset
     expect(newDataset.length).toBe(dataset.length * measures.length)
     expect(result).toMatchSnapshot()
   })
@@ -84,7 +82,7 @@ describe('foldMeasures', () => {
     ]
     const measures: Measure[] = [{ id: 'profit', alias: 'Profit' }]
     const result = foldMeasures(dataset, measures)
-    const newDataset = result.dataset as Dataset
+    const newDataset = result.dataset
     expect(newDataset.length).toBe(dataset.length * measures.length)
     expect(result).toMatchSnapshot()
   })
@@ -107,7 +105,7 @@ describe('foldMeasures', () => {
       { id: 'sales', alias: 'Sales' },
     ]
     const result = foldMeasures(dataset, measures)
-    const newDataset = result.dataset as Dataset
+    const newDataset = result.dataset
     expect(newDataset.length).toBe(dataset.length * measures.length)
     expect(result).toMatchSnapshot()
   })

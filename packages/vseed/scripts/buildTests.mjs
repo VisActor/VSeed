@@ -6,7 +6,7 @@ const rootDir = path.resolve(__dirname, '../');
 
 async function generateTests() {
   try {
-    const absolutePipelineDir = path.join(rootDir, './tests/pipeline/chartType');
+    const absolutePipelineDir = path.join(rootDir, './tests/features/');
     const entries = await fs.readdir(absolutePipelineDir, { withFileTypes: true });
 
     for (const entry of entries) {

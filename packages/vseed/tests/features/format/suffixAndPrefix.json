@@ -1,0 +1,29 @@
+{
+  "chartType": "column",
+  "dataset": [
+    {
+      "num0": 123.34,
+      "num1": 123.38,
+      "num2": -123.34,
+      "num3": -123.38,
+      "num4": 123.34,
+      "num5": 234.38,
+      "num6": -234.34,
+      "num7": -234.38,
+      "num8": 4.5,
+      "num9": 3.5
+    }
+  ],
+  "measures": [
+    { "id": "num0", "format": { "type": "number", "fractionDigits": 1, "suffix": "¥" } },
+    { "id": "num1", "format": { "type": "number", "fractionDigits": 1, "suffix": "$" } },
+    { "id": "num2", "format": { "type": "number", "fractionDigits": 1, "suffix": "!" } },
+    { "id": "num3", "format": { "type": "number", "fractionDigits": 1, "suffix": "-" } },
+    { "id": "num4", "format": { "type": "number", "fractionDigits": 1, "suffix": "+" } },
+    { "id": "num5", "format": { "type": "number", "fractionDigits": 1, "prefix": "¥" } },
+    { "id": "num6", "format": { "type": "number", "fractionDigits": 1, "prefix": "$" } },
+    { "id": "num7", "format": { "type": "number", "fractionDigits": 1, "prefix": "!" } },
+    { "id": "num8", "format": { "type": "number", "fractionDigits": 0, "prefix": "-" } },
+    { "id": "num9", "format": { "type": "number", "fractionDigits": 0, "prefix": "+" } }
+  ]
+}

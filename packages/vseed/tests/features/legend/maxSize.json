@@ -1,0 +1,21 @@
+{
+  "chartType": "columnParallel",
+  "legend": {
+    "enable": true,
+    "position": "rt",
+    "maxSize": 2
+  },
+  "dataset": [
+    { "date": "2019", "region": "east", "city": "A", "profit": 1, "sales": 2, "discount": 0.5 },
+    { "date": "2019", "region": "east", "city": "B", "profit": 3, "sales": 6, "discount": 0.5 },
+    { "date": "2019", "region": "east", "city": "C", "profit": 3, "sales": 6, "discount": 0.5 },
+    { "date": "2019", "region": "east", "city": "D", "profit": 5, "sales": 10, "discount": 0.5 },
+    { "date": "2019", "region": "east", "city": "E", "profit": 4, "sales": 8, "discount": 0.5 },
+
+    { "date": "2020", "region": "north of east", "city": "A", "profit": 1, "sales": 2, "discount": 0.5 },
+    { "date": "2020", "region": "north of east", "city": "B", "profit": 3, "sales": 6, "discount": 0.5 },
+    { "date": "2020", "region": "north of east", "city": "C", "profit": 3, "sales": 6, "discount": 0.5 },
+    { "date": "2020", "region": "north of east", "city": "D", "profit": 5, "sales": 10, "discount": 0.5 },
+    { "date": "2020", "region": "north of east", "city": "E", "profit": 4, "sales": 8, "discount": 0.5 }
+  ]
+}

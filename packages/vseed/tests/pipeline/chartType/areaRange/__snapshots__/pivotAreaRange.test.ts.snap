@@ -1,0 +1,430 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`pivotAreaRange 1`] = `
+{
+  "annotation": {},
+  "chartType": "areaRange",
+  "config": {
+    "areaRange": {
+      "backgroundColor": "transparent",
+      "color": {
+        "colorScheme": [
+          "#8D72F6",
+          "#5766EC",
+          "#66A3FE",
+          "#51D5E6",
+          "#4EC0B3",
+          "#F9DF90",
+          "#F9AD71",
+          "#ED8888",
+          "#E9A0C3",
+          "#D77DD3",
+        ],
+      },
+      "crosshairLine": {
+        "labelBackgroundColor": "#364159",
+        "labelColor": "#ffffff",
+        "labelVisible": true,
+        "lineColor": "#3641594d",
+        "visible": true,
+      },
+      "label": {
+        "enable": true,
+      },
+      "legend": {
+        "border": true,
+        "enable": true,
+        "labelFontColor": "#646A73",
+        "labelFontSize": 12,
+        "labelFontWeight": 400,
+        "maxSize": 1,
+        "position": "rt",
+        "shapeType": "rectRound",
+      },
+      "tooltip": {
+        "enable": true,
+      },
+      "xAxis": {
+        "grid": {
+          "gridColor": "#36415926",
+          "gridWidth": 0.5,
+          "visible": false,
+        },
+        "label": {
+          "labelAngle": 0,
+          "labelColor": "#797B85",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "visible": true,
+        },
+        "labelAutoHide": true,
+        "labelAutoHideGap": 4,
+        "labelAutoLimit": true,
+        "labelAutoLimitLength": 80,
+        "labelAutoRotate": false,
+        "labelAutoRotateAngleRange": [
+          0,
+          -45,
+          -90,
+        ],
+        "line": {
+          "lineColor": "#3641594d",
+          "lineWidth": 1,
+          "visible": true,
+        },
+        "tick": {
+          "tickColor": "#3641594d",
+          "tickInside": false,
+          "tickSize": 4,
+          "visible": false,
+        },
+        "title": {
+          "titleColor": "#646A73",
+          "titleFontSize": 12,
+          "titleFontWeight": 400,
+          "titleText": "",
+          "visible": false,
+        },
+      },
+      "yAxis": {
+        "grid": {
+          "gridColor": "#36415926",
+          "gridWidth": 0.5,
+          "visible": true,
+        },
+        "inverse": false,
+        "label": {
+          "labelAngle": 0,
+          "labelColor": "#797B85",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "visible": true,
+        },
+        "line": {
+          "lineColor": "#3641594d",
+          "lineWidth": 1,
+          "visible": false,
+        },
+        "nice": true,
+        "tick": {
+          "tickColor": "#3641594d",
+          "tickInside": false,
+          "tickSize": 4,
+          "visible": false,
+        },
+        "title": {
+          "titleColor": "#646A73",
+          "titleFontSize": 12,
+          "titleFontWeight": 400,
+          "titleText": "",
+          "visible": false,
+        },
+        "zero": true,
+      },
+    },
+  },
+  "customTheme": {
+    "config": {
+      "areaRange": {
+        "backgroundColor": "transparent",
+        "color": {
+          "colorScheme": [
+            "#8D72F6",
+            "#5766EC",
+            "#66A3FE",
+            "#51D5E6",
+            "#4EC0B3",
+            "#F9DF90",
+            "#F9AD71",
+            "#ED8888",
+            "#E9A0C3",
+            "#D77DD3",
+          ],
+        },
+        "crosshairLine": {
+          "labelBackgroundColor": "#364159",
+          "labelColor": "#ffffff",
+          "labelVisible": true,
+          "lineColor": "#3641594d",
+          "visible": true,
+        },
+        "label": {
+          "enable": true,
+        },
+        "legend": {
+          "border": true,
+          "enable": true,
+          "labelFontColor": "#646A73",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "maxSize": 1,
+          "position": "rt",
+          "shapeType": "rectRound",
+        },
+        "tooltip": {
+          "enable": true,
+        },
+        "xAxis": {
+          "grid": {
+            "gridColor": "#36415926",
+            "gridWidth": 0.5,
+            "visible": false,
+          },
+          "label": {
+            "labelAngle": 0,
+            "labelColor": "#797B85",
+            "labelFontSize": 12,
+            "labelFontWeight": 400,
+            "visible": true,
+          },
+          "labelAutoHide": true,
+          "labelAutoHideGap": 4,
+          "labelAutoLimit": true,
+          "labelAutoLimitLength": 80,
+          "labelAutoRotate": false,
+          "labelAutoRotateAngleRange": [
+            0,
+            -45,
+            -90,
+          ],
+          "line": {
+            "lineColor": "#3641594d",
+            "lineWidth": 1,
+            "visible": true,
+          },
+          "tick": {
+            "tickColor": "#3641594d",
+            "tickInside": false,
+            "tickSize": 4,
+            "visible": false,
+          },
+          "title": {
+            "titleColor": "#646A73",
+            "titleFontSize": 12,
+            "titleFontWeight": 400,
+            "titleText": "",
+            "visible": false,
+          },
+        },
+        "yAxis": {
+          "grid": {
+            "gridColor": "#36415926",
+            "gridWidth": 0.5,
+            "visible": true,
+          },
+          "inverse": false,
+          "label": {
+            "labelAngle": 0,
+            "labelColor": "#797B85",
+            "labelFontSize": 12,
+            "labelFontWeight": 400,
+            "visible": true,
+          },
+          "line": {
+            "lineColor": "#3641594d",
+            "lineWidth": 1,
+            "visible": false,
+          },
+          "nice": true,
+          "tick": {
+            "tickColor": "#3641594d",
+            "tickInside": false,
+            "tickSize": 4,
+            "visible": false,
+          },
+          "title": {
+            "titleColor": "#646A73",
+            "titleFontSize": 12,
+            "titleFontWeight": 400,
+            "titleText": "",
+            "visible": false,
+          },
+          "zero": true,
+        },
+      },
+    },
+  },
+  "dataset": [],
+  "datasetReshapeInfo": [],
+  "dimensions": [
+    {
+      "alias": "月",
+      "id": "month",
+      "location": "dimension",
+    },
+    {
+      "alias": "年",
+      "id": "date",
+      "location": "columnDimension",
+    },
+    {
+      "alias": "类型",
+      "id": "type",
+      "location": "rowDimension",
+    },
+  ],
+  "encoding": [],
+  "locale": "zh-CN",
+  "markStyle": {},
+  "measures": [
+    {
+      "alias": "销售额",
+      "format": {
+        "decimalPlaces": 0,
+        "prefix": "利润",
+        "ratio": 1000,
+        "suffix": "$",
+        "symbol": "千",
+        "thousandSeparator": true,
+        "type": "number",
+      },
+      "id": "sales",
+    },
+    {
+      "alias": "利润",
+      "autoFormat": true,
+      "format": {
+        "decimalPlaces": 0,
+        "prefix": "利润",
+        "ratio": 1000,
+        "suffix": "$",
+        "symbol": "千",
+        "thousandSeparator": true,
+        "type": "number",
+      },
+      "id": "profit",
+    },
+  ],
+}
+`;
+
+exports[`pivotAreaRange 2`] = `
+{
+  "animation": true,
+  "columns": [
+    {
+      "dimensionKey": "date",
+      "title": "年",
+    },
+  ],
+  "heightMode": "adaptive",
+  "indicators": [],
+  "indicatorsAsCol": false,
+  "records": {},
+  "rows": [
+    {
+      "dimensionKey": "type",
+      "title": "类型",
+    },
+  ],
+  "theme": {
+    "bodyStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": [
+        0,
+        0,
+        2,
+        0,
+      ],
+      "hover": {
+        "cellBgColor": "transparent",
+      },
+      "padding": [
+        0,
+        0,
+        1,
+        0,
+      ],
+    },
+    "bottomFrozenStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "cornerHeaderStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": [
+        0,
+        0,
+        0,
+        0,
+      ],
+      "color": "#333333",
+      "fontSize": 12,
+      "fontWeight": "bold",
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+      "textAlign": "center",
+    },
+    "cornerLeftBottomCellStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "cornerRightBottomCellStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "cornerRightTopCellStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "frameStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderLineWidth": 0,
+    },
+    "headerStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "color": "#333333",
+      "fontSize": 12,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+      "textAlign": "center",
+    },
+    "rightFrozenStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "rowHeaderStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "color": "#333333",
+      "fontSize": 12,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "selectionStyle": {
+      "cellBgColor": "",
+      "cellBorderColor": "",
+    },
+    "underlayBackgroundColor": "rgba(0,0,0,0)",
+  },
+  "widthMode": "adaptive",
+}
+`;

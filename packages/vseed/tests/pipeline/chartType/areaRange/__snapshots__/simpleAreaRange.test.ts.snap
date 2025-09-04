@@ -1,0 +1,756 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`simpleAreaRange 1`] = `
+{
+  "annotation": {},
+  "chartType": "areaRange",
+  "config": {
+    "areaRange": {
+      "backgroundColor": "transparent",
+      "color": {
+        "colorScheme": [
+          "#8D72F6",
+          "#5766EC",
+          "#66A3FE",
+          "#51D5E6",
+          "#4EC0B3",
+          "#F9DF90",
+          "#F9AD71",
+          "#ED8888",
+          "#E9A0C3",
+          "#D77DD3",
+        ],
+      },
+      "crosshairLine": {
+        "labelBackgroundColor": "#364159",
+        "labelColor": "#ffffff",
+        "labelVisible": true,
+        "lineColor": "#3641594d",
+        "visible": true,
+      },
+      "label": {
+        "enable": true,
+      },
+      "legend": {
+        "border": true,
+        "enable": true,
+        "labelFontColor": "#646A73",
+        "labelFontSize": 12,
+        "labelFontWeight": 400,
+        "maxSize": 1,
+        "position": "rt",
+        "shapeType": "rectRound",
+      },
+      "tooltip": {
+        "enable": true,
+      },
+      "xAxis": {
+        "grid": {
+          "gridColor": "#36415926",
+          "gridWidth": 0.5,
+          "visible": false,
+        },
+        "label": {
+          "labelAngle": 0,
+          "labelColor": "#797B85",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "visible": true,
+        },
+        "labelAutoHide": true,
+        "labelAutoHideGap": 4,
+        "labelAutoLimit": true,
+        "labelAutoLimitLength": 80,
+        "labelAutoRotate": false,
+        "labelAutoRotateAngleRange": [
+          0,
+          -45,
+          -90,
+        ],
+        "line": {
+          "lineColor": "#3641594d",
+          "lineWidth": 1,
+          "visible": true,
+        },
+        "tick": {
+          "tickColor": "#3641594d",
+          "tickInside": false,
+          "tickSize": 4,
+          "visible": false,
+        },
+        "title": {
+          "titleColor": "#646A73",
+          "titleFontSize": 12,
+          "titleFontWeight": 400,
+          "titleText": "",
+          "visible": false,
+        },
+      },
+      "yAxis": {
+        "grid": {
+          "gridColor": "#36415926",
+          "gridWidth": 0.5,
+          "visible": true,
+        },
+        "inverse": false,
+        "label": {
+          "labelAngle": 0,
+          "labelColor": "#797B85",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "visible": true,
+        },
+        "line": {
+          "lineColor": "#3641594d",
+          "lineWidth": 1,
+          "visible": false,
+        },
+        "nice": true,
+        "tick": {
+          "tickColor": "#3641594d",
+          "tickInside": false,
+          "tickSize": 4,
+          "visible": false,
+        },
+        "title": {
+          "titleColor": "#646A73",
+          "titleFontSize": 12,
+          "titleFontWeight": 400,
+          "titleText": "",
+          "visible": false,
+        },
+        "zero": true,
+      },
+    },
+  },
+  "customTheme": {
+    "config": {
+      "areaRange": {
+        "backgroundColor": "transparent",
+        "color": {
+          "colorScheme": [
+            "#8D72F6",
+            "#5766EC",
+            "#66A3FE",
+            "#51D5E6",
+            "#4EC0B3",
+            "#F9DF90",
+            "#F9AD71",
+            "#ED8888",
+            "#E9A0C3",
+            "#D77DD3",
+          ],
+        },
+        "crosshairLine": {
+          "labelBackgroundColor": "#364159",
+          "labelColor": "#ffffff",
+          "labelVisible": true,
+          "lineColor": "#3641594d",
+          "visible": true,
+        },
+        "label": {
+          "enable": true,
+        },
+        "legend": {
+          "border": true,
+          "enable": true,
+          "labelFontColor": "#646A73",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "maxSize": 1,
+          "position": "rt",
+          "shapeType": "rectRound",
+        },
+        "tooltip": {
+          "enable": true,
+        },
+        "xAxis": {
+          "grid": {
+            "gridColor": "#36415926",
+            "gridWidth": 0.5,
+            "visible": false,
+          },
+          "label": {
+            "labelAngle": 0,
+            "labelColor": "#797B85",
+            "labelFontSize": 12,
+            "labelFontWeight": 400,
+            "visible": true,
+          },
+          "labelAutoHide": true,
+          "labelAutoHideGap": 4,
+          "labelAutoLimit": true,
+          "labelAutoLimitLength": 80,
+          "labelAutoRotate": false,
+          "labelAutoRotateAngleRange": [
+            0,
+            -45,
+            -90,
+          ],
+          "line": {
+            "lineColor": "#3641594d",
+            "lineWidth": 1,
+            "visible": true,
+          },
+          "tick": {
+            "tickColor": "#3641594d",
+            "tickInside": false,
+            "tickSize": 4,
+            "visible": false,
+          },
+          "title": {
+            "titleColor": "#646A73",
+            "titleFontSize": 12,
+            "titleFontWeight": 400,
+            "titleText": "",
+            "visible": false,
+          },
+        },
+        "yAxis": {
+          "grid": {
+            "gridColor": "#36415926",
+            "gridWidth": 0.5,
+            "visible": true,
+          },
+          "inverse": false,
+          "label": {
+            "labelAngle": 0,
+            "labelColor": "#797B85",
+            "labelFontSize": 12,
+            "labelFontWeight": 400,
+            "visible": true,
+          },
+          "line": {
+            "lineColor": "#3641594d",
+            "lineWidth": 1,
+            "visible": false,
+          },
+          "nice": true,
+          "tick": {
+            "tickColor": "#3641594d",
+            "tickInside": false,
+            "tickSize": 4,
+            "visible": false,
+          },
+          "title": {
+            "titleColor": "#646A73",
+            "titleFontSize": 12,
+            "titleFontWeight": 400,
+            "titleText": "",
+            "visible": false,
+          },
+          "zero": true,
+        },
+      },
+    },
+  },
+  "dataset": [
+    {
+      "__DimGroupID__": "2019-A",
+      "__DimGroup__": "2019-A",
+      "date": "2019",
+      "goalProfit": 10,
+      "leftCount": 1,
+      "profit": 10,
+      "sales": 100,
+      "salesCount": 100,
+      "type": "A",
+    },
+    {
+      "__DimGroupID__": "2020-A",
+      "__DimGroup__": "2020-A",
+      "date": "2020",
+      "goalProfit": 30,
+      "leftCount": 2,
+      "profit": 30,
+      "sales": 320,
+      "salesCount": 200,
+      "type": "A",
+    },
+    {
+      "__DimGroupID__": "2021-A",
+      "__DimGroup__": "2021-A",
+      "date": "2021",
+      "goalProfit": 30,
+      "leftCount": 3,
+      "profit": 30,
+      "sales": 300,
+      "salesCount": 300,
+      "type": "A",
+    },
+    {
+      "__DimGroupID__": "2022-A",
+      "__DimGroup__": "2022-A",
+      "date": "2022",
+      "goalProfit": 50,
+      "leftCount": 4,
+      "profit": 50,
+      "sales": 240,
+      "salesCount": 400,
+      "type": "A",
+    },
+    {
+      "__DimGroupID__": "2023-A",
+      "__DimGroup__": "2023-A",
+      "date": "2023",
+      "goalProfit": 40,
+      "leftCount": 5,
+      "profit": 40,
+      "sales": 500,
+      "salesCount": 500,
+      "type": "A",
+    },
+  ],
+  "datasetReshapeInfo": [
+    {
+      "foldInfo": {
+        "foldMap": {},
+        "measureId": "__MeaId__",
+        "measureName": "__MeaName__",
+        "measureValue": "__MeaValue__",
+      },
+      "id": "1D2M",
+      "index": 0,
+      "unfoldInfo": {
+        "colorIdMap": {
+          "2019-A": "2019-A",
+          "2020-A": "2020-A",
+          "2021-A": "2021-A",
+          "2022-A": "2022-A",
+          "2023-A": "2023-A",
+        },
+        "colorItems": [
+          "2019-A",
+          "2020-A",
+          "2021-A",
+          "2022-A",
+          "2023-A",
+        ],
+        "groupId": "__DimGroupID__",
+        "groupName": "__DimGroup__",
+      },
+    },
+  ],
+  "dimensions": [
+    {
+      "alias": "date",
+      "id": "date",
+      "location": "dimension",
+    },
+    {
+      "alias": "type",
+      "id": "type",
+      "location": "dimension",
+    },
+  ],
+  "encoding": [
+    {
+      "color": [
+        "__MeaName__",
+      ],
+      "group": [
+        "__DimGroupID__",
+      ],
+      "x": [
+        "__DimGroupID__",
+      ],
+      "y": [
+        "goalProfit",
+        "profit",
+      ],
+    },
+  ],
+  "locale": "zh-CN",
+  "markStyle": {},
+  "measures": [
+    {
+      "alias": "",
+      "children": [
+        {
+          "alias": "goalProfit",
+          "id": "goalProfit",
+        },
+        {
+          "alias": "profit",
+          "id": "profit",
+        },
+      ],
+      "id": "",
+    },
+    {
+      "alias": "",
+      "children": [
+        {
+          "alias": "sales",
+          "id": "sales",
+        },
+        {
+          "alias": "leftCount",
+          "id": "leftCount",
+        },
+      ],
+      "id": "",
+    },
+    {
+      "alias": "",
+      "children": [
+        {
+          "alias": "salesCount",
+          "id": "salesCount",
+        },
+      ],
+      "id": "",
+    },
+  ],
+}
+`;
+
+exports[`simpleAreaRange 2`] = `
+{
+  "axes": [
+    {
+      "domainLine": {
+        "style": {
+          "lineWidth": 1,
+          "stroke": "#3641594d",
+        },
+        "visible": true,
+      },
+      "grid": {
+        "style": {
+          "lineWidth": 0.5,
+          "stroke": "#36415926",
+        },
+        "visible": false,
+      },
+      "hover": true,
+      "label": {
+        "autoHide": true,
+        "autoHideMethod": "greedy",
+        "autoHideSeparation": 4,
+        "autoLimit": true,
+        "autoRotate": false,
+        "autoRotateAngle": [
+          0,
+          -45,
+          -90,
+        ],
+        "flush": true,
+        "lastVisible": true,
+        "minGap": 4,
+        "space": 8,
+        "style": {
+          "angle": 0,
+          "fill": "#797B85",
+          "fontSize": 12,
+          "fontWeight": 400,
+          "maxLineWidth": 80,
+        },
+        "visible": true,
+      },
+      "maxHeight": 140,
+      "orient": "bottom",
+      "paddingInner": [
+        0.15,
+        0.1,
+      ],
+      "paddingOuter": [
+        0.075,
+        0.1,
+      ],
+      "sampling": false,
+      "tick": {
+        "inside": false,
+        "style": {
+          "stroke": "#3641594d",
+        },
+        "tickSize": 4,
+        "visible": false,
+      },
+      "title": {
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "text": "",
+        "visible": false,
+      },
+      "type": "band",
+      "visible": true,
+    },
+    {
+      "base": 10,
+      "domainLine": {
+        "style": {
+          "lineWidth": 1,
+          "stroke": "#3641594d",
+        },
+        "visible": false,
+      },
+      "grid": {
+        "style": {
+          "lineWidth": 0.5,
+          "stroke": "#36415926",
+        },
+        "visible": true,
+      },
+      "innerOffset": {
+        "top": 7,
+      },
+      "inverse": false,
+      "label": {
+        "formatMethod": [Function],
+        "style": {
+          "angle": 0,
+          "fill": "#797B85",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "visible": true,
+      },
+      "max": undefined,
+      "min": undefined,
+      "nice": true,
+      "orient": "left",
+      "tick": {
+        "inside": false,
+        "style": {
+          "stroke": "#3641594d",
+        },
+        "tickSize": 4,
+        "visible": false,
+      },
+      "title": {
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "text": "",
+        "visible": false,
+      },
+      "type": "linear",
+      "visible": true,
+      "zero": true,
+    },
+  ],
+  "background": "transparent",
+  "crosshair": {
+    "xField": {
+      "label": {
+        "labelBackground": {
+          "style": {
+            "fill": "#364159",
+          },
+          "visible": true,
+        },
+        "style": {
+          "fill": "#ffffff",
+        },
+        "visible": true,
+      },
+      "line": {
+        "style": {
+          "lineDash": [
+            4,
+            2,
+          ],
+          "lineWidth": 1,
+          "opacity": 1,
+          "stroke": "#3641594d",
+        },
+        "type": "line",
+      },
+      "visible": true,
+    },
+  },
+  "data": {
+    "fields": {
+      "__DimGroupID__": {
+        "sortIndex": 0,
+      },
+    },
+    "id": "1D2M",
+    "values": [
+      {
+        "__DimGroupID__": "2019-A",
+        "__DimGroup__": "2019-A",
+        "date": "2019",
+        "goalProfit": 10,
+        "leftCount": 1,
+        "profit": 10,
+        "sales": 100,
+        "salesCount": 100,
+        "type": "A",
+      },
+      {
+        "__DimGroupID__": "2020-A",
+        "__DimGroup__": "2020-A",
+        "date": "2020",
+        "goalProfit": 30,
+        "leftCount": 2,
+        "profit": 30,
+        "sales": 320,
+        "salesCount": 200,
+        "type": "A",
+      },
+      {
+        "__DimGroupID__": "2021-A",
+        "__DimGroup__": "2021-A",
+        "date": "2021",
+        "goalProfit": 30,
+        "leftCount": 3,
+        "profit": 30,
+        "sales": 300,
+        "salesCount": 300,
+        "type": "A",
+      },
+      {
+        "__DimGroupID__": "2022-A",
+        "__DimGroup__": "2022-A",
+        "date": "2022",
+        "goalProfit": 50,
+        "leftCount": 4,
+        "profit": 50,
+        "sales": 240,
+        "salesCount": 400,
+        "type": "A",
+      },
+      {
+        "__DimGroupID__": "2023-A",
+        "__DimGroup__": "2023-A",
+        "date": "2023",
+        "goalProfit": 40,
+        "leftCount": 5,
+        "profit": 40,
+        "sales": 500,
+        "salesCount": 500,
+        "type": "A",
+      },
+    ],
+  },
+  "label": {
+    "formatMethod": [Function],
+    "visible": true,
+  },
+  "padding": 0,
+  "region": [
+    {
+      "clip": true,
+    },
+  ],
+  "series": [
+    {
+      "animation": true,
+      "area": {
+        "visible": true,
+      },
+      "direction": "vertical",
+      "stack": false,
+      "type": "rangeArea",
+      "xField": "__DimGroupID__",
+      "yField": [
+        "goalProfit",
+        "profit",
+      ],
+    },
+    {
+      "animation": true,
+      "direction": "vertical",
+      "line": {
+        "style": {
+          "stroke": "#8D72F6",
+        },
+      },
+      "point": {
+        "state": {
+          "dimension_hover": {
+            "outerBorder": {
+              "distance": 2,
+              "lineWidth": 4,
+              "strokeOpacity": 0.25,
+            },
+            "scaleX": 1.4,
+            "scaleY": 1.4,
+          },
+        },
+        "style": {
+          "fill": "#8D72F6",
+          "visible": false,
+        },
+      },
+      "stack": false,
+      "tooltip": {
+        "visible": false,
+      },
+      "type": "line",
+      "xField": "__DimGroupID__",
+      "yField": [
+        "goalProfit",
+      ],
+    },
+    {
+      "animation": true,
+      "direction": "vertical",
+      "line": {
+        "style": {
+          "stroke": "#8D72F6",
+        },
+      },
+      "point": {
+        "state": {
+          "dimension_hover": {
+            "outerBorder": {
+              "distance": 2,
+              "lineWidth": 4,
+              "strokeOpacity": 0.25,
+            },
+            "scaleX": 1.4,
+            "scaleY": 1.4,
+          },
+        },
+        "style": {
+          "fill": "#8D72F6",
+          "visible": false,
+        },
+      },
+      "stack": false,
+      "tooltip": {
+        "visible": false,
+      },
+      "type": "line",
+      "xField": "__DimGroupID__",
+      "yField": [
+        "profit",
+      ],
+    },
+  ],
+  "tooltip": {
+    "dimension": {
+      "content": [
+        {
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+        {
+          "key": "goalProfit",
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+        {
+          "key": "profit",
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+      ],
+    },
+    "visible": true,
+  },
+  "type": "common",
+}
+`;

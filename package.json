@@ -16,7 +16,9 @@
     "build:rsdoctor": "pnpm --filter=@visactor/vseed run build:rsdoctor",
     "build:docs": "node ./scripts/build-docs.js",
     "build:test": "node ./scripts/build-tests.mjs",
+    "build:canvasTest": "node ./scripts/build-tests-with-canvas.mjs",
     "test": "pnpm --filter=@visactor/vseed test",
+    "rstest": "pnpm --filter=@visactor/vseed rstest",
     "test:coverage": "pnpm --filter=@visactor/vseed test:coverage && node scripts/build-coverage-badge.mjs",
     "publish:vseed": "pnpm run build:vseed && pnpm publish --filter=@visactor/vseed --access=public"
   },

@@ -9,6 +9,10 @@
     "baseUrl": ".",
     "rootDir": ".",
     "noEmit": true,
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "paths": {
       "@visactor/vseed": [
         "./src"

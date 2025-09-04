@@ -1,0 +1,24 @@
+{
+  "chartType": "dualAxis",
+  "dualChartType": {
+    "primary": "area",
+    "secondary": "scatter"
+  },
+  "dataset": [
+    { "date": "2019", "profit": 20, "sales": 100 },
+    { "date": "2020", "profit": 30, "sales": 600 },
+    { "date": "2021", "profit": 30, "sales": 600 },
+    { "date": "2022", "profit": 50, "sales": 500 },
+    { "date": "2023", "profit": 10, "sales": 800 }
+  ],
+  "measures": [
+    {
+      "id": "primary",
+      "children": [{ "id": "sales", "alias": "销售额" }]
+    },
+    {
+      "id": "secondary",
+      "children": [{ "id": "profit", "alias": "利润" }]
+    }
+  ]
+}

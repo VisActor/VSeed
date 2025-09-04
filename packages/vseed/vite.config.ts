@@ -16,7 +16,7 @@ export default defineConfig({
         'node_modules/**',
         '**/*.d.ts',
         '**/*.config.*',
-        'scripts/**'
+        'scripts/**',
       ],
       reporter: ['text', 'json', 'html', 'json-summary'],
       reportsDirectory: './coverage',
@@ -27,7 +27,7 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     alias: {
-      'src': new URL('./src', import.meta.url).pathname,
+      src: new URL('./src', import.meta.url).pathname,
       '@visactor/vseed': new URL('./src', import.meta.url).pathname,
     },
   },

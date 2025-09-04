@@ -1,0 +1,343 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`combinationPivotTable 1`] = `
+{
+  "chartType": "pivotTable",
+  "config": {
+    "pivotTable": {
+      "backgroundColor": "transparent",
+      "bodyBackgroundColor": "transparent",
+      "bodyFontColor": "#141414",
+      "bodyFontSize": 12,
+      "borderColor": "#e3e5eb",
+      "headerBackgroundColor": "#f6f7f9",
+      "headerFontColor": "#21252c",
+      "headerFontSize": 12,
+      "hoverBodyBackgroundColor": "#bedaff",
+      "hoverBodyInlineBackgroundColor": "#bedaff33",
+      "hoverHeaderBackgroundColor": "#D9DDE4",
+      "hoverHeaderInlineBackgroundColor": "#D9DDE455",
+      "selectedBackgroundColor": "#bedaff33",
+      "selectedBorderColor": "#4080ff",
+    },
+  },
+  "customTheme": {
+    "config": {
+      "pivotTable": {
+        "backgroundColor": "transparent",
+        "bodyBackgroundColor": "transparent",
+        "bodyFontColor": "#141414",
+        "bodyFontSize": 12,
+        "borderColor": "#e3e5eb",
+        "headerBackgroundColor": "#f6f7f9",
+        "headerFontColor": "#21252c",
+        "headerFontSize": 12,
+        "hoverBodyBackgroundColor": "#bedaff",
+        "hoverBodyInlineBackgroundColor": "#bedaff33",
+        "hoverHeaderBackgroundColor": "#D9DDE4",
+        "hoverHeaderInlineBackgroundColor": "#D9DDE455",
+        "selectedBackgroundColor": "#bedaff33",
+        "selectedBorderColor": "#4080ff",
+      },
+    },
+  },
+  "dataset": [
+    {
+      "date": "2019",
+      "profit": 10000,
+      "sales": 200000,
+    },
+    {
+      "date": "2020",
+      "profit": 20000,
+      "sales": 400000,
+    },
+    {
+      "date": "2021",
+      "profit": 30000,
+      "sales": 600000,
+    },
+    {
+      "date": "2022",
+      "profit": 40000,
+      "sales": 800000,
+    },
+    {
+      "date": "2023",
+      "profit": 50000,
+      "sales": 1000000,
+    },
+  ],
+  "dimensions": [
+    {
+      "alias": "日期",
+      "id": "date",
+      "location": "columnDimension",
+    },
+  ],
+  "locale": "zh-CN",
+  "measures": [
+    {
+      "alias": "销售额",
+      "format": {
+        "decimalPlaces": 0,
+        "prefix": "利润",
+        "ratio": 1000,
+        "suffix": "$",
+        "symbol": "千",
+        "thousandSeparator": true,
+        "type": "number",
+      },
+      "id": "sales",
+    },
+    {
+      "alias": "利润",
+      "autoFormat": true,
+      "format": {
+        "decimalPlaces": 0,
+        "prefix": "利润",
+        "ratio": 1000,
+        "suffix": "$",
+        "symbol": "千",
+        "thousandSeparator": true,
+        "type": "number",
+      },
+      "id": "profit",
+    },
+  ],
+}
+`;
+
+exports[`combinationPivotTable 2`] = `
+{
+  "animationAppear": {
+    "delay": 250,
+    "direction": "row",
+    "duration": 300,
+    "type": "one-by-one",
+  },
+  "autoWrapText": true,
+  "columnResizeMode": "all",
+  "columnResizeType": "column",
+  "columns": [
+    {
+      "dimensionKey": "date",
+      "title": "日期",
+      "width": "auto",
+    },
+  ],
+  "corner": {
+    "titleOnDimension": "all",
+  },
+  "dataConfig": {
+    "aggregationRules": [
+      {
+        "aggregationType": "NONE",
+        "field": "sales",
+        "indicatorKey": "sales",
+      },
+      {
+        "aggregationType": "NONE",
+        "field": "profit",
+        "indicatorKey": "profit",
+      },
+    ],
+  },
+  "heightMode": "autoHeight",
+  "hover": {
+    "highlightMode": "cross",
+  },
+  "indicatorTitle": "指标名称",
+  "indicators": [
+    {
+      "cellType": "text",
+      "format": [Function],
+      "indicatorKey": "sales",
+      "title": "销售额",
+      "width": "auto",
+    },
+    {
+      "cellType": "text",
+      "format": [Function],
+      "indicatorKey": "profit",
+      "title": "利润",
+      "width": "auto",
+    },
+  ],
+  "indicatorsAsCol": true,
+  "records": [
+    {
+      "date": "2019",
+      "profit": 10000,
+      "sales": 200000,
+    },
+    {
+      "date": "2020",
+      "profit": 20000,
+      "sales": 400000,
+    },
+    {
+      "date": "2021",
+      "profit": 30000,
+      "sales": 600000,
+    },
+    {
+      "date": "2022",
+      "profit": 40000,
+      "sales": 800000,
+    },
+    {
+      "date": "2023",
+      "profit": 50000,
+      "sales": 1000000,
+    },
+  ],
+  "rows": [],
+  "select": {
+    "headerSelectMode": "inline",
+    "highlightMode": "cell",
+  },
+  "showColumnHeader": true,
+  "showRowHeader": true,
+  "theme": {
+    "bodyStyle": {
+      "bgColor": "transparent",
+      "borderColor": "#e3e5eb",
+      "borderLineWidth": 1,
+      "color": "#141414",
+      "fontSize": 12,
+      "fontStyle": "normal",
+      "fontVariant": "normal",
+      "fontWeight": "normal",
+      "hover": {
+        "cellBgColor": "#bedaff",
+        "inlineColumnBgColor": "#bedaff33",
+        "inlineRowBgColor": "#bedaff33",
+      },
+      "lineHeight": 18,
+      "padding": [
+        8.6,
+        12,
+        8.6,
+        12,
+      ],
+      "textAlign": "right",
+    },
+    "cornerHeaderStyle": {
+      "bgColor": "#f6f7f9",
+      "borderColor": [
+        "#e3e5eb",
+        "#e3e5eb",
+      ],
+      "borderLineWidth": 1,
+      "color": "#21252c",
+      "fontSize": 12,
+      "fontStyle": "normal",
+      "fontVariant": "normal",
+      "fontWeight": "bold",
+      "frameStyle": {
+        "borderColor": [
+          null,
+          "#e3e5eb",
+          "#e3e5eb",
+          null,
+        ],
+        "borderLineWidth": 1,
+      },
+      "hover": {
+        "cellBgColor": "#D9DDE4",
+        "inlineColumnBgColor": "#D9DDE455",
+        "inlineRowBgColor": "#D9DDE455",
+      },
+      "lineHeight": 18,
+      "padding": [
+        8,
+        12,
+        8,
+        12,
+      ],
+      "textAlign": "left",
+    },
+    "frameStyle": {
+      "borderColor": "#e3e5eb",
+      "borderLineWidth": 0,
+      "cornerRadius": 4,
+    },
+    "headerStyle": {
+      "bgColor": "#f6f7f9",
+      "borderColor": "#e3e5eb",
+      "borderLineWidth": 1,
+      "color": "#21252c",
+      "fontSize": 12,
+      "fontStyle": "normal",
+      "fontVariant": "normal",
+      "fontWeight": "bold",
+      "frameStyle": {
+        "borderColor": [
+          null,
+          null,
+          "#e3e5eb",
+          null,
+        ],
+        "borderLineWidth": 1,
+      },
+      "hover": {
+        "cellBgColor": "#D9DDE4",
+        "inlineColumnBgColor": "#D9DDE455",
+        "inlineRowBgColor": "#D9DDE455",
+      },
+      "lineHeight": 18,
+      "padding": [
+        8,
+        12,
+        8,
+        12,
+      ],
+      "textAlign": "center",
+    },
+    "rowHeaderStyle": {
+      "bgColor": "#f6f7f9",
+      "borderColor": "#e3e5eb",
+      "borderLineWidth": 1,
+      "color": "#21252c",
+      "fontSize": 12,
+      "fontStyle": "normal",
+      "fontVariant": "normal",
+      "fontWeight": "bold",
+      "frameStyle": {
+        "borderColor": [
+          null,
+          "#e3e5eb",
+          null,
+          null,
+        ],
+        "borderLineWidth": 1,
+      },
+      "hover": {
+        "cellBgColor": "#D9DDE4",
+        "inlineColumnBgColor": "#D9DDE455",
+        "inlineRowBgColor": "#D9DDE455",
+      },
+      "lineHeight": 18,
+      "padding": [
+        8.6,
+        12,
+        8.6,
+        12,
+      ],
+      "textAlign": "left",
+    },
+    "selectionStyle": {
+      "cellBgColor": "#bedaff33",
+      "cellBorderColor": "#4080ff",
+      "cellBorderLineWidth": 2,
+    },
+    "underlayBackgroundColor": "transparent",
+  },
+  "tooltip": {
+    "isShowOverflowTextTooltip": true,
+  },
+  "widthAdaptiveMode": "all",
+  "widthMode": "standard",
+}
+`;

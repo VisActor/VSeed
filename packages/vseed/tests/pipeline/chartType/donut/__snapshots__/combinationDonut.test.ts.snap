@@ -1,0 +1,1034 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`combinationDonut 1`] = `
+{
+  "annotation": {},
+  "chartType": "donut",
+  "config": {
+    "donut": {
+      "backgroundColor": "transparent",
+      "color": {
+        "colorScheme": [
+          "#8D72F6",
+          "#5766EC",
+          "#66A3FE",
+          "#51D5E6",
+          "#4EC0B3",
+          "#F9DF90",
+          "#F9AD71",
+          "#ED8888",
+          "#E9A0C3",
+          "#D77DD3",
+        ],
+      },
+      "label": {
+        "enable": true,
+      },
+      "legend": {
+        "border": true,
+        "enable": true,
+        "labelFontColor": "#646A73",
+        "labelFontSize": 12,
+        "labelFontWeight": 400,
+        "maxSize": 1,
+        "position": "rt",
+        "shapeType": "rectRound",
+      },
+      "tooltip": {
+        "enable": true,
+      },
+    },
+  },
+  "customTheme": {
+    "config": {
+      "donut": {
+        "backgroundColor": "transparent",
+        "color": {
+          "colorScheme": [
+            "#8D72F6",
+            "#5766EC",
+            "#66A3FE",
+            "#51D5E6",
+            "#4EC0B3",
+            "#F9DF90",
+            "#F9AD71",
+            "#ED8888",
+            "#E9A0C3",
+            "#D77DD3",
+          ],
+        },
+        "label": {
+          "enable": true,
+        },
+        "legend": {
+          "border": true,
+          "enable": true,
+          "labelFontColor": "#646A73",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "maxSize": 1,
+          "position": "rt",
+          "shapeType": "rectRound",
+        },
+        "tooltip": {
+          "enable": true,
+        },
+      },
+    },
+  },
+  "dataset": [
+    [
+      {
+        "__DimGroupID__": "2019-sales",
+        "__DimGroup__": "2019",
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaValue__line1": 200000,
+        "__OriginalData__": {
+          "date": "2019",
+          "profit": 10000,
+          "sales": 200000,
+        },
+        "date": "2019",
+        "profit": 10000,
+        "sales": 200000,
+      },
+      {
+        "__DimGroupID__": "2020-sales",
+        "__DimGroup__": "2020",
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaValue__line1": 400000,
+        "__OriginalData__": {
+          "date": "2020",
+          "profit": 20000,
+          "sales": 400000,
+        },
+        "date": "2020",
+        "profit": 20000,
+        "sales": 400000,
+      },
+      {
+        "__DimGroupID__": "2021-sales",
+        "__DimGroup__": "2021",
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaValue__line1": 600000,
+        "__OriginalData__": {
+          "date": "2021",
+          "profit": 30000,
+          "sales": 600000,
+        },
+        "date": "2021",
+        "profit": 30000,
+        "sales": 600000,
+      },
+      {
+        "__DimGroupID__": "2022-sales",
+        "__DimGroup__": "2022",
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaValue__line1": 800000,
+        "__OriginalData__": {
+          "date": "2022",
+          "profit": 40000,
+          "sales": 800000,
+        },
+        "date": "2022",
+        "profit": 40000,
+        "sales": 800000,
+      },
+      {
+        "__DimGroupID__": "2023-sales",
+        "__DimGroup__": "2023",
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaValue__line1": 1000000,
+        "__OriginalData__": {
+          "date": "2023",
+          "profit": 50000,
+          "sales": 1000000,
+        },
+        "date": "2023",
+        "profit": 50000,
+        "sales": 1000000,
+      },
+    ],
+    [
+      {
+        "__DimGroupID__": "2019-profit",
+        "__DimGroup__": "2019",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaValue__line2": 10000,
+        "__OriginalData__": {
+          "date": "2019",
+          "profit": 10000,
+          "sales": 200000,
+        },
+        "date": "2019",
+        "profit": 10000,
+        "sales": 200000,
+      },
+      {
+        "__DimGroupID__": "2020-profit",
+        "__DimGroup__": "2020",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaValue__line2": 20000,
+        "__OriginalData__": {
+          "date": "2020",
+          "profit": 20000,
+          "sales": 400000,
+        },
+        "date": "2020",
+        "profit": 20000,
+        "sales": 400000,
+      },
+      {
+        "__DimGroupID__": "2021-profit",
+        "__DimGroup__": "2021",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaValue__line2": 30000,
+        "__OriginalData__": {
+          "date": "2021",
+          "profit": 30000,
+          "sales": 600000,
+        },
+        "date": "2021",
+        "profit": 30000,
+        "sales": 600000,
+      },
+      {
+        "__DimGroupID__": "2022-profit",
+        "__DimGroup__": "2022",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaValue__line2": 40000,
+        "__OriginalData__": {
+          "date": "2022",
+          "profit": 40000,
+          "sales": 800000,
+        },
+        "date": "2022",
+        "profit": 40000,
+        "sales": 800000,
+      },
+      {
+        "__DimGroupID__": "2023-profit",
+        "__DimGroup__": "2023",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaValue__line2": 50000,
+        "__OriginalData__": {
+          "date": "2023",
+          "profit": 50000,
+          "sales": 1000000,
+        },
+        "date": "2023",
+        "profit": 50000,
+        "sales": 1000000,
+      },
+    ],
+  ],
+  "datasetReshapeInfo": [
+    {
+      "foldInfo": {
+        "foldMap": {
+          "sales": "销售额",
+        },
+        "measureId": "__MeaId__",
+        "measureName": "__MeaName__",
+        "measureValue": "__MeaValue__line1",
+      },
+      "id": "line1",
+      "index": 0,
+      "unfoldInfo": {
+        "colorIdMap": {
+          "2019-sales": "2019",
+          "2020-sales": "2020",
+          "2021-sales": "2021",
+          "2022-sales": "2022",
+          "2023-sales": "2023",
+        },
+        "colorItems": [
+          "2019-sales",
+          "2020-sales",
+          "2021-sales",
+          "2022-sales",
+          "2023-sales",
+        ],
+        "groupId": "__DimGroupID__",
+        "groupName": "__DimGroup__",
+      },
+    },
+    {
+      "foldInfo": {
+        "foldMap": {
+          "profit": "利润",
+        },
+        "measureId": "__MeaId__",
+        "measureName": "__MeaName__",
+        "measureValue": "__MeaValue__line2",
+      },
+      "id": "line2",
+      "index": 1,
+      "unfoldInfo": {
+        "colorIdMap": {
+          "2019-profit": "2019",
+          "2020-profit": "2020",
+          "2021-profit": "2021",
+          "2022-profit": "2022",
+          "2023-profit": "2023",
+        },
+        "colorItems": [
+          "2019-profit",
+          "2020-profit",
+          "2021-profit",
+          "2022-profit",
+          "2023-profit",
+        ],
+        "groupId": "__DimGroupID__",
+        "groupName": "__DimGroup__",
+      },
+    },
+  ],
+  "dimensions": [
+    {
+      "alias": "日期",
+      "id": "date",
+      "location": "dimension",
+    },
+  ],
+  "encoding": [
+    {
+      "angle": [
+        "__DimGroupID__",
+      ],
+      "color": [
+        "__DimGroupID__",
+      ],
+      "group": [
+        "__DimGroupID__",
+      ],
+      "radius": [
+        "__MeaValue__line1",
+      ],
+    },
+    {
+      "angle": [
+        "__DimGroupID__",
+      ],
+      "color": [
+        "__DimGroupID__",
+      ],
+      "group": [
+        "__DimGroupID__",
+      ],
+      "radius": [
+        "__MeaValue__line2",
+      ],
+    },
+  ],
+  "locale": "zh-CN",
+  "measures": [
+    {
+      "children": [
+        {
+          "alias": "销售额",
+          "format": {
+            "decimalPlaces": 0,
+            "prefix": "利润",
+            "ratio": 1000,
+            "suffix": "$",
+            "symbol": "千",
+            "thousandSeparator": true,
+            "type": "number",
+          },
+          "id": "sales",
+        },
+      ],
+      "id": "line1",
+    },
+    {
+      "children": [
+        {
+          "alias": "利润",
+          "autoFormat": true,
+          "format": {
+            "decimalPlaces": 0,
+            "prefix": "利润",
+            "ratio": 1000,
+            "suffix": "$",
+            "symbol": "千",
+            "thousandSeparator": true,
+            "type": "number",
+          },
+          "id": "profit",
+        },
+      ],
+      "id": "line2",
+    },
+  ],
+}
+`;
+
+exports[`combinationDonut 2`] = `
+{
+  "animation": true,
+  "columns": [],
+  "heightMode": "adaptive",
+  "indicators": [
+    {
+      "cellType": "chart",
+      "chartModule": "vchart",
+      "chartSpec": {
+        "animation": true,
+        "background": "transparent",
+        "categoryField": "__DimGroupID__",
+        "color": {
+          "domain": [
+            "2019-sales",
+            "2020-sales",
+            "2021-sales",
+            "2022-sales",
+            "2023-sales",
+            "2019-profit",
+            "2020-profit",
+            "2021-profit",
+            "2022-profit",
+            "2023-profit",
+          ],
+          "range": [
+            "#8D72F6",
+            "#5766EC",
+            "#66A3FE",
+            "#51D5E6",
+            "#4EC0B3",
+            "#F9DF90",
+            "#F9AD71",
+            "#ED8888",
+            "#E9A0C3",
+            "#D77DD3",
+          ],
+          "specified": undefined,
+          "type": "ordinal",
+        },
+        "data": {
+          "fields": {
+            "__DimGroupID__": {
+              "sortIndex": 0,
+            },
+          },
+          "id": "line1",
+          "values": undefined,
+        },
+        "innerRadius": 0.6400000000000001,
+        "label": {
+          "formatMethod": [Function],
+          "visible": true,
+        },
+        "outerRadius": 0.8,
+        "padding": 0,
+        "pie": {
+          "state": {
+            "hover": {
+              "outerRadius": 0.8800000000000001,
+            },
+          },
+          "style": {
+            "lineWidth": 1,
+            "stroke": "#ffffff",
+          },
+        },
+        "region": [
+          {
+            "clip": true,
+          },
+        ],
+        "seriesField": "__DimGroupID__",
+        "tooltip": {
+          "dimension": {
+            "content": [
+              {
+                "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
+            ],
+          },
+          "mark": {
+            "content": [
+              {
+                "hasShape": true,
+                "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
+              {
+                "hasShape": true,
+                "key": [Function],
+                "value": [Function],
+                "visible": true,
+              },
+            ],
+            "title": {
+              "visible": true,
+            },
+          },
+          "visible": true,
+        },
+        "type": "pie",
+        "valueField": "__MeaValue__line1",
+      },
+      "indicatorKey": "line1",
+      "style": {
+        "padding": [
+          1,
+          1,
+          0,
+          1,
+        ],
+      },
+      "title": undefined,
+    },
+    {
+      "cellType": "chart",
+      "chartModule": "vchart",
+      "chartSpec": {
+        "animation": true,
+        "background": "transparent",
+        "categoryField": "__DimGroupID__",
+        "color": {
+          "domain": [
+            "2019-sales",
+            "2020-sales",
+            "2021-sales",
+            "2022-sales",
+            "2023-sales",
+            "2019-profit",
+            "2020-profit",
+            "2021-profit",
+            "2022-profit",
+            "2023-profit",
+          ],
+          "range": [
+            "#8D72F6",
+            "#5766EC",
+            "#66A3FE",
+            "#51D5E6",
+            "#4EC0B3",
+            "#F9DF90",
+            "#F9AD71",
+            "#ED8888",
+            "#E9A0C3",
+            "#D77DD3",
+          ],
+          "specified": undefined,
+          "type": "ordinal",
+        },
+        "data": {
+          "fields": {
+            "__DimGroupID__": {
+              "sortIndex": 0,
+            },
+          },
+          "id": "line2",
+          "values": undefined,
+        },
+        "innerRadius": 0.6400000000000001,
+        "label": {
+          "formatMethod": [Function],
+          "visible": true,
+        },
+        "outerRadius": 0.8,
+        "padding": 0,
+        "pie": {
+          "state": {
+            "hover": {
+              "outerRadius": 0.8800000000000001,
+            },
+          },
+          "style": {
+            "lineWidth": 1,
+            "stroke": "#ffffff",
+          },
+        },
+        "region": [
+          {
+            "clip": true,
+          },
+        ],
+        "seriesField": "__DimGroupID__",
+        "tooltip": {
+          "dimension": {
+            "content": [
+              {
+                "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
+            ],
+          },
+          "mark": {
+            "content": [
+              {
+                "hasShape": true,
+                "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
+              {
+                "hasShape": true,
+                "key": [Function],
+                "value": [Function],
+                "visible": true,
+              },
+            ],
+            "title": {
+              "visible": true,
+            },
+          },
+          "visible": true,
+        },
+        "type": "pie",
+        "valueField": "__MeaValue__line2",
+      },
+      "indicatorKey": "line2",
+      "style": {
+        "padding": [
+          1,
+          1,
+          0,
+          1,
+        ],
+      },
+      "title": undefined,
+    },
+  ],
+  "indicatorsAsCol": false,
+  "legends": {
+    "data": [
+      {
+        "label": "2019-sales",
+        "shape": {
+          "fill": "#8D72F6",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#8D72F6",
+          },
+        },
+      },
+      {
+        "label": "2020-sales",
+        "shape": {
+          "fill": "#5766EC",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#5766EC",
+          },
+        },
+      },
+      {
+        "label": "2021-sales",
+        "shape": {
+          "fill": "#66A3FE",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#66A3FE",
+          },
+        },
+      },
+      {
+        "label": "2022-sales",
+        "shape": {
+          "fill": "#51D5E6",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#51D5E6",
+          },
+        },
+      },
+      {
+        "label": "2023-sales",
+        "shape": {
+          "fill": "#4EC0B3",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#4EC0B3",
+          },
+        },
+      },
+      {
+        "label": "2019-profit",
+        "shape": {
+          "fill": "#F9DF90",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#F9DF90",
+          },
+        },
+      },
+      {
+        "label": "2020-profit",
+        "shape": {
+          "fill": "#F9AD71",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#F9AD71",
+          },
+        },
+      },
+      {
+        "label": "2021-profit",
+        "shape": {
+          "fill": "#ED8888",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#ED8888",
+          },
+        },
+      },
+      {
+        "label": "2022-profit",
+        "shape": {
+          "fill": "#E9A0C3",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#E9A0C3",
+          },
+        },
+      },
+      {
+        "label": "2023-profit",
+        "shape": {
+          "fill": "#D77DD3",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#D77DD3",
+          },
+        },
+      },
+    ],
+    "item": {
+      "background": {
+        "state": {
+          "selectedHover": {
+            "fill": "#646A73",
+            "fillOpacity": 0.05,
+          },
+        },
+      },
+      "focus": true,
+      "focusIconStyle": {
+        "fill": "#646A73",
+        "fontWeight": 400,
+        "size": 14,
+      },
+      "label": {
+        "formatMethod": [Function],
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+      },
+      "maxWidth": "30%",
+      "shape": {
+        "space": 6,
+        "style": {
+          "size": 8,
+          "symbolType": "rectRound",
+        },
+      },
+    },
+    "maxCol": 1,
+    "maxRow": 1,
+    "orient": "right",
+    "position": "start",
+    "type": "discrete",
+    "visible": true,
+  },
+  "records": {
+    "line1": [
+      {
+        "__DimGroupID__": "2019-sales",
+        "__DimGroup__": "2019",
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaValue__line1": 200000,
+        "__OriginalData__": {
+          "date": "2019",
+          "profit": 10000,
+          "sales": 200000,
+        },
+        "date": "2019",
+        "profit": 10000,
+        "sales": 200000,
+      },
+      {
+        "__DimGroupID__": "2020-sales",
+        "__DimGroup__": "2020",
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaValue__line1": 400000,
+        "__OriginalData__": {
+          "date": "2020",
+          "profit": 20000,
+          "sales": 400000,
+        },
+        "date": "2020",
+        "profit": 20000,
+        "sales": 400000,
+      },
+      {
+        "__DimGroupID__": "2021-sales",
+        "__DimGroup__": "2021",
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaValue__line1": 600000,
+        "__OriginalData__": {
+          "date": "2021",
+          "profit": 30000,
+          "sales": 600000,
+        },
+        "date": "2021",
+        "profit": 30000,
+        "sales": 600000,
+      },
+      {
+        "__DimGroupID__": "2022-sales",
+        "__DimGroup__": "2022",
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaValue__line1": 800000,
+        "__OriginalData__": {
+          "date": "2022",
+          "profit": 40000,
+          "sales": 800000,
+        },
+        "date": "2022",
+        "profit": 40000,
+        "sales": 800000,
+      },
+      {
+        "__DimGroupID__": "2023-sales",
+        "__DimGroup__": "2023",
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaValue__line1": 1000000,
+        "__OriginalData__": {
+          "date": "2023",
+          "profit": 50000,
+          "sales": 1000000,
+        },
+        "date": "2023",
+        "profit": 50000,
+        "sales": 1000000,
+      },
+    ],
+    "line2": [
+      {
+        "__DimGroupID__": "2019-profit",
+        "__DimGroup__": "2019",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaValue__line2": 10000,
+        "__OriginalData__": {
+          "date": "2019",
+          "profit": 10000,
+          "sales": 200000,
+        },
+        "date": "2019",
+        "profit": 10000,
+        "sales": 200000,
+      },
+      {
+        "__DimGroupID__": "2020-profit",
+        "__DimGroup__": "2020",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaValue__line2": 20000,
+        "__OriginalData__": {
+          "date": "2020",
+          "profit": 20000,
+          "sales": 400000,
+        },
+        "date": "2020",
+        "profit": 20000,
+        "sales": 400000,
+      },
+      {
+        "__DimGroupID__": "2021-profit",
+        "__DimGroup__": "2021",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaValue__line2": 30000,
+        "__OriginalData__": {
+          "date": "2021",
+          "profit": 30000,
+          "sales": 600000,
+        },
+        "date": "2021",
+        "profit": 30000,
+        "sales": 600000,
+      },
+      {
+        "__DimGroupID__": "2022-profit",
+        "__DimGroup__": "2022",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaValue__line2": 40000,
+        "__OriginalData__": {
+          "date": "2022",
+          "profit": 40000,
+          "sales": 800000,
+        },
+        "date": "2022",
+        "profit": 40000,
+        "sales": 800000,
+      },
+      {
+        "__DimGroupID__": "2023-profit",
+        "__DimGroup__": "2023",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaValue__line2": 50000,
+        "__OriginalData__": {
+          "date": "2023",
+          "profit": 50000,
+          "sales": 1000000,
+        },
+        "date": "2023",
+        "profit": 50000,
+        "sales": 1000000,
+      },
+    ],
+  },
+  "rows": [],
+  "theme": {
+    "bodyStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": [
+        0,
+        0,
+        2,
+        0,
+      ],
+      "hover": {
+        "cellBgColor": "transparent",
+      },
+      "padding": [
+        0,
+        0,
+        1,
+        0,
+      ],
+    },
+    "bottomFrozenStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "cornerHeaderStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": [
+        0,
+        0,
+        0,
+        0,
+      ],
+      "color": "#333333",
+      "fontSize": 12,
+      "fontWeight": "bold",
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+      "textAlign": "center",
+    },
+    "cornerLeftBottomCellStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "cornerRightBottomCellStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "cornerRightTopCellStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "frameStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderLineWidth": 0,
+    },
+    "headerStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "color": "#333333",
+      "fontSize": 12,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+      "textAlign": "center",
+    },
+    "rightFrozenStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "rowHeaderStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "color": "#333333",
+      "fontSize": 12,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "selectionStyle": {
+      "cellBgColor": "",
+      "cellBorderColor": "",
+    },
+    "underlayBackgroundColor": "rgba(0,0,0,0)",
+  },
+  "widthMode": "adaptive",
+}
+`;

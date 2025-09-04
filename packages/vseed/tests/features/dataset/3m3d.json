@@ -1,0 +1,16 @@
+{
+  "chartType": "columnParallel",
+  "dataset": [
+    { "date": "2019", "region": "east", "city": "A", "profit": 10, "sales": 20, "discount": 0.1 },
+    { "date": "2019", "region": "east", "city": "B", "profit": 30, "sales": 60, "discount": 0.1 },
+    { "date": "2019", "region": "east", "city": "C", "profit": 30, "sales": 60, "discount": 0.1 },
+    { "date": "2019", "region": "east", "city": "D", "profit": 50, "sales": 100, "discount": 0.1 },
+    { "date": "2019", "region": "east", "city": "E", "profit": 40, "sales": 80, "discount": 0.1 },
+
+    { "date": "2020", "region": "north of east", "city": "A", "profit": 10, "sales": 20, "discount": 0.1 },
+    { "date": "2020", "region": "north of east", "city": "B", "profit": 30, "sales": 60, "discount": 0.1 },
+    { "date": "2020", "region": "north of east", "city": "C", "profit": 30, "sales": 60, "discount": 0.1 },
+    { "date": "2020", "region": "north of east", "city": "D", "profit": 50, "sales": 100, "discount": 0.1 },
+    { "date": "2020", "region": "north of east", "city": "E", "profit": 40, "sales": 80, "discount": 0.1 }
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "chartType": "columnParallel",
+  "dataset": [{ "profit": 1, "sales": 2, "discount": 0.1 }]
+}

@@ -42,6 +42,7 @@ async function generateTests() {
         await fs.unlink(testPath)
         console.log(`Removed existing test file: ${testPath}`)
       } catch (error) {
+        console.error(error)
         if (error.code !== 'ENOENT') {
           throw error
         }

@@ -49,7 +49,6 @@ async function generateTests() {
 
       const testContent = `import type { VSeed } from '@visactor/vseed'
 import { Builder, isPivotChart, isPivotTable, isTable, registerAll } from '@visactor/vseed'
-import { Builder, isPivotChart, isPivotTable, isTable, registerAll } from '@visactor/vseed'
 import type { ISpec } from '@visactor/vchart'
 import { VChart } from '@visactor/vchart'
 import * as VTable from '@visactor/vtable'

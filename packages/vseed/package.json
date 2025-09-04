@@ -20,7 +20,6 @@
     "build": "rslib build",
     "dev:rsdoctor": "RSDOCTOR=true rsbuild dev",
     "build:rsdoctor": "RSDOCTOR=true rsbuild build",
-    "build:test": "node scripts/buildTests.mjs",
     "format": "prettier --write .",
     "lint": "eslint .",
     "test": "vitest run",

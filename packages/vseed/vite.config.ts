@@ -5,8 +5,7 @@ export default defineConfig({
     root: '.',
     include: ['tests/**/*.test.ts'],
     coverage: {
-      enabled: true,
-      provider: 'istanbul',
+      provider: 'v8',
       include: ['src/**/*.ts'],
       exclude: [
         'src/**/*.test.ts',

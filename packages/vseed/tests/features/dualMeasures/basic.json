@@ -1,0 +1,16 @@
+{
+  "chartType": "dualAxis",
+  "dualMeasures": [
+    {
+      "primaryMeasures": [{ "id": "profit" }],
+      "secondaryMeasures": [{ "id": "sales" }]
+    }
+  ],
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 200 },
+    { "date": "2020", "profit": 30, "sales": 600 },
+    { "date": "2021", "profit": 30, "sales": 600 },
+    { "date": "2022", "profit": 50, "sales": 1000 },
+    { "date": "2023", "profit": 40, "sales": 800 }
+  ]
+}

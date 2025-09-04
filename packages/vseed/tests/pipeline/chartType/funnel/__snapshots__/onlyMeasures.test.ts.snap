@@ -1,0 +1,493 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`onlyMeasures 1`] = `
+{
+  "annotation": {},
+  "chartType": "funnel",
+  "config": {
+    "funnel": {
+      "backgroundColor": "transparent",
+      "color": {
+        "colorScheme": [
+          "#C2CEFF",
+          "#B7C4FF",
+          "#ACB9FF",
+          "#A0AEFF",
+          "#95A3FF",
+          "#8998FF",
+          "#7C8CFA",
+          "#7080F4",
+          "#6372F0",
+          "#5766EC",
+        ],
+      },
+      "label": {
+        "enable": true,
+      },
+      "legend": {
+        "border": true,
+        "enable": true,
+        "labelFontColor": "#646A73",
+        "labelFontSize": 12,
+        "labelFontWeight": 400,
+        "maxSize": 1,
+        "position": "rt",
+        "shapeType": "rectRound",
+      },
+      "tooltip": {
+        "enable": true,
+      },
+    },
+  },
+  "customTheme": {
+    "config": {
+      "funnel": {
+        "backgroundColor": "transparent",
+        "color": {
+          "colorScheme": [
+            "#C2CEFF",
+            "#B7C4FF",
+            "#ACB9FF",
+            "#A0AEFF",
+            "#95A3FF",
+            "#8998FF",
+            "#7C8CFA",
+            "#7080F4",
+            "#6372F0",
+            "#5766EC",
+          ],
+        },
+        "label": {
+          "enable": true,
+        },
+        "legend": {
+          "border": true,
+          "enable": true,
+          "labelFontColor": "#646A73",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "maxSize": 1,
+          "position": "rt",
+          "shapeType": "rectRound",
+        },
+        "tooltip": {
+          "enable": true,
+        },
+      },
+    },
+  },
+  "dataset": [
+    {
+      "__DimGroupID__": "销售额-sales",
+      "__DimGroup__": "销售额",
+      "__MeaId__": "sales",
+      "__MeaName__": "销售额",
+      "__MeaValue__": 200000,
+      "__OriginalData__": {
+        "profit": 10000,
+        "sales": 200000,
+      },
+      "sales": 200000,
+    },
+    {
+      "__DimGroupID__": "利润-profit",
+      "__DimGroup__": "利润",
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaValue__": 10000,
+      "__OriginalData__": {
+        "profit": 10000,
+        "sales": 200000,
+      },
+      "profit": 10000,
+    },
+    {
+      "__DimGroupID__": "销售额-sales",
+      "__DimGroup__": "销售额",
+      "__MeaId__": "sales",
+      "__MeaName__": "销售额",
+      "__MeaValue__": 400000,
+      "__OriginalData__": {
+        "profit": 20000,
+        "sales": 400000,
+      },
+      "sales": 400000,
+    },
+    {
+      "__DimGroupID__": "利润-profit",
+      "__DimGroup__": "利润",
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaValue__": 20000,
+      "__OriginalData__": {
+        "profit": 20000,
+        "sales": 400000,
+      },
+      "profit": 20000,
+    },
+    {
+      "__DimGroupID__": "销售额-sales",
+      "__DimGroup__": "销售额",
+      "__MeaId__": "sales",
+      "__MeaName__": "销售额",
+      "__MeaValue__": 600000,
+      "__OriginalData__": {
+        "profit": 30000,
+        "sales": 600000,
+      },
+      "sales": 600000,
+    },
+    {
+      "__DimGroupID__": "利润-profit",
+      "__DimGroup__": "利润",
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaValue__": 30000,
+      "__OriginalData__": {
+        "profit": 30000,
+        "sales": 600000,
+      },
+      "profit": 30000,
+    },
+    {
+      "__DimGroupID__": "销售额-sales",
+      "__DimGroup__": "销售额",
+      "__MeaId__": "sales",
+      "__MeaName__": "销售额",
+      "__MeaValue__": 800000,
+      "__OriginalData__": {
+        "profit": 40000,
+        "sales": 800000,
+      },
+      "sales": 800000,
+    },
+    {
+      "__DimGroupID__": "利润-profit",
+      "__DimGroup__": "利润",
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaValue__": 40000,
+      "__OriginalData__": {
+        "profit": 40000,
+        "sales": 800000,
+      },
+      "profit": 40000,
+    },
+    {
+      "__DimGroupID__": "销售额-sales",
+      "__DimGroup__": "销售额",
+      "__MeaId__": "sales",
+      "__MeaName__": "销售额",
+      "__MeaValue__": 1000000,
+      "__OriginalData__": {
+        "profit": 50000,
+        "sales": 1000000,
+      },
+      "sales": 1000000,
+    },
+    {
+      "__DimGroupID__": "利润-profit",
+      "__DimGroup__": "利润",
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaValue__": 50000,
+      "__OriginalData__": {
+        "profit": 50000,
+        "sales": 1000000,
+      },
+      "profit": 50000,
+    },
+  ],
+  "datasetReshapeInfo": [
+    {
+      "foldInfo": {
+        "foldMap": {
+          "profit": "利润",
+          "sales": "销售额",
+        },
+        "measureId": "__MeaId__",
+        "measureName": "__MeaName__",
+        "measureValue": "__MeaValue__",
+      },
+      "id": "1D1M",
+      "index": 0,
+      "unfoldInfo": {
+        "colorIdMap": {
+          "利润-profit": "利润",
+          "销售额-sales": "销售额",
+        },
+        "colorItems": [
+          "销售额-sales",
+          "利润-profit",
+        ],
+        "groupId": "__DimGroupID__",
+        "groupName": "__DimGroup__",
+      },
+    },
+  ],
+  "dimensions": [],
+  "encoding": [
+    {
+      "color": [
+        "__MeaValue__",
+      ],
+      "group": [
+        "__DimGroupID__",
+      ],
+      "size": [
+        "__MeaValue__",
+      ],
+    },
+  ],
+  "locale": "zh-CN",
+  "measures": [
+    {
+      "alias": "销售额",
+      "autoFormat": true,
+      "id": "sales",
+    },
+    {
+      "alias": "利润",
+      "autoFormat": false,
+      "format": {
+        "decimalPlaces": 0,
+        "prefix": "利润",
+        "ratio": 1000,
+        "suffix": "$",
+        "symbol": "千",
+        "thousandSeparator": true,
+        "type": "number",
+      },
+      "id": "profit",
+    },
+  ],
+}
+`;
+
+exports[`onlyMeasures 2`] = `
+{
+  "animation": true,
+  "background": "transparent",
+  "categoryField": "__DimGroupID__",
+  "color": {
+    "domain": [
+      {
+        "dataId": "1D1M",
+        "fields": [
+          "__MeaValue__",
+        ],
+      },
+    ],
+    "range": [
+      "#C2CEFF",
+      "#B7C4FF",
+      "#ACB9FF",
+      "#A0AEFF",
+      "#95A3FF",
+      "#8998FF",
+      "#7C8CFA",
+      "#7080F4",
+      "#6372F0",
+      "#5766EC",
+    ],
+    "type": "linear",
+  },
+  "data": {
+    "fields": {
+      "__DimGroupID__": {
+        "sortIndex": 0,
+      },
+    },
+    "id": "1D1M",
+    "values": [
+      {
+        "__DimGroupID__": "销售额-sales",
+        "__DimGroup__": "销售额",
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaValue__": 200000,
+        "__OriginalData__": {
+          "profit": 10000,
+          "sales": 200000,
+        },
+        "sales": 200000,
+      },
+      {
+        "__DimGroupID__": "利润-profit",
+        "__DimGroup__": "利润",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaValue__": 10000,
+        "__OriginalData__": {
+          "profit": 10000,
+          "sales": 200000,
+        },
+        "profit": 10000,
+      },
+      {
+        "__DimGroupID__": "销售额-sales",
+        "__DimGroup__": "销售额",
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaValue__": 400000,
+        "__OriginalData__": {
+          "profit": 20000,
+          "sales": 400000,
+        },
+        "sales": 400000,
+      },
+      {
+        "__DimGroupID__": "利润-profit",
+        "__DimGroup__": "利润",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaValue__": 20000,
+        "__OriginalData__": {
+          "profit": 20000,
+          "sales": 400000,
+        },
+        "profit": 20000,
+      },
+      {
+        "__DimGroupID__": "销售额-sales",
+        "__DimGroup__": "销售额",
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaValue__": 600000,
+        "__OriginalData__": {
+          "profit": 30000,
+          "sales": 600000,
+        },
+        "sales": 600000,
+      },
+      {
+        "__DimGroupID__": "利润-profit",
+        "__DimGroup__": "利润",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaValue__": 30000,
+        "__OriginalData__": {
+          "profit": 30000,
+          "sales": 600000,
+        },
+        "profit": 30000,
+      },
+      {
+        "__DimGroupID__": "销售额-sales",
+        "__DimGroup__": "销售额",
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaValue__": 800000,
+        "__OriginalData__": {
+          "profit": 40000,
+          "sales": 800000,
+        },
+        "sales": 800000,
+      },
+      {
+        "__DimGroupID__": "利润-profit",
+        "__DimGroup__": "利润",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaValue__": 40000,
+        "__OriginalData__": {
+          "profit": 40000,
+          "sales": 800000,
+        },
+        "profit": 40000,
+      },
+      {
+        "__DimGroupID__": "销售额-sales",
+        "__DimGroup__": "销售额",
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaValue__": 1000000,
+        "__OriginalData__": {
+          "profit": 50000,
+          "sales": 1000000,
+        },
+        "sales": 1000000,
+      },
+      {
+        "__DimGroupID__": "利润-profit",
+        "__DimGroup__": "利润",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaValue__": 50000,
+        "__OriginalData__": {
+          "profit": 50000,
+          "sales": 1000000,
+        },
+        "profit": 50000,
+      },
+    ],
+  },
+  "funnel": {
+    "state": {
+      "hover": {
+        "fillOpacity": 0.6,
+      },
+    },
+    "style": {
+      "cornerRadius": 4,
+      "fill": {
+        "field": "__MeaValue__",
+        "scale": "color",
+      },
+    },
+  },
+  "isTransform": true,
+  "label": {
+    "formatMethod": [Function],
+    "visible": true,
+  },
+  "legends": {
+    "field": "__MeaValue__",
+    "inverse": true,
+    "orient": "right",
+    "position": "start",
+    "type": "color",
+    "visible": true,
+  },
+  "maxSize": "75%",
+  "minSize": "10%",
+  "padding": 0,
+  "region": [
+    {
+      "clip": true,
+    },
+  ],
+  "shape": "rect",
+  "tooltip": {
+    "dimension": {
+      "content": [
+        {
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+      ],
+    },
+    "mark": {
+      "content": [
+        {
+          "hasShape": true,
+          "key": [Function],
+          "value": [Function],
+          "visible": true,
+        },
+      ],
+      "title": {
+        "visible": true,
+      },
+    },
+    "visible": true,
+  },
+  "transformLabel": {
+    "visible": true,
+  },
+  "type": "funnel",
+  "valueField": "__MeaValue__",
+}
+`;

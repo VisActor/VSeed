@@ -1,0 +1,31 @@
+{
+  "chartType": "column",
+  "dataset": [
+    {
+      "num1": 1,
+      "num2": 10,
+      "num3": 100,
+      "num4": 1000,
+      "num5": 10000,
+      "num6": 100000,
+      "num7": 1000000,
+      "num8": 10000000,
+      "num9": 100000000
+    }
+  ],
+  "measures": [
+    { "id": "num1", "format": { "type": "number", "fractionDigits": 0, "ratio": 1, "symbol": "" } },
+    { "id": "num2", "format": { "type": "number", "fractionDigits": 0, "ratio": 10, "symbol": "十" } },
+    { "id": "num3", "format": { "type": "number", "fractionDigits": 0, "ratio": 100, "symbol": "百" } },
+    { "id": "num4", "format": { "type": "number", "fractionDigits": 0, "ratio": 1000, "symbol": "千" } },
+    { "id": "num5", "format": { "type": "number", "fractionDigits": 0, "ratio": 10000, "symbol": "万" } },
+    { "id": "num6", "format": { "type": "number", "fractionDigits": 0, "ratio": 100000, "symbol": "十万" } },
+    { "id": "num7", "format": { "type": "number", "fractionDigits": 0, "ratio": 1000000, "symbol": "百万" } },
+    { "id": "num8", "format": { "type": "number", "fractionDigits": 0, "ratio": 10000000, "symbol": "千万" } },
+    { "id": "num9", "format": { "type": "number", "fractionDigits": 0, "ratio": 100000000, "symbol": "亿" } }
+  ],
+  "yAxis": {
+    "log": true,
+    "logBase": 10
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "chartType": "column",
+  "dataset": [
+    {
+      "num0": 123.456,
+      "num1": 123.456,
+      "num2": 123.456,
+      "num3": 123.456,
+      "num4": 123.456,
+      "num5": 234.567,
+      "num6": 234.567,
+      "num7": 234.567,
+      "num8": 345.678,
+      "num9": 1000
+    }
+  ],
+  "measures": [
+    {
+      "id": "num0",
+      "format": {
+        "type": "number",
+        "significantDigits": 0,
+        "fractionDigits": 2,
+        "roundingPriority": "morePrecision",
+        "lessPrecision": true
+      }
+    },
+    {
+      "id": "num1",
+      "format": {
+        "type": "number",
+        "significantDigits": 1,
+        "fractionDigits": 2,
+        "roundingPriority": "morePrecision",
+        "lessPrecision": true
+      }
+    },
+    {
+      "id": "num2",
+      "format": {
+        "type": "number",
+        "significantDigits": 2,
+        "fractionDigits": 2,
+        "roundingPriority": "morePrecision",
+        "lessPrecision": true
+      }
+    },
+    {
+      "id": "num3",
+      "format": {
+        "type": "number",
+        "significantDigits": 3,
+        "fractionDigits": 2,
+        "roundingPriority": "morePrecision",
+        "lessPrecision": true
+      }
+    },
+    {
+      "id": "num4",
+      "format": {
+        "type": "number",
+        "significantDigits": 4,
+        "fractionDigits": 2,
+        "roundingPriority": "morePrecision",
+        "lessPrecision": true
+      }
+    },
+    {
+      "id": "num5",
+      "format": {
+        "type": "number",
+        "significantDigits": 5,
+        "fractionDigits": 2,
+        "roundingPriority": "morePrecision",
+        "lessPrecision": false
+      }
+    },
+    {
+      "id": "num6",
+      "format": {
+        "type": "number",
+        "significantDigits": 6,
+        "fractionDigits": 2,
+        "roundingPriority": "morePrecision",
+        "lessPrecision": false
+      }
+    },
+    {
+      "id": "num7",
+      "format": {
+        "type": "number",
+        "significantDigits": 7,
+        "fractionDigits": 2,
+        "roundingPriority": "morePrecision",
+        "lessPrecision": false
+      }
+    },
+    {
+      "id": "num8",
+      "format": {
+        "type": "number",
+        "significantDigits": 8,
+        "fractionDigits": 2,
+        "roundingPriority": "morePrecision",
+        "lessPrecision": false
+      }
+    },
+    {
+      "id": "num9",
+      "format": {
+        "type": "number",
+        "significantDigits": 9,
+        "fractionDigits": 2,
+        "roundingPriority": "morePrecision",
+        "lessPrecision": false
+      }
+    }
+  ]
+}

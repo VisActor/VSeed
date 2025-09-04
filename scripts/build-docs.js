@@ -6,9 +6,9 @@ const { Project, SyntaxKind } = require('ts-morph')
 // Constants
 // ==================================================================================
 
-const outputDir = path.resolve(__dirname, '../docs/zh-CN/option')
-const chartTypesDir = path.resolve(__dirname, '../../../packages/vseed/src/types/chartType')
-const tsConfigPath = path.resolve(__dirname, '../../../packages/vseed/tsconfig.json')
+const outputDir = path.resolve(__dirname, '../apps/website/docs/zh-CN/option')
+const chartTypesDir = path.resolve(__dirname, '../packages/vseed/src/types/chartType')
+const tsConfigPath = path.resolve(__dirname, '../packages/vseed/tsconfig.json')
 
 // ==================================================================================
 // Main Orchestration

@@ -21,6 +21,7 @@ import type {
   MeasureTree,
   Sort,
   SortLegend,
+  Encoding,
 } from '../../properties'
 
 /**
@@ -30,100 +31,91 @@ import type {
  * - 类别名称较长时的占比对比
  * - 多维度数据的横向构成分析
  * - 排名与占比同时展示的场景
- * @warning 
+ * @warning
  * 数据要求:
  * - 至少1个维度字段和1个度量字段
  * - 所有类别占比之和为100%
  * - 支持多系列堆叠展示占比关系
  * 默认开启的功能:
  * - 默认开启图例、坐标轴、百分比标签、提示信息、占比计算
- * @recommend 
+ * @recommend
  * - 推荐字段配置: `1`个指标, `2`个维度
  * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
 export interface BarPercent {
   /**
-   * 百分比条形图
    * @description 百分比条形图，以横向百分比形式展示各类别数据占比关系
    * @type {'barPercent'}
    * @example 'barPercent'
    */
   chartType: 'barPercent'
   /**
-   * 数据集
-   * @description 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 百分比条形图的数据最终会被转换为2个维度, 1个指标.
+   * @description 数据源, 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 百分比条形图的数据最终会被转换为2个维度, 1个指标.
    * @type {Array<Record<string|number, any>>}
    * @example [{category:'A', value:30}, {category:'B', value:70}]
    */
   dataset: Dataset
 
   /**
-   * 维度
-   * @description 第一个维度会放至Y轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
+   * @description 编码配置, 用于定义图表的X轴,Y轴,颜色,提示信息等视觉通道的映射关系
+   */
+  encoding?: Encoding
+
+  /**
+   * @description 维度, 第一个维度会放至Y轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
    * @type {Dimensions}
    * @example [{id: 'category', alias: '类别'}]
    */
   dimensions?: Dimensions
 
   /**
-   * 指标
-   * @description 指标会自动合并为一个指标, 映射到X轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
+   * @description 指标, 指标会自动合并为一个指标, 映射到X轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
    * @type {DimensionTree}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
   measures?: MeasureTree
 
   /**
-   * 图表的背景颜色
-   * @default transparent 默认为透明背景
-   * @description 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
+   * @description 图表的背景颜色, 默认为透明背景, 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
    */
   backgroundColor?: BackgroundColor
 
   /**
-   * 颜色
    * @description 颜色配置, 用于定义图表的颜色方案, 包括颜色列表, 颜色映射, 颜色渐变等.
    */
   color?: Color
 
   /**
-   * 标签
    * @description 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
    */
   label?: Label
 
   /**
-   * 图例
    * @description 图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.
    */
   legend?: Legend
 
   /**
-   * 提示信息
    * @description 提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等.
    */
   tooltip?: Tooltip
 
   /**
-   * x轴
-   * @description 数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.
+   * @description x轴, 数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.
    */
   xAxis?: XLinearAxis
 
   /**
-   * y轴
-   * @description 类目轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.
+   * @description y轴, 类目轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.
    */
   yAxis?: YBandAxis
 
   /**
-   * 水平提示框
    * @description 水平提示框配置, 用于定义图表的水平提示框, 包括水平提示框的颜色、标签样式等.
    */
   crosshairRect?: CrosshairRect
 
   /**
-   * 条形图 堆叠圆角
    * @description 条形图 堆叠圆角
    * @default 8
    */
@@ -141,6 +133,7 @@ export interface BarPercent {
    * }
    */
   sort?: Sort
+
   /**
    * @description 图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
    * @example

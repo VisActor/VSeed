@@ -1,5 +1,5 @@
 import type { AdvancedPipe, FoldInfo, UnfoldInfo } from 'src/types'
-import type { Encoding } from 'src/types'
+import type { Encodings } from 'src/types'
 
 export const encodingAreaRange: AdvancedPipe = (advancedVSeed) => {
   const result = { ...advancedVSeed }
@@ -8,7 +8,7 @@ export const encodingAreaRange: AdvancedPipe = (advancedVSeed) => {
     return result
   }
 
-  const encoding = datasetReshapeInfo.reduce<Encoding>((prev, cur, index) => {
+  const encoding = datasetReshapeInfo.reduce<Encodings>((prev, cur, index) => {
     const measure = measures[index]
     if ('children' in measure) {
       const m1 = measure.children?.[0]
@@ -31,7 +31,7 @@ export const encodingAreaRange: AdvancedPipe = (advancedVSeed) => {
           group,
           color,
         },
-      ] as Encoding
+      ] as Encodings
     } else {
       const m1 = measures[index]
       const m2 = measures[index + 1] || m1
@@ -53,7 +53,7 @@ export const encodingAreaRange: AdvancedPipe = (advancedVSeed) => {
           group,
           color,
         },
-      ] as Encoding
+      ] as Encodings
     }
   }, [])
 

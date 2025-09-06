@@ -1,5 +1,5 @@
 import type { AdvancedPipe, Dimensions, FoldInfo, UnfoldInfo } from 'src/types'
-import type { Encoding } from 'src/types'
+import type { Encodings } from 'src/types'
 
 export const encodingXY: AdvancedPipe = (advancedVSeed) => {
   const result = { ...advancedVSeed }
@@ -15,7 +15,7 @@ export const encodingXY: AdvancedPipe = (advancedVSeed) => {
 
   const isZeroDimension = dimensions.length === 0
 
-  const encoding = datasetReshapeInfo.reduce<Encoding>((prev, cur) => {
+  const encoding = datasetReshapeInfo.reduce<Encodings>((prev, cur) => {
     const { foldInfo, unfoldInfo } = cur as {
       foldInfo: FoldInfo
       unfoldInfo: UnfoldInfo
@@ -34,7 +34,7 @@ export const encodingXY: AdvancedPipe = (advancedVSeed) => {
         group,
         color,
       },
-    ] as Encoding
+    ] as Encodings
   }, [])
 
   return {

@@ -11,6 +11,7 @@ import {
   zCrosshairRect,
   zDataset,
   zDimensions,
+  zEncoding,
   zLabel,
   zLegend,
   zMeasureTree,
@@ -24,6 +25,7 @@ import {
 export const zBarPercent = z.object({
   chartType: z.literal('barPercent'),
   dataset: zDataset.nullish(),
+  encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasureTree.nullish(),
   backgroundColor: zBackgroundColor.nullish(),

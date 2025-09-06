@@ -57,9 +57,14 @@ export interface BarPercent {
   dataset: Dataset
 
   /**
-   * @description 编码配置, 用于定义图表的X轴,Y轴,颜色,提示信息等视觉通道的映射关系
+   * @description 编码配置, 百分比条形图的视觉通道, 包括: y通道, color通道, detail通道, label通道, tooltip通道
+   * - y: 映射到Y轴的字段, 支持放入多个维度
+   * - detail: 详情映射通道, 支持放入多个维度
+   * - tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
+   * - color: 颜色映射通道, 支持放入多个维度 或 1个 指标
+   * - label: 标签映射通道, 支持放入 多个维度 或 1个指标
    */
-  encoding?: Encoding
+  encoding?: Pick<Encoding, 'y' | 'color' | 'detail' | 'label' | 'tooltip'>
 
   /**
    * @description 维度, 第一个维度会放至Y轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.

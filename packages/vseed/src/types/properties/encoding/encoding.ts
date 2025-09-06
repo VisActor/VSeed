@@ -20,7 +20,7 @@ export type Encoding = {
   /**
    * @description 细分映射通道, 支持放入多个维度字段, 不支持放入指标字段, 在图表中显示更细粒度的数据
    */
-  details?: string[]
+  detail?: string[]
   /**
    * @description 颜色映射通道, 支持放入多个维度字段 或 1个 指标字段
    * - 多个维度: 合并所有维度为离散的图例项

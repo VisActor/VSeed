@@ -1,3 +1,5 @@
+export * from './initEncoding'
+
 export { encodingXY } from './encodingXY'
 export { encodingYX } from './encodingYX'
 export { encodingYY } from './encodingYY'

@@ -3,22 +3,22 @@ import {
   autoDimensions,
   autoMeasures,
   initAdvancedVSeed,
-  reshapeTo2D1M,
   theme,
   pivotAdapter,
   markStyle,
   annotation,
   roseConfig,
-  encodingRose,
-  pivotReshapeTo2D1M,
+  reshapeWithEncoding,
+  pivotReshapeWithEncoding,
 } from '../pipes'
+import { encodingForRose } from '../pipes/encoding/initEncoding/rose'
 
 export const roseAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   autoMeasures,
   autoDimensions,
-  pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
-  encodingRose,
+  encodingForRose,
+  pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
   roseConfig,
   theme,
   markStyle,

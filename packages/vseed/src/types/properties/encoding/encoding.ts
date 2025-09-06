@@ -44,4 +44,13 @@ export type Encoding = {
    * @deprecated use color instead, 已弃用, 请使用颜色替代
    */
   group?: string[]
+
+  /**
+   * @description 行映射通道, 支持放入多个维度字段, 不支持放入指标字段, 在图表中进行行透视
+   */
+  row?: string[]
+  /**
+   * @description 列映射通道, 支持放入多个维度字段, 不支持放入指标字段, 在图表中进行列透视
+   */
+  column?: string[]
 }

@@ -4,19 +4,17 @@ import type { SpecPipe } from 'src/types'
 export const initRoseParallel: SpecPipe = (spec, context) => {
   const result = { ...spec } as IRoseChartSpec
   const { advancedVSeed } = context
-  const { encoding, datasetReshapeInfo, dataset, dimensions } = advancedVSeed
+  const { datasetReshapeInfo, dataset, dimensions } = advancedVSeed
   const { unfoldInfo, foldInfo } = datasetReshapeInfo[0]
-
-  if (!encoding[0].radius || !encoding[0].angle || !encoding[0].group) {
-    return result
-  }
 
   const sameDimensionsMode = dimensions.length > 1 && dimensions.every((dim) => dim.id === dimensions[0].id)
 
   result.type = 'rose'
-  result.categoryField = sameDimensionsMode ? [encoding[0].angle[0]] : [encoding[0].angle[0], unfoldInfo.groupId]
-  result.valueField = encoding[0].radius[0]
-  result.seriesField = encoding[0].group[0]
+  result.categoryField = sameDimensionsMode
+    ? [unfoldInfo.encodingAngle]
+    : [unfoldInfo.encodingAngle, unfoldInfo.encodingDetail]
+  result.valueField = foldInfo.measureValue
+  result.seriesField = unfoldInfo.encodingColor
   result.padding = 0
 
   result.outerRadius = 0.9

@@ -11,3 +11,7 @@ export { pivotReshapeTo1D1M } from './pivotReshapeTo1D1M'
 export { pivotReshapeTo1D2M } from './pivotReshapeTo1D2M'
 export { pivotReshapeTo1D } from './pivotReshapeTo1D'
 export { pivotReshapeTo2D2M } from './pivotReshapeTo2D2M'
+
+
+export { pivotReshapeWithEncoding } from './pivotReshapeWithEncoding'
+export { reshapeWithEncoding } from './reshapeWithEncoding'

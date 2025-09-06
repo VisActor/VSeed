@@ -8,8 +8,21 @@ export type FoldInfo = {
 }
 
 export type UnfoldInfo = {
+  /**
+   * @deprecated
+   */
   groupName: string
+  /**
+   * @deprecated
+   */
   groupId: string
+
+  encodingX: string
+  encodingY: string
+  encodingColor: string
+  encodingDetail: string
+  encodingAngle: string
+
   colorItems: string[]
   colorIdMap: Record<string, string>
 }
@@ -21,10 +34,15 @@ export const zFoldInfo = z.object({
   measureValue: z.string(),
 })
 export const zUnfoldInfo = z.object({
-  colorItems: z.array(z.string()),
   groupId: z.string(),
-  colorIdMap: z.record(z.string(), z.string()),
   groupName: z.string(),
+  encodingX: z.string(),
+  encodingY: z.string(),
+  encodingColor: z.string(),
+  encodingDetail: z.string(),
+  encodingAngle: z.string(),
+  colorItems: z.array(z.string()),
+  colorIdMap: z.record(z.string(), z.string()),
 })
 
 export const zDatasetReshapeInfo = z.array(

@@ -5,20 +5,20 @@ import {
   initAdvancedVSeed,
   theme,
   pivotAdapter,
-  reshapeTo1D1M,
-  pivotReshapeTo1D1M,
-  encodingPie,
   pieConfig,
   annotation,
+  reshapeWithEncoding,
+  pivotReshapeWithEncoding,
+  encodingForPie,
 } from '../pipes'
 
 export const pieAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   autoMeasures,
   autoDimensions,
-  pivotAdapter([reshapeTo1D1M], [pivotReshapeTo1D1M]),
-  encodingPie,
+  encodingForPie,
+  pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
   pieConfig,
   theme,
-  annotation
+  annotation,
 ]

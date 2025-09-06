@@ -6,8 +6,10 @@ pageType: custom
 
 ```tsx
 const Demo = () => {
+  const MeasureNames = '__MeaName__'
+
   const vseed: VSeed = {
-    chartType: 'columnParallel',
+    chartType: 'roseParallel',
     measures: [
       {
         id: 'sales',
@@ -26,12 +28,12 @@ const Demo = () => {
       },
     ],
     dimensions: [
-      { id: 'year', alias: 'Yearn', location: 'dimension' },
-      { id: 'month', alias: 'Month', location: 'dimension' },
+      { id: 'year', alias: 'Year' },
+      { id: 'month', alias: 'Month' },
     ],
     encoding: {
-      x: ['year'],
-      color: ['month', 'MeasureNames'],
+      angle: ['year'],
+      color: ['year', 'month'],
     },
     dataset: [
       { year: '2019', month: 'Jan', profit: 10000, sales: 200000, discount: 0.5 },
@@ -144,7 +146,9 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
         console.log('advancedVSeed', builderRef.current.advancedVSeed)
         console.groupEnd()
       }}
-    ></div>
+    >
+      {' '}
+    </div>
   )
 }
 

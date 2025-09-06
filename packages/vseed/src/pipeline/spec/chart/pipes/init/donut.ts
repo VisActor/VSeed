@@ -4,19 +4,17 @@ import type { SpecPipe } from 'src/types'
 export const initDonut: SpecPipe = (spec, context) => {
   const result = { ...spec } as IPieChartSpec
   const { advancedVSeed } = context
-  const { encoding, dataset } = advancedVSeed
+  const { datasetReshapeInfo, dataset } = advancedVSeed
+  const { foldInfo, unfoldInfo } = datasetReshapeInfo[0]
 
-  if (!encoding[0].angle || !encoding[0].radius || !encoding[0].group) {
-    return result
-  }
   const showStroke = dataset.length <= 30
 
   result.type = 'pie'
   result.outerRadius = 0.8
   result.innerRadius = result.outerRadius * 0.8
-  result.valueField = encoding[0].radius[0]
-  result.categoryField = encoding[0].angle[0]
-  result.seriesField = encoding[0].group[0]
+  result.valueField = foldInfo.measureValue
+  result.categoryField = unfoldInfo.encodingDetail
+  result.seriesField = unfoldInfo.encodingColor
   result.padding = 0
   result.region = [
     {

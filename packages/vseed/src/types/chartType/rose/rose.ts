@@ -1,5 +1,5 @@
 import { type Locale } from '../../i18n'
-import type { MeasureTree } from '../../properties'
+import type { Encoding, MeasureTree } from '../../properties'
 import {
   type BackgroundColor,
   type Color,
@@ -18,14 +18,14 @@ import {
  * - 多维度数据的分布对比
  * - 周期性数据的强弱比较
  * - 分类数据的数值与占比同时展示
- * @warning 
+ * @warning
  * 数据要求:
  * - 至少1个数值字段（度量）
  * - 第一个维度会放至角度轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
  * - 所有指标会自动合并为一个指标
  * 默认开启的功能:
  * - 默认开启图例、极坐标系、数据标签、提示信息、数值缩放
- * @recommend 
+ * @recommend
  * - 推荐字段配置: `1`个指标, `1`个维度
  * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
@@ -44,6 +44,16 @@ export interface Rose {
    * @example [{month:'1月', value:100}, {month:'2月', value:150}, {month:'3月', value:120}]
    */
   dataset: Dataset
+
+  /**
+   * @description 编码配置, 并列条形图的视觉通道, 包括: angle通道, color通道, detail通道, label通道, tooltip通道
+   * - angle: 映射到角度的字段, 支持放入多个维度
+   * - detail: 详情映射通道, 支持放入多个维度
+   * - tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
+   * - color: 颜色映射通道, 支持放入多个维度 或 1个 指标
+   * - label: 标签映射通道, 支持放入 多个维度 或 1个指标
+   */
+  encoding?: Pick<Encoding, 'angle' | 'color' | 'detail' | 'label' | 'tooltip'>
 
   /**
    * 维度

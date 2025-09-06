@@ -8,13 +8,12 @@ export const pivotIndicators =
   (spec, context) => {
     const result = { ...spec } as PivotChartConstructorOptions
     const { advancedVSeed } = context
-    const { measures, datasetReshapeInfo, encoding, dataset } = advancedVSeed
+    const { measures, datasetReshapeInfo, dataset } = advancedVSeed
 
     const colorItems = unique(datasetReshapeInfo.flatMap((d) => d.unfoldInfo.colorItems))
 
     const indicators = datasetReshapeInfo.map((reshapeInfo, index) => {
       const measure = measures?.find((d) => d.id === reshapeInfo.id)
-      const newEncoding = [encoding[index]]
       const newDataset = dataset[index] as Dataset
       const newDatasetReshapeInfo = [
         {
@@ -28,7 +27,6 @@ export const pivotIndicators =
           ...advancedVSeed,
           datasetReshapeInfo: newDatasetReshapeInfo,
           dataset: newDataset,
-          encoding: newEncoding,
         },
       }
 

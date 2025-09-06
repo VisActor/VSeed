@@ -12,6 +12,9 @@ export const zEncoding = z.object({
   tooltip: z.array(z.string()).nullish(),
   label: z.array(z.string()).nullish(),
 
+  row: z.array(z.string()).nullish(),
+  column: z.array(z.string()).nullish(),
+
   group: z.array(z.string()).nullish().describe('已弃用, 请使用颜色替代'),
 })
 

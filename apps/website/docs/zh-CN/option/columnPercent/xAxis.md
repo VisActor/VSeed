@@ -6,6 +6,49 @@
 x轴, 类目轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.:::
 
 
+## label
+
+**Type:** `{ visible?: boolean; labelColor?: string; labelFontSize?: number; labelFontWeight?: number; labelAngle?: number; } | undefined`
+
+:::note{title=描述}
+X轴刻度标签:::
+
+
+### visible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+标签是否可见:::
+
+### labelColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+标签颜色:::
+
+### labelFontSize
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标签字体大小:::
+
+### labelFontWeight
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标签字体粗细:::
+
+### labelAngle
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标签旋转角度:::
+
 ## visible
 
 **Type:** `boolean | undefined`
@@ -101,49 +144,6 @@ autoHide关闭时, 使用sampling采样, 设置在minGap上:::
 
 
 当标签文本长度超过最大长度时, 超出部分省略号表示, 鼠标悬浮后可见标签. 仅对类目轴生效.:::
-
-## label
-
-**Type:** `{ visible?: boolean; labelColor?: string; labelFontSize?: number; labelFontWeight?: number; labelAngle?: number; } | undefined`
-
-:::note{title=描述}
-X轴刻度标签:::
-
-
-### visible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-标签是否可见:::
-
-### labelColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-标签颜色:::
-
-### labelFontSize
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-标签字体大小:::
-
-### labelFontWeight
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-标签字体粗细:::
-
-### labelAngle
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-标签旋转角度:::
 
 ## line
 

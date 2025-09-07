@@ -6,6 +6,49 @@
 双轴图的次Y轴配置, 用于定义双轴图的次Y轴, 包括次Y轴的位置, 样式等. 当measures有多组时, secondaryYAxis可以配置为数组, 每项对应一个双轴图的次Y轴.:::
 
 
+## label
+
+**Type:** `{ visible?: boolean; labelColor?: string; labelFontSize?: number; labelFontWeight?: number; labelAngle?: number; } | undefined`
+
+:::note{title=描述}
+X轴刻度标签:::
+
+
+### visible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+标签是否可见:::
+
+### labelColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+标签颜色:::
+
+### labelFontSize
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标签字体大小:::
+
+### labelFontWeight
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标签字体粗细:::
+
+### labelAngle
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标签旋转角度:::
+
 ## min
 
 **Type:** `number | undefined`
@@ -105,49 +148,6 @@ true
 **示例**
 false
 
-
-## label
-
-**Type:** `{ visible?: boolean; labelColor?: string; labelFontSize?: number; labelFontWeight?: number; labelAngle?: number; } | undefined`
-
-:::note{title=描述}
-X轴刻度标签:::
-
-
-### visible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-标签是否可见:::
-
-### labelColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-标签颜色:::
-
-### labelFontSize
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-标签字体大小:::
-
-### labelFontWeight
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-标签字体粗细:::
-
-### labelAngle
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-标签旋转角度:::
 
 ## line
 

@@ -1,11 +1,11 @@
 # encoding
 
-**Type:** `Pick<Encoding, "x" | "color" | "detail" | "label" | "tooltip"> | undefined`
+**Type:** `Pick<Encoding, "color" | "detail" | "label" | "tooltip" | "angle"> | undefined`
 
 :::note{title=描述}
-编码配置, 堆叠柱状图的视觉通道, 包括: x通道, color通道, detail通道, label通道, tooltip通道
+编码配置, 分组玫瑰图的视觉通道, 包括: angle通道, color通道, detail通道, label通道, tooltip通道
 
-\- x: 映射到X轴的字段, 支持放入多个维度
+\- angle: 映射到角度的字段, 支持放入多个维度
 
 \- detail: 详情映射通道, 支持放入多个维度
 
@@ -15,13 +15,6 @@
 
 \- label: 标签映射通道, 支持放入 多个维度 或 1个指标:::
 
-
-## x
-
-**Type:** `string[] | undefined`
-
-:::note{title=描述}
-X轴映射通道, 支持放入多个维度字段, 不支持放入指标字段, 在笛卡尔坐标系中用于显示离散的X轴, 例如柱状图、折线图、面积图、双轴图:::
 
 ## color
 
@@ -54,4 +47,11 @@ X轴映射通道, 支持放入多个维度字段, 不支持放入指标字段, �
 
 :::note{title=描述}
 提示映射通道, 支持放入多个维度字段 和 多个指标字段, 每多一个字段, tooltip内就会多显示一个字段的信息:::
+
+## angle
+
+**Type:** `string[] | undefined`
+
+:::note{title=描述}
+角度映射通道, 支持放入多个维度字段, 不支持放入指标字段, 在饼图中用于显示角度:::
 

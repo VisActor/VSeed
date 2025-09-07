@@ -1,6 +1,6 @@
 # encoding
 
-**Type:** `Pick<Encoding, "label" | "color" | "detail" | "tooltip"> | undefined`
+**Type:** `Pick<Encoding, "color" | "detail" | "label" | "tooltip"> | undefined`
 
 :::note{title=描述}
 编码配置,漏斗图的视觉通道, 包括: color通道, detail通道, label通道, tooltip通道
@@ -13,13 +13,6 @@
 
 \- label: 标签映射通道, 支持放入 多个维度 或 1个指标:::
 
-
-## label
-
-**Type:** `string[] | undefined`
-
-:::note{title=描述}
-标签映射通道, 支持放入多个维度字段 和 多个指标字段, 每多一个字段, label内就会多显示一个字段的信息:::
 
 ## color
 
@@ -38,6 +31,13 @@
 
 :::note{title=描述}
 细分映射通道, 支持放入多个维度字段, 不支持放入指标字段, 在图表中显示更细粒度的数据:::
+
+## label
+
+**Type:** `string[] | undefined`
+
+:::note{title=描述}
+标签映射通道, 支持放入多个维度字段 和 多个指标字段, 每多一个字段, label内就会多显示一个字段的信息:::
 
 ## tooltip
 

@@ -12,7 +12,7 @@ export const initHeatmap: SpecPipe = (spec, context) => {
   result.direction = 'vertical'
   result.xField = unfoldInfo.encodingX
   result.yField = unfoldInfo.encodingY
-  result.seriesField = unfoldInfo.encodingColor
+  result.seriesField = unfoldInfo.encodingColorId
   result.valueField = foldInfo.measureValue
   result.padding = 0
   result.cell = {

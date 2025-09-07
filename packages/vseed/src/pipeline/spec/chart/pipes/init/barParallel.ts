@@ -16,7 +16,7 @@ export const initBarParallel: SpecPipe = (spec, context) => {
     ? [unfoldInfo.encodingY]
     : ([unfoldInfo.encodingY, unfoldInfo.encodingDetail] as string[])
   result.xField = foldInfo.measureValue
-  result.seriesField = unfoldInfo.encodingColor
+  result.seriesField = unfoldInfo.encodingColorId
 
   result.padding = 0
   result.region = [

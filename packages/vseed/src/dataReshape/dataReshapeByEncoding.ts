@@ -10,6 +10,7 @@ import {
   YEncoding,
   ColorEncoding,
   DetailEncoding,
+  ColorIdEncoding,
 } from './constant'
 
 const emptyReshapeResult: {
@@ -30,8 +31,9 @@ const emptyReshapeResult: {
     encodingAngle: AngleEncoding,
     encodingX: XEncoding,
     encodingY: YEncoding,
-    encodingColor: ColorEncoding,
     encodingDetail: DetailEncoding,
+    encodingColor: ColorEncoding,
+    encodingColorId: ColorIdEncoding,
     colorItems: [],
     colorIdMap: {},
   },
@@ -99,8 +101,9 @@ const unfoldDimensions = (
     encodingAngle: AngleEncoding,
     encodingX: XEncoding,
     encodingY: YEncoding,
-    encodingColor: ColorEncoding,
     encodingDetail: DetailEncoding,
+    encodingColor: ColorEncoding,
+    encodingColorId: ColorIdEncoding,
 
     colorItems: [],
     colorIdMap: {},
@@ -143,11 +146,11 @@ const unfoldDimensions = (
       continue
     }
     const measureId = String(datum[foldMeasureId])
-    const colorItem = String(datum[ColorEncoding]) // 原始的颜色名称
+    const colorItem = String(datum[ColorEncoding])
     const colorId = measureId ? [colorItem, measureId].join(separator) : colorItem
+    datum[ColorIdEncoding] = colorId
     colorIdMap[colorId] = colorItem
     colorItems.add(colorId)
-    datum[ColorEncoding] = colorId // 因为可能会名称重复, 所以使用colorId, 避免冲突
   }
 
   unfoldInfo.colorItems = Array.from(colorItems)

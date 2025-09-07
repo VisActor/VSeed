@@ -14,7 +14,7 @@ export const initRoseParallel: SpecPipe = (spec, context) => {
     ? [unfoldInfo.encodingAngle]
     : [unfoldInfo.encodingAngle, unfoldInfo.encodingDetail]
   result.valueField = foldInfo.measureValue
-  result.seriesField = unfoldInfo.encodingColor
+  result.seriesField = unfoldInfo.encodingColorId
   result.padding = 0
 
   result.outerRadius = 0.9

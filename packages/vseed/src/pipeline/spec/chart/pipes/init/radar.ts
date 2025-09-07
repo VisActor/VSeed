@@ -11,7 +11,7 @@ export const initRadar: SpecPipe = (spec, context) => {
   result.type = 'radar'
   result.angleField = unfoldInfo.encodingAngle
   result.radiusField = foldInfo.measureValue
-  result.seriesField = unfoldInfo.encodingColor
+  result.seriesField = unfoldInfo.encodingColorId
 
   result.padding = 0
   result.region = [

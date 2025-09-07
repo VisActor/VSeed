@@ -14,7 +14,7 @@ export const initPie: SpecPipe = (spec, context) => {
   result.innerRadius = 0
   result.valueField = foldInfo.measureValue
   result.categoryField = unfoldInfo.encodingAngle
-  result.seriesField = unfoldInfo.encodingColor
+  result.seriesField = unfoldInfo.encodingColorId
   result.padding = 0
   result.region = [
     {

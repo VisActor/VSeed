@@ -31,7 +31,7 @@ export const initDualAxisSecondary: SpecPipe = (spec, context) => {
   result.xField = unfoldInfo.encodingX
   result.yField = foldInfoList?.[1].measureValue
 
-  result.seriesField = unfoldInfo.encodingColor
+  result.seriesField = unfoldInfo.encodingColorId
 
   result.animation = true
 

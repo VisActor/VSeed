@@ -1,10 +1,9 @@
-export * from './initEncoding'
-
-export { encodingXY } from './encodingXY'
-export { encodingYX } from './encodingYX'
 export { encodingYY } from './encodingYY'
-export { encodingXYY } from './encodingXYY'
-export { encodingRose } from './encodingRose'
-export { encodingPie } from './encodingPie'
-export { encodingAR } from './encodingAR'
-export { encodingFunnel } from './encodingFunnel'
+
+export { encodingForColumn } from './column'
+export { encodingForBar } from './bar'
+export { encodingForPie } from './pie'
+export { encodingForDualAxis } from './dualAxis'
+export { encodingForFunnel } from './funnel'
+export { encodingForHeatmap } from './heatmap'
+export { encodingForRadar } from './radar'

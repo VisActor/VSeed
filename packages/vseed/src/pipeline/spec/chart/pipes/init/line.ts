@@ -11,7 +11,7 @@ export const initLine: SpecPipe = (spec, context) => {
   result.direction = 'vertical'
   result.xField = unfoldInfo.encodingX
   result.yField = foldInfo.measureValue
-  result.seriesField = unfoldInfo.encodingColor
+  result.seriesField = unfoldInfo.encodingColorId
   result.padding = 0
   result.region = [
     {

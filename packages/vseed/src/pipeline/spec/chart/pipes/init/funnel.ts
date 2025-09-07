@@ -10,7 +10,7 @@ export const initFunnel: SpecPipe = (spec, context) => {
   result.type = 'funnel'
   result.valueField = foldInfo.measureValue
   result.categoryField = unfoldInfo.encodingDetail
-  result.seriesField = unfoldInfo.encodingColor
+  result.seriesField = unfoldInfo.encodingColorId
 
   result.padding = 0
   result.isTransform = true

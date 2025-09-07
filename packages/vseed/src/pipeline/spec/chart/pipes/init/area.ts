@@ -12,7 +12,7 @@ export const initArea: SpecPipe = (spec, context) => {
   result.yField = foldInfo.measureValue
   
   result.xField = unfoldInfo.encodingX
-  result.seriesField = unfoldInfo.encodingColor
+  result.seriesField = unfoldInfo.encodingColorId
   result.padding = 0
   result.region = [
     {

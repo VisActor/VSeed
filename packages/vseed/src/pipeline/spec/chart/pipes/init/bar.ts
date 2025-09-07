@@ -11,7 +11,7 @@ export const initBar: SpecPipe = (spec, context) => {
   result.direction = 'horizontal'
   result.yField = unfoldInfo.encodingY
   result.xField = foldInfo.measureValue
-  result.seriesField = unfoldInfo.encodingColor
+  result.seriesField = unfoldInfo.encodingColorId
   result.padding = 0
   result.region = [
     {

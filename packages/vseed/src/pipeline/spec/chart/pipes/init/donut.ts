@@ -14,7 +14,7 @@ export const initDonut: SpecPipe = (spec, context) => {
   result.innerRadius = result.outerRadius * 0.8
   result.valueField = foldInfo.measureValue
   result.categoryField = unfoldInfo.encodingDetail
-  result.seriesField = unfoldInfo.encodingColor
+  result.seriesField = unfoldInfo.encodingColorId
   result.padding = 0
   result.region = [
     {

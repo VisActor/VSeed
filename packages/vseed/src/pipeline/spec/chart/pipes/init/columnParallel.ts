@@ -13,7 +13,7 @@ export const initColumnParallel: SpecPipe = (spec, context) => {
   result.direction = 'vertical'
   result.xField = sameDimensionsMode ? [unfoldInfo.encodingX] : [unfoldInfo.encodingX, unfoldInfo.encodingDetail]
   result.yField = foldInfo.measureValue
-  result.seriesField = unfoldInfo.encodingColor
+  result.seriesField = unfoldInfo.encodingColorId
   result.padding = 0
   result.region = [
     {

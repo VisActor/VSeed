@@ -28,7 +28,8 @@ export const pointStateDimensionHover: SpecPipe = (spec) => {
 export const pointStateHover: SpecPipe = (spec, context) => {
   const point = (spec as IScatterChartSpec).point || {}
   const { advancedVSeed } = context
-  const { encoding } = advancedVSeed
+  const { datasetReshapeInfo } = advancedVSeed
+  const { unfoldInfo } = datasetReshapeInfo[0]
   const result = {
     ...spec,
     point: {
@@ -39,7 +40,7 @@ export const pointStateHover: SpecPipe = (spec, context) => {
           scaleX: 1.4,
           scaleY: 1.4,
           stroke: (datum, context: ISeriesMarkAttributeContext) => {
-            const field = encoding[0]?.group?.[0] as string
+            const field = unfoldInfo.encodingColorId
             const color = context.seriesColor(datum[field] as string)
             return color
           },

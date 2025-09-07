@@ -1,12 +1,13 @@
 import { sort, unique } from 'remeda'
-import type { AdvancedPipe, Dataset, Datum, Line, Sort, SortLegend } from 'src/types'
+import type { AdvancedPipe, Dataset, DatasetReshapeInfo, Datum, Line, Sort, SortLegend } from 'src/types'
 
 export const sortXBandAxis: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { sort: sortAxis, dataset } = vseed as Line
-  const { encoding } = advancedVSeed
-  const xField = encoding?.[0]?.x?.[0]
+  const { datasetReshapeInfo } = advancedVSeed as { datasetReshapeInfo: DatasetReshapeInfo }
+  const { unfoldInfo } = datasetReshapeInfo[0]
+  const xField = unfoldInfo.encodingX
   if (!sortAxis || !xField) {
     return advancedVSeed
   }
@@ -24,8 +25,9 @@ export const sortYBandAxis: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { sort: sortAxis, dataset } = vseed as Line
-  const { encoding } = advancedVSeed
-  const yField = encoding?.[0]?.y?.[0]
+  const { datasetReshapeInfo } = advancedVSeed as { datasetReshapeInfo: DatasetReshapeInfo }
+  const { unfoldInfo } = datasetReshapeInfo[0]
+  const yField = unfoldInfo?.encodingY
   if (!sortAxis || !yField) {
     return advancedVSeed
   }

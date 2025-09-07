@@ -10,7 +10,10 @@ export const initScatter: SpecPipe = (spec, context) => {
   result.type = 'scatter'
   result.direction = 'vertical'
   result.xField = foldInfoList?.[0].measureValue
-  result.yField = foldInfoList?.[1].measureValue
+  if (foldInfoList?.[1]) {
+    result.yField = foldInfoList[1].measureValue
+  }
+
   result.seriesField = unfoldInfo.encodingColorId
 
   result.padding = 0

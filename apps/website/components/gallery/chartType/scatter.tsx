@@ -85,7 +85,7 @@ export const CombinationScatterChart = memo(() => {
       },
     ],
   }
-  return <PivotChart vseed={vseed} />
+  return <VChartRender vseed={vseed} />
 })
 
 export const PivotScatterChart = memo(() => {

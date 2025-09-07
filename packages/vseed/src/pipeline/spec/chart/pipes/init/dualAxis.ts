@@ -29,7 +29,9 @@ export const initDualAxisSecondary: SpecPipe = (spec, context) => {
   result.type = 'line'
   result.direction = 'vertical'
   result.xField = unfoldInfo.encodingX
-  result.yField = foldInfoList?.[1].measureValue
+  if (foldInfoList?.[1]) {
+    result.yField = foldInfoList[1].measureValue
+  }
 
   result.seriesField = unfoldInfo.encodingColorId
 

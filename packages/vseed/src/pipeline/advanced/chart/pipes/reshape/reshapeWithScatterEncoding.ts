@@ -22,15 +22,15 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
   const unfoldInfoList: UnfoldInfo[] = []
 
   const datasets: Dataset[] = []
-  const primaryMeasures = measures[0] as MeasureGroup
-  const secondaryMeasures = (measures[1] || []) as MeasureGroup
+  const xMeasures = measures[0] as MeasureGroup
+  const yMeasures = (measures[1] || []) as MeasureGroup
 
-  if (primaryMeasures && primaryMeasures.children) {
+  if (xMeasures && xMeasures.children) {
     const {
       dataset: newDataset,
       foldInfo,
       unfoldInfo,
-    } = dataReshapeByEncoding(dataset, dimensions, primaryMeasures.children, encoding as Encoding, {
+    } = dataReshapeByEncoding(dataset, dimensions, xMeasures.children, encoding as Encoding, {
       foldMeasureValue: FoldPrimaryMeasureValue,
     })
 
@@ -39,12 +39,12 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
     unfoldInfoList.push(unfoldInfo)
   }
 
-  if (secondaryMeasures && secondaryMeasures.children) {
+  if (yMeasures && yMeasures.children) {
     const {
       dataset: newDataset,
       foldInfo,
       unfoldInfo,
-    } = dataReshapeByEncoding(dataset, dimensions, secondaryMeasures.children, encoding as Encoding, {
+    } = dataReshapeByEncoding(dataset, dimensions, yMeasures.children, encoding as Encoding, {
       foldMeasureValue: FoldSecondaryMeasureValue,
     })
 
@@ -61,7 +61,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
 
   return {
     ...result,
-    dataset: datasets[0].map((d, index) => ({ ...d, ...datasets[1][index] })),
+    dataset: datasets[0].map((d, index) => ({ ...d, ...(datasets[1]?.[index] || {}) })),
 
     datasetReshapeInfo: [
       {

@@ -1,4 +1,5 @@
 import { dataReshapeByEncoding, FoldPrimaryMeasureValue, FoldSecondaryMeasureValue } from 'src/dataReshape'
+import { measureDepth } from 'src/pipeline/utils'
 import type {
   AdvancedPipe,
   ColumnParallel,
@@ -23,9 +24,18 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
   const datasetList: Dataset[] = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
-  measures.forEach((measureGroup: MeasureGroup, index) => {
-    const measures = measureGroup.children || []
+  const measureGroups: Array<MeasureGroup[]> = []
 
+  const depth = measureDepth(measures)
+  if (depth === 3) {
+    measures.forEach((measure: MeasureGroup) => {
+      measureGroups.push(measure as unknown as MeasureGroup[])
+    })
+  } else if (depth === 2) {
+    measureGroups.push(measures as unknown as MeasureGroup[])
+  }
+
+  measureGroups.forEach((measures: MeasureGroup[], index) => {
     if (measures.length === 0) {
       throw new Error('measures can not be empty')
     }
@@ -38,8 +48,8 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
     const unfoldInfoList: UnfoldInfo[] = []
 
     const datasets: Dataset[] = []
-    const primaryMeasures = measures[0] as MeasureGroup
-    const secondaryMeasures = (measures[1] || []) as MeasureGroup
+    const primaryMeasures = measures[0]
+    const secondaryMeasures = (measures[1] || [])
 
     if (primaryMeasures && primaryMeasures.children) {
       const {
@@ -61,7 +71,7 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
         foldInfo,
         unfoldInfo,
       } = dataReshapeByEncoding(dataset, dimensions, secondaryMeasures.children, encoding as Encoding, {
-       foldMeasureValue: `${FoldSecondaryMeasureValue}${index}`,
+        foldMeasureValue: `${FoldSecondaryMeasureValue}${index}`,
       })
 
       datasets.push(newDataset)

@@ -1,4 +1,4 @@
-import { dataReshapeByEncoding } from 'src/dataReshape'
+import { dataReshapeByEncoding, FoldMeasureValue } from 'src/dataReshape'
 import type { AdvancedPipe, ColumnParallel, Dataset, DatasetReshapeInfo, Encoding, MeasureGroup } from 'src/types'
 
 export const pivotReshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
@@ -37,7 +37,9 @@ export const pivotReshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) =
       dataset: newSubDataset,
       foldInfo,
       unfoldInfo,
-    } = dataReshapeByEncoding(dataset, dimensions, measures, encoding as Encoding)
+    } = dataReshapeByEncoding(dataset, dimensions, measures, encoding as Encoding, {
+      foldMeasureValue: `${FoldMeasureValue}_${groupId}`,
+    })
 
     const reshapeInfo = {
       id: groupId,

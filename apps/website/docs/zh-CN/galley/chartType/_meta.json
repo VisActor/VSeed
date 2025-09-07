@@ -21,10 +21,5 @@
   "roseParallel",
 
   "heatmap",
-  "funnel",
-  {
-    "type": "dir",
-    "name": "experimental",
-    "label": "experimental"
-  }
+  "funnel"
 ]

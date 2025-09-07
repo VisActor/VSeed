@@ -1,7 +1,6 @@
 import type {
   Area,
   AreaPercent,
-  AreaRange,
   Bar,
   BarParallel,
   BarPercent,
@@ -37,7 +36,6 @@ export type VSeed =
   | BarPercent
   | Area
   | AreaPercent
-  | AreaRange
   | Scatter
   | DualAxis
 

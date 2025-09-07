@@ -12,7 +12,6 @@ export * from './barParallel'
 export * from './barPercent'
 export * from './area'
 export * from './areaPercent'
-export * from './areaRange'
 export * from './scatter'
 export * from './dualAxis'
 

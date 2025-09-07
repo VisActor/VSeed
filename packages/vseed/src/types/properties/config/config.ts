@@ -93,7 +93,7 @@ export const zAreaConfig = z.object({
   crosshairLine: zCrosshairLine.nullish(),
 })
 export const zAreaPercentConfig = zAreaConfig
-export const zAreaRangeConfig = zAreaConfig
+
 export const zDualAxisConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
   label: zLabel.nullish(),
@@ -159,7 +159,7 @@ export type BarParallelConfig = z.infer<typeof zBarParallelConfig>
 export type BarPercentConfig = z.infer<typeof zBarPercentConfig>
 export type AreaConfig = z.infer<typeof zAreaConfig>
 export type AreaPercentConfig = z.infer<typeof zAreaPercentConfig>
-export type AreaRangeConfig = z.infer<typeof zAreaRangeConfig>
+
 export type ScatterConfig = z.infer<typeof zScatterConfig>
 export type DualAxisConfig = z.infer<typeof zDualAxisConfig>
 // polar
@@ -190,7 +190,7 @@ export const zConfig = z.object({
   barPercent: zBarPercentConfig.nullish(),
   area: zAreaConfig.nullish(),
   areaPercent: zAreaPercentConfig.nullish(),
-  areaRange: zAreaRangeConfig.nullish(),
+
   scatter: zScatterConfig.nullish(),
   dualAxis: zDualAxisConfig.nullish(),
 

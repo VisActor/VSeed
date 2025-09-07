@@ -20,7 +20,6 @@ export {
   registerScatter,
   registerTable,
   registerPivotTable,
-  registerAreaRange,
   registerHeatmap,
   registerRadar,
 } from './builder/register/chartType'

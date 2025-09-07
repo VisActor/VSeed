@@ -49,6 +49,7 @@ export const dataReshapeByEncoding = (
     foldMeasureId?: string
     foldMeasureName?: string
     foldMeasureValue?: string
+    colorItemAsId?: boolean
   },
 ): {
   dataset: Dataset
@@ -59,6 +60,7 @@ export const dataReshapeByEncoding = (
     foldMeasureId = FoldMeasureId,
     foldMeasureName = FoldMeasureName,
     foldMeasureValue = FoldMeasureValue,
+    colorItemAsId = false,
   } = options || {}
   if (dimensions.length === 0 && measures.length === 0) {
     return emptyReshapeResult
@@ -77,6 +79,7 @@ export const dataReshapeByEncoding = (
   const { dataset: finalDataset, unfoldInfo } = unfoldDimensions(foldedDataset, dimensions, encoding, {
     foldMeasureId,
     separator: Separator,
+    colorItemAsId,
   })
   return { dataset: finalDataset, foldInfo, unfoldInfo }
 }

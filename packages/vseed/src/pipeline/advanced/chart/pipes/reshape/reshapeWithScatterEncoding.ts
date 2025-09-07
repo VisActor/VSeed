@@ -32,6 +32,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
       unfoldInfo,
     } = dataReshapeByEncoding(dataset, dimensions, xMeasures.children, encoding as Encoding, {
       foldMeasureValue: FoldPrimaryMeasureValue,
+      colorItemAsId: true,
     })
 
     datasets.push(newDataset)
@@ -46,6 +47,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
       unfoldInfo,
     } = dataReshapeByEncoding(dataset, dimensions, yMeasures.children, encoding as Encoding, {
       foldMeasureValue: FoldSecondaryMeasureValue,
+      colorItemAsId: true,
     })
 
     datasets.push(newDataset)

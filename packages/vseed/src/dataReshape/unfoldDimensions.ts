@@ -16,12 +16,13 @@ export const unfoldDimensions = (
   options: {
     foldMeasureId: string
     separator: string
+    colorItemAsId: boolean
   },
 ): {
   dataset: Dataset
   unfoldInfo: UnfoldInfo
 } => {
-  const { foldMeasureId, separator } = options
+  const { foldMeasureId, separator, colorItemAsId } = options
 
   const unfoldInfo: UnfoldInfo = {
     groupName: '',
@@ -76,7 +77,7 @@ export const unfoldDimensions = (
     }
     const measureId = String(datum[foldMeasureId])
     const colorItem = String(datum[ColorEncoding])
-    const colorId = measureId ? [colorItem, measureId].join(separator) : colorItem
+    const colorId = colorItemAsId ? colorItem : measureId ? [colorItem, measureId].join(separator) : colorItem
     datum[ColorIdEncoding] = colorId
     colorIdMap[colorId] = colorItem
     colorItems.add(colorId)

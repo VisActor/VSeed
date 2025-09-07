@@ -51,6 +51,11 @@
   },
   {
     "type": "file",
+    "name": "encoding",
+    "label": "encoding "
+  },
+  {
+    "type": "file",
     "name": "label",
     "label": "label "
   },
@@ -73,6 +78,11 @@
     "type": "file",
     "name": "pointStyle",
     "label": "pointStyle "
+  },
+  {
+    "type": "file",
+    "name": "scatterMeasures",
+    "label": "scatterMeasures "
   },
   {
     "type": "file",

@@ -22,6 +22,7 @@ import type {
   MeasureTree,
   Sort,
   SortLegend,
+  Encoding,
 } from '../../properties'
 
 /**
@@ -30,7 +31,7 @@ import type {
  * - 展示单一数据系列的趋势变化
  * - 强调总量随时间的累积效果
  * - 对比多个数据系列的总量差异
- * @warning 
+ * @warning
  * 数据要求:
  * - 至少1个指标字段（度量）
  * - 第一个维度字段映射到X轴，其余维度字段会与指标名称(存在多个指标时)合并, 作为图例项展示.
@@ -38,7 +39,7 @@ import type {
  * 默认开启的功能:
  * - 模块开启堆叠
  * - 默认开启图例、坐标轴、区域填充、数据标签、提示信息
- * @recommend 
+ * @recommend
  * - 推荐字段配置: `1`个指标, `2`个维度
  * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
@@ -47,7 +48,7 @@ export interface Area {
    * 面积图
    * @description 面积图，展示数据趋势及累积关系的图表类型
    * @type {'area'}
-   * @example 
+   * @example
    * ```js {2}
    * {
    *   chartType: 'area',
@@ -63,6 +64,16 @@ export interface Area {
    * @example [{month:'1月', value:100}, {month:'2月', value:150}, {month:'3月', value:120}]
    */
   dataset: Dataset
+
+  /**
+   * @description 编码配置, 堆叠面积图的视觉通道, 包括: x通道, color通道, detail通道, label通道, tooltip通道
+   * - x: 映射到X轴的字段, 支持放入多个维度
+   * - detail: 详情映射通道, 支持放入多个维度
+   * - tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
+   * - color: 颜色映射通道, 支持放入多个维度 或 1个 指标
+   * - label: 标签映射通道, 支持放入 多个维度 或 1个指标
+   */
+  encoding?: Pick<Encoding, 'x' | 'color' | 'detail' | 'label' | 'tooltip'>
 
   /**
    * 维度

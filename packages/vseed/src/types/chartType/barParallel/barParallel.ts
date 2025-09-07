@@ -65,6 +65,7 @@ export interface BarParallel {
    * - label: 标签映射通道, 支持放入 多个维度 或 1个指标
    */
   encoding?: Pick<Encoding, 'y' | 'color' | 'detail' | 'label' | 'tooltip'>
+
   /**
    * @description 维度, 第一个维度被映射到Y轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
    * @type {Dimensions}

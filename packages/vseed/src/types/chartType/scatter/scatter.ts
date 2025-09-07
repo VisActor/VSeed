@@ -18,6 +18,8 @@ import type {
   YLinearAxis,
   XLinearAxis,
   MeasureTree,
+  Encoding,
+  ScatterMeasures,
 } from '../../properties'
 
 /**
@@ -25,14 +27,14 @@ import type {
  * @description 散点图，适用于展示数据的分布情况，通过点的位置表示数据的数值
  * 适用场景:
  * - 分析数据的分布特征, 如数据的中心趋势, 分布范围, 异常值等
- * @warning 
+ * @warning
  * 数据要求:
  * - 至少2个数值字段（度量）
  * - 第一个指标字段会放至X轴, 其余指标会进行合并, 映射至Y轴
  * - 指标名称和维度名称会合并, 作为图例项展示
  * 默认开启的功能:
  * - 默认开启图例、坐标轴、数据点标记、提示信息、趋势线
- * @recommend 
+ * @recommend
  * - 推荐字段配置: `2`个指标, `1`个维度
  * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
@@ -53,6 +55,15 @@ export interface Scatter {
   dataset: Dataset
 
   /**
+   * @description 编码配置, 散点图的视觉通道, 包括:  color通道, detail通道, label通道, tooltip通道
+   * - detail: 详情映射通道, 支持放入多个维度
+   * - tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
+   * - color: 颜色映射通道, 支持放入多个维度 或 1个 指标
+   * - label: 标签映射通道, 支持放入 多个维度 或 1个指标
+   */
+  encoding?: Pick<Encoding, 'color' | 'detail' | 'label' | 'tooltip'>
+
+  /**
    * 维度
    * @description 散点图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
    * @type {Dimensions}
@@ -61,12 +72,88 @@ export interface Scatter {
   dimensions?: Dimensions
 
   /**
-   * 指标
-   * @description 散点图的第一个指标字段会放至X轴, 其余指标会进行合并, 映射至Y轴
-   * @type {DimensionTree}
-   * @example [{id: "value", alias: "数值"}]
+   * @description 散点图指标
+   * measures可以使用2个指标组, 代表普通散点图的X轴和Y轴指标, 每个指标组内的指标会自动合并为一个指标.
+   * measures可以使用1个指标组, 再嵌套2个指标组, 绘制组合散点图. 最外层的每一个组, 代表一个散点图, 它们会纵向排列.
+   * @example
+   * 普通散点图
+   * [
+   *   {
+   *     id: "xAxis",
+   *     alias: '主轴',
+   *     children: [{id: 'profit', alias: '利润'}, {id: 'sales', alias: '销售额'}]
+   *   },
+   *   {
+   *     id: "y",
+   *     alias: '次轴',
+   *     children: [{id: 'growth', alias: '增长率'}, {id: 'returnRatio', alias: '回报率'}]
+   *   }
+   * ]
+   * 组合散点图
+   * [
+   *   {
+   *     id: "first",
+   *     alias: "第一个散点图",
+   *     children: [
+   *      {
+   *        id: "xAxis",
+   *        alias: '主轴',
+   *        children: [{id: 'profit', alias: '利润'}, {id: 'sales', alias: '销售额'}]
+   *      },
+   *      {
+   *        id: "y",
+   *        alias: '次轴',
+   *        children: [{id: 'growth', alias: '增长率'}, {id: 'returnRatio', alias: '回报率'}]
+   *      },
+   *     ]
+   *   },
+   *   {
+   *     id: "second",
+   *     alias: "第二个散点图",
+   *     children: [
+   *      {
+   *        id: "xAxis2",
+   *        alias: '主轴',
+   *        children: [{id: 'profit2', alias: '利润'}, {id: 'sales2', alias: '销售额'}]
+   *      },
+   *      {
+   *        id: "y2",
+   *        alias: '次轴',
+   *        children: [{id: 'growth2', alias: '增长率'}, {id: 'returnRatio2', alias: '回报率'}]
+   *      },
+   *     ]
+   *   },
+   * ]
    */
   measures?: MeasureTree
+
+  /**
+   * @description 散点图指标, 是measures的简化形式
+   * 组合的散点图指标配置, 每个对象都代表一个散点图, 散点图之间纵向排列, 必须是数组.
+   * 每个配置对象内, xMeasures代表所有的X轴指标, yMeasures代表所有的Y轴指标, xMeasures和yMeasures可配置为数组或一个对象
+   * xMeasures 如果是多个指标, 则会自动合并, 映射至X轴
+   * yMeasures 如果是多个指标, 则会自动合并, 映射至Y轴
+   * @example
+   * 如下示例配置了一个双轴图, 主轴有1个value指标, 次轴有1个growth指标
+   * [
+   *   {
+   *     xMeasures:   {id: 'value', alias: '数值'}
+   *     yMeasures: {id: 'growth', alias: '增长率'}
+   *   }
+   * ]
+   * 如下示例配置了2个纵向排列的双轴图, 第一个双轴图, 主轴有1个value指标, 次轴有一个growth指标, 第二个双轴图, 主轴有2个指标: profit与sales, 次轴有一个returnRatio指标
+   * [
+   *   {
+   *     xMeasures:  {id: 'value', alias: '数值'}
+   *     yMeasures: {id: 'growth', alias: '增长率'}
+   *   },
+   *   {
+   *     xMeasures:   [{id: 'profit', alias: '利润'}, {id: 'sales', alias: '销售额'}],
+   *     yMeasures: [{id: 'returnRatio', alias: '回报率'}]
+   *   }
+   * ]
+   */
+  scatterMeasures?: ScatterMeasures
 
   /**
    * 图表的背景颜色

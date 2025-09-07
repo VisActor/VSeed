@@ -1,8 +1,8 @@
-import type { AdvancedPipe, ColumnParallel, Encoding } from 'src/types'
+import type { AdvancedPipe, DualAxis, Encoding } from 'src/types'
 
 export const encodingForDualAxis: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context as {
-    vseed: ColumnParallel
+    vseed: DualAxis
   }
   const { dimensions } = advancedVSeed
   if (!dimensions) {
@@ -22,7 +22,7 @@ export const encodingForDualAxis: AdvancedPipe = (advancedVSeed, context) => {
       encoding: {
         ...encoding,
         detail: mergedDetail,
-      },
+      } as Encoding,
     }
   }
 

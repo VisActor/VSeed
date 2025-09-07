@@ -1,7 +1,7 @@
 import { dataReshapeByEncoding, FoldPrimaryMeasureValue, FoldSecondaryMeasureValue } from 'src/dataReshape'
 import type { AdvancedPipe, ColumnParallel, Dataset, Encoding, FoldInfo, MeasureGroup, UnfoldInfo } from 'src/types'
 
-export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) => {
+export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
@@ -61,7 +61,8 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
 
   return {
     ...result,
-    dataset: datasets,
+    dataset: datasets[0].map((d, index) => ({ ...d, ...datasets[1][index] })),
+
     datasetReshapeInfo: [
       {
         id: String(chartType),

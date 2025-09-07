@@ -9,7 +9,7 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'radar',
+    chartType: 'scatter',
     dimensions: [
       {
         id: 'type',
@@ -20,18 +20,22 @@ const Demo = () => {
         alias: '日期',
       },
     ],
+    scatterMeasures: [
+      {
+        xMeasures: [{ id: 'profit' }],
+        yMeasures: [{ id: 'sales' }],
+      },
+      {
+        xMeasures: [{ id: 'profit' }],
+        yMeasures: [{ id: 'sales' }],
+      },
+    ],
     dataset: [
-      { date: '2019', type: 'A', profit: 10, sales: 100, test: 10 },
-      { date: '2020', type: 'A', profit: 30, sales: 100, test: 20 },
-      { date: '2021', type: 'A', profit: 30, sales: 100, test: 30 },
-      { date: '2022', type: 'A', profit: 50, sales: 100, test: 40 },
-      { date: '2023', type: 'A', profit: 40, sales: 100, test: 50 },
-
-      { date: '2019', type: 'C', profit: 10, sales: 100, test: 90 },
-      { date: '2020', type: 'C', profit: 30, sales: 100, test: 70 },
-      { date: '2021', type: 'C', profit: 30, sales: 100, test: 60 },
-      { date: '2022', type: 'C', profit: 50, sales: 100, test: 50 },
-      { date: '2023', type: 'C', profit: 40, sales: 100, test: 20 },
+      { date: '2019', type: 'A', profit: 10, sales: 100 },
+      { date: '2020', type: 'A', profit: 20, sales: 110 },
+      { date: '2021', type: 'A', profit: 30, sales: 120 },
+      { date: '2022', type: 'A', profit: 40, sales: 130 },
+      { date: '2023', type: 'A', profit: 50, sales: 140 },
     ],
   }
 

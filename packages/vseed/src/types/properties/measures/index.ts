@@ -1,6 +1,8 @@
 export * from './format'
+export * from './zMeasures'
+export * from './zDualMeasures'
+export * from './zScatterMeasures'
 
 export type * from './measures'
 export type * from './dualMeasures'
-export * from './zMeasures'
-export * from './zDualMeasures'
+export type * from './scatterMeasures'

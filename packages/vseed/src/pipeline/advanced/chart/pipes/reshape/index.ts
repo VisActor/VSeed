@@ -15,3 +15,5 @@ export { pivotReshapeTo2D2M } from './pivotReshapeTo2D2M'
 
 export { pivotReshapeWithEncoding } from './pivotReshapeWithEncoding'
 export { reshapeWithEncoding } from './reshapeWithEncoding'
+export { reshapeWithDualEncoding } from './reshapeWithDualEncoding'
+export { pivotReshapeWithDualEncoding } from './pivotReshapeWithDualEncoding'

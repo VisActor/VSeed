@@ -19,6 +19,17 @@ export const isPivotChart = (vseed: VSeed) => {
   }
 
   if (vseed.chartType === 'dualAxis') {
+    const { dimensions = [] } = vseed as {
+      dimensions: Dimensions
+    }
+    const hasRowOrColumnDimension =
+      dimensions &&
+      dimensions.some((dimension) => dimension.location === 'rowDimension' || dimension.location === 'columnDimension')
+
+    if (hasRowOrColumnDimension) {
+      return true
+    }
+
     if (vseed.measures) {
       const depth = measureDepth(vseed.measures)
       if (depth === 3) {

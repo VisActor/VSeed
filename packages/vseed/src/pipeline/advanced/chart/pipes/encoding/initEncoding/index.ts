@@ -1,3 +1,7 @@
 export { encodingForColumn } from './column'
 export { encodingForBar } from './bar'
 export { encodingForPie } from './pie'
+export { encodingForDualAxis } from './dualAxis'
+export { encodingForFunnel } from './funnel'
+export { encodingForHeatmap } from './heatmap'
+export { encodingForRadar } from './radar'

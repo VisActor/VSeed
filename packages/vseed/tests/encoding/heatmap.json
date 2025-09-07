@@ -1,0 +1,31 @@
+{
+  "chartType": "heatmap",
+  "dimensions": [
+    {
+      "id": "type",
+      "alias": "类型"
+    },
+    {
+      "id": "date",
+      "alias": "日期"
+    }
+  ],
+  "dataset": [
+    { "date": "2019", "type": "A", "profit": 10, "sales": 100 },
+    { "date": "2020", "type": "A", "profit": 30, "sales": 100 },
+    { "date": "2021", "type": "A", "profit": 30, "sales": 100 },
+    { "date": "2022", "type": "A", "profit": 50, "sales": 100 },
+    { "date": "2023", "type": "A", "profit": 40, "sales": 100 },
+
+    { "date": "2019", "type": "C", "profit": 10, "sales": 100 },
+    { "date": "2020", "type": "C", "profit": 30, "sales": 100 },
+    { "date": "2021", "type": "C", "profit": 30, "sales": 100 },
+    { "date": "2022", "type": "C", "profit": 50, "sales": 100 },
+    { "date": "2023", "type": "C", "profit": 40, "sales": 100 }
+  ],
+  "encoding": {
+    "x": ["type", "__MeaName__"],
+    "y": ["date"],
+    "color": ["__MeaName__"]
+  }
+}

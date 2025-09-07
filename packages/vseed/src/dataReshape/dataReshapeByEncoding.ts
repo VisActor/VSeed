@@ -143,10 +143,11 @@ const unfoldDimensions = (
       continue
     }
     const measureId = String(datum[foldMeasureId])
-    const colorItem = String(datum[ColorEncoding])
+    const colorItem = String(datum[ColorEncoding]) // 原始的颜色名称
     const colorId = measureId ? [colorItem, measureId].join(separator) : colorItem
     colorIdMap[colorId] = colorItem
-    colorItems.add(colorItem)
+    colorItems.add(colorId)
+    datum[ColorEncoding] = colorId // 因为可能会名称重复, 所以使用colorId, 避免冲突
   }
 
   unfoldInfo.colorItems = Array.from(colorItems)

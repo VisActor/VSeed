@@ -22,7 +22,7 @@ export const reshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
     dataset: newDatasets,
     datasetReshapeInfo: [
       {
-        id: chartType,
+        id: String(chartType),
         index: 0,
         foldInfo,
         unfoldInfo,

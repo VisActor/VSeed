@@ -4,15 +4,14 @@ import type { SpecPipe } from 'src/types'
 export const initFunnel: SpecPipe = (spec, context) => {
   const result = { ...spec } as IFunnelChartSpec
   const { advancedVSeed } = context
-  const { encoding } = advancedVSeed
-
-  if (!encoding[0].size || !encoding[0].group || !encoding[0].color) {
-    return result
-  }
+  const { datasetReshapeInfo } = advancedVSeed
+  const { foldInfo, unfoldInfo } = datasetReshapeInfo[0]
 
   result.type = 'funnel'
-  result.valueField = encoding[0].size[0]
-  result.categoryField = encoding[0].group[0]
+  result.valueField = foldInfo.measureValue
+  result.categoryField = unfoldInfo.encodingDetail
+  result.seriesField = unfoldInfo.encodingColor
+
   result.padding = 0
   result.isTransform = true
   result.shape = 'rect'
@@ -27,7 +26,7 @@ export const initFunnel: SpecPipe = (spec, context) => {
     style: {
       cornerRadius: 4,
       fill: {
-        field: encoding[0].color[0],
+        field: unfoldInfo.encodingColor,
         scale: 'color',
       },
     },

@@ -5,6 +5,7 @@ import {
   zColorLegend,
   zDataset,
   zDimensions,
+  zEncoding,
   zLabel,
   zLinearColor,
   zMeasureTree,
@@ -15,6 +16,7 @@ import {
 export const zFunnel = z.object({
   chartType: z.literal('funnel'),
   dataset: zDataset.nullish(),
+  encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasureTree.nullish(),
   backgroundColor: zBackgroundColor.nullish(),

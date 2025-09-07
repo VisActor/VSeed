@@ -9,8 +9,9 @@ export const initArea: SpecPipe = (spec, context) => {
 
   result.type = 'area'
   result.direction = 'vertical'
-  result.xField = unfoldInfo.encodingX
   result.yField = foldInfo.measureValue
+  
+  result.xField = unfoldInfo.encodingX
   result.seriesField = unfoldInfo.encodingColor
   result.padding = 0
   result.region = [

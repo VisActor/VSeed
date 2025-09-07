@@ -1,5 +1,5 @@
 import { type Locale } from '../../i18n'
-import type { ColorLegend, LinearColor, MeasureTree } from '../../properties'
+import type { ColorLegend, Encoding, LinearColor, MeasureTree } from '../../properties'
 import {
   type BackgroundColor,
   type Dataset,
@@ -16,14 +16,14 @@ import {
  * - 大规模二维数据的密度和强度展示
  * - 分类与数值的关联分析
  * - 时间序列与类别的交叉对比
- * @warning 
+ * @warning
  * 数据要求:
  * - 至少2个维度字段，用于确定热力图的行和列
  * - 至少1个数值字段（度量），用于映射颜色深浅
  * - 支持多个指标时，通常选择一个指标进行颜色映射
  * 默认开启的功能:
  * - 默认开启图例、坐标轴、数据标签、提示信息、数值缩放
- * @recommend 
+ * @recommend
  * - 推荐字段配置: `1`个指标, `2`个维度
  * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
@@ -42,6 +42,16 @@ export interface Heatmap {
    * @example [{month:'1月', value:100}, {month:'2月', value:150}, {month:'3月', value:120}]
    */
   dataset: Dataset
+
+  /**
+   * @description 编码配置,漏斗图的视觉通道, 包括: x轴, y轴, color通道, label通道, tooltip通道
+   * - x: x轴映射通道, 支持放入多个维度
+   * - y: y轴映射通道, 支持放入多个维度
+   * - tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
+   * - color: 颜色映射通道, 支持放入多个维度 或 1个 指标
+   * - label: 标签映射通道, 支持放入 多个维度 或 1个指标
+   */
+  encoding?: Pick<Encoding, 'color' | 'x' | 'y' | 'label' | 'tooltip'>
 
   /**
    * 维度

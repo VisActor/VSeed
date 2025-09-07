@@ -29,7 +29,7 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
   const depth = measureDepth(measures)
   if (depth === 3) {
     measures.forEach((measure: MeasureGroup) => {
-      measureGroups.push(measure as unknown as MeasureGroup[])
+      measureGroups.push(measure.children as unknown as MeasureGroup[])
     })
   } else if (depth === 2) {
     measureGroups.push(measures as unknown as MeasureGroup[])

@@ -11,7 +11,7 @@ export const initDualAxisPrimary: SpecPipe = (spec, context) => {
   result.type = 'bar'
   result.direction = 'vertical'
   result.xField = unfoldInfo.encodingX
-  result.seriesField = unfoldInfo.encodingColor
+  result.seriesField = unfoldInfo.encodingColorId
 
   result.yField = foldInfoList?.[0].measureValue
   result.animation = true

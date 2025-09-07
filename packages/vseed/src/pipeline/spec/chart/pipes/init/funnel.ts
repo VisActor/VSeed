@@ -26,7 +26,7 @@ export const initFunnel: SpecPipe = (spec, context) => {
     style: {
       cornerRadius: 4,
       fill: {
-        field: unfoldInfo.encodingColor,
+        field: unfoldInfo.encodingColorId,
         scale: 'color',
       },
     },

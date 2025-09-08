@@ -12,6 +12,10 @@ export const MeasureName = FoldMeasureName
 export const FoldPrimaryMeasureValue = '__MeaPrimaryValue__'
 export const FoldSecondaryMeasureValue = '__MeaSecondaryValue__'
 
+// Measures For Scatter
+export const FoldXMeasureValue = '__MeaXValue__'
+export const FoldYMeasureValue = '__MeaYValue__'
+
 // Encoding Dimensions
 export const XEncoding = '__Dim_X__'
 export const YEncoding = '__Dim_Y__'

@@ -1,4 +1,4 @@
-import { dataReshapeByEncoding, FoldPrimaryMeasureValue, FoldSecondaryMeasureValue } from 'src/dataReshape'
+import { dataReshapeByEncoding, FoldXMeasureValue, FoldYMeasureValue } from 'src/dataReshape'
 import { measureDepth } from 'src/pipeline/utils'
 import type {
   AdvancedPipe,
@@ -57,7 +57,8 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
         foldInfo,
         unfoldInfo,
       } = dataReshapeByEncoding(dataset, dimensions, xMeasures.children, encoding as Encoding, {
-        foldMeasureValue: `${FoldPrimaryMeasureValue}${index}`,
+        foldMeasureValue: `${FoldXMeasureValue}${index}`,
+        colorItemAsId: true,
       })
 
       datasets.push(newDataset)
@@ -71,7 +72,8 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
         foldInfo,
         unfoldInfo,
       } = dataReshapeByEncoding(dataset, dimensions, yMeasures.children, encoding as Encoding, {
-        foldMeasureValue: `${FoldSecondaryMeasureValue}${index}`,
+        foldMeasureValue: `${FoldYMeasureValue}${index}`,
+        colorItemAsId: true,
       })
 
       datasets.push(newDataset)

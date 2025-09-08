@@ -10,33 +10,43 @@ const Demo = () => {
 
   const vseed: VSeed = {
     chartType: 'scatter',
-    dataset: [
-      { date: '2019', profit: 10, sales: 20 },
-      { date: '2020', profit: 30, sales: 60 },
-      { date: '2021', profit: 30, sales: 60 },
-      { date: '2022', profit: 50, sales: 100 },
-      { date: '2023', profit: 200, sales: 80 },
-    ],
     measures: [
       {
-        id: 'sales',
-        alias: '销售额',
+        id: 'primary',
+        alias: 'primary',
+        children: [
+          {
+            id: 'profit',
+            alias: 'profit',
+          },
+        ],
       },
       {
-        id: 'profit',
-        alias: '利润',
+        id: 'secondary',
+        alias: 'secondary',
+        children: [
+          {
+            id: 'sales',
+            alias: 'sales',
+          },
+          {
+            id: 'discount',
+            alias: 'discount',
+          },
+        ],
       },
     ],
-    dimensions: [
+    dataset: [
       {
-        id: 'date',
-        alias: '日期',
-        location: 'dimension',
+        profit: 10,
+        sales: 20,
+        discount: 30,
       },
     ],
-    label: {
-      enable: false,
+    legend: {
+      position: 'bottom',
     },
+    locale: 'zh-CN',
   }
 
   if (zVSeed.safeParse(vseed).success) {

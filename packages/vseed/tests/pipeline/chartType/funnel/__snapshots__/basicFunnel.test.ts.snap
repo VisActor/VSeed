@@ -78,8 +78,9 @@ exports[`basicFunnel 1`] = `
   },
   "dataset": [
     {
-      "__DimGroupID__": "2019-销售额-sales",
-      "__DimGroup__": "2019-销售额",
+      "__Dim_ColorId__": "2019-销售额-sales",
+      "__Dim_Color__": "2019-销售额",
+      "__Dim_Detail__": "2019-销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 200000,
@@ -92,8 +93,9 @@ exports[`basicFunnel 1`] = `
       "sales": 200000,
     },
     {
-      "__DimGroupID__": "2019-利润-profit",
-      "__DimGroup__": "2019-利润",
+      "__Dim_ColorId__": "2019-利润-profit",
+      "__Dim_Color__": "2019-利润",
+      "__Dim_Detail__": "2019-利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 10000,
@@ -106,8 +108,9 @@ exports[`basicFunnel 1`] = `
       "profit": 10000,
     },
     {
-      "__DimGroupID__": "2020-销售额-sales",
-      "__DimGroup__": "2020-销售额",
+      "__Dim_ColorId__": "2020-销售额-sales",
+      "__Dim_Color__": "2020-销售额",
+      "__Dim_Detail__": "2020-销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 400000,
@@ -120,8 +123,9 @@ exports[`basicFunnel 1`] = `
       "sales": 400000,
     },
     {
-      "__DimGroupID__": "2020-利润-profit",
-      "__DimGroup__": "2020-利润",
+      "__Dim_ColorId__": "2020-利润-profit",
+      "__Dim_Color__": "2020-利润",
+      "__Dim_Detail__": "2020-利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 20000,
@@ -134,8 +138,9 @@ exports[`basicFunnel 1`] = `
       "profit": 20000,
     },
     {
-      "__DimGroupID__": "2021-销售额-sales",
-      "__DimGroup__": "2021-销售额",
+      "__Dim_ColorId__": "2021-销售额-sales",
+      "__Dim_Color__": "2021-销售额",
+      "__Dim_Detail__": "2021-销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 600000,
@@ -148,8 +153,9 @@ exports[`basicFunnel 1`] = `
       "sales": 600000,
     },
     {
-      "__DimGroupID__": "2021-利润-profit",
-      "__DimGroup__": "2021-利润",
+      "__Dim_ColorId__": "2021-利润-profit",
+      "__Dim_Color__": "2021-利润",
+      "__Dim_Detail__": "2021-利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 30000,
@@ -162,8 +168,9 @@ exports[`basicFunnel 1`] = `
       "profit": 30000,
     },
     {
-      "__DimGroupID__": "2022-销售额-sales",
-      "__DimGroup__": "2022-销售额",
+      "__Dim_ColorId__": "2022-销售额-sales",
+      "__Dim_Color__": "2022-销售额",
+      "__Dim_Detail__": "2022-销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 800000,
@@ -176,8 +183,9 @@ exports[`basicFunnel 1`] = `
       "sales": 800000,
     },
     {
-      "__DimGroupID__": "2022-利润-profit",
-      "__DimGroup__": "2022-利润",
+      "__Dim_ColorId__": "2022-利润-profit",
+      "__Dim_Color__": "2022-利润",
+      "__Dim_Detail__": "2022-利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 40000,
@@ -190,8 +198,9 @@ exports[`basicFunnel 1`] = `
       "profit": 40000,
     },
     {
-      "__DimGroupID__": "2023-销售额-sales",
-      "__DimGroup__": "2023-销售额",
+      "__Dim_ColorId__": "2023-销售额-sales",
+      "__Dim_Color__": "2023-销售额",
+      "__Dim_Detail__": "2023-销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 1000000,
@@ -204,8 +213,9 @@ exports[`basicFunnel 1`] = `
       "sales": 1000000,
     },
     {
-      "__DimGroupID__": "2023-利润-profit",
-      "__DimGroup__": "2023-利润",
+      "__Dim_ColorId__": "2023-利润-profit",
+      "__Dim_Color__": "2023-利润",
+      "__Dim_Detail__": "2023-利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 50000,
@@ -229,7 +239,7 @@ exports[`basicFunnel 1`] = `
         "measureName": "__MeaName__",
         "measureValue": "__MeaValue__",
       },
-      "id": "1D1M",
+      "id": "funnel",
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
@@ -256,8 +266,12 @@ exports[`basicFunnel 1`] = `
           "2023-销售额-sales",
           "2023-利润-profit",
         ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
   ],
@@ -267,20 +281,28 @@ exports[`basicFunnel 1`] = `
       "id": "date",
       "location": "dimension",
     },
-  ],
-  "encoding": [
     {
-      "color": [
-        "__MeaValue__",
-      ],
-      "group": [
-        "__DimGroupID__",
-      ],
-      "size": [
-        "__MeaValue__",
-      ],
+      "alias": "指标名称",
+      "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "color": [
+      "date",
+      "__MeaName__",
+    ],
+    "column": [],
+    "detail": [
+      "date",
+      "__MeaName__",
+    ],
+    "label": [],
+    "row": [],
+    "tooltip": [
+      "date",
+      "__MeaName__",
+    ],
+  },
   "locale": "zh-CN",
   "measures": [
     {
@@ -310,41 +332,25 @@ exports[`basicFunnel 2`] = `
 {
   "animation": true,
   "background": "transparent",
-  "categoryField": "__DimGroupID__",
-  "color": {
-    "domain": [
-      {
-        "dataId": "1D1M",
-        "fields": [
-          "__MeaValue__",
-        ],
-      },
-    ],
-    "range": [
-      "#C2CEFF",
-      "#B7C4FF",
-      "#ACB9FF",
-      "#A0AEFF",
-      "#95A3FF",
-      "#8998FF",
-      "#7C8CFA",
-      "#7080F4",
-      "#6372F0",
-      "#5766EC",
-    ],
-    "type": "linear",
-  },
+  "categoryField": "__Dim_Detail__",
   "data": {
     "fields": {
-      "__DimGroupID__": {
+      "__Dim_Angle__": {
+        "sortIndex": 0,
+      },
+      "__Dim_ColorId__": {
+        "sortIndex": 0,
+      },
+      "__Dim_X__": {
         "sortIndex": 0,
       },
     },
-    "id": "1D1M",
+    "id": "funnel",
     "values": [
       {
-        "__DimGroupID__": "2019-销售额-sales",
-        "__DimGroup__": "2019-销售额",
+        "__Dim_ColorId__": "2019-销售额-sales",
+        "__Dim_Color__": "2019-销售额",
+        "__Dim_Detail__": "2019-销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 200000,
@@ -357,8 +363,9 @@ exports[`basicFunnel 2`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "2019-利润-profit",
-        "__DimGroup__": "2019-利润",
+        "__Dim_ColorId__": "2019-利润-profit",
+        "__Dim_Color__": "2019-利润",
+        "__Dim_Detail__": "2019-利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 10000,
@@ -371,8 +378,9 @@ exports[`basicFunnel 2`] = `
         "profit": 10000,
       },
       {
-        "__DimGroupID__": "2020-销售额-sales",
-        "__DimGroup__": "2020-销售额",
+        "__Dim_ColorId__": "2020-销售额-sales",
+        "__Dim_Color__": "2020-销售额",
+        "__Dim_Detail__": "2020-销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 400000,
@@ -385,8 +393,9 @@ exports[`basicFunnel 2`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "2020-利润-profit",
-        "__DimGroup__": "2020-利润",
+        "__Dim_ColorId__": "2020-利润-profit",
+        "__Dim_Color__": "2020-利润",
+        "__Dim_Detail__": "2020-利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 20000,
@@ -399,8 +408,9 @@ exports[`basicFunnel 2`] = `
         "profit": 20000,
       },
       {
-        "__DimGroupID__": "2021-销售额-sales",
-        "__DimGroup__": "2021-销售额",
+        "__Dim_ColorId__": "2021-销售额-sales",
+        "__Dim_Color__": "2021-销售额",
+        "__Dim_Detail__": "2021-销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 600000,
@@ -413,8 +423,9 @@ exports[`basicFunnel 2`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "2021-利润-profit",
-        "__DimGroup__": "2021-利润",
+        "__Dim_ColorId__": "2021-利润-profit",
+        "__Dim_Color__": "2021-利润",
+        "__Dim_Detail__": "2021-利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 30000,
@@ -427,8 +438,9 @@ exports[`basicFunnel 2`] = `
         "profit": 30000,
       },
       {
-        "__DimGroupID__": "2022-销售额-sales",
-        "__DimGroup__": "2022-销售额",
+        "__Dim_ColorId__": "2022-销售额-sales",
+        "__Dim_Color__": "2022-销售额",
+        "__Dim_Detail__": "2022-销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 800000,
@@ -441,8 +453,9 @@ exports[`basicFunnel 2`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "2022-利润-profit",
-        "__DimGroup__": "2022-利润",
+        "__Dim_ColorId__": "2022-利润-profit",
+        "__Dim_Color__": "2022-利润",
+        "__Dim_Detail__": "2022-利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 40000,
@@ -455,8 +468,9 @@ exports[`basicFunnel 2`] = `
         "profit": 40000,
       },
       {
-        "__DimGroupID__": "2023-销售额-sales",
-        "__DimGroup__": "2023-销售额",
+        "__Dim_ColorId__": "2023-销售额-sales",
+        "__Dim_Color__": "2023-销售额",
+        "__Dim_Detail__": "2023-销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 1000000,
@@ -469,8 +483,9 @@ exports[`basicFunnel 2`] = `
         "sales": 1000000,
       },
       {
-        "__DimGroupID__": "2023-利润-profit",
-        "__DimGroup__": "2023-利润",
+        "__Dim_ColorId__": "2023-利润-profit",
+        "__Dim_Color__": "2023-利润",
+        "__Dim_Detail__": "2023-利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 50000,
@@ -493,7 +508,7 @@ exports[`basicFunnel 2`] = `
     "style": {
       "cornerRadius": 4,
       "fill": {
-        "field": "__MeaValue__",
+        "field": "__Dim_ColorId__",
         "scale": "color",
       },
     },
@@ -504,11 +519,46 @@ exports[`basicFunnel 2`] = `
     "visible": true,
   },
   "legends": {
-    "field": "__MeaValue__",
-    "inverse": true,
+    "autoPage": true,
+    "data": [Function],
+    "item": {
+      "background": {
+        "state": {
+          "selectedHover": {
+            "fill": "#646A73",
+            "fillOpacity": 0.05,
+          },
+        },
+      },
+      "focus": true,
+      "focusIconStyle": {
+        "fill": "#646A73",
+        "fontWeight": 400,
+        "size": 14,
+      },
+      "label": {
+        "formatMethod": [Function],
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+      },
+      "maxWidth": "30%",
+      "shape": {
+        "space": 6,
+        "style": {
+          "size": 8,
+          "symbolType": "rectRound",
+        },
+      },
+    },
+    "maxCol": 1,
+    "maxRow": 1,
     "orient": "right",
+    "padding": 0,
     "position": "start",
-    "type": "color",
+    "type": "discrete",
     "visible": true,
   },
   "maxSize": "75%",
@@ -519,6 +569,7 @@ exports[`basicFunnel 2`] = `
       "clip": true,
     },
   ],
+  "seriesField": "__Dim_ColorId__",
   "shape": "rect",
   "tooltip": {
     "dimension": {
@@ -533,6 +584,13 @@ exports[`basicFunnel 2`] = `
     },
     "mark": {
       "content": [
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
         {
           "hasShape": true,
           "key": [Function],

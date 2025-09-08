@@ -381,8 +381,10 @@ exports[`basic 1`] = `
   "dataset": [
     [
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaPrimaryValue__0": 10,
@@ -400,8 +402,10 @@ exports[`basic 1`] = `
         "sales": 100,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaPrimaryValue__0": 30,
@@ -419,8 +423,10 @@ exports[`basic 1`] = `
         "sales": 3200,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2021",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaPrimaryValue__0": 30,
@@ -438,8 +444,10 @@ exports[`basic 1`] = `
         "sales": 300,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2022",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaPrimaryValue__0": 50,
@@ -457,8 +465,10 @@ exports[`basic 1`] = `
         "sales": 2400,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2023",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaPrimaryValue__0": 40,
@@ -476,8 +486,10 @@ exports[`basic 1`] = `
         "sales": 500,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaSecondaryValue__0": 100,
@@ -495,8 +507,10 @@ exports[`basic 1`] = `
         "sales": 100,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaSecondaryValue__0": 3200,
@@ -514,8 +528,10 @@ exports[`basic 1`] = `
         "sales": 3200,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2021",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaSecondaryValue__0": 300,
@@ -533,8 +549,10 @@ exports[`basic 1`] = `
         "sales": 300,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2022",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaSecondaryValue__0": 2400,
@@ -552,8 +570,10 @@ exports[`basic 1`] = `
         "sales": 2400,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2023",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaSecondaryValue__0": 500,
@@ -573,8 +593,10 @@ exports[`basic 1`] = `
     ],
     [
       {
-        "__DimGroupID__": "比率-ratio",
-        "__DimGroup__": "比率",
+        "__Dim_ColorId__": "比率-ratio",
+        "__Dim_Color__": "比率",
+        "__Dim_Detail__": "比率",
+        "__Dim_X__": "2019",
         "__MeaId__": "ratio",
         "__MeaName__": "比率",
         "__MeaPrimaryValue__1": 301,
@@ -592,8 +614,10 @@ exports[`basic 1`] = `
         "sales": 100,
       },
       {
-        "__DimGroupID__": "比率-ratio",
-        "__DimGroup__": "比率",
+        "__Dim_ColorId__": "比率-ratio",
+        "__Dim_Color__": "比率",
+        "__Dim_Detail__": "比率",
+        "__Dim_X__": "2020",
         "__MeaId__": "ratio",
         "__MeaName__": "比率",
         "__MeaPrimaryValue__1": 32,
@@ -611,8 +635,10 @@ exports[`basic 1`] = `
         "sales": 3200,
       },
       {
-        "__DimGroupID__": "比率-ratio",
-        "__DimGroup__": "比率",
+        "__Dim_ColorId__": "比率-ratio",
+        "__Dim_Color__": "比率",
+        "__Dim_Detail__": "比率",
+        "__Dim_X__": "2021",
         "__MeaId__": "ratio",
         "__MeaName__": "比率",
         "__MeaPrimaryValue__1": 103,
@@ -630,8 +656,10 @@ exports[`basic 1`] = `
         "sales": 300,
       },
       {
-        "__DimGroupID__": "比率-ratio",
-        "__DimGroup__": "比率",
+        "__Dim_ColorId__": "比率-ratio",
+        "__Dim_Color__": "比率",
+        "__Dim_Detail__": "比率",
+        "__Dim_X__": "2022",
         "__MeaId__": "ratio",
         "__MeaName__": "比率",
         "__MeaPrimaryValue__1": 30,
@@ -649,8 +677,10 @@ exports[`basic 1`] = `
         "sales": 2400,
       },
       {
-        "__DimGroupID__": "比率-ratio",
-        "__DimGroup__": "比率",
+        "__Dim_ColorId__": "比率-ratio",
+        "__Dim_Color__": "比率",
+        "__Dim_Detail__": "比率",
+        "__Dim_X__": "2023",
         "__MeaId__": "ratio",
         "__MeaName__": "比率",
         "__MeaPrimaryValue__1": 305,
@@ -668,8 +698,10 @@ exports[`basic 1`] = `
         "sales": 500,
       },
       {
-        "__DimGroupID__": "回报率-returnRatio",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-returnRatio",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2019",
         "__MeaId__": "returnRatio",
         "__MeaName__": "回报率",
         "__MeaSecondaryValue__1": 301,
@@ -687,8 +719,10 @@ exports[`basic 1`] = `
         "sales": 100,
       },
       {
-        "__DimGroupID__": "回报率-returnRatio",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-returnRatio",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2020",
         "__MeaId__": "returnRatio",
         "__MeaName__": "回报率",
         "__MeaSecondaryValue__1": 30,
@@ -706,8 +740,10 @@ exports[`basic 1`] = `
         "sales": 3200,
       },
       {
-        "__DimGroupID__": "回报率-returnRatio",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-returnRatio",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2021",
         "__MeaId__": "returnRatio",
         "__MeaName__": "回报率",
         "__MeaSecondaryValue__1": 503,
@@ -725,8 +761,10 @@ exports[`basic 1`] = `
         "sales": 300,
       },
       {
-        "__DimGroupID__": "回报率-returnRatio",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-returnRatio",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2022",
         "__MeaId__": "returnRatio",
         "__MeaName__": "回报率",
         "__MeaSecondaryValue__1": 24,
@@ -744,8 +782,10 @@ exports[`basic 1`] = `
         "sales": 2400,
       },
       {
-        "__DimGroupID__": "回报率-returnRatio",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-returnRatio",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2023",
         "__MeaId__": "returnRatio",
         "__MeaName__": "回报率",
         "__MeaSecondaryValue__1": 305,
@@ -792,7 +832,7 @@ exports[`basic 1`] = `
           "measureValue": "__MeaSecondaryValue__0",
         },
       ],
-      "id": "2D2M-0",
+      "id": "dualAxis-0",
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
@@ -803,8 +843,12 @@ exports[`basic 1`] = `
           "利润-profit",
           "销售额-sales",
         ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
     {
@@ -834,7 +878,7 @@ exports[`basic 1`] = `
           "measureValue": "__MeaSecondaryValue__1",
         },
       ],
-      "id": "2D2M-1",
+      "id": "dualAxis-1",
       "index": 1,
       "unfoldInfo": {
         "colorIdMap": {
@@ -845,8 +889,12 @@ exports[`basic 1`] = `
           "比率-ratio",
           "回报率-returnRatio",
         ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
   ],
@@ -856,39 +904,29 @@ exports[`basic 1`] = `
       "id": "date",
       "location": "dimension",
     },
-  ],
-  "encoding": [
     {
-      "color": [
-        "__MeaName__",
-      ],
-      "group": [
-        "__DimGroupID__",
-      ],
-      "x": [
-        "date",
-      ],
-      "y": [
-        "__MeaPrimaryValue__0",
-        "__MeaSecondaryValue__0",
-      ],
-    },
-    {
-      "color": [
-        "__MeaName__",
-      ],
-      "group": [
-        "__DimGroupID__",
-      ],
-      "x": [
-        "date",
-      ],
-      "y": [
-        "__MeaPrimaryValue__1",
-        "__MeaSecondaryValue__1",
-      ],
+      "alias": "指标名称",
+      "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "color": [
+      "__MeaName__",
+    ],
+    "column": [],
+    "detail": [
+      "__MeaName__",
+    ],
+    "label": [],
+    "row": [],
+    "tooltip": [
+      "date",
+      "__MeaName__",
+    ],
+    "x": [
+      "date",
+    ],
+  },
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [
@@ -1042,7 +1080,7 @@ exports[`basic 2`] = `
               },
               "visible": true,
             },
-            "id": "2D2M-0-primary-axis",
+            "id": "dualAxis-0-primary-axis",
             "innerOffset": {
               "top": 7,
             },
@@ -1061,7 +1099,7 @@ exports[`basic 2`] = `
             "min": undefined,
             "nice": true,
             "orient": "left",
-            "seriesId": "2D2M-0-primary-series",
+            "seriesId": "dualAxis-0-primary-series",
             "tick": {
               "inside": false,
               "style": {
@@ -1099,7 +1137,7 @@ exports[`basic 2`] = `
               },
               "visible": false,
             },
-            "id": "2D2M-0-secondary-axis",
+            "id": "dualAxis-0-secondary-axis",
             "innerOffset": {
               "top": 7,
             },
@@ -1118,9 +1156,9 @@ exports[`basic 2`] = `
             "min": undefined,
             "nice": true,
             "orient": "right",
-            "seriesId": "2D2M-0-secondary-series",
+            "seriesId": "dualAxis-0-secondary-series",
             "sync": {
-              "axisId": "2D2M-0-primary-axis",
+              "axisId": "dualAxis-0-primary-axis",
               "zeroAlign": true,
             },
             "tick": {
@@ -1217,18 +1255,18 @@ exports[`basic 2`] = `
             },
             "data": {
               "fields": {
-                "__DimGroupID__": {
+                "__Dim_ColorId__": {
                   "sortIndex": 0,
                 },
-                "date": {
+                "__Dim_X__": {
                   "sortIndex": 0,
                 },
               },
-              "id": "2D2M-0-primary-dataset",
+              "id": "dualAxis-0-primary-dataset",
               "values": undefined,
             },
             "direction": "vertical",
-            "id": "2D2M-0-primary-series",
+            "id": "dualAxis-0-primary-series",
             "label": {
               "formatMethod": [Function],
               "visible": true,
@@ -1246,7 +1284,7 @@ exports[`basic 2`] = `
                 },
               },
             },
-            "seriesField": "__DimGroupID__",
+            "seriesField": "__Dim_ColorId__",
             "tooltip": {
               "dimension": {
                 "content": [
@@ -1260,6 +1298,13 @@ exports[`basic 2`] = `
               },
               "mark": {
                 "content": [
+                  {
+                    "hasShape": true,
+                    "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
                   {
                     "hasShape": true,
                     "key": [Function],
@@ -1281,7 +1326,7 @@ exports[`basic 2`] = `
               "visible": true,
             },
             "type": "bar",
-            "xField": "date",
+            "xField": "__Dim_X__",
             "yField": "__MeaPrimaryValue__0",
             "zIndex": 1000,
           },
@@ -1302,18 +1347,18 @@ exports[`basic 2`] = `
             },
             "data": {
               "fields": {
-                "__DimGroupID__": {
+                "__Dim_ColorId__": {
                   "sortIndex": 0,
                 },
-                "date": {
+                "__Dim_X__": {
                   "sortIndex": 0,
                 },
               },
-              "id": "2D2M-0-secondary-dataset",
+              "id": "dualAxis-0-secondary-dataset",
               "values": undefined,
             },
             "direction": "vertical",
-            "id": "2D2M-0-secondary-series",
+            "id": "dualAxis-0-secondary-series",
             "label": {
               "formatMethod": [Function],
               "visible": true,
@@ -1331,7 +1376,7 @@ exports[`basic 2`] = `
                 },
               },
             },
-            "seriesField": "__DimGroupID__",
+            "seriesField": "__Dim_ColorId__",
             "tooltip": {
               "dimension": {
                 "content": [
@@ -1355,6 +1400,13 @@ exports[`basic 2`] = `
                   {
                     "hasShape": true,
                     "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
+                  {
+                    "hasShape": true,
+                    "key": [Function],
                     "value": [Function],
                     "visible": true,
                   },
@@ -1366,14 +1418,14 @@ exports[`basic 2`] = `
               "visible": true,
             },
             "type": "line",
-            "xField": "date",
+            "xField": "__Dim_X__",
             "yField": "__MeaSecondaryValue__0",
             "zIndex": 1001,
           },
         ],
         "type": "common",
       },
-      "indicatorKey": "2D2M-0",
+      "indicatorKey": "dualAxis-0",
       "style": {
         "padding": [
           1,
@@ -1476,7 +1528,7 @@ exports[`basic 2`] = `
               },
               "visible": true,
             },
-            "id": "2D2M-1-primary-axis",
+            "id": "dualAxis-1-primary-axis",
             "innerOffset": {
               "top": 7,
             },
@@ -1495,7 +1547,7 @@ exports[`basic 2`] = `
             "min": undefined,
             "nice": true,
             "orient": "left",
-            "seriesId": "2D2M-1-primary-series",
+            "seriesId": "dualAxis-1-primary-series",
             "tick": {
               "inside": false,
               "style": {
@@ -1533,7 +1585,7 @@ exports[`basic 2`] = `
               },
               "visible": false,
             },
-            "id": "2D2M-1-secondary-axis",
+            "id": "dualAxis-1-secondary-axis",
             "innerOffset": {
               "top": 7,
             },
@@ -1552,9 +1604,9 @@ exports[`basic 2`] = `
             "min": undefined,
             "nice": true,
             "orient": "right",
-            "seriesId": "2D2M-1-secondary-series",
+            "seriesId": "dualAxis-1-secondary-series",
             "sync": {
-              "axisId": "2D2M-1-primary-axis",
+              "axisId": "dualAxis-1-primary-axis",
               "zeroAlign": true,
             },
             "tick": {
@@ -1651,18 +1703,18 @@ exports[`basic 2`] = `
             },
             "data": {
               "fields": {
-                "__DimGroupID__": {
+                "__Dim_ColorId__": {
                   "sortIndex": 0,
                 },
-                "date": {
+                "__Dim_X__": {
                   "sortIndex": 0,
                 },
               },
-              "id": "2D2M-1-primary-dataset",
+              "id": "dualAxis-1-primary-dataset",
               "values": undefined,
             },
             "direction": "vertical",
-            "id": "2D2M-1-primary-series",
+            "id": "dualAxis-1-primary-series",
             "label": {
               "formatMethod": [Function],
               "visible": true,
@@ -1680,7 +1732,7 @@ exports[`basic 2`] = `
                 },
               },
             },
-            "seriesField": "__DimGroupID__",
+            "seriesField": "__Dim_ColorId__",
             "tooltip": {
               "dimension": {
                 "content": [
@@ -1694,6 +1746,13 @@ exports[`basic 2`] = `
               },
               "mark": {
                 "content": [
+                  {
+                    "hasShape": true,
+                    "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
                   {
                     "hasShape": true,
                     "key": [Function],
@@ -1715,7 +1774,7 @@ exports[`basic 2`] = `
               "visible": true,
             },
             "type": "bar",
-            "xField": "date",
+            "xField": "__Dim_X__",
             "yField": "__MeaPrimaryValue__1",
             "zIndex": 1000,
           },
@@ -1736,18 +1795,18 @@ exports[`basic 2`] = `
             },
             "data": {
               "fields": {
-                "__DimGroupID__": {
+                "__Dim_ColorId__": {
                   "sortIndex": 0,
                 },
-                "date": {
+                "__Dim_X__": {
                   "sortIndex": 0,
                 },
               },
-              "id": "2D2M-1-secondary-dataset",
+              "id": "dualAxis-1-secondary-dataset",
               "values": undefined,
             },
             "direction": "vertical",
-            "id": "2D2M-1-secondary-series",
+            "id": "dualAxis-1-secondary-series",
             "label": {
               "formatMethod": [Function],
               "visible": true,
@@ -1765,7 +1824,7 @@ exports[`basic 2`] = `
                 },
               },
             },
-            "seriesField": "__DimGroupID__",
+            "seriesField": "__Dim_ColorId__",
             "tooltip": {
               "dimension": {
                 "content": [
@@ -1789,6 +1848,13 @@ exports[`basic 2`] = `
                   {
                     "hasShape": true,
                     "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
+                  {
+                    "hasShape": true,
+                    "key": [Function],
                     "value": [Function],
                     "visible": true,
                   },
@@ -1800,14 +1866,14 @@ exports[`basic 2`] = `
               "visible": true,
             },
             "type": "line",
-            "xField": "date",
+            "xField": "__Dim_X__",
             "yField": "__MeaSecondaryValue__1",
             "zIndex": 1001,
           },
         ],
         "type": "common",
       },
-      "indicatorKey": "2D2M-1",
+      "indicatorKey": "dualAxis-1",
       "style": {
         "padding": [
           1,
@@ -1907,10 +1973,12 @@ exports[`basic 2`] = `
     "visible": true,
   },
   "records": {
-    "2D2M-0": [
+    "dualAxis-0": [
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaPrimaryValue__0": 10,
@@ -1928,8 +1996,10 @@ exports[`basic 2`] = `
         "sales": 100,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaPrimaryValue__0": 30,
@@ -1947,8 +2017,10 @@ exports[`basic 2`] = `
         "sales": 3200,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2021",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaPrimaryValue__0": 30,
@@ -1966,8 +2038,10 @@ exports[`basic 2`] = `
         "sales": 300,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2022",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaPrimaryValue__0": 50,
@@ -1985,8 +2059,10 @@ exports[`basic 2`] = `
         "sales": 2400,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2023",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaPrimaryValue__0": 40,
@@ -2004,8 +2080,10 @@ exports[`basic 2`] = `
         "sales": 500,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaSecondaryValue__0": 100,
@@ -2023,8 +2101,10 @@ exports[`basic 2`] = `
         "sales": 100,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaSecondaryValue__0": 3200,
@@ -2042,8 +2122,10 @@ exports[`basic 2`] = `
         "sales": 3200,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2021",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaSecondaryValue__0": 300,
@@ -2061,8 +2143,10 @@ exports[`basic 2`] = `
         "sales": 300,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2022",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaSecondaryValue__0": 2400,
@@ -2080,8 +2164,10 @@ exports[`basic 2`] = `
         "sales": 2400,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2023",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaSecondaryValue__0": 500,
@@ -2099,10 +2185,12 @@ exports[`basic 2`] = `
         "sales": 500,
       },
     ],
-    "2D2M-1": [
+    "dualAxis-1": [
       {
-        "__DimGroupID__": "比率-ratio",
-        "__DimGroup__": "比率",
+        "__Dim_ColorId__": "比率-ratio",
+        "__Dim_Color__": "比率",
+        "__Dim_Detail__": "比率",
+        "__Dim_X__": "2019",
         "__MeaId__": "ratio",
         "__MeaName__": "比率",
         "__MeaPrimaryValue__1": 301,
@@ -2120,8 +2208,10 @@ exports[`basic 2`] = `
         "sales": 100,
       },
       {
-        "__DimGroupID__": "比率-ratio",
-        "__DimGroup__": "比率",
+        "__Dim_ColorId__": "比率-ratio",
+        "__Dim_Color__": "比率",
+        "__Dim_Detail__": "比率",
+        "__Dim_X__": "2020",
         "__MeaId__": "ratio",
         "__MeaName__": "比率",
         "__MeaPrimaryValue__1": 32,
@@ -2139,8 +2229,10 @@ exports[`basic 2`] = `
         "sales": 3200,
       },
       {
-        "__DimGroupID__": "比率-ratio",
-        "__DimGroup__": "比率",
+        "__Dim_ColorId__": "比率-ratio",
+        "__Dim_Color__": "比率",
+        "__Dim_Detail__": "比率",
+        "__Dim_X__": "2021",
         "__MeaId__": "ratio",
         "__MeaName__": "比率",
         "__MeaPrimaryValue__1": 103,
@@ -2158,8 +2250,10 @@ exports[`basic 2`] = `
         "sales": 300,
       },
       {
-        "__DimGroupID__": "比率-ratio",
-        "__DimGroup__": "比率",
+        "__Dim_ColorId__": "比率-ratio",
+        "__Dim_Color__": "比率",
+        "__Dim_Detail__": "比率",
+        "__Dim_X__": "2022",
         "__MeaId__": "ratio",
         "__MeaName__": "比率",
         "__MeaPrimaryValue__1": 30,
@@ -2177,8 +2271,10 @@ exports[`basic 2`] = `
         "sales": 2400,
       },
       {
-        "__DimGroupID__": "比率-ratio",
-        "__DimGroup__": "比率",
+        "__Dim_ColorId__": "比率-ratio",
+        "__Dim_Color__": "比率",
+        "__Dim_Detail__": "比率",
+        "__Dim_X__": "2023",
         "__MeaId__": "ratio",
         "__MeaName__": "比率",
         "__MeaPrimaryValue__1": 305,
@@ -2196,8 +2292,10 @@ exports[`basic 2`] = `
         "sales": 500,
       },
       {
-        "__DimGroupID__": "回报率-returnRatio",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-returnRatio",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2019",
         "__MeaId__": "returnRatio",
         "__MeaName__": "回报率",
         "__MeaSecondaryValue__1": 301,
@@ -2215,8 +2313,10 @@ exports[`basic 2`] = `
         "sales": 100,
       },
       {
-        "__DimGroupID__": "回报率-returnRatio",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-returnRatio",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2020",
         "__MeaId__": "returnRatio",
         "__MeaName__": "回报率",
         "__MeaSecondaryValue__1": 30,
@@ -2234,8 +2334,10 @@ exports[`basic 2`] = `
         "sales": 3200,
       },
       {
-        "__DimGroupID__": "回报率-returnRatio",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-returnRatio",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2021",
         "__MeaId__": "returnRatio",
         "__MeaName__": "回报率",
         "__MeaSecondaryValue__1": 503,
@@ -2253,8 +2355,10 @@ exports[`basic 2`] = `
         "sales": 300,
       },
       {
-        "__DimGroupID__": "回报率-returnRatio",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-returnRatio",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2022",
         "__MeaId__": "returnRatio",
         "__MeaName__": "回报率",
         "__MeaSecondaryValue__1": 24,
@@ -2272,8 +2376,10 @@ exports[`basic 2`] = `
         "sales": 2400,
       },
       {
-        "__DimGroupID__": "回报率-returnRatio",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-returnRatio",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2023",
         "__MeaId__": "returnRatio",
         "__MeaName__": "回报率",
         "__MeaSecondaryValue__1": 305,

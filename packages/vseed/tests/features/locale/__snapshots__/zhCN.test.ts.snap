@@ -259,8 +259,10 @@ exports[`zhCN 1`] = `
   "dataset": [
     [
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__group1": 10000,
@@ -277,8 +279,10 @@ exports[`zhCN 1`] = `
         "rateOfReturn": 0.001,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__group1": 200000,
@@ -295,8 +299,10 @@ exports[`zhCN 1`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__group1": 20000,
@@ -313,8 +319,10 @@ exports[`zhCN 1`] = `
         "rateOfReturn": 0.002,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__group1": 400000,
@@ -331,8 +339,10 @@ exports[`zhCN 1`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2021",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__group1": 30000,
@@ -349,8 +359,10 @@ exports[`zhCN 1`] = `
         "rateOfReturn": 0.003,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2021",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__group1": 600000,
@@ -367,8 +379,10 @@ exports[`zhCN 1`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2022",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__group1": 40000,
@@ -385,8 +399,10 @@ exports[`zhCN 1`] = `
         "rateOfReturn": 0.004,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2022",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__group1": 800000,
@@ -403,8 +419,10 @@ exports[`zhCN 1`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2023",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__group1": 50000,
@@ -421,8 +439,10 @@ exports[`zhCN 1`] = `
         "rateOfReturn": 0.005,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2023",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__group1": 1000000,
@@ -441,8 +461,10 @@ exports[`zhCN 1`] = `
     ],
     [
       {
-        "__DimGroupID__": "折扣-discount",
-        "__DimGroup__": "折扣",
+        "__Dim_ColorId__": "折扣-discount",
+        "__Dim_Color__": "折扣",
+        "__Dim_Detail__": "折扣",
+        "__Dim_X__": "2019",
         "__MeaId__": "discount",
         "__MeaName__": "折扣",
         "__MeaValue__group2": 0.5,
@@ -460,8 +482,10 @@ exports[`zhCN 1`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "折扣-discount",
-        "__DimGroup__": "折扣",
+        "__Dim_ColorId__": "折扣-discount",
+        "__Dim_Color__": "折扣",
+        "__Dim_Detail__": "折扣",
+        "__Dim_X__": "2020",
         "__MeaId__": "discount",
         "__MeaName__": "折扣",
         "__MeaValue__group2": 0.2,
@@ -479,8 +503,10 @@ exports[`zhCN 1`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "折扣-discount",
-        "__DimGroup__": "折扣",
+        "__Dim_ColorId__": "折扣-discount",
+        "__Dim_Color__": "折扣",
+        "__Dim_Detail__": "折扣",
+        "__Dim_X__": "2021",
         "__MeaId__": "discount",
         "__MeaName__": "折扣",
         "__MeaValue__group2": 0.4,
@@ -498,8 +524,10 @@ exports[`zhCN 1`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "折扣-discount",
-        "__DimGroup__": "折扣",
+        "__Dim_ColorId__": "折扣-discount",
+        "__Dim_Color__": "折扣",
+        "__Dim_Detail__": "折扣",
+        "__Dim_X__": "2022",
         "__MeaId__": "discount",
         "__MeaName__": "折扣",
         "__MeaValue__group2": 0.2,
@@ -517,8 +545,10 @@ exports[`zhCN 1`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "折扣-discount",
-        "__DimGroup__": "折扣",
+        "__Dim_ColorId__": "折扣-discount",
+        "__Dim_Color__": "折扣",
+        "__Dim_Detail__": "折扣",
+        "__Dim_X__": "2023",
         "__MeaId__": "discount",
         "__MeaName__": "折扣",
         "__MeaValue__group2": 0.05,
@@ -538,8 +568,10 @@ exports[`zhCN 1`] = `
     ],
     [
       {
-        "__DimGroupID__": "回报率-rateOfReturn",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-rateOfReturn",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2019",
         "__MeaId__": "rateOfReturn",
         "__MeaName__": "回报率",
         "__MeaValue__回报率rateOfReturn": 0.001,
@@ -557,8 +589,10 @@ exports[`zhCN 1`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "回报率-rateOfReturn",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-rateOfReturn",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2020",
         "__MeaId__": "rateOfReturn",
         "__MeaName__": "回报率",
         "__MeaValue__回报率rateOfReturn": 0.002,
@@ -576,8 +610,10 @@ exports[`zhCN 1`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "回报率-rateOfReturn",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-rateOfReturn",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2021",
         "__MeaId__": "rateOfReturn",
         "__MeaName__": "回报率",
         "__MeaValue__回报率rateOfReturn": 0.003,
@@ -595,8 +631,10 @@ exports[`zhCN 1`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "回报率-rateOfReturn",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-rateOfReturn",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2022",
         "__MeaId__": "rateOfReturn",
         "__MeaName__": "回报率",
         "__MeaValue__回报率rateOfReturn": 0.004,
@@ -614,8 +652,10 @@ exports[`zhCN 1`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "回报率-rateOfReturn",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-rateOfReturn",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2023",
         "__MeaId__": "rateOfReturn",
         "__MeaName__": "回报率",
         "__MeaValue__回报率rateOfReturn": 0.005,
@@ -656,8 +696,12 @@ exports[`zhCN 1`] = `
           "利润-profit",
           "销售额-sales",
         ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
     {
@@ -678,8 +722,12 @@ exports[`zhCN 1`] = `
         "colorItems": [
           "折扣-discount",
         ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
     {
@@ -700,8 +748,12 @@ exports[`zhCN 1`] = `
         "colorItems": [
           "回报率-rateOfReturn",
         ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
   ],
@@ -711,51 +763,29 @@ exports[`zhCN 1`] = `
       "id": "date",
       "location": "dimension",
     },
-  ],
-  "encoding": [
     {
-      "color": [
-        "__MeaName__",
-      ],
-      "group": [
-        "__DimGroupID__",
-      ],
-      "x": [
-        "date",
-      ],
-      "y": [
-        "__MeaValue__group1",
-      ],
-    },
-    {
-      "color": [
-        "__MeaName__",
-      ],
-      "group": [
-        "__DimGroupID__",
-      ],
-      "x": [
-        "date",
-      ],
-      "y": [
-        "__MeaValue__group2",
-      ],
-    },
-    {
-      "color": [
-        "__MeaName__",
-      ],
-      "group": [
-        "__DimGroupID__",
-      ],
-      "x": [
-        "date",
-      ],
-      "y": [
-        "__MeaValue__回报率rateOfReturn",
-      ],
+      "alias": "指标名称",
+      "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "color": [
+      "__MeaName__",
+    ],
+    "column": [],
+    "detail": [
+      "__MeaName__",
+    ],
+    "label": [],
+    "row": [],
+    "tooltip": [
+      "date",
+      "__MeaName__",
+    ],
+    "x": [
+      "date",
+    ],
+  },
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [
@@ -1000,10 +1030,13 @@ exports[`zhCN 2`] = `
         },
         "data": {
           "fields": {
-            "__DimGroupID__": {
+            "__Dim_Angle__": {
               "sortIndex": 0,
             },
-            "date": {
+            "__Dim_ColorId__": {
+              "sortIndex": 0,
+            },
+            "__Dim_X__": {
               "sortIndex": 0,
             },
           },
@@ -1021,7 +1054,7 @@ exports[`zhCN 2`] = `
             "clip": true,
           },
         ],
-        "seriesField": "__DimGroupID__",
+        "seriesField": "__Dim_ColorId__",
         "stackCornerRadius": [
           4,
           4,
@@ -1051,6 +1084,13 @@ exports[`zhCN 2`] = `
               {
                 "hasShape": true,
                 "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
+              {
+                "hasShape": true,
+                "key": [Function],
                 "value": [Function],
                 "visible": true,
               },
@@ -1063,8 +1103,8 @@ exports[`zhCN 2`] = `
         },
         "type": "bar",
         "xField": [
-          "date",
-          "__DimGroupID__",
+          "__Dim_X__",
+          "__Dim_Detail__",
         ],
         "yField": "__MeaValue__group1",
       },
@@ -1272,10 +1312,13 @@ exports[`zhCN 2`] = `
         },
         "data": {
           "fields": {
-            "__DimGroupID__": {
+            "__Dim_Angle__": {
               "sortIndex": 0,
             },
-            "date": {
+            "__Dim_ColorId__": {
+              "sortIndex": 0,
+            },
+            "__Dim_X__": {
               "sortIndex": 0,
             },
           },
@@ -1293,7 +1336,7 @@ exports[`zhCN 2`] = `
             "clip": true,
           },
         ],
-        "seriesField": "__DimGroupID__",
+        "seriesField": "__Dim_ColorId__",
         "stackCornerRadius": [
           4,
           4,
@@ -1323,6 +1366,13 @@ exports[`zhCN 2`] = `
               {
                 "hasShape": true,
                 "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
+              {
+                "hasShape": true,
+                "key": [Function],
                 "value": [Function],
                 "visible": true,
               },
@@ -1335,8 +1385,8 @@ exports[`zhCN 2`] = `
         },
         "type": "bar",
         "xField": [
-          "date",
-          "__DimGroupID__",
+          "__Dim_X__",
+          "__Dim_Detail__",
         ],
         "yField": "__MeaValue__group2",
       },
@@ -1544,10 +1594,13 @@ exports[`zhCN 2`] = `
         },
         "data": {
           "fields": {
-            "__DimGroupID__": {
+            "__Dim_Angle__": {
               "sortIndex": 0,
             },
-            "date": {
+            "__Dim_ColorId__": {
+              "sortIndex": 0,
+            },
+            "__Dim_X__": {
               "sortIndex": 0,
             },
           },
@@ -1565,7 +1618,7 @@ exports[`zhCN 2`] = `
             "clip": true,
           },
         ],
-        "seriesField": "__DimGroupID__",
+        "seriesField": "__Dim_ColorId__",
         "stackCornerRadius": [
           4,
           4,
@@ -1595,6 +1648,13 @@ exports[`zhCN 2`] = `
               {
                 "hasShape": true,
                 "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
+              {
+                "hasShape": true,
+                "key": [Function],
                 "value": [Function],
                 "visible": true,
               },
@@ -1607,8 +1667,8 @@ exports[`zhCN 2`] = `
         },
         "type": "bar",
         "xField": [
-          "date",
-          "__DimGroupID__",
+          "__Dim_X__",
+          "__Dim_Detail__",
         ],
         "yField": "__MeaValue__回报率rateOfReturn",
       },
@@ -1714,8 +1774,10 @@ exports[`zhCN 2`] = `
   "records": {
     "group1": [
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__group1": 10000,
@@ -1732,8 +1794,10 @@ exports[`zhCN 2`] = `
         "rateOfReturn": 0.001,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__group1": 200000,
@@ -1750,8 +1814,10 @@ exports[`zhCN 2`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__group1": 20000,
@@ -1768,8 +1834,10 @@ exports[`zhCN 2`] = `
         "rateOfReturn": 0.002,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__group1": 400000,
@@ -1786,8 +1854,10 @@ exports[`zhCN 2`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2021",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__group1": 30000,
@@ -1804,8 +1874,10 @@ exports[`zhCN 2`] = `
         "rateOfReturn": 0.003,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2021",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__group1": 600000,
@@ -1822,8 +1894,10 @@ exports[`zhCN 2`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2022",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__group1": 40000,
@@ -1840,8 +1914,10 @@ exports[`zhCN 2`] = `
         "rateOfReturn": 0.004,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2022",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__group1": 800000,
@@ -1858,8 +1934,10 @@ exports[`zhCN 2`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2023",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__group1": 50000,
@@ -1876,8 +1954,10 @@ exports[`zhCN 2`] = `
         "rateOfReturn": 0.005,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2023",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__group1": 1000000,
@@ -1896,8 +1976,10 @@ exports[`zhCN 2`] = `
     ],
     "group2": [
       {
-        "__DimGroupID__": "折扣-discount",
-        "__DimGroup__": "折扣",
+        "__Dim_ColorId__": "折扣-discount",
+        "__Dim_Color__": "折扣",
+        "__Dim_Detail__": "折扣",
+        "__Dim_X__": "2019",
         "__MeaId__": "discount",
         "__MeaName__": "折扣",
         "__MeaValue__group2": 0.5,
@@ -1915,8 +1997,10 @@ exports[`zhCN 2`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "折扣-discount",
-        "__DimGroup__": "折扣",
+        "__Dim_ColorId__": "折扣-discount",
+        "__Dim_Color__": "折扣",
+        "__Dim_Detail__": "折扣",
+        "__Dim_X__": "2020",
         "__MeaId__": "discount",
         "__MeaName__": "折扣",
         "__MeaValue__group2": 0.2,
@@ -1934,8 +2018,10 @@ exports[`zhCN 2`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "折扣-discount",
-        "__DimGroup__": "折扣",
+        "__Dim_ColorId__": "折扣-discount",
+        "__Dim_Color__": "折扣",
+        "__Dim_Detail__": "折扣",
+        "__Dim_X__": "2021",
         "__MeaId__": "discount",
         "__MeaName__": "折扣",
         "__MeaValue__group2": 0.4,
@@ -1953,8 +2039,10 @@ exports[`zhCN 2`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "折扣-discount",
-        "__DimGroup__": "折扣",
+        "__Dim_ColorId__": "折扣-discount",
+        "__Dim_Color__": "折扣",
+        "__Dim_Detail__": "折扣",
+        "__Dim_X__": "2022",
         "__MeaId__": "discount",
         "__MeaName__": "折扣",
         "__MeaValue__group2": 0.2,
@@ -1972,8 +2060,10 @@ exports[`zhCN 2`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "折扣-discount",
-        "__DimGroup__": "折扣",
+        "__Dim_ColorId__": "折扣-discount",
+        "__Dim_Color__": "折扣",
+        "__Dim_Detail__": "折扣",
+        "__Dim_X__": "2023",
         "__MeaId__": "discount",
         "__MeaName__": "折扣",
         "__MeaValue__group2": 0.05,
@@ -1993,8 +2083,10 @@ exports[`zhCN 2`] = `
     ],
     "回报率rateOfReturn": [
       {
-        "__DimGroupID__": "回报率-rateOfReturn",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-rateOfReturn",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2019",
         "__MeaId__": "rateOfReturn",
         "__MeaName__": "回报率",
         "__MeaValue__回报率rateOfReturn": 0.001,
@@ -2012,8 +2104,10 @@ exports[`zhCN 2`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "回报率-rateOfReturn",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-rateOfReturn",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2020",
         "__MeaId__": "rateOfReturn",
         "__MeaName__": "回报率",
         "__MeaValue__回报率rateOfReturn": 0.002,
@@ -2031,8 +2125,10 @@ exports[`zhCN 2`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "回报率-rateOfReturn",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-rateOfReturn",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2021",
         "__MeaId__": "rateOfReturn",
         "__MeaName__": "回报率",
         "__MeaValue__回报率rateOfReturn": 0.003,
@@ -2050,8 +2146,10 @@ exports[`zhCN 2`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "回报率-rateOfReturn",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-rateOfReturn",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2022",
         "__MeaId__": "rateOfReturn",
         "__MeaName__": "回报率",
         "__MeaValue__回报率rateOfReturn": 0.004,
@@ -2069,8 +2167,10 @@ exports[`zhCN 2`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "回报率-rateOfReturn",
-        "__DimGroup__": "回报率",
+        "__Dim_ColorId__": "回报率-rateOfReturn",
+        "__Dim_Color__": "回报率",
+        "__Dim_Detail__": "回报率",
+        "__Dim_X__": "2023",
         "__MeaId__": "rateOfReturn",
         "__MeaName__": "回报率",
         "__MeaValue__回报率rateOfReturn": 0.005,

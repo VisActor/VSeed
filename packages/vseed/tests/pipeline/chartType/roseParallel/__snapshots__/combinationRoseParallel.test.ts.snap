@@ -79,8 +79,10 @@ exports[`combinationRoseParallel 1`] = `
   "dataset": [
     [
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_Angle__": "2019",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 200000,
@@ -94,8 +96,10 @@ exports[`combinationRoseParallel 1`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_Angle__": "2020",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 400000,
@@ -109,8 +113,10 @@ exports[`combinationRoseParallel 1`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_Angle__": "2021",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 600000,
@@ -124,8 +130,10 @@ exports[`combinationRoseParallel 1`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_Angle__": "2022",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 800000,
@@ -139,8 +147,10 @@ exports[`combinationRoseParallel 1`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_Angle__": "2023",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 1000000,
@@ -156,8 +166,10 @@ exports[`combinationRoseParallel 1`] = `
     ],
     [
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_Angle__": "2019",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 10000,
@@ -171,8 +183,10 @@ exports[`combinationRoseParallel 1`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_Angle__": "2020",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 20000,
@@ -186,8 +200,10 @@ exports[`combinationRoseParallel 1`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_Angle__": "2021",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 30000,
@@ -201,8 +217,10 @@ exports[`combinationRoseParallel 1`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_Angle__": "2022",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 40000,
@@ -216,8 +234,10 @@ exports[`combinationRoseParallel 1`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_Angle__": "2023",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 50000,
@@ -251,8 +271,12 @@ exports[`combinationRoseParallel 1`] = `
         "colorItems": [
           "销售额-sales",
         ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
     {
@@ -273,8 +297,12 @@ exports[`combinationRoseParallel 1`] = `
         "colorItems": [
           "利润-profit",
         ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
   ],
@@ -284,37 +312,29 @@ exports[`combinationRoseParallel 1`] = `
       "id": "date",
       "location": "dimension",
     },
-  ],
-  "encoding": [
     {
-      "angle": [
-        "date",
-      ],
-      "color": [
-        "__DimGroupID__",
-      ],
-      "group": [
-        "__DimGroupID__",
-      ],
-      "radius": [
-        "__MeaValue__line1",
-      ],
-    },
-    {
-      "angle": [
-        "date",
-      ],
-      "color": [
-        "__DimGroupID__",
-      ],
-      "group": [
-        "__DimGroupID__",
-      ],
-      "radius": [
-        "__MeaValue__line2",
-      ],
+      "alias": "指标名称",
+      "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "angle": [
+      "date",
+    ],
+    "color": [
+      "__MeaName__",
+    ],
+    "column": [],
+    "detail": [
+      "__MeaName__",
+    ],
+    "label": [],
+    "row": [],
+    "tooltip": [
+      "date",
+      "__MeaName__",
+    ],
+  },
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [
@@ -415,8 +435,8 @@ exports[`combinationRoseParallel 2`] = `
         ],
         "background": "transparent",
         "categoryField": [
-          "date",
-          "__DimGroupID__",
+          "__Dim_Angle__",
+          "__Dim_Detail__",
         ],
         "color": {
           "domain": [
@@ -440,10 +460,13 @@ exports[`combinationRoseParallel 2`] = `
         },
         "data": {
           "fields": {
-            "__DimGroupID__": {
+            "__Dim_Angle__": {
               "sortIndex": 0,
             },
-            "date": {
+            "__Dim_ColorId__": {
+              "sortIndex": 0,
+            },
+            "__Dim_X__": {
               "sortIndex": 0,
             },
           },
@@ -474,7 +497,7 @@ exports[`combinationRoseParallel 2`] = `
             "stroke": "#ffffff",
           },
         },
-        "seriesField": "__DimGroupID__",
+        "seriesField": "__Dim_ColorId__",
         "stackCornerRadius": undefined,
         "tooltip": {
           "dimension": {
@@ -489,6 +512,13 @@ exports[`combinationRoseParallel 2`] = `
           },
           "mark": {
             "content": [
+              {
+                "hasShape": true,
+                "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
               {
                 "hasShape": true,
                 "key": [Function],
@@ -573,8 +603,8 @@ exports[`combinationRoseParallel 2`] = `
         ],
         "background": "transparent",
         "categoryField": [
-          "date",
-          "__DimGroupID__",
+          "__Dim_Angle__",
+          "__Dim_Detail__",
         ],
         "color": {
           "domain": [
@@ -598,10 +628,13 @@ exports[`combinationRoseParallel 2`] = `
         },
         "data": {
           "fields": {
-            "__DimGroupID__": {
+            "__Dim_Angle__": {
               "sortIndex": 0,
             },
-            "date": {
+            "__Dim_ColorId__": {
+              "sortIndex": 0,
+            },
+            "__Dim_X__": {
               "sortIndex": 0,
             },
           },
@@ -632,7 +665,7 @@ exports[`combinationRoseParallel 2`] = `
             "stroke": "#ffffff",
           },
         },
-        "seriesField": "__DimGroupID__",
+        "seriesField": "__Dim_ColorId__",
         "stackCornerRadius": undefined,
         "tooltip": {
           "dimension": {
@@ -647,6 +680,13 @@ exports[`combinationRoseParallel 2`] = `
           },
           "mark": {
             "content": [
+              {
+                "hasShape": true,
+                "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
               {
                 "hasShape": true,
                 "key": [Function],
@@ -750,8 +790,10 @@ exports[`combinationRoseParallel 2`] = `
   "records": {
     "line1": [
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_Angle__": "2019",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 200000,
@@ -765,8 +807,10 @@ exports[`combinationRoseParallel 2`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_Angle__": "2020",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 400000,
@@ -780,8 +824,10 @@ exports[`combinationRoseParallel 2`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_Angle__": "2021",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 600000,
@@ -795,8 +841,10 @@ exports[`combinationRoseParallel 2`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_Angle__": "2022",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 800000,
@@ -810,8 +858,10 @@ exports[`combinationRoseParallel 2`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_Angle__": "2023",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 1000000,
@@ -827,8 +877,10 @@ exports[`combinationRoseParallel 2`] = `
     ],
     "line2": [
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_Angle__": "2019",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 10000,
@@ -842,8 +894,10 @@ exports[`combinationRoseParallel 2`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_Angle__": "2020",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 20000,
@@ -857,8 +911,10 @@ exports[`combinationRoseParallel 2`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_Angle__": "2021",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 30000,
@@ -872,8 +928,10 @@ exports[`combinationRoseParallel 2`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_Angle__": "2022",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 40000,
@@ -887,8 +945,10 @@ exports[`combinationRoseParallel 2`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_Angle__": "2023",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 50000,

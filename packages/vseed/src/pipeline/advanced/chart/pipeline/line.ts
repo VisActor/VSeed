@@ -2,7 +2,6 @@ import type { AdvancedPipeline } from 'src/types'
 import {
   autoDimensions,
   autoMeasures,
-  encodingXY,
   initAdvancedVSeed,
   theme,
   pivotAdapter,
@@ -11,20 +10,21 @@ import {
   markStyle,
   sortXBandAxis,
   sortLegend,
-  reshapeTo2D1M0Name,
-  pivotReshapeTo2D1M0Name,
+  reshapeWithEncoding,
+  pivotReshapeWithEncoding,
+  encodingForColumn,
 } from '../pipes'
 
 export const lineAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   autoMeasures,
   autoDimensions,
-  pivotAdapter([reshapeTo2D1M0Name], [pivotReshapeTo2D1M0Name]),
-  encodingXY,
+  encodingForColumn,
+  pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
   sortXBandAxis,
   sortLegend,
   lineConfig,
   theme,
   markStyle,
-  annotation
+  annotation,
 ]

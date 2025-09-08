@@ -22,6 +22,7 @@ import type {
   MeasureTree,
   Sort,
   SortLegend,
+  Encoding,
 } from '../../properties'
 
 /**
@@ -31,14 +32,14 @@ import type {
  * - 时间序列的构成变化分析
  * - 多类别占比趋势对比
  * - 累积占比与单一类别占比同时展示
- * @warning 
+ * @warning
  * 数据要求:
  * - 至少1个指标字段（度量）
  * - 第一个维度会放至Y轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
  * - 所有指标会自动合并为一个指标
  * 默认开启的功能:
  * - 默认开启图例、坐标轴、百分比标签、提示信息、占比计算
- * @recommend 
+ * @recommend
  * - 推荐字段配置: `1`个指标, `2`个维度
  * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
@@ -57,6 +58,16 @@ export interface AreaPercent {
    * @example [{month:'1月', category:'A', value:30}, {month:'1月', category:'B', value:70}]
    */
   dataset: Dataset
+
+  /**
+   * @description 编码配置, 百分比面积图的视觉通道, 包括: x通道, color通道, detail通道, label通道, tooltip通道
+   * - x: 映射到X轴的字段, 支持放入多个维度
+   * - detail: 详情映射通道, 支持放入多个维度
+   * - tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
+   * - color: 颜色映射通道, 支持放入多个维度 或 1个 指标
+   * - label: 标签映射通道, 支持放入 多个维度 或 1个指标
+   */
+  encoding?: Pick<Encoding, 'x' | 'color' | 'detail' | 'label' | 'tooltip'>
 
   /**
    * 维度

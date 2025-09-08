@@ -14,7 +14,7 @@ export const tooltipPrimary: SpecPipe = (spec, context) => {
   const unfoldInfo = datasetReshapeInfo[0].unfoldInfo
 
   const { measureId, measureValue, measureName } = foldInfoList[0]
-  const { groupName } = unfoldInfo
+  const { encodingColor: colorName } = unfoldInfo
 
   result.tooltip = {
     visible: enable,
@@ -41,7 +41,7 @@ export const tooltipPrimary: SpecPipe = (spec, context) => {
         {
           visible: true,
           hasShape: true,
-          key: (datum) => (datum && (datum[measureName || groupName] as string)) || '',
+          key: (datum) => (datum && (datum[measureName || colorName] as string)) || '',
           value: (datum) => {
             if (!datum) {
               return ''
@@ -71,7 +71,7 @@ export const tooltipPrimary: SpecPipe = (spec, context) => {
       content: [
         {
           visible: true,
-          key: (datum) => (datum && (datum[groupName] as string)) || '',
+          key: (datum) => (datum && (datum[colorName] as string)) || '',
           value: (datum) => {
             if (!datum) {
               return ''
@@ -117,7 +117,7 @@ export const tooltipSecondary: SpecPipe = (spec, context) => {
   const foldInfoList = datasetReshapeInfo[0].foldInfoList as FoldInfo[]
   const unfoldInfo = datasetReshapeInfo[0].unfoldInfo as UnfoldInfo
   const { measureId, measureValue, measureName } = foldInfoList[1]
-  const { groupName } = unfoldInfo
+  const { encodingColorId } = unfoldInfo
 
   result.tooltip = {
     visible: enable,
@@ -144,7 +144,7 @@ export const tooltipSecondary: SpecPipe = (spec, context) => {
         {
           visible: true,
           hasShape: true,
-          key: (datum) => (datum && (datum[measureName || groupName] as string)) || '',
+          key: (datum) => (datum && (datum[measureName || encodingColorId] as string)) || '',
           value: (datum) => {
             if (!datum) {
               return ''
@@ -174,7 +174,7 @@ export const tooltipSecondary: SpecPipe = (spec, context) => {
       content: [
         {
           visible: true,
-          key: (datum) => (datum && (datum[groupName] as string)) || '',
+          key: (datum) => (datum && (datum[encodingColorId] as string)) || '',
           value: (datum) => {
             if (!datum) {
               return ''

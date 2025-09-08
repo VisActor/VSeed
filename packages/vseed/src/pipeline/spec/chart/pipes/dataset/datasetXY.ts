@@ -4,11 +4,12 @@ import type { SpecPipe } from 'src/types'
 
 export const datasetXY: SpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
-  const { encoding, analysis, datasetReshapeInfo } = advancedVSeed
+  const { analysis, datasetReshapeInfo } = advancedVSeed
+  const { unfoldInfo } = datasetReshapeInfo[0]
   const orderMapping = analysis?.orderMapping || {}
-  const angle = encoding[0]?.angle?.[0]
-  const x = encoding[0]?.x?.[0]
-  const group = encoding[0]?.group?.[0]
+  const angle = unfoldInfo.encodingAngle
+  const x = unfoldInfo.encodingX
+  const colorId = unfoldInfo.encodingColorId
   const id = datasetReshapeInfo[0].id
 
   const fields: Record<string, object> = {}
@@ -32,16 +33,16 @@ export const datasetXY: SpecPipe = (spec, context) => {
     }
   }
 
-  if (group) {
-    const order = orderMapping[group]
+  if (colorId) {
+    const order = orderMapping[colorId]
     if (order) {
-      fields[group] = {
+      fields[colorId] = {
         sortIndex: 0,
         domain: order,
         lockStatisticsByDomain: true,
       }
     } else {
-      fields[group] = {
+      fields[colorId] = {
         sortIndex: 0,
       }
     }

@@ -4,10 +4,12 @@ import type { SpecPipe } from 'src/types'
 
 export const datasetPrimary: SpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
-  const { encoding, analysis, datasetReshapeInfo } = advancedVSeed
+  const { analysis, datasetReshapeInfo } = advancedVSeed
   const orderMapping = analysis?.orderMapping || {}
-  const x = encoding[0]?.x?.[0]
-  const group = encoding[0]?.group?.[0]
+
+  const { unfoldInfo } = datasetReshapeInfo[0]
+  const x = unfoldInfo.encodingX
+  const colorId = unfoldInfo.encodingColorId
   const id = datasetReshapeInfo[0].id
 
   const fields: Record<string, object> = {}
@@ -27,16 +29,16 @@ export const datasetPrimary: SpecPipe = (spec, context) => {
     }
   }
 
-  if (group) {
-    const order = orderMapping[group]
+  if (colorId) {
+    const order = orderMapping[colorId]
     if (order) {
-      fields[group] = {
+      fields[colorId] = {
         sortIndex: 0,
         domain: order,
         lockStatisticsByDomain: true,
       }
     } else {
-      fields[group] = {
+      fields[colorId] = {
         sortIndex: 0,
       }
     }
@@ -55,10 +57,12 @@ export const datasetPrimary: SpecPipe = (spec, context) => {
 
 export const datasetSecondary: SpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
-  const { encoding, analysis, datasetReshapeInfo } = advancedVSeed
+  const { analysis, datasetReshapeInfo } = advancedVSeed
   const orderMapping = analysis?.orderMapping || {}
-  const x = encoding[0]?.x?.[0]
-  const group = encoding[0]?.group?.[0]
+
+  const { unfoldInfo } = datasetReshapeInfo[0]
+  const x = unfoldInfo.encodingX
+  const colorId = unfoldInfo.encodingColorId
   const id = datasetReshapeInfo[0].id
 
   const fields: Record<string, object> = {}
@@ -78,16 +82,16 @@ export const datasetSecondary: SpecPipe = (spec, context) => {
     }
   }
 
-  if (group) {
-    const order = orderMapping[group]
+  if (colorId) {
+    const order = orderMapping[colorId]
     if (order) {
-      fields[group] = {
+      fields[colorId] = {
         sortIndex: 0,
         domain: order,
         lockStatisticsByDomain: true,
       }
     } else {
-      fields[group] = {
+      fields[colorId] = {
         sortIndex: 0,
       }
     }

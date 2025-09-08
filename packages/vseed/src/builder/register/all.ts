@@ -16,7 +16,6 @@ import {
   registerScatter,
   registerTable,
   registerPivotTable,
-  registerAreaRange,
   registerHeatmap,
   registerRadar,
   registerDualAxis,
@@ -37,7 +36,6 @@ export const registerAll = () => {
   registerBarPercent()
   registerArea()
   registerAreaPercent()
-  registerAreaRange()
   registerScatter()
   registerDualAxis()
   // polar

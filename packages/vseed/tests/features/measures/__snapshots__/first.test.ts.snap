@@ -321,8 +321,10 @@ exports[`first 1`] = `
   "dataset": [
     [
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaPrimaryValue__": 200,
@@ -336,8 +338,10 @@ exports[`first 1`] = `
         "sales": 200,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaPrimaryValue__": 600,
@@ -351,8 +355,10 @@ exports[`first 1`] = `
         "sales": 600,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2021",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaPrimaryValue__": 600,
@@ -366,8 +372,10 @@ exports[`first 1`] = `
         "sales": 600,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2022",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaPrimaryValue__": 1000,
@@ -381,8 +389,10 @@ exports[`first 1`] = `
         "sales": 1000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
+        "__Dim_X__": "2023",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaPrimaryValue__": 800,
@@ -398,8 +408,10 @@ exports[`first 1`] = `
     ],
     [
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaSecondaryValue__": 10,
@@ -413,8 +425,10 @@ exports[`first 1`] = `
         "sales": 200,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaSecondaryValue__": 30,
@@ -428,8 +442,10 @@ exports[`first 1`] = `
         "sales": 600,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2021",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaSecondaryValue__": 30,
@@ -443,8 +459,10 @@ exports[`first 1`] = `
         "sales": 600,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2022",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaSecondaryValue__": 50,
@@ -458,8 +476,10 @@ exports[`first 1`] = `
         "sales": 1000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2023",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaSecondaryValue__": 40,
@@ -502,7 +522,7 @@ exports[`first 1`] = `
           "measureValue": "__MeaSecondaryValue__",
         },
       ],
-      "id": "2D2M",
+      "id": "dualAxis",
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
@@ -513,8 +533,12 @@ exports[`first 1`] = `
           "销售额-sales",
           "利润-profit",
         ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
   ],
@@ -524,24 +548,29 @@ exports[`first 1`] = `
       "id": "date",
       "location": "dimension",
     },
-  ],
-  "encoding": [
     {
-      "color": [
-        "__MeaName__",
-      ],
-      "group": [
-        "__DimGroupID__",
-      ],
-      "x": [
-        "date",
-      ],
-      "y": [
-        "__MeaPrimaryValue__",
-        "__MeaSecondaryValue__",
-      ],
+      "alias": "指标名称",
+      "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "color": [
+      "__MeaName__",
+    ],
+    "column": [],
+    "detail": [
+      "__MeaName__",
+    ],
+    "label": [],
+    "row": [],
+    "tooltip": [
+      "date",
+      "__MeaName__",
+    ],
+    "x": [
+      "date",
+    ],
+  },
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [
@@ -659,7 +688,7 @@ exports[`first 2`] = `
         },
         "visible": true,
       },
-      "id": "2D2M-primary-axis",
+      "id": "dualAxis-primary-axis",
       "innerOffset": {
         "top": 7,
       },
@@ -678,7 +707,7 @@ exports[`first 2`] = `
       "min": undefined,
       "nice": true,
       "orient": "left",
-      "seriesId": "2D2M-primary-series",
+      "seriesId": "dualAxis-primary-series",
       "tick": {
         "inside": false,
         "style": {
@@ -716,7 +745,7 @@ exports[`first 2`] = `
         },
         "visible": false,
       },
-      "id": "2D2M-secondary-axis",
+      "id": "dualAxis-secondary-axis",
       "innerOffset": {
         "top": 7,
       },
@@ -735,9 +764,9 @@ exports[`first 2`] = `
       "min": undefined,
       "nice": true,
       "orient": "right",
-      "seriesId": "2D2M-secondary-series",
+      "seriesId": "dualAxis-secondary-series",
       "sync": {
-        "axisId": "2D2M-primary-axis",
+        "axisId": "dualAxis-primary-axis",
         "zeroAlign": true,
       },
       "tick": {
@@ -875,18 +904,20 @@ exports[`first 2`] = `
       },
       "data": {
         "fields": {
-          "__DimGroupID__": {
+          "__Dim_ColorId__": {
             "sortIndex": 0,
           },
-          "date": {
+          "__Dim_X__": {
             "sortIndex": 0,
           },
         },
-        "id": "2D2M-primary-dataset",
+        "id": "dualAxis-primary-dataset",
         "values": [
           {
-            "__DimGroupID__": "销售额-sales",
-            "__DimGroup__": "销售额",
+            "__Dim_ColorId__": "销售额-sales",
+            "__Dim_Color__": "销售额",
+            "__Dim_Detail__": "销售额",
+            "__Dim_X__": "2019",
             "__MeaId__": "sales",
             "__MeaName__": "销售额",
             "__MeaPrimaryValue__": 200,
@@ -900,8 +931,10 @@ exports[`first 2`] = `
             "sales": 200,
           },
           {
-            "__DimGroupID__": "销售额-sales",
-            "__DimGroup__": "销售额",
+            "__Dim_ColorId__": "销售额-sales",
+            "__Dim_Color__": "销售额",
+            "__Dim_Detail__": "销售额",
+            "__Dim_X__": "2020",
             "__MeaId__": "sales",
             "__MeaName__": "销售额",
             "__MeaPrimaryValue__": 600,
@@ -915,8 +948,10 @@ exports[`first 2`] = `
             "sales": 600,
           },
           {
-            "__DimGroupID__": "销售额-sales",
-            "__DimGroup__": "销售额",
+            "__Dim_ColorId__": "销售额-sales",
+            "__Dim_Color__": "销售额",
+            "__Dim_Detail__": "销售额",
+            "__Dim_X__": "2021",
             "__MeaId__": "sales",
             "__MeaName__": "销售额",
             "__MeaPrimaryValue__": 600,
@@ -930,8 +965,10 @@ exports[`first 2`] = `
             "sales": 600,
           },
           {
-            "__DimGroupID__": "销售额-sales",
-            "__DimGroup__": "销售额",
+            "__Dim_ColorId__": "销售额-sales",
+            "__Dim_Color__": "销售额",
+            "__Dim_Detail__": "销售额",
+            "__Dim_X__": "2022",
             "__MeaId__": "sales",
             "__MeaName__": "销售额",
             "__MeaPrimaryValue__": 1000,
@@ -945,8 +982,10 @@ exports[`first 2`] = `
             "sales": 1000,
           },
           {
-            "__DimGroupID__": "销售额-sales",
-            "__DimGroup__": "销售额",
+            "__Dim_ColorId__": "销售额-sales",
+            "__Dim_Color__": "销售额",
+            "__Dim_Detail__": "销售额",
+            "__Dim_X__": "2023",
             "__MeaId__": "sales",
             "__MeaName__": "销售额",
             "__MeaPrimaryValue__": 800,
@@ -962,7 +1001,7 @@ exports[`first 2`] = `
         ],
       },
       "direction": "vertical",
-      "id": "2D2M-primary-series",
+      "id": "dualAxis-primary-series",
       "label": {
         "formatMethod": [Function],
         "visible": true,
@@ -980,7 +1019,7 @@ exports[`first 2`] = `
           },
         },
       },
-      "seriesField": "__DimGroupID__",
+      "seriesField": "__Dim_ColorId__",
       "tooltip": {
         "dimension": {
           "content": [
@@ -994,6 +1033,13 @@ exports[`first 2`] = `
         },
         "mark": {
           "content": [
+            {
+              "hasShape": true,
+              "key": [Function],
+              "shapeType": "rectRound",
+              "value": [Function],
+              "visible": true,
+            },
             {
               "hasShape": true,
               "key": [Function],
@@ -1015,7 +1061,7 @@ exports[`first 2`] = `
         "visible": true,
       },
       "type": "bar",
-      "xField": "date",
+      "xField": "__Dim_X__",
       "yField": "__MeaPrimaryValue__",
       "zIndex": 1000,
     },
@@ -1036,18 +1082,20 @@ exports[`first 2`] = `
       },
       "data": {
         "fields": {
-          "__DimGroupID__": {
+          "__Dim_ColorId__": {
             "sortIndex": 0,
           },
-          "date": {
+          "__Dim_X__": {
             "sortIndex": 0,
           },
         },
-        "id": "2D2M-secondary-dataset",
+        "id": "dualAxis-secondary-dataset",
         "values": [
           {
-            "__DimGroupID__": "利润-profit",
-            "__DimGroup__": "利润",
+            "__Dim_ColorId__": "利润-profit",
+            "__Dim_Color__": "利润",
+            "__Dim_Detail__": "利润",
+            "__Dim_X__": "2019",
             "__MeaId__": "profit",
             "__MeaName__": "利润",
             "__MeaSecondaryValue__": 10,
@@ -1061,8 +1109,10 @@ exports[`first 2`] = `
             "sales": 200,
           },
           {
-            "__DimGroupID__": "利润-profit",
-            "__DimGroup__": "利润",
+            "__Dim_ColorId__": "利润-profit",
+            "__Dim_Color__": "利润",
+            "__Dim_Detail__": "利润",
+            "__Dim_X__": "2020",
             "__MeaId__": "profit",
             "__MeaName__": "利润",
             "__MeaSecondaryValue__": 30,
@@ -1076,8 +1126,10 @@ exports[`first 2`] = `
             "sales": 600,
           },
           {
-            "__DimGroupID__": "利润-profit",
-            "__DimGroup__": "利润",
+            "__Dim_ColorId__": "利润-profit",
+            "__Dim_Color__": "利润",
+            "__Dim_Detail__": "利润",
+            "__Dim_X__": "2021",
             "__MeaId__": "profit",
             "__MeaName__": "利润",
             "__MeaSecondaryValue__": 30,
@@ -1091,8 +1143,10 @@ exports[`first 2`] = `
             "sales": 600,
           },
           {
-            "__DimGroupID__": "利润-profit",
-            "__DimGroup__": "利润",
+            "__Dim_ColorId__": "利润-profit",
+            "__Dim_Color__": "利润",
+            "__Dim_Detail__": "利润",
+            "__Dim_X__": "2022",
             "__MeaId__": "profit",
             "__MeaName__": "利润",
             "__MeaSecondaryValue__": 50,
@@ -1106,8 +1160,10 @@ exports[`first 2`] = `
             "sales": 1000,
           },
           {
-            "__DimGroupID__": "利润-profit",
-            "__DimGroup__": "利润",
+            "__Dim_ColorId__": "利润-profit",
+            "__Dim_Color__": "利润",
+            "__Dim_Detail__": "利润",
+            "__Dim_X__": "2023",
             "__MeaId__": "profit",
             "__MeaName__": "利润",
             "__MeaSecondaryValue__": 40,
@@ -1123,7 +1179,7 @@ exports[`first 2`] = `
         ],
       },
       "direction": "vertical",
-      "id": "2D2M-secondary-series",
+      "id": "dualAxis-secondary-series",
       "label": {
         "formatMethod": [Function],
         "visible": true,
@@ -1141,7 +1197,7 @@ exports[`first 2`] = `
           },
         },
       },
-      "seriesField": "__DimGroupID__",
+      "seriesField": "__Dim_ColorId__",
       "tooltip": {
         "dimension": {
           "content": [
@@ -1165,6 +1221,13 @@ exports[`first 2`] = `
             {
               "hasShape": true,
               "key": [Function],
+              "shapeType": "rectRound",
+              "value": [Function],
+              "visible": true,
+            },
+            {
+              "hasShape": true,
+              "key": [Function],
               "value": [Function],
               "visible": true,
             },
@@ -1176,7 +1239,7 @@ exports[`first 2`] = `
         "visible": true,
       },
       "type": "line",
-      "xField": "date",
+      "xField": "__Dim_X__",
       "yField": "__MeaSecondaryValue__",
       "zIndex": 1001,
     },

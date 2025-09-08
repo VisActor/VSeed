@@ -78,8 +78,10 @@ exports[`basicDonut 1`] = `
   },
   "dataset": [
     {
-      "__DimGroupID__": "2019-销售额-sales",
-      "__DimGroup__": "2019-销售额",
+      "__Dim_Angle__": "2019",
+      "__Dim_ColorId__": "2019-销售额-sales",
+      "__Dim_Color__": "2019-销售额",
+      "__Dim_Detail__": "2019-销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 200000,
@@ -92,8 +94,10 @@ exports[`basicDonut 1`] = `
       "sales": 200000,
     },
     {
-      "__DimGroupID__": "2019-利润-profit",
-      "__DimGroup__": "2019-利润",
+      "__Dim_Angle__": "2019",
+      "__Dim_ColorId__": "2019-利润-profit",
+      "__Dim_Color__": "2019-利润",
+      "__Dim_Detail__": "2019-利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 10000,
@@ -106,8 +110,10 @@ exports[`basicDonut 1`] = `
       "profit": 10000,
     },
     {
-      "__DimGroupID__": "2020-销售额-sales",
-      "__DimGroup__": "2020-销售额",
+      "__Dim_Angle__": "2020",
+      "__Dim_ColorId__": "2020-销售额-sales",
+      "__Dim_Color__": "2020-销售额",
+      "__Dim_Detail__": "2020-销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 400000,
@@ -120,8 +126,10 @@ exports[`basicDonut 1`] = `
       "sales": 400000,
     },
     {
-      "__DimGroupID__": "2020-利润-profit",
-      "__DimGroup__": "2020-利润",
+      "__Dim_Angle__": "2020",
+      "__Dim_ColorId__": "2020-利润-profit",
+      "__Dim_Color__": "2020-利润",
+      "__Dim_Detail__": "2020-利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 20000,
@@ -134,8 +142,10 @@ exports[`basicDonut 1`] = `
       "profit": 20000,
     },
     {
-      "__DimGroupID__": "2021-销售额-sales",
-      "__DimGroup__": "2021-销售额",
+      "__Dim_Angle__": "2021",
+      "__Dim_ColorId__": "2021-销售额-sales",
+      "__Dim_Color__": "2021-销售额",
+      "__Dim_Detail__": "2021-销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 600000,
@@ -148,8 +158,10 @@ exports[`basicDonut 1`] = `
       "sales": 600000,
     },
     {
-      "__DimGroupID__": "2021-利润-profit",
-      "__DimGroup__": "2021-利润",
+      "__Dim_Angle__": "2021",
+      "__Dim_ColorId__": "2021-利润-profit",
+      "__Dim_Color__": "2021-利润",
+      "__Dim_Detail__": "2021-利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 30000,
@@ -162,8 +174,10 @@ exports[`basicDonut 1`] = `
       "profit": 30000,
     },
     {
-      "__DimGroupID__": "2022-销售额-sales",
-      "__DimGroup__": "2022-销售额",
+      "__Dim_Angle__": "2022",
+      "__Dim_ColorId__": "2022-销售额-sales",
+      "__Dim_Color__": "2022-销售额",
+      "__Dim_Detail__": "2022-销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 800000,
@@ -176,8 +190,10 @@ exports[`basicDonut 1`] = `
       "sales": 800000,
     },
     {
-      "__DimGroupID__": "2022-利润-profit",
-      "__DimGroup__": "2022-利润",
+      "__Dim_Angle__": "2022",
+      "__Dim_ColorId__": "2022-利润-profit",
+      "__Dim_Color__": "2022-利润",
+      "__Dim_Detail__": "2022-利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 40000,
@@ -190,8 +206,10 @@ exports[`basicDonut 1`] = `
       "profit": 40000,
     },
     {
-      "__DimGroupID__": "2023-销售额-sales",
-      "__DimGroup__": "2023-销售额",
+      "__Dim_Angle__": "2023",
+      "__Dim_ColorId__": "2023-销售额-sales",
+      "__Dim_Color__": "2023-销售额",
+      "__Dim_Detail__": "2023-销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 1000000,
@@ -204,8 +222,10 @@ exports[`basicDonut 1`] = `
       "sales": 1000000,
     },
     {
-      "__DimGroupID__": "2023-利润-profit",
-      "__DimGroup__": "2023-利润",
+      "__Dim_Angle__": "2023",
+      "__Dim_ColorId__": "2023-利润-profit",
+      "__Dim_Color__": "2023-利润",
+      "__Dim_Detail__": "2023-利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 50000,
@@ -229,7 +249,7 @@ exports[`basicDonut 1`] = `
         "measureName": "__MeaName__",
         "measureValue": "__MeaValue__",
       },
-      "id": "1D1M",
+      "id": "donut",
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
@@ -256,8 +276,12 @@ exports[`basicDonut 1`] = `
           "2023-销售额-sales",
           "2023-利润-profit",
         ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
   ],
@@ -267,23 +291,31 @@ exports[`basicDonut 1`] = `
       "id": "date",
       "location": "dimension",
     },
-  ],
-  "encoding": [
     {
-      "angle": [
-        "__DimGroupID__",
-      ],
-      "color": [
-        "__DimGroupID__",
-      ],
-      "group": [
-        "__DimGroupID__",
-      ],
-      "radius": [
-        "__MeaValue__",
-      ],
+      "alias": "指标名称",
+      "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "angle": [
+      "date",
+    ],
+    "color": [
+      "date",
+      "__MeaName__",
+    ],
+    "column": [],
+    "detail": [
+      "date",
+      "__MeaName__",
+    ],
+    "label": [],
+    "row": [],
+    "tooltip": [
+      "date",
+      "__MeaName__",
+    ],
+  },
   "locale": "zh-CN",
   "measures": [
     {
@@ -313,7 +345,7 @@ exports[`basicDonut 2`] = `
 {
   "animation": true,
   "background": "transparent",
-  "categoryField": "__DimGroupID__",
+  "categoryField": "__Dim_Detail__",
   "color": {
     "domain": [
       "2019-销售额-sales",
@@ -344,15 +376,23 @@ exports[`basicDonut 2`] = `
   },
   "data": {
     "fields": {
-      "__DimGroupID__": {
+      "__Dim_Angle__": {
+        "sortIndex": 0,
+      },
+      "__Dim_ColorId__": {
+        "sortIndex": 0,
+      },
+      "__Dim_X__": {
         "sortIndex": 0,
       },
     },
-    "id": "1D1M",
+    "id": "donut",
     "values": [
       {
-        "__DimGroupID__": "2019-销售额-sales",
-        "__DimGroup__": "2019-销售额",
+        "__Dim_Angle__": "2019",
+        "__Dim_ColorId__": "2019-销售额-sales",
+        "__Dim_Color__": "2019-销售额",
+        "__Dim_Detail__": "2019-销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 200000,
@@ -365,8 +405,10 @@ exports[`basicDonut 2`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "2019-利润-profit",
-        "__DimGroup__": "2019-利润",
+        "__Dim_Angle__": "2019",
+        "__Dim_ColorId__": "2019-利润-profit",
+        "__Dim_Color__": "2019-利润",
+        "__Dim_Detail__": "2019-利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 10000,
@@ -379,8 +421,10 @@ exports[`basicDonut 2`] = `
         "profit": 10000,
       },
       {
-        "__DimGroupID__": "2020-销售额-sales",
-        "__DimGroup__": "2020-销售额",
+        "__Dim_Angle__": "2020",
+        "__Dim_ColorId__": "2020-销售额-sales",
+        "__Dim_Color__": "2020-销售额",
+        "__Dim_Detail__": "2020-销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 400000,
@@ -393,8 +437,10 @@ exports[`basicDonut 2`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "2020-利润-profit",
-        "__DimGroup__": "2020-利润",
+        "__Dim_Angle__": "2020",
+        "__Dim_ColorId__": "2020-利润-profit",
+        "__Dim_Color__": "2020-利润",
+        "__Dim_Detail__": "2020-利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 20000,
@@ -407,8 +453,10 @@ exports[`basicDonut 2`] = `
         "profit": 20000,
       },
       {
-        "__DimGroupID__": "2021-销售额-sales",
-        "__DimGroup__": "2021-销售额",
+        "__Dim_Angle__": "2021",
+        "__Dim_ColorId__": "2021-销售额-sales",
+        "__Dim_Color__": "2021-销售额",
+        "__Dim_Detail__": "2021-销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 600000,
@@ -421,8 +469,10 @@ exports[`basicDonut 2`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "2021-利润-profit",
-        "__DimGroup__": "2021-利润",
+        "__Dim_Angle__": "2021",
+        "__Dim_ColorId__": "2021-利润-profit",
+        "__Dim_Color__": "2021-利润",
+        "__Dim_Detail__": "2021-利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 30000,
@@ -435,8 +485,10 @@ exports[`basicDonut 2`] = `
         "profit": 30000,
       },
       {
-        "__DimGroupID__": "2022-销售额-sales",
-        "__DimGroup__": "2022-销售额",
+        "__Dim_Angle__": "2022",
+        "__Dim_ColorId__": "2022-销售额-sales",
+        "__Dim_Color__": "2022-销售额",
+        "__Dim_Detail__": "2022-销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 800000,
@@ -449,8 +501,10 @@ exports[`basicDonut 2`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "2022-利润-profit",
-        "__DimGroup__": "2022-利润",
+        "__Dim_Angle__": "2022",
+        "__Dim_ColorId__": "2022-利润-profit",
+        "__Dim_Color__": "2022-利润",
+        "__Dim_Detail__": "2022-利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 40000,
@@ -463,8 +517,10 @@ exports[`basicDonut 2`] = `
         "profit": 40000,
       },
       {
-        "__DimGroupID__": "2023-销售额-sales",
-        "__DimGroup__": "2023-销售额",
+        "__Dim_Angle__": "2023",
+        "__Dim_ColorId__": "2023-销售额-sales",
+        "__Dim_Color__": "2023-销售额",
+        "__Dim_Detail__": "2023-销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 1000000,
@@ -477,8 +533,10 @@ exports[`basicDonut 2`] = `
         "sales": 1000000,
       },
       {
-        "__DimGroupID__": "2023-利润-profit",
-        "__DimGroup__": "2023-利润",
+        "__Dim_Angle__": "2023",
+        "__Dim_ColorId__": "2023-利润-profit",
+        "__Dim_Color__": "2023-利润",
+        "__Dim_Detail__": "2023-利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 50000,
@@ -558,7 +616,7 @@ exports[`basicDonut 2`] = `
       "clip": true,
     },
   ],
-  "seriesField": "__DimGroupID__",
+  "seriesField": "__Dim_ColorId__",
   "tooltip": {
     "dimension": {
       "content": [
@@ -572,6 +630,13 @@ exports[`basicDonut 2`] = `
     },
     "mark": {
       "content": [
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
         {
           "hasShape": true,
           "key": [Function],

@@ -258,8 +258,8 @@ exports[`roundingMode 1`] = `
   },
   "dataset": [
     {
-      "__DimGroupID__": "num0-num0",
-      "__DimGroup__": "num0",
+      "__Dim_Detail__": "num0",
+      "__Dim_X__": "num0",
       "__MeaId__": "num0",
       "__MeaName__": "num0",
       "__MeaValue__": 123.34,
@@ -278,8 +278,8 @@ exports[`roundingMode 1`] = `
       "num0": 123.34,
     },
     {
-      "__DimGroupID__": "num1-num1",
-      "__DimGroup__": "num1",
+      "__Dim_Detail__": "num1",
+      "__Dim_X__": "num1",
       "__MeaId__": "num1",
       "__MeaName__": "num1",
       "__MeaValue__": 123.38,
@@ -298,8 +298,8 @@ exports[`roundingMode 1`] = `
       "num1": 123.38,
     },
     {
-      "__DimGroupID__": "num2-num2",
-      "__DimGroup__": "num2",
+      "__Dim_Detail__": "num2",
+      "__Dim_X__": "num2",
       "__MeaId__": "num2",
       "__MeaName__": "num2",
       "__MeaValue__": -123.34,
@@ -318,8 +318,8 @@ exports[`roundingMode 1`] = `
       "num2": -123.34,
     },
     {
-      "__DimGroupID__": "num3-num3",
-      "__DimGroup__": "num3",
+      "__Dim_Detail__": "num3",
+      "__Dim_X__": "num3",
       "__MeaId__": "num3",
       "__MeaName__": "num3",
       "__MeaValue__": -123.38,
@@ -338,8 +338,8 @@ exports[`roundingMode 1`] = `
       "num3": -123.38,
     },
     {
-      "__DimGroupID__": "num4-num4",
-      "__DimGroup__": "num4",
+      "__Dim_Detail__": "num4",
+      "__Dim_X__": "num4",
       "__MeaId__": "num4",
       "__MeaName__": "num4",
       "__MeaValue__": 123.34,
@@ -358,8 +358,8 @@ exports[`roundingMode 1`] = `
       "num4": 123.34,
     },
     {
-      "__DimGroupID__": "num5-num5",
-      "__DimGroup__": "num5",
+      "__Dim_Detail__": "num5",
+      "__Dim_X__": "num5",
       "__MeaId__": "num5",
       "__MeaName__": "num5",
       "__MeaValue__": 234.38,
@@ -378,8 +378,8 @@ exports[`roundingMode 1`] = `
       "num5": 234.38,
     },
     {
-      "__DimGroupID__": "num6-num6",
-      "__DimGroup__": "num6",
+      "__Dim_Detail__": "num6",
+      "__Dim_X__": "num6",
       "__MeaId__": "num6",
       "__MeaName__": "num6",
       "__MeaValue__": -234.34,
@@ -398,8 +398,8 @@ exports[`roundingMode 1`] = `
       "num6": -234.34,
     },
     {
-      "__DimGroupID__": "num7-num7",
-      "__DimGroup__": "num7",
+      "__Dim_Detail__": "num7",
+      "__Dim_X__": "num7",
       "__MeaId__": "num7",
       "__MeaName__": "num7",
       "__MeaValue__": -234.38,
@@ -418,8 +418,8 @@ exports[`roundingMode 1`] = `
       "num7": -234.38,
     },
     {
-      "__DimGroupID__": "num8-num8",
-      "__DimGroup__": "num8",
+      "__Dim_Detail__": "num8",
+      "__Dim_X__": "num8",
       "__MeaId__": "num8",
       "__MeaName__": "num8",
       "__MeaValue__": 4.5,
@@ -438,8 +438,8 @@ exports[`roundingMode 1`] = `
       "num8": 4.5,
     },
     {
-      "__DimGroupID__": "num9-num9",
-      "__DimGroup__": "num9",
+      "__Dim_Detail__": "num9",
+      "__Dim_X__": "num9",
       "__MeaId__": "num9",
       "__MeaName__": "num9",
       "__MeaValue__": 3.5,
@@ -477,55 +477,41 @@ exports[`roundingMode 1`] = `
         "measureName": "__MeaName__",
         "measureValue": "__MeaValue__",
       },
-      "id": "2D1M",
+      "id": "column",
       "index": 0,
       "unfoldInfo": {
-        "colorIdMap": {
-          "num0-num0": "num0",
-          "num1-num1": "num1",
-          "num2-num2": "num2",
-          "num3-num3": "num3",
-          "num4-num4": "num4",
-          "num5-num5": "num5",
-          "num6-num6": "num6",
-          "num7-num7": "num7",
-          "num8-num8": "num8",
-          "num9-num9": "num9",
-        },
-        "colorItems": [
-          "num0-num0",
-          "num1-num1",
-          "num2-num2",
-          "num3-num3",
-          "num4-num4",
-          "num5-num5",
-          "num6-num6",
-          "num7-num7",
-          "num8-num8",
-          "num9-num9",
-        ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "colorIdMap": {},
+        "colorItems": [],
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
   ],
-  "dimensions": [],
-  "encoding": [
+  "dimensions": [
     {
-      "color": [
-        "__MeaName__",
-      ],
-      "group": [
-        "__DimGroupID__",
-      ],
-      "x": [
-        "__MeaName__",
-      ],
-      "y": [
-        "__MeaValue__",
-      ],
+      "alias": "指标名称",
+      "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "color": [],
+    "column": [],
+    "detail": [
+      "__MeaName__",
+    ],
+    "label": [],
+    "row": [],
+    "tooltip": [
+      "__MeaName__",
+    ],
+    "x": [
+      "__MeaName__",
+    ],
+  },
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [
@@ -756,18 +742,7 @@ exports[`roundingMode 2`] = `
     },
   },
   "color": {
-    "domain": [
-      "num0-num0",
-      "num1-num1",
-      "num2-num2",
-      "num3-num3",
-      "num4-num4",
-      "num5-num5",
-      "num6-num6",
-      "num7-num7",
-      "num8-num8",
-      "num9-num9",
-    ],
+    "domain": [],
     "range": [
       "#8D72F6",
       "#5766EC",
@@ -810,18 +785,21 @@ exports[`roundingMode 2`] = `
   },
   "data": {
     "fields": {
-      "__DimGroupID__": {
+      "__Dim_Angle__": {
         "sortIndex": 0,
       },
-      "__MeaName__": {
+      "__Dim_ColorId__": {
+        "sortIndex": 0,
+      },
+      "__Dim_X__": {
         "sortIndex": 0,
       },
     },
-    "id": "2D1M",
+    "id": "column",
     "values": [
       {
-        "__DimGroupID__": "num0-num0",
-        "__DimGroup__": "num0",
+        "__Dim_Detail__": "num0",
+        "__Dim_X__": "num0",
         "__MeaId__": "num0",
         "__MeaName__": "num0",
         "__MeaValue__": 123.34,
@@ -840,8 +818,8 @@ exports[`roundingMode 2`] = `
         "num0": 123.34,
       },
       {
-        "__DimGroupID__": "num1-num1",
-        "__DimGroup__": "num1",
+        "__Dim_Detail__": "num1",
+        "__Dim_X__": "num1",
         "__MeaId__": "num1",
         "__MeaName__": "num1",
         "__MeaValue__": 123.38,
@@ -860,8 +838,8 @@ exports[`roundingMode 2`] = `
         "num1": 123.38,
       },
       {
-        "__DimGroupID__": "num2-num2",
-        "__DimGroup__": "num2",
+        "__Dim_Detail__": "num2",
+        "__Dim_X__": "num2",
         "__MeaId__": "num2",
         "__MeaName__": "num2",
         "__MeaValue__": -123.34,
@@ -880,8 +858,8 @@ exports[`roundingMode 2`] = `
         "num2": -123.34,
       },
       {
-        "__DimGroupID__": "num3-num3",
-        "__DimGroup__": "num3",
+        "__Dim_Detail__": "num3",
+        "__Dim_X__": "num3",
         "__MeaId__": "num3",
         "__MeaName__": "num3",
         "__MeaValue__": -123.38,
@@ -900,8 +878,8 @@ exports[`roundingMode 2`] = `
         "num3": -123.38,
       },
       {
-        "__DimGroupID__": "num4-num4",
-        "__DimGroup__": "num4",
+        "__Dim_Detail__": "num4",
+        "__Dim_X__": "num4",
         "__MeaId__": "num4",
         "__MeaName__": "num4",
         "__MeaValue__": 123.34,
@@ -920,8 +898,8 @@ exports[`roundingMode 2`] = `
         "num4": 123.34,
       },
       {
-        "__DimGroupID__": "num5-num5",
-        "__DimGroup__": "num5",
+        "__Dim_Detail__": "num5",
+        "__Dim_X__": "num5",
         "__MeaId__": "num5",
         "__MeaName__": "num5",
         "__MeaValue__": 234.38,
@@ -940,8 +918,8 @@ exports[`roundingMode 2`] = `
         "num5": 234.38,
       },
       {
-        "__DimGroupID__": "num6-num6",
-        "__DimGroup__": "num6",
+        "__Dim_Detail__": "num6",
+        "__Dim_X__": "num6",
         "__MeaId__": "num6",
         "__MeaName__": "num6",
         "__MeaValue__": -234.34,
@@ -960,8 +938,8 @@ exports[`roundingMode 2`] = `
         "num6": -234.34,
       },
       {
-        "__DimGroupID__": "num7-num7",
-        "__DimGroup__": "num7",
+        "__Dim_Detail__": "num7",
+        "__Dim_X__": "num7",
         "__MeaId__": "num7",
         "__MeaName__": "num7",
         "__MeaValue__": -234.38,
@@ -980,8 +958,8 @@ exports[`roundingMode 2`] = `
         "num7": -234.38,
       },
       {
-        "__DimGroupID__": "num8-num8",
-        "__DimGroup__": "num8",
+        "__Dim_Detail__": "num8",
+        "__Dim_X__": "num8",
         "__MeaId__": "num8",
         "__MeaName__": "num8",
         "__MeaValue__": 4.5,
@@ -1000,8 +978,8 @@ exports[`roundingMode 2`] = `
         "num8": 4.5,
       },
       {
-        "__DimGroupID__": "num9-num9",
-        "__DimGroup__": "num9",
+        "__Dim_Detail__": "num9",
+        "__Dim_X__": "num9",
         "__MeaId__": "num9",
         "__MeaName__": "num9",
         "__MeaValue__": 3.5,
@@ -1075,7 +1053,7 @@ exports[`roundingMode 2`] = `
       "clip": true,
     },
   ],
-  "seriesField": "__DimGroupID__",
+  "seriesField": "__Dim_ColorId__",
   "stackCornerRadius": [
     4,
     4,
@@ -1099,6 +1077,13 @@ exports[`roundingMode 2`] = `
         {
           "hasShape": true,
           "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+        {
+          "hasShape": true,
+          "key": [Function],
           "value": [Function],
           "visible": true,
         },
@@ -1110,7 +1095,7 @@ exports[`roundingMode 2`] = `
     "visible": true,
   },
   "type": "bar",
-  "xField": "__MeaName__",
+  "xField": "__Dim_X__",
   "yField": "__MeaValue__",
 }
 `;

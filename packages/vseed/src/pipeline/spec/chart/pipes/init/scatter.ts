@@ -4,17 +4,18 @@ import type { SpecPipe } from 'src/types'
 export const initScatter: SpecPipe = (spec, context) => {
   const result = { ...spec } as IScatterChartSpec
   const { advancedVSeed } = context
-  const { encoding } = advancedVSeed
-
-  if (!encoding[0].y || !encoding[0].x || !encoding[0].group) {
-    return result
-  }
+  const { datasetReshapeInfo } = advancedVSeed
+  const { unfoldInfo, foldInfoList } = datasetReshapeInfo[0]
 
   result.type = 'scatter'
   result.direction = 'vertical'
-  result.xField = encoding[0].x[0]
-  result.yField = encoding[0].y[0]
-  result.seriesField = encoding[0].group[0]
+  result.xField = foldInfoList?.[0].measureValue
+  if (foldInfoList?.[1]) {
+    result.yField = foldInfoList[1].measureValue
+  }
+
+  result.seriesField = unfoldInfo.encodingColorId
+
   result.padding = 0
   result.region = [
     {

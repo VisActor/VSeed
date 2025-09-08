@@ -6,6 +6,7 @@ import {
   zColor,
   zDataset,
   zDimensions,
+  zEncoding,
   zLabel,
   zLegend,
   zMeasureTree,
@@ -16,6 +17,7 @@ import {
 export const zDonut = z.object({
   chartType: z.literal('donut'),
   dataset: zDataset.nullish(),
+  encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasureTree.nullish(),
   backgroundColor: zBackgroundColor.nullish(),

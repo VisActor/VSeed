@@ -18,17 +18,43 @@ export const isPivotChart = (vseed: VSeed) => {
     return false
   }
 
-  if (vseed.chartType === 'dualAxis') {
-    if (vseed.measures) {
-      const depth = measureDepth(vseed.measures)
-      if (depth === 3) {
-        return true
-      }
-      return false
+  if (vseed.chartType === 'dualAxis' || vseed.chartType === 'scatter') {
+    const { dimensions = [] } = vseed as {
+      dimensions: Dimensions
+    }
+    const hasRowOrColumnDimension =
+      dimensions &&
+      dimensions.some((dimension) => dimension.location === 'rowDimension' || dimension.location === 'columnDimension')
+
+    if (hasRowOrColumnDimension) {
+      return true
     }
 
-    if (vseed.dualMeasures && vseed.dualMeasures.length > 1) {
-      return true
+    if (vseed.chartType === 'scatter') {
+      if (vseed.measures) {
+        const depth = measureDepth(vseed.measures)
+        if (depth === 3) {
+          return true
+        }
+        return false
+      }
+
+      if (vseed.scatterMeasures && vseed.scatterMeasures.length > 1) {
+        return true
+      }
+    }
+    if (vseed.chartType === 'dualAxis') {
+      if (vseed.measures) {
+        const depth = measureDepth(vseed.measures)
+        if (depth === 3) {
+          return true
+        }
+        return false
+      }
+
+      if (vseed.dualMeasures && vseed.dualMeasures.length > 1) {
+        return true
+      }
     }
 
     return false

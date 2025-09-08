@@ -1,6 +1,5 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
-  autoDimensions,
   initAdvancedVSeed,
   theme,
   pivotAdapter,
@@ -8,23 +7,24 @@ import {
   markStyle,
   sortXBandAxis,
   sortLegend,
-  reshapeTo2D2M,
-  encodingXYY,
-  pivotReshapeTo2D2M,
   dualAxisConfig,
+  encodingForDualAxis,
+  autoDimensions,
+  autoDualMeasures,
+  reshapeWithDualEncoding,
+  pivotReshapeWithDualEncoding,
 } from '../pipes'
-import { autoDualMeasures } from '../pipes/init/autoDualMeasures'
 
 export const dualAxisAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   autoDualMeasures,
   autoDimensions,
-  pivotAdapter([reshapeTo2D2M], [pivotReshapeTo2D2M]),
-  encodingXYY,
+  encodingForDualAxis,
+  pivotAdapter([reshapeWithDualEncoding], [pivotReshapeWithDualEncoding]),
   sortXBandAxis,
   sortLegend,
   dualAxisConfig,
   theme,
   markStyle,
-  annotation
+  annotation,
 ]

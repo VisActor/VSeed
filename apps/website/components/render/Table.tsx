@@ -1,6 +1,6 @@
 import { useRef, useEffect, memo } from 'react'
 import { ListTable as VTableListTable, ListTableConstructorOptions } from '@visactor/vtable'
-import { registerAll, VSeed, Builder, UnfoldDimensionGroupId } from '@visactor/vseed'
+import { registerAll, VSeed, Builder, ColorIdEncoding } from '@visactor/vseed'
 import { useDark } from 'rspress/runtime'
 
 registerAll()
@@ -31,7 +31,7 @@ export const Table = memo((props: { vseed: VSeed }) => {
       console.log('LEGEND_ITEM_CLICK', args)
       tableInstance.updateFilterRules([
         {
-          filterKey: UnfoldDimensionGroupId,
+          filterKey: ColorIdEncoding,
           filteredValues: args.value,
         },
       ])

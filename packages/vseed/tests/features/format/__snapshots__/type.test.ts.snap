@@ -258,8 +258,8 @@ exports[`type 1`] = `
   },
   "dataset": [
     {
-      "__DimGroupID__": "profit-profit",
-      "__DimGroup__": "profit",
+      "__Dim_Detail__": "profit",
+      "__Dim_X__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 1234.4567,
@@ -271,8 +271,8 @@ exports[`type 1`] = `
       "profit": 1234.4567,
     },
     {
-      "__DimGroupID__": "sales-sales",
-      "__DimGroup__": "sales",
+      "__Dim_Detail__": "sales",
+      "__Dim_X__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "sales",
       "__MeaValue__": 1234.4567,
@@ -284,8 +284,8 @@ exports[`type 1`] = `
       "sales": 1234.4567,
     },
     {
-      "__DimGroupID__": "count-count",
-      "__DimGroup__": "count",
+      "__Dim_Detail__": "count",
+      "__Dim_X__": "count",
       "__MeaId__": "count",
       "__MeaName__": "count",
       "__MeaValue__": 1234.4567,
@@ -309,41 +309,41 @@ exports[`type 1`] = `
         "measureName": "__MeaName__",
         "measureValue": "__MeaValue__",
       },
-      "id": "2D1M",
+      "id": "column",
       "index": 0,
       "unfoldInfo": {
-        "colorIdMap": {
-          "count-count": "count",
-          "profit-profit": "profit",
-          "sales-sales": "sales",
-        },
-        "colorItems": [
-          "profit-profit",
-          "sales-sales",
-          "count-count",
-        ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "colorIdMap": {},
+        "colorItems": [],
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
   ],
-  "dimensions": [],
-  "encoding": [
+  "dimensions": [
     {
-      "color": [
-        "__MeaName__",
-      ],
-      "group": [
-        "__DimGroupID__",
-      ],
-      "x": [
-        "__MeaName__",
-      ],
-      "y": [
-        "__MeaValue__",
-      ],
+      "alias": "指标名称",
+      "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "color": [],
+    "column": [],
+    "detail": [
+      "__MeaName__",
+    ],
+    "label": [],
+    "row": [],
+    "tooltip": [
+      "__MeaName__",
+    ],
+    "x": [
+      "__MeaName__",
+    ],
+  },
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [
@@ -512,11 +512,7 @@ exports[`type 2`] = `
     },
   },
   "color": {
-    "domain": [
-      "profit-profit",
-      "sales-sales",
-      "count-count",
-    ],
+    "domain": [],
     "range": [
       "#8D72F6",
       "#5766EC",
@@ -559,18 +555,21 @@ exports[`type 2`] = `
   },
   "data": {
     "fields": {
-      "__DimGroupID__": {
+      "__Dim_Angle__": {
         "sortIndex": 0,
       },
-      "__MeaName__": {
+      "__Dim_ColorId__": {
+        "sortIndex": 0,
+      },
+      "__Dim_X__": {
         "sortIndex": 0,
       },
     },
-    "id": "2D1M",
+    "id": "column",
     "values": [
       {
-        "__DimGroupID__": "profit-profit",
-        "__DimGroup__": "profit",
+        "__Dim_Detail__": "profit",
+        "__Dim_X__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 1234.4567,
@@ -582,8 +581,8 @@ exports[`type 2`] = `
         "profit": 1234.4567,
       },
       {
-        "__DimGroupID__": "sales-sales",
-        "__DimGroup__": "sales",
+        "__Dim_Detail__": "sales",
+        "__Dim_X__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
         "__MeaValue__": 1234.4567,
@@ -595,8 +594,8 @@ exports[`type 2`] = `
         "sales": 1234.4567,
       },
       {
-        "__DimGroupID__": "count-count",
-        "__DimGroup__": "count",
+        "__Dim_Detail__": "count",
+        "__Dim_X__": "count",
         "__MeaId__": "count",
         "__MeaName__": "count",
         "__MeaValue__": 1234.4567,
@@ -663,7 +662,7 @@ exports[`type 2`] = `
       "clip": true,
     },
   ],
-  "seriesField": "__DimGroupID__",
+  "seriesField": "__Dim_ColorId__",
   "stackCornerRadius": [
     4,
     4,
@@ -687,6 +686,13 @@ exports[`type 2`] = `
         {
           "hasShape": true,
           "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+        {
+          "hasShape": true,
+          "key": [Function],
           "value": [Function],
           "visible": true,
         },
@@ -698,7 +704,7 @@ exports[`type 2`] = `
     "visible": true,
   },
   "type": "bar",
-  "xField": "__MeaName__",
+  "xField": "__Dim_X__",
   "yField": "__MeaValue__",
 }
 `;

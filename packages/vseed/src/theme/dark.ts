@@ -241,13 +241,6 @@ export const darkTheme = (): CustomThemeConfig => {
         yAxis: linearAxis,
         crosshairLine: crosshairLine,
       },
-      areaRange: {
-        ...baseConfig,
-
-        xAxis: bandAxis,
-        yAxis: linearAxis,
-        crosshairLine: crosshairLine,
-      },
       scatter: {
         ...baseConfig,
 

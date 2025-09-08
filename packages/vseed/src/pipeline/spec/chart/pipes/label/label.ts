@@ -16,7 +16,6 @@ export const label: SpecPipe = (spec, context) => {
   }
 
   const { measureId, measureValue } = datasetReshapeInfo[0].foldInfo
-  // const { groupId, groupName } = datasetReshapeInfo[0].unfoldInfo
   const { label } = baseConfig
   const { enable } = label
 

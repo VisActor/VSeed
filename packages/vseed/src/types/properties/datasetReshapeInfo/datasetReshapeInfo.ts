@@ -6,15 +6,6 @@ export type FoldInfo = {
 }
 
 export type UnfoldInfo = {
-  /**
-   * @deprecated
-   */
-  groupName: string
-  /**
-   * @deprecated
-   */
-  groupId: string
-
   encodingX: string
   encodingY: string
   encodingColor: string

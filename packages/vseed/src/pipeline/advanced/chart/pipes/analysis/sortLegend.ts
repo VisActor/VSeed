@@ -6,10 +6,10 @@ export const sortLegend: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context
   const { sortLegend } = vseed as Line
   const { datasetReshapeInfo, dataset } = advancedVSeed
-  const groupField = datasetReshapeInfo?.[0]?.unfoldInfo?.groupId
+  const colorId = datasetReshapeInfo?.[0]?.unfoldInfo?.encodingColorId
   const colorIdMap = datasetReshapeInfo?.[0]?.unfoldInfo?.colorIdMap
   const colorItems = datasetReshapeInfo?.[0]?.unfoldInfo?.colorItems
-  if (!sortLegend || !groupField || !colorIdMap || !colorItems) {
+  if (!sortLegend || !colorId || !colorIdMap || !colorItems) {
     return advancedVSeed
   }
 
@@ -26,12 +26,12 @@ export const sortLegend: AdvancedPipe = (advancedVSeed, context) => {
     const orderRes = sortLegend.customOrder.map((itemNameOrId) =>
       nameMap[itemNameOrId] ? nameMap[itemNameOrId] : itemNameOrId,
     )
-    result.analysis.orderMapping[groupField] = orderRes
+    result.analysis.orderMapping[colorId] = orderRes
     return result
   }
 
-  const orderRes = calcOrder(sortLegend, groupField, dataset?.flat(2) || [])
-  result.analysis.orderMapping[groupField] = orderRes
+  const orderRes = calcOrder(sortLegend, colorId, dataset?.flat(2) || [])
+  result.analysis.orderMapping[colorId] = orderRes
 
   return result
 }

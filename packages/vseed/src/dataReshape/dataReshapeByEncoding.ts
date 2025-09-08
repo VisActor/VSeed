@@ -27,8 +27,6 @@ const emptyReshapeResult: {
     measureValue: '',
   },
   unfoldInfo: {
-    groupName: '',
-    groupId: '',
     encodingAngle: AngleEncoding,
     encodingX: XEncoding,
     encodingY: YEncoding,

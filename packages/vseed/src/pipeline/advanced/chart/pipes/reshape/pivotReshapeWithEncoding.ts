@@ -38,7 +38,7 @@ export const pivotReshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) =
       foldInfo,
       unfoldInfo,
     } = dataReshapeByEncoding(dataset, dimensions, measures, encoding as Encoding, {
-      foldMeasureValue: `${FoldMeasureValue}_${groupId}`,
+      foldMeasureValue: `${FoldMeasureValue}${groupId}`,
     })
 
     const reshapeInfo = {

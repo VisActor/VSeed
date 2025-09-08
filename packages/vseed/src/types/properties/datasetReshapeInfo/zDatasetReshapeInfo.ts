@@ -7,8 +7,6 @@ export const zFoldInfo = z.object({
   measureValue: z.string(),
 })
 export const zUnfoldInfo = z.object({
-  groupId: z.string(),
-  groupName: z.string(),
   encodingX: z.string(),
   encodingY: z.string(),
   encodingColor: z.string(),

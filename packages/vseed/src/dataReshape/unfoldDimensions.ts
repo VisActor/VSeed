@@ -25,9 +25,6 @@ export const unfoldDimensions = (
   const { foldMeasureId, separator, colorItemAsId } = options
 
   const unfoldInfo: UnfoldInfo = {
-    groupName: '',
-    groupId: '',
-
     encodingAngle: AngleEncoding,
     encodingX: XEncoding,
     encodingY: YEncoding,

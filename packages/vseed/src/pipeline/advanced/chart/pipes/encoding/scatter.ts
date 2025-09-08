@@ -30,7 +30,7 @@ export const encodingForScatter: AdvancedPipe = (advancedVSeed, context) => {
   const dimensionsWithoutMeasureName = dimensions.filter((item) => item.id !== MeasureName)
 
   const mergedEncoding: Encoding = {
-    color: dimensionsWithoutMeasureName.slice(0).map((item) => item.id), // 第二个之后的维度用于颜色
+    color: dimensions.slice(0).map((item) => item.id), // 第二个之后的维度用于颜色
     detail: dimensionsWithoutMeasureName.slice(0).map((item) => item.id), // 第二个之后的维度进行细分
     tooltip: dimensionsWithoutMeasureName.map((item) => item.id), // 展示所有维度
     label: [], // 默认不展示标签

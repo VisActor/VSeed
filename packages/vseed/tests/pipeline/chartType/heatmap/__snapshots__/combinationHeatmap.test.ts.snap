@@ -79,8 +79,10 @@ exports[`combinationHeatmap 1`] = `
   "dataset": [
     [
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "2019-销售额-sales",
+        "__Dim_Color__": "2019-销售额",
+        "__Dim_X__": "2019",
+        "__Dim_Y__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 200000,
@@ -94,8 +96,10 @@ exports[`combinationHeatmap 1`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "2020-销售额-sales",
+        "__Dim_Color__": "2020-销售额",
+        "__Dim_X__": "2020",
+        "__Dim_Y__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 400000,
@@ -109,8 +113,10 @@ exports[`combinationHeatmap 1`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "2021-销售额-sales",
+        "__Dim_Color__": "2021-销售额",
+        "__Dim_X__": "2021",
+        "__Dim_Y__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 600000,
@@ -124,8 +130,10 @@ exports[`combinationHeatmap 1`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "2022-销售额-sales",
+        "__Dim_Color__": "2022-销售额",
+        "__Dim_X__": "2022",
+        "__Dim_Y__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 800000,
@@ -139,8 +147,10 @@ exports[`combinationHeatmap 1`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "2023-销售额-sales",
+        "__Dim_Color__": "2023-销售额",
+        "__Dim_X__": "2023",
+        "__Dim_Y__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 1000000,
@@ -156,8 +166,10 @@ exports[`combinationHeatmap 1`] = `
     ],
     [
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "2019-利润-profit",
+        "__Dim_Color__": "2019-利润",
+        "__Dim_X__": "2019",
+        "__Dim_Y__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 10000,
@@ -171,8 +183,10 @@ exports[`combinationHeatmap 1`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "2020-利润-profit",
+        "__Dim_Color__": "2020-利润",
+        "__Dim_X__": "2020",
+        "__Dim_Y__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 20000,
@@ -186,8 +200,10 @@ exports[`combinationHeatmap 1`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "2021-利润-profit",
+        "__Dim_Color__": "2021-利润",
+        "__Dim_X__": "2021",
+        "__Dim_Y__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 30000,
@@ -201,8 +217,10 @@ exports[`combinationHeatmap 1`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "2022-利润-profit",
+        "__Dim_Color__": "2022-利润",
+        "__Dim_X__": "2022",
+        "__Dim_Y__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 40000,
@@ -216,8 +234,10 @@ exports[`combinationHeatmap 1`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "2023-利润-profit",
+        "__Dim_Color__": "2023-利润",
+        "__Dim_X__": "2023",
+        "__Dim_Y__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 50000,
@@ -246,13 +266,25 @@ exports[`combinationHeatmap 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "销售额-sales": "销售额",
+          "2019-销售额-sales": "2019-销售额",
+          "2020-销售额-sales": "2020-销售额",
+          "2021-销售额-sales": "2021-销售额",
+          "2022-销售额-sales": "2022-销售额",
+          "2023-销售额-sales": "2023-销售额",
         },
         "colorItems": [
-          "销售额-sales",
+          "2019-销售额-sales",
+          "2020-销售额-sales",
+          "2021-销售额-sales",
+          "2022-销售额-sales",
+          "2023-销售额-sales",
         ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
     {
@@ -268,13 +300,25 @@ exports[`combinationHeatmap 1`] = `
       "index": 1,
       "unfoldInfo": {
         "colorIdMap": {
-          "利润-profit": "利润",
+          "2019-利润-profit": "2019-利润",
+          "2020-利润-profit": "2020-利润",
+          "2021-利润-profit": "2021-利润",
+          "2022-利润-profit": "2022-利润",
+          "2023-利润-profit": "2023-利润",
         },
         "colorItems": [
-          "利润-profit",
+          "2019-利润-profit",
+          "2020-利润-profit",
+          "2021-利润-profit",
+          "2022-利润-profit",
+          "2023-利润-profit",
         ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
   ],
@@ -284,31 +328,30 @@ exports[`combinationHeatmap 1`] = `
       "id": "date",
       "location": "dimension",
     },
-  ],
-  "encoding": [
     {
-      "color": [
-        "__MeaValue__line1",
-      ],
-      "x": [
-        "date",
-      ],
-      "y": [
-        "__DimGroup__",
-      ],
-    },
-    {
-      "color": [
-        "__MeaValue__line2",
-      ],
-      "x": [
-        "date",
-      ],
-      "y": [
-        "__DimGroup__",
-      ],
+      "alias": "指标名称",
+      "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "color": [
+      "date",
+      "__MeaName__",
+    ],
+    "column": [],
+    "label": [],
+    "row": [],
+    "tooltip": [
+      "date",
+      "__MeaName__",
+    ],
+    "x": [
+      "date",
+    ],
+    "y": [
+      "__MeaName__",
+    ],
+  },
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [
@@ -379,41 +422,20 @@ exports[`combinationHeatmap 2`] = `
         "background": "transparent",
         "cell": {
           "style": {
-            "fill": {
-              "field": "__MeaValue__line1",
-              "scale": "color",
-            },
             "lineWidth": 1,
             "shape": "rect",
             "stroke": "#ffffff",
           },
         },
-        "color": {
-          "domain": [
-            {
-              "dataId": "line1",
-              "fields": [
-                "__MeaValue__line1",
-              ],
-            },
-          ],
-          "range": [
-            "#C2CEFF",
-            "#B7C4FF",
-            "#ACB9FF",
-            "#A0AEFF",
-            "#95A3FF",
-            "#8998FF",
-            "#7C8CFA",
-            "#7080F4",
-            "#6372F0",
-            "#5766EC",
-          ],
-          "type": "linear",
-        },
         "data": {
           "fields": {
-            "date": {
+            "__Dim_Angle__": {
+              "sortIndex": 0,
+            },
+            "__Dim_ColorId__": {
+              "sortIndex": 0,
+            },
+            "__Dim_X__": {
               "sortIndex": 0,
             },
           },
@@ -427,11 +449,46 @@ exports[`combinationHeatmap 2`] = `
           "visible": true,
         },
         "legends": {
-          "field": "__MeaValue__line1",
-          "inverse": true,
+          "autoPage": true,
+          "data": [Function],
+          "item": {
+            "background": {
+              "state": {
+                "selectedHover": {
+                  "fill": "#646A73",
+                  "fillOpacity": 0.05,
+                },
+              },
+            },
+            "focus": true,
+            "focusIconStyle": {
+              "fill": "#646A73",
+              "fontWeight": 400,
+              "size": 14,
+            },
+            "label": {
+              "formatMethod": [Function],
+              "style": {
+                "fill": "#646A73",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+            },
+            "maxWidth": "30%",
+            "shape": {
+              "space": 6,
+              "style": {
+                "size": 8,
+                "symbolType": "rectRound",
+              },
+            },
+          },
+          "maxCol": 1,
+          "maxRow": 1,
           "orient": "right",
+          "padding": 0,
           "position": "start",
-          "type": "color",
+          "type": "discrete",
           "visible": true,
         },
         "padding": 0,
@@ -453,6 +510,7 @@ exports[`combinationHeatmap 2`] = `
             "clip": true,
           },
         ],
+        "seriesField": "__Dim_ColorId__",
         "tooltip": {
           "dimension": {
             "content": [
@@ -476,6 +534,13 @@ exports[`combinationHeatmap 2`] = `
               {
                 "hasShape": true,
                 "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
+              {
+                "hasShape": true,
+                "key": [Function],
                 "value": [Function],
                 "visible": true,
               },
@@ -488,8 +553,8 @@ exports[`combinationHeatmap 2`] = `
         },
         "type": "heatmap",
         "valueField": "__MeaValue__line1",
-        "xField": "date",
-        "yField": "__DimGroup__",
+        "xField": "__Dim_X__",
+        "yField": "__Dim_Y__",
       },
       "indicatorKey": "line1",
       "style": {
@@ -522,41 +587,20 @@ exports[`combinationHeatmap 2`] = `
         "background": "transparent",
         "cell": {
           "style": {
-            "fill": {
-              "field": "__MeaValue__line2",
-              "scale": "color",
-            },
             "lineWidth": 1,
             "shape": "rect",
             "stroke": "#ffffff",
           },
         },
-        "color": {
-          "domain": [
-            {
-              "dataId": "line2",
-              "fields": [
-                "__MeaValue__line2",
-              ],
-            },
-          ],
-          "range": [
-            "#C2CEFF",
-            "#B7C4FF",
-            "#ACB9FF",
-            "#A0AEFF",
-            "#95A3FF",
-            "#8998FF",
-            "#7C8CFA",
-            "#7080F4",
-            "#6372F0",
-            "#5766EC",
-          ],
-          "type": "linear",
-        },
         "data": {
           "fields": {
-            "date": {
+            "__Dim_Angle__": {
+              "sortIndex": 0,
+            },
+            "__Dim_ColorId__": {
+              "sortIndex": 0,
+            },
+            "__Dim_X__": {
               "sortIndex": 0,
             },
           },
@@ -570,11 +614,46 @@ exports[`combinationHeatmap 2`] = `
           "visible": true,
         },
         "legends": {
-          "field": "__MeaValue__line2",
-          "inverse": true,
+          "autoPage": true,
+          "data": [Function],
+          "item": {
+            "background": {
+              "state": {
+                "selectedHover": {
+                  "fill": "#646A73",
+                  "fillOpacity": 0.05,
+                },
+              },
+            },
+            "focus": true,
+            "focusIconStyle": {
+              "fill": "#646A73",
+              "fontWeight": 400,
+              "size": 14,
+            },
+            "label": {
+              "formatMethod": [Function],
+              "style": {
+                "fill": "#646A73",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+            },
+            "maxWidth": "30%",
+            "shape": {
+              "space": 6,
+              "style": {
+                "size": 8,
+                "symbolType": "rectRound",
+              },
+            },
+          },
+          "maxCol": 1,
+          "maxRow": 1,
           "orient": "right",
+          "padding": 0,
           "position": "start",
-          "type": "color",
+          "type": "discrete",
           "visible": true,
         },
         "padding": 0,
@@ -596,6 +675,7 @@ exports[`combinationHeatmap 2`] = `
             "clip": true,
           },
         ],
+        "seriesField": "__Dim_ColorId__",
         "tooltip": {
           "dimension": {
             "content": [
@@ -619,6 +699,13 @@ exports[`combinationHeatmap 2`] = `
               {
                 "hasShape": true,
                 "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
+              {
+                "hasShape": true,
+                "key": [Function],
                 "value": [Function],
                 "visible": true,
               },
@@ -631,8 +718,8 @@ exports[`combinationHeatmap 2`] = `
         },
         "type": "heatmap",
         "valueField": "__MeaValue__line2",
-        "xField": "date",
-        "yField": "__DimGroup__",
+        "xField": "__Dim_X__",
+        "yField": "__Dim_Y__",
       },
       "indicatorKey": "line2",
       "style": {
@@ -650,8 +737,10 @@ exports[`combinationHeatmap 2`] = `
   "records": {
     "line1": [
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "2019-销售额-sales",
+        "__Dim_Color__": "2019-销售额",
+        "__Dim_X__": "2019",
+        "__Dim_Y__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 200000,
@@ -665,8 +754,10 @@ exports[`combinationHeatmap 2`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "2020-销售额-sales",
+        "__Dim_Color__": "2020-销售额",
+        "__Dim_X__": "2020",
+        "__Dim_Y__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 400000,
@@ -680,8 +771,10 @@ exports[`combinationHeatmap 2`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "2021-销售额-sales",
+        "__Dim_Color__": "2021-销售额",
+        "__Dim_X__": "2021",
+        "__Dim_Y__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 600000,
@@ -695,8 +788,10 @@ exports[`combinationHeatmap 2`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "2022-销售额-sales",
+        "__Dim_Color__": "2022-销售额",
+        "__Dim_X__": "2022",
+        "__Dim_Y__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 800000,
@@ -710,8 +805,10 @@ exports[`combinationHeatmap 2`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "销售额-sales",
-        "__DimGroup__": "销售额",
+        "__Dim_ColorId__": "2023-销售额-sales",
+        "__Dim_Color__": "2023-销售额",
+        "__Dim_X__": "2023",
+        "__Dim_Y__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 1000000,
@@ -727,8 +824,10 @@ exports[`combinationHeatmap 2`] = `
     ],
     "line2": [
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "2019-利润-profit",
+        "__Dim_Color__": "2019-利润",
+        "__Dim_X__": "2019",
+        "__Dim_Y__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 10000,
@@ -742,8 +841,10 @@ exports[`combinationHeatmap 2`] = `
         "sales": 200000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "2020-利润-profit",
+        "__Dim_Color__": "2020-利润",
+        "__Dim_X__": "2020",
+        "__Dim_Y__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 20000,
@@ -757,8 +858,10 @@ exports[`combinationHeatmap 2`] = `
         "sales": 400000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "2021-利润-profit",
+        "__Dim_Color__": "2021-利润",
+        "__Dim_X__": "2021",
+        "__Dim_Y__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 30000,
@@ -772,8 +875,10 @@ exports[`combinationHeatmap 2`] = `
         "sales": 600000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "2022-利润-profit",
+        "__Dim_Color__": "2022-利润",
+        "__Dim_X__": "2022",
+        "__Dim_Y__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 40000,
@@ -787,8 +892,10 @@ exports[`combinationHeatmap 2`] = `
         "sales": 800000,
       },
       {
-        "__DimGroupID__": "利润-profit",
-        "__DimGroup__": "利润",
+        "__Dim_ColorId__": "2023-利润-profit",
+        "__Dim_Color__": "2023-利润",
+        "__Dim_X__": "2023",
+        "__Dim_Y__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 50000,

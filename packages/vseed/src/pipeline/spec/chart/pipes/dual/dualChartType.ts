@@ -33,9 +33,9 @@ export const dualChartTypePrimary: SpecPipe = (spec, context) => {
     case 'columnParallel': {
       const columnSpec = result as IBarSeriesSpec
       if (Array.isArray(columnSpec.xField)) {
-        columnSpec.xField.push(datasetReshapeInfo[0].unfoldInfo.groupId)
+        columnSpec.xField.push(datasetReshapeInfo[0].unfoldInfo.encodingDetail)
       } else if (columnSpec.xField) {
-        columnSpec.xField = [columnSpec.xField, datasetReshapeInfo[0].unfoldInfo.groupId]
+        columnSpec.xField = [columnSpec.xField, datasetReshapeInfo[0].unfoldInfo.encodingDetail]
       }
       columnSpec.type = 'bar'
       result.zIndex = DUAL_AXIS_CHART_COLUMN_Z_INDEX
@@ -99,9 +99,9 @@ export const dualChartTypeSecondary: SpecPipe = (spec, context) => {
     case 'columnParallel': {
       const columnSpec = result as IBarSeriesSpec
       if (Array.isArray(columnSpec.xField)) {
-        columnSpec.xField.push(datasetReshapeInfo[0].unfoldInfo.groupId)
+        columnSpec.xField.push(datasetReshapeInfo[0].unfoldInfo.encodingDetail)
       } else if (columnSpec.xField) {
-        columnSpec.xField = [columnSpec.xField, datasetReshapeInfo[0].unfoldInfo.groupId]
+        columnSpec.xField = [columnSpec.xField, datasetReshapeInfo[0].unfoldInfo.encodingDetail]
       }
       columnSpec.type = 'bar'
       result.zIndex = DUAL_AXIS_CHART_COLUMN_Z_INDEX

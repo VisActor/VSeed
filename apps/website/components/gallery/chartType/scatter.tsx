@@ -56,30 +56,68 @@ export const CombinationScatterChart = memo(() => {
     ],
     measures: [
       {
-        id: 'salesAndProfit',
-        alias: '销售额与利润',
+        id: 'first',
         children: [
           {
-            id: 'sales',
-            alias: '销售额',
+            id: 'salesAndProfit',
+            alias: '销售额与利润',
+            children: [
+              {
+                id: 'sales',
+                alias: '销售额',
+              },
+              {
+                id: 'profit',
+                alias: '利润',
+              },
+            ],
           },
           {
-            id: 'profit',
-            alias: '利润',
+            id: 'ratio',
+            alias: '比率',
+            children: [
+              {
+                id: 'sales',
+                alias: '销售额',
+              },
+              {
+                id: 'rateOfReturn',
+                alias: '回报率',
+              },
+            ],
           },
         ],
       },
       {
-        id: 'ratio',
-        alias: '比率',
+        id: 'second',
         children: [
           {
-            id: 'sales',
-            alias: '销售额',
+            id: 'salesAndProfit',
+            alias: '销售额与利润',
+            children: [
+              {
+                id: 'sales',
+                alias: '销售额',
+              },
+              {
+                id: 'profit',
+                alias: '利润',
+              },
+            ],
           },
           {
-            id: 'rateOfReturn',
-            alias: '回报率',
+            id: 'ratio',
+            alias: '比率',
+            children: [
+              {
+                id: 'sales',
+                alias: '销售额',
+              },
+              {
+                id: 'rateOfReturn',
+                alias: '回报率',
+              },
+            ],
           },
         ],
       },
@@ -136,6 +174,50 @@ export const PivotScatterChart = memo(() => {
       { date: '2020', region: 'west', category: 'Dairy', profit: 30, sales: 300 },
       { date: '2020', region: 'west', category: 'Household', profit: 50, sales: 200 },
       { date: '2020', region: 'west', category: 'Personal', profit: 200, sales: 500 },
+    ],
+  }
+  return <PivotChart vseed={vseed} />
+})
+
+export const ScatterMeasures = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'scatter',
+    dataset: [
+      { date: '2019', profit: 20, sales: 100 },
+      { date: '2020', profit: 30, sales: 600 },
+      { date: '2021', profit: 30, sales: 600 },
+      { date: '2022', profit: 50, sales: 500 },
+      { date: '2023', profit: 10, sales: 800 },
+    ],
+    scatterMeasures: [
+      {
+        xMeasures: [{ id: 'sales', alias: '销售额' }],
+        yMeasures: [{ id: 'profit', alias: '利润' }],
+      },
+    ],
+  }
+  return <VChartRender vseed={vseed} />
+})
+
+export const ScatterMeasuresArray = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'scatter',
+    dataset: [
+      { date: '2019', profit: 20, sales: 100 },
+      { date: '2020', profit: 30, sales: 600 },
+      { date: '2021', profit: 30, sales: 600 },
+      { date: '2022', profit: 50, sales: 500 },
+      { date: '2023', profit: 10, sales: 800 },
+    ],
+    scatterMeasures: [
+      {
+        xMeasures: [{ id: 'sales', alias: '销售额' }],
+        yMeasures: [{ id: 'profit', alias: '利润' }],
+      },
+      {
+        xMeasures: [{ id: 'sales', alias: '销售额' }],
+        yMeasures: [{ id: 'profit', alias: '利润' }],
+      },
     ],
   }
   return <PivotChart vseed={vseed} />

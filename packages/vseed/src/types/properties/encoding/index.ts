@@ -1,2 +1,2 @@
-export type { Encoding } from './encoding'
-export { zEncoding } from './encoding'
+export type { Encodings, Encoding } from './encoding'
+export { zEncoding, zEncodings } from './zEncoding'

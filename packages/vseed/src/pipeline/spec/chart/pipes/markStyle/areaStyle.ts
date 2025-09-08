@@ -5,8 +5,9 @@ import { groupBy } from 'remeda'
 
 export const areaStyle: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const { markStyle, encoding, dataset } = advancedVSeed
+  const { markStyle, datasetReshapeInfo, dataset } = advancedVSeed
   const { areaStyle } = markStyle
+  const { unfoldInfo } = datasetReshapeInfo[0]
 
   if (!areaStyle) {
     return {
@@ -20,7 +21,7 @@ export const areaStyle: SpecPipe = (spec, context) => {
 
   const areaStyles = (Array.isArray(areaStyle) ? areaStyle : [areaStyle]) as AreaStyle[]
 
-  const group = encoding[0]?.group?.[0]
+  const group = unfoldInfo.encodingColorId
 
   const areaGroups = groupBy(dataset, (d) => d[group ?? ''] as string)
 

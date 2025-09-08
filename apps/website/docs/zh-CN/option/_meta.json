@@ -18,12 +18,6 @@
   },
   {
     "type": "dir",
-    "name": "areaRange",
-    "label": "areaRange ",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
     "name": "bar",
     "label": "bar ",
     "collapsed": true

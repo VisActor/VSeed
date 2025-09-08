@@ -231,13 +231,21 @@ exports[`combinationScatter 1`] = `
     },
   },
   "dataset": [
-    [
-      {
-        "__DimGroupID__": "2019-sales",
-        "__DimGroup__": "2019",
+    {
+      "__Dim_ColorId__": "2019-利润",
+      "__Dim_Color__": "2019-利润",
+      "__Dim_Detail__": "2019",
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaXValue__": 200000,
+      "__MeaYValue__": 10000,
+      "__OriginalData__": {
+        "__Dim_ColorId__": "2019-销售额",
+        "__Dim_Color__": "2019-销售额",
+        "__Dim_Detail__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__line1": 200000,
+        "__MeaXValue__": 200000,
         "__OriginalData__": {
           "date": "2019",
           "profit": 10000,
@@ -247,12 +255,25 @@ exports[`combinationScatter 1`] = `
         "profit": 10000,
         "sales": 200000,
       },
-      {
-        "__DimGroupID__": "2020-sales",
-        "__DimGroup__": "2020",
+      "date": "2019",
+      "profit": 10000,
+      "sales": 200000,
+    },
+    {
+      "__Dim_ColorId__": "2020-利润",
+      "__Dim_Color__": "2020-利润",
+      "__Dim_Detail__": "2020",
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaXValue__": 400000,
+      "__MeaYValue__": 20000,
+      "__OriginalData__": {
+        "__Dim_ColorId__": "2020-销售额",
+        "__Dim_Color__": "2020-销售额",
+        "__Dim_Detail__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__line1": 400000,
+        "__MeaXValue__": 400000,
         "__OriginalData__": {
           "date": "2020",
           "profit": 20000,
@@ -262,12 +283,25 @@ exports[`combinationScatter 1`] = `
         "profit": 20000,
         "sales": 400000,
       },
-      {
-        "__DimGroupID__": "2021-sales",
-        "__DimGroup__": "2021",
+      "date": "2020",
+      "profit": 20000,
+      "sales": 400000,
+    },
+    {
+      "__Dim_ColorId__": "2021-利润",
+      "__Dim_Color__": "2021-利润",
+      "__Dim_Detail__": "2021",
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaXValue__": 600000,
+      "__MeaYValue__": 30000,
+      "__OriginalData__": {
+        "__Dim_ColorId__": "2021-销售额",
+        "__Dim_Color__": "2021-销售额",
+        "__Dim_Detail__": "2021",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__line1": 600000,
+        "__MeaXValue__": 600000,
         "__OriginalData__": {
           "date": "2021",
           "profit": 30000,
@@ -277,12 +311,25 @@ exports[`combinationScatter 1`] = `
         "profit": 30000,
         "sales": 600000,
       },
-      {
-        "__DimGroupID__": "2022-sales",
-        "__DimGroup__": "2022",
+      "date": "2021",
+      "profit": 30000,
+      "sales": 600000,
+    },
+    {
+      "__Dim_ColorId__": "2022-利润",
+      "__Dim_Color__": "2022-利润",
+      "__Dim_Detail__": "2022",
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaXValue__": 800000,
+      "__MeaYValue__": 40000,
+      "__OriginalData__": {
+        "__Dim_ColorId__": "2022-销售额",
+        "__Dim_Color__": "2022-销售额",
+        "__Dim_Detail__": "2022",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__line1": 800000,
+        "__MeaXValue__": 800000,
         "__OriginalData__": {
           "date": "2022",
           "profit": 40000,
@@ -292,12 +339,25 @@ exports[`combinationScatter 1`] = `
         "profit": 40000,
         "sales": 800000,
       },
-      {
-        "__DimGroupID__": "2023-sales",
-        "__DimGroup__": "2023",
+      "date": "2022",
+      "profit": 40000,
+      "sales": 800000,
+    },
+    {
+      "__Dim_ColorId__": "2023-利润",
+      "__Dim_Color__": "2023-利润",
+      "__Dim_Detail__": "2023",
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaXValue__": 1000000,
+      "__MeaYValue__": 50000,
+      "__OriginalData__": {
+        "__Dim_ColorId__": "2023-销售额",
+        "__Dim_Color__": "2023-销售额",
+        "__Dim_Detail__": "2023",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__line1": 1000000,
+        "__MeaXValue__": 1000000,
         "__OriginalData__": {
           "date": "2023",
           "profit": 50000,
@@ -307,84 +367,10 @@ exports[`combinationScatter 1`] = `
         "profit": 50000,
         "sales": 1000000,
       },
-    ],
-    [
-      {
-        "__DimGroupID__": "2019-profit",
-        "__DimGroup__": "2019",
-        "__MeaId__": "profit",
-        "__MeaName__": "利润",
-        "__MeaValue__line2": 10000,
-        "__OriginalData__": {
-          "date": "2019",
-          "profit": 10000,
-          "sales": 200000,
-        },
-        "date": "2019",
-        "profit": 10000,
-        "sales": 200000,
-      },
-      {
-        "__DimGroupID__": "2020-profit",
-        "__DimGroup__": "2020",
-        "__MeaId__": "profit",
-        "__MeaName__": "利润",
-        "__MeaValue__line2": 20000,
-        "__OriginalData__": {
-          "date": "2020",
-          "profit": 20000,
-          "sales": 400000,
-        },
-        "date": "2020",
-        "profit": 20000,
-        "sales": 400000,
-      },
-      {
-        "__DimGroupID__": "2021-profit",
-        "__DimGroup__": "2021",
-        "__MeaId__": "profit",
-        "__MeaName__": "利润",
-        "__MeaValue__line2": 30000,
-        "__OriginalData__": {
-          "date": "2021",
-          "profit": 30000,
-          "sales": 600000,
-        },
-        "date": "2021",
-        "profit": 30000,
-        "sales": 600000,
-      },
-      {
-        "__DimGroupID__": "2022-profit",
-        "__DimGroup__": "2022",
-        "__MeaId__": "profit",
-        "__MeaName__": "利润",
-        "__MeaValue__line2": 40000,
-        "__OriginalData__": {
-          "date": "2022",
-          "profit": 40000,
-          "sales": 800000,
-        },
-        "date": "2022",
-        "profit": 40000,
-        "sales": 800000,
-      },
-      {
-        "__DimGroupID__": "2023-profit",
-        "__DimGroup__": "2023",
-        "__MeaId__": "profit",
-        "__MeaName__": "利润",
-        "__MeaValue__line2": 50000,
-        "__OriginalData__": {
-          "date": "2023",
-          "profit": 50000,
-          "sales": 1000000,
-        },
-        "date": "2023",
-        "profit": 50000,
-        "sales": 1000000,
-      },
-    ],
+      "date": "2023",
+      "profit": 50000,
+      "sales": 1000000,
+    },
   ],
   "datasetReshapeInfo": [
     {
@@ -394,57 +380,59 @@ exports[`combinationScatter 1`] = `
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureValue": "__MeaValue__line1",
+        "measureValue": "__MeaXValue__",
       },
-      "id": "line1",
+      "foldInfoList": [
+        {
+          "foldMap": {
+            "sales": "销售额",
+          },
+          "measureId": "__MeaId__",
+          "measureName": "__MeaName__",
+          "measureValue": "__MeaXValue__",
+        },
+        {
+          "foldMap": {
+            "profit": "利润",
+          },
+          "measureId": "__MeaId__",
+          "measureName": "__MeaName__",
+          "measureValue": "__MeaYValue__",
+        },
+      ],
+      "id": "scatter",
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "2019-sales": "2019",
-          "2020-sales": "2020",
-          "2021-sales": "2021",
-          "2022-sales": "2022",
-          "2023-sales": "2023",
+          "2019-利润": "2019-利润",
+          "2019-销售额": "2019-销售额",
+          "2020-利润": "2020-利润",
+          "2020-销售额": "2020-销售额",
+          "2021-利润": "2021-利润",
+          "2021-销售额": "2021-销售额",
+          "2022-利润": "2022-利润",
+          "2022-销售额": "2022-销售额",
+          "2023-利润": "2023-利润",
+          "2023-销售额": "2023-销售额",
         },
         "colorItems": [
-          "2019-sales",
-          "2020-sales",
-          "2021-sales",
-          "2022-sales",
-          "2023-sales",
+          "2019-销售额",
+          "2020-销售额",
+          "2021-销售额",
+          "2022-销售额",
+          "2023-销售额",
+          "2019-利润",
+          "2020-利润",
+          "2021-利润",
+          "2022-利润",
+          "2023-利润",
         ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
-      },
-    },
-    {
-      "foldInfo": {
-        "foldMap": {
-          "profit": "利润",
-        },
-        "measureId": "__MeaId__",
-        "measureName": "__MeaName__",
-        "measureValue": "__MeaValue__line2",
-      },
-      "id": "line2",
-      "index": 1,
-      "unfoldInfo": {
-        "colorIdMap": {
-          "2019-profit": "2019",
-          "2020-profit": "2020",
-          "2021-profit": "2021",
-          "2022-profit": "2022",
-          "2023-profit": "2023",
-        },
-        "colorItems": [
-          "2019-profit",
-          "2020-profit",
-          "2021-profit",
-          "2022-profit",
-          "2023-profit",
-        ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
   ],
@@ -454,37 +442,26 @@ exports[`combinationScatter 1`] = `
       "id": "date",
       "location": "dimension",
     },
-  ],
-  "encoding": [
     {
-      "color": [
-        "__DimGroupID__",
-      ],
-      "group": [
-        "__DimGroupID__",
-      ],
-      "x": [
-        "sales",
-      ],
-      "y": [
-        "__MeaValue__line1",
-      ],
-    },
-    {
-      "color": [
-        "__DimGroupID__",
-      ],
-      "group": [
-        "__DimGroupID__",
-      ],
-      "x": [
-        "sales",
-      ],
-      "y": [
-        "__MeaValue__line2",
-      ],
+      "alias": "指标名称",
+      "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "color": [
+      "date",
+      "__MeaName__",
+    ],
+    "column": [],
+    "detail": [
+      "date",
+    ],
+    "label": [],
+    "row": [],
+    "tooltip": [
+      "date",
+    ],
+  },
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [
@@ -532,694 +509,357 @@ exports[`combinationScatter 1`] = `
 exports[`combinationScatter 2`] = `
 {
   "animation": true,
-  "columns": [],
-  "heightMode": "adaptive",
-  "indicators": [
+  "axes": [
     {
-      "cellType": "chart",
-      "chartModule": "vchart",
-      "chartSpec": {
-        "animation": true,
-        "axes": [
-          {
-            "base": 10,
-            "domainLine": {
-              "style": {
-                "lineWidth": 1,
-                "stroke": "#3641594d",
-              },
-              "visible": true,
-            },
-            "grid": {
-              "style": {
-                "lineWidth": 0.5,
-                "stroke": "#36415926",
-              },
-              "visible": true,
-            },
-            "innerOffset": {
-              "right": 7,
-            },
-            "inverse": false,
-            "label": {
-              "formatMethod": [Function],
-              "style": {
-                "angle": 0,
-                "fill": "#797B85",
-                "fontSize": 12,
-                "fontWeight": 400,
-              },
-              "visible": true,
-            },
-            "max": undefined,
-            "min": undefined,
-            "nice": true,
-            "orient": "bottom",
-            "tick": {
-              "inside": false,
-              "style": {
-                "stroke": "#3641594d",
-              },
-              "tickSize": 4,
-              "visible": false,
-            },
-            "title": {
-              "style": {
-                "fill": "#646A73",
-                "fontSize": 12,
-                "fontWeight": 400,
-              },
-              "text": "",
-              "visible": false,
-            },
-            "type": "linear",
-            "visible": true,
-            "zero": true,
-          },
-          {
-            "base": 10,
-            "domainLine": {
-              "style": {
-                "lineWidth": 1,
-                "stroke": "#3641594d",
-              },
-              "visible": true,
-            },
-            "grid": {
-              "style": {
-                "lineWidth": 0.5,
-                "stroke": "#36415926",
-              },
-              "visible": true,
-            },
-            "innerOffset": {
-              "top": 7,
-            },
-            "inverse": false,
-            "label": {
-              "formatMethod": [Function],
-              "style": {
-                "angle": 0,
-                "fill": "#797B85",
-                "fontSize": 12,
-                "fontWeight": 400,
-              },
-              "visible": true,
-            },
-            "max": undefined,
-            "min": undefined,
-            "nice": true,
-            "orient": "left",
-            "tick": {
-              "inside": false,
-              "style": {
-                "stroke": "#3641594d",
-              },
-              "tickSize": 4,
-              "visible": false,
-            },
-            "title": {
-              "style": {
-                "fill": "#646A73",
-                "fontSize": 12,
-                "fontWeight": 400,
-              },
-              "text": "",
-              "visible": false,
-            },
-            "type": "linear",
-            "visible": true,
-            "zero": true,
-          },
-        ],
-        "background": "transparent",
-        "color": {
-          "domain": [
-            "2019-sales",
-            "2020-sales",
-            "2021-sales",
-            "2022-sales",
-            "2023-sales",
-            "2019-profit",
-            "2020-profit",
-            "2021-profit",
-            "2022-profit",
-            "2023-profit",
-          ],
-          "range": [
-            "#8D72F6",
-            "#5766EC",
-            "#66A3FE",
-            "#51D5E6",
-            "#4EC0B3",
-            "#F9DF90",
-            "#F9AD71",
-            "#ED8888",
-            "#E9A0C3",
-            "#D77DD3",
-          ],
-          "specified": undefined,
-          "type": "ordinal",
+      "base": 10,
+      "domainLine": {
+        "style": {
+          "lineWidth": 1,
+          "stroke": "#3641594d",
         },
-        "crosshair": {
-          "xField": {
-            "label": {
-              "labelBackground": {
-                "style": {
-                  "fill": "#364159",
-                },
-                "visible": true,
-              },
-              "style": {
-                "fill": "#ffffff",
-              },
-              "visible": true,
-            },
-            "line": {
-              "style": {
-                "lineDash": [
-                  4,
-                  2,
-                ],
-                "lineWidth": 1,
-                "opacity": 1,
-                "stroke": "#3641594d",
-              },
-              "type": "line",
-            },
-            "visible": true,
-          },
-          "yField": {
-            "label": {
-              "labelBackground": {
-                "style": {
-                  "fill": "#364159",
-                },
-                "visible": true,
-              },
-              "style": {
-                "fill": "#ffffff",
-              },
-              "visible": true,
-            },
-            "line": {
-              "style": {
-                "lineDash": [
-                  4,
-                  2,
-                ],
-                "lineWidth": 1,
-                "opacity": 1,
-                "stroke": "#3641594d",
-              },
-              "type": "line",
-            },
-            "visible": true,
-          },
-        },
-        "data": {
-          "fields": {
-            "__DimGroupID__": {
-              "sortIndex": 0,
-            },
-            "sales": {
-              "sortIndex": 0,
-            },
-          },
-          "id": "line1",
-          "values": undefined,
-        },
-        "direction": "vertical",
-        "label": {
-          "formatMethod": [Function],
-          "visible": true,
-        },
-        "padding": 0,
-        "point": {
-          "state": {
-            "hover": {
-              "fillOpacity": 0.6,
-              "lineWidth": 1,
-              "scaleX": 1.4,
-              "scaleY": 1.4,
-              "stroke": [Function],
-            },
-          },
-        },
-        "region": [
-          {
-            "clip": true,
-          },
-        ],
-        "seriesField": "__DimGroupID__",
-        "tooltip": {
-          "dimension": {
-            "content": [
-              {
-                "key": [Function],
-                "shapeType": "rectRound",
-                "value": [Function],
-                "visible": true,
-              },
-            ],
-          },
-          "mark": {
-            "content": [
-              {
-                "hasShape": true,
-                "key": [Function],
-                "shapeType": "rectRound",
-                "value": [Function],
-                "visible": true,
-              },
-              {
-                "hasShape": true,
-                "key": [Function],
-                "value": [Function],
-                "visible": true,
-              },
-            ],
-            "title": {
-              "visible": true,
-            },
-          },
-          "visible": true,
-        },
-        "type": "scatter",
-        "xField": "sales",
-        "yField": "__MeaValue__line1",
+        "visible": true,
       },
-      "indicatorKey": "line1",
-      "style": {
-        "padding": [
-          1,
-          1,
-          0,
-          1,
-        ],
+      "grid": {
+        "style": {
+          "lineWidth": 0.5,
+          "stroke": "#36415926",
+        },
+        "visible": true,
       },
-      "title": undefined,
+      "innerOffset": {
+        "right": 7,
+      },
+      "inverse": false,
+      "label": {
+        "formatMethod": [Function],
+        "style": {
+          "angle": 0,
+          "fill": "#797B85",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "visible": true,
+      },
+      "max": undefined,
+      "min": undefined,
+      "nice": true,
+      "orient": "bottom",
+      "tick": {
+        "inside": false,
+        "style": {
+          "stroke": "#3641594d",
+        },
+        "tickSize": 4,
+        "visible": false,
+      },
+      "title": {
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "text": "",
+        "visible": false,
+      },
+      "type": "linear",
+      "visible": true,
+      "zero": true,
     },
     {
-      "cellType": "chart",
-      "chartModule": "vchart",
-      "chartSpec": {
-        "animation": true,
-        "axes": [
-          {
-            "base": 10,
-            "domainLine": {
-              "style": {
-                "lineWidth": 1,
-                "stroke": "#3641594d",
-              },
-              "visible": true,
-            },
-            "grid": {
-              "style": {
-                "lineWidth": 0.5,
-                "stroke": "#36415926",
-              },
-              "visible": true,
-            },
-            "innerOffset": {
-              "right": 7,
-            },
-            "inverse": false,
-            "label": {
-              "formatMethod": [Function],
-              "style": {
-                "angle": 0,
-                "fill": "#797B85",
-                "fontSize": 12,
-                "fontWeight": 400,
-              },
-              "visible": true,
-            },
-            "max": undefined,
-            "min": undefined,
-            "nice": true,
-            "orient": "bottom",
-            "tick": {
-              "inside": false,
-              "style": {
-                "stroke": "#3641594d",
-              },
-              "tickSize": 4,
-              "visible": false,
-            },
-            "title": {
-              "style": {
-                "fill": "#646A73",
-                "fontSize": 12,
-                "fontWeight": 400,
-              },
-              "text": "",
-              "visible": false,
-            },
-            "type": "linear",
-            "visible": true,
-            "zero": true,
-          },
-          {
-            "base": 10,
-            "domainLine": {
-              "style": {
-                "lineWidth": 1,
-                "stroke": "#3641594d",
-              },
-              "visible": true,
-            },
-            "grid": {
-              "style": {
-                "lineWidth": 0.5,
-                "stroke": "#36415926",
-              },
-              "visible": true,
-            },
-            "innerOffset": {
-              "top": 7,
-            },
-            "inverse": false,
-            "label": {
-              "formatMethod": [Function],
-              "style": {
-                "angle": 0,
-                "fill": "#797B85",
-                "fontSize": 12,
-                "fontWeight": 400,
-              },
-              "visible": true,
-            },
-            "max": undefined,
-            "min": undefined,
-            "nice": true,
-            "orient": "left",
-            "tick": {
-              "inside": false,
-              "style": {
-                "stroke": "#3641594d",
-              },
-              "tickSize": 4,
-              "visible": false,
-            },
-            "title": {
-              "style": {
-                "fill": "#646A73",
-                "fontSize": 12,
-                "fontWeight": 400,
-              },
-              "text": "",
-              "visible": false,
-            },
-            "type": "linear",
-            "visible": true,
-            "zero": true,
-          },
-        ],
-        "background": "transparent",
-        "color": {
-          "domain": [
-            "2019-sales",
-            "2020-sales",
-            "2021-sales",
-            "2022-sales",
-            "2023-sales",
-            "2019-profit",
-            "2020-profit",
-            "2021-profit",
-            "2022-profit",
-            "2023-profit",
-          ],
-          "range": [
-            "#8D72F6",
-            "#5766EC",
-            "#66A3FE",
-            "#51D5E6",
-            "#4EC0B3",
-            "#F9DF90",
-            "#F9AD71",
-            "#ED8888",
-            "#E9A0C3",
-            "#D77DD3",
-          ],
-          "specified": undefined,
-          "type": "ordinal",
+      "base": 10,
+      "domainLine": {
+        "style": {
+          "lineWidth": 1,
+          "stroke": "#3641594d",
         },
-        "crosshair": {
-          "xField": {
-            "label": {
-              "labelBackground": {
-                "style": {
-                  "fill": "#364159",
-                },
-                "visible": true,
-              },
-              "style": {
-                "fill": "#ffffff",
-              },
-              "visible": true,
-            },
-            "line": {
-              "style": {
-                "lineDash": [
-                  4,
-                  2,
-                ],
-                "lineWidth": 1,
-                "opacity": 1,
-                "stroke": "#3641594d",
-              },
-              "type": "line",
-            },
-            "visible": true,
-          },
-          "yField": {
-            "label": {
-              "labelBackground": {
-                "style": {
-                  "fill": "#364159",
-                },
-                "visible": true,
-              },
-              "style": {
-                "fill": "#ffffff",
-              },
-              "visible": true,
-            },
-            "line": {
-              "style": {
-                "lineDash": [
-                  4,
-                  2,
-                ],
-                "lineWidth": 1,
-                "opacity": 1,
-                "stroke": "#3641594d",
-              },
-              "type": "line",
-            },
-            "visible": true,
-          },
-        },
-        "data": {
-          "fields": {
-            "__DimGroupID__": {
-              "sortIndex": 0,
-            },
-            "sales": {
-              "sortIndex": 0,
-            },
-          },
-          "id": "line2",
-          "values": undefined,
-        },
-        "direction": "vertical",
-        "label": {
-          "formatMethod": [Function],
-          "visible": true,
-        },
-        "padding": 0,
-        "point": {
-          "state": {
-            "hover": {
-              "fillOpacity": 0.6,
-              "lineWidth": 1,
-              "scaleX": 1.4,
-              "scaleY": 1.4,
-              "stroke": [Function],
-            },
-          },
-        },
-        "region": [
-          {
-            "clip": true,
-          },
-        ],
-        "seriesField": "__DimGroupID__",
-        "tooltip": {
-          "dimension": {
-            "content": [
-              {
-                "key": [Function],
-                "shapeType": "rectRound",
-                "value": [Function],
-                "visible": true,
-              },
-            ],
-          },
-          "mark": {
-            "content": [
-              {
-                "hasShape": true,
-                "key": [Function],
-                "shapeType": "rectRound",
-                "value": [Function],
-                "visible": true,
-              },
-              {
-                "hasShape": true,
-                "key": [Function],
-                "value": [Function],
-                "visible": true,
-              },
-            ],
-            "title": {
-              "visible": true,
-            },
-          },
-          "visible": true,
-        },
-        "type": "scatter",
-        "xField": "sales",
-        "yField": "__MeaValue__line2",
+        "visible": true,
       },
-      "indicatorKey": "line2",
-      "style": {
-        "padding": [
-          1,
-          1,
-          0,
-          1,
-        ],
+      "grid": {
+        "style": {
+          "lineWidth": 0.5,
+          "stroke": "#36415926",
+        },
+        "visible": true,
       },
-      "title": undefined,
+      "innerOffset": {
+        "top": 7,
+      },
+      "inverse": false,
+      "label": {
+        "formatMethod": [Function],
+        "style": {
+          "angle": 0,
+          "fill": "#797B85",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "visible": true,
+      },
+      "max": undefined,
+      "min": undefined,
+      "nice": true,
+      "orient": "left",
+      "tick": {
+        "inside": false,
+        "style": {
+          "stroke": "#3641594d",
+        },
+        "tickSize": 4,
+        "visible": false,
+      },
+      "title": {
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "text": "",
+        "visible": false,
+      },
+      "type": "linear",
+      "visible": true,
+      "zero": true,
     },
   ],
-  "indicatorsAsCol": false,
-  "legends": {
-    "data": [
-      {
-        "label": "2019-sales",
-        "shape": {
-          "fill": "#8D72F6",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#8D72F6",
+  "background": "transparent",
+  "color": {
+    "domain": [
+      "2019-销售额",
+      "2020-销售额",
+      "2021-销售额",
+      "2022-销售额",
+      "2023-销售额",
+      "2019-利润",
+      "2020-利润",
+      "2021-利润",
+      "2022-利润",
+      "2023-利润",
+    ],
+    "range": [
+      "#8D72F6",
+      "#5766EC",
+      "#66A3FE",
+      "#51D5E6",
+      "#4EC0B3",
+      "#F9DF90",
+      "#F9AD71",
+      "#ED8888",
+      "#E9A0C3",
+      "#D77DD3",
+    ],
+    "specified": undefined,
+    "type": "ordinal",
+  },
+  "crosshair": {
+    "xField": {
+      "label": {
+        "labelBackground": {
+          "style": {
+            "fill": "#364159",
           },
+          "visible": true,
         },
+        "style": {
+          "fill": "#ffffff",
+        },
+        "visible": true,
+      },
+      "line": {
+        "style": {
+          "lineDash": [
+            4,
+            2,
+          ],
+          "lineWidth": 1,
+          "opacity": 1,
+          "stroke": "#3641594d",
+        },
+        "type": "line",
+      },
+      "visible": true,
+    },
+    "yField": {
+      "label": {
+        "labelBackground": {
+          "style": {
+            "fill": "#364159",
+          },
+          "visible": true,
+        },
+        "style": {
+          "fill": "#ffffff",
+        },
+        "visible": true,
+      },
+      "line": {
+        "style": {
+          "lineDash": [
+            4,
+            2,
+          ],
+          "lineWidth": 1,
+          "opacity": 1,
+          "stroke": "#3641594d",
+        },
+        "type": "line",
+      },
+      "visible": true,
+    },
+  },
+  "data": {
+    "fields": {},
+    "id": "scatter",
+    "values": [
+      {
+        "__Dim_ColorId__": "2019-利润",
+        "__Dim_Color__": "2019-利润",
+        "__Dim_Detail__": "2019",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaXValue__": 200000,
+        "__MeaYValue__": 10000,
+        "__OriginalData__": {
+          "__Dim_ColorId__": "2019-销售额",
+          "__Dim_Color__": "2019-销售额",
+          "__Dim_Detail__": "2019",
+          "__MeaId__": "sales",
+          "__MeaName__": "销售额",
+          "__MeaXValue__": 200000,
+          "__OriginalData__": {
+            "date": "2019",
+            "profit": 10000,
+            "sales": 200000,
+          },
+          "date": "2019",
+          "profit": 10000,
+          "sales": 200000,
+        },
+        "date": "2019",
+        "profit": 10000,
+        "sales": 200000,
       },
       {
-        "label": "2020-sales",
-        "shape": {
-          "fill": "#5766EC",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#5766EC",
+        "__Dim_ColorId__": "2020-利润",
+        "__Dim_Color__": "2020-利润",
+        "__Dim_Detail__": "2020",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaXValue__": 400000,
+        "__MeaYValue__": 20000,
+        "__OriginalData__": {
+          "__Dim_ColorId__": "2020-销售额",
+          "__Dim_Color__": "2020-销售额",
+          "__Dim_Detail__": "2020",
+          "__MeaId__": "sales",
+          "__MeaName__": "销售额",
+          "__MeaXValue__": 400000,
+          "__OriginalData__": {
+            "date": "2020",
+            "profit": 20000,
+            "sales": 400000,
           },
+          "date": "2020",
+          "profit": 20000,
+          "sales": 400000,
         },
+        "date": "2020",
+        "profit": 20000,
+        "sales": 400000,
       },
       {
-        "label": "2021-sales",
-        "shape": {
-          "fill": "#66A3FE",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#66A3FE",
+        "__Dim_ColorId__": "2021-利润",
+        "__Dim_Color__": "2021-利润",
+        "__Dim_Detail__": "2021",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaXValue__": 600000,
+        "__MeaYValue__": 30000,
+        "__OriginalData__": {
+          "__Dim_ColorId__": "2021-销售额",
+          "__Dim_Color__": "2021-销售额",
+          "__Dim_Detail__": "2021",
+          "__MeaId__": "sales",
+          "__MeaName__": "销售额",
+          "__MeaXValue__": 600000,
+          "__OriginalData__": {
+            "date": "2021",
+            "profit": 30000,
+            "sales": 600000,
           },
+          "date": "2021",
+          "profit": 30000,
+          "sales": 600000,
         },
+        "date": "2021",
+        "profit": 30000,
+        "sales": 600000,
       },
       {
-        "label": "2022-sales",
-        "shape": {
-          "fill": "#51D5E6",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#51D5E6",
+        "__Dim_ColorId__": "2022-利润",
+        "__Dim_Color__": "2022-利润",
+        "__Dim_Detail__": "2022",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaXValue__": 800000,
+        "__MeaYValue__": 40000,
+        "__OriginalData__": {
+          "__Dim_ColorId__": "2022-销售额",
+          "__Dim_Color__": "2022-销售额",
+          "__Dim_Detail__": "2022",
+          "__MeaId__": "sales",
+          "__MeaName__": "销售额",
+          "__MeaXValue__": 800000,
+          "__OriginalData__": {
+            "date": "2022",
+            "profit": 40000,
+            "sales": 800000,
           },
+          "date": "2022",
+          "profit": 40000,
+          "sales": 800000,
         },
+        "date": "2022",
+        "profit": 40000,
+        "sales": 800000,
       },
       {
-        "label": "2023-sales",
-        "shape": {
-          "fill": "#4EC0B3",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#4EC0B3",
+        "__Dim_ColorId__": "2023-利润",
+        "__Dim_Color__": "2023-利润",
+        "__Dim_Detail__": "2023",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaXValue__": 1000000,
+        "__MeaYValue__": 50000,
+        "__OriginalData__": {
+          "__Dim_ColorId__": "2023-销售额",
+          "__Dim_Color__": "2023-销售额",
+          "__Dim_Detail__": "2023",
+          "__MeaId__": "sales",
+          "__MeaName__": "销售额",
+          "__MeaXValue__": 1000000,
+          "__OriginalData__": {
+            "date": "2023",
+            "profit": 50000,
+            "sales": 1000000,
           },
+          "date": "2023",
+          "profit": 50000,
+          "sales": 1000000,
         },
-      },
-      {
-        "label": "2019-profit",
-        "shape": {
-          "fill": "#F9DF90",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#F9DF90",
-          },
-        },
-      },
-      {
-        "label": "2020-profit",
-        "shape": {
-          "fill": "#F9AD71",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#F9AD71",
-          },
-        },
-      },
-      {
-        "label": "2021-profit",
-        "shape": {
-          "fill": "#ED8888",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#ED8888",
-          },
-        },
-      },
-      {
-        "label": "2022-profit",
-        "shape": {
-          "fill": "#E9A0C3",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#E9A0C3",
-          },
-        },
-      },
-      {
-        "label": "2023-profit",
-        "shape": {
-          "fill": "#D77DD3",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#D77DD3",
-          },
-        },
+        "date": "2023",
+        "profit": 50000,
+        "sales": 1000000,
       },
     ],
+  },
+  "direction": "vertical",
+  "label": {
+    "formatMethod": [Function],
+    "visible": true,
+  },
+  "legends": {
+    "autoPage": true,
+    "data": [Function],
     "item": {
       "background": {
         "state": {
@@ -1255,275 +895,71 @@ exports[`combinationScatter 2`] = `
     "maxCol": 1,
     "maxRow": 1,
     "orient": "right",
+    "padding": 0,
     "position": "start",
     "type": "discrete",
     "visible": true,
   },
-  "records": {
-    "line1": [
-      {
-        "__DimGroupID__": "2019-sales",
-        "__DimGroup__": "2019",
-        "__MeaId__": "sales",
-        "__MeaName__": "销售额",
-        "__MeaValue__line1": 200000,
-        "__OriginalData__": {
-          "date": "2019",
-          "profit": 10000,
-          "sales": 200000,
-        },
-        "date": "2019",
-        "profit": 10000,
-        "sales": 200000,
+  "padding": 0,
+  "point": {
+    "state": {
+      "hover": {
+        "fillOpacity": 0.6,
+        "lineWidth": 1,
+        "scaleX": 1.4,
+        "scaleY": 1.4,
+        "stroke": [Function],
       },
-      {
-        "__DimGroupID__": "2020-sales",
-        "__DimGroup__": "2020",
-        "__MeaId__": "sales",
-        "__MeaName__": "销售额",
-        "__MeaValue__line1": 400000,
-        "__OriginalData__": {
-          "date": "2020",
-          "profit": 20000,
-          "sales": 400000,
-        },
-        "date": "2020",
-        "profit": 20000,
-        "sales": 400000,
-      },
-      {
-        "__DimGroupID__": "2021-sales",
-        "__DimGroup__": "2021",
-        "__MeaId__": "sales",
-        "__MeaName__": "销售额",
-        "__MeaValue__line1": 600000,
-        "__OriginalData__": {
-          "date": "2021",
-          "profit": 30000,
-          "sales": 600000,
-        },
-        "date": "2021",
-        "profit": 30000,
-        "sales": 600000,
-      },
-      {
-        "__DimGroupID__": "2022-sales",
-        "__DimGroup__": "2022",
-        "__MeaId__": "sales",
-        "__MeaName__": "销售额",
-        "__MeaValue__line1": 800000,
-        "__OriginalData__": {
-          "date": "2022",
-          "profit": 40000,
-          "sales": 800000,
-        },
-        "date": "2022",
-        "profit": 40000,
-        "sales": 800000,
-      },
-      {
-        "__DimGroupID__": "2023-sales",
-        "__DimGroup__": "2023",
-        "__MeaId__": "sales",
-        "__MeaName__": "销售额",
-        "__MeaValue__line1": 1000000,
-        "__OriginalData__": {
-          "date": "2023",
-          "profit": 50000,
-          "sales": 1000000,
-        },
-        "date": "2023",
-        "profit": 50000,
-        "sales": 1000000,
-      },
-    ],
-    "line2": [
-      {
-        "__DimGroupID__": "2019-profit",
-        "__DimGroup__": "2019",
-        "__MeaId__": "profit",
-        "__MeaName__": "利润",
-        "__MeaValue__line2": 10000,
-        "__OriginalData__": {
-          "date": "2019",
-          "profit": 10000,
-          "sales": 200000,
-        },
-        "date": "2019",
-        "profit": 10000,
-        "sales": 200000,
-      },
-      {
-        "__DimGroupID__": "2020-profit",
-        "__DimGroup__": "2020",
-        "__MeaId__": "profit",
-        "__MeaName__": "利润",
-        "__MeaValue__line2": 20000,
-        "__OriginalData__": {
-          "date": "2020",
-          "profit": 20000,
-          "sales": 400000,
-        },
-        "date": "2020",
-        "profit": 20000,
-        "sales": 400000,
-      },
-      {
-        "__DimGroupID__": "2021-profit",
-        "__DimGroup__": "2021",
-        "__MeaId__": "profit",
-        "__MeaName__": "利润",
-        "__MeaValue__line2": 30000,
-        "__OriginalData__": {
-          "date": "2021",
-          "profit": 30000,
-          "sales": 600000,
-        },
-        "date": "2021",
-        "profit": 30000,
-        "sales": 600000,
-      },
-      {
-        "__DimGroupID__": "2022-profit",
-        "__DimGroup__": "2022",
-        "__MeaId__": "profit",
-        "__MeaName__": "利润",
-        "__MeaValue__line2": 40000,
-        "__OriginalData__": {
-          "date": "2022",
-          "profit": 40000,
-          "sales": 800000,
-        },
-        "date": "2022",
-        "profit": 40000,
-        "sales": 800000,
-      },
-      {
-        "__DimGroupID__": "2023-profit",
-        "__DimGroup__": "2023",
-        "__MeaId__": "profit",
-        "__MeaName__": "利润",
-        "__MeaValue__line2": 50000,
-        "__OriginalData__": {
-          "date": "2023",
-          "profit": 50000,
-          "sales": 1000000,
-        },
-        "date": "2023",
-        "profit": 50000,
-        "sales": 1000000,
-      },
-    ],
+    },
   },
-  "rows": [],
-  "theme": {
-    "bodyStyle": {
-      "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
-      "borderLineWidth": [
-        0,
-        0,
-        2,
-        0,
-      ],
-      "hover": {
-        "cellBgColor": "transparent",
-      },
-      "padding": [
-        0,
-        0,
-        1,
-        0,
+  "region": [
+    {
+      "clip": true,
+    },
+  ],
+  "seriesField": "__Dim_ColorId__",
+  "tooltip": {
+    "dimension": {
+      "content": [
+        {
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
       ],
     },
-    "bottomFrozenStyle": {
-      "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
-      "borderLineWidth": 0,
-      "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
-      },
-    },
-    "cornerHeaderStyle": {
-      "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
-      "borderLineWidth": [
-        0,
-        0,
-        0,
-        0,
+    "mark": {
+      "content": [
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+        {
+          "hasShape": true,
+          "key": [Function],
+          "value": [Function],
+          "visible": true,
+        },
       ],
-      "color": "#333333",
-      "fontSize": 12,
-      "fontWeight": "bold",
-      "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
-      },
-      "textAlign": "center",
-    },
-    "cornerLeftBottomCellStyle": {
-      "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
-      "borderLineWidth": 0,
-      "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
+      "title": {
+        "visible": true,
       },
     },
-    "cornerRightBottomCellStyle": {
-      "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
-      "borderLineWidth": 0,
-      "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
-      },
-    },
-    "cornerRightTopCellStyle": {
-      "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
-      "borderLineWidth": 0,
-      "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
-      },
-    },
-    "frameStyle": {
-      "bgColor": "rgba(0,0,0,0)",
-      "borderLineWidth": 0,
-    },
-    "headerStyle": {
-      "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
-      "borderLineWidth": 0,
-      "color": "#333333",
-      "fontSize": 12,
-      "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
-      },
-      "textAlign": "center",
-    },
-    "rightFrozenStyle": {
-      "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
-      "borderLineWidth": 0,
-      "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
-      },
-    },
-    "rowHeaderStyle": {
-      "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
-      "borderLineWidth": 0,
-      "color": "#333333",
-      "fontSize": 12,
-      "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
-      },
-    },
-    "selectionStyle": {
-      "cellBgColor": "",
-      "cellBorderColor": "",
-    },
-    "underlayBackgroundColor": "rgba(0,0,0,0)",
+    "visible": true,
   },
-  "widthMode": "adaptive",
+  "type": "scatter",
+  "xField": "__MeaXValue__",
+  "yField": "__MeaYValue__",
 }
 `;

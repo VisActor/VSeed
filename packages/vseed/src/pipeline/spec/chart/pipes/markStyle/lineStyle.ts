@@ -5,7 +5,8 @@ import { groupBy } from 'remeda'
 
 export const lineStyle: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const { markStyle, encoding, dataset } = advancedVSeed
+  const { markStyle, datasetReshapeInfo, dataset } = advancedVSeed
+  const { unfoldInfo } = datasetReshapeInfo[0]
   const { lineStyle } = markStyle
   if (!lineStyle) {
     return spec
@@ -14,8 +15,8 @@ export const lineStyle: SpecPipe = (spec, context) => {
 
   const lineStyles = (Array.isArray(lineStyle) ? lineStyle : [lineStyle]) as LineStyle[]
 
-  const group = encoding[0]?.group?.[0]
-  const lineGroups = groupBy(dataset, (d) => d[group ?? ''] as string)
+  const colorId = unfoldInfo.encodingColorId
+  const lineGroups = groupBy(dataset, (d) => d[colorId ?? ''] as string)
 
   const customMap = lineStyles.reduce<object>((result, style, index) => {
     const { lineColor, lineColorOpacity, lineSmooth, lineStyle, lineWidth = 2, lineVisible = true } = style
@@ -34,7 +35,7 @@ export const lineStyle: SpecPipe = (spec, context) => {
         // 优先级: 后者覆盖前者
         level: index + 1,
         filter: (datum: Datum) => {
-          const lineData = lineGroups[datum[group ?? ''] as string]
+          const lineData = lineGroups[datum[colorId ?? ''] as string]
           for (const d of lineData) {
             if (selector(d, style.selector)) {
               return true

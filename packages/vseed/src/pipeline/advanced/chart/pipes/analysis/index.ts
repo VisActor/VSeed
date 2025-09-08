@@ -1,1 +1,3 @@
-export { sortXBandAxis, sortYBandAxis, sortLegend } from './sort'
+export { sortLegend } from './sortLegend'
+export { sortXBandAxis } from './sortXBand'
+export { sortYBandAxis } from './sortYBand'

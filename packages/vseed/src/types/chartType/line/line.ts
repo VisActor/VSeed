@@ -20,55 +20,63 @@ import type {
   MeasureTree,
   Sort,
   SortLegend,
+  Encoding,
 } from '../../properties'
 
 /**
  * 折线图类型定义
- * @description 
+ * @description
  * 折线图，适用于展示数据随时间或有序类别变化的趋势，通过线段连接数据点形成趋势线
- * @warning 
+ * @warning
  * 适用场景:
  * - 展示时间序列数据的变化趋势
  * - 比较多个数据系列的趋势对比
  * - 分析数据的增长或下降规律
- * @warning 
+ * @warning
  * 数据要求:
  * - 至少1个数值字段（度量）
  * - 第一个维度会放至X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
  * - 所有指标会自动合并为一个指标
  * 默认开启的功能:
  * - 默认开启图例、坐标轴、数据点标记、提示信息、趋势线
- * @recommend 
+ * @recommend
  * - 推荐字段配置: `1`个指标, `2`个维度
  * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
 export interface Line {
   /**
-   * 折线图
    * @description 折线图，适用于展示数据随时间或有序类别变化的趋势
    * @type {string}
    * @example 'line'
    */
   chartType: 'line'
+
   /**
-   * 数据集
-   * @description 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 折线图的数据最终会被转换为2个维度, 1个指标.
+   * @description 数据源, 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 折线图的数据最终会被转换为2个维度, 1个指标.
    * @type {Array<Record<string|number, any>>}
    * @example [{month:'1月', value:100}, {month:'2月', value:150}, {month:'3月', value:120}]
    */
   dataset: Dataset
 
   /**
-   * 维度
-   * @description 折线图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
+   * @description 编码配置, 折线图的视觉通道, 包括: x通道, color通道, detail通道, label通道, tooltip通道
+   * - x: 映射到X轴的字段, 支持放入多个维度
+   * - detail: 详情映射通道, 支持放入多个维度
+   * - tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
+   * - color: 颜色映射通道, 支持放入多个维度 或 1个 指标
+   * - label: 标签映射通道, 支持放入 多个维度 或 1个指标
+   */
+  encoding?: Pick<Encoding, 'x' | 'color' | 'detail' | 'label' | 'tooltip'>
+
+  /**
+   * @description 维度, 折线图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
    * @type {Dimensions}
    * @example [{id: "month", alias: "月份"}]
    */
   dimensions?: Dimensions
 
   /**
-   * 指标
-   * @description 折线图的所有指标会自动合并为一个指标, 映射到Y轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
+   * @description 指标, 折线图的所有指标会自动合并为一个指标, 映射到Y轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
    * @type {DimensionTree}
    * @example [{id: "value", alias: "数值"}]
    */
@@ -76,8 +84,7 @@ export interface Line {
 
   /**
    * 图表的背景颜色
-   * @default transparent 默认为透明背景
-   * @description 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
+   * @description 图表的背景颜色, 默认为透明背景, 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
    */
   backgroundColor?: BackgroundColor
 

@@ -26,14 +26,15 @@ import {
   horizontalCrosshairLine,
   pointStateHover,
   initScatter,
-  progressive
+  progressive,
+  datasetScatter
 } from '../pipes'
 
 const scatter: SpecPipeline = [
   initScatter,
   color,
   backgroundColor,
-  datasetXY,
+  datasetScatter,
   progressive,
   xLinear,
   yLinear,
@@ -59,7 +60,7 @@ const pivotScatter: SpecPipeline = [
     initScatter,
     color,
     backgroundColor,
-    datasetXY,
+    datasetScatter,
     progressive,
     xLinear,
     yLinear,

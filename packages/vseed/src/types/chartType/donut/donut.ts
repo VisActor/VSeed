@@ -4,6 +4,7 @@ import type {
   Color,
   Dataset,
   Dimensions,
+  Encoding,
   Label,
   Legend,
   MeasureTree,
@@ -18,14 +19,14 @@ import type {
  * - 需要同时展示整体数据和各部分占比
  * - 强调数据的整体与部分关系
  * - 中心区域需要展示关键指标或标题
- * @warning 
+ * @warning
  * 数据要求:
  * - 至少1个指标字段（度量）
  * - 所有维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
  * - 所有指标会自动合并为一个指标
  * 默认开启的功能:
  * - 默认开启图例、数据标签、提示信息、占比计算、中心文本
- * @recommend 
+ * @recommend
  * - 推荐字段配置: `1`个指标, `2`个维度
  * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
@@ -37,6 +38,7 @@ export interface Donut {
    * @example 'donut'
    */
   chartType: 'donut'
+
   /**
    * 数据集
    * @description 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 环形图的数据最终会被转换为1个维度, 1个指标.
@@ -44,6 +46,16 @@ export interface Donut {
    * @example [{category:'A', value:30}, {category:'B', value:70}]
    */
   dataset: Dataset
+
+  /**
+   * @description 编码配置, 环形图的视觉通道, 包括: angle通道, color通道, detail通道, label通道, tooltip通道
+   * - angle: 映射到角度的字段, 支持放入多个维度
+   * - detail: 详情映射通道, 支持放入多个维度
+   * - tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
+   * - color: 颜色映射通道, 支持放入多个维度 或 1个 指标
+   * - label: 标签映射通道, 支持放入 多个维度 或 1个指标
+   */
+  encoding?: Pick<Encoding, 'angle' | 'color' | 'detail' | 'label' | 'tooltip'>
 
   /**
    * 维度

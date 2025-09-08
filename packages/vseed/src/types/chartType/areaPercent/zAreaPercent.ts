@@ -10,6 +10,7 @@ import {
   zCrosshairLine,
   zDataset,
   zDimensions,
+  zEncoding,
   zLabel,
   zLegend,
   zLineStyle,
@@ -26,6 +27,7 @@ import { z } from 'zod'
 export const zAreaPercent = z.object({
   chartType: z.literal('areaPercent'),
   dataset: zDataset.nullish(),
+  encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasureTree.nullish(),
   backgroundColor: zBackgroundColor.nullish(),

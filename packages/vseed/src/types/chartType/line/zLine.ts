@@ -9,6 +9,7 @@ import {
   zCrosshairLine,
   zDataset,
   zDimensions,
+  zEncoding,
   zLabel,
   zLegend,
   zLineStyle,
@@ -27,6 +28,7 @@ import { z } from 'zod'
 export const zLine = z.object({
   chartType: z.literal('line'),
   dataset: zDataset.nullish(),
+  encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasureTree.nullish(),
   backgroundColor: zBackgroundColor.nullish(),

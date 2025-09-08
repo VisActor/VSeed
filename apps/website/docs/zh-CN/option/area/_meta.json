@@ -56,6 +56,11 @@
   },
   {
     "type": "file",
+    "name": "encoding",
+    "label": "encoding "
+  },
+  {
+    "type": "file",
     "name": "label",
     "label": "label "
   },

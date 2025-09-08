@@ -3,10 +3,6 @@
 **Type:** `AnnotationArea | AnnotationArea[] | undefined`
 
 :::note{title=描述}
-标注区域
-
-
-
 标注区域配置, 根据选择的数据, 定义图表的标注区域, 包括标注区域的位置, 样式等.:::
 
 

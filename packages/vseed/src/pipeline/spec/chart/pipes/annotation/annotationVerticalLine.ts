@@ -6,7 +6,9 @@ import { ANNOTATION_Z_INDEX } from '../../../../utils/constant'
 
 export const annotationVerticalLine: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const { annotation, encoding } = advancedVSeed
+  const { annotation, datasetReshapeInfo } = advancedVSeed
+
+  const { unfoldInfo } = datasetReshapeInfo[0]
 
   if (!annotation || !annotation.annotationVerticalLine) {
     return spec
@@ -108,7 +110,7 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
     const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
 
     return selectedData.map((datum) => {
-      const x = encoding[0]?.x?.[0]
+      const x = unfoldInfo.encodingX
       if (!x) {
         return {}
       }

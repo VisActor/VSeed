@@ -258,8 +258,10 @@ exports[`1m1d 1`] = `
   },
   "dataset": [
     {
-      "__DimGroupID__": "profit-profit",
-      "__DimGroup__": "profit",
+      "__Dim_ColorId__": "profit-profit",
+      "__Dim_Color__": "profit",
+      "__Dim_Detail__": "profit",
+      "__Dim_X__": "2019",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 10,
@@ -271,8 +273,10 @@ exports[`1m1d 1`] = `
       "profit": 10,
     },
     {
-      "__DimGroupID__": "profit-profit",
-      "__DimGroup__": "profit",
+      "__Dim_ColorId__": "profit-profit",
+      "__Dim_Color__": "profit",
+      "__Dim_Detail__": "profit",
+      "__Dim_X__": "2020",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 30,
@@ -284,8 +288,10 @@ exports[`1m1d 1`] = `
       "profit": 30,
     },
     {
-      "__DimGroupID__": "profit-profit",
-      "__DimGroup__": "profit",
+      "__Dim_ColorId__": "profit-profit",
+      "__Dim_Color__": "profit",
+      "__Dim_Detail__": "profit",
+      "__Dim_X__": "2021",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 30,
@@ -297,8 +303,10 @@ exports[`1m1d 1`] = `
       "profit": 30,
     },
     {
-      "__DimGroupID__": "profit-profit",
-      "__DimGroup__": "profit",
+      "__Dim_ColorId__": "profit-profit",
+      "__Dim_Color__": "profit",
+      "__Dim_Detail__": "profit",
+      "__Dim_X__": "2022",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 50,
@@ -310,8 +318,10 @@ exports[`1m1d 1`] = `
       "profit": 50,
     },
     {
-      "__DimGroupID__": "profit-profit",
-      "__DimGroup__": "profit",
+      "__Dim_ColorId__": "profit-profit",
+      "__Dim_Color__": "profit",
+      "__Dim_Detail__": "profit",
+      "__Dim_X__": "2023",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 40,
@@ -333,7 +343,7 @@ exports[`1m1d 1`] = `
         "measureName": "__MeaName__",
         "measureValue": "__MeaValue__",
       },
-      "id": "2D1M",
+      "id": "columnParallel",
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
@@ -342,8 +352,12 @@ exports[`1m1d 1`] = `
         "colorItems": [
           "profit-profit",
         ],
-        "groupId": "__DimGroupID__",
-        "groupName": "__DimGroup__",
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
       },
     },
   ],
@@ -353,23 +367,29 @@ exports[`1m1d 1`] = `
       "id": "date",
       "location": "dimension",
     },
-  ],
-  "encoding": [
     {
-      "color": [
-        "__MeaName__",
-      ],
-      "group": [
-        "__DimGroupID__",
-      ],
-      "x": [
-        "date",
-      ],
-      "y": [
-        "__MeaValue__",
-      ],
+      "alias": "指标名称",
+      "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "color": [
+      "__MeaName__",
+    ],
+    "column": [],
+    "detail": [
+      "__MeaName__",
+    ],
+    "label": [],
+    "row": [],
+    "tooltip": [
+      "date",
+      "__MeaName__",
+    ],
+    "x": [
+      "date",
+    ],
+  },
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [
@@ -569,18 +589,23 @@ exports[`1m1d 2`] = `
   },
   "data": {
     "fields": {
-      "__DimGroupID__": {
+      "__Dim_Angle__": {
         "sortIndex": 0,
       },
-      "date": {
+      "__Dim_ColorId__": {
+        "sortIndex": 0,
+      },
+      "__Dim_X__": {
         "sortIndex": 0,
       },
     },
-    "id": "2D1M",
+    "id": "columnParallel",
     "values": [
       {
-        "__DimGroupID__": "profit-profit",
-        "__DimGroup__": "profit",
+        "__Dim_ColorId__": "profit-profit",
+        "__Dim_Color__": "profit",
+        "__Dim_Detail__": "profit",
+        "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 10,
@@ -592,8 +617,10 @@ exports[`1m1d 2`] = `
         "profit": 10,
       },
       {
-        "__DimGroupID__": "profit-profit",
-        "__DimGroup__": "profit",
+        "__Dim_ColorId__": "profit-profit",
+        "__Dim_Color__": "profit",
+        "__Dim_Detail__": "profit",
+        "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 30,
@@ -605,8 +632,10 @@ exports[`1m1d 2`] = `
         "profit": 30,
       },
       {
-        "__DimGroupID__": "profit-profit",
-        "__DimGroup__": "profit",
+        "__Dim_ColorId__": "profit-profit",
+        "__Dim_Color__": "profit",
+        "__Dim_Detail__": "profit",
+        "__Dim_X__": "2021",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 30,
@@ -618,8 +647,10 @@ exports[`1m1d 2`] = `
         "profit": 30,
       },
       {
-        "__DimGroupID__": "profit-profit",
-        "__DimGroup__": "profit",
+        "__Dim_ColorId__": "profit-profit",
+        "__Dim_Color__": "profit",
+        "__Dim_Detail__": "profit",
+        "__Dim_X__": "2022",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 50,
@@ -631,8 +662,10 @@ exports[`1m1d 2`] = `
         "profit": 50,
       },
       {
-        "__DimGroupID__": "profit-profit",
-        "__DimGroup__": "profit",
+        "__Dim_ColorId__": "profit-profit",
+        "__Dim_Color__": "profit",
+        "__Dim_Detail__": "profit",
+        "__Dim_X__": "2023",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 40,
@@ -699,7 +732,7 @@ exports[`1m1d 2`] = `
       "clip": true,
     },
   ],
-  "seriesField": "__DimGroupID__",
+  "seriesField": "__Dim_ColorId__",
   "stackCornerRadius": [
     4,
     4,
@@ -729,6 +762,13 @@ exports[`1m1d 2`] = `
         {
           "hasShape": true,
           "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+        {
+          "hasShape": true,
+          "key": [Function],
           "value": [Function],
           "visible": true,
         },
@@ -741,8 +781,8 @@ exports[`1m1d 2`] = `
   },
   "type": "bar",
   "xField": [
-    "date",
-    "__DimGroupID__",
+    "__Dim_X__",
+    "__Dim_Detail__",
   ],
   "yField": "__MeaValue__",
 }

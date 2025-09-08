@@ -10,6 +10,7 @@ import {
   zCrosshairRect,
   zDataset,
   zDimensions,
+  zEncoding,
   zLabel,
   zLegend,
   zMeasureTree,
@@ -25,6 +26,7 @@ import { z } from 'zod'
 export const zBar = z.object({
   chartType: z.literal('bar'),
   dataset: zDataset.nullish(),
+  encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasureTree.nullish(),
   backgroundColor: zBackgroundColor.nullish(),

@@ -1,24 +1,24 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
   autoDimensions,
-  autoMeasures,
   initAdvancedVSeed,
   theme,
   pivotAdapter,
   annotation,
   markStyle,
   scatterConfig,
-  reshapeTo1D2M,
-  pivotReshapeTo1D2M,
-  encodingYY,
+  encodingForScatter,
+  autoScatterMeasures,
 } from '../pipes'
+import { reshapeWithScatterEncoding } from '../pipes/reshape/reshapeWithScatterEncoding'
+import { pivotReshapeWithScatterEncoding } from '../pipes/reshape/pivotReshapeWithScatterEncoding'
 
 export const scatterAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  autoMeasures,
+  autoScatterMeasures,
   autoDimensions,
-  pivotAdapter([reshapeTo1D2M], [pivotReshapeTo1D2M]),
-  encodingYY,
+  encodingForScatter,
+  pivotAdapter([reshapeWithScatterEncoding], [pivotReshapeWithScatterEncoding]),
   scatterConfig,
   theme,
   markStyle,

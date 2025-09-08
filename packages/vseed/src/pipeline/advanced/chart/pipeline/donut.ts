@@ -5,20 +5,20 @@ import {
   initAdvancedVSeed,
   theme,
   pivotAdapter,
-  reshapeTo1D1M,
-  pivotReshapeTo1D1M,
-  encodingPie,
   annotation,
   donutConfig,
+  encodingForPie,
+  reshapeWithEncoding,
+  pivotReshapeWithEncoding,
 } from '../pipes'
 
 export const donutAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   autoMeasures,
   autoDimensions,
-  pivotAdapter([reshapeTo1D1M], [pivotReshapeTo1D1M]),
-  encodingPie,
+  encodingForPie,
+  pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
   donutConfig,
   theme,
-  annotation
+  annotation,
 ]

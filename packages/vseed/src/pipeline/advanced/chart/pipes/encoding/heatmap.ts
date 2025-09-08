@@ -1,3 +1,4 @@
+import { MeasureName } from 'src/dataReshape'
 import type { AdvancedPipe, Encoding, Heatmap } from 'src/types'
 
 export const encodingForHeatmap: AdvancedPipe = (advancedVSeed, context) => {
@@ -20,9 +21,11 @@ export const encodingForHeatmap: AdvancedPipe = (advancedVSeed, context) => {
     }
   }
 
+  const onlyMeasureName = dimensions.length === 1 && dimensions.find((item) => item.id === MeasureName)
+
   const mergedEncoding: Encoding = {
-    x: dimensions.slice(0,1).map((item) => item.id), // 第一个用于X轴
-    y: dimensions.slice(1).map((item) => item.id), // 第二及其之后个用于Y轴
+    x: dimensions.slice(0, 1).map((item) => item.id), // 第一个用于X轴
+    y: dimensions.slice(onlyMeasureName ? 0 : 1).map((item) => item.id), // 第二及其之后个用于Y轴
     color: dimensions.slice(0).map((item) => item.id), // 所有维度用于颜色
     tooltip: dimensions.map((item) => item.id), // 展示所有维度
     label: [], // 默认不展示标签

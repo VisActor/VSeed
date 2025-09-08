@@ -48,15 +48,15 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
     const unfoldInfoList: UnfoldInfo[] = []
 
     const datasets: Dataset[] = []
-    const primaryMeasures = measures[0]
-    const secondaryMeasures = (measures[1] || [])
+    const xMeasures = measures[0]
+    const yMeasures = measures[1] || xMeasures
 
-    if (primaryMeasures && primaryMeasures.children) {
+    if (xMeasures && xMeasures.children) {
       const {
         dataset: newDataset,
         foldInfo,
         unfoldInfo,
-      } = dataReshapeByEncoding(dataset, dimensions, primaryMeasures.children, encoding as Encoding, {
+      } = dataReshapeByEncoding(dataset, dimensions, xMeasures.children, encoding as Encoding, {
         foldMeasureValue: `${FoldPrimaryMeasureValue}${index}`,
       })
 
@@ -65,12 +65,12 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
       unfoldInfoList.push(unfoldInfo)
     }
 
-    if (secondaryMeasures && secondaryMeasures.children) {
+    if (yMeasures && yMeasures.children) {
       const {
         dataset: newDataset,
         foldInfo,
         unfoldInfo,
-      } = dataReshapeByEncoding(dataset, dimensions, secondaryMeasures.children, encoding as Encoding, {
+      } = dataReshapeByEncoding(dataset, dimensions, yMeasures.children, encoding as Encoding, {
         foldMeasureValue: `${FoldSecondaryMeasureValue}${index}`,
       })
 

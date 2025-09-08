@@ -23,7 +23,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
 
   const datasets: Dataset[] = []
   const xMeasures = measures[0] as MeasureGroup
-  const yMeasures = (measures[1] || []) as MeasureGroup
+  const yMeasures = (measures[1] || xMeasures) as MeasureGroup
 
   if (xMeasures && xMeasures.children) {
     const {

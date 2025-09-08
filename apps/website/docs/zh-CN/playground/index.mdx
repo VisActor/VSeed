@@ -9,39 +9,17 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'scatter',
-    measures: [
-      {
-        id: 'primary',
-        alias: 'primary',
-        children: [
-          {
-            id: 'profit',
-            alias: 'profit',
-          },
-        ],
-      },
-      {
-        id: 'secondary',
-        alias: 'secondary',
-        children: [
-          {
-            id: 'sales',
-            alias: 'sales',
-          },
-          {
-            id: 'discount',
-            alias: 'discount',
-          },
-        ],
-      },
-    ],
+    chartType: 'columnParallel',
+    encoding: {
+      x: ['__MeaName__'],
+      color: ['date', 'east', 'city', MeasureNames],
+    },
+    measures: [{ id: 'profit' }, { id: 'sales' }],
     dataset: [
-      {
-        profit: 10,
-        sales: 20,
-        discount: 30,
-      },
+      { date: '2019', region: 'east', city: 'A', profit: 10, sales: 100 },
+      { date: '2019', region: 'east', city: 'B', profit: 30, sales: 200 },
+      { date: '2019', region: 'west', city: 'C', profit: 0, sales: 300 },
+      { date: '2019', region: 'west', city: 'D', profit: 50, sales: 500 },
     ],
     legend: {
       position: 'bottom',

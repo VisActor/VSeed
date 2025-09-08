@@ -1,5 +1,20 @@
 # @visactor/vseed
 
+## 0.1.0
+
+### Minor Changes
+
+break changes:
+- remove areaRange
+- remove groupId in dataset
+- remove groupColor in dataset
+- rewrite scatter chart
+- rewrite all the dataReshape
+
+features:
+- add encoding for all chart types
+
+
 ## 0.0.40
 
 ### Patch Changes

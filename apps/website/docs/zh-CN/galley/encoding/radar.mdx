@@ -1,0 +1,76 @@
+---
+pageType: doc
+---
+
+import { EncodingRadar } from '@components'
+
+# radar
+
+## 介绍
+:::info
+雷达图，也称为蜘蛛图或星图，是一种用于比较多个定量变量的二维图表。它非常适合用于展示多维数据的综合表现，例如评估一个产品或一个团队在多个指标上的表现。
+:::
+
+## Encoding
+
+:::tip
+在雷达图中, **measures** 中的所有指标会自动合并，并映射到雷达图的 **半径** 上，用于表示数值的大小。
+:::
+
+雷达图支持以下视觉通道:
+
+- `angle`: **可选**，映射到角度的字段, 支持放入多个维度。表示雷达图的各个轴。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的数据系列。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+## 示例
+
+<EncodingRadar />
+
+```json
+{
+  "chartType": "radar",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "angle": ["month"],
+    "color": ["year", "__MeaName__"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 210000, "sales": 200000 },
+    { "year": "2019", "month": "Feb", "profit": 220000, "sales": 400000 },
+    { "year": "2019", "month": "Mar", "profit": 230000, "sales": 600000 },
+    { "year": "2019", "month": "Apr", "profit": 340000, "sales": 800000 },
+    { "year": "2019", "month": "May", "profit": 450000, "sales": 1000000 },
+    { "year": "2019", "month": "Jun", "profit": 560000, "sales": 1200000 },
+
+    { "year": "2020", "month": "Jan", "profit": 110000, "sales": 200000 },
+    { "year": "2020", "month": "Feb", "profit": 320000, "sales": 400000 },
+    { "year": "2020", "month": "Mar", "profit": 430000, "sales": 600000 },
+    { "year": "2020", "month": "Apr", "profit": 540000, "sales": 800000 },
+    { "year": "2020", "month": "May", "profit": 250000, "sales": 1000000 },
+    { "year": "2020", "month": "Jun", "profit": 610000, "sales": 1200000 }
+  ]
+}
+```

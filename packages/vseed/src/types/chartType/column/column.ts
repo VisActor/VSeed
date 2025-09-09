@@ -59,10 +59,13 @@ export interface Column {
   /**
    * @description 编码配置, 堆叠柱状图的视觉通道, 包括: x通道, color通道, detail通道, label通道, tooltip通道
    * - x: 映射到X轴的字段, 支持放入多个维度
-   * - detail: 详情映射通道, 支持放入多个维度
+   * - detail: 细分映射通道, 支持放入多个维度
    * - tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
    * - color: 颜色映射通道, 支持放入多个维度 或 1个 指标
-   * - label: 标签映射通道, 支持放入 多个维度 或 1个指标
+   * - label: 标签映射通道, 支持放入 多个维度 或 多个指标
+   * 
+   * @tip 特殊的:
+   * - y: measures会直接映射到Y轴通道
    */
   encoding?: Pick<Encoding, 'x' | 'color' | 'detail' | 'label' | 'tooltip'>
 

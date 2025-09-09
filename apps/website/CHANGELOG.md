@@ -1,5 +1,15 @@
 # website
 
+## 0.1.1
+
+### Patch Changes
+
+- - docs: update docs for encoding
+  - feat: optimize the default x,y,color,detail of encoding
+  - fix: bad cases in encoding
+- Updated dependencies
+  - @visactor/vseed@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes

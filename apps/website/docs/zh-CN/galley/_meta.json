@@ -13,6 +13,11 @@
   },
   {
     "type": "dir",
+    "name": "encoding",
+    "label": "编码映射"
+  },
+  {
+    "type": "dir",
     "name": "baseConfig",
     "label": "baseConfig",
     "collapsed": true

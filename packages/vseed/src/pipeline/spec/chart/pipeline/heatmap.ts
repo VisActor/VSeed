@@ -21,6 +21,7 @@ import {
   pointStateDimensionHover,
   labelColorInversion,
   discreteLegend,
+  color,
 } from '../pipes'
 import { initHeatmap } from '../pipes/init/heatmap'
 
@@ -28,6 +29,7 @@ const heatmap: SpecPipeline = [
   initHeatmap,
   backgroundColor,
   datasetXY,
+  color,
   label,
   labelColorInversion,
   discreteLegend,
@@ -50,6 +52,7 @@ const pivotHeatmap: SpecPipeline = [
     initHeatmap,
     backgroundColor,
     datasetXY,
+    color,
     label,
     labelColorInversion,
     discreteLegend,

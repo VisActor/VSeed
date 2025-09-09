@@ -326,6 +326,7 @@ exports[`basicRose 1`] = `
 
 exports[`basicRose 2`] = `
 {
+  "angleField": "__Dim_Angle__",
   "animation": true,
   "axes": [
     {
@@ -371,7 +372,6 @@ exports[`basicRose 2`] = `
     },
   ],
   "background": "transparent",
-  "categoryField": "__Dim_Angle__",
   "color": {
     "domain": [
       "销售额-sales",

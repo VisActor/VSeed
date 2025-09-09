@@ -3,5 +3,7 @@
 **Type:** `string | undefined`
 
 :::note{title=描述}
-表格的边框颜色:::
+表格的边框颜色
+
+:::
 

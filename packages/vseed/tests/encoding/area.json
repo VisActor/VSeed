@@ -1,0 +1,44 @@
+{
+  "chartType": "area",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "x": ["year", "month"],
+    "color": ["__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}

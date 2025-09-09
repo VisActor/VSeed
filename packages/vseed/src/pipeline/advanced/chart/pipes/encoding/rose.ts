@@ -1,3 +1,4 @@
+import { unique } from 'remeda'
 import { MeasureName } from 'src/dataReshape'
 import type { AdvancedPipe, Encoding, Rose } from 'src/types'
 
@@ -13,15 +14,17 @@ export const encodingForRose: AdvancedPipe = (advancedVSeed, context) => {
   const encoding = vseed.encoding
 
   if (encoding) {
-    const angle = encoding.angle || []
+    const angle = encoding.angle || [dimensions[0].id]
+    const color = encoding.color || [(dimensions[1] || dimensions[0]).id]
     const detail = encoding.detail || []
-    const color = encoding.color || []
 
-    const mergedDetail = [...color.filter((d) => !angle.includes(d)), ...detail]
+    const mergedDetail = unique([...color, ...detail])
     return {
       ...advancedVSeed,
       encoding: {
         ...encoding,
+        angle,
+        color,
         detail: mergedDetail,
       },
     }
@@ -30,7 +33,7 @@ export const encodingForRose: AdvancedPipe = (advancedVSeed, context) => {
 
   const mergedEncoding: Encoding = {
     angle: dimensions.slice(0, 1).map((item) => item.id), // 第一个维度放置于angle轴
-    color: dimensions.slice(1).map((item) => item.id), // 第二个之后的维度用于颜色
+    color: dimensions.slice(onlyMeasureName ? 0 : 1).map((item) => item.id), // 第二个之后的维度用于颜色
     detail: dimensions.slice(onlyMeasureName ? 0 : 1).map((item) => item.id),
     tooltip: dimensions.map((item) => item.id), // 展示所有维度
     label: [], // 默认不展示标签

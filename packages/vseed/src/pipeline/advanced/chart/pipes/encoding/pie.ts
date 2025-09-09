@@ -21,7 +21,6 @@ export const encodingForPie: AdvancedPipe = (advancedVSeed, context) => {
   }
 
   const mergedEncoding: Encoding = {
-    angle: dimensions.slice(0, 1).map((item) => item.id), // 第一个维度用于角度
     color: dimensions.slice(0).map((item) => item.id), // 所有维度用于颜色
     detail: dimensions.slice(0).map((item) => item.id), // 所有维度用于细分
     tooltip: dimensions.map((item) => item.id), // 展示所有维度

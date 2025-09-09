@@ -1,0 +1,83 @@
+---
+pageType: doc
+---
+
+import { EncodingDualAxis } from '@components'
+
+# dualAxis
+
+## 介绍
+:::info
+双轴图用于在同一个图表中展示两个具有不同单位或量级的指标。它通过使用主、次两个Y轴，将两个相关的指标进行对比，非常适合分析两个变量之间的关系，例如销售额和增长率。
+:::
+
+## Encoding
+
+:::tip
+在双轴图中, **measures** 可以配置两个指标组。第一个指标组的指标会自动合并，并映射到 **主Y轴** 上；第二个指标组的指标会自动合并，并映射到 **次Y轴** 上。
+:::
+
+双轴图支持以下视觉通道:
+
+- `x`: **可选**，映射到X轴的字段, 支持放入多个维度。通常表示时间或类别。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的数据系列。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+## 示例
+
+<EncodingDualAxis />
+
+```json
+{
+  "chartType": "dualAxis",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "month", "alias": "Month" },
+    { "id": "year", "alias": "Year" }
+  ],
+  "dualMeasures": [
+    {
+      "primaryMeasures": [{ "id": "profit" }, { "id": "sales" }],
+      "secondaryMeasures": [{ "id": "discount" }]
+    }
+  ],
+  "encoding": {
+    "x": ["month"],
+    "color": ["__MeaName__"],
+    "detail": ["year"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```

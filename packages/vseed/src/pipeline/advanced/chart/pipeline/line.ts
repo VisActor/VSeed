@@ -12,14 +12,14 @@ import {
   sortLegend,
   reshapeWithEncoding,
   pivotReshapeWithEncoding,
-  encodingForColumn,
+  encodingForLine,
 } from '../pipes'
 
 export const lineAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   autoMeasures,
   autoDimensions,
-  encodingForColumn,
+  encodingForLine,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
   sortXBandAxis,
   sortLegend,

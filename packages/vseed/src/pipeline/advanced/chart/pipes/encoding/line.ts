@@ -1,10 +1,9 @@
-import { unique } from 'remeda'
 import { MeasureName } from 'src/dataReshape'
-import type { AdvancedPipe, Encoding, Rose } from 'src/types'
+import type { AdvancedPipe, ColumnParallel, Encoding } from 'src/types'
 
-export const encodingForRose: AdvancedPipe = (advancedVSeed, context) => {
+export const encodingForLine: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context as {
-    vseed: Rose
+    vseed: ColumnParallel
   }
   const { dimensions } = advancedVSeed
   if (!dimensions) {
@@ -14,16 +13,17 @@ export const encodingForRose: AdvancedPipe = (advancedVSeed, context) => {
   const encoding = vseed.encoding
 
   if (encoding) {
-    const angle = encoding.angle || [dimensions[0].id]
+    const x = encoding.x || [dimensions[0].id]
     const color = encoding.color || [(dimensions[1] || dimensions[0]).id]
     const detail = encoding.detail || []
 
-    const mergedDetail = detail.length === 0 ? unique([...color, ...detail]) : detail
+    const mergedDetail =
+      detail.length === 0 ? dimensions.map((d) => d.id).filter((id) => !x.includes(id)) : encoding.detail
     return {
       ...advancedVSeed,
       encoding: {
         ...encoding,
-        angle,
+        x,
         color,
         detail: mergedDetail,
       },
@@ -32,7 +32,7 @@ export const encodingForRose: AdvancedPipe = (advancedVSeed, context) => {
   const onlyMeasureName = dimensions.length === 1 && dimensions.find((item) => item.id === MeasureName)
 
   const mergedEncoding: Encoding = {
-    angle: dimensions.slice(0, 1).map((item) => item.id), // 第一个维度放置于angle轴
+    x: dimensions.slice(0, 1).map((item) => item.id), // 第一个维度放置于X轴
     color: dimensions.slice(onlyMeasureName ? 0 : 1).map((item) => item.id), // 第二个之后的维度用于颜色
     detail: dimensions.slice(onlyMeasureName ? 0 : 1).map((item) => item.id),
     tooltip: dimensions.map((item) => item.id), // 展示所有维度
@@ -40,5 +40,6 @@ export const encodingForRose: AdvancedPipe = (advancedVSeed, context) => {
     row: [], // 默认不进行行透视
     column: [], // 默认不进行列透视
   }
+
   return { ...advancedVSeed, encoding: mergedEncoding }
 }

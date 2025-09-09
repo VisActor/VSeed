@@ -18,7 +18,7 @@ export const encodingForBar: AdvancedPipe = (advancedVSeed, context) => {
     const color = encoding.color || [(dimensions[1] || dimensions[0]).id]
     const detail = encoding.detail || []
 
-    const mergedDetail = unique([...y, ...color, ...detail])
+    const mergedDetail = detail.length === 0 ? unique([...color, ...detail]) : detail
     return {
       ...advancedVSeed,
       encoding: {

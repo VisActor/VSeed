@@ -9,7 +9,7 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'columnParallel',
+    chartType: 'scatter',
     measures: [
       {
         id: 'sales',
@@ -27,8 +27,8 @@ const Demo = () => {
       { id: 'month', alias: 'Month' },
     ],
     encoding: {
-      x: ['year', '__MeaName__'],
       color: ['sales'],
+      detail: ['__MeaName__', 'year'],
     },
     dataset: [
       { year: '2019', month: 'Jan', profit: 210000, sales: 200000 },

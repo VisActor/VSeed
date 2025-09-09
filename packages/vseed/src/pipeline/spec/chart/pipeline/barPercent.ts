@@ -27,12 +27,17 @@ import {
   horizontalCrosshairRect,
   stackCornerRadius,
   progressive,
+  colorAdapter,
+  linearColor,
+  colorLegend,
+  colorBarStyleFill,
+  pivotColorLegend,
 } from '../pipes'
 
 const barPercent: SpecPipeline = [
   initBar,
   stackCornerRadius,
-  color,
+  colorAdapter(color, linearColor),
   backgroundColor,
   percent,
   datasetYX,
@@ -41,9 +46,9 @@ const barPercent: SpecPipeline = [
   yBand,
   label,
   tooltip,
+  colorAdapter(discreteLegend, colorLegend),
   horizontalCrosshairRect,
-  discreteLegend,
-  barStyle,
+  colorBarStyleFill(barStyle),
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
@@ -58,7 +63,7 @@ const pivotBarPercent: SpecPipeline = [
   pivotIndicators([
     initBar,
     stackCornerRadius,
-    color,
+    colorAdapter(color, linearColor),
     backgroundColor,
     percent,
     datasetYX,
@@ -66,8 +71,8 @@ const pivotBarPercent: SpecPipeline = [
     xLinear,
     label,
     tooltip,
+    colorBarStyleFill(barStyle),
     horizontalCrosshairRect,
-    barStyle,
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,
@@ -75,7 +80,7 @@ const pivotBarPercent: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotDiscreteLegend,
+  colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
 export const barPercentSpecPipeline: SpecPipeline = [pivotAdapter(barPercent, pivotBarPercent)]

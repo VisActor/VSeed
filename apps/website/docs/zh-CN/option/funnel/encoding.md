@@ -5,7 +5,7 @@
 :::note{title=描述}
 编码配置,漏斗图的视觉通道, 包括: color通道, detail通道, label通道, tooltip通道
 
-\- detail: 详情映射通道, 支持放入多个维度
+\- detail: 细分映射通道, 支持放入多个维度
 
 \- tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
 

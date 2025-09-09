@@ -1,3 +1,4 @@
+import { unique } from 'remeda'
 import type { AdvancedPipe, DualAxis, Encoding } from 'src/types'
 
 export const encodingForDualAxis: AdvancedPipe = (advancedVSeed, context) => {
@@ -12,15 +13,17 @@ export const encodingForDualAxis: AdvancedPipe = (advancedVSeed, context) => {
   const encoding = vseed.encoding
 
   if (encoding) {
-    const x = encoding.x || []
+    const x = encoding.x || [dimensions[0].id]
+    const color = encoding.color || [(dimensions[1] || dimensions[0]).id]
     const detail = encoding.detail || []
-    const color = encoding.color || []
 
-    const mergedDetail = [...color.filter((d) => !x.includes(d)), ...detail]
+    const mergedDetail = unique([...color, ...detail])
     return {
       ...advancedVSeed,
       encoding: {
         ...encoding,
+        x,
+        color,
         detail: mergedDetail,
       } as Encoding,
     }

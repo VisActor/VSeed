@@ -260,6 +260,8 @@ exports[`ratioAndSymbol 1`] = `
   },
   "dataset": [
     {
+      "__Dim_ColorId__": "num1-num1",
+      "__Dim_Color__": "num1",
       "__Dim_Detail__": "num1",
       "__Dim_X__": "num1",
       "__MeaId__": "num1",
@@ -279,6 +281,8 @@ exports[`ratioAndSymbol 1`] = `
       "num1": 1,
     },
     {
+      "__Dim_ColorId__": "num2-num2",
+      "__Dim_Color__": "num2",
       "__Dim_Detail__": "num2",
       "__Dim_X__": "num2",
       "__MeaId__": "num2",
@@ -298,6 +302,8 @@ exports[`ratioAndSymbol 1`] = `
       "num2": 10,
     },
     {
+      "__Dim_ColorId__": "num3-num3",
+      "__Dim_Color__": "num3",
       "__Dim_Detail__": "num3",
       "__Dim_X__": "num3",
       "__MeaId__": "num3",
@@ -317,6 +323,8 @@ exports[`ratioAndSymbol 1`] = `
       "num3": 100,
     },
     {
+      "__Dim_ColorId__": "num4-num4",
+      "__Dim_Color__": "num4",
       "__Dim_Detail__": "num4",
       "__Dim_X__": "num4",
       "__MeaId__": "num4",
@@ -336,6 +344,8 @@ exports[`ratioAndSymbol 1`] = `
       "num4": 1000,
     },
     {
+      "__Dim_ColorId__": "num5-num5",
+      "__Dim_Color__": "num5",
       "__Dim_Detail__": "num5",
       "__Dim_X__": "num5",
       "__MeaId__": "num5",
@@ -355,6 +365,8 @@ exports[`ratioAndSymbol 1`] = `
       "num5": 10000,
     },
     {
+      "__Dim_ColorId__": "num6-num6",
+      "__Dim_Color__": "num6",
       "__Dim_Detail__": "num6",
       "__Dim_X__": "num6",
       "__MeaId__": "num6",
@@ -374,6 +386,8 @@ exports[`ratioAndSymbol 1`] = `
       "num6": 100000,
     },
     {
+      "__Dim_ColorId__": "num7-num7",
+      "__Dim_Color__": "num7",
       "__Dim_Detail__": "num7",
       "__Dim_X__": "num7",
       "__MeaId__": "num7",
@@ -393,6 +407,8 @@ exports[`ratioAndSymbol 1`] = `
       "num7": 1000000,
     },
     {
+      "__Dim_ColorId__": "num8-num8",
+      "__Dim_Color__": "num8",
       "__Dim_Detail__": "num8",
       "__Dim_X__": "num8",
       "__MeaId__": "num8",
@@ -412,6 +428,8 @@ exports[`ratioAndSymbol 1`] = `
       "num8": 10000000,
     },
     {
+      "__Dim_ColorId__": "num9-num9",
+      "__Dim_Color__": "num9",
       "__Dim_Detail__": "num9",
       "__Dim_X__": "num9",
       "__MeaId__": "num9",
@@ -452,8 +470,28 @@ exports[`ratioAndSymbol 1`] = `
       "id": "column",
       "index": 0,
       "unfoldInfo": {
-        "colorIdMap": {},
-        "colorItems": [],
+        "colorIdMap": {
+          "num1-num1": "num1",
+          "num2-num2": "num2",
+          "num3-num3": "num3",
+          "num4-num4": "num4",
+          "num5-num5": "num5",
+          "num6-num6": "num6",
+          "num7-num7": "num7",
+          "num8-num8": "num8",
+          "num9-num9": "num9",
+        },
+        "colorItems": [
+          "num1-num1",
+          "num2-num2",
+          "num3-num3",
+          "num4-num4",
+          "num5-num5",
+          "num6-num6",
+          "num7-num7",
+          "num8-num8",
+          "num9-num9",
+        ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
         "encodingColorId": "__Dim_ColorId__",
@@ -470,7 +508,9 @@ exports[`ratioAndSymbol 1`] = `
     },
   ],
   "encoding": {
-    "color": [],
+    "color": [
+      "__MeaName__",
+    ],
     "column": [],
     "detail": [
       "__MeaName__",
@@ -715,7 +755,17 @@ exports[`ratioAndSymbol 2`] = `
     },
   },
   "color": {
-    "domain": [],
+    "domain": [
+      "num1-num1",
+      "num2-num2",
+      "num3-num3",
+      "num4-num4",
+      "num5-num5",
+      "num6-num6",
+      "num7-num7",
+      "num8-num8",
+      "num9-num9",
+    ],
     "range": [
       "#8D72F6",
       "#5766EC",
@@ -771,6 +821,8 @@ exports[`ratioAndSymbol 2`] = `
     "id": "column",
     "values": [
       {
+        "__Dim_ColorId__": "num1-num1",
+        "__Dim_Color__": "num1",
         "__Dim_Detail__": "num1",
         "__Dim_X__": "num1",
         "__MeaId__": "num1",
@@ -790,6 +842,8 @@ exports[`ratioAndSymbol 2`] = `
         "num1": 1,
       },
       {
+        "__Dim_ColorId__": "num2-num2",
+        "__Dim_Color__": "num2",
         "__Dim_Detail__": "num2",
         "__Dim_X__": "num2",
         "__MeaId__": "num2",
@@ -809,6 +863,8 @@ exports[`ratioAndSymbol 2`] = `
         "num2": 10,
       },
       {
+        "__Dim_ColorId__": "num3-num3",
+        "__Dim_Color__": "num3",
         "__Dim_Detail__": "num3",
         "__Dim_X__": "num3",
         "__MeaId__": "num3",
@@ -828,6 +884,8 @@ exports[`ratioAndSymbol 2`] = `
         "num3": 100,
       },
       {
+        "__Dim_ColorId__": "num4-num4",
+        "__Dim_Color__": "num4",
         "__Dim_Detail__": "num4",
         "__Dim_X__": "num4",
         "__MeaId__": "num4",
@@ -847,6 +905,8 @@ exports[`ratioAndSymbol 2`] = `
         "num4": 1000,
       },
       {
+        "__Dim_ColorId__": "num5-num5",
+        "__Dim_Color__": "num5",
         "__Dim_Detail__": "num5",
         "__Dim_X__": "num5",
         "__MeaId__": "num5",
@@ -866,6 +926,8 @@ exports[`ratioAndSymbol 2`] = `
         "num5": 10000,
       },
       {
+        "__Dim_ColorId__": "num6-num6",
+        "__Dim_Color__": "num6",
         "__Dim_Detail__": "num6",
         "__Dim_X__": "num6",
         "__MeaId__": "num6",
@@ -885,6 +947,8 @@ exports[`ratioAndSymbol 2`] = `
         "num6": 100000,
       },
       {
+        "__Dim_ColorId__": "num7-num7",
+        "__Dim_Color__": "num7",
         "__Dim_Detail__": "num7",
         "__Dim_X__": "num7",
         "__MeaId__": "num7",
@@ -904,6 +968,8 @@ exports[`ratioAndSymbol 2`] = `
         "num7": 1000000,
       },
       {
+        "__Dim_ColorId__": "num8-num8",
+        "__Dim_Color__": "num8",
         "__Dim_Detail__": "num8",
         "__Dim_X__": "num8",
         "__MeaId__": "num8",
@@ -923,6 +989,8 @@ exports[`ratioAndSymbol 2`] = `
         "num8": 10000000,
       },
       {
+        "__Dim_ColorId__": "num9-num9",
+        "__Dim_Color__": "num9",
         "__Dim_Detail__": "num9",
         "__Dim_X__": "num9",
         "__MeaId__": "num9",

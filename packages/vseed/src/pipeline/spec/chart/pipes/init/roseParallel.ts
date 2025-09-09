@@ -10,7 +10,7 @@ export const initRoseParallel: SpecPipe = (spec, context) => {
   const sameDimensionsMode = dimensions.length > 1 && dimensions.every((dim) => dim.id === dimensions[0].id)
 
   result.type = 'rose'
-  result.categoryField = sameDimensionsMode
+  result.angleField = sameDimensionsMode
     ? [unfoldInfo.encodingAngle]
     : [unfoldInfo.encodingAngle, unfoldInfo.encodingDetail]
   result.valueField = foldInfo.measureValue

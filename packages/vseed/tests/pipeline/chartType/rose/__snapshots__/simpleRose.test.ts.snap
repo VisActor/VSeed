@@ -709,6 +709,7 @@ exports[`simpleRose 1`] = `
 
 exports[`simpleRose 2`] = `
 {
+  "angleField": "__Dim_Angle__",
   "animation": true,
   "axes": [
     {
@@ -754,7 +755,6 @@ exports[`simpleRose 2`] = `
     },
   ],
   "background": "transparent",
-  "categoryField": "__Dim_Angle__",
   "color": {
     "domain": [
       "A-goalProfit-goalProfit",

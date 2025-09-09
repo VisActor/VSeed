@@ -18,12 +18,14 @@ import {
   annotationArea,
   initFunnel,
   discreteLegend,
+  color,
 } from '../pipes'
 
 const funnel: SpecPipeline = [
   initFunnel,
   backgroundColor,
   datasetXY,
+  color,
   label,
   tooltip,
   discreteLegend,
@@ -42,6 +44,7 @@ const pivotFunnel: SpecPipeline = [
     initFunnel,
     backgroundColor,
     datasetXY,
+    color,
     label,
     tooltip,
     discreteLegend,

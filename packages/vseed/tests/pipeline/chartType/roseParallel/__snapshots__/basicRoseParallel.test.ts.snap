@@ -326,6 +326,10 @@ exports[`basicRoseParallel 1`] = `
 
 exports[`basicRoseParallel 2`] = `
 {
+  "angleField": [
+    "__Dim_Angle__",
+    "__Dim_Detail__",
+  ],
   "animation": true,
   "axes": [
     {
@@ -371,10 +375,6 @@ exports[`basicRoseParallel 2`] = `
     },
   ],
   "background": "transparent",
-  "categoryField": [
-    "__Dim_Angle__",
-    "__Dim_Detail__",
-  ],
   "color": {
     "domain": [
       "销售额-sales",

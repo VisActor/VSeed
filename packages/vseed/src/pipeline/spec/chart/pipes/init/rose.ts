@@ -9,7 +9,7 @@ export const initRose: SpecPipe = (spec, context) => {
 
   result.type = 'rose'
 
-  result.categoryField = unfoldInfo.encodingAngle
+  result.angleField = unfoldInfo.encodingAngle
   result.seriesField = unfoldInfo.encodingColorId
 
   result.valueField = foldInfo.measureValue

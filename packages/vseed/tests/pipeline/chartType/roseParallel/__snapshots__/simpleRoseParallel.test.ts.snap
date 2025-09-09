@@ -709,6 +709,10 @@ exports[`simpleRoseParallel 1`] = `
 
 exports[`simpleRoseParallel 2`] = `
 {
+  "angleField": [
+    "__Dim_Angle__",
+    "__Dim_Detail__",
+  ],
   "animation": true,
   "axes": [
     {
@@ -754,10 +758,6 @@ exports[`simpleRoseParallel 2`] = `
     },
   ],
   "background": "transparent",
-  "categoryField": [
-    "__Dim_Angle__",
-    "__Dim_Detail__",
-  ],
   "color": {
     "domain": [
       "A-goalProfit-goalProfit",

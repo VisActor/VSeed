@@ -1,0 +1,75 @@
+---
+pageType: doc
+---
+
+import { EncodingFunnel } from '@components'
+
+# funnel
+
+## 介绍
+:::info
+漏斗图是一种特殊的图表，用于展示数据在不同阶段的转化或流失情况。它通常用于分析销售流程、网站访问流程等，通过梯形的宽度或高度来表示每个阶段的数量，从而直观地展示转化率。
+:::
+
+## Encoding
+
+:::tip
+在漏斗图中, **measures** 中的所有指标会自动合并，并映射到漏斗图的 **高度** 或 **宽度** 上，用于表示每个阶段的数量。
+:::
+
+漏斗图支持以下视觉通道:
+
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的阶段。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+## 示例
+
+<EncodingFunnel />
+
+```json
+{
+  "chartType": "funnel",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "color": ["year", "__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```

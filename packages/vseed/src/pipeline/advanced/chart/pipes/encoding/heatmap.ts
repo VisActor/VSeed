@@ -13,9 +13,13 @@ export const encodingForHeatmap: AdvancedPipe = (advancedVSeed, context) => {
   const encoding = vseed.encoding
 
   if (encoding) {
+    const x = encoding.x || [dimensions[0].id]
+    const y = encoding.y || [(dimensions[1] || dimensions[0]).id]
     return {
       ...advancedVSeed,
       encoding: {
+        x,
+        y,
         ...encoding,
       },
     }

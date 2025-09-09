@@ -1,5 +1,13 @@
 # website
 
+## 0.1.2
+
+### Patch Changes
+
+- feat: add linear color for encoding
+- Updated dependencies
+  - @visactor/vseed@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes

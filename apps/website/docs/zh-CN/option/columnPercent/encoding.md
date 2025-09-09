@@ -3,7 +3,7 @@
 **Type:** `Pick<Encoding, "x" | "color" | "detail" | "label" | "tooltip"> | undefined`
 
 :::note{title=描述}
-编码配置, 堆叠柱状图的视觉通道, 包括: x通道, color通道, detail通道, label通道, tooltip通道
+编码配置, 百分比柱状图的视觉通道, 包括: x通道, color通道, detail通道, label通道, tooltip通道
 
 \- x: 映射到X轴的字段, 支持放入多个维度
 
@@ -13,7 +13,7 @@
 
 \- color: 颜色映射通道, 支持放入多个维度 或 1个 指标
 
-\- label: 标签映射通道, 支持放入 多个维度 或 1个指标:::
+\- label: 标签映射通道, 支持放入 多个维度 或 多个指标:::
 
 
 ## x

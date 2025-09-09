@@ -1454,6 +1454,7 @@ exports[`pivotAreaPercent 2`] = `
       "chartSpec": {
         "animation": true,
         "area": {
+          "style": {},
           "visible": true,
         },
         "axes": [
@@ -1660,8 +1661,25 @@ exports[`pivotAreaPercent 2`] = `
           "formatMethod": [Function],
           "visible": true,
         },
+        "line": {
+          "style": {},
+        },
         "padding": 0,
         "percent": true,
+        "point": {
+          "state": {
+            "dimension_hover": {
+              "outerBorder": {
+                "distance": 2,
+                "lineWidth": 4,
+                "strokeOpacity": 0.25,
+              },
+              "scaleX": 1.4,
+              "scaleY": 1.4,
+            },
+          },
+          "style": {},
+        },
         "region": [
           {
             "clip": true,
@@ -1744,6 +1762,7 @@ exports[`pivotAreaPercent 2`] = `
       "chartSpec": {
         "animation": true,
         "area": {
+          "style": {},
           "visible": true,
         },
         "axes": [
@@ -1950,8 +1969,25 @@ exports[`pivotAreaPercent 2`] = `
           "formatMethod": [Function],
           "visible": true,
         },
+        "line": {
+          "style": {},
+        },
         "padding": 0,
         "percent": true,
+        "point": {
+          "state": {
+            "dimension_hover": {
+              "outerBorder": {
+                "distance": 2,
+                "lineWidth": 4,
+                "strokeOpacity": 0.25,
+              },
+              "scaleX": 1.4,
+              "scaleY": 1.4,
+            },
+          },
+          "style": {},
+        },
         "region": [
           {
             "clip": true,

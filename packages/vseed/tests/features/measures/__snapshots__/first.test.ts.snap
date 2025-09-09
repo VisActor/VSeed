@@ -922,6 +922,7 @@ exports[`first 2`] = `
     {
       "animation": true,
       "area": {
+        "style": {},
         "visible": true,
       },
       "bar": {
@@ -1038,6 +1039,9 @@ exports[`first 2`] = `
         "formatMethod": [Function],
         "visible": true,
       },
+      "line": {
+        "style": {},
+      },
       "point": {
         "state": {
           "dimension_hover": {
@@ -1050,6 +1054,7 @@ exports[`first 2`] = `
             "scaleY": 1.4,
           },
         },
+        "style": {},
       },
       "seriesField": "__Dim_ColorId__",
       "tooltip": {
@@ -1100,6 +1105,7 @@ exports[`first 2`] = `
     {
       "animation": true,
       "area": {
+        "style": {},
         "visible": true,
       },
       "bar": {
@@ -1216,6 +1222,9 @@ exports[`first 2`] = `
         "formatMethod": [Function],
         "visible": true,
       },
+      "line": {
+        "style": {},
+      },
       "point": {
         "state": {
           "dimension_hover": {
@@ -1228,6 +1237,7 @@ exports[`first 2`] = `
             "scaleY": 1.4,
           },
         },
+        "style": {},
       },
       "seriesField": "__Dim_ColorId__",
       "tooltip": {

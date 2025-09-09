@@ -1133,6 +1133,7 @@ exports[`measureCondition 2`] = `
         },
       },
     },
+    "style": {},
   },
   "padding": 0,
   "point": {
@@ -1147,6 +1148,7 @@ exports[`measureCondition 2`] = `
         "scaleY": 1.4,
       },
     },
+    "style": {},
   },
   "region": [
     {

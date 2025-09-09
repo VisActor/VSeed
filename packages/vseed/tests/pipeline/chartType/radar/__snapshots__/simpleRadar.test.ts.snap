@@ -728,6 +728,7 @@ exports[`simpleRadar 2`] = `
   "angleField": "__Dim_Angle__",
   "animation": true,
   "area": {
+    "style": {},
     "visible": true,
   },
   "axes": [
@@ -1377,6 +1378,9 @@ exports[`simpleRadar 2`] = `
     "type": "discrete",
     "visible": true,
   },
+  "line": {
+    "style": {},
+  },
   "padding": 0,
   "point": {
     "state": {
@@ -1390,6 +1394,7 @@ exports[`simpleRadar 2`] = `
         "scaleY": 1.4,
       },
     },
+    "style": {},
   },
   "radiusField": "__MeaValue__",
   "region": [

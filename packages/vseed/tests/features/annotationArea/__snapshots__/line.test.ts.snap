@@ -1107,6 +1107,9 @@ exports[`line 2`] = `
     "type": "discrete",
     "visible": true,
   },
+  "line": {
+    "style": {},
+  },
   "markArea": [
     {
       "area": {
@@ -1163,6 +1166,7 @@ exports[`line 2`] = `
         "scaleY": 1.4,
       },
     },
+    "style": {},
   },
   "region": [
     {

@@ -895,6 +895,7 @@ exports[`simpleAreaPercent 2`] = `
 {
   "animation": true,
   "area": {
+    "style": {},
     "visible": true,
   },
   "axes": [
@@ -1667,8 +1668,25 @@ exports[`simpleAreaPercent 2`] = `
     "type": "discrete",
     "visible": true,
   },
+  "line": {
+    "style": {},
+  },
   "padding": 0,
   "percent": true,
+  "point": {
+    "state": {
+      "dimension_hover": {
+        "outerBorder": {
+          "distance": 2,
+          "lineWidth": 4,
+          "strokeOpacity": 0.25,
+        },
+        "scaleX": 1.4,
+        "scaleY": 1.4,
+      },
+    },
+    "style": {},
+  },
   "region": [
     {
       "clip": true,

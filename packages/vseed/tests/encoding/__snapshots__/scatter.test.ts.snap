@@ -2312,6 +2312,7 @@ exports[`scatter 2`] = `
         "stroke": [Function],
       },
     },
+    "style": {},
   },
   "region": [
     {

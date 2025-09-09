@@ -1151,6 +1151,7 @@ exports[`array 2`] = `
         },
       },
     },
+    "style": {},
   },
   "padding": 0,
   "point": {
@@ -1165,6 +1166,7 @@ exports[`array 2`] = `
         "scaleY": 1.4,
       },
     },
+    "style": {},
   },
   "region": [
     {

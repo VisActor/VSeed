@@ -2194,6 +2194,7 @@ exports[`simpleScatter 2`] = `
         "stroke": [Function],
       },
     },
+    "style": {},
   },
   "region": [
     {

@@ -1287,6 +1287,7 @@ exports[`pivotRadar 2`] = `
         "angleField": "__Dim_Angle__",
         "animation": true,
         "area": {
+          "style": {},
           "visible": true,
         },
         "axes": [
@@ -1370,6 +1371,9 @@ exports[`pivotRadar 2`] = `
           "formatMethod": [Function],
           "visible": true,
         },
+        "line": {
+          "style": {},
+        },
         "padding": 0,
         "point": {
           "state": {
@@ -1383,6 +1387,7 @@ exports[`pivotRadar 2`] = `
               "scaleY": 1.4,
             },
           },
+          "style": {},
         },
         "radiusField": "__MeaValue__line1",
         "region": [
@@ -1465,6 +1470,7 @@ exports[`pivotRadar 2`] = `
         "angleField": "__Dim_Angle__",
         "animation": true,
         "area": {
+          "style": {},
           "visible": true,
         },
         "axes": [
@@ -1548,6 +1554,9 @@ exports[`pivotRadar 2`] = `
           "formatMethod": [Function],
           "visible": true,
         },
+        "line": {
+          "style": {},
+        },
         "padding": 0,
         "point": {
           "state": {
@@ -1561,6 +1570,7 @@ exports[`pivotRadar 2`] = `
               "scaleY": 1.4,
             },
           },
+          "style": {},
         },
         "radiusField": "__MeaValue__line2",
         "region": [

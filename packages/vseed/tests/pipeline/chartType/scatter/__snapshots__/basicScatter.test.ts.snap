@@ -937,6 +937,7 @@ exports[`basicScatter 2`] = `
         "stroke": [Function],
       },
     },
+    "style": {},
   },
   "region": [
     {

@@ -616,6 +616,7 @@ exports[`value 2`] = `
 {
   "animation": true,
   "area": {
+    "style": {},
     "visible": true,
   },
   "axes": [
@@ -1134,6 +1135,7 @@ exports[`value 2`] = `
         },
       },
     },
+    "style": {},
   },
   "padding": 0,
   "point": {
@@ -1148,6 +1150,7 @@ exports[`value 2`] = `
         "scaleY": 1.4,
       },
     },
+    "style": {},
   },
   "region": [
     {

@@ -620,6 +620,7 @@ exports[`measureCondition 2`] = `
 {
   "animation": true,
   "area": {
+    "style": {},
     "visible": true,
   },
   "axes": [
@@ -1120,6 +1121,9 @@ exports[`measureCondition 2`] = `
     "type": "discrete",
     "visible": true,
   },
+  "line": {
+    "style": {},
+  },
   "padding": 0,
   "percent": true,
   "point": {
@@ -1143,7 +1147,17 @@ exports[`measureCondition 2`] = `
           "visible": true,
         },
       },
+      "dimension_hover": {
+        "outerBorder": {
+          "distance": 2,
+          "lineWidth": 4,
+          "strokeOpacity": 0.25,
+        },
+        "scaleX": 1.4,
+        "scaleY": 1.4,
+      },
     },
+    "style": {},
   },
   "region": [
     {

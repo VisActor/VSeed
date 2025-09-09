@@ -345,6 +345,7 @@ exports[`basicRadar 2`] = `
   "angleField": "__Dim_Angle__",
   "animation": true,
   "area": {
+    "style": {},
     "visible": true,
   },
   "axes": [
@@ -626,6 +627,9 @@ exports[`basicRadar 2`] = `
     "type": "discrete",
     "visible": true,
   },
+  "line": {
+    "style": {},
+  },
   "padding": 0,
   "point": {
     "state": {
@@ -639,6 +643,7 @@ exports[`basicRadar 2`] = `
         "scaleY": 1.4,
       },
     },
+    "style": {},
   },
   "radiusField": "__MeaValue__",
   "region": [

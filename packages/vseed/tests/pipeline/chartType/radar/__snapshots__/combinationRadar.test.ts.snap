@@ -416,6 +416,7 @@ exports[`combinationRadar 2`] = `
         "angleField": "__Dim_Angle__",
         "animation": true,
         "area": {
+          "style": {},
           "visible": true,
         },
         "axes": [
@@ -493,6 +494,9 @@ exports[`combinationRadar 2`] = `
           "formatMethod": [Function],
           "visible": true,
         },
+        "line": {
+          "style": {},
+        },
         "padding": 0,
         "point": {
           "state": {
@@ -506,6 +510,7 @@ exports[`combinationRadar 2`] = `
               "scaleY": 1.4,
             },
           },
+          "style": {},
         },
         "radiusField": "__MeaValue__line1",
         "region": [
@@ -574,6 +579,7 @@ exports[`combinationRadar 2`] = `
         "angleField": "__Dim_Angle__",
         "animation": true,
         "area": {
+          "style": {},
           "visible": true,
         },
         "axes": [
@@ -651,6 +657,9 @@ exports[`combinationRadar 2`] = `
           "formatMethod": [Function],
           "visible": true,
         },
+        "line": {
+          "style": {},
+        },
         "padding": 0,
         "point": {
           "state": {
@@ -664,6 +673,7 @@ exports[`combinationRadar 2`] = `
               "scaleY": 1.4,
             },
           },
+          "style": {},
         },
         "radiusField": "__MeaValue__line2",
         "region": [

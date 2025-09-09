@@ -1454,6 +1454,7 @@ exports[`pivotArea 2`] = `
       "chartSpec": {
         "animation": true,
         "area": {
+          "style": {},
           "visible": true,
         },
         "axes": [
@@ -1660,6 +1661,9 @@ exports[`pivotArea 2`] = `
           "formatMethod": [Function],
           "visible": true,
         },
+        "line": {
+          "style": {},
+        },
         "padding": 0,
         "point": {
           "state": {
@@ -1673,6 +1677,7 @@ exports[`pivotArea 2`] = `
               "scaleY": 1.4,
             },
           },
+          "style": {},
         },
         "region": [
           {
@@ -1756,6 +1761,7 @@ exports[`pivotArea 2`] = `
       "chartSpec": {
         "animation": true,
         "area": {
+          "style": {},
           "visible": true,
         },
         "axes": [
@@ -1962,6 +1968,9 @@ exports[`pivotArea 2`] = `
           "formatMethod": [Function],
           "visible": true,
         },
+        "line": {
+          "style": {},
+        },
         "padding": 0,
         "point": {
           "state": {
@@ -1975,6 +1984,7 @@ exports[`pivotArea 2`] = `
               "scaleY": 1.4,
             },
           },
+          "style": {},
         },
         "region": [
           {

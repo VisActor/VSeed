@@ -1779,6 +1779,7 @@ exports[`pivotDualAxis 2`] = `
           {
             "animation": true,
             "area": {
+              "style": {},
               "visible": true,
             },
             "bar": {
@@ -1809,6 +1810,9 @@ exports[`pivotDualAxis 2`] = `
               "formatMethod": [Function],
               "visible": true,
             },
+            "line": {
+              "style": {},
+            },
             "point": {
               "state": {
                 "dimension_hover": {
@@ -1821,6 +1825,7 @@ exports[`pivotDualAxis 2`] = `
                   "scaleY": 1.4,
                 },
               },
+              "style": {},
             },
             "seriesField": "__Dim_ColorId__",
             "tooltip": {
@@ -1885,6 +1890,7 @@ exports[`pivotDualAxis 2`] = `
           {
             "animation": true,
             "area": {
+              "style": {},
               "visible": true,
             },
             "bar": {
@@ -1915,6 +1921,9 @@ exports[`pivotDualAxis 2`] = `
               "formatMethod": [Function],
               "visible": true,
             },
+            "line": {
+              "style": {},
+            },
             "point": {
               "state": {
                 "dimension_hover": {
@@ -1927,6 +1936,7 @@ exports[`pivotDualAxis 2`] = `
                   "scaleY": 1.4,
                 },
               },
+              "style": {},
             },
             "seriesField": "__Dim_ColorId__",
             "tooltip": {

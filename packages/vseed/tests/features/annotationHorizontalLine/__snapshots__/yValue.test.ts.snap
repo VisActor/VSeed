@@ -617,6 +617,7 @@ exports[`yValue 2`] = `
 {
   "animation": true,
   "area": {
+    "style": {},
     "visible": true,
   },
   "axes": [
@@ -1117,6 +1118,9 @@ exports[`yValue 2`] = `
     "type": "discrete",
     "visible": true,
   },
+  "line": {
+    "style": {},
+  },
   "markLine": [
     {
       "endSymbol": {
@@ -1282,6 +1286,7 @@ exports[`yValue 2`] = `
         "scaleY": 1.4,
       },
     },
+    "style": {},
   },
   "region": [
     {

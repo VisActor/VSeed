@@ -583,6 +583,7 @@ exports[`combinationArea 2`] = `
       "chartSpec": {
         "animation": true,
         "area": {
+          "style": {},
           "visible": true,
         },
         "axes": [
@@ -783,6 +784,9 @@ exports[`combinationArea 2`] = `
           "formatMethod": [Function],
           "visible": true,
         },
+        "line": {
+          "style": {},
+        },
         "padding": 0,
         "point": {
           "state": {
@@ -796,6 +800,7 @@ exports[`combinationArea 2`] = `
               "scaleY": 1.4,
             },
           },
+          "style": {},
         },
         "region": [
           {
@@ -865,6 +870,7 @@ exports[`combinationArea 2`] = `
       "chartSpec": {
         "animation": true,
         "area": {
+          "style": {},
           "visible": true,
         },
         "axes": [
@@ -1065,6 +1071,9 @@ exports[`combinationArea 2`] = `
           "formatMethod": [Function],
           "visible": true,
         },
+        "line": {
+          "style": {},
+        },
         "padding": 0,
         "point": {
           "state": {
@@ -1078,6 +1087,7 @@ exports[`combinationArea 2`] = `
               "scaleY": 1.4,
             },
           },
+          "style": {},
         },
         "region": [
           {

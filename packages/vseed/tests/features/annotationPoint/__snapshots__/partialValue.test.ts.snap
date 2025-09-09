@@ -1128,6 +1128,9 @@ exports[`partialValue 2`] = `
     "type": "discrete",
     "visible": true,
   },
+  "line": {
+    "style": {},
+  },
   "markPoint": [
     {
       "itemContent": {
@@ -1223,6 +1226,7 @@ exports[`partialValue 2`] = `
         "scaleY": 1.4,
       },
     },
+    "style": {},
   },
   "region": [
     {

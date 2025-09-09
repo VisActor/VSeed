@@ -1516,6 +1516,9 @@ exports[`pivotHeatmap 2`] = `
           "type": "discrete",
           "visible": true,
         },
+        "line": {
+          "style": {},
+        },
         "padding": 0,
         "point": {
           "state": {
@@ -1529,6 +1532,7 @@ exports[`pivotHeatmap 2`] = `
               "scaleY": 1.4,
             },
           },
+          "style": {},
         },
         "region": [
           {
@@ -1761,6 +1765,9 @@ exports[`pivotHeatmap 2`] = `
           "type": "discrete",
           "visible": true,
         },
+        "line": {
+          "style": {},
+        },
         "padding": 0,
         "point": {
           "state": {
@@ -1774,6 +1781,7 @@ exports[`pivotHeatmap 2`] = `
               "scaleY": 1.4,
             },
           },
+          "style": {},
         },
         "region": [
           {

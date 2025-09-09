@@ -614,6 +614,7 @@ exports[`parialDatum 2`] = `
 {
   "animation": true,
   "area": {
+    "style": {},
     "visible": true,
   },
   "axes": [
@@ -1132,6 +1133,7 @@ exports[`parialDatum 2`] = `
         },
       },
     },
+    "style": {},
   },
   "padding": 0,
   "point": {
@@ -1146,6 +1148,7 @@ exports[`parialDatum 2`] = `
         "scaleY": 1.4,
       },
     },
+    "style": {},
   },
   "region": [
     {

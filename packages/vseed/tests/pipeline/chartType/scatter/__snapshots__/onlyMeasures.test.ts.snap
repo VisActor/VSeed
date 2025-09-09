@@ -853,6 +853,7 @@ exports[`onlyMeasures 2`] = `
         "stroke": [Function],
       },
     },
+    "style": {},
   },
   "region": [
     {

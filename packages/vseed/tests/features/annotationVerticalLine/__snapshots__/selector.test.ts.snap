@@ -1105,6 +1105,9 @@ exports[`selector 2`] = `
     "type": "discrete",
     "visible": true,
   },
+  "line": {
+    "style": {},
+  },
   "markLine": [
     {
       "endSymbol": {
@@ -1270,6 +1273,7 @@ exports[`selector 2`] = `
         "scaleY": 1.4,
       },
     },
+    "style": {},
   },
   "region": [
     {

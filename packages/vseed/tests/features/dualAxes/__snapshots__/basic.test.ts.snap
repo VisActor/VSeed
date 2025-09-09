@@ -1297,6 +1297,7 @@ exports[`basic 2`] = `
           {
             "animation": true,
             "area": {
+              "style": {},
               "visible": true,
             },
             "bar": {
@@ -1327,6 +1328,9 @@ exports[`basic 2`] = `
               "formatMethod": [Function],
               "visible": true,
             },
+            "line": {
+              "style": {},
+            },
             "point": {
               "state": {
                 "dimension_hover": {
@@ -1339,6 +1343,7 @@ exports[`basic 2`] = `
                   "scaleY": 1.4,
                 },
               },
+              "style": {},
             },
             "seriesField": "__Dim_ColorId__",
             "tooltip": {
@@ -1389,6 +1394,7 @@ exports[`basic 2`] = `
           {
             "animation": true,
             "area": {
+              "style": {},
               "visible": true,
             },
             "bar": {
@@ -1419,6 +1425,9 @@ exports[`basic 2`] = `
               "formatMethod": [Function],
               "visible": true,
             },
+            "line": {
+              "style": {},
+            },
             "point": {
               "state": {
                 "dimension_hover": {
@@ -1431,6 +1440,7 @@ exports[`basic 2`] = `
                   "scaleY": 1.4,
                 },
               },
+              "style": {},
             },
             "seriesField": "__Dim_ColorId__",
             "tooltip": {
@@ -1745,6 +1755,7 @@ exports[`basic 2`] = `
           {
             "animation": true,
             "area": {
+              "style": {},
               "visible": true,
             },
             "bar": {
@@ -1775,6 +1786,9 @@ exports[`basic 2`] = `
               "formatMethod": [Function],
               "visible": true,
             },
+            "line": {
+              "style": {},
+            },
             "point": {
               "state": {
                 "dimension_hover": {
@@ -1787,6 +1801,7 @@ exports[`basic 2`] = `
                   "scaleY": 1.4,
                 },
               },
+              "style": {},
             },
             "seriesField": "__Dim_ColorId__",
             "tooltip": {
@@ -1837,6 +1852,7 @@ exports[`basic 2`] = `
           {
             "animation": true,
             "area": {
+              "style": {},
               "visible": true,
             },
             "bar": {
@@ -1867,6 +1883,9 @@ exports[`basic 2`] = `
               "formatMethod": [Function],
               "visible": true,
             },
+            "line": {
+              "style": {},
+            },
             "point": {
               "state": {
                 "dimension_hover": {
@@ -1879,6 +1898,7 @@ exports[`basic 2`] = `
                   "scaleY": 1.4,
                 },
               },
+              "style": {},
             },
             "seriesField": "__Dim_ColorId__",
             "tooltip": {

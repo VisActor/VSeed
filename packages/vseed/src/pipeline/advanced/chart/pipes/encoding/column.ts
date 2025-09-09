@@ -18,7 +18,7 @@ export const encodingForColumn: AdvancedPipe = (advancedVSeed, context) => {
     const color = encoding.color || [(dimensions[1] || dimensions[0]).id]
     const detail = encoding.detail || []
 
-    const mergedDetail = unique([...color, ...detail])
+    const mergedDetail = unique([...x, ...color, ...detail])
     return {
       ...advancedVSeed,
       encoding: {

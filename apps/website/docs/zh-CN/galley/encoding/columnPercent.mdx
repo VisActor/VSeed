@@ -1,5 +1,16 @@
+---
+pageType: doc
+---
+
+import { EncodingColumnPercent } from '@components'
+
+# columnPercent
+
+<EncodingColumnPercent />
+
+```json
 {
-  "chartType": "heatmap",
+  "chartType": "columnPercent",
   "measures": [
     {
       "id": "sales",
@@ -22,9 +33,9 @@
     { "id": "month", "alias": "Month" }
   ],
   "encoding": {
-    "x": ["year", "__MeaName__"],
-    "y": ["month"],
-    "color": ["__MeaName__"]
+    "x": ["year", "month"],
+    "color": ["__MeaName__"],
+    "detail": ["month"]
   },
   "dataset": [
     { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
@@ -42,3 +53,4 @@
     { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
   ]
 }
+```

@@ -1,5 +1,16 @@
+---
+pageType: doc
+---
+
+import { EncodingDualAxis } from '@components'
+
+# dualAxis
+
+<EncodingDualAxis />
+
+```json
 {
-  "chartType": "heatmap",
+  "chartType": "dualAxis",
   "measures": [
     {
       "id": "sales",
@@ -18,13 +29,19 @@
     }
   ],
   "dimensions": [
-    { "id": "year", "alias": "Yearn" },
-    { "id": "month", "alias": "Month" }
+    { "id": "month", "alias": "Month" },
+    { "id": "year", "alias": "Year" }
+  ],
+  "dualMeasures": [
+    {
+      "primaryMeasures": [{ "id": "profit" }, { "id": "sales" }],
+      "secondaryMeasures": [{ "id": "discount" }]
+    }
   ],
   "encoding": {
-    "x": ["year", "__MeaName__"],
-    "y": ["month"],
-    "color": ["__MeaName__"]
+    "x": ["month"],
+    "color": ["__MeaName__"],
+    "detail": ["year"]
   },
   "dataset": [
     { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
@@ -42,3 +59,4 @@
     { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
   ]
 }
+```

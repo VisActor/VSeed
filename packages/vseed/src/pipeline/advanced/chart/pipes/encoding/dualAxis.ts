@@ -12,15 +12,17 @@ export const encodingForDualAxis: AdvancedPipe = (advancedVSeed, context) => {
   const encoding = vseed.encoding
 
   if (encoding) {
-    const x = encoding.x || []
-    const detail = encoding.detail || []
+    const x = encoding.x || [dimensions[0].id]
     const color = encoding.color || []
+    const detail = encoding.detail || []
 
     const mergedDetail = [...color.filter((d) => !x.includes(d)), ...detail]
     return {
       ...advancedVSeed,
       encoding: {
         ...encoding,
+        x,
+        color,
         detail: mergedDetail,
       } as Encoding,
     }

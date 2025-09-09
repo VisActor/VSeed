@@ -13,7 +13,7 @@ export const encodingForColumn: AdvancedPipe = (advancedVSeed, context) => {
   const encoding = vseed.encoding
 
   if (encoding) {
-    const x = encoding.x || []
+    const x = encoding.x || [dimensions[0].id]
     const detail = encoding.detail || []
     const color = encoding.color || []
 
@@ -22,16 +22,17 @@ export const encodingForColumn: AdvancedPipe = (advancedVSeed, context) => {
       ...advancedVSeed,
       encoding: {
         ...encoding,
+        x,
+        color,
         detail: mergedDetail,
       },
     }
   }
-
   const onlyMeasureName = dimensions.length === 1 && dimensions.find((item) => item.id === MeasureName)
 
   const mergedEncoding: Encoding = {
     x: dimensions.slice(0, 1).map((item) => item.id), // 第一个维度放置于X轴
-    color: dimensions.slice(1).map((item) => item.id), // 第二个之后的维度用于颜色
+    color: dimensions.slice(onlyMeasureName ? 0 : 1).map((item) => item.id), // 第二个之后的维度用于颜色
     detail: dimensions.slice(onlyMeasureName ? 0 : 1).map((item) => item.id),
     tooltip: dimensions.map((item) => item.id), // 展示所有维度
     label: [], // 默认不展示标签

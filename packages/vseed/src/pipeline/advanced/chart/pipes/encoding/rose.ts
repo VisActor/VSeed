@@ -30,7 +30,7 @@ export const encodingForRose: AdvancedPipe = (advancedVSeed, context) => {
 
   const mergedEncoding: Encoding = {
     angle: dimensions.slice(0, 1).map((item) => item.id), // 第一个维度放置于angle轴
-    color: dimensions.slice(1).map((item) => item.id), // 第二个之后的维度用于颜色
+    color: dimensions.slice(onlyMeasureName ? 0 : 1).map((item) => item.id), // 第二个之后的维度用于颜色
     detail: dimensions.slice(onlyMeasureName ? 0 : 1).map((item) => item.id),
     tooltip: dimensions.map((item) => item.id), // 展示所有维度
     label: [], // 默认不展示标签

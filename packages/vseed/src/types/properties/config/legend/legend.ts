@@ -8,28 +8,30 @@ export type Legend = {
    */
   enable?: boolean
   /**
-   * 图例边框是否开启
+   * @description 图例边框是否开启
+   * @warning 仅离散图例生效
    * @default true
    * @example border: true
    */
   border?: boolean
   /**
-   * 图例字体大小
+   * @description 图例字体大小
    * @example labelFontSize: 10
    */
   labelFontSize?: number
   /**
-   * 图例字体颜色
+   * @description 图例字体颜色
    * @example labelFontColor: '#212121'
    */
   labelFontColor?: string
   /**
-   * 图例字体粗细
+   * @description 图例字体粗细
    * @example labelFontWeight: 400
    */
   labelFontWeight?: number | string
   /**
-   * 图例形状
+   * @description 图例形状
+   * @warning 仅离散图例生效
    * @example shapeType: 'circle'
    */
   shapeType?:
@@ -86,6 +88,8 @@ export type Legend = {
    * @description 存在大量图例时, 最大列数 或 图例最大行数
    *  如果position为水平方向(bottom, bottomLeft, bottomRight, bl, br, top, topLeft, topRight, tl, tr), maxSize控制显示的列数
    *  如果position为垂直方向(left, leftTop, leftBottom, lt, lb, right, rightTop, rightBottom, rt, rb), maxSize控制显示的行数
+   * 
+   * @warning 仅离散图例生效
    * @example maxSize: 2
    * @default 1
    */

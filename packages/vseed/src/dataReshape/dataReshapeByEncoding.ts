@@ -22,6 +22,8 @@ const emptyReshapeResult: {
   dataset: [],
   foldInfo: {
     foldMap: {},
+    colorRange: [0, 1],
+    measureRange: [0, 1],
     measureId: '',
     measureName: '',
     measureValue: '',
@@ -65,13 +67,11 @@ export const dataReshapeByEncoding = (
   }
 
   // 合并所有指标为1个指标
-  const { dataset: foldedDataset, foldInfo } = foldMeasures(
-    dataset,
-    measures,
-    foldMeasureId,
-    foldMeasureName,
-    foldMeasureValue,
-  )
+  const { dataset: foldedDataset, foldInfo } = foldMeasures(dataset, measures, encoding, {
+    measureId: foldMeasureId,
+    measureName: foldMeasureName,
+    measureValue: foldMeasureValue,
+  })
 
   // 展开指定的维度为指标
   const { dataset: finalDataset, unfoldInfo } = unfoldDimensions(foldedDataset, dimensions, encoding, {

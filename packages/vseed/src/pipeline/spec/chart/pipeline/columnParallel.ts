@@ -26,12 +26,17 @@ import {
   verticalCrosshairRect,
   stackCornerRadius,
   progressive,
+  linearColor,
+  colorAdapter,
+  colorLegend,
+  colorBarStyleFill,
+  pivotColorLegend,
 } from '../pipes'
 
 const columnParallel: SpecPipeline = [
   initColumnParallel,
   stackCornerRadius,
-  color,
+  colorAdapter(color, linearColor),
   backgroundColor,
   datasetXY,
   progressive,
@@ -39,9 +44,9 @@ const columnParallel: SpecPipeline = [
   yLinear,
   label,
   tooltip,
-  discreteLegend,
+  colorAdapter(discreteLegend, colorLegend),
   verticalCrosshairRect,
-  barStyle,
+  colorBarStyleFill(barStyle),
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
@@ -56,7 +61,7 @@ const pivotColumnParallel: SpecPipeline = [
   pivotIndicators([
     initColumnParallel,
     stackCornerRadius,
-    color,
+    colorAdapter(color, linearColor),
     backgroundColor,
     datasetXY,
     progressive,
@@ -65,7 +70,7 @@ const pivotColumnParallel: SpecPipeline = [
     label,
     tooltip,
     verticalCrosshairRect,
-    barStyle,
+    colorBarStyleFill(barStyle),
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,
@@ -73,7 +78,7 @@ const pivotColumnParallel: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotDiscreteLegend,
+  colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
 export const columnParallelSpecPipeline: SpecPipeline = [pivotAdapter(columnParallel, pivotColumnParallel)]

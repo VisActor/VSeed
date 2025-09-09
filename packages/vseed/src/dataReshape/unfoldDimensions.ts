@@ -68,7 +68,7 @@ export const unfoldDimensions = (
     applyEncoding(DetailEncoding, detailDimensions, datum, separator)
 
     // 处理离散的颜色图例
-    if (!datum[ColorEncoding]) {
+    if (!colorDimensions.length || !datum[ColorEncoding]) {
       // 无颜色通道, 则跳过
       continue
     }

@@ -1,0 +1,1324 @@
+---
+pageType: doc
+---
+
+import { EncodingArea } from '@components'
+import { EncodingAreaPercent } from '@components'
+import { EncodingBar } from '@components'
+import { EncodingBarParallel } from '@components'
+import { EncodingBarPercent } from '@components'
+import { EncodingColumn } from '@components'
+import { EncodingColumnParallel } from '@components'
+import { EncodingColumnPercent } from '@components'
+import { EncodingDonut } from '@components'
+import { EncodingDualAxis } from '@components'
+import { EncodingFunnel } from '@components'
+import { EncodingHeatmap } from '@components'
+import { EncodingLine } from '@components'
+import { EncodingPie } from '@components'
+import { EncodingRadar } from '@components'
+import { EncodingRose } from '@components'
+import { EncodingRoseParallel } from '@components'
+import { EncodingScatter } from '@components'
+
+# 编码映射
+
+## 什么是编码映射
+
+编码映射是一种将数据属性映射到视觉通道的机制，是数据可视化中的核心概念。通过编码映射，我们可以将抽象的数据转化为直观的视觉元素，如颜色、位置、大小等，从而帮助用户快速理解数据的分布、趋势和关系。
+
+在 VSeed 中，每种图表类型都支持一系列特定的视觉通道，用于展示不同维度的数据信息。下面将详细介绍各种图表类型及其支持的编码映射通道。
+
+## column
+
+**介绍**
+:::info
+柱状图使用垂直的条形来显示不同类别之间的比较。它是最常见的图表类型之一，非常适合用于类别名称较短的情况，或者当您想要强调数值随时间的变化时。X轴代表类别，Y轴代表数值。
+:::
+
+**Encoding**
+
+:::tip
+在柱状图中, **measures** 中的所有指标会自动合并，并映射到 **Y轴** 上，用于表示柱子的高度。
+:::
+
+柱状图支持以下视觉通道:
+
+- `x`: **可选**，映射到X轴的字段, 支持放入多个维度。通常表示类别或时间。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的数据系列。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingColumn />
+
+```json
+{
+  "chartType": "column",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "x": ["year"],
+    "color": ["__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```
+
+## columnPercent
+
+**介绍**
+:::info
+百分比柱状图是柱状图的一种变体，它将每个类别的值显示为总量的百分比。这使得比较不同类别在整体中的相对贡献变得容易。Y轴的范围总是从0%到100%。
+:::
+
+**Encoding**
+
+:::tip
+在百分比柱状图中, **measures** 中的所有指标会自动合并，并映射到 **Y轴** 上，用于表示柱子的高度。Y轴将以百分比的形式显示数据的占比关系。
+:::
+
+百分比柱状图支持以下视觉通道:
+
+- `x`: **可选**，映射到X轴的字段, 支持放入多个维度。通常表示类别或时间。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分并列的各个数据系列。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingColumnPercent />
+
+```json
+{
+  "chartType": "columnPercent",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "x": ["year", "month"],
+    "color": ["__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```
+
+## columnParallel
+
+**介绍**
+:::info
+并列柱状图在柱状图的基础上，将每个类别的多个数据系列并列显示。这使得在同一类别内直接比较不同系列的值变得非常方便。它常用于比较不同时间点、不同产品或不同组别的数据。
+:::
+
+**Encoding**
+
+:::tip
+在并列柱状图中, **measures** 中的所有指标会自动合并，并映射到 **Y轴** 上，用于表示柱子的高度。
+:::
+
+并列柱状图支持以下视觉通道:
+
+- `x`: **可选**，映射到X轴的字段, 支持放入多个维度。通常表示类别或时间。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分并列的各个数据系列。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingColumnParallel />
+
+```json
+{
+  "chartType": "columnParallel",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "x": ["year"],
+    "color": ["__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```
+
+## bar
+
+**介绍**
+:::info
+条形图使用水平的条形来显示不同类别之间的比较。它非常适合用于类别名称较长的情况，或者当您想要强调排名时。Y轴代表类别，X轴代表数值。
+:::
+
+**Encoding**
+
+:::tip
+在条形图中, **measures** 中的所有指标会自动合并，并映射到 **X轴** 上，用于表示条形的长度。
+:::
+
+条形图支持以下视觉通道:
+
+- `y`: **可选**，映射到Y轴的字段, 支持放入多个维度。通常表示类别。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的数据系列。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingBar />
+
+```json
+{
+  "chartType": "bar",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "y": ["year"],
+    "color": ["__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```
+
+## barPercent
+
+**介绍**
+:::info
+百分比条形图是条形图的一种变体，它将每个类别的值显示为总量的百分比。这使得比较不同类别在整体中的相对贡献变得容易。X轴的范围总是从0%到100%。
+:::
+
+**Encoding**
+
+:::tip
+在百分比条形图中, **measures** 中的所有指标会自动合并，并映射到 **X轴** 上，用于表示条形的长度。X轴将以百分比的形式显示数据的占比关系。
+:::
+
+百分比条形图支持以下视觉通道:
+
+- `y`: **可选**，映射到Y轴的字段, 支持放入多个维度。通常表示类别。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分并列的各个数据系列。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingBarPercent />
+
+```json
+{
+  "chartType": "barPercent",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "y": ["year", "month"],
+    "color": ["__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```
+
+## barParallel
+
+**介绍**
+:::info
+并列条形图在条形图的基础上，将每个类别的多个数据系列并列显示。这使得在同一类别内直接比较不同系列的值变得非常方便。它常用于比较不同时间点、不同产品或不同组别的数据。
+:::
+
+**Encoding**
+
+:::tip
+在并列条形图中, **measures** 中的所有指标会自动合并，并映射到 **X轴** 上，用于表示条形的长度。
+:::
+
+并列条形图支持以下视觉通道:
+
+- `y`: **可选**，映射到Y轴的字段, 支持放入多个维度。通常表示类别。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分并列的各个数据系列。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingBarParallel />
+
+```json
+{
+  "chartType": "barParallel",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "y": ["year"],
+    "color": ["__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```
+
+## area
+
+**介绍**
+:::info
+面积图是一种用于可视化定量数据随时间或其他连续变量变化的图表。它通过在数据点之间填充颜色来强调数量的多少，非常适合展示趋势和比较不同组别的数据。
+:::
+
+**Encoding**
+
+:::tip
+在面积图中, **measures** 中的所有指标会自动合并，并映射到 **Y轴** 上，用于表示面积的高度。
+:::
+
+面积图支持以下视觉通道:
+
+- `x`: **可选**，映射到X轴的字段, 支持放入多个维度。通常表示时间或类别。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的数据系列。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingArea />
+
+```json
+{
+  "chartType": "area",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "x": ["year", "month"],
+    "color": ["__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```
+
+## areaPercent
+
+**介绍**
+:::info
+百分比面积图是面积图的一种变体，它将每个类别的值显示为总量的百分比。这使得比较不同类别在整体中的相对贡献变得容易。Y轴的范围总是从0%到100%。
+:::
+
+**Encoding**
+
+:::tip
+在百分比面积图中, **measures** 中的所有指标会自动合并，并映射到 **Y轴** 上，用于表示面积的高度。Y轴将以百分比的形式显示数据的占比关系。
+:::
+
+百分比面积图支持以下视觉通道:
+
+- `x`: **可选**，映射到X轴的字段, 支持放入多个维度。通常表示时间或类别。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的数据系列。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingAreaPercent />
+
+```json
+{
+  "chartType": "areaPercent",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "x": ["year", "month"],
+    "color": ["__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```
+
+## scatter
+
+**介绍**
+:::info
+散点图使用点来显示两个或多个变量之间的关系。每个点的位置由其在X轴和Y轴上的值决定。它非常适合用于发现数据中的模式、趋势和异常值，尤其是在分析两个连续变量之间的相关性时。
+:::
+
+**Encoding**
+
+:::tip
+在散点图中, **measures** 可以配置两个指标组。第一个指标组的指标会自动合并，并映射到 **X轴** 上；第二个指标组的指标会自动合并，并映射到 **Y轴** 上。
+:::
+
+散点图支持以下视觉通道:
+
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的数据系列或表示第三个变量。
+- `detail`: **可选**，详情映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingScatter />
+
+```json
+{
+  "chartType": "scatter",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "month", "alias": "Month" },
+    { "id": "year", "alias": "Year" }
+  ],
+  "scatterMeasures": [
+    {
+      "xMeasures": [{ "id": "discount" }],
+      "yMeasures": [{ "id": "profit" }, { "id": "sales" }]
+    }
+  ],
+  "encoding": {
+    "color": ["year", "month", "__MeaName__"],
+    "detail": []
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```
+
+## roseParallel
+
+**介绍**
+:::info
+分组玫瑰图是玫瑰图的一种变体，它在极坐标系下通过扇形的半径和角度来表示数据，并允许将数据分组显示。这使得在同一图表中比较不同组别的数据分布和趋势变得更加直观。
+:::
+
+**Encoding**
+
+:::tip
+在分组玫瑰图中, **measures** 中的所有指标会自动合并，并映射到扇形的 **半径** 上，用于表示扇形的大小。
+:::
+
+分组玫瑰图支持以下视觉通道:
+
+- `angle`: **可选**，映射到角度的字段, 支持放入多个维度。通常表示类别或时间。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的数据系列。
+- `detail`: **可选**，详情映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingRoseParallel />
+
+```json
+{
+  "chartType": "roseParallel",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "angle": ["year", "__MeaName__"],
+    "color": ["__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 210000, "sales": 200000 },
+    { "year": "2019", "month": "Feb", "profit": 220000, "sales": 400000 },
+    { "year": "2019", "month": "Mar", "profit": 230000, "sales": 600000 },
+    { "year": "2019", "month": "Apr", "profit": 340000, "sales": 800000 },
+    { "year": "2019", "month": "May", "profit": 450000, "sales": 1000000 },
+    { "year": "2019", "month": "Jun", "profit": 560000, "sales": 1200000 },
+
+    { "year": "2020", "month": "Jan", "profit": 110000, "sales": 200000 },
+    { "year": "2020", "month": "Feb", "profit": 320000, "sales": 400000 },
+    { "year": "2020", "month": "Mar", "profit": 430000, "sales": 600000 },
+    { "year": "2020", "month": "Apr", "profit": 540000, "sales": 800000 },
+    { "year": "2020", "month": "May", "profit": 250000, "sales": 1000000 },
+    { "year": "2020", "month": "Jun", "profit": 610000, "sales": 1200000 }
+  ]
+}
+```
+
+## rose
+
+**介绍**
+:::info
+玫瑰图是一种极坐标下的柱状图，它通过扇形的半径和角度来表示数据。它非常适合用于展示周期性数据的分布和比较，例如一年中不同月份的销售额。
+:::
+
+**Encoding**
+
+:::tip
+在玫瑰图中, **measures** 中的所有指标会自动合并，并映射到扇形的 **半径** 上，用于表示扇形的大小。
+:::
+
+玫瑰图支持以下视觉通道:
+
+- `angle`: **可选**，映射到角度的字段, 支持放入多个维度。通常表示类别或时间。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的数据系列。
+- `detail`: **可选**，详情映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingRose />
+
+```json
+{
+  "chartType": "rose",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "angle": ["month"],
+    "color": ["__MeaName__"],
+    "detail": ["year"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 210000, "sales": 200000 },
+    { "year": "2019", "month": "Feb", "profit": 220000, "sales": 400000 },
+    { "year": "2019", "month": "Mar", "profit": 230000, "sales": 600000 },
+    { "year": "2019", "month": "Apr", "profit": 340000, "sales": 800000 },
+    { "year": "2019", "month": "May", "profit": 450000, "sales": 1000000 },
+    { "year": "2019", "month": "Jun", "profit": 560000, "sales": 1200000 },
+
+    { "year": "2020", "month": "Jan", "profit": 110000, "sales": 200000 },
+    { "year": "2020", "month": "Feb", "profit": 320000, "sales": 400000 },
+    { "year": "2020", "month": "Mar", "profit": 430000, "sales": 600000 },
+    { "year": "2020", "month": "Apr", "profit": 540000, "sales": 800000 },
+    { "year": "2020", "month": "May", "profit": 250000, "sales": 1000000 },
+    { "year": "2020", "month": "Jun", "profit": 610000, "sales": 1200000 }
+  ]
+}
+```
+
+## radar
+
+**介绍**
+:::info
+雷达图，也称为蜘蛛图或星图，是一种用于比较多个定量变量的二维图表。它非常适合用于展示多维数据的综合表现，例如评估一个产品或一个团队在多个指标上的表现。
+:::
+
+**Encoding**
+
+:::tip
+在雷达图中, **measures** 中的所有指标会自动合并，并映射到雷达图的 **半径** 上，用于表示数值的大小。
+:::
+
+雷达图支持以下视觉通道:
+
+- `angle`: **可选**，映射到角度的字段, 支持放入多个维度。表示雷达图的各个轴。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的数据系列。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingRadar />
+
+```json
+{
+  "chartType": "radar",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "angle": ["month"],
+    "color": ["year", "__MeaName__"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 210000, "sales": 200000 },
+    { "year": "2019", "month": "Feb", "profit": 220000, "sales": 400000 },
+    { "year": "2019", "month": "Mar", "profit": 230000, "sales": 600000 },
+    { "year": "2019", "month": "Apr", "profit": 340000, "sales": 800000 },
+    { "year": "2019", "month": "May", "profit": 450000, "sales": 1000000 },
+    { "year": "2019", "month": "Jun", "profit": 560000, "sales": 1200000 },
+
+    { "year": "2020", "month": "Jan", "profit": 110000, "sales": 200000 },
+    { "year": "2020", "month": "Feb", "profit": 320000, "sales": 400000 },
+    { "year": "2020", "month": "Mar", "profit": 430000, "sales": 600000 },
+    { "year": "2020", "month": "Apr", "profit": 540000, "sales": 800000 },
+    { "year": "2020", "month": "May", "profit": 250000, "sales": 1000000 },
+    { "year": "2020", "month": "Jun", "profit": 610000, "sales": 1200000 }
+  ]
+}
+```
+
+## pie
+
+**介绍**
+:::info
+饼图是一种圆形统计图，用于将数据划分为不同的扇区，每个扇区的大小与它所代表的数据量成比例。它非常适合展示单一维度数据的占比关系，尤其是在类别数量较少时。
+:::
+
+**Encoding**
+
+:::tip
+在饼图中, **measures** 中的所有指标会自动合并，并映射到扇形的 **角度** 上，用于表示扇形的大小。
+:::
+
+饼图支持以下视觉通道:
+
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的扇区。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingPie />
+
+```json
+{
+  "chartType": "pie",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "color": ["year", "__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```
+
+## line
+
+**介绍**
+:::info
+折线图通过连接数据点来显示数据随时间或有序类别变化的趋势。它非常适合用于展示数据的变化趋势、比较多个数据系列的趋势，以及分析数据的增长或下降规律。
+:::
+
+**Encoding**
+
+:::tip
+在折线图中, **measures** 中的所有指标会自动合并，并映射到 **Y轴** 上，用于表示折线的高度。
+:::
+
+折线图支持以下视觉通道:
+
+- `x`: **可选**，映射到X轴的字段, 支持放入多个维度。通常表示时间或有序类别。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的数据系列。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingLine />
+
+```json
+{
+  "chartType": "line",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "x": ["year", "month"],
+    "color": ["__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```
+
+## heatmap
+
+**介绍**
+:::info
+热力图通过颜色的变化来表示二维矩阵中数值的大小。它非常适合用于展示数据的分布、密度和强度，尤其是在处理大量数据时。颜色越深，通常表示数值越大。
+:::
+
+**Encoding**
+
+:::tip
+在热力图中, **measures** 中的所有指标会自动合并，并映射到 **颜色** 通道上，用于表示热力块的颜色深浅。
+:::
+
+热力图支持以下视觉通道:
+
+- `x`: **可选**，x轴映射通道, 支持放入多个维度。
+- `y`: **可选**，y轴映射通道, 支持放入多个维度。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于表示数值的大小。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingHeatmap />
+
+```json
+{
+  "chartType": "heatmap",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "x": ["year", "__MeaName__"],
+    "y": ["month"],
+    "color": ["__MeaName__"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```
+
+## funnel
+
+**介绍**
+:::info
+漏斗图是一种特殊的图表，用于展示数据在不同阶段的转化或流失情况。它通常用于分析销售流程、网站访问流程等，通过梯形的宽度或高度来表示每个阶段的数量，从而直观地展示转化率。
+:::
+
+**Encoding**
+
+:::tip
+在漏斗图中, **measures** 中的所有指标会自动合并，并映射到漏斗图的 **高度** 或 **宽度** 上，用于表示每个阶段的数量。
+:::
+
+漏斗图支持以下视觉通道:
+
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的阶段。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingFunnel />
+
+```json
+{
+  "chartType": "funnel",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "color": ["year", "__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```
+
+## dualAxis
+
+**介绍**
+:::info
+双轴图用于在同一个图表中展示两个具有不同单位或量级的指标。它通过使用主、次两个Y轴，将两个相关的指标进行对比，非常适合分析两个变量之间的关系，例如销售额和增长率。
+:::
+
+**Encoding**
+
+:::tip
+在双轴图中, **measures** 可以配置两个指标组。第一个指标组的指标会自动合并，并映射到 **主Y轴** 上；第二个指标组的指标会自动合并，并映射到 **次Y轴** 上。
+:::
+
+双轴图支持以下视觉通道:
+
+- `x`: **可选**，映射到X轴的字段, 支持放入多个维度。通常表示时间或类别。
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的数据系列。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingDualAxis />
+
+```json
+{
+  "chartType": "dualAxis",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "month", "alias": "Month" },
+    { "id": "year", "alias": "Year" }
+  ],
+  "dualMeasures": [
+    {
+      "primaryMeasures": [{ "id": "profit" }, { "id": "sales" }],
+      "secondaryMeasures": [{ "id": "discount" }]
+    }
+  ],
+  "encoding": {
+    "x": ["month"],
+    "color": ["__MeaName__"],
+    "detail": ["year"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```
+
+## donut
+
+**介绍**
+:::info
+环形图是一种特殊的饼图，中心有一个空白区域，通常用于显示总计或关键指标。它非常适合展示单一维度数据的占比关系，同时通过中心区域提供额外的信息。
+:::
+
+**Encoding**
+
+:::tip
+在环形图中, **measures** 中的所有指标会自动合并，并映射到扇形的 **半径** 上，用于表示扇形的大小。
+:::
+
+环形图支持以下视觉通道:
+
+- `color`: **可选**，颜色映射通道, 支持放入多个维度或1个指标。用于区分不同的扇区。
+- `detail`: **可选**，细分映射通道, 支持放入多个维度。当需要在同一个颜色系列下展示更细粒度的数据时使用。
+- `label`: **可选**，标签映射通道, 支持放入多个维度或多个指标。用于在图表上直接显示数据值。
+- `tooltip`: **可选**，提示映射通道, 支持放入多个维度和多个指标。用于在鼠标悬停时显示详细信息。
+
+**示例**
+
+<EncodingDonut />
+
+```json
+{
+  "chartType": "donut",
+  "measures": [
+    {
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
+    },
+    {
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
+    }
+  ],
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
+  ],
+  "encoding": {
+    "color": ["year", "__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
+}
+```

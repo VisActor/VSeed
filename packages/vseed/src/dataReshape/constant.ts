@@ -16,19 +16,10 @@ export const FoldSecondaryMeasureValue = '__MeaSecondaryValue__'
 export const FoldXMeasureValue = '__MeaXValue__'
 export const FoldYMeasureValue = '__MeaYValue__'
 
-// Encoding Dimensions
+// Encoding
 export const XEncoding = '__Dim_X__'
 export const YEncoding = '__Dim_Y__'
 export const AngleEncoding = '__Dim_Angle__'
 export const DetailEncoding = '__Dim_Detail__'
 export const ColorEncoding = '__Dim_Color__'
 export const ColorIdEncoding = '__Dim_ColorId__'
-
-/**
- * @deprecated use ColorEncoding, DetailEncoding instead
- */
-export const UnfoldDimensionGroup = '__DimGroup__'
-/**
- * @deprecated use ColorEncoding, DetailEncoding instead
- */
-export const UnfoldDimensionGroupId = '__DimGroupID__'

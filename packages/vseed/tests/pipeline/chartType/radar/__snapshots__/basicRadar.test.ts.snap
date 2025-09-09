@@ -20,6 +20,10 @@ exports[`basicRadar 1`] = `
           "#E9A0C3",
           "#D77DD3",
         ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
       },
       "label": {
         "enable": true,
@@ -55,6 +59,10 @@ exports[`basicRadar 1`] = `
             "#ED8888",
             "#E9A0C3",
             "#D77DD3",
+          ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
           ],
         },
         "label": {
@@ -241,12 +249,20 @@ exports[`basicRadar 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "profit": "利润",
           "sales": "销售额",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          10000,
+          1000000,
+        ],
         "measureValue": "__MeaValue__",
       },
       "id": "radar",
@@ -329,6 +345,7 @@ exports[`basicRadar 2`] = `
   "angleField": "__Dim_Angle__",
   "animation": true,
   "area": {
+    "style": {},
     "visible": true,
   },
   "axes": [
@@ -610,6 +627,9 @@ exports[`basicRadar 2`] = `
     "type": "discrete",
     "visible": true,
   },
+  "line": {
+    "style": {},
+  },
   "padding": 0,
   "point": {
     "state": {
@@ -623,6 +643,7 @@ exports[`basicRadar 2`] = `
         "scaleY": 1.4,
       },
     },
+    "style": {},
   },
   "radiusField": "__MeaValue__",
   "region": [

@@ -20,6 +20,10 @@ exports[`onlyMeasures 1`] = `
           "#E9A0C3",
           "#D77DD3",
         ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
       },
       "crosshairLine": {
         "labelBackgroundColor": "#364159",
@@ -139,6 +143,10 @@ exports[`onlyMeasures 1`] = `
             "#ED8888",
             "#E9A0C3",
             "#D77DD3",
+          ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
           ],
         },
         "crosshairLine": {
@@ -389,12 +397,20 @@ exports[`onlyMeasures 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "profit": "利润",
           "sales": "销售额",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          10000,
+          1000000,
+        ],
         "measureValue": "__MeaValue__",
       },
       "id": "area",
@@ -470,6 +486,7 @@ exports[`onlyMeasures 2`] = `
 {
   "animation": true,
   "area": {
+    "style": {},
     "visible": true,
   },
   "axes": [
@@ -854,6 +871,9 @@ exports[`onlyMeasures 2`] = `
     "type": "discrete",
     "visible": true,
   },
+  "line": {
+    "style": {},
+  },
   "padding": 0,
   "point": {
     "state": {
@@ -867,6 +887,7 @@ exports[`onlyMeasures 2`] = `
         "scaleY": 1.4,
       },
     },
+    "style": {},
   },
   "region": [
     {

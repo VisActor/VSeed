@@ -1,5 +1,6 @@
 import type { ILineChartSpec } from '@visactor/vchart'
 import type { SpecPipe } from 'src/types'
+import { isLinearColor } from '../color/colorAdapter'
 
 export const initLine: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
@@ -11,7 +12,7 @@ export const initLine: SpecPipe = (spec, context) => {
   result.direction = 'vertical'
   result.xField = unfoldInfo.encodingX
   result.yField = foldInfo.measureValue
-  result.seriesField = unfoldInfo.encodingColorId
+  result.seriesField = isLinearColor(advancedVSeed) ? unfoldInfo.encodingDetail : unfoldInfo.encodingColorId
   result.padding = 0
   result.region = [
     {

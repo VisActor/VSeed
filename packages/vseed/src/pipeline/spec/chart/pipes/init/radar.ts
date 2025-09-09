@@ -1,5 +1,6 @@
 import type { IRadarChartSpec } from '@visactor/vchart'
 import type { SpecPipe } from 'src/types'
+import { isLinearColor } from '../color/colorAdapter'
 
 export const initRadar: SpecPipe = (spec, context) => {
   const result = { ...spec } as IRadarChartSpec
@@ -11,7 +12,7 @@ export const initRadar: SpecPipe = (spec, context) => {
   result.type = 'radar'
   result.angleField = unfoldInfo.encodingAngle
   result.radiusField = foldInfo.measureValue
-  result.seriesField = unfoldInfo.encodingColorId
+  result.seriesField = isLinearColor(advancedVSeed) ? unfoldInfo.encodingDetail : unfoldInfo.encodingColorId
 
   result.padding = 0
   result.region = [

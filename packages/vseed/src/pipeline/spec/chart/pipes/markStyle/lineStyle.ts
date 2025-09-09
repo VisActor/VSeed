@@ -8,10 +8,15 @@ export const lineStyle: SpecPipe = (spec, context) => {
   const { markStyle, datasetReshapeInfo, dataset } = advancedVSeed
   const { unfoldInfo } = datasetReshapeInfo[0]
   const { lineStyle } = markStyle
+  const result = {
+    ...spec,
+    line: {
+      style: {},
+    },
+  } as IAreaChartSpec
   if (!lineStyle) {
-    return spec
+    return result
   }
-  const result = { ...spec } as IAreaChartSpec
 
   const lineStyles = (Array.isArray(lineStyle) ? lineStyle : [lineStyle]) as LineStyle[]
 
@@ -58,6 +63,7 @@ export const lineStyle: SpecPipe = (spec, context) => {
   return {
     ...result,
     line: {
+      ...result.line,
       state: {
         ...customMap,
       },

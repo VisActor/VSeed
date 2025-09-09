@@ -1,6 +1,5 @@
 import type { SpecPipeline } from 'src/types'
 import {
-  datasetXY,
   yLinear,
   backgroundColor,
   label,
@@ -27,12 +26,16 @@ import {
   pointStateHover,
   initScatter,
   progressive,
-  datasetScatter
+  datasetScatter,
+  linearColor,
+  colorAdapter,
+  colorPointStyleFill,
+  colorLegend,
 } from '../pipes'
 
 const scatter: SpecPipeline = [
   initScatter,
-  color,
+  colorAdapter(color, linearColor),
   backgroundColor,
   datasetScatter,
   progressive,
@@ -40,10 +43,10 @@ const scatter: SpecPipeline = [
   yLinear,
   label,
   tooltip,
+  colorAdapter(discreteLegend, colorLegend),
   verticalCrosshairLine,
   horizontalCrosshairLine,
-  discreteLegend,
-  pointStyle,
+  colorPointStyleFill(pointStyle),
   pointStateHover,
   annotationPoint,
   annotationVerticalLine,
@@ -58,7 +61,7 @@ const pivotScatter: SpecPipeline = [
   datasetPivot,
   pivotIndicators([
     initScatter,
-    color,
+    colorAdapter(color, linearColor),
     backgroundColor,
     datasetScatter,
     progressive,
@@ -68,7 +71,7 @@ const pivotScatter: SpecPipeline = [
     tooltip,
     verticalCrosshairLine,
     horizontalCrosshairLine,
-    pointStyle,
+    colorPointStyleFill(pointStyle),
     pointStateHover,
     annotationPoint,
     annotationVerticalLine,

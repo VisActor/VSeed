@@ -8,6 +8,9 @@ export const pointStyle: SpecPipe = (spec, context) => {
   const { pointStyle } = markStyle
   const result = {
     ...spec,
+    point: {
+      style: {},
+    },
   } as IAreaChartSpec
 
   if (!pointStyle) {
@@ -57,6 +60,7 @@ export const pointStyle: SpecPipe = (spec, context) => {
   return {
     ...result,
     point: {
+      ...result.point,
       state: {
         ...customMap,
       },

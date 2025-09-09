@@ -29,6 +29,10 @@ exports[`sortLegendByMeasure 1`] = `
           "#E9A0C3",
           "#D77DD3",
         ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
       },
       "crosshairLine": {
         "labelBackgroundColor": "#364159",
@@ -148,6 +152,10 @@ exports[`sortLegendByMeasure 1`] = `
             "#ED8888",
             "#E9A0C3",
             "#D77DD3",
+          ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
           ],
         },
         "crosshairLine": {
@@ -537,11 +545,19 @@ exports[`sortLegendByMeasure 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "count": "数量",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          14,
+          33,
+        ],
         "measureValue": "__MeaValue__数量count",
       },
       "id": "数量count",
@@ -563,12 +579,20 @@ exports[`sortLegendByMeasure 1`] = `
     },
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "profit": "利润",
           "sales": "销售额",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          10,
+          100,
+        ],
         "measureValue": "__MeaValue__group",
       },
       "id": "group",
@@ -867,6 +891,9 @@ exports[`sortLegendByMeasure 2`] = `
           "formatMethod": [Function],
           "visible": true,
         },
+        "line": {
+          "style": {},
+        },
         "padding": 0,
         "point": {
           "state": {
@@ -880,6 +907,7 @@ exports[`sortLegendByMeasure 2`] = `
               "scaleY": 1.4,
             },
           },
+          "style": {},
         },
         "region": [
           {
@@ -1152,6 +1180,9 @@ exports[`sortLegendByMeasure 2`] = `
           "formatMethod": [Function],
           "visible": true,
         },
+        "line": {
+          "style": {},
+        },
         "padding": 0,
         "point": {
           "state": {
@@ -1165,6 +1196,7 @@ exports[`sortLegendByMeasure 2`] = `
               "scaleY": 1.4,
             },
           },
+          "style": {},
         },
         "region": [
           {

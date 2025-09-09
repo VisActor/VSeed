@@ -20,6 +20,10 @@ exports[`dualAxis 1`] = `
           "#E9A0C3",
           "#D77DD3",
         ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
       },
       "crosshairRect": {
         "labelBackgroundColor": "#364159",
@@ -177,6 +181,10 @@ exports[`dualAxis 1`] = `
             "#E9A0C3",
             "#D77DD3",
           ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
+          ],
         },
         "crosshairRect": {
           "labelBackgroundColor": "#364159",
@@ -323,7 +331,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "profit-profit",
         "__Dim_Color__": "profit",
-        "__Dim_Detail__": "2019-profit",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "Jan",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
@@ -343,7 +351,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "sales-sales",
         "__Dim_Color__": "sales",
-        "__Dim_Detail__": "2019-sales",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "Jan",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
@@ -363,7 +371,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "profit-profit",
         "__Dim_Color__": "profit",
-        "__Dim_Detail__": "2019-profit",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "Feb",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
@@ -383,7 +391,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "sales-sales",
         "__Dim_Color__": "sales",
-        "__Dim_Detail__": "2019-sales",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "Feb",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
@@ -403,7 +411,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "profit-profit",
         "__Dim_Color__": "profit",
-        "__Dim_Detail__": "2019-profit",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "Mar",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
@@ -423,7 +431,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "sales-sales",
         "__Dim_Color__": "sales",
-        "__Dim_Detail__": "2019-sales",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "Mar",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
@@ -443,7 +451,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "profit-profit",
         "__Dim_Color__": "profit",
-        "__Dim_Detail__": "2019-profit",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "Apr",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
@@ -463,7 +471,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "sales-sales",
         "__Dim_Color__": "sales",
-        "__Dim_Detail__": "2019-sales",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "Apr",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
@@ -483,7 +491,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "profit-profit",
         "__Dim_Color__": "profit",
-        "__Dim_Detail__": "2019-profit",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "May",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
@@ -503,7 +511,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "sales-sales",
         "__Dim_Color__": "sales",
-        "__Dim_Detail__": "2019-sales",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "May",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
@@ -523,7 +531,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "profit-profit",
         "__Dim_Color__": "profit",
-        "__Dim_Detail__": "2019-profit",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "Jun",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
@@ -543,7 +551,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "sales-sales",
         "__Dim_Color__": "sales",
-        "__Dim_Detail__": "2019-sales",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "Jun",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
@@ -563,7 +571,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "profit-profit",
         "__Dim_Color__": "profit",
-        "__Dim_Detail__": "2020-profit",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "Jan",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
@@ -583,7 +591,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "sales-sales",
         "__Dim_Color__": "sales",
-        "__Dim_Detail__": "2020-sales",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "Jan",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
@@ -603,7 +611,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "profit-profit",
         "__Dim_Color__": "profit",
-        "__Dim_Detail__": "2020-profit",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "Feb",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
@@ -623,7 +631,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "sales-sales",
         "__Dim_Color__": "sales",
-        "__Dim_Detail__": "2020-sales",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "Feb",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
@@ -643,7 +651,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "profit-profit",
         "__Dim_Color__": "profit",
-        "__Dim_Detail__": "2020-profit",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "Mar",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
@@ -663,7 +671,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "sales-sales",
         "__Dim_Color__": "sales",
-        "__Dim_Detail__": "2020-sales",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "Mar",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
@@ -683,7 +691,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "profit-profit",
         "__Dim_Color__": "profit",
-        "__Dim_Detail__": "2020-profit",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "Apr",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
@@ -703,7 +711,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "sales-sales",
         "__Dim_Color__": "sales",
-        "__Dim_Detail__": "2020-sales",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "Apr",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
@@ -723,7 +731,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "profit-profit",
         "__Dim_Color__": "profit",
-        "__Dim_Detail__": "2020-profit",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "May",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
@@ -743,7 +751,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "sales-sales",
         "__Dim_Color__": "sales",
-        "__Dim_Detail__": "2020-sales",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "May",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
@@ -763,7 +771,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "profit-profit",
         "__Dim_Color__": "profit",
-        "__Dim_Detail__": "2020-profit",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "Jun",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
@@ -783,7 +791,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "sales-sales",
         "__Dim_Color__": "sales",
-        "__Dim_Detail__": "2020-sales",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "Jun",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
@@ -805,7 +813,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "discount-discount",
         "__Dim_Color__": "discount",
-        "__Dim_Detail__": "2019-discount",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "Jan",
         "__MeaId__": "discount",
         "__MeaName__": "discount",
@@ -826,7 +834,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "discount-discount",
         "__Dim_Color__": "discount",
-        "__Dim_Detail__": "2019-discount",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "Feb",
         "__MeaId__": "discount",
         "__MeaName__": "discount",
@@ -847,7 +855,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "discount-discount",
         "__Dim_Color__": "discount",
-        "__Dim_Detail__": "2019-discount",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "Mar",
         "__MeaId__": "discount",
         "__MeaName__": "discount",
@@ -868,7 +876,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "discount-discount",
         "__Dim_Color__": "discount",
-        "__Dim_Detail__": "2019-discount",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "Apr",
         "__MeaId__": "discount",
         "__MeaName__": "discount",
@@ -889,7 +897,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "discount-discount",
         "__Dim_Color__": "discount",
-        "__Dim_Detail__": "2019-discount",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "May",
         "__MeaId__": "discount",
         "__MeaName__": "discount",
@@ -910,7 +918,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "discount-discount",
         "__Dim_Color__": "discount",
-        "__Dim_Detail__": "2019-discount",
+        "__Dim_Detail__": "2019",
         "__Dim_X__": "Jun",
         "__MeaId__": "discount",
         "__MeaName__": "discount",
@@ -931,7 +939,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "discount-discount",
         "__Dim_Color__": "discount",
-        "__Dim_Detail__": "2020-discount",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "Jan",
         "__MeaId__": "discount",
         "__MeaName__": "discount",
@@ -952,7 +960,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "discount-discount",
         "__Dim_Color__": "discount",
-        "__Dim_Detail__": "2020-discount",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "Feb",
         "__MeaId__": "discount",
         "__MeaName__": "discount",
@@ -973,7 +981,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "discount-discount",
         "__Dim_Color__": "discount",
-        "__Dim_Detail__": "2020-discount",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "Mar",
         "__MeaId__": "discount",
         "__MeaName__": "discount",
@@ -994,7 +1002,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "discount-discount",
         "__Dim_Color__": "discount",
-        "__Dim_Detail__": "2020-discount",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "Apr",
         "__MeaId__": "discount",
         "__MeaName__": "discount",
@@ -1015,7 +1023,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "discount-discount",
         "__Dim_Color__": "discount",
-        "__Dim_Detail__": "2020-discount",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "May",
         "__MeaId__": "discount",
         "__MeaName__": "discount",
@@ -1036,7 +1044,7 @@ exports[`dualAxis 1`] = `
       {
         "__Dim_ColorId__": "discount-discount",
         "__Dim_Color__": "discount",
-        "__Dim_Detail__": "2020-discount",
+        "__Dim_Detail__": "2020",
         "__Dim_X__": "Jun",
         "__MeaId__": "discount",
         "__MeaName__": "discount",
@@ -1059,30 +1067,54 @@ exports[`dualAxis 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "profit": undefined,
           "sales": undefined,
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          10000,
+          1200000,
+        ],
         "measureValue": "__MeaPrimaryValue__",
       },
       "foldInfoList": [
         {
+          "colorRange": [
+            0,
+            1,
+          ],
           "foldMap": {
             "profit": undefined,
             "sales": undefined,
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
+          "measureRange": [
+            10000,
+            1200000,
+          ],
           "measureValue": "__MeaPrimaryValue__",
         },
         {
+          "colorRange": [
+            0,
+            1,
+          ],
           "foldMap": {
             "discount": undefined,
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
+          "measureRange": [
+            0.05,
+            1,
+          ],
           "measureValue": "__MeaSecondaryValue__",
         },
       ],
@@ -1129,7 +1161,6 @@ exports[`dualAxis 1`] = `
       "__MeaName__",
     ],
     "detail": [
-      "__MeaName__",
       "year",
     ],
     "x": [
@@ -1457,6 +1488,7 @@ exports[`dualAxis 2`] = `
     {
       "animation": true,
       "area": {
+        "style": {},
         "visible": true,
       },
       "bar": {
@@ -1483,7 +1515,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "profit-profit",
             "__Dim_Color__": "profit",
-            "__Dim_Detail__": "2019-profit",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "Jan",
             "__MeaId__": "profit",
             "__MeaName__": "profit",
@@ -1503,7 +1535,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "sales-sales",
             "__Dim_Color__": "sales",
-            "__Dim_Detail__": "2019-sales",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "Jan",
             "__MeaId__": "sales",
             "__MeaName__": "sales",
@@ -1523,7 +1555,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "profit-profit",
             "__Dim_Color__": "profit",
-            "__Dim_Detail__": "2019-profit",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "Feb",
             "__MeaId__": "profit",
             "__MeaName__": "profit",
@@ -1543,7 +1575,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "sales-sales",
             "__Dim_Color__": "sales",
-            "__Dim_Detail__": "2019-sales",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "Feb",
             "__MeaId__": "sales",
             "__MeaName__": "sales",
@@ -1563,7 +1595,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "profit-profit",
             "__Dim_Color__": "profit",
-            "__Dim_Detail__": "2019-profit",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "Mar",
             "__MeaId__": "profit",
             "__MeaName__": "profit",
@@ -1583,7 +1615,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "sales-sales",
             "__Dim_Color__": "sales",
-            "__Dim_Detail__": "2019-sales",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "Mar",
             "__MeaId__": "sales",
             "__MeaName__": "sales",
@@ -1603,7 +1635,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "profit-profit",
             "__Dim_Color__": "profit",
-            "__Dim_Detail__": "2019-profit",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "Apr",
             "__MeaId__": "profit",
             "__MeaName__": "profit",
@@ -1623,7 +1655,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "sales-sales",
             "__Dim_Color__": "sales",
-            "__Dim_Detail__": "2019-sales",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "Apr",
             "__MeaId__": "sales",
             "__MeaName__": "sales",
@@ -1643,7 +1675,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "profit-profit",
             "__Dim_Color__": "profit",
-            "__Dim_Detail__": "2019-profit",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "May",
             "__MeaId__": "profit",
             "__MeaName__": "profit",
@@ -1663,7 +1695,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "sales-sales",
             "__Dim_Color__": "sales",
-            "__Dim_Detail__": "2019-sales",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "May",
             "__MeaId__": "sales",
             "__MeaName__": "sales",
@@ -1683,7 +1715,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "profit-profit",
             "__Dim_Color__": "profit",
-            "__Dim_Detail__": "2019-profit",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "Jun",
             "__MeaId__": "profit",
             "__MeaName__": "profit",
@@ -1703,7 +1735,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "sales-sales",
             "__Dim_Color__": "sales",
-            "__Dim_Detail__": "2019-sales",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "Jun",
             "__MeaId__": "sales",
             "__MeaName__": "sales",
@@ -1723,7 +1755,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "profit-profit",
             "__Dim_Color__": "profit",
-            "__Dim_Detail__": "2020-profit",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "Jan",
             "__MeaId__": "profit",
             "__MeaName__": "profit",
@@ -1743,7 +1775,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "sales-sales",
             "__Dim_Color__": "sales",
-            "__Dim_Detail__": "2020-sales",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "Jan",
             "__MeaId__": "sales",
             "__MeaName__": "sales",
@@ -1763,7 +1795,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "profit-profit",
             "__Dim_Color__": "profit",
-            "__Dim_Detail__": "2020-profit",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "Feb",
             "__MeaId__": "profit",
             "__MeaName__": "profit",
@@ -1783,7 +1815,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "sales-sales",
             "__Dim_Color__": "sales",
-            "__Dim_Detail__": "2020-sales",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "Feb",
             "__MeaId__": "sales",
             "__MeaName__": "sales",
@@ -1803,7 +1835,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "profit-profit",
             "__Dim_Color__": "profit",
-            "__Dim_Detail__": "2020-profit",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "Mar",
             "__MeaId__": "profit",
             "__MeaName__": "profit",
@@ -1823,7 +1855,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "sales-sales",
             "__Dim_Color__": "sales",
-            "__Dim_Detail__": "2020-sales",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "Mar",
             "__MeaId__": "sales",
             "__MeaName__": "sales",
@@ -1843,7 +1875,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "profit-profit",
             "__Dim_Color__": "profit",
-            "__Dim_Detail__": "2020-profit",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "Apr",
             "__MeaId__": "profit",
             "__MeaName__": "profit",
@@ -1863,7 +1895,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "sales-sales",
             "__Dim_Color__": "sales",
-            "__Dim_Detail__": "2020-sales",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "Apr",
             "__MeaId__": "sales",
             "__MeaName__": "sales",
@@ -1883,7 +1915,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "profit-profit",
             "__Dim_Color__": "profit",
-            "__Dim_Detail__": "2020-profit",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "May",
             "__MeaId__": "profit",
             "__MeaName__": "profit",
@@ -1903,7 +1935,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "sales-sales",
             "__Dim_Color__": "sales",
-            "__Dim_Detail__": "2020-sales",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "May",
             "__MeaId__": "sales",
             "__MeaName__": "sales",
@@ -1923,7 +1955,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "profit-profit",
             "__Dim_Color__": "profit",
-            "__Dim_Detail__": "2020-profit",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "Jun",
             "__MeaId__": "profit",
             "__MeaName__": "profit",
@@ -1943,7 +1975,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "sales-sales",
             "__Dim_Color__": "sales",
-            "__Dim_Detail__": "2020-sales",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "Jun",
             "__MeaId__": "sales",
             "__MeaName__": "sales",
@@ -1968,6 +2000,9 @@ exports[`dualAxis 2`] = `
         "formatMethod": [Function],
         "visible": true,
       },
+      "line": {
+        "style": {},
+      },
       "point": {
         "state": {
           "dimension_hover": {
@@ -1980,6 +2015,7 @@ exports[`dualAxis 2`] = `
             "scaleY": 1.4,
           },
         },
+        "style": {},
       },
       "seriesField": "__Dim_ColorId__",
       "tooltip": {
@@ -2037,6 +2073,7 @@ exports[`dualAxis 2`] = `
     {
       "animation": true,
       "area": {
+        "style": {},
         "visible": true,
       },
       "bar": {
@@ -2063,7 +2100,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "discount-discount",
             "__Dim_Color__": "discount",
-            "__Dim_Detail__": "2019-discount",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "Jan",
             "__MeaId__": "discount",
             "__MeaName__": "discount",
@@ -2084,7 +2121,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "discount-discount",
             "__Dim_Color__": "discount",
-            "__Dim_Detail__": "2019-discount",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "Feb",
             "__MeaId__": "discount",
             "__MeaName__": "discount",
@@ -2105,7 +2142,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "discount-discount",
             "__Dim_Color__": "discount",
-            "__Dim_Detail__": "2019-discount",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "Mar",
             "__MeaId__": "discount",
             "__MeaName__": "discount",
@@ -2126,7 +2163,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "discount-discount",
             "__Dim_Color__": "discount",
-            "__Dim_Detail__": "2019-discount",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "Apr",
             "__MeaId__": "discount",
             "__MeaName__": "discount",
@@ -2147,7 +2184,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "discount-discount",
             "__Dim_Color__": "discount",
-            "__Dim_Detail__": "2019-discount",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "May",
             "__MeaId__": "discount",
             "__MeaName__": "discount",
@@ -2168,7 +2205,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "discount-discount",
             "__Dim_Color__": "discount",
-            "__Dim_Detail__": "2019-discount",
+            "__Dim_Detail__": "2019",
             "__Dim_X__": "Jun",
             "__MeaId__": "discount",
             "__MeaName__": "discount",
@@ -2189,7 +2226,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "discount-discount",
             "__Dim_Color__": "discount",
-            "__Dim_Detail__": "2020-discount",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "Jan",
             "__MeaId__": "discount",
             "__MeaName__": "discount",
@@ -2210,7 +2247,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "discount-discount",
             "__Dim_Color__": "discount",
-            "__Dim_Detail__": "2020-discount",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "Feb",
             "__MeaId__": "discount",
             "__MeaName__": "discount",
@@ -2231,7 +2268,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "discount-discount",
             "__Dim_Color__": "discount",
-            "__Dim_Detail__": "2020-discount",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "Mar",
             "__MeaId__": "discount",
             "__MeaName__": "discount",
@@ -2252,7 +2289,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "discount-discount",
             "__Dim_Color__": "discount",
-            "__Dim_Detail__": "2020-discount",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "Apr",
             "__MeaId__": "discount",
             "__MeaName__": "discount",
@@ -2273,7 +2310,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "discount-discount",
             "__Dim_Color__": "discount",
-            "__Dim_Detail__": "2020-discount",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "May",
             "__MeaId__": "discount",
             "__MeaName__": "discount",
@@ -2294,7 +2331,7 @@ exports[`dualAxis 2`] = `
           {
             "__Dim_ColorId__": "discount-discount",
             "__Dim_Color__": "discount",
-            "__Dim_Detail__": "2020-discount",
+            "__Dim_Detail__": "2020",
             "__Dim_X__": "Jun",
             "__MeaId__": "discount",
             "__MeaName__": "discount",
@@ -2320,6 +2357,9 @@ exports[`dualAxis 2`] = `
         "formatMethod": [Function],
         "visible": true,
       },
+      "line": {
+        "style": {},
+      },
       "point": {
         "state": {
           "dimension_hover": {
@@ -2332,6 +2372,7 @@ exports[`dualAxis 2`] = `
             "scaleY": 1.4,
           },
         },
+        "style": {},
       },
       "seriesField": "__Dim_ColorId__",
       "tooltip": {

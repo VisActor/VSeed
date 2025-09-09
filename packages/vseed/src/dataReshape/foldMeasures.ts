@@ -1,6 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { Dataset, FoldInfo, Dimension, Measures, DimensionTree } from 'src/types'
-import { FoldMeasureId, FoldMeasureName, FoldMeasureValue, ORIGINAL_DATA } from './constant'
+import type { Dataset, FoldInfo, Dimension, Encoding } from 'src/types'
+import {
+  ColorEncoding,
+  ColorIdEncoding,
+  FoldMeasureId,
+  FoldMeasureName,
+  FoldMeasureValue,
+  ORIGINAL_DATA,
+} from './constant'
 import { omit } from 'remeda'
 
 /**
@@ -10,17 +17,29 @@ import { omit } from 'remeda'
 export const foldMeasures = (
   dataset: Dataset,
   measures: Dimension[],
-  measureId = FoldMeasureId,
-  measureName = FoldMeasureName,
-  measureValue = FoldMeasureValue,
+  encoding: Encoding,
+  options?: {
+    measureId?: string
+    measureName?: string
+    measureValue?: string
+  },
 ): {
   dataset: Dataset
   foldInfo: FoldInfo
 } => {
+  const { measureId = FoldMeasureId, measureName = FoldMeasureName, measureValue = FoldMeasureValue } = options || {}
+
+  const colorMeasureId =
+    encoding?.color?.length === 1 && measures.some((m) => m.id === encoding?.color?.[0])
+      ? encoding?.color?.[0]
+      : undefined
+
   const foldInfo: FoldInfo = {
     measureId,
     measureName,
     measureValue,
+    colorRange: [0, 1],
+    measureRange: [0, 1],
     foldMap: {},
   }
   const result: Dataset = new Array(dataset.length * measures.length) as Dataset
@@ -40,6 +59,22 @@ export const foldMeasures = (
       datum[measureName] = alias || id
       datum[measureValue] = dataset[i][id] as unknown
 
+      if (colorMeasureId) {
+        const value = (datum[ORIGINAL_DATA] as Record<string, string | number>)[colorMeasureId]
+        datum[ColorEncoding] = value
+        datum[ColorIdEncoding] = colorMeasureId
+
+        foldInfo.colorRange = [
+          Math.min(foldInfo.colorRange[0] || Infinity, Number(value)),
+          Math.max(foldInfo.colorRange[1] || -Infinity, Number(value)),
+        ]
+      }
+
+      foldInfo.measureRange = [
+        Math.min(foldInfo.measureRange[0] || Infinity, Number(datum[id])),
+        Math.max(foldInfo.measureRange[1] || -Infinity, Number(datum[id])),
+      ]
+
       foldInfo.foldMap[id] = alias
       result[index++] = datum
     }
@@ -48,54 +83,5 @@ export const foldMeasures = (
   return {
     dataset: result,
     foldInfo,
-  }
-}
-
-/**
- * 折叠指定的指标组, 至多支持2层
- * @param dataset
- * @param measures
- * @param measureId
- * @param measureName
- * @param measureValue
- * @returns
- */
-export const foldMeasureGroups = (
-  dataset: Dataset,
-  measures: Required<DimensionTree>,
-  measureId = '__MeaId__',
-  measureName = '__MeaName__',
-  measureValue = '__MeaValue__',
-) => {
-  const groups: Array<Measures> = []
-  if (!measures) {
-    return {
-      dataset,
-    }
-  }
-
-  // 没有分组, 直接折叠所有指标
-  if (!measures.some((measure) => 'children' in measure)) {
-    return foldMeasures(dataset, measures, measureId, measureName, measureValue)
-  }
-
-  measures.forEach((measure) => {
-    if ('children' in measure && measure.children) {
-      groups.push(measure.children)
-    } else {
-      groups.push([measure])
-    }
-  })
-
-  // 一组返回一个dataset
-  const datasetGroup = groups.map((measures) => {
-    if (!measures) {
-      return []
-    }
-    return foldMeasures(dataset, measures, measureId, measureName, measureValue)
-  })
-
-  return {
-    datasetGroup,
   }
 }

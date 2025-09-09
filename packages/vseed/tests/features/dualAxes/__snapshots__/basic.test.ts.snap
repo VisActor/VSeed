@@ -20,6 +20,10 @@ exports[`basic 1`] = `
           "#E9A0C3",
           "#D77DD3",
         ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
       },
       "crosshairRect": {
         "labelBackgroundColor": "#364159",
@@ -236,6 +240,10 @@ exports[`basic 1`] = `
             "#ED8888",
             "#E9A0C3",
             "#D77DD3",
+          ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
           ],
         },
         "crosshairRect": {
@@ -807,28 +815,52 @@ exports[`basic 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "profit": "利润",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          10,
+          50,
+        ],
         "measureValue": "__MeaPrimaryValue__0",
       },
       "foldInfoList": [
         {
+          "colorRange": [
+            0,
+            1,
+          ],
           "foldMap": {
             "profit": "利润",
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
+          "measureRange": [
+            10,
+            50,
+          ],
           "measureValue": "__MeaPrimaryValue__0",
         },
         {
+          "colorRange": [
+            0,
+            1,
+          ],
           "foldMap": {
             "sales": "销售额",
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
+          "measureRange": [
+            100,
+            3200,
+          ],
           "measureValue": "__MeaSecondaryValue__0",
         },
       ],
@@ -853,28 +885,52 @@ exports[`basic 1`] = `
     },
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "ratio": "比率",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          30,
+          305,
+        ],
         "measureValue": "__MeaPrimaryValue__1",
       },
       "foldInfoList": [
         {
+          "colorRange": [
+            0,
+            1,
+          ],
           "foldMap": {
             "ratio": "比率",
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
+          "measureRange": [
+            30,
+            305,
+          ],
           "measureValue": "__MeaPrimaryValue__1",
         },
         {
+          "colorRange": [
+            0,
+            1,
+          ],
           "foldMap": {
             "returnRatio": "回报率",
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
+          "measureRange": [
+            24,
+            503,
+          ],
           "measureValue": "__MeaSecondaryValue__1",
         },
       ],
@@ -1241,6 +1297,7 @@ exports[`basic 2`] = `
           {
             "animation": true,
             "area": {
+              "style": {},
               "visible": true,
             },
             "bar": {
@@ -1271,6 +1328,9 @@ exports[`basic 2`] = `
               "formatMethod": [Function],
               "visible": true,
             },
+            "line": {
+              "style": {},
+            },
             "point": {
               "state": {
                 "dimension_hover": {
@@ -1283,6 +1343,7 @@ exports[`basic 2`] = `
                   "scaleY": 1.4,
                 },
               },
+              "style": {},
             },
             "seriesField": "__Dim_ColorId__",
             "tooltip": {
@@ -1333,6 +1394,7 @@ exports[`basic 2`] = `
           {
             "animation": true,
             "area": {
+              "style": {},
               "visible": true,
             },
             "bar": {
@@ -1363,6 +1425,9 @@ exports[`basic 2`] = `
               "formatMethod": [Function],
               "visible": true,
             },
+            "line": {
+              "style": {},
+            },
             "point": {
               "state": {
                 "dimension_hover": {
@@ -1375,6 +1440,7 @@ exports[`basic 2`] = `
                   "scaleY": 1.4,
                 },
               },
+              "style": {},
             },
             "seriesField": "__Dim_ColorId__",
             "tooltip": {
@@ -1689,6 +1755,7 @@ exports[`basic 2`] = `
           {
             "animation": true,
             "area": {
+              "style": {},
               "visible": true,
             },
             "bar": {
@@ -1719,6 +1786,9 @@ exports[`basic 2`] = `
               "formatMethod": [Function],
               "visible": true,
             },
+            "line": {
+              "style": {},
+            },
             "point": {
               "state": {
                 "dimension_hover": {
@@ -1731,6 +1801,7 @@ exports[`basic 2`] = `
                   "scaleY": 1.4,
                 },
               },
+              "style": {},
             },
             "seriesField": "__Dim_ColorId__",
             "tooltip": {
@@ -1781,6 +1852,7 @@ exports[`basic 2`] = `
           {
             "animation": true,
             "area": {
+              "style": {},
               "visible": true,
             },
             "bar": {
@@ -1811,6 +1883,9 @@ exports[`basic 2`] = `
               "formatMethod": [Function],
               "visible": true,
             },
+            "line": {
+              "style": {},
+            },
             "point": {
               "state": {
                 "dimension_hover": {
@@ -1823,6 +1898,7 @@ exports[`basic 2`] = `
                   "scaleY": 1.4,
                 },
               },
+              "style": {},
             },
             "seriesField": "__Dim_ColorId__",
             "tooltip": {

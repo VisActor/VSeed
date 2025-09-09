@@ -2,6 +2,7 @@
   "chartTypeSwitch",
   "dataReshape",
   "pivotAndCombine",
+  "encoding",
   "dataFormat",
   "dataAnalysis",
   "conditionalStyle",

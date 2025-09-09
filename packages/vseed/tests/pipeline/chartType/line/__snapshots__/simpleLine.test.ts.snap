@@ -20,6 +20,10 @@ exports[`simpleLine 1`] = `
           "#E9A0C3",
           "#D77DD3",
         ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
       },
       "crosshairLine": {
         "labelBackgroundColor": "#364159",
@@ -139,6 +143,10 @@ exports[`simpleLine 1`] = `
             "#ED8888",
             "#E9A0C3",
             "#D77DD3",
+          ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
           ],
         },
         "crosshairLine": {
@@ -774,6 +782,10 @@ exports[`simpleLine 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "goalProfit": "goalProfit",
           "leftCount": "leftCount",
@@ -783,6 +795,10 @@ exports[`simpleLine 1`] = `
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          1,
+          500,
+        ],
         "measureValue": "__MeaValue__",
       },
       "id": "line",

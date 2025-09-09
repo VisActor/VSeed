@@ -20,6 +20,10 @@ exports[`array 1`] = `
           "#E9A0C3",
           "#D77DD3",
         ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
       },
       "crosshairRect": {
         "labelBackgroundColor": "#364159",
@@ -176,6 +180,10 @@ exports[`array 1`] = `
             "#ED8888",
             "#E9A0C3",
             "#D77DD3",
+          ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
           ],
         },
         "crosshairRect": {
@@ -747,28 +755,52 @@ exports[`array 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "profit": undefined,
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          10,
+          50,
+        ],
         "measureValue": "__MeaPrimaryValue__0",
       },
       "foldInfoList": [
         {
+          "colorRange": [
+            0,
+            1,
+          ],
           "foldMap": {
             "profit": undefined,
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
+          "measureRange": [
+            10,
+            50,
+          ],
           "measureValue": "__MeaPrimaryValue__0",
         },
         {
+          "colorRange": [
+            0,
+            1,
+          ],
           "foldMap": {
             "sales": undefined,
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
+          "measureRange": [
+            100,
+            3200,
+          ],
           "measureValue": "__MeaSecondaryValue__0",
         },
       ],
@@ -793,28 +825,52 @@ exports[`array 1`] = `
     },
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "ratio": undefined,
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          30,
+          305,
+        ],
         "measureValue": "__MeaPrimaryValue__1",
       },
       "foldInfoList": [
         {
+          "colorRange": [
+            0,
+            1,
+          ],
           "foldMap": {
             "ratio": undefined,
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
+          "measureRange": [
+            30,
+            305,
+          ],
           "measureValue": "__MeaPrimaryValue__1",
         },
         {
+          "colorRange": [
+            0,
+            1,
+          ],
           "foldMap": {
             "returnRatio": undefined,
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
+          "measureRange": [
+            24,
+            503,
+          ],
           "measureValue": "__MeaSecondaryValue__1",
         },
       ],

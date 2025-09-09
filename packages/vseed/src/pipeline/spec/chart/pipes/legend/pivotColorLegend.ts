@@ -45,6 +45,7 @@ export const pivotColorLegend: SpecPipe = (spec, context) => {
     min: min,
     max: max,
 
+    inverse: ['right', 'left'].includes(orient),
     maxWidth: '30%',
     startText: {
       visible: true,

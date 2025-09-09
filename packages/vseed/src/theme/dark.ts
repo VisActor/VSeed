@@ -116,18 +116,7 @@ export const darkTheme = (): CustomThemeConfig => {
   } = {
     backgroundColor: 'transparent',
     color: {
-      linearColorScheme: [
-        '#2E62F1',
-        '#3A6EF6',
-        '#4780FA',
-        '#548CFE',
-        '#6198FF',
-        '#6FA3FF',
-        '#7CACFF',
-        '#88B7FF',
-        '#94C2FF',
-        '#A0CEFF',
-      ],
+      linearColorScheme: ['#A0CEFF', '#2E62F1'],
       colorScheme: [
         '#2E62F1',
         '#4DC36A',

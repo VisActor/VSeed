@@ -20,6 +20,10 @@ exports[`dimensionCondition 1`] = `
           "#E9A0C3",
           "#D77DD3",
         ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
       },
       "crosshairLine": {
         "labelBackgroundColor": "#364159",
@@ -139,6 +143,10 @@ exports[`dimensionCondition 1`] = `
             "#ED8888",
             "#E9A0C3",
             "#D77DD3",
+          ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
           ],
         },
         "crosshairLine": {
@@ -504,6 +512,10 @@ exports[`dimensionCondition 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "count": "数量",
           "profit": "利润",
@@ -511,6 +523,10 @@ exports[`dimensionCondition 1`] = `
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          10,
+          100,
+        ],
         "measureValue": "__MeaValue__",
       },
       "id": "line",

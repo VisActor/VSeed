@@ -20,6 +20,10 @@ exports[`areaPercent 1`] = `
           "#E9A0C3",
           "#D77DD3",
         ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
       },
       "crosshairLine": {
         "labelBackgroundColor": "#364159",
@@ -140,6 +144,10 @@ exports[`areaPercent 1`] = `
             "#E9A0C3",
             "#D77DD3",
           ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
+          ],
         },
         "crosshairLine": {
           "labelBackgroundColor": "#364159",
@@ -248,7 +256,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Sales-sales",
       "__Dim_Color__": "Sales",
-      "__Dim_Detail__": "Jan-Sales",
+      "__Dim_Detail__": "2019-Jan-Sales",
       "__Dim_X__": "2019-Jan",
       "__MeaId__": "sales",
       "__MeaName__": "Sales",
@@ -267,7 +275,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Profit-profit",
       "__Dim_Color__": "Profit",
-      "__Dim_Detail__": "Jan-Profit",
+      "__Dim_Detail__": "2019-Jan-Profit",
       "__Dim_X__": "2019-Jan",
       "__MeaId__": "profit",
       "__MeaName__": "Profit",
@@ -286,7 +294,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Discount-discount",
       "__Dim_Color__": "Discount",
-      "__Dim_Detail__": "Jan-Discount",
+      "__Dim_Detail__": "2019-Jan-Discount",
       "__Dim_X__": "2019-Jan",
       "__MeaId__": "discount",
       "__MeaName__": "Discount",
@@ -305,7 +313,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Sales-sales",
       "__Dim_Color__": "Sales",
-      "__Dim_Detail__": "Feb-Sales",
+      "__Dim_Detail__": "2019-Feb-Sales",
       "__Dim_X__": "2019-Feb",
       "__MeaId__": "sales",
       "__MeaName__": "Sales",
@@ -324,7 +332,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Profit-profit",
       "__Dim_Color__": "Profit",
-      "__Dim_Detail__": "Feb-Profit",
+      "__Dim_Detail__": "2019-Feb-Profit",
       "__Dim_X__": "2019-Feb",
       "__MeaId__": "profit",
       "__MeaName__": "Profit",
@@ -343,7 +351,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Discount-discount",
       "__Dim_Color__": "Discount",
-      "__Dim_Detail__": "Feb-Discount",
+      "__Dim_Detail__": "2019-Feb-Discount",
       "__Dim_X__": "2019-Feb",
       "__MeaId__": "discount",
       "__MeaName__": "Discount",
@@ -362,7 +370,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Sales-sales",
       "__Dim_Color__": "Sales",
-      "__Dim_Detail__": "Mar-Sales",
+      "__Dim_Detail__": "2019-Mar-Sales",
       "__Dim_X__": "2019-Mar",
       "__MeaId__": "sales",
       "__MeaName__": "Sales",
@@ -381,7 +389,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Profit-profit",
       "__Dim_Color__": "Profit",
-      "__Dim_Detail__": "Mar-Profit",
+      "__Dim_Detail__": "2019-Mar-Profit",
       "__Dim_X__": "2019-Mar",
       "__MeaId__": "profit",
       "__MeaName__": "Profit",
@@ -400,7 +408,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Discount-discount",
       "__Dim_Color__": "Discount",
-      "__Dim_Detail__": "Mar-Discount",
+      "__Dim_Detail__": "2019-Mar-Discount",
       "__Dim_X__": "2019-Mar",
       "__MeaId__": "discount",
       "__MeaName__": "Discount",
@@ -419,7 +427,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Sales-sales",
       "__Dim_Color__": "Sales",
-      "__Dim_Detail__": "Apr-Sales",
+      "__Dim_Detail__": "2019-Apr-Sales",
       "__Dim_X__": "2019-Apr",
       "__MeaId__": "sales",
       "__MeaName__": "Sales",
@@ -438,7 +446,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Profit-profit",
       "__Dim_Color__": "Profit",
-      "__Dim_Detail__": "Apr-Profit",
+      "__Dim_Detail__": "2019-Apr-Profit",
       "__Dim_X__": "2019-Apr",
       "__MeaId__": "profit",
       "__MeaName__": "Profit",
@@ -457,7 +465,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Discount-discount",
       "__Dim_Color__": "Discount",
-      "__Dim_Detail__": "Apr-Discount",
+      "__Dim_Detail__": "2019-Apr-Discount",
       "__Dim_X__": "2019-Apr",
       "__MeaId__": "discount",
       "__MeaName__": "Discount",
@@ -476,7 +484,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Sales-sales",
       "__Dim_Color__": "Sales",
-      "__Dim_Detail__": "May-Sales",
+      "__Dim_Detail__": "2019-May-Sales",
       "__Dim_X__": "2019-May",
       "__MeaId__": "sales",
       "__MeaName__": "Sales",
@@ -495,7 +503,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Profit-profit",
       "__Dim_Color__": "Profit",
-      "__Dim_Detail__": "May-Profit",
+      "__Dim_Detail__": "2019-May-Profit",
       "__Dim_X__": "2019-May",
       "__MeaId__": "profit",
       "__MeaName__": "Profit",
@@ -514,7 +522,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Discount-discount",
       "__Dim_Color__": "Discount",
-      "__Dim_Detail__": "May-Discount",
+      "__Dim_Detail__": "2019-May-Discount",
       "__Dim_X__": "2019-May",
       "__MeaId__": "discount",
       "__MeaName__": "Discount",
@@ -533,7 +541,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Sales-sales",
       "__Dim_Color__": "Sales",
-      "__Dim_Detail__": "Jun-Sales",
+      "__Dim_Detail__": "2019-Jun-Sales",
       "__Dim_X__": "2019-Jun",
       "__MeaId__": "sales",
       "__MeaName__": "Sales",
@@ -552,7 +560,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Profit-profit",
       "__Dim_Color__": "Profit",
-      "__Dim_Detail__": "Jun-Profit",
+      "__Dim_Detail__": "2019-Jun-Profit",
       "__Dim_X__": "2019-Jun",
       "__MeaId__": "profit",
       "__MeaName__": "Profit",
@@ -571,7 +579,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Discount-discount",
       "__Dim_Color__": "Discount",
-      "__Dim_Detail__": "Jun-Discount",
+      "__Dim_Detail__": "2019-Jun-Discount",
       "__Dim_X__": "2019-Jun",
       "__MeaId__": "discount",
       "__MeaName__": "Discount",
@@ -590,7 +598,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Sales-sales",
       "__Dim_Color__": "Sales",
-      "__Dim_Detail__": "Jan-Sales",
+      "__Dim_Detail__": "2020-Jan-Sales",
       "__Dim_X__": "2020-Jan",
       "__MeaId__": "sales",
       "__MeaName__": "Sales",
@@ -609,7 +617,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Profit-profit",
       "__Dim_Color__": "Profit",
-      "__Dim_Detail__": "Jan-Profit",
+      "__Dim_Detail__": "2020-Jan-Profit",
       "__Dim_X__": "2020-Jan",
       "__MeaId__": "profit",
       "__MeaName__": "Profit",
@@ -628,7 +636,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Discount-discount",
       "__Dim_Color__": "Discount",
-      "__Dim_Detail__": "Jan-Discount",
+      "__Dim_Detail__": "2020-Jan-Discount",
       "__Dim_X__": "2020-Jan",
       "__MeaId__": "discount",
       "__MeaName__": "Discount",
@@ -647,7 +655,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Sales-sales",
       "__Dim_Color__": "Sales",
-      "__Dim_Detail__": "Feb-Sales",
+      "__Dim_Detail__": "2020-Feb-Sales",
       "__Dim_X__": "2020-Feb",
       "__MeaId__": "sales",
       "__MeaName__": "Sales",
@@ -666,7 +674,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Profit-profit",
       "__Dim_Color__": "Profit",
-      "__Dim_Detail__": "Feb-Profit",
+      "__Dim_Detail__": "2020-Feb-Profit",
       "__Dim_X__": "2020-Feb",
       "__MeaId__": "profit",
       "__MeaName__": "Profit",
@@ -685,7 +693,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Discount-discount",
       "__Dim_Color__": "Discount",
-      "__Dim_Detail__": "Feb-Discount",
+      "__Dim_Detail__": "2020-Feb-Discount",
       "__Dim_X__": "2020-Feb",
       "__MeaId__": "discount",
       "__MeaName__": "Discount",
@@ -704,7 +712,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Sales-sales",
       "__Dim_Color__": "Sales",
-      "__Dim_Detail__": "Mar-Sales",
+      "__Dim_Detail__": "2020-Mar-Sales",
       "__Dim_X__": "2020-Mar",
       "__MeaId__": "sales",
       "__MeaName__": "Sales",
@@ -723,7 +731,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Profit-profit",
       "__Dim_Color__": "Profit",
-      "__Dim_Detail__": "Mar-Profit",
+      "__Dim_Detail__": "2020-Mar-Profit",
       "__Dim_X__": "2020-Mar",
       "__MeaId__": "profit",
       "__MeaName__": "Profit",
@@ -742,7 +750,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Discount-discount",
       "__Dim_Color__": "Discount",
-      "__Dim_Detail__": "Mar-Discount",
+      "__Dim_Detail__": "2020-Mar-Discount",
       "__Dim_X__": "2020-Mar",
       "__MeaId__": "discount",
       "__MeaName__": "Discount",
@@ -761,7 +769,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Sales-sales",
       "__Dim_Color__": "Sales",
-      "__Dim_Detail__": "Apr-Sales",
+      "__Dim_Detail__": "2020-Apr-Sales",
       "__Dim_X__": "2020-Apr",
       "__MeaId__": "sales",
       "__MeaName__": "Sales",
@@ -780,7 +788,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Profit-profit",
       "__Dim_Color__": "Profit",
-      "__Dim_Detail__": "Apr-Profit",
+      "__Dim_Detail__": "2020-Apr-Profit",
       "__Dim_X__": "2020-Apr",
       "__MeaId__": "profit",
       "__MeaName__": "Profit",
@@ -799,7 +807,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Discount-discount",
       "__Dim_Color__": "Discount",
-      "__Dim_Detail__": "Apr-Discount",
+      "__Dim_Detail__": "2020-Apr-Discount",
       "__Dim_X__": "2020-Apr",
       "__MeaId__": "discount",
       "__MeaName__": "Discount",
@@ -818,7 +826,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Sales-sales",
       "__Dim_Color__": "Sales",
-      "__Dim_Detail__": "May-Sales",
+      "__Dim_Detail__": "2020-May-Sales",
       "__Dim_X__": "2020-May",
       "__MeaId__": "sales",
       "__MeaName__": "Sales",
@@ -837,7 +845,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Profit-profit",
       "__Dim_Color__": "Profit",
-      "__Dim_Detail__": "May-Profit",
+      "__Dim_Detail__": "2020-May-Profit",
       "__Dim_X__": "2020-May",
       "__MeaId__": "profit",
       "__MeaName__": "Profit",
@@ -856,7 +864,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Discount-discount",
       "__Dim_Color__": "Discount",
-      "__Dim_Detail__": "May-Discount",
+      "__Dim_Detail__": "2020-May-Discount",
       "__Dim_X__": "2020-May",
       "__MeaId__": "discount",
       "__MeaName__": "Discount",
@@ -875,7 +883,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Sales-sales",
       "__Dim_Color__": "Sales",
-      "__Dim_Detail__": "Jun-Sales",
+      "__Dim_Detail__": "2020-Jun-Sales",
       "__Dim_X__": "2020-Jun",
       "__MeaId__": "sales",
       "__MeaName__": "Sales",
@@ -894,7 +902,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Profit-profit",
       "__Dim_Color__": "Profit",
-      "__Dim_Detail__": "Jun-Profit",
+      "__Dim_Detail__": "2020-Jun-Profit",
       "__Dim_X__": "2020-Jun",
       "__MeaId__": "profit",
       "__MeaName__": "Profit",
@@ -913,7 +921,7 @@ exports[`areaPercent 1`] = `
     {
       "__Dim_ColorId__": "Discount-discount",
       "__Dim_Color__": "Discount",
-      "__Dim_Detail__": "Jun-Discount",
+      "__Dim_Detail__": "2020-Jun-Discount",
       "__Dim_X__": "2020-Jun",
       "__MeaId__": "discount",
       "__MeaName__": "Discount",
@@ -933,6 +941,10 @@ exports[`areaPercent 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "discount": "Discount",
           "profit": "Profit",
@@ -940,6 +952,10 @@ exports[`areaPercent 1`] = `
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          0.05,
+          1200000,
+        ],
         "measureValue": "__MeaValue__",
       },
       "id": "areaPercent",
@@ -985,8 +1001,9 @@ exports[`areaPercent 1`] = `
       "__MeaName__",
     ],
     "detail": [
-      "__MeaName__",
+      "year",
       "month",
+      "__MeaName__",
     ],
     "x": [
       "year",
@@ -1217,7 +1234,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Sales-sales",
         "__Dim_Color__": "Sales",
-        "__Dim_Detail__": "Jan-Sales",
+        "__Dim_Detail__": "2019-Jan-Sales",
         "__Dim_X__": "2019-Jan",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
@@ -1236,7 +1253,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Profit-profit",
         "__Dim_Color__": "Profit",
-        "__Dim_Detail__": "Jan-Profit",
+        "__Dim_Detail__": "2019-Jan-Profit",
         "__Dim_X__": "2019-Jan",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
@@ -1255,7 +1272,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Discount-discount",
         "__Dim_Color__": "Discount",
-        "__Dim_Detail__": "Jan-Discount",
+        "__Dim_Detail__": "2019-Jan-Discount",
         "__Dim_X__": "2019-Jan",
         "__MeaId__": "discount",
         "__MeaName__": "Discount",
@@ -1274,7 +1291,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Sales-sales",
         "__Dim_Color__": "Sales",
-        "__Dim_Detail__": "Feb-Sales",
+        "__Dim_Detail__": "2019-Feb-Sales",
         "__Dim_X__": "2019-Feb",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
@@ -1293,7 +1310,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Profit-profit",
         "__Dim_Color__": "Profit",
-        "__Dim_Detail__": "Feb-Profit",
+        "__Dim_Detail__": "2019-Feb-Profit",
         "__Dim_X__": "2019-Feb",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
@@ -1312,7 +1329,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Discount-discount",
         "__Dim_Color__": "Discount",
-        "__Dim_Detail__": "Feb-Discount",
+        "__Dim_Detail__": "2019-Feb-Discount",
         "__Dim_X__": "2019-Feb",
         "__MeaId__": "discount",
         "__MeaName__": "Discount",
@@ -1331,7 +1348,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Sales-sales",
         "__Dim_Color__": "Sales",
-        "__Dim_Detail__": "Mar-Sales",
+        "__Dim_Detail__": "2019-Mar-Sales",
         "__Dim_X__": "2019-Mar",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
@@ -1350,7 +1367,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Profit-profit",
         "__Dim_Color__": "Profit",
-        "__Dim_Detail__": "Mar-Profit",
+        "__Dim_Detail__": "2019-Mar-Profit",
         "__Dim_X__": "2019-Mar",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
@@ -1369,7 +1386,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Discount-discount",
         "__Dim_Color__": "Discount",
-        "__Dim_Detail__": "Mar-Discount",
+        "__Dim_Detail__": "2019-Mar-Discount",
         "__Dim_X__": "2019-Mar",
         "__MeaId__": "discount",
         "__MeaName__": "Discount",
@@ -1388,7 +1405,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Sales-sales",
         "__Dim_Color__": "Sales",
-        "__Dim_Detail__": "Apr-Sales",
+        "__Dim_Detail__": "2019-Apr-Sales",
         "__Dim_X__": "2019-Apr",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
@@ -1407,7 +1424,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Profit-profit",
         "__Dim_Color__": "Profit",
-        "__Dim_Detail__": "Apr-Profit",
+        "__Dim_Detail__": "2019-Apr-Profit",
         "__Dim_X__": "2019-Apr",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
@@ -1426,7 +1443,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Discount-discount",
         "__Dim_Color__": "Discount",
-        "__Dim_Detail__": "Apr-Discount",
+        "__Dim_Detail__": "2019-Apr-Discount",
         "__Dim_X__": "2019-Apr",
         "__MeaId__": "discount",
         "__MeaName__": "Discount",
@@ -1445,7 +1462,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Sales-sales",
         "__Dim_Color__": "Sales",
-        "__Dim_Detail__": "May-Sales",
+        "__Dim_Detail__": "2019-May-Sales",
         "__Dim_X__": "2019-May",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
@@ -1464,7 +1481,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Profit-profit",
         "__Dim_Color__": "Profit",
-        "__Dim_Detail__": "May-Profit",
+        "__Dim_Detail__": "2019-May-Profit",
         "__Dim_X__": "2019-May",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
@@ -1483,7 +1500,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Discount-discount",
         "__Dim_Color__": "Discount",
-        "__Dim_Detail__": "May-Discount",
+        "__Dim_Detail__": "2019-May-Discount",
         "__Dim_X__": "2019-May",
         "__MeaId__": "discount",
         "__MeaName__": "Discount",
@@ -1502,7 +1519,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Sales-sales",
         "__Dim_Color__": "Sales",
-        "__Dim_Detail__": "Jun-Sales",
+        "__Dim_Detail__": "2019-Jun-Sales",
         "__Dim_X__": "2019-Jun",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
@@ -1521,7 +1538,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Profit-profit",
         "__Dim_Color__": "Profit",
-        "__Dim_Detail__": "Jun-Profit",
+        "__Dim_Detail__": "2019-Jun-Profit",
         "__Dim_X__": "2019-Jun",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
@@ -1540,7 +1557,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Discount-discount",
         "__Dim_Color__": "Discount",
-        "__Dim_Detail__": "Jun-Discount",
+        "__Dim_Detail__": "2019-Jun-Discount",
         "__Dim_X__": "2019-Jun",
         "__MeaId__": "discount",
         "__MeaName__": "Discount",
@@ -1559,7 +1576,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Sales-sales",
         "__Dim_Color__": "Sales",
-        "__Dim_Detail__": "Jan-Sales",
+        "__Dim_Detail__": "2020-Jan-Sales",
         "__Dim_X__": "2020-Jan",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
@@ -1578,7 +1595,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Profit-profit",
         "__Dim_Color__": "Profit",
-        "__Dim_Detail__": "Jan-Profit",
+        "__Dim_Detail__": "2020-Jan-Profit",
         "__Dim_X__": "2020-Jan",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
@@ -1597,7 +1614,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Discount-discount",
         "__Dim_Color__": "Discount",
-        "__Dim_Detail__": "Jan-Discount",
+        "__Dim_Detail__": "2020-Jan-Discount",
         "__Dim_X__": "2020-Jan",
         "__MeaId__": "discount",
         "__MeaName__": "Discount",
@@ -1616,7 +1633,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Sales-sales",
         "__Dim_Color__": "Sales",
-        "__Dim_Detail__": "Feb-Sales",
+        "__Dim_Detail__": "2020-Feb-Sales",
         "__Dim_X__": "2020-Feb",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
@@ -1635,7 +1652,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Profit-profit",
         "__Dim_Color__": "Profit",
-        "__Dim_Detail__": "Feb-Profit",
+        "__Dim_Detail__": "2020-Feb-Profit",
         "__Dim_X__": "2020-Feb",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
@@ -1654,7 +1671,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Discount-discount",
         "__Dim_Color__": "Discount",
-        "__Dim_Detail__": "Feb-Discount",
+        "__Dim_Detail__": "2020-Feb-Discount",
         "__Dim_X__": "2020-Feb",
         "__MeaId__": "discount",
         "__MeaName__": "Discount",
@@ -1673,7 +1690,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Sales-sales",
         "__Dim_Color__": "Sales",
-        "__Dim_Detail__": "Mar-Sales",
+        "__Dim_Detail__": "2020-Mar-Sales",
         "__Dim_X__": "2020-Mar",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
@@ -1692,7 +1709,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Profit-profit",
         "__Dim_Color__": "Profit",
-        "__Dim_Detail__": "Mar-Profit",
+        "__Dim_Detail__": "2020-Mar-Profit",
         "__Dim_X__": "2020-Mar",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
@@ -1711,7 +1728,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Discount-discount",
         "__Dim_Color__": "Discount",
-        "__Dim_Detail__": "Mar-Discount",
+        "__Dim_Detail__": "2020-Mar-Discount",
         "__Dim_X__": "2020-Mar",
         "__MeaId__": "discount",
         "__MeaName__": "Discount",
@@ -1730,7 +1747,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Sales-sales",
         "__Dim_Color__": "Sales",
-        "__Dim_Detail__": "Apr-Sales",
+        "__Dim_Detail__": "2020-Apr-Sales",
         "__Dim_X__": "2020-Apr",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
@@ -1749,7 +1766,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Profit-profit",
         "__Dim_Color__": "Profit",
-        "__Dim_Detail__": "Apr-Profit",
+        "__Dim_Detail__": "2020-Apr-Profit",
         "__Dim_X__": "2020-Apr",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
@@ -1768,7 +1785,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Discount-discount",
         "__Dim_Color__": "Discount",
-        "__Dim_Detail__": "Apr-Discount",
+        "__Dim_Detail__": "2020-Apr-Discount",
         "__Dim_X__": "2020-Apr",
         "__MeaId__": "discount",
         "__MeaName__": "Discount",
@@ -1787,7 +1804,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Sales-sales",
         "__Dim_Color__": "Sales",
-        "__Dim_Detail__": "May-Sales",
+        "__Dim_Detail__": "2020-May-Sales",
         "__Dim_X__": "2020-May",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
@@ -1806,7 +1823,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Profit-profit",
         "__Dim_Color__": "Profit",
-        "__Dim_Detail__": "May-Profit",
+        "__Dim_Detail__": "2020-May-Profit",
         "__Dim_X__": "2020-May",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
@@ -1825,7 +1842,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Discount-discount",
         "__Dim_Color__": "Discount",
-        "__Dim_Detail__": "May-Discount",
+        "__Dim_Detail__": "2020-May-Discount",
         "__Dim_X__": "2020-May",
         "__MeaId__": "discount",
         "__MeaName__": "Discount",
@@ -1844,7 +1861,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Sales-sales",
         "__Dim_Color__": "Sales",
-        "__Dim_Detail__": "Jun-Sales",
+        "__Dim_Detail__": "2020-Jun-Sales",
         "__Dim_X__": "2020-Jun",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
@@ -1863,7 +1880,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Profit-profit",
         "__Dim_Color__": "Profit",
-        "__Dim_Detail__": "Jun-Profit",
+        "__Dim_Detail__": "2020-Jun-Profit",
         "__Dim_X__": "2020-Jun",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
@@ -1882,7 +1899,7 @@ exports[`areaPercent 2`] = `
       {
         "__Dim_ColorId__": "Discount-discount",
         "__Dim_Color__": "Discount",
-        "__Dim_Detail__": "Jun-Discount",
+        "__Dim_Detail__": "2020-Jun-Discount",
         "__Dim_X__": "2020-Jun",
         "__MeaId__": "discount",
         "__MeaName__": "Discount",

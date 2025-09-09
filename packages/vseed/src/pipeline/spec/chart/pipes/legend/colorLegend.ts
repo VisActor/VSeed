@@ -34,7 +34,7 @@ export const colorLegend: SpecPipe = (spec, context) => {
     position: legendPosition,
     padding: 0,
     field: unfoldInfo.encodingColor,
-
+    inverse: ['right', 'left'].includes(orient),
     maxWidth: '30%',
     startText: {
       visible: true,

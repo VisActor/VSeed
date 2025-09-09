@@ -20,6 +20,10 @@ exports[`dark 1`] = `
           "#FF6341",
           "#98DD62",
         ],
+        "linearColorScheme": [
+          "#A0CEFF",
+          "#2E62F1",
+        ],
       },
       "crosshairRect": {
         "labelBackgroundColor": "#ffffff",
@@ -44,8 +48,8 @@ exports[`dark 1`] = `
       "stackCornerRadius": [
         4,
         4,
-        4,
-        4,
+        0,
+        0,
       ],
       "tooltip": {
         "enable": true,
@@ -145,6 +149,10 @@ exports[`dark 1`] = `
             "#FF6341",
             "#98DD62",
           ],
+          "linearColorScheme": [
+            "#A0CEFF",
+            "#2E62F1",
+          ],
         },
         "crosshairRect": {
           "labelBackgroundColor": "#ffffff",
@@ -169,8 +177,8 @@ exports[`dark 1`] = `
         "stackCornerRadius": [
           4,
           4,
-          4,
-          4,
+          0,
+          0,
         ],
         "tooltip": {
           "enable": true,
@@ -419,12 +427,20 @@ exports[`dark 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "profit": "profit",
           "sales": "sales",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          10,
+          100,
+        ],
         "measureValue": "__MeaValue__",
       },
       "id": "column",
@@ -909,12 +925,7 @@ exports[`dark 2`] = `
     },
   ],
   "seriesField": "__Dim_ColorId__",
-  "stackCornerRadius": [
-    4,
-    4,
-    4,
-    4,
-  ],
+  "stackCornerRadius": [Function],
   "stackInverse": true,
   "tooltip": {
     "dimension": {

@@ -1,3 +1,4 @@
+import { unique } from 'remeda'
 import { MeasureName } from 'src/dataReshape'
 import type { AdvancedPipe, ColumnParallel, Encoding } from 'src/types'
 
@@ -14,10 +15,10 @@ export const encodingForColumn: AdvancedPipe = (advancedVSeed, context) => {
 
   if (encoding) {
     const x = encoding.x || [dimensions[0].id]
+    const color = encoding.color || [(dimensions[1] || dimensions[0]).id]
     const detail = encoding.detail || []
-    const color = encoding.color || []
 
-    const mergedDetail = [...color.filter((d) => !x.includes(d)), ...detail]
+    const mergedDetail = unique([...color, ...detail])
     return {
       ...advancedVSeed,
       encoding: {

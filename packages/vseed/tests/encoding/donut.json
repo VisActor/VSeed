@@ -1,5 +1,5 @@
 {
-  "chartType": "columnParallel",
+  "chartType": "donut",
   "measures": [
     {
       "id": "sales",
@@ -22,8 +22,7 @@
     { "id": "month", "alias": "Month" }
   ],
   "encoding": {
-    "x": ["year"],
-    "color": ["__MeaName__"],
+    "color": ["year", "__MeaName__"],
     "detail": ["month"]
   },
   "dataset": [

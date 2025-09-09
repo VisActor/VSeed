@@ -1,5 +1,5 @@
 {
-  "chartType": "columnParallel",
+  "chartType": "column",
   "measures": [
     {
       "id": "sales",

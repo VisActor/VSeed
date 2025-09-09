@@ -1,3 +1,4 @@
+import { unique } from 'remeda'
 import { MeasureName } from 'src/dataReshape'
 import type { AdvancedPipe, Encoding, Rose } from 'src/types'
 
@@ -13,15 +14,17 @@ export const encodingForRose: AdvancedPipe = (advancedVSeed, context) => {
   const encoding = vseed.encoding
 
   if (encoding) {
-    const angle = encoding.angle || []
+    const angle = encoding.angle || [dimensions[0].id]
+    const color = encoding.color || [(dimensions[1] || dimensions[0]).id]
     const detail = encoding.detail || []
-    const color = encoding.color || []
 
-    const mergedDetail = [...color.filter((d) => !angle.includes(d)), ...detail]
+    const mergedDetail = unique([...color, ...detail])
     return {
       ...advancedVSeed,
       encoding: {
         ...encoding,
+        angle,
+        color,
         detail: mergedDetail,
       },
     }

@@ -1,5 +1,5 @@
 {
-  "chartType": "columnParallel",
+  "chartType": "line",
   "measures": [
     {
       "id": "sales",
@@ -22,7 +22,7 @@
     { "id": "month", "alias": "Month" }
   ],
   "encoding": {
-    "x": ["year"],
+    "x": ["year", "month"],
     "color": ["__MeaName__"],
     "detail": ["month"]
   },

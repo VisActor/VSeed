@@ -1,5 +1,5 @@
 {
-  "chartType": "radar",
+  "chartType": "rose",
   "measures": [
     {
       "id": "sales",
@@ -23,7 +23,8 @@
   ],
   "encoding": {
     "angle": ["month"],
-    "color": ["year", "__MeaName__"]
+    "color": ["__MeaName__"],
+    "detail": ["year"]
   },
   "dataset": [
     { "year": "2019", "month": "Jan", "profit": 210000, "sales": 200000 },

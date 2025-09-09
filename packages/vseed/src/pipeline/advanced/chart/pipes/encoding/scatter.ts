@@ -15,13 +15,14 @@ export const encodingForScatter: AdvancedPipe = (advancedVSeed, context) => {
 
   if (encoding) {
     const detail = encoding.detail || []
-    const color = encoding.color || []
+    const color = encoding.color || [(dimensions[1] || dimensions[0]).id]
 
     const mergedDetail = unique([...color, ...detail])
     return {
       ...advancedVSeed,
       encoding: {
         ...encoding,
+        color,
         detail: mergedDetail,
       },
     }

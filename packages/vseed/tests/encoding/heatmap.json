@@ -1,31 +1,43 @@
 {
   "chartType": "heatmap",
-  "dimensions": [
+  "measures": [
     {
-      "id": "type",
-      "alias": "类型"
+      "id": "sales",
+      "alias": "Sales",
+      "autoFormat": true
     },
     {
-      "id": "date",
-      "alias": "日期"
+      "id": "profit",
+      "alias": "Profit",
+      "autoFormat": true
+    },
+    {
+      "id": "discount",
+      "alias": "Discount",
+      "autoFormat": true
     }
   ],
-  "dataset": [
-    { "date": "2019", "type": "A", "profit": 10, "sales": 100 },
-    { "date": "2020", "type": "A", "profit": 30, "sales": 100 },
-    { "date": "2021", "type": "A", "profit": 30, "sales": 100 },
-    { "date": "2022", "type": "A", "profit": 50, "sales": 100 },
-    { "date": "2023", "type": "A", "profit": 40, "sales": 100 },
-
-    { "date": "2019", "type": "C", "profit": 10, "sales": 100 },
-    { "date": "2020", "type": "C", "profit": 30, "sales": 100 },
-    { "date": "2021", "type": "C", "profit": 30, "sales": 100 },
-    { "date": "2022", "type": "C", "profit": 50, "sales": 100 },
-    { "date": "2023", "type": "C", "profit": 40, "sales": 100 }
+  "dimensions": [
+    { "id": "year", "alias": "Yearn" },
+    { "id": "month", "alias": "Month" }
   ],
   "encoding": {
-    "x": ["type", "__MeaName__"],
-    "y": ["date"],
-    "color": ["__MeaName__"]
-  }
+    "color": ["year", "__MeaName__"],
+    "detail": ["month"]
+  },
+  "dataset": [
+    { "year": "2019", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2019", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2019", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2019", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2019", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2019", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 },
+
+    { "year": "2020", "month": "Jan", "profit": 10000, "sales": 200000, "discount": 0.5 },
+    { "year": "2020", "month": "Feb", "profit": 20000, "sales": 400000, "discount": 0.2 },
+    { "year": "2020", "month": "Mar", "profit": 30000, "sales": 600000, "discount": 0.4 },
+    { "year": "2020", "month": "Apr", "profit": 40000, "sales": 800000, "discount": 0.2 },
+    { "year": "2020", "month": "May", "profit": 50000, "sales": 1000000, "discount": 0.05 },
+    { "year": "2020", "month": "Jun", "profit": 60000, "sales": 1200000, "discount": 0.3 }
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "chartType": "radar",
+  "chartType": "roseParallel",
   "measures": [
     {
       "id": "sales",
@@ -10,11 +10,6 @@
       "id": "profit",
       "alias": "Profit",
       "autoFormat": true
-    },
-    {
-      "id": "discount",
-      "alias": "Discount",
-      "autoFormat": true
     }
   ],
   "dimensions": [
@@ -22,8 +17,9 @@
     { "id": "month", "alias": "Month" }
   ],
   "encoding": {
-    "angle": ["month"],
-    "color": ["year", "__MeaName__"]
+    "angle": ["year", "__MeaName__"],
+    "color": ["__MeaName__"],
+    "detail": ["month"]
   },
   "dataset": [
     { "year": "2019", "month": "Jan", "profit": 210000, "sales": 200000 },

@@ -156,35 +156,35 @@ function generateMarkdownContent(node, project, level = 1, visited = new Set()) 
   const tip = (tags.tip || []).join('\n\n'.replace(/\n/g, '\n\n').replace(/\-/g, '\\-')) || ''
 
   if (recommend) {
-    markdown += `:::info{title=推荐}\n${recommend}:::`
+    markdown += `:::info{title=推荐}\n${recommend}\n\n:::`
     markdown += '\n\n'
   }
   if (description) {
-    markdown += `:::note{title=描述}\n${description}:::`
+    markdown += `:::note{title=描述}\n${description}\n\n:::`
     markdown += '\n\n'
   }
   if (example) {
-    markdown += `**示例**\n${example}\n`
+    markdown += `**示例**\n${example}\n\n`
     markdown += '\n\n'
   }
   if (info) {
-    markdown += `:::info{title=Info}\n${info}:::`
+    markdown += `:::info{title=Info}\n${info}\n\n:::`
     markdown += '\n\n'
   }
   if (tip) {
-    markdown += `:::tip{title=Tip}\n${tip}:::`
+    markdown += `:::tip{title=Tip}\n${tip}\n\n:::`
     markdown += '\n\n'
   }
   if (note) {
-    markdown += `:::note{title=Note}\n${note}:::`
+    markdown += `:::note{title=Note}\n${note}\n\n:::`
     markdown += '\n\n'
   }
   if (warning) {
-    markdown += `:::warning{title=Warning}\n${warning}:::`
+    markdown += `:::warning{title=Warning}\n${warning}\n\n:::`
     markdown += '\n\n'
   }
   if (danger) {
-    markdown += `:::danger{title=Danger}\n${danger}:::`
+    markdown += `:::danger{title=Danger}\n${danger}\n\n:::`
     markdown += '\n\n'
   }
 

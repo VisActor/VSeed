@@ -3,10 +3,13 @@
 **Type:** `MeasureTree | undefined`
 
 :::note{title=描述}
-指标, 并列条形图指标会自动合并为一个指标, 映射到X轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.:::
+指标, 并列条形图指标会自动合并为一个指标, 映射到X轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
+
+:::
 
 **示例**
 [{id: 'value1', alias: '指标1'}, {id: 'value2', alias: '指标2'}]
+
 
 
 
@@ -15,14 +18,18 @@
 **Type:** `string`
 
 :::note{title=描述}
-指标组id, 不能重复:::
+指标组id, 不能重复
+
+:::
 
 ## alias
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-指标组别名, 允许重复, 未填写时, alias 为 id:::
+指标组别名, 允许重复, 未填写时, alias 为 id
+
+:::
 
 ## autoFormat
 
@@ -39,14 +46,18 @@
 
 当locale为zh\-CN: 749740.264会被自动格式化为74.45万
 
-当locale为en\-US: 749740.264会被自动格式化为744.5K:::
+当locale为en\-US: 749740.264会被自动格式化为744.5K
+
+:::
 
 ## format
 
 **Type:** `NumFormat | undefined`
 
 :::note{title=描述}
-指标的数值格式化, 会自动应用于label、tooltip:::
+指标的数值格式化, 会自动应用于label、tooltip
+
+:::
 
 
 ### type
@@ -54,20 +65,25 @@
 **Type:** `"number" | "percent" | "permille" | "scientific" | undefined`
 
 :::note{title=描述}
-数字格式化类型, 支持数值(十进制)、百分比(%)、千分比(‰)、科学计数法:::
+数字格式化类型, 支持数值(十进制)、百分比(%)、千分比(‰)、科学计数法
+
+:::
 
 ### ratio
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-数值格式化比例, 百分比和千分比需要设置比例:::
+数值格式化比例, 百分比和千分比需要设置比例
+
+:::
 
 **示例**
 \- 100000 转换为 10万, ratio:10000, symbol:"万"
 \- 100000 转换为 10K, ratio:1000, symbol:"K"
 \- 100000 转换为 100%, ratio:100, symbol:"%"
 \- 100000 转换为 100‰, ratio:1000, symbol:"‰"
+
 
 
 ### symbol
@@ -75,7 +91,9 @@
 **Type:** `string | undefined`
 
 :::note{title=描述}
-数值格式化符号, 例如%、‰:::
+数值格式化符号, 例如%、‰
+
+:::
 
 **示例**
 \- 100000 转换为 10万, ratio:10000, symbol:"万"
@@ -84,33 +102,42 @@
 \- 100000 转换为 100‰, ratio:1000, symbol:"‰"
 
 
+
 ### thousandSeparator
 
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
-数值格式化千分位分隔符:::
+数值格式化千分位分隔符
+
+:::
 
 ### suffix
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-数值格式化后缀:::
+数值格式化后缀
+
+:::
 
 ### prefix
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-数值格式化前缀:::
+数值格式化前缀
+
+:::
 
 ### fractionDigits
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-数值格式化小数位, 使用浏览器提供的 Intl.NumberFormat 中的 minimumFractionDigits 和 maximumFractionDigits 进行格式化, 优先级低于 significantDigits:::
+数值格式化小数位, 使用浏览器提供的 Intl.NumberFormat 中的 minimumFractionDigits 和 maximumFractionDigits 进行格式化, 优先级低于 significantDigits
+
+:::
 
 **示例**
 \- 1234.5678 转换为 1235, fractionDigits:0 (roundingMode:halfCeil)
@@ -121,12 +148,15 @@
 \- 1234.5678 转换为 1234.56780, fractionDigits:5 (roundingMode:halfCeil)
 
 
+
 ### significantDigits
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-数值格式化有效位, 使用浏览器提供的 Intl.NumberFormat 中的 minimumSignificantDigits 和 maximumSignificantDigits 进行格式化, 优先级高于 fractionDigits:::
+数值格式化有效位, 使用浏览器提供的 Intl.NumberFormat 中的 minimumSignificantDigits 和 maximumSignificantDigits 进行格式化, 优先级高于 fractionDigits
+
+:::
 
 **示例**
 \- 1234.5678 转换为 1000, significantDigits:1
@@ -139,16 +169,20 @@
 \- 1234.5678 转换为 1234.5678, significantDigits:8 (roundingMode:halfCeil)
 
 
+
 ### roundingPriority
 
 **Type:** `"morePrecision" | "lessPrecision" | undefined`
 
 :::note{title=描述}
-数值格式化舍入优先级, 处理同时设置了 significantDigits 和 fractionDigits 时的舍入优先级, 使用浏览器提供的 Intl.NumberFormat 进行格式化, 规则同 Intl.NumberFormat 中的 roundingPriority:::
+数值格式化舍入优先级, 处理同时设置了 significantDigits 和 fractionDigits 时的舍入优先级, 使用浏览器提供的 Intl.NumberFormat 进行格式化, 规则同 Intl.NumberFormat 中的 roundingPriority
+
+:::
 
 **示例**
 \- 1234.5678 转换为 1230, significantDigits:3 (roundingPriority:lessPrecision)
 \- 1234.5678 转换为 1234.5678, significantDigits:3 (roundingPriority:morePrecision)
+
 
 
 ### roundingMode
@@ -156,13 +190,17 @@
 **Type:** `"floor" | "ceil" | "expand" | "trunc" | "halfCeil" | "halfFloor" | "halfExpand" | "halfTrunc" | "halfEven" | undefined`
 
 :::note{title=描述}
-数值格式化舍入模式, 使用浏览器提供的 Intl.NumberFormat 进行格式化, 规则同 Intl.NumberFormat 中的 roundingMode:::
+数值格式化舍入模式, 使用浏览器提供的 Intl.NumberFormat 进行格式化, 规则同 Intl.NumberFormat 中的 roundingMode
+
+:::
 
 ## children
 
 **Type:** `(Measure | MeasureGroup)[] | undefined`
 
 :::note{title=描述}
-指标组的子指标或指标组:::
+指标组的子指标或指标组
+
+:::
 
 

@@ -11,7 +11,9 @@
 
 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
 
-若未配置selector, 则样式全局生效.:::
+若未配置selector, 则样式全局生效.
+
+:::
 
 
 ## selector
@@ -25,7 +27,9 @@
 
 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
 
-若未配置selector, 则样式全局生效.:::
+若未配置selector, 则样式全局生效.
+
+:::
 
 **示例**
 数值选择器
@@ -64,12 +68,15 @@ value: [100, 300]
 
 
 
+
 ### field
 
 **Type:** `string`
 
 :::note{title=描述}
-维度字段, dimensions 某一项的 id:::
+维度字段, dimensions 某一项的 id
+
+:::
 
 ### operator
 
@@ -80,7 +87,9 @@ value: [100, 300]
 
 \- in: 选择数据项中维度字段的值在 value 中的数据项
 
-\- not in: 选择数据项中维度字段的值不在 value 中的数据项:::
+\- not in: 选择数据项中维度字段的值不在 value 中的数据项
+
+:::
 
 ### op
 
@@ -93,21 +102,27 @@ value: [100, 300]
 
 \- not in: 选择数据项中维度字段的值不在 value 中的数据项
 
-same as operator:::
+same as operator
+
+:::
 
 ### value
 
 **Type:** `string | number | (string | number)[]`
 
 :::note{title=描述}
-选择数据项中维度字段的值, 支持数组:::
+选择数据项中维度字段的值, 支持数组
+
+:::
 
 ## pointVisible
 
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
-点是否可见:::
+点是否可见
+
+:::
 
 ## pointSize
 
@@ -118,7 +133,9 @@ same as operator:::
 
 
 
-点大小:::
+点大小
+
+:::
 
 ## pointColor
 
@@ -129,7 +146,9 @@ same as operator:::
 
 
 
-点图元颜色:::
+点图元颜色
+
+:::
 
 ## pointColorOpacity
 
@@ -140,7 +159,9 @@ same as operator:::
 
 
 
-点图元颜色透明度:::
+点图元颜色透明度
+
+:::
 
 ## pointBorderColor
 
@@ -151,7 +172,9 @@ same as operator:::
 
 
 
-点图元边框颜色:::
+点图元边框颜色
+
+:::
 
 ## pointBorderWidth
 
@@ -162,7 +185,9 @@ same as operator:::
 
 
 
-点图元边框宽度:::
+点图元边框宽度
+
+:::
 
 ## pointBorderStyle
 
@@ -173,7 +198,9 @@ same as operator:::
 
 
 
-点图元边框样式:::
+点图元边框样式
+
+:::
 
 **示例**
 solid
@@ -181,5 +208,6 @@ solid
 dashed
 
 dotted
+
 
 

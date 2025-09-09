@@ -1260,6 +1260,7 @@ exports[`pivotRose 2`] = `
       "cellType": "chart",
       "chartModule": "vchart",
       "chartSpec": {
+        "angleField": "__Dim_Angle__",
         "animation": true,
         "axes": [
           {
@@ -1305,7 +1306,6 @@ exports[`pivotRose 2`] = `
           },
         ],
         "background": "transparent",
-        "categoryField": "__Dim_Angle__",
         "color": {
           "domain": [
             "2019-A-销售额-sales",
@@ -1446,6 +1446,7 @@ exports[`pivotRose 2`] = `
       "cellType": "chart",
       "chartModule": "vchart",
       "chartSpec": {
+        "angleField": "__Dim_Angle__",
         "animation": true,
         "axes": [
           {
@@ -1491,7 +1492,6 @@ exports[`pivotRose 2`] = `
           },
         ],
         "background": "transparent",
-        "categoryField": "__Dim_Angle__",
         "color": {
           "domain": [
             "2019-A-销售额-sales",

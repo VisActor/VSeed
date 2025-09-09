@@ -332,7 +332,35 @@ exports[`basicFunnel 2`] = `
 {
   "animation": true,
   "background": "transparent",
-  "categoryField": "__Dim_Detail__",
+  "categoryField": "__Dim_ColorId__",
+  "color": {
+    "domain": [
+      "2019-销售额-sales",
+      "2019-利润-profit",
+      "2020-销售额-sales",
+      "2020-利润-profit",
+      "2021-销售额-sales",
+      "2021-利润-profit",
+      "2022-销售额-sales",
+      "2022-利润-profit",
+      "2023-销售额-sales",
+      "2023-利润-profit",
+    ],
+    "range": [
+      "#C2CEFF",
+      "#B7C4FF",
+      "#ACB9FF",
+      "#A0AEFF",
+      "#95A3FF",
+      "#8998FF",
+      "#7C8CFA",
+      "#7080F4",
+      "#6372F0",
+      "#5766EC",
+    ],
+    "specified": undefined,
+    "type": "ordinal",
+  },
   "data": {
     "fields": {
       "__Dim_Angle__": {
@@ -569,7 +597,6 @@ exports[`basicFunnel 2`] = `
       "clip": true,
     },
   ],
-  "seriesField": "__Dim_ColorId__",
   "shape": "rect",
   "tooltip": {
     "dimension": {

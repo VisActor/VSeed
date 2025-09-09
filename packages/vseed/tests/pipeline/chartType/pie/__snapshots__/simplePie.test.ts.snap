@@ -78,7 +78,6 @@ exports[`simplePie 1`] = `
   },
   "dataset": [
     {
-      "__Dim_Angle__": "2019",
       "__Dim_ColorId__": "2019-A-goalProfit-goalProfit",
       "__Dim_Color__": "2019-A-goalProfit",
       "__Dim_Detail__": "2019-A-goalProfit",
@@ -99,7 +98,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2019",
       "__Dim_ColorId__": "2019-A-profit-profit",
       "__Dim_Color__": "2019-A-profit",
       "__Dim_Detail__": "2019-A-profit",
@@ -120,7 +118,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2019",
       "__Dim_ColorId__": "2019-A-sales-sales",
       "__Dim_Color__": "2019-A-sales",
       "__Dim_Detail__": "2019-A-sales",
@@ -141,7 +138,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2019",
       "__Dim_ColorId__": "2019-A-leftCount-leftCount",
       "__Dim_Color__": "2019-A-leftCount",
       "__Dim_Detail__": "2019-A-leftCount",
@@ -162,7 +158,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2019",
       "__Dim_ColorId__": "2019-A-salesCount-salesCount",
       "__Dim_Color__": "2019-A-salesCount",
       "__Dim_Detail__": "2019-A-salesCount",
@@ -183,7 +178,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2020",
       "__Dim_ColorId__": "2020-A-goalProfit-goalProfit",
       "__Dim_Color__": "2020-A-goalProfit",
       "__Dim_Detail__": "2020-A-goalProfit",
@@ -204,7 +198,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2020",
       "__Dim_ColorId__": "2020-A-profit-profit",
       "__Dim_Color__": "2020-A-profit",
       "__Dim_Detail__": "2020-A-profit",
@@ -225,7 +218,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2020",
       "__Dim_ColorId__": "2020-A-sales-sales",
       "__Dim_Color__": "2020-A-sales",
       "__Dim_Detail__": "2020-A-sales",
@@ -246,7 +238,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2020",
       "__Dim_ColorId__": "2020-A-leftCount-leftCount",
       "__Dim_Color__": "2020-A-leftCount",
       "__Dim_Detail__": "2020-A-leftCount",
@@ -267,7 +258,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2020",
       "__Dim_ColorId__": "2020-A-salesCount-salesCount",
       "__Dim_Color__": "2020-A-salesCount",
       "__Dim_Detail__": "2020-A-salesCount",
@@ -288,7 +278,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2021",
       "__Dim_ColorId__": "2021-A-goalProfit-goalProfit",
       "__Dim_Color__": "2021-A-goalProfit",
       "__Dim_Detail__": "2021-A-goalProfit",
@@ -309,7 +298,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2021",
       "__Dim_ColorId__": "2021-A-profit-profit",
       "__Dim_Color__": "2021-A-profit",
       "__Dim_Detail__": "2021-A-profit",
@@ -330,7 +318,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2021",
       "__Dim_ColorId__": "2021-A-sales-sales",
       "__Dim_Color__": "2021-A-sales",
       "__Dim_Detail__": "2021-A-sales",
@@ -351,7 +338,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2021",
       "__Dim_ColorId__": "2021-A-leftCount-leftCount",
       "__Dim_Color__": "2021-A-leftCount",
       "__Dim_Detail__": "2021-A-leftCount",
@@ -372,7 +358,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2021",
       "__Dim_ColorId__": "2021-A-salesCount-salesCount",
       "__Dim_Color__": "2021-A-salesCount",
       "__Dim_Detail__": "2021-A-salesCount",
@@ -393,7 +378,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2022",
       "__Dim_ColorId__": "2022-A-goalProfit-goalProfit",
       "__Dim_Color__": "2022-A-goalProfit",
       "__Dim_Detail__": "2022-A-goalProfit",
@@ -414,7 +398,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2022",
       "__Dim_ColorId__": "2022-A-profit-profit",
       "__Dim_Color__": "2022-A-profit",
       "__Dim_Detail__": "2022-A-profit",
@@ -435,7 +418,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2022",
       "__Dim_ColorId__": "2022-A-sales-sales",
       "__Dim_Color__": "2022-A-sales",
       "__Dim_Detail__": "2022-A-sales",
@@ -456,7 +438,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2022",
       "__Dim_ColorId__": "2022-A-leftCount-leftCount",
       "__Dim_Color__": "2022-A-leftCount",
       "__Dim_Detail__": "2022-A-leftCount",
@@ -477,7 +458,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2022",
       "__Dim_ColorId__": "2022-A-salesCount-salesCount",
       "__Dim_Color__": "2022-A-salesCount",
       "__Dim_Detail__": "2022-A-salesCount",
@@ -498,7 +478,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2023",
       "__Dim_ColorId__": "2023-A-goalProfit-goalProfit",
       "__Dim_Color__": "2023-A-goalProfit",
       "__Dim_Detail__": "2023-A-goalProfit",
@@ -519,7 +498,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2023",
       "__Dim_ColorId__": "2023-A-profit-profit",
       "__Dim_Color__": "2023-A-profit",
       "__Dim_Detail__": "2023-A-profit",
@@ -540,7 +518,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2023",
       "__Dim_ColorId__": "2023-A-sales-sales",
       "__Dim_Color__": "2023-A-sales",
       "__Dim_Detail__": "2023-A-sales",
@@ -561,7 +538,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2023",
       "__Dim_ColorId__": "2023-A-leftCount-leftCount",
       "__Dim_Color__": "2023-A-leftCount",
       "__Dim_Detail__": "2023-A-leftCount",
@@ -582,7 +558,6 @@ exports[`simplePie 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "2023",
       "__Dim_ColorId__": "2023-A-salesCount-salesCount",
       "__Dim_Color__": "2023-A-salesCount",
       "__Dim_Detail__": "2023-A-salesCount",
@@ -700,9 +675,6 @@ exports[`simplePie 1`] = `
     },
   ],
   "encoding": {
-    "angle": [
-      "date",
-    ],
     "color": [
       "date",
       "type",
@@ -752,7 +724,7 @@ exports[`simplePie 2`] = `
 {
   "animation": true,
   "background": "transparent",
-  "categoryField": "__Dim_Angle__",
+  "categoryField": "__Dim_ColorId__",
   "color": {
     "domain": [
       "2019-A-goalProfit-goalProfit",
@@ -811,7 +783,6 @@ exports[`simplePie 2`] = `
     "id": "pie",
     "values": [
       {
-        "__Dim_Angle__": "2019",
         "__Dim_ColorId__": "2019-A-goalProfit-goalProfit",
         "__Dim_Color__": "2019-A-goalProfit",
         "__Dim_Detail__": "2019-A-goalProfit",
@@ -832,7 +803,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2019",
         "__Dim_ColorId__": "2019-A-profit-profit",
         "__Dim_Color__": "2019-A-profit",
         "__Dim_Detail__": "2019-A-profit",
@@ -853,7 +823,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2019",
         "__Dim_ColorId__": "2019-A-sales-sales",
         "__Dim_Color__": "2019-A-sales",
         "__Dim_Detail__": "2019-A-sales",
@@ -874,7 +843,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2019",
         "__Dim_ColorId__": "2019-A-leftCount-leftCount",
         "__Dim_Color__": "2019-A-leftCount",
         "__Dim_Detail__": "2019-A-leftCount",
@@ -895,7 +863,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2019",
         "__Dim_ColorId__": "2019-A-salesCount-salesCount",
         "__Dim_Color__": "2019-A-salesCount",
         "__Dim_Detail__": "2019-A-salesCount",
@@ -916,7 +883,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2020",
         "__Dim_ColorId__": "2020-A-goalProfit-goalProfit",
         "__Dim_Color__": "2020-A-goalProfit",
         "__Dim_Detail__": "2020-A-goalProfit",
@@ -937,7 +903,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2020",
         "__Dim_ColorId__": "2020-A-profit-profit",
         "__Dim_Color__": "2020-A-profit",
         "__Dim_Detail__": "2020-A-profit",
@@ -958,7 +923,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2020",
         "__Dim_ColorId__": "2020-A-sales-sales",
         "__Dim_Color__": "2020-A-sales",
         "__Dim_Detail__": "2020-A-sales",
@@ -979,7 +943,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2020",
         "__Dim_ColorId__": "2020-A-leftCount-leftCount",
         "__Dim_Color__": "2020-A-leftCount",
         "__Dim_Detail__": "2020-A-leftCount",
@@ -1000,7 +963,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2020",
         "__Dim_ColorId__": "2020-A-salesCount-salesCount",
         "__Dim_Color__": "2020-A-salesCount",
         "__Dim_Detail__": "2020-A-salesCount",
@@ -1021,7 +983,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2021",
         "__Dim_ColorId__": "2021-A-goalProfit-goalProfit",
         "__Dim_Color__": "2021-A-goalProfit",
         "__Dim_Detail__": "2021-A-goalProfit",
@@ -1042,7 +1003,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2021",
         "__Dim_ColorId__": "2021-A-profit-profit",
         "__Dim_Color__": "2021-A-profit",
         "__Dim_Detail__": "2021-A-profit",
@@ -1063,7 +1023,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2021",
         "__Dim_ColorId__": "2021-A-sales-sales",
         "__Dim_Color__": "2021-A-sales",
         "__Dim_Detail__": "2021-A-sales",
@@ -1084,7 +1043,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2021",
         "__Dim_ColorId__": "2021-A-leftCount-leftCount",
         "__Dim_Color__": "2021-A-leftCount",
         "__Dim_Detail__": "2021-A-leftCount",
@@ -1105,7 +1063,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2021",
         "__Dim_ColorId__": "2021-A-salesCount-salesCount",
         "__Dim_Color__": "2021-A-salesCount",
         "__Dim_Detail__": "2021-A-salesCount",
@@ -1126,7 +1083,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2022",
         "__Dim_ColorId__": "2022-A-goalProfit-goalProfit",
         "__Dim_Color__": "2022-A-goalProfit",
         "__Dim_Detail__": "2022-A-goalProfit",
@@ -1147,7 +1103,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2022",
         "__Dim_ColorId__": "2022-A-profit-profit",
         "__Dim_Color__": "2022-A-profit",
         "__Dim_Detail__": "2022-A-profit",
@@ -1168,7 +1123,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2022",
         "__Dim_ColorId__": "2022-A-sales-sales",
         "__Dim_Color__": "2022-A-sales",
         "__Dim_Detail__": "2022-A-sales",
@@ -1189,7 +1143,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2022",
         "__Dim_ColorId__": "2022-A-leftCount-leftCount",
         "__Dim_Color__": "2022-A-leftCount",
         "__Dim_Detail__": "2022-A-leftCount",
@@ -1210,7 +1163,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2022",
         "__Dim_ColorId__": "2022-A-salesCount-salesCount",
         "__Dim_Color__": "2022-A-salesCount",
         "__Dim_Detail__": "2022-A-salesCount",
@@ -1231,7 +1183,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2023",
         "__Dim_ColorId__": "2023-A-goalProfit-goalProfit",
         "__Dim_Color__": "2023-A-goalProfit",
         "__Dim_Detail__": "2023-A-goalProfit",
@@ -1252,7 +1203,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2023",
         "__Dim_ColorId__": "2023-A-profit-profit",
         "__Dim_Color__": "2023-A-profit",
         "__Dim_Detail__": "2023-A-profit",
@@ -1273,7 +1223,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2023",
         "__Dim_ColorId__": "2023-A-sales-sales",
         "__Dim_Color__": "2023-A-sales",
         "__Dim_Detail__": "2023-A-sales",
@@ -1294,7 +1243,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2023",
         "__Dim_ColorId__": "2023-A-leftCount-leftCount",
         "__Dim_Color__": "2023-A-leftCount",
         "__Dim_Detail__": "2023-A-leftCount",
@@ -1315,7 +1263,6 @@ exports[`simplePie 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "2023",
         "__Dim_ColorId__": "2023-A-salesCount-salesCount",
         "__Dim_Color__": "2023-A-salesCount",
         "__Dim_Detail__": "2023-A-salesCount",
@@ -1404,7 +1351,6 @@ exports[`simplePie 2`] = `
       "clip": true,
     },
   ],
-  "seriesField": "__Dim_ColorId__",
   "tooltip": {
     "dimension": {
       "content": [

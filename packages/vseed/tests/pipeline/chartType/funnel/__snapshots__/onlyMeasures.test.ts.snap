@@ -288,7 +288,27 @@ exports[`onlyMeasures 2`] = `
 {
   "animation": true,
   "background": "transparent",
-  "categoryField": "__Dim_Detail__",
+  "categoryField": "__Dim_ColorId__",
+  "color": {
+    "domain": [
+      "销售额-sales",
+      "利润-profit",
+    ],
+    "range": [
+      "#C2CEFF",
+      "#B7C4FF",
+      "#ACB9FF",
+      "#A0AEFF",
+      "#95A3FF",
+      "#8998FF",
+      "#7C8CFA",
+      "#7080F4",
+      "#6372F0",
+      "#5766EC",
+    ],
+    "specified": undefined,
+    "type": "ordinal",
+  },
   "data": {
     "fields": {
       "__Dim_Angle__": {
@@ -505,7 +525,6 @@ exports[`onlyMeasures 2`] = `
       "clip": true,
     },
   ],
-  "seriesField": "__Dim_ColorId__",
   "shape": "rect",
   "tooltip": {
     "dimension": {

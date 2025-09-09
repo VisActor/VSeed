@@ -20,6 +20,10 @@ exports[`combinationRose 1`] = `
           "#E9A0C3",
           "#D77DD3",
         ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
       },
       "label": {
         "enable": true,
@@ -55,6 +59,10 @@ exports[`combinationRose 1`] = `
             "#ED8888",
             "#E9A0C3",
             "#D77DD3",
+          ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
           ],
         },
         "label": {
@@ -255,11 +263,19 @@ exports[`combinationRose 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "sales": "销售额",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          200000,
+          1000000,
+        ],
         "measureValue": "__MeaValue__line1",
       },
       "id": "line1",
@@ -281,11 +297,19 @@ exports[`combinationRose 1`] = `
     },
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "profit": "利润",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          10000,
+          50000,
+        ],
         "measureValue": "__MeaValue__line2",
       },
       "id": "line2",
@@ -495,7 +519,7 @@ exports[`combinationRose 2`] = `
           },
         },
         "seriesField": "__Dim_ColorId__",
-        "stackCornerRadius": undefined,
+        "stackCornerRadius": [Function],
         "stackInverse": true,
         "tooltip": {
           "dimension": {
@@ -661,7 +685,7 @@ exports[`combinationRose 2`] = `
           },
         },
         "seriesField": "__Dim_ColorId__",
-        "stackCornerRadius": undefined,
+        "stackCornerRadius": [Function],
         "stackInverse": true,
         "tooltip": {
           "dimension": {

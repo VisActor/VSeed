@@ -20,6 +20,10 @@ exports[`simpleRose 1`] = `
           "#E9A0C3",
           "#D77DD3",
         ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
       },
       "label": {
         "enable": true,
@@ -55,6 +59,10 @@ exports[`simpleRose 1`] = `
             "#ED8888",
             "#E9A0C3",
             "#D77DD3",
+          ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
           ],
         },
         "label": {
@@ -606,6 +614,10 @@ exports[`simpleRose 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "goalProfit": "goalProfit",
           "leftCount": "leftCount",
@@ -615,6 +627,10 @@ exports[`simpleRose 1`] = `
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          1,
+          500,
+        ],
         "measureValue": "__MeaValue__",
       },
       "id": "rose",
@@ -1387,7 +1403,7 @@ exports[`simpleRose 2`] = `
     },
   },
   "seriesField": "__Dim_ColorId__",
-  "stackCornerRadius": undefined,
+  "stackCornerRadius": [Function],
   "stackInverse": true,
   "tooltip": {
     "dimension": {

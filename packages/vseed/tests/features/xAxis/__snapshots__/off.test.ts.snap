@@ -20,6 +20,10 @@ exports[`off 1`] = `
           "#E9A0C3",
           "#D77DD3",
         ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
       },
       "crosshairLine": {
         "labelBackgroundColor": "#364159",
@@ -135,6 +139,10 @@ exports[`off 1`] = `
             "#ED8888",
             "#E9A0C3",
             "#D77DD3",
+          ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
           ],
         },
         "crosshairLine": {
@@ -1237,12 +1245,20 @@ exports[`off 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
         "foldMap": {
           "profit": "profit",
           "sales": "sales",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
+        "measureRange": [
+          10,
+          100,
+        ],
         "measureValue": "__MeaValue__",
       },
       "id": "line",
@@ -2542,6 +2558,9 @@ exports[`off 2`] = `
     "type": "discrete",
     "visible": true,
   },
+  "line": {
+    "style": {},
+  },
   "padding": 0,
   "point": {
     "state": {
@@ -2555,6 +2574,7 @@ exports[`off 2`] = `
         "scaleY": 1.4,
       },
     },
+    "style": {},
   },
   "region": [
     {

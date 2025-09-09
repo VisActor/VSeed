@@ -2,6 +2,8 @@ import { z } from 'zod'
 
 export const zFoldInfo = z.object({
   foldMap: z.record(z.string(), z.string().or(z.undefined())),
+  colorRange: z.array(z.number()),
+  measureRange: z.array(z.number()),
   measureId: z.string(),
   measureName: z.string(),
   measureValue: z.string(),

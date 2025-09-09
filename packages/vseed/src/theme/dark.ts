@@ -116,6 +116,7 @@ export const darkTheme = (): CustomThemeConfig => {
   } = {
     backgroundColor: 'transparent',
     color: {
+      linearColorScheme: ['#A0CEFF', '#2E62F1'],
       colorScheme: [
         '#2E62F1',
         '#4DC36A',
@@ -185,7 +186,7 @@ export const darkTheme = (): CustomThemeConfig => {
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect: crosshairRect,
-        stackCornerRadius: [4, 4, 4, 4],
+        stackCornerRadius: [4, 4, 0, 0],
       },
       columnParallel: {
         ...baseConfig,
@@ -193,7 +194,7 @@ export const darkTheme = (): CustomThemeConfig => {
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect: crosshairRect,
-        stackCornerRadius: [4, 4, 4, 4],
+        stackCornerRadius: [4, 4, 0, 0],
       },
       columnPercent: {
         ...baseConfig,
@@ -201,7 +202,7 @@ export const darkTheme = (): CustomThemeConfig => {
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect: crosshairRect,
-        stackCornerRadius: [4, 4, 4, 4],
+        stackCornerRadius: [4, 4, 0, 0],
       },
       bar: {
         ...baseConfig,
@@ -217,7 +218,7 @@ export const darkTheme = (): CustomThemeConfig => {
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect: crosshairRect,
-        stackCornerRadius: [4, 4, 4, 4],
+        stackCornerRadius: [0, 4, 4, 0],
       },
       barPercent: {
         ...baseConfig,
@@ -225,7 +226,7 @@ export const darkTheme = (): CustomThemeConfig => {
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect: crosshairRect,
-        stackCornerRadius: [4, 4, 4, 4],
+        stackCornerRadius: [0, 4, 4, 0],
       },
       area: {
         ...baseConfig,
@@ -290,20 +291,6 @@ export const darkTheme = (): CustomThemeConfig => {
       // other
       funnel: {
         ...baseConfig,
-        color: {
-          colorScheme: [
-            '#2E62F1',
-            '#3A6EF6',
-            '#4780FA',
-            '#548CFE',
-            '#6198FF',
-            '#6FA3FF',
-            '#7CACFF',
-            '#88B7FF',
-            '#94C2FF',
-            '#A0CEFF',
-          ],
-        },
       },
       heatmap: {
         ...baseConfig,

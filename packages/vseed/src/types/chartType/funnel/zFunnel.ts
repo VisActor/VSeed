@@ -2,12 +2,12 @@ import { z } from 'zod'
 import { zLocale } from '../../i18n'
 import {
   zBackgroundColor,
+  zColor,
   zColorLegend,
   zDataset,
   zDimensions,
   zEncoding,
   zLabel,
-  zLinearColor,
   zMeasureTree,
   zTheme,
   zTooltip,
@@ -20,7 +20,7 @@ export const zFunnel = z.object({
   dimensions: zDimensions.nullish(),
   measures: zMeasureTree.nullish(),
   backgroundColor: zBackgroundColor.nullish(),
-  color: zLinearColor.nullish(),
+  color: zColor.nullish(),
   label: zLabel.nullish(),
   legend: zColorLegend.nullish(),
   tooltip: zTooltip.nullish(),

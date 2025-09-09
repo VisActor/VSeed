@@ -118,6 +118,7 @@ export const lightTheme = (): CustomThemeConfig => {
   } = {
     backgroundColor: 'transparent',
     color: {
+      linearColorScheme: ['#C2CEFF', '#5766EC'],
       colorScheme: [
         '#8D72F6',
         '#5766EC',
@@ -187,42 +188,42 @@ export const lightTheme = (): CustomThemeConfig => {
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect,
-        stackCornerRadius: [4, 4, 4, 4],
+        stackCornerRadius: [4, 4, 0, 0],
       },
       columnParallel: {
         ...baseConfig,
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect,
-        stackCornerRadius: [4, 4, 4, 4],
+        stackCornerRadius: [4, 4, 0, 0],
       },
       columnPercent: {
         ...baseConfig,
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairRect,
-        stackCornerRadius: [4, 4, 4, 4],
+        stackCornerRadius: [4, 4, 0, 0],
       },
       bar: {
         ...baseConfig,
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect,
-        stackCornerRadius: [4, 4, 4, 4],
+        stackCornerRadius: [0, 4, 4, 0],
       },
       barParallel: {
         ...baseConfig,
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect,
-        stackCornerRadius: [4, 4, 4, 4],
+        stackCornerRadius: [0, 4, 4, 0],
       },
       barPercent: {
         ...baseConfig,
         xAxis: linearAxis,
         yAxis: barBandAxis,
         crosshairRect,
-        stackCornerRadius: [4, 4, 4, 4],
+        stackCornerRadius: [0, 4, 4, 0],
       },
       area: {
         ...baseConfig,
@@ -284,37 +285,9 @@ export const lightTheme = (): CustomThemeConfig => {
       // other
       funnel: {
         ...baseConfig,
-        color: {
-          colorScheme: [
-            '#5766EC',
-            '#6372F0',
-            '#7080F4',
-            '#7C8CFA',
-            '#8998FF',
-            '#95A3FF',
-            '#A0AEFF',
-            '#ACB9FF',
-            '#B7C4FF',
-            '#C2CEFF',
-          ].reverse(),
-        },
       },
       heatmap: {
         ...baseConfig,
-        color: {
-          colorScheme: [
-            '#5766EC',
-            '#6372F0',
-            '#7080F4',
-            '#7C8CFA',
-            '#8998FF',
-            '#95A3FF',
-            '#A0AEFF',
-            '#ACB9FF',
-            '#B7C4FF',
-            '#C2CEFF',
-          ].reverse(),
-        },
       },
     },
   }

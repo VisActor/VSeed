@@ -8,16 +8,17 @@ export const areaStyle: SpecPipe = (spec, context) => {
   const { markStyle, datasetReshapeInfo, dataset } = advancedVSeed
   const { areaStyle } = markStyle
   const { unfoldInfo } = datasetReshapeInfo[0]
+  const result = {
+    ...spec,
+    area: {
+      visible: true,
+      style: {},
+    },
+  } as IAreaChartSpec
 
   if (!areaStyle) {
-    return {
-      ...spec,
-      area: {
-        visible: true,
-      },
-    }
+    return result
   }
-  const result = { ...spec } as IAreaChartSpec
 
   const areaStyles = (Array.isArray(areaStyle) ? areaStyle : [areaStyle]) as AreaStyle[]
 
@@ -54,6 +55,7 @@ export const areaStyle: SpecPipe = (spec, context) => {
   return {
     ...result,
     area: {
+      ...result.area,
       visible: true,
       state: {
         ...customMap,

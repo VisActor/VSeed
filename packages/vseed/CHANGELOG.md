@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.2
+
+### Patch Changes
+
+- feat: add linear color for encoding
+
 ## 0.1.1
 
 ### Patch Changes

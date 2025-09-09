@@ -1,10 +1,19 @@
 # @visactor/vseed
 
+## 0.1.1
+
+### Patch Changes
+
+- - docs: update docs for encoding
+  - feat: optimize the default x,y,color,detail of encoding
+  - fix: bad cases in encoding
+
 ## 0.1.0
 
 ### Minor Changes
 
 break changes:
+
 - remove areaRange
 - remove groupId in dataset
 - remove groupColor in dataset
@@ -12,8 +21,8 @@ break changes:
 - rewrite all the dataReshape
 
 features:
-- add encoding for all chart types
 
+- add encoding for all chart types
 
 ## 0.0.40
 

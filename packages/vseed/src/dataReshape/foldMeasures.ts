@@ -18,21 +18,17 @@ export const foldMeasures = (
   dataset: Dataset,
   measures: Dimension[],
   encoding: Encoding,
-  options?: {
-    measureId?: string
-    measureName?: string
-    measureValue?: string
+  options: {
+    measureId: string
+    measureName: string
+    measureValue: string
+    colorMeasureId?: string
   },
 ): {
   dataset: Dataset
   foldInfo: FoldInfo
 } => {
-  const { measureId = FoldMeasureId, measureName = FoldMeasureName, measureValue = FoldMeasureValue } = options || {}
-
-  const colorMeasureId =
-    encoding?.color?.length === 1 && measures.some((m) => m.id === encoding?.color?.[0])
-      ? encoding?.color?.[0]
-      : undefined
+  const { measureId, measureName, measureValue, colorMeasureId } = options || {}
 
   const foldInfo: FoldInfo = {
     measureId,

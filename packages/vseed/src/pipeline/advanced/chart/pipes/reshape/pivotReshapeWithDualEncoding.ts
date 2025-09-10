@@ -1,7 +1,9 @@
 import { dataReshapeByEncoding, FoldPrimaryMeasureValue, FoldSecondaryMeasureValue } from 'src/dataReshape'
+import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
 import { measureDepth } from 'src/pipeline/utils'
 import type {
   AdvancedPipe,
+  AdvancedVSeed,
   ColumnParallel,
   Dataset,
   DatasetReshapeInfo,
@@ -49,7 +51,7 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
 
     const datasets: Dataset[] = []
     const primaryMeasures = measures[0]
-    const secondaryMeasures = (measures[1] || [])
+    const secondaryMeasures = measures[1] || []
 
     if (primaryMeasures && primaryMeasures.children) {
       const {
@@ -58,6 +60,7 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
         unfoldInfo,
       } = dataReshapeByEncoding(dataset, dimensions, primaryMeasures.children, encoding as Encoding, {
         foldMeasureValue: `${FoldPrimaryMeasureValue}${index}`,
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
       })
 
       datasets.push(newDataset)
@@ -72,6 +75,7 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
         unfoldInfo,
       } = dataReshapeByEncoding(dataset, dimensions, secondaryMeasures.children, encoding as Encoding, {
         foldMeasureValue: `${FoldSecondaryMeasureValue}${index}`,
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
       })
 
       datasets.push(newDataset)

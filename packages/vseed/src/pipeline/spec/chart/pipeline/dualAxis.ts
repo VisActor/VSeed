@@ -38,6 +38,15 @@ import {
   dualChartTypeSecondary,
   seriesDualAxis,
   series,
+  colorBarStyleFill,
+  colorPointStyleFill,
+  colorLineStyleFill,
+  colorAreaStyleFill,
+  linearColor,
+  colorAdapter,
+  colorLegend,
+  pivotColorLegend,
+  linearColorForDualAxis,
 } from '../pipes'
 
 const dualAxis: SpecPipeline = [
@@ -50,11 +59,11 @@ const dualAxis: SpecPipeline = [
       tooltipPrimary,
       progressive,
 
-      barStyle,
-      pointStyle,
+      colorBarStyleFill(barStyle),
+      colorPointStyleFill(pointStyle),
       pointStateDimensionHover,
-      lineStyle,
-      areaStyle,
+      colorLineStyleFill(lineStyle),
+      colorAreaStyleFill(areaStyle),
     ],
     [
       initDualAxisSecondary,
@@ -64,20 +73,21 @@ const dualAxis: SpecPipeline = [
       tooltipSecondary,
       progressive,
 
-      barStyle,
-      pointStyle,
+      colorBarStyleFill(barStyle),
+      colorPointStyleFill(pointStyle),
       pointStateDimensionHover,
-      lineStyle,
-      areaStyle,
+      colorLineStyleFill(lineStyle),
+      colorAreaStyleFill(areaStyle),
     ],
   ),
   xBand,
   yLinearPrimary,
   yLinearSecondary,
 
-  color,
+  colorAdapter(color, linearColorForDualAxis),
+  colorAdapter(discreteLegend, colorLegend),
+
   backgroundColor,
-  discreteLegend,
 
   verticalCrosshairRect,
   annotationPoint,
@@ -101,11 +111,11 @@ const pivotDualAxis: SpecPipeline = [
         tooltipPrimary,
         progressive,
 
-        barStyle,
-        pointStyle,
+        colorBarStyleFill(barStyle),
+        colorPointStyleFill(pointStyle),
         pointStateDimensionHover,
-        lineStyle,
-        areaStyle,
+        colorLineStyleFill(lineStyle),
+        colorAreaStyleFill(areaStyle),
       ],
       [
         initDualAxisSecondary,
@@ -115,17 +125,17 @@ const pivotDualAxis: SpecPipeline = [
         tooltipSecondary,
         progressive,
 
-        barStyle,
-        pointStyle,
+        colorBarStyleFill(barStyle),
+        colorPointStyleFill(pointStyle),
         pointStateDimensionHover,
-        lineStyle,
-        areaStyle,
+        colorLineStyleFill(lineStyle),
+        colorAreaStyleFill(areaStyle),
       ],
     ),
     xBand,
     yLinearPrimary,
     yLinearSecondary,
-    color,
+    colorAdapter(color, linearColor),
     backgroundColor,
     verticalCrosshairRect,
     annotationPoint,
@@ -135,7 +145,7 @@ const pivotDualAxis: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotDiscreteLegend,
+  colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
 export const dualAxisSpecPipeline: SpecPipeline = [pivotAdapter(dualAxis, pivotDualAxis)]

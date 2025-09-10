@@ -1,7 +1,9 @@
 import { dataReshapeByEncoding, FoldXMeasureValue, FoldYMeasureValue } from 'src/dataReshape'
+import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
 import { measureDepth } from 'src/pipeline/utils'
 import type {
   AdvancedPipe,
+  AdvancedVSeed,
   ColumnParallel,
   Dataset,
   DatasetReshapeInfo,
@@ -59,6 +61,7 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
       } = dataReshapeByEncoding(dataset, dimensions, xMeasures.children, encoding as Encoding, {
         foldMeasureValue: `${FoldXMeasureValue}${index}`,
         colorItemAsId: true,
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
       })
 
       datasets.push(newDataset)
@@ -74,6 +77,7 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
       } = dataReshapeByEncoding(dataset, dimensions, yMeasures.children, encoding as Encoding, {
         foldMeasureValue: `${FoldYMeasureValue}${index}`,
         colorItemAsId: true,
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
       })
 
       datasets.push(newDataset)

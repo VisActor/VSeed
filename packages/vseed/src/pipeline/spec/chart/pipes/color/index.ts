@@ -1,6 +1,7 @@
 export { color } from './color'
-export { colorAdapter } from './colorAdapter'
+export { colorAdapter, isLinearColor, getColorMeasureId } from './colorAdapter'
 export { linearColor } from './linearColor'
+export { linearColorForDualAxis } from './linearColorForDualAxis'
 export { colorBarStyleFill } from './colorBarStyleFill'
 export { colorLineStyleFill } from './colorLineStyleFill'
 export { colorPointStyleFill } from './colorPointStyleFill'

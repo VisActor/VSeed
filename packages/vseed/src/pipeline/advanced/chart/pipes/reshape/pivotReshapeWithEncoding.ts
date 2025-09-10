@@ -1,5 +1,14 @@
 import { dataReshapeByEncoding, FoldMeasureValue } from 'src/dataReshape'
-import type { AdvancedPipe, ColumnParallel, Dataset, DatasetReshapeInfo, Encoding, MeasureGroup } from 'src/types'
+import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
+import type {
+  AdvancedPipe,
+  AdvancedVSeed,
+  ColumnParallel,
+  Dataset,
+  DatasetReshapeInfo,
+  Encoding,
+  MeasureGroup,
+} from 'src/types'
 
 export const pivotReshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
@@ -39,6 +48,7 @@ export const pivotReshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) =
       unfoldInfo,
     } = dataReshapeByEncoding(dataset, dimensions, measures, encoding as Encoding, {
       foldMeasureValue: `${FoldMeasureValue}${groupId}`,
+      colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
     })
 
     const reshapeInfo = {

@@ -40,6 +40,11 @@ border: true
 
 
 
+:::warning{title=Warning}
+仅离散图例生效
+
+:::
+
 ## labelFontSize
 
 **Type:** `number | undefined`
@@ -96,6 +101,11 @@ shapeType: 'circle'
 
 
 
+:::warning{title=Warning}
+仅离散图例生效
+
+:::
+
 ## position
 
 **Type:** `"left" | "leftTop" | "leftBottom" | "lt" | "lb" | "top" | "topLeft" | "topRight" | "tl" | "tr" | "right" | "rightTop" | "rightBottom" | "rt" | "rb" | "bottom" | "bottomLeft" | "bottomRight" | "bl" | "br" | undefined`
@@ -127,4 +137,9 @@ position: 'rightTop'
 maxSize: 2
 
 
+
+:::warning{title=Warning}
+仅离散图例生效
+
+:::
 

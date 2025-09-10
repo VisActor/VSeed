@@ -9,7 +9,7 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'scatter',
+    chartType: 'dualAxis',
     measures: [
       {
         id: 'sales',
@@ -23,10 +23,11 @@ const Demo = () => {
       },
     ],
     dimensions: [
-      { id: 'year', alias: 'Yearn' },
       { id: 'month', alias: 'Month' },
+      { id: 'year', alias: 'Yearn' },
     ],
     encoding: {
+      x: ['month'],
       color: ['sales'],
       detail: ['__MeaName__', 'year'],
     },

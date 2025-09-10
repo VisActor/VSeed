@@ -38,6 +38,10 @@ yMeasures 如果是多个指标, 则会自动合并, 映射至Y轴
 
 
 
+## id
+
+**Type:** `string`
+
 ## xMeasures
 
 **Type:** `Measure | Measure[] | undefined`

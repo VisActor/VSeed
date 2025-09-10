@@ -13,6 +13,7 @@ export const dataReshapeByEncoding = (
     foldMeasureName?: string
     foldMeasureValue?: string
     colorItemAsId?: boolean
+    colorMeasureId?: string
   },
 ): {
   dataset: Dataset
@@ -24,6 +25,7 @@ export const dataReshapeByEncoding = (
     foldMeasureName = FoldMeasureName,
     foldMeasureValue = FoldMeasureValue,
     colorItemAsId = false,
+    colorMeasureId,
   } = options || {}
 
   // 合并所有指标为1个指标
@@ -31,6 +33,7 @@ export const dataReshapeByEncoding = (
     measureId: foldMeasureId,
     measureName: foldMeasureName,
     measureValue: foldMeasureValue,
+    colorMeasureId,
   })
 
   // 展开指定的维度为指标

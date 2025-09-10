@@ -1,5 +1,6 @@
 import { dataReshapeByEncoding } from 'src/dataReshape'
-import type { AdvancedPipe, ColumnParallel, Encoding } from 'src/types'
+import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
+import type { AdvancedPipe, AdvancedVSeed, ColumnParallel, Encoding } from 'src/types'
 
 export const reshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
@@ -15,7 +16,13 @@ export const reshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
     throw new Error('measures can not be empty')
   }
 
-  const { dataset: newDatasets, foldInfo, unfoldInfo } = dataReshapeByEncoding(dataset, dimensions, measures, encoding as Encoding)
+  const {
+    dataset: newDatasets,
+    foldInfo,
+    unfoldInfo,
+  } = dataReshapeByEncoding(dataset, dimensions, measures, encoding as Encoding, {
+    colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+  })
 
   return {
     ...result,

@@ -1,5 +1,6 @@
 import type { IBarSeriesSpec, ILineSeriesSpec } from '@visactor/vchart'
 import type { SpecPipe } from 'src/types'
+import { isLinearColor } from '../color/colorAdapter'
 
 export const initDualAxisPrimary: SpecPipe = (spec, context) => {
   const result = { ...spec } as IBarSeriesSpec
@@ -33,7 +34,7 @@ export const initDualAxisSecondary: SpecPipe = (spec, context) => {
     result.yField = foldInfoList[1].measureValue
   }
 
-  result.seriesField = unfoldInfo.encodingColorId
+  result.seriesField = isLinearColor(advancedVSeed) ? unfoldInfo.encodingDetail : unfoldInfo.encodingColorId
 
   result.animation = true
 

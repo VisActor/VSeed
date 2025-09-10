@@ -19,6 +19,11 @@ export const isPivotChart = (vseed: VSeed) => {
     return false
   }
 
+  if (isMeasureTreeWithParentId(vseed)) {
+    const parentIds = vseed.measures?.map((measure: Measure) => measure.parentId)
+    return parentIds && parentIds.length > 1
+  }
+
   if (vseed.chartType === 'dualAxis' || vseed.chartType === 'scatter') {
     const { dimensions = [] } = vseed as {
       dimensions: Dimensions
@@ -37,11 +42,6 @@ export const isPivotChart = (vseed: VSeed) => {
         return depth === 3
       }
 
-      if (isMeasureTreeWithParentId(vseed)) {
-        const parentIds = vseed.measures?.map((measure: Measure) => measure.parentId)
-        return parentIds && parentIds.length > 1
-      }
-
       if (vseed.scatterMeasures && vseed.scatterMeasures.length > 1) {
         return true
       }
@@ -51,11 +51,6 @@ export const isPivotChart = (vseed: VSeed) => {
       if (isMeasureTreeWithChildren(vseed)) {
         const depth = measureDepth(vseed.measures)
         return depth === 3
-      }
-
-      if (isMeasureTreeWithParentId(vseed)) {
-        const parentIds = vseed.measures?.map((measure: Measure) => measure.parentId)
-        return parentIds && parentIds.length > 1
       }
 
       if (vseed.dualMeasures && vseed.dualMeasures.length > 1) {

@@ -1,11 +1,11 @@
-import type { Dataset, Datum, VSeed } from 'src/types'
+import type { Dataset, Datum, Measures, VSeed } from 'src/types'
 
 /**
  * @description 获取指标, 无指标时, 自动生成指标
  * @param vseed vseed
  * @returns 指标
  */
-export const getBasicMeasures = (vseed: VSeed) => {
+export const getBasicMeasures = (vseed: VSeed): Measures => {
   const { dataset, measures } = vseed
 
   // 无指标时, 自动生成指标

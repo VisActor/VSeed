@@ -28,6 +28,7 @@ export const EncodingDualAxis = memo(() => {
     ],
     dualMeasures: [
       {
+        id: 'first',
         primaryMeasures: [{ id: 'profit' }, { id: 'sales' }],
         secondaryMeasures: [{ id: 'discount' }],
       },

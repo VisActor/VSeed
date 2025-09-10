@@ -927,7 +927,7 @@ exports[`array 1`] = `
   "markStyle": {},
   "measures": [
     {
-      "alias": "profitsales",
+      "alias": "undefined-profitsales",
       "children": [
         {
           "alias": "profit",
@@ -948,10 +948,10 @@ exports[`array 1`] = `
           "id": "0-secondary",
         },
       ],
-      "id": "profitsales",
+      "id": "undefined-profitsales",
     },
     {
-      "alias": "ratioreturnRatio",
+      "alias": "undefined-ratioreturnRatio",
       "children": [
         {
           "alias": "ratio",
@@ -972,7 +972,7 @@ exports[`array 1`] = `
           "id": "1-secondary",
         },
       ],
-      "id": "ratioreturnRatio",
+      "id": "undefined-ratioreturnRatio",
     },
   ],
 }

@@ -1,7 +1,6 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
   autoDimensions,
-  autoMeasures,
   initAdvancedVSeed,
   theme,
   pivotAdapter,
@@ -12,11 +11,12 @@ import {
   reshapeWithEncoding,
   pivotReshapeWithEncoding,
   encodingForHeatmap,
+  buildMeasures,
 } from '../pipes'
 
 export const heatmapAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  autoMeasures,
+  buildMeasures,
   autoDimensions,
   encodingForHeatmap,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),

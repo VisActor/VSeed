@@ -7,6 +7,10 @@ export const zMeasure = z.object({
   alias: z.string().optional(),
   autoFormat: z.boolean().default(true),
   format: zNumFormat.default({}),
+  encoding: z
+    .enum(['primaryYAxis', 'secondaryYAxis', 'xAxis', 'yAxis', 'angle', 'radius', 'size', 'color', 'label', 'tooltip'])
+    .optional(),
+  parentId: z.string().optional(),
 })
 
 export const zMeasureGroup: z.ZodType<MeasureGroup> = z.object({

@@ -886,7 +886,7 @@ exports[`linearColor 1`] = `
   "markStyle": {},
   "measures": [
     {
-      "alias": "primary",
+      "alias": "Sales",
       "children": [
         {
           "alias": "Sales",
@@ -894,10 +894,10 @@ exports[`linearColor 1`] = `
           "id": "sales",
         },
       ],
-      "id": "primary",
+      "id": "0-primary",
     },
     {
-      "alias": "secondary",
+      "alias": "Profit",
       "children": [
         {
           "alias": "Profit",
@@ -905,7 +905,7 @@ exports[`linearColor 1`] = `
           "id": "profit",
         },
       ],
-      "id": "secondary",
+      "id": "0-secondary",
     },
   ],
 }

@@ -1,7 +1,7 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
   autoDimensions,
-  autoMeasures,
+  buildMeasures,
   initAdvancedVSeed,
   theme,
   pivotAdapter,
@@ -17,7 +17,7 @@ import {
 
 export const barPercentAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  autoMeasures,
+  buildMeasures,
   autoDimensions,
   encodingForBar,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),

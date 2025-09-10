@@ -1,5 +1,3 @@
-export type Encodings = Array<Encoding>
-
 export type Encoding = {
   /**
    * @description X轴映射通道, 支持放入多个维度字段, 不支持放入指标字段, 在笛卡尔坐标系中用于显示离散的X轴, 例如柱状图、折线图、面积图、双轴图

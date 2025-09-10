@@ -123,10 +123,12 @@ export const PivotDualAxisChart = memo(() => {
     ],
     dualMeasures: [
       {
+        id: 'first',
         primaryMeasures: [{ id: 'profit' }],
         secondaryMeasures: [{ id: 'sales' }],
       },
       {
+        id: 'second',
         primaryMeasures: [{ id: 'ratio' }],
         secondaryMeasures: [{ id: 'returnRatio' }],
       },

@@ -273,7 +273,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": -400000,
+        "__MeaValue__sales-profit": -400000,
         "__OriginalData__": {
           "month": "Jan",
           "profit": 10000,
@@ -291,7 +291,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 10000,
+        "__MeaValue__sales-profit": 10000,
         "__OriginalData__": {
           "month": "Jan",
           "profit": 10000,
@@ -309,7 +309,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 400000,
+        "__MeaValue__sales-profit": 400000,
         "__OriginalData__": {
           "month": "Feb",
           "profit": 220000,
@@ -327,7 +327,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 220000,
+        "__MeaValue__sales-profit": 220000,
         "__OriginalData__": {
           "month": "Feb",
           "profit": 220000,
@@ -345,7 +345,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 600000,
+        "__MeaValue__sales-profit": 600000,
         "__OriginalData__": {
           "month": "Mar",
           "profit": 230000,
@@ -363,7 +363,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 230000,
+        "__MeaValue__sales-profit": 230000,
         "__OriginalData__": {
           "month": "Mar",
           "profit": 230000,
@@ -381,7 +381,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 800000,
+        "__MeaValue__sales-profit": 800000,
         "__OriginalData__": {
           "month": "Apr",
           "profit": 340000,
@@ -399,7 +399,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 340000,
+        "__MeaValue__sales-profit": 340000,
         "__OriginalData__": {
           "month": "Apr",
           "profit": 340000,
@@ -417,7 +417,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 1000000,
+        "__MeaValue__sales-profit": 1000000,
         "__OriginalData__": {
           "month": "May",
           "profit": 450000,
@@ -435,7 +435,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 450000,
+        "__MeaValue__sales-profit": 450000,
         "__OriginalData__": {
           "month": "May",
           "profit": 450000,
@@ -453,7 +453,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 1200000,
+        "__MeaValue__sales-profit": 1200000,
         "__OriginalData__": {
           "month": "Jun",
           "profit": 560000,
@@ -471,7 +471,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 560000,
+        "__MeaValue__sales-profit": 560000,
         "__OriginalData__": {
           "month": "Jun",
           "profit": 560000,
@@ -489,7 +489,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 200000,
+        "__MeaValue__sales-profit": 200000,
         "__OriginalData__": {
           "month": "Jan",
           "profit": 110000,
@@ -507,7 +507,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 110000,
+        "__MeaValue__sales-profit": 110000,
         "__OriginalData__": {
           "month": "Jan",
           "profit": 110000,
@@ -525,7 +525,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 400000,
+        "__MeaValue__sales-profit": 400000,
         "__OriginalData__": {
           "month": "Feb",
           "profit": 320000,
@@ -543,7 +543,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 320000,
+        "__MeaValue__sales-profit": 320000,
         "__OriginalData__": {
           "month": "Feb",
           "profit": 320000,
@@ -561,7 +561,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 600000,
+        "__MeaValue__sales-profit": 600000,
         "__OriginalData__": {
           "month": "Mar",
           "profit": 430000,
@@ -579,7 +579,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 430000,
+        "__MeaValue__sales-profit": 430000,
         "__OriginalData__": {
           "month": "Mar",
           "profit": 430000,
@@ -597,7 +597,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 800000,
+        "__MeaValue__sales-profit": 800000,
         "__OriginalData__": {
           "month": "Apr",
           "profit": 540000,
@@ -615,7 +615,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 540000,
+        "__MeaValue__sales-profit": 540000,
         "__OriginalData__": {
           "month": "Apr",
           "profit": 540000,
@@ -633,7 +633,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 1000000,
+        "__MeaValue__sales-profit": 1000000,
         "__OriginalData__": {
           "month": "May",
           "profit": 250000,
@@ -651,7 +651,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 250000,
+        "__MeaValue__sales-profit": 250000,
         "__OriginalData__": {
           "month": "May",
           "profit": 250000,
@@ -669,7 +669,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 1200000,
+        "__MeaValue__sales-profit": 1200000,
         "__OriginalData__": {
           "month": "Jun",
           "profit": 610000,
@@ -687,7 +687,7 @@ exports[`pivotLinaerColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 610000,
+        "__MeaValue__sales-profit": 610000,
         "__OriginalData__": {
           "month": "Jun",
           "profit": 610000,
@@ -717,9 +717,9 @@ exports[`pivotLinaerColorScheme 1`] = `
           -400000,
           1200000,
         ],
-        "measureValue": "__MeaValue__measureGroup",
+        "measureValue": "__MeaValue__sales-profit",
       },
-      "id": "measureGroup",
+      "id": "sales-profit",
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {},
@@ -764,7 +764,7 @@ exports[`pivotLinaerColorScheme 1`] = `
   "markStyle": {},
   "measures": [
     {
-      "alias": "measureGroup",
+      "alias": "Sales-Profit",
       "children": [
         {
           "alias": "Sales",
@@ -777,7 +777,7 @@ exports[`pivotLinaerColorScheme 1`] = `
           "id": "profit",
         },
       ],
-      "id": "measureGroup",
+      "id": "sales-profit",
     },
   ],
 }
@@ -940,7 +940,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "color": {
           "domain": [
             {
-              "dataId": "measureGroup",
+              "dataId": "sales-profit",
               "fields": [
                 "__Dim_Color__",
               ],
@@ -989,7 +989,7 @@ exports[`pivotLinaerColorScheme 2`] = `
               "sortIndex": 0,
             },
           },
-          "id": "measureGroup",
+          "id": "sales-profit",
           "values": undefined,
         },
         "direction": "vertical",
@@ -1057,9 +1057,9 @@ exports[`pivotLinaerColorScheme 2`] = `
           "__Dim_X__",
           "__Dim_Detail__",
         ],
-        "yField": "__MeaValue__measureGroup",
+        "yField": "__MeaValue__sales-profit",
       },
-      "indicatorKey": "measureGroup",
+      "indicatorKey": "sales-profit",
       "style": {
         "padding": [
           1,
@@ -1068,7 +1068,7 @@ exports[`pivotLinaerColorScheme 2`] = `
           1,
         ],
       },
-      "title": "measureGroup",
+      "title": "Sales-Profit",
     },
   ],
   "indicatorsAsCol": false,
@@ -1106,7 +1106,7 @@ exports[`pivotLinaerColorScheme 2`] = `
     "visible": true,
   },
   "records": {
-    "measureGroup": [
+    "sales-profit": [
       {
         "__Dim_ColorId__": "sales",
         "__Dim_Color__": -400000,
@@ -1114,7 +1114,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": -400000,
+        "__MeaValue__sales-profit": -400000,
         "__OriginalData__": {
           "month": "Jan",
           "profit": 10000,
@@ -1132,7 +1132,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 10000,
+        "__MeaValue__sales-profit": 10000,
         "__OriginalData__": {
           "month": "Jan",
           "profit": 10000,
@@ -1150,7 +1150,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 400000,
+        "__MeaValue__sales-profit": 400000,
         "__OriginalData__": {
           "month": "Feb",
           "profit": 220000,
@@ -1168,7 +1168,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 220000,
+        "__MeaValue__sales-profit": 220000,
         "__OriginalData__": {
           "month": "Feb",
           "profit": 220000,
@@ -1186,7 +1186,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 600000,
+        "__MeaValue__sales-profit": 600000,
         "__OriginalData__": {
           "month": "Mar",
           "profit": 230000,
@@ -1204,7 +1204,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 230000,
+        "__MeaValue__sales-profit": 230000,
         "__OriginalData__": {
           "month": "Mar",
           "profit": 230000,
@@ -1222,7 +1222,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 800000,
+        "__MeaValue__sales-profit": 800000,
         "__OriginalData__": {
           "month": "Apr",
           "profit": 340000,
@@ -1240,7 +1240,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 340000,
+        "__MeaValue__sales-profit": 340000,
         "__OriginalData__": {
           "month": "Apr",
           "profit": 340000,
@@ -1258,7 +1258,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 1000000,
+        "__MeaValue__sales-profit": 1000000,
         "__OriginalData__": {
           "month": "May",
           "profit": 450000,
@@ -1276,7 +1276,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 450000,
+        "__MeaValue__sales-profit": 450000,
         "__OriginalData__": {
           "month": "May",
           "profit": 450000,
@@ -1294,7 +1294,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 1200000,
+        "__MeaValue__sales-profit": 1200000,
         "__OriginalData__": {
           "month": "Jun",
           "profit": 560000,
@@ -1312,7 +1312,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 560000,
+        "__MeaValue__sales-profit": 560000,
         "__OriginalData__": {
           "month": "Jun",
           "profit": 560000,
@@ -1330,7 +1330,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 200000,
+        "__MeaValue__sales-profit": 200000,
         "__OriginalData__": {
           "month": "Jan",
           "profit": 110000,
@@ -1348,7 +1348,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 110000,
+        "__MeaValue__sales-profit": 110000,
         "__OriginalData__": {
           "month": "Jan",
           "profit": 110000,
@@ -1366,7 +1366,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 400000,
+        "__MeaValue__sales-profit": 400000,
         "__OriginalData__": {
           "month": "Feb",
           "profit": 320000,
@@ -1384,7 +1384,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 320000,
+        "__MeaValue__sales-profit": 320000,
         "__OriginalData__": {
           "month": "Feb",
           "profit": 320000,
@@ -1402,7 +1402,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 600000,
+        "__MeaValue__sales-profit": 600000,
         "__OriginalData__": {
           "month": "Mar",
           "profit": 430000,
@@ -1420,7 +1420,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 430000,
+        "__MeaValue__sales-profit": 430000,
         "__OriginalData__": {
           "month": "Mar",
           "profit": 430000,
@@ -1438,7 +1438,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 800000,
+        "__MeaValue__sales-profit": 800000,
         "__OriginalData__": {
           "month": "Apr",
           "profit": 540000,
@@ -1456,7 +1456,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 540000,
+        "__MeaValue__sales-profit": 540000,
         "__OriginalData__": {
           "month": "Apr",
           "profit": 540000,
@@ -1474,7 +1474,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 1000000,
+        "__MeaValue__sales-profit": 1000000,
         "__OriginalData__": {
           "month": "May",
           "profit": 250000,
@@ -1492,7 +1492,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 250000,
+        "__MeaValue__sales-profit": 250000,
         "__OriginalData__": {
           "month": "May",
           "profit": 250000,
@@ -1510,7 +1510,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "Sales",
-        "__MeaValue__measureGroup": 1200000,
+        "__MeaValue__sales-profit": 1200000,
         "__OriginalData__": {
           "month": "Jun",
           "profit": 610000,
@@ -1528,7 +1528,7 @@ exports[`pivotLinaerColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "Profit",
-        "__MeaValue__measureGroup": 610000,
+        "__MeaValue__sales-profit": 610000,
         "__OriginalData__": {
           "month": "Jun",
           "profit": 610000,

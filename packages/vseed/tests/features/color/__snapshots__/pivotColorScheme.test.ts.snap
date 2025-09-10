@@ -268,7 +268,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 10,
+        "__MeaValue__profit-sales": 10,
         "__OriginalData__": {
           "date": "2019",
           "profit": 10,
@@ -286,7 +286,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 20,
+        "__MeaValue__profit-sales": 20,
         "__OriginalData__": {
           "date": "2019",
           "profit": 10,
@@ -304,7 +304,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 30,
+        "__MeaValue__profit-sales": 30,
         "__OriginalData__": {
           "date": "2019",
           "profit": 30,
@@ -322,7 +322,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 60,
+        "__MeaValue__profit-sales": 60,
         "__OriginalData__": {
           "date": "2019",
           "profit": 30,
@@ -340,7 +340,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 30,
+        "__MeaValue__profit-sales": 30,
         "__OriginalData__": {
           "date": "2019",
           "profit": 30,
@@ -358,7 +358,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 60,
+        "__MeaValue__profit-sales": 60,
         "__OriginalData__": {
           "date": "2019",
           "profit": 30,
@@ -376,7 +376,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 50,
+        "__MeaValue__profit-sales": 50,
         "__OriginalData__": {
           "date": "2019",
           "profit": 50,
@@ -394,7 +394,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 100,
+        "__MeaValue__profit-sales": 100,
         "__OriginalData__": {
           "date": "2019",
           "profit": 50,
@@ -412,7 +412,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 40,
+        "__MeaValue__profit-sales": 40,
         "__OriginalData__": {
           "date": "2019",
           "profit": 40,
@@ -430,7 +430,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 80,
+        "__MeaValue__profit-sales": 80,
         "__OriginalData__": {
           "date": "2019",
           "profit": 40,
@@ -448,7 +448,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 10,
+        "__MeaValue__profit-sales": 10,
         "__OriginalData__": {
           "date": "2020",
           "profit": 10,
@@ -466,7 +466,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 20,
+        "__MeaValue__profit-sales": 20,
         "__OriginalData__": {
           "date": "2020",
           "profit": 10,
@@ -484,7 +484,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 30,
+        "__MeaValue__profit-sales": 30,
         "__OriginalData__": {
           "date": "2020",
           "profit": 30,
@@ -502,7 +502,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 60,
+        "__MeaValue__profit-sales": 60,
         "__OriginalData__": {
           "date": "2020",
           "profit": 30,
@@ -520,7 +520,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 30,
+        "__MeaValue__profit-sales": 30,
         "__OriginalData__": {
           "date": "2020",
           "profit": 30,
@@ -538,7 +538,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 60,
+        "__MeaValue__profit-sales": 60,
         "__OriginalData__": {
           "date": "2020",
           "profit": 30,
@@ -556,7 +556,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 50,
+        "__MeaValue__profit-sales": 50,
         "__OriginalData__": {
           "date": "2020",
           "profit": 50,
@@ -574,7 +574,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 100,
+        "__MeaValue__profit-sales": 100,
         "__OriginalData__": {
           "date": "2020",
           "profit": 50,
@@ -592,7 +592,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 40,
+        "__MeaValue__profit-sales": 40,
         "__OriginalData__": {
           "date": "2020",
           "profit": 40,
@@ -610,7 +610,7 @@ exports[`pivotColorScheme 1`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 80,
+        "__MeaValue__profit-sales": 80,
         "__OriginalData__": {
           "date": "2020",
           "profit": 40,
@@ -640,9 +640,9 @@ exports[`pivotColorScheme 1`] = `
           10,
           100,
         ],
-        "measureValue": "__MeaValue__measureGroup",
+        "measureValue": "__MeaValue__profit-sales",
       },
-      "id": "measureGroup",
+      "id": "profit-sales",
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
@@ -719,7 +719,7 @@ exports[`pivotColorScheme 1`] = `
   "markStyle": {},
   "measures": [
     {
-      "alias": "measureGroup",
+      "alias": "利润-销售额",
       "children": [
         {
           "alias": "利润",
@@ -730,7 +730,7 @@ exports[`pivotColorScheme 1`] = `
           "id": "sales",
         },
       ],
-      "id": "measureGroup",
+      "id": "profit-sales",
     },
   ],
 }
@@ -946,7 +946,7 @@ exports[`pivotColorScheme 2`] = `
               "sortIndex": 0,
             },
           },
-          "id": "measureGroup",
+          "id": "profit-sales",
           "values": undefined,
         },
         "direction": "vertical",
@@ -1014,9 +1014,9 @@ exports[`pivotColorScheme 2`] = `
           "__Dim_X__",
           "__Dim_Detail__",
         ],
-        "yField": "__MeaValue__measureGroup",
+        "yField": "__MeaValue__profit-sales",
       },
-      "indicatorKey": "measureGroup",
+      "indicatorKey": "profit-sales",
       "style": {
         "padding": [
           1,
@@ -1025,7 +1025,7 @@ exports[`pivotColorScheme 2`] = `
           1,
         ],
       },
-      "title": "measureGroup",
+      "title": "利润-销售额",
     },
   ],
   "indicatorsAsCol": false,
@@ -1182,7 +1182,7 @@ exports[`pivotColorScheme 2`] = `
     "visible": true,
   },
   "records": {
-    "measureGroup": [
+    "profit-sales": [
       {
         "__Dim_ColorId__": "A-利润-profit",
         "__Dim_Color__": "A-利润",
@@ -1190,7 +1190,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 10,
+        "__MeaValue__profit-sales": 10,
         "__OriginalData__": {
           "date": "2019",
           "profit": 10,
@@ -1208,7 +1208,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 20,
+        "__MeaValue__profit-sales": 20,
         "__OriginalData__": {
           "date": "2019",
           "profit": 10,
@@ -1226,7 +1226,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 30,
+        "__MeaValue__profit-sales": 30,
         "__OriginalData__": {
           "date": "2019",
           "profit": 30,
@@ -1244,7 +1244,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 60,
+        "__MeaValue__profit-sales": 60,
         "__OriginalData__": {
           "date": "2019",
           "profit": 30,
@@ -1262,7 +1262,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 30,
+        "__MeaValue__profit-sales": 30,
         "__OriginalData__": {
           "date": "2019",
           "profit": 30,
@@ -1280,7 +1280,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 60,
+        "__MeaValue__profit-sales": 60,
         "__OriginalData__": {
           "date": "2019",
           "profit": 30,
@@ -1298,7 +1298,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 50,
+        "__MeaValue__profit-sales": 50,
         "__OriginalData__": {
           "date": "2019",
           "profit": 50,
@@ -1316,7 +1316,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 100,
+        "__MeaValue__profit-sales": 100,
         "__OriginalData__": {
           "date": "2019",
           "profit": 50,
@@ -1334,7 +1334,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 40,
+        "__MeaValue__profit-sales": 40,
         "__OriginalData__": {
           "date": "2019",
           "profit": 40,
@@ -1352,7 +1352,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 80,
+        "__MeaValue__profit-sales": 80,
         "__OriginalData__": {
           "date": "2019",
           "profit": 40,
@@ -1370,7 +1370,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 10,
+        "__MeaValue__profit-sales": 10,
         "__OriginalData__": {
           "date": "2020",
           "profit": 10,
@@ -1388,7 +1388,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 20,
+        "__MeaValue__profit-sales": 20,
         "__OriginalData__": {
           "date": "2020",
           "profit": 10,
@@ -1406,7 +1406,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 30,
+        "__MeaValue__profit-sales": 30,
         "__OriginalData__": {
           "date": "2020",
           "profit": 30,
@@ -1424,7 +1424,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 60,
+        "__MeaValue__profit-sales": 60,
         "__OriginalData__": {
           "date": "2020",
           "profit": 30,
@@ -1442,7 +1442,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 30,
+        "__MeaValue__profit-sales": 30,
         "__OriginalData__": {
           "date": "2020",
           "profit": 30,
@@ -1460,7 +1460,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 60,
+        "__MeaValue__profit-sales": 60,
         "__OriginalData__": {
           "date": "2020",
           "profit": 30,
@@ -1478,7 +1478,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 50,
+        "__MeaValue__profit-sales": 50,
         "__OriginalData__": {
           "date": "2020",
           "profit": 50,
@@ -1496,7 +1496,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 100,
+        "__MeaValue__profit-sales": 100,
         "__OriginalData__": {
           "date": "2020",
           "profit": 50,
@@ -1514,7 +1514,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
-        "__MeaValue__measureGroup": 40,
+        "__MeaValue__profit-sales": 40,
         "__OriginalData__": {
           "date": "2020",
           "profit": 40,
@@ -1532,7 +1532,7 @@ exports[`pivotColorScheme 2`] = `
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__measureGroup": 80,
+        "__MeaValue__profit-sales": 80,
         "__OriginalData__": {
           "date": "2020",
           "profit": 40,

@@ -17,5 +17,3 @@ export const zEncoding = z.object({
 
   group: z.array(z.string()).nullish().describe('已弃用, 请使用颜色替代'),
 })
-
-export const zEncodings = z.array(zEncoding)

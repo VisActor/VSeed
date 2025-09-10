@@ -1,4 +1,3 @@
-import type { MeasureEncoding } from '../encoding'
 import type { NumFormat } from './format/numFormat'
 
 /**
@@ -42,7 +41,17 @@ export type Measure = {
    * - label: 指标映射的标签, 适用于所有图表
    * - tooltip: 指标映射的提示, 适用于所有图表
    */
-  encoding?: MeasureEncoding | MeasureEncoding[]
+  encoding?:
+    | 'primaryYAxis'
+    | 'secondaryYAxis'
+    | 'xAxis'
+    | 'yAxis'
+    | 'angle'
+    | 'radius'
+    | 'size'
+    | 'color'
+    | 'label'
+    | 'tooltip'
 
   /**
    * @description 以扁平的指标配置形式, 构建树形指标组, parentId指向父级指标组的id, 用于构建指标树

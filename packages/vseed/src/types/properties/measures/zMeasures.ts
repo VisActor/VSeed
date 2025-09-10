@@ -1,14 +1,15 @@
 import { z } from 'zod'
 import { zNumFormat } from './format/numFormat'
 import type { MeasureGroup } from './measures'
-import { zMeasureEncoding } from '../encoding/zMeasureEncoding'
 
 export const zMeasure = z.object({
   id: z.string(),
   alias: z.string().optional(),
   autoFormat: z.boolean().default(true),
   format: zNumFormat.default({}),
-  encoding: zMeasureEncoding.optional(),
+  encoding: z
+    .enum(['primaryYAxis', 'secondaryYAxis', 'xAxis', 'yAxis', 'angle', 'radius', 'size', 'color', 'label', 'tooltip'])
+    .optional(),
   parentId: z.string().optional(),
 })
 

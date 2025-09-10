@@ -20,10 +20,10 @@ function getCoverageData() {
     if (!existsSync(coveragePath)) {
       console.log('coverage-summary.json not found, using fallback data');
       return {
-        lines: 96,
-        statements: 96,
-        functions: 96,
-        branches: 96,
+        lines: 0,
+        statements: 0,
+        functions: 0,
+        branches: 0,
         color: 'brightgreen',
         badgeUrl: 'https://img.shields.io/badge/Coverage-96%25-brightgreen.svg'
       };

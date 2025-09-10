@@ -1,5 +1,6 @@
-import type { Dimensions, DimensionGroup, DimensionTree, VSeed } from 'src/types'
+import type { Dimensions, DimensionGroup, DimensionTree, VSeed, Measure } from 'src/types'
 import { measureDepth } from './measures'
+import { isMeasureTreeWithChildren, isMeasureTreeWithParentId } from '../advanced/chart/pipes/measures/utils'
 
 export const isTable = (vseed: VSeed) => {
   return vseed.chartType === 'table'
@@ -31,25 +32,30 @@ export const isPivotChart = (vseed: VSeed) => {
     }
 
     if (vseed.chartType === 'scatter') {
-      if (vseed.measures) {
+      if (isMeasureTreeWithChildren(vseed)) {
         const depth = measureDepth(vseed.measures)
-        if (depth === 3) {
-          return true
-        }
-        return false
+        return depth === 3
+      }
+
+      if (isMeasureTreeWithParentId(vseed)) {
+        const parentIds = vseed.measures?.map((measure: Measure) => measure.parentId)
+        return parentIds && parentIds.length > 1
       }
 
       if (vseed.scatterMeasures && vseed.scatterMeasures.length > 1) {
         return true
       }
+      return false
     }
     if (vseed.chartType === 'dualAxis') {
-      if (vseed.measures) {
+      if (isMeasureTreeWithChildren(vseed)) {
         const depth = measureDepth(vseed.measures)
-        if (depth === 3) {
-          return true
-        }
-        return false
+        return depth === 3
+      }
+
+      if (isMeasureTreeWithParentId(vseed)) {
+        const parentIds = vseed.measures?.map((measure: Measure) => measure.parentId)
+        return parentIds && parentIds.length > 1
       }
 
       if (vseed.dualMeasures && vseed.dualMeasures.length > 1) {

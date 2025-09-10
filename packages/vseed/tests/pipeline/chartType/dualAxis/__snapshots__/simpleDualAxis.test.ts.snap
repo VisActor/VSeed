@@ -1019,17 +1019,17 @@ exports[`simpleDualAxis 1`] = `
   "markStyle": {},
   "measures": [
     {
-      "alias": "primary",
+      "alias": "goalProfit",
       "children": [
         {
           "alias": "goalProfit",
           "id": "goalProfit",
         },
       ],
-      "id": "primary",
+      "id": "0-primary",
     },
     {
-      "alias": "secondary",
+      "alias": "profit,sales,leftCount,salesCount",
       "children": [
         {
           "alias": "profit",
@@ -1048,7 +1048,7 @@ exports[`simpleDualAxis 1`] = `
           "id": "salesCount",
         },
       ],
-      "id": "secondary",
+      "id": "0-secondary",
     },
   ],
 }

@@ -10,15 +10,15 @@ import {
   dualAxisConfig,
   encodingForDualAxis,
   autoDimensions,
-  autoDualMeasures,
   reshapeWithDualEncoding,
   pivotReshapeWithDualEncoding,
+  buildMeasuresForDualAxis,
 } from '../pipes'
 
 export const dualAxisAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  autoDualMeasures,
   autoDimensions,
+  buildMeasuresForDualAxis,
   encodingForDualAxis,
   pivotAdapter([reshapeWithDualEncoding], [pivotReshapeWithDualEncoding]),
   sortXBandAxis,

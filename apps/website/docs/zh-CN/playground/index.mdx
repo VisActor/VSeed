@@ -14,12 +14,24 @@ const Demo = () => {
       {
         id: 'sales',
         alias: 'Sales',
-        autoFormat: true,
+        parentId: 'chart1',
+        encoding: ['primaryYAxis'],
       },
       {
         id: 'profit',
         alias: 'Profit',
-        autoFormat: true,
+        parentId: 'chart1',
+        encoding: ['secondaryYAxis'],
+      },
+      {
+        id: 'sales',
+        alias: 'Sales',
+        parentId: 'chart2',
+      },
+      {
+        id: 'profit',
+        alias: 'Profit',
+        parentId: 'chart2',
       },
     ],
     dimensions: [
@@ -28,7 +40,7 @@ const Demo = () => {
     ],
     encoding: {
       x: ['month'],
-      color: ['sales'],
+      color: ['year', '__MeaName__'],
       detail: ['__MeaName__', 'year'],
     },
     dataset: [

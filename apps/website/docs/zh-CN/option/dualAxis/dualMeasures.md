@@ -230,7 +230,7 @@ secondaryMeasures 如果是多个指标, 则会自动合并
 
 ### encoding
 
-**Type:** `MeasureEncoding | MeasureEncoding[] | undefined`
+**Type:** `"color" | "label" | "tooltip" | "primaryYAxis" | "secondaryYAxis" | "xAxis" | "yAxis" | "angle" | "radius" | "size" | undefined`
 
 :::note{title=描述}
 指标映射的通道
@@ -459,7 +459,7 @@ secondaryMeasures 如果是多个指标, 则会自动合并
 
 ### encoding
 
-**Type:** `MeasureEncoding | MeasureEncoding[] | undefined`
+**Type:** `"color" | "label" | "tooltip" | "primaryYAxis" | "secondaryYAxis" | "xAxis" | "yAxis" | "angle" | "radius" | "size" | undefined`
 
 :::note{title=描述}
 指标映射的通道

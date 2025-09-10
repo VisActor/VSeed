@@ -247,7 +247,7 @@ measures可以使用1个指标组, 再嵌套2个指标组, 绘制组合散点图
 
 ## encoding
 
-**Type:** `MeasureEncoding | MeasureEncoding[] | undefined`
+**Type:** `"color" | "label" | "tooltip" | "primaryYAxis" | "secondaryYAxis" | "xAxis" | "yAxis" | "angle" | "radius" | "size" | undefined`
 
 :::note{title=描述}
 指标映射的通道

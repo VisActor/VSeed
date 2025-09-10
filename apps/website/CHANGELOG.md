@@ -1,5 +1,13 @@
 # website
 
+## 0.1.3
+
+### Patch Changes
+
+- feat: add measure encoding for all charts
+- Updated dependencies
+  - @visactor/vseed@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes

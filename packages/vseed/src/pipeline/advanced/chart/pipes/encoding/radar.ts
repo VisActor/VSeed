@@ -1,43 +1,79 @@
 import { unique } from 'remeda'
-import type { AdvancedPipe, Encoding, Radar } from 'src/types'
+import { MeasureName } from 'src/dataReshape'
+import { findAllMeasures } from 'src/pipeline/utils'
+import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
+import { getBasicDimensions } from '../init'
+import { getBasicMeasures } from '../measures'
 
 export const encodingForRadar: AdvancedPipe = (advancedVSeed, context) => {
-  const { vseed } = context as {
-    vseed: Radar
-  }
-  const { dimensions } = advancedVSeed
-  if (!dimensions) {
-    return advancedVSeed
-  }
+  const { vseed } = context
+  const { measures: vseedMeasures = [] } = vseed
+  // prepare measures and dimensions
+  const measures = vseedMeasures.length ? findAllMeasures(vseedMeasures) : getBasicMeasures(vseed)
+  const dimensions = getBasicDimensions(vseed)
 
-  const encoding = vseed.encoding
+  // exist encoding condition
+  const hasDimensionEncoding = dimensions.some((item: Dimension) => item.encoding)
+  const hasMeasureEncoding = measures.some((item: Measure) => item.encoding)
 
-  if (encoding) {
-    const angle = encoding.angle || [dimensions[0].id]
-    const color = encoding.color || [(dimensions[1] || dimensions[0]).id]
-    const detail = encoding.detail || []
+  // encoding for modify in place
+  const encoding: Encoding = {}
 
-    const mergedDetail = detail.length === 0 ? unique([...color, ...detail]) : detail
-    return {
-      ...advancedVSeed,
-      encoding: {
-        ...encoding,
-        angle,
-        color,
-        detail: mergedDetail,
-      },
-    }
+  if (hasDimensionEncoding) {
+    generateDimensionEncoding(dimensions, encoding)
+  } else {
+    generateDefaultDimensionEncoding(dimensions, encoding)
   }
 
-  const mergedEncoding: Encoding = {
-    angle: dimensions.slice(0, 1).map((item) => item.id), // 第一个维度放置于angle轴
-    color: dimensions.slice(1).map((item) => item.id), // 第二个之后的维度用于颜色
-    detail: dimensions.slice(1).map((item) => item.id), // 第二个之后的维度进行细分
-    tooltip: dimensions.map((item) => item.id), // 展示所有维度
-    label: [], // 默认不展示标签
-    row: [], // 默认不进行行透视
-    column: [], // 默认不进行列透视
+  if (hasMeasureEncoding) {
+    generateMeasureEncoding(measures, encoding)
+  } else {
+    generateDefaultMeasureEncoding(measures, encoding)
   }
 
-  return { ...advancedVSeed, encoding: mergedEncoding }
+  return { ...advancedVSeed, encoding }
+}
+
+const generateDefaultMeasureEncoding = (measures: Measures, encoding: Encoding) => {
+  encoding.tooltip = unique(measures.map((item) => item.id))
+  encoding.radius = unique(measures.filter((item) => item.encoding === 'radius' || !item.encoding).map((item) => item.id))
+}
+
+const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
+  const onlyMeasureName = dimensions.length === 1 && dimensions.find((item) => item.id === MeasureName)
+  const uniqueDimIds = unique(dimensions.map((d) => d.id))
+
+  encoding.angle = uniqueDimIds.slice(0, 1) // 第一个维度放置于X轴
+  encoding.color = uniqueDimIds.slice(onlyMeasureName ? 0 : 1) // 第二个之后的维度用于颜色
+  encoding.detail = uniqueDimIds.slice(onlyMeasureName ? 0 : 1) // 第二个之后的维度用于详情
+  encoding.tooltip = uniqueDimIds // 展示所有维度
+  encoding.label = [] // 默认不展示标签
+  encoding.row = [] // 默认不进行行透视
+  encoding.column = [] // 默认不进行列透视
+}
+
+const generateMeasureEncoding = (measures: Measures, encoding: Encoding) => {
+  encoding.tooltip = measures.map((item) => item.id)
+  encoding.radius = unique(measures.filter((item) => item.encoding === 'radius' || !item.encoding).map((item) => item.id))
+  const color = unique(measures.filter((item) => item.encoding === 'color').map((item) => item.id))
+  if (color.length > 0) {
+    encoding.color = color
+  }
+  return encoding
+}
+
+const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
+  encoding.angle = unique(dimensions.filter((item) => item.encoding === 'angle' || !item.encoding).map((item) => item.id))
+  encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
+  encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))
+
+  if (encoding.angle.length === 0) {
+    encoding.angle = [dimensions[0].id]
+  }
+  if (encoding.color.length === 0) {
+    encoding.color = dimensions.filter((item) => !encoding.angle?.includes(item.id)).map((item) => item.id)
+  }
+  if (encoding.detail.length === 0) {
+    encoding.detail = dimensions.filter((item) => !encoding.angle?.includes(item.id)).map((item) => item.id)
+  }
 }

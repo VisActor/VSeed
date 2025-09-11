@@ -9,7 +9,7 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'line',
+    chartType: 'radar',
     dataset: [
       { date: '2019', type: 'A', profit: 10, profit2: 10, sales: 20 },
       { date: '2019', type: 'B', profit: 30, profit2: 10, sales: 60 },
@@ -25,20 +25,19 @@ const Demo = () => {
     ],
     dimensions: [
       {
-        id: 'date',
-        alias: '日期',
-        encoding: 'xAxis',
-      },
-      {
         id: 'type',
         alias: '类型',
-        encoding: 'detail',
+        encoding: 'angle',
+      },
+      {
+        id: 'date',
+        alias: '日期',
+        encoding: 'color',
       },
     ],
     measures: [
-      { id: 'profit', alias: '利润', encoding: 'yAxis', parentId: '1' },
-      // { id: 'profit', alias: '利润', encoding: 'color', parentId: '1' },
-      { id: 'sales', alias: '销售额', encoding: 'yAxis', parentId: '1' },
+      { id: 'profit', alias: '利润', encoding: 'radius', parentId: '1' },
+      { id: 'sales', alias: '销售额', encoding: 'radius', parentId: '1' },
     ],
   }
 

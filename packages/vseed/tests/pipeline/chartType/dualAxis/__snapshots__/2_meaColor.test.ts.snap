@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`2_meaColor copy 1`] = `
+exports[`2_meaColor 1`] = `
 {
   "annotation": {},
   "chartType": "dualAxis",
@@ -889,7 +889,7 @@ exports[`2_meaColor copy 1`] = `
 }
 `;
 
-exports[`2_meaColor copy 2`] = `
+exports[`2_meaColor 2`] = `
 {
   "axes": [
     {

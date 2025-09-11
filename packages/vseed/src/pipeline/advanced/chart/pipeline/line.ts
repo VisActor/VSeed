@@ -17,9 +17,9 @@ import {
 
 export const lineAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  encodingForLine,
   buildMeasures,
   autoDimensions,
-  encodingForLine,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
   sortXBandAxis,
   sortLegend,

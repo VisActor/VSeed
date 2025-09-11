@@ -1,6 +1,6 @@
-import { MeasureName } from "src/dataReshape"
-import { intl } from "src/i18n"
-import type { Datum, Dimension, Dimensions, VSeed } from "src/types"
+import { MeasureName } from 'src/dataReshape'
+import { intl } from 'src/i18n'
+import type { Datum, Dimension, Dimensions, VSeed } from 'src/types'
 
 export const getBasicDimensions = (vseed: VSeed): Dimensions => {
   const { dimensions, dataset } = vseed
@@ -8,6 +8,7 @@ export const getBasicDimensions = (vseed: VSeed): Dimensions => {
   const MeaName: Dimension = {
     id: MeasureName,
     alias: intl.i18n`指标名称`,
+    encoding: 'detail',
   }
 
   if (!dataset) {

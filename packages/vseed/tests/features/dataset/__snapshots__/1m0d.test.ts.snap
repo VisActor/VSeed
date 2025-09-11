@@ -266,8 +266,6 @@ exports[`1m0d 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "profit-profit",
-      "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "profit",
       "__MeaId__": "profit",
@@ -300,12 +298,8 @@ exports[`1m0d 1`] = `
       "id": "columnParallel",
       "index": 0,
       "unfoldInfo": {
-        "colorIdMap": {
-          "profit-profit": "profit",
-        },
-        "colorItems": [
-          "profit-profit",
-        ],
+        "colorIdMap": {},
+        "colorItems": [],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
         "encodingColorId": "__Dim_ColorId__",
@@ -322,15 +316,10 @@ exports[`1m0d 1`] = `
     },
   ],
   "encoding": {
-    "color": [
-      "__MeaName__",
-    ],
-    "column": [],
+    "color": [],
     "detail": [
       "__MeaName__",
     ],
-    "label": [],
-    "row": [],
     "tooltip": [
       "profit",
     ],
@@ -495,9 +484,7 @@ exports[`1m0d 2`] = `
     },
   },
   "color": {
-    "domain": [
-      "profit-profit",
-    ],
+    "domain": [],
     "range": [
       "#8D72F6",
       "#5766EC",
@@ -553,8 +540,6 @@ exports[`1m0d 2`] = `
     "id": "columnParallel",
     "values": [
       {
-        "__Dim_ColorId__": "profit-profit",
-        "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "profit",
         "__MeaId__": "profit",

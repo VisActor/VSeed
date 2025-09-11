@@ -240,11 +240,17 @@ exports[`onlyMeasures 1`] = `
   },
   "dataset": [
     {
+      "__Dim_ColorId__": "销售额",
+      "__Dim_Color__": "销售额",
+      "__Dim_Detail__": "销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaXValue__": 10000,
       "__MeaYValue__": 200000,
       "__OriginalData__": {
+        "__Dim_ColorId__": "利润",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__": 10000,
@@ -259,11 +265,17 @@ exports[`onlyMeasures 1`] = `
       "sales": 200000,
     },
     {
+      "__Dim_ColorId__": "销售额",
+      "__Dim_Color__": "销售额",
+      "__Dim_Detail__": "销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaXValue__": 20000,
       "__MeaYValue__": 400000,
       "__OriginalData__": {
+        "__Dim_ColorId__": "利润",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__": 20000,
@@ -278,11 +290,17 @@ exports[`onlyMeasures 1`] = `
       "sales": 400000,
     },
     {
+      "__Dim_ColorId__": "销售额",
+      "__Dim_Color__": "销售额",
+      "__Dim_Detail__": "销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaXValue__": 30000,
       "__MeaYValue__": 600000,
       "__OriginalData__": {
+        "__Dim_ColorId__": "利润",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__": 30000,
@@ -297,11 +315,17 @@ exports[`onlyMeasures 1`] = `
       "sales": 600000,
     },
     {
+      "__Dim_ColorId__": "销售额",
+      "__Dim_Color__": "销售额",
+      "__Dim_Detail__": "销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaXValue__": 40000,
       "__MeaYValue__": 800000,
       "__OriginalData__": {
+        "__Dim_ColorId__": "利润",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__": 40000,
@@ -316,11 +340,17 @@ exports[`onlyMeasures 1`] = `
       "sales": 800000,
     },
     {
+      "__Dim_ColorId__": "销售额",
+      "__Dim_Color__": "销售额",
+      "__Dim_Detail__": "销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaXValue__": 50000,
       "__MeaYValue__": 1000000,
       "__OriginalData__": {
+        "__Dim_ColorId__": "利润",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__": 50000,
@@ -390,8 +420,14 @@ exports[`onlyMeasures 1`] = `
       "id": "scatter",
       "index": 0,
       "unfoldInfo": {
-        "colorIdMap": {},
-        "colorItems": [],
+        "colorIdMap": {
+          "利润": "利润",
+          "销售额": "销售额",
+        },
+        "colorItems": [
+          "利润",
+          "销售额",
+        ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
         "encodingColorId": "__Dim_ColorId__",
@@ -408,11 +444,12 @@ exports[`onlyMeasures 1`] = `
     },
   ],
   "encoding": {
-    "color": [],
-    "column": [],
-    "detail": [],
-    "label": [],
-    "row": [],
+    "color": [
+      "__MeaName__",
+    ],
+    "detail": [
+      "__MeaName__",
+    ],
     "tooltip": [
       "sales",
       "profit",
@@ -577,7 +614,10 @@ exports[`onlyMeasures 2`] = `
   ],
   "background": "transparent",
   "color": {
-    "domain": [],
+    "domain": [
+      "利润",
+      "销售额",
+    ],
     "range": [
       "#8D72F6",
       "#5766EC",
@@ -654,11 +694,17 @@ exports[`onlyMeasures 2`] = `
     "id": "scatter",
     "values": [
       {
+        "__Dim_ColorId__": "销售额",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaXValue__": 10000,
         "__MeaYValue__": 200000,
         "__OriginalData__": {
+          "__Dim_ColorId__": "利润",
+          "__Dim_Color__": "利润",
+          "__Dim_Detail__": "利润",
           "__MeaId__": "profit",
           "__MeaName__": "利润",
           "__MeaXValue__": 10000,
@@ -673,11 +719,17 @@ exports[`onlyMeasures 2`] = `
         "sales": 200000,
       },
       {
+        "__Dim_ColorId__": "销售额",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaXValue__": 20000,
         "__MeaYValue__": 400000,
         "__OriginalData__": {
+          "__Dim_ColorId__": "利润",
+          "__Dim_Color__": "利润",
+          "__Dim_Detail__": "利润",
           "__MeaId__": "profit",
           "__MeaName__": "利润",
           "__MeaXValue__": 20000,
@@ -692,11 +744,17 @@ exports[`onlyMeasures 2`] = `
         "sales": 400000,
       },
       {
+        "__Dim_ColorId__": "销售额",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaXValue__": 30000,
         "__MeaYValue__": 600000,
         "__OriginalData__": {
+          "__Dim_ColorId__": "利润",
+          "__Dim_Color__": "利润",
+          "__Dim_Detail__": "利润",
           "__MeaId__": "profit",
           "__MeaName__": "利润",
           "__MeaXValue__": 30000,
@@ -711,11 +769,17 @@ exports[`onlyMeasures 2`] = `
         "sales": 600000,
       },
       {
+        "__Dim_ColorId__": "销售额",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaXValue__": 40000,
         "__MeaYValue__": 800000,
         "__OriginalData__": {
+          "__Dim_ColorId__": "利润",
+          "__Dim_Color__": "利润",
+          "__Dim_Detail__": "利润",
           "__MeaId__": "profit",
           "__MeaName__": "利润",
           "__MeaXValue__": 40000,
@@ -730,11 +794,17 @@ exports[`onlyMeasures 2`] = `
         "sales": 800000,
       },
       {
+        "__Dim_ColorId__": "销售额",
+        "__Dim_Color__": "销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaXValue__": 50000,
         "__MeaYValue__": 1000000,
         "__OriginalData__": {
+          "__Dim_ColorId__": "利润",
+          "__Dim_Color__": "利润",
+          "__Dim_Detail__": "利润",
           "__MeaId__": "profit",
           "__MeaName__": "利润",
           "__MeaXValue__": 50000,

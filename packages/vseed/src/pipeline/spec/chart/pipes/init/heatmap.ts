@@ -15,17 +15,6 @@ export const initHeatmap: SpecPipe = (spec, context) => {
   result.seriesField = unfoldInfo.encodingColorId
   result.valueField = foldInfo.measureValue
   result.padding = 0
-  result.cell = {
-    style: {
-      shape: 'rect',
-      stroke: '#ffffff',
-      lineWidth: 1,
-      // fill: {
-      //   field: encoding[0].color[0],
-      //   scale: 'color',
-      // },
-    },
-  }
   result.axes = [
     {
       type: 'band',

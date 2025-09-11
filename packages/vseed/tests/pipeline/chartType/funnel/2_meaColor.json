@@ -1,0 +1,32 @@
+{
+  "chartType": "funnel",
+  "dataset": [
+    { "date": "2019", "type": "A", "profit": 10, "profit2": 10, "sales": 20 },
+    { "date": "2019", "type": "B", "profit": 30, "profit2": 10, "sales": 60 },
+    { "date": "2019", "type": "C", "profit": 30, "profit2": 10, "sales": 60 },
+    { "date": "2019", "type": "D", "profit": 50, "profit2": 10, "sales": 100 },
+    { "date": "2019", "type": "E", "profit": 40, "profit2": 10, "sales": 80 },
+
+    { "date": "2020", "type": "A", "profit": 100, "profit2": 210, "sales": 210 },
+    { "date": "2020", "type": "B", "profit": 300, "profit2": 120, "sales": 610 },
+    { "date": "2020", "type": "C", "profit": 300, "profit2": 120, "sales": 610 },
+    { "date": "2020", "type": "D", "profit": 500, "profit2": 210, "sales": 100 },
+    { "date": "2020", "type": "E", "profit": 400, "profit2": 210, "sales": 110 }
+  ],
+  "dimensions": [
+    {
+      "id": "type",
+      "alias": "类型",
+      "encoding": "detail"
+    },
+    {
+      "id": "date",
+      "alias": "日期",
+      "encoding": "detail"
+    }
+  ],
+  "measures": [
+    { "id": "profit", "alias": "利润", "encoding": "size", "parentId": "1" },
+    { "id": "sales", "alias": "销售额", "encoding": "color", "parentId": "1" }
+  ]
+}

@@ -555,10 +555,6 @@ exports[`basicFunnel 2`] = `
     },
     "style": {
       "cornerRadius": 4,
-      "fill": {
-        "field": "__Dim_ColorId__",
-        "scale": "color",
-      },
     },
   },
   "isTransform": true,

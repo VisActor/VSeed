@@ -399,11 +399,13 @@ exports[`1m1d 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "profit",
     ],
     "x": [
       "date",
+    ],
+    "y": [
+      "profit",
     ],
   },
   "locale": "zh-CN",

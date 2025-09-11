@@ -1,3 +1,4 @@
+import { uniqueBy } from 'remeda'
 import { dataReshapeByEncoding, FoldMeasureValue } from 'src/dataReshape'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
 import type {
@@ -46,10 +47,16 @@ export const pivotReshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) =
       dataset: newSubDataset,
       foldInfo,
       unfoldInfo,
-    } = dataReshapeByEncoding(dataset, dimensions, measures, encoding as Encoding, {
-      foldMeasureValue: `${FoldMeasureValue}${groupId}`,
-      colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
-    })
+    } = dataReshapeByEncoding(
+      dataset,
+      uniqueBy(dimensions, (item) => item.id),
+      uniqueBy(measures, (item) => item.id),
+      encoding as Encoding,
+      {
+        foldMeasureValue: `${FoldMeasureValue}${groupId}`,
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+      },
+    )
 
     const reshapeInfo = {
       id: groupId,

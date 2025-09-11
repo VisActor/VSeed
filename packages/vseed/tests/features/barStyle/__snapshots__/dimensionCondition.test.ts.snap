@@ -585,11 +585,17 @@ exports[`dimensionCondition 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "profit",
+      "sales",
+      "count",
     ],
     "x": [
       "date",
+    ],
+    "y": [
+      "profit",
+      "sales",
+      "count",
     ],
   },
   "locale": "zh-CN",

@@ -487,11 +487,15 @@ exports[`basicColumnParallel 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "sales",
+      "profit",
     ],
     "x": [
       "date",
+    ],
+    "y": [
+      "sales",
+      "profit",
     ],
   },
   "locale": "zh-CN",

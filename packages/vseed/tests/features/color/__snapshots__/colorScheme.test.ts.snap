@@ -705,12 +705,15 @@ exports[`colorScheme 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "date",
-      "type",
-      "__MeaName__",
+      "profit",
+      "sales",
     ],
     "x": [
       "date",
+    ],
+    "y": [
+      "profit",
+      "sales",
     ],
   },
   "locale": "zh-CN",

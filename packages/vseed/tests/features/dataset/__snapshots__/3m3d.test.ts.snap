@@ -1028,13 +1028,17 @@ exports[`3m3d 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "date",
-      "region",
-      "city",
-      "__MeaName__",
+      "profit",
+      "sales",
+      "discount",
     ],
     "x": [
       "date",
+    ],
+    "y": [
+      "profit",
+      "sales",
+      "discount",
     ],
   },
   "locale": "zh-CN",

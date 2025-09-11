@@ -670,11 +670,19 @@ exports[`zhCN 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "profit",
+      "sales",
+      "discount",
+      "rateOfReturn",
     ],
     "x": [
       "date",
+    ],
+    "y": [
+      "profit",
+      "sales",
+      "discount",
+      "rateOfReturn",
     ],
   },
   "locale": "zh-CN",

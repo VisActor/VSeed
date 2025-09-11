@@ -485,11 +485,15 @@ exports[`dark 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "profit",
+      "sales",
     ],
     "x": [
       "date",
+    ],
+    "y": [
+      "profit",
+      "sales",
     ],
   },
   "locale": "zh-CN",

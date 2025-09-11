@@ -1,4 +1,4 @@
-import type { Dataset, Dimension, Encoding, FoldInfo, Measure, UnfoldInfo } from 'src/types'
+import type { Dataset, Dimension, Encoding, FoldInfo, Measure, Measures, UnfoldInfo } from 'src/types'
 import { foldMeasures } from './foldMeasures'
 import { FoldMeasureId, FoldMeasureName, FoldMeasureValue, Separator } from './constant'
 import { unfoldDimensions } from './unfoldDimensions'
@@ -29,7 +29,7 @@ export const dataReshapeByEncoding = (
   } = options || {}
 
   // 合并所有指标为1个指标
-  const { dataset: foldedDataset, foldInfo } = foldMeasures(dataset, measures, {
+  const { dataset: foldedDataset, foldInfo } = foldMeasures(dataset, measures as Measures, {
     measureId: foldMeasureId,
     measureName: foldMeasureName,
     measureValue: foldMeasureValue,

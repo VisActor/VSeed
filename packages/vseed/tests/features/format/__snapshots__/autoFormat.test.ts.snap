@@ -350,10 +350,15 @@ exports[`autoFormat 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "__MeaName__",
+      "profit",
+      "sales",
     ],
     "x": [
       "__MeaName__",
+    ],
+    "y": [
+      "profit",
+      "sales",
     ],
   },
   "locale": "zh-CN",

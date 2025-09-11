@@ -370,10 +370,17 @@ exports[`3m0d 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "__MeaName__",
+      "profit",
+      "sales",
+      "discount",
     ],
     "x": [
       "__MeaName__",
+    ],
+    "y": [
+      "profit",
+      "sales",
+      "discount",
     ],
   },
   "locale": "zh-CN",

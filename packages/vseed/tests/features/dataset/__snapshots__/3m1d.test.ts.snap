@@ -585,11 +585,17 @@ exports[`3m1d 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "profit",
+      "sales",
+      "discount",
     ],
     "x": [
       "date",
+    ],
+    "y": [
+      "profit",
+      "sales",
+      "discount",
     ],
   },
   "locale": "zh-CN",

@@ -594,11 +594,17 @@ exports[`sortLegendBySelf 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "count",
+      "sales",
+      "profit",
     ],
     "x": [
       "date",
+    ],
+    "y": [
+      "count",
+      "sales",
+      "profit",
     ],
   },
   "locale": "zh-CN",

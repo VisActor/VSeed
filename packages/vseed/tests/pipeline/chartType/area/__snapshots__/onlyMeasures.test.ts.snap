@@ -450,10 +450,15 @@ exports[`onlyMeasures 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "__MeaName__",
+      "sales",
+      "profit",
     ],
     "x": [
       "__MeaName__",
+    ],
+    "y": [
+      "sales",
+      "profit",
     ],
   },
   "locale": "zh-CN",

@@ -546,13 +546,13 @@ exports[`1m3d 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "date",
-      "region",
-      "city",
-      "__MeaName__",
+      "profit",
     ],
     "x": [
       "date",
+    ],
+    "y": [
+      "profit",
     ],
   },
   "locale": "zh-CN",

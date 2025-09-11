@@ -1,5 +1,5 @@
 {
-  "chartType": "columnParallel",
+  "chartType": "barParallel",
   "dataset": [
     { "date": "2019", "type": "A", "profit": 10, "profit2": 10, "sales": 20 },
     { "date": "2019", "type": "B", "profit": 30, "profit2": 10, "sales": 60 },
@@ -17,7 +17,7 @@
     {
       "id": "date",
       "alias": "日期",
-      "encoding": "x"
+      "encoding": "yAxis"
     },
     {
       "id": "type",
@@ -26,12 +26,15 @@
     },
     {
       "id": "__MeaName__",
-      "alias": "指标名称",
+      "encoding": "detail"
+    },
+    {
+      "id": "__MeaName__",
       "encoding": "color"
     }
   ],
   "measures": [
-    { "id": "profit", "alias": "利润", "encoding": "yAxis" },
+    { "id": "profit", "alias": "利润", "encoding": "xAxis" },
     { "id": "sales", "alias": "销售额", "encoding": "color" }
   ]
 }

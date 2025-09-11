@@ -17,7 +17,7 @@
     {
       "id": "date",
       "alias": "日期",
-      "encoding": "x"
+      "encoding": "xAxis"
     },
     {
       "id": "type",
@@ -26,7 +26,7 @@
     },
     {
       "id": "__MeaName__",
-      "encoding": "x"
+      "encoding": "xAxis"
     }
   ],
   "measures": [

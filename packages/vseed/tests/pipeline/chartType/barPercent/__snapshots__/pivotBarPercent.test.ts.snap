@@ -1396,10 +1396,12 @@ exports[`pivotBarPercent 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "month",
-      "date",
-      "type",
-      "__MeaName__",
+      "sales",
+      "profit",
+    ],
+    "x": [
+      "sales",
+      "profit",
     ],
     "y": [
       "month",

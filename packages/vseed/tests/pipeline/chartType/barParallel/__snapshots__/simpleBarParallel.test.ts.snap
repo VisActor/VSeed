@@ -868,9 +868,18 @@ exports[`simpleBarParallel 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "date",
-      "type",
-      "__MeaName__",
+      "goalProfit",
+      "profit",
+      "sales",
+      "leftCount",
+      "salesCount",
+    ],
+    "x": [
+      "goalProfit",
+      "profit",
+      "sales",
+      "leftCount",
+      "salesCount",
     ],
     "y": [
       "date",

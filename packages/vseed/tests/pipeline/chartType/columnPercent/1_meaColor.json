@@ -17,14 +17,17 @@
     {
       "id": "date",
       "alias": "日期",
-      "encoding": "x"
+      "encoding": "xAxis"
     },
     {
       "id": "type",
-      "alias": "类型"
+      "alias": "类型",
+      "encoding": "detail"
     },
     {
-      "id": "__MeaName__"
+      "id": "__MeaName__",
+      "alias": "指标",
+      "encoding": "xAxis"
     }
   ],
   "measures": [

@@ -585,8 +585,14 @@ exports[`array 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "profit",
+      "sales",
+      "count",
+    ],
+    "x": [
+      "profit",
+      "sales",
+      "count",
     ],
     "y": [
       "date",

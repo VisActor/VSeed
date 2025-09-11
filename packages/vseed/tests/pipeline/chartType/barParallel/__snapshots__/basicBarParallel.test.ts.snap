@@ -487,8 +487,12 @@ exports[`basicBarParallel 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "sales",
+      "profit",
+    ],
+    "x": [
+      "sales",
+      "profit",
     ],
     "y": [
       "date",

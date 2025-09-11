@@ -708,10 +708,13 @@ exports[`1_meaColor 1`] = `
     },
     {
       "alias": "类型",
+      "encoding": "detail",
       "id": "type",
       "location": "dimension",
     },
     {
+      "alias": "指标名称",
+      "encoding": "detail",
       "id": "__MeaName__",
       "location": "dimension",
     },

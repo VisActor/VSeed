@@ -21,10 +21,12 @@
     },
     {
       "id": "type",
-      "alias": "类型"
+      "alias": "类型",
+      "encoding": "detail"
     },
     {
       "id": "__MeaName__",
+      "alias": "指标名称",
       "encoding": "color"
     }
   ],

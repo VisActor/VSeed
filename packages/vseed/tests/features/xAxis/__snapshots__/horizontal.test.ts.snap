@@ -1321,8 +1321,12 @@ exports[`horizontal 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "profit",
+      "sales",
+    ],
+    "x": [
+      "profit",
+      "sales",
     ],
     "y": [
       "date",

@@ -66,14 +66,13 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) =
   encoding.y = unique(dimensions.filter((item) => item.encoding === 'yAxis' || !item.encoding).map((item) => item.id))
   encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
   encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))
-
   if (encoding.y.length === 0) {
     encoding.y = [dimensions[0].id]
   }
   if (encoding.color.length === 0) {
-    encoding.color = dimensions.filter((item) => !encoding.x?.includes(item.id)).map((item) => item.id)
+    encoding.color = dimensions.filter((item) => !encoding.y?.includes(item.id)).map((item) => item.id)
   }
   if (encoding.detail.length === 0) {
-    encoding.detail = dimensions.filter((item) => !encoding.x?.includes(item.id)).map((item) => item.id)
+    encoding.detail = dimensions.filter((item) => !encoding.y?.includes(item.id)).map((item) => item.id)
   }
 }

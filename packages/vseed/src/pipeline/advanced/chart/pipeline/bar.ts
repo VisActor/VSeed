@@ -17,9 +17,9 @@ import {
 
 export const barAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  encodingForBar,
   buildMeasures,
   autoDimensions,
-  encodingForBar,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
   sortYBandAxis,
   sortLegend,

@@ -1,5 +1,12 @@
 # @visactor/vseed
 
+## 0.1.4
+
+### Patch Changes
+
+- feat: add encoding for measures and dimensions
+- break changes: optimize the default encoding for all chart types
+
 ## 0.1.3
 
 ### Patch Changes

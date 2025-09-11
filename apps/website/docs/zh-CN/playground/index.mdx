@@ -9,7 +9,7 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'pie',
+    chartType: 'heatmap',
     dataset: [
       { date: '2019', type: 'A', profit: 10, profit2: 10, sales: 20 },
       { date: '2019', type: 'B', profit: 30, profit2: 10, sales: 60 },
@@ -27,17 +27,22 @@ const Demo = () => {
       {
         id: 'type',
         alias: '类型',
-        encoding: 'angle',
+        encoding: 'yAxis',
       },
       {
         id: 'date',
         alias: '日期',
-        encoding: 'angle',
+        encoding: 'xAxis',
+      },
+      {
+        id: '__MeaName__',
+        alias: '日期',
+        encoding: 'color',
       },
     ],
     measures: [
-      { id: 'profit', alias: '利润', encoding: 'radius', parentId: '1' },
-      { id: 'sales', alias: '销售额', encoding: 'radius', parentId: '1' },
+      { id: 'profit', alias: '利润', encoding: 'detail', parentId: '1' },
+      { id: 'sales', alias: '销售额', encoding: 'detail', parentId: '1' },
     ],
   }
 

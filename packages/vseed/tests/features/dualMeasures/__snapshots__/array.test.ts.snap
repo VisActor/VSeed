@@ -916,11 +916,19 @@ exports[`array 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "profit",
+      "sales",
+      "ratio",
+      "returnRatio",
     ],
     "x": [
       "date",
+    ],
+    "y": [
+      "profit",
+      "sales",
+      "ratio",
+      "returnRatio",
     ],
   },
   "locale": "zh-CN",

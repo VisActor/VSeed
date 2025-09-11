@@ -1458,13 +1458,15 @@ exports[`pivotDualAxis 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "month",
-      "date",
-      "type",
-      "__MeaName__",
+      "sales",
+      "profit",
     ],
     "x": [
       "month",
+    ],
+    "y": [
+      "sales",
+      "profit",
     ],
   },
   "locale": "zh-CN",

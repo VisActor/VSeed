@@ -1,6 +1,7 @@
 import type { Dimensions, DimensionGroup, DimensionTree, VSeed, Measure } from 'src/types'
 import { measureDepth } from './measures'
 import { isMeasureTreeWithChildren, isMeasureTreeWithParentId } from '../advanced/chart/pipes/measures/utils'
+import { unique } from 'remeda'
 
 export const isTable = (vseed: VSeed) => {
   return vseed.chartType === 'table'
@@ -21,7 +22,7 @@ export const isPivotChart = (vseed: VSeed) => {
 
   if (isMeasureTreeWithParentId(vseed)) {
     const parentIds = vseed.measures?.map((measure: Measure) => measure.parentId)
-    return parentIds && parentIds.length > 1
+    return parentIds && unique(parentIds).length > 1
   }
 
   if (vseed.chartType === 'dualAxis' || vseed.chartType === 'scatter') {

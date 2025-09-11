@@ -1,5 +1,4 @@
 import { unique } from 'remeda'
-import { MeasureName } from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
 import { getBasicDimensions } from '../init'
@@ -42,16 +41,15 @@ const generateDefaultMeasureEncoding = (measures: Measures, encoding: Encoding) 
 }
 
 const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
-  const onlyMeasureName = dimensions.length === 1 && dimensions.find((item) => item.id === MeasureName)
   const uniqueDimIds = unique(dimensions.map((d) => d.id))
 
-  encoding.angle = uniqueDimIds.slice(0, 1) // 第一个维度放置于X轴
-  encoding.color = uniqueDimIds.slice(onlyMeasureName ? 0 : 1) // 第二个之后的维度用于颜色
-  encoding.detail = uniqueDimIds.slice(onlyMeasureName ? 0 : 1) // 第二个之后的维度用于详情
+  encoding.angle = uniqueDimIds.slice(0, 1)
+  encoding.color = uniqueDimIds.slice(1)
   encoding.tooltip = uniqueDimIds // 展示所有维度
-  encoding.label = [] // 默认不展示标签
-  encoding.row = [] // 默认不进行行透视
-  encoding.column = [] // 默认不进行列透视
+  encoding.detail = [] // 雷达图暂不支持细分
+  encoding.label = []
+  encoding.row = []
+  encoding.column = []
 }
 
 const generateMeasureEncoding = (measures: Measures, encoding: Encoding) => {
@@ -66,19 +64,14 @@ const generateMeasureEncoding = (measures: Measures, encoding: Encoding) => {
 }
 
 const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
-  encoding.angle = unique(
-    dimensions.filter((item) => item.encoding === 'angle' || !item.encoding).map((item) => item.id),
-  )
+  encoding.angle = unique(dimensions.filter((item) => item.encoding === 'angle').map((item) => item.id))
   encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
-  encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))
+  encoding.detail = []
 
   if (encoding.angle.length === 0) {
     encoding.angle = [dimensions[0].id]
   }
   if (encoding.color.length === 0) {
     encoding.color = dimensions.filter((item) => !encoding.angle?.includes(item.id)).map((item) => item.id)
-  }
-  if (encoding.detail.length === 0) {
-    encoding.detail = dimensions.filter((item) => !encoding.angle?.includes(item.id)).map((item) => item.id)
   }
 }

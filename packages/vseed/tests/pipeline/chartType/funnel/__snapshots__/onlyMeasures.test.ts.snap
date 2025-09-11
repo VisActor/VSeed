@@ -265,9 +265,12 @@ exports[`onlyMeasures 1`] = `
     "color": [
       "__MeaName__",
     ],
+    "column": [],
     "detail": [
       "__MeaName__",
     ],
+    "label": [],
+    "row": [],
     "size": [
       "sales",
       "profit",
@@ -481,10 +484,6 @@ exports[`onlyMeasures 2`] = `
     },
     "style": {
       "cornerRadius": 4,
-      "fill": {
-        "field": "__Dim_ColorId__",
-        "scale": "color",
-      },
     },
   },
   "isTransform": true,

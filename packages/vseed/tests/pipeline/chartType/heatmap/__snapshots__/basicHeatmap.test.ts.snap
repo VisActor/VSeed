@@ -285,9 +285,12 @@ exports[`basicHeatmap 1`] = `
       "sales",
       "profit",
     ],
+    "column": [],
     "detail": [
       "__MeaName__",
     ],
+    "label": [],
+    "row": [],
     "tooltip": [
       "sales",
       "profit",
@@ -580,24 +583,7 @@ exports[`basicHeatmap 2`] = `
     "type": "discrete",
     "visible": true,
   },
-  "line": {
-    "style": {},
-  },
   "padding": 0,
-  "point": {
-    "state": {
-      "dimension_hover": {
-        "outerBorder": {
-          "distance": 2,
-          "lineWidth": 4,
-          "strokeOpacity": 0.25,
-        },
-        "scaleX": 1.4,
-        "scaleY": 1.4,
-      },
-    },
-    "style": {},
-  },
   "region": [
     {
       "clip": true,

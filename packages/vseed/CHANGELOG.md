@@ -1,5 +1,12 @@
 # @visactor/vseed
 
+## 0.1.5
+
+### Patch Changes
+
+- feat: add color encoding for all chart types
+- fix: all chart default encoding error
+
 ## 0.1.4
 
 ### Patch Changes

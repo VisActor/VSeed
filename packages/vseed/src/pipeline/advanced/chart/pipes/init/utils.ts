@@ -8,7 +8,6 @@ export const getBasicDimensions = (vseed: VSeed): Dimensions => {
   const MeaName: Dimension = {
     id: MeasureName,
     alias: intl.i18n`指标名称`,
-    encoding: 'detail',
   }
 
   if (!dataset) {

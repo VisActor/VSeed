@@ -242,7 +242,7 @@ exports[`2_meaColor 1`] = `
     {
       "__Dim_ColorId__": "profit",
       "__Dim_Color__": 10,
-      "__Dim_Detail__": "A-销售额",
+      "__Dim_Detail__": "A",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaXValue__": 10,
@@ -250,7 +250,7 @@ exports[`2_meaColor 1`] = `
       "__OriginalData__": {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 10,
-        "__Dim_Detail__": "A-利润",
+        "__Dim_Detail__": "A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__": 10,
@@ -276,7 +276,7 @@ exports[`2_meaColor 1`] = `
     {
       "__Dim_ColorId__": "profit",
       "__Dim_Color__": 30,
-      "__Dim_Detail__": "B-销售额",
+      "__Dim_Detail__": "B",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaXValue__": 30,
@@ -284,7 +284,7 @@ exports[`2_meaColor 1`] = `
       "__OriginalData__": {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 30,
-        "__Dim_Detail__": "B-利润",
+        "__Dim_Detail__": "B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__": 30,
@@ -310,7 +310,7 @@ exports[`2_meaColor 1`] = `
     {
       "__Dim_ColorId__": "profit",
       "__Dim_Color__": 30,
-      "__Dim_Detail__": "C-销售额",
+      "__Dim_Detail__": "C",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaXValue__": 30,
@@ -318,7 +318,7 @@ exports[`2_meaColor 1`] = `
       "__OriginalData__": {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 30,
-        "__Dim_Detail__": "C-利润",
+        "__Dim_Detail__": "C",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__": 30,
@@ -344,7 +344,7 @@ exports[`2_meaColor 1`] = `
     {
       "__Dim_ColorId__": "profit",
       "__Dim_Color__": 50,
-      "__Dim_Detail__": "D-销售额",
+      "__Dim_Detail__": "D",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaXValue__": 50,
@@ -352,7 +352,7 @@ exports[`2_meaColor 1`] = `
       "__OriginalData__": {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 50,
-        "__Dim_Detail__": "D-利润",
+        "__Dim_Detail__": "D",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__": 50,
@@ -378,7 +378,7 @@ exports[`2_meaColor 1`] = `
     {
       "__Dim_ColorId__": "profit",
       "__Dim_Color__": 40,
-      "__Dim_Detail__": "E-销售额",
+      "__Dim_Detail__": "E",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaXValue__": 40,
@@ -386,7 +386,7 @@ exports[`2_meaColor 1`] = `
       "__OriginalData__": {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 40,
-        "__Dim_Detail__": "E-利润",
+        "__Dim_Detail__": "E",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__": 40,
@@ -412,7 +412,7 @@ exports[`2_meaColor 1`] = `
     {
       "__Dim_ColorId__": "profit",
       "__Dim_Color__": 10,
-      "__Dim_Detail__": "A-销售额",
+      "__Dim_Detail__": "A",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaXValue__": 10,
@@ -420,7 +420,7 @@ exports[`2_meaColor 1`] = `
       "__OriginalData__": {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 10,
-        "__Dim_Detail__": "A-利润",
+        "__Dim_Detail__": "A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__": 10,
@@ -446,7 +446,7 @@ exports[`2_meaColor 1`] = `
     {
       "__Dim_ColorId__": "profit",
       "__Dim_Color__": 30,
-      "__Dim_Detail__": "B-销售额",
+      "__Dim_Detail__": "B",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaXValue__": 30,
@@ -454,7 +454,7 @@ exports[`2_meaColor 1`] = `
       "__OriginalData__": {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 30,
-        "__Dim_Detail__": "B-利润",
+        "__Dim_Detail__": "B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__": 30,
@@ -480,7 +480,7 @@ exports[`2_meaColor 1`] = `
     {
       "__Dim_ColorId__": "profit",
       "__Dim_Color__": 30,
-      "__Dim_Detail__": "C-销售额",
+      "__Dim_Detail__": "C",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaXValue__": 30,
@@ -488,7 +488,7 @@ exports[`2_meaColor 1`] = `
       "__OriginalData__": {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 30,
-        "__Dim_Detail__": "C-利润",
+        "__Dim_Detail__": "C",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__": 30,
@@ -514,7 +514,7 @@ exports[`2_meaColor 1`] = `
     {
       "__Dim_ColorId__": "profit",
       "__Dim_Color__": 50,
-      "__Dim_Detail__": "D-销售额",
+      "__Dim_Detail__": "D",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaXValue__": 50,
@@ -522,7 +522,7 @@ exports[`2_meaColor 1`] = `
       "__OriginalData__": {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 50,
-        "__Dim_Detail__": "D-利润",
+        "__Dim_Detail__": "D",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__": 50,
@@ -548,7 +548,7 @@ exports[`2_meaColor 1`] = `
     {
       "__Dim_ColorId__": "profit",
       "__Dim_Color__": 40,
-      "__Dim_Detail__": "E-销售额",
+      "__Dim_Detail__": "E",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaXValue__": 40,
@@ -556,7 +556,7 @@ exports[`2_meaColor 1`] = `
       "__OriginalData__": {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 40,
-        "__Dim_Detail__": "E-利润",
+        "__Dim_Detail__": "E",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__": 40,
@@ -670,7 +670,6 @@ exports[`2_meaColor 1`] = `
     ],
     "detail": [
       "type",
-      "__MeaName__",
     ],
     "tooltip": [
       "profit",
@@ -907,7 +906,7 @@ exports[`2_meaColor 2`] = `
       {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 10,
-        "__Dim_Detail__": "A-销售额",
+        "__Dim_Detail__": "A",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaXValue__": 10,
@@ -915,7 +914,7 @@ exports[`2_meaColor 2`] = `
         "__OriginalData__": {
           "__Dim_ColorId__": "profit",
           "__Dim_Color__": 10,
-          "__Dim_Detail__": "A-利润",
+          "__Dim_Detail__": "A",
           "__MeaId__": "profit",
           "__MeaName__": "利润",
           "__MeaXValue__": 10,
@@ -941,7 +940,7 @@ exports[`2_meaColor 2`] = `
       {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 30,
-        "__Dim_Detail__": "B-销售额",
+        "__Dim_Detail__": "B",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaXValue__": 30,
@@ -949,7 +948,7 @@ exports[`2_meaColor 2`] = `
         "__OriginalData__": {
           "__Dim_ColorId__": "profit",
           "__Dim_Color__": 30,
-          "__Dim_Detail__": "B-利润",
+          "__Dim_Detail__": "B",
           "__MeaId__": "profit",
           "__MeaName__": "利润",
           "__MeaXValue__": 30,
@@ -975,7 +974,7 @@ exports[`2_meaColor 2`] = `
       {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 30,
-        "__Dim_Detail__": "C-销售额",
+        "__Dim_Detail__": "C",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaXValue__": 30,
@@ -983,7 +982,7 @@ exports[`2_meaColor 2`] = `
         "__OriginalData__": {
           "__Dim_ColorId__": "profit",
           "__Dim_Color__": 30,
-          "__Dim_Detail__": "C-利润",
+          "__Dim_Detail__": "C",
           "__MeaId__": "profit",
           "__MeaName__": "利润",
           "__MeaXValue__": 30,
@@ -1009,7 +1008,7 @@ exports[`2_meaColor 2`] = `
       {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 50,
-        "__Dim_Detail__": "D-销售额",
+        "__Dim_Detail__": "D",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaXValue__": 50,
@@ -1017,7 +1016,7 @@ exports[`2_meaColor 2`] = `
         "__OriginalData__": {
           "__Dim_ColorId__": "profit",
           "__Dim_Color__": 50,
-          "__Dim_Detail__": "D-利润",
+          "__Dim_Detail__": "D",
           "__MeaId__": "profit",
           "__MeaName__": "利润",
           "__MeaXValue__": 50,
@@ -1043,7 +1042,7 @@ exports[`2_meaColor 2`] = `
       {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 40,
-        "__Dim_Detail__": "E-销售额",
+        "__Dim_Detail__": "E",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaXValue__": 40,
@@ -1051,7 +1050,7 @@ exports[`2_meaColor 2`] = `
         "__OriginalData__": {
           "__Dim_ColorId__": "profit",
           "__Dim_Color__": 40,
-          "__Dim_Detail__": "E-利润",
+          "__Dim_Detail__": "E",
           "__MeaId__": "profit",
           "__MeaName__": "利润",
           "__MeaXValue__": 40,
@@ -1077,7 +1076,7 @@ exports[`2_meaColor 2`] = `
       {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 10,
-        "__Dim_Detail__": "A-销售额",
+        "__Dim_Detail__": "A",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaXValue__": 10,
@@ -1085,7 +1084,7 @@ exports[`2_meaColor 2`] = `
         "__OriginalData__": {
           "__Dim_ColorId__": "profit",
           "__Dim_Color__": 10,
-          "__Dim_Detail__": "A-利润",
+          "__Dim_Detail__": "A",
           "__MeaId__": "profit",
           "__MeaName__": "利润",
           "__MeaXValue__": 10,
@@ -1111,7 +1110,7 @@ exports[`2_meaColor 2`] = `
       {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 30,
-        "__Dim_Detail__": "B-销售额",
+        "__Dim_Detail__": "B",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaXValue__": 30,
@@ -1119,7 +1118,7 @@ exports[`2_meaColor 2`] = `
         "__OriginalData__": {
           "__Dim_ColorId__": "profit",
           "__Dim_Color__": 30,
-          "__Dim_Detail__": "B-利润",
+          "__Dim_Detail__": "B",
           "__MeaId__": "profit",
           "__MeaName__": "利润",
           "__MeaXValue__": 30,
@@ -1145,7 +1144,7 @@ exports[`2_meaColor 2`] = `
       {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 30,
-        "__Dim_Detail__": "C-销售额",
+        "__Dim_Detail__": "C",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaXValue__": 30,
@@ -1153,7 +1152,7 @@ exports[`2_meaColor 2`] = `
         "__OriginalData__": {
           "__Dim_ColorId__": "profit",
           "__Dim_Color__": 30,
-          "__Dim_Detail__": "C-利润",
+          "__Dim_Detail__": "C",
           "__MeaId__": "profit",
           "__MeaName__": "利润",
           "__MeaXValue__": 30,
@@ -1179,7 +1178,7 @@ exports[`2_meaColor 2`] = `
       {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 50,
-        "__Dim_Detail__": "D-销售额",
+        "__Dim_Detail__": "D",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaXValue__": 50,
@@ -1187,7 +1186,7 @@ exports[`2_meaColor 2`] = `
         "__OriginalData__": {
           "__Dim_ColorId__": "profit",
           "__Dim_Color__": 50,
-          "__Dim_Detail__": "D-利润",
+          "__Dim_Detail__": "D",
           "__MeaId__": "profit",
           "__MeaName__": "利润",
           "__MeaXValue__": 50,
@@ -1213,7 +1212,7 @@ exports[`2_meaColor 2`] = `
       {
         "__Dim_ColorId__": "profit",
         "__Dim_Color__": 40,
-        "__Dim_Detail__": "E-销售额",
+        "__Dim_Detail__": "E",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaXValue__": 40,
@@ -1221,7 +1220,7 @@ exports[`2_meaColor 2`] = `
         "__OriginalData__": {
           "__Dim_ColorId__": "profit",
           "__Dim_Color__": 40,
-          "__Dim_Detail__": "E-利润",
+          "__Dim_Detail__": "E",
           "__MeaId__": "profit",
           "__MeaName__": "利润",
           "__MeaXValue__": 40,

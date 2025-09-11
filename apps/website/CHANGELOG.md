@@ -1,5 +1,13 @@
 # website
 
+## 0.1.5
+
+### Patch Changes
+
+- feat: add color encoding for all chart types
+- Updated dependencies
+  - @visactor/vseed@0.1.5
+
 ## 0.1.4
 
 ### Patch Changes

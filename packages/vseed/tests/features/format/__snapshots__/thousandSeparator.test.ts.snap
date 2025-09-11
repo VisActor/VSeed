@@ -266,8 +266,6 @@ exports[`thousandSeparator 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "profit-profit",
-      "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "profit",
       "__MeaId__": "profit",
@@ -281,8 +279,6 @@ exports[`thousandSeparator 1`] = `
       "profit": 12344567,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
-      "__Dim_Color__": "sales",
       "__Dim_Detail__": "sales",
       "__Dim_X__": "sales",
       "__MeaId__": "sales",
@@ -296,8 +292,6 @@ exports[`thousandSeparator 1`] = `
       "sales": 12344567,
     },
     {
-      "__Dim_ColorId__": "count-count",
-      "__Dim_Color__": "count",
       "__Dim_Detail__": "count",
       "__Dim_X__": "count",
       "__MeaId__": "count",
@@ -334,16 +328,8 @@ exports[`thousandSeparator 1`] = `
       "id": "column",
       "index": 0,
       "unfoldInfo": {
-        "colorIdMap": {
-          "count-count": "count",
-          "profit-profit": "profit",
-          "sales-sales": "sales",
-        },
-        "colorItems": [
-          "profit-profit",
-          "sales-sales",
-          "count-count",
-        ],
+        "colorIdMap": {},
+        "colorItems": [],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
         "encodingColorId": "__Dim_ColorId__",
@@ -360,20 +346,22 @@ exports[`thousandSeparator 1`] = `
     },
   ],
   "encoding": {
-    "color": [
-      "__MeaName__",
-    ],
-    "column": [],
+    "color": [],
     "detail": [
       "__MeaName__",
     ],
-    "label": [],
-    "row": [],
     "tooltip": [
-      "__MeaName__",
+      "profit",
+      "sales",
+      "count",
     ],
     "x": [
       "__MeaName__",
+    ],
+    "y": [
+      "profit",
+      "sales",
+      "count",
     ],
   },
   "locale": "zh-CN",
@@ -547,11 +535,7 @@ exports[`thousandSeparator 2`] = `
     },
   },
   "color": {
-    "domain": [
-      "profit-profit",
-      "sales-sales",
-      "count-count",
-    ],
+    "domain": [],
     "range": [
       "#8D72F6",
       "#5766EC",
@@ -607,8 +591,6 @@ exports[`thousandSeparator 2`] = `
     "id": "column",
     "values": [
       {
-        "__Dim_ColorId__": "profit-profit",
-        "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "profit",
         "__MeaId__": "profit",
@@ -622,8 +604,6 @@ exports[`thousandSeparator 2`] = `
         "profit": 12344567,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
-        "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "sales",
         "__MeaId__": "sales",
@@ -637,8 +617,6 @@ exports[`thousandSeparator 2`] = `
         "sales": 12344567,
       },
       {
-        "__Dim_ColorId__": "count-count",
-        "__Dim_Color__": "count",
         "__Dim_Detail__": "count",
         "__Dim_X__": "count",
         "__MeaId__": "count",

@@ -119,13 +119,14 @@ const generateMeasuresByParentId = (measures: Measures) => {
     }
 
     const encoding = Array.isArray(item.encoding) ? item.encoding : [item.encoding]
-    const isY = encoding.includes('yAxis')
     const isX = encoding.includes('xAxis')
+    const isY = encoding.includes('yAxis')
+    const isEmpty = !encoding.length
     if (isY) {
       scatterChart.yMeasures.push(item)
     } else if (isX) {
       scatterChart.xMeasures.push(item)
-    } else if (!isY && !isX) {
+    } else if (isEmpty) {
       if (scatterChart.yMeasures.length === 0) {
         scatterChart.yMeasures.push(item)
       } else {

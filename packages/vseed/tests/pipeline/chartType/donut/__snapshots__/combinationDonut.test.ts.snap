@@ -89,7 +89,7 @@ exports[`combinationDonut 1`] = `
       {
         "__Dim_ColorId__": "2019-销售额-sales",
         "__Dim_Color__": "2019-销售额",
-        "__Dim_Detail__": "2019-销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 200000,
@@ -105,7 +105,7 @@ exports[`combinationDonut 1`] = `
       {
         "__Dim_ColorId__": "2020-销售额-sales",
         "__Dim_Color__": "2020-销售额",
-        "__Dim_Detail__": "2020-销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 400000,
@@ -121,7 +121,7 @@ exports[`combinationDonut 1`] = `
       {
         "__Dim_ColorId__": "2021-销售额-sales",
         "__Dim_Color__": "2021-销售额",
-        "__Dim_Detail__": "2021-销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 600000,
@@ -137,7 +137,7 @@ exports[`combinationDonut 1`] = `
       {
         "__Dim_ColorId__": "2022-销售额-sales",
         "__Dim_Color__": "2022-销售额",
-        "__Dim_Detail__": "2022-销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 800000,
@@ -153,7 +153,7 @@ exports[`combinationDonut 1`] = `
       {
         "__Dim_ColorId__": "2023-销售额-sales",
         "__Dim_Color__": "2023-销售额",
-        "__Dim_Detail__": "2023-销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 1000000,
@@ -171,7 +171,7 @@ exports[`combinationDonut 1`] = `
       {
         "__Dim_ColorId__": "2019-利润-profit",
         "__Dim_Color__": "2019-利润",
-        "__Dim_Detail__": "2019-利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 10000,
@@ -187,7 +187,7 @@ exports[`combinationDonut 1`] = `
       {
         "__Dim_ColorId__": "2020-利润-profit",
         "__Dim_Color__": "2020-利润",
-        "__Dim_Detail__": "2020-利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 20000,
@@ -203,7 +203,7 @@ exports[`combinationDonut 1`] = `
       {
         "__Dim_ColorId__": "2021-利润-profit",
         "__Dim_Color__": "2021-利润",
-        "__Dim_Detail__": "2021-利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 30000,
@@ -219,7 +219,7 @@ exports[`combinationDonut 1`] = `
       {
         "__Dim_ColorId__": "2022-利润-profit",
         "__Dim_Color__": "2022-利润",
-        "__Dim_Detail__": "2022-利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 40000,
@@ -235,7 +235,7 @@ exports[`combinationDonut 1`] = `
       {
         "__Dim_ColorId__": "2023-利润-profit",
         "__Dim_Color__": "2023-利润",
-        "__Dim_Detail__": "2023-利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 50000,
@@ -348,20 +348,20 @@ exports[`combinationDonut 1`] = `
     },
   ],
   "encoding": {
+    "angle": [
+      "sales",
+      "profit",
+    ],
     "color": [
       "date",
       "__MeaName__",
     ],
-    "column": [],
     "detail": [
-      "date",
       "__MeaName__",
     ],
-    "label": [],
-    "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "sales",
+      "profit",
     ],
   },
   "locale": "zh-CN",
@@ -826,7 +826,7 @@ exports[`combinationDonut 2`] = `
       {
         "__Dim_ColorId__": "2019-销售额-sales",
         "__Dim_Color__": "2019-销售额",
-        "__Dim_Detail__": "2019-销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 200000,
@@ -842,7 +842,7 @@ exports[`combinationDonut 2`] = `
       {
         "__Dim_ColorId__": "2020-销售额-sales",
         "__Dim_Color__": "2020-销售额",
-        "__Dim_Detail__": "2020-销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 400000,
@@ -858,7 +858,7 @@ exports[`combinationDonut 2`] = `
       {
         "__Dim_ColorId__": "2021-销售额-sales",
         "__Dim_Color__": "2021-销售额",
-        "__Dim_Detail__": "2021-销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 600000,
@@ -874,7 +874,7 @@ exports[`combinationDonut 2`] = `
       {
         "__Dim_ColorId__": "2022-销售额-sales",
         "__Dim_Color__": "2022-销售额",
-        "__Dim_Detail__": "2022-销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 800000,
@@ -890,7 +890,7 @@ exports[`combinationDonut 2`] = `
       {
         "__Dim_ColorId__": "2023-销售额-sales",
         "__Dim_Color__": "2023-销售额",
-        "__Dim_Detail__": "2023-销售额",
+        "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__line1": 1000000,
@@ -908,7 +908,7 @@ exports[`combinationDonut 2`] = `
       {
         "__Dim_ColorId__": "2019-利润-profit",
         "__Dim_Color__": "2019-利润",
-        "__Dim_Detail__": "2019-利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 10000,
@@ -924,7 +924,7 @@ exports[`combinationDonut 2`] = `
       {
         "__Dim_ColorId__": "2020-利润-profit",
         "__Dim_Color__": "2020-利润",
-        "__Dim_Detail__": "2020-利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 20000,
@@ -940,7 +940,7 @@ exports[`combinationDonut 2`] = `
       {
         "__Dim_ColorId__": "2021-利润-profit",
         "__Dim_Color__": "2021-利润",
-        "__Dim_Detail__": "2021-利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 30000,
@@ -956,7 +956,7 @@ exports[`combinationDonut 2`] = `
       {
         "__Dim_ColorId__": "2022-利润-profit",
         "__Dim_Color__": "2022-利润",
-        "__Dim_Detail__": "2022-利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 40000,
@@ -972,7 +972,7 @@ exports[`combinationDonut 2`] = `
       {
         "__Dim_ColorId__": "2023-利润-profit",
         "__Dim_Color__": "2023-利润",
-        "__Dim_Detail__": "2023-利润",
+        "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__line2": 50000,

@@ -525,15 +525,16 @@ exports[`combinationBarPercent 1`] = `
     "color": [
       "__MeaName__",
     ],
-    "column": [],
     "detail": [
       "__MeaName__",
     ],
-    "label": [],
-    "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "sales",
+      "profit",
+    ],
+    "x": [
+      "sales",
+      "profit",
     ],
     "y": [
       "date",

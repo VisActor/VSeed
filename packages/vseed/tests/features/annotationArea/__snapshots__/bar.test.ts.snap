@@ -587,15 +587,18 @@ exports[`bar 1`] = `
     "color": [
       "__MeaName__",
     ],
-    "column": [],
     "detail": [
       "__MeaName__",
     ],
-    "label": [],
-    "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "profit",
+      "sales",
+      "count",
+    ],
+    "x": [
+      "profit",
+      "sales",
+      "count",
     ],
     "y": [
       "date",

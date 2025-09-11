@@ -1,5 +1,13 @@
 # website
 
+## 0.1.4
+
+### Patch Changes
+
+- feat: add encoding for measures and dimensions
+- Updated dependencies
+  - @visactor/vseed@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes

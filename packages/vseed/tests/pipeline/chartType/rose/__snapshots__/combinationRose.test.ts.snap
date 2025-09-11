@@ -348,15 +348,16 @@ exports[`combinationRose 1`] = `
     "color": [
       "__MeaName__",
     ],
-    "column": [],
     "detail": [
       "__MeaName__",
     ],
-    "label": [],
-    "row": [],
+    "radius": [
+      "sales",
+      "profit",
+    ],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "sales",
+      "profit",
     ],
   },
   "locale": "zh-CN",

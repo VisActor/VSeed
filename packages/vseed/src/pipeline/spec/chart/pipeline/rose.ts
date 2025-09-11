@@ -22,22 +22,29 @@ import {
   radiusAxis,
   angleAxis,
   progressive,
+  linearColor,
+  colorAdapter,
+  pivotColorLegend,
+  colorLegend,
+  roseStyle,
+  colorRoseStyleFill,
 } from '../pipes'
 
 const rose: SpecPipeline = [
   initRose,
   stackCornerRadius,
   stackInverse,
-  color,
+  colorAdapter(color, linearColor),
   backgroundColor,
   datasetXY,
   progressive,
-  radiusAxis,
   angleAxis,
+  radiusAxis,
+  verticalCrosshairRect,
+  colorRoseStyleFill(roseStyle),
+  colorAdapter(discreteLegend, colorLegend),
   label,
   tooltip,
-  verticalCrosshairRect,
-  discreteLegend,
 ]
 
 const pivotRose: SpecPipeline = [
@@ -49,19 +56,20 @@ const pivotRose: SpecPipeline = [
     initRose,
     stackCornerRadius,
     stackInverse,
-    color,
+    colorAdapter(color, linearColor),
     backgroundColor,
     datasetXY,
     progressive,
     radiusAxis,
     angleAxis,
+    verticalCrosshairRect,
+    colorRoseStyleFill(roseStyle),
     label,
     tooltip,
-    verticalCrosshairRect,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotDiscreteLegend,
+  colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
 export const roseSpecPipeline = [pivotAdapter(rose, pivotRose)]

@@ -331,11 +331,16 @@ exports[`onlyMeasures 2`] = `
       "grid": {
         "visible": true,
       },
-      "label": {
-        "visible": true,
-      },
       "nice": true,
-      "orient": "radius",
+      "orient": "angle",
+      "paddingInner": [
+        0.15,
+        0.1,
+      ],
+      "paddingOuter": [
+        0.075,
+        0.1,
+      ],
       "tick": {
         "visible": true,
       },
@@ -349,16 +354,11 @@ exports[`onlyMeasures 2`] = `
       "grid": {
         "visible": true,
       },
+      "label": {
+        "visible": true,
+      },
       "nice": true,
-      "orient": "angle",
-      "paddingInner": [
-        0.15,
-        0.1,
-      ],
-      "paddingOuter": [
-        0.075,
-        0.1,
-      ],
+      "orient": "radius",
       "tick": {
         "visible": true,
       },

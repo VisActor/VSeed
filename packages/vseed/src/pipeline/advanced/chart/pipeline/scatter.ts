@@ -15,9 +15,9 @@ import { pivotReshapeWithScatterEncoding } from '../pipes/reshape/pivotReshapeWi
 
 export const scatterAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  encodingForScatter,
   buildMeasuresForScatter,
   autoDimensions,
-  encodingForScatter,
   pivotAdapter([reshapeWithScatterEncoding], [pivotReshapeWithScatterEncoding]),
   scatterConfig,
   theme,

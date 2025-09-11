@@ -241,8 +241,8 @@ exports[`pivotScatter 1`] = `
   "dataset": [
     [
       {
-        "__Dim_ColorId__": "1-2019-A-利润",
-        "__Dim_Color__": "1-2019-A-利润",
+        "__Dim_ColorId__": "1-2019-A",
+        "__Dim_Color__": "1-2019-A",
         "__Dim_Detail__": "1-2019-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -262,8 +262,8 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "2-2019-A-利润",
-        "__Dim_Color__": "2-2019-A-利润",
+        "__Dim_ColorId__": "2-2019-A",
+        "__Dim_Color__": "2-2019-A",
         "__Dim_Detail__": "2-2019-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -283,8 +283,8 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "3-2019-A-利润",
-        "__Dim_Color__": "3-2019-A-利润",
+        "__Dim_ColorId__": "3-2019-A",
+        "__Dim_Color__": "3-2019-A",
         "__Dim_Detail__": "3-2019-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -304,8 +304,8 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "4-2019-A-利润",
-        "__Dim_Color__": "4-2019-A-利润",
+        "__Dim_ColorId__": "4-2019-A",
+        "__Dim_Color__": "4-2019-A",
         "__Dim_Detail__": "4-2019-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -325,8 +325,8 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "5-2019-A-利润",
-        "__Dim_Color__": "5-2019-A-利润",
+        "__Dim_ColorId__": "5-2019-A",
+        "__Dim_Color__": "5-2019-A",
         "__Dim_Detail__": "5-2019-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -346,8 +346,8 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "6-2019-A-利润",
-        "__Dim_Color__": "6-2019-A-利润",
+        "__Dim_ColorId__": "6-2019-A",
+        "__Dim_Color__": "6-2019-A",
         "__Dim_Detail__": "6-2019-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -367,8 +367,8 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "1-2019-B-利润",
-        "__Dim_Color__": "1-2019-B-利润",
+        "__Dim_ColorId__": "1-2019-B",
+        "__Dim_Color__": "1-2019-B",
         "__Dim_Detail__": "1-2019-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -388,8 +388,8 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "2-2019-B-利润",
-        "__Dim_Color__": "2-2019-B-利润",
+        "__Dim_ColorId__": "2-2019-B",
+        "__Dim_Color__": "2-2019-B",
         "__Dim_Detail__": "2-2019-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -409,8 +409,8 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "3-2019-B-利润",
-        "__Dim_Color__": "3-2019-B-利润",
+        "__Dim_ColorId__": "3-2019-B",
+        "__Dim_Color__": "3-2019-B",
         "__Dim_Detail__": "3-2019-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -430,8 +430,8 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "4-2019-B-利润",
-        "__Dim_Color__": "4-2019-B-利润",
+        "__Dim_ColorId__": "4-2019-B",
+        "__Dim_Color__": "4-2019-B",
         "__Dim_Detail__": "4-2019-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -451,8 +451,8 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "5-2019-B-利润",
-        "__Dim_Color__": "5-2019-B-利润",
+        "__Dim_ColorId__": "5-2019-B",
+        "__Dim_Color__": "5-2019-B",
         "__Dim_Detail__": "5-2019-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -472,8 +472,8 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "6-2019-B-利润",
-        "__Dim_Color__": "6-2019-B-利润",
+        "__Dim_ColorId__": "6-2019-B",
+        "__Dim_Color__": "6-2019-B",
         "__Dim_Detail__": "6-2019-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -493,8 +493,8 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "1-2020-A-利润",
-        "__Dim_Color__": "1-2020-A-利润",
+        "__Dim_ColorId__": "1-2020-A",
+        "__Dim_Color__": "1-2020-A",
         "__Dim_Detail__": "1-2020-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -514,8 +514,8 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "2-2020-A-利润",
-        "__Dim_Color__": "2-2020-A-利润",
+        "__Dim_ColorId__": "2-2020-A",
+        "__Dim_Color__": "2-2020-A",
         "__Dim_Detail__": "2-2020-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -535,8 +535,8 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "3-2020-A-利润",
-        "__Dim_Color__": "3-2020-A-利润",
+        "__Dim_ColorId__": "3-2020-A",
+        "__Dim_Color__": "3-2020-A",
         "__Dim_Detail__": "3-2020-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -556,8 +556,8 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "4-2020-A-利润",
-        "__Dim_Color__": "4-2020-A-利润",
+        "__Dim_ColorId__": "4-2020-A",
+        "__Dim_Color__": "4-2020-A",
         "__Dim_Detail__": "4-2020-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -577,8 +577,8 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "5-2020-A-利润",
-        "__Dim_Color__": "5-2020-A-利润",
+        "__Dim_ColorId__": "5-2020-A",
+        "__Dim_Color__": "5-2020-A",
         "__Dim_Detail__": "5-2020-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -598,8 +598,8 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "6-2020-A-利润",
-        "__Dim_Color__": "6-2020-A-利润",
+        "__Dim_ColorId__": "6-2020-A",
+        "__Dim_Color__": "6-2020-A",
         "__Dim_Detail__": "6-2020-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -619,8 +619,8 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "1-2020-B-利润",
-        "__Dim_Color__": "1-2020-B-利润",
+        "__Dim_ColorId__": "1-2020-B",
+        "__Dim_Color__": "1-2020-B",
         "__Dim_Detail__": "1-2020-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -640,8 +640,8 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "2-2020-B-利润",
-        "__Dim_Color__": "2-2020-B-利润",
+        "__Dim_ColorId__": "2-2020-B",
+        "__Dim_Color__": "2-2020-B",
         "__Dim_Detail__": "2-2020-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -661,8 +661,8 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "3-2020-B-利润",
-        "__Dim_Color__": "3-2020-B-利润",
+        "__Dim_ColorId__": "3-2020-B",
+        "__Dim_Color__": "3-2020-B",
         "__Dim_Detail__": "3-2020-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -682,8 +682,8 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "4-2020-B-利润",
-        "__Dim_Color__": "4-2020-B-利润",
+        "__Dim_ColorId__": "4-2020-B",
+        "__Dim_Color__": "4-2020-B",
         "__Dim_Detail__": "4-2020-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -703,8 +703,8 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "5-2020-B-利润",
-        "__Dim_Color__": "5-2020-B-利润",
+        "__Dim_ColorId__": "5-2020-B",
+        "__Dim_Color__": "5-2020-B",
         "__Dim_Detail__": "5-2020-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -724,8 +724,8 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "6-2020-B-利润",
-        "__Dim_Color__": "6-2020-B-利润",
+        "__Dim_ColorId__": "6-2020-B",
+        "__Dim_Color__": "6-2020-B",
         "__Dim_Detail__": "6-2020-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -802,104 +802,80 @@ exports[`pivotScatter 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "1-2019-A-利润": "1-2019-A-利润",
-          "1-2019-A-销售额": "1-2019-A-销售额",
-          "1-2019-B-利润": "1-2019-B-利润",
-          "1-2019-B-销售额": "1-2019-B-销售额",
-          "1-2020-A-利润": "1-2020-A-利润",
-          "1-2020-A-销售额": "1-2020-A-销售额",
-          "1-2020-B-利润": "1-2020-B-利润",
-          "1-2020-B-销售额": "1-2020-B-销售额",
-          "2-2019-A-利润": "2-2019-A-利润",
-          "2-2019-A-销售额": "2-2019-A-销售额",
-          "2-2019-B-利润": "2-2019-B-利润",
-          "2-2019-B-销售额": "2-2019-B-销售额",
-          "2-2020-A-利润": "2-2020-A-利润",
-          "2-2020-A-销售额": "2-2020-A-销售额",
-          "2-2020-B-利润": "2-2020-B-利润",
-          "2-2020-B-销售额": "2-2020-B-销售额",
-          "3-2019-A-利润": "3-2019-A-利润",
-          "3-2019-A-销售额": "3-2019-A-销售额",
-          "3-2019-B-利润": "3-2019-B-利润",
-          "3-2019-B-销售额": "3-2019-B-销售额",
-          "3-2020-A-利润": "3-2020-A-利润",
-          "3-2020-A-销售额": "3-2020-A-销售额",
-          "3-2020-B-利润": "3-2020-B-利润",
-          "3-2020-B-销售额": "3-2020-B-销售额",
-          "4-2019-A-利润": "4-2019-A-利润",
-          "4-2019-A-销售额": "4-2019-A-销售额",
-          "4-2019-B-利润": "4-2019-B-利润",
-          "4-2019-B-销售额": "4-2019-B-销售额",
-          "4-2020-A-利润": "4-2020-A-利润",
-          "4-2020-A-销售额": "4-2020-A-销售额",
-          "4-2020-B-利润": "4-2020-B-利润",
-          "4-2020-B-销售额": "4-2020-B-销售额",
-          "5-2019-A-利润": "5-2019-A-利润",
-          "5-2019-A-销售额": "5-2019-A-销售额",
-          "5-2019-B-利润": "5-2019-B-利润",
-          "5-2019-B-销售额": "5-2019-B-销售额",
-          "5-2020-A-利润": "5-2020-A-利润",
-          "5-2020-A-销售额": "5-2020-A-销售额",
-          "5-2020-B-利润": "5-2020-B-利润",
-          "5-2020-B-销售额": "5-2020-B-销售额",
-          "6-2019-A-利润": "6-2019-A-利润",
-          "6-2019-A-销售额": "6-2019-A-销售额",
-          "6-2019-B-利润": "6-2019-B-利润",
-          "6-2019-B-销售额": "6-2019-B-销售额",
-          "6-2020-A-利润": "6-2020-A-利润",
-          "6-2020-A-销售额": "6-2020-A-销售额",
-          "6-2020-B-利润": "6-2020-B-利润",
-          "6-2020-B-销售额": "6-2020-B-销售额",
+          "1-2019-A": "1-2019-A",
+          "1-2019-B": "1-2019-B",
+          "1-2020-A": "1-2020-A",
+          "1-2020-B": "1-2020-B",
+          "2-2019-A": "2-2019-A",
+          "2-2019-B": "2-2019-B",
+          "2-2020-A": "2-2020-A",
+          "2-2020-B": "2-2020-B",
+          "3-2019-A": "3-2019-A",
+          "3-2019-B": "3-2019-B",
+          "3-2020-A": "3-2020-A",
+          "3-2020-B": "3-2020-B",
+          "4-2019-A": "4-2019-A",
+          "4-2019-B": "4-2019-B",
+          "4-2020-A": "4-2020-A",
+          "4-2020-B": "4-2020-B",
+          "5-2019-A": "5-2019-A",
+          "5-2019-B": "5-2019-B",
+          "5-2020-A": "5-2020-A",
+          "5-2020-B": "5-2020-B",
+          "6-2019-A": "6-2019-A",
+          "6-2019-B": "6-2019-B",
+          "6-2020-A": "6-2020-A",
+          "6-2020-B": "6-2020-B",
         },
         "colorItems": [
-          "1-2019-A-销售额",
-          "2-2019-A-销售额",
-          "3-2019-A-销售额",
-          "4-2019-A-销售额",
-          "5-2019-A-销售额",
-          "6-2019-A-销售额",
-          "1-2019-B-销售额",
-          "2-2019-B-销售额",
-          "3-2019-B-销售额",
-          "4-2019-B-销售额",
-          "5-2019-B-销售额",
-          "6-2019-B-销售额",
-          "1-2020-A-销售额",
-          "2-2020-A-销售额",
-          "3-2020-A-销售额",
-          "4-2020-A-销售额",
-          "5-2020-A-销售额",
-          "6-2020-A-销售额",
-          "1-2020-B-销售额",
-          "2-2020-B-销售额",
-          "3-2020-B-销售额",
-          "4-2020-B-销售额",
-          "5-2020-B-销售额",
-          "6-2020-B-销售额",
-          "1-2019-A-利润",
-          "2-2019-A-利润",
-          "3-2019-A-利润",
-          "4-2019-A-利润",
-          "5-2019-A-利润",
-          "6-2019-A-利润",
-          "1-2019-B-利润",
-          "2-2019-B-利润",
-          "3-2019-B-利润",
-          "4-2019-B-利润",
-          "5-2019-B-利润",
-          "6-2019-B-利润",
-          "1-2020-A-利润",
-          "2-2020-A-利润",
-          "3-2020-A-利润",
-          "4-2020-A-利润",
-          "5-2020-A-利润",
-          "6-2020-A-利润",
-          "1-2020-B-利润",
-          "2-2020-B-利润",
-          "3-2020-B-利润",
-          "4-2020-B-利润",
-          "5-2020-B-利润",
-          "6-2020-B-利润",
+          "1-2019-A",
+          "2-2019-A",
+          "3-2019-A",
+          "4-2019-A",
+          "5-2019-A",
+          "6-2019-A",
+          "1-2019-B",
+          "2-2019-B",
+          "3-2019-B",
+          "4-2019-B",
+          "5-2019-B",
+          "6-2019-B",
+          "1-2020-A",
+          "2-2020-A",
+          "3-2020-A",
+          "4-2020-A",
+          "5-2020-A",
+          "6-2020-A",
+          "1-2020-B",
+          "2-2020-B",
+          "3-2020-B",
+          "4-2020-B",
+          "5-2020-B",
+          "6-2020-B",
+          "1-2019-A",
+          "2-2019-A",
+          "3-2019-A",
+          "4-2019-A",
+          "5-2019-A",
+          "6-2019-A",
+          "1-2019-B",
+          "2-2019-B",
+          "3-2019-B",
+          "4-2019-B",
+          "5-2019-B",
+          "6-2019-B",
+          "1-2020-A",
+          "2-2020-A",
+          "3-2020-A",
+          "4-2020-A",
+          "5-2020-A",
+          "6-2020-A",
+          "1-2020-B",
+          "2-2020-B",
+          "3-2020-B",
+          "4-2020-B",
+          "5-2020-B",
+          "6-2020-B",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -936,7 +912,6 @@ exports[`pivotScatter 1`] = `
       "month",
       "date",
       "type",
-      "__MeaName__",
     ],
     "column": [],
     "detail": [
@@ -947,9 +922,12 @@ exports[`pivotScatter 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "month",
-      "date",
-      "type",
+      "sales",
+      "profit",
+    ],
+    "y": [
+      "sales",
+      "profit",
     ],
   },
   "locale": "zh-CN",
@@ -1127,54 +1105,30 @@ exports[`pivotScatter 2`] = `
         "background": "transparent",
         "color": {
           "domain": [
-            "1-2019-A-销售额",
-            "2-2019-A-销售额",
-            "3-2019-A-销售额",
-            "4-2019-A-销售额",
-            "5-2019-A-销售额",
-            "6-2019-A-销售额",
-            "1-2019-B-销售额",
-            "2-2019-B-销售额",
-            "3-2019-B-销售额",
-            "4-2019-B-销售额",
-            "5-2019-B-销售额",
-            "6-2019-B-销售额",
-            "1-2020-A-销售额",
-            "2-2020-A-销售额",
-            "3-2020-A-销售额",
-            "4-2020-A-销售额",
-            "5-2020-A-销售额",
-            "6-2020-A-销售额",
-            "1-2020-B-销售额",
-            "2-2020-B-销售额",
-            "3-2020-B-销售额",
-            "4-2020-B-销售额",
-            "5-2020-B-销售额",
-            "6-2020-B-销售额",
-            "1-2019-A-利润",
-            "2-2019-A-利润",
-            "3-2019-A-利润",
-            "4-2019-A-利润",
-            "5-2019-A-利润",
-            "6-2019-A-利润",
-            "1-2019-B-利润",
-            "2-2019-B-利润",
-            "3-2019-B-利润",
-            "4-2019-B-利润",
-            "5-2019-B-利润",
-            "6-2019-B-利润",
-            "1-2020-A-利润",
-            "2-2020-A-利润",
-            "3-2020-A-利润",
-            "4-2020-A-利润",
-            "5-2020-A-利润",
-            "6-2020-A-利润",
-            "1-2020-B-利润",
-            "2-2020-B-利润",
-            "3-2020-B-利润",
-            "4-2020-B-利润",
-            "5-2020-B-利润",
-            "6-2020-B-利润",
+            "1-2019-A",
+            "2-2019-A",
+            "3-2019-A",
+            "4-2019-A",
+            "5-2019-A",
+            "6-2019-A",
+            "1-2019-B",
+            "2-2019-B",
+            "3-2019-B",
+            "4-2019-B",
+            "5-2019-B",
+            "6-2019-B",
+            "1-2020-A",
+            "2-2020-A",
+            "3-2020-A",
+            "4-2020-A",
+            "5-2020-A",
+            "6-2020-A",
+            "1-2020-B",
+            "2-2020-B",
+            "3-2020-B",
+            "4-2020-B",
+            "5-2020-B",
+            "6-2020-B",
           ],
           "range": [
             "#8D72F6",
@@ -1350,7 +1304,7 @@ exports[`pivotScatter 2`] = `
   "legends": {
     "data": [
       {
-        "label": "1-2019-A-销售额",
+        "label": "1-2019-A",
         "shape": {
           "fill": "#8D72F6",
           "outerBorder": {
@@ -1361,7 +1315,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "2-2019-A-销售额",
+        "label": "2-2019-A",
         "shape": {
           "fill": "#5766EC",
           "outerBorder": {
@@ -1372,7 +1326,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "3-2019-A-销售额",
+        "label": "3-2019-A",
         "shape": {
           "fill": "#66A3FE",
           "outerBorder": {
@@ -1383,7 +1337,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "4-2019-A-销售额",
+        "label": "4-2019-A",
         "shape": {
           "fill": "#51D5E6",
           "outerBorder": {
@@ -1394,7 +1348,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "5-2019-A-销售额",
+        "label": "5-2019-A",
         "shape": {
           "fill": "#4EC0B3",
           "outerBorder": {
@@ -1405,7 +1359,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "6-2019-A-销售额",
+        "label": "6-2019-A",
         "shape": {
           "fill": "#F9DF90",
           "outerBorder": {
@@ -1416,7 +1370,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "1-2019-B-销售额",
+        "label": "1-2019-B",
         "shape": {
           "fill": "#F9AD71",
           "outerBorder": {
@@ -1427,7 +1381,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "2-2019-B-销售额",
+        "label": "2-2019-B",
         "shape": {
           "fill": "#ED8888",
           "outerBorder": {
@@ -1438,7 +1392,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "3-2019-B-销售额",
+        "label": "3-2019-B",
         "shape": {
           "fill": "#E9A0C3",
           "outerBorder": {
@@ -1449,7 +1403,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "4-2019-B-销售额",
+        "label": "4-2019-B",
         "shape": {
           "fill": "#D77DD3",
           "outerBorder": {
@@ -1460,7 +1414,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "5-2019-B-销售额",
+        "label": "5-2019-B",
         "shape": {
           "fill": "#8D72F6",
           "outerBorder": {
@@ -1471,7 +1425,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "6-2019-B-销售额",
+        "label": "6-2019-B",
         "shape": {
           "fill": "#5766EC",
           "outerBorder": {
@@ -1482,7 +1436,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "1-2020-A-销售额",
+        "label": "1-2020-A",
         "shape": {
           "fill": "#66A3FE",
           "outerBorder": {
@@ -1493,7 +1447,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "2-2020-A-销售额",
+        "label": "2-2020-A",
         "shape": {
           "fill": "#51D5E6",
           "outerBorder": {
@@ -1504,7 +1458,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "3-2020-A-销售额",
+        "label": "3-2020-A",
         "shape": {
           "fill": "#4EC0B3",
           "outerBorder": {
@@ -1515,7 +1469,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "4-2020-A-销售额",
+        "label": "4-2020-A",
         "shape": {
           "fill": "#F9DF90",
           "outerBorder": {
@@ -1526,7 +1480,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "5-2020-A-销售额",
+        "label": "5-2020-A",
         "shape": {
           "fill": "#F9AD71",
           "outerBorder": {
@@ -1537,7 +1491,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "6-2020-A-销售额",
+        "label": "6-2020-A",
         "shape": {
           "fill": "#ED8888",
           "outerBorder": {
@@ -1548,7 +1502,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "1-2020-B-销售额",
+        "label": "1-2020-B",
         "shape": {
           "fill": "#E9A0C3",
           "outerBorder": {
@@ -1559,7 +1513,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "2-2020-B-销售额",
+        "label": "2-2020-B",
         "shape": {
           "fill": "#D77DD3",
           "outerBorder": {
@@ -1570,7 +1524,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "3-2020-B-销售额",
+        "label": "3-2020-B",
         "shape": {
           "fill": "#8D72F6",
           "outerBorder": {
@@ -1581,7 +1535,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "4-2020-B-销售额",
+        "label": "4-2020-B",
         "shape": {
           "fill": "#5766EC",
           "outerBorder": {
@@ -1592,7 +1546,7 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "5-2020-B-销售额",
+        "label": "5-2020-B",
         "shape": {
           "fill": "#66A3FE",
           "outerBorder": {
@@ -1603,277 +1557,13 @@ exports[`pivotScatter 2`] = `
         },
       },
       {
-        "label": "6-2020-B-销售额",
+        "label": "6-2020-B",
         "shape": {
           "fill": "#51D5E6",
           "outerBorder": {
             "distance": 3,
             "lineWidth": 1,
             "stroke": "#51D5E6",
-          },
-        },
-      },
-      {
-        "label": "1-2019-A-利润",
-        "shape": {
-          "fill": "#4EC0B3",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#4EC0B3",
-          },
-        },
-      },
-      {
-        "label": "2-2019-A-利润",
-        "shape": {
-          "fill": "#F9DF90",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#F9DF90",
-          },
-        },
-      },
-      {
-        "label": "3-2019-A-利润",
-        "shape": {
-          "fill": "#F9AD71",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#F9AD71",
-          },
-        },
-      },
-      {
-        "label": "4-2019-A-利润",
-        "shape": {
-          "fill": "#ED8888",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#ED8888",
-          },
-        },
-      },
-      {
-        "label": "5-2019-A-利润",
-        "shape": {
-          "fill": "#E9A0C3",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#E9A0C3",
-          },
-        },
-      },
-      {
-        "label": "6-2019-A-利润",
-        "shape": {
-          "fill": "#D77DD3",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#D77DD3",
-          },
-        },
-      },
-      {
-        "label": "1-2019-B-利润",
-        "shape": {
-          "fill": "#8D72F6",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#8D72F6",
-          },
-        },
-      },
-      {
-        "label": "2-2019-B-利润",
-        "shape": {
-          "fill": "#5766EC",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#5766EC",
-          },
-        },
-      },
-      {
-        "label": "3-2019-B-利润",
-        "shape": {
-          "fill": "#66A3FE",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#66A3FE",
-          },
-        },
-      },
-      {
-        "label": "4-2019-B-利润",
-        "shape": {
-          "fill": "#51D5E6",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#51D5E6",
-          },
-        },
-      },
-      {
-        "label": "5-2019-B-利润",
-        "shape": {
-          "fill": "#4EC0B3",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#4EC0B3",
-          },
-        },
-      },
-      {
-        "label": "6-2019-B-利润",
-        "shape": {
-          "fill": "#F9DF90",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#F9DF90",
-          },
-        },
-      },
-      {
-        "label": "1-2020-A-利润",
-        "shape": {
-          "fill": "#F9AD71",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#F9AD71",
-          },
-        },
-      },
-      {
-        "label": "2-2020-A-利润",
-        "shape": {
-          "fill": "#ED8888",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#ED8888",
-          },
-        },
-      },
-      {
-        "label": "3-2020-A-利润",
-        "shape": {
-          "fill": "#E9A0C3",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#E9A0C3",
-          },
-        },
-      },
-      {
-        "label": "4-2020-A-利润",
-        "shape": {
-          "fill": "#D77DD3",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#D77DD3",
-          },
-        },
-      },
-      {
-        "label": "5-2020-A-利润",
-        "shape": {
-          "fill": "#8D72F6",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#8D72F6",
-          },
-        },
-      },
-      {
-        "label": "6-2020-A-利润",
-        "shape": {
-          "fill": "#5766EC",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#5766EC",
-          },
-        },
-      },
-      {
-        "label": "1-2020-B-利润",
-        "shape": {
-          "fill": "#66A3FE",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#66A3FE",
-          },
-        },
-      },
-      {
-        "label": "2-2020-B-利润",
-        "shape": {
-          "fill": "#51D5E6",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#51D5E6",
-          },
-        },
-      },
-      {
-        "label": "3-2020-B-利润",
-        "shape": {
-          "fill": "#4EC0B3",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#4EC0B3",
-          },
-        },
-      },
-      {
-        "label": "4-2020-B-利润",
-        "shape": {
-          "fill": "#F9DF90",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#F9DF90",
-          },
-        },
-      },
-      {
-        "label": "5-2020-B-利润",
-        "shape": {
-          "fill": "#F9AD71",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#F9AD71",
-          },
-        },
-      },
-      {
-        "label": "6-2020-B-利润",
-        "shape": {
-          "fill": "#ED8888",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#ED8888",
           },
         },
       },
@@ -1920,8 +1610,8 @@ exports[`pivotScatter 2`] = `
   "records": {
     "scatter-0": [
       {
-        "__Dim_ColorId__": "1-2019-A-利润",
-        "__Dim_Color__": "1-2019-A-利润",
+        "__Dim_ColorId__": "1-2019-A",
+        "__Dim_Color__": "1-2019-A",
         "__Dim_Detail__": "1-2019-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1941,8 +1631,8 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "2-2019-A-利润",
-        "__Dim_Color__": "2-2019-A-利润",
+        "__Dim_ColorId__": "2-2019-A",
+        "__Dim_Color__": "2-2019-A",
         "__Dim_Detail__": "2-2019-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1962,8 +1652,8 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "3-2019-A-利润",
-        "__Dim_Color__": "3-2019-A-利润",
+        "__Dim_ColorId__": "3-2019-A",
+        "__Dim_Color__": "3-2019-A",
         "__Dim_Detail__": "3-2019-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1983,8 +1673,8 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "4-2019-A-利润",
-        "__Dim_Color__": "4-2019-A-利润",
+        "__Dim_ColorId__": "4-2019-A",
+        "__Dim_Color__": "4-2019-A",
         "__Dim_Detail__": "4-2019-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2004,8 +1694,8 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "5-2019-A-利润",
-        "__Dim_Color__": "5-2019-A-利润",
+        "__Dim_ColorId__": "5-2019-A",
+        "__Dim_Color__": "5-2019-A",
         "__Dim_Detail__": "5-2019-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2025,8 +1715,8 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "6-2019-A-利润",
-        "__Dim_Color__": "6-2019-A-利润",
+        "__Dim_ColorId__": "6-2019-A",
+        "__Dim_Color__": "6-2019-A",
         "__Dim_Detail__": "6-2019-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2046,8 +1736,8 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "1-2019-B-利润",
-        "__Dim_Color__": "1-2019-B-利润",
+        "__Dim_ColorId__": "1-2019-B",
+        "__Dim_Color__": "1-2019-B",
         "__Dim_Detail__": "1-2019-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2067,8 +1757,8 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "2-2019-B-利润",
-        "__Dim_Color__": "2-2019-B-利润",
+        "__Dim_ColorId__": "2-2019-B",
+        "__Dim_Color__": "2-2019-B",
         "__Dim_Detail__": "2-2019-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2088,8 +1778,8 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "3-2019-B-利润",
-        "__Dim_Color__": "3-2019-B-利润",
+        "__Dim_ColorId__": "3-2019-B",
+        "__Dim_Color__": "3-2019-B",
         "__Dim_Detail__": "3-2019-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2109,8 +1799,8 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "4-2019-B-利润",
-        "__Dim_Color__": "4-2019-B-利润",
+        "__Dim_ColorId__": "4-2019-B",
+        "__Dim_Color__": "4-2019-B",
         "__Dim_Detail__": "4-2019-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2130,8 +1820,8 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "5-2019-B-利润",
-        "__Dim_Color__": "5-2019-B-利润",
+        "__Dim_ColorId__": "5-2019-B",
+        "__Dim_Color__": "5-2019-B",
         "__Dim_Detail__": "5-2019-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2151,8 +1841,8 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "6-2019-B-利润",
-        "__Dim_Color__": "6-2019-B-利润",
+        "__Dim_ColorId__": "6-2019-B",
+        "__Dim_Color__": "6-2019-B",
         "__Dim_Detail__": "6-2019-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2172,8 +1862,8 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "1-2020-A-利润",
-        "__Dim_Color__": "1-2020-A-利润",
+        "__Dim_ColorId__": "1-2020-A",
+        "__Dim_Color__": "1-2020-A",
         "__Dim_Detail__": "1-2020-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2193,8 +1883,8 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "2-2020-A-利润",
-        "__Dim_Color__": "2-2020-A-利润",
+        "__Dim_ColorId__": "2-2020-A",
+        "__Dim_Color__": "2-2020-A",
         "__Dim_Detail__": "2-2020-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2214,8 +1904,8 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "3-2020-A-利润",
-        "__Dim_Color__": "3-2020-A-利润",
+        "__Dim_ColorId__": "3-2020-A",
+        "__Dim_Color__": "3-2020-A",
         "__Dim_Detail__": "3-2020-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2235,8 +1925,8 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "4-2020-A-利润",
-        "__Dim_Color__": "4-2020-A-利润",
+        "__Dim_ColorId__": "4-2020-A",
+        "__Dim_Color__": "4-2020-A",
         "__Dim_Detail__": "4-2020-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2256,8 +1946,8 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "5-2020-A-利润",
-        "__Dim_Color__": "5-2020-A-利润",
+        "__Dim_ColorId__": "5-2020-A",
+        "__Dim_Color__": "5-2020-A",
         "__Dim_Detail__": "5-2020-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2277,8 +1967,8 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "6-2020-A-利润",
-        "__Dim_Color__": "6-2020-A-利润",
+        "__Dim_ColorId__": "6-2020-A",
+        "__Dim_Color__": "6-2020-A",
         "__Dim_Detail__": "6-2020-A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2298,8 +1988,8 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "1-2020-B-利润",
-        "__Dim_Color__": "1-2020-B-利润",
+        "__Dim_ColorId__": "1-2020-B",
+        "__Dim_Color__": "1-2020-B",
         "__Dim_Detail__": "1-2020-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2319,8 +2009,8 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "2-2020-B-利润",
-        "__Dim_Color__": "2-2020-B-利润",
+        "__Dim_ColorId__": "2-2020-B",
+        "__Dim_Color__": "2-2020-B",
         "__Dim_Detail__": "2-2020-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2340,8 +2030,8 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "3-2020-B-利润",
-        "__Dim_Color__": "3-2020-B-利润",
+        "__Dim_ColorId__": "3-2020-B",
+        "__Dim_Color__": "3-2020-B",
         "__Dim_Detail__": "3-2020-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2361,8 +2051,8 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "4-2020-B-利润",
-        "__Dim_Color__": "4-2020-B-利润",
+        "__Dim_ColorId__": "4-2020-B",
+        "__Dim_Color__": "4-2020-B",
         "__Dim_Detail__": "4-2020-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2382,8 +2072,8 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "5-2020-B-利润",
-        "__Dim_Color__": "5-2020-B-利润",
+        "__Dim_ColorId__": "5-2020-B",
+        "__Dim_Color__": "5-2020-B",
         "__Dim_Detail__": "5-2020-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2403,8 +2093,8 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "6-2020-B-利润",
-        "__Dim_Color__": "6-2020-B-利润",
+        "__Dim_ColorId__": "6-2020-B",
+        "__Dim_Color__": "6-2020-B",
         "__Dim_Detail__": "6-2020-B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",

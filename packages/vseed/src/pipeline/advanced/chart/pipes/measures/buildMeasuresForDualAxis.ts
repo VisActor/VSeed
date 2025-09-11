@@ -121,11 +121,13 @@ const generateMeasuresByParentId = (measures: Measures) => {
     const encoding = Array.isArray(item.encoding) ? item.encoding : [item.encoding]
     const isPrimary = encoding.includes('primaryYAxis')
     const isSecondary = encoding.includes('secondaryYAxis')
+    const isEmpty = !item.encoding
+
     if (isPrimary) {
       dualChart.primaryMeasures.push(item)
     } else if (isSecondary) {
       dualChart.secondaryMeasures.push(item)
-    } else if (!isPrimary && !isSecondary) {
+    } else if (isEmpty) {
       if (dualChart.primaryMeasures.length === 0) {
         dualChart.primaryMeasures.push(item)
       } else {

@@ -303,13 +303,16 @@ exports[`basicRoseParallel 1`] = `
     "color": [
       "__MeaName__",
     ],
+    "column": [],
     "detail": [
       "__MeaName__",
     ],
+    "label": [],
     "radius": [
       "sales",
       "profit",
     ],
+    "row": [],
     "tooltip": [
       "sales",
       "profit",

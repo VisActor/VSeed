@@ -71,7 +71,7 @@ const generateMeasureEncoding = (measures: Measures, encoding: Encoding) => {
 }
 
 const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
-  encoding.x = unique(dimensions.filter((item) => item.encoding === 'xAxis' || !item.encoding).map((item) => item.id))
+  encoding.x = unique(dimensions.filter((item) => item.encoding === 'xAxis').map((item) => item.id))
   encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
   encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))
 

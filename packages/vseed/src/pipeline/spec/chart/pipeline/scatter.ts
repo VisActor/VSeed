@@ -31,6 +31,7 @@ import {
   colorAdapter,
   colorPointStyleFill,
   colorLegend,
+  pivotColorLegend,
 } from '../pipes'
 
 const scatter: SpecPipeline = [
@@ -80,7 +81,7 @@ const pivotScatter: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotDiscreteLegend,
+  colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
 export const scatterSpecPipeline: SpecPipeline = [pivotAdapter(scatter, pivotScatter)]

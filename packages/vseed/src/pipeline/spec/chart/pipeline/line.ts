@@ -32,6 +32,7 @@ import {
   colorLegend,
   colorLineStyleFill,
   colorPointStyleFill,
+  pivotColorLegend,
 } from '../pipes'
 
 const line: SpecPipeline = [
@@ -42,13 +43,13 @@ const line: SpecPipeline = [
   progressive,
   xBand,
   yLinear,
-  label,
-  tooltip,
   verticalCrosshairLine,
   colorAdapter(discreteLegend, colorLegend),
   colorPointStyleFill(pointStyle),
   pointStateDimensionHover,
   colorLineStyleFill(lineStyle),
+  label,
+  tooltip,
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
@@ -62,18 +63,18 @@ const pivotLine: SpecPipeline = [
   datasetPivot,
   pivotIndicators([
     initLine,
-    color,
+    colorAdapter(color, linearColor),
     backgroundColor,
     datasetXY,
     progressive,
     xBand,
     yLinear,
+    verticalCrosshairLine,
+    colorPointStyleFill(pointStyle),
+    pointStateDimensionHover,
+    colorLineStyleFill(lineStyle),
     label,
     tooltip,
-    verticalCrosshairLine,
-    pointStyle,
-    pointStateDimensionHover,
-    lineStyle,
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,
@@ -81,7 +82,7 @@ const pivotLine: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotDiscreteLegend,
+  colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
 export const lineSpecPipeline: SpecPipeline = [pivotAdapter(line, pivotLine)]

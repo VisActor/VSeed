@@ -63,7 +63,7 @@ const generateMeasureEncoding = (measures: Measures, encoding: Encoding) => {
 }
 
 const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
-  encoding.y = unique(dimensions.filter((item) => item.encoding === 'yAxis' || !item.encoding).map((item) => item.id))
+  encoding.y = unique(dimensions.filter((item) => item.encoding === 'yAxis').map((item) => item.id))
   encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
   encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))
   if (encoding.y.length === 0) {

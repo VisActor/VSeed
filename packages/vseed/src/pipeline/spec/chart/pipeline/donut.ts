@@ -21,17 +21,24 @@ import {
   annotationHorizontalLine,
   annotationArea,
   progressive,
+  colorAdapter,
+  linearColor,
+  colorLegend,
+  pivotColorLegend,
+  pieStyle,
+  colorPieStyleFill,
 } from '../pipes'
 
 const donut: SpecPipeline = [
   initDonut,
-  color,
+  colorAdapter(color, linearColor),
   backgroundColor,
   datasetXY,
   progressive,
   label,
+  colorPieStyleFill(pieStyle),
+  colorAdapter(discreteLegend, colorLegend),
   tooltip,
-  discreteLegend,
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
@@ -45,11 +52,12 @@ const pivotDonut: SpecPipeline = [
   datasetPivot,
   pivotIndicators([
     initDonut,
-    color,
+    colorAdapter(color, linearColor),
     backgroundColor,
     datasetXY,
     progressive,
     label,
+    colorPieStyleFill(pieStyle),
     tooltip,
     annotationPoint,
     annotationVerticalLine,
@@ -58,7 +66,7 @@ const pivotDonut: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
-  pivotDiscreteLegend,
+  colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
 export const donutSpecPipeline: SpecPipeline = [pivotAdapter(donut, pivotDonut)]

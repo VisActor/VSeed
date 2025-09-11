@@ -19,16 +19,24 @@ import {
   initFunnel,
   discreteLegend,
   color,
+  funnelStyle,
+  linearColor,
+  colorAdapter,
+  colorLegend,
+  colorFunnelStyleFill,
+  pivotDiscreteLegend,
+  pivotColorLegend,
 } from '../pipes'
 
 const funnel: SpecPipeline = [
   initFunnel,
   backgroundColor,
   datasetXY,
-  color,
+  colorAdapter(color, linearColor),
   label,
+  colorAdapter(discreteLegend, colorLegend),
+  colorFunnelStyleFill(funnelStyle),
   tooltip,
-  discreteLegend,
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
@@ -44,10 +52,10 @@ const pivotFunnel: SpecPipeline = [
     initFunnel,
     backgroundColor,
     datasetXY,
-    color,
+    colorAdapter(color, linearColor),
     label,
     tooltip,
-    discreteLegend,
+    colorFunnelStyleFill(funnelStyle),
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,
@@ -55,6 +63,7 @@ const pivotFunnel: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
 export const funnelSpecPipeline: SpecPipeline = [pivotAdapter(funnel, pivotFunnel)]

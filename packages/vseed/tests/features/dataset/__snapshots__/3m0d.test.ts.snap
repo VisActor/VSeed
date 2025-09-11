@@ -266,6 +266,8 @@ exports[`3m0d 1`] = `
   },
   "dataset": [
     {
+      "__Dim_ColorId__": "profit-profit",
+      "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "profit",
       "__MeaId__": "profit",
@@ -279,6 +281,8 @@ exports[`3m0d 1`] = `
       "profit": 1,
     },
     {
+      "__Dim_ColorId__": "sales-sales",
+      "__Dim_Color__": "sales",
       "__Dim_Detail__": "sales",
       "__Dim_X__": "sales",
       "__MeaId__": "sales",
@@ -292,6 +296,8 @@ exports[`3m0d 1`] = `
       "sales": 2,
     },
     {
+      "__Dim_ColorId__": "discount-discount",
+      "__Dim_Color__": "discount",
       "__Dim_Detail__": "discount",
       "__Dim_X__": "discount",
       "__MeaId__": "discount",
@@ -328,8 +334,16 @@ exports[`3m0d 1`] = `
       "id": "columnParallel",
       "index": 0,
       "unfoldInfo": {
-        "colorIdMap": {},
-        "colorItems": [],
+        "colorIdMap": {
+          "discount-discount": "discount",
+          "profit-profit": "profit",
+          "sales-sales": "sales",
+        },
+        "colorItems": [
+          "profit-profit",
+          "sales-sales",
+          "discount-discount",
+        ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
         "encodingColorId": "__Dim_ColorId__",
@@ -346,10 +360,15 @@ exports[`3m0d 1`] = `
     },
   ],
   "encoding": {
-    "color": [],
+    "color": [
+      "__MeaName__",
+    ],
+    "column": [],
     "detail": [
       "__MeaName__",
     ],
+    "label": [],
+    "row": [],
     "tooltip": [
       "profit",
       "sales",
@@ -526,7 +545,11 @@ exports[`3m0d 2`] = `
     },
   },
   "color": {
-    "domain": [],
+    "domain": [
+      "profit-profit",
+      "sales-sales",
+      "discount-discount",
+    ],
     "range": [
       "#8D72F6",
       "#5766EC",
@@ -582,6 +605,8 @@ exports[`3m0d 2`] = `
     "id": "columnParallel",
     "values": [
       {
+        "__Dim_ColorId__": "profit-profit",
+        "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "profit",
         "__MeaId__": "profit",
@@ -595,6 +620,8 @@ exports[`3m0d 2`] = `
         "profit": 1,
       },
       {
+        "__Dim_ColorId__": "sales-sales",
+        "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "sales",
         "__MeaId__": "sales",
@@ -608,6 +635,8 @@ exports[`3m0d 2`] = `
         "sales": 2,
       },
       {
+        "__Dim_ColorId__": "discount-discount",
+        "__Dim_Color__": "discount",
         "__Dim_Detail__": "discount",
         "__Dim_X__": "discount",
         "__MeaId__": "discount",

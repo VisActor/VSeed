@@ -266,6 +266,8 @@ exports[`autoFormat 1`] = `
   },
   "dataset": [
     {
+      "__Dim_ColorId__": "profit-profit",
+      "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "profit",
       "__MeaId__": "profit",
@@ -278,6 +280,8 @@ exports[`autoFormat 1`] = `
       "profit": 12342.34567,
     },
     {
+      "__Dim_ColorId__": "sales-sales",
+      "__Dim_Color__": "sales",
       "__Dim_Detail__": "sales",
       "__Dim_X__": "sales",
       "__MeaId__": "sales",
@@ -312,8 +316,14 @@ exports[`autoFormat 1`] = `
       "id": "column",
       "index": 0,
       "unfoldInfo": {
-        "colorIdMap": {},
-        "colorItems": [],
+        "colorIdMap": {
+          "profit-profit": "profit",
+          "sales-sales": "sales",
+        },
+        "colorItems": [
+          "profit-profit",
+          "sales-sales",
+        ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
         "encodingColorId": "__Dim_ColorId__",
@@ -330,10 +340,15 @@ exports[`autoFormat 1`] = `
     },
   ],
   "encoding": {
-    "color": [],
+    "color": [
+      "__MeaName__",
+    ],
+    "column": [],
     "detail": [
       "__MeaName__",
     ],
+    "label": [],
+    "row": [],
     "tooltip": [
       "profit",
       "sales",
@@ -504,7 +519,10 @@ exports[`autoFormat 2`] = `
     },
   },
   "color": {
-    "domain": [],
+    "domain": [
+      "profit-profit",
+      "sales-sales",
+    ],
     "range": [
       "#8D72F6",
       "#5766EC",
@@ -560,6 +578,8 @@ exports[`autoFormat 2`] = `
     "id": "column",
     "values": [
       {
+        "__Dim_ColorId__": "profit-profit",
+        "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "profit",
         "__MeaId__": "profit",
@@ -572,6 +592,8 @@ exports[`autoFormat 2`] = `
         "profit": 12342.34567,
       },
       {
+        "__Dim_ColorId__": "sales-sales",
+        "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "sales",
         "__MeaId__": "sales",

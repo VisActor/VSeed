@@ -22,18 +22,6 @@ export const initRose: SpecPipe = (spec, context) => {
     result.innerRadius = 0.05
   }
 
-  result.rose = {
-    style: {
-      stroke: '#ffffff',
-      lineWidth: 1,
-    },
-    state: {
-      hover: {
-        lineWidth: 1,
-        fillOpacity: 0.6,
-      },
-    },
-  }
   result.region = [
     {
       clip: true,

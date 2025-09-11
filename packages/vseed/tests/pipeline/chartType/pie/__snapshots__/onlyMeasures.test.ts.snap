@@ -269,9 +269,12 @@ exports[`onlyMeasures 1`] = `
     "color": [
       "__MeaName__",
     ],
+    "column": [],
     "detail": [
       "__MeaName__",
     ],
+    "label": [],
+    "row": [],
     "tooltip": [
       "sales",
       "profit",
@@ -530,7 +533,6 @@ exports[`onlyMeasures 2`] = `
       },
     },
     "style": {
-      "centerOffset": 0,
       "lineWidth": 1,
       "stroke": "#ffffff",
     },

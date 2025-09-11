@@ -254,7 +254,6 @@ exports[`onlyMeasures 1`] = `
   },
   "dataset": [
     {
-      "__Dim_Detail__": "销售额",
       "__Dim_X__": "销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
@@ -266,7 +265,6 @@ exports[`onlyMeasures 1`] = `
       "sales": 200000,
     },
     {
-      "__Dim_Detail__": "利润",
       "__Dim_X__": "利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
@@ -278,7 +276,6 @@ exports[`onlyMeasures 1`] = `
       "profit": 10000,
     },
     {
-      "__Dim_Detail__": "销售额",
       "__Dim_X__": "销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
@@ -290,7 +287,6 @@ exports[`onlyMeasures 1`] = `
       "sales": 400000,
     },
     {
-      "__Dim_Detail__": "利润",
       "__Dim_X__": "利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
@@ -302,7 +298,6 @@ exports[`onlyMeasures 1`] = `
       "profit": 20000,
     },
     {
-      "__Dim_Detail__": "销售额",
       "__Dim_X__": "销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
@@ -314,7 +309,6 @@ exports[`onlyMeasures 1`] = `
       "sales": 600000,
     },
     {
-      "__Dim_Detail__": "利润",
       "__Dim_X__": "利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
@@ -326,7 +320,6 @@ exports[`onlyMeasures 1`] = `
       "profit": 30000,
     },
     {
-      "__Dim_Detail__": "销售额",
       "__Dim_X__": "销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
@@ -338,7 +331,6 @@ exports[`onlyMeasures 1`] = `
       "sales": 800000,
     },
     {
-      "__Dim_Detail__": "利润",
       "__Dim_X__": "利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
@@ -350,7 +342,6 @@ exports[`onlyMeasures 1`] = `
       "profit": 40000,
     },
     {
-      "__Dim_Detail__": "销售额",
       "__Dim_X__": "销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
@@ -362,7 +353,6 @@ exports[`onlyMeasures 1`] = `
       "sales": 1000000,
     },
     {
-      "__Dim_Detail__": "利润",
       "__Dim_X__": "利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
@@ -415,9 +405,10 @@ exports[`onlyMeasures 1`] = `
   ],
   "encoding": {
     "color": [],
-    "detail": [
-      "__MeaName__",
-    ],
+    "column": [],
+    "detail": [],
+    "label": [],
+    "row": [],
     "tooltip": [
       "sales",
       "profit",
@@ -649,7 +640,6 @@ exports[`onlyMeasures 2`] = `
     "id": "line",
     "values": [
       {
-        "__Dim_Detail__": "销售额",
         "__Dim_X__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
@@ -661,7 +651,6 @@ exports[`onlyMeasures 2`] = `
         "sales": 200000,
       },
       {
-        "__Dim_Detail__": "利润",
         "__Dim_X__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -673,7 +662,6 @@ exports[`onlyMeasures 2`] = `
         "profit": 10000,
       },
       {
-        "__Dim_Detail__": "销售额",
         "__Dim_X__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
@@ -685,7 +673,6 @@ exports[`onlyMeasures 2`] = `
         "sales": 400000,
       },
       {
-        "__Dim_Detail__": "利润",
         "__Dim_X__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -697,7 +684,6 @@ exports[`onlyMeasures 2`] = `
         "profit": 20000,
       },
       {
-        "__Dim_Detail__": "销售额",
         "__Dim_X__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
@@ -709,7 +695,6 @@ exports[`onlyMeasures 2`] = `
         "sales": 600000,
       },
       {
-        "__Dim_Detail__": "利润",
         "__Dim_X__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -721,7 +706,6 @@ exports[`onlyMeasures 2`] = `
         "profit": 30000,
       },
       {
-        "__Dim_Detail__": "销售额",
         "__Dim_X__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
@@ -733,7 +717,6 @@ exports[`onlyMeasures 2`] = `
         "sales": 800000,
       },
       {
-        "__Dim_Detail__": "利润",
         "__Dim_X__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -745,7 +728,6 @@ exports[`onlyMeasures 2`] = `
         "profit": 40000,
       },
       {
-        "__Dim_Detail__": "销售额",
         "__Dim_X__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
@@ -757,7 +739,6 @@ exports[`onlyMeasures 2`] = `
         "sales": 1000000,
       },
       {
-        "__Dim_Detail__": "利润",
         "__Dim_X__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",

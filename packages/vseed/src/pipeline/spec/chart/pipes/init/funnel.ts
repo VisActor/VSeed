@@ -21,20 +21,7 @@ export const initFunnel: SpecPipe = (spec, context) => {
       clip: true,
     },
   ]
-  result.funnel = {
-    style: {
-      cornerRadius: 4,
-      fill: {
-        field: unfoldInfo.encodingColorId,
-        scale: 'color',
-      },
-    },
-    state: {
-      hover: {
-        fillOpacity: 0.6,
-      },
-    },
-  }
+
   result.transformLabel = {
     visible: true,
   }

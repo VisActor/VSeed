@@ -24,6 +24,8 @@ import {
   colorAdapter,
   colorLegend,
   colorFunnelStyleFill,
+  pivotDiscreteLegend,
+  pivotColorLegend,
 } from '../pipes'
 
 const funnel: SpecPipeline = [
@@ -50,7 +52,7 @@ const pivotFunnel: SpecPipeline = [
     initFunnel,
     backgroundColor,
     datasetXY,
-    color,
+    colorAdapter(color, linearColor),
     label,
     tooltip,
     colorFunnelStyleFill(funnelStyle),
@@ -61,6 +63,7 @@ const pivotFunnel: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
 export const funnelSpecPipeline: SpecPipeline = [pivotAdapter(funnel, pivotFunnel)]

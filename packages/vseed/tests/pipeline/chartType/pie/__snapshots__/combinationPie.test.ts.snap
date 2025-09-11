@@ -481,7 +481,6 @@ exports[`combinationPie 2`] = `
             },
           },
           "style": {
-            "centerOffset": 0,
             "lineWidth": 1,
             "stroke": "#ffffff",
           },
@@ -609,7 +608,6 @@ exports[`combinationPie 2`] = `
             },
           },
           "style": {
-            "centerOffset": 0,
             "lineWidth": 1,
             "stroke": "#ffffff",
           },

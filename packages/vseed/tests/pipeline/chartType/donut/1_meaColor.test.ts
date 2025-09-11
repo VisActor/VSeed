@@ -4,11 +4,11 @@ import type { ISpec } from '@visactor/vchart'
 import { VChart } from '@visactor/vchart'
 import * as VTable from '@visactor/vtable'
 
-import vseed from './combinationHeatmap.json'
+import vseed from './1_meaColor.json'
 
 VTable.register.chartModule('vchart', VChart)
 
-test('combinationHeatmap', () => {
+test('1_meaColor', () => {
   registerAll()
   const builder = Builder.from(vseed as VSeed)
   const advanced = builder.buildAdvanced()

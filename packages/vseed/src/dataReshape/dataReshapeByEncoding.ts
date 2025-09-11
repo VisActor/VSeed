@@ -29,7 +29,7 @@ export const dataReshapeByEncoding = (
   } = options || {}
 
   // 合并所有指标为1个指标
-  const { dataset: foldedDataset, foldInfo } = foldMeasures(dataset, measures, encoding, {
+  const { dataset: foldedDataset, foldInfo } = foldMeasures(dataset, measures, {
     measureId: foldMeasureId,
     measureName: foldMeasureName,
     measureValue: foldMeasureValue,

@@ -260,9 +260,12 @@ exports[`onlyMeasures 1`] = `
       "sales",
       "profit",
     ],
+    "column": [],
     "detail": [
       "__MeaName__",
     ],
+    "label": [],
+    "row": [],
     "tooltip": [
       "sales",
       "profit",

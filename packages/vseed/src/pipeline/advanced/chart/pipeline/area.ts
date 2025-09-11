@@ -11,13 +11,13 @@ import {
   sortLegend,
   reshapeWithEncoding,
   pivotReshapeWithEncoding,
-  encodingForColumn,
   buildMeasures,
+  encodingForLine,
 } from '../pipes'
 
 export const areaAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  encodingForColumn,
+  encodingForLine,
   buildMeasures,
   autoDimensions,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),

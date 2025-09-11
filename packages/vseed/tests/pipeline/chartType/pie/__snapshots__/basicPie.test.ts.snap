@@ -88,7 +88,7 @@ exports[`basicPie 1`] = `
     {
       "__Dim_ColorId__": "2019-销售额-sales",
       "__Dim_Color__": "2019-销售额",
-      "__Dim_Detail__": "销售额",
+      "__Dim_Detail__": "2019-销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 200000,
@@ -103,7 +103,7 @@ exports[`basicPie 1`] = `
     {
       "__Dim_ColorId__": "2019-利润-profit",
       "__Dim_Color__": "2019-利润",
-      "__Dim_Detail__": "利润",
+      "__Dim_Detail__": "2019-利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 10000,
@@ -118,7 +118,7 @@ exports[`basicPie 1`] = `
     {
       "__Dim_ColorId__": "2020-销售额-sales",
       "__Dim_Color__": "2020-销售额",
-      "__Dim_Detail__": "销售额",
+      "__Dim_Detail__": "2020-销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 400000,
@@ -133,7 +133,7 @@ exports[`basicPie 1`] = `
     {
       "__Dim_ColorId__": "2020-利润-profit",
       "__Dim_Color__": "2020-利润",
-      "__Dim_Detail__": "利润",
+      "__Dim_Detail__": "2020-利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 20000,
@@ -148,7 +148,7 @@ exports[`basicPie 1`] = `
     {
       "__Dim_ColorId__": "2021-销售额-sales",
       "__Dim_Color__": "2021-销售额",
-      "__Dim_Detail__": "销售额",
+      "__Dim_Detail__": "2021-销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 600000,
@@ -163,7 +163,7 @@ exports[`basicPie 1`] = `
     {
       "__Dim_ColorId__": "2021-利润-profit",
       "__Dim_Color__": "2021-利润",
-      "__Dim_Detail__": "利润",
+      "__Dim_Detail__": "2021-利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 30000,
@@ -178,7 +178,7 @@ exports[`basicPie 1`] = `
     {
       "__Dim_ColorId__": "2022-销售额-sales",
       "__Dim_Color__": "2022-销售额",
-      "__Dim_Detail__": "销售额",
+      "__Dim_Detail__": "2022-销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 800000,
@@ -193,7 +193,7 @@ exports[`basicPie 1`] = `
     {
       "__Dim_ColorId__": "2022-利润-profit",
       "__Dim_Color__": "2022-利润",
-      "__Dim_Detail__": "利润",
+      "__Dim_Detail__": "2022-利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 40000,
@@ -208,7 +208,7 @@ exports[`basicPie 1`] = `
     {
       "__Dim_ColorId__": "2023-销售额-sales",
       "__Dim_Color__": "2023-销售额",
-      "__Dim_Detail__": "销售额",
+      "__Dim_Detail__": "2023-销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 1000000,
@@ -223,7 +223,7 @@ exports[`basicPie 1`] = `
     {
       "__Dim_ColorId__": "2023-利润-profit",
       "__Dim_Color__": "2023-利润",
-      "__Dim_Detail__": "利润",
+      "__Dim_Detail__": "2023-利润",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 50000,
@@ -311,9 +311,13 @@ exports[`basicPie 1`] = `
       "date",
       "__MeaName__",
     ],
+    "column": [],
     "detail": [
+      "date",
       "__MeaName__",
     ],
+    "label": [],
+    "row": [],
     "tooltip": [
       "sales",
       "profit",
@@ -394,7 +398,7 @@ exports[`basicPie 2`] = `
       {
         "__Dim_ColorId__": "2019-销售额-sales",
         "__Dim_Color__": "2019-销售额",
-        "__Dim_Detail__": "销售额",
+        "__Dim_Detail__": "2019-销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 200000,
@@ -409,7 +413,7 @@ exports[`basicPie 2`] = `
       {
         "__Dim_ColorId__": "2019-利润-profit",
         "__Dim_Color__": "2019-利润",
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "2019-利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 10000,
@@ -424,7 +428,7 @@ exports[`basicPie 2`] = `
       {
         "__Dim_ColorId__": "2020-销售额-sales",
         "__Dim_Color__": "2020-销售额",
-        "__Dim_Detail__": "销售额",
+        "__Dim_Detail__": "2020-销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 400000,
@@ -439,7 +443,7 @@ exports[`basicPie 2`] = `
       {
         "__Dim_ColorId__": "2020-利润-profit",
         "__Dim_Color__": "2020-利润",
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "2020-利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 20000,
@@ -454,7 +458,7 @@ exports[`basicPie 2`] = `
       {
         "__Dim_ColorId__": "2021-销售额-sales",
         "__Dim_Color__": "2021-销售额",
-        "__Dim_Detail__": "销售额",
+        "__Dim_Detail__": "2021-销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 600000,
@@ -469,7 +473,7 @@ exports[`basicPie 2`] = `
       {
         "__Dim_ColorId__": "2021-利润-profit",
         "__Dim_Color__": "2021-利润",
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "2021-利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 30000,
@@ -484,7 +488,7 @@ exports[`basicPie 2`] = `
       {
         "__Dim_ColorId__": "2022-销售额-sales",
         "__Dim_Color__": "2022-销售额",
-        "__Dim_Detail__": "销售额",
+        "__Dim_Detail__": "2022-销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 800000,
@@ -499,7 +503,7 @@ exports[`basicPie 2`] = `
       {
         "__Dim_ColorId__": "2022-利润-profit",
         "__Dim_Color__": "2022-利润",
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "2022-利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 40000,
@@ -514,7 +518,7 @@ exports[`basicPie 2`] = `
       {
         "__Dim_ColorId__": "2023-销售额-sales",
         "__Dim_Color__": "2023-销售额",
-        "__Dim_Detail__": "销售额",
+        "__Dim_Detail__": "2023-销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 1000000,
@@ -529,7 +533,7 @@ exports[`basicPie 2`] = `
       {
         "__Dim_ColorId__": "2023-利润-profit",
         "__Dim_Color__": "2023-利润",
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "2023-利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 50000,

@@ -1312,9 +1312,12 @@ exports[`horizontal 1`] = `
     "color": [
       "__MeaName__",
     ],
+    "column": [],
     "detail": [
       "__MeaName__",
     ],
+    "label": [],
+    "row": [],
     "tooltip": [
       "profit",
       "sales",

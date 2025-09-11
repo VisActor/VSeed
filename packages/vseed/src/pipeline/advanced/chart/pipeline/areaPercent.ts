@@ -9,7 +9,7 @@ import {
   markStyle,
   sortXBandAxis,
   sortLegend,
-  encodingForColumn,
+  encodingForLine,
   reshapeWithEncoding,
   pivotReshapeWithEncoding,
   buildMeasures,
@@ -17,7 +17,7 @@ import {
 
 export const areaPercentAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  encodingForColumn,
+  encodingForLine,
   buildMeasures,
   autoDimensions,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),

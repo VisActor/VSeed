@@ -14,9 +14,9 @@ import {
 
 export const pieAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  encodingForPie,
   buildMeasures,
   autoDimensions,
-  encodingForPie,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
   pieConfig,
   theme,

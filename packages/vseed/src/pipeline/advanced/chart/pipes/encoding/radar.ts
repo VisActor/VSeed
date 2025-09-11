@@ -36,7 +36,9 @@ export const encodingForRadar: AdvancedPipe = (advancedVSeed, context) => {
 
 const generateDefaultMeasureEncoding = (measures: Measures, encoding: Encoding) => {
   encoding.tooltip = unique(measures.map((item) => item.id))
-  encoding.radius = unique(measures.filter((item) => item.encoding === 'radius' || !item.encoding).map((item) => item.id))
+  encoding.radius = unique(
+    measures.filter((item) => item.encoding === 'radius' || !item.encoding).map((item) => item.id),
+  )
 }
 
 const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
@@ -54,16 +56,19 @@ const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Enco
 
 const generateMeasureEncoding = (measures: Measures, encoding: Encoding) => {
   encoding.tooltip = measures.map((item) => item.id)
-  encoding.radius = unique(measures.filter((item) => item.encoding === 'radius' || !item.encoding).map((item) => item.id))
+  encoding.radius = unique(
+    measures.filter((item) => item.encoding === 'radius' || !item.encoding).map((item) => item.id),
+  )
   const color = unique(measures.filter((item) => item.encoding === 'color').map((item) => item.id))
   if (color.length > 0) {
     encoding.color = color
   }
-  return encoding
 }
 
 const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
-  encoding.angle = unique(dimensions.filter((item) => item.encoding === 'angle' || !item.encoding).map((item) => item.id))
+  encoding.angle = unique(
+    dimensions.filter((item) => item.encoding === 'angle' || !item.encoding).map((item) => item.id),
+  )
   encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
   encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))
 

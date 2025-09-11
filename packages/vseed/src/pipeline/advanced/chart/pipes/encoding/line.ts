@@ -59,7 +59,6 @@ const generateMeasureEncoding = (measures: Measures, encoding: Encoding) => {
   if (color.length > 0) {
     encoding.color = color
   }
-  return encoding
 }
 
 const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {

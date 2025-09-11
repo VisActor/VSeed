@@ -9,79 +9,35 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'bar',
-    measures: [
-      {
-        id: 'line1',
-        children: [
-          {
-            id: 'sales',
-            alias: '销售额',
-            format: {
-              type: 'number',
-              ratio: 1000,
-              thousandSeparator: true,
-              decimalPlaces: 0,
-              symbol: '千',
-              prefix: '利润',
-              suffix: '$',
-            },
-          },
-        ],
-      },
-      {
-        id: 'line2',
-        children: [
-          {
-            id: 'profit',
-            alias: '利润',
-            autoFormat: true,
-            format: {
-              type: 'number',
-              ratio: 1000,
-              thousandSeparator: true,
-              decimalPlaces: 0,
-              symbol: '千',
-              prefix: '利润',
-              suffix: '$',
-            },
-          },
-        ],
-      },
+    chartType: 'pie',
+    dataset: [
+      { date: '2019', type: 'A', profit: 10, profit2: 10, sales: 20 },
+      { date: '2019', type: 'B', profit: 30, profit2: 10, sales: 60 },
+      { date: '2019', type: 'C', profit: 30, profit2: 10, sales: 60 },
+      { date: '2019', type: 'D', profit: 50, profit2: 10, sales: 100 },
+      { date: '2019', type: 'E', profit: 40, profit2: 10, sales: 80 },
+
+      { date: '2020', type: 'A', profit: 10, profit2: 10, sales: 20 },
+      { date: '2020', type: 'B', profit: 30, profit2: 10, sales: 60 },
+      { date: '2020', type: 'C', profit: 30, profit2: 10, sales: 60 },
+      { date: '2020', type: 'D', profit: 50, profit2: 10, sales: 100 },
+      { date: '2020', type: 'E', profit: 40, profit2: 10, sales: 80 },
     ],
     dimensions: [
-      { id: 'month', alias: '月', location: 'dimension' },
-      { id: 'date', alias: '年', location: 'columnDimension' },
-      { id: 'type', alias: '类型', location: 'rowDimension' },
+      {
+        id: 'type',
+        alias: '类型',
+        encoding: 'angle',
+      },
+      {
+        id: 'date',
+        alias: '日期',
+        encoding: 'angle',
+      },
     ],
-    dataset: [
-      { date: '2019', type: 'A', month: '1', profit: 10000, sales: 200000 },
-      { date: '2019', type: 'A', month: '2', profit: 20000, sales: 400000 },
-      { date: '2019', type: 'A', month: '3', profit: 30000, sales: 600000 },
-      { date: '2019', type: 'A', month: '4', profit: 40000, sales: 800000 },
-      { date: '2019', type: 'A', month: '5', profit: 50000, sales: 1000000 },
-      { date: '2019', type: 'A', month: '6', profit: 10000, sales: 300000 },
-
-      { date: '2019', type: 'B', month: '1', profit: 10000, sales: 200000 },
-      { date: '2019', type: 'B', month: '2', profit: 20000, sales: 400000 },
-      { date: '2019', type: 'B', month: '3', profit: 30000, sales: 600000 },
-      { date: '2019', type: 'B', month: '4', profit: 40000, sales: 800000 },
-      { date: '2019', type: 'B', month: '5', profit: 50000, sales: 1000000 },
-      { date: '2019', type: 'B', month: '6', profit: 10000, sales: 300000 },
-
-      { date: '2020', type: 'A', month: '1', profit: 10000, sales: 200000 },
-      { date: '2020', type: 'A', month: '2', profit: 20000, sales: 400000 },
-      { date: '2020', type: 'A', month: '3', profit: 30000, sales: 600000 },
-      { date: '2020', type: 'A', month: '4', profit: 40000, sales: 800000 },
-      { date: '2020', type: 'A', month: '5', profit: 50000, sales: 1000000 },
-      { date: '2020', type: 'A', month: '6', profit: 10000, sales: 300000 },
-
-      { date: '2020', type: 'B', month: '1', profit: 10000, sales: 200000 },
-      { date: '2020', type: 'B', month: '2', profit: 20000, sales: 400000 },
-      { date: '2020', type: 'B', month: '3', profit: 30000, sales: 600000 },
-      { date: '2020', type: 'B', month: '4', profit: 40000, sales: 800000 },
-      { date: '2020', type: 'B', month: '5', profit: 50000, sales: 1000000 },
-      { date: '2020', type: 'B', month: '6', profit: 10000, sales: 300000 },
+    measures: [
+      { id: 'profit', alias: '利润', encoding: 'radius', parentId: '1' },
+      { id: 'sales', alias: '销售额', encoding: 'radius', parentId: '1' },
     ],
   }
 

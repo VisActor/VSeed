@@ -262,17 +262,19 @@ exports[`onlyMeasures 1`] = `
     },
   ],
   "encoding": {
+    "angle": [
+      "sales",
+      "profit",
+    ],
     "color": [
       "__MeaName__",
     ],
-    "column": [],
     "detail": [
       "__MeaName__",
     ],
-    "label": [],
-    "row": [],
     "tooltip": [
-      "__MeaName__",
+      "sales",
+      "profit",
     ],
   },
   "locale": "zh-CN",

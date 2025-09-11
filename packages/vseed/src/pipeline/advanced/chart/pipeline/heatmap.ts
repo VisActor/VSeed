@@ -16,9 +16,9 @@ import {
 
 export const heatmapAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  encodingForHeatmap,
   buildMeasures,
   autoDimensions,
-  encodingForHeatmap,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
   sortXBandAxis,
   heatmapConfig,

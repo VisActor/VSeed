@@ -1,42 +1,81 @@
 import { unique } from 'remeda'
 import { MeasureName } from 'src/dataReshape'
-import type { AdvancedPipe, Encoding, Scatter } from 'src/types'
+import { findAllMeasures } from 'src/pipeline/utils'
+import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
+import { getBasicDimensions } from '../init'
+import { getBasicMeasures } from '../measures'
 
 export const encodingForScatter: AdvancedPipe = (advancedVSeed, context) => {
-  const { vseed } = context as {
-    vseed: Scatter
-  }
-  const { dimensions } = advancedVSeed
-  if (!dimensions) {
-    return advancedVSeed
-  }
+  const { vseed } = context
+  const { measures: vseedMeasures = [] } = vseed
+  // prepare measures and dimensions
+  const measures = vseedMeasures.length ? findAllMeasures(vseedMeasures) : getBasicMeasures(vseed)
+  const dimensions = getBasicDimensions(vseed)
 
-  const encoding = vseed.encoding
+  // exist encoding condition
+  const hasDimensionEncoding = dimensions.some((item: Dimension) => item.encoding)
+  const hasMeasureEncoding = measures.some((item: Measure) => item.encoding)
 
-  if (encoding) {
-    const detail = encoding.detail || []
-    const color = encoding.color || [(dimensions[1] || dimensions[0]).id]
+  // encoding for modify in place
+  const encoding: Encoding = {}
 
-    const mergedDetail = detail.length === 0 ? unique([...color, ...detail]) : detail
-    return {
-      ...advancedVSeed,
-      encoding: {
-        ...encoding,
-        color,
-        detail: mergedDetail,
-      },
-    }
+  if (hasDimensionEncoding) {
+    generateDimensionEncoding(dimensions, encoding)
+  } else {
+    generateDefaultDimensionEncoding(dimensions, encoding)
   }
 
+  if (hasMeasureEncoding) {
+    generateMeasureEncoding(measures, encoding)
+  } else {
+    generateDefaultMeasureEncoding(measures, encoding)
+  }
+
+  return { ...advancedVSeed, encoding }
+}
+
+const generateDefaultMeasureEncoding = (measures: Measures, encoding: Encoding) => {
+  encoding.tooltip = unique(measures.map((item) => item.id))
+  encoding.y = unique(
+    measures
+      .filter((item) => item.encoding === 'xAxis' || item.encoding === 'yAxis' || !item.encoding)
+      .map((item) => item.id),
+  )
+}
+
+const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
   const dimensionsWithoutMeasureName = dimensions.filter((item) => item.id !== MeasureName)
+  const uniqueDimIds = unique(dimensionsWithoutMeasureName.map((d) => d.id))
 
-  const mergedEncoding: Encoding = {
-    color: dimensions.slice(0).map((item) => item.id), // 第二个之后的维度用于颜色
-    detail: dimensionsWithoutMeasureName.slice(0).map((item) => item.id), // 第二个之后的维度进行细分
-    tooltip: dimensionsWithoutMeasureName.map((item) => item.id), // 展示所有维度
-    label: [], // 默认不展示标签
-    row: [], // 默认不进行行透视
-    column: [], // 默认不进行列透视
+  encoding.color = uniqueDimIds.slice(0)
+  encoding.detail = uniqueDimIds.slice(0)
+  encoding.tooltip = uniqueDimIds // 展示所有维度
+  encoding.label = [] // 默认不展示标签
+  encoding.row = [] // 默认不进行行透视
+  encoding.column = [] // 默认不进行列透视
+}
+
+const generateMeasureEncoding = (measures: Measures, encoding: Encoding) => {
+  encoding.tooltip = measures.map((item) => item.id)
+  encoding.y = unique(
+    measures
+      .filter((item) => item.encoding === 'xAxis' || item.encoding === 'yAxis' || !item.encoding)
+      .map((item) => item.id),
+  )
+  const color = unique(measures.filter((item) => item.encoding === 'color').map((item) => item.id))
+  if (color.length > 0) {
+    encoding.color = color
   }
-  return { ...advancedVSeed, encoding: mergedEncoding }
+}
+
+const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
+  encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
+  encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))
+
+  if (encoding.color.length === 0) {
+    encoding.color = dimensions.filter((item) => !encoding.x?.includes(item.id)).map((item) => item.id)
+  }
+  if (encoding.detail.length === 0) {
+    encoding.detail = dimensions.filter((item) => !encoding.x?.includes(item.id)).map((item) => item.id)
+  }
 }

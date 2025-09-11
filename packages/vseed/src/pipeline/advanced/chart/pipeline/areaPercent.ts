@@ -17,9 +17,9 @@ import {
 
 export const areaPercentAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  encodingForColumn,
   buildMeasures,
   autoDimensions,
-  encodingForColumn,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
   sortXBandAxis,
   sortLegend,

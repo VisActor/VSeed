@@ -16,9 +16,9 @@ import {
 
 export const radarAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  encodingForRadar,
   buildMeasures,
   autoDimensions,
-  encodingForRadar,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
   // sortXBandAxis,
   sortLegend,

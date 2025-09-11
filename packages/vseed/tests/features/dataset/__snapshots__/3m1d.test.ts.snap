@@ -578,18 +578,21 @@ exports[`3m1d 1`] = `
     "color": [
       "__MeaName__",
     ],
-    "column": [],
     "detail": [
       "__MeaName__",
     ],
-    "label": [],
-    "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "profit",
+      "sales",
+      "discount",
     ],
     "x": [
       "date",
+    ],
+    "y": [
+      "profit",
+      "sales",
+      "discount",
     ],
   },
   "locale": "zh-CN",

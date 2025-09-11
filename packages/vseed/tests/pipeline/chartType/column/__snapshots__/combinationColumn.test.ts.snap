@@ -525,18 +525,19 @@ exports[`combinationColumn 1`] = `
     "color": [
       "__MeaName__",
     ],
-    "column": [],
     "detail": [
       "__MeaName__",
     ],
-    "label": [],
-    "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "sales",
+      "profit",
     ],
     "x": [
       "date",
+    ],
+    "y": [
+      "sales",
+      "profit",
     ],
   },
   "locale": "zh-CN",

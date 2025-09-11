@@ -1,5 +1,7 @@
+import { uniqueBy } from 'remeda'
 import { dataReshapeByEncoding } from 'src/dataReshape'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
+import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, AdvancedVSeed, ColumnParallel, Encoding } from 'src/types'
 
 export const reshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
@@ -20,9 +22,15 @@ export const reshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
     dataset: newDatasets,
     foldInfo,
     unfoldInfo,
-  } = dataReshapeByEncoding(dataset, dimensions, measures, encoding as Encoding, {
-    colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
-  })
+  } = dataReshapeByEncoding(
+    dataset,
+    uniqueBy(dimensions, (item) => item.id),
+    uniqueBy(findAllMeasures(measures), (item) => item.id),
+    encoding as Encoding,
+    {
+      colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+    },
+  )
 
   return {
     ...result,

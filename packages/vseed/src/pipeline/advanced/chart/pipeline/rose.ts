@@ -15,9 +15,9 @@ import { encodingForRose } from '../pipes/encoding/rose'
 
 export const roseAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  encodingForRose,
   buildMeasures,
   autoDimensions,
-  encodingForRose,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
   roseConfig,
   theme,

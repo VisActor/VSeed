@@ -14,9 +14,9 @@ import {
 
 export const funnelAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  encodingForFunnel,
   buildMeasures,
   autoDimensions,
-  encodingForFunnel,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
   funnelConfig,
   theme,

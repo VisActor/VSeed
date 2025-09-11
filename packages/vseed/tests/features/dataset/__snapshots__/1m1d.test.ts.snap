@@ -392,18 +392,17 @@ exports[`1m1d 1`] = `
     "color": [
       "__MeaName__",
     ],
-    "column": [],
     "detail": [
       "__MeaName__",
     ],
-    "label": [],
-    "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "profit",
     ],
     "x": [
       "date",
+    ],
+    "y": [
+      "profit",
     ],
   },
   "locale": "zh-CN",

@@ -17,9 +17,9 @@ import {
 
 export const dualAxisAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  encodingForDualAxis,
   buildMeasuresForDualAxis,
   autoDimensions,
-  encodingForDualAxis,
   pivotAdapter([reshapeWithDualEncoding], [pivotReshapeWithDualEncoding]),
   sortXBandAxis,
   sortLegend,

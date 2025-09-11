@@ -88,7 +88,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2019-A-goalProfit-goalProfit",
       "__Dim_Color__": "2019-A-goalProfit",
-      "__Dim_Detail__": "2019-A-goalProfit",
+      "__Dim_Detail__": "goalProfit",
       "__MeaId__": "goalProfit",
       "__MeaName__": "goalProfit",
       "__MeaValue__": 10,
@@ -108,7 +108,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2019-A-profit-profit",
       "__Dim_Color__": "2019-A-profit",
-      "__Dim_Detail__": "2019-A-profit",
+      "__Dim_Detail__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 10,
@@ -128,7 +128,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2019-A-sales-sales",
       "__Dim_Color__": "2019-A-sales",
-      "__Dim_Detail__": "2019-A-sales",
+      "__Dim_Detail__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "sales",
       "__MeaValue__": 100,
@@ -148,7 +148,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2019-A-leftCount-leftCount",
       "__Dim_Color__": "2019-A-leftCount",
-      "__Dim_Detail__": "2019-A-leftCount",
+      "__Dim_Detail__": "leftCount",
       "__MeaId__": "leftCount",
       "__MeaName__": "leftCount",
       "__MeaValue__": 1,
@@ -168,7 +168,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2019-A-salesCount-salesCount",
       "__Dim_Color__": "2019-A-salesCount",
-      "__Dim_Detail__": "2019-A-salesCount",
+      "__Dim_Detail__": "salesCount",
       "__MeaId__": "salesCount",
       "__MeaName__": "salesCount",
       "__MeaValue__": 100,
@@ -188,7 +188,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2020-A-goalProfit-goalProfit",
       "__Dim_Color__": "2020-A-goalProfit",
-      "__Dim_Detail__": "2020-A-goalProfit",
+      "__Dim_Detail__": "goalProfit",
       "__MeaId__": "goalProfit",
       "__MeaName__": "goalProfit",
       "__MeaValue__": 30,
@@ -208,7 +208,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2020-A-profit-profit",
       "__Dim_Color__": "2020-A-profit",
-      "__Dim_Detail__": "2020-A-profit",
+      "__Dim_Detail__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 30,
@@ -228,7 +228,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2020-A-sales-sales",
       "__Dim_Color__": "2020-A-sales",
-      "__Dim_Detail__": "2020-A-sales",
+      "__Dim_Detail__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "sales",
       "__MeaValue__": 320,
@@ -248,7 +248,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2020-A-leftCount-leftCount",
       "__Dim_Color__": "2020-A-leftCount",
-      "__Dim_Detail__": "2020-A-leftCount",
+      "__Dim_Detail__": "leftCount",
       "__MeaId__": "leftCount",
       "__MeaName__": "leftCount",
       "__MeaValue__": 2,
@@ -268,7 +268,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2020-A-salesCount-salesCount",
       "__Dim_Color__": "2020-A-salesCount",
-      "__Dim_Detail__": "2020-A-salesCount",
+      "__Dim_Detail__": "salesCount",
       "__MeaId__": "salesCount",
       "__MeaName__": "salesCount",
       "__MeaValue__": 200,
@@ -288,7 +288,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2021-A-goalProfit-goalProfit",
       "__Dim_Color__": "2021-A-goalProfit",
-      "__Dim_Detail__": "2021-A-goalProfit",
+      "__Dim_Detail__": "goalProfit",
       "__MeaId__": "goalProfit",
       "__MeaName__": "goalProfit",
       "__MeaValue__": 30,
@@ -308,7 +308,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2021-A-profit-profit",
       "__Dim_Color__": "2021-A-profit",
-      "__Dim_Detail__": "2021-A-profit",
+      "__Dim_Detail__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 30,
@@ -328,7 +328,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2021-A-sales-sales",
       "__Dim_Color__": "2021-A-sales",
-      "__Dim_Detail__": "2021-A-sales",
+      "__Dim_Detail__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "sales",
       "__MeaValue__": 300,
@@ -348,7 +348,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2021-A-leftCount-leftCount",
       "__Dim_Color__": "2021-A-leftCount",
-      "__Dim_Detail__": "2021-A-leftCount",
+      "__Dim_Detail__": "leftCount",
       "__MeaId__": "leftCount",
       "__MeaName__": "leftCount",
       "__MeaValue__": 3,
@@ -368,7 +368,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2021-A-salesCount-salesCount",
       "__Dim_Color__": "2021-A-salesCount",
-      "__Dim_Detail__": "2021-A-salesCount",
+      "__Dim_Detail__": "salesCount",
       "__MeaId__": "salesCount",
       "__MeaName__": "salesCount",
       "__MeaValue__": 300,
@@ -388,7 +388,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2022-A-goalProfit-goalProfit",
       "__Dim_Color__": "2022-A-goalProfit",
-      "__Dim_Detail__": "2022-A-goalProfit",
+      "__Dim_Detail__": "goalProfit",
       "__MeaId__": "goalProfit",
       "__MeaName__": "goalProfit",
       "__MeaValue__": 50,
@@ -408,7 +408,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2022-A-profit-profit",
       "__Dim_Color__": "2022-A-profit",
-      "__Dim_Detail__": "2022-A-profit",
+      "__Dim_Detail__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 50,
@@ -428,7 +428,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2022-A-sales-sales",
       "__Dim_Color__": "2022-A-sales",
-      "__Dim_Detail__": "2022-A-sales",
+      "__Dim_Detail__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "sales",
       "__MeaValue__": 240,
@@ -448,7 +448,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2022-A-leftCount-leftCount",
       "__Dim_Color__": "2022-A-leftCount",
-      "__Dim_Detail__": "2022-A-leftCount",
+      "__Dim_Detail__": "leftCount",
       "__MeaId__": "leftCount",
       "__MeaName__": "leftCount",
       "__MeaValue__": 4,
@@ -468,7 +468,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2022-A-salesCount-salesCount",
       "__Dim_Color__": "2022-A-salesCount",
-      "__Dim_Detail__": "2022-A-salesCount",
+      "__Dim_Detail__": "salesCount",
       "__MeaId__": "salesCount",
       "__MeaName__": "salesCount",
       "__MeaValue__": 400,
@@ -488,7 +488,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2023-A-goalProfit-goalProfit",
       "__Dim_Color__": "2023-A-goalProfit",
-      "__Dim_Detail__": "2023-A-goalProfit",
+      "__Dim_Detail__": "goalProfit",
       "__MeaId__": "goalProfit",
       "__MeaName__": "goalProfit",
       "__MeaValue__": 40,
@@ -508,7 +508,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2023-A-profit-profit",
       "__Dim_Color__": "2023-A-profit",
-      "__Dim_Detail__": "2023-A-profit",
+      "__Dim_Detail__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "profit",
       "__MeaValue__": 40,
@@ -528,7 +528,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2023-A-sales-sales",
       "__Dim_Color__": "2023-A-sales",
-      "__Dim_Detail__": "2023-A-sales",
+      "__Dim_Detail__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "sales",
       "__MeaValue__": 500,
@@ -548,7 +548,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2023-A-leftCount-leftCount",
       "__Dim_Color__": "2023-A-leftCount",
-      "__Dim_Detail__": "2023-A-leftCount",
+      "__Dim_Detail__": "leftCount",
       "__MeaId__": "leftCount",
       "__MeaName__": "leftCount",
       "__MeaValue__": 5,
@@ -568,7 +568,7 @@ exports[`simpleFunnel 1`] = `
     {
       "__Dim_ColorId__": "2023-A-salesCount-salesCount",
       "__Dim_Color__": "2023-A-salesCount",
-      "__Dim_Detail__": "2023-A-salesCount",
+      "__Dim_Detail__": "salesCount",
       "__MeaId__": "salesCount",
       "__MeaName__": "salesCount",
       "__MeaValue__": 500,
@@ -696,18 +696,22 @@ exports[`simpleFunnel 1`] = `
       "type",
       "__MeaName__",
     ],
-    "column": [],
     "detail": [
-      "date",
-      "type",
       "__MeaName__",
     ],
-    "label": [],
-    "row": [],
+    "size": [
+      "goalProfit",
+      "profit",
+      "sales",
+      "leftCount",
+      "salesCount",
+    ],
     "tooltip": [
-      "date",
-      "type",
-      "__MeaName__",
+      "goalProfit",
+      "profit",
+      "sales",
+      "leftCount",
+      "salesCount",
     ],
   },
   "locale": "zh-CN",
@@ -801,7 +805,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2019-A-goalProfit-goalProfit",
         "__Dim_Color__": "2019-A-goalProfit",
-        "__Dim_Detail__": "2019-A-goalProfit",
+        "__Dim_Detail__": "goalProfit",
         "__MeaId__": "goalProfit",
         "__MeaName__": "goalProfit",
         "__MeaValue__": 10,
@@ -821,7 +825,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2019-A-profit-profit",
         "__Dim_Color__": "2019-A-profit",
-        "__Dim_Detail__": "2019-A-profit",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 10,
@@ -841,7 +845,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2019-A-sales-sales",
         "__Dim_Color__": "2019-A-sales",
-        "__Dim_Detail__": "2019-A-sales",
+        "__Dim_Detail__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
         "__MeaValue__": 100,
@@ -861,7 +865,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2019-A-leftCount-leftCount",
         "__Dim_Color__": "2019-A-leftCount",
-        "__Dim_Detail__": "2019-A-leftCount",
+        "__Dim_Detail__": "leftCount",
         "__MeaId__": "leftCount",
         "__MeaName__": "leftCount",
         "__MeaValue__": 1,
@@ -881,7 +885,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2019-A-salesCount-salesCount",
         "__Dim_Color__": "2019-A-salesCount",
-        "__Dim_Detail__": "2019-A-salesCount",
+        "__Dim_Detail__": "salesCount",
         "__MeaId__": "salesCount",
         "__MeaName__": "salesCount",
         "__MeaValue__": 100,
@@ -901,7 +905,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2020-A-goalProfit-goalProfit",
         "__Dim_Color__": "2020-A-goalProfit",
-        "__Dim_Detail__": "2020-A-goalProfit",
+        "__Dim_Detail__": "goalProfit",
         "__MeaId__": "goalProfit",
         "__MeaName__": "goalProfit",
         "__MeaValue__": 30,
@@ -921,7 +925,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2020-A-profit-profit",
         "__Dim_Color__": "2020-A-profit",
-        "__Dim_Detail__": "2020-A-profit",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 30,
@@ -941,7 +945,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2020-A-sales-sales",
         "__Dim_Color__": "2020-A-sales",
-        "__Dim_Detail__": "2020-A-sales",
+        "__Dim_Detail__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
         "__MeaValue__": 320,
@@ -961,7 +965,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2020-A-leftCount-leftCount",
         "__Dim_Color__": "2020-A-leftCount",
-        "__Dim_Detail__": "2020-A-leftCount",
+        "__Dim_Detail__": "leftCount",
         "__MeaId__": "leftCount",
         "__MeaName__": "leftCount",
         "__MeaValue__": 2,
@@ -981,7 +985,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2020-A-salesCount-salesCount",
         "__Dim_Color__": "2020-A-salesCount",
-        "__Dim_Detail__": "2020-A-salesCount",
+        "__Dim_Detail__": "salesCount",
         "__MeaId__": "salesCount",
         "__MeaName__": "salesCount",
         "__MeaValue__": 200,
@@ -1001,7 +1005,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2021-A-goalProfit-goalProfit",
         "__Dim_Color__": "2021-A-goalProfit",
-        "__Dim_Detail__": "2021-A-goalProfit",
+        "__Dim_Detail__": "goalProfit",
         "__MeaId__": "goalProfit",
         "__MeaName__": "goalProfit",
         "__MeaValue__": 30,
@@ -1021,7 +1025,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2021-A-profit-profit",
         "__Dim_Color__": "2021-A-profit",
-        "__Dim_Detail__": "2021-A-profit",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 30,
@@ -1041,7 +1045,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2021-A-sales-sales",
         "__Dim_Color__": "2021-A-sales",
-        "__Dim_Detail__": "2021-A-sales",
+        "__Dim_Detail__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
         "__MeaValue__": 300,
@@ -1061,7 +1065,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2021-A-leftCount-leftCount",
         "__Dim_Color__": "2021-A-leftCount",
-        "__Dim_Detail__": "2021-A-leftCount",
+        "__Dim_Detail__": "leftCount",
         "__MeaId__": "leftCount",
         "__MeaName__": "leftCount",
         "__MeaValue__": 3,
@@ -1081,7 +1085,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2021-A-salesCount-salesCount",
         "__Dim_Color__": "2021-A-salesCount",
-        "__Dim_Detail__": "2021-A-salesCount",
+        "__Dim_Detail__": "salesCount",
         "__MeaId__": "salesCount",
         "__MeaName__": "salesCount",
         "__MeaValue__": 300,
@@ -1101,7 +1105,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2022-A-goalProfit-goalProfit",
         "__Dim_Color__": "2022-A-goalProfit",
-        "__Dim_Detail__": "2022-A-goalProfit",
+        "__Dim_Detail__": "goalProfit",
         "__MeaId__": "goalProfit",
         "__MeaName__": "goalProfit",
         "__MeaValue__": 50,
@@ -1121,7 +1125,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2022-A-profit-profit",
         "__Dim_Color__": "2022-A-profit",
-        "__Dim_Detail__": "2022-A-profit",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 50,
@@ -1141,7 +1145,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2022-A-sales-sales",
         "__Dim_Color__": "2022-A-sales",
-        "__Dim_Detail__": "2022-A-sales",
+        "__Dim_Detail__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
         "__MeaValue__": 240,
@@ -1161,7 +1165,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2022-A-leftCount-leftCount",
         "__Dim_Color__": "2022-A-leftCount",
-        "__Dim_Detail__": "2022-A-leftCount",
+        "__Dim_Detail__": "leftCount",
         "__MeaId__": "leftCount",
         "__MeaName__": "leftCount",
         "__MeaValue__": 4,
@@ -1181,7 +1185,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2022-A-salesCount-salesCount",
         "__Dim_Color__": "2022-A-salesCount",
-        "__Dim_Detail__": "2022-A-salesCount",
+        "__Dim_Detail__": "salesCount",
         "__MeaId__": "salesCount",
         "__MeaName__": "salesCount",
         "__MeaValue__": 400,
@@ -1201,7 +1205,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2023-A-goalProfit-goalProfit",
         "__Dim_Color__": "2023-A-goalProfit",
-        "__Dim_Detail__": "2023-A-goalProfit",
+        "__Dim_Detail__": "goalProfit",
         "__MeaId__": "goalProfit",
         "__MeaName__": "goalProfit",
         "__MeaValue__": 40,
@@ -1221,7 +1225,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2023-A-profit-profit",
         "__Dim_Color__": "2023-A-profit",
-        "__Dim_Detail__": "2023-A-profit",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "profit",
         "__MeaValue__": 40,
@@ -1241,7 +1245,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2023-A-sales-sales",
         "__Dim_Color__": "2023-A-sales",
-        "__Dim_Detail__": "2023-A-sales",
+        "__Dim_Detail__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "sales",
         "__MeaValue__": 500,
@@ -1261,7 +1265,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2023-A-leftCount-leftCount",
         "__Dim_Color__": "2023-A-leftCount",
-        "__Dim_Detail__": "2023-A-leftCount",
+        "__Dim_Detail__": "leftCount",
         "__MeaId__": "leftCount",
         "__MeaName__": "leftCount",
         "__MeaValue__": 5,
@@ -1281,7 +1285,7 @@ exports[`simpleFunnel 2`] = `
       {
         "__Dim_ColorId__": "2023-A-salesCount-salesCount",
         "__Dim_Color__": "2023-A-salesCount",
-        "__Dim_Detail__": "2023-A-salesCount",
+        "__Dim_Detail__": "salesCount",
         "__MeaId__": "salesCount",
         "__MeaName__": "salesCount",
         "__MeaValue__": 500,

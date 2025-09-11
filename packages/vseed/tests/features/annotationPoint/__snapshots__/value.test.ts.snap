@@ -591,18 +591,21 @@ exports[`value 1`] = `
     "color": [
       "__MeaName__",
     ],
-    "column": [],
     "detail": [
       "__MeaName__",
     ],
-    "label": [],
-    "row": [],
     "tooltip": [
-      "date",
-      "__MeaName__",
+      "profit",
+      "sales",
+      "count",
     ],
     "x": [
       "date",
+    ],
+    "y": [
+      "profit",
+      "sales",
+      "count",
     ],
   },
   "locale": "zh-CN",

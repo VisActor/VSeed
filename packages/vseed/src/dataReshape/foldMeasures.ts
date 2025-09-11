@@ -1,13 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { Dataset, FoldInfo, Dimension, Encoding } from 'src/types'
-import {
-  ColorEncoding,
-  ColorIdEncoding,
-  FoldMeasureId,
-  FoldMeasureName,
-  FoldMeasureValue,
-  ORIGINAL_DATA,
-} from './constant'
+import type { Dataset, FoldInfo, Measures } from 'src/types'
+import { ColorEncoding, ColorIdEncoding, ORIGINAL_DATA } from './constant'
 import { omit } from 'remeda'
 
 /**
@@ -16,8 +9,7 @@ import { omit } from 'remeda'
  */
 export const foldMeasures = (
   dataset: Dataset,
-  measures: Dimension[],
-  encoding: Encoding,
+  measures: Measures,
   options: {
     measureId: string
     measureName: string

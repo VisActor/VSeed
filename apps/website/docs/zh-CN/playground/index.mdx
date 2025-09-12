@@ -9,33 +9,23 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'table',
+    chartType: 'line',
     dataset: [
-      { date: '2019', type: 'A', profit: 10, profit2: 10, sales: 20 },
-      { date: '2019', type: 'B', profit: 30, profit2: 10, sales: 60 },
-      { date: '2019', type: 'C', profit: 30, profit2: 10, sales: 60 },
-      { date: '2019', type: 'D', profit: 50, profit2: 10, sales: 100 },
-      { date: '2019', type: 'E', profit: 40, profit2: 10, sales: 80 },
-
-      { date: '2020', type: 'A', profit: 10, profit2: 10, sales: 20 },
-      { date: '2020', type: 'B', profit: 30, profit2: 10, sales: 60 },
-      { date: '2020', type: 'C', profit: 30, profit2: 10, sales: 60 },
-      { date: '2020', type: 'D', profit: 50, profit2: 10, sales: 100 },
-      { date: '2020', type: 'E', profit: 40, profit2: 10, sales: 80 },
+      { date: '2019', profit: 100, sales: 200, count: 500 },
+      { date: '2020', profit: 30, sales: 60, count: 50 },
+      { date: '2021', profit: 30, sales: 60, count: 50 },
+      { date: '2022', profit: 50, sales: 100, count: 50 },
+      { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
-    dimensions: [
-      {
-        id: 'type',
-        alias: '类型',
-      },
-      {
-        id: 'date',
-        alias: '日期',
-      },
-    ],
+    annotationHorizontalLine: {
+      selector: 200,
+      text: '销售额最大值',
+    },
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
+      { id: 'count', alias: '数量' },
     ],
   }
 

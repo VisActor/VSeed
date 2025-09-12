@@ -20,6 +20,11 @@
 
 :::
 
+:::info{title=编码映射}
+仅支持配置维度树与指标树, 默认encoding到column
+
+:::
+
 :::warning{title=Warning}
 数据要求:
 

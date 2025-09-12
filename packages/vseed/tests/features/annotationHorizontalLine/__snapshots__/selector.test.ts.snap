@@ -545,7 +545,6 @@ exports[`selector 1`] = `
     {
       "alias": "日期",
       "id": "date",
-      "location": "dimension",
     },
     {
       "alias": "指标名称",
@@ -1130,7 +1129,7 @@ exports[`selector 2`] = `
           "visible": true,
         },
       },
-      "y": undefined,
+      "y": 200,
       "zIndex": 1000,
     },
   ],

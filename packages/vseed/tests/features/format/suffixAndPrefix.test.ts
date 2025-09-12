@@ -47,5 +47,6 @@ test('suffixAndPrefix', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

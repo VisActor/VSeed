@@ -47,5 +47,6 @@ test('array', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

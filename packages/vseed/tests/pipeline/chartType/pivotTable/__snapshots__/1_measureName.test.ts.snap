@@ -458,20 +458,35 @@ exports[`1_measureName 1`] = `
     },
     {
       "alias": "日期",
-      "encoding": "row",
       "id": "date",
     },
     {
       "alias": "区域",
-      "encoding": "column",
       "id": "region",
     },
     {
       "alias": "城市",
-      "encoding": "row",
       "id": "city",
     },
   ],
+  "encoding": {
+    "column": [
+      "__MeaName__",
+      "region",
+    ],
+    "detail": [
+      "profit",
+      "sales",
+    ],
+    "row": [
+      "date",
+      "city",
+    ],
+    "tooltip": [
+      "profit",
+      "sales",
+    ],
+  },
   "locale": "zh-CN",
   "measures": [
     {
@@ -968,9 +983,9 @@ exports[`1_measureName 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "right",
@@ -1072,9 +1087,9 @@ exports[`1_measureName 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "left",

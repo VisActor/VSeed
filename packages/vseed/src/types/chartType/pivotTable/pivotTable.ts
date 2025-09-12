@@ -3,20 +3,27 @@ import type { Measures } from '../../properties'
 import { type BackgroundColor, type Dataset, type Dimensions, type Theme } from '../../properties'
 
 /**
- * 透视表类型定义
- * @description 透视表，适用于多维度数据交叉分析场景，可灵活配置行、列维度和指标计算方式
+ * @description 透视表格，适用于多维度数据交叉分析场景，可灵活配置行、列维度和指标计算方式
  * 适用场景:
  * - 复杂多维数据统计分析
  * - 数据钻取与聚合展示
  * - 业务报表生成与数据探索
- * @warning 
+ * @encoding
+ * 则使用默认映射规则:
+ * - 维度与指标名称, 交替映射到列维度和行维度
+ * - 指标默认映射到detail通道
+ *
+ * 存在`encoding`配置:
+ * - 用户指定的`row`与`column`维度, 精准映射到行维度与列维度, 若未指定row和column, 则交替映射到列维度和行维度
+ * - 用户指定的`detail`指标, 精准映射到detail通道, 若未指定detail, 则依旧映射到detail通道
+ * @warning
  * 数据要求:
  * - 至少1个行维度 或 1个列维度 或 1个指标
  * - 数据必须已聚合
  * - 数据可被分组
  * 默认开启的功能:
  * - 默认开启行列排序、数据筛选、聚合计算、小计/总计
- * @recommend 
+ * @recommend
  * - 推荐字段配置: `1`个指标, `1`个维度
  * - 支持数据重塑: 至少`1`个指标, `0`个维度
  */
@@ -35,7 +42,7 @@ export interface PivotTable {
   dataset: Dataset
 
   /**
-   * @description 透视表的行维度和列维度，会自动对数据进行处理为树形结构, 并映射到行和列轴, 可以通过 location : "rowDimension" | "columnDimension" 来控制一维度的映射位置
+   * @description 透视表的行维度和列维度，会自动对数据进行处理为树形结构, 并映射到行和列轴,
    * @type {Dimensions}
    * @example [{id: 'region', alias: '地区', isRow: true}, {id: 'product', alias: '产品', isColumn: true}]
    */

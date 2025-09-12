@@ -47,5 +47,6 @@ test('simpleLine', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

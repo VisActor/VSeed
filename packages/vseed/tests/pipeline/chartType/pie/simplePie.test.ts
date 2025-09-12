@@ -47,5 +47,6 @@ test('simplePie', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

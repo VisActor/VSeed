@@ -215,17 +215,16 @@ exports[`pivotTable 1`] = `
     {
       "alias": "月",
       "id": "month",
-      "location": "dimension",
     },
     {
       "alias": "年",
+      "encoding": "column",
       "id": "date",
-      "location": "columnDimension",
     },
     {
       "alias": "类型",
+      "encoding": "row",
       "id": "type",
-      "location": "rowDimension",
     },
   ],
   "locale": "zh-CN",
@@ -514,9 +513,9 @@ exports[`pivotTable 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "right",

@@ -47,5 +47,6 @@ test('simpleRadar', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

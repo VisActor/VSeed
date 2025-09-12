@@ -47,5 +47,6 @@ test('border', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

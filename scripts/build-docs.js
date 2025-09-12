@@ -148,6 +148,7 @@ function generateMarkdownContent(node, project, level = 1, visited = new Set()) 
   const description = (tags.description || []).join('\n\n').replace(/\n/g, '\n\n').replace(/\-/g, '\\-') || ''
   const example = (tags.example || []).join('\n\n').replace(/\n/g, '\n').replace(/\-/g, '\\-') || ''
   const recommend = (tags.recommend || []).join('\n\n').replace(/\n/g, '\n\n').replace(/\-/g, '\\-') || ''
+  const encoding = (tags.encoding || []).join('\n\n').replace(/\n/g, '\n\n').replace(/\-/g, '\\-') || ''
   const note = (tags.note || []).join('\n\n').replace(/\n/g, '\n\n').replace(/\-/g, '\\-') || ''
 
   const danger = (tags.danger || []).join('\n\n').replace(/\n/g, '\n\n').replace(/\-/g, '\\-') || ''
@@ -161,6 +162,10 @@ function generateMarkdownContent(node, project, level = 1, visited = new Set()) 
   }
   if (description) {
     markdown += `:::note{title=描述}\n${description}\n\n:::`
+    markdown += '\n\n'
+  }
+  if (encoding) {
+    markdown += `:::info{title=编码映射}\n${encoding}\n\n:::`
     markdown += '\n\n'
   }
   if (example) {

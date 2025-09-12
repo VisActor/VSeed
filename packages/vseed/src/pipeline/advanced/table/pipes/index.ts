@@ -1,3 +1,6 @@
 export * from './init'
 export * from './records'
 export * from './config'
+export * from './default'
+export * from './reshape'
+export * from './encoding'

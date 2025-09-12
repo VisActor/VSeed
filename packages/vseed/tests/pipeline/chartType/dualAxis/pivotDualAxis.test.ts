@@ -47,5 +47,6 @@ test('pivotDualAxis', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

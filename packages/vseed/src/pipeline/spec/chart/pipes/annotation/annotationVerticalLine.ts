@@ -8,7 +8,7 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { annotation, datasetReshapeInfo } = advancedVSeed
 
-  const { unfoldInfo } = datasetReshapeInfo[0]
+  const { unfoldInfo, foldInfo } = datasetReshapeInfo[0]
 
   if (!annotation || !annotation.annotationVerticalLine) {
     return spec
@@ -110,11 +110,13 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
     const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
 
     return selectedData.map((datum) => {
-      const x = unfoldInfo.encodingX
-      if (!x) {
-        return {}
+      if (datum[unfoldInfo.encodingX]) {
+        return generateOneMarkLine(datum[unfoldInfo.encodingX] as string)
       }
-      return generateOneMarkLine(datum[x] as string)
+      if (datum[foldInfo.measureValue]) {
+        return generateOneMarkLine(datum[foldInfo.measureValue] as string)
+      }
+      return {}
     })
   }) as IMarkLineSpec[]
 

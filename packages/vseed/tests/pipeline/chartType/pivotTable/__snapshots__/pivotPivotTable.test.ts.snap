@@ -837,54 +837,79 @@ exports[`pivotPivotTable 1`] = `
   "dimensions": [
     {
       "alias": "月",
-      "encoding": "column",
       "id": "month",
-      "location": "dimension",
     },
     {
       "alias": "年",
+      "encoding": "column",
       "id": "date",
-      "location": "columnDimension",
     },
     {
       "alias": "类型",
+      "encoding": "row",
       "id": "type",
-      "location": "rowDimension",
     },
     {
       "alias": "指标名称",
-      "encoding": "row",
       "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "column": [
+      "month",
+      "date",
+    ],
+    "detail": [
+      "sales",
+      "profit",
+    ],
+    "row": [
+      "type",
+      "__MeaName__",
+    ],
+    "tooltip": [
+      "sales",
+      "profit",
+    ],
+  },
   "locale": "zh-CN",
   "measures": [
     {
-      "alias": "销售额",
-      "format": {
-        "decimalPlaces": 0,
-        "prefix": "利润",
-        "ratio": 1000,
-        "suffix": "$",
-        "symbol": "千",
-        "thousandSeparator": true,
-        "type": "number",
-      },
-      "id": "sales",
+      "children": [
+        {
+          "alias": "销售额",
+          "format": {
+            "decimalPlaces": 0,
+            "prefix": "利润",
+            "ratio": 1000,
+            "suffix": "$",
+            "symbol": "千",
+            "thousandSeparator": true,
+            "type": "number",
+          },
+          "id": "sales",
+        },
+      ],
+      "id": "line1",
     },
     {
-      "alias": "利润",
-      "autoFormat": true,
-      "format": {
-        "decimalPlaces": 0,
-        "prefix": "利润",
-        "ratio": 1000,
-        "suffix": "$",
-        "symbol": "千",
-        "thousandSeparator": true,
-        "type": "number",
-      },
-      "id": "profit",
+      "children": [
+        {
+          "alias": "利润",
+          "autoFormat": true,
+          "format": {
+            "decimalPlaces": 0,
+            "prefix": "利润",
+            "ratio": 1000,
+            "suffix": "$",
+            "symbol": "千",
+            "thousandSeparator": true,
+            "type": "number",
+          },
+          "id": "profit",
+        },
+      ],
+      "id": "line2",
     },
   ],
 }
@@ -1751,9 +1776,9 @@ exports[`pivotPivotTable 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "right",
@@ -1855,9 +1880,9 @@ exports[`pivotPivotTable 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "left",

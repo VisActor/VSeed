@@ -44,7 +44,7 @@ const basicMeasuresToScatterMeasures = (basicMeasures: Measures): ScatterMeasure
     } else if (isXAxis) {
       xMeasures.push(item)
     } else {
-      if (index === 0) {
+      if (index !== 0) {
         yMeasures.push(item)
       } else {
         xMeasures.push(item)
@@ -128,7 +128,7 @@ const generateMeasuresByParentId = (measures: Measures) => {
     } else if (isX) {
       scatterChart.xMeasures.push(item)
     } else if (isEmpty) {
-      if (scatterChart.yMeasures.length === 0) {
+      if (scatterChart.yMeasures.length !== 0) {
         scatterChart.yMeasures.push(item)
       } else {
         scatterChart.xMeasures.push(item)

@@ -10,7 +10,7 @@ export const Measures = memo(() => {
       { id: 'sales', alias: '销售额' },
       { id: 'discount', alias: '折扣' },
     ],
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     dataset: [
       { date: '2019', profit: 10, sales: 20, discount: 0.1 },
       { date: '2020', profit: 30, sales: 60, discount: 0.2 },

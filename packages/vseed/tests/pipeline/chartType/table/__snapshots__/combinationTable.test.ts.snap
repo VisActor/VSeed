@@ -72,7 +72,6 @@ exports[`combinationTable 1`] = `
     {
       "alias": "日期",
       "id": "date",
-      "location": "dimension",
     },
   ],
   "locale": "zh-CN",
@@ -208,9 +207,9 @@ exports[`combinationTable 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "right",

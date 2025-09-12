@@ -91,12 +91,10 @@ exports[`simpleTable 1`] = `
   "dimensions": [
     {
       "alias": "date",
-      "encoding": "column",
       "id": "date",
     },
     {
       "alias": "type",
-      "encoding": "column",
       "id": "type",
     },
   ],
@@ -104,27 +102,22 @@ exports[`simpleTable 1`] = `
   "measures": [
     {
       "alias": "goalProfit",
-      "encoding": "column",
       "id": "goalProfit",
     },
     {
       "alias": "profit",
-      "encoding": "column",
       "id": "profit",
     },
     {
       "alias": "sales",
-      "encoding": "column",
       "id": "sales",
     },
     {
       "alias": "leftCount",
-      "encoding": "column",
       "id": "leftCount",
     },
     {
       "alias": "salesCount",
-      "encoding": "column",
       "id": "salesCount",
     },
   ],
@@ -252,9 +245,9 @@ exports[`simpleTable 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "right",

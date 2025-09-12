@@ -21,7 +21,7 @@ export const rowHeaderStyle: SpecPipe = (spec, context) => {
   result.theme.rowHeaderStyle = {
     borderColor: borderColor,
     borderLineWidth: 1,
-    padding: [8.6, 12, 8.6, 12],
+    padding: [8, 12, 8, 12],
     textAlign: 'left',
     hover: {
       cellBgColor: hoverCellBgColor,

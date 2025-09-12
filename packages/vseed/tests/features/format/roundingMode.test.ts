@@ -47,5 +47,6 @@ test('roundingMode', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

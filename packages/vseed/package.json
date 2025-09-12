@@ -1,6 +1,6 @@
 {
   "name": "@visactor/vseed",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "type": "module",
   "exports": {
     ".": {
@@ -39,7 +39,7 @@
     "@types/d3-color": "^3.1.0",
     "@types/node": "^22.16.5",
     "@typescript-eslint/eslint-plugin": "8.38.0",
-    "@visactor/vchart": "1.13.19",
+    "@visactor/vchart": "2.0.4",
     "@visactor/vtable": "1.19.8",
     "@vitest/coverage-istanbul": "3.2.4",
     "@vitest/coverage-v8": "3.2.4",

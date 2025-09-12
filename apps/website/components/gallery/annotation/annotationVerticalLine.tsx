@@ -20,7 +20,7 @@ export const AnnotationVerticalLineSelector = memo(() => {
       },
       text: '下降趋势',
     },
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -44,7 +44,7 @@ export const AnnotationVerticalLineValue = memo(() => {
       xValue: '2022',
       text: '下降开始',
     },
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },

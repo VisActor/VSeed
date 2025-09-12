@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.7
+
+### Patch Changes
+
+- feat: optimize encoding
+
 ## 0.1.6
 
 ### Patch Changes

@@ -47,5 +47,6 @@ test('yValue', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

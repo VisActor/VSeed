@@ -1,5 +1,7 @@
+import { MeasureName } from 'src/dataReshape'
+import { intl } from 'src/i18n'
 import { findAllDimensions, findAllMeasures } from 'src/pipeline/utils'
-import type { AdvancedPipe, Datum, Dimensions, Measures } from 'src/types'
+import type { AdvancedPipe, Datum, Dimension, Dimensions, Measures } from 'src/types'
 
 export const autoPivotDimensions: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
@@ -7,6 +9,11 @@ export const autoPivotDimensions: AdvancedPipe = (advancedVSeed, context) => {
   const { dimensions, dataset } = vseed
 
   const measures = findAllMeasures(advancedVSeed.measures as Measures)
+
+  const MeaName: Dimension = {
+    id: MeasureName,
+    alias: intl.i18n`指标名称`,
+  }
 
   if (!dataset) {
     throw new Error('dataset is required')
@@ -18,13 +25,20 @@ export const autoPivotDimensions: AdvancedPipe = (advancedVSeed, context) => {
 
   if (dimensions) {
     const newDimensions = findAllDimensions(dimensions) as Dimensions
+    if (!newDimensions.some((dim) => dim.id === MeasureName)) {
+      newDimensions.push(MeaName)
+    }
+
     result.dimensions = newDimensions.map((item, index) => {
+      if (item.encoding === 'row' || item.encoding === 'column') {
+        return item
+      }
       if (item.location === 'rowDimension' || item.location === 'columnDimension') {
         return item
       }
       return {
         ...item,
-        location: index % 2 === 0 ? 'columnDimension' : 'rowDimension',
+        encoding: index % 2 === 0 ? 'column' : 'row',
       }
     }) as Dimensions
 
@@ -37,19 +51,21 @@ export const autoPivotDimensions: AdvancedPipe = (advancedVSeed, context) => {
     return { ...prev, ...cur }
   }, {})
 
-  let i = 0
-  result.dimensions = Object.keys(sample)
-    .filter(
-      (key) =>
-        top100dataset.some((item) => typeof item[key] === 'string') &&
-        !['', null, undefined].includes(key) &&
-        !measures.some((measure) => measure.id === key),
-    )
-    .map((dim) => ({
-      id: dim,
-      alias: dim,
-      location: i++ % 2 === 0 ? 'columnDimension' : 'rowDimension',
-    })) as Dimensions
+  const newDimensions = Object.keys(sample).filter(
+    (key) =>
+      top100dataset.some((item) => typeof item[key] === 'string') &&
+      !['', null, undefined].includes(key) &&
+      !measures.some((measure) => measure.id === key),
+  ) as unknown as Dimensions
 
+  result.dimensions = newDimensions.map((dim) => ({
+    id: dim,
+    alias: dim,
+  })) as unknown as Dimensions
+  result.dimensions.push(MeaName)
+  result.dimensions = result.dimensions.map((dim, index) => ({
+    ...dim,
+    encoding: index % 2 === 0 ? 'column' : 'row',
+  }))
   return result
 }

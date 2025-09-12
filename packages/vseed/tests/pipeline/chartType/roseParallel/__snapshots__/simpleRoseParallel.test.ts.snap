@@ -663,12 +663,10 @@ exports[`simpleRoseParallel 1`] = `
     {
       "alias": "date",
       "id": "date",
-      "location": "dimension",
     },
     {
       "alias": "type",
       "id": "type",
-      "location": "dimension",
     },
     {
       "alias": "指标名称",

@@ -1,21 +1,14 @@
 import { unique } from 'remeda'
+import { MeasureName } from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
-import { getBasicDimensions } from '../init'
-import { getBasicMeasures } from '../measures'
 
-export const encodingForRadar: AdvancedPipe = (advancedVSeed, context) => {
-  const { vseed } = context
-  const { measures: vseedMeasures = [] } = vseed
-  // prepare measures and dimensions
-  const measures = vseedMeasures.length ? findAllMeasures(vseedMeasures) : getBasicMeasures(vseed)
-  const dimensions = getBasicDimensions(vseed)
+export const encodingForRadar: AdvancedPipe = (advancedVSeed) => {
+  const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
+  const measures = findAllMeasures(vseedMeasures)
 
-  // exist encoding condition
   const hasDimensionEncoding = dimensions.some((item: Dimension) => item.encoding)
   const hasMeasureEncoding = measures.some((item: Measure) => item.encoding)
-
-  // encoding for modify in place
   const encoding: Encoding = {}
 
   if (hasDimensionEncoding) {
@@ -72,6 +65,6 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) =
     encoding.angle = [dimensions[0].id]
   }
   if (encoding.color.length === 0) {
-    encoding.color = dimensions.filter((item) => !encoding.angle?.includes(item.id)).map((item) => item.id)
+    encoding.color = [MeasureName]
   }
 }

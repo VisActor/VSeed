@@ -1,5 +1,12 @@
 # @visactor/vseed
 
+## 0.1.6
+
+### Patch Changes
+
+- feat: add row and column encoding for all chart types
+- feat: optimize the default encoding for all chart types
+
 ## 0.1.5
 
 ### Patch Changes

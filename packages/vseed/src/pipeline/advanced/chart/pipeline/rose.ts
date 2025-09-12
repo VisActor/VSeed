@@ -1,6 +1,5 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
-  autoDimensions,
   initAdvancedVSeed,
   theme,
   pivotAdapter,
@@ -10,15 +9,22 @@ import {
   reshapeWithEncoding,
   pivotReshapeWithEncoding,
   buildMeasures,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
 } from '../pipes'
 import { encodingForRose } from '../pipes/encoding/rose'
 
 export const roseAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+
   encodingForRose,
   buildMeasures,
-  autoDimensions,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
+
   roseConfig,
   theme,
   markStyle,

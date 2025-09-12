@@ -1,6 +1,5 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
-  autoDimensions,
   buildMeasures,
   initAdvancedVSeed,
   theme,
@@ -13,14 +12,21 @@ import {
   reshapeWithEncoding,
   pivotReshapeWithEncoding,
   encodingForBar,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
 } from '../pipes'
 
 export const barParallelAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  buildMeasures,
-  autoDimensions,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+
   encodingForBar,
+  buildMeasures,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
+
   sortYBandAxis,
   sortLegend,
   barParallelConfig,

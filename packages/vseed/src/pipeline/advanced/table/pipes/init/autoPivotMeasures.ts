@@ -32,6 +32,7 @@ export const autoPivotMeasures: AdvancedPipe = (advancedVSeed, context) => {
     .map((measure) => ({
       id: measure,
       alias: measure,
+      encoding: 'detail',
     }))
 
   return result

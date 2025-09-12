@@ -1,5 +1,5 @@
 import type { AdvancedPipe, DualAxis, DualMeasures, MeasureGroup, Measures, MeasureTree } from 'src/types'
-import { getBasicMeasures, isMeasureTreeWithParentId, isMeasureTreeWithChildren } from './utils'
+import { isMeasureTreeWithParentId, isMeasureTreeWithChildren } from './utils'
 
 export const buildMeasuresForDualAxis: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context as {
@@ -20,9 +20,9 @@ export const buildMeasuresForDualAxis: AdvancedPipe = (advancedVSeed, context) =
   /**
    * 既不是带Children的指标树, 也不是带parentId的指标树, 则自动生成指标
    */
-  const basicMeasures = getBasicMeasures(vseed)
-
-  const dualMeasures = vseed.dualMeasures ? vseed.dualMeasures : basicMeasuresToDualMeasures(basicMeasures)
+  const dualMeasures = vseed.dualMeasures
+    ? vseed.dualMeasures
+    : basicMeasuresToDualMeasures(advancedVSeed.measures || [])
   advancedVSeed.measures = dualMeasuresToMeasureTree(dualMeasures)
 
   return advancedVSeed

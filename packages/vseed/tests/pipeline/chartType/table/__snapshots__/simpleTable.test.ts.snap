@@ -91,35 +91,40 @@ exports[`simpleTable 1`] = `
   "dimensions": [
     {
       "alias": "date",
+      "encoding": "column",
       "id": "date",
-      "location": "dimension",
     },
     {
       "alias": "type",
+      "encoding": "column",
       "id": "type",
-      "location": "dimension",
     },
   ],
   "locale": "zh-CN",
   "measures": [
     {
       "alias": "goalProfit",
+      "encoding": "column",
       "id": "goalProfit",
     },
     {
       "alias": "profit",
+      "encoding": "column",
       "id": "profit",
     },
     {
       "alias": "sales",
+      "encoding": "column",
       "id": "sales",
     },
     {
       "alias": "leftCount",
+      "encoding": "column",
       "id": "leftCount",
     },
     {
       "alias": "salesCount",
+      "encoding": "column",
       "id": "salesCount",
     },
   ],

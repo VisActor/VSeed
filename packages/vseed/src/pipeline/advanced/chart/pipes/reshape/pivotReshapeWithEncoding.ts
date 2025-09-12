@@ -7,6 +7,7 @@ import type {
   ColumnParallel,
   Dataset,
   DatasetReshapeInfo,
+  Dimension,
   Encoding,
   MeasureGroup,
 } from 'src/types'
@@ -32,6 +33,7 @@ export const pivotReshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) =
       }
     })
   }
+  const hasEncoding = (vseed.dimensions || []).some((item: Dimension) => item.encoding)
 
   const datasets: Dataset = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
@@ -52,6 +54,7 @@ export const pivotReshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) =
       uniqueBy(measures, (item) => item.id),
       encoding as Encoding,
       {
+        colorItemAsId: hasEncoding,
         foldMeasureValue: `${FoldMeasureValue}${groupId}`,
         colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
       },

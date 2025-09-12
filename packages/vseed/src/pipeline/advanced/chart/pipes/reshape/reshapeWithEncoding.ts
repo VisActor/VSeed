@@ -2,7 +2,7 @@ import { uniqueBy } from 'remeda'
 import { dataReshapeByEncoding } from 'src/dataReshape'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
 import { findAllMeasures } from 'src/pipeline/utils'
-import type { AdvancedPipe, AdvancedVSeed, ColumnParallel, Encoding } from 'src/types'
+import type { AdvancedPipe, AdvancedVSeed, ColumnParallel, Dimension, Encoding } from 'src/types'
 
 export const reshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
@@ -18,6 +18,8 @@ export const reshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
     throw new Error('measures can not be empty')
   }
 
+  const hasEncoding = (vseed.dimensions || []).some((item: Dimension) => item.encoding)
+
   const {
     dataset: newDatasets,
     foldInfo,
@@ -28,6 +30,7 @@ export const reshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
     uniqueBy(findAllMeasures(measures), (item) => item.id),
     encoding as Encoding,
     {
+      colorItemAsId: hasEncoding,
       colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
     },
   )

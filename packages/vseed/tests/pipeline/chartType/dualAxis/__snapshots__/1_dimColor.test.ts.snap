@@ -329,7 +329,7 @@ exports[`1_dimColor 1`] = `
   "dataset": [
     [
       {
-        "__Dim_ColorId__": "利润-利润-profit",
+        "__Dim_ColorId__": "利润-利润",
         "__Dim_Color__": "利润-利润",
         "__Dim_Detail__": "2019-利润-利润",
         "__Dim_X__": "A",
@@ -350,7 +350,7 @@ exports[`1_dimColor 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润-利润-profit",
+        "__Dim_ColorId__": "利润-利润",
         "__Dim_Color__": "利润-利润",
         "__Dim_Detail__": "2019-利润-利润",
         "__Dim_X__": "B",
@@ -371,7 +371,7 @@ exports[`1_dimColor 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润-利润-profit",
+        "__Dim_ColorId__": "利润-利润",
         "__Dim_Color__": "利润-利润",
         "__Dim_Detail__": "2019-利润-利润",
         "__Dim_X__": "C",
@@ -392,7 +392,7 @@ exports[`1_dimColor 1`] = `
         "type": "C",
       },
       {
-        "__Dim_ColorId__": "利润-利润-profit",
+        "__Dim_ColorId__": "利润-利润",
         "__Dim_Color__": "利润-利润",
         "__Dim_Detail__": "2019-利润-利润",
         "__Dim_X__": "D",
@@ -413,7 +413,7 @@ exports[`1_dimColor 1`] = `
         "type": "D",
       },
       {
-        "__Dim_ColorId__": "利润-利润-profit",
+        "__Dim_ColorId__": "利润-利润",
         "__Dim_Color__": "利润-利润",
         "__Dim_Detail__": "2019-利润-利润",
         "__Dim_X__": "E",
@@ -434,7 +434,7 @@ exports[`1_dimColor 1`] = `
         "type": "E",
       },
       {
-        "__Dim_ColorId__": "利润-利润-profit",
+        "__Dim_ColorId__": "利润-利润",
         "__Dim_Color__": "利润-利润",
         "__Dim_Detail__": "2020-利润-利润",
         "__Dim_X__": "A",
@@ -455,7 +455,7 @@ exports[`1_dimColor 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润-利润-profit",
+        "__Dim_ColorId__": "利润-利润",
         "__Dim_Color__": "利润-利润",
         "__Dim_Detail__": "2020-利润-利润",
         "__Dim_X__": "B",
@@ -476,7 +476,7 @@ exports[`1_dimColor 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润-利润-profit",
+        "__Dim_ColorId__": "利润-利润",
         "__Dim_Color__": "利润-利润",
         "__Dim_Detail__": "2020-利润-利润",
         "__Dim_X__": "C",
@@ -497,7 +497,7 @@ exports[`1_dimColor 1`] = `
         "type": "C",
       },
       {
-        "__Dim_ColorId__": "利润-利润-profit",
+        "__Dim_ColorId__": "利润-利润",
         "__Dim_Color__": "利润-利润",
         "__Dim_Detail__": "2020-利润-利润",
         "__Dim_X__": "D",
@@ -518,7 +518,7 @@ exports[`1_dimColor 1`] = `
         "type": "D",
       },
       {
-        "__Dim_ColorId__": "利润-利润-profit",
+        "__Dim_ColorId__": "利润-利润",
         "__Dim_Color__": "利润-利润",
         "__Dim_Detail__": "2020-利润-利润",
         "__Dim_X__": "E",
@@ -808,11 +808,11 @@ exports[`1_dimColor 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "利润-利润-profit": "利润-利润",
+          "利润-利润": "利润-利润",
           "销售额-销售额-sales": "销售额-销售额",
         },
         "colorItems": [
-          "利润-利润-profit",
+          "利润-利润",
           "销售额-销售额-sales",
         ],
         "encodingAngle": "__Dim_Angle__",
@@ -1091,7 +1091,7 @@ exports[`1_dimColor 2`] = `
   "background": "transparent",
   "color": {
     "domain": [
-      "利润-利润-profit",
+      "利润-利润",
       "销售额-销售额-sales",
     ],
     "range": [
@@ -1212,7 +1212,7 @@ exports[`1_dimColor 2`] = `
         "id": "dualAxis-primary-dataset",
         "values": [
           {
-            "__Dim_ColorId__": "利润-利润-profit",
+            "__Dim_ColorId__": "利润-利润",
             "__Dim_Color__": "利润-利润",
             "__Dim_Detail__": "2019-利润-利润",
             "__Dim_X__": "A",
@@ -1233,7 +1233,7 @@ exports[`1_dimColor 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "利润-利润-profit",
+            "__Dim_ColorId__": "利润-利润",
             "__Dim_Color__": "利润-利润",
             "__Dim_Detail__": "2019-利润-利润",
             "__Dim_X__": "B",
@@ -1254,7 +1254,7 @@ exports[`1_dimColor 2`] = `
             "type": "B",
           },
           {
-            "__Dim_ColorId__": "利润-利润-profit",
+            "__Dim_ColorId__": "利润-利润",
             "__Dim_Color__": "利润-利润",
             "__Dim_Detail__": "2019-利润-利润",
             "__Dim_X__": "C",
@@ -1275,7 +1275,7 @@ exports[`1_dimColor 2`] = `
             "type": "C",
           },
           {
-            "__Dim_ColorId__": "利润-利润-profit",
+            "__Dim_ColorId__": "利润-利润",
             "__Dim_Color__": "利润-利润",
             "__Dim_Detail__": "2019-利润-利润",
             "__Dim_X__": "D",
@@ -1296,7 +1296,7 @@ exports[`1_dimColor 2`] = `
             "type": "D",
           },
           {
-            "__Dim_ColorId__": "利润-利润-profit",
+            "__Dim_ColorId__": "利润-利润",
             "__Dim_Color__": "利润-利润",
             "__Dim_Detail__": "2019-利润-利润",
             "__Dim_X__": "E",
@@ -1317,7 +1317,7 @@ exports[`1_dimColor 2`] = `
             "type": "E",
           },
           {
-            "__Dim_ColorId__": "利润-利润-profit",
+            "__Dim_ColorId__": "利润-利润",
             "__Dim_Color__": "利润-利润",
             "__Dim_Detail__": "2020-利润-利润",
             "__Dim_X__": "A",
@@ -1338,7 +1338,7 @@ exports[`1_dimColor 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "利润-利润-profit",
+            "__Dim_ColorId__": "利润-利润",
             "__Dim_Color__": "利润-利润",
             "__Dim_Detail__": "2020-利润-利润",
             "__Dim_X__": "B",
@@ -1359,7 +1359,7 @@ exports[`1_dimColor 2`] = `
             "type": "B",
           },
           {
-            "__Dim_ColorId__": "利润-利润-profit",
+            "__Dim_ColorId__": "利润-利润",
             "__Dim_Color__": "利润-利润",
             "__Dim_Detail__": "2020-利润-利润",
             "__Dim_X__": "C",
@@ -1380,7 +1380,7 @@ exports[`1_dimColor 2`] = `
             "type": "C",
           },
           {
-            "__Dim_ColorId__": "利润-利润-profit",
+            "__Dim_ColorId__": "利润-利润",
             "__Dim_Color__": "利润-利润",
             "__Dim_Detail__": "2020-利润-利润",
             "__Dim_X__": "D",
@@ -1401,7 +1401,7 @@ exports[`1_dimColor 2`] = `
             "type": "D",
           },
           {
-            "__Dim_ColorId__": "利润-利润-profit",
+            "__Dim_ColorId__": "利润-利润",
             "__Dim_Color__": "利润-利润",
             "__Dim_Detail__": "2020-利润-利润",
             "__Dim_X__": "E",

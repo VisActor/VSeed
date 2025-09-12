@@ -9,28 +9,35 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'columnParallel',
-    measures: [{ id: 'sales' }, { id: 'profit' }],
-    dimensions: [
-      { id: 'date', alias: '日期', encoding: 'xAxis' },
-      { id: 'region', alias: '区域', encoding: 'color' },
-      { id: 'city', alias: '城市', encoding: 'row' },
-    ],
+    chartType: 'line',
     dataset: [
-      { date: '2019', region: 'east', city: 'A', profit: 10, sales: 100 },
-      { date: '2019', region: 'east', city: 'B', profit: 30, sales: 200 },
-      { date: '2019', region: 'west', city: 'A', profit: 30, sales: 300 },
-      { date: '2019', region: 'west', city: 'B', profit: 50, sales: 500 },
+      { date: '2019', type: 'A', profit: 10, profit2: 10, sales: 20 },
+      { date: '2019', type: 'B', profit: 30, profit2: 10, sales: 60 },
+      { date: '2019', type: 'C', profit: 30, profit2: 10, sales: 60 },
+      { date: '2019', type: 'D', profit: 50, profit2: 10, sales: 100 },
+      { date: '2019', type: 'E', profit: 40, profit2: 10, sales: 80 },
 
-      { date: '2020', region: 'east', city: 'A', profit: 15, sales: 100 },
-      { date: '2020', region: 'east', city: 'B', profit: 35, sales: 200 },
-      { date: '2020', region: 'west', city: 'A', profit: 35, sales: 300 },
-      { date: '2020', region: 'west', city: 'B', profit: 55, sales: 500 },
-
-      { date: '2021', region: 'east', city: 'A', profit: 20, sales: 100 },
-      { date: '2021', region: 'east', city: 'B', profit: 40, sales: 200 },
-      { date: '2021', region: 'west', city: 'A', profit: 40, sales: 300 },
-      { date: '2021', region: 'west', city: 'B', profit: 60, sales: 500 },
+      { date: '2020', type: 'A', profit: 10, profit2: 10, sales: 20 },
+      { date: '2020', type: 'B', profit: 30, profit2: 10, sales: 60 },
+      { date: '2020', type: 'C', profit: 30, profit2: 10, sales: 60 },
+      { date: '2020', type: 'D', profit: 50, profit2: 10, sales: 100 },
+      { date: '2020', type: 'E', profit: 40, profit2: 10, sales: 80 },
+    ],
+    dimensions: [
+      {
+        id: 'type',
+        alias: '类型',
+        encoding: 'angle',
+      },
+      {
+        id: 'date',
+        alias: '日期',
+        encoding: 'angle',
+      },
+    ],
+    measures: [
+      { id: 'profit', alias: '利润', encoding: 'radius', parentId: '1' },
+      { id: 'sales', alias: '销售额', encoding: 'radius', parentId: '1' },
     ],
   }
 

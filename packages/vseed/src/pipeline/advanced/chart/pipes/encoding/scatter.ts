@@ -69,7 +69,7 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) =
   encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))
 
   if (encoding.color.length === 0) {
-    encoding.color = dimensions.filter((item) => !encoding.x?.includes(item.id)).map((item) => item.id)
+    encoding.color = [MeasureName]
   }
   if (encoding.detail.length === 0) {
     encoding.detail = dimensions.filter((item) => !encoding.x?.includes(item.id)).map((item) => item.id)

@@ -1,4 +1,5 @@
 import { unique } from 'remeda'
+import { MeasureName } from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
 
@@ -60,6 +61,6 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) =
     encoding.x = [dimensions[0].id]
   }
   if (encoding.color.length === 0) {
-    encoding.color = dimensions.filter((item) => !encoding.x?.includes(item.id)).map((item) => item.id)
+    encoding.color = [MeasureName]
   }
 }

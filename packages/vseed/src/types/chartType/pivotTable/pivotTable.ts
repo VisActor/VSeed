@@ -3,12 +3,19 @@ import type { Measures } from '../../properties'
 import { type BackgroundColor, type Dataset, type Dimensions, type Theme } from '../../properties'
 
 /**
- * 透视表类型定义
- * @description 透视表，适用于多维度数据交叉分析场景，可灵活配置行、列维度和指标计算方式
+ * @description 透视表格，适用于多维度数据交叉分析场景，可灵活配置行、列维度和指标计算方式
  * 适用场景:
  * - 复杂多维数据统计分析
  * - 数据钻取与聚合展示
  * - 业务报表生成与数据探索
+ * @encoding
+ * 则使用默认映射规则:
+ * - 维度与指标名称, 交替映射到列维度和行维度
+ * - 指标默认映射到detail通道
+ * 
+ * 存在`encoding`配置:
+ * - 用户指定的`row`与`column`维度, 精准映射到行维度与列维度, 若未指定row和column, 则交替映射到列维度和行维度
+ * - 用户指定的`detail`指标, 精准映射到detail通道, 若未指定detail, 则依旧映射到detail通道
  * @warning 
  * 数据要求:
  * - 至少1个行维度 或 1个列维度 或 1个指标

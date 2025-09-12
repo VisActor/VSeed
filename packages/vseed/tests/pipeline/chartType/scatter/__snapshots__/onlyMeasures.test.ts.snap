@@ -240,14 +240,14 @@ exports[`onlyMeasures 1`] = `
   },
   "dataset": [
     {
-      "__MeaId__": "sales",
-      "__MeaName__": "销售额",
-      "__MeaXValue__": 10000,
-      "__MeaYValue__": 200000,
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaXValue__": 200000,
+      "__MeaYValue__": 10000,
       "__OriginalData__": {
-        "__MeaId__": "profit",
-        "__MeaName__": "利润",
-        "__MeaXValue__": 10000,
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaXValue__": 200000,
         "__OriginalData__": {
           "profit": 10000,
           "sales": 200000,
@@ -259,14 +259,14 @@ exports[`onlyMeasures 1`] = `
       "sales": 200000,
     },
     {
-      "__MeaId__": "sales",
-      "__MeaName__": "销售额",
-      "__MeaXValue__": 20000,
-      "__MeaYValue__": 400000,
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaXValue__": 400000,
+      "__MeaYValue__": 20000,
       "__OriginalData__": {
-        "__MeaId__": "profit",
-        "__MeaName__": "利润",
-        "__MeaXValue__": 20000,
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaXValue__": 400000,
         "__OriginalData__": {
           "profit": 20000,
           "sales": 400000,
@@ -278,14 +278,14 @@ exports[`onlyMeasures 1`] = `
       "sales": 400000,
     },
     {
-      "__MeaId__": "sales",
-      "__MeaName__": "销售额",
-      "__MeaXValue__": 30000,
-      "__MeaYValue__": 600000,
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaXValue__": 600000,
+      "__MeaYValue__": 30000,
       "__OriginalData__": {
-        "__MeaId__": "profit",
-        "__MeaName__": "利润",
-        "__MeaXValue__": 30000,
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaXValue__": 600000,
         "__OriginalData__": {
           "profit": 30000,
           "sales": 600000,
@@ -297,14 +297,14 @@ exports[`onlyMeasures 1`] = `
       "sales": 600000,
     },
     {
-      "__MeaId__": "sales",
-      "__MeaName__": "销售额",
-      "__MeaXValue__": 40000,
-      "__MeaYValue__": 800000,
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaXValue__": 800000,
+      "__MeaYValue__": 40000,
       "__OriginalData__": {
-        "__MeaId__": "profit",
-        "__MeaName__": "利润",
-        "__MeaXValue__": 40000,
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaXValue__": 800000,
         "__OriginalData__": {
           "profit": 40000,
           "sales": 800000,
@@ -316,14 +316,14 @@ exports[`onlyMeasures 1`] = `
       "sales": 800000,
     },
     {
-      "__MeaId__": "sales",
-      "__MeaName__": "销售额",
-      "__MeaXValue__": 50000,
-      "__MeaYValue__": 1000000,
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaXValue__": 1000000,
+      "__MeaYValue__": 50000,
       "__OriginalData__": {
-        "__MeaId__": "profit",
-        "__MeaName__": "利润",
-        "__MeaXValue__": 50000,
+        "__MeaId__": "sales",
+        "__MeaName__": "销售额",
+        "__MeaXValue__": 1000000,
         "__OriginalData__": {
           "profit": 50000,
           "sales": 1000000,
@@ -343,33 +343,17 @@ exports[`onlyMeasures 1`] = `
           1,
         ],
         "foldMap": {
-          "profit": "利润",
+          "sales": "销售额",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
         "measureRange": [
-          10000,
-          50000,
+          200000,
+          1000000,
         ],
         "measureValue": "__MeaXValue__",
       },
       "foldInfoList": [
-        {
-          "colorRange": [
-            0,
-            1,
-          ],
-          "foldMap": {
-            "profit": "利润",
-          },
-          "measureId": "__MeaId__",
-          "measureName": "__MeaName__",
-          "measureRange": [
-            10000,
-            50000,
-          ],
-          "measureValue": "__MeaXValue__",
-        },
         {
           "colorRange": [
             0,
@@ -383,6 +367,22 @@ exports[`onlyMeasures 1`] = `
           "measureRange": [
             200000,
             1000000,
+          ],
+          "measureValue": "__MeaXValue__",
+        },
+        {
+          "colorRange": [
+            0,
+            1,
+          ],
+          "foldMap": {
+            "profit": "利润",
+          },
+          "measureId": "__MeaId__",
+          "measureName": "__MeaName__",
+          "measureRange": [
+            10000,
+            50000,
           ],
           "measureValue": "__MeaYValue__",
         },
@@ -426,6 +426,17 @@ exports[`onlyMeasures 1`] = `
   "markStyle": {},
   "measures": [
     {
+      "alias": "销售额",
+      "children": [
+        {
+          "alias": "销售额",
+          "autoFormat": true,
+          "id": "sales",
+        },
+      ],
+      "id": "0-x",
+    },
+    {
       "alias": "利润",
       "children": [
         {
@@ -441,17 +452,6 @@ exports[`onlyMeasures 1`] = `
             "type": "number",
           },
           "id": "profit",
-        },
-      ],
-      "id": "0-x",
-    },
-    {
-      "alias": "销售额",
-      "children": [
-        {
-          "alias": "销售额",
-          "autoFormat": true,
-          "id": "sales",
         },
       ],
       "id": "0-y",
@@ -654,14 +654,14 @@ exports[`onlyMeasures 2`] = `
     "id": "scatter",
     "values": [
       {
-        "__MeaId__": "sales",
-        "__MeaName__": "销售额",
-        "__MeaXValue__": 10000,
-        "__MeaYValue__": 200000,
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaXValue__": 200000,
+        "__MeaYValue__": 10000,
         "__OriginalData__": {
-          "__MeaId__": "profit",
-          "__MeaName__": "利润",
-          "__MeaXValue__": 10000,
+          "__MeaId__": "sales",
+          "__MeaName__": "销售额",
+          "__MeaXValue__": 200000,
           "__OriginalData__": {
             "profit": 10000,
             "sales": 200000,
@@ -673,14 +673,14 @@ exports[`onlyMeasures 2`] = `
         "sales": 200000,
       },
       {
-        "__MeaId__": "sales",
-        "__MeaName__": "销售额",
-        "__MeaXValue__": 20000,
-        "__MeaYValue__": 400000,
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaXValue__": 400000,
+        "__MeaYValue__": 20000,
         "__OriginalData__": {
-          "__MeaId__": "profit",
-          "__MeaName__": "利润",
-          "__MeaXValue__": 20000,
+          "__MeaId__": "sales",
+          "__MeaName__": "销售额",
+          "__MeaXValue__": 400000,
           "__OriginalData__": {
             "profit": 20000,
             "sales": 400000,
@@ -692,14 +692,14 @@ exports[`onlyMeasures 2`] = `
         "sales": 400000,
       },
       {
-        "__MeaId__": "sales",
-        "__MeaName__": "销售额",
-        "__MeaXValue__": 30000,
-        "__MeaYValue__": 600000,
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaXValue__": 600000,
+        "__MeaYValue__": 30000,
         "__OriginalData__": {
-          "__MeaId__": "profit",
-          "__MeaName__": "利润",
-          "__MeaXValue__": 30000,
+          "__MeaId__": "sales",
+          "__MeaName__": "销售额",
+          "__MeaXValue__": 600000,
           "__OriginalData__": {
             "profit": 30000,
             "sales": 600000,
@@ -711,14 +711,14 @@ exports[`onlyMeasures 2`] = `
         "sales": 600000,
       },
       {
-        "__MeaId__": "sales",
-        "__MeaName__": "销售额",
-        "__MeaXValue__": 40000,
-        "__MeaYValue__": 800000,
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaXValue__": 800000,
+        "__MeaYValue__": 40000,
         "__OriginalData__": {
-          "__MeaId__": "profit",
-          "__MeaName__": "利润",
-          "__MeaXValue__": 40000,
+          "__MeaId__": "sales",
+          "__MeaName__": "销售额",
+          "__MeaXValue__": 800000,
           "__OriginalData__": {
             "profit": 40000,
             "sales": 800000,
@@ -730,14 +730,14 @@ exports[`onlyMeasures 2`] = `
         "sales": 800000,
       },
       {
-        "__MeaId__": "sales",
-        "__MeaName__": "销售额",
-        "__MeaXValue__": 50000,
-        "__MeaYValue__": 1000000,
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaXValue__": 1000000,
+        "__MeaYValue__": 50000,
         "__OriginalData__": {
-          "__MeaId__": "profit",
-          "__MeaName__": "利润",
-          "__MeaXValue__": 50000,
+          "__MeaId__": "sales",
+          "__MeaName__": "销售额",
+          "__MeaXValue__": 1000000,
           "__OriginalData__": {
             "profit": 50000,
             "sales": 1000000,

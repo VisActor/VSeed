@@ -24,7 +24,7 @@
     {
       "id": "type",
       "alias": "类型",
-      "location": "rowDimension"
+      "encoding": "row"
     }
   ],
   "measures": [

@@ -1069,12 +1069,12 @@ exports[`pivotFunnel 1`] = `
     {
       "alias": "年",
       "id": "date",
-      "location": "columnDimension",
+      "encoding": "column",
     },
     {
       "alias": "类型",
       "id": "type",
-      "location": "rowDimension",
+      "encoding": "row",
     },
   ],
   "encoding": [

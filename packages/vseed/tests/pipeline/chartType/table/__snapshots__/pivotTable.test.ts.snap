@@ -219,13 +219,13 @@ exports[`pivotTable 1`] = `
     },
     {
       "alias": "年",
+      "encoding": "column",
       "id": "date",
-      "location": "columnDimension",
     },
     {
       "alias": "类型",
+      "encoding": "row",
       "id": "type",
-      "location": "rowDimension",
     },
   ],
   "locale": "zh-CN",

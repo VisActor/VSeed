@@ -56,8 +56,8 @@ import { ColumnDimensions, RowDimensions, PivotDimensions, Dimensions } from '@c
   "chartType": "columnParallel",
   "dimensions": [
     { "id": "category", "alias": "类别", "location": "dimension" },
-    { "id": "date", "alias": "日期", "location": "columnDimension" },
-    { "id": "region", "alias": "区域", "location": "columnDimension" }
+    { "id": "date", "alias": "日期", "encoding": "column" },
+    { "id": "region", "alias": "区域", "encoding": "column" }
   ],
   "measures": [{ "id": "profit", "alias": "利润" }],
   "dataset": [
@@ -95,8 +95,8 @@ import { ColumnDimensions, RowDimensions, PivotDimensions, Dimensions } from '@c
   "chartType": "columnParallel",
   "dimensions": [
     { "id": "category", "alias": "类别", "location": "dimension" },
-    { "id": "date", "alias": "日期", "location": "rowDimension" },
-    { "id": "region", "alias": "区域", "location": "rowDimension" }
+    { "id": "date", "alias": "日期", "encoding": "row" },
+    { "id": "region", "alias": "区域", "encoding": "row" }
   ],
   "measures": [{ "id": "profit", "alias": "利润" }],
   "dataset": [
@@ -134,8 +134,8 @@ import { ColumnDimensions, RowDimensions, PivotDimensions, Dimensions } from '@c
   "chartType": "columnParallel",
   "dimensions": [
     { "id": "category", "alias": "类别", "location": "dimension" },
-    { "id": "date", "alias": "日期", "location": "columnDimension" },
-    { "id": "region", "alias": "区域", "location": "rowDimension" }
+    { "id": "date", "alias": "日期", "encoding": "column" },
+    { "id": "region", "alias": "区域", "encoding": "row" }
   ],
   "measures": [{ "id": "profit", "alias": "利润" }],
   "dataset": [

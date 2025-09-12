@@ -842,13 +842,13 @@ exports[`pivotPivotTable 1`] = `
     },
     {
       "alias": "年",
+      "encoding": "column",
       "id": "date",
-      "location": "columnDimension",
     },
     {
       "alias": "类型",
+      "encoding": "row",
       "id": "type",
-      "location": "rowDimension",
     },
     {
       "alias": "指标名称",
@@ -858,14 +858,14 @@ exports[`pivotPivotTable 1`] = `
   "encoding": {
     "column": [
       "month",
-      "type",
+      "date",
     ],
     "detail": [
       "sales",
       "profit",
     ],
     "row": [
-      "date",
+      "type",
       "__MeaName__",
     ],
     "tooltip": [
@@ -936,11 +936,6 @@ exports[`pivotPivotTable 2`] = `
     {
       "dimensionKey": "date",
       "title": "年",
-      "width": "auto",
-    },
-    {
-      "dimensionKey": "type",
-      "title": "类型",
       "width": "auto",
     },
   ],
@@ -1748,11 +1743,6 @@ exports[`pivotPivotTable 2`] = `
     },
   ],
   "rows": [
-    {
-      "dimensionKey": "date",
-      "title": "年",
-      "width": "auto",
-    },
     {
       "dimensionKey": "type",
       "title": "类型",

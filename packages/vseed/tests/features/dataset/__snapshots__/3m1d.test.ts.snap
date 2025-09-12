@@ -567,7 +567,6 @@ exports[`3m1d 1`] = `
     {
       "alias": "date",
       "id": "date",
-      "location": "dimension",
     },
     {
       "alias": "指标名称",

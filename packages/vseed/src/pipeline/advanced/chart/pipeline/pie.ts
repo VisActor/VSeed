@@ -1,6 +1,5 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
-  autoDimensions,
   initAdvancedVSeed,
   theme,
   pivotAdapter,
@@ -10,14 +9,21 @@ import {
   pivotReshapeWithEncoding,
   encodingForPie,
   buildMeasures,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
 } from '../pipes'
 
 export const pieAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+
   encodingForPie,
   buildMeasures,
-  autoDimensions,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
+
   pieConfig,
   theme,
   annotation,

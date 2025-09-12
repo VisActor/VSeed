@@ -3,7 +3,7 @@ import type { Dimensions, SpecPipe } from 'src/types'
 export const pivotRows: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const dimensions = advancedVSeed.dimensions as Dimensions
-  const rows = dimensions.filter((item) => item['location'] === 'rowDimension')
+  const rows = dimensions.filter((item) => item['location'] === 'rowDimension' || item['encoding'] === 'row')
 
   return {
     ...spec,

@@ -5,6 +5,7 @@ import type {
   AdvancedVSeed,
   ColumnParallel,
   Dataset,
+  Dimension,
   Encoding,
   FoldInfo,
   MeasureGroup,
@@ -34,6 +35,7 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
   const datasets: Dataset[] = []
   const primaryMeasures = measures[0] as MeasureGroup
   const secondaryMeasures = (measures[1] || []) as MeasureGroup
+  const hasEncoding = (vseed.dimensions || []).some((item: Dimension) => item.encoding)
 
   if (primaryMeasures && primaryMeasures.children) {
     const {
@@ -41,6 +43,7 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
       foldInfo,
       unfoldInfo,
     } = dataReshapeByEncoding(dataset, dimensions, primaryMeasures.children, encoding as Encoding, {
+      colorItemAsId: hasEncoding,
       foldMeasureValue: FoldPrimaryMeasureValue,
       colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
     })

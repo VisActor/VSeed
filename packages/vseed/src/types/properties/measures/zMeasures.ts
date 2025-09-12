@@ -8,7 +8,20 @@ export const zMeasure = z.object({
   autoFormat: z.boolean().default(true),
   format: zNumFormat.default({}),
   encoding: z
-    .enum(['primaryYAxis', 'secondaryYAxis', 'xAxis', 'yAxis', 'angle', 'radius', 'size', 'color', 'label', 'tooltip'])
+    .enum([
+      'primaryYAxis',
+      'secondaryYAxis',
+      'xAxis',
+      'yAxis',
+      'angle',
+      'radius',
+      'size',
+      'color',
+      'label',
+      'tooltip',
+      'detail',
+      'column',
+    ])
     .optional(),
   parentId: z.string().optional(),
 })

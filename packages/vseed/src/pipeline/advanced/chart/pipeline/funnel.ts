@@ -1,6 +1,5 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
-  autoDimensions,
   initAdvancedVSeed,
   theme,
   pivotAdapter,
@@ -10,14 +9,21 @@ import {
   pivotReshapeWithEncoding,
   encodingForFunnel,
   buildMeasures,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
 } from '../pipes'
 
 export const funnelAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+
   encodingForFunnel,
   buildMeasures,
-  autoDimensions,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
+
   funnelConfig,
   theme,
   annotation,

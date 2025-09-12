@@ -9,18 +9,24 @@ import {
   sortLegend,
   dualAxisConfig,
   encodingForDualAxis,
-  autoDimensions,
   reshapeWithDualEncoding,
   pivotReshapeWithDualEncoding,
   buildMeasuresForDualAxis,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
 } from '../pipes'
 
 export const dualAxisAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+
   encodingForDualAxis,
   buildMeasuresForDualAxis,
-  autoDimensions,
   pivotAdapter([reshapeWithDualEncoding], [pivotReshapeWithDualEncoding]),
+
   sortXBandAxis,
   sortLegend,
   dualAxisConfig,

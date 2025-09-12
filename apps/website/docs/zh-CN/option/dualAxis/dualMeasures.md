@@ -230,7 +230,7 @@ secondaryMeasures 如果是多个指标, 则会自动合并
 
 ### encoding
 
-**Type:** `"color" | "label" | "tooltip" | "xAxis" | "yAxis" | "angle" | "primaryYAxis" | "secondaryYAxis" | "radius" | "size" | undefined`
+**Type:** `"color" | "detail" | "label" | "tooltip" | "xAxis" | "yAxis" | "angle" | "column" | "primaryYAxis" | "secondaryYAxis" | "radius" | "size" | undefined`
 
 :::note{title=描述}
 指标映射的通道
@@ -248,6 +248,10 @@ secondaryMeasures 如果是多个指标, 则会自动合并
 \- radius: 指标映射的半径, 适用于玫瑰图
 
 \- size: 指标映射的大小, 适用于漏斗图、散点图
+
+\- detail: 指标映射的详情, 适用于透视表、热力图
+
+\- column: 指标映射的列, 仅适用于表格
 
 \- color: 指标映射的颜色, 适用于所有图表
 
@@ -459,7 +463,7 @@ secondaryMeasures 如果是多个指标, 则会自动合并
 
 ### encoding
 
-**Type:** `"color" | "label" | "tooltip" | "xAxis" | "yAxis" | "angle" | "primaryYAxis" | "secondaryYAxis" | "radius" | "size" | undefined`
+**Type:** `"color" | "detail" | "label" | "tooltip" | "xAxis" | "yAxis" | "angle" | "column" | "primaryYAxis" | "secondaryYAxis" | "radius" | "size" | undefined`
 
 :::note{title=描述}
 指标映射的通道
@@ -477,6 +481,10 @@ secondaryMeasures 如果是多个指标, 则会自动合并
 \- radius: 指标映射的半径, 适用于玫瑰图
 
 \- size: 指标映射的大小, 适用于漏斗图、散点图
+
+\- detail: 指标映射的详情, 适用于透视表、热力图
+
+\- column: 指标映射的列, 仅适用于表格
 
 \- color: 指标映射的颜色, 适用于所有图表
 

@@ -996,17 +996,14 @@ exports[`border 1`] = `
     {
       "alias": "date",
       "id": "date",
-      "location": "dimension",
     },
     {
       "alias": "region",
       "id": "region",
-      "location": "dimension",
     },
     {
       "alias": "city",
       "id": "city",
-      "location": "dimension",
     },
     {
       "alias": "指标名称",

@@ -3,7 +3,6 @@ import {
   initAdvancedVSeed,
   theme,
   buildMeasures,
-  autoDimensions,
   pivotAdapter,
   barConfig,
   markStyle,
@@ -13,14 +12,21 @@ import {
   reshapeWithEncoding,
   pivotReshapeWithEncoding,
   encodingForBar,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
 } from '../pipes'
 
 export const barAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+
   encodingForBar,
   buildMeasures,
-  autoDimensions,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
+
   sortYBandAxis,
   sortLegend,
   barConfig,

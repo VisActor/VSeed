@@ -20,7 +20,7 @@
     "barBorderStyle": "dashed",
     "barRadius": [8, 8, 0, 0]
   },
-  "dimensions": [{ "id": "date", "alias": "日期", "location": "dimension" }],
+  "dimensions": [{ "id": "date", "alias": "日期" }],
   "measures": [
     { "id": "profit", "alias": "利润" },
     { "id": "sales", "alias": "销售额" },

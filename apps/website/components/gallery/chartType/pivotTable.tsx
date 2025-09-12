@@ -52,12 +52,12 @@ export const PivotTableRowDimensions = memo(() => {
       {
         id: 'date',
         alias: '日期',
-        location: 'rowDimension',
+        encoding: 'row',
       },
       {
         id: 'type',
         alias: '类型',
-        location: 'rowDimension',
+        encoding: 'row',
       },
     ],
   }
@@ -100,12 +100,12 @@ export const PivotTableColumnDimensions = memo(() => {
       {
         id: 'date',
         alias: '日期',
-        location: 'columnDimension',
+        encoding: 'column',
       },
       {
         id: 'type',
         alias: '类型',
-        location: 'columnDimension',
+        encoding: 'column',
       },
     ],
   }

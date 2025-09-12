@@ -21,7 +21,7 @@ export const bodyStyle: SpecPipe = (spec, context) => {
   result.theme.bodyStyle = {
     borderColor: borderColor,
     borderLineWidth: 1,
-    padding: [8.6, 12, 8.6, 12],
+    padding: [8, 12, 8, 12],
     textAlign: 'right',
     hover: {
       cellBgColor: hoverCellBgColor,

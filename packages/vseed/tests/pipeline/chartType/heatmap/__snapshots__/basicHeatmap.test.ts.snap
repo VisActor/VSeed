@@ -86,6 +86,8 @@ exports[`basicHeatmap 1`] = `
   },
   "dataset": [
     {
+      "__Dim_ColorId__": "sales",
+      "__Dim_Color__": 200000,
       "__Dim_Detail__": "销售额",
       "__Dim_X__": "2019",
       "__Dim_Y__": "销售额",
@@ -101,6 +103,8 @@ exports[`basicHeatmap 1`] = `
       "sales": 200000,
     },
     {
+      "__Dim_ColorId__": "sales",
+      "__Dim_Color__": 200000,
       "__Dim_Detail__": "利润",
       "__Dim_X__": "2019",
       "__Dim_Y__": "利润",
@@ -116,6 +120,8 @@ exports[`basicHeatmap 1`] = `
       "profit": 10000,
     },
     {
+      "__Dim_ColorId__": "sales",
+      "__Dim_Color__": 400000,
       "__Dim_Detail__": "销售额",
       "__Dim_X__": "2020",
       "__Dim_Y__": "销售额",
@@ -131,6 +137,8 @@ exports[`basicHeatmap 1`] = `
       "sales": 400000,
     },
     {
+      "__Dim_ColorId__": "sales",
+      "__Dim_Color__": 400000,
       "__Dim_Detail__": "利润",
       "__Dim_X__": "2020",
       "__Dim_Y__": "利润",
@@ -146,6 +154,8 @@ exports[`basicHeatmap 1`] = `
       "profit": 20000,
     },
     {
+      "__Dim_ColorId__": "sales",
+      "__Dim_Color__": 600000,
       "__Dim_Detail__": "销售额",
       "__Dim_X__": "2021",
       "__Dim_Y__": "销售额",
@@ -161,6 +171,8 @@ exports[`basicHeatmap 1`] = `
       "sales": 600000,
     },
     {
+      "__Dim_ColorId__": "sales",
+      "__Dim_Color__": 600000,
       "__Dim_Detail__": "利润",
       "__Dim_X__": "2021",
       "__Dim_Y__": "利润",
@@ -176,6 +188,8 @@ exports[`basicHeatmap 1`] = `
       "profit": 30000,
     },
     {
+      "__Dim_ColorId__": "sales",
+      "__Dim_Color__": 800000,
       "__Dim_Detail__": "销售额",
       "__Dim_X__": "2022",
       "__Dim_Y__": "销售额",
@@ -191,6 +205,8 @@ exports[`basicHeatmap 1`] = `
       "sales": 800000,
     },
     {
+      "__Dim_ColorId__": "sales",
+      "__Dim_Color__": 800000,
       "__Dim_Detail__": "利润",
       "__Dim_X__": "2022",
       "__Dim_Y__": "利润",
@@ -206,6 +222,8 @@ exports[`basicHeatmap 1`] = `
       "profit": 40000,
     },
     {
+      "__Dim_ColorId__": "sales",
+      "__Dim_Color__": 1000000,
       "__Dim_Detail__": "销售额",
       "__Dim_X__": "2023",
       "__Dim_Y__": "销售额",
@@ -221,6 +239,8 @@ exports[`basicHeatmap 1`] = `
       "sales": 1000000,
     },
     {
+      "__Dim_ColorId__": "sales",
+      "__Dim_Color__": 1000000,
       "__Dim_Detail__": "利润",
       "__Dim_X__": "2023",
       "__Dim_Y__": "利润",
@@ -240,8 +260,8 @@ exports[`basicHeatmap 1`] = `
     {
       "foldInfo": {
         "colorRange": [
-          0,
-          1,
+          200000,
+          1000000,
         ],
         "foldMap": {
           "profit": "利润",
@@ -273,7 +293,6 @@ exports[`basicHeatmap 1`] = `
     {
       "alias": "日期",
       "id": "date",
-      "location": "dimension",
     },
     {
       "alias": "指标名称",
@@ -283,7 +302,6 @@ exports[`basicHeatmap 1`] = `
   "encoding": {
     "color": [
       "sales",
-      "profit",
     ],
     "column": [],
     "detail": [
@@ -346,27 +364,29 @@ exports[`basicHeatmap 2`] = `
   "background": "transparent",
   "cell": {
     "style": {
+      "fill": {
+        "field": "__Dim_Color__",
+        "scale": "color",
+      },
       "lineWidth": 1,
       "shape": "rect",
       "stroke": "#ffffff",
     },
   },
   "color": {
-    "domain": [],
-    "range": [
-      "#8D72F6",
-      "#5766EC",
-      "#66A3FE",
-      "#51D5E6",
-      "#4EC0B3",
-      "#F9DF90",
-      "#F9AD71",
-      "#ED8888",
-      "#E9A0C3",
-      "#D77DD3",
+    "domain": [
+      {
+        "dataId": "heatmap",
+        "fields": [
+          "__Dim_Color__",
+        ],
+      },
     ],
-    "specified": undefined,
-    "type": "ordinal",
+    "range": [
+      "#C2CEFF",
+      "#5766EC",
+    ],
+    "type": "linear",
   },
   "data": {
     "fields": {
@@ -383,6 +403,8 @@ exports[`basicHeatmap 2`] = `
     "id": "heatmap",
     "values": [
       {
+        "__Dim_ColorId__": "sales",
+        "__Dim_Color__": 200000,
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "2019",
         "__Dim_Y__": "销售额",
@@ -398,6 +420,8 @@ exports[`basicHeatmap 2`] = `
         "sales": 200000,
       },
       {
+        "__Dim_ColorId__": "sales",
+        "__Dim_Color__": 200000,
         "__Dim_Detail__": "利润",
         "__Dim_X__": "2019",
         "__Dim_Y__": "利润",
@@ -413,6 +437,8 @@ exports[`basicHeatmap 2`] = `
         "profit": 10000,
       },
       {
+        "__Dim_ColorId__": "sales",
+        "__Dim_Color__": 400000,
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "2020",
         "__Dim_Y__": "销售额",
@@ -428,6 +454,8 @@ exports[`basicHeatmap 2`] = `
         "sales": 400000,
       },
       {
+        "__Dim_ColorId__": "sales",
+        "__Dim_Color__": 400000,
         "__Dim_Detail__": "利润",
         "__Dim_X__": "2020",
         "__Dim_Y__": "利润",
@@ -443,6 +471,8 @@ exports[`basicHeatmap 2`] = `
         "profit": 20000,
       },
       {
+        "__Dim_ColorId__": "sales",
+        "__Dim_Color__": 600000,
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "2021",
         "__Dim_Y__": "销售额",
@@ -458,6 +488,8 @@ exports[`basicHeatmap 2`] = `
         "sales": 600000,
       },
       {
+        "__Dim_ColorId__": "sales",
+        "__Dim_Color__": 600000,
         "__Dim_Detail__": "利润",
         "__Dim_X__": "2021",
         "__Dim_Y__": "利润",
@@ -473,6 +505,8 @@ exports[`basicHeatmap 2`] = `
         "profit": 30000,
       },
       {
+        "__Dim_ColorId__": "sales",
+        "__Dim_Color__": 800000,
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "2022",
         "__Dim_Y__": "销售额",
@@ -488,6 +522,8 @@ exports[`basicHeatmap 2`] = `
         "sales": 800000,
       },
       {
+        "__Dim_ColorId__": "sales",
+        "__Dim_Color__": 800000,
         "__Dim_Detail__": "利润",
         "__Dim_X__": "2022",
         "__Dim_Y__": "利润",
@@ -503,6 +539,8 @@ exports[`basicHeatmap 2`] = `
         "profit": 40000,
       },
       {
+        "__Dim_ColorId__": "sales",
+        "__Dim_Color__": 1000000,
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "2023",
         "__Dim_Y__": "销售额",
@@ -518,6 +556,8 @@ exports[`basicHeatmap 2`] = `
         "sales": 1000000,
       },
       {
+        "__Dim_ColorId__": "sales",
+        "__Dim_Color__": 1000000,
         "__Dim_Detail__": "利润",
         "__Dim_X__": "2023",
         "__Dim_Y__": "利润",
@@ -541,46 +581,28 @@ exports[`basicHeatmap 2`] = `
     "visible": true,
   },
   "legends": {
-    "autoPage": true,
-    "data": [Function],
-    "item": {
-      "background": {
-        "state": {
-          "selectedHover": {
-            "fill": "#646A73",
-            "fillOpacity": 0.05,
-          },
-        },
-      },
-      "focus": true,
-      "focusIconStyle": {
+    "endText": {
+      "style": {
         "fill": "#646A73",
+        "fontSize": 12,
         "fontWeight": 400,
-        "size": 14,
       },
-      "label": {
-        "formatMethod": [Function],
-        "style": {
-          "fill": "#646A73",
-          "fontSize": 12,
-          "fontWeight": 400,
-        },
-      },
-      "maxWidth": "30%",
-      "shape": {
-        "space": 6,
-        "style": {
-          "size": 8,
-          "symbolType": "rectRound",
-        },
-      },
+      "visible": true,
     },
-    "maxCol": 1,
-    "maxRow": 1,
+    "field": "__Dim_Color__",
+    "maxWidth": "30%",
     "orient": "right",
     "padding": 0,
     "position": "start",
-    "type": "discrete",
+    "startText": {
+      "style": {
+        "fill": "#646A73",
+        "fontSize": 12,
+        "fontWeight": 400,
+      },
+      "visible": true,
+    },
+    "type": "color",
     "visible": true,
   },
   "padding": 0,

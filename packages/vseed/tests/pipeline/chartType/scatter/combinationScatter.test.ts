@@ -47,5 +47,6 @@ test('combinationScatter', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

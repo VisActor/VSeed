@@ -1,5 +1,13 @@
 # website
 
+## 0.1.7
+
+### Patch Changes
+
+- feat: optimize encoding
+- Updated dependencies
+  - @visactor/vseed@0.1.7
+
 ## 0.1.6
 
 ### Patch Changes

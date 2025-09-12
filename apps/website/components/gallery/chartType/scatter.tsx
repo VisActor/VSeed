@@ -27,7 +27,6 @@ export const ScatterChart = memo(() => {
       {
         id: 'date',
         alias: '日期',
-        location: 'dimension',
       },
     ],
     label: {
@@ -51,7 +50,6 @@ export const CombinationScatterChart = memo(() => {
       {
         id: 'date',
         alias: '日期',
-        location: 'dimension',
       },
     ],
     measures: [
@@ -130,9 +128,9 @@ export const PivotScatterChart = memo(() => {
   const vseed: VSeed = {
     chartType: 'scatter',
     dimensions: [
-      { id: 'category', alias: '类别', location: 'dimension' },
-      { id: 'date', alias: '日期', location: 'columnDimension' },
-      { id: 'region', alias: '区域', location: 'rowDimension' },
+      { id: 'category', alias: '类别', encoding: 'color' },
+      { id: 'date', alias: '日期', encoding: 'column' },
+      { id: 'region', alias: '区域', encoding: 'row' },
     ],
     measures: [
       {
@@ -191,6 +189,7 @@ export const ScatterMeasures = memo(() => {
     ],
     scatterMeasures: [
       {
+        id: 'scatter-measure-1',
         xMeasures: [{ id: 'sales', alias: '销售额' }],
         yMeasures: [{ id: 'profit', alias: '利润' }],
       },
@@ -211,10 +210,12 @@ export const ScatterMeasuresArray = memo(() => {
     ],
     scatterMeasures: [
       {
+        id: 'chart1',
         xMeasures: [{ id: 'sales', alias: '销售额' }],
         yMeasures: [{ id: 'profit', alias: '利润' }],
       },
       {
+        id: 'chart2',
         xMeasures: [{ id: 'sales', alias: '销售额' }],
         yMeasures: [{ id: 'profit', alias: '利润' }],
       },

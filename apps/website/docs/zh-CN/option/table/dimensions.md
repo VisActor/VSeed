@@ -21,10 +21,6 @@
 
 **Type:** `string | undefined`
 
-## location
-
-**Type:** `"dimension" | "rowDimension" | "columnDimension" | undefined`
-
 ## encoding
 
 **Type:** `"color" | "detail" | "label" | "tooltip" | "xAxis" | "yAxis" | "angle" | "row" | "column" | undefined`
@@ -64,10 +60,6 @@
 ### alias
 
 **Type:** `string | undefined`
-
-### location
-
-**Type:** `"dimension" | "rowDimension" | "columnDimension" | undefined`
 
 ### encoding
 

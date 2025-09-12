@@ -47,5 +47,6 @@ test('labelFontColor', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

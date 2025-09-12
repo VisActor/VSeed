@@ -723,12 +723,12 @@ exports[`linearColor 1`] = `
     {
       "alias": "Yearn",
       "id": "year",
-      "location": "dimension",
+       ,
     },
     {
       "alias": "Month",
       "id": "month",
-      "location": "dimension",
+       ,
     },
     {
       "alias": "指标名称",

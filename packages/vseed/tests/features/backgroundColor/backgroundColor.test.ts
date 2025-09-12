@@ -47,5 +47,6 @@ test('backgroundColor', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

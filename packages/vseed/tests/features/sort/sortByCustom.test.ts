@@ -47,5 +47,6 @@ test('sortByCustom', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

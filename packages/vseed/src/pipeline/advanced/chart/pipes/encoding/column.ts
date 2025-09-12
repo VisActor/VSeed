@@ -5,21 +5,21 @@ import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures }
 
 /**
  * @description 堆叠柱状图、并列柱状图、百分比柱状图
- * 维度未包含任何encoding, 则使用默认映射规则:
+ * 维度未包含任何`encoding`, 则使用默认映射规则:
  * 1. x: 第一个维度映射至X轴
- * 2. color: 非X轴所有维度与指标名称, 合并映射至颜色通道, 作为图例展示
- * 3. detail: 其余所有维度映射至Detail通道
- * 指标未包含任何encoding, 则使用默认映射规则:
+ * 2. color: 非`X`轴所有维度与指标名称, 合并映射至颜色通道, 作为图例展示
+ * 3. detail: 非`X`轴所有维度与指标名称, 映射至Detail通道
+ * 指标未包含任何`encoding`, 则使用默认映射规则:
  * 1. y: 全部指标映射至Y轴
  * 2. tooltip: 全部指标映射至Tooltip
  *
  * 维度映射规则:
- * 1. 用户指定的xAxis维度映射至X轴, 支持多个维度; 若未指定, 则默认映射第一个维度
- * 2. 用户指定的color维度映射至颜色通道, 支持多个维度; 若未指定, 则默认映射指标名称
- * 3. 用户指定的detail维度映射至Detail通道, 支持多个维度; 若未指定, 则无detail
+ * 1. 用户指定的`xAxis`维度映射至X轴, 支持多个维度; 若未指定, 则默认将第一个维度映射至X轴
+ * 2. 用户指定的`color`维度映射至颜色通道, 支持多个维度; 若未指定, 则默认将指标名称映射至颜色通道, 作为图例展示
+ * 3. 用户指定的`detail`维度映射至Detail通道, 支持多个维度; 若未指定, 则默认将指标名称映射至Detail通道
  * 指标映射规则:
- * 1. 指标未配置encoding, 则默认映射至Y轴;
- * 2. 用户指定的yAxis指标映射至Y轴, 支持多个指标;
+ * 1. 指标未配置`encoding`, 则默认映射至Y轴;
+ * 2. 用户指定的`yAxis`指标映射至Y轴, 支持多个指标;
  * 3. 所有指标均映射到Tooltip
  */
 export const encodingForColumn: AdvancedPipe = (advancedVSeed) => {
@@ -68,6 +68,9 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) =
   }
   if (encoding.color.length === 0) {
     encoding.color = [MeasureName]
+  }
+  if (encoding.detail.length === 0) {
+    encoding.detail = [MeasureName]
   }
 }
 

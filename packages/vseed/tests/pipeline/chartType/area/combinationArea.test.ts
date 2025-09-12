@@ -47,5 +47,6 @@ test('combinationArea', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

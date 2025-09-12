@@ -298,7 +298,7 @@ exports[`combinationFunnel 1`] = `
     {
       "alias": "日期",
       "id": "date",
-      "location": "dimension",
+       ,
     },
   ],
   "encoding": [

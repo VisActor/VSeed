@@ -47,5 +47,6 @@ test('simpleTable', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

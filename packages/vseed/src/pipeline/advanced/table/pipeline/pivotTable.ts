@@ -1,12 +1,22 @@
 import type { AdvancedPipeline } from 'src/types'
 import { theme } from '../../chart/pipes'
-import { autoPivotDimensions, autoPivotMeasures, initAdvancedVSeed, pivotTableConfig } from '../pipes'
-import { reshapePivotTable } from '../pipes/reshape'
+import {
+  defaultDimensions,
+  defaultMeasureName,
+  defaultMeasures,
+  encodingForPivotTable,
+  initAdvancedVSeed,
+  pivotTableConfig,
+  reshapePivotTable,
+} from '../pipes'
 
 export const pivotTableAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  autoPivotMeasures,
-  autoPivotDimensions,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+
+  encodingForPivotTable,
   reshapePivotTable,
   pivotTableConfig,
   theme,

@@ -20,7 +20,7 @@
       "pointColorOpacity": 0.8
     }
   ],
-  "dimensions": [{ "id": "date", "alias": "日期", "location": "dimension" }],
+  "dimensions": [{ "id": "date", "alias": "日期" }],
   "measures": [
     { "id": "profit", "alias": "利润" },
     { "id": "sales", "alias": "销售额" },

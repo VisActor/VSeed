@@ -47,5 +47,6 @@ test('sortByMeasure', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

@@ -189,16 +189,29 @@ exports[`basicPivotTable 1`] = `
   "dimensions": [
     {
       "alias": "日期",
-      "encoding": "column",
       "id": "date",
-      "location": "dimension",
     },
     {
       "alias": "指标名称",
-      "encoding": "row",
       "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "column": [
+      "date",
+    ],
+    "detail": [
+      "sales",
+      "profit",
+    ],
+    "row": [
+      "__MeaName__",
+    ],
+    "tooltip": [
+      "sales",
+      "profit",
+    ],
+  },
   "locale": "zh-CN",
   "measures": [
     {
@@ -427,9 +440,9 @@ exports[`basicPivotTable 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "right",
@@ -531,9 +544,9 @@ exports[`basicPivotTable 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "left",

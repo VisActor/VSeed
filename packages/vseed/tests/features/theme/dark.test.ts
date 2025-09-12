@@ -47,5 +47,6 @@ test('dark', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

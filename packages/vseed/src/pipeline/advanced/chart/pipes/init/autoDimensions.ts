@@ -1,7 +1,7 @@
 import { MeasureName } from 'src/dataReshape'
 import { intl } from 'src/i18n'
 import { findAllMeasures } from 'src/pipeline/utils'
-import type { AdvancedPipe, Datum, Dimension, Dimensions, DimensionTree, VSeed } from 'src/types'
+import type { AdvancedPipe, Datum, Dimension, DimensionTree } from 'src/types'
 
 export const autoDimensions: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }

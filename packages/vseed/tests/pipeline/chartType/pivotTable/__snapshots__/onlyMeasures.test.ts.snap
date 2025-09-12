@@ -43,27 +43,136 @@ exports[`onlyMeasures 1`] = `
   },
   "dataset": [
     {
-      "profit": 10000,
+      "__MeaId__": "sales",
+      "__MeaName__": "销售额",
+      "__MeaValue__": 200000,
+      "__OriginalData__": {
+        "profit": 10000,
+        "sales": 200000,
+      },
       "sales": 200000,
     },
     {
-      "profit": 20000,
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaValue__": 10000,
+      "__OriginalData__": {
+        "profit": 10000,
+        "sales": 200000,
+      },
+      "profit": 10000,
+    },
+    {
+      "__MeaId__": "sales",
+      "__MeaName__": "销售额",
+      "__MeaValue__": 400000,
+      "__OriginalData__": {
+        "profit": 20000,
+        "sales": 400000,
+      },
       "sales": 400000,
     },
     {
-      "profit": 30000,
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaValue__": 20000,
+      "__OriginalData__": {
+        "profit": 20000,
+        "sales": 400000,
+      },
+      "profit": 20000,
+    },
+    {
+      "__MeaId__": "sales",
+      "__MeaName__": "销售额",
+      "__MeaValue__": 600000,
+      "__OriginalData__": {
+        "profit": 30000,
+        "sales": 600000,
+      },
       "sales": 600000,
     },
     {
-      "profit": 40000,
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaValue__": 30000,
+      "__OriginalData__": {
+        "profit": 30000,
+        "sales": 600000,
+      },
+      "profit": 30000,
+    },
+    {
+      "__MeaId__": "sales",
+      "__MeaName__": "销售额",
+      "__MeaValue__": 800000,
+      "__OriginalData__": {
+        "profit": 40000,
+        "sales": 800000,
+      },
       "sales": 800000,
     },
     {
-      "profit": 50000,
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaValue__": 40000,
+      "__OriginalData__": {
+        "profit": 40000,
+        "sales": 800000,
+      },
+      "profit": 40000,
+    },
+    {
+      "__MeaId__": "sales",
+      "__MeaName__": "销售额",
+      "__MeaValue__": 1000000,
+      "__OriginalData__": {
+        "profit": 50000,
+        "sales": 1000000,
+      },
       "sales": 1000000,
     },
+    {
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaValue__": 50000,
+      "__OriginalData__": {
+        "profit": 50000,
+        "sales": 1000000,
+      },
+      "profit": 50000,
+    },
   ],
-  "dimensions": [],
+  "datasetReshapeInfo": [
+    {
+      "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
+        "foldMap": {
+          "profit": "利润",
+          "sales": "销售额",
+        },
+        "measureId": "__MeaId__",
+        "measureName": "__MeaName__",
+        "measureRange": [
+          10000,
+          1000000,
+        ],
+        "measureValue": "__MeaValue__",
+      },
+      "id": "pivotTable",
+      "index": 0,
+    },
+  ],
+  "dimensions": [
+    {
+      "alias": "指标名称",
+      "encoding": "column",
+      "id": "__MeaName__",
+    },
+  ],
   "locale": "zh-CN",
   "measures": [
     {
@@ -100,7 +209,13 @@ exports[`onlyMeasures 2`] = `
   "autoWrapText": true,
   "columnResizeMode": "all",
   "columnResizeType": "column",
-  "columns": [],
+  "columns": [
+    {
+      "dimensionKey": "__MeaName__",
+      "title": "指标名称",
+      "width": "auto",
+    },
+  ],
   "corner": {
     "titleOnDimension": "all",
   },
@@ -119,6 +234,7 @@ exports[`onlyMeasures 2`] = `
     ],
   },
   "heightMode": "autoHeight",
+  "hideIndicatorName": true,
   "hover": {
     "highlightMode": "cross",
   },
@@ -127,39 +243,112 @@ exports[`onlyMeasures 2`] = `
     {
       "cellType": "text",
       "format": [Function],
-      "indicatorKey": "sales",
-      "title": "销售额",
-      "width": "auto",
-    },
-    {
-      "cellType": "text",
-      "format": [Function],
-      "indicatorKey": "profit",
-      "title": "利润",
+      "indicatorKey": "__MeaValue__",
+      "title": "indicator",
       "width": "auto",
     },
   ],
   "indicatorsAsCol": true,
   "records": [
     {
-      "profit": 10000,
+      "__MeaId__": "sales",
+      "__MeaName__": "销售额",
+      "__MeaValue__": 200000,
+      "__OriginalData__": {
+        "profit": 10000,
+        "sales": 200000,
+      },
       "sales": 200000,
     },
     {
-      "profit": 20000,
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaValue__": 10000,
+      "__OriginalData__": {
+        "profit": 10000,
+        "sales": 200000,
+      },
+      "profit": 10000,
+    },
+    {
+      "__MeaId__": "sales",
+      "__MeaName__": "销售额",
+      "__MeaValue__": 400000,
+      "__OriginalData__": {
+        "profit": 20000,
+        "sales": 400000,
+      },
       "sales": 400000,
     },
     {
-      "profit": 30000,
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaValue__": 20000,
+      "__OriginalData__": {
+        "profit": 20000,
+        "sales": 400000,
+      },
+      "profit": 20000,
+    },
+    {
+      "__MeaId__": "sales",
+      "__MeaName__": "销售额",
+      "__MeaValue__": 600000,
+      "__OriginalData__": {
+        "profit": 30000,
+        "sales": 600000,
+      },
       "sales": 600000,
     },
     {
-      "profit": 40000,
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaValue__": 30000,
+      "__OriginalData__": {
+        "profit": 30000,
+        "sales": 600000,
+      },
+      "profit": 30000,
+    },
+    {
+      "__MeaId__": "sales",
+      "__MeaName__": "销售额",
+      "__MeaValue__": 800000,
+      "__OriginalData__": {
+        "profit": 40000,
+        "sales": 800000,
+      },
       "sales": 800000,
     },
     {
-      "profit": 50000,
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaValue__": 40000,
+      "__OriginalData__": {
+        "profit": 40000,
+        "sales": 800000,
+      },
+      "profit": 40000,
+    },
+    {
+      "__MeaId__": "sales",
+      "__MeaName__": "销售额",
+      "__MeaValue__": 1000000,
+      "__OriginalData__": {
+        "profit": 50000,
+        "sales": 1000000,
+      },
       "sales": 1000000,
+    },
+    {
+      "__MeaId__": "profit",
+      "__MeaName__": "利润",
+      "__MeaValue__": 50000,
+      "__OriginalData__": {
+        "profit": 50000,
+        "sales": 1000000,
+      },
+      "profit": 50000,
     },
   ],
   "rows": [],

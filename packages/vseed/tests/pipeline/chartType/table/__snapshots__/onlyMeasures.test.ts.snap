@@ -41,28 +41,7 @@ exports[`onlyMeasures 1`] = `
       },
     },
   },
-  "dataset": [
-    {
-      "profit": 10000,
-      "sales": 200000,
-    },
-    {
-      "profit": 20000,
-      "sales": 400000,
-    },
-    {
-      "profit": 30000,
-      "sales": 600000,
-    },
-    {
-      "profit": 40000,
-      "sales": 800000,
-    },
-    {
-      "profit": 50000,
-      "sales": 1000000,
-    },
-  ],
+  "dataset": undefined,
   "dimensions": [],
   "locale": "zh-CN",
   "measures": [
@@ -117,28 +96,7 @@ exports[`onlyMeasures 2`] = `
   "hover": {
     "highlightMode": "row",
   },
-  "records": [
-    {
-      "profit": 10000,
-      "sales": 200000,
-    },
-    {
-      "profit": 20000,
-      "sales": 400000,
-    },
-    {
-      "profit": 30000,
-      "sales": 600000,
-    },
-    {
-      "profit": 40000,
-      "sales": 800000,
-    },
-    {
-      "profit": 50000,
-      "sales": 1000000,
-    },
-  ],
+  "records": undefined,
   "showHeader": true,
   "theme": {
     "bodyStyle": {

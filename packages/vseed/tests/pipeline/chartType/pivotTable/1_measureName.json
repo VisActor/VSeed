@@ -1,0 +1,49 @@
+{
+  "chartType": "pivotTable",
+  "dataset": [
+    { "date": "2019", "region": "east", "city": "A", "profit": 10, "sales": 100 },
+    { "date": "2019", "region": "east", "city": "B", "profit": 30, "sales": 200 },
+    { "date": "2019", "region": "west", "city": "A", "profit": 30, "sales": 300 },
+    { "date": "2019", "region": "west", "city": "B", "profit": 50, "sales": 500 },
+
+    { "date": "2020", "region": "east", "city": "A", "profit": 15, "sales": 100 },
+    { "date": "2020", "region": "east", "city": "B", "profit": 35, "sales": 200 },
+    { "date": "2020", "region": "west", "city": "A", "profit": 35, "sales": 300 },
+    { "date": "2020", "region": "west", "city": "B", "profit": 55, "sales": 500 },
+
+    { "date": "2021", "region": "east", "city": "A", "profit": 20, "sales": 100 },
+    { "date": "2021", "region": "east", "city": "B", "profit": 40, "sales": 200 },
+    { "date": "2021", "region": "west", "city": "A", "profit": 40, "sales": 300 },
+    { "date": "2021", "region": "west", "city": "B", "profit": 60, "sales": 500 }
+  ],
+  "dimensions": [
+    {
+      "id": "__MeaName__",
+      "alias": "指标名称",
+      "encoding": "column"
+    },
+    {
+      "id": "date",
+      "alias": "日期"
+    },
+    {
+      "id": "region",
+      "alias": "区域"
+    },
+    {
+      "id": "city",
+      "alias": "城市"
+    }
+  ],
+  "measures": [
+    {
+      "id": "profit",
+      "alias": "利润",
+      "encoding": "detail",
+      "format": {
+        "prefix": "hello"
+      }
+    },
+    { "id": "sales", "alias": "销售额", "encoding": "detail" }
+  ]
+}

@@ -41,33 +41,7 @@ exports[`basicTable 1`] = `
       },
     },
   },
-  "dataset": [
-    {
-      "date": "2019",
-      "profit": 10000,
-      "sales": 200000,
-    },
-    {
-      "date": "2020",
-      "profit": 20000,
-      "sales": 400000,
-    },
-    {
-      "date": "2021",
-      "profit": 30000,
-      "sales": 600000,
-    },
-    {
-      "date": "2022",
-      "profit": 40000,
-      "sales": 800000,
-    },
-    {
-      "date": "2023",
-      "profit": 50000,
-      "sales": 1000000,
-    },
-  ],
+  "dataset": undefined,
   "dimensions": [
     {
       "alias": "日期",
@@ -133,33 +107,7 @@ exports[`basicTable 2`] = `
   "hover": {
     "highlightMode": "row",
   },
-  "records": [
-    {
-      "date": "2019",
-      "profit": 10000,
-      "sales": 200000,
-    },
-    {
-      "date": "2020",
-      "profit": 20000,
-      "sales": 400000,
-    },
-    {
-      "date": "2021",
-      "profit": 30000,
-      "sales": 600000,
-    },
-    {
-      "date": "2022",
-      "profit": 40000,
-      "sales": 800000,
-    },
-    {
-      "date": "2023",
-      "profit": 50000,
-      "sales": 1000000,
-    },
-  ],
+  "records": undefined,
   "showHeader": true,
   "theme": {
     "bodyStyle": {

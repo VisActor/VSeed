@@ -9,35 +9,50 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'heatmap',
+    chartType: 'pivotTable',
     dataset: [
-      { date: '2019', type: 'A', profit: 10, profit2: 10, sales: 20 },
-      { date: '2019', type: 'B', profit: 30, profit2: 10, sales: 60 },
-      { date: '2019', type: 'C', profit: 30, profit2: 10, sales: 60 },
-      { date: '2019', type: 'D', profit: 50, profit2: 10, sales: 100 },
-      { date: '2019', type: 'E', profit: 40, profit2: 10, sales: 80 },
+      { date: '2019', region: 'east', city: 'A', profit: 10, sales: 100 },
+      { date: '2019', region: 'east', city: 'B', profit: 30, sales: 200 },
+      { date: '2019', region: 'west', city: 'A', profit: 30, sales: 300 },
+      { date: '2019', region: 'west', city: 'B', profit: 50, sales: 500 },
 
-      { date: '2020', type: 'A', profit: 100, profit2: 210, sales: 210 },
-      { date: '2020', type: 'B', profit: 300, profit2: 120, sales: 610 },
-      { date: '2020', type: 'C', profit: 300, profit2: 120, sales: 610 },
-      { date: '2020', type: 'D', profit: 500, profit2: 210, sales: 100 },
-      { date: '2020', type: 'E', profit: 400, profit2: 210, sales: 110 },
+      { date: '2020', region: 'east', city: 'A', profit: 15, sales: 100 },
+      { date: '2020', region: 'east', city: 'B', profit: 35, sales: 200 },
+      { date: '2020', region: 'west', city: 'A', profit: 35, sales: 300 },
+      { date: '2020', region: 'west', city: 'B', profit: 55, sales: 500 },
+
+      { date: '2021', region: 'east', city: 'A', profit: 20, sales: 100 },
+      { date: '2021', region: 'east', city: 'B', profit: 40, sales: 200 },
+      { date: '2021', region: 'west', city: 'A', profit: 40, sales: 300 },
+      { date: '2021', region: 'west', city: 'B', profit: 60, sales: 500 },
     ],
     dimensions: [
       {
-        id: 'type',
-        alias: '类型',
-        encoding: 'xAxis',
-      },
-      {
         id: 'date',
         alias: '日期',
-        encoding: 'color',
+        encoding: 'row',
+      },
+      {
+        id: 'region',
+        alias: '区域',
+        encoding: 'row',
+      },
+      {
+        id: 'city',
+        alias: '城市',
+        encoding: 'column',
       },
     ],
     measures: [
-      { id: 'profit', alias: '利润', encoding: 'color', parentId: '1' },
-      { id: 'sales', alias: '销售额', parentId: '1' },
+      {
+        id: 'profit',
+        alias: '利润',
+        encoding: 'detail',
+        format: {
+          prefix: 'hello',
+        },
+      },
+      { id: 'sales', alias: '销售额', encoding: 'detail' },
     ],
   }
 

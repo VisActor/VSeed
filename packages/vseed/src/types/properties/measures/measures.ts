@@ -37,6 +37,8 @@ export type Measure = {
    * - angle: 指标映射的角度, 适用于饼图、环形图、雷达图
    * - radius: 指标映射的半径, 适用于玫瑰图
    * - size: 指标映射的大小, 适用于漏斗图、散点图
+   * - detail: 指标映射的详情, 适用于透视表、热力图
+   * - column: 指标映射的列, 仅适用于表格
    * - color: 指标映射的颜色, 适用于所有图表
    * - label: 指标映射的标签, 适用于所有图表
    * - tooltip: 指标映射的提示, 适用于所有图表
@@ -50,6 +52,8 @@ export type Measure = {
     | 'radius'
     | 'size'
     | 'color'
+    | 'detail'
+    | 'column'
     | 'label'
     | 'tooltip'
 

@@ -20,9 +20,7 @@
 
 :::
 
-:::info{title=Info}
-Encoding规则
-
+:::info{title=编码映射}
 维度未包含任何encoding, 则使用默认映射规则:
 
 1. x: 第一个维度映射至X轴

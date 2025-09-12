@@ -15,6 +15,7 @@ import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures }
  * 维度映射规则:
  * 1. 用户指定的xAxis维度映射至X轴, 支持多个维度; 若未指定, 则默认将第一个维度映射至X轴
  * 2. 用户指定的color维度映射至颜色通道, 支持多个维度; 若未指定, 则默认将指标名称映射至颜色通道, 作为图例展示
+ * 3. 用户指定的`detail`维度映射至Detail通道, 支持多个维度; 若未指定, 则默认将指标名称映射至Detail通道
  * 指标映射规则:
  * 1. 指标未配置encoding, 则默认映射至Y轴;
  * 2. 用户指定的yAxis指标映射至Y轴, 支持多个指标;
@@ -66,6 +67,9 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) =
   }
   if (encoding.color.length === 0) {
     encoding.color = [MeasureName]
+  }
+  if (encoding.detail.length === 0) {
+    encoding.detail = [MeasureName]
   }
 }
 

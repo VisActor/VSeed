@@ -3,8 +3,11 @@ import type { Dimensions, SpecPipe } from 'src/types'
 
 export const pivotColumns: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
+  const { encoding } = advancedVSeed
   const dimensions = advancedVSeed.dimensions as Dimensions
-  const columns = dimensions.filter((item) => item['location'] === 'columnDimension' || item['encoding'] === 'column')
+  const columns = dimensions.filter(
+    (item) => item['location'] === 'columnDimension' || encoding.column?.includes(item.id),
+  )
 
   return {
     ...spec,

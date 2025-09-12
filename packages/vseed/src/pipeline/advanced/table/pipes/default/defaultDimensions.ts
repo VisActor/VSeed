@@ -1,12 +1,17 @@
 import { findAllMeasures } from 'src/pipeline/utils'
-import type { AdvancedPipe, Datum } from 'src/types'
+import type { AdvancedPipe, Datum, Dimensions, DimensionTree } from 'src/types'
 
-export const autoDimensions: AdvancedPipe = (advancedVSeed, context) => {
+export const defaultDimensions: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dimensions, dataset } = vseed
 
-  const measures = findAllMeasures(advancedVSeed.measures)
+  if (dimensions && dimensions.length > 0) {
+    return {
+      ...result,
+      dimensions,
+    }
+  }
 
   if (!dataset) {
     throw new Error('dataset is required')
@@ -16,13 +21,7 @@ export const autoDimensions: AdvancedPipe = (advancedVSeed, context) => {
     return result
   }
 
-  if (dimensions) {
-    result.dimensions = dimensions.map((dim) => ({
-      location: 'dimension',
-      ...dim,
-    }))
-    return result
-  }
+  const measures = findAllMeasures(advancedVSeed.measures as DimensionTree)
 
   const top100dataset = dataset.slice(0, 100)
 
@@ -30,7 +29,7 @@ export const autoDimensions: AdvancedPipe = (advancedVSeed, context) => {
     return { ...prev, ...cur }
   }, {})
 
-  result.dimensions = Object.keys(sample)
+  const newDimensions = Object.keys(sample)
     .filter(
       (key) =>
         top100dataset.some((item) => typeof item[key] === 'string') &&
@@ -40,8 +39,10 @@ export const autoDimensions: AdvancedPipe = (advancedVSeed, context) => {
     .map((dim) => ({
       id: dim,
       alias: dim,
-      encoding: 'column',
-    }))
+    })) as Dimensions
 
-  return result
+  return {
+    ...result,
+    dimensions: newDimensions,
+  }
 }

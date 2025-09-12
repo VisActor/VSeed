@@ -1,0 +1,1 @@
+export { encodingForPivotTable } from './pivotTable'

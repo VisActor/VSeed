@@ -212,7 +212,6 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
 export default Demo
 ```
 
-
 ### thousandSeparator
 
 - `thousandSeparator` 千分位分隔符
@@ -307,7 +306,6 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
 export default Demo
 ```
 
-
 ### ratio & symbol
 
 - `ratio` 比例
@@ -331,20 +329,20 @@ const Demo = () => {
       },
     ],
     measures: [
-      { id: 'num1',   format: { type: 'number', fractionDigits:0, ratio:1,        symbol:'' } },
-      { id: 'num2',   format: { type: 'number', fractionDigits:0, ratio:10,       symbol:'十' } },
-      { id: 'num3',   format: { type: 'number', fractionDigits:0, ratio:100,      symbol:'百' } },
-      { id: 'num4',   format: { type: 'number', fractionDigits:0, ratio:1000,     symbol:'千' } },
-      { id: 'num5',   format: { type: 'number', fractionDigits:0, ratio:10000,    symbol:'万' } },
-      { id: 'num6',   format: { type: 'number', fractionDigits:0, ratio:100000,   symbol:'十万' } },
-      { id: 'num7',   format: { type: 'number', fractionDigits:0, ratio:1000000,  symbol:'百万' } },
-      { id: 'num8',   format: { type: 'number', fractionDigits:0, ratio:10000000, symbol:'千万' } },
-      { id: 'num9',   format: { type: 'number', fractionDigits:0, ratio:100000000,symbol:'亿' } },
+      { id: 'num1', format: { type: 'number', fractionDigits: 0, ratio: 1, symbol: '' } },
+      { id: 'num2', format: { type: 'number', fractionDigits: 0, ratio: 10, symbol: '十' } },
+      { id: 'num3', format: { type: 'number', fractionDigits: 0, ratio: 100, symbol: '百' } },
+      { id: 'num4', format: { type: 'number', fractionDigits: 0, ratio: 1000, symbol: '千' } },
+      { id: 'num5', format: { type: 'number', fractionDigits: 0, ratio: 10000, symbol: '万' } },
+      { id: 'num6', format: { type: 'number', fractionDigits: 0, ratio: 100000, symbol: '十万' } },
+      { id: 'num7', format: { type: 'number', fractionDigits: 0, ratio: 1000000, symbol: '百万' } },
+      { id: 'num8', format: { type: 'number', fractionDigits: 0, ratio: 10000000, symbol: '千万' } },
+      { id: 'num9', format: { type: 'number', fractionDigits: 0, ratio: 100000000, symbol: '亿' } },
     ],
     yAxis: {
       log: true,
       logBase: 10,
-    }
+    },
   }
 
   if (zVSeed.safeParse(vseed).success) {
@@ -443,19 +441,18 @@ const Demo = () => {
       },
     ],
     measures: [
-      { id: 'num0',   format: { type: 'number', fractionDigits:0}},
-      { id: 'num1',   format: { type: 'number', fractionDigits:1}},
-      { id: 'num2',   format: { type: 'number', fractionDigits:2}},
-      { id: 'num3',   format: { type: 'number', fractionDigits:3}},
-      { id: 'num4',   format: { type: 'number', fractionDigits:4}},
-      { id: 'num5',   format: { type: 'number', fractionDigits:5}},
-      { id: 'num6',   format: { type: 'number', fractionDigits:6}},
-      { id: 'num7',   format: { type: 'number', fractionDigits:7}},
-      { id: 'num8',   format: { type: 'number', fractionDigits:8}},
-      { id: 'num9',   format: { type: 'number', fractionDigits:9}},
+      { id: 'num0', format: { type: 'number', fractionDigits: 0 } },
+      { id: 'num1', format: { type: 'number', fractionDigits: 1 } },
+      { id: 'num2', format: { type: 'number', fractionDigits: 2 } },
+      { id: 'num3', format: { type: 'number', fractionDigits: 3 } },
+      { id: 'num4', format: { type: 'number', fractionDigits: 4 } },
+      { id: 'num5', format: { type: 'number', fractionDigits: 5 } },
+      { id: 'num6', format: { type: 'number', fractionDigits: 6 } },
+      { id: 'num7', format: { type: 'number', fractionDigits: 7 } },
+      { id: 'num8', format: { type: 'number', fractionDigits: 8 } },
+      { id: 'num9', format: { type: 'number', fractionDigits: 9 } },
     ],
-    yAxis: {
-    }
+    yAxis: {},
   }
 
   if (zVSeed.safeParse(vseed).success) {
@@ -554,16 +551,16 @@ const Demo = () => {
       },
     ],
     measures: [
-      { id: 'num0',   format: { type: 'number', significantDigits:0}},
-      { id: 'num1',   format: { type: 'number', significantDigits:1}},
-      { id: 'num2',   format: { type: 'number', significantDigits:2}},
-      { id: 'num3',   format: { type: 'number', significantDigits:3}},
-      { id: 'num4',   format: { type: 'number', significantDigits:4}},
-      { id: 'num5',   format: { type: 'number', significantDigits:5}},
-      { id: 'num6',   format: { type: 'number', significantDigits:6}},
-      { id: 'num7',   format: { type: 'number', significantDigits:7}},
-      { id: 'num8',   format: { type: 'number', significantDigits:8}},
-      { id: 'num9',   format: { type: 'number', significantDigits:9}},
+      { id: 'num0', format: { type: 'number', significantDigits: 0 } },
+      { id: 'num1', format: { type: 'number', significantDigits: 1 } },
+      { id: 'num2', format: { type: 'number', significantDigits: 2 } },
+      { id: 'num3', format: { type: 'number', significantDigits: 3 } },
+      { id: 'num4', format: { type: 'number', significantDigits: 4 } },
+      { id: 'num5', format: { type: 'number', significantDigits: 5 } },
+      { id: 'num6', format: { type: 'number', significantDigits: 6 } },
+      { id: 'num7', format: { type: 'number', significantDigits: 7 } },
+      { id: 'num8', format: { type: 'number', significantDigits: 8 } },
+      { id: 'num9', format: { type: 'number', significantDigits: 9 } },
     ],
   }
 
@@ -639,15 +636,12 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
 export default Demo
 ```
 
-
-
 ### roundingPriority
 
 若同时设置了 `fractionDigits` 和 `significantDigits`，则 `roundingPriority` 会生效, 默认为 `lessPrecision`
 
 - `lessPrecision` 更少精度, 尽可能的以 `significantDigits` 为准, 但如果 `significantDigits` 不足, 则以 `significantDigits` 为准
 - `morePrecision` 更多精度, 尽可能的以 `fractionDigits` 为准, 但如果 `fractionDigits` 不足, 则以 `significantDigits` 为准
-
 
 ```tsx direction=vertical
 const Demo = () => {
@@ -669,16 +663,46 @@ const Demo = () => {
       },
     ],
     measures: [
-      { id: 'num0',   format: { type: 'number', significantDigits:0, fractionDigits:2, roundingPriority: 'morePrecision' }},
-      { id: 'num1',   format: { type: 'number', significantDigits:1, fractionDigits:2, roundingPriority: 'morePrecision'  }},
-      { id: 'num2',   format: { type: 'number', significantDigits:2, fractionDigits:2, roundingPriority: 'morePrecision'  }},
-      { id: 'num3',   format: { type: 'number', significantDigits:3, fractionDigits:2, roundingPriority: 'morePrecision'  }},
-      { id: 'num4',   format: { type: 'number', significantDigits:4, fractionDigits:2, roundingPriority: 'morePrecision'  }},
-      { id: 'num5',   format: { type: 'number', significantDigits:5, fractionDigits:2, roundingPriority: 'morePrecision'  }},
-      { id: 'num6',   format: { type: 'number', significantDigits:6, fractionDigits:2, roundingPriority: 'morePrecision'  }},
-      { id: 'num7',   format: { type: 'number', significantDigits:7, fractionDigits:2, roundingPriority: 'morePrecision'  }},
-      { id: 'num8',   format: { type: 'number', significantDigits:8, fractionDigits:2, roundingPriority: 'morePrecision'  }},
-      { id: 'num9',   format: { type: 'number', significantDigits:9, fractionDigits:2, roundingPriority: 'morePrecision'  }},
+      {
+        id: 'num0',
+        format: { type: 'number', significantDigits: 0, fractionDigits: 2, roundingPriority: 'morePrecision' },
+      },
+      {
+        id: 'num1',
+        format: { type: 'number', significantDigits: 1, fractionDigits: 2, roundingPriority: 'morePrecision' },
+      },
+      {
+        id: 'num2',
+        format: { type: 'number', significantDigits: 2, fractionDigits: 2, roundingPriority: 'morePrecision' },
+      },
+      {
+        id: 'num3',
+        format: { type: 'number', significantDigits: 3, fractionDigits: 2, roundingPriority: 'morePrecision' },
+      },
+      {
+        id: 'num4',
+        format: { type: 'number', significantDigits: 4, fractionDigits: 2, roundingPriority: 'morePrecision' },
+      },
+      {
+        id: 'num5',
+        format: { type: 'number', significantDigits: 5, fractionDigits: 2, roundingPriority: 'morePrecision' },
+      },
+      {
+        id: 'num6',
+        format: { type: 'number', significantDigits: 6, fractionDigits: 2, roundingPriority: 'morePrecision' },
+      },
+      {
+        id: 'num7',
+        format: { type: 'number', significantDigits: 7, fractionDigits: 2, roundingPriority: 'morePrecision' },
+      },
+      {
+        id: 'num8',
+        format: { type: 'number', significantDigits: 8, fractionDigits: 2, roundingPriority: 'morePrecision' },
+      },
+      {
+        id: 'num9',
+        format: { type: 'number', significantDigits: 9, fractionDigits: 2, roundingPriority: 'morePrecision' },
+      },
     ],
   }
 
@@ -776,16 +800,15 @@ export default Demo
 ### roundingMode
 
 - `roundingMode` 四舍五入模式, 默认为 `halfExpand`
- - `floor` 
- - `ceil` 
- - `expand` 
- - `trunc` 
- - `halfCeil` 
- - `halfFloor` 
- - `halfExpand` 
- - `halfTrunc` 
- - `halfEven` 
-
+- `floor`
+- `ceil`
+- `expand`
+- `trunc`
+- `halfCeil`
+- `halfFloor`
+- `halfExpand`
+- `halfTrunc`
+- `halfEven`
 
 ```tsx direction=vertical
 const Demo = () => {
@@ -806,16 +829,16 @@ const Demo = () => {
       },
     ],
     measures: [
-      { id: 'num0',   format: { type: 'number', fractionDigits:1 roundingMode: 'floor' }},
-      { id: 'num1',   format: { type: 'number', fractionDigits:1 roundingMode: 'ceil' }},
-      { id: 'num2',   format: { type: 'number', fractionDigits:1 roundingMode: 'expand' }},
-      { id: 'num3',   format: { type: 'number', fractionDigits:1 roundingMode: 'trunc' }},
-      { id: 'num4',   format: { type: 'number', fractionDigits:1 roundingMode: 'halfCeil' }},
-      { id: 'num5',   format: { type: 'number', fractionDigits:1 roundingMode: 'halfFloor' }},
-      { id: 'num6',   format: { type: 'number', fractionDigits:1 roundingMode: 'halfExpand' }},
-      { id: 'num7',   format: { type: 'number', fractionDigits:1 roundingMode: 'halfTrunc' }},
-      { id: 'num8',   format: { type: 'number', fractionDigits:0 roundingMode: 'halfEven' }},
-      { id: 'num9',   format: { type: 'number', fractionDigits:0 roundingMode: 'halfEven' }},
+      { id: 'num0', format: { type: 'number', fractionDigits: 1, roundingMode: 'floor' } },
+      { id: 'num1', format: { type: 'number', fractionDigits: 1, roundingMode: 'ceil' } },
+      { id: 'num2', format: { type: 'number', fractionDigits: 1, roundingMode: 'expand' } },
+      { id: 'num3', format: { type: 'number', fractionDigits: 1, roundingMode: 'trunc' } },
+      { id: 'num4', format: { type: 'number', fractionDigits: 1, roundingMode: 'halfCeil' } },
+      { id: 'num5', format: { type: 'number', fractionDigits: 1, roundingMode: 'halfFloor' } },
+      { id: 'num6', format: { type: 'number', fractionDigits: 1, roundingMode: 'halfExpand' } },
+      { id: 'num7', format: { type: 'number', fractionDigits: 1, roundingMode: 'halfTrunc' } },
+      { id: 'num8', format: { type: 'number', fractionDigits: 0, roundingMode: 'halfEven' } },
+      { id: 'num9', format: { type: 'number', fractionDigits: 0, roundingMode: 'halfEven' } },
     ],
   }
 
@@ -848,7 +871,6 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
   const ref = useRef<HTMLDivElement>(null)
   const builderRef = useRef<Builder>(Builder.from({ chartType: 'line', dataset: [] }))
   const dark = useDark()
-
 
   useEffect(() => {
     if (!ref.current) {
@@ -892,10 +914,6 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
 
 export default Demo
 ```
-
-
-
-
 
 ### suffix & prefix
 
@@ -921,16 +939,16 @@ const Demo = () => {
       },
     ],
     measures: [
-      { id: 'num0',   format: { type: 'number', fractionDigits:1 suffix:'¥'}},
-      { id: 'num1',   format: { type: 'number', fractionDigits:1 suffix:'$'}},
-      { id: 'num2',   format: { type: 'number', fractionDigits:1 suffix:'!'}},
-      { id: 'num3',   format: { type: 'number', fractionDigits:1 suffix:'-'}},
-      { id: 'num4',   format: { type: 'number', fractionDigits:1 suffix:'+'}},
-      { id: 'num5',   format: { type: 'number', fractionDigits:1 prefix:'¥'}},
-      { id: 'num6',   format: { type: 'number', fractionDigits:1 prefix:'$'}},
-      { id: 'num7',   format: { type: 'number', fractionDigits:1 prefix:'!'}},
-      { id: 'num8',   format: { type: 'number', fractionDigits:0 prefix:'-'}},
-      { id: 'num9',   format: { type: 'number', fractionDigits:0 prefix:'+'}},
+      { id: 'num0', format: { type: 'number', fractionDigits: 1, suffix: '¥' } },
+      { id: 'num1', format: { type: 'number', fractionDigits: 1, suffix: '$' } },
+      { id: 'num2', format: { type: 'number', fractionDigits: 1, suffix: '!' } },
+      { id: 'num3', format: { type: 'number', fractionDigits: 1, suffix: '-' } },
+      { id: 'num4', format: { type: 'number', fractionDigits: 1, suffix: '+' } },
+      { id: 'num5', format: { type: 'number', fractionDigits: 1, prefix: '¥' } },
+      { id: 'num6', format: { type: 'number', fractionDigits: 1, prefix: '$' } },
+      { id: 'num7', format: { type: 'number', fractionDigits: 1, prefix: '!' } },
+      { id: 'num8', format: { type: 'number', fractionDigits: 0, prefix: '-' } },
+      { id: 'num9', format: { type: 'number', fractionDigits: 0, prefix: '+' } },
     ],
   }
 
@@ -963,7 +981,6 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
   const ref = useRef<HTMLDivElement>(null)
   const builderRef = useRef<Builder>(Builder.from({ chartType: 'line', dataset: [] }))
   const dark = useDark()
-
 
   useEffect(() => {
     if (!ref.current) {
@@ -1007,5 +1024,3 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
 
 export default Demo
 ```
-
-

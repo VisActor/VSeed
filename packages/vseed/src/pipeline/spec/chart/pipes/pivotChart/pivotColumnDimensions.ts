@@ -10,7 +10,7 @@ export const pivotColumnDimensions: SpecPipe = (spec, context) => {
   if (!dimensions) {
     return result
   }
-  const columnDimensions = dimensions.filter((dim) => dim.location === 'columnDimension' && dim.encoding === 'column')
+  const columnDimensions = dimensions.filter((dim) => dim.location === 'columnDimension' || dim.encoding === 'column')
   const columns: IBasicDimension[] = columnDimensions.map((dim) => ({
     dimensionKey: dim.id,
     title: dim.alias || dim.id,

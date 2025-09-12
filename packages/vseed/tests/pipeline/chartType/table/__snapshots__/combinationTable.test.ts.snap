@@ -41,7 +41,33 @@ exports[`combinationTable 1`] = `
       },
     },
   },
-  "dataset": undefined,
+  "dataset": [
+    {
+      "date": "2019",
+      "profit": 10000,
+      "sales": 200000,
+    },
+    {
+      "date": "2020",
+      "profit": 20000,
+      "sales": 400000,
+    },
+    {
+      "date": "2021",
+      "profit": 30000,
+      "sales": 600000,
+    },
+    {
+      "date": "2022",
+      "profit": 40000,
+      "sales": 800000,
+    },
+    {
+      "date": "2023",
+      "profit": 50000,
+      "sales": 1000000,
+    },
+  ],
   "dimensions": [
     {
       "alias": "日期",
@@ -137,7 +163,33 @@ exports[`combinationTable 2`] = `
   "hover": {
     "highlightMode": "row",
   },
-  "records": undefined,
+  "records": [
+    {
+      "date": "2019",
+      "profit": 10000,
+      "sales": 200000,
+    },
+    {
+      "date": "2020",
+      "profit": 20000,
+      "sales": 400000,
+    },
+    {
+      "date": "2021",
+      "profit": 30000,
+      "sales": 600000,
+    },
+    {
+      "date": "2022",
+      "profit": 40000,
+      "sales": 800000,
+    },
+    {
+      "date": "2023",
+      "profit": 50000,
+      "sales": 1000000,
+    },
+  ],
   "showHeader": true,
   "theme": {
     "bodyStyle": {

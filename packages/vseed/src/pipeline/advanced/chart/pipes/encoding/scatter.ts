@@ -2,15 +2,11 @@ import { unique } from 'remeda'
 import { MeasureName } from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
-import { getBasicDimensions } from '../init'
-import { getBasicMeasures } from '../measures'
 
-export const encodingForScatter: AdvancedPipe = (advancedVSeed, context) => {
-  const { vseed } = context
-  const { measures: vseedMeasures = [] } = vseed
+export const encodingForScatter: AdvancedPipe = (advancedVSeed) => {
+  const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
   // prepare measures and dimensions
-  const measures = vseedMeasures.length ? findAllMeasures(vseedMeasures) : getBasicMeasures(vseed)
-  const dimensions = getBasicDimensions(vseed)
+  const measures = findAllMeasures(vseedMeasures)
 
   // exist encoding condition
   const hasDimensionEncoding = dimensions.some((item: Dimension) => item.encoding)

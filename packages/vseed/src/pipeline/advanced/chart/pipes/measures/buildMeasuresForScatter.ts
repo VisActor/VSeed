@@ -1,5 +1,5 @@
 import type { AdvancedPipe, MeasureGroup, Measures, MeasureTree, Scatter, ScatterMeasures } from 'src/types'
-import { getBasicMeasures, isMeasureTreeWithParentId, isMeasureTreeWithChildren } from './utils'
+import { isMeasureTreeWithParentId, isMeasureTreeWithChildren } from './utils'
 
 export const buildMeasuresForScatter: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context as {
@@ -20,9 +20,10 @@ export const buildMeasuresForScatter: AdvancedPipe = (advancedVSeed, context) =>
   /**
    * 既不是带Children的指标树, 也不是带parentId的指标树, 则自动生成指标
    */
-  const basicMeasures = getBasicMeasures(vseed)
 
-  const scatterMeasures = vseed.scatterMeasures ? vseed.scatterMeasures : basicMeasuresToScatterMeasures(basicMeasures)
+  const scatterMeasures = vseed.scatterMeasures
+    ? vseed.scatterMeasures
+    : basicMeasuresToScatterMeasures(advancedVSeed.measures || [])
   advancedVSeed.measures = scatterMeasuresToMeasureTree(scatterMeasures)
 
   return advancedVSeed

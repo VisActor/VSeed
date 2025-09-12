@@ -40,8 +40,7 @@
   "dimensions": [
     {
       "id": "date",
-      "alias": "日期",
-      "location": "dimension"
+      "alias": "日期"
     }
   ]
 }

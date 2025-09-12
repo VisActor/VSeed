@@ -39,7 +39,7 @@
       ]
     }
   ],
-  "dimensions": [{ "id": "date", "alias": "日期", "location": "dimension" }],
+  "dimensions": [{ "id": "date", "alias": "日期" }],
   "dataset": [
     { "date": "2019", "profit": 10000, "sales": 200000 },
     { "date": "2020", "profit": 20000, "sales": 400000 },

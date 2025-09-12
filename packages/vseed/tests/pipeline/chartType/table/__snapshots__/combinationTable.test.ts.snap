@@ -72,7 +72,6 @@ exports[`combinationTable 1`] = `
     {
       "alias": "日期",
       "id": "date",
-      "location": "dimension",
     },
   ],
   "locale": "zh-CN",

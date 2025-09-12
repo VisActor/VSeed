@@ -40,7 +40,7 @@
     }
   ],
   "dimensions": [
-    { "id": "month", "alias": "月", "location": "dimension" },
+    { "id": "month", "alias": "月" },
     { "id": "date", "alias": "年", "encoding": "column" },
     { "id": "type", "alias": "类型", "encoding": "row" }
   ],

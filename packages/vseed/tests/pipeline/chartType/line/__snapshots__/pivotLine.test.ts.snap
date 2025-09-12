@@ -1340,7 +1340,6 @@ exports[`pivotLine 1`] = `
     {
       "alias": "月",
       "id": "month",
-      "location": "dimension",
     },
     {
       "alias": "年",

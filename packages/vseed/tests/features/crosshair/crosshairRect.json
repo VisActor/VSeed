@@ -14,8 +14,7 @@
   "dimensions": [
     {
       "id": "date",
-      "alias": "日期",
-      "location": "dimension"
+      "alias": "日期"
     }
   ],
   "measures": [{ "id": "sales", "alias": "销售额" }]

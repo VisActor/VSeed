@@ -580,7 +580,6 @@ exports[`value 1`] = `
     {
       "alias": "日期",
       "id": "date",
-      "location": "dimension",
     },
     {
       "alias": "指标名称",

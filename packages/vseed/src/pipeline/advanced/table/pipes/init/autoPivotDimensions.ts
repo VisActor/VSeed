@@ -33,9 +33,7 @@ export const autoPivotDimensions: AdvancedPipe = (advancedVSeed, context) => {
       if (item.encoding === 'row' || item.encoding === 'column') {
         return item
       }
-      if (item.location === 'rowDimension' || item.location === 'columnDimension') {
-        return item
-      }
+
       return {
         ...item,
         encoding: index % 2 === 0 ? 'column' : 'row',

@@ -43,7 +43,6 @@ export const ScatterChart = memo(() => {
       {
         id: 'date',
         alias: '日期',
-        
       },
     ],
     label: {
@@ -93,7 +92,6 @@ export const ScatterChart = memo(() => {
       {
         id: 'date',
         alias: '日期',
-        
       },
     ],
     label: {
@@ -123,7 +121,6 @@ export const CombinationScatterChart = memo(() => {
       {
         id: 'date',
         alias: '日期',
-        
       },
     ],
     measures: [
@@ -260,12 +257,13 @@ export const ScatterMeasuresArray = memo(() => {
 ## 透视组合散点图
 
 <PivotScatterChart />
+
 ```tsx pure {}
 export const PivotScatterChart = memo(() => {
   const vseed: VSeed = {
     chartType: 'scatter',
     dimensions: [
-      { id: 'category', alias: '类别',   },
+      { id: 'category', alias: '类别' },
       { id: 'date', alias: '日期', encoding: 'column' },
       { id: 'region', alias: '区域', encoding: 'row' },
     ],
@@ -273,9 +271,7 @@ export const PivotScatterChart = memo(() => {
       {
         id: 'group-sales',
         alias: '销售额分组',
-        children: [
-          { id: 'sales', alias: '销售额' },
-        ],
+        children: [{ id: 'sales', alias: '销售额' }],
       },
       {
         id: 'group-sales',
@@ -312,14 +308,7 @@ export const PivotScatterChart = memo(() => {
       { date: '2020', region: 'west', category: 'Household', profit: 50, sales: 200 },
       { date: '2020', region: 'west', category: 'Personal', profit: 200, sales: 500 },
     ],
-
-}
-return <PivotChart vseed={vseed} />
+  }
+  return <PivotChart vseed={vseed} />
 })
-
-````
-
 ```
-
-```
-````

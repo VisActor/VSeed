@@ -30,8 +30,7 @@ export const isPivotChart = (vseed: VSeed) => {
       dimensions: Dimensions
     }
     const hasRowOrColumnDimension =
-      dimensions &&
-      dimensions.some((dimension) => dimension.location === 'rowDimension' || dimension.location === 'columnDimension')
+      dimensions && dimensions.some((dimension) => dimension.encoding === 'row' || dimension.encoding === 'column')
 
     if (hasRowOrColumnDimension) {
       return true
@@ -68,8 +67,7 @@ export const isPivotChart = (vseed: VSeed) => {
   }
 
   const hasRowOrColumnDimension =
-    dimensions &&
-    dimensions.some((dimension) => dimension.location === 'rowDimension' || dimension.location === 'columnDimension')
+    dimensions && dimensions.some((dimension) => dimension.encoding === 'row' || dimension.encoding === 'column')
 
   const hasMeasureGroup = measures && measures.some((measure: DimensionGroup) => measure && measure.children)
 

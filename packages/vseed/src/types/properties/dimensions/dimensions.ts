@@ -6,11 +6,6 @@ export type Dimension = {
   alias?: string
 
   /**
-   * @deprecated 请使用 encoding 代替
-   */
-  location?: 'dimension' | 'rowDimension' | 'columnDimension'
-
-  /**
    * @description 维度映射的通道
    * - x: 支持将多个维度映射到x轴, 支持柱状图、折线图、面积图等
    * - y: 支持将多个维度映射到y轴, 支持柱状图、折线图、面积图等

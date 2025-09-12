@@ -5,9 +5,7 @@ export const pivotColumns: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { encoding } = advancedVSeed
   const dimensions = advancedVSeed.dimensions as Dimensions
-  const columns = dimensions.filter(
-    (item) => item['location'] === 'columnDimension' || encoding.column?.includes(item.id),
-  )
+  const columns = dimensions.filter((item) => encoding.column?.includes(item.id))
 
   return {
     ...spec,

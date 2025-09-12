@@ -5,7 +5,14 @@ import type { AdvancedPipe, Datum } from 'src/types'
  */
 export const defaultMeasures: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context
-  const { dataset } = vseed
+  const { measures, dataset } = vseed
+
+  if (measures && measures.length > 0) {
+    return {
+      ...advancedVSeed,
+      measures,
+    }
+  }
 
   if (!dataset) {
     throw new Error('dataset is required')
@@ -30,6 +37,7 @@ export const defaultMeasures: AdvancedPipe = (advancedVSeed, context) => {
       id: measure,
       alias: measure,
     }))
+
   return {
     ...advancedVSeed,
     measures: defaultMeasures,

@@ -16,7 +16,6 @@ export const pivotReshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) =
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
   const { dimensions, measures, encoding } = advancedVSeed
-
   if (!measures || !dimensions || !dataset || !encoding) {
     return result
   }

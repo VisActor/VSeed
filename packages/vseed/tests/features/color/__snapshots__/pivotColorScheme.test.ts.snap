@@ -682,7 +682,6 @@ exports[`pivotColorScheme 1`] = `
     {
       "alias": "日期",
       "id": "date",
-      "location": "dimension",
     },
     {
       "alias": "类型",

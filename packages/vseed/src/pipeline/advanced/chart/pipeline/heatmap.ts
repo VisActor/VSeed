@@ -1,6 +1,5 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
-  autoDimensions,
   initAdvancedVSeed,
   theme,
   pivotAdapter,
@@ -13,18 +12,23 @@ import {
   encodingForHeatmap,
   buildMeasures,
   defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
 } from '../pipes'
 
 export const heatmapAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+
   encodingForHeatmap,
   buildMeasures,
-  autoDimensions,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
+
   sortXBandAxis,
   heatmapConfig,
   theme,
   markStyle,
-  annotation
+  annotation,
 ]

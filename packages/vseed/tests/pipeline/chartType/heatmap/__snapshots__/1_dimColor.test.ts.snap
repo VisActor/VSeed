@@ -550,19 +550,16 @@ exports[`1_dimColor 1`] = `
       "alias": "类型",
       "encoding": "yAxis",
       "id": "type",
-      "location": "dimension",
     },
     {
       "alias": "日期",
       "encoding": "xAxis",
       "id": "date",
-      "location": "dimension",
     },
     {
       "alias": "日期",
       "encoding": "color",
       "id": "__MeaName__",
-      "location": "dimension",
     },
   ],
   "encoding": {

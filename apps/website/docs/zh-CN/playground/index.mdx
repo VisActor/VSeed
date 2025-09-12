@@ -9,47 +9,53 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'table',
-    dataset: [
-      { date: '2019', region: 'east', city: 'A', profit: 10, sales: 100 },
-      { date: '2019', region: 'east', city: 'B', profit: 30, sales: 200 },
-      { date: '2019', region: 'west', city: 'A', profit: 30, sales: 300 },
-      { date: '2019', region: 'west', city: 'B', profit: 50, sales: 500 },
-
-      { date: '2020', region: 'east', city: 'A', profit: 15, sales: 100 },
-      { date: '2020', region: 'east', city: 'B', profit: 35, sales: 200 },
-      { date: '2020', region: 'west', city: 'A', profit: 35, sales: 300 },
-      { date: '2020', region: 'west', city: 'B', profit: 55, sales: 500 },
-
-      { date: '2021', region: 'east', city: 'A', profit: 20, sales: 100 },
-      { date: '2021', region: 'east', city: 'B', profit: 40, sales: 200 },
-      { date: '2021', region: 'west', city: 'A', profit: 40, sales: 300 },
-      { date: '2021', region: 'west', city: 'B', profit: 60, sales: 500 },
-    ],
-    dimensions: [
-      {
-        id: 'date',
-        alias: '日期',
-      },
-      {
-        id: 'region',
-        alias: '区域',
-      },
-      {
-        id: 'city',
-        alias: '城市',
-      },
-    ],
+    chartType: 'column',
     measures: [
       {
-        id: 'profit',
-        alias: '利润',
-        encoding: 'detail',
-        format: {
-          prefix: 'hello',
-        },
+        id: 'line1',
+        children: [
+          {
+            id: 'sales',
+            alias: '销售额',
+            format: {
+              type: 'number',
+              ratio: 1000,
+              thousandSeparator: true,
+              decimalPlaces: 0,
+              symbol: '千',
+              prefix: '利润',
+              suffix: '$',
+            },
+          },
+        ],
       },
-      { id: 'sales', alias: '销售额' },
+      {
+        id: 'line2',
+        children: [
+          {
+            id: 'profit',
+            alias: '利润',
+            autoFormat: true,
+            format: {
+              type: 'number',
+              ratio: 1000,
+              thousandSeparator: true,
+              decimalPlaces: 0,
+              symbol: '千',
+              prefix: '利润',
+              suffix: '$',
+            },
+          },
+        ],
+      },
+    ],
+    dimensions: [{ id: 'date', alias: '日期' }],
+    dataset: [
+      { date: '2019', profit: 10000, sales: 200000 },
+      { date: '2020', profit: 20000, sales: 400000 },
+      { date: '2021', profit: 30000, sales: 600000 },
+      { date: '2022', profit: 40000, sales: 800000 },
+      { date: '2023', profit: 50000, sales: 1000000 },
     ],
   }
 

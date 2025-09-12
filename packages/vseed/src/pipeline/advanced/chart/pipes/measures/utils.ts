@@ -1,4 +1,4 @@
-import type { Dataset, Datum, Measures, VSeed } from 'src/types'
+import type { AdvancedVSeed, Dataset, Datum, Measures, VSeed } from 'src/types'
 
 /**
  * @description 获取指标, 无指标时, 自动生成指标
@@ -19,7 +19,7 @@ export const getBasicMeasures = (vseed: VSeed): Measures => {
 /**
  * @description 自动根据数据集生成指标
  * @param dataset 数据集
- * @returns 
+ * @returns
  */
 export const generateMeasuresByDataset = (dataset: Dataset) => {
   if (!dataset) {
@@ -53,7 +53,7 @@ export const generateMeasuresByDataset = (dataset: Dataset) => {
  * @param vseed vseed
  * @returns
  */
-export const isMeasureTreeWithChildren = (vseed: VSeed) => {
+export const isMeasureTreeWithChildren = (vseed: VSeed | AdvancedVSeed) => {
   const { measures } = vseed
 
   if (!measures) {
@@ -68,7 +68,7 @@ export const isMeasureTreeWithChildren = (vseed: VSeed) => {
  * @param vseed vseed
  * @returns
  */
-export const isMeasureTreeWithParentId = (vseed: VSeed) => {
+export const isMeasureTreeWithParentId = (vseed: VSeed | AdvancedVSeed) => {
   const { measures } = vseed
 
   if (!measures) {

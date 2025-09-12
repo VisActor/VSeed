@@ -1,6 +1,5 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
-  autoDimensions,
   buildMeasures,
   initAdvancedVSeed,
   theme,
@@ -14,15 +13,20 @@ import {
   pivotReshapeWithEncoding,
   encodingForBar,
   defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
 } from '../pipes'
 
 export const barPercentAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   defaultMeasures,
-  buildMeasures,
-  autoDimensions,
+  defaultDimensions,
+  defaultMeasureName,
+
   encodingForBar,
+  buildMeasures,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
+
   sortYBandAxis,
   sortLegend,
   barPercentConfig,

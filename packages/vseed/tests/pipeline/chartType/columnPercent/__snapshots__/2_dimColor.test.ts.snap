@@ -710,19 +710,16 @@ exports[`2_dimColor 1`] = `
       "alias": "日期",
       "encoding": "x",
       "id": "date",
-      "location": "dimension",
     },
     {
       "alias": "类型",
       "encoding": "detail",
       "id": "type",
-      "location": "dimension",
     },
     {
       "alias": "指标名称",
       "encoding": "color",
       "id": "__MeaName__",
-      "location": "dimension",
     },
   ],
   "encoding": {

@@ -1,6 +1,5 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
-  autoDimensions,
   initAdvancedVSeed,
   theme,
   pivotAdapter,
@@ -13,15 +12,20 @@ import {
   pivotReshapeWithEncoding,
   buildMeasures,
   defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
 } from '../pipes'
 
 export const radarAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+
   encodingForRadar,
   buildMeasures,
-  autoDimensions,
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
+
   // sortXBandAxis,
   sortLegend,
   radarConfig,

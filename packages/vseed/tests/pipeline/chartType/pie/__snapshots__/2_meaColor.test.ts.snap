@@ -504,13 +504,11 @@ exports[`2_meaColor 1`] = `
       "alias": "类型",
       "encoding": "detail",
       "id": "type",
-      "location": "dimension",
     },
     {
       "alias": "日期",
       "encoding": "detail",
       "id": "date",
-      "location": "dimension",
     },
     {
       "alias": "指标名称",

@@ -704,19 +704,16 @@ exports[`1_meaColor 1`] = `
       "alias": "日期",
       "encoding": "xAxis",
       "id": "date",
-      "location": "dimension",
     },
     {
       "alias": "类型",
       "encoding": "detail",
       "id": "type",
-      "location": "dimension",
     },
     {
       "alias": "指标",
       "encoding": "xAxis",
       "id": "__MeaName__",
-      "location": "dimension",
     },
   ],
   "encoding": {

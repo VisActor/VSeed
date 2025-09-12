@@ -514,13 +514,11 @@ exports[`1_dimColor 1`] = `
       "alias": "类型",
       "encoding": "angle",
       "id": "type",
-      "location": "dimension",
     },
     {
       "alias": "日期",
       "encoding": "color",
       "id": "date",
-      "location": "dimension",
     },
     {
       "alias": "指标名称",

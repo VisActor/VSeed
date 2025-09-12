@@ -678,13 +678,11 @@ exports[`1_dimColor 1`] = `
       "alias": "日期",
       "encoding": "xAxis",
       "id": "date",
-      "location": "dimension",
     },
     {
       "alias": "类型",
       "encoding": "xAxis",
       "id": "type",
-      "location": "dimension",
     },
     {
       "alias": "指标名称",

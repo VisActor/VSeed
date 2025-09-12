@@ -13,10 +13,12 @@ import {
   reshapeWithDualEncoding,
   pivotReshapeWithDualEncoding,
   buildMeasuresForDualAxis,
+  defaultMeasures,
 } from '../pipes'
 
 export const dualAxisAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  defaultMeasures,
   encodingForDualAxis,
   buildMeasuresForDualAxis,
   autoDimensions,

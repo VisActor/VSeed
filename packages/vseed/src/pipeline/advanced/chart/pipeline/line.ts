@@ -13,10 +13,12 @@ import {
   pivotReshapeWithEncoding,
   encodingForLine,
   buildMeasures,
+  defaultMeasures,
 } from '../pipes'
 
 export const lineAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  defaultMeasures,
   encodingForLine,
   buildMeasures,
   autoDimensions,

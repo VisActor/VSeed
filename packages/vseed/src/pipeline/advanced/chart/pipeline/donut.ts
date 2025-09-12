@@ -10,10 +10,12 @@ import {
   reshapeWithEncoding,
   pivotReshapeWithEncoding,
   buildMeasures,
+  defaultMeasures,
 } from '../pipes'
 
 export const donutAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  defaultMeasures,
   buildMeasures,
   autoDimensions,
   encodingForPie,

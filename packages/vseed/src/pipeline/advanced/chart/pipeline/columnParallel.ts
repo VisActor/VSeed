@@ -13,10 +13,12 @@ import {
   sortLegend,
   encodingForColumn,
   buildMeasures,
+  defaultMeasures,
 } from '../pipes'
 
 export const columnParallelAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  defaultMeasures,
   encodingForColumn,
   buildMeasures,
   autoDimensions,

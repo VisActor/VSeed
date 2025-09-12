@@ -12,10 +12,12 @@ import {
   pivotReshapeWithEncoding,
   encodingForHeatmap,
   buildMeasures,
+  defaultMeasures,
 } from '../pipes'
 
 export const heatmapAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  defaultMeasures,
   encodingForHeatmap,
   buildMeasures,
   autoDimensions,

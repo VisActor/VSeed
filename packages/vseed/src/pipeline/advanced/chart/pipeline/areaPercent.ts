@@ -13,10 +13,12 @@ import {
   reshapeWithEncoding,
   pivotReshapeWithEncoding,
   buildMeasures,
+  defaultMeasures,
 } from '../pipes'
 
 export const areaPercentAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  defaultMeasures,
   encodingForLine,
   buildMeasures,
   autoDimensions,

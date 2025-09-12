@@ -13,10 +13,12 @@ import {
   reshapeWithEncoding,
   pivotReshapeWithEncoding,
   encodingForBar,
+  defaultMeasures,
 } from '../pipes'
 
 export const barAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  defaultMeasures,
   encodingForBar,
   buildMeasures,
   autoDimensions,

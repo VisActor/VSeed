@@ -10,10 +10,12 @@ import {
   pivotReshapeWithEncoding,
   encodingForPie,
   buildMeasures,
+  defaultMeasures,
 } from '../pipes'
 
 export const pieAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  defaultMeasures,
   encodingForPie,
   buildMeasures,
   autoDimensions,

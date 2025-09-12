@@ -10,11 +10,13 @@ import {
   reshapeWithEncoding,
   pivotReshapeWithEncoding,
   buildMeasures,
+  defaultMeasures,
 } from '../pipes'
 import { encodingForRose } from '../pipes/encoding/rose'
 
 export const roseAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  defaultMeasures,
   encodingForRose,
   buildMeasures,
   autoDimensions,

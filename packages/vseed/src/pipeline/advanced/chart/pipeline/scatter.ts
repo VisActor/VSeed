@@ -9,12 +9,14 @@ import {
   scatterConfig,
   encodingForScatter,
   buildMeasuresForScatter,
+  defaultMeasures,
 } from '../pipes'
 import { reshapeWithScatterEncoding } from '../pipes/reshape/reshapeWithScatterEncoding'
 import { pivotReshapeWithScatterEncoding } from '../pipes/reshape/pivotReshapeWithScatterEncoding'
 
 export const scatterAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
+  defaultMeasures,
   encodingForScatter,
   buildMeasuresForScatter,
   autoDimensions,

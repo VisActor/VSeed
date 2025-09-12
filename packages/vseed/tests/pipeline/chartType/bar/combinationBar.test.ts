@@ -47,5 +47,6 @@ test('combinationBar', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

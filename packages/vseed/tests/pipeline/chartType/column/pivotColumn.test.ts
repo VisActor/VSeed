@@ -47,5 +47,6 @@ test('pivotColumn', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

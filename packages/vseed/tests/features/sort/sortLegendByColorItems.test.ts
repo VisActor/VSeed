@@ -47,5 +47,6 @@ test('sortLegendByColorItems', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

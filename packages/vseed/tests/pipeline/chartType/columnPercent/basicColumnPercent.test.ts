@@ -47,5 +47,6 @@ test('basicColumnPercent', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

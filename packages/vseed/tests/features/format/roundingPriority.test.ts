@@ -47,5 +47,6 @@ test('roundingPriority', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

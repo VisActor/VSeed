@@ -47,5 +47,6 @@ test('combinationBarPercent', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

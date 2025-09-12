@@ -47,5 +47,6 @@ test('1m1d', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

@@ -47,5 +47,6 @@ test('basicHeatmap', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

@@ -47,5 +47,6 @@ test('basicRose', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

@@ -47,5 +47,6 @@ test('1_meaColor', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

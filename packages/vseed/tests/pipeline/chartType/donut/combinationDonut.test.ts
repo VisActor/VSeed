@@ -47,5 +47,6 @@ test('combinationDonut', () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   }
 })

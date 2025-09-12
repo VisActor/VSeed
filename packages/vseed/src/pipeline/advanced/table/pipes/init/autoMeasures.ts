@@ -31,6 +31,7 @@ export const autoMeasures: AdvancedPipe = (advancedVSeed, context) => {
     .map((measure) => ({
       id: measure,
       alias: measure,
+      encoding: 'column',
     }))
 
   return result

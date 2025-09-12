@@ -9,7 +9,7 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'pivotTable',
+    chartType: 'table',
     dataset: [
       { date: '2019', region: 'east', city: 'A', profit: 10, sales: 100 },
       { date: '2019', region: 'east', city: 'B', profit: 30, sales: 200 },
@@ -30,17 +30,14 @@ const Demo = () => {
       {
         id: 'date',
         alias: '日期',
-        encoding: 'row',
       },
       {
         id: 'region',
         alias: '区域',
-        encoding: 'row',
       },
       {
         id: 'city',
         alias: '城市',
-        encoding: 'column',
       },
     ],
     measures: [
@@ -52,20 +49,7 @@ const Demo = () => {
           prefix: 'hello',
         },
       },
-      { id: 'sales', alias: '销售额', encoding: 'detail' },
-    ],
-  }
-
-  const result = {
-    dimensions: [
-      {
-        id: 'date',
-        alias: '日期',
-      },
-      {
-        id: 'type',
-        alias: '类型',
-      },
+      { id: 'sales', alias: '销售额' },
     ],
   }
 

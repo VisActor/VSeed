@@ -40,7 +40,7 @@ export const autoDimensions: AdvancedPipe = (advancedVSeed, context) => {
     .map((dim) => ({
       id: dim,
       alias: dim,
-      location: 'dimension',
+      encoding: 'column',
     }))
 
   return result

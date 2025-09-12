@@ -421,7 +421,7 @@ export default Demo
 
 ### fractionDigits
 
-- `fractionDigits` 小数位, , 必须大于等于0, 否则不生效.
+- `fractionDigits` 小数位, 必须大于等于0, 否则不生效.
 
 ```tsx direction=vertical
 const Demo = () => {
@@ -806,16 +806,16 @@ const Demo = () => {
       },
     ],
     measures: [
-      { id: 'num0',   format: { type: 'number', fractionDigits:1 , roundingMode: 'floor' }},
-      { id: 'num1',   format: { type: 'number', fractionDigits:1 , roundingMode: 'ceil' }},
-      { id: 'num2',   format: { type: 'number', fractionDigits:1 , roundingMode: 'expand' }},
-      { id: 'num3',   format: { type: 'number', fractionDigits:1 , roundingMode: 'trunc' }},
-      { id: 'num4',   format: { type: 'number', fractionDigits:1 , roundingMode: 'halfCeil' }},
-      { id: 'num5',   format: { type: 'number', fractionDigits:1 , roundingMode: 'halfFloor' }},
-      { id: 'num6',   format: { type: 'number', fractionDigits:1 , roundingMode: 'halfExpand' }},
-      { id: 'num7',   format: { type: 'number', fractionDigits:1 , roundingMode: 'halfTrunc' }},
-      { id: 'num8',   format: { type: 'number', fractionDigits:0 , roundingMode: 'halfEven' }},
-      { id: 'num9',   format: { type: 'number', fractionDigits:0 , roundingMode: 'halfEven' }},
+      { id: 'num0',   format: { type: 'number', fractionDigits:1 roundingMode: 'floor' }},
+      { id: 'num1',   format: { type: 'number', fractionDigits:1 roundingMode: 'ceil' }},
+      { id: 'num2',   format: { type: 'number', fractionDigits:1 roundingMode: 'expand' }},
+      { id: 'num3',   format: { type: 'number', fractionDigits:1 roundingMode: 'trunc' }},
+      { id: 'num4',   format: { type: 'number', fractionDigits:1 roundingMode: 'halfCeil' }},
+      { id: 'num5',   format: { type: 'number', fractionDigits:1 roundingMode: 'halfFloor' }},
+      { id: 'num6',   format: { type: 'number', fractionDigits:1 roundingMode: 'halfExpand' }},
+      { id: 'num7',   format: { type: 'number', fractionDigits:1 roundingMode: 'halfTrunc' }},
+      { id: 'num8',   format: { type: 'number', fractionDigits:0 roundingMode: 'halfEven' }},
+      { id: 'num9',   format: { type: 'number', fractionDigits:0 roundingMode: 'halfEven' }},
     ],
   }
 
@@ -921,16 +921,16 @@ const Demo = () => {
       },
     ],
     measures: [
-      { id: 'num0',   format: { type: 'number', fractionDigits:1 , suffix:'¥'}},
-      { id: 'num1',   format: { type: 'number', fractionDigits:1 , suffix:'$'}},
-      { id: 'num2',   format: { type: 'number', fractionDigits:1 , suffix:'!'}},
-      { id: 'num3',   format: { type: 'number', fractionDigits:1 , suffix:'-'}},
-      { id: 'num4',   format: { type: 'number', fractionDigits:1 , suffix:'+'}},
-      { id: 'num5',   format: { type: 'number', fractionDigits:1 , prefix:'¥'}},
-      { id: 'num6',   format: { type: 'number', fractionDigits:1 , prefix:'$'}},
-      { id: 'num7',   format: { type: 'number', fractionDigits:1 , prefix:'!'}},
-      { id: 'num8',   format: { type: 'number', fractionDigits:0 , prefix:'-'}},
-      { id: 'num9',   format: { type: 'number', fractionDigits:0 , prefix:'+'}},
+      { id: 'num0',   format: { type: 'number', fractionDigits:1 suffix:'¥'}},
+      { id: 'num1',   format: { type: 'number', fractionDigits:1 suffix:'$'}},
+      { id: 'num2',   format: { type: 'number', fractionDigits:1 suffix:'!'}},
+      { id: 'num3',   format: { type: 'number', fractionDigits:1 suffix:'-'}},
+      { id: 'num4',   format: { type: 'number', fractionDigits:1 suffix:'+'}},
+      { id: 'num5',   format: { type: 'number', fractionDigits:1 prefix:'¥'}},
+      { id: 'num6',   format: { type: 'number', fractionDigits:1 prefix:'$'}},
+      { id: 'num7',   format: { type: 'number', fractionDigits:1 prefix:'!'}},
+      { id: 'num8',   format: { type: 'number', fractionDigits:0 prefix:'-'}},
+      { id: 'num9',   format: { type: 'number', fractionDigits:0 prefix:'+'}},
     ],
   }
 

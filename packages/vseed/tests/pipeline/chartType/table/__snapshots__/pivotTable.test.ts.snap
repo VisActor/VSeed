@@ -514,9 +514,9 @@ exports[`pivotTable 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "right",

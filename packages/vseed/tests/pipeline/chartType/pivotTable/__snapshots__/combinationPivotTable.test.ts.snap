@@ -189,44 +189,68 @@ exports[`combinationPivotTable 1`] = `
   "dimensions": [
     {
       "alias": "日期",
-      "encoding": "column",
       "id": "date",
       "location": "dimension",
     },
     {
       "alias": "指标名称",
-      "encoding": "row",
       "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "column": [
+      "date",
+    ],
+    "detail": [
+      "sales",
+      "profit",
+    ],
+    "row": [
+      "__MeaName__",
+    ],
+    "tooltip": [
+      "sales",
+      "profit",
+    ],
+  },
   "locale": "zh-CN",
   "measures": [
     {
-      "alias": "销售额",
-      "format": {
-        "decimalPlaces": 0,
-        "prefix": "利润",
-        "ratio": 1000,
-        "suffix": "$",
-        "symbol": "千",
-        "thousandSeparator": true,
-        "type": "number",
-      },
-      "id": "sales",
+      "children": [
+        {
+          "alias": "销售额",
+          "format": {
+            "decimalPlaces": 0,
+            "prefix": "利润",
+            "ratio": 1000,
+            "suffix": "$",
+            "symbol": "千",
+            "thousandSeparator": true,
+            "type": "number",
+          },
+          "id": "sales",
+        },
+      ],
+      "id": "line1",
     },
     {
-      "alias": "利润",
-      "autoFormat": true,
-      "format": {
-        "decimalPlaces": 0,
-        "prefix": "利润",
-        "ratio": 1000,
-        "suffix": "$",
-        "symbol": "千",
-        "thousandSeparator": true,
-        "type": "number",
-      },
-      "id": "profit",
+      "children": [
+        {
+          "alias": "利润",
+          "autoFormat": true,
+          "format": {
+            "decimalPlaces": 0,
+            "prefix": "利润",
+            "ratio": 1000,
+            "suffix": "$",
+            "symbol": "千",
+            "thousandSeparator": true,
+            "type": "number",
+          },
+          "id": "profit",
+        },
+      ],
+      "id": "line2",
     },
   ],
 }
@@ -435,9 +459,9 @@ exports[`combinationPivotTable 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "right",
@@ -539,9 +563,9 @@ exports[`combinationPivotTable 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "left",

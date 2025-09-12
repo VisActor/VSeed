@@ -35,7 +35,9 @@ const fieldFormat =
     }
 
     const datum = table.getCellOriginRecord(col, row) as Datum[]
-
+    if (!datum[0]) {
+      return value
+    }
     const { measureId: foldMeasureId } = foldInfo
     const measureId = datum[0][foldMeasureId] as string
     const node = findMeasureById(measures, measureId)

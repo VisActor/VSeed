@@ -497,45 +497,60 @@ exports[`simplePivotTable 1`] = `
   "dimensions": [
     {
       "alias": "date",
-      "encoding": "column",
       "id": "date",
     },
     {
       "alias": "type",
-      "encoding": "row",
       "id": "type",
     },
     {
       "alias": "指标名称",
-      "encoding": "column",
       "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "column": [
+      "date",
+      "__MeaName__",
+    ],
+    "detail": [
+      "goalProfit",
+      "profit",
+      "sales",
+      "leftCount",
+      "salesCount",
+    ],
+    "row": [
+      "type",
+    ],
+    "tooltip": [
+      "goalProfit",
+      "profit",
+      "sales",
+      "leftCount",
+      "salesCount",
+    ],
+  },
   "locale": "zh-CN",
   "measures": [
     {
       "alias": "goalProfit",
-      "encoding": "detail",
       "id": "goalProfit",
     },
     {
       "alias": "profit",
-      "encoding": "detail",
       "id": "profit",
     },
     {
       "alias": "sales",
-      "encoding": "detail",
       "id": "sales",
     },
     {
       "alias": "leftCount",
-      "encoding": "detail",
       "id": "leftCount",
     },
     {
       "alias": "salesCount",
-      "encoding": "detail",
       "id": "salesCount",
     },
   ],
@@ -1070,9 +1085,9 @@ exports[`simplePivotTable 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "right",
@@ -1174,9 +1189,9 @@ exports[`simplePivotTable 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "left",

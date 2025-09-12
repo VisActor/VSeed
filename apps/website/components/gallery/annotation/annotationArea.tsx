@@ -16,7 +16,7 @@ export const AnnotationAreaSelectorVertical = memo(() => {
       selector: ['2021'],
       text: '区域',
     },
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -42,7 +42,7 @@ export const AnnotationAreaSelectorHorizontal = memo(() => {
       textPosition: 'topRight',
       textAlign: 'right',
     },
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -66,7 +66,7 @@ export const AnnotationAreaSelectorLine = memo(() => {
       selector: ['2021'],
       text: '区域',
     },
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },

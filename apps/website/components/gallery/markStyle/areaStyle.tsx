@@ -18,7 +18,7 @@ export const SelectorAreaValue = memo(() => {
         areaColorOpacity: 0.05,
       },
     ],
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -42,7 +42,7 @@ export const SelectorAreaPartialDatum = memo(() => {
       selector: [ { sales: 60 }],
       areaColor: 'red',
     },
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -81,7 +81,7 @@ export const SelectorAreaDimensionCondition = memo(() => {
         },
       ],
     },
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -109,7 +109,7 @@ export const SelectorAreaMeasureCondition = memo(() => {
       },
       areaColorOpacity: 1,
     },
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -139,7 +139,7 @@ export const MultiAreaStyle = memo(() => {
         areaColorOpacity: 0.05,
       },
     ],
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },

@@ -169,10 +169,23 @@ exports[`onlyMeasures 1`] = `
   "dimensions": [
     {
       "alias": "指标名称",
-      "encoding": "column",
       "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "column": [
+      "__MeaName__",
+    ],
+    "detail": [
+      "sales",
+      "profit",
+    ],
+    "row": [],
+    "tooltip": [
+      "sales",
+      "profit",
+    ],
+  },
   "locale": "zh-CN",
   "measures": [
     {
@@ -375,9 +388,9 @@ exports[`onlyMeasures 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "right",
@@ -479,9 +492,9 @@ exports[`onlyMeasures 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "left",

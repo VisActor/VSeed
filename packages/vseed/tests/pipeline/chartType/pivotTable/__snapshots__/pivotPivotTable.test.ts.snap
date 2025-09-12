@@ -837,7 +837,6 @@ exports[`pivotPivotTable 1`] = `
   "dimensions": [
     {
       "alias": "月",
-      "encoding": "column",
       "id": "month",
       "location": "dimension",
     },
@@ -853,38 +852,65 @@ exports[`pivotPivotTable 1`] = `
     },
     {
       "alias": "指标名称",
-      "encoding": "row",
       "id": "__MeaName__",
     },
   ],
+  "encoding": {
+    "column": [
+      "month",
+      "type",
+    ],
+    "detail": [
+      "sales",
+      "profit",
+    ],
+    "row": [
+      "date",
+      "__MeaName__",
+    ],
+    "tooltip": [
+      "sales",
+      "profit",
+    ],
+  },
   "locale": "zh-CN",
   "measures": [
     {
-      "alias": "销售额",
-      "format": {
-        "decimalPlaces": 0,
-        "prefix": "利润",
-        "ratio": 1000,
-        "suffix": "$",
-        "symbol": "千",
-        "thousandSeparator": true,
-        "type": "number",
-      },
-      "id": "sales",
+      "children": [
+        {
+          "alias": "销售额",
+          "format": {
+            "decimalPlaces": 0,
+            "prefix": "利润",
+            "ratio": 1000,
+            "suffix": "$",
+            "symbol": "千",
+            "thousandSeparator": true,
+            "type": "number",
+          },
+          "id": "sales",
+        },
+      ],
+      "id": "line1",
     },
     {
-      "alias": "利润",
-      "autoFormat": true,
-      "format": {
-        "decimalPlaces": 0,
-        "prefix": "利润",
-        "ratio": 1000,
-        "suffix": "$",
-        "symbol": "千",
-        "thousandSeparator": true,
-        "type": "number",
-      },
-      "id": "profit",
+      "children": [
+        {
+          "alias": "利润",
+          "autoFormat": true,
+          "format": {
+            "decimalPlaces": 0,
+            "prefix": "利润",
+            "ratio": 1000,
+            "suffix": "$",
+            "symbol": "千",
+            "thousandSeparator": true,
+            "type": "number",
+          },
+          "id": "profit",
+        },
+      ],
+      "id": "line2",
     },
   ],
 }
@@ -910,6 +936,11 @@ exports[`pivotPivotTable 2`] = `
     {
       "dimensionKey": "date",
       "title": "年",
+      "width": "auto",
+    },
+    {
+      "dimensionKey": "type",
+      "title": "类型",
       "width": "auto",
     },
   ],
@@ -1718,6 +1749,11 @@ exports[`pivotPivotTable 2`] = `
   ],
   "rows": [
     {
+      "dimensionKey": "date",
+      "title": "年",
+      "width": "auto",
+    },
+    {
       "dimensionKey": "type",
       "title": "类型",
       "width": "auto",
@@ -1751,9 +1787,9 @@ exports[`pivotPivotTable 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "right",
@@ -1855,9 +1891,9 @@ exports[`pivotPivotTable 2`] = `
       },
       "lineHeight": 18,
       "padding": [
-        8.6,
+        8,
         12,
-        8.6,
+        8,
         12,
       ],
       "textAlign": "left",

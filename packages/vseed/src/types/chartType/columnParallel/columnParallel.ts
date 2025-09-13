@@ -20,7 +20,6 @@ import type {
   MeasureTree,
   SortLegend,
   Sort,
-  Encoding,
 } from '../../properties'
 
 /**
@@ -69,19 +68,6 @@ export interface ColumnParallel {
    * @example [{category:'A', value1:100, value2:200}, {category:'B', value1:150, value2:250}]
    */
   dataset: Dataset
-
-  /**
-   * @description 编码配置, 并列柱状图的视觉通道, 包括: x通道, color通道, detail通道, label通道, tooltip通道
-   * - x: 映射到X轴的字段, 支持放入多个维度
-   * - detail: 细分映射通道, 支持放入多个维度
-   * - tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
-   * - color: 颜色映射通道, 支持放入多个维度 或 1个 指标
-   * - label: 标签映射通道, 支持放入 多个维度 或 多个指标
-   *
-   * @tip 特殊的:
-   * - y: measures会直接映射到Y轴通道
-   */
-  encoding?: Pick<Encoding, 'x' | 'color' | 'detail' | 'label' | 'tooltip'>
 
   /**
    * @description 维度, 第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.

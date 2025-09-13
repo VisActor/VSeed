@@ -1,5 +1,5 @@
 import { type Locale } from '../../i18n'
-import type { ColorLegend, Encoding, LinearColor, MeasureTree } from '../../properties'
+import type { ColorLegend, LinearColor, MeasureTree } from '../../properties'
 import {
   type BackgroundColor,
   type Dataset,
@@ -58,19 +58,6 @@ export interface Heatmap {
    * @example [{month:'1月', value:100}, {month:'2月', value:150}, {month:'3月', value:120}]
    */
   dataset: Dataset
-
-  /**
-   * @description 编码配置, 热力图的视觉通道, 包括: x通道, y通道, color通道, label通道, tooltip通道
-   * - x: x轴映射通道, 支持放入多个维度
-   * - y: y轴映射通道, 支持放入多个维度
-   * - tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
-   * - color: 颜色映射通道, 支持放入多个维度 或 1个 指标
-   * - label: 标签映射通道, 支持放入 多个维度 或 多个指标
-   *
-   * @tip 特殊的:
-   * - value: measures会直接映射到数值通道
-   */
-  encoding?: Pick<Encoding, 'color' | 'x' | 'y' | 'label' | 'tooltip'>
 
   /**
    * 维度

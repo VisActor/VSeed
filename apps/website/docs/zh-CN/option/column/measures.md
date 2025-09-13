@@ -196,7 +196,7 @@
 
 ## encoding
 
-**Type:** `"color" | "detail" | "label" | "tooltip" | "xAxis" | "yAxis" | "angle" | "column" | "primaryYAxis" | "secondaryYAxis" | "radius" | "size" | undefined`
+**Type:** `"xAxis" | "yAxis" | "angle" | "color" | "detail" | "tooltip" | "label" | "column" | "primaryYAxis" | "secondaryYAxis" | "radius" | "size" | undefined`
 
 :::note{title=描述}
 指标映射的通道

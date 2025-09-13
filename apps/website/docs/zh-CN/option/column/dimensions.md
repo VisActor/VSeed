@@ -23,7 +23,7 @@
 
 ## encoding
 
-**Type:** `"color" | "detail" | "label" | "tooltip" | "xAxis" | "yAxis" | "angle" | "row" | "column" | undefined`
+**Type:** `"xAxis" | "yAxis" | "angle" | "color" | "detail" | "tooltip" | "label" | "row" | "column" | undefined`
 
 :::note{title=描述}
 维度映射的通道

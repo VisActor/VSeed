@@ -310,8 +310,7 @@ exports[`basicHeatmap 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "sales",
-      "profit",
+      "date",
     ],
     "x": [
       "date",
@@ -614,14 +613,7 @@ exports[`basicHeatmap 2`] = `
   "seriesField": "__Dim_ColorId__",
   "tooltip": {
     "dimension": {
-      "content": [
-        {
-          "key": [Function],
-          "shapeType": "rectRound",
-          "value": [Function],
-          "visible": true,
-        },
-      ],
+      "visible": false,
     },
     "mark": {
       "content": [
@@ -639,15 +631,9 @@ exports[`basicHeatmap 2`] = `
           "value": [Function],
           "visible": true,
         },
-        {
-          "hasShape": true,
-          "key": [Function],
-          "value": [Function],
-          "visible": true,
-        },
       ],
       "title": {
-        "visible": true,
+        "visible": false,
       },
     },
     "visible": true,

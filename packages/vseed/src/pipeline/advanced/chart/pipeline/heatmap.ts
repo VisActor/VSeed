@@ -14,6 +14,8 @@ import {
   defaultMeasures,
   defaultDimensions,
   defaultMeasureName,
+  encodingAdapter,
+  defaultEncodingForHeatmap,
 } from '../pipes'
 
 export const heatmapAdvancedPipeline: AdvancedPipeline = [
@@ -22,8 +24,7 @@ export const heatmapAdvancedPipeline: AdvancedPipeline = [
   defaultDimensions,
   defaultMeasureName,
 
-  encodingForHeatmap,
-  buildMeasures,
+  encodingAdapter([defaultEncodingForHeatmap, buildMeasures], [encodingForHeatmap, buildMeasures]),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 
   sortXBandAxis,

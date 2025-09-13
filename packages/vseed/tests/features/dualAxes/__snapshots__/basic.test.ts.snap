@@ -975,10 +975,7 @@ exports[`basic 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "profit",
-      "sales",
-      "ratio",
-      "returnRatio",
+      "date",
     ],
     "x": [
       "date",
@@ -1357,12 +1354,16 @@ exports[`basic 2`] = `
               "dimension": {
                 "content": [
                   {
+                    "hasShape": true,
                     "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
                   },
                 ],
+                "title": {
+                  "visible": true,
+                },
               },
               "mark": {
                 "content": [
@@ -1380,15 +1381,9 @@ exports[`basic 2`] = `
                     "value": [Function],
                     "visible": true,
                   },
-                  {
-                    "hasShape": true,
-                    "key": [Function],
-                    "value": [Function],
-                    "visible": true,
-                  },
                 ],
                 "title": {
-                  "visible": true,
+                  "visible": false,
                 },
               },
               "visible": true,
@@ -1454,12 +1449,16 @@ exports[`basic 2`] = `
               "dimension": {
                 "content": [
                   {
+                    "hasShape": true,
                     "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
                   },
                 ],
+                "title": {
+                  "visible": true,
+                },
               },
               "mark": {
                 "content": [
@@ -1477,15 +1476,9 @@ exports[`basic 2`] = `
                     "value": [Function],
                     "visible": true,
                   },
-                  {
-                    "hasShape": true,
-                    "key": [Function],
-                    "value": [Function],
-                    "visible": true,
-                  },
                 ],
                 "title": {
-                  "visible": true,
+                  "visible": false,
                 },
               },
               "visible": true,
@@ -1815,12 +1808,16 @@ exports[`basic 2`] = `
               "dimension": {
                 "content": [
                   {
+                    "hasShape": true,
                     "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
                   },
                 ],
+                "title": {
+                  "visible": true,
+                },
               },
               "mark": {
                 "content": [
@@ -1838,15 +1835,9 @@ exports[`basic 2`] = `
                     "value": [Function],
                     "visible": true,
                   },
-                  {
-                    "hasShape": true,
-                    "key": [Function],
-                    "value": [Function],
-                    "visible": true,
-                  },
                 ],
                 "title": {
-                  "visible": true,
+                  "visible": false,
                 },
               },
               "visible": true,
@@ -1912,12 +1903,16 @@ exports[`basic 2`] = `
               "dimension": {
                 "content": [
                   {
+                    "hasShape": true,
                     "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
                   },
                 ],
+                "title": {
+                  "visible": true,
+                },
               },
               "mark": {
                 "content": [
@@ -1935,15 +1930,9 @@ exports[`basic 2`] = `
                     "value": [Function],
                     "visible": true,
                   },
-                  {
-                    "hasShape": true,
-                    "key": [Function],
-                    "value": [Function],
-                    "visible": true,
-                  },
                 ],
                 "title": {
-                  "visible": true,
+                  "visible": false,
                 },
               },
               "visible": true,

@@ -12,6 +12,8 @@ import {
   defaultMeasures,
   defaultDimensions,
   defaultMeasureName,
+  encodingAdapter,
+  defaultEncodingForPie,
 } from '../pipes'
 
 export const pieAdvancedPipeline: AdvancedPipeline = [
@@ -20,8 +22,7 @@ export const pieAdvancedPipeline: AdvancedPipeline = [
   defaultDimensions,
   defaultMeasureName,
 
-  encodingForPie,
-  buildMeasures,
+  encodingAdapter([defaultEncodingForPie, buildMeasures], [encodingForPie, buildMeasures]),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 
   pieConfig,

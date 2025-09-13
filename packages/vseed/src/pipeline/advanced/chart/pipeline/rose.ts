@@ -12,8 +12,10 @@ import {
   defaultMeasures,
   defaultDimensions,
   defaultMeasureName,
+  encodingAdapter,
+  encodingForRose,
+  defaultEncodingForRose,
 } from '../pipes'
-import { encodingForRose } from '../pipes/encoding/rose'
 
 export const roseAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
@@ -21,8 +23,7 @@ export const roseAdvancedPipeline: AdvancedPipeline = [
   defaultDimensions,
   defaultMeasureName,
 
-  encodingForRose,
-  buildMeasures,
+  encodingAdapter([defaultEncodingForRose, buildMeasures], [encodingForRose, buildMeasures]),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 
   roseConfig,

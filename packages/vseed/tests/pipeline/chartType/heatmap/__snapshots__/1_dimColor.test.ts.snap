@@ -570,8 +570,8 @@ exports[`1_dimColor 1`] = `
       "__MeaName__",
     ],
     "tooltip": [
-      "profit",
-      "sales",
+      "type",
+      "date",
     ],
     "x": [
       "date",
@@ -1141,14 +1141,7 @@ exports[`1_dimColor 2`] = `
   "seriesField": "__Dim_ColorId__",
   "tooltip": {
     "dimension": {
-      "content": [
-        {
-          "key": [Function],
-          "shapeType": "rectRound",
-          "value": [Function],
-          "visible": true,
-        },
-      ],
+      "visible": false,
     },
     "mark": {
       "content": [
@@ -1173,15 +1166,9 @@ exports[`1_dimColor 2`] = `
           "value": [Function],
           "visible": true,
         },
-        {
-          "hasShape": true,
-          "key": [Function],
-          "value": [Function],
-          "visible": true,
-        },
       ],
       "title": {
-        "visible": true,
+        "visible": false,
       },
     },
     "visible": true,

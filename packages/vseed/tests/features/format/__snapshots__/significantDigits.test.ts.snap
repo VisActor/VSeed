@@ -575,18 +575,7 @@ exports[`significantDigits 1`] = `
     ],
     "label": [],
     "row": [],
-    "tooltip": [
-      "num0",
-      "num1",
-      "num2",
-      "num3",
-      "num4",
-      "num5",
-      "num6",
-      "num7",
-      "num8",
-      "num9",
-    ],
+    "tooltip": [],
     "x": [
       "__MeaName__",
     ],
@@ -1182,12 +1171,16 @@ exports[`significantDigits 2`] = `
     "dimension": {
       "content": [
         {
+          "hasShape": true,
           "key": [Function],
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,
         },
       ],
+      "title": {
+        "visible": true,
+      },
     },
     "mark": {
       "content": [
@@ -1198,15 +1191,9 @@ exports[`significantDigits 2`] = `
           "value": [Function],
           "visible": true,
         },
-        {
-          "hasShape": true,
-          "key": [Function],
-          "value": [Function],
-          "visible": true,
-        },
       ],
       "title": {
-        "visible": true,
+        "visible": false,
       },
     },
     "visible": true,

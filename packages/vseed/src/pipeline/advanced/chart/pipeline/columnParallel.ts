@@ -15,6 +15,8 @@ import {
   defaultMeasures,
   defaultDimensions,
   defaultMeasureName,
+  encodingAdapter,
+  defaultEncodingForColumn,
 } from '../pipes'
 
 export const columnParallelAdvancedPipeline: AdvancedPipeline = [
@@ -23,8 +25,7 @@ export const columnParallelAdvancedPipeline: AdvancedPipeline = [
   defaultDimensions,
   defaultMeasureName,
 
-  encodingForColumn,
-  buildMeasures,
+  encodingAdapter([defaultEncodingForColumn, buildMeasures], [encodingForColumn, buildMeasures]),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 
   sortXBandAxis,

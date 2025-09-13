@@ -15,6 +15,8 @@ import {
   defaultMeasures,
   defaultDimensions,
   defaultMeasureName,
+  encodingAdapter,
+  defaultEncodingForBar,
 } from '../pipes'
 
 export const barAdvancedPipeline: AdvancedPipeline = [
@@ -23,8 +25,7 @@ export const barAdvancedPipeline: AdvancedPipeline = [
   defaultDimensions,
   defaultMeasureName,
 
-  encodingForBar,
-  buildMeasures,
+  encodingAdapter([defaultEncodingForBar, buildMeasures], [encodingForBar, buildMeasures]),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 
   sortYBandAxis,

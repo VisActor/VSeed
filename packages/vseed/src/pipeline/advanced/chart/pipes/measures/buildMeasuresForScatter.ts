@@ -52,6 +52,10 @@ const basicMeasuresToScatterMeasures = (basicMeasures: Measures): ScatterMeasure
     }
   }
 
+  if (yMeasures.length === 0 && xMeasures.length > 0) {
+    yMeasures.push(xMeasures[0])
+  }
+
   return [{ id: 'scatterMeasures', xMeasures, yMeasures }]
 }
 

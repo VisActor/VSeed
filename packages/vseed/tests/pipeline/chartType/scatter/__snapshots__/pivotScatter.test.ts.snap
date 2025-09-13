@@ -846,8 +846,9 @@ exports[`pivotScatter 1`] = `
       "__MeaName__",
     ],
     "tooltip": [
-      "sales",
-      "profit",
+      "month",
+      "date",
+      "type",
     ],
     "y": [
       "sales",
@@ -1134,14 +1135,7 @@ exports[`pivotScatter 2`] = `
         "seriesField": "__Dim_ColorId__",
         "tooltip": {
           "dimension": {
-            "content": [
-              {
-                "key": [Function],
-                "shapeType": "rectRound",
-                "value": [Function],
-                "visible": true,
-              },
-            ],
+            "visible": false,
           },
           "mark": {
             "content": [
@@ -1176,12 +1170,13 @@ exports[`pivotScatter 2`] = `
               {
                 "hasShape": true,
                 "key": [Function],
+                "shapeType": "rectRound",
                 "value": [Function],
                 "visible": true,
               },
             ],
             "title": {
-              "visible": true,
+              "visible": false,
             },
           },
           "visible": true,

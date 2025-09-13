@@ -486,8 +486,7 @@ exports[`basicBarParallel 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "sales",
-      "profit",
+      "date",
     ],
     "x": [
       "sales",
@@ -947,12 +946,16 @@ exports[`basicBarParallel 2`] = `
     "dimension": {
       "content": [
         {
+          "hasShape": true,
           "key": [Function],
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,
         },
       ],
+      "title": {
+        "visible": true,
+      },
     },
     "mark": {
       "content": [
@@ -970,15 +973,9 @@ exports[`basicBarParallel 2`] = `
           "value": [Function],
           "visible": true,
         },
-        {
-          "hasShape": true,
-          "key": [Function],
-          "value": [Function],
-          "visible": true,
-        },
       ],
       "title": {
-        "visible": true,
+        "visible": false,
       },
     },
     "visible": true,

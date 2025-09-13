@@ -866,11 +866,8 @@ exports[`simpleColumnParallel 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "goalProfit",
-      "profit",
-      "sales",
-      "leftCount",
-      "salesCount",
+      "date",
+      "type",
     ],
     "x": [
       "date",
@@ -1701,12 +1698,16 @@ exports[`simpleColumnParallel 2`] = `
     "dimension": {
       "content": [
         {
+          "hasShape": true,
           "key": [Function],
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,
         },
       ],
+      "title": {
+        "visible": true,
+      },
     },
     "mark": {
       "content": [
@@ -1731,15 +1732,9 @@ exports[`simpleColumnParallel 2`] = `
           "value": [Function],
           "visible": true,
         },
-        {
-          "hasShape": true,
-          "key": [Function],
-          "value": [Function],
-          "visible": true,
-        },
       ],
       "title": {
-        "visible": true,
+        "visible": false,
       },
     },
     "visible": true,

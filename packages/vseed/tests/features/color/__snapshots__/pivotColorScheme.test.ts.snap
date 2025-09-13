@@ -685,8 +685,8 @@ exports[`pivotColorScheme 1`] = `
       "__MeaName__",
     ],
     "tooltip": [
-      "profit",
-      "sales",
+      "date",
+      "type",
     ],
     "x": [
       "date",
@@ -939,12 +939,16 @@ exports[`pivotColorScheme 2`] = `
           "dimension": {
             "content": [
               {
+                "hasShape": true,
                 "key": [Function],
                 "shapeType": "rectRound",
                 "value": [Function],
                 "visible": true,
               },
             ],
+            "title": {
+              "visible": true,
+            },
           },
           "mark": {
             "content": [
@@ -969,15 +973,9 @@ exports[`pivotColorScheme 2`] = `
                 "value": [Function],
                 "visible": true,
               },
-              {
-                "hasShape": true,
-                "key": [Function],
-                "value": [Function],
-                "visible": true,
-              },
             ],
             "title": {
-              "visible": true,
+              "visible": false,
             },
           },
           "visible": true,

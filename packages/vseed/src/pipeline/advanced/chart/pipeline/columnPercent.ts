@@ -15,6 +15,8 @@ import {
   defaultMeasures,
   defaultDimensions,
   defaultMeasureName,
+  encodingAdapter,
+  defaultEncodingForColumn,
 } from '../pipes'
 
 export const columnPercentAdvancedPipeline: AdvancedPipeline = [
@@ -23,8 +25,7 @@ export const columnPercentAdvancedPipeline: AdvancedPipeline = [
   defaultDimensions,
   defaultMeasureName,
 
-  encodingForColumn,
-  buildMeasures,
+  encodingAdapter([defaultEncodingForColumn, buildMeasures], [encodingForColumn, buildMeasures]),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 
   sortXBandAxis,

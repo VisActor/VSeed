@@ -2,7 +2,7 @@ import type { ISpec } from '@visactor/vchart'
 import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
 import { autoFormatter } from '../../../../utils'
 import type { SpecPipe, YLinearAxis } from 'src/types'
-import { isNullish } from 'remeda'
+import { isEmpty, isNullish } from 'remeda'
 
 export const yLinearSecondary: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
@@ -11,7 +11,6 @@ export const yLinearSecondary: SpecPipe = (spec, context) => {
   const { locale, datasetReshapeInfo } = advancedVSeed
   const { index, id: reshapeInfoId, foldInfoList } = datasetReshapeInfo[0]
   // TODO: default config missing
-
   const secondaryYAxis = advancedVSeed.config?.[chartType as 'dualAxis']?.secondaryYAxis as YLinearAxis | YLinearAxis[]
   const yAxisConfig = Array.isArray(secondaryYAxis) ? secondaryYAxis[index] || secondaryYAxis[0] : secondaryYAxis
   const alignTicks = advancedVSeed.config?.[chartType as 'dualAxis']?.alignTicks as boolean | boolean[]
@@ -20,6 +19,9 @@ export const yLinearSecondary: SpecPipe = (spec, context) => {
   if (isNullish(foldInfoList?.[1])) {
     return result
   }
+
+  const isEmptySecondary = isEmpty(foldInfoList?.[1].foldMap)
+  const onlySecondary = isEmpty(foldInfoList?.[0].foldMap) && !isEmptySecondary
 
   const sync = {
     axisId: `${reshapeInfoId}-primary-axis`,
@@ -66,7 +68,7 @@ export const yLinearSecondary: SpecPipe = (spec, context) => {
   } = yAxisConfig
 
   const linearAxis = {
-    visible,
+    visible: isEmptySecondary ? false : visible,
     id,
     seriesId,
     sync,
@@ -108,7 +110,7 @@ export const yLinearSecondary: SpecPipe = (spec, context) => {
       },
     },
     grid: {
-      visible: grid?.visible,
+      visible: onlySecondary ? true : grid?.visible,
       style: {
         lineWidth: grid?.gridWidth,
         stroke: grid?.gridColor,

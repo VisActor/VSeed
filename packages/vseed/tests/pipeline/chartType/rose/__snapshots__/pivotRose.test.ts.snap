@@ -1203,8 +1203,9 @@ exports[`pivotRose 1`] = `
       "profit",
     ],
     "tooltip": [
-      "sales",
-      "profit",
+      "month",
+      "date",
+      "type",
     ],
   },
   "locale": "zh-CN",
@@ -1378,12 +1379,16 @@ exports[`pivotRose 2`] = `
           "dimension": {
             "content": [
               {
+                "hasShape": true,
                 "key": [Function],
                 "shapeType": "rectRound",
                 "value": [Function],
                 "visible": true,
               },
             ],
+            "title": {
+              "visible": true,
+            },
           },
           "mark": {
             "content": [
@@ -1415,15 +1420,9 @@ exports[`pivotRose 2`] = `
                 "value": [Function],
                 "visible": true,
               },
-              {
-                "hasShape": true,
-                "key": [Function],
-                "value": [Function],
-                "visible": true,
-              },
             ],
             "title": {
-              "visible": true,
+              "visible": false,
             },
           },
           "visible": true,
@@ -1558,12 +1557,16 @@ exports[`pivotRose 2`] = `
           "dimension": {
             "content": [
               {
+                "hasShape": true,
                 "key": [Function],
                 "shapeType": "rectRound",
                 "value": [Function],
                 "visible": true,
               },
             ],
+            "title": {
+              "visible": true,
+            },
           },
           "mark": {
             "content": [
@@ -1595,15 +1598,9 @@ exports[`pivotRose 2`] = `
                 "value": [Function],
                 "visible": true,
               },
-              {
-                "hasShape": true,
-                "key": [Function],
-                "value": [Function],
-                "visible": true,
-              },
             ],
             "title": {
-              "visible": true,
+              "visible": false,
             },
           },
           "visible": true,

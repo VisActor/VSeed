@@ -12,6 +12,8 @@ import {
   defaultMeasures,
   defaultDimensions,
   defaultMeasureName,
+  encodingAdapter,
+  defaultEncodingForFunnel,
 } from '../pipes'
 
 export const funnelAdvancedPipeline: AdvancedPipeline = [
@@ -20,8 +22,7 @@ export const funnelAdvancedPipeline: AdvancedPipeline = [
   defaultDimensions,
   defaultMeasureName,
 
-  encodingForFunnel,
-  buildMeasures,
+  encodingAdapter([defaultEncodingForFunnel, buildMeasures], [encodingForFunnel, buildMeasures]),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 
   funnelConfig,

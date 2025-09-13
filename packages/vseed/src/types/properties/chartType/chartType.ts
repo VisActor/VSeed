@@ -25,31 +25,31 @@ export type ChartType =
   | 'heatmap'
   | 'funnel'
 
-export enum ChartTypeEnum {
-  Table = 'table',
-  PivotTable = 'pivotTable',
+export const ChartTypeEnum = {
+  Table: 'table',
+  PivotTable: 'pivotTable',
   // cartesian
-  Line = 'line',
-  Column = 'column',
-  ColumnPercent = 'columnPercent',
-  ColumnParallel = 'columnParallel',
-  Bar = 'bar',
-  BarPercent = 'barPercent',
-  BarParallel = 'barParallel',
-  Area = 'area',
-  AreaPercent = 'areaPercent',
-  DualAxis = 'dualAxis',
-  Scatter = 'scatter',
+  Line: 'line',
+  Column: 'column',
+  ColumnPercent: 'columnPercent',
+  ColumnParallel: 'columnParallel',
+  Bar: 'bar',
+  BarPercent: 'barPercent',
+  BarParallel: 'barParallel',
+  Area: 'area',
+  AreaPercent: 'areaPercent',
+  DualAxis: 'dualAxis',
+  Scatter: 'scatter',
   // polar
-  Rose = 'rose',
-  RoseParallel = 'roseParallel',
-  Pie = 'pie',
-  Donut = 'donut',
-  Radar = 'radar',
+  Rose: 'rose',
+  RoseParallel: 'roseParallel',
+  Pie: 'pie',
+  Donut: 'donut',
+  Radar: 'radar',
   // other
-  Funnel = 'funnel',
-  Heatmap = 'heatmap',
-}
+  Funnel: 'funnel',
+  Heatmap: 'heatmap',
+} as const
 
 export const zChartType = z.enum([
   'table',

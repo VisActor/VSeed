@@ -1,6 +1,7 @@
 import type { AdvancedPipelineContext, AdvancedVSeed } from 'src/types'
 import { execPipeline } from '../../pipeline'
 import { Builder } from './builder'
+import { intl } from 'src/i18n'
 
 export const buildAdvanced = (builder: Builder): AdvancedVSeed | null => {
   const start = typeof performance !== 'undefined' ? performance.now() : Date.now()
@@ -17,6 +18,9 @@ export const buildAdvanced = (builder: Builder): AdvancedVSeed | null => {
   const context: AdvancedPipelineContext = {
     vseed: builder.vseed,
     customTheme: Builder.getThemeMap(),
+  }
+  if (builder.vseed.locale) {
+    intl.setLocale(builder.vseed.locale)
   }
 
   try {

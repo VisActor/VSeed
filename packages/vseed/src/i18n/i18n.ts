@@ -1,5 +1,5 @@
 import { isNullish } from 'remeda'
-import translateMap from './i18nData.json'
+import * as translateMap from './i18nData.json'
 import type { Locale, TranslateRecordType } from '../types'
 
 class Intl {

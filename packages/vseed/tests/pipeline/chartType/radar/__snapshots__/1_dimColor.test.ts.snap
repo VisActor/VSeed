@@ -556,8 +556,8 @@ exports[`1_dimColor 1`] = `
       "sales",
     ],
     "tooltip": [
-      "profit",
-      "sales",
+      "type",
+      "date",
     ],
   },
   "locale": "zh-CN",
@@ -1140,12 +1140,16 @@ exports[`1_dimColor 2`] = `
     "dimension": {
       "content": [
         {
+          "hasShape": true,
           "key": [Function],
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,
         },
       ],
+      "title": {
+        "visible": true,
+      },
     },
     "mark": {
       "content": [
@@ -1170,15 +1174,9 @@ exports[`1_dimColor 2`] = `
           "value": [Function],
           "visible": true,
         },
-        {
-          "hasShape": true,
-          "key": [Function],
-          "value": [Function],
-          "visible": true,
-        },
       ],
       "title": {
-        "visible": true,
+        "visible": false,
       },
     },
     "visible": true,

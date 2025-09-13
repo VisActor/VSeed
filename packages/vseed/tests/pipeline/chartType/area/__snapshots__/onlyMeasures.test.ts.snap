@@ -409,10 +409,7 @@ exports[`onlyMeasures 1`] = `
     "detail": [],
     "label": [],
     "row": [],
-    "tooltip": [
-      "sales",
-      "profit",
-    ],
+    "tooltip": [],
     "x": [
       "__MeaName__",
     ],
@@ -832,12 +829,16 @@ exports[`onlyMeasures 2`] = `
     "dimension": {
       "content": [
         {
+          "hasShape": true,
           "key": [Function],
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,
         },
       ],
+      "title": {
+        "visible": true,
+      },
     },
     "mark": {
       "content": [
@@ -848,15 +849,9 @@ exports[`onlyMeasures 2`] = `
           "value": [Function],
           "visible": true,
         },
-        {
-          "hasShape": true,
-          "key": [Function],
-          "value": [Function],
-          "visible": true,
-        },
       ],
       "title": {
-        "visible": true,
+        "visible": false,
       },
     },
     "visible": true,

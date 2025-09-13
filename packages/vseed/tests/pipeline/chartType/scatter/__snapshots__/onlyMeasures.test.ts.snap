@@ -240,13 +240,14 @@ exports[`onlyMeasures 1`] = `
   },
   "dataset": [
     {
-      "__MeaId__": "profit",
       "__MeaName__": "利润",
+      "__MeaXId__": "sales",
       "__MeaXValue__": 200000,
+      "__MeaYId__": "profit",
       "__MeaYValue__": 10000,
       "__OriginalData__": {
-        "__MeaId__": "sales",
         "__MeaName__": "销售额",
+        "__MeaXId__": "sales",
         "__MeaXValue__": 200000,
         "__OriginalData__": {
           "profit": 10000,
@@ -259,13 +260,14 @@ exports[`onlyMeasures 1`] = `
       "sales": 200000,
     },
     {
-      "__MeaId__": "profit",
       "__MeaName__": "利润",
+      "__MeaXId__": "sales",
       "__MeaXValue__": 400000,
+      "__MeaYId__": "profit",
       "__MeaYValue__": 20000,
       "__OriginalData__": {
-        "__MeaId__": "sales",
         "__MeaName__": "销售额",
+        "__MeaXId__": "sales",
         "__MeaXValue__": 400000,
         "__OriginalData__": {
           "profit": 20000,
@@ -278,13 +280,14 @@ exports[`onlyMeasures 1`] = `
       "sales": 400000,
     },
     {
-      "__MeaId__": "profit",
       "__MeaName__": "利润",
+      "__MeaXId__": "sales",
       "__MeaXValue__": 600000,
+      "__MeaYId__": "profit",
       "__MeaYValue__": 30000,
       "__OriginalData__": {
-        "__MeaId__": "sales",
         "__MeaName__": "销售额",
+        "__MeaXId__": "sales",
         "__MeaXValue__": 600000,
         "__OriginalData__": {
           "profit": 30000,
@@ -297,13 +300,14 @@ exports[`onlyMeasures 1`] = `
       "sales": 600000,
     },
     {
-      "__MeaId__": "profit",
       "__MeaName__": "利润",
+      "__MeaXId__": "sales",
       "__MeaXValue__": 800000,
+      "__MeaYId__": "profit",
       "__MeaYValue__": 40000,
       "__OriginalData__": {
-        "__MeaId__": "sales",
         "__MeaName__": "销售额",
+        "__MeaXId__": "sales",
         "__MeaXValue__": 800000,
         "__OriginalData__": {
           "profit": 40000,
@@ -316,13 +320,14 @@ exports[`onlyMeasures 1`] = `
       "sales": 800000,
     },
     {
-      "__MeaId__": "profit",
       "__MeaName__": "利润",
+      "__MeaXId__": "sales",
       "__MeaXValue__": 1000000,
+      "__MeaYId__": "profit",
       "__MeaYValue__": 50000,
       "__OriginalData__": {
-        "__MeaId__": "sales",
         "__MeaName__": "销售额",
+        "__MeaXId__": "sales",
         "__MeaXValue__": 1000000,
         "__OriginalData__": {
           "profit": 50000,
@@ -345,7 +350,7 @@ exports[`onlyMeasures 1`] = `
         "foldMap": {
           "sales": "销售额",
         },
-        "measureId": "__MeaId__",
+        "measureId": "__MeaXId__",
         "measureName": "__MeaName__",
         "measureRange": [
           200000,
@@ -362,7 +367,7 @@ exports[`onlyMeasures 1`] = `
           "foldMap": {
             "sales": "销售额",
           },
-          "measureId": "__MeaId__",
+          "measureId": "__MeaXId__",
           "measureName": "__MeaName__",
           "measureRange": [
             200000,
@@ -378,7 +383,7 @@ exports[`onlyMeasures 1`] = `
           "foldMap": {
             "profit": "利润",
           },
-          "measureId": "__MeaId__",
+          "measureId": "__MeaYId__",
           "measureName": "__MeaName__",
           "measureRange": [
             10000,
@@ -413,10 +418,7 @@ exports[`onlyMeasures 1`] = `
     "detail": [],
     "label": [],
     "row": [],
-    "tooltip": [
-      "sales",
-      "profit",
-    ],
+    "tooltip": [],
     "y": [
       "sales",
       "profit",
@@ -654,13 +656,14 @@ exports[`onlyMeasures 2`] = `
     "id": "scatter",
     "values": [
       {
-        "__MeaId__": "profit",
         "__MeaName__": "利润",
+        "__MeaXId__": "sales",
         "__MeaXValue__": 200000,
+        "__MeaYId__": "profit",
         "__MeaYValue__": 10000,
         "__OriginalData__": {
-          "__MeaId__": "sales",
           "__MeaName__": "销售额",
+          "__MeaXId__": "sales",
           "__MeaXValue__": 200000,
           "__OriginalData__": {
             "profit": 10000,
@@ -673,13 +676,14 @@ exports[`onlyMeasures 2`] = `
         "sales": 200000,
       },
       {
-        "__MeaId__": "profit",
         "__MeaName__": "利润",
+        "__MeaXId__": "sales",
         "__MeaXValue__": 400000,
+        "__MeaYId__": "profit",
         "__MeaYValue__": 20000,
         "__OriginalData__": {
-          "__MeaId__": "sales",
           "__MeaName__": "销售额",
+          "__MeaXId__": "sales",
           "__MeaXValue__": 400000,
           "__OriginalData__": {
             "profit": 20000,
@@ -692,13 +696,14 @@ exports[`onlyMeasures 2`] = `
         "sales": 400000,
       },
       {
-        "__MeaId__": "profit",
         "__MeaName__": "利润",
+        "__MeaXId__": "sales",
         "__MeaXValue__": 600000,
+        "__MeaYId__": "profit",
         "__MeaYValue__": 30000,
         "__OriginalData__": {
-          "__MeaId__": "sales",
           "__MeaName__": "销售额",
+          "__MeaXId__": "sales",
           "__MeaXValue__": 600000,
           "__OriginalData__": {
             "profit": 30000,
@@ -711,13 +716,14 @@ exports[`onlyMeasures 2`] = `
         "sales": 600000,
       },
       {
-        "__MeaId__": "profit",
         "__MeaName__": "利润",
+        "__MeaXId__": "sales",
         "__MeaXValue__": 800000,
+        "__MeaYId__": "profit",
         "__MeaYValue__": 40000,
         "__OriginalData__": {
-          "__MeaId__": "sales",
           "__MeaName__": "销售额",
+          "__MeaXId__": "sales",
           "__MeaXValue__": 800000,
           "__OriginalData__": {
             "profit": 40000,
@@ -730,13 +736,14 @@ exports[`onlyMeasures 2`] = `
         "sales": 800000,
       },
       {
-        "__MeaId__": "profit",
         "__MeaName__": "利润",
+        "__MeaXId__": "sales",
         "__MeaXValue__": 1000000,
+        "__MeaYId__": "profit",
         "__MeaYValue__": 50000,
         "__OriginalData__": {
-          "__MeaId__": "sales",
           "__MeaName__": "销售额",
+          "__MeaXId__": "sales",
           "__MeaXValue__": 1000000,
           "__OriginalData__": {
             "profit": 50000,
@@ -819,14 +826,7 @@ exports[`onlyMeasures 2`] = `
   "seriesField": "__Dim_ColorId__",
   "tooltip": {
     "dimension": {
-      "content": [
-        {
-          "key": [Function],
-          "shapeType": "rectRound",
-          "value": [Function],
-          "visible": true,
-        },
-      ],
+      "visible": false,
     },
     "mark": {
       "content": [
@@ -840,12 +840,13 @@ exports[`onlyMeasures 2`] = `
         {
           "hasShape": true,
           "key": [Function],
+          "shapeType": "rectRound",
           "value": [Function],
           "visible": true,
         },
       ],
       "title": {
-        "visible": true,
+        "visible": false,
       },
     },
     "visible": true,

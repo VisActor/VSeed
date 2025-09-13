@@ -696,11 +696,8 @@ exports[`simpleRoseParallel 1`] = `
     ],
     "row": [],
     "tooltip": [
-      "goalProfit",
-      "profit",
-      "sales",
-      "leftCount",
-      "salesCount",
+      "date",
+      "type",
     ],
   },
   "locale": "zh-CN",
@@ -1418,12 +1415,16 @@ exports[`simpleRoseParallel 2`] = `
     "dimension": {
       "content": [
         {
+          "hasShape": true,
           "key": [Function],
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,
         },
       ],
+      "title": {
+        "visible": true,
+      },
     },
     "mark": {
       "content": [
@@ -1448,15 +1449,9 @@ exports[`simpleRoseParallel 2`] = `
           "value": [Function],
           "visible": true,
         },
-        {
-          "hasShape": true,
-          "key": [Function],
-          "value": [Function],
-          "visible": true,
-        },
       ],
       "title": {
-        "visible": true,
+        "visible": false,
       },
     },
     "visible": true,

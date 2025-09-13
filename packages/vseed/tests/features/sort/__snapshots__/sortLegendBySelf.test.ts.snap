@@ -593,9 +593,7 @@ exports[`sortLegendBySelf 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "count",
-      "sales",
-      "profit",
+      "date",
     ],
     "x": [
       "date",
@@ -1151,12 +1149,16 @@ exports[`sortLegendBySelf 2`] = `
     "dimension": {
       "content": [
         {
+          "hasShape": true,
           "key": [Function],
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,
         },
       ],
+      "title": {
+        "visible": true,
+      },
     },
     "mark": {
       "content": [
@@ -1174,15 +1176,9 @@ exports[`sortLegendBySelf 2`] = `
           "value": [Function],
           "visible": true,
         },
-        {
-          "hasShape": true,
-          "key": [Function],
-          "value": [Function],
-          "visible": true,
-        },
       ],
       "title": {
-        "visible": true,
+        "visible": false,
       },
     },
     "visible": true,

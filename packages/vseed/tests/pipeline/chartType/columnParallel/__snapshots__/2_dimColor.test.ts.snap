@@ -729,8 +729,8 @@ exports[`2_dimColor 1`] = `
       "type",
     ],
     "tooltip": [
-      "profit",
-      "sales",
+      "date",
+      "type",
     ],
     "x": [
       "date",
@@ -1419,12 +1419,16 @@ exports[`2_dimColor 2`] = `
     "dimension": {
       "content": [
         {
+          "hasShape": true,
           "key": [Function],
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,
         },
       ],
+      "title": {
+        "visible": true,
+      },
     },
     "mark": {
       "content": [
@@ -1449,15 +1453,9 @@ exports[`2_dimColor 2`] = `
           "value": [Function],
           "visible": true,
         },
-        {
-          "hasShape": true,
-          "key": [Function],
-          "value": [Function],
-          "visible": true,
-        },
       ],
       "title": {
-        "visible": true,
+        "visible": false,
       },
     },
     "visible": true,

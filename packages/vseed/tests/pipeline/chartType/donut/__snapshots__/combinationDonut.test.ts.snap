@@ -363,8 +363,7 @@ exports[`combinationDonut 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "sales",
-      "profit",
+      "date",
     ],
   },
   "locale": "zh-CN",
@@ -493,12 +492,16 @@ exports[`combinationDonut 2`] = `
           "dimension": {
             "content": [
               {
+                "hasShape": true,
                 "key": [Function],
                 "shapeType": "rectRound",
                 "value": [Function],
                 "visible": true,
               },
             ],
+            "title": {
+              "visible": true,
+            },
           },
           "mark": {
             "content": [
@@ -516,15 +519,9 @@ exports[`combinationDonut 2`] = `
                 "value": [Function],
                 "visible": true,
               },
-              {
-                "hasShape": true,
-                "key": [Function],
-                "value": [Function],
-                "visible": true,
-              },
             ],
             "title": {
-              "visible": true,
+              "visible": false,
             },
           },
           "visible": true,
@@ -620,12 +617,16 @@ exports[`combinationDonut 2`] = `
           "dimension": {
             "content": [
               {
+                "hasShape": true,
                 "key": [Function],
                 "shapeType": "rectRound",
                 "value": [Function],
                 "visible": true,
               },
             ],
+            "title": {
+              "visible": true,
+            },
           },
           "mark": {
             "content": [
@@ -643,15 +644,9 @@ exports[`combinationDonut 2`] = `
                 "value": [Function],
                 "visible": true,
               },
-              {
-                "hasShape": true,
-                "key": [Function],
-                "value": [Function],
-                "visible": true,
-              },
             ],
             "title": {
-              "visible": true,
+              "visible": false,
             },
           },
           "visible": true,

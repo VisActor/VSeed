@@ -507,8 +507,7 @@ exports[`combinationLine 1`] = `
     "label": [],
     "row": [],
     "tooltip": [
-      "sales",
-      "profit",
+      "date",
     ],
     "x": [
       "date",
@@ -799,12 +798,16 @@ exports[`combinationLine 2`] = `
           "dimension": {
             "content": [
               {
+                "hasShape": true,
                 "key": [Function],
                 "shapeType": "rectRound",
                 "value": [Function],
                 "visible": true,
               },
             ],
+            "title": {
+              "visible": true,
+            },
           },
           "mark": {
             "content": [
@@ -822,15 +825,9 @@ exports[`combinationLine 2`] = `
                 "value": [Function],
                 "visible": true,
               },
-              {
-                "hasShape": true,
-                "key": [Function],
-                "value": [Function],
-                "visible": true,
-              },
             ],
             "title": {
-              "visible": true,
+              "visible": false,
             },
           },
           "visible": true,
@@ -1081,12 +1078,16 @@ exports[`combinationLine 2`] = `
           "dimension": {
             "content": [
               {
+                "hasShape": true,
                 "key": [Function],
                 "shapeType": "rectRound",
                 "value": [Function],
                 "visible": true,
               },
             ],
+            "title": {
+              "visible": true,
+            },
           },
           "mark": {
             "content": [
@@ -1104,15 +1105,9 @@ exports[`combinationLine 2`] = `
                 "value": [Function],
                 "visible": true,
               },
-              {
-                "hasShape": true,
-                "key": [Function],
-                "value": [Function],
-                "visible": true,
-              },
             ],
             "title": {
-              "visible": true,
+              "visible": false,
             },
           },
           "visible": true,

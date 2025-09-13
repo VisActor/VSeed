@@ -18,8 +18,8 @@
   "scripts": {
     "dev": "rslib build --watch",
     "build": "rslib build",
-    "dev:rsdoctor": "RSDOCTOR=true rsbuild dev",
-    "build:rsdoctor": "RSDOCTOR=true rsbuild build",
+    "dev:rsdoctor": "RSDOCTOR=true rslib dev",
+    "build:rsdoctor": "RSDOCTOR=true rslib build",
     "format": "prettier --write .",
     "lint": "eslint .",
     "test": "vitest run",

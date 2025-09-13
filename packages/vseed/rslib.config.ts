@@ -14,6 +14,7 @@ export default defineConfig({
       },
       output: {
         sourceMap: true,
+        // minify: true,
         distPath: {
           root: './dist/esm',
         },

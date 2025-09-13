@@ -6,6 +6,12 @@ export default defineConfig({
       format: 'esm',
       syntax: ['node 18'],
       dts: true,
+      bundle: false,
+      source: {
+        entry: {
+          index: ['./src/**', '!src/**/*.DS_Store'],
+        },
+      },
     },
     {
       format: 'cjs',

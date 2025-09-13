@@ -12,6 +12,7 @@ import {
   defaultMeasures,
   defaultDimensions,
   defaultMeasureName,
+  encodingAdapter,
 } from '../pipes'
 
 export const donutAdvancedPipeline: AdvancedPipeline = [
@@ -20,8 +21,7 @@ export const donutAdvancedPipeline: AdvancedPipeline = [
   defaultDimensions,
   defaultMeasureName,
 
-  buildMeasures,
-  encodingForPie,
+  encodingAdapter([encodingForPie, buildMeasures], [encodingForPie, buildMeasures]),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 
   donutConfig,

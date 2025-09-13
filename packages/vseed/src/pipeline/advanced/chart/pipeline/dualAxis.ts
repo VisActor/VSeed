@@ -15,6 +15,7 @@ import {
   defaultMeasures,
   defaultDimensions,
   defaultMeasureName,
+  encodingAdapter,
 } from '../pipes'
 
 export const dualAxisAdvancedPipeline: AdvancedPipeline = [
@@ -23,8 +24,7 @@ export const dualAxisAdvancedPipeline: AdvancedPipeline = [
   defaultDimensions,
   defaultMeasureName,
 
-  encodingForDualAxis,
-  buildMeasuresForDualAxis,
+  encodingAdapter([encodingForDualAxis, buildMeasuresForDualAxis], [encodingForDualAxis, buildMeasuresForDualAxis]),
   pivotAdapter([reshapeWithDualEncoding], [pivotReshapeWithDualEncoding]),
 
   sortXBandAxis,

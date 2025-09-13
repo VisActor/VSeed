@@ -19,12 +19,6 @@
   },
   {
     "type": "dir",
-    "name": "chartConfig",
-    "label": "chartConfig",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
     "name": "analysis",
     "label": "analysis",
     "collapsed": true
@@ -51,12 +45,6 @@
     "type": "dir",
     "name": "i18n",
     "label": "i18n",
-    "collapsed": true
-  },
-  {
-    "type": "dir",
-    "name": "api",
-    "label": "api",
     "collapsed": true
   }
 ]

@@ -1,5 +1,13 @@
 # @visactor/vseed
 
+## 0.1.8
+
+### Patch Changes
+
+- feat: optimize the default encoding
+- feat: normalizeMeasureTree
+- feat: auto push git tag when release
+
 ## 0.1.7
 
 ### Patch Changes

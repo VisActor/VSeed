@@ -1,5 +1,5 @@
 import { type Locale } from '../../i18n'
-import type { Encoding, MeasureTree } from '../../properties'
+import type { MeasureTree } from '../../properties'
 import {
   type BackgroundColor,
   type Color,
@@ -60,19 +60,6 @@ export interface Rose {
    * @example [{month:'1月', value:100}, {month:'2月', value:150}, {month:'3月', value:120}]
    */
   dataset: Dataset
-
-  /**
-   * @description 编码配置, 堆叠玫瑰图的视觉通道, 包括: angle通道, color通道, detail通道, label通道, tooltip通道
-   * - angle: 映射到角度的字段, 支持放入多个维度
-   * - detail: 细分映射通道, 支持放入多个维度
-   * - tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
-   * - color: 颜色映射通道, 支持放入多个维度 或 1个 指标
-   * - label: 标签映射通道, 支持放入 多个维度 或 多个指标
-   *
-   * @tip 特殊的:
-   * - radius: measures会直接映射到半径通道
-   */
-  encoding?: Pick<Encoding, 'angle' | 'color' | 'detail' | 'label' | 'tooltip'>
 
   /**
    * 维度

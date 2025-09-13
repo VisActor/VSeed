@@ -20,7 +20,6 @@ import type {
   MeasureTree,
   Sort,
   SortLegend,
-  Encoding,
 } from '../../properties'
 
 /**
@@ -64,26 +63,13 @@ export interface Column {
    * @example 'column'
    */
   chartType: 'column'
-  
+
   /**
    * @description 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 柱状图的数据最终会被转换为2个维度, 1个指标.
    * @type {Array<Record<string|number, any>>}
    * @example [{category:'A', value:100}, {category:'B', value:200}]
    */
   dataset: Dataset
-
-  /**
-   * @description 编码配置, 堆叠柱状图的视觉通道, 包括: x通道, color通道, detail通道, label通道, tooltip通道
-   * - x: 映射到X轴的字段, 支持放入多个维度
-   * - detail: 细分映射通道, 支持放入多个维度
-   * - tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
-   * - color: 颜色映射通道, 支持放入多个维度 或 1个 指标
-   * - label: 标签映射通道, 支持放入 多个维度 或 多个指标
-   * 
-   * @tip 特殊的:
-   * - y: measures会直接映射到Y轴通道
-   */
-  encoding?: Pick<Encoding, 'x' | 'color' | 'detail' | 'label' | 'tooltip'>
 
   /**
    * @description 柱状图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示

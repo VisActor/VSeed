@@ -20,7 +20,6 @@ import type {
   MeasureTree,
   Sort,
   SortLegend,
-  Encoding,
 } from '../../properties'
 
 /**
@@ -36,7 +35,7 @@ import type {
  * 指标未包含任何encoding, 则使用默认映射规则:
  * 1. y: 全部指标映射至Y轴
  * 2. tooltip: 全部指标映射至Tooltip
- * 
+ *
  * 维度映射规则:
  * 1. 用户指定的xAxis维度映射至X轴, 支持多个维度; 若未指定, 则默认将第一个维度映射至X轴
  * 2. 用户指定的color维度映射至颜色通道, 支持多个维度; 若未指定, 则默认将指标名称映射至颜色通道, 作为图例展示
@@ -69,19 +68,6 @@ export interface Line {
    * @example [{month:'1月', value:100}, {month:'2月', value:150}, {month:'3月', value:120}]
    */
   dataset: Dataset
-
-  /**
-   * @description 编码配置, 折线图的视觉通道, 包括: x通道, color通道, detail通道, label通道, tooltip通道
-   * - x: 映射到X轴的字段, 支持放入多个维度
-   * - detail: 细分映射通道, 支持放入多个维度
-   * - tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
-   * - color: 颜色映射通道, 支持放入多个维度 或 1个 指标
-   * - label: 标签映射通道, 支持放入 多个维度 或 多个指标
-   * 
-   * @tip 特殊的:
-   * - y: measures会直接映射到Y轴通道
-   */
-  encoding?: Pick<Encoding, 'x' | 'color' | 'detail' | 'label' | 'tooltip'>
 
   /**
    * @description 维度, 折线图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示

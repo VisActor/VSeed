@@ -13,7 +13,6 @@ import type {
   Dimensions,
   DualChartType,
   DualMeasures,
-  Encoding,
   Label,
   Legend,
   LineStyle,
@@ -74,19 +73,6 @@ export interface DualAxis {
    * @example [{month:'1月', value:100, growth:0.2}, {month:'2月', value:150, growth:0.5}]
    */
   dataset: Dataset
-
-  /**
-   * @description 编码配置, 双轴图的视觉通道, 包括: x通道, color通道, detail通道, label通道, tooltip通道
-   * - detail: 细分映射通道, 支持放入多个维度
-   * - tooltip: 提示映射通道, 支持放入多个维度 和 多个指标
-   * - color: 颜色映射通道, 支持放入多个维度 或 1个 指标
-   * - label: 标签映射通道, 支持放入 多个维度 或 多个指标
-   * 
-   * @tip 特殊的:
-   * - primaryY: measures会直接映射到主Y轴通道
-   * - secondaryY: measures会直接映射到次Y轴通道
-   */
-  encoding?: Pick<Encoding, 'x' | 'color' | 'detail' | 'label' | 'tooltip'>
 
   /**
    * @description 维度, 第一个维度会放至X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.

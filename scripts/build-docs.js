@@ -160,12 +160,12 @@ function generateMarkdownContent(node, project, level = 1, visited = new Set()) 
     markdown += `:::info{title=推荐}\n${recommend}\n\n:::`
     markdown += '\n\n'
   }
-  if (description) {
-    markdown += `:::note{title=描述}\n${description}\n\n:::`
-    markdown += '\n\n'
-  }
   if (encoding) {
     markdown += `:::info{title=编码映射}\n${encoding}\n\n:::`
+    markdown += '\n\n'
+  }
+  if (description) {
+    markdown += `:::note{title=描述}\n${description}\n\n:::`
     markdown += '\n\n'
   }
   if (example) {

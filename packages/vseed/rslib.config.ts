@@ -12,10 +12,23 @@ export default defineConfig({
           index: ['./src/**', '!src/**/*.DS_Store'],
         },
       },
+      output: {
+        sourceMap: true,
+        distPath: {
+          root: './dist/esm',
+        },
+      },
     },
     {
       format: 'cjs',
       syntax: ['node 18'],
+      output: {
+        sourceMap: true,
+        minify: true,
+        distPath: {
+          root: './dist/cjs',
+        },
+      },
     },
     {
       format: 'umd',
@@ -26,6 +39,7 @@ export default defineConfig({
         },
       },
       output: {
+        sourceMap: true,
         target: 'web',
         distPath: {
           root: './dist/umd',
@@ -33,9 +47,4 @@ export default defineConfig({
       },
     },
   ],
-  output: {
-    sourceMap: true,
-    // enable after release 1.0.0
-    // minify: true
-  },
 })

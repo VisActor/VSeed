@@ -1,5 +1,13 @@
 # website
 
+## 0.1.9
+
+### Patch Changes
+
+- fix: i18n not working
+- Updated dependencies
+  - @visactor/vseed@0.1.9
+
 ## 0.1.8
 
 ### Patch Changes

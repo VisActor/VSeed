@@ -1,5 +1,13 @@
 # @visactor/vseed
 
+## 0.1.9
+
+### Patch Changes
+
+- fix: i18n not working
+- feat: rslib with bundle less
+- feat: change the dist with esm,cjs,umd
+
 ## 0.1.8
 
 ### Patch Changes

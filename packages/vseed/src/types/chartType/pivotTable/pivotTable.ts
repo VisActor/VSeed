@@ -9,13 +9,10 @@ import { type BackgroundColor, type Dataset, type Dimensions, type Theme } from 
  * - 数据钻取与聚合展示
  * - 业务报表生成与数据探索
  * @encoding
- * 则使用默认映射规则:
- * - 维度与指标名称, 交替映射到列维度和行维度
- * - 指标默认映射到detail通道
- *
- * 存在`encoding`配置:
- * - 用户指定的`row`与`column`维度, 精准映射到行维度与列维度, 若未指定row和column, 则交替映射到列维度和行维度
- * - 用户指定的`detail`指标, 精准映射到detail通道, 若未指定detail, 则依旧映射到detail通道
+ * 透视表支持以下视觉通道:
+ * `row`    : 行维度, 支持`多个维度`, 按维度值在行上进行分组
+ * `column` : 列维度, 支持`多个维度`, 按维度值在列上进行分组
+ * `detail` : 细分通道, 支持`多个指标`, 在单元格中展示指标值
  * @warning
  * 数据要求:
  * - 至少1个行维度 或 1个列维度 或 1个指标

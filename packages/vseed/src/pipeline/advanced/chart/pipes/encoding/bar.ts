@@ -3,6 +3,15 @@ import { MeasureName } from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
 
+export const defaultEncodingForBar: AdvancedPipe = (advancedVSeed) => {
+  const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
+  const measures = findAllMeasures(vseedMeasures)
+  const encoding: Encoding = {}
+  generateDefaultDimensionEncoding(dimensions, encoding)
+  generateDefaultMeasureEncoding(measures, encoding)
+  return { ...advancedVSeed, encoding }
+}
+
 export const encodingForBar: AdvancedPipe = (advancedVSeed) => {
   const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
   const measures = findAllMeasures(vseedMeasures)

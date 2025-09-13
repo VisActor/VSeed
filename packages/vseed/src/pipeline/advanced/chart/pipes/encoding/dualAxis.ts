@@ -3,25 +3,15 @@ import { MeasureName } from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
 
-/**
- * @description 双轴图
- * 维度未包含任何`encoding`, 则使用默认映射规则:
- * 1. x: 第一个维度映射至X轴
- * 2. color: 非`X`轴所有维度与指标名称, 合并映射至颜色通道, 作为图例展示
- * 3. detail: 非`X`轴所有维度与指标名称, 映射至Detail通道
- * 指标未包含任何`encoding`, 则使用默认映射规则:
- * 1. y: 第一个指标映射至主Y轴, 其余指标映射至次Y轴
- * 2. tooltip: 全部指标映射至Tooltip
- *
- * 维度映射规则:
- * 1. 用户指定的`xAxis`维度映射至X轴, 支持多个维度; 若未指定, 则默认将第一个维度映射至X轴
- * 2. 用户指定的`color`维度映射至颜色通道, 支持多个维度; 若未指定, 则默认将指标名称映射至颜色通道, 作为图例展示
- * 3. 用户指定的`detail`维度映射至Detail通道, 支持多个维度; 若未指定, 则默认将指标名称映射至Detail通道
- * 指标映射规则:
- * 1. 指标未配置encoding, 则第一个指标默认映射至Y轴, 其余指标默认映射至次Y轴
- * 2. 用户指定的yAxis指标映射至主Y轴或次Y轴, 支持多个指标;
- * 3. 所有指标均映射到Tooltip
- */
+export const defaultEncodingForDualAxis: AdvancedPipe = (advancedVSeed) => {
+  const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
+  const measures = findAllMeasures(vseedMeasures)
+  const encoding: Encoding = {}
+  generateDefaultDimensionEncoding(dimensions, encoding)
+  generateDefaultMeasureEncoding(measures, encoding)
+  return { ...advancedVSeed, encoding }
+}
+
 export const encodingForDualAxis: AdvancedPipe = (advancedVSeed) => {
   const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
   const measures = findAllMeasures(vseedMeasures)

@@ -15,6 +15,7 @@ import {
   defaultDimensions,
   defaultMeasureName,
   encodingAdapter,
+  defaultEncodingForRadar,
 } from '../pipes'
 
 export const radarAdvancedPipeline: AdvancedPipeline = [
@@ -23,7 +24,7 @@ export const radarAdvancedPipeline: AdvancedPipeline = [
   defaultDimensions,
   defaultMeasureName,
 
-  encodingAdapter([encodingForRadar, buildMeasures], [encodingForRadar, buildMeasures]),
+  encodingAdapter([defaultEncodingForRadar, buildMeasures], [encodingForRadar, buildMeasures]),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 
   // sortXBandAxis,

@@ -3,24 +3,15 @@ import { MeasureName } from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
 
-/**
- * @description 饼图、环形图
- * 维度未包含任何`encoding`, 则使用默认映射规则:
- * 1. color: 所有维度, 合并映射至颜色通道, 作为图例展示
- * 2. detail: 所有维度, 映射至Detail通道
- * 指标未包含任何`encoding`, 则使用默认映射规则:
- * 1. angle: 全部指标映射至angle轴
- * 2. tooltip: 全部指标映射至Tooltip
- *
- * 维度映射规则:
- * 1. 用户指定的`color`维度映射至颜色通道, 支持多个维度; 若未指定, 则默认将指标名称映射至颜色通道, 作为图例展示
- * 2. 用户指定的`detail`维度映射至Detail通道, 支持多个维度; 若未指定, 则默认将指标名称映射至Detail通道
- * 指标映射规则:
- * 1. 指标未配置`encoding`, 则默认映射至angle轴;
- * 2. 用户指定的`angle`指标映射至angle轴, 支持多个指标;
- * 3. 用户指定的`color`指标映射至color通道, 支持多个指标;
- * 3. 所有指标均映射到Tooltip
- */
+export const defaultEncodingForPie: AdvancedPipe = (advancedVSeed) => {
+  const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
+  const measures = findAllMeasures(vseedMeasures)
+  const encoding: Encoding = {}
+  generateDefaultDimensionEncoding(dimensions, encoding)
+  generateDefaultMeasureEncoding(measures, encoding)
+  return { ...advancedVSeed, encoding }
+}
+
 export const encodingForPie: AdvancedPipe = (advancedVSeed) => {
   const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
   const measures = findAllMeasures(vseedMeasures)

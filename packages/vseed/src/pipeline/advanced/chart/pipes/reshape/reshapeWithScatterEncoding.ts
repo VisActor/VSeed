@@ -1,5 +1,5 @@
 import { uniqueBy } from 'remeda'
-import { dataReshapeByEncoding, FoldXMeasureValue, FoldYMeasureValue } from 'src/dataReshape'
+import { dataReshapeByEncoding, FoldXMeasureId, FoldXMeasureValue, FoldYMeasureId, FoldYMeasureValue } from 'src/dataReshape'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
 import type {
   AdvancedPipe,
@@ -48,6 +48,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
       encoding as Encoding,
       {
         foldMeasureValue: FoldXMeasureValue,
+        foldMeasureId: FoldXMeasureId,
         colorItemAsId: true,
         colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
       },
@@ -70,6 +71,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
       encoding as Encoding,
       {
         foldMeasureValue: FoldYMeasureValue,
+        foldMeasureId: FoldYMeasureId,
         colorItemAsId: true,
         colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
       },

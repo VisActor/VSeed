@@ -55,19 +55,19 @@ const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Enco
   encoding.y = uniqueDimIds.slice(onlyMeasureName ? 0 : 1) // 第2个维度放置于Y轴
   encoding.color = uniqueDimIds.slice(onlyMeasureName ? 0 : 1) // 第二个之后的维度用于颜色
   encoding.detail = uniqueDimIds.slice(onlyMeasureName ? 0 : 1) // 第二个之后的维度用于详情
-  encoding.tooltip = uniqueDimIds // 展示所有维度
+  encoding.tooltip = uniqueDimIds.filter((d) => d !== MeasureName) // 展示指标名称之外的所有维度
   encoding.label = [] // 默认不展示标签
   encoding.row = [] // 默认不进行行透视
   encoding.column = [] // 默认不进行列透视
 }
 const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
   encoding.x = unique(dimensions.filter((item) => item.encoding === 'xAxis').map((item) => item.id))
-  encoding.y = unique(dimensions.filter((item) => item.encoding === 'yAxis').map((item) => item.id))
-  encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
-  encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))
+  // x
   if (encoding.x.length === 0) {
     encoding.x = [dimensions[0].id]
   }
+  // y
+  encoding.y = unique(dimensions.filter((item) => item.encoding === 'yAxis').map((item) => item.id))
   if (encoding.y.length === 0) {
     if (dimensions.length > 1) {
       encoding.y = dimensions.slice(1).map((item) => item.id)
@@ -75,19 +75,25 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) =
       encoding.y = dimensions.slice(0).map((item) => item.id)
     }
   }
+  // color
+  encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
   if (encoding.color.length === 0) {
     encoding.color = [MeasureName]
   }
+  // detail
+  encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))
   if (encoding.detail.length === 0) {
     encoding.detail = [MeasureName]
   }
+  // tooltip
+  encoding.tooltip = unique(dimensions.map((item) => item.id))
+  encoding.tooltip = encoding.tooltip.filter((d) => d !== MeasureName)
 }
 
 /**
  * --------------------指标--------------------
  */
 const generateDefaultMeasureEncoding = (measures: Measures, encoding: Encoding) => {
-  encoding.tooltip = unique(measures.map((item) => item.id))
   const colorDims = unique(
     measures.filter((item) => item.encoding === 'color' || !item.encoding).map((item) => item.id),
   )
@@ -96,10 +102,13 @@ const generateDefaultMeasureEncoding = (measures: Measures, encoding: Encoding) 
   }
 }
 const generateMeasureEncoding = (measures: Measures, encoding: Encoding) => {
-  encoding.tooltip = measures.map((item) => item.id)
+  // color
   const color = unique(measures.filter((item) => item.encoding === 'color').map((item) => item.id))
   if (color.length > 0) {
     encoding.color = [color[0]]
   }
-  return encoding
+
+  // tooltip
+  const tooltip = unique(measures.filter((item) => item.encoding === 'tooltip').map((item) => item.id))
+  encoding.tooltip = unique([...(encoding.tooltip || []), ...tooltip])
 }

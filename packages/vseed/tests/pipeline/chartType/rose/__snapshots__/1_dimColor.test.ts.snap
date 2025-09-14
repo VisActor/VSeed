@@ -552,6 +552,7 @@ exports[`1_dimColor 1`] = `
     "detail": [
       "__MeaName__",
     ],
+    "label": [],
     "radius": [
       "profit",
       "sales",

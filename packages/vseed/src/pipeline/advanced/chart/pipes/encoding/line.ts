@@ -70,6 +70,10 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) =
   // tooltip
   encoding.tooltip = unique(dimensions.map((item) => item.id))
   encoding.tooltip = encoding.tooltip.filter((d) => d !== MeasureName)
+
+  // label
+  encoding.label = unique(dimensions.filter((item) => item.encoding === 'label').map((item) => item.id))
+  encoding.label = encoding.label.filter((d) => d !== MeasureName)
 }
 
 /**

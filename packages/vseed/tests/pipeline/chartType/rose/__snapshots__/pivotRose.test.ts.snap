@@ -1198,6 +1198,7 @@ exports[`pivotRose 1`] = `
     "detail": [
       "__MeaName__",
     ],
+    "label": [],
     "radius": [
       "sales",
       "profit",

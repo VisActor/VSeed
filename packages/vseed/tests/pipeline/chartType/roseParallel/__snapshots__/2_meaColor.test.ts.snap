@@ -545,6 +545,7 @@ exports[`2_meaColor 1`] = `
     "detail": [
       "date",
     ],
+    "label": [],
     "radius": [
       "sales",
     ],

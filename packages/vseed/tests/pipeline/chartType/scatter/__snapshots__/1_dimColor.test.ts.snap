@@ -701,6 +701,7 @@ exports[`1_dimColor 1`] = `
     "detail": [
       "type",
     ],
+    "label": [],
     "tooltip": [
       "date",
       "type",

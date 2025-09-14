@@ -684,6 +684,7 @@ exports[`pivotColorScheme 1`] = `
     "detail": [
       "__MeaName__",
     ],
+    "label": [],
     "tooltip": [
       "date",
       "type",

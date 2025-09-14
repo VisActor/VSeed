@@ -723,6 +723,7 @@ exports[`1_meaColor 1`] = `
     "detail": [
       "type",
     ],
+    "label": [],
     "tooltip": [
       "date",
       "type",

@@ -1375,6 +1375,7 @@ exports[`pivotColumn 1`] = `
     "detail": [
       "__MeaName__",
     ],
+    "label": [],
     "tooltip": [
       "month",
       "date",

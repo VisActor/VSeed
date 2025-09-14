@@ -13,7 +13,8 @@ import {
   defaultMeasureName,
   encodingAdapter,
   defaultEncodingForScatter,
-  deleteTooltipMeasure,
+  deleteTooltipAndLabelMeasure,
+  deleteTooltipAndLabelDimension,
 } from '../pipes'
 import { reshapeWithScatterEncoding } from '../pipes/reshape/reshapeWithScatterEncoding'
 import { pivotReshapeWithScatterEncoding } from '../pipes/reshape/pivotReshapeWithScatterEncoding'
@@ -26,7 +27,7 @@ export const scatterAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForScatter, buildMeasuresForScatter],
-    [encodingForScatter, buildMeasuresForScatter, deleteTooltipMeasure],
+    [encodingForScatter, buildMeasuresForScatter, deleteTooltipAndLabelMeasure, deleteTooltipAndLabelDimension],
   ),
   pivotAdapter([reshapeWithScatterEncoding], [pivotReshapeWithScatterEncoding]),
 

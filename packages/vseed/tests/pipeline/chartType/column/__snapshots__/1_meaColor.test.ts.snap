@@ -724,6 +724,7 @@ exports[`1_meaColor 1`] = `
       "type",
       "__MeaName__",
     ],
+    "label": [],
     "tooltip": [
       "date",
       "type",

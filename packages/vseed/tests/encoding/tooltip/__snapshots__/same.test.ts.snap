@@ -726,11 +726,6 @@ exports[`same 1`] = `
       "encoding": "color",
       "id": "co_20250913222058_0fe2",
     },
-    {
-      "alias": "指标名称",
-      "encoding": "tooltip",
-      "id": "__MeaName__",
-    },
   ],
   "encoding": {
     "color": [
@@ -739,6 +734,7 @@ exports[`same 1`] = `
     "detail": [
       "co_20250913222058_0fe2",
     ],
+    "label": [],
     "tooltip": [
       "xA_20250913220803_3339",
       "co_20250913222058_0fe2",

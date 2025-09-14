@@ -852,6 +852,7 @@ exports[`1_dimColor 1`] = `
       "date",
       "__MeaName__",
     ],
+    "label": [],
     "tooltip": [
       "date",
       "type",

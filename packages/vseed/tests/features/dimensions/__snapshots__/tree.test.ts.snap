@@ -350,3 +350,32 @@ exports[`tree 2`] = `
   "widthMode": "standard",
 }
 `;
+
+exports[`tree 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {},
+  "colorItems": [],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

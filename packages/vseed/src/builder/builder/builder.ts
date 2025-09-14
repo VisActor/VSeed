@@ -158,7 +158,7 @@ export class Builder implements VSeedBuilder {
    * @example Builder.getTheme('light'), 获取浅色主题
    * @returns 主题配置
    */
-  static getTheme = (themeKey: string) => Builder._themeMap[themeKey]
+  static getTheme = (themeKey?: string) => Builder._themeMap[themeKey || 'light']
 
   /**
    * @description 获取主题配置映射表

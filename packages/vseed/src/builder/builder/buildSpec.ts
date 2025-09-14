@@ -26,7 +26,9 @@ export const buildSpec = (builder: Builder, advancedVSeed: AdvancedVSeed): Spec 
   }
 
   try {
-    return execPipeline<Spec, SpecPipelineContext>(pipeline, context)
+    const spec = execPipeline<Spec, SpecPipelineContext>(pipeline, context)
+    builder.spec = spec
+    return spec
   } catch (e) {
     console.error(e)
     throw new Error(`buildSpec error, see error info in console`)

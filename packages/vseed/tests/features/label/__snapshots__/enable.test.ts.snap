@@ -974,3 +974,38 @@ exports[`enable 2`] = `
   "yField": "__MeaValue__",
 }
 `;
+
+exports[`enable 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "利润-profit": "利润",
+    "销售额-sales": "销售额",
+  },
+  "colorItems": [
+    "利润",
+    "销售额",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

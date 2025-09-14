@@ -2386,3 +2386,58 @@ exports[`tpye_area_area 2`] = `
   "type": "common",
 }
 `;
+
+exports[`tpye_area_area 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "东北-sum(数量)-me_20250914101727_1111": "东北-sum(数量)",
+    "东北-sum(销售额)": "东北-sum(销售额)",
+    "中南-sum(数量)-me_20250914101727_1111": "中南-sum(数量)",
+    "中南-sum(销售额)": "中南-sum(销售额)",
+    "华东-sum(数量)-me_20250914101727_1111": "华东-sum(数量)",
+    "华东-sum(销售额)": "华东-sum(销售额)",
+    "华北-sum(数量)-me_20250914101727_1111": "华北-sum(数量)",
+    "华北-sum(销售额)": "华北-sum(销售额)",
+    "西北-sum(数量)-me_20250914101727_1111": "西北-sum(数量)",
+    "西北-sum(销售额)": "西北-sum(销售额)",
+    "西南-sum(数量)-me_20250914101727_1111": "西南-sum(数量)",
+    "西南-sum(销售额)": "西南-sum(销售额)",
+  },
+  "colorItems": [
+    "中南-sum(销售额)",
+    "东北-sum(销售额)",
+    "西南-sum(销售额)",
+    "西北-sum(销售额)",
+    "华东-sum(销售额)",
+    "华北-sum(销售额)",
+    "中南-sum(数量)",
+    "东北-sum(数量)",
+    "西南-sum(数量)",
+    "西北-sum(数量)",
+    "华东-sum(数量)",
+    "华北-sum(数量)",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

@@ -16,8 +16,17 @@ test('combinationRoseParallel', () => {
     throw new Error('Failed to build advanced configuration')
   }
   const spec = builder.buildSpec(advanced)
+
+  const colorIdMap = builder.getColorIdMap()
+  const colorItems = builder.getColorItems()
+  const advancedPipeline = Builder.getAdvancedPipeline(builder.vseed.chartType)
+  const specPipeline = Builder.getSpecPipeline(builder.vseed.chartType)
+  const hasTheme = !!Builder.getTheme(builder.vseed.theme)
+  const themeMapKeys = Object.keys(Builder.getThemeMap())
+
   expect(advanced).toMatchSnapshot()
   expect(spec).toMatchSnapshot()
+  expect({ colorIdMap, colorItems, advancedPipeline, specPipeline, hasTheme, themeMapKeys }).toMatchSnapshot()
 
   const div = document.createElement('div') as unknown as HTMLDivElement
   div.style.width = '960px'

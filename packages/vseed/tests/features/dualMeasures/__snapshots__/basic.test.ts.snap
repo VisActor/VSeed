@@ -1285,3 +1285,38 @@ exports[`basic 2`] = `
   "type": "common",
 }
 `;
+
+exports[`basic 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "profit-profit": "profit",
+    "sales-sales": "sales",
+  },
+  "colorItems": [
+    "profit",
+    "sales",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

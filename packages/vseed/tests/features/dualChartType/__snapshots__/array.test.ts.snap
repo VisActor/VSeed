@@ -2528,3 +2528,42 @@ exports[`array 2`] = `
   "widthMode": "adaptive",
 }
 `;
+
+exports[`array 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "利润-profit": "利润",
+    "回报率-returnRatio": "回报率",
+    "比率-ratio": "比率",
+    "销售额-sales": "销售额",
+  },
+  "colorItems": [
+    "利润",
+    "销售额",
+    "比率",
+    "回报率",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

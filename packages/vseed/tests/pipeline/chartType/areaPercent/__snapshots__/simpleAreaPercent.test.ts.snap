@@ -1695,3 +1695,44 @@ exports[`simpleAreaPercent 2`] = `
   "yField": "__MeaValue__",
 }
 `;
+
+exports[`simpleAreaPercent 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "A-goalProfit-goalProfit": "A-goalProfit",
+    "A-leftCount-leftCount": "A-leftCount",
+    "A-profit-profit": "A-profit",
+    "A-sales-sales": "A-sales",
+    "A-salesCount-salesCount": "A-salesCount",
+  },
+  "colorItems": [
+    "A-goalProfit",
+    "A-profit",
+    "A-sales",
+    "A-leftCount",
+    "A-salesCount",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

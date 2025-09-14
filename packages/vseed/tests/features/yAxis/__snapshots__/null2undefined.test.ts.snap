@@ -1258,3 +1258,36 @@ exports[`null2undefined 2`] = `
   "yField": "__MeaValue__",
 }
 `;
+
+exports[`null2undefined 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "股价（美元）-price": "股价（美元）",
+  },
+  "colorItems": [
+    "股价（美元）",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

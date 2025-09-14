@@ -1303,3 +1303,38 @@ exports[`4_onlySecondaryYAxis 2`] = `
   "type": "common",
 }
 `;
+
+exports[`4_onlySecondaryYAxis 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "sales-sales": "sales",
+    "利润-profit": "利润",
+  },
+  "colorItems": [
+    "利润",
+    "sales",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

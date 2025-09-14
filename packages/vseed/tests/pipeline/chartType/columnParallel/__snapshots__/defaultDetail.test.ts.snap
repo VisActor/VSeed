@@ -2014,3 +2014,58 @@ exports[`defaultDetail 2`] = `
   "yField": "__MeaValue__",
 }
 `;
+
+exports[`defaultDetail 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "东北-sum(数量)": "东北-sum(数量)",
+    "东北-sum(销售额)": "东北-sum(销售额)",
+    "中南-sum(数量)": "中南-sum(数量)",
+    "中南-sum(销售额)": "中南-sum(销售额)",
+    "华东-sum(数量)": "华东-sum(数量)",
+    "华东-sum(销售额)": "华东-sum(销售额)",
+    "华北-sum(数量)": "华北-sum(数量)",
+    "华北-sum(销售额)": "华北-sum(销售额)",
+    "西北-sum(数量)": "西北-sum(数量)",
+    "西北-sum(销售额)": "西北-sum(销售额)",
+    "西南-sum(数量)": "西南-sum(数量)",
+    "西南-sum(销售额)": "西南-sum(销售额)",
+  },
+  "colorItems": [
+    "中南-sum(销售额)",
+    "中南-sum(数量)",
+    "东北-sum(销售额)",
+    "东北-sum(数量)",
+    "西南-sum(销售额)",
+    "西南-sum(数量)",
+    "西北-sum(销售额)",
+    "西北-sum(数量)",
+    "华东-sum(销售额)",
+    "华东-sum(数量)",
+    "华北-sum(销售额)",
+    "华北-sum(数量)",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

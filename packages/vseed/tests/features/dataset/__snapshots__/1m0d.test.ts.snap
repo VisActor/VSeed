@@ -660,3 +660,36 @@ exports[`1m0d 2`] = `
   "yField": "__MeaValue__",
 }
 `;
+
+exports[`1m0d 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "profit-profit": "profit",
+  },
+  "colorItems": [
+    "profit",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

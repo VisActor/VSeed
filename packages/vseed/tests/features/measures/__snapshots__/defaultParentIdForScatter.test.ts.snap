@@ -1414,3 +1414,38 @@ exports[`defaultParentIdForScatter 2`] = `
   "widthMode": "adaptive",
 }
 `;
+
+exports[`defaultParentIdForScatter 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "办公用品": "办公用品",
+    "家具": "家具",
+    "技术": "技术",
+  },
+  "colorItems": [
+    "技术",
+    "办公用品",
+    "家具",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

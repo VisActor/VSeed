@@ -2242,3 +2242,42 @@ exports[`simpleScatter 2`] = `
   "yField": "__MeaYValue__",
 }
 `;
+
+exports[`simpleScatter 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "2019-A": "2019-A",
+    "2020-A": "2020-A",
+    "2021-A": "2021-A",
+    "2022-A": "2022-A",
+    "2023-A": "2023-A",
+  },
+  "colorItems": [
+    "2019-A",
+    "2020-A",
+    "2021-A",
+    "2022-A",
+    "2023-A",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

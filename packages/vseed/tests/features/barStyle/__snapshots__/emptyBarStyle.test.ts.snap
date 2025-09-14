@@ -1324,3 +1324,32 @@ exports[`emptyBarStyle 2`] = `
   "widthMode": "adaptive",
 }
 `;
+
+exports[`emptyBarStyle 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {},
+  "colorItems": [],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

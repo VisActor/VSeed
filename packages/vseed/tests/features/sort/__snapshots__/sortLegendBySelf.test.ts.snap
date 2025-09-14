@@ -1188,3 +1188,40 @@ exports[`sortLegendBySelf 2`] = `
   "yField": "__MeaValue__",
 }
 `;
+
+exports[`sortLegendBySelf 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "利润-profit": "利润",
+    "数量-count": "数量",
+    "销售额-sales": "销售额",
+  },
+  "colorItems": [
+    "数量",
+    "销售额",
+    "利润",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

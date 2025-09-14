@@ -1856,3 +1856,38 @@ exports[`defaultParentIdForDualAxis 2`] = `
   "widthMode": "adaptive",
 }
 `;
+
+exports[`defaultParentIdForDualAxis 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "sum(amount)-co_20250914131915_8e38": "sum(amount)",
+    "sum(amount)-yA_20250914131844_6718": "sum(amount)",
+  },
+  "colorItems": [
+    "sum(amount)",
+    "sum(amount)",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

@@ -780,3 +780,36 @@ exports[`crosshairRect 2`] = `
   "yField": "__MeaValue__",
 }
 `;
+
+exports[`crosshairRect 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "销售额-sales": "销售额",
+  },
+  "colorItems": [
+    "销售额",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

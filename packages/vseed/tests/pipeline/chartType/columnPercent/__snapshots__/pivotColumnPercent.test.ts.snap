@@ -3212,3 +3212,38 @@ exports[`pivotColumnPercent 2`] = `
   "widthMode": "adaptive",
 }
 `;
+
+exports[`pivotColumnPercent 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "利润": "利润",
+    "销售额": "销售额",
+  },
+  "colorItems": [
+    "销售额",
+    "利润",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

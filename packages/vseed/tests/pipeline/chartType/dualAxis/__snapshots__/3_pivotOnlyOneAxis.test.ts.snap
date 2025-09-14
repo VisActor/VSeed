@@ -2022,3 +2022,38 @@ exports[`3_pivotOnlyOneAxis 2`] = `
   "widthMode": "adaptive",
 }
 `;
+
+exports[`3_pivotOnlyOneAxis 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "sales-sales": "sales",
+    "利润-profit": "利润",
+  },
+  "colorItems": [
+    "利润",
+    "sales",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

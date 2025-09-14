@@ -653,3 +653,51 @@ exports[`basicDonut 2`] = `
   "valueField": "__MeaValue__",
 }
 `;
+
+exports[`basicDonut 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "2019-利润-profit": "2019-利润",
+    "2019-销售额-sales": "2019-销售额",
+    "2020-利润-profit": "2020-利润",
+    "2020-销售额-sales": "2020-销售额",
+    "2021-利润-profit": "2021-利润",
+    "2021-销售额-sales": "2021-销售额",
+    "2022-利润-profit": "2022-利润",
+    "2022-销售额-sales": "2022-销售额",
+    "2023-利润-profit": "2023-利润",
+    "2023-销售额-sales": "2023-销售额",
+  },
+  "colorItems": [
+    "2019-销售额",
+    "2019-利润",
+    "2020-销售额",
+    "2020-利润",
+    "2021-销售额",
+    "2021-利润",
+    "2022-销售额",
+    "2022-利润",
+    "2023-销售额",
+    "2023-利润",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

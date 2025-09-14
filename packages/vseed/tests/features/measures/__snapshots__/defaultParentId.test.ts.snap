@@ -1337,3 +1337,36 @@ exports[`defaultParentId 2`] = `
   "widthMode": "adaptive",
 }
 `;
+
+exports[`defaultParentId 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "sum(amount)": "sum(amount)",
+  },
+  "colorItems": [
+    "sum(amount)",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

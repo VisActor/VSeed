@@ -15,6 +15,7 @@ export const dualAxisConfig: AdvancedPipe = (advancedVSeed, context) => {
     'label',
     'legend',
     'tooltip',
+    'xAxis',
 
     // only for dualAxis
     'dualChartType',
@@ -22,6 +23,7 @@ export const dualAxisConfig: AdvancedPipe = (advancedVSeed, context) => {
     'primaryYAxis',
     'secondaryYAxis',
     'crosshairLine',
+    'crosshairRect',
   ]) as Config['dualAxis']
 
   result.config = {

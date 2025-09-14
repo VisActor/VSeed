@@ -17,10 +17,14 @@ const Demo = () => {
       { date: '2022', profit: 50, sales: 100, count: 50 },
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
-    dimensions: [{ id: 'date', alias: '日期' }],
+    dimensions: [
+      { id: 'date', alias: '日期', encoding: 'xAxis' },
+      { id: 'date', alias: '日期', encoding: 'row' },
+    ],
     measures: [
       { id: 'profit', alias: '利润', encoding: 'primaryYAxis', parentId: 'test' },
-      { id: 'sales', alias: 'sales', encoding: 'secondaryYAxis', parentId: 'test2' },
+      { id: 'sales', alias: '销售额', encoding: 'secondaryYAxis', parentId: 'test2' },
+      { id: 'count', alias: '数量', encoding: 'tooltip', parentId: 'test2' },
     ],
   }
 

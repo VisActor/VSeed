@@ -1,0 +1,48 @@
+{
+  "chartType": "dualAxis",
+  "dataset": [
+    {
+      "co_20250914131915_8e38": "7642",
+      "xA_20250914131841_3aa1": "技术",
+      "yA_20250914131844_6718": "7642"
+    },
+    {
+      "co_20250914131915_8e38": "21401",
+      "xA_20250914131841_3aa1": "办公用品",
+      "yA_20250914131844_6718": "21401"
+    },
+    {
+      "co_20250914131915_8e38": "8491",
+      "xA_20250914131841_3aa1": "家具",
+      "yA_20250914131844_6718": "8491"
+    }
+  ],
+  "measures": [
+    {
+      "id": "co_20250914131915_8e38",
+      "alias": "sum(amount)",
+      "format": {
+        "auto": false,
+        "type": "number"
+      },
+      "autoFormat": false
+    },
+    {
+      "id": "yA_20250914131844_6718",
+      "alias": "sum(amount)",
+      "format": {
+        "auto": false,
+        "type": "number"
+      },
+      "autoFormat": false,
+      "parentId": "0"
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "xA_20250914131841_3aa1",
+      "alias": "product_type",
+      "autoFormat": true
+    }
+  ]
+}

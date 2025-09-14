@@ -27,6 +27,9 @@ exports[`heatmap 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -67,6 +70,9 @@ exports[`heatmap 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -279,21 +285,21 @@ exports[`heatmap 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          60,
-          200,
-        ],
         "foldMap": {
           "profit": "利润",
           "sales": "销售额",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          30,
-          310,
-        ],
         "measureValue": "__MeaValue__",
+        "statistics": {
+          "colorMax": 200,
+          "colorMin": 60,
+          "count": 10,
+          "max": 310,
+          "min": 30,
+          "sum": 1030,
+        },
       },
       "id": "heatmap",
       "index": 0,

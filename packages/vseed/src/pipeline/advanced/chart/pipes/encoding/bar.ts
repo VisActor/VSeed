@@ -50,16 +50,19 @@ const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Enco
   encoding.column = [] // 默认不进行列透视
 }
 const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
+  // y
   encoding.y = unique(dimensions.filter((item) => item.encoding === 'yAxis').map((item) => item.id))
   if (encoding.y.length === 0) {
     encoding.y = [dimensions[0].id]
   }
 
+  // color
   encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
   if (encoding.color.length === 0) {
     encoding.color = [MeasureName]
   }
 
+  // detail
   encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))
   if (encoding.detail.length === 0) {
     encoding.detail = encoding.color
@@ -68,6 +71,10 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) =
   // tooltip
   encoding.tooltip = unique(dimensions.map((item) => item.id))
   encoding.tooltip = encoding.tooltip.filter((d) => d !== MeasureName)
+
+  // label
+  encoding.label = unique(dimensions.filter((item) => item.encoding === 'label').map((item) => item.id))
+  encoding.label = encoding.label.filter((d) => d !== MeasureName)
 }
 
 /**
@@ -86,7 +93,11 @@ const generateMeasureEncoding = (measures: Measures, encoding: Encoding) => {
     encoding.color = color
   }
 
+  // label
+  const label = unique(measures.filter((item) => item.encoding === 'label').map((item) => item.id))
+  encoding.label = unique([...(encoding.label || []), ...label])
+
   // tooltip
   const tooltip = unique(measures.filter((item) => item.encoding === 'tooltip').map((item) => item.id))
-  encoding.tooltip = unique([...(encoding.tooltip || []), ...tooltip])
+  encoding.tooltip = unique([...(encoding.tooltip || []), ...label, ...tooltip])
 }

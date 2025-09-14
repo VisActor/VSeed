@@ -38,6 +38,9 @@ exports[`array 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -199,6 +202,9 @@ exports[`array 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -755,53 +761,53 @@ exports[`array 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "profit": undefined,
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          10,
-          50,
-        ],
         "measureValue": "__MeaPrimaryValue__0",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 5,
+          "max": 50,
+          "min": 10,
+          "sum": 160,
+        },
       },
       "foldInfoList": [
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {
             "profit": undefined,
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            10,
-            50,
-          ],
           "measureValue": "__MeaPrimaryValue__0",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 5,
+            "max": 50,
+            "min": 10,
+            "sum": 160,
+          },
         },
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {
             "sales": undefined,
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            100,
-            3200,
-          ],
           "measureValue": "__MeaSecondaryValue__0",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 5,
+            "max": 3200,
+            "min": 100,
+            "sum": 6500,
+          },
         },
       ],
       "id": "dualAxis-0",
@@ -825,53 +831,53 @@ exports[`array 1`] = `
     },
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "ratio": undefined,
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          30,
-          305,
-        ],
         "measureValue": "__MeaPrimaryValue__1",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 5,
+          "max": 305,
+          "min": 30,
+          "sum": 771,
+        },
       },
       "foldInfoList": [
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {
             "ratio": undefined,
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            30,
-            305,
-          ],
           "measureValue": "__MeaPrimaryValue__1",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 5,
+            "max": 305,
+            "min": 30,
+            "sum": 771,
+          },
         },
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {
             "returnRatio": undefined,
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            24,
-            503,
-          ],
           "measureValue": "__MeaSecondaryValue__1",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 5,
+            "max": 503,
+            "min": 24,
+            "sum": 1163,
+          },
         },
       ],
       "id": "dualAxis-1",

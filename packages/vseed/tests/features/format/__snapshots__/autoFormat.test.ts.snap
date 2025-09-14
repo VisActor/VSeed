@@ -34,6 +34,9 @@ exports[`autoFormat 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -164,6 +167,9 @@ exports[`autoFormat 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -297,21 +303,21 @@ exports[`autoFormat 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "profit": undefined,
           "sales": undefined,
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          12342.34567,
-          23453.4567,
-        ],
         "measureValue": "__MeaValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 2,
+          "max": 23453.4567,
+          "min": 12342.34567,
+          "sum": 35795.80237,
+        },
       },
       "id": "column",
       "index": 0,

@@ -430,21 +430,21 @@ exports[`1_measureName 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "profit": "利润",
           "sales": "销售额",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          10,
-          500,
-        ],
         "measureValue": "__MeaValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 24,
+          "max": 500,
+          "min": 10,
+          "sum": 3720,
+        },
       },
       "id": "pivotTable",
       "index": 0,

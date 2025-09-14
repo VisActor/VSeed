@@ -17,7 +17,8 @@ import {
   defaultMeasureName,
   encodingAdapter,
   defaultEncodingForColumn,
-  deleteTooltipMeasure,
+  deleteTooltipAndLabelMeasure,
+  deleteTooltipAndLabelDimension,
 } from '../pipes'
 
 export const columnAdvancedPipeline: AdvancedPipeline = [
@@ -26,7 +27,10 @@ export const columnAdvancedPipeline: AdvancedPipeline = [
   defaultDimensions,
   defaultMeasureName,
 
-  encodingAdapter([defaultEncodingForColumn, buildMeasures], [encodingForColumn, buildMeasures, deleteTooltipMeasure]),
+  encodingAdapter(
+    [defaultEncodingForColumn, buildMeasures],
+    [encodingForColumn, buildMeasures, deleteTooltipAndLabelMeasure, deleteTooltipAndLabelDimension],
+  ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 
   sortXBandAxis,

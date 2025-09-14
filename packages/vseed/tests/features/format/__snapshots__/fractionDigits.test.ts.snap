@@ -34,6 +34,9 @@ exports[`fractionDigits 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -164,6 +167,9 @@ exports[`fractionDigits 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -489,10 +495,6 @@ exports[`fractionDigits 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "num0": undefined,
           "num1": undefined,
@@ -507,11 +509,15 @@ exports[`fractionDigits 1`] = `
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          123.456,
-          400,
-        ],
         "measureValue": "__MeaValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 10,
+          "max": 400,
+          "min": 123.456,
+          "sum": 2066.659,
+        },
       },
       "id": "column",
       "index": 0,

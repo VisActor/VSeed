@@ -13,8 +13,8 @@ export const pivotColorLegend: SpecPipe = (spec, context) => {
   }
 
   const { datasetReshapeInfo } = advancedVSeed
-  const max = Math.max(...datasetReshapeInfo.map((d) => d.foldInfo.colorRange[1]))
-  const min = Math.min(...datasetReshapeInfo.map((d) => d.foldInfo.colorRange[0]))
+  const max = Math.max(...datasetReshapeInfo.map((d) => d.foldInfo.statistics.colorMin))
+  const min = Math.min(...datasetReshapeInfo.map((d) => d.foldInfo.statistics.colorMax))
   const { legend, color } = baseConfig
   const { colorScheme, linearColorScheme } = color
 

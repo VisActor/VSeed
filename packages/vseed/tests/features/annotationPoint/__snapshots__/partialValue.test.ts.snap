@@ -62,6 +62,9 @@ exports[`partialValue 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -186,6 +189,9 @@ exports[`partialValue 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -525,10 +531,6 @@ exports[`partialValue 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "count": "数量",
           "profit": "利润",
@@ -536,11 +538,15 @@ exports[`partialValue 1`] = `
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          10,
-          100,
-        ],
         "measureValue": "__MeaValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 15,
+          "max": 100,
+          "min": 10,
+          "sum": 730,
+        },
       },
       "id": "line",
       "index": 0,

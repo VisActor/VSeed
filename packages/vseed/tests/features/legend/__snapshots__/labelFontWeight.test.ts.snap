@@ -34,6 +34,9 @@ exports[`labelFontWeight 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -164,6 +167,9 @@ exports[`labelFontWeight 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -429,21 +435,21 @@ exports[`labelFontWeight 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "profit": "profit",
           "sales": "sales",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          10,
-          100,
-        ],
         "measureValue": "__MeaValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 10,
+          "max": 100,
+          "min": 10,
+          "sum": 480,
+        },
       },
       "id": "columnParallel",
       "index": 0,

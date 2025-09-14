@@ -38,6 +38,9 @@ exports[`dualAxisPivot 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -199,6 +202,9 @@ exports[`dualAxisPivot 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -525,51 +531,51 @@ exports[`dualAxisPivot 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "profit": "利润",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          30,
-          100,
-        ],
         "measureValue": "__MeaPrimaryValue__0",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 5,
+          "max": 100,
+          "min": 30,
+          "sum": 250,
+        },
       },
       "foldInfoList": [
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {
             "profit": "利润",
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            30,
-            100,
-          ],
           "measureValue": "__MeaPrimaryValue__0",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 5,
+            "max": 100,
+            "min": 30,
+            "sum": 250,
+          },
         },
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {},
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            0,
-            1,
-          ],
           "measureValue": "__MeaSecondaryValue__0",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 0,
+            "max": -Infinity,
+            "min": Infinity,
+            "sum": 0,
+          },
         },
       ],
       "id": "dualAxis-0",
@@ -591,49 +597,49 @@ exports[`dualAxisPivot 1`] = `
     },
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {},
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          0,
-          1,
-        ],
         "measureValue": "__MeaPrimaryValue__1",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 0,
+          "max": -Infinity,
+          "min": Infinity,
+          "sum": 0,
+        },
       },
       "foldInfoList": [
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {},
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            0,
-            1,
-          ],
           "measureValue": "__MeaPrimaryValue__1",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 0,
+            "max": -Infinity,
+            "min": Infinity,
+            "sum": 0,
+          },
         },
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {
             "sales": "销售额",
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            60,
-            200,
-          ],
           "measureValue": "__MeaSecondaryValue__1",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 5,
+            "max": 200,
+            "min": 60,
+            "sum": 500,
+          },
         },
       ],
       "id": "dualAxis-1",
@@ -677,6 +683,7 @@ exports[`dualAxisPivot 1`] = `
     "detail": [
       "__MeaName__",
     ],
+    "label": [],
     "tooltip": [
       "date",
       "count",

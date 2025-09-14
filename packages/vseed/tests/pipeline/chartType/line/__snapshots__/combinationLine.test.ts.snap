@@ -34,6 +34,9 @@ exports[`combinationLine 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -158,6 +161,9 @@ exports[`combinationLine 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -421,20 +427,20 @@ exports[`combinationLine 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "sales": "销售额",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          200000,
-          1000000,
-        ],
         "measureValue": "__MeaValue__line1",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 5,
+          "max": 1000000,
+          "min": 200000,
+          "sum": 3000000,
+        },
       },
       "id": "line1",
       "index": 0,
@@ -455,20 +461,20 @@ exports[`combinationLine 1`] = `
     },
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "profit": "利润",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          10000,
-          50000,
-        ],
         "measureValue": "__MeaValue__line2",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 5,
+          "max": 50000,
+          "min": 10000,
+          "sum": 150000,
+        },
       },
       "id": "line2",
       "index": 1,

@@ -34,6 +34,9 @@ exports[`defaultDetail 1`] = `
       },
       "label": {
         "enable": false,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -164,6 +167,9 @@ exports[`defaultDetail 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -917,21 +923,21 @@ exports[`defaultDetail 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "me_20250914101727_1111": "sum(数量)",
           "me_20250914101727_9d4f": "sum(销售额)",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          251,
-          3718172.451000012,
-        ],
         "measureValue": "__MeaValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 36,
+          "max": 3718172.451000012,
+          "min": 251,
+          "sum": 26960758.36000001,
+        },
       },
       "id": "columnParallel",
       "index": 0,
@@ -1000,6 +1006,7 @@ exports[`defaultDetail 1`] = `
       "di_20250914101717_a7e4",
       "__MeaName__",
     ],
+    "label": [],
     "tooltip": [
       "di_20250914101717_6266",
       "di_20250914101717_a7e4",

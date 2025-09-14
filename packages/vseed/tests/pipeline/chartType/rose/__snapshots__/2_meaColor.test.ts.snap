@@ -27,6 +27,9 @@ exports[`2_meaColor 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": true,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -67,6 +70,9 @@ exports[`2_meaColor 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": true,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -489,21 +495,21 @@ exports[`2_meaColor 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          10,
-          500,
-        ],
         "foldMap": {
           "profit": "利润",
           "sales": "销售额",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          10,
-          610,
-        ],
         "measureValue": "__MeaValue__",
+        "statistics": {
+          "colorMax": 500,
+          "colorMin": 10,
+          "count": 20,
+          "max": 610,
+          "min": 10,
+          "sum": 3720,
+        },
       },
       "id": "rose",
       "index": 0,
@@ -545,6 +551,7 @@ exports[`2_meaColor 1`] = `
     "detail": [
       "date",
     ],
+    "label": [],
     "radius": [
       "sales",
     ],

@@ -34,6 +34,9 @@ exports[`enUS 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -164,6 +167,9 @@ exports[`enUS 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -685,21 +691,21 @@ exports[`enUS 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "profit": "利润",
           "sales": "销售额",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          10000,
-          1000000,
-        ],
         "measureValue": "__MeaValue__group1",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 10,
+          "max": 1000000,
+          "min": 10000,
+          "sum": 3150000,
+        },
       },
       "id": "group1",
       "index": 0,
@@ -722,20 +728,20 @@ exports[`enUS 1`] = `
     },
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "discount": "折扣",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          0.05,
-          1,
-        ],
         "measureValue": "__MeaValue__group2",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 5,
+          "max": 0.5,
+          "min": 0.05,
+          "sum": 1.35,
+        },
       },
       "id": "group2",
       "index": 1,
@@ -756,20 +762,20 @@ exports[`enUS 1`] = `
     },
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "rateOfReturn": "回报率",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          0.001,
-          1,
-        ],
         "measureValue": "__MeaValue__group-rateOfReturn",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 5,
+          "max": 0.005,
+          "min": 0.001,
+          "sum": 0.015,
+        },
       },
       "id": "group-rateOfReturn",
       "index": 2,

@@ -43,6 +43,9 @@ exports[`emptyBarStyle 1`] = `
         "labelMode": "single",
         "labelPos": "outer",
         "labelWeight": "normal",
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -173,6 +176,9 @@ exports[`emptyBarStyle 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -384,20 +390,20 @@ exports[`emptyBarStyle 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          7642,
-          21401,
-        ],
         "foldMap": {
           "co_20250914131915_8e38": "sum(amount)",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          7642,
-          21401,
-        ],
         "measureValue": "__MeaValue____DefaultParentId__",
+        "statistics": {
+          "colorMax": 21401,
+          "colorMin": 7642,
+          "count": 3,
+          "max": 21401,
+          "min": 7642,
+          "sum": 37534,
+        },
       },
       "id": "__DefaultParentId__",
       "index": 0,
@@ -414,20 +420,20 @@ exports[`emptyBarStyle 1`] = `
     },
     {
       "foldInfo": {
-        "colorRange": [
-          7642,
-          21401,
-        ],
         "foldMap": {
           "yA_20250914131844_6718": "sum(amount)",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          7642,
-          21401,
-        ],
         "measureValue": "__MeaValue__0",
+        "statistics": {
+          "colorMax": 21401,
+          "colorMin": 7642,
+          "count": 3,
+          "max": 21401,
+          "min": 7642,
+          "sum": 37534,
+        },
       },
       "id": "0",
       "index": 1,
@@ -462,6 +468,7 @@ exports[`emptyBarStyle 1`] = `
     "detail": [
       "__MeaName__",
     ],
+    "label": [],
     "tooltip": [
       "xA_20250914131841_3aa1",
     ],
@@ -1084,9 +1091,9 @@ exports[`emptyBarStyle 2`] = `
       },
       "visible": true,
     },
-    "max": 21401,
+    "max": 7642,
     "maxWidth": "30%",
-    "min": 7642,
+    "min": 21401,
     "orient": "right",
     "position": "start",
     "startText": {
@@ -1099,8 +1106,8 @@ exports[`emptyBarStyle 2`] = `
     },
     "type": "color",
     "value": [
-      7642,
       21401,
+      7642,
     ],
     "visible": true,
   },

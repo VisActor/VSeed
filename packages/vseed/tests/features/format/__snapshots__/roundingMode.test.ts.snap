@@ -34,6 +34,9 @@ exports[`roundingMode 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -164,6 +167,9 @@ exports[`roundingMode 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -489,10 +495,6 @@ exports[`roundingMode 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "num0": undefined,
           "num1": undefined,
@@ -507,11 +509,15 @@ exports[`roundingMode 1`] = `
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          -234.38,
-          234.38,
-        ],
         "measureValue": "__MeaValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 10,
+          "max": 234.38,
+          "min": -234.38,
+          "sum": -102.99999999999997,
+        },
       },
       "id": "column",
       "index": 0,

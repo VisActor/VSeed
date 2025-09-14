@@ -26,8 +26,14 @@ export const foldMeasures = (
     measureId,
     measureName,
     measureValue,
-    colorRange: [0, 1],
-    measureRange: [0, 1],
+    statistics: {
+      max: -Infinity,
+      min: Infinity,
+      sum: 0,
+      count: 0,
+      colorMin: Infinity,
+      colorMax: -Infinity,
+    },
     foldMap: {},
   }
   const result: Dataset = new Array(dataset.length * measures.length) as Dataset
@@ -52,16 +58,16 @@ export const foldMeasures = (
         datum[ColorEncoding] = value
         datum[ColorIdEncoding] = colorMeasureId
 
-        foldInfo.colorRange = [
-          Math.min(foldInfo.colorRange[0] || Infinity, Number(value)),
-          Math.max(foldInfo.colorRange[1] || -Infinity, Number(value)),
-        ]
+        const valueNumber = Number(value)
+        foldInfo.statistics.colorMin = Math.min(foldInfo.statistics.colorMin, valueNumber)
+        foldInfo.statistics.colorMax = Math.max(foldInfo.statistics.colorMax, valueNumber)
       }
 
-      foldInfo.measureRange = [
-        Math.min(foldInfo.measureRange[0] || Infinity, Number(datum[id])),
-        Math.max(foldInfo.measureRange[1] || -Infinity, Number(datum[id])),
-      ]
+      const valueNumber = Number(datum[id])
+      foldInfo.statistics.min = Math.min(foldInfo.statistics.min, valueNumber)
+      foldInfo.statistics.max = Math.max(foldInfo.statistics.max, valueNumber)
+      foldInfo.statistics.sum += valueNumber
+      foldInfo.statistics.count++
 
       foldInfo.foldMap[id] = alias
       result[index++] = datum

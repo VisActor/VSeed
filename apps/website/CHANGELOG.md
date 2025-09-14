@@ -1,5 +1,13 @@
 # website
 
+## 0.1.13
+
+### Patch Changes
+
+- feat: add label encoding for all chart types
+- Updated dependencies
+  - @visactor/vseed@0.1.13
+
 ## 0.1.12
 
 ### Patch Changes

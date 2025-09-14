@@ -471,10 +471,6 @@ exports[`simplePivotTable 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "goalProfit": "goalProfit",
           "leftCount": "leftCount",
@@ -484,11 +480,15 @@ exports[`simplePivotTable 1`] = `
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          1,
-          500,
-        ],
         "measureValue": "__MeaValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 25,
+          "max": 500,
+          "min": 1,
+          "sum": 3295,
+        },
       },
       "id": "pivotTable",
       "index": 0,

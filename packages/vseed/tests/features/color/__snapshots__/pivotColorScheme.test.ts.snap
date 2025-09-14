@@ -29,6 +29,9 @@ exports[`pivotColorScheme 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -159,6 +162,9 @@ exports[`pivotColorScheme 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -626,21 +632,21 @@ exports[`pivotColorScheme 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "profit": "利润",
           "sales": "销售额",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          10,
-          100,
-        ],
         "measureValue": "__MeaValue__profit-sales",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 20,
+          "max": 100,
+          "min": 10,
+          "sum": 960,
+        },
       },
       "id": "profit-sales",
       "index": 0,

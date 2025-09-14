@@ -43,6 +43,9 @@ exports[`same 1`] = `
         "labelMode": "single",
         "labelPos": "outer",
         "labelWeight": "normal",
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -173,6 +176,9 @@ exports[`same 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -562,20 +568,20 @@ exports[`same 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "pr_20250913220806_eacd": "min(amount)",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          1,
-          1,
-        ],
         "measureValue": "__MeaValue__0",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 3,
+          "max": 1,
+          "min": 1,
+          "sum": 3,
+        },
       },
       "id": "0",
       "index": 0,
@@ -600,20 +606,20 @@ exports[`same 1`] = `
     },
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "yA_20250913221832_0230": "sum(amount)",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          7642,
-          21401,
-        ],
         "measureValue": "__MeaValue__1",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 3,
+          "max": 21401,
+          "min": 7642,
+          "sum": 37534,
+        },
       },
       "id": "1",
       "index": 1,
@@ -638,20 +644,20 @@ exports[`same 1`] = `
     },
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "yA_20250913221852_0d8a": "sum(discount)",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          250.60000000000227,
-          483.99999999999267,
-        ],
         "measureValue": "__MeaValue__2",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 3,
+          "max": 483.99999999999267,
+          "min": 250.60000000000227,
+          "sum": 1059.699999999994,
+        },
       },
       "id": "2",
       "index": 2,
@@ -676,20 +682,20 @@ exports[`same 1`] = `
     },
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "yA_20250913221908_10a4": "sum(profit)",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          638735.6290000005,
-          757640.3519999951,
-        ],
         "measureValue": "__MeaValue__3",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 3,
+          "max": 757640.3519999951,
+          "min": 638735.6290000005,
+          "sum": 2147538.924999997,
+        },
       },
       "id": "3",
       "index": 3,

@@ -40,6 +40,9 @@ exports[`type_scatter_columnPercent 1`] = `
       ],
       "label": {
         "enable": false,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -201,6 +204,9 @@ exports[`type_scatter_columnPercent 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -1021,53 +1027,53 @@ exports[`type_scatter_columnPercent 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "me_20250914101727_9d4f": "sum(销售额)",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          123130.028,
-          3718172.451000012,
-        ],
         "measureValue": "__MeaPrimaryValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 18,
+          "max": 3718172.451000012,
+          "min": 123130.028,
+          "sum": 26899372.36000001,
+        },
       },
       "foldInfoList": [
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {
             "me_20250914101727_9d4f": "sum(销售额)",
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            123130.028,
-            3718172.451000012,
-          ],
           "measureValue": "__MeaPrimaryValue__",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 18,
+            "max": 3718172.451000012,
+            "min": 123130.028,
+            "sum": 26899372.36000001,
+          },
         },
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {
             "me_20250914101727_1111": "sum(数量)",
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            251,
-            8704,
-          ],
           "measureValue": "__MeaSecondaryValue__",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 18,
+            "max": 8704,
+            "min": 251,
+            "sum": 61386,
+          },
         },
       ],
       "id": "dualAxis",

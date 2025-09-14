@@ -38,6 +38,9 @@ exports[`basic 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -199,6 +202,9 @@ exports[`basic 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -505,53 +511,53 @@ exports[`basic 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "profit": undefined,
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          10,
-          50,
-        ],
         "measureValue": "__MeaPrimaryValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 5,
+          "max": 50,
+          "min": 10,
+          "sum": 160,
+        },
       },
       "foldInfoList": [
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {
             "profit": undefined,
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            10,
-            50,
-          ],
           "measureValue": "__MeaPrimaryValue__",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 5,
+            "max": 50,
+            "min": 10,
+            "sum": 160,
+          },
         },
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {
             "sales": undefined,
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            200,
-            1000,
-          ],
           "measureValue": "__MeaSecondaryValue__",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 5,
+            "max": 1000,
+            "min": 200,
+            "sum": 3200,
+          },
         },
       ],
       "id": "dualAxis",

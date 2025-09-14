@@ -34,6 +34,9 @@ exports[`3m1d 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -164,6 +167,9 @@ exports[`3m1d 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -524,10 +530,6 @@ exports[`3m1d 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "discount": "discount",
           "profit": "profit",
@@ -535,11 +537,15 @@ exports[`3m1d 1`] = `
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          0.1,
-          100,
-        ],
         "measureValue": "__MeaValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 15,
+          "max": 100,
+          "min": 0.1,
+          "sum": 480.5,
+        },
       },
       "id": "columnParallel",
       "index": 0,

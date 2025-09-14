@@ -38,6 +38,9 @@ exports[`defaultParentIdForDualAxis 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -199,6 +202,9 @@ exports[`defaultParentIdForDualAxis 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -437,51 +443,51 @@ exports[`defaultParentIdForDualAxis 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "co_20250914131915_8e38": "sum(amount)",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          7642,
-          21401,
-        ],
         "measureValue": "__MeaPrimaryValue__0",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 3,
+          "max": 21401,
+          "min": 7642,
+          "sum": 37534,
+        },
       },
       "foldInfoList": [
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {
             "co_20250914131915_8e38": "sum(amount)",
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            7642,
-            21401,
-          ],
           "measureValue": "__MeaPrimaryValue__0",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 3,
+            "max": 21401,
+            "min": 7642,
+            "sum": 37534,
+          },
         },
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {},
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            0,
-            1,
-          ],
           "measureValue": "__MeaSecondaryValue__0",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 0,
+            "max": -Infinity,
+            "min": Infinity,
+            "sum": 0,
+          },
         },
       ],
       "id": "dualAxis-0",
@@ -503,51 +509,51 @@ exports[`defaultParentIdForDualAxis 1`] = `
     },
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "yA_20250914131844_6718": "sum(amount)",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          7642,
-          21401,
-        ],
         "measureValue": "__MeaPrimaryValue__1",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 3,
+          "max": 21401,
+          "min": 7642,
+          "sum": 37534,
+        },
       },
       "foldInfoList": [
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {
             "yA_20250914131844_6718": "sum(amount)",
           },
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            7642,
-            21401,
-          ],
           "measureValue": "__MeaPrimaryValue__1",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 3,
+            "max": 21401,
+            "min": 7642,
+            "sum": 37534,
+          },
         },
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {},
           "measureId": "__MeaId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            0,
-            1,
-          ],
           "measureValue": "__MeaSecondaryValue__1",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 0,
+            "max": -Infinity,
+            "min": Infinity,
+            "sum": 0,
+          },
         },
       ],
       "id": "dualAxis-1",

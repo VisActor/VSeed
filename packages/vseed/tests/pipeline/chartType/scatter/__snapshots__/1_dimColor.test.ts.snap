@@ -34,6 +34,9 @@ exports[`1_dimColor 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -151,6 +154,9 @@ exports[`1_dimColor 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -593,53 +599,53 @@ exports[`1_dimColor 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "profit": "利润",
         },
         "measureId": "__MeaXId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          10,
-          50,
-        ],
         "measureValue": "__MeaXValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 10,
+          "max": 50,
+          "min": 10,
+          "sum": 320,
+        },
       },
       "foldInfoList": [
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {
             "profit": "利润",
           },
           "measureId": "__MeaXId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            10,
-            50,
-          ],
           "measureValue": "__MeaXValue__",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 10,
+            "max": 50,
+            "min": 10,
+            "sum": 320,
+          },
         },
         {
-          "colorRange": [
-            0,
-            1,
-          ],
           "foldMap": {
             "sales": "销售额",
           },
           "measureId": "__MeaYId__",
           "measureName": "__MeaName__",
-          "measureRange": [
-            20,
-            100,
-          ],
           "measureValue": "__MeaYValue__",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 10,
+            "max": 100,
+            "min": 20,
+            "sum": 640,
+          },
         },
       ],
       "id": "scatter",

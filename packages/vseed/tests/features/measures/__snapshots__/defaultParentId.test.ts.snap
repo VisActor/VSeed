@@ -38,6 +38,9 @@ exports[`defaultParentId 1`] = `
         "labelMode": "single",
         "labelPos": "outer",
         "labelWeight": "normal",
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -168,6 +171,9 @@ exports[`defaultParentId 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -379,20 +385,20 @@ exports[`defaultParentId 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "co_20250914131915_8e38": "sum(amount)",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          7642,
-          21401,
-        ],
         "measureValue": "__MeaValue____DefaultParentId__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 3,
+          "max": 21401,
+          "min": 7642,
+          "sum": 37534,
+        },
       },
       "id": "__DefaultParentId__",
       "index": 0,
@@ -413,20 +419,20 @@ exports[`defaultParentId 1`] = `
     },
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "yA_20250914131844_6718": "sum(amount)",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          7642,
-          21401,
-        ],
         "measureValue": "__MeaValue__0",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 3,
+          "max": 21401,
+          "min": 7642,
+          "sum": 37534,
+        },
       },
       "id": "0",
       "index": 1,

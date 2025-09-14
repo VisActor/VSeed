@@ -64,6 +64,9 @@ exports[`null2undefined 1`] = `
       },
       "label": {
         "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
       },
       "legend": {
         "border": true,
@@ -188,6 +191,9 @@ exports[`null2undefined 1`] = `
         },
         "label": {
           "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
         },
         "legend": {
           "border": true,
@@ -511,20 +517,20 @@ exports[`null2undefined 1`] = `
   "datasetReshapeInfo": [
     {
       "foldInfo": {
-        "colorRange": [
-          0,
-          1,
-        ],
         "foldMap": {
           "price": "股价（美元）",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
-        "measureRange": [
-          53.97,
-          94.5,
-        ],
         "measureValue": "__MeaValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 16,
+          "max": 94.5,
+          "min": 53.97,
+          "sum": 1103.73,
+        },
       },
       "id": "line",
       "index": 0,

@@ -1,3 +1,4 @@
+import { clone } from 'remeda'
 import type { AdvancedPipe, Datum } from 'src/types'
 
 /**
@@ -10,7 +11,7 @@ export const defaultMeasures: AdvancedPipe = (advancedVSeed, context) => {
   if (measures && measures.length > 0) {
     return {
       ...advancedVSeed,
-      measures,
+      measures: clone(measures),
     }
   }
 

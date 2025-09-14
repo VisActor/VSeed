@@ -1,26 +1,23 @@
-import type { AdvancedPipe, Column, MeasureGroup, Measures, MeasureTree } from 'src/types'
+import type { AdvancedPipe, AdvancedVSeed, MeasureGroup, Measures, MeasureTree } from 'src/types'
 import { isMeasureTreeWithChildren, isMeasureTreeWithParentId, normalizeMeasureTree } from './utils'
 import { isPivotChart } from 'src/pipeline/utils'
 
-export const buildMeasures: AdvancedPipe = (advancedVSeed, context) => {
-  const { vseed } = context as {
-    vseed: Column
-  }
+export const buildMeasures: AdvancedPipe = (advancedVSeed) => {
   // 带Children的指标树, 不进行任何处理
-  if (isMeasureTreeWithChildren(vseed)) {
-    advancedVSeed.measures = normalizeMeasureTree(vseed.measures as MeasureTree)
+  if (isMeasureTreeWithChildren(advancedVSeed.measures)) {
+    advancedVSeed.measures = normalizeMeasureTree(advancedVSeed.measures as MeasureTree)
     return advancedVSeed
   }
   // 带parentId的指标树, 转换为带children的指标树
-  if (isMeasureTreeWithParentId(vseed)) {
-    advancedVSeed.measures = generateMeasuresByParentId(vseed.measures as Measures)
+  if (isMeasureTreeWithParentId(advancedVSeed.measures)) {
+    advancedVSeed.measures = generateMeasuresByParentId(advancedVSeed.measures as Measures)
     return advancedVSeed
   }
 
   /**
    * 透视图表, 自动生成指标树
    */
-  if (isPivotChart(vseed)) {
+  if (isPivotChart(advancedVSeed as AdvancedVSeed)) {
     advancedVSeed.measures = basicMeasuresToMeasureTree(advancedVSeed.measures as Measures)
   }
 

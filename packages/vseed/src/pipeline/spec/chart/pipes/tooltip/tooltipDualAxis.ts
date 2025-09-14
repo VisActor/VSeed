@@ -1,10 +1,11 @@
 import { isNullish } from 'remeda'
 import { createDimensionContent, createMarkContent } from './tooltip'
 import type { FoldInfo, SpecPipe, Tooltip, UnfoldInfo } from 'src/types'
+import { findAllMeasures } from 'src/pipeline/utils'
 
 export const tooltipPrimary: SpecPipe = (spec, context) => {
   const result = { ...spec }
-  const { advancedVSeed } = context
+  const { advancedVSeed, vseed } = context
   const { measures, datasetReshapeInfo, chartType, locale, dimensions, encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
@@ -19,7 +20,14 @@ export const tooltipPrimary: SpecPipe = (spec, context) => {
       title: {
         visible: false,
       },
-      content: createMarkContent(encoding.tooltip || [], dimensions, measures, locale, foldInfoList[0], unfoldInfo),
+      content: createMarkContent(
+        encoding.tooltip || [],
+        dimensions,
+        findAllMeasures(vseed.measures),
+        locale,
+        foldInfoList[0],
+        unfoldInfo,
+      ),
     },
     dimension: {
       title: {
@@ -33,7 +41,7 @@ export const tooltipPrimary: SpecPipe = (spec, context) => {
 
 export const tooltipSecondary: SpecPipe = (spec, context) => {
   const result = { ...spec }
-  const { advancedVSeed } = context
+  const { advancedVSeed, vseed } = context
   const { measures, datasetReshapeInfo, chartType, locale, dimensions, encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
@@ -51,7 +59,14 @@ export const tooltipSecondary: SpecPipe = (spec, context) => {
       title: {
         visible: false,
       },
-      content: createMarkContent(encoding.tooltip || [], dimensions, measures, locale, foldInfoList[1], unfoldInfo),
+      content: createMarkContent(
+        encoding.tooltip || [],
+        dimensions,
+        findAllMeasures(vseed.measures),
+        locale,
+        foldInfoList[1],
+        unfoldInfo,
+      ),
     },
     dimension: {
       title: {

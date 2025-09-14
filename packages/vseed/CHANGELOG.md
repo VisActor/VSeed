@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.10
+
+### Patch Changes
+
+- feat: remove tooltip in foldMeasures
+
 ## 0.1.9
 
 ### Patch Changes

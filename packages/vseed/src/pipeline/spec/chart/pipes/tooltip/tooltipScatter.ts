@@ -1,12 +1,12 @@
-import { isEmpty } from 'remeda'
-import { autoFormatter, createFormatter, findMeasureById } from '../../../../utils'
+import { isEmpty, uniqueBy } from 'remeda'
+import { autoFormatter, createFormatter, findAllMeasures, findMeasureById } from '../../../../utils'
 import type { Datum, Dimensions, FoldInfo, Locale, Measures, SpecPipe, Tooltip, UnfoldInfo } from 'src/types'
 import { ORIGINAL_DATA } from 'src/dataReshape'
 
 export const tooltipScatter: SpecPipe = (spec, context) => {
   const result = { ...spec }
-  const { advancedVSeed } = context
-  const { measures, datasetReshapeInfo, chartType, locale, dimensions, encoding } = advancedVSeed
+  const { advancedVSeed, vseed } = context
+  const { datasetReshapeInfo, chartType, locale, dimensions, encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
@@ -22,7 +22,13 @@ export const tooltipScatter: SpecPipe = (spec, context) => {
       title: {
         visible: false,
       },
-      content: createMarkContent(encoding.tooltip || [], dimensions, measures, locale, foldInfoList),
+      content: createMarkContent(
+        encoding.tooltip || [],
+        dimensions,
+        findAllMeasures(vseed.measures),
+        locale,
+        foldInfoList,
+      ),
     },
     dimension: {
       visible: false,
@@ -38,8 +44,14 @@ export const createMarkContent = (
   locale: Locale,
   foldInfoList: FoldInfo[],
 ) => {
-  const dims = dimensions.filter((item) => tooltip.includes(item.id))
-  const meas = measures.filter((item) => tooltip.includes(item.id))
+  const dims = uniqueBy(
+    dimensions.filter((item) => tooltip.includes(item.id)),
+    (item) => item.id,
+  )
+  const meas = uniqueBy(
+    measures.filter((item) => tooltip.includes(item.id)),
+    (item) => item.id,
+  )
 
   const dimContent = dims.map((item) => ({
     visible: true,

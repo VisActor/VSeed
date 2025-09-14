@@ -702,8 +702,8 @@ exports[`1_dimColor 1`] = `
       "type",
     ],
     "tooltip": [
-      "profit",
-      "sales",
+      "date",
+      "type",
     ],
     "y": [
       "profit",
@@ -1370,6 +1370,20 @@ exports[`1_dimColor 2`] = `
     },
     "mark": {
       "content": [
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
         {
           "hasShape": true,
           "key": [Function],

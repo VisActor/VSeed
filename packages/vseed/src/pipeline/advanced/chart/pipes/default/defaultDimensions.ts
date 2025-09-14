@@ -1,3 +1,4 @@
+import { clone } from 'remeda'
 import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, Datum, Dimensions, DimensionTree } from 'src/types'
 
@@ -9,7 +10,7 @@ export const defaultDimensions: AdvancedPipe = (advancedVSeed, context) => {
   if (dimensions && dimensions.length > 0) {
     return {
       ...result,
-      dimensions,
+      dimensions: clone(dimensions),
     }
   }
 

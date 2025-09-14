@@ -1,6 +1,7 @@
 import type { IBarChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { BarStyle, Datum, SpecPipe } from 'src/types'
+import { isEmpty, isNullish } from 'remeda'
 
 export const barStyle: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
@@ -23,7 +24,7 @@ export const barStyle: SpecPipe = (spec, context) => {
     },
   } as IBarChartSpec
 
-  if (!barStyle) {
+  if (isNullish(barStyle) || isEmpty(barStyle)) {
     return result
   }
 

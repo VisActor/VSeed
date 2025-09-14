@@ -1,7 +1,7 @@
 import type { IAreaChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { AreaStyle, Datum, SpecPipe } from 'src/types'
-import { groupBy } from 'remeda'
+import { groupBy, isEmpty, isNullish } from 'remeda'
 
 export const areaStyle: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
@@ -16,7 +16,7 @@ export const areaStyle: SpecPipe = (spec, context) => {
     },
   } as IAreaChartSpec
 
-  if (!areaStyle) {
+  if (isNullish(areaStyle) || isEmpty(areaStyle)) {
     return result
   }
 

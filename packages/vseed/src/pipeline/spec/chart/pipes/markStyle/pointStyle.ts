@@ -1,6 +1,7 @@
 import type { IAreaChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { Datum, PointStyle, SpecPipe } from 'src/types'
+import { isEmpty, isNullish } from 'remeda'
 
 export const pointStyle: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
@@ -13,9 +14,10 @@ export const pointStyle: SpecPipe = (spec, context) => {
     },
   } as IAreaChartSpec
 
-  if (!pointStyle) {
+  if (isNullish(pointStyle) || isEmpty(pointStyle)) {
     return result
   }
+
   const pointStyles = (Array.isArray(pointStyle) ? pointStyle : [pointStyle]) as PointStyle[]
 
   const customMap = pointStyles.reduce<object>((result, style, index) => {

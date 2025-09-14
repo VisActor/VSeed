@@ -4,11 +4,11 @@ import type { ISpec } from '@visactor/vchart'
 import { VChart } from '@visactor/vchart'
 import * as VTable from '@visactor/vtable'
 
-import vseed from './columnParallel.json'
+import vseed from './tpye_area_column.json'
 
 VTable.register.chartModule('vchart', VChart)
 
-test('columnParallel', () => {
+test('tpye_area_column', () => {
   registerAll()
   const builder = Builder.from(vseed as VSeed)
   const advanced = builder.buildAdvanced()

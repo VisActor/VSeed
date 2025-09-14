@@ -30,7 +30,13 @@ const Demo = () => {
       labelFontSize: 12,
       labelFontColor: '#6F6F6F',
     },
-    chartType: 'columnParallel',
+    dualChartType: [
+      {
+        primary: 'scatter',
+        secondary: 'columnPercent',
+      },
+    ],
+    chartType: 'dualAxis',
     dataset: [
       {
         di_20250914101717_6266: '公司',
@@ -178,8 +184,18 @@ const Demo = () => {
       {
         id: 'di_20250914101717_6266',
         alias: '细分',
-        encoding: 'xAxis',
+        encoding: 'angle',
         autoFormat: true,
+      },
+      {
+        id: 'di_20250914101717_a7e4',
+        alias: '地区',
+        encoding: 'color',
+        autoFormat: true,
+      },
+      {
+        id: '__MeaName__',
+        encoding: 'color',
       },
     ],
     locale: 'zh-CN',

@@ -45,7 +45,7 @@ const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Enco
   const uniqueDimIds = unique(dimensions.map((d) => d.id))
   encoding.angle = uniqueDimIds.slice(0, 1) // 第一个维度放置于X轴
   encoding.color = uniqueDimIds.slice(onlyMeasureName ? 0 : 1) // 第二个之后的维度用于颜色
-  encoding.detail = uniqueDimIds.slice(onlyMeasureName ? 0 : 1) // 第二个之后的维度用于详情
+  encoding.detail = encoding.color
   encoding.tooltip = uniqueDimIds.filter((d) => d !== MeasureName) // 展示指标名称之外的所有维度
   encoding.label = [] // 默认不展示标签
   encoding.row = [] // 默认不进行行透视
@@ -67,7 +67,7 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) =
   // detail
   encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))
   if (encoding.detail.length === 0) {
-    encoding.detail = [MeasureName]
+    encoding.detail = encoding.color
   }
 
   // tooltip

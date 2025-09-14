@@ -1,5 +1,13 @@
 # @visactor/vseed
 
+## 0.1.11
+
+### Patch Changes
+
+- feat: empty group id for default group
+- feat: add encoding for measures and dimensions
+- fix: empty mark style not working for linear color
+
 ## 0.1.10
 
 ### Patch Changes

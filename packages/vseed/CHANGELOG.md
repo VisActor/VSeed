@@ -1,5 +1,13 @@
 # @visactor/vseed
 
+## 0.1.12
+
+### Patch Changes
+
+- feat: replace null to undefined in config
+- feat: optimize the detail encoding with color, in column\bar\rose
+- feat: add x axis in dual axis
+
 ## 0.1.11
 
 ### Patch Changes

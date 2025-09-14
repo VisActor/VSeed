@@ -49,10 +49,6 @@ export const deleteMeasureTreeByCallback = <T extends MeasureTree>(
         if (callback?.(node, index, parentList)) {
           parentList.splice(index, 1)
         }
-      } else if (isMeasureGroup(node)) {
-        if (!node.children || node.children.length === 0) {
-          parentList.splice(index, 1)
-        }
       }
     }
   }

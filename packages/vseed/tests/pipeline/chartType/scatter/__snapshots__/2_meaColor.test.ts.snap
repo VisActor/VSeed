@@ -680,8 +680,8 @@ exports[`2_meaColor 1`] = `
       "type",
     ],
     "tooltip": [
-      "profit",
-      "sales",
+      "date",
+      "type",
     ],
     "y": [
       "profit",
@@ -1322,6 +1322,20 @@ exports[`2_meaColor 2`] = `
     },
     "mark": {
       "content": [
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
         {
           "hasShape": true,
           "key": [Function],

@@ -41,7 +41,7 @@ export const encodingForFunnel: AdvancedPipe = (advancedVSeed) => {
 const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
   const uniqueDimIds = unique(dimensions.map((d) => d.id))
   encoding.color = uniqueDimIds.slice(0) // 第0个之后的维度用于颜色
-  encoding.detail = uniqueDimIds.slice(0) // 第0个之后的维度用于详情
+  encoding.detail = encoding.color
   encoding.tooltip = uniqueDimIds.filter((d) => d !== MeasureName) // 展示指标名称之外的所有维度
   encoding.label = [] // 默认不展示标签
   encoding.row = [] // 默认不进行行透视

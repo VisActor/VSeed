@@ -17,3 +17,24 @@ export const zEncoding = z.object({
 
   group: z.array(z.string()).nullish().describe('已弃用, 请使用颜色替代'),
 })
+
+/**
+ * @description 仅VSeed内AdvancedVSeed使用此结构, 其余场景请使用DimensionEncodingEnum、MeasureEncodingEnum
+ */
+export const EncodingEnum = {
+  x: 'x',
+  y: 'y',
+  angle: 'angle',
+  radius: 'radius',
+  detail: 'detail',
+
+  color: 'color',
+  size: 'size',
+  tooltip: 'tooltip',
+  label: 'label',
+
+  row: 'row',
+  column: 'column',
+
+  group: 'group',
+} as const

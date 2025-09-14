@@ -1,4 +1,5 @@
 import { pick } from 'remeda'
+import { replaceNullToUndefined } from 'src/pipeline/utils'
 import type { AdvancedPipe, AdvancedVSeed, Config } from 'src/types'
 
 export const dualAxisConfig: AdvancedPipe = (advancedVSeed, context) => {
@@ -8,13 +9,14 @@ export const dualAxisConfig: AdvancedPipe = (advancedVSeed, context) => {
     ...advancedVSeed,
   }
 
-  const config = pick(vseed, [
+  const pickedConfig = pick(vseed, [
     // common
     'backgroundColor',
     'color',
     'label',
     'legend',
     'tooltip',
+    'xAxis',
 
     // only for dualAxis
     'dualChartType',
@@ -22,7 +24,10 @@ export const dualAxisConfig: AdvancedPipe = (advancedVSeed, context) => {
     'primaryYAxis',
     'secondaryYAxis',
     'crosshairLine',
+    'crosshairRect',
   ]) as Config['dualAxis']
+
+  const config = replaceNullToUndefined(pickedConfig)
 
   result.config = {
     ...(result.config || {}),

@@ -22,6 +22,7 @@ import type {
   SortLegend,
   Theme,
   Tooltip,
+  XBandAxis,
   YLinearAxis,
 } from '../../properties'
 
@@ -178,6 +179,11 @@ export interface DualAxis {
    * @description 双轴图的次Y轴配置, 用于定义双轴图的次Y轴, 包括次Y轴的位置, 样式等. 当measures有多组时, secondaryYAxis可以配置为数组, 每项对应一个双轴图的次Y轴.
    */
   secondaryYAxis?: YLinearAxis | YLinearAxis[]
+
+  /**
+   * @description x轴, 类目轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.
+   */
+  xAxis?: XBandAxis
 
   /**
    * @default transparent 默认为透明背景

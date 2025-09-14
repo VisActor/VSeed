@@ -45,7 +45,7 @@ const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Enco
   const dimensionsWithoutMeasureName = dimensions.filter((item) => item.id !== MeasureName)
   const uniqueDimIds = unique(dimensionsWithoutMeasureName.map((d) => d.id))
   encoding.color = uniqueDimIds.slice(0)
-  encoding.detail = uniqueDimIds.slice(0)
+  encoding.detail = encoding.color
   encoding.tooltip = uniqueDimIds.filter((d) => d !== MeasureName) // 展示指标名称之外的所有维度
   encoding.label = [] // 默认不展示标签
   encoding.row = [] // 默认不进行行透视

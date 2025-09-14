@@ -278,7 +278,7 @@ exports[`same 1`] = `
       {
         "__Dim_ColorId__": "家具",
         "__Dim_Color__": "家具",
-        "__Dim_Detail__": "min(amount)",
+        "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
         "__MeaId__": "pr_20250913220806_eacd",
         "__MeaName__": "min(amount)",
@@ -301,7 +301,7 @@ exports[`same 1`] = `
       {
         "__Dim_ColorId__": "办公用品",
         "__Dim_Color__": "办公用品",
-        "__Dim_Detail__": "min(amount)",
+        "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
         "__MeaId__": "pr_20250913220806_eacd",
         "__MeaName__": "min(amount)",
@@ -324,7 +324,7 @@ exports[`same 1`] = `
       {
         "__Dim_ColorId__": "技术",
         "__Dim_Color__": "技术",
-        "__Dim_Detail__": "min(amount)",
+        "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
         "__MeaId__": "pr_20250913220806_eacd",
         "__MeaName__": "min(amount)",
@@ -349,7 +349,7 @@ exports[`same 1`] = `
       {
         "__Dim_ColorId__": "家具",
         "__Dim_Color__": "家具",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
         "__MeaId__": "yA_20250913221832_0230",
         "__MeaName__": "sum(amount)",
@@ -372,7 +372,7 @@ exports[`same 1`] = `
       {
         "__Dim_ColorId__": "办公用品",
         "__Dim_Color__": "办公用品",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
         "__MeaId__": "yA_20250913221832_0230",
         "__MeaName__": "sum(amount)",
@@ -395,7 +395,7 @@ exports[`same 1`] = `
       {
         "__Dim_ColorId__": "技术",
         "__Dim_Color__": "技术",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
         "__MeaId__": "yA_20250913221832_0230",
         "__MeaName__": "sum(amount)",
@@ -420,7 +420,7 @@ exports[`same 1`] = `
       {
         "__Dim_ColorId__": "家具",
         "__Dim_Color__": "家具",
-        "__Dim_Detail__": "sum(discount)",
+        "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
         "__MeaId__": "yA_20250913221852_0d8a",
         "__MeaName__": "sum(discount)",
@@ -443,7 +443,7 @@ exports[`same 1`] = `
       {
         "__Dim_ColorId__": "办公用品",
         "__Dim_Color__": "办公用品",
-        "__Dim_Detail__": "sum(discount)",
+        "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
         "__MeaId__": "yA_20250913221852_0d8a",
         "__MeaName__": "sum(discount)",
@@ -466,7 +466,7 @@ exports[`same 1`] = `
       {
         "__Dim_ColorId__": "技术",
         "__Dim_Color__": "技术",
-        "__Dim_Detail__": "sum(discount)",
+        "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
         "__MeaId__": "yA_20250913221852_0d8a",
         "__MeaName__": "sum(discount)",
@@ -491,7 +491,7 @@ exports[`same 1`] = `
       {
         "__Dim_ColorId__": "家具",
         "__Dim_Color__": "家具",
-        "__Dim_Detail__": "sum(profit)",
+        "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
         "__MeaId__": "yA_20250913221908_10a4",
         "__MeaName__": "sum(profit)",
@@ -514,7 +514,7 @@ exports[`same 1`] = `
       {
         "__Dim_ColorId__": "办公用品",
         "__Dim_Color__": "办公用品",
-        "__Dim_Detail__": "sum(profit)",
+        "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
         "__MeaId__": "yA_20250913221908_10a4",
         "__MeaName__": "sum(profit)",
@@ -537,7 +537,7 @@ exports[`same 1`] = `
       {
         "__Dim_ColorId__": "技术",
         "__Dim_Color__": "技术",
-        "__Dim_Detail__": "sum(profit)",
+        "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
         "__MeaId__": "yA_20250913221908_10a4",
         "__MeaName__": "sum(profit)",
@@ -737,7 +737,7 @@ exports[`same 1`] = `
       "co_20250913222058_0fe2",
     ],
     "detail": [
-      "__MeaName__",
+      "co_20250913222058_0fe2",
     ],
     "tooltip": [
       "xA_20250913220803_3339",
@@ -2021,7 +2021,7 @@ exports[`same 2`] = `
       {
         "__Dim_ColorId__": "家具",
         "__Dim_Color__": "家具",
-        "__Dim_Detail__": "min(amount)",
+        "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
         "__MeaId__": "pr_20250913220806_eacd",
         "__MeaName__": "min(amount)",
@@ -2044,7 +2044,7 @@ exports[`same 2`] = `
       {
         "__Dim_ColorId__": "办公用品",
         "__Dim_Color__": "办公用品",
-        "__Dim_Detail__": "min(amount)",
+        "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
         "__MeaId__": "pr_20250913220806_eacd",
         "__MeaName__": "min(amount)",
@@ -2067,7 +2067,7 @@ exports[`same 2`] = `
       {
         "__Dim_ColorId__": "技术",
         "__Dim_Color__": "技术",
-        "__Dim_Detail__": "min(amount)",
+        "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
         "__MeaId__": "pr_20250913220806_eacd",
         "__MeaName__": "min(amount)",
@@ -2092,7 +2092,7 @@ exports[`same 2`] = `
       {
         "__Dim_ColorId__": "家具",
         "__Dim_Color__": "家具",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
         "__MeaId__": "yA_20250913221832_0230",
         "__MeaName__": "sum(amount)",
@@ -2115,7 +2115,7 @@ exports[`same 2`] = `
       {
         "__Dim_ColorId__": "办公用品",
         "__Dim_Color__": "办公用品",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
         "__MeaId__": "yA_20250913221832_0230",
         "__MeaName__": "sum(amount)",
@@ -2138,7 +2138,7 @@ exports[`same 2`] = `
       {
         "__Dim_ColorId__": "技术",
         "__Dim_Color__": "技术",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
         "__MeaId__": "yA_20250913221832_0230",
         "__MeaName__": "sum(amount)",
@@ -2163,7 +2163,7 @@ exports[`same 2`] = `
       {
         "__Dim_ColorId__": "家具",
         "__Dim_Color__": "家具",
-        "__Dim_Detail__": "sum(discount)",
+        "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
         "__MeaId__": "yA_20250913221852_0d8a",
         "__MeaName__": "sum(discount)",
@@ -2186,7 +2186,7 @@ exports[`same 2`] = `
       {
         "__Dim_ColorId__": "办公用品",
         "__Dim_Color__": "办公用品",
-        "__Dim_Detail__": "sum(discount)",
+        "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
         "__MeaId__": "yA_20250913221852_0d8a",
         "__MeaName__": "sum(discount)",
@@ -2209,7 +2209,7 @@ exports[`same 2`] = `
       {
         "__Dim_ColorId__": "技术",
         "__Dim_Color__": "技术",
-        "__Dim_Detail__": "sum(discount)",
+        "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
         "__MeaId__": "yA_20250913221852_0d8a",
         "__MeaName__": "sum(discount)",
@@ -2234,7 +2234,7 @@ exports[`same 2`] = `
       {
         "__Dim_ColorId__": "家具",
         "__Dim_Color__": "家具",
-        "__Dim_Detail__": "sum(profit)",
+        "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
         "__MeaId__": "yA_20250913221908_10a4",
         "__MeaName__": "sum(profit)",
@@ -2257,7 +2257,7 @@ exports[`same 2`] = `
       {
         "__Dim_ColorId__": "办公用品",
         "__Dim_Color__": "办公用品",
-        "__Dim_Detail__": "sum(profit)",
+        "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
         "__MeaId__": "yA_20250913221908_10a4",
         "__MeaName__": "sum(profit)",
@@ -2280,7 +2280,7 @@ exports[`same 2`] = `
       {
         "__Dim_ColorId__": "技术",
         "__Dim_Color__": "技术",
-        "__Dim_Detail__": "sum(profit)",
+        "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
         "__MeaId__": "yA_20250913221908_10a4",
         "__MeaName__": "sum(profit)",

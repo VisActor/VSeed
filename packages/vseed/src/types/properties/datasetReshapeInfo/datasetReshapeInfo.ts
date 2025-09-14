@@ -1,8 +1,13 @@
 export type FoldInfo = {
   foldMap: Record<string, string | undefined>
-  colorRange: [number, number]
-  measureRange: [number, number]
-
+  statistics: {
+    min: number
+    max: number
+    sum: number
+    count: number
+    colorMin: number
+    colorMax: number
+  }
   measureId: string
   measureName: string
   measureValue: string

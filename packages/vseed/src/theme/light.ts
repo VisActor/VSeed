@@ -134,6 +134,9 @@ export const lightTheme = (): CustomThemeConfig => {
     },
     label: {
       enable: true,
+      wrap: true,
+      showValue: true,
+      showValuePercent: false,
     },
     tooltip: {
       enable: true,
@@ -269,6 +272,10 @@ export const lightTheme = (): CustomThemeConfig => {
       // polar
       pie: {
         ...baseConfig,
+        label: {
+          ...baseConfig.label,
+          showValuePercent: true,
+        },
       },
       donut: {
         ...baseConfig,
@@ -278,9 +285,17 @@ export const lightTheme = (): CustomThemeConfig => {
       },
       rose: {
         ...baseConfig,
+        label: {
+          ...baseConfig.label,
+          showValuePercent: true,
+        },
       },
       roseParallel: {
         ...baseConfig,
+        label: {
+          ...baseConfig.label,
+          showValuePercent: true,
+        },
       },
       // other
       funnel: {

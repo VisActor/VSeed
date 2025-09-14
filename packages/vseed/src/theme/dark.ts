@@ -132,6 +132,9 @@ export const darkTheme = (): CustomThemeConfig => {
     },
     label: {
       enable: true,
+      wrap: true,
+      showValue: true,
+      showValuePercent: false,
     },
     tooltip: {
       enable: true,
@@ -275,6 +278,10 @@ export const darkTheme = (): CustomThemeConfig => {
       // polar
       pie: {
         ...baseConfig,
+        label: {
+          ...baseConfig.label,
+          showValuePercent: true,
+        },
       },
       donut: {
         ...baseConfig,
@@ -284,9 +291,17 @@ export const darkTheme = (): CustomThemeConfig => {
       },
       rose: {
         ...baseConfig,
+        label: {
+          ...baseConfig.label,
+          showValuePercent: true,
+        },
       },
       roseParallel: {
         ...baseConfig,
+        label: {
+          ...baseConfig.label,
+          showValuePercent: true,
+        },
       },
       // other
       funnel: {

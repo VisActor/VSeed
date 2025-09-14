@@ -2,8 +2,14 @@ import { z } from 'zod'
 
 export const zFoldInfo = z.object({
   foldMap: z.record(z.string(), z.string().or(z.undefined())),
-  colorRange: z.array(z.number()),
-  measureRange: z.array(z.number()),
+  statistics: z.object({
+    min: z.number(),
+    max: z.number(),
+    sum: z.number(),
+    count: z.number(),
+    colorMin: z.number(),
+    colorMax: z.number(),
+  }),
   measureId: z.string(),
   measureName: z.string(),
   measureValue: z.string(),

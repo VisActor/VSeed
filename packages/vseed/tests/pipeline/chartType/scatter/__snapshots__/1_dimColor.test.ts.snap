@@ -1410,3 +1410,42 @@ exports[`1_dimColor 2`] = `
   "yField": "__MeaYValue__",
 }
 `;
+
+exports[`1_dimColor 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "A": "A",
+    "B": "B",
+    "C": "C",
+    "D": "D",
+    "E": "E",
+  },
+  "colorItems": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

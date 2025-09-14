@@ -24,7 +24,7 @@
     "lint": "eslint .",
     "test": "vitest run",
     "rstest": "rstest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage && open coverage/index.html"
   },
   "dependencies": {
     "remeda": "2.28.0",

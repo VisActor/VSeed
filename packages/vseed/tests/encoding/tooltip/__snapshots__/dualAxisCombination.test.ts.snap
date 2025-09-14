@@ -2051,3 +2051,38 @@ exports[`dualAxisCombination 2`] = `
   "widthMode": "adaptive",
 }
 `;
+
+exports[`dualAxisCombination 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "利润-profit": "利润",
+    "销售额-sales": "销售额",
+  },
+  "colorItems": [
+    "利润",
+    "销售额",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

@@ -1175,3 +1175,40 @@ exports[`3m1d 2`] = `
   "yField": "__MeaValue__",
 }
 `;
+
+exports[`3m1d 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "discount-discount": "discount",
+    "profit-profit": "profit",
+    "sales-sales": "sales",
+  },
+  "colorItems": [
+    "profit",
+    "sales",
+    "discount",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

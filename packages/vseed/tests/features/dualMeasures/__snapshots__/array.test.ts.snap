@@ -2522,3 +2522,42 @@ exports[`array 2`] = `
   "widthMode": "adaptive",
 }
 `;
+
+exports[`array 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "profit-profit": "profit",
+    "ratio-ratio": "ratio",
+    "returnRatio-returnRatio": "returnRatio",
+    "sales-sales": "sales",
+  },
+  "colorItems": [
+    "profit",
+    "sales",
+    "ratio",
+    "returnRatio",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

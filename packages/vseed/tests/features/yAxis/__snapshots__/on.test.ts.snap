@@ -2511,3 +2511,38 @@ exports[`on 2`] = `
   "yField": "__MeaValue__",
 }
 `;
+
+exports[`on 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "profit-profit": "profit",
+    "sales-sales": "sales",
+  },
+  "colorItems": [
+    "profit",
+    "sales",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

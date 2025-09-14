@@ -24,7 +24,9 @@ export const buildAdvanced = (builder: Builder): AdvancedVSeed | null => {
   }
 
   try {
-    return execPipeline<AdvancedVSeed, AdvancedPipelineContext>(pipeline, context)
+    const advancedVSeed = execPipeline<AdvancedVSeed, AdvancedPipelineContext>(pipeline, context)
+    builder.advancedVSeed = advancedVSeed
+    return advancedVSeed
   } catch (e) {
     console.error(e)
     throw new Error(`buildAdvanced error, see error info in console`)

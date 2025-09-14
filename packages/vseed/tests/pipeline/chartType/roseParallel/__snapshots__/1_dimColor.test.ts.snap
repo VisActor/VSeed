@@ -1190,3 +1190,36 @@ exports[`1_dimColor 2`] = `
   "valueField": "__MeaValue__",
 }
 `;
+
+exports[`1_dimColor 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "利润": "利润",
+    "销售额": "销售额",
+  },
+  "colorItems": [
+    "利润",
+    "销售额",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

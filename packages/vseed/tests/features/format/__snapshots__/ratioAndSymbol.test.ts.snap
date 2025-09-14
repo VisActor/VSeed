@@ -1129,3 +1129,52 @@ exports[`ratioAndSymbol 2`] = `
   "yField": "__MeaValue__",
 }
 `;
+
+exports[`ratioAndSymbol 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "num1-num1": "num1",
+    "num2-num2": "num2",
+    "num3-num3": "num3",
+    "num4-num4": "num4",
+    "num5-num5": "num5",
+    "num6-num6": "num6",
+    "num7-num7": "num7",
+    "num8-num8": "num8",
+    "num9-num9": "num9",
+  },
+  "colorItems": [
+    "num1",
+    "num2",
+    "num3",
+    "num4",
+    "num5",
+    "num6",
+    "num7",
+    "num8",
+    "num9",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

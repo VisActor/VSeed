@@ -997,3 +997,42 @@ exports[`combinationScatter 2`] = `
   "yField": "__MeaYValue__",
 }
 `;
+
+exports[`combinationScatter 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "2019": "2019",
+    "2020": "2020",
+    "2021": "2021",
+    "2022": "2022",
+    "2023": "2023",
+  },
+  "colorItems": [
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

@@ -8,7 +8,7 @@ VSeed所有图表类型的文档, 都在 [`packages/vseed/src/types/chartType`](
 
 ## 自动构建文档
 
-```bash title="apps/website/scripts/generateDocs.js"
+```bash title="source: scripts/build-docs.js"
 pnpm run build:docs
 ```
 

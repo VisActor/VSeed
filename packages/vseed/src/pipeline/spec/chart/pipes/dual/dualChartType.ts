@@ -45,6 +45,7 @@ export const dualChartTypePrimary: SpecPipe = (spec, context) => {
     case 'columnPercent': {
       result.type = 'bar'
       result.percent = true
+      result.zIndex = DUAL_AXIS_CHART_COLUMN_Z_INDEX
       break
     }
     case 'area': {
@@ -111,6 +112,7 @@ export const dualChartTypeSecondary: SpecPipe = (spec, context) => {
     case 'columnPercent': {
       result.type = 'bar'
       result.percent = true
+      result.zIndex = DUAL_AXIS_CHART_COLUMN_Z_INDEX
       break
     }
     case 'area': {

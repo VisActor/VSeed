@@ -1082,3 +1082,54 @@ exports[`1m3d 2`] = `
   "yField": "__MeaValue__",
 }
 `;
+
+exports[`1m3d 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "east-A-profit-profit": "east-A-profit",
+    "east-B-profit-profit": "east-B-profit",
+    "east-C-profit-profit": "east-C-profit",
+    "east-D-profit-profit": "east-D-profit",
+    "east-E-profit-profit": "east-E-profit",
+    "north of east-A-profit-profit": "north of east-A-profit",
+    "north of east-B-profit-profit": "north of east-B-profit",
+    "north of east-C-profit-profit": "north of east-C-profit",
+    "north of east-D-profit-profit": "north of east-D-profit",
+    "north of east-E-profit-profit": "north of east-E-profit",
+  },
+  "colorItems": [
+    "east-A-profit",
+    "east-B-profit",
+    "east-C-profit",
+    "east-D-profit",
+    "east-E-profit",
+    "north of east-A-profit",
+    "north of east-B-profit",
+    "north of east-C-profit",
+    "north of east-D-profit",
+    "north of east-E-profit",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

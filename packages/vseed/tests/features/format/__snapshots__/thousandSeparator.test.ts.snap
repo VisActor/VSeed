@@ -749,3 +749,40 @@ exports[`thousandSeparator 2`] = `
   "yField": "__MeaValue__",
 }
 `;
+
+exports[`thousandSeparator 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "count-count": "count",
+    "profit-profit": "profit",
+    "sales-sales": "sales",
+  },
+  "colorItems": [
+    "profit",
+    "sales",
+    "count",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

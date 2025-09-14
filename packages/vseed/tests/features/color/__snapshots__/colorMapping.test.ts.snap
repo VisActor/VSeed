@@ -1426,3 +1426,54 @@ exports[`colorMapping 2`] = `
   "yField": "__MeaValue__",
 }
 `;
+
+exports[`colorMapping 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "A-利润-profit": "A-利润",
+    "A-销售额-sales": "A-销售额",
+    "B-利润-profit": "B-利润",
+    "B-销售额-sales": "B-销售额",
+    "C-利润-profit": "C-利润",
+    "C-销售额-sales": "C-销售额",
+    "D-利润-profit": "D-利润",
+    "D-销售额-sales": "D-销售额",
+    "E-利润-profit": "E-利润",
+    "E-销售额-sales": "E-销售额",
+  },
+  "colorItems": [
+    "A-利润",
+    "A-销售额",
+    "B-利润",
+    "B-销售额",
+    "C-利润",
+    "C-销售额",
+    "D-利润",
+    "D-销售额",
+    "E-利润",
+    "E-销售额",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

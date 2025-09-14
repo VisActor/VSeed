@@ -856,3 +856,30 @@ exports[`onlyMeasures 2`] = `
   "yField": "__MeaYValue__",
 }
 `;
+
+exports[`onlyMeasures 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {},
+  "colorItems": [],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

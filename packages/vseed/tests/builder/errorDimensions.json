@@ -1,0 +1,10 @@
+{
+  "chartType": "line",
+  "dataset": [
+    {
+      "a": "1",
+      "b": 2
+    }
+  ],
+  "dimensions": {}
+}

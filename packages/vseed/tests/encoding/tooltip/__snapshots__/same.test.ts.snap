@@ -2414,3 +2414,40 @@ exports[`same 2`] = `
   "widthMode": "adaptive",
 }
 `;
+
+exports[`same 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "办公用品": "办公用品",
+    "家具": "家具",
+    "技术": "技术",
+  },
+  "colorItems": [
+    "家具",
+    "办公用品",
+    "技术",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

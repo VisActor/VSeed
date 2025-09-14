@@ -2316,3 +2316,42 @@ exports[`enUS 2`] = `
   "widthMode": "adaptive",
 }
 `;
+
+exports[`enUS 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "利润-profit": "利润",
+    "回报率-rateOfReturn": "回报率",
+    "折扣-discount": "折扣",
+    "销售额-sales": "销售额",
+  },
+  "colorItems": [
+    "利润",
+    "销售额",
+    "折扣",
+    "回报率",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

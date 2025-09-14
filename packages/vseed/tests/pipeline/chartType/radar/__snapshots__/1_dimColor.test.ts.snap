@@ -1184,3 +1184,37 @@ exports[`1_dimColor 2`] = `
   "type": "radar",
 }
 `;
+
+exports[`1_dimColor 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "2019": "2019",
+    "2020": "2020",
+  },
+  "colorItems": [
+    "2019",
+    "2020",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

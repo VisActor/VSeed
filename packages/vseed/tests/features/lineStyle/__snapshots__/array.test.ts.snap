@@ -1177,3 +1177,40 @@ exports[`array 2`] = `
   "yField": "__MeaValue__",
 }
 `;
+
+exports[`array 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "利润-profit": "利润",
+    "数量-count": "数量",
+    "销售额-sales": "销售额",
+  },
+  "colorItems": [
+    "利润",
+    "销售额",
+    "数量",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

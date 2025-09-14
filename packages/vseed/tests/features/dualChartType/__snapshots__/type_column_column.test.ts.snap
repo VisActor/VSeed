@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`columnParallel 1`] = `
+exports[`type_column_column 1`] = `
 {
   "annotation": {},
   "chartType": "dualAxis",
@@ -34,8 +34,8 @@ exports[`columnParallel 1`] = `
       },
       "dualChartType": [
         {
-          "primary": "columnParallel",
-          "secondary": "line",
+          "primary": "column",
+          "secondary": "column",
         },
       ],
       "label": {
@@ -1193,7 +1193,7 @@ exports[`columnParallel 1`] = `
 }
 `;
 
-exports[`columnParallel 2`] = `
+exports[`type_column_column 2`] = `
 {
   "axes": [
     {
@@ -2380,12 +2380,70 @@ exports[`columnParallel 2`] = `
         },
         "visible": true,
       },
-      "type": "line",
-      "xField": "__Dim_X__",
+      "type": "bar",
+      "xField": [
+        "__Dim_X__",
+        "__Dim_Detail__",
+      ],
       "yField": "__MeaSecondaryValue__",
-      "zIndex": 1001,
+      "zIndex": 1000,
     },
   ],
   "type": "common",
+}
+`;
+
+exports[`type_column_column 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "东北-sum(数量)-me_20250914101727_1111": "东北-sum(数量)",
+    "东北-sum(销售额)": "东北-sum(销售额)",
+    "中南-sum(数量)-me_20250914101727_1111": "中南-sum(数量)",
+    "中南-sum(销售额)": "中南-sum(销售额)",
+    "华东-sum(数量)-me_20250914101727_1111": "华东-sum(数量)",
+    "华东-sum(销售额)": "华东-sum(销售额)",
+    "华北-sum(数量)-me_20250914101727_1111": "华北-sum(数量)",
+    "华北-sum(销售额)": "华北-sum(销售额)",
+    "西北-sum(数量)-me_20250914101727_1111": "西北-sum(数量)",
+    "西北-sum(销售额)": "西北-sum(销售额)",
+    "西南-sum(数量)-me_20250914101727_1111": "西南-sum(数量)",
+    "西南-sum(销售额)": "西南-sum(销售额)",
+  },
+  "colorItems": [
+    "中南-sum(销售额)",
+    "东北-sum(销售额)",
+    "西南-sum(销售额)",
+    "西北-sum(销售额)",
+    "华东-sum(销售额)",
+    "华北-sum(销售额)",
+    "中南-sum(数量)",
+    "东北-sum(数量)",
+    "西南-sum(数量)",
+    "西北-sum(数量)",
+    "华东-sum(数量)",
+    "华北-sum(数量)",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
 }
 `;

@@ -1,0 +1,1260 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`null2undefined 1`] = `
+{
+  "annotation": {
+    "annotationArea": {
+      "selector": {
+        "field": "date",
+        "operator": "=",
+        "value": "2024-08-11",
+      },
+      "text": "数据来源：Yahoo Finance",
+      "textAlign": "center",
+      "textBaseline": "top",
+      "textColor": "black",
+      "textFontSize": 12,
+      "textPosition": "bottom",
+    },
+    "annotationPoint": [
+      {
+        "selector": {
+          "field": "date",
+          "operator": "=",
+          "value": "2024-02-15",
+        },
+        "text": "高点",
+        "textAlign": "right",
+        "textBaseline": "top",
+      },
+      {
+        "selector": {
+          "field": "date",
+          "operator": "=",
+          "value": "2024-02-29",
+        },
+        "text": "低点",
+        "textAlign": "right",
+        "textBaseline": "top",
+      },
+    ],
+  },
+  "chartType": "line",
+  "config": {
+    "line": {
+      "backgroundColor": "transparent",
+      "color": {
+        "colorMapping": {
+          "price": "#FF5733",
+        },
+        "colorScheme": [
+          "#0000FF",
+        ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
+      },
+      "crosshairLine": {
+        "labelBackgroundColor": "#364159",
+        "labelColor": "#ffffff",
+        "labelVisible": true,
+        "lineColor": "#3641594d",
+        "visible": true,
+      },
+      "label": {
+        "enable": true,
+      },
+      "legend": {
+        "border": true,
+        "enable": true,
+        "labelFontColor": "#646A73",
+        "labelFontSize": 12,
+        "labelFontWeight": 400,
+        "maxSize": 1,
+        "position": "rt",
+        "shapeType": "rectRound",
+      },
+      "tooltip": {
+        "enable": true,
+      },
+      "xAxis": {
+        "grid": {
+          "gridColor": "#36415926",
+          "gridWidth": 0.5,
+          "visible": false,
+        },
+        "label": {
+          "labelAngle": 0,
+          "labelColor": "#797B85",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "visible": true,
+        },
+        "labelAutoHide": true,
+        "labelAutoHideGap": 4,
+        "labelAutoLimit": true,
+        "labelAutoLimitLength": 80,
+        "labelAutoRotate": false,
+        "labelAutoRotateAngleRange": [
+          0,
+          -45,
+          -90,
+        ],
+        "line": {
+          "lineColor": "#3641594d",
+          "lineWidth": 1,
+          "visible": true,
+        },
+        "tick": {
+          "tickColor": "#3641594d",
+          "tickInside": false,
+          "tickSize": 4,
+          "visible": false,
+        },
+        "title": {
+          "titleColor": "#646A73",
+          "titleFontSize": 12,
+          "titleFontWeight": 400,
+          "titleText": "",
+          "visible": false,
+        },
+      },
+      "yAxis": {
+        "grid": {
+          "gridColor": "#36415926",
+          "gridWidth": 0.5,
+          "visible": true,
+        },
+        "inverse": false,
+        "label": {
+          "labelAngle": undefined,
+          "labelColor": undefined,
+          "labelFontSize": 16,
+          "labelFontWeight": undefined,
+          "visible": true,
+        },
+        "line": {
+          "lineColor": "#3641594d",
+          "lineWidth": 1,
+          "visible": false,
+        },
+        "nice": true,
+        "tick": {
+          "tickColor": "#3641594d",
+          "tickInside": false,
+          "tickSize": 4,
+          "visible": false,
+        },
+        "title": {
+          "titleColor": "#646A73",
+          "titleFontSize": 12,
+          "titleFontWeight": 400,
+          "titleText": "测试一下",
+          "visible": true,
+        },
+        "zero": true,
+      },
+    },
+  },
+  "customTheme": {
+    "config": {
+      "line": {
+        "backgroundColor": "transparent",
+        "color": {
+          "colorScheme": [
+            "#8D72F6",
+            "#5766EC",
+            "#66A3FE",
+            "#51D5E6",
+            "#4EC0B3",
+            "#F9DF90",
+            "#F9AD71",
+            "#ED8888",
+            "#E9A0C3",
+            "#D77DD3",
+          ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
+          ],
+        },
+        "crosshairLine": {
+          "labelBackgroundColor": "#364159",
+          "labelColor": "#ffffff",
+          "labelVisible": true,
+          "lineColor": "#3641594d",
+          "visible": true,
+        },
+        "label": {
+          "enable": true,
+        },
+        "legend": {
+          "border": true,
+          "enable": true,
+          "labelFontColor": "#646A73",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "maxSize": 1,
+          "position": "rt",
+          "shapeType": "rectRound",
+        },
+        "tooltip": {
+          "enable": true,
+        },
+        "xAxis": {
+          "grid": {
+            "gridColor": "#36415926",
+            "gridWidth": 0.5,
+            "visible": false,
+          },
+          "label": {
+            "labelAngle": 0,
+            "labelColor": "#797B85",
+            "labelFontSize": 12,
+            "labelFontWeight": 400,
+            "visible": true,
+          },
+          "labelAutoHide": true,
+          "labelAutoHideGap": 4,
+          "labelAutoLimit": true,
+          "labelAutoLimitLength": 80,
+          "labelAutoRotate": false,
+          "labelAutoRotateAngleRange": [
+            0,
+            -45,
+            -90,
+          ],
+          "line": {
+            "lineColor": "#3641594d",
+            "lineWidth": 1,
+            "visible": true,
+          },
+          "tick": {
+            "tickColor": "#3641594d",
+            "tickInside": false,
+            "tickSize": 4,
+            "visible": false,
+          },
+          "title": {
+            "titleColor": "#646A73",
+            "titleFontSize": 12,
+            "titleFontWeight": 400,
+            "titleText": "",
+            "visible": false,
+          },
+        },
+        "yAxis": {
+          "grid": {
+            "gridColor": "#36415926",
+            "gridWidth": 0.5,
+            "visible": true,
+          },
+          "inverse": false,
+          "label": {
+            "labelAngle": 0,
+            "labelColor": "#797B85",
+            "labelFontSize": 12,
+            "labelFontWeight": 400,
+            "visible": true,
+          },
+          "line": {
+            "lineColor": "#3641594d",
+            "lineWidth": 1,
+            "visible": false,
+          },
+          "nice": true,
+          "tick": {
+            "tickColor": "#3641594d",
+            "tickInside": false,
+            "tickSize": 4,
+            "visible": false,
+          },
+          "title": {
+            "titleColor": "#646A73",
+            "titleFontSize": 12,
+            "titleFontWeight": 400,
+            "titleText": "",
+            "visible": false,
+          },
+          "zero": true,
+        },
+      },
+    },
+  },
+  "dataset": [
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-01-02",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 89,
+      "__OriginalData__": {
+        "date": "2024-01-02",
+        "price": 89,
+      },
+      "date": "2024-01-02",
+      "price": 89,
+    },
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-01-16",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 84.79,
+      "__OriginalData__": {
+        "date": "2024-01-16",
+        "price": 84.79,
+      },
+      "date": "2024-01-16",
+      "price": 84.79,
+    },
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-02-01",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 88.65,
+      "__OriginalData__": {
+        "date": "2024-02-01",
+        "price": 88.65,
+      },
+      "date": "2024-02-01",
+      "price": 88.65,
+    },
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-02-15",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 94.5,
+      "__OriginalData__": {
+        "date": "2024-02-15",
+        "price": 94.5,
+      },
+      "date": "2024-02-15",
+      "price": 94.5,
+    },
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-02-29",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 63.18,
+      "__OriginalData__": {
+        "date": "2024-02-29",
+        "price": 63.18,
+      },
+      "date": "2024-02-29",
+      "price": 63.18,
+    },
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-03-15",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 63.99,
+      "__OriginalData__": {
+        "date": "2024-03-15",
+        "price": 63.99,
+      },
+      "date": "2024-03-15",
+      "price": 63.99,
+    },
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-04-01",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 64.19,
+      "__OriginalData__": {
+        "date": "2024-04-01",
+        "price": 64.19,
+      },
+      "date": "2024-04-01",
+      "price": 64.19,
+    },
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-04-15",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 58.94,
+      "__OriginalData__": {
+        "date": "2024-04-15",
+        "price": 58.94,
+      },
+      "date": "2024-04-15",
+      "price": 58.94,
+    },
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-05-01",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 59.13,
+      "__OriginalData__": {
+        "date": "2024-05-01",
+        "price": 59.13,
+      },
+      "date": "2024-05-01",
+      "price": 59.13,
+    },
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-05-15",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 62.27,
+      "__OriginalData__": {
+        "date": "2024-05-15",
+        "price": 62.27,
+      },
+      "date": "2024-05-15",
+      "price": 62.27,
+    },
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-06-03",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 57.94,
+      "__OriginalData__": {
+        "date": "2024-06-03",
+        "price": 57.94,
+      },
+      "date": "2024-06-03",
+      "price": 57.94,
+    },
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-06-17",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 53.97,
+      "__OriginalData__": {
+        "date": "2024-06-17",
+        "price": 53.97,
+      },
+      "date": "2024-06-17",
+      "price": 53.97,
+    },
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-07-01",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 62.47,
+      "__OriginalData__": {
+        "date": "2024-07-01",
+        "price": 62.47,
+      },
+      "date": "2024-07-01",
+      "price": 62.47,
+    },
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-07-15",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 62.44,
+      "__OriginalData__": {
+        "date": "2024-07-15",
+        "price": 62.44,
+      },
+      "date": "2024-07-15",
+      "price": 62.44,
+    },
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-08-01",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 55.33,
+      "__OriginalData__": {
+        "date": "2024-08-01",
+        "price": 55.33,
+      },
+      "date": "2024-08-01",
+      "price": 55.33,
+    },
+    {
+      "__Dim_ColorId__": "股价（美元）-price",
+      "__Dim_Color__": "股价（美元）",
+      "__Dim_X__": "2024-08-11",
+      "__MeaId__": "price",
+      "__MeaName__": "股价（美元）",
+      "__MeaValue__": 82.94,
+      "__OriginalData__": {
+        "date": "2024-08-11",
+        "price": 82.94,
+      },
+      "date": "2024-08-11",
+      "price": 82.94,
+    },
+  ],
+  "datasetReshapeInfo": [
+    {
+      "foldInfo": {
+        "colorRange": [
+          0,
+          1,
+        ],
+        "foldMap": {
+          "price": "股价（美元）",
+        },
+        "measureId": "__MeaId__",
+        "measureName": "__MeaName__",
+        "measureRange": [
+          53.97,
+          94.5,
+        ],
+        "measureValue": "__MeaValue__",
+      },
+      "id": "line",
+      "index": 0,
+      "unfoldInfo": {
+        "colorIdMap": {
+          "股价（美元）-price": "股价（美元）",
+        },
+        "colorItems": [
+          "股价（美元）-price",
+        ],
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
+      },
+    },
+  ],
+  "dimensions": [
+    {
+      "alias": "日期",
+      "id": "date",
+    },
+    {
+      "alias": "指标名称",
+      "id": "__MeaName__",
+    },
+  ],
+  "encoding": {
+    "color": [
+      "__MeaName__",
+    ],
+    "column": [],
+    "detail": [],
+    "label": [],
+    "row": [],
+    "tooltip": [
+      "date",
+    ],
+    "x": [
+      "date",
+    ],
+    "y": [
+      "price",
+    ],
+  },
+  "locale": "zh-CN",
+  "markStyle": {
+    "pointStyle": {
+      "pointVisible": true,
+      "selector": {
+        "field": "price",
+        "operator": "=",
+        "value": 94.5,
+      },
+    },
+  },
+  "measures": [
+    {
+      "alias": "股价（美元）",
+      "id": "price",
+    },
+  ],
+}
+`;
+
+exports[`null2undefined 2`] = `
+{
+  "animation": true,
+  "axes": [
+    {
+      "domainLine": {
+        "style": {
+          "lineWidth": 1,
+          "stroke": "#3641594d",
+        },
+        "visible": true,
+      },
+      "grid": {
+        "style": {
+          "lineWidth": 0.5,
+          "stroke": "#36415926",
+        },
+        "visible": false,
+      },
+      "hover": true,
+      "label": {
+        "autoHide": true,
+        "autoHideMethod": "greedy",
+        "autoHideSeparation": 4,
+        "autoLimit": true,
+        "autoRotate": false,
+        "autoRotateAngle": [
+          0,
+          -45,
+          -90,
+        ],
+        "flush": true,
+        "lastVisible": true,
+        "minGap": 4,
+        "space": 8,
+        "style": {
+          "angle": 0,
+          "fill": "#797B85",
+          "fontSize": 12,
+          "fontWeight": 400,
+          "maxLineWidth": 80,
+        },
+        "visible": true,
+      },
+      "maxHeight": 140,
+      "orient": "bottom",
+      "paddingInner": [
+        0.15,
+        0.1,
+      ],
+      "paddingOuter": [
+        0.075,
+        0.1,
+      ],
+      "sampling": false,
+      "tick": {
+        "inside": false,
+        "style": {
+          "stroke": "#3641594d",
+        },
+        "tickSize": 4,
+        "visible": false,
+      },
+      "title": {
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "text": "",
+        "visible": false,
+      },
+      "type": "band",
+      "visible": true,
+    },
+    {
+      "base": 10,
+      "domainLine": {
+        "style": {
+          "lineWidth": 1,
+          "stroke": "#3641594d",
+        },
+        "visible": false,
+      },
+      "grid": {
+        "style": {
+          "lineWidth": 0.5,
+          "stroke": "#36415926",
+        },
+        "visible": true,
+      },
+      "innerOffset": {
+        "top": 7,
+      },
+      "inverse": false,
+      "label": {
+        "formatMethod": [Function],
+        "style": {
+          "angle": undefined,
+          "fill": undefined,
+          "fontSize": 16,
+          "fontWeight": undefined,
+        },
+        "visible": true,
+      },
+      "max": undefined,
+      "min": undefined,
+      "nice": true,
+      "orient": "left",
+      "tick": {
+        "inside": false,
+        "style": {
+          "stroke": "#3641594d",
+        },
+        "tickSize": 4,
+        "visible": false,
+      },
+      "title": {
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "text": "测试一下",
+        "visible": true,
+      },
+      "type": "linear",
+      "visible": true,
+      "zero": true,
+    },
+  ],
+  "background": "transparent",
+  "color": {
+    "domain": [
+      "股价（美元）-price",
+    ],
+    "range": [
+      "#0000FF",
+    ],
+    "specified": {
+      "股价（美元）-price": "#FF5733",
+    },
+    "type": "ordinal",
+  },
+  "crosshair": {
+    "xField": {
+      "label": {
+        "labelBackground": {
+          "style": {
+            "fill": "#364159",
+          },
+          "visible": true,
+        },
+        "style": {
+          "fill": "#ffffff",
+        },
+        "visible": true,
+      },
+      "line": {
+        "style": {
+          "lineDash": [
+            4,
+            2,
+          ],
+          "lineWidth": 1,
+          "opacity": 1,
+          "stroke": "#3641594d",
+        },
+        "type": "line",
+      },
+      "visible": true,
+    },
+  },
+  "data": {
+    "fields": {
+      "__Dim_Angle__": {
+        "sortIndex": 0,
+      },
+      "__Dim_ColorId__": {
+        "sortIndex": 0,
+      },
+      "__Dim_X__": {
+        "sortIndex": 0,
+      },
+    },
+    "id": "line",
+    "values": [
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-01-02",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 89,
+        "__OriginalData__": {
+          "date": "2024-01-02",
+          "price": 89,
+        },
+        "date": "2024-01-02",
+        "price": 89,
+      },
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-01-16",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 84.79,
+        "__OriginalData__": {
+          "date": "2024-01-16",
+          "price": 84.79,
+        },
+        "date": "2024-01-16",
+        "price": 84.79,
+      },
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-02-01",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 88.65,
+        "__OriginalData__": {
+          "date": "2024-02-01",
+          "price": 88.65,
+        },
+        "date": "2024-02-01",
+        "price": 88.65,
+      },
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-02-15",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 94.5,
+        "__OriginalData__": {
+          "date": "2024-02-15",
+          "price": 94.5,
+        },
+        "date": "2024-02-15",
+        "price": 94.5,
+      },
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-02-29",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 63.18,
+        "__OriginalData__": {
+          "date": "2024-02-29",
+          "price": 63.18,
+        },
+        "date": "2024-02-29",
+        "price": 63.18,
+      },
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-03-15",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 63.99,
+        "__OriginalData__": {
+          "date": "2024-03-15",
+          "price": 63.99,
+        },
+        "date": "2024-03-15",
+        "price": 63.99,
+      },
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-04-01",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 64.19,
+        "__OriginalData__": {
+          "date": "2024-04-01",
+          "price": 64.19,
+        },
+        "date": "2024-04-01",
+        "price": 64.19,
+      },
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-04-15",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 58.94,
+        "__OriginalData__": {
+          "date": "2024-04-15",
+          "price": 58.94,
+        },
+        "date": "2024-04-15",
+        "price": 58.94,
+      },
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-05-01",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 59.13,
+        "__OriginalData__": {
+          "date": "2024-05-01",
+          "price": 59.13,
+        },
+        "date": "2024-05-01",
+        "price": 59.13,
+      },
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-05-15",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 62.27,
+        "__OriginalData__": {
+          "date": "2024-05-15",
+          "price": 62.27,
+        },
+        "date": "2024-05-15",
+        "price": 62.27,
+      },
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-06-03",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 57.94,
+        "__OriginalData__": {
+          "date": "2024-06-03",
+          "price": 57.94,
+        },
+        "date": "2024-06-03",
+        "price": 57.94,
+      },
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-06-17",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 53.97,
+        "__OriginalData__": {
+          "date": "2024-06-17",
+          "price": 53.97,
+        },
+        "date": "2024-06-17",
+        "price": 53.97,
+      },
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-07-01",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 62.47,
+        "__OriginalData__": {
+          "date": "2024-07-01",
+          "price": 62.47,
+        },
+        "date": "2024-07-01",
+        "price": 62.47,
+      },
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-07-15",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 62.44,
+        "__OriginalData__": {
+          "date": "2024-07-15",
+          "price": 62.44,
+        },
+        "date": "2024-07-15",
+        "price": 62.44,
+      },
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-08-01",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 55.33,
+        "__OriginalData__": {
+          "date": "2024-08-01",
+          "price": 55.33,
+        },
+        "date": "2024-08-01",
+        "price": 55.33,
+      },
+      {
+        "__Dim_ColorId__": "股价（美元）-price",
+        "__Dim_Color__": "股价（美元）",
+        "__Dim_X__": "2024-08-11",
+        "__MeaId__": "price",
+        "__MeaName__": "股价（美元）",
+        "__MeaValue__": 82.94,
+        "__OriginalData__": {
+          "date": "2024-08-11",
+          "price": 82.94,
+        },
+        "date": "2024-08-11",
+        "price": 82.94,
+      },
+    ],
+  },
+  "direction": "vertical",
+  "label": {
+    "formatMethod": [Function],
+    "visible": true,
+  },
+  "legends": {
+    "autoPage": true,
+    "data": [Function],
+    "item": {
+      "background": {
+        "state": {
+          "selectedHover": {
+            "fill": "#646A73",
+            "fillOpacity": 0.05,
+          },
+        },
+      },
+      "focus": true,
+      "focusIconStyle": {
+        "fill": "#646A73",
+        "fontWeight": 400,
+        "size": 14,
+      },
+      "label": {
+        "formatMethod": [Function],
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+      },
+      "maxWidth": "30%",
+      "shape": {
+        "space": 6,
+        "style": {
+          "size": 8,
+          "symbolType": "rectRound",
+        },
+      },
+    },
+    "maxCol": 1,
+    "maxRow": 1,
+    "orient": "right",
+    "padding": 0,
+    "position": "start",
+    "type": "discrete",
+    "visible": true,
+  },
+  "line": {
+    "style": {},
+  },
+  "markArea": [
+    {
+      "area": {
+        "style": {
+          "cornerRadius": 4,
+          "fill": "#888888",
+          "fillOpacity": 0.15,
+          "lineWidth": 1,
+          "stroke": "#888888",
+          "visible": true,
+        },
+      },
+      "label": {
+        "labelBackground": {
+          "padding": 4,
+          "style": {
+            "cornerRadius": 4,
+            "dy": -24,
+            "fill": "#191d24",
+            "lineWidth": 1,
+            "stroke": "#191d24",
+          },
+          "visible": true,
+        },
+        "position": "insideBottom",
+        "style": {
+          "dy": -24,
+          "fill": "black",
+          "fontSize": 12,
+          "fontWeight": 400,
+          "lineWidth": 1,
+          "stroke": "#191d24",
+          "textAlign": "center",
+          "textBaseline": "top",
+        },
+        "text": "数据来源：Yahoo Finance",
+        "visible": true,
+      },
+      "positions": [Function],
+      "regionRelative": true,
+      "zIndex": 1000,
+    },
+  ],
+  "markPoint": [
+    {
+      "itemContent": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "text": {
+          "labelBackground": {
+            "padding": 2,
+            "style": {
+              "cornerRadius": 4,
+              "dy": 12,
+              "fill": "#212121",
+              "lineWidth": 1,
+              "stroke": undefined,
+            },
+            "visible": true,
+          },
+          "style": {
+            "dy": 12,
+            "fill": "#ffffff",
+            "fontSize": 12,
+            "fontWeight": 400,
+            "lineWidth": 1,
+            "stroke": "#212121",
+            "textAlign": "right",
+            "textBaseline": "top",
+            "visible": true,
+          },
+          "text": "高点",
+        },
+      },
+      "itemLine": {
+        "visible": false,
+      },
+      "position": [Function],
+      "regionRelative": true,
+      "zIndex": 1000,
+    },
+    {
+      "itemContent": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "text": {
+          "labelBackground": {
+            "padding": 2,
+            "style": {
+              "cornerRadius": 4,
+              "dy": 12,
+              "fill": "#212121",
+              "lineWidth": 1,
+              "stroke": undefined,
+            },
+            "visible": true,
+          },
+          "style": {
+            "dy": 12,
+            "fill": "#ffffff",
+            "fontSize": 12,
+            "fontWeight": 400,
+            "lineWidth": 1,
+            "stroke": "#212121",
+            "textAlign": "right",
+            "textBaseline": "top",
+            "visible": true,
+          },
+          "text": "低点",
+        },
+      },
+      "itemLine": {
+        "visible": false,
+      },
+      "position": [Function],
+      "regionRelative": true,
+      "zIndex": 1000,
+    },
+  ],
+  "padding": 0,
+  "point": {
+    "state": {
+      "custom1": {
+        "filter": [Function],
+        "level": 1,
+        "style": {
+          "fill": undefined,
+          "fillOpacity": undefined,
+          "innerBorder": {
+            "distance": 0.5,
+            "lineDash": [
+              0,
+              0,
+            ],
+            "lineWidth": 1,
+            "stroke": undefined,
+          },
+          "size": undefined,
+          "visible": true,
+        },
+      },
+      "dimension_hover": {
+        "outerBorder": {
+          "distance": 2,
+          "lineWidth": 4,
+          "strokeOpacity": 0.25,
+        },
+        "scaleX": 1.4,
+        "scaleY": 1.4,
+      },
+    },
+    "style": {},
+  },
+  "region": [
+    {
+      "clip": true,
+    },
+  ],
+  "seriesField": "__Dim_ColorId__",
+  "tooltip": {
+    "dimension": {
+      "content": [
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+      ],
+      "title": {
+        "visible": true,
+      },
+    },
+    "mark": {
+      "content": [
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+      ],
+      "title": {
+        "visible": false,
+      },
+    },
+    "visible": true,
+  },
+  "type": "line",
+  "xField": "__Dim_X__",
+  "yField": "__MeaValue__",
+}
+`;

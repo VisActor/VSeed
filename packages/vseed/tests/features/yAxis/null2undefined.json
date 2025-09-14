@@ -1,0 +1,144 @@
+{
+  "chartType": "line",
+  "dataset": [
+    {
+      "date": "2024-01-02",
+      "price": 89
+    },
+    {
+      "date": "2024-01-16",
+      "price": 84.79
+    },
+    {
+      "date": "2024-02-01",
+      "price": 88.65
+    },
+    {
+      "date": "2024-02-15",
+      "price": 94.5
+    },
+    {
+      "date": "2024-02-29",
+      "price": 63.18
+    },
+    {
+      "date": "2024-03-15",
+      "price": 63.99
+    },
+    {
+      "date": "2024-04-01",
+      "price": 64.19
+    },
+    {
+      "date": "2024-04-15",
+      "price": 58.94
+    },
+    {
+      "date": "2024-05-01",
+      "price": 59.13
+    },
+    {
+      "date": "2024-05-15",
+      "price": 62.27
+    },
+    {
+      "date": "2024-06-03",
+      "price": 57.94
+    },
+    {
+      "date": "2024-06-17",
+      "price": 53.97
+    },
+    {
+      "date": "2024-07-01",
+      "price": 62.47
+    },
+    {
+      "date": "2024-07-15",
+      "price": 62.44
+    },
+    {
+      "date": "2024-08-01",
+      "price": 55.33
+    },
+    {
+      "date": "2024-08-11",
+      "price": 82.94
+    }
+  ],
+  "dimensions": [
+    {
+      "alias": "日期",
+      "id": "date"
+    }
+  ],
+  "measures": [
+    {
+      "alias": "股价（美元）",
+      "id": "price"
+    }
+  ],
+  "color": {
+    "colorScheme": ["#0000FF"],
+    "colorMapping": {
+      "price": "#FF5733"
+    }
+  },
+  "pointStyle": {
+    "selector": {
+      "field": "price",
+      "operator": "=",
+      "value": 94.5
+    },
+    "pointVisible": true
+  },
+  "annotationPoint": [
+    {
+      "selector": {
+        "field": "date",
+        "operator": "=",
+        "value": "2024-02-15"
+      },
+      "text": "高点",
+      "textAlign": "right",
+      "textBaseline": "top"
+    },
+    {
+      "selector": {
+        "field": "date",
+        "operator": "=",
+        "value": "2024-02-29"
+      },
+      "text": "低点",
+      "textAlign": "right",
+      "textBaseline": "top"
+    }
+  ],
+  "annotationArea": {
+    "selector": {
+      "field": "date",
+      "operator": "=",
+      "value": "2024-08-11"
+    },
+    "text": "数据来源：Yahoo Finance",
+    "textPosition": "bottom",
+    "textAlign": "center",
+    "textBaseline": "top",
+    "textFontSize": 12,
+    "textColor": "black"
+  },
+  "locale": "zh-CN",
+  "yAxis": {
+    "title": {
+      "visible": true,
+      "titleText": "测试一下"
+    },
+    "label": {
+      "visible": true,
+      "labelColor": null,
+      "labelFontSize": 16,
+      "labelFontWeight": null,
+      "labelAngle": null
+    }
+  }
+}

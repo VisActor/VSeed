@@ -9,46 +9,148 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'dualAxis',
+    chartType: 'line',
     dataset: [
-      { date: '2019', type: 'A', profit: 10, profit2: 10, sales: 20 },
-      { date: '2019', type: 'B', profit: 30, profit2: 10, sales: 60 },
-      { date: '2019', type: 'C', profit: 30, profit2: 10, sales: 60 },
-      { date: '2019', type: 'D', profit: 50, profit2: 10, sales: 100 },
-      { date: '2019', type: 'E', profit: 40, profit2: 10, sales: 80 },
-
-      { date: '2020', type: 'A', profit: 10, profit2: 10, sales: 20 },
-      { date: '2020', type: 'B', profit: 30, profit2: 10, sales: 60 },
-      { date: '2020', type: 'C', profit: 30, profit2: 10, sales: 60 },
-      { date: '2020', type: 'D', profit: 50, profit2: 10, sales: 100 },
-      { date: '2020', type: 'E', profit: 40, profit2: 10, sales: 80 },
+      {
+        date: '2024-01-02',
+        price: 89,
+      },
+      {
+        date: '2024-01-16',
+        price: 84.79,
+      },
+      {
+        date: '2024-02-01',
+        price: 88.65,
+      },
+      {
+        date: '2024-02-15',
+        price: 94.5,
+      },
+      {
+        date: '2024-02-29',
+        price: 63.18,
+      },
+      {
+        date: '2024-03-15',
+        price: 63.99,
+      },
+      {
+        date: '2024-04-01',
+        price: 64.19,
+      },
+      {
+        date: '2024-04-15',
+        price: 58.94,
+      },
+      {
+        date: '2024-05-01',
+        price: 59.13,
+      },
+      {
+        date: '2024-05-15',
+        price: 62.27,
+      },
+      {
+        date: '2024-06-03',
+        price: 57.94,
+      },
+      {
+        date: '2024-06-17',
+        price: 53.97,
+      },
+      {
+        date: '2024-07-01',
+        price: 62.47,
+      },
+      {
+        date: '2024-07-15',
+        price: 62.44,
+      },
+      {
+        date: '2024-08-01',
+        price: 55.33,
+      },
+      {
+        date: '2024-08-11',
+        price: 82.94,
+      },
     ],
     dimensions: [
       {
-        id: 'date',
         alias: '日期',
-        encoding: 'detail',
-      },
-      {
-        id: 'type',
-        alias: '类型',
-        encoding: 'xAxis',
-      },
-      {
-        id: '__MeaName__',
-        encoding: 'detail',
-      },
-      {
-        id: '__MeaName__',
-        encoding: 'color',
+        id: 'date',
       },
     ],
     measures: [
-      { id: 'profit', alias: '利润', encoding: 'primaryYAxis', parentId: '1' },
-      { id: 'sales', alias: '销售额', encoding: 'secondaryYAxis', parentId: '1' },
+      {
+        alias: '股价（美元）',
+        id: 'price',
+      },
     ],
-    xAxis: {
-      visible: false,
+    color: {
+      colorScheme: ['#0000FF'],
+      colorMapping: {
+        price: '#FF5733',
+      },
+    },
+    pointStyle: {
+      selector: {
+        field: 'price',
+        operator: '=',
+        value: 94.5,
+      },
+      pointVisible: true,
+    },
+    annotationPoint: [
+      {
+        selector: {
+          field: 'date',
+          operator: '=',
+          value: '2024-02-15',
+        },
+        text: '高点',
+        textAlign: 'right',
+        textBaseline: 'top',
+      },
+      {
+        selector: {
+          field: 'date',
+          operator: '=',
+          value: '2024-02-29',
+        },
+        text: '低点',
+        textAlign: 'right',
+        textBaseline: 'top',
+      },
+    ],
+    annotationArea: {
+      selector: {
+        field: 'date',
+        operator: '=',
+        value: '2024-08-11',
+      },
+      text: '数据来源：Yahoo Finance',
+      textPosition: 'bottom',
+      textAlign: 'center',
+      textBaseline: 'top',
+      textFontSize: 12,
+      textColor: 'black',
+    },
+    locale: 'zh-CN',
+    yAxis: {
+      title: {
+        visible: true,
+        titleText: '测试一下',
+      },
+      label: {
+        visible: true,
+        labelColor: null,
+        labelFontSize: 16,
+        labelFontWeight: null,
+        labelAngle: null,
+      },
+      // "formatter": "value => `${value}xx`"
     },
   }
 

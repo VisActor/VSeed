@@ -27,7 +27,7 @@
 
 ## encoding
 
-**Type:** `"xAxis" | "yAxis" | "angle" | "color" | "detail" | "tooltip" | "label" | "row" | "column" | undefined`
+**Type:** `DimensionEncoding | undefined`
 
 :::note{title=描述}
 维度映射的通道

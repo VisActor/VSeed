@@ -1,4 +1,4 @@
-import { isEmpty, uniqueBy } from 'remeda'
+import { isEmpty, pipe, uniqueBy } from 'remeda'
 import { autoFormatter, createFormatter, findAllMeasures, findMeasureById } from '../../../../utils'
 import type { Datum, Dimensions, FoldInfo, Locale, Measures, SpecPipe, Tooltip, UnfoldInfo } from 'src/types'
 import { ORIGINAL_DATA } from 'src/dataReshape'
@@ -91,13 +91,15 @@ export const createMarkContent = (
   foldInfo: FoldInfo,
   unfoldInfo: UnfoldInfo,
 ) => {
-  const dims = uniqueBy(
+  const dims = pipe(
     dimensions.filter((item) => tooltip.includes(item.id)),
-    (item) => item.id,
+    uniqueBy((item) => item.id),
+    uniqueBy((item) => item.alias),
   )
-  const meas = uniqueBy(
+  const meas = pipe(
     measures.filter((item) => tooltip.includes(item.id)),
-    (item) => item.id,
+    uniqueBy((item) => item.id),
+    uniqueBy((item) => item.alias),
   )
 
   const dimContent = dims.map((item) => ({

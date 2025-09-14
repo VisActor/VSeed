@@ -1,0 +1,134 @@
+{
+  "color": {
+    "colorScheme": [
+      "#8D72F6",
+      "#5766EC",
+      "#66A3FE",
+      "#51D5E6",
+      "#4EC0B3",
+      "#F9DF90",
+      "#F9AD71",
+      "#ED8888",
+      "#E9A0C3",
+      "#D77DD3"
+    ]
+  },
+  "legend": {
+    "enable": true,
+    "position": "rightTop",
+    "maxSize": 1,
+    "labelFontSize": 12,
+    "labelFontColor": "#6F6F6F"
+  },
+  "label": {
+    "enable": false,
+    "labelColor": "#212121",
+    "labelMode": "single",
+    "labelPos": "outer",
+    "labelWeight": "normal"
+  },
+  "chartType": "column",
+  "dataset": [
+    {
+      "co_20250913222058_0fe2": "家具",
+      "pr_20250913220806_eacd": "1",
+      "xA_20250913220803_3339": "家具",
+      "yA_20250913221832_0230": "8491",
+      "yA_20250913221852_0d8a": "325.0999999999991",
+      "yA_20250913221908_10a4": "638735.6290000005"
+    },
+    {
+      "co_20250913222058_0fe2": "办公用品",
+      "pr_20250913220806_eacd": "1",
+      "xA_20250913220803_3339": "办公用品",
+      "yA_20250913221832_0230": "21401",
+      "yA_20250913221852_0d8a": "483.99999999999267",
+      "yA_20250913221908_10a4": "757640.3519999951"
+    },
+    {
+      "co_20250913222058_0fe2": "技术",
+      "pr_20250913220806_eacd": "1",
+      "xA_20250913220803_3339": "技术",
+      "yA_20250913221832_0230": "7642",
+      "yA_20250913221852_0d8a": "250.60000000000227",
+      "yA_20250913221908_10a4": "751162.9440000018"
+    }
+  ],
+  "measures": [
+    {
+      "id": "pr_20250913220806_eacd",
+      "alias": "min(amount)",
+      "encoding": "yAxis",
+      "format": {
+        "auto": false,
+        "type": "number"
+      },
+      "autoFormat": false,
+      "parentId": "0"
+    },
+    {
+      "id": "yA_20250913221832_0230",
+      "alias": "sum(amount)",
+      "encoding": "yAxis",
+      "format": {
+        "auto": false,
+        "type": "number"
+      },
+      "autoFormat": false,
+      "parentId": "1"
+    },
+    {
+      "id": "yA_20250913221852_0d8a",
+      "alias": "sum(discount)",
+      "encoding": "yAxis",
+      "format": {
+        "auto": false,
+        "significantDigits": 4,
+        "thousandSeparator": true,
+        "type": "number"
+      },
+      "autoFormat": false,
+      "parentId": "2"
+    },
+    {
+      "id": "yA_20250913221908_10a4",
+      "alias": "sum(profit)",
+      "encoding": "yAxis",
+      "format": {
+        "auto": false,
+        "significantDigits": 4,
+        "thousandSeparator": true,
+        "type": "number"
+      },
+      "autoFormat": false,
+      "parentId": "3"
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "xA_20250913220803_3339",
+      "alias": "product_type",
+      "encoding": "xAxis",
+      "autoFormat": true
+    },
+    {
+      "id": "co_20250913222058_0fe2",
+      "alias": "product_type",
+      "encoding": "color",
+      "autoFormat": true
+    },
+    {
+      "id": "__MeaName__",
+      "alias": "指标名称",
+      "encoding": "tooltip"
+    }
+  ],
+  "lineStyle": [],
+  "barStyle": [],
+  "pointStyle": [],
+  "areaStyle": [],
+  "annotationPoint": [],
+  "annotationHorizontalLine": [],
+  "annotationVerticalLine": [],
+  "annotationArea": []
+}

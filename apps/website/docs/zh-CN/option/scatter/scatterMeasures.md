@@ -230,7 +230,7 @@ yMeasures 如果是多个指标, 则会自动合并, 映射至Y轴
 
 ### encoding
 
-**Type:** `"xAxis" | "yAxis" | "angle" | "color" | "detail" | "tooltip" | "label" | "column" | "primaryYAxis" | "secondaryYAxis" | "radius" | "size" | undefined`
+**Type:** `MeasureEncoding | undefined`
 
 :::note{title=描述}
 指标映射的通道
@@ -463,7 +463,7 @@ yMeasures 如果是多个指标, 则会自动合并, 映射至Y轴
 
 ### encoding
 
-**Type:** `"xAxis" | "yAxis" | "angle" | "color" | "detail" | "tooltip" | "label" | "column" | "primaryYAxis" | "secondaryYAxis" | "radius" | "size" | undefined`
+**Type:** `MeasureEncoding | undefined`
 
 :::note{title=描述}
 指标映射的通道

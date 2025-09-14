@@ -82,6 +82,7 @@ test('${testName}', () => {
     expect({ colorIdMap, colorItems, advancedPipeline, specPipeline, hasTheme, themeMapKeys }).toMatchSnapshot()
 
     const div = document.createElement('div') as unknown as HTMLDivElement
+    document.body.appendChild(div)
     div.style.width = '960px'
     div.style.height = '600px'
     if (window) {

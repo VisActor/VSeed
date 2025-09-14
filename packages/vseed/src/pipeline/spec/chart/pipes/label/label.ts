@@ -12,7 +12,7 @@ export const label: SpecPipe = (spec, context) => {
   const { chartType, encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { label: Label }
 
-  if (!baseConfig || !baseConfig.label) {
+  if (!baseConfig || isEmpty(baseConfig.label)) {
     return result
   }
 

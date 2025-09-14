@@ -1,13 +1,11 @@
-import type { AdvancedVSeed, MeasureGroup, MeasureTree, VSeed } from 'src/types'
+import type { MeasureGroup, MeasureTree } from 'src/types'
 
 /**
  * @description 检查是否为指标树, 指标树深度大于1. 如果存在一个指标为组, 即有children配置, 则认为是指标树.
  * @param vseed vseed
  * @returns
  */
-export const isMeasureTreeWithChildren = (vseed: VSeed | AdvancedVSeed) => {
-  const { measures } = vseed
-
+export const isMeasureTreeWithChildren = <T extends MeasureTree>(measures?: T) => {
   if (!measures) {
     return false
   }
@@ -20,9 +18,7 @@ export const isMeasureTreeWithChildren = (vseed: VSeed | AdvancedVSeed) => {
  * @param vseed vseed
  * @returns
  */
-export const isMeasureTreeWithParentId = (vseed: VSeed | AdvancedVSeed) => {
-  const { measures } = vseed
-
+export const isMeasureTreeWithParentId = <T extends MeasureTree>(measures?: T) => {
   if (!measures) {
     return false
   }

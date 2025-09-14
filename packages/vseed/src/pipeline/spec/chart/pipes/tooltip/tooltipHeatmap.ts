@@ -1,12 +1,12 @@
 import { isEmpty } from 'remeda'
-import { autoFormatter, createFormatter, findMeasureById } from '../../../../utils'
+import { autoFormatter, createFormatter, findAllMeasures, findMeasureById } from '../../../../utils'
 import type { Datum, Dimensions, FoldInfo, Locale, Measures, SpecPipe, Tooltip, UnfoldInfo } from 'src/types'
 import { ORIGINAL_DATA } from 'src/dataReshape'
 
 export const tooltipHeatmap: SpecPipe = (spec, context) => {
   const result = { ...spec }
-  const { advancedVSeed } = context
-  const { measures, datasetReshapeInfo, chartType, locale, dimensions, encoding } = advancedVSeed
+  const { advancedVSeed, vseed } = context
+  const { datasetReshapeInfo, chartType, locale, dimensions, encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
@@ -22,7 +22,7 @@ export const tooltipHeatmap: SpecPipe = (spec, context) => {
       title: {
         visible: false,
       },
-      content: createMarkContent(encoding.tooltip || [], dimensions, measures, locale, foldInfo),
+      content: createMarkContent(encoding.tooltip || [], dimensions, findAllMeasures(vseed.measures), locale, foldInfo),
     },
     dimension: {
       visible: false,

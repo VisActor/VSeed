@@ -1,12 +1,6 @@
-import type {
-  AdvancedPipe,
-  MeasureGroup,
-  Measures,
-  MeasureTree,
-  Scatter,
-  ScatterMeasures,
-} from 'src/types'
+import type { AdvancedPipe, MeasureGroup, Measures, MeasureTree, Scatter, ScatterMeasures } from 'src/types'
 import { isMeasureTreeWithParentId, isMeasureTreeWithChildren } from './utils'
+import { clone } from 'remeda'
 
 export const buildMeasuresForScatter: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context as {
@@ -28,7 +22,7 @@ export const buildMeasuresForScatter: AdvancedPipe = (advancedVSeed, context) =>
    */
 
   const scatterMeasures = vseed.scatterMeasures
-    ? vseed.scatterMeasures
+    ? clone(vseed.scatterMeasures)
     : basicMeasuresToScatterMeasures(advancedVSeed.measures || [])
   advancedVSeed.measures = scatterMeasuresToMeasureTree(scatterMeasures)
 

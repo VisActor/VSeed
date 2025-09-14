@@ -79,7 +79,6 @@ const generateDefaultMeasureEncoding = (measures: Measures, encoding: Encoding) 
   )
 }
 const generateMeasureEncoding = (measures: Measures, encoding: Encoding) => {
-  encoding.tooltip = measures.map((item) => item.id)
   encoding.y = unique(
     measures
       .filter((item) => item.encoding === 'xAxis' || item.encoding === 'yAxis' || !item.encoding)

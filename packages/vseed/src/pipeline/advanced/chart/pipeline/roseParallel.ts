@@ -15,6 +15,7 @@ import {
   encodingAdapter,
   encodingForRose,
   defaultEncodingForRose,
+  deleteTooltipMeasure,
 } from '../pipes'
 
 export const roseParallelAdvancedPipeline: AdvancedPipeline = [
@@ -23,7 +24,7 @@ export const roseParallelAdvancedPipeline: AdvancedPipeline = [
   defaultDimensions,
   defaultMeasureName,
 
-  encodingAdapter([defaultEncodingForRose, buildMeasures], [encodingForRose, buildMeasures]),
+  encodingAdapter([defaultEncodingForRose, buildMeasures], [encodingForRose, buildMeasures, deleteTooltipMeasure]),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 
   roseParallelConfig,

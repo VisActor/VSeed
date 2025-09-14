@@ -1,5 +1,13 @@
 # website
 
+## 0.1.11
+
+### Patch Changes
+
+- feat: empty group id for default group
+- Updated dependencies
+  - @visactor/vseed@0.1.11
+
 ## 0.1.10
 
 ### Patch Changes

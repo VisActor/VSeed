@@ -1,0 +1,83 @@
+{
+  "color": {
+    "colorScheme": [
+      "#8D72F6",
+      "#5766EC",
+      "#66A3FE",
+      "#51D5E6",
+      "#4EC0B3",
+      "#F9DF90",
+      "#F9AD71",
+      "#ED8888",
+      "#E9A0C3",
+      "#D77DD3"
+    ]
+  },
+  "legend": {
+    "enable": true,
+    "position": "rightTop",
+    "maxSize": 1,
+    "labelFontSize": 12,
+    "labelFontColor": "#6F6F6F"
+  },
+  "label": {
+    "enable": false,
+    "labelColor": "#212121",
+    "labelMode": "single",
+    "labelPos": "outer",
+    "labelWeight": "normal"
+  },
+  "chartType": "columnPercent",
+  "dataset": [
+    {
+      "co_20250914131915_8e38": "7642",
+      "xA_20250914131841_3aa1": "技术",
+      "yA_20250914131844_6718": "7642"
+    },
+    {
+      "co_20250914131915_8e38": "21401",
+      "xA_20250914131841_3aa1": "办公用品",
+      "yA_20250914131844_6718": "21401"
+    },
+    {
+      "co_20250914131915_8e38": "8491",
+      "xA_20250914131841_3aa1": "家具",
+      "yA_20250914131844_6718": "8491"
+    }
+  ],
+  "measures": [
+    {
+      "id": "co_20250914131915_8e38",
+      "alias": "sum(amount)",
+      "encoding": "yAxis",
+      "format": {
+        "auto": false,
+        "type": "number"
+      },
+      "autoFormat": false
+    },
+    {
+      "id": "yA_20250914131844_6718",
+      "alias": "sum(amount)",
+      "encoding": "yAxis",
+      "format": {
+        "auto": false,
+        "type": "number"
+      },
+      "autoFormat": false,
+      "parentId": "0"
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "xA_20250914131841_3aa1",
+      "alias": "product_type",
+      "encoding": "xAxis",
+      "autoFormat": true
+    },
+    {
+      "id": "__MeaName__",
+      "alias": "指标名称"
+    }
+  ]
+}

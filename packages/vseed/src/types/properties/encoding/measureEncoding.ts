@@ -1,0 +1,13 @@
+export type MeasureEncoding =
+  | 'primaryYAxis'
+  | 'secondaryYAxis'
+  | 'xAxis'
+  | 'yAxis'
+  | 'angle'
+  | 'radius'
+  | 'size'
+  | 'color'
+  | 'detail'
+  | 'column'
+  | 'label'
+  | 'tooltip'

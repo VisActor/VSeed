@@ -1,6 +1,7 @@
 import type { AdvancedPipe, AdvancedVSeed, MeasureGroup, Measures, MeasureTree } from 'src/types'
 import { isMeasureTreeWithChildren, isMeasureTreeWithParentId, normalizeMeasureTree } from './utils'
 import { isPivotChart } from 'src/pipeline/utils'
+import { DEFAULT_PARENT_ID } from 'src/pipeline/utils/constant'
 
 export const buildMeasures: AdvancedPipe = (advancedVSeed) => {
   // 带Children的指标树, 不进行任何处理
@@ -28,18 +29,18 @@ const generateMeasuresByParentId = (measures: Measures): MeasureTree => {
   const measureTree: MeasureGroup[] = []
 
   measures.forEach((measure) => {
-    if (!measure.parentId) {
-      return
-    }
-
     const parent = measureTree.find((item) => item.id === measure.parentId)
-
     if (parent && 'children' in parent) {
       parent.children = parent.children || []
       parent.children.push(measure)
-    } else {
+    } else if (measure.parentId) {
       measureTree.push({
         id: measure.parentId,
+        children: [measure],
+      })
+    } else {
+      measureTree.push({
+        id: DEFAULT_PARENT_ID,
         children: [measure],
       })
     }

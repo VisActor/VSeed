@@ -1,3 +1,5 @@
+import type { DimensionEncoding } from "../encoding"
+
 /**
  * @description 维度
  */
@@ -17,7 +19,7 @@ export type Dimension = {
    * - row: 支持将多个维度映射到行通道, 支持所有图表类型
    * - column: 支持将多个维度映射到列通道, 支持所有图表类型
    */
-  encoding?: 'xAxis' | 'yAxis' | 'angle' | 'color' | 'detail' | 'tooltip' | 'label' | 'row' | 'column'
+  encoding?: DimensionEncoding
 }
 
 /**

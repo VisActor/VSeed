@@ -9,19 +9,95 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'dualAxis',
+    color: {
+      colorScheme: [
+        '#8D72F6',
+        '#5766EC',
+        '#66A3FE',
+        '#51D5E6',
+        '#4EC0B3',
+        '#F9DF90',
+        '#F9AD71',
+        '#ED8888',
+        '#E9A0C3',
+        '#D77DD3',
+      ],
+    },
+    legend: {
+      enable: true,
+      position: 'rightTop',
+      maxSize: 1,
+      labelFontSize: 12,
+      labelFontColor: '#6F6F6F',
+    },
+    label: {
+      enable: false,
+      labelColor: '#212121',
+      labelMode: 'single',
+      labelPos: 'outer',
+      labelWeight: 'normal',
+    },
+    chartType: 'columnPercent',
     dataset: [
-      { date: '2019', profit: 100, sales: 200, count: 500 },
-      { date: '2020', profit: 30, sales: 60, count: 50 },
-      { date: '2021', profit: 30, sales: 60, count: 50 },
-      { date: '2022', profit: 50, sales: 100, count: 50 },
-      { date: '2023', profit: 40, sales: 80, count: 50 },
+      {
+        co_20250914131915_8e38: '7642',
+        xA_20250914131841_3aa1: '技术',
+        yA_20250914131844_6718: '7642',
+      },
+      {
+        co_20250914131915_8e38: '21401',
+        xA_20250914131841_3aa1: '办公用品',
+        yA_20250914131844_6718: '21401',
+      },
+      {
+        co_20250914131915_8e38: '8491',
+        xA_20250914131841_3aa1: '家具',
+        yA_20250914131844_6718: '8491',
+      },
     ],
-    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
-      { id: 'profit', alias: '利润', encoding: 'primaryYAxis', parentId: 'test' },
-      { id: 'sales', alias: 'sales', encoding: 'secondaryYAxis', parentId: 'test2' },
+      {
+        id: 'co_20250914131915_8e38',
+        alias: 'sum(amount)',
+        encoding: 'color',
+        format: {
+          auto: false,
+          type: 'number',
+        },
+        autoFormat: false,
+      },
+      {
+        id: 'yA_20250914131844_6718',
+        alias: 'sum(amount)',
+        encoding: 'yAxis',
+        format: {
+          auto: false,
+          type: 'number',
+        },
+        autoFormat: false,
+        parentId: '0',
+      },
     ],
+    dimensions: [
+      {
+        id: 'xA_20250914131841_3aa1',
+        alias: 'product_type',
+        encoding: 'xAxis',
+        autoFormat: true,
+      },
+      {
+        id: '__MeaName__',
+        alias: '指标名称',
+      },
+    ],
+    lineStyle: [],
+    barStyle: [],
+    pointStyle: [],
+    areaStyle: [],
+    annotationPoint: [],
+    annotationHorizontalLine: [],
+    annotationVerticalLine: [],
+    annotationArea: [],
   }
 
   if (zVSeed.safeParse(vseed).success) {

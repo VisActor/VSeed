@@ -1,6 +1,7 @@
 import type { AdvancedPipe, DualAxis, DualMeasures, MeasureGroup, Measures, MeasureTree } from 'src/types'
 import { isMeasureTreeWithParentId, isMeasureTreeWithChildren } from './utils'
 import { clone } from 'remeda'
+import { DEFAULT_PARENT_ID } from 'src/pipeline/utils/constant'
 
 export const buildMeasuresForDualAxis: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context as {
@@ -101,24 +102,21 @@ const generateMeasuresByParentId = (measures: Measures) => {
   const dualMeasures: DualMeasures = []
 
   measures.forEach((item) => {
-    if (!item.parentId) {
-      return
-    }
-
-    if (!dualMeasures.find((d) => d.id === item.parentId)) {
+    const id = item.parentId || DEFAULT_PARENT_ID
+    if (!dualMeasures.find((d) => d.id === id)) {
       dualMeasures.push({
-        id: item.parentId,
+        id,
         primaryMeasures: [],
         secondaryMeasures: [],
       })
     }
 
-    const dualChart = dualMeasures.find((d) => d.id === item.parentId)
+    const dualChart = dualMeasures.find((d) => d.id === id)
     if (!dualChart || !Array.isArray(dualChart.primaryMeasures) || !Array.isArray(dualChart.secondaryMeasures)) {
       return
     }
 
-    const encoding = Array.isArray(item.encoding) ? item.encoding : [item.encoding]
+    const encoding = Array.isArray(item.encoding) ? item.encoding : [item.encoding].filter(Boolean)
     const isPrimary = encoding.includes('primaryYAxis')
     const isSecondary = encoding.includes('secondaryYAxis')
     const isEmpty = !item.encoding

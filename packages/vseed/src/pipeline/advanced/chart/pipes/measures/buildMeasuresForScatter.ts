@@ -1,6 +1,7 @@
 import type { AdvancedPipe, MeasureGroup, Measures, MeasureTree, Scatter, ScatterMeasures } from 'src/types'
 import { isMeasureTreeWithParentId, isMeasureTreeWithChildren } from './utils'
 import { clone } from 'remeda'
+import { DEFAULT_PARENT_ID } from 'src/pipeline/utils/constant'
 
 export const buildMeasuresForScatter: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context as {
@@ -106,24 +107,21 @@ const generateMeasuresByParentId = (measures: Measures) => {
   const scatterMeasures: ScatterMeasures = []
 
   measures.forEach((item) => {
-    if (!item.parentId) {
-      return
-    }
+    const id = item.parentId || DEFAULT_PARENT_ID
 
-    if (!scatterMeasures.find((d) => d.id === item.parentId)) {
+    if (!scatterMeasures.find((d) => d.id === id)) {
       scatterMeasures.push({
-        id: item.parentId,
+        id,
         yMeasures: [],
         xMeasures: [],
       })
     }
-
-    const scatterChart = scatterMeasures.find((d) => d.id === item.parentId)
+    const scatterChart = scatterMeasures.find((d) => d.id === id)
     if (!scatterChart || !Array.isArray(scatterChart.yMeasures) || !Array.isArray(scatterChart.xMeasures)) {
       return
     }
 
-    const encoding = Array.isArray(item.encoding) ? item.encoding : [item.encoding]
+    const encoding = Array.isArray(item.encoding) ? item.encoding : [item.encoding].filter(Boolean)
     const isX = encoding.includes('xAxis')
     const isY = encoding.includes('yAxis')
     const isEmpty = !encoding.length

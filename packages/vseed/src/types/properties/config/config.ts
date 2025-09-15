@@ -1,6 +1,5 @@
 import { z } from 'zod'
-import { zXBandAxis, zYBandAxis } from './axes/bandAxis'
-import { zXLinearAxis, zYLinearAxis } from './axes/linearAxis'
+import { zXBandAxis, zYBandAxis, zXLinearAxis, zYLinearAxis } from './axes'
 import { zCrosshairLine, zCrosshairRect } from './crosshair'
 import { zStackCornerRadius } from './stackCornerRadius/stackCornerRadius'
 import { zBackgroundColor } from './backgroundColor/backgroundColor'
@@ -11,7 +10,6 @@ import { zTooltip } from './tooltip/tooltip'
 import { zDualChartType } from '../chartType'
 
 /**
- * ---
  * zConfig by 图表类型
  */
 export const zTableConfig = z.object({

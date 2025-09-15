@@ -19,6 +19,7 @@ export const radiusAxis: SpecPipe = (spec, context) => {
   }
 
   result.axes.push({
+    type: 'linear',
     orient: 'radius',
     visible: showAxis,
     zero: true,

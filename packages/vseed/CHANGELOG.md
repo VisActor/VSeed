@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.14
+
+### Patch Changes
+
+- feat: add label features
+
 ## 0.1.13
 
 ### Patch Changes

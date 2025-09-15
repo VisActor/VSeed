@@ -1,5 +1,13 @@
 # website
 
+## 0.1.14
+
+### Patch Changes
+
+- feat: add label features
+- Updated dependencies
+  - @visactor/vseed@0.1.14
+
 ## 0.1.13
 
 ### Patch Changes

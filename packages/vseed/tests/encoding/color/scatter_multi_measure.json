@@ -1,0 +1,33 @@
+{
+  "chartType": "scatter",
+  "dimensions": [
+    { "id": "date", "alias": "日期", "encoding": "xAxis" },
+    { "id": "region", "alias": "区域", "encoding": "color" },
+    { "id": "city", "alias": "城市", "encoding": "color" },
+    { "id": "city", "alias": "城市", "encoding": "label" }
+  ],
+  "measures": [
+    { "id": "profit", "alias": "利润" },
+    { "id": "sales", "alias": "销售额" },
+    { "id": "count", "alias": "数量", "encoding": "label" }
+  ],
+  "dataset": [
+    { "date": "2019", "region": "east", "city": "A", "profit": 10, "sales": 20, "count": 100 },
+    { "date": "2019", "region": "east", "city": "B", "profit": 30, "sales": 60, "count": 100 },
+    { "date": "2019", "region": "west", "city": "A", "profit": 15, "sales": 44, "count": 100 },
+    { "date": "2019", "region": "west", "city": "B", "profit": 50, "sales": 60, "count": 100 },
+
+    { "date": "2020", "region": "east", "city": "A", "profit": 15, "sales": 21, "count": 100 },
+    { "date": "2020", "region": "east", "city": "B", "profit": 1, "sales": 10, "count": 100 },
+    { "date": "2020", "region": "west", "city": "A", "profit": 35, "sales": 40, "count": 100 },
+    { "date": "2020", "region": "west", "city": "B", "profit": 55, "sales": 60, "count": 100 },
+
+    { "date": "2021", "region": "east", "city": "A", "profit": 20, "sales": 30, "count": 100 },
+    { "date": "2021", "region": "east", "city": "B", "profit": 2, "sales": 55, "count": 100 },
+    { "date": "2021", "region": "west", "city": "A", "profit": 40, "sales": 75, "count": 100 },
+    { "date": "2021", "region": "west", "city": "B", "profit": 60, "sales": 65, "count": 100 }
+  ],
+  "label": {
+    "enable": true
+  }
+}

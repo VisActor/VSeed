@@ -35,6 +35,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
     enable,
     position = 'bottom',
     labelFontColor,
+    labelColor,
     labelFontSize = 12,
     labelFontWeight = 400,
     maxSize = 1,
@@ -85,7 +86,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
       maxWidth: '30%',
       focusIconStyle: {
         size: labelFontSize + 2,
-        fill: labelFontColor,
+        fill: labelColor || labelFontColor,
         fontWeight: labelFontWeight,
       },
       shape: {
@@ -101,14 +102,14 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
         },
         style: {
           fontSize: labelFontSize,
-          fill: labelFontColor,
+          fill: labelColor || labelFontColor,
           fontWeight: labelFontWeight,
         },
       },
       background: {
         state: {
           selectedHover: {
-            fill: labelFontColor,
+            fill: labelColor || labelFontColor,
             fillOpacity: 0.05,
           },
         },

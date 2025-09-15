@@ -135,6 +135,8 @@ export const darkTheme = (): CustomThemeConfig => {
       wrap: true,
       showValue: true,
       showValuePercent: false,
+      labelColorSmartInvert: false,
+      labelOverlap: true,
     },
     tooltip: {
       enable: true,
@@ -145,7 +147,7 @@ export const darkTheme = (): CustomThemeConfig => {
       maxSize: 1,
       position: 'rt',
       shapeType: 'rectRound',
-      labelFontColor: '#FDFDFD',
+      labelColor: '#FDFDFD',
       labelFontSize: 12,
       labelFontWeight: 400,
     },

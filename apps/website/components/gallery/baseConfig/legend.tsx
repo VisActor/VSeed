@@ -69,7 +69,7 @@ export const BaseConfigLegendLabel = memo(() => {
       enable: true,
       position: 'rt',
       labelFontSize: 12,
-      labelFontColor: '#000',
+      labelColor: '#000',
       labelFontWeight: 'bold',
     },
     dataset: [

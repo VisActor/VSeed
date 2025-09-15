@@ -27,6 +27,8 @@ exports[`simpleRoseParallel 1`] = `
       },
       "label": {
         "enable": true,
+        "labelColorSmartInvert": false,
+        "labelOverlap": true,
         "showValue": true,
         "showValuePercent": true,
         "wrap": true,
@@ -34,7 +36,7 @@ exports[`simpleRoseParallel 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelFontColor": "#646A73",
+        "labelColor": "#646A73",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
@@ -70,6 +72,8 @@ exports[`simpleRoseParallel 1`] = `
         },
         "label": {
           "enable": true,
+          "labelColorSmartInvert": false,
+          "labelOverlap": true,
           "showValue": true,
           "showValuePercent": true,
           "wrap": true,
@@ -77,7 +81,7 @@ exports[`simpleRoseParallel 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelFontColor": "#646A73",
+          "labelColor": "#646A73",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
@@ -756,6 +760,7 @@ exports[`simpleRoseParallel 2`] = `
       "tick": {
         "visible": true,
       },
+      "type": "linear",
       "visible": true,
       "zero": true,
     },
@@ -779,6 +784,7 @@ exports[`simpleRoseParallel 2`] = `
       "tick": {
         "visible": true,
       },
+      "type": "band",
       "visible": true,
       "zero": true,
     },
@@ -1351,6 +1357,18 @@ exports[`simpleRoseParallel 2`] = `
   "innerRadius": 0,
   "label": {
     "formatMethod": [Function],
+    "overlap": {
+      "clampForce": true,
+      "hideOnHit": true,
+    },
+    "position": undefined,
+    "smartInvert": false,
+    "style": {
+      "background": undefined,
+      "fill": undefined,
+      "fontSize": undefined,
+      "fontWeight": undefined,
+    },
     "visible": true,
   },
   "legends": {

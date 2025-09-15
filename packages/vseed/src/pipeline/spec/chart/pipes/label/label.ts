@@ -2,7 +2,7 @@ import type { ILineChartSpec } from '@visactor/vchart'
 import type { ILineLikeLabelSpec } from '@visactor/vchart/esm/series/mixin/interface'
 import { autoFormatter, createFormatter, findMeasureById } from '../../../../utils'
 import type { Datum, Formatter, Label, Measure, NumFormat, SpecPipe } from 'src/types'
-import { isEmpty, uniqueBy } from 'remeda'
+import { isEmpty, merge, uniqueBy } from 'remeda'
 import { intl } from 'src/i18n'
 
 export const label: SpecPipe = (spec, context) => {
@@ -18,7 +18,21 @@ export const label: SpecPipe = (spec, context) => {
 
   const { measureId, measureValue, statistics } = datasetReshapeInfo[0].foldInfo
   const { label } = baseConfig
-  const { enable, wrap, showValue, showValuePercent } = label
+  const {
+    enable,
+    wrap,
+    showValue,
+    showValuePercent,
+    labelOverlap,
+    labelColorSmartInvert,
+    labelColor,
+    labelFontSize,
+    labelFontWeight,
+    labelBackgroundColor,
+    labelPosition,
+    autoFormat = true,
+    numFormat = {},
+  } = label
 
   const labelDims = uniqueBy(
     (vseed.dimensions || []).filter((item) => encoding.label?.includes(item.id)),
@@ -29,24 +43,33 @@ export const label: SpecPipe = (spec, context) => {
     (item) => item.id,
   )
 
-  const format: NumFormat = {
+  const percentFormat: NumFormat = merge(numFormat, {
     type: 'percent',
-  }
-  const formatter = createFormatter(format)
+  } as NumFormat)
+
+  const percentFormatter = createFormatter(percentFormat)
 
   result.label = {
     visible: enable,
     formatMethod: (_, datum: Datum) => {
       const result = []
 
-      const measure = findMeasureById(measures, datum[measureId] as string)
       const dimLabels = labelDims.map((item) => item.alias || item.id)
-      const meaLabels = labelMeas.map((item) => generateMeasureValue(datum[item.id] as number | string, item))
-      const measureValueLabel = generateMeasureValue(datum[measureValue] as number | string, measure)
+      const meaLabels = labelMeas.map((item) =>
+        generateMeasureValue(datum[item.id] as number | string, item, autoFormat, numFormat),
+      )
+
+      const measure = findMeasureById(measures, datum[measureId] as string)
+      const measureValueLabel = generateMeasureValue(
+        datum[measureValue] as number | string,
+        measure,
+        autoFormat,
+        numFormat,
+      )
       const measurePercentLabel = generateMeasurePercent(
         datum[measureValue] as number | string,
         statistics.sum,
-        formatter,
+        percentFormatter,
       )
 
       result.push(...dimLabels)
@@ -65,15 +88,37 @@ export const label: SpecPipe = (spec, context) => {
       }
       return result.join(' ')
     },
+    position: labelPosition,
+    style: {
+      fill: labelColor,
+      fontSize: labelFontSize,
+      fontWeight: labelFontWeight,
+      background: labelBackgroundColor,
+    },
+    smartInvert: labelColorSmartInvert,
   } as ILineLikeLabelSpec
+
+  if (labelOverlap) {
+    result.label.overlap = {
+      hideOnHit: true,
+      clampForce: true,
+    }
+  }
+
   return result
 }
 
-const generateMeasureValue = (value: number | string, measure?: Measure) => {
+const generateMeasureValue = (
+  value: number | string,
+  measure?: Measure,
+  labelAutoFormat: boolean = true,
+  numFormat: NumFormat = {},
+) => {
   if (!measure) {
     return value
   }
-  const { format = {}, autoFormat = true } = measure
+  const format = merge(numFormat, measure.format)
+  const autoFormat = labelAutoFormat || measure.autoFormat
 
   if (!isEmpty(format)) {
     const formatter = createFormatter(format)

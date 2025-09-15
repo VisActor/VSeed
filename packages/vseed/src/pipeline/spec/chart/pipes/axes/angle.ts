@@ -19,6 +19,7 @@ export const angleAxis: SpecPipe = (spec, context) => {
   }
 
   result.axes.push({
+    type: 'band',
     orient: 'angle',
     visible: showAxis,
     zero: true,

@@ -34,6 +34,8 @@ exports[`defaultDetail 1`] = `
       },
       "label": {
         "enable": false,
+        "labelColorSmartInvert": false,
+        "labelOverlap": true,
         "showValue": true,
         "showValuePercent": false,
         "wrap": true,
@@ -41,7 +43,7 @@ exports[`defaultDetail 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelFontColor": "#6F6F6F",
+        "labelColor": "#6F6F6F",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
@@ -167,6 +169,8 @@ exports[`defaultDetail 1`] = `
         },
         "label": {
           "enable": true,
+          "labelColorSmartInvert": false,
+          "labelOverlap": true,
           "showValue": true,
           "showValuePercent": false,
           "wrap": true,
@@ -174,7 +178,7 @@ exports[`defaultDetail 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelFontColor": "#646A73",
+          "labelColor": "#646A73",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
@@ -1915,6 +1919,18 @@ exports[`defaultDetail 2`] = `
   "direction": "vertical",
   "label": {
     "formatMethod": [Function],
+    "overlap": {
+      "clampForce": true,
+      "hideOnHit": true,
+    },
+    "position": undefined,
+    "smartInvert": false,
+    "style": {
+      "background": undefined,
+      "fill": undefined,
+      "fontSize": undefined,
+      "fontWeight": undefined,
+    },
     "visible": false,
   },
   "legends": {

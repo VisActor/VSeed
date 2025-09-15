@@ -2,6 +2,7 @@ import { unique } from 'remeda'
 import { MeasureName } from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
+import { addColorToEncoding } from './color'
 
 export const defaultEncodingForColumn: AdvancedPipe = (advancedVSeed) => {
   const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
@@ -57,14 +58,7 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding, i
   }
 
   // color
-  encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
-  const measureName = dimensions.find((item) => item.id === MeasureName)
-  if (measureName && !measureName.encoding && isMultiMeasure) {
-    encoding.color.push(MeasureName)
-  }
-  if (encoding.color.length === 0) {
-    encoding.color = [MeasureName]
-  }
+  addColorToEncoding(dimensions, encoding, isMultiMeasure)
 
   // detail
   encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))

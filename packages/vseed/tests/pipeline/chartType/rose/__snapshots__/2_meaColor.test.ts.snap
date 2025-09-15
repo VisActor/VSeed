@@ -609,6 +609,7 @@ exports[`2_meaColor 2`] = `
       "tick": {
         "visible": true,
       },
+      "type": "band",
       "visible": true,
       "zero": true,
     },
@@ -627,6 +628,7 @@ exports[`2_meaColor 2`] = `
       "tick": {
         "visible": true,
       },
+      "type": "linear",
       "visible": true,
       "zero": true,
     },

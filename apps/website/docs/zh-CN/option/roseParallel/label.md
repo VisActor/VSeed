@@ -52,3 +52,57 @@
 
 :::
 
+## labelFontSize
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标签字体大小
+
+:::
+
+## labelColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+标签字体颜色
+
+:::
+
+## labelColorSmartInvert
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+标签是否自动根据图元颜色进行字体颜色的反转
+
+:::
+
+## labelFontWeight
+
+**Type:** `string | number | undefined`
+
+:::note{title=描述}
+标签字体粗细
+
+:::
+
+## labelBackgroundColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+标签背景色
+
+:::
+
+## labelPosition
+
+**Type:** `"inside" | "outside" | undefined`
+
+:::note{title=描述}
+标签位置
+
+:::
+

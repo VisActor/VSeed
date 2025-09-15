@@ -41,7 +41,7 @@ exports[`dark 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelFontColor": "#FDFDFD",
+        "labelColor": "#FDFDFD",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
@@ -173,7 +173,7 @@ exports[`dark 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelFontColor": "#FDFDFD",
+          "labelColor": "#FDFDFD",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,

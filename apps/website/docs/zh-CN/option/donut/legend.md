@@ -45,6 +45,15 @@ border: true
 
 :::
 
+## labelColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+图例字体颜色
+
+:::
+
 ## labelFontSize
 
 **Type:** `number | undefined`
@@ -67,11 +76,6 @@ labelFontSize: 10
 图例字体颜色
 
 :::
-
-**示例**
-labelFontColor: '#212121'
-
-
 
 ## labelFontWeight
 

@@ -25,12 +25,12 @@ function getCoverageData() {
         functions: 0,
         branches: 0,
         color: 'brightgreen',
-        badgeUrl: 'https://img.shields.io/badge/Coverage-96%25-brightgreen.svg'
+        badgeUrl: 'https://img.shields.io/badge/Coverage-0%25-red.svg'
       };
     }
 
     const coverage = JSON.parse(readFileSync(coveragePath, 'utf8'));
-    const lines = Math.round(coverage.total.lines.pct);
+    const lines = Number(coverage.total.lines.pct).toFixed(2);
     
     const getColor = (pct) => {
       if (pct >= 90) return 'brightgreen';
@@ -43,9 +43,9 @@ function getCoverageData() {
 
     return {
       lines,
-      statements: Math.round(coverage.total.statements.pct),
-      functions: Math.round(coverage.total.functions.pct),
-      branches: Math.round(coverage.total.branches.pct),
+      statements: Number(coverage.total.statements.pct).toFixed(2),
+      functions: Number(coverage.total.functions.pct).toFixed(2),
+      branches: Number(coverage.total.branches.pct).toFixed(2),
       color: getColor(lines),
       badgeUrl: `https://img.shields.io/badge/Coverage-${lines}%25-${getColor(lines)}.svg`
     };

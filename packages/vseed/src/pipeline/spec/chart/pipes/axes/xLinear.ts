@@ -1,7 +1,8 @@
 import type { ISpec } from '@visactor/vchart'
 import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
 import type { SpecPipe, XLinearAxis } from 'src/types'
-import { autoFormatter } from '../../../../utils'
+import { autoFormatter, createNumFormatter } from '../../../../utils'
+import { isEmpty } from 'remeda'
 
 export const xLinear: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
@@ -41,7 +42,11 @@ export const xLinear: SpecPipe = (spec, context) => {
     min,
     log,
     logBase = 10,
+    autoFormat = true,
+    numFormat = {},
   } = config
+
+  const formatter = createNumFormatter(numFormat, locale)
 
   const linearAxis = {
     visible,
@@ -56,7 +61,13 @@ export const xLinear: SpecPipe = (spec, context) => {
     label: {
       visible: label?.visible,
       formatMethod: (value: string) => {
-        return autoFormatter(value, locale)
+        if (!isEmpty(numFormat)) {
+          return formatter(value)
+        }
+        if (autoFormat) {
+          return autoFormatter(value, locale)
+        }
+        return value
       },
       style: {
         fill: label?.labelColor,

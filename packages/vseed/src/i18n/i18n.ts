@@ -1,5 +1,5 @@
 import { isNullish } from 'remeda'
-import translateMap from './i18n.json'
+import * as translateMap from './i18nData.json'
 import type { Locale, TranslateRecordType } from '../types'
 
 class Intl {
@@ -15,7 +15,6 @@ class Intl {
    */
   i18n = (segments: TemplateStringsArray, ...values: Array<number | string>) => {
     const text = segments.map((segment, index) => segment + (values[index] || '')).join('')
-
     const translatedText = this.translateMap?.[text]?.[this.locale]
     if (isNullish(translatedText)) {
       console.warn(`i18n ${this.locale} no translate: ${text}`)
@@ -41,6 +40,4 @@ class Intl {
 
 const intl = Intl.getInstance()
 
-const i18n = intl.i18n
-
-export { intl, i18n }
+export { intl }

@@ -2,25 +2,28 @@ import type { ISpec } from '@visactor/vchart'
 import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
 import { autoFormatter } from '../../../../utils'
 import type { SpecPipe, YLinearAxis } from 'src/types'
-import { isEmpty } from 'remeda'
+import { isEmpty, isNullish } from 'remeda'
 
 export const yLinearPrimary: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const { locale, datasetReshapeInfo } = advancedVSeed
+  const { index, id: reshapeInfoId, foldInfoList } = datasetReshapeInfo[0]
   // TODO: default config missing
-  const index = datasetReshapeInfo[0].index
   const primaryYAxis = advancedVSeed.config?.[chartType as 'dualAxis']?.primaryYAxis as YLinearAxis | YLinearAxis[]
   const yAxisConfig = Array.isArray(primaryYAxis) ? primaryYAxis[index] || primaryYAxis[0] : primaryYAxis
   const alignTicks = advancedVSeed.config?.[chartType as 'dualAxis']?.alignTicks as boolean | boolean[]
   const alignTicksConfig = Array.isArray(alignTicks) ? alignTicks[index] || alignTicks[0] : alignTicks
 
-  if (datasetReshapeInfo[0].foldInfoList?.[0] && isEmpty(datasetReshapeInfo[0].foldInfoList[0].foldMap)) {
+  if (isNullish(foldInfoList?.[0])) {
     return result
   }
-  const id = `${datasetReshapeInfo[0].id}-primary-axis`
-  const seriesIds = [`${datasetReshapeInfo[0].id}-primary-series`, `${datasetReshapeInfo[0].id}-secondary-series`]
+
+  const isEmptySecondary = isEmpty(foldInfoList?.[0].foldMap)
+
+  const id = `${reshapeInfoId}-primary-axis`
+  const seriesIds = [`${reshapeInfoId}-primary-series`, `${reshapeInfoId}-secondary-series`]
   const seriesId = alignTicksConfig ? seriesIds : seriesIds[0]
 
   if (!result.axes) {
@@ -59,7 +62,7 @@ export const yLinearPrimary: SpecPipe = (spec, context) => {
   } = yAxisConfig
 
   const linearAxis = {
-    visible,
+    visible: isEmptySecondary ? false : visible,
     id,
     seriesId,
 

@@ -1,26 +1,28 @@
 import type { IAreaChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { AreaStyle, Datum, SpecPipe } from 'src/types'
-import { groupBy } from 'remeda'
+import { groupBy, isEmpty, isNullish } from 'remeda'
 
 export const areaStyle: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const { markStyle, encoding, dataset } = advancedVSeed
+  const { markStyle, datasetReshapeInfo, dataset } = advancedVSeed
   const { areaStyle } = markStyle
+  const { unfoldInfo } = datasetReshapeInfo[0]
+  const result = {
+    ...spec,
+    area: {
+      visible: true,
+      style: {},
+    },
+  } as IAreaChartSpec
 
-  if (!areaStyle) {
-    return {
-      ...spec,
-      area: {
-        visible: true,
-      },
-    }
+  if (isNullish(areaStyle) || isEmpty(areaStyle)) {
+    return result
   }
-  const result = { ...spec } as IAreaChartSpec
 
   const areaStyles = (Array.isArray(areaStyle) ? areaStyle : [areaStyle]) as AreaStyle[]
 
-  const group = encoding[0]?.group?.[0]
+  const group = unfoldInfo.encodingColorId
 
   const areaGroups = groupBy(dataset, (d) => d[group ?? ''] as string)
 
@@ -53,6 +55,7 @@ export const areaStyle: SpecPipe = (spec, context) => {
   return {
     ...result,
     area: {
+      ...result.area,
       visible: true,
       state: {
         ...customMap,

@@ -1,26 +1,38 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
-  autoDimensions,
-  autoMeasures,
-  encodingXY,
   initAdvancedVSeed,
   theme,
-  reshapeTo2D1M,
-  pivotReshapeTo2D1M,
   pivotAdapter,
   columnPercentConfig,
   markStyle,
   annotation,
   sortXBandAxis,
   sortLegend,
+  encodingForColumn,
+  reshapeWithEncoding,
+  pivotReshapeWithEncoding,
+  buildMeasures,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+  encodingAdapter,
+  defaultEncodingForColumn,
+  deleteTooltipAndLabelMeasure,
+  deleteTooltipAndLabelDimension,
 } from '../pipes'
 
 export const columnPercentAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  autoMeasures,
-  autoDimensions,
-  pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
-  encodingXY,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+
+  encodingAdapter(
+    [defaultEncodingForColumn, buildMeasures],
+    [encodingForColumn, buildMeasures, deleteTooltipAndLabelMeasure, deleteTooltipAndLabelDimension],
+  ),
+  pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
+
   sortXBandAxis,
   sortLegend,
   columnPercentConfig,

@@ -1,0 +1,76 @@
+{
+  "chartType": "pivotTable",
+  "measures": [
+    {
+      "id": "line1",
+      "children": [
+        {
+          "id": "sales",
+          "alias": "销售额",
+          "format": {
+            "type": "number",
+            "ratio": 1000,
+            "thousandSeparator": true,
+            "decimalPlaces": 0,
+            "symbol": "千",
+            "prefix": "利润",
+            "suffix": "$"
+          }
+        }
+      ]
+    },
+    {
+      "id": "line2",
+      "children": [
+        {
+          "id": "profit",
+          "alias": "利润",
+          "autoFormat": true,
+          "format": {
+            "type": "number",
+            "ratio": 1000,
+            "thousandSeparator": true,
+            "decimalPlaces": 0,
+            "symbol": "千",
+            "prefix": "利润",
+            "suffix": "$"
+          }
+        }
+      ]
+    }
+  ],
+  "dimensions": [
+    { "id": "month", "alias": "月" },
+    { "id": "date", "alias": "年", "encoding": "column" },
+    { "id": "type", "alias": "类型", "encoding": "row" }
+  ],
+  "dataset": [
+    { "date": "2019", "type": "A", "month": "1", "profit": 10000, "sales": 200000 },
+    { "date": "2019", "type": "A", "month": "2", "profit": 20000, "sales": 400000 },
+    { "date": "2019", "type": "A", "month": "3", "profit": 30000, "sales": 600000 },
+    { "date": "2019", "type": "A", "month": "4", "profit": 40000, "sales": 800000 },
+    { "date": "2019", "type": "A", "month": "5", "profit": 50000, "sales": 1000000 },
+    { "date": "2019", "type": "A", "month": "6", "profit": 10000, "sales": 300000 },
+
+    { "date": "2019", "type": "B", "month": "1", "profit": 10000, "sales": 200000 },
+    { "date": "2019", "type": "B", "month": "2", "profit": 20000, "sales": 400000 },
+    { "date": "2019", "type": "B", "month": "3", "profit": 30000, "sales": 600000 },
+    { "date": "2019", "type": "B", "month": "4", "profit": 40000, "sales": 800000 },
+    { "date": "2019", "type": "B", "month": "5", "profit": 50000, "sales": 1000000 },
+    { "date": "2019", "type": "B", "month": "6", "profit": 10000, "sales": 300000 },
+
+    { "date": "2020", "type": "A", "month": "1", "profit": 10000, "sales": 200000 },
+    { "date": "2020", "type": "A", "month": "2", "profit": 20000, "sales": 400000 },
+    { "date": "2020", "type": "A", "month": "3", "profit": 30000, "sales": 600000 },
+    { "date": "2020", "type": "A", "month": "4", "profit": 40000, "sales": 800000 },
+    { "date": "2020", "type": "A", "month": "5", "profit": 50000, "sales": 1000000 },
+    { "date": "2020", "type": "A", "month": "6", "profit": 10000, "sales": 300000 },
+
+    { "date": "2020", "type": "B", "month": "1", "profit": 10000, "sales": 200000 },
+    { "date": "2020", "type": "B", "month": "2", "profit": 20000, "sales": 400000 },
+    { "date": "2020", "type": "B", "month": "3", "profit": 30000, "sales": 600000 },
+    { "date": "2020", "type": "B", "month": "4", "profit": 40000, "sales": 800000 },
+    { "date": "2020", "type": "B", "month": "5", "profit": 50000, "sales": 1000000 },
+    { "date": "2020", "type": "B", "month": "6", "profit": 10000, "sales": 300000 }
+  ]
+}

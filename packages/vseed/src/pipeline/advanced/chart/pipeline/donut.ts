@@ -1,24 +1,36 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
-  autoDimensions,
-  autoMeasures,
   initAdvancedVSeed,
   theme,
   pivotAdapter,
-  reshapeTo1D1M,
-  pivotReshapeTo1D1M,
-  encodingPie,
   annotation,
   donutConfig,
+  encodingForPie,
+  reshapeWithEncoding,
+  pivotReshapeWithEncoding,
+  buildMeasures,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+  encodingAdapter,
+  defaultEncodingForPie,
+  deleteTooltipAndLabelMeasure,
+  deleteTooltipAndLabelDimension,
 } from '../pipes'
 
 export const donutAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  autoMeasures,
-  autoDimensions,
-  pivotAdapter([reshapeTo1D1M], [pivotReshapeTo1D1M]),
-  encodingPie,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+
+  encodingAdapter(
+    [defaultEncodingForPie, buildMeasures],
+    [encodingForPie, buildMeasures, deleteTooltipAndLabelMeasure, deleteTooltipAndLabelDimension],
+  ),
+  pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
+
   donutConfig,
   theme,
-  annotation
+  annotation,
 ]

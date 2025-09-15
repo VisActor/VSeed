@@ -1,0 +1,24 @@
+import type { IRoseChartSpec } from '@visactor/vchart'
+import type { SpecPipe } from 'src/types'
+import { isLinearColor } from './colorAdapter'
+
+export const colorRoseStyleFill = (stylePipe: SpecPipe): SpecPipe => {
+  return (spec, context) => {
+    const result = stylePipe(spec, context) as IRoseChartSpec
+
+    const { advancedVSeed } = context
+    const { datasetReshapeInfo } = advancedVSeed
+    const { unfoldInfo } = datasetReshapeInfo[0]
+
+    if (isLinearColor(advancedVSeed)) {
+      if (result?.rose?.style) {
+        result.rose.style.fill = {
+          field: unfoldInfo.encodingColor,
+          scale: 'color',
+        }
+      }
+    }
+
+    return result
+  }
+}

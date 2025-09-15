@@ -1,4 +1,1 @@
 export { initAdvancedVSeed } from './initAdvancedVSeed'
-export { autoMeasures } from './autoMeasures'
-export { autoDimensions } from './autoDimensions'
-export { autoMeasuresBy2M1Group } from './autoMeasuresBy2M1Group'

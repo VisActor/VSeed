@@ -1,3 +1,4 @@
+import { z } from 'zod'
 import { zLocale } from '../../i18n'
 import {
   zAnnotationArea,
@@ -10,6 +11,7 @@ import {
   zCrosshairRect,
   zDataset,
   zDimensions,
+  zEncoding,
   zLabel,
   zLegend,
   zMeasureTree,
@@ -20,11 +22,10 @@ import {
   zYLinearAxis,
 } from '../../properties'
 
-import { z } from 'zod'
-
 export const zColumnParallel = z.object({
   chartType: z.literal('columnParallel'),
   dataset: zDataset.nullish(),
+  encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasureTree.nullish(),
   backgroundColor: zBackgroundColor.nullish(),

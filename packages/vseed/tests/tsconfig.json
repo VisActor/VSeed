@@ -1,17 +1,3 @@
 {
-  "include": [
-    ".",
-    "../src",
-    "../vitest.setup.ts"
-  ],
-  "compilerOptions": {
-    "paths": {
-      "baseUrl": [
-        "../"
-      ],
-      "@visactor/vseed": [
-        "../src"
-      ]
-    }
-  },
+  "extends": "../tsconfig.test.json",
 }

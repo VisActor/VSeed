@@ -1,10 +1,11 @@
-import type { ILineChartSpec } from '@visactor/vchart'
+import type { IBarChartSpec } from '@visactor/vchart'
 import type { Color, SpecPipe } from 'src/types'
 
 export const linearColor: SpecPipe = (spec, context) => {
-  const result = { ...spec } as ILineChartSpec
+  const result = { ...spec } as IBarChartSpec
   const { advancedVSeed } = context
-  const { datasetReshapeInfo, chartType, encoding } = advancedVSeed
+  const { datasetReshapeInfo, chartType } = advancedVSeed
+  const { unfoldInfo, id } = datasetReshapeInfo[0]
   const baseConfig = advancedVSeed.config[chartType] as { color: Color }
 
   if (!baseConfig || !baseConfig.color) {
@@ -12,17 +13,18 @@ export const linearColor: SpecPipe = (spec, context) => {
   }
 
   const { color } = baseConfig
-  const { colorScheme } = color
+  const { colorScheme, linearColorScheme } = color
 
   result.color = {
     type: 'linear',
+    range: linearColorScheme || colorScheme || [],
     domain: [
       {
-        dataId: datasetReshapeInfo[0].id,
-        fields: encoding?.[0]?.color,
+        dataId: id,
+        fields: [unfoldInfo.encodingColor],
       },
     ],
-    range: colorScheme,
-  } as ILineChartSpec['color']
+  }
+
   return result
 }

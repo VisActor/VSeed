@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { Dataset, FoldInfo, Dimension, Measures, DimensionTree } from 'src/types'
-import { FoldMeasureId, FoldMeasureName, FoldMeasureValue, ORIGINAL_DATA } from './constant'
+import type { Dataset, FoldInfo, Measures } from 'src/types'
+import { ColorEncoding, ColorIdEncoding, ORIGINAL_DATA } from './constant'
 import { omit } from 'remeda'
 
 /**
@@ -9,18 +9,31 @@ import { omit } from 'remeda'
  */
 export const foldMeasures = (
   dataset: Dataset,
-  measures: Dimension[],
-  measureId = FoldMeasureId,
-  measureName = FoldMeasureName,
-  measureValue = FoldMeasureValue,
+  measures: Measures,
+  options: {
+    measureId: string
+    measureName: string
+    measureValue: string
+    colorMeasureId?: string
+  },
 ): {
   dataset: Dataset
   foldInfo: FoldInfo
 } => {
+  const { measureId, measureName, measureValue, colorMeasureId } = options || {}
+
   const foldInfo: FoldInfo = {
     measureId,
     measureName,
     measureValue,
+    statistics: {
+      max: -Infinity,
+      min: Infinity,
+      sum: 0,
+      count: 0,
+      colorMin: Infinity,
+      colorMax: -Infinity,
+    },
     foldMap: {},
   }
   const result: Dataset = new Array(dataset.length * measures.length) as Dataset
@@ -40,6 +53,22 @@ export const foldMeasures = (
       datum[measureName] = alias || id
       datum[measureValue] = dataset[i][id] as unknown
 
+      if (colorMeasureId) {
+        const value = (datum[ORIGINAL_DATA] as Record<string, string | number>)[colorMeasureId]
+        datum[ColorEncoding] = value
+        datum[ColorIdEncoding] = colorMeasureId
+
+        const valueNumber = Number(value)
+        foldInfo.statistics.colorMin = Math.min(foldInfo.statistics.colorMin, valueNumber)
+        foldInfo.statistics.colorMax = Math.max(foldInfo.statistics.colorMax, valueNumber)
+      }
+
+      const valueNumber = Number(datum[id])
+      foldInfo.statistics.min = Math.min(foldInfo.statistics.min, valueNumber)
+      foldInfo.statistics.max = Math.max(foldInfo.statistics.max, valueNumber)
+      foldInfo.statistics.sum += valueNumber
+      foldInfo.statistics.count++
+
       foldInfo.foldMap[id] = alias
       result[index++] = datum
     }
@@ -48,54 +77,5 @@ export const foldMeasures = (
   return {
     dataset: result,
     foldInfo,
-  }
-}
-
-/**
- * 折叠指定的指标组, 至多支持2层
- * @param dataset
- * @param measures
- * @param measureId
- * @param measureName
- * @param measureValue
- * @returns
- */
-export const foldMeasureGroups = (
-  dataset: Dataset,
-  measures: Required<DimensionTree>,
-  measureId = '__MeaId__',
-  measureName = '__MeaName__',
-  measureValue = '__MeaValue__',
-) => {
-  const groups: Array<Measures> = []
-  if (!measures) {
-    return {
-      dataset,
-    }
-  }
-
-  // 没有分组, 直接折叠所有指标
-  if (!measures.some((measure) => 'children' in measure)) {
-    return foldMeasures(dataset, measures, measureId, measureName, measureValue)
-  }
-
-  measures.forEach((measure) => {
-    if ('children' in measure && measure.children) {
-      groups.push(measure.children)
-    } else {
-      groups.push([measure])
-    }
-  })
-
-  // 一组返回一个dataset
-  const datasetGroup = groups.map((measures) => {
-    if (!measures) {
-      return []
-    }
-    return foldMeasures(dataset, measures, measureId, measureName, measureValue)
-  })
-
-  return {
-    datasetGroup,
   }
 }

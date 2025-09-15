@@ -1,4 +1,3 @@
-import type { StringOrNumber } from '@visactor/vchart'
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
 import type { IDiscreteTableLegendOption } from '@visactor/vtable/es/ts-types/component/legend'
 import { unique } from 'remeda'
@@ -97,8 +96,8 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
         },
       },
       label: {
-        formatMethod: (value: StringOrNumber) => {
-          return colorIdMap[String(value)] ?? value
+        formatMethod: (value: string) => {
+          return colorIdMap[value] ?? value
         },
         style: {
           fontSize: labelFontSize,

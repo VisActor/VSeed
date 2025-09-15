@@ -31,7 +31,7 @@ export const CombinationColumnPercentChart = memo(() => {
       {
         id: 'date',
         alias: '日期',
-        location: 'dimension',
+        
       },
     ],
     measures: [
@@ -68,9 +68,9 @@ export const PivotColumnPercentChart = memo(() => {
   const vseed: VSeed = {
     chartType: 'columnPercent',
     dimensions: [
-      { id: 'category', alias: '类别', location: 'dimension' },
-      { id: 'date', alias: '日期', location: 'columnDimension' },
-      { id: 'region', alias: '区域', location: 'rowDimension' },
+      { id: 'category', alias: '类别',   },
+      { id: 'date', alias: '日期', encoding: 'column' },
+      { id: 'region', alias: '区域', encoding: 'row' },
     ],
     measures: [
       {

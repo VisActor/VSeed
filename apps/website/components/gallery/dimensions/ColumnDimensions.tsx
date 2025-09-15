@@ -7,9 +7,9 @@ export const ColumnDimensions = memo(() => {
   const vseed: VSeed = {
     chartType: 'columnParallel',
     dimensions: [
-      { id: 'category', alias: '类别', location: 'dimension' },
-      { id: 'date', alias: '日期', location: 'columnDimension' },
-      { id: 'region', alias: '区域', location: 'columnDimension' },
+      { id: 'category', alias: '类别',   },
+      { id: 'date', alias: '日期', encoding: 'column' },
+      { id: 'region', alias: '区域', encoding: 'column' },
     ],
     measures: [{ id: 'profit', alias: '利润' }],
     dataset: [

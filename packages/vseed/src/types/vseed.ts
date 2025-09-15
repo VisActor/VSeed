@@ -1,34 +1,24 @@
-import { z } from 'zod'
-
-import { zBar, type Bar } from './chartType/bar'
-import { zBarParallel, type BarParallel } from './chartType/barParallel'
-import { zColumn, type Column } from './chartType/column'
-import { zColumnParallel, type ColumnParallel } from './chartType/columnParallel'
-import { zColumnPercent, type ColumnPercent } from './chartType/columnPercent'
-import { zLine, type Line } from './chartType/line'
-import type { Table } from './chartType/table'
-import { zRose, type Rose } from './chartType/rose'
-import { zBarPercent, type BarPercent } from './chartType/barPercent'
-import type { PivotTable } from './chartType/pivotTable'
-import { zPie, type Pie } from './chartType/pie'
-import { zDonut, type Donut } from './chartType/donut'
-import type { DualAxis } from './chartType/dualAxis'
-import { zArea, type Area } from './chartType/area'
-import { zAreaPercent, type AreaPercent } from './chartType/areaPercent'
-import type { AreaRange, Heatmap, Radar } from './chartType'
-import {
-  zAreaRange,
-  zDualAxis,
-  zFunnel,
-  zHeatmap,
-  zPivotTable,
-  zRadar,
-  zRoseParallel,
-  zScatter,
-  zTable,
-  type Funnel,
-  type RoseParallel,
-  type Scatter,
+import type {
+  Area,
+  AreaPercent,
+  Bar,
+  BarParallel,
+  BarPercent,
+  Column,
+  ColumnParallel,
+  ColumnPercent,
+  Donut,
+  DualAxis,
+  Funnel,
+  Heatmap,
+  Line,
+  Pie,
+  PivotTable,
+  Radar,
+  Rose,
+  RoseParallel,
+  Scatter,
+  Table,
 } from './chartType'
 
 export type VSeed =
@@ -46,7 +36,6 @@ export type VSeed =
   | BarPercent
   | Area
   | AreaPercent
-  | AreaRange
   | Scatter
   | DualAxis
 
@@ -60,30 +49,3 @@ export type VSeed =
   // other
   | Funnel
   | Heatmap
-
-export const zVSeed = z.discriminatedUnion('chartType', [
-  zTable,
-  zPivotTable,
-  // cartesian
-  zLine,
-  zColumn,
-  zColumnParallel,
-  zColumnPercent,
-  zBar,
-  zBarParallel,
-  zBarPercent,
-  zArea,
-  zAreaPercent,
-  zAreaRange,
-  zScatter,
-  zDualAxis,
-  // polar
-  zPie,
-  zDonut,
-  zRose,
-  zRoseParallel,
-  zRadar,
-  // other
-  zFunnel,
-  zHeatmap,
-])

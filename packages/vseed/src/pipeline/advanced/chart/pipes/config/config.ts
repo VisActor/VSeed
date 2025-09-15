@@ -1,4 +1,5 @@
 import { pick } from 'remeda'
+import { replaceNullToUndefined } from 'src/pipeline/utils'
 import type { AdvancedPipe, AdvancedVSeed, Config } from 'src/types'
 
 export const lineConfig: AdvancedPipe = (advancedVSeed, context) => {
@@ -8,7 +9,7 @@ export const lineConfig: AdvancedPipe = (advancedVSeed, context) => {
     ...advancedVSeed,
   }
 
-  const config = pick(vseed, [
+  const pickedConfig = pick(vseed, [
     'backgroundColor',
     'color',
     'label',
@@ -18,6 +19,8 @@ export const lineConfig: AdvancedPipe = (advancedVSeed, context) => {
     'yAxis',
     'crosshairLine',
   ]) as Config['line']
+
+  const config = replaceNullToUndefined(pickedConfig)
 
   result.config = {
     ...(result.config || {}),

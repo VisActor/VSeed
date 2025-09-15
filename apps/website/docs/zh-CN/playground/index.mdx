@@ -6,32 +6,47 @@ pageType: custom
 
 ```tsx
 const Demo = () => {
+  const MeasureNames = '__MeaName__'
+
   const vseed: VSeed = {
     chartType: 'columnParallel',
-    measures: [
-      {
-        id: 'sales',
-        alias: '销售额',
-        autoFormat: true,
-      },
-    ],
     dimensions: [
-      { id: 'date', alias: '日期', location: 'dimension' },
-      { id: 'date', alias: '日期', location: 'dimension' },
+      { id: 'date', alias: '日期', encoding: 'xAxis' },
+      { id: 'region', alias: '区域', encoding: 'color' },
+      { id: 'city', alias: '城市', encoding: 'color' },
+      { id: 'city', alias: '城市', encoding: 'label' },
+    ],
+    measures: [
+      { id: 'profit', alias: '利润' },
+      { id: 'sales', alias: '销售额' },
+      { id: 'count', alias: '数量', encoding: 'label' },
     ],
     dataset: [
-      { date: '2019', profit: 10000, sales: 200000, discount: 0.5, rateOfReturn: 0.001 },
-      { date: '2020', profit: 20000, sales: 400000, discount: 0.2, rateOfReturn: 0.002 },
-      { date: '2021', profit: 30000, sales: 600000, discount: 0.4, rateOfReturn: 0.003 },
-      { date: '2022', profit: 40000, sales: 800000, discount: 0.2, rateOfReturn: 0.004 },
-      { date: '2023', profit: 50000, sales: 1000000, discount: 0.05, rateOfReturn: 0.005 },
+      { date: '2019', region: 'east', city: 'A', profit: 10, sales: 20, count: 100 },
+      { date: '2019', region: 'east', city: 'B', profit: 30, sales: 60, count: 100 },
+      { date: '2019', region: 'west', city: 'A', profit: 15, sales: 44, count: 100 },
+      { date: '2019', region: 'west', city: 'B', profit: 50, sales: 60, count: 100 },
+
+      { date: '2020', region: 'east', city: 'A', profit: 15, sales: 21, count: 100 },
+      { date: '2020', region: 'east', city: 'B', profit: 1, sales: 10, count: 100 },
+      { date: '2020', region: 'west', city: 'A', profit: 35, sales: 40, count: 100 },
+      { date: '2020', region: 'west', city: 'B', profit: 55, sales: 60, count: 100 },
+
+      { date: '2021', region: 'east', city: 'A', profit: 20, sales: 30, count: 100 },
+      { date: '2021', region: 'east', city: 'B', profit: 2, sales: 55, count: 100 },
+      { date: '2021', region: 'west', city: 'A', profit: 40, sales: 75, count: 100 },
+      { date: '2021', region: 'west', city: 'B', profit: 60, sales: 65, count: 100 },
     ],
+    label: {
+      enable: true,
+    },
   }
 
-  if (zVSeed.safeParse(vseed).success) {
+  const parseRes = zVSeed.safeParse(vseed)
+  if (parseRes.success) {
     console.log('zVSeed parse success!!!')
   } else {
-    console.error('zVSeed parse error!!!')
+    console.error('zVSeed parse error!!!', parseRes)
   }
 
   return <SimpleVSeedRender vseed={vseed} />
@@ -50,7 +65,7 @@ import {
   isPivotTable,
   isTable,
   zVSeed,
-  UnfoldDimensionGroupId,
+  ColorIdEncoding,
 } from '@visactor/vseed'
 
 registerAll()
@@ -78,7 +93,7 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
         console.log('LEGEND_ITEM_CLICK', args)
         tableInstance.updateFilterRules([
           {
-            filterKey: UnfoldDimensionGroupId,
+            filterKey: ColorIdEncoding,
             filteredValues: args.value,
           },
         ])
@@ -110,7 +125,9 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
         console.log('advancedVSeed', builderRef.current.advancedVSeed)
         console.groupEnd()
       }}
-    ></div>
+    >
+      {' '}
+    </div>
   )
 }
 

@@ -11,6 +11,7 @@ import {
   zCrosshairLine,
   zDataset,
   zDimensions,
+  zEncoding,
   zLabel,
   zLegend,
   zLineStyle,
@@ -25,6 +26,7 @@ import {
 export const zArea = z.object({
   chartType: z.literal('area'),
   dataset: zDataset.nullish(),
+  encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasureTree.nullish(),
   backgroundColor: zBackgroundColor.nullish(),

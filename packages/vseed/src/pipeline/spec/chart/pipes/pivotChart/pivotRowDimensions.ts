@@ -9,7 +9,7 @@ export const pivotRowDimensions: SpecPipe = (spec, context) => {
   if (!dimensions) {
     return result
   }
-  const rowDimensions = dimensions.filter((dim) => dim.location === 'rowDimension')
+  const rowDimensions = dimensions.filter((dim) => dim.encoding === 'row')
   const rows: IBasicDimension[] = rowDimensions.map((dim) => ({
     dimensionKey: dim.id,
     title: dim.alias || dim.id,

@@ -1,7 +1,7 @@
 {
   "name": "website",
   "private": true,
-  "version": "0.0.40",
+  "version": "0.1.13",
   "scripts": {
     "build": "rspress build",
     "dev": "rspress dev",
@@ -17,7 +17,6 @@
     "zustand": "5.0.6"
   },
   "devDependencies": {
-    "ts-morph": "26.0.0",
     "@eslint/js": "9.30.0",
     "@rspress/plugin-playground": "1.45.3",
     "@types/node": "22.16.5",

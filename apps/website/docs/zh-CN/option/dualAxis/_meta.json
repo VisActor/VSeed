@@ -133,5 +133,10 @@
     "type": "file",
     "name": "tooltip",
     "label": "tooltip "
+  },
+  {
+    "type": "file",
+    "name": "xAxis",
+    "label": "xAxis "
   }
 ]

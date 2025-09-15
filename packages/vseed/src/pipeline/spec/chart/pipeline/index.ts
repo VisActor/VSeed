@@ -8,7 +8,6 @@ export { barParallelSpecPipeline } from './barParallel'
 export { barPercentSpecPipeline } from './barPercent'
 export { areaSpecPipeline } from './area'
 export { areaPercentSpecPipeline } from './areaPercent'
-export { areaRangeSpecPipeline } from './areaRange'
 export { scatterSpecPipeline } from './scatter'
 export { dualAxisSpecPipeline } from './dualAxis'
 // polar

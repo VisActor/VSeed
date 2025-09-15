@@ -3,20 +3,15 @@ import type { Legend, SpecPipe } from 'src/types'
 export const colorLegend: SpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed } = context
-  const { chartType } = advancedVSeed
+  const { datasetReshapeInfo, chartType } = advancedVSeed
+  const { unfoldInfo } = datasetReshapeInfo[0]
   const baseConfig = advancedVSeed.config[chartType] as { legend: Legend }
-  const { encoding } = advancedVSeed
-
-  if (!encoding[0].color) {
-    return result
-  }
-
   if (!baseConfig || !baseConfig.legend) {
     return result
   }
 
   const { legend } = baseConfig
-  const { enable, position = 'bottom' } = legend || {}
+  const { enable, position = 'bottom', labelFontColor, labelFontSize = 12, labelFontWeight } = legend || {}
 
   const orient = ['bottom', 'bottomLeft', 'bottomRight', 'bl', 'br'].includes(position)
     ? 'bottom'
@@ -37,8 +32,25 @@ export const colorLegend: SpecPipe = (spec, context) => {
     visible: enable,
     orient,
     position: legendPosition,
-    field: encoding[0].color[0],
-    inverse: ['left', 'right'].includes(orient) ? true : false,
+    padding: 0,
+    field: unfoldInfo.encodingColor,
+    maxWidth: '30%',
+    startText: {
+      visible: true,
+      style: {
+        fill: labelFontColor,
+        fontSize: labelFontSize,
+        fontWeight: labelFontWeight,
+      },
+    },
+    endText: {
+      visible: true,
+      style: {
+        fill: labelFontColor,
+        fontSize: labelFontSize,
+        fontWeight: labelFontWeight,
+      },
+    },
   }
   return result
 }

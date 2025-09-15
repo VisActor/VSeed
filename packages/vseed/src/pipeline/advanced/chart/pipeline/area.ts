@@ -1,8 +1,5 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
-  autoDimensions,
-  autoMeasures,
-  encodingXY,
   initAdvancedVSeed,
   theme,
   pivotAdapter,
@@ -11,16 +8,31 @@ import {
   markStyle,
   sortXBandAxis,
   sortLegend,
-  reshapeTo2D1M0Name,
-  pivotReshapeTo2D1M0Name,
+  reshapeWithEncoding,
+  pivotReshapeWithEncoding,
+  buildMeasures,
+  encodingForLine,
+  defaultMeasures,
+  defaultMeasureName,
+  defaultDimensions,
+  encodingAdapter,
+  defaultEncodingForLine,
+  deleteTooltipAndLabelMeasure,
+  deleteTooltipAndLabelDimension,
 } from '../pipes'
 
 export const areaAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  autoMeasures,
-  autoDimensions,
-  pivotAdapter([reshapeTo2D1M0Name], [pivotReshapeTo2D1M0Name]),
-  encodingXY,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+
+  encodingAdapter(
+    [defaultEncodingForLine, buildMeasures],
+    [encodingForLine, buildMeasures, deleteTooltipAndLabelMeasure, deleteTooltipAndLabelDimension],
+  ),
+  pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
+
   sortXBandAxis,
   sortLegend,
   areaConfig,

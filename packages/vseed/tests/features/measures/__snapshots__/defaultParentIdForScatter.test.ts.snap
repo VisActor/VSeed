@@ -1,0 +1,1457 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`defaultParentIdForScatter 1`] = `
+{
+  "annotation": {},
+  "chartType": "scatter",
+  "config": {
+    "scatter": {
+      "backgroundColor": "transparent",
+      "color": {
+        "colorScheme": [
+          "#8D72F6",
+          "#5766EC",
+          "#66A3FE",
+          "#51D5E6",
+          "#4EC0B3",
+          "#F9DF90",
+          "#F9AD71",
+          "#ED8888",
+          "#E9A0C3",
+          "#D77DD3",
+        ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
+      },
+      "crosshairLine": {
+        "labelBackgroundColor": "#364159",
+        "labelColor": "#ffffff",
+        "labelVisible": true,
+        "lineColor": "#3641594d",
+        "visible": true,
+      },
+      "label": {
+        "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
+      },
+      "legend": {
+        "border": true,
+        "enable": true,
+        "labelFontColor": "#646A73",
+        "labelFontSize": 12,
+        "labelFontWeight": 400,
+        "maxSize": 1,
+        "position": "rt",
+        "shapeType": "rectRound",
+      },
+      "tooltip": {
+        "enable": true,
+      },
+      "xAxis": {
+        "grid": {
+          "gridColor": "#36415926",
+          "gridWidth": 0.5,
+          "visible": true,
+        },
+        "inverse": false,
+        "label": {
+          "labelAngle": 0,
+          "labelColor": "#797B85",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "visible": true,
+        },
+        "line": {
+          "lineColor": "#3641594d",
+          "lineWidth": 1,
+          "visible": true,
+        },
+        "nice": true,
+        "tick": {
+          "tickColor": "#3641594d",
+          "tickInside": false,
+          "tickSize": 4,
+          "visible": false,
+        },
+        "title": {
+          "titleColor": "#646A73",
+          "titleFontSize": 12,
+          "titleFontWeight": 400,
+          "titleText": "",
+          "visible": false,
+        },
+        "zero": true,
+      },
+      "yAxis": {
+        "grid": {
+          "gridColor": "#36415926",
+          "gridWidth": 0.5,
+          "visible": true,
+        },
+        "inverse": false,
+        "label": {
+          "labelAngle": 0,
+          "labelColor": "#797B85",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "visible": true,
+        },
+        "line": {
+          "lineColor": "#3641594d",
+          "lineWidth": 1,
+          "visible": true,
+        },
+        "nice": true,
+        "tick": {
+          "tickColor": "#3641594d",
+          "tickInside": false,
+          "tickSize": 4,
+          "visible": false,
+        },
+        "title": {
+          "titleColor": "#646A73",
+          "titleFontSize": 12,
+          "titleFontWeight": 400,
+          "titleText": "",
+          "visible": false,
+        },
+        "zero": true,
+      },
+    },
+  },
+  "customTheme": {
+    "config": {
+      "scatter": {
+        "backgroundColor": "transparent",
+        "color": {
+          "colorScheme": [
+            "#8D72F6",
+            "#5766EC",
+            "#66A3FE",
+            "#51D5E6",
+            "#4EC0B3",
+            "#F9DF90",
+            "#F9AD71",
+            "#ED8888",
+            "#E9A0C3",
+            "#D77DD3",
+          ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
+          ],
+        },
+        "crosshairLine": {
+          "labelBackgroundColor": "#364159",
+          "labelColor": "#ffffff",
+          "labelVisible": true,
+          "lineColor": "#3641594d",
+          "visible": true,
+        },
+        "label": {
+          "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
+        },
+        "legend": {
+          "border": true,
+          "enable": true,
+          "labelFontColor": "#646A73",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "maxSize": 1,
+          "position": "rt",
+          "shapeType": "rectRound",
+        },
+        "tooltip": {
+          "enable": true,
+        },
+        "xAxis": {
+          "grid": {
+            "gridColor": "#36415926",
+            "gridWidth": 0.5,
+            "visible": true,
+          },
+          "inverse": false,
+          "label": {
+            "labelAngle": 0,
+            "labelColor": "#797B85",
+            "labelFontSize": 12,
+            "labelFontWeight": 400,
+            "visible": true,
+          },
+          "line": {
+            "lineColor": "#3641594d",
+            "lineWidth": 1,
+            "visible": true,
+          },
+          "nice": true,
+          "tick": {
+            "tickColor": "#3641594d",
+            "tickInside": false,
+            "tickSize": 4,
+            "visible": false,
+          },
+          "title": {
+            "titleColor": "#646A73",
+            "titleFontSize": 12,
+            "titleFontWeight": 400,
+            "titleText": "",
+            "visible": false,
+          },
+          "zero": true,
+        },
+        "yAxis": {
+          "grid": {
+            "gridColor": "#36415926",
+            "gridWidth": 0.5,
+            "visible": true,
+          },
+          "inverse": false,
+          "label": {
+            "labelAngle": 0,
+            "labelColor": "#797B85",
+            "labelFontSize": 12,
+            "labelFontWeight": 400,
+            "visible": true,
+          },
+          "line": {
+            "lineColor": "#3641594d",
+            "lineWidth": 1,
+            "visible": true,
+          },
+          "nice": true,
+          "tick": {
+            "tickColor": "#3641594d",
+            "tickInside": false,
+            "tickSize": 4,
+            "visible": false,
+          },
+          "title": {
+            "titleColor": "#646A73",
+            "titleFontSize": 12,
+            "titleFontWeight": 400,
+            "titleText": "",
+            "visible": false,
+          },
+          "zero": true,
+        },
+      },
+    },
+  },
+  "dataset": [
+    [
+      {
+        "__Dim_ColorId__": "技术",
+        "__Dim_Color__": "技术",
+        "__Dim_Detail__": "技术",
+        "__MeaId__": "co_20250914131915_8e38",
+        "__MeaName__": "sum(amount)",
+        "__MeaXValue__0": "7642",
+        "__OriginalData__": {
+          "co_20250914131915_8e38": "7642",
+          "xA_20250914131841_3aa1": "技术",
+          "yA_20250914131844_6718": "7642",
+        },
+        "co_20250914131915_8e38": "7642",
+        "xA_20250914131841_3aa1": "技术",
+        "yA_20250914131844_6718": "7642",
+      },
+      {
+        "__Dim_ColorId__": "办公用品",
+        "__Dim_Color__": "办公用品",
+        "__Dim_Detail__": "办公用品",
+        "__MeaId__": "co_20250914131915_8e38",
+        "__MeaName__": "sum(amount)",
+        "__MeaXValue__0": "21401",
+        "__OriginalData__": {
+          "co_20250914131915_8e38": "21401",
+          "xA_20250914131841_3aa1": "办公用品",
+          "yA_20250914131844_6718": "21401",
+        },
+        "co_20250914131915_8e38": "21401",
+        "xA_20250914131841_3aa1": "办公用品",
+        "yA_20250914131844_6718": "21401",
+      },
+      {
+        "__Dim_ColorId__": "家具",
+        "__Dim_Color__": "家具",
+        "__Dim_Detail__": "家具",
+        "__MeaId__": "co_20250914131915_8e38",
+        "__MeaName__": "sum(amount)",
+        "__MeaXValue__0": "8491",
+        "__OriginalData__": {
+          "co_20250914131915_8e38": "8491",
+          "xA_20250914131841_3aa1": "家具",
+          "yA_20250914131844_6718": "8491",
+        },
+        "co_20250914131915_8e38": "8491",
+        "xA_20250914131841_3aa1": "家具",
+        "yA_20250914131844_6718": "8491",
+      },
+    ],
+    [
+      {
+        "__Dim_ColorId__": "技术",
+        "__Dim_Color__": "技术",
+        "__Dim_Detail__": "技术",
+        "__MeaId__": "yA_20250914131844_6718",
+        "__MeaName__": "sum(amount)",
+        "__MeaXValue__1": "7642",
+        "__OriginalData__": {
+          "co_20250914131915_8e38": "7642",
+          "xA_20250914131841_3aa1": "技术",
+          "yA_20250914131844_6718": "7642",
+        },
+        "co_20250914131915_8e38": "7642",
+        "xA_20250914131841_3aa1": "技术",
+        "yA_20250914131844_6718": "7642",
+      },
+      {
+        "__Dim_ColorId__": "办公用品",
+        "__Dim_Color__": "办公用品",
+        "__Dim_Detail__": "办公用品",
+        "__MeaId__": "yA_20250914131844_6718",
+        "__MeaName__": "sum(amount)",
+        "__MeaXValue__1": "21401",
+        "__OriginalData__": {
+          "co_20250914131915_8e38": "21401",
+          "xA_20250914131841_3aa1": "办公用品",
+          "yA_20250914131844_6718": "21401",
+        },
+        "co_20250914131915_8e38": "21401",
+        "xA_20250914131841_3aa1": "办公用品",
+        "yA_20250914131844_6718": "21401",
+      },
+      {
+        "__Dim_ColorId__": "家具",
+        "__Dim_Color__": "家具",
+        "__Dim_Detail__": "家具",
+        "__MeaId__": "yA_20250914131844_6718",
+        "__MeaName__": "sum(amount)",
+        "__MeaXValue__1": "8491",
+        "__OriginalData__": {
+          "co_20250914131915_8e38": "8491",
+          "xA_20250914131841_3aa1": "家具",
+          "yA_20250914131844_6718": "8491",
+        },
+        "co_20250914131915_8e38": "8491",
+        "xA_20250914131841_3aa1": "家具",
+        "yA_20250914131844_6718": "8491",
+      },
+    ],
+  ],
+  "datasetReshapeInfo": [
+    {
+      "foldInfo": {
+        "foldMap": {
+          "co_20250914131915_8e38": "sum(amount)",
+        },
+        "measureId": "__MeaId__",
+        "measureName": "__MeaName__",
+        "measureValue": "__MeaXValue__0",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 3,
+          "max": 21401,
+          "min": 7642,
+          "sum": 37534,
+        },
+      },
+      "foldInfoList": [
+        {
+          "foldMap": {
+            "co_20250914131915_8e38": "sum(amount)",
+          },
+          "measureId": "__MeaId__",
+          "measureName": "__MeaName__",
+          "measureValue": "__MeaXValue__0",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 3,
+            "max": 21401,
+            "min": 7642,
+            "sum": 37534,
+          },
+        },
+        {
+          "foldMap": {},
+          "measureId": "__MeaId__",
+          "measureName": "__MeaName__",
+          "measureValue": "__MeaYValue__0",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 0,
+            "max": -Infinity,
+            "min": Infinity,
+            "sum": 0,
+          },
+        },
+      ],
+      "id": "scatter-0",
+      "index": 0,
+      "unfoldInfo": {
+        "colorIdMap": {
+          "办公用品": "办公用品",
+          "家具": "家具",
+          "技术": "技术",
+        },
+        "colorItems": [
+          "技术",
+          "办公用品",
+          "家具",
+        ],
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
+      },
+    },
+    {
+      "foldInfo": {
+        "foldMap": {
+          "yA_20250914131844_6718": "sum(amount)",
+        },
+        "measureId": "__MeaId__",
+        "measureName": "__MeaName__",
+        "measureValue": "__MeaXValue__1",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 3,
+          "max": 21401,
+          "min": 7642,
+          "sum": 37534,
+        },
+      },
+      "foldInfoList": [
+        {
+          "foldMap": {
+            "yA_20250914131844_6718": "sum(amount)",
+          },
+          "measureId": "__MeaId__",
+          "measureName": "__MeaName__",
+          "measureValue": "__MeaXValue__1",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 3,
+            "max": 21401,
+            "min": 7642,
+            "sum": 37534,
+          },
+        },
+        {
+          "foldMap": {},
+          "measureId": "__MeaId__",
+          "measureName": "__MeaName__",
+          "measureValue": "__MeaYValue__1",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 0,
+            "max": -Infinity,
+            "min": Infinity,
+            "sum": 0,
+          },
+        },
+      ],
+      "id": "scatter-1",
+      "index": 1,
+      "unfoldInfo": {
+        "colorIdMap": {
+          "办公用品": "办公用品",
+          "家具": "家具",
+          "技术": "技术",
+        },
+        "colorItems": [
+          "技术",
+          "办公用品",
+          "家具",
+        ],
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
+      },
+    },
+  ],
+  "dimensions": [
+    {
+      "alias": "product_type",
+      "autoFormat": true,
+      "id": "xA_20250914131841_3aa1",
+    },
+    {
+      "alias": "指标名称",
+      "id": "__MeaName__",
+    },
+  ],
+  "encoding": {
+    "color": [
+      "xA_20250914131841_3aa1",
+    ],
+    "column": [],
+    "detail": [
+      "xA_20250914131841_3aa1",
+    ],
+    "label": [],
+    "row": [],
+    "tooltip": [
+      "xA_20250914131841_3aa1",
+    ],
+    "y": [
+      "co_20250914131915_8e38",
+      "yA_20250914131844_6718",
+    ],
+  },
+  "locale": "zh-CN",
+  "markStyle": {},
+  "measures": [
+    {
+      "alias": "__DefaultParentId__-sum(amount)",
+      "children": [
+        {
+          "alias": "sum(amount)",
+          "children": [
+            {
+              "alias": "sum(amount)",
+              "autoFormat": false,
+              "format": {
+                "auto": false,
+                "type": "number",
+              },
+              "id": "co_20250914131915_8e38",
+            },
+          ],
+          "id": "0-x",
+        },
+        {
+          "alias": "",
+          "children": [],
+          "id": "0-y",
+        },
+      ],
+      "id": "__DefaultParentId__-sum(amount)",
+    },
+    {
+      "alias": "0-sum(amount)",
+      "children": [
+        {
+          "alias": "sum(amount)",
+          "children": [
+            {
+              "alias": "sum(amount)",
+              "autoFormat": false,
+              "format": {
+                "auto": false,
+                "type": "number",
+              },
+              "id": "yA_20250914131844_6718",
+              "parentId": "0",
+            },
+          ],
+          "id": "1-x",
+        },
+        {
+          "alias": "",
+          "children": [],
+          "id": "1-y",
+        },
+      ],
+      "id": "0-sum(amount)",
+    },
+  ],
+}
+`;
+
+exports[`defaultParentIdForScatter 2`] = `
+{
+  "animation": true,
+  "columns": [],
+  "heightMode": "adaptive",
+  "indicators": [
+    {
+      "cellType": "chart",
+      "chartModule": "vchart",
+      "chartSpec": {
+        "animation": true,
+        "axes": [
+          {
+            "base": 10,
+            "domainLine": {
+              "style": {
+                "lineWidth": 1,
+                "stroke": "#3641594d",
+              },
+              "visible": true,
+            },
+            "grid": {
+              "style": {
+                "lineWidth": 0.5,
+                "stroke": "#36415926",
+              },
+              "visible": true,
+            },
+            "innerOffset": {
+              "right": 7,
+            },
+            "inverse": false,
+            "label": {
+              "formatMethod": [Function],
+              "style": {
+                "angle": 0,
+                "fill": "#797B85",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "visible": true,
+            },
+            "max": undefined,
+            "min": undefined,
+            "nice": true,
+            "orient": "bottom",
+            "tick": {
+              "inside": false,
+              "style": {
+                "stroke": "#3641594d",
+              },
+              "tickSize": 4,
+              "visible": false,
+            },
+            "title": {
+              "style": {
+                "fill": "#646A73",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "text": "",
+              "visible": false,
+            },
+            "type": "linear",
+            "visible": true,
+            "zero": true,
+          },
+          {
+            "base": 10,
+            "domainLine": {
+              "style": {
+                "lineWidth": 1,
+                "stroke": "#3641594d",
+              },
+              "visible": true,
+            },
+            "grid": {
+              "style": {
+                "lineWidth": 0.5,
+                "stroke": "#36415926",
+              },
+              "visible": true,
+            },
+            "innerOffset": {
+              "top": 7,
+            },
+            "inverse": false,
+            "label": {
+              "formatMethod": [Function],
+              "style": {
+                "angle": 0,
+                "fill": "#797B85",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "visible": true,
+            },
+            "max": undefined,
+            "min": undefined,
+            "nice": true,
+            "orient": "left",
+            "tick": {
+              "inside": false,
+              "style": {
+                "stroke": "#3641594d",
+              },
+              "tickSize": 4,
+              "visible": false,
+            },
+            "title": {
+              "style": {
+                "fill": "#646A73",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "text": "",
+              "visible": false,
+            },
+            "type": "linear",
+            "visible": true,
+            "zero": true,
+          },
+        ],
+        "background": "transparent",
+        "color": {
+          "domain": [
+            "技术",
+            "办公用品",
+            "家具",
+          ],
+          "range": [
+            "#8D72F6",
+            "#5766EC",
+            "#66A3FE",
+            "#51D5E6",
+            "#4EC0B3",
+            "#F9DF90",
+            "#F9AD71",
+            "#ED8888",
+            "#E9A0C3",
+            "#D77DD3",
+          ],
+          "specified": undefined,
+          "type": "ordinal",
+        },
+        "crosshair": {
+          "xField": {
+            "label": {
+              "labelBackground": {
+                "style": {
+                  "fill": "#364159",
+                },
+                "visible": true,
+              },
+              "style": {
+                "fill": "#ffffff",
+              },
+              "visible": true,
+            },
+            "line": {
+              "style": {
+                "lineDash": [
+                  4,
+                  2,
+                ],
+                "lineWidth": 1,
+                "opacity": 1,
+                "stroke": "#3641594d",
+              },
+              "type": "line",
+            },
+            "visible": true,
+          },
+          "yField": {
+            "label": {
+              "labelBackground": {
+                "style": {
+                  "fill": "#364159",
+                },
+                "visible": true,
+              },
+              "style": {
+                "fill": "#ffffff",
+              },
+              "visible": true,
+            },
+            "line": {
+              "style": {
+                "lineDash": [
+                  4,
+                  2,
+                ],
+                "lineWidth": 1,
+                "opacity": 1,
+                "stroke": "#3641594d",
+              },
+              "type": "line",
+            },
+            "visible": true,
+          },
+        },
+        "data": {
+          "fields": {},
+          "id": "scatter-0",
+          "values": undefined,
+        },
+        "direction": "vertical",
+        "label": {
+          "formatMethod": [Function],
+          "visible": true,
+        },
+        "padding": 0,
+        "point": {
+          "state": {
+            "hover": {
+              "fillOpacity": 0.6,
+              "lineWidth": 1,
+              "scaleX": 1.4,
+              "scaleY": 1.4,
+              "stroke": [Function],
+            },
+          },
+          "style": {},
+        },
+        "region": [
+          {
+            "clip": true,
+          },
+        ],
+        "seriesField": "__Dim_ColorId__",
+        "tooltip": {
+          "dimension": {
+            "visible": false,
+          },
+          "mark": {
+            "content": [
+              {
+                "hasShape": true,
+                "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
+              {
+                "hasShape": true,
+                "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
+              {
+                "hasShape": true,
+                "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
+            ],
+            "title": {
+              "visible": false,
+            },
+          },
+          "visible": true,
+        },
+        "type": "scatter",
+        "xField": "__MeaXValue__0",
+        "yField": "__MeaYValue__0",
+      },
+      "indicatorKey": "scatter-0",
+      "style": {
+        "padding": [
+          1,
+          1,
+          0,
+          1,
+        ],
+      },
+      "title": undefined,
+    },
+    {
+      "cellType": "chart",
+      "chartModule": "vchart",
+      "chartSpec": {
+        "animation": true,
+        "axes": [
+          {
+            "base": 10,
+            "domainLine": {
+              "style": {
+                "lineWidth": 1,
+                "stroke": "#3641594d",
+              },
+              "visible": true,
+            },
+            "grid": {
+              "style": {
+                "lineWidth": 0.5,
+                "stroke": "#36415926",
+              },
+              "visible": true,
+            },
+            "innerOffset": {
+              "right": 7,
+            },
+            "inverse": false,
+            "label": {
+              "formatMethod": [Function],
+              "style": {
+                "angle": 0,
+                "fill": "#797B85",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "visible": true,
+            },
+            "max": undefined,
+            "min": undefined,
+            "nice": true,
+            "orient": "bottom",
+            "tick": {
+              "inside": false,
+              "style": {
+                "stroke": "#3641594d",
+              },
+              "tickSize": 4,
+              "visible": false,
+            },
+            "title": {
+              "style": {
+                "fill": "#646A73",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "text": "",
+              "visible": false,
+            },
+            "type": "linear",
+            "visible": true,
+            "zero": true,
+          },
+          {
+            "base": 10,
+            "domainLine": {
+              "style": {
+                "lineWidth": 1,
+                "stroke": "#3641594d",
+              },
+              "visible": true,
+            },
+            "grid": {
+              "style": {
+                "lineWidth": 0.5,
+                "stroke": "#36415926",
+              },
+              "visible": true,
+            },
+            "innerOffset": {
+              "top": 7,
+            },
+            "inverse": false,
+            "label": {
+              "formatMethod": [Function],
+              "style": {
+                "angle": 0,
+                "fill": "#797B85",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "visible": true,
+            },
+            "max": undefined,
+            "min": undefined,
+            "nice": true,
+            "orient": "left",
+            "tick": {
+              "inside": false,
+              "style": {
+                "stroke": "#3641594d",
+              },
+              "tickSize": 4,
+              "visible": false,
+            },
+            "title": {
+              "style": {
+                "fill": "#646A73",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "text": "",
+              "visible": false,
+            },
+            "type": "linear",
+            "visible": true,
+            "zero": true,
+          },
+        ],
+        "background": "transparent",
+        "color": {
+          "domain": [
+            "技术",
+            "办公用品",
+            "家具",
+          ],
+          "range": [
+            "#8D72F6",
+            "#5766EC",
+            "#66A3FE",
+            "#51D5E6",
+            "#4EC0B3",
+            "#F9DF90",
+            "#F9AD71",
+            "#ED8888",
+            "#E9A0C3",
+            "#D77DD3",
+          ],
+          "specified": undefined,
+          "type": "ordinal",
+        },
+        "crosshair": {
+          "xField": {
+            "label": {
+              "labelBackground": {
+                "style": {
+                  "fill": "#364159",
+                },
+                "visible": true,
+              },
+              "style": {
+                "fill": "#ffffff",
+              },
+              "visible": true,
+            },
+            "line": {
+              "style": {
+                "lineDash": [
+                  4,
+                  2,
+                ],
+                "lineWidth": 1,
+                "opacity": 1,
+                "stroke": "#3641594d",
+              },
+              "type": "line",
+            },
+            "visible": true,
+          },
+          "yField": {
+            "label": {
+              "labelBackground": {
+                "style": {
+                  "fill": "#364159",
+                },
+                "visible": true,
+              },
+              "style": {
+                "fill": "#ffffff",
+              },
+              "visible": true,
+            },
+            "line": {
+              "style": {
+                "lineDash": [
+                  4,
+                  2,
+                ],
+                "lineWidth": 1,
+                "opacity": 1,
+                "stroke": "#3641594d",
+              },
+              "type": "line",
+            },
+            "visible": true,
+          },
+        },
+        "data": {
+          "fields": {},
+          "id": "scatter-1",
+          "values": undefined,
+        },
+        "direction": "vertical",
+        "label": {
+          "formatMethod": [Function],
+          "visible": true,
+        },
+        "padding": 0,
+        "point": {
+          "state": {
+            "hover": {
+              "fillOpacity": 0.6,
+              "lineWidth": 1,
+              "scaleX": 1.4,
+              "scaleY": 1.4,
+              "stroke": [Function],
+            },
+          },
+          "style": {},
+        },
+        "region": [
+          {
+            "clip": true,
+          },
+        ],
+        "seriesField": "__Dim_ColorId__",
+        "tooltip": {
+          "dimension": {
+            "visible": false,
+          },
+          "mark": {
+            "content": [
+              {
+                "hasShape": true,
+                "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
+              {
+                "hasShape": true,
+                "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
+              {
+                "hasShape": true,
+                "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
+            ],
+            "title": {
+              "visible": false,
+            },
+          },
+          "visible": true,
+        },
+        "type": "scatter",
+        "xField": "__MeaXValue__1",
+        "yField": "__MeaYValue__1",
+      },
+      "indicatorKey": "scatter-1",
+      "style": {
+        "padding": [
+          1,
+          1,
+          0,
+          1,
+        ],
+      },
+      "title": undefined,
+    },
+  ],
+  "indicatorsAsCol": false,
+  "legends": {
+    "data": [
+      {
+        "label": "技术",
+        "shape": {
+          "fill": "#8D72F6",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#8D72F6",
+          },
+        },
+      },
+      {
+        "label": "办公用品",
+        "shape": {
+          "fill": "#5766EC",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#5766EC",
+          },
+        },
+      },
+      {
+        "label": "家具",
+        "shape": {
+          "fill": "#66A3FE",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#66A3FE",
+          },
+        },
+      },
+    ],
+    "item": {
+      "background": {
+        "state": {
+          "selectedHover": {
+            "fill": "#646A73",
+            "fillOpacity": 0.05,
+          },
+        },
+      },
+      "focus": true,
+      "focusIconStyle": {
+        "fill": "#646A73",
+        "fontWeight": 400,
+        "size": 14,
+      },
+      "label": {
+        "formatMethod": [Function],
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+      },
+      "maxWidth": "30%",
+      "shape": {
+        "space": 6,
+        "style": {
+          "size": 8,
+          "symbolType": "rectRound",
+        },
+      },
+    },
+    "maxCol": 1,
+    "maxRow": 1,
+    "orient": "right",
+    "position": "start",
+    "type": "discrete",
+    "visible": true,
+  },
+  "records": {
+    "scatter-0": [
+      {
+        "__Dim_ColorId__": "技术",
+        "__Dim_Color__": "技术",
+        "__Dim_Detail__": "技术",
+        "__MeaId__": "co_20250914131915_8e38",
+        "__MeaName__": "sum(amount)",
+        "__MeaXValue__0": "7642",
+        "__OriginalData__": {
+          "co_20250914131915_8e38": "7642",
+          "xA_20250914131841_3aa1": "技术",
+          "yA_20250914131844_6718": "7642",
+        },
+        "co_20250914131915_8e38": "7642",
+        "xA_20250914131841_3aa1": "技术",
+        "yA_20250914131844_6718": "7642",
+      },
+      {
+        "__Dim_ColorId__": "办公用品",
+        "__Dim_Color__": "办公用品",
+        "__Dim_Detail__": "办公用品",
+        "__MeaId__": "co_20250914131915_8e38",
+        "__MeaName__": "sum(amount)",
+        "__MeaXValue__0": "21401",
+        "__OriginalData__": {
+          "co_20250914131915_8e38": "21401",
+          "xA_20250914131841_3aa1": "办公用品",
+          "yA_20250914131844_6718": "21401",
+        },
+        "co_20250914131915_8e38": "21401",
+        "xA_20250914131841_3aa1": "办公用品",
+        "yA_20250914131844_6718": "21401",
+      },
+      {
+        "__Dim_ColorId__": "家具",
+        "__Dim_Color__": "家具",
+        "__Dim_Detail__": "家具",
+        "__MeaId__": "co_20250914131915_8e38",
+        "__MeaName__": "sum(amount)",
+        "__MeaXValue__0": "8491",
+        "__OriginalData__": {
+          "co_20250914131915_8e38": "8491",
+          "xA_20250914131841_3aa1": "家具",
+          "yA_20250914131844_6718": "8491",
+        },
+        "co_20250914131915_8e38": "8491",
+        "xA_20250914131841_3aa1": "家具",
+        "yA_20250914131844_6718": "8491",
+      },
+    ],
+    "scatter-1": [
+      {
+        "__Dim_ColorId__": "技术",
+        "__Dim_Color__": "技术",
+        "__Dim_Detail__": "技术",
+        "__MeaId__": "yA_20250914131844_6718",
+        "__MeaName__": "sum(amount)",
+        "__MeaXValue__1": "7642",
+        "__OriginalData__": {
+          "co_20250914131915_8e38": "7642",
+          "xA_20250914131841_3aa1": "技术",
+          "yA_20250914131844_6718": "7642",
+        },
+        "co_20250914131915_8e38": "7642",
+        "xA_20250914131841_3aa1": "技术",
+        "yA_20250914131844_6718": "7642",
+      },
+      {
+        "__Dim_ColorId__": "办公用品",
+        "__Dim_Color__": "办公用品",
+        "__Dim_Detail__": "办公用品",
+        "__MeaId__": "yA_20250914131844_6718",
+        "__MeaName__": "sum(amount)",
+        "__MeaXValue__1": "21401",
+        "__OriginalData__": {
+          "co_20250914131915_8e38": "21401",
+          "xA_20250914131841_3aa1": "办公用品",
+          "yA_20250914131844_6718": "21401",
+        },
+        "co_20250914131915_8e38": "21401",
+        "xA_20250914131841_3aa1": "办公用品",
+        "yA_20250914131844_6718": "21401",
+      },
+      {
+        "__Dim_ColorId__": "家具",
+        "__Dim_Color__": "家具",
+        "__Dim_Detail__": "家具",
+        "__MeaId__": "yA_20250914131844_6718",
+        "__MeaName__": "sum(amount)",
+        "__MeaXValue__1": "8491",
+        "__OriginalData__": {
+          "co_20250914131915_8e38": "8491",
+          "xA_20250914131841_3aa1": "家具",
+          "yA_20250914131844_6718": "8491",
+        },
+        "co_20250914131915_8e38": "8491",
+        "xA_20250914131841_3aa1": "家具",
+        "yA_20250914131844_6718": "8491",
+      },
+    ],
+  },
+  "rows": [],
+  "theme": {
+    "bodyStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": [
+        0,
+        0,
+        2,
+        0,
+      ],
+      "hover": {
+        "cellBgColor": "transparent",
+      },
+      "padding": [
+        0,
+        0,
+        1,
+        0,
+      ],
+    },
+    "bottomFrozenStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "cornerHeaderStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": [
+        0,
+        0,
+        0,
+        0,
+      ],
+      "color": "#333333",
+      "fontSize": 12,
+      "fontWeight": "bold",
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+      "textAlign": "center",
+    },
+    "cornerLeftBottomCellStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "cornerRightBottomCellStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "cornerRightTopCellStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "frameStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderLineWidth": 0,
+    },
+    "headerStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "color": "#333333",
+      "fontSize": 12,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+      "textAlign": "center",
+    },
+    "rightFrozenStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "rowHeaderStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "color": "#333333",
+      "fontSize": 12,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "selectionStyle": {
+      "cellBgColor": "",
+      "cellBorderColor": "",
+    },
+    "underlayBackgroundColor": "rgba(0,0,0,0)",
+  },
+  "widthMode": "adaptive",
+}
+`;
+
+exports[`defaultParentIdForScatter 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "办公用品": "办公用品",
+    "家具": "家具",
+    "技术": "技术",
+  },
+  "colorItems": [
+    "技术",
+    "办公用品",
+    "家具",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

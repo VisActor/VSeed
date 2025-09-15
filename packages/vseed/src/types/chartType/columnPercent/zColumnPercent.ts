@@ -10,6 +10,7 @@ import {
   zCrosshairRect,
   zDataset,
   zDimensions,
+  zEncoding,
   zLabel,
   zLegend,
   zMeasureTree,
@@ -25,6 +26,7 @@ import { z } from 'zod'
 export const zColumnPercent = z.object({
   chartType: z.literal('columnPercent'),
   dataset: zDataset.nullish(),
+  encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasureTree.nullish(),
   backgroundColor: zBackgroundColor.nullish(),

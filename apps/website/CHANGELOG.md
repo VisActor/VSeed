@@ -1,5 +1,123 @@
 # website
 
+## 0.1.13
+
+### Patch Changes
+
+- feat: add label encoding for all chart types
+- Updated dependencies
+  - @visactor/vseed@0.1.13
+
+## 0.1.12
+
+### Patch Changes
+
+- feat: e
+- Updated dependencies
+  - @visactor/vseed@0.1.12
+
+## 0.1.11
+
+### Patch Changes
+
+- feat: empty group id for default group
+- Updated dependencies
+  - @visactor/vseed@0.1.11
+
+## 0.1.10
+
+### Patch Changes
+
+- feat: remove tooltip in foldMeasures
+- Updated dependencies
+  - @visactor/vseed@0.1.10
+
+## 0.1.9
+
+### Patch Changes
+
+- fix: i18n not working
+- Updated dependencies
+  - @visactor/vseed@0.1.9
+
+## 0.1.8
+
+### Patch Changes
+
+- feat: optimize the default encoding
+- Updated dependencies
+  - @visactor/vseed@0.1.8
+
+## 0.1.7
+
+### Patch Changes
+
+- feat: optimize encoding
+- Updated dependencies
+  - @visactor/vseed@0.1.7
+
+## 0.1.6
+
+### Patch Changes
+
+- feat: add row and column encoding for all chart types
+- Updated dependencies
+  - @visactor/vseed@0.1.6
+
+## 0.1.5
+
+### Patch Changes
+
+- feat: add color encoding for all chart types
+- Updated dependencies
+  - @visactor/vseed@0.1.5
+
+## 0.1.4
+
+### Patch Changes
+
+- feat: add encoding for measures and dimensions
+- Updated dependencies
+  - @visactor/vseed@0.1.4
+
+## 0.1.3
+
+### Patch Changes
+
+- feat: add measure encoding for all charts
+- Updated dependencies
+  - @visactor/vseed@0.1.3
+
+## 0.1.2
+
+### Patch Changes
+
+- feat: add linear color for encoding
+- Updated dependencies
+  - @visactor/vseed@0.1.2
+
+## 0.1.1
+
+### Patch Changes
+
+- - docs: update docs for encoding
+  - feat: optimize the default x,y,color,detail of encoding
+  - fix: bad cases in encoding
+- Updated dependencies
+  - @visactor/vseed@0.1.1
+
+## 0.1.0
+
+### Minor Changes
+
+- Updated dependencies
+  - @visactor/vseed@0.1.0
+
+### Patch Changes
+
+- Updated dependencies
+  - @visactor/vseed@0.1.0
+
 ## 0.0.40
 
 ### Patch Changes

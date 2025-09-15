@@ -1,5 +1,112 @@
 # @visactor/vseed
 
+## 0.1.13
+
+### Patch Changes
+
+- feat: add label encoding for all chart types
+
+## 0.1.12
+
+### Patch Changes
+
+- feat: replace null to undefined in config
+- feat: optimize the detail encoding with color, in column\bar\rose
+- feat: add x axis in dual axis
+
+## 0.1.11
+
+### Patch Changes
+
+- feat: empty group id for default group
+- feat: add encoding for measures and dimensions
+- fix: empty mark style not working for linear color
+
+## 0.1.10
+
+### Patch Changes
+
+- feat: remove tooltip in foldMeasures
+
+## 0.1.9
+
+### Patch Changes
+
+- fix: i18n not working
+- feat: rslib with bundle less
+- feat: change the dist with esm,cjs,umd
+
+## 0.1.8
+
+### Patch Changes
+
+- feat: optimize the default encoding
+- feat: normalizeMeasureTree
+- feat: auto push git tag when release
+
+## 0.1.7
+
+### Patch Changes
+
+- feat: optimize encoding
+
+## 0.1.6
+
+### Patch Changes
+
+- feat: add row and column encoding for all chart types
+- feat: optimize the default encoding for all chart types
+
+## 0.1.5
+
+### Patch Changes
+
+- feat: add color encoding for all chart types
+- fix: all chart default encoding error
+
+## 0.1.4
+
+### Patch Changes
+
+- feat: add encoding for measures and dimensions
+- break changes: optimize the default encoding for all chart types
+
+## 0.1.3
+
+### Patch Changes
+
+- feat: add measure encoding for all charts
+
+## 0.1.2
+
+### Patch Changes
+
+- feat: add linear color for encoding
+
+## 0.1.1
+
+### Patch Changes
+
+- - docs: update docs for encoding
+  - feat: optimize the default x,y,color,detail of encoding
+  - fix: bad cases in encoding
+
+## 0.1.0
+
+### Minor Changes
+
+break changes:
+
+- remove areaRange
+- remove groupId in dataset
+- remove groupColor in dataset
+- rewrite scatter chart
+- rewrite all the dataReshape
+
+features:
+
+- add encoding for all chart types
+
 ## 0.0.40
 
 ### Patch Changes

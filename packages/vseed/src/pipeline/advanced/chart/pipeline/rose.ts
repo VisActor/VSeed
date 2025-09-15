@@ -1,24 +1,36 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
-  autoDimensions,
-  autoMeasures,
   initAdvancedVSeed,
-  reshapeTo2D1M,
   theme,
   pivotAdapter,
   markStyle,
   annotation,
   roseConfig,
-  encodingRose,
-  pivotReshapeTo2D1M,
+  reshapeWithEncoding,
+  pivotReshapeWithEncoding,
+  buildMeasures,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+  encodingAdapter,
+  encodingForRose,
+  defaultEncodingForRose,
+  deleteTooltipAndLabelMeasure,
+  deleteTooltipAndLabelDimension,
 } from '../pipes'
 
 export const roseAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  autoMeasures,
-  autoDimensions,
-  pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
-  encodingRose,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+
+  encodingAdapter(
+    [defaultEncodingForRose, buildMeasures],
+    [encodingForRose, buildMeasures, deleteTooltipAndLabelMeasure, deleteTooltipAndLabelDimension],
+  ),
+  pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
+
   roseConfig,
   theme,
   markStyle,

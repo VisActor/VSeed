@@ -1,26 +1,38 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
-  autoDimensions,
-  autoMeasures,
-  encodingYX,
+  buildMeasures,
   initAdvancedVSeed,
-  reshapeTo2D1M,
   theme,
   pivotAdapter,
-  pivotReshapeTo2D1M,
   barParallelConfig,
   markStyle,
   annotation,
   sortYBandAxis,
   sortLegend,
+  reshapeWithEncoding,
+  pivotReshapeWithEncoding,
+  encodingForBar,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+  encodingAdapter,
+  defaultEncodingForBar,
+  deleteTooltipAndLabelMeasure,
+  deleteTooltipAndLabelDimension,
 } from '../pipes'
 
 export const barParallelAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  autoMeasures,
-  autoDimensions,
-  pivotAdapter([reshapeTo2D1M], [pivotReshapeTo2D1M]),
-  encodingYX,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+
+  encodingAdapter(
+    [defaultEncodingForBar, buildMeasures],
+    [encodingForBar, buildMeasures, deleteTooltipAndLabelMeasure, deleteTooltipAndLabelDimension],
+  ),
+  pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
+
   sortYBandAxis,
   sortLegend,
   barParallelConfig,

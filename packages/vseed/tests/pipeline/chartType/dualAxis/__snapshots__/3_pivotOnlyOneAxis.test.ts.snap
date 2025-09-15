@@ -1,0 +1,2065 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`3_pivotOnlyOneAxis 1`] = `
+{
+  "annotation": {},
+  "chartType": "dualAxis",
+  "config": {
+    "dualAxis": {
+      "backgroundColor": "transparent",
+      "color": {
+        "colorScheme": [
+          "#8D72F6",
+          "#5766EC",
+          "#66A3FE",
+          "#51D5E6",
+          "#4EC0B3",
+          "#F9DF90",
+          "#F9AD71",
+          "#ED8888",
+          "#E9A0C3",
+          "#D77DD3",
+        ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
+      },
+      "crosshairRect": {
+        "labelBackgroundColor": "#364159",
+        "labelColor": "#ffffff",
+        "labelVisible": true,
+        "rectColor": "#3641594d",
+        "visible": true,
+      },
+      "dualChartType": {
+        "primary": "column",
+        "secondary": "line",
+      },
+      "label": {
+        "enable": true,
+        "showValue": true,
+        "showValuePercent": false,
+        "wrap": true,
+      },
+      "legend": {
+        "border": true,
+        "enable": true,
+        "labelFontColor": "#646A73",
+        "labelFontSize": 12,
+        "labelFontWeight": 400,
+        "maxSize": 1,
+        "position": "rt",
+        "shapeType": "rectRound",
+      },
+      "primaryYAxis": {
+        "grid": {
+          "gridColor": "#36415926",
+          "gridWidth": 0.5,
+          "visible": true,
+        },
+        "inverse": false,
+        "label": {
+          "labelAngle": 0,
+          "labelColor": "#797B85",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "visible": true,
+        },
+        "line": {
+          "lineColor": "#3641594d",
+          "lineWidth": 1,
+          "visible": false,
+        },
+        "nice": true,
+        "tick": {
+          "tickColor": "#3641594d",
+          "tickInside": false,
+          "tickSize": 4,
+          "visible": false,
+        },
+        "title": {
+          "titleColor": "#646A73",
+          "titleFontSize": 12,
+          "titleFontWeight": 400,
+          "titleText": "",
+          "visible": false,
+        },
+        "zero": true,
+      },
+      "secondaryYAxis": {
+        "grid": {
+          "visible": false,
+        },
+        "inverse": false,
+        "label": {
+          "labelAngle": 0,
+          "labelColor": "#797B85",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "visible": true,
+        },
+        "line": {
+          "lineColor": "#3641594d",
+          "lineWidth": 1,
+          "visible": false,
+        },
+        "nice": true,
+        "tick": {
+          "tickColor": "#3641594d",
+          "tickInside": false,
+          "tickSize": 4,
+          "visible": false,
+        },
+        "title": {
+          "titleColor": "#646A73",
+          "titleFontSize": 12,
+          "titleFontWeight": 400,
+          "titleText": "",
+          "visible": false,
+        },
+        "zero": true,
+      },
+      "tooltip": {
+        "enable": true,
+      },
+      "xAxis": {
+        "grid": {
+          "gridColor": "#36415926",
+          "gridWidth": 0.5,
+          "visible": false,
+        },
+        "label": {
+          "labelAngle": 0,
+          "labelColor": "#797B85",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "visible": true,
+        },
+        "labelAutoHide": true,
+        "labelAutoHideGap": 4,
+        "labelAutoLimit": true,
+        "labelAutoLimitLength": 80,
+        "labelAutoRotate": false,
+        "labelAutoRotateAngleRange": [
+          0,
+          -45,
+          -90,
+        ],
+        "line": {
+          "lineColor": "#3641594d",
+          "lineWidth": 1,
+          "visible": true,
+        },
+        "tick": {
+          "tickColor": "#3641594d",
+          "tickInside": false,
+          "tickSize": 4,
+          "visible": false,
+        },
+        "title": {
+          "titleColor": "#646A73",
+          "titleFontSize": 12,
+          "titleFontWeight": 400,
+          "titleText": "",
+          "visible": false,
+        },
+      },
+    },
+  },
+  "customTheme": {
+    "config": {
+      "dualAxis": {
+        "backgroundColor": "transparent",
+        "color": {
+          "colorScheme": [
+            "#8D72F6",
+            "#5766EC",
+            "#66A3FE",
+            "#51D5E6",
+            "#4EC0B3",
+            "#F9DF90",
+            "#F9AD71",
+            "#ED8888",
+            "#E9A0C3",
+            "#D77DD3",
+          ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
+          ],
+        },
+        "crosshairRect": {
+          "labelBackgroundColor": "#364159",
+          "labelColor": "#ffffff",
+          "labelVisible": true,
+          "rectColor": "#3641594d",
+          "visible": true,
+        },
+        "dualChartType": {
+          "primary": "column",
+          "secondary": "line",
+        },
+        "label": {
+          "enable": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
+        },
+        "legend": {
+          "border": true,
+          "enable": true,
+          "labelFontColor": "#646A73",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "maxSize": 1,
+          "position": "rt",
+          "shapeType": "rectRound",
+        },
+        "primaryYAxis": {
+          "grid": {
+            "gridColor": "#36415926",
+            "gridWidth": 0.5,
+            "visible": true,
+          },
+          "inverse": false,
+          "label": {
+            "labelAngle": 0,
+            "labelColor": "#797B85",
+            "labelFontSize": 12,
+            "labelFontWeight": 400,
+            "visible": true,
+          },
+          "line": {
+            "lineColor": "#3641594d",
+            "lineWidth": 1,
+            "visible": false,
+          },
+          "nice": true,
+          "tick": {
+            "tickColor": "#3641594d",
+            "tickInside": false,
+            "tickSize": 4,
+            "visible": false,
+          },
+          "title": {
+            "titleColor": "#646A73",
+            "titleFontSize": 12,
+            "titleFontWeight": 400,
+            "titleText": "",
+            "visible": false,
+          },
+          "zero": true,
+        },
+        "secondaryYAxis": {
+          "grid": {
+            "visible": false,
+          },
+          "inverse": false,
+          "label": {
+            "labelAngle": 0,
+            "labelColor": "#797B85",
+            "labelFontSize": 12,
+            "labelFontWeight": 400,
+            "visible": true,
+          },
+          "line": {
+            "lineColor": "#3641594d",
+            "lineWidth": 1,
+            "visible": false,
+          },
+          "nice": true,
+          "tick": {
+            "tickColor": "#3641594d",
+            "tickInside": false,
+            "tickSize": 4,
+            "visible": false,
+          },
+          "title": {
+            "titleColor": "#646A73",
+            "titleFontSize": 12,
+            "titleFontWeight": 400,
+            "titleText": "",
+            "visible": false,
+          },
+          "zero": true,
+        },
+        "tooltip": {
+          "enable": true,
+        },
+        "xAxis": {
+          "grid": {
+            "gridColor": "#36415926",
+            "gridWidth": 0.5,
+            "visible": false,
+          },
+          "label": {
+            "labelAngle": 0,
+            "labelColor": "#797B85",
+            "labelFontSize": 12,
+            "labelFontWeight": 400,
+            "visible": true,
+          },
+          "labelAutoHide": true,
+          "labelAutoHideGap": 4,
+          "labelAutoLimit": true,
+          "labelAutoLimitLength": 80,
+          "labelAutoRotate": false,
+          "labelAutoRotateAngleRange": [
+            0,
+            -45,
+            -90,
+          ],
+          "line": {
+            "lineColor": "#3641594d",
+            "lineWidth": 1,
+            "visible": true,
+          },
+          "tick": {
+            "tickColor": "#3641594d",
+            "tickInside": false,
+            "tickSize": 4,
+            "visible": false,
+          },
+          "title": {
+            "titleColor": "#646A73",
+            "titleFontSize": 12,
+            "titleFontWeight": 400,
+            "titleText": "",
+            "visible": false,
+          },
+        },
+      },
+    },
+  },
+  "dataset": [
+    [
+      {
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2019",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaPrimaryValue__0": 100,
+        "__OriginalData__": {
+          "count": 500,
+          "date": "2019",
+          "profit": 100,
+          "sales": 200,
+        },
+        "count": 500,
+        "date": "2019",
+        "profit": 100,
+        "sales": 200,
+      },
+      {
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2020",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaPrimaryValue__0": 30,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2020",
+          "profit": 30,
+          "sales": 60,
+        },
+        "count": 50,
+        "date": "2020",
+        "profit": 30,
+        "sales": 60,
+      },
+      {
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2021",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaPrimaryValue__0": 30,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2021",
+          "profit": 30,
+          "sales": 60,
+        },
+        "count": 50,
+        "date": "2021",
+        "profit": 30,
+        "sales": 60,
+      },
+      {
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2022",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaPrimaryValue__0": 50,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2022",
+          "profit": 50,
+          "sales": 100,
+        },
+        "count": 50,
+        "date": "2022",
+        "profit": 50,
+        "sales": 100,
+      },
+      {
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2023",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaPrimaryValue__0": 40,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2023",
+          "profit": 40,
+          "sales": 80,
+        },
+        "count": 50,
+        "date": "2023",
+        "profit": 40,
+        "sales": 80,
+      },
+    ],
+    [
+      {
+        "__Dim_ColorId__": "sales-sales",
+        "__Dim_Color__": "sales",
+        "__Dim_Detail__": "sales",
+        "__Dim_X__": "2019",
+        "__MeaId__": "sales",
+        "__MeaName__": "sales",
+        "__MeaSecondaryValue__1": 200,
+        "__OriginalData__": {
+          "count": 500,
+          "date": "2019",
+          "profit": 100,
+          "sales": 200,
+        },
+        "count": 500,
+        "date": "2019",
+        "profit": 100,
+        "sales": 200,
+      },
+      {
+        "__Dim_ColorId__": "sales-sales",
+        "__Dim_Color__": "sales",
+        "__Dim_Detail__": "sales",
+        "__Dim_X__": "2020",
+        "__MeaId__": "sales",
+        "__MeaName__": "sales",
+        "__MeaSecondaryValue__1": 60,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2020",
+          "profit": 30,
+          "sales": 60,
+        },
+        "count": 50,
+        "date": "2020",
+        "profit": 30,
+        "sales": 60,
+      },
+      {
+        "__Dim_ColorId__": "sales-sales",
+        "__Dim_Color__": "sales",
+        "__Dim_Detail__": "sales",
+        "__Dim_X__": "2021",
+        "__MeaId__": "sales",
+        "__MeaName__": "sales",
+        "__MeaSecondaryValue__1": 60,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2021",
+          "profit": 30,
+          "sales": 60,
+        },
+        "count": 50,
+        "date": "2021",
+        "profit": 30,
+        "sales": 60,
+      },
+      {
+        "__Dim_ColorId__": "sales-sales",
+        "__Dim_Color__": "sales",
+        "__Dim_Detail__": "sales",
+        "__Dim_X__": "2022",
+        "__MeaId__": "sales",
+        "__MeaName__": "sales",
+        "__MeaSecondaryValue__1": 100,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2022",
+          "profit": 50,
+          "sales": 100,
+        },
+        "count": 50,
+        "date": "2022",
+        "profit": 50,
+        "sales": 100,
+      },
+      {
+        "__Dim_ColorId__": "sales-sales",
+        "__Dim_Color__": "sales",
+        "__Dim_Detail__": "sales",
+        "__Dim_X__": "2023",
+        "__MeaId__": "sales",
+        "__MeaName__": "sales",
+        "__MeaSecondaryValue__1": 80,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2023",
+          "profit": 40,
+          "sales": 80,
+        },
+        "count": 50,
+        "date": "2023",
+        "profit": 40,
+        "sales": 80,
+      },
+    ],
+  ],
+  "datasetReshapeInfo": [
+    {
+      "foldInfo": {
+        "foldMap": {
+          "profit": "利润",
+        },
+        "measureId": "__MeaId__",
+        "measureName": "__MeaName__",
+        "measureValue": "__MeaPrimaryValue__0",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 5,
+          "max": 100,
+          "min": 30,
+          "sum": 250,
+        },
+      },
+      "foldInfoList": [
+        {
+          "foldMap": {
+            "profit": "利润",
+          },
+          "measureId": "__MeaId__",
+          "measureName": "__MeaName__",
+          "measureValue": "__MeaPrimaryValue__0",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 5,
+            "max": 100,
+            "min": 30,
+            "sum": 250,
+          },
+        },
+        {
+          "foldMap": {},
+          "measureId": "__MeaId__",
+          "measureName": "__MeaName__",
+          "measureValue": "__MeaSecondaryValue__0",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 0,
+            "max": -Infinity,
+            "min": Infinity,
+            "sum": 0,
+          },
+        },
+      ],
+      "id": "dualAxis-0",
+      "index": 0,
+      "unfoldInfo": {
+        "colorIdMap": {
+          "利润-profit": "利润",
+        },
+        "colorItems": [
+          "利润-profit",
+        ],
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
+      },
+    },
+    {
+      "foldInfo": {
+        "foldMap": {},
+        "measureId": "__MeaId__",
+        "measureName": "__MeaName__",
+        "measureValue": "__MeaPrimaryValue__1",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 0,
+          "max": -Infinity,
+          "min": Infinity,
+          "sum": 0,
+        },
+      },
+      "foldInfoList": [
+        {
+          "foldMap": {},
+          "measureId": "__MeaId__",
+          "measureName": "__MeaName__",
+          "measureValue": "__MeaPrimaryValue__1",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 0,
+            "max": -Infinity,
+            "min": Infinity,
+            "sum": 0,
+          },
+        },
+        {
+          "foldMap": {
+            "sales": "sales",
+          },
+          "measureId": "__MeaId__",
+          "measureName": "__MeaName__",
+          "measureValue": "__MeaSecondaryValue__1",
+          "statistics": {
+            "colorMax": -Infinity,
+            "colorMin": Infinity,
+            "count": 5,
+            "max": 200,
+            "min": 60,
+            "sum": 500,
+          },
+        },
+      ],
+      "id": "dualAxis-1",
+      "index": 1,
+      "unfoldInfo": {
+        "colorIdMap": {
+          "sales-sales": "sales",
+        },
+        "colorItems": [
+          "sales-sales",
+        ],
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
+      },
+    },
+  ],
+  "dimensions": [
+    {
+      "alias": "日期",
+      "id": "date",
+    },
+    {
+      "alias": "指标名称",
+      "id": "__MeaName__",
+    },
+  ],
+  "encoding": {
+    "color": [
+      "__MeaName__",
+    ],
+    "column": [],
+    "detail": [
+      "__MeaName__",
+    ],
+    "label": [],
+    "row": [],
+    "tooltip": [
+      "date",
+    ],
+    "x": [
+      "date",
+    ],
+    "y": [
+      "profit",
+      "sales",
+    ],
+  },
+  "locale": "zh-CN",
+  "markStyle": {},
+  "measures": [
+    {
+      "alias": "test-利润",
+      "children": [
+        {
+          "alias": "利润",
+          "children": [
+            {
+              "alias": "利润",
+              "encoding": "primaryYAxis",
+              "id": "profit",
+              "parentId": "test",
+            },
+          ],
+          "id": "0-primary",
+        },
+        {
+          "alias": "",
+          "children": [],
+          "id": "0-secondary",
+        },
+      ],
+      "id": "test-利润",
+    },
+    {
+      "alias": "test2-sales",
+      "children": [
+        {
+          "alias": "",
+          "children": [],
+          "id": "1-primary",
+        },
+        {
+          "alias": "sales",
+          "children": [
+            {
+              "alias": "sales",
+              "encoding": "secondaryYAxis",
+              "id": "sales",
+              "parentId": "test2",
+            },
+          ],
+          "id": "1-secondary",
+        },
+      ],
+      "id": "test2-sales",
+    },
+  ],
+}
+`;
+
+exports[`3_pivotOnlyOneAxis 2`] = `
+{
+  "animation": true,
+  "columns": [],
+  "heightMode": "adaptive",
+  "indicators": [
+    {
+      "cellType": "chart",
+      "chartModule": "vchart",
+      "chartSpec": {
+        "axes": [
+          {
+            "domainLine": {
+              "style": {
+                "lineWidth": 1,
+                "stroke": "#3641594d",
+              },
+              "visible": true,
+            },
+            "grid": {
+              "style": {
+                "lineWidth": 0.5,
+                "stroke": "#36415926",
+              },
+              "visible": false,
+            },
+            "hover": true,
+            "label": {
+              "autoHide": true,
+              "autoHideMethod": "greedy",
+              "autoHideSeparation": 4,
+              "autoLimit": true,
+              "autoRotate": false,
+              "autoRotateAngle": [
+                0,
+                -45,
+                -90,
+              ],
+              "flush": true,
+              "lastVisible": true,
+              "minGap": 4,
+              "space": 8,
+              "style": {
+                "angle": 0,
+                "fill": "#797B85",
+                "fontSize": 12,
+                "fontWeight": 400,
+                "maxLineWidth": 80,
+              },
+              "visible": true,
+            },
+            "maxHeight": 140,
+            "orient": "bottom",
+            "paddingInner": [
+              0.15,
+              0.1,
+            ],
+            "paddingOuter": [
+              0.075,
+              0.1,
+            ],
+            "sampling": false,
+            "tick": {
+              "inside": false,
+              "style": {
+                "stroke": "#3641594d",
+              },
+              "tickSize": 4,
+              "visible": false,
+            },
+            "title": {
+              "style": {
+                "fill": "#646A73",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "text": "",
+              "visible": false,
+            },
+            "type": "band",
+            "visible": true,
+          },
+          {
+            "base": 10,
+            "domainLine": {
+              "style": {
+                "lineWidth": 1,
+                "stroke": "#3641594d",
+              },
+              "visible": false,
+            },
+            "grid": {
+              "style": {
+                "lineWidth": 0.5,
+                "stroke": "#36415926",
+              },
+              "visible": true,
+            },
+            "id": "dualAxis-0-primary-axis",
+            "innerOffset": {
+              "top": 7,
+            },
+            "inverse": false,
+            "label": {
+              "formatMethod": [Function],
+              "style": {
+                "angle": 0,
+                "fill": "#797B85",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "visible": true,
+            },
+            "max": undefined,
+            "min": undefined,
+            "nice": true,
+            "orient": "left",
+            "seriesId": "dualAxis-0-primary-series",
+            "tick": {
+              "inside": false,
+              "style": {
+                "stroke": "#3641594d",
+              },
+              "tickSize": 4,
+              "visible": false,
+            },
+            "title": {
+              "style": {
+                "fill": "#646A73",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "text": "",
+              "visible": false,
+            },
+            "type": "linear",
+            "visible": true,
+            "zero": true,
+          },
+          {
+            "base": 10,
+            "domainLine": {
+              "style": {
+                "lineWidth": 1,
+                "stroke": "#3641594d",
+              },
+              "visible": false,
+            },
+            "grid": {
+              "style": {
+                "lineWidth": undefined,
+                "stroke": undefined,
+              },
+              "visible": false,
+            },
+            "id": "dualAxis-0-secondary-axis",
+            "innerOffset": {
+              "top": 7,
+            },
+            "inverse": false,
+            "label": {
+              "formatMethod": [Function],
+              "style": {
+                "angle": 0,
+                "fill": "#797B85",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "visible": true,
+            },
+            "max": undefined,
+            "min": undefined,
+            "nice": true,
+            "orient": "right",
+            "seriesId": "dualAxis-0-secondary-series",
+            "sync": {
+              "axisId": "dualAxis-0-primary-axis",
+              "zeroAlign": true,
+            },
+            "tick": {
+              "inside": false,
+              "style": {
+                "stroke": "#3641594d",
+              },
+              "tickSize": 4,
+              "visible": false,
+            },
+            "title": {
+              "style": {
+                "fill": "#646A73",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "text": "",
+              "visible": false,
+            },
+            "type": "linear",
+            "visible": false,
+            "zero": true,
+          },
+        ],
+        "background": "transparent",
+        "color": {
+          "domain": [
+            "利润-profit",
+            "sales-sales",
+          ],
+          "range": [
+            "#8D72F6",
+            "#5766EC",
+            "#66A3FE",
+            "#51D5E6",
+            "#4EC0B3",
+            "#F9DF90",
+            "#F9AD71",
+            "#ED8888",
+            "#E9A0C3",
+            "#D77DD3",
+          ],
+          "specified": undefined,
+          "type": "ordinal",
+        },
+        "crosshair": {
+          "xField": {
+            "label": {
+              "labelBackground": {
+                "style": {
+                  "fill": "#364159",
+                },
+                "visible": true,
+              },
+              "style": {
+                "fill": "#ffffff",
+              },
+              "visible": true,
+            },
+            "line": {
+              "style": {
+                "fill": "#3641594d",
+                "lineWidth": 0,
+                "opacity": 0.2,
+              },
+              "type": "rect",
+            },
+            "visible": true,
+          },
+        },
+        "padding": 0,
+        "region": [
+          {
+            "clip": true,
+          },
+        ],
+        "series": [
+          {
+            "animation": true,
+            "area": {
+              "style": {},
+              "visible": true,
+            },
+            "bar": {
+              "state": {
+                "hover": {
+                  "fillOpacity": 0.6,
+                },
+              },
+              "style": {
+                "lineWidth": 1,
+              },
+            },
+            "data": {
+              "fields": {
+                "__Dim_ColorId__": {
+                  "sortIndex": 0,
+                },
+                "__Dim_X__": {
+                  "sortIndex": 0,
+                },
+              },
+              "id": "dualAxis-0-primary-dataset",
+              "values": undefined,
+            },
+            "direction": "vertical",
+            "id": "dualAxis-0-primary-series",
+            "label": {
+              "formatMethod": [Function],
+              "visible": true,
+            },
+            "line": {
+              "style": {},
+            },
+            "point": {
+              "state": {
+                "dimension_hover": {
+                  "outerBorder": {
+                    "distance": 2,
+                    "lineWidth": 4,
+                    "strokeOpacity": 0.25,
+                  },
+                  "scaleX": 1.4,
+                  "scaleY": 1.4,
+                },
+              },
+              "style": {},
+            },
+            "seriesField": "__Dim_ColorId__",
+            "tooltip": {
+              "dimension": {
+                "content": [
+                  {
+                    "hasShape": true,
+                    "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
+                ],
+                "title": {
+                  "visible": true,
+                },
+              },
+              "mark": {
+                "content": [
+                  {
+                    "hasShape": true,
+                    "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
+                  {
+                    "hasShape": true,
+                    "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
+                ],
+                "title": {
+                  "visible": false,
+                },
+              },
+              "visible": true,
+            },
+            "type": "bar",
+            "xField": "__Dim_X__",
+            "yField": "__MeaPrimaryValue__0",
+            "zIndex": 1000,
+          },
+          {
+            "animation": true,
+            "area": {
+              "style": {},
+              "visible": true,
+            },
+            "bar": {
+              "state": {
+                "hover": {
+                  "fillOpacity": 0.6,
+                },
+              },
+              "style": {
+                "lineWidth": 1,
+              },
+            },
+            "data": {
+              "fields": {
+                "__Dim_ColorId__": {
+                  "sortIndex": 0,
+                },
+                "__Dim_X__": {
+                  "sortIndex": 0,
+                },
+              },
+              "id": "dualAxis-0-secondary-dataset",
+              "values": undefined,
+            },
+            "direction": "vertical",
+            "id": "dualAxis-0-secondary-series",
+            "label": {
+              "formatMethod": [Function],
+              "visible": true,
+            },
+            "line": {
+              "style": {},
+            },
+            "point": {
+              "state": {
+                "dimension_hover": {
+                  "outerBorder": {
+                    "distance": 2,
+                    "lineWidth": 4,
+                    "strokeOpacity": 0.25,
+                  },
+                  "scaleX": 1.4,
+                  "scaleY": 1.4,
+                },
+              },
+              "style": {},
+            },
+            "seriesField": "__Dim_ColorId__",
+            "tooltip": {
+              "dimension": {
+                "content": [
+                  {
+                    "hasShape": true,
+                    "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
+                ],
+                "title": {
+                  "visible": true,
+                },
+              },
+              "mark": {
+                "content": [
+                  {
+                    "hasShape": true,
+                    "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
+                  {
+                    "hasShape": true,
+                    "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
+                ],
+                "title": {
+                  "visible": false,
+                },
+              },
+              "visible": true,
+            },
+            "type": "line",
+            "xField": "__Dim_X__",
+            "yField": "__MeaSecondaryValue__0",
+            "zIndex": 1001,
+          },
+        ],
+        "type": "common",
+      },
+      "indicatorKey": "dualAxis-0",
+      "style": {
+        "padding": [
+          1,
+          1,
+          0,
+          1,
+        ],
+      },
+      "title": undefined,
+    },
+    {
+      "cellType": "chart",
+      "chartModule": "vchart",
+      "chartSpec": {
+        "axes": [
+          {
+            "domainLine": {
+              "style": {
+                "lineWidth": 1,
+                "stroke": "#3641594d",
+              },
+              "visible": true,
+            },
+            "grid": {
+              "style": {
+                "lineWidth": 0.5,
+                "stroke": "#36415926",
+              },
+              "visible": false,
+            },
+            "hover": true,
+            "label": {
+              "autoHide": true,
+              "autoHideMethod": "greedy",
+              "autoHideSeparation": 4,
+              "autoLimit": true,
+              "autoRotate": false,
+              "autoRotateAngle": [
+                0,
+                -45,
+                -90,
+              ],
+              "flush": true,
+              "lastVisible": true,
+              "minGap": 4,
+              "space": 8,
+              "style": {
+                "angle": 0,
+                "fill": "#797B85",
+                "fontSize": 12,
+                "fontWeight": 400,
+                "maxLineWidth": 80,
+              },
+              "visible": true,
+            },
+            "maxHeight": 140,
+            "orient": "bottom",
+            "paddingInner": [
+              0.15,
+              0.1,
+            ],
+            "paddingOuter": [
+              0.075,
+              0.1,
+            ],
+            "sampling": false,
+            "tick": {
+              "inside": false,
+              "style": {
+                "stroke": "#3641594d",
+              },
+              "tickSize": 4,
+              "visible": false,
+            },
+            "title": {
+              "style": {
+                "fill": "#646A73",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "text": "",
+              "visible": false,
+            },
+            "type": "band",
+            "visible": true,
+          },
+          {
+            "base": 10,
+            "domainLine": {
+              "style": {
+                "lineWidth": 1,
+                "stroke": "#3641594d",
+              },
+              "visible": false,
+            },
+            "grid": {
+              "style": {
+                "lineWidth": 0.5,
+                "stroke": "#36415926",
+              },
+              "visible": true,
+            },
+            "id": "dualAxis-1-primary-axis",
+            "innerOffset": {
+              "top": 7,
+            },
+            "inverse": false,
+            "label": {
+              "formatMethod": [Function],
+              "style": {
+                "angle": 0,
+                "fill": "#797B85",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "visible": true,
+            },
+            "max": undefined,
+            "min": undefined,
+            "nice": true,
+            "orient": "left",
+            "seriesId": "dualAxis-1-primary-series",
+            "tick": {
+              "inside": false,
+              "style": {
+                "stroke": "#3641594d",
+              },
+              "tickSize": 4,
+              "visible": false,
+            },
+            "title": {
+              "style": {
+                "fill": "#646A73",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "text": "",
+              "visible": false,
+            },
+            "type": "linear",
+            "visible": false,
+            "zero": true,
+          },
+          {
+            "base": 10,
+            "domainLine": {
+              "style": {
+                "lineWidth": 1,
+                "stroke": "#3641594d",
+              },
+              "visible": false,
+            },
+            "grid": {
+              "style": {
+                "lineWidth": undefined,
+                "stroke": undefined,
+              },
+              "visible": true,
+            },
+            "id": "dualAxis-1-secondary-axis",
+            "innerOffset": {
+              "top": 7,
+            },
+            "inverse": false,
+            "label": {
+              "formatMethod": [Function],
+              "style": {
+                "angle": 0,
+                "fill": "#797B85",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "visible": true,
+            },
+            "max": undefined,
+            "min": undefined,
+            "nice": true,
+            "orient": "right",
+            "seriesId": "dualAxis-1-secondary-series",
+            "sync": {
+              "axisId": "dualAxis-1-primary-axis",
+              "zeroAlign": true,
+            },
+            "tick": {
+              "inside": false,
+              "style": {
+                "stroke": "#3641594d",
+              },
+              "tickSize": 4,
+              "visible": false,
+            },
+            "title": {
+              "style": {
+                "fill": "#646A73",
+                "fontSize": 12,
+                "fontWeight": 400,
+              },
+              "text": "",
+              "visible": false,
+            },
+            "type": "linear",
+            "visible": true,
+            "zero": true,
+          },
+        ],
+        "background": "transparent",
+        "color": {
+          "domain": [
+            "利润-profit",
+            "sales-sales",
+          ],
+          "range": [
+            "#8D72F6",
+            "#5766EC",
+            "#66A3FE",
+            "#51D5E6",
+            "#4EC0B3",
+            "#F9DF90",
+            "#F9AD71",
+            "#ED8888",
+            "#E9A0C3",
+            "#D77DD3",
+          ],
+          "specified": undefined,
+          "type": "ordinal",
+        },
+        "crosshair": {
+          "xField": {
+            "label": {
+              "labelBackground": {
+                "style": {
+                  "fill": "#364159",
+                },
+                "visible": true,
+              },
+              "style": {
+                "fill": "#ffffff",
+              },
+              "visible": true,
+            },
+            "line": {
+              "style": {
+                "fill": "#3641594d",
+                "lineWidth": 0,
+                "opacity": 0.2,
+              },
+              "type": "rect",
+            },
+            "visible": true,
+          },
+        },
+        "padding": 0,
+        "region": [
+          {
+            "clip": true,
+          },
+        ],
+        "series": [
+          {
+            "animation": true,
+            "area": {
+              "style": {},
+              "visible": true,
+            },
+            "bar": {
+              "state": {
+                "hover": {
+                  "fillOpacity": 0.6,
+                },
+              },
+              "style": {
+                "lineWidth": 1,
+              },
+            },
+            "data": {
+              "fields": {
+                "__Dim_ColorId__": {
+                  "sortIndex": 0,
+                },
+                "__Dim_X__": {
+                  "sortIndex": 0,
+                },
+              },
+              "id": "dualAxis-1-primary-dataset",
+              "values": undefined,
+            },
+            "direction": "vertical",
+            "id": "dualAxis-1-primary-series",
+            "label": {
+              "formatMethod": [Function],
+              "visible": true,
+            },
+            "line": {
+              "style": {},
+            },
+            "point": {
+              "state": {
+                "dimension_hover": {
+                  "outerBorder": {
+                    "distance": 2,
+                    "lineWidth": 4,
+                    "strokeOpacity": 0.25,
+                  },
+                  "scaleX": 1.4,
+                  "scaleY": 1.4,
+                },
+              },
+              "style": {},
+            },
+            "seriesField": "__Dim_ColorId__",
+            "tooltip": {
+              "dimension": {
+                "content": [
+                  {
+                    "hasShape": true,
+                    "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
+                ],
+                "title": {
+                  "visible": true,
+                },
+              },
+              "mark": {
+                "content": [
+                  {
+                    "hasShape": true,
+                    "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
+                  {
+                    "hasShape": true,
+                    "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
+                ],
+                "title": {
+                  "visible": false,
+                },
+              },
+              "visible": true,
+            },
+            "type": "bar",
+            "xField": "__Dim_X__",
+            "yField": "__MeaPrimaryValue__1",
+            "zIndex": 1000,
+          },
+          {
+            "animation": true,
+            "area": {
+              "style": {},
+              "visible": true,
+            },
+            "bar": {
+              "state": {
+                "hover": {
+                  "fillOpacity": 0.6,
+                },
+              },
+              "style": {
+                "lineWidth": 1,
+              },
+            },
+            "data": {
+              "fields": {
+                "__Dim_ColorId__": {
+                  "sortIndex": 0,
+                },
+                "__Dim_X__": {
+                  "sortIndex": 0,
+                },
+              },
+              "id": "dualAxis-1-secondary-dataset",
+              "values": undefined,
+            },
+            "direction": "vertical",
+            "id": "dualAxis-1-secondary-series",
+            "label": {
+              "formatMethod": [Function],
+              "visible": true,
+            },
+            "line": {
+              "style": {},
+            },
+            "point": {
+              "state": {
+                "dimension_hover": {
+                  "outerBorder": {
+                    "distance": 2,
+                    "lineWidth": 4,
+                    "strokeOpacity": 0.25,
+                  },
+                  "scaleX": 1.4,
+                  "scaleY": 1.4,
+                },
+              },
+              "style": {},
+            },
+            "seriesField": "__Dim_ColorId__",
+            "tooltip": {
+              "dimension": {
+                "content": [
+                  {
+                    "hasShape": true,
+                    "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
+                ],
+                "title": {
+                  "visible": true,
+                },
+              },
+              "mark": {
+                "content": [
+                  {
+                    "hasShape": true,
+                    "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
+                  {
+                    "hasShape": true,
+                    "key": [Function],
+                    "shapeType": "rectRound",
+                    "value": [Function],
+                    "visible": true,
+                  },
+                ],
+                "title": {
+                  "visible": false,
+                },
+              },
+              "visible": true,
+            },
+            "type": "line",
+            "xField": "__Dim_X__",
+            "yField": "__MeaSecondaryValue__1",
+            "zIndex": 1001,
+          },
+        ],
+        "type": "common",
+      },
+      "indicatorKey": "dualAxis-1",
+      "style": {
+        "padding": [
+          1,
+          1,
+          0,
+          1,
+        ],
+      },
+      "title": undefined,
+    },
+  ],
+  "indicatorsAsCol": false,
+  "legends": {
+    "data": [
+      {
+        "label": "利润-profit",
+        "shape": {
+          "fill": "#8D72F6",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#8D72F6",
+          },
+        },
+      },
+      {
+        "label": "sales-sales",
+        "shape": {
+          "fill": "#5766EC",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#5766EC",
+          },
+        },
+      },
+    ],
+    "item": {
+      "background": {
+        "state": {
+          "selectedHover": {
+            "fill": "#646A73",
+            "fillOpacity": 0.05,
+          },
+        },
+      },
+      "focus": true,
+      "focusIconStyle": {
+        "fill": "#646A73",
+        "fontWeight": 400,
+        "size": 14,
+      },
+      "label": {
+        "formatMethod": [Function],
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+      },
+      "maxWidth": "30%",
+      "shape": {
+        "space": 6,
+        "style": {
+          "size": 8,
+          "symbolType": "rectRound",
+        },
+      },
+    },
+    "maxCol": 1,
+    "maxRow": 1,
+    "orient": "right",
+    "position": "start",
+    "type": "discrete",
+    "visible": true,
+  },
+  "records": {
+    "dualAxis-0": [
+      {
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2019",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaPrimaryValue__0": 100,
+        "__OriginalData__": {
+          "count": 500,
+          "date": "2019",
+          "profit": 100,
+          "sales": 200,
+        },
+        "count": 500,
+        "date": "2019",
+        "profit": 100,
+        "sales": 200,
+      },
+      {
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2020",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaPrimaryValue__0": 30,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2020",
+          "profit": 30,
+          "sales": 60,
+        },
+        "count": 50,
+        "date": "2020",
+        "profit": 30,
+        "sales": 60,
+      },
+      {
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2021",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaPrimaryValue__0": 30,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2021",
+          "profit": 30,
+          "sales": 60,
+        },
+        "count": 50,
+        "date": "2021",
+        "profit": 30,
+        "sales": 60,
+      },
+      {
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2022",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaPrimaryValue__0": 50,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2022",
+          "profit": 50,
+          "sales": 100,
+        },
+        "count": 50,
+        "date": "2022",
+        "profit": 50,
+        "sales": 100,
+      },
+      {
+        "__Dim_ColorId__": "利润-profit",
+        "__Dim_Color__": "利润",
+        "__Dim_Detail__": "利润",
+        "__Dim_X__": "2023",
+        "__MeaId__": "profit",
+        "__MeaName__": "利润",
+        "__MeaPrimaryValue__0": 40,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2023",
+          "profit": 40,
+          "sales": 80,
+        },
+        "count": 50,
+        "date": "2023",
+        "profit": 40,
+        "sales": 80,
+      },
+    ],
+    "dualAxis-1": [
+      {
+        "__Dim_ColorId__": "sales-sales",
+        "__Dim_Color__": "sales",
+        "__Dim_Detail__": "sales",
+        "__Dim_X__": "2019",
+        "__MeaId__": "sales",
+        "__MeaName__": "sales",
+        "__MeaSecondaryValue__1": 200,
+        "__OriginalData__": {
+          "count": 500,
+          "date": "2019",
+          "profit": 100,
+          "sales": 200,
+        },
+        "count": 500,
+        "date": "2019",
+        "profit": 100,
+        "sales": 200,
+      },
+      {
+        "__Dim_ColorId__": "sales-sales",
+        "__Dim_Color__": "sales",
+        "__Dim_Detail__": "sales",
+        "__Dim_X__": "2020",
+        "__MeaId__": "sales",
+        "__MeaName__": "sales",
+        "__MeaSecondaryValue__1": 60,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2020",
+          "profit": 30,
+          "sales": 60,
+        },
+        "count": 50,
+        "date": "2020",
+        "profit": 30,
+        "sales": 60,
+      },
+      {
+        "__Dim_ColorId__": "sales-sales",
+        "__Dim_Color__": "sales",
+        "__Dim_Detail__": "sales",
+        "__Dim_X__": "2021",
+        "__MeaId__": "sales",
+        "__MeaName__": "sales",
+        "__MeaSecondaryValue__1": 60,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2021",
+          "profit": 30,
+          "sales": 60,
+        },
+        "count": 50,
+        "date": "2021",
+        "profit": 30,
+        "sales": 60,
+      },
+      {
+        "__Dim_ColorId__": "sales-sales",
+        "__Dim_Color__": "sales",
+        "__Dim_Detail__": "sales",
+        "__Dim_X__": "2022",
+        "__MeaId__": "sales",
+        "__MeaName__": "sales",
+        "__MeaSecondaryValue__1": 100,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2022",
+          "profit": 50,
+          "sales": 100,
+        },
+        "count": 50,
+        "date": "2022",
+        "profit": 50,
+        "sales": 100,
+      },
+      {
+        "__Dim_ColorId__": "sales-sales",
+        "__Dim_Color__": "sales",
+        "__Dim_Detail__": "sales",
+        "__Dim_X__": "2023",
+        "__MeaId__": "sales",
+        "__MeaName__": "sales",
+        "__MeaSecondaryValue__1": 80,
+        "__OriginalData__": {
+          "count": 50,
+          "date": "2023",
+          "profit": 40,
+          "sales": 80,
+        },
+        "count": 50,
+        "date": "2023",
+        "profit": 40,
+        "sales": 80,
+      },
+    ],
+  },
+  "rows": [],
+  "theme": {
+    "bodyStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": [
+        0,
+        0,
+        2,
+        0,
+      ],
+      "hover": {
+        "cellBgColor": "transparent",
+      },
+      "padding": [
+        0,
+        0,
+        1,
+        0,
+      ],
+    },
+    "bottomFrozenStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "cornerHeaderStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": [
+        0,
+        0,
+        0,
+        0,
+      ],
+      "color": "#333333",
+      "fontSize": 12,
+      "fontWeight": "bold",
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+      "textAlign": "center",
+    },
+    "cornerLeftBottomCellStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "cornerRightBottomCellStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "cornerRightTopCellStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "frameStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderLineWidth": 0,
+    },
+    "headerStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "color": "#333333",
+      "fontSize": 12,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+      "textAlign": "center",
+    },
+    "rightFrozenStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "rowHeaderStyle": {
+      "bgColor": "rgba(0,0,0,0)",
+      "borderColor": "rgba(0,4,20,0.2)",
+      "borderLineWidth": 0,
+      "color": "#333333",
+      "fontSize": 12,
+      "hover": {
+        "cellBgColor": "rgba(178,186,207, 0.2)",
+      },
+    },
+    "selectionStyle": {
+      "cellBgColor": "",
+      "cellBorderColor": "",
+    },
+    "underlayBackgroundColor": "rgba(0,0,0,0)",
+  },
+  "widthMode": "adaptive",
+}
+`;
+
+exports[`3_pivotOnlyOneAxis 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "sales-sales": "sales",
+    "利润-profit": "利润",
+  },
+  "colorItems": [
+    "利润",
+    "sales",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

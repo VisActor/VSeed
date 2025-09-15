@@ -1,0 +1,21 @@
+{
+  "chartType": "line",
+  "dataset": [
+    { "date": "2019", "sales": 100 },
+    { "date": "2020", "sales": 3200 },
+    { "date": "2021", "sales": 300 },
+    { "date": "2022", "sales": 2400 },
+    { "date": "2023", "sales": 500 }
+  ],
+  "crosshairLine": {
+    "lineColor": "red",
+    "labelColor": "red"
+  },
+  "dimensions": [
+    {
+      "id": "date",
+      "alias": "日期"
+    }
+  ],
+  "measures": [{ "id": "sales", "alias": "销售额" }]
+}

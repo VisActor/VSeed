@@ -1,0 +1,27 @@
+{
+  "chartType": "bar",
+  "measures": [
+    { "id": "sales", "alias": "销售额", "autoFormat": true },
+    {
+      "id": "profit",
+      "alias": "利润",
+      "autoFormat": false,
+      "format": {
+        "type": "number",
+        "ratio": 1000,
+        "thousandSeparator": true,
+        "decimalPlaces": 0,
+        "symbol": "千",
+        "prefix": "利润",
+        "suffix": "$"
+      }
+    }
+  ],
+  "dataset": [
+    { "profit": 10000, "sales": 200000 },
+    { "profit": 20000, "sales": 400000 },
+    { "profit": 30000, "sales": 600000 },
+    { "profit": 40000, "sales": 800000 },
+    { "profit": 50000, "sales": 1000000 }
+  ]
+}

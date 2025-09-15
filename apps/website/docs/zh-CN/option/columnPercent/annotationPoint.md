@@ -3,11 +3,9 @@
 **Type:** `AnnotationPoint | AnnotationPoint[] | undefined`
 
 :::note{title=描述}
-标注点
+标注点配置, 根据选择的数据, 定义图表的标注点, 包括标注点的位置, 格式, 样式等.
 
-
-
-标注点配置, 根据选择的数据, 定义图表的标注点, 包括标注点的位置, 格式, 样式等.:::
+:::
 
 
 ## selector
@@ -15,7 +13,9 @@
 **Type:** `Selector | Selectors`
 
 :::note{title=描述}
-标注点的选择器, 用于选择数据点.:::
+标注点的选择器, 用于选择数据点.
+
+:::
 
 
 ### field
@@ -23,7 +23,9 @@
 **Type:** `string`
 
 :::note{title=描述}
-维度字段, dimensions 某一项的 id:::
+维度字段, dimensions 某一项的 id
+
+:::
 
 ### operator
 
@@ -34,7 +36,9 @@
 
 \- in: 选择数据项中维度字段的值在 value 中的数据项
 
-\- not in: 选择数据项中维度字段的值不在 value 中的数据项:::
+\- not in: 选择数据项中维度字段的值不在 value 中的数据项
+
+:::
 
 ### op
 
@@ -47,24 +51,31 @@
 
 \- not in: 选择数据项中维度字段的值不在 value 中的数据项
 
-same as operator:::
+same as operator
+
+:::
 
 ### value
 
 **Type:** `string | number | (string | number)[]`
 
 :::note{title=描述}
-选择数据项中维度字段的值, 支持数组:::
+选择数据项中维度字段的值, 支持数组
+
+:::
 
 ## text
 
 **Type:** `string | string[] | undefined`
 
 :::note{title=描述}
-标注的文本:::
+标注的文本
+
+:::
 
 **示例**
 '标注文本'
+
 
 
 ## textColor
@@ -72,10 +83,13 @@ same as operator:::
 **Type:** `string | undefined`
 
 :::note{title=描述}
-文本颜色:::
+文本颜色
+
+:::
 
 **示例**
 'red'
+
 
 
 ## textFontSize
@@ -83,10 +97,13 @@ same as operator:::
 **Type:** `number | undefined`
 
 :::note{title=描述}
-文本字体大小:::
+文本字体大小
+
+:::
 
 **示例**
 12
+
 
 
 ## textFontWeight
@@ -94,10 +111,13 @@ same as operator:::
 **Type:** `number | undefined`
 
 :::note{title=描述}
-文本字体重量:::
+文本字体重量
+
+:::
 
 **示例**
 400
+
 
 
 ## textAlign
@@ -113,10 +133,13 @@ right: 文本在标注点的左侧, 文本的右侧边缘对齐标注点
 
 left: 文本在标注点的右侧, 文本的左侧边缘对齐标注点
 
-center: 文本在标注点的中心, 文本的中心对齐标注点:::
+center: 文本在标注点的中心, 文本的中心对齐标注点
+
+:::
 
 **示例**
 'right' 文本在标注点的左侧
+
 
 
 ## textBaseline
@@ -132,10 +155,13 @@ top: 文本在标注点的底部, 文本的顶部边缘对齐标注点
 
 middle: 文本在标注点的中心, 文本的中心对齐标注点
 
-bottom: 文本在标注点的顶部, 文本的底部边缘对齐标注点:::
+bottom: 文本在标注点的顶部, 文本的底部边缘对齐标注点
+
+:::
 
 **示例**
 'top' 文本在标注点的底部
+
 
 
 ## textBackgroundVisible
@@ -143,10 +169,13 @@ bottom: 文本在标注点的顶部, 文本的底部边缘对齐标注点:::
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
-背景可见:::
+背景可见
+
+:::
 
 **示例**
 true
+
 
 
 ## textBackgroundColor
@@ -154,10 +183,13 @@ true
 **Type:** `string | undefined`
 
 :::note{title=描述}
-背景颜色:::
+背景颜色
+
+:::
 
 **示例**
 'red'
+
 
 
 ## textBackgroundBorderColor
@@ -165,10 +197,13 @@ true
 **Type:** `string | undefined`
 
 :::note{title=描述}
-背景边框颜色:::
+背景边框颜色
+
+:::
 
 **示例**
 'red'
+
 
 
 ## textBackgroundBorderWidth
@@ -176,10 +211,13 @@ true
 **Type:** `number | undefined`
 
 :::note{title=描述}
-背景边框宽度:::
+背景边框宽度
+
+:::
 
 **示例**
 2
+
 
 
 ## textBackgroundBorderRadius
@@ -187,10 +225,13 @@ true
 **Type:** `number | undefined`
 
 :::note{title=描述}
-背景边框圆角:::
+背景边框圆角
+
+:::
 
 **示例**
 4
+
 
 
 ## textBackgroundPadding
@@ -198,10 +239,13 @@ true
 **Type:** `number | undefined`
 
 :::note{title=描述}
-背景内边距:::
+背景内边距
+
+:::
 
 **示例**
 4
+
 
 
 ## offsetY
@@ -213,10 +257,13 @@ true
 
 负值则整体向上偏移, 例如设置为\-10, 则整个标注点组件包括文本、文本背景, 一起向上偏移10像素
 
-正值则整体向下偏移, 例如设置为10, 则整个标注点组件包括文本、文本背景, 一起向下偏移10像素:::
+正值则整体向下偏移, 例如设置为10, 则整个标注点组件包括文本、文本背景, 一起向下偏移10像素
+
+:::
 
 **示例**
 offsetY: 5, 标注点整体向下偏移5像素
+
 
 
 ## offsetX
@@ -228,9 +275,12 @@ offsetY: 5, 标注点整体向下偏移5像素
 
 负值则整体向左偏移, 例如设置为\-10, 则整个标注点组件包括文本、文本背景, 一起向左偏移10像素
 
-正值则整体向右偏移, 例如设置为10, 则整个标注点组件包括文本、文本背景, 一起向右偏移10像素:::
+正值则整体向右偏移, 例如设置为10, 则整个标注点组件包括文本、文本背景, 一起向右偏移10像素
+
+:::
 
 **示例**
 offsetX: 5, 标注点整体向右偏移5像素
+
 
 

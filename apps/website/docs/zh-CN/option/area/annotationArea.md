@@ -7,7 +7,9 @@
 
 
 
-标注区域配置, 根据选择的数据, 定义图表的标注区域, 包括标注区域的位置, 样式等.:::
+标注区域配置, 根据选择的数据, 定义图表的标注区域, 包括标注区域的位置, 样式等.
+
+:::
 
 
 ## selector
@@ -15,7 +17,9 @@
 **Type:** `Selector | Selectors`
 
 :::note{title=描述}
-依赖选择的数据, 进行数据标记.:::
+依赖选择的数据, 进行数据标记.
+
+:::
 
 
 ### field
@@ -23,7 +27,9 @@
 **Type:** `string`
 
 :::note{title=描述}
-维度字段, dimensions 某一项的 id:::
+维度字段, dimensions 某一项的 id
+
+:::
 
 ### operator
 
@@ -34,7 +40,9 @@
 
 \- in: 选择数据项中维度字段的值在 value 中的数据项
 
-\- not in: 选择数据项中维度字段的值不在 value 中的数据项:::
+\- not in: 选择数据项中维度字段的值不在 value 中的数据项
+
+:::
 
 ### op
 
@@ -47,24 +55,31 @@
 
 \- not in: 选择数据项中维度字段的值不在 value 中的数据项
 
-same as operator:::
+same as operator
+
+:::
 
 ### value
 
 **Type:** `string | number | (string | number)[]`
 
 :::note{title=描述}
-选择数据项中维度字段的值, 支持数组:::
+选择数据项中维度字段的值, 支持数组
+
+:::
 
 ## text
 
 **Type:** `string | string[] | undefined`
 
 :::note{title=描述}
-标注的文本:::
+标注的文本
+
+:::
 
 **示例**
 '标注文本'
+
 
 
 ## textPosition
@@ -72,10 +87,13 @@ same as operator:::
 **Type:** `"left" | "top" | "topLeft" | "topRight" | "right" | "bottom" | "bottomLeft" | "bottomRight" | undefined`
 
 :::note{title=描述}
-文本位置:::
+文本位置
+
+:::
 
 **示例**
 'top'
+
 
 
 ## textColor
@@ -83,10 +101,13 @@ same as operator:::
 **Type:** `string | undefined`
 
 :::note{title=描述}
-文本颜色:::
+文本颜色
+
+:::
 
 **示例**
 'red'
+
 
 
 ## textFontSize
@@ -94,10 +115,13 @@ same as operator:::
 **Type:** `number | undefined`
 
 :::note{title=描述}
-文本字体大小:::
+文本字体大小
+
+:::
 
 **示例**
 12
+
 
 
 ## textFontWeight
@@ -105,10 +129,13 @@ same as operator:::
 **Type:** `number | undefined`
 
 :::note{title=描述}
-文本字体重量:::
+文本字体重量
+
+:::
 
 **示例**
 400
+
 
 
 ## textAlign
@@ -124,10 +151,13 @@ right: 文本在标注区域的左侧, 文本的右侧边缘对齐标注区域
 
 left: 文本在标注区域的右侧, 文本的左侧边缘对齐标注区域
 
-center: 文本在标注区域的中心, 文本的中心对齐标注区域:::
+center: 文本在标注区域的中心, 文本的中心对齐标注区域
+
+:::
 
 **示例**
 'center' 文本在标注区域的中间
+
 
 
 ## textBaseline
@@ -143,10 +173,13 @@ top: 文本在标注区域的底部, 文本的顶部边缘对齐标注区域
 
 middle: 文本在标注区域的中心, 文本的中心对齐标注区域
 
-bottom: 文本在标注区域的顶部, 文本的底部边缘对齐标注区域:::
+bottom: 文本在标注区域的顶部, 文本的底部边缘对齐标注区域
+
+:::
 
 **示例**
 'top' 文本在标注区域的底部
+
 
 
 ## textBackgroundVisible
@@ -154,10 +187,13 @@ bottom: 文本在标注区域的顶部, 文本的底部边缘对齐标注区域:
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
-背景可见:::
+背景可见
+
+:::
 
 **示例**
 true
+
 
 
 ## textBackgroundColor
@@ -165,10 +201,13 @@ true
 **Type:** `string | undefined`
 
 :::note{title=描述}
-背景颜色:::
+背景颜色
+
+:::
 
 **示例**
 'red'
+
 
 
 ## textBackgroundBorderColor
@@ -180,10 +219,13 @@ true
 
 
 
-背景边框颜色:::
+背景边框颜色
+
+:::
 
 **示例**
 'red'
+
 
 
 ## textBackgroundBorderWidth
@@ -191,10 +233,13 @@ true
 **Type:** `number | undefined`
 
 :::note{title=描述}
-背景边框宽度:::
+背景边框宽度
+
+:::
 
 **示例**
 2
+
 
 
 ## textBackgroundBorderRadius
@@ -206,10 +251,13 @@ true
 
 
 
-背景边框圆角:::
+背景边框圆角
+
+:::
 
 **示例**
 4
+
 
 
 ## textBackgroundPadding
@@ -217,10 +265,13 @@ true
 **Type:** `number | undefined`
 
 :::note{title=描述}
-背景内边距:::
+背景内边距
+
+:::
 
 **示例**
 4
+
 
 
 ## areaColor
@@ -228,10 +279,13 @@ true
 **Type:** `string | undefined`
 
 :::note{title=描述}
-标注区域区域颜色:::
+标注区域区域颜色
+
+:::
 
 **示例**
 'red'
+
 
 
 ## areaColorOpacity
@@ -239,10 +293,13 @@ true
 **Type:** `number | undefined`
 
 :::note{title=描述}
-标注区域区域颜色透明度:::
+标注区域区域颜色透明度
+
+:::
 
 **示例**
 0.5
+
 
 
 ## areaBorderColor
@@ -250,10 +307,13 @@ true
 **Type:** `number | undefined`
 
 :::note{title=描述}
-标注区域区域边框颜色:::
+标注区域区域边框颜色
+
+:::
 
 **示例**
 'red'
+
 
 
 ## areaBorderWidth
@@ -261,10 +321,13 @@ true
 **Type:** `number | undefined`
 
 :::note{title=描述}
-标注区域区域边框宽度:::
+标注区域区域边框宽度
+
+:::
 
 **示例**
 2
+
 
 
 ## areaBorderRadius
@@ -272,10 +335,13 @@ true
 **Type:** `number | undefined`
 
 :::note{title=描述}
-标注区域区域边框圆角:::
+标注区域区域边框圆角
+
+:::
 
 **示例**
 4
+
 
 
 ## outerPadding
@@ -283,9 +349,12 @@ true
 **Type:** `number | undefined`
 
 :::note{title=描述}
-标注区域区域的边距:::
+标注区域区域的边距
+
+:::
 
 **示例**
 0
+
 
 

@@ -2,31 +2,34 @@ import type { ISpec } from '@visactor/vchart'
 import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
 import { autoFormatter } from '../../../../utils'
 import type { SpecPipe, YLinearAxis } from 'src/types'
-import { isNullish } from 'remeda'
+import { isEmpty, isNullish } from 'remeda'
 
 export const yLinearSecondary: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const { locale, datasetReshapeInfo } = advancedVSeed
+  const { index, id: reshapeInfoId, foldInfoList } = datasetReshapeInfo[0]
   // TODO: default config missing
-  const index = datasetReshapeInfo[0].index
   const secondaryYAxis = advancedVSeed.config?.[chartType as 'dualAxis']?.secondaryYAxis as YLinearAxis | YLinearAxis[]
   const yAxisConfig = Array.isArray(secondaryYAxis) ? secondaryYAxis[index] || secondaryYAxis[0] : secondaryYAxis
   const alignTicks = advancedVSeed.config?.[chartType as 'dualAxis']?.alignTicks as boolean | boolean[]
   const alignTicksConfig = Array.isArray(alignTicks) ? alignTicks[index] || alignTicks[0] : alignTicks
 
-  if (isNullish(datasetReshapeInfo[0].foldInfoList?.[1])) {
+  if (isNullish(foldInfoList?.[1])) {
     return result
   }
 
+  const isEmptySecondary = isEmpty(foldInfoList?.[1].foldMap)
+  const onlySecondary = isEmpty(foldInfoList?.[0].foldMap) && !isEmptySecondary
+
   const sync = {
-    axisId: `${datasetReshapeInfo[0].id}-primary-axis`,
+    axisId: `${reshapeInfoId}-primary-axis`,
     zeroAlign: true,
   }
 
-  const id = `${datasetReshapeInfo[0].id}-secondary-axis`
-  const seriesIds = [`${datasetReshapeInfo[0].id}-primary-series`, `${datasetReshapeInfo[0].id}-secondary-series`]
+  const id = `${reshapeInfoId}-secondary-axis`
+  const seriesIds = [`${reshapeInfoId}-primary-series`, `${reshapeInfoId}-secondary-series`]
   const seriesId = alignTicksConfig ? seriesIds : seriesIds[1]
   if (!result.axes) {
     result.axes = []
@@ -65,7 +68,7 @@ export const yLinearSecondary: SpecPipe = (spec, context) => {
   } = yAxisConfig
 
   const linearAxis = {
-    visible,
+    visible: isEmptySecondary ? false : visible,
     id,
     seriesId,
     sync,
@@ -107,7 +110,7 @@ export const yLinearSecondary: SpecPipe = (spec, context) => {
       },
     },
     grid: {
-      visible: grid?.visible,
+      visible: onlySecondary ? true : grid?.visible,
       style: {
         lineWidth: grid?.gridWidth,
         stroke: grid?.gridColor,

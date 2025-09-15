@@ -42,15 +42,15 @@ import {
     { "id": "sales", "alias": "销售量" }
   ],
   "dimensions": [
-    { "id": "date", "alias": "日期", "location": "dimension" },
-    { "id": "region", "alias": "区域", "location": "dimension" }
+    { "id": "date", "alias": "日期" },
+    { "id": "region", "alias": "区域" }
   ]
 }
 ```
 
 ## 自动选择
 
-若未配置 `dimensions` 和 `measures` , 会取前100条数据, 进行如下判断:
+若未配置 `dimensions` 和 `measures` 会取前100条数据, 进行如下判断:
 
 - 如果一个字段存在 `number` 类型的数据, 则将其设置为指标
 - 如果一个字段存在 `string` 类型的数据, 并且字段未被设置为指标, 则将其设置为维度

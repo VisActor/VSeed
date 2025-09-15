@@ -1,9 +1,11 @@
 import { unique } from 'remeda'
 import type { Builder } from '../builder'
+import { isPivotTable, isTable } from 'src/pipeline'
 
 export const getColorItems = (builder: Builder): string[] => {
   const advancedVSeed = builder.advancedVSeed
-  if (!advancedVSeed) {
+
+  if (!advancedVSeed || isTable(builder.vseed) || isPivotTable(builder.vseed)) {
     return []
   }
 
@@ -18,7 +20,8 @@ export const getColorItems = (builder: Builder): string[] => {
 
 export const getColorIdMap = (builder: Builder): Record<string, string> => {
   const advancedVSeed = builder.advancedVSeed
-  if (!advancedVSeed) {
+
+  if (!advancedVSeed || isTable(builder.vseed) || isPivotTable(builder.vseed)) {
     return {}
   }
 

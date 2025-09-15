@@ -8,6 +8,6 @@ export const isDimensionGroup = (dimension: Dimension | DimensionGroup): dimensi
   return 'children' in dimension
 }
 
-export const isDimensions = (dimensions: Dimension[] | DimensionGroup[]): dimensions is Dimension[] => {
-  return dimensions.every(isDimension)
-}
+// export const isDimensions = (dimensions: Dimension[] | DimensionGroup[]): dimensions is Dimension[] => {
+//   return dimensions.every(isDimension)
+// }

@@ -21,7 +21,7 @@ export const SelectorBarValue = memo(() => {
       barBorderStyle: 'dashed',
       barRadius: [8, 8, 0, 0],
     },
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -50,7 +50,7 @@ export const SelectorBarPartialDatum = memo(() => {
       barBorderStyle: 'dashed',
       barRadius: [8, 8, 0, 0],
     },
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -85,7 +85,7 @@ export const SelectorBarDimensionCondition = memo(() => {
       barBorderStyle: 'dashed',
       barRadius: [8, 8, 0, 0],
     },
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -118,7 +118,7 @@ export const SelectorBarMeasureCondition = memo(() => {
       barBorderStyle: 'dashed',
       barRadius: [8, 8, 0, 0],
     },
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -154,7 +154,7 @@ export const MultiBarStyle = memo(() => {
         barColorOpacity: 0.8,
       },
     ],
-    dimensions: [{ id: 'date', alias: '日期', location: 'dimension' }],
+    dimensions: [{ id: 'date', alias: '日期',   }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },

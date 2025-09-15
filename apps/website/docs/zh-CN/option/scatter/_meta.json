@@ -76,6 +76,11 @@
   },
   {
     "type": "file",
+    "name": "scatterMeasures",
+    "label": "scatterMeasures "
+  },
+  {
+    "type": "file",
     "name": "theme",
     "label": "theme "
   },

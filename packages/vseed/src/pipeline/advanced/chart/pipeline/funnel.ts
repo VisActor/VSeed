@@ -1,23 +1,35 @@
 import type { AdvancedPipeline } from 'src/types'
 import {
-  autoDimensions,
-  autoMeasures,
   initAdvancedVSeed,
   theme,
   pivotAdapter,
-  reshapeTo1D1M,
-  pivotReshapeTo1D1M,
   annotation,
-  encodingFunnel,
   funnelConfig,
+  reshapeWithEncoding,
+  pivotReshapeWithEncoding,
+  encodingForFunnel,
+  buildMeasures,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+  encodingAdapter,
+  defaultEncodingForFunnel,
+  deleteTooltipAndLabelMeasure,
+  deleteTooltipAndLabelDimension,
 } from '../pipes'
 
 export const funnelAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
-  autoMeasures,
-  autoDimensions,
-  pivotAdapter([reshapeTo1D1M], [pivotReshapeTo1D1M]),
-  encodingFunnel,
+  defaultMeasures,
+  defaultDimensions,
+  defaultMeasureName,
+
+  encodingAdapter(
+    [defaultEncodingForFunnel, buildMeasures],
+    [encodingForFunnel, buildMeasures, deleteTooltipAndLabelMeasure, deleteTooltipAndLabelDimension],
+  ),
+  pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
+
   funnelConfig,
   theme,
   annotation,

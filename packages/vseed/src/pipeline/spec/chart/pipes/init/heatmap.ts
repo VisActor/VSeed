@@ -4,29 +4,17 @@ import type { SpecPipe } from 'src/types'
 export const initHeatmap: SpecPipe = (spec, context) => {
   const result = { ...spec } as IHeatmapChartSpec
   const { advancedVSeed } = context
-  const { encoding } = advancedVSeed
+  const { datasetReshapeInfo } = advancedVSeed
 
-  if (!encoding[0].y || !encoding[0].x || !encoding[0].color) {
-    return result
-  }
+  const { unfoldInfo, foldInfo } = datasetReshapeInfo[0]
 
   result.type = 'heatmap'
   result.direction = 'vertical'
-  result.xField = encoding[0].x[0]
-  result.yField = encoding[0].y[0]
-  result.valueField = encoding[0].color[0]
+  result.xField = unfoldInfo.encodingX
+  result.yField = unfoldInfo.encodingY
+  result.seriesField = unfoldInfo.encodingColorId
+  result.valueField = foldInfo.measureValue
   result.padding = 0
-  result.cell = {
-    style: {
-      shape: 'rect',
-      stroke: '#ffffff',
-      lineWidth: 1,
-      fill: {
-        field: encoding[0].color[0],
-        scale: 'color',
-      },
-    },
-  }
   result.axes = [
     {
       type: 'band',

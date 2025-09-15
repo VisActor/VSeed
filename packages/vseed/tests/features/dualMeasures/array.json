@@ -1,0 +1,26 @@
+{
+  "chartType": "dualAxis",
+  "dualMeasures": [
+    {
+      "primaryMeasures": [{ "id": "profit" }],
+      "secondaryMeasures": [{ "id": "sales" }]
+    },
+    {
+      "primaryMeasures": [{ "id": "ratio" }],
+      "secondaryMeasures": [{ "id": "returnRatio" }]
+    }
+  ],
+  "dataset": [
+    { "date": "2019", "profit": 10, "sales": 100, "ratio": 301, "returnRatio": 301 },
+    { "date": "2020", "profit": 30, "sales": 3200, "ratio": 32, "returnRatio": 30 },
+    { "date": "2021", "profit": 30, "sales": 300, "ratio": 103, "returnRatio": 503 },
+    { "date": "2022", "profit": 50, "sales": 2400, "ratio": 30, "returnRatio": 24 },
+    { "date": "2023", "profit": 40, "sales": 500, "ratio": 305, "returnRatio": 305 }
+  ],
+  "dimensions": [
+    {
+      "id": "date",
+      "alias": "日期"
+    }
+  ]
+}

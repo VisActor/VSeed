@@ -14,8 +14,12 @@
     "build": "pnpm -r build",
     "build:vseed": "pnpm --filter=@visactor/vseed run build",
     "build:rsdoctor": "pnpm --filter=@visactor/vseed run build:rsdoctor",
-    "build:docs": "node ./apps/website/scripts/generateDocs.js",
-    "test": "pnpm -r test",
+    "build:docs": "node ./scripts/build-docs.js",
+    "build:test": "node ./scripts/build-tests.mjs",
+    "build:canvasTest": "node ./scripts/build-tests-with-canvas.mjs",
+    "test": "pnpm --filter=@visactor/vseed test",
+    "rstest": "pnpm --filter=@visactor/vseed rstest",
+    "test:coverage": "pnpm --filter=@visactor/vseed test:coverage && node scripts/build-coverage-badge.mjs",
     "publish:vseed": "pnpm run build:vseed && pnpm publish --filter=@visactor/vseed --access=public"
   },
   "workspaces": [
@@ -25,7 +29,8 @@
   ],
   "devDependencies": {
     "@changesets/cli": "^2.29.5",
-    "prettier": "^3.6.2"
+    "prettier": "^3.6.2",
+    "ts-morph": "26.0.0"
   },
   "engines": {
     "node": ">=18.0.0",

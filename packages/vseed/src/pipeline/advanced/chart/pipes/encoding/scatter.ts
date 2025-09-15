@@ -54,6 +54,7 @@ const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Enco
 const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
   // color
   encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
+
   if (encoding.color.length === 0) {
     encoding.color = [MeasureName]
   }

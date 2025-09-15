@@ -23,7 +23,7 @@ export const encodingForRose: AdvancedPipe = (advancedVSeed) => {
   const encoding: Encoding = {}
 
   if (hasDimensionEncoding) {
-    generateDimensionEncoding(dimensions, encoding)
+    generateDimensionEncoding(dimensions, encoding, measures.length > 1)
   } else {
     generateDefaultDimensionEncoding(dimensions, encoding)
   }
@@ -51,7 +51,7 @@ const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Enco
   encoding.row = [] // 默认不进行行透视
   encoding.column = [] // 默认不进行列透视
 }
-const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
+const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding, isMultiMeasure: boolean) => {
   // angle
   encoding.angle = unique(dimensions.filter((item) => item.encoding === 'angle').map((item) => item.id))
   if (encoding.angle.length === 0) {
@@ -60,6 +60,10 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) =
 
   // color
   encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
+  const measureName = dimensions.find((item) => item.id === MeasureName)
+  if (measureName && !measureName.encoding && isMultiMeasure) {
+    encoding.color.push(MeasureName)
+  }
   if (encoding.color.length === 0) {
     encoding.color = [MeasureName]
   }

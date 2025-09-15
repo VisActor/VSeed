@@ -1,11 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`1_dimColor 1`] = `
+exports[`line_multi_measure 1`] = `
 {
   "annotation": {},
-  "chartType": "radar",
+  "chartType": "line",
   "config": {
-    "radar": {
+    "line": {
       "backgroundColor": "transparent",
       "color": {
         "colorScheme": [
@@ -24,6 +24,13 @@ exports[`1_dimColor 1`] = `
           "#C2CEFF",
           "#5766EC",
         ],
+      },
+      "crosshairLine": {
+        "labelBackgroundColor": "#364159",
+        "labelColor": "#ffffff",
+        "labelVisible": true,
+        "lineColor": "#3641594d",
+        "visible": true,
       },
       "label": {
         "enable": true,
@@ -44,11 +51,88 @@ exports[`1_dimColor 1`] = `
       "tooltip": {
         "enable": true,
       },
+      "xAxis": {
+        "grid": {
+          "gridColor": "#36415926",
+          "gridWidth": 0.5,
+          "visible": false,
+        },
+        "label": {
+          "labelAngle": 0,
+          "labelColor": "#797B85",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "visible": true,
+        },
+        "labelAutoHide": true,
+        "labelAutoHideGap": 4,
+        "labelAutoLimit": true,
+        "labelAutoLimitLength": 80,
+        "labelAutoRotate": false,
+        "labelAutoRotateAngleRange": [
+          0,
+          -45,
+          -90,
+        ],
+        "line": {
+          "lineColor": "#3641594d",
+          "lineWidth": 1,
+          "visible": true,
+        },
+        "tick": {
+          "tickColor": "#3641594d",
+          "tickInside": false,
+          "tickSize": 4,
+          "visible": false,
+        },
+        "title": {
+          "titleColor": "#646A73",
+          "titleFontSize": 12,
+          "titleFontWeight": 400,
+          "titleText": "",
+          "visible": false,
+        },
+      },
+      "yAxis": {
+        "grid": {
+          "gridColor": "#36415926",
+          "gridWidth": 0.5,
+          "visible": true,
+        },
+        "inverse": false,
+        "label": {
+          "labelAngle": 0,
+          "labelColor": "#797B85",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "visible": true,
+        },
+        "line": {
+          "lineColor": "#3641594d",
+          "lineWidth": 1,
+          "visible": false,
+        },
+        "nice": true,
+        "tick": {
+          "tickColor": "#3641594d",
+          "tickInside": false,
+          "tickSize": 4,
+          "visible": false,
+        },
+        "title": {
+          "titleColor": "#646A73",
+          "titleFontSize": 12,
+          "titleFontWeight": 400,
+          "titleText": "",
+          "visible": false,
+        },
+        "zero": true,
+      },
     },
   },
   "customTheme": {
     "config": {
-      "radar": {
+      "line": {
         "backgroundColor": "transparent",
         "color": {
           "colorScheme": [
@@ -67,6 +151,13 @@ exports[`1_dimColor 1`] = `
             "#C2CEFF",
             "#5766EC",
           ],
+        },
+        "crosshairLine": {
+          "labelBackgroundColor": "#364159",
+          "labelColor": "#ffffff",
+          "labelVisible": true,
+          "lineColor": "#3641594d",
+          "visible": true,
         },
         "label": {
           "enable": true,
@@ -87,15 +178,92 @@ exports[`1_dimColor 1`] = `
         "tooltip": {
           "enable": true,
         },
+        "xAxis": {
+          "grid": {
+            "gridColor": "#36415926",
+            "gridWidth": 0.5,
+            "visible": false,
+          },
+          "label": {
+            "labelAngle": 0,
+            "labelColor": "#797B85",
+            "labelFontSize": 12,
+            "labelFontWeight": 400,
+            "visible": true,
+          },
+          "labelAutoHide": true,
+          "labelAutoHideGap": 4,
+          "labelAutoLimit": true,
+          "labelAutoLimitLength": 80,
+          "labelAutoRotate": false,
+          "labelAutoRotateAngleRange": [
+            0,
+            -45,
+            -90,
+          ],
+          "line": {
+            "lineColor": "#3641594d",
+            "lineWidth": 1,
+            "visible": true,
+          },
+          "tick": {
+            "tickColor": "#3641594d",
+            "tickInside": false,
+            "tickSize": 4,
+            "visible": false,
+          },
+          "title": {
+            "titleColor": "#646A73",
+            "titleFontSize": 12,
+            "titleFontWeight": 400,
+            "titleText": "",
+            "visible": false,
+          },
+        },
+        "yAxis": {
+          "grid": {
+            "gridColor": "#36415926",
+            "gridWidth": 0.5,
+            "visible": true,
+          },
+          "inverse": false,
+          "label": {
+            "labelAngle": 0,
+            "labelColor": "#797B85",
+            "labelFontSize": 12,
+            "labelFontWeight": 400,
+            "visible": true,
+          },
+          "line": {
+            "lineColor": "#3641594d",
+            "lineWidth": 1,
+            "visible": false,
+          },
+          "nice": true,
+          "tick": {
+            "tickColor": "#3641594d",
+            "tickInside": false,
+            "tickSize": 4,
+            "visible": false,
+          },
+          "title": {
+            "titleColor": "#646A73",
+            "titleFontSize": 12,
+            "titleFontWeight": 400,
+            "titleText": "",
+            "visible": false,
+          },
+          "zero": true,
+        },
       },
     },
   },
   "dataset": [
     {
-      "__Dim_Angle__": "A",
       "__Dim_ColorId__": "2019-利润",
       "__Dim_Color__": "2019-利润",
       "__Dim_Detail__": "利润",
+      "__Dim_X__": "A",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 10,
@@ -112,10 +280,10 @@ exports[`1_dimColor 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "A",
       "__Dim_ColorId__": "2019-销售额",
       "__Dim_Color__": "2019-销售额",
       "__Dim_Detail__": "销售额",
+      "__Dim_X__": "A",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 20,
@@ -132,10 +300,10 @@ exports[`1_dimColor 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "B",
       "__Dim_ColorId__": "2019-利润",
       "__Dim_Color__": "2019-利润",
       "__Dim_Detail__": "利润",
+      "__Dim_X__": "B",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 30,
@@ -152,10 +320,10 @@ exports[`1_dimColor 1`] = `
       "type": "B",
     },
     {
-      "__Dim_Angle__": "B",
       "__Dim_ColorId__": "2019-销售额",
       "__Dim_Color__": "2019-销售额",
       "__Dim_Detail__": "销售额",
+      "__Dim_X__": "B",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 60,
@@ -172,10 +340,10 @@ exports[`1_dimColor 1`] = `
       "type": "B",
     },
     {
-      "__Dim_Angle__": "C",
       "__Dim_ColorId__": "2019-利润",
       "__Dim_Color__": "2019-利润",
       "__Dim_Detail__": "利润",
+      "__Dim_X__": "C",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 30,
@@ -192,10 +360,10 @@ exports[`1_dimColor 1`] = `
       "type": "C",
     },
     {
-      "__Dim_Angle__": "C",
       "__Dim_ColorId__": "2019-销售额",
       "__Dim_Color__": "2019-销售额",
       "__Dim_Detail__": "销售额",
+      "__Dim_X__": "C",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 60,
@@ -212,10 +380,10 @@ exports[`1_dimColor 1`] = `
       "type": "C",
     },
     {
-      "__Dim_Angle__": "D",
       "__Dim_ColorId__": "2019-利润",
       "__Dim_Color__": "2019-利润",
       "__Dim_Detail__": "利润",
+      "__Dim_X__": "D",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 50,
@@ -232,10 +400,10 @@ exports[`1_dimColor 1`] = `
       "type": "D",
     },
     {
-      "__Dim_Angle__": "D",
       "__Dim_ColorId__": "2019-销售额",
       "__Dim_Color__": "2019-销售额",
       "__Dim_Detail__": "销售额",
+      "__Dim_X__": "D",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 100,
@@ -252,10 +420,10 @@ exports[`1_dimColor 1`] = `
       "type": "D",
     },
     {
-      "__Dim_Angle__": "E",
       "__Dim_ColorId__": "2019-利润",
       "__Dim_Color__": "2019-利润",
       "__Dim_Detail__": "利润",
+      "__Dim_X__": "E",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 40,
@@ -272,10 +440,10 @@ exports[`1_dimColor 1`] = `
       "type": "E",
     },
     {
-      "__Dim_Angle__": "E",
       "__Dim_ColorId__": "2019-销售额",
       "__Dim_Color__": "2019-销售额",
       "__Dim_Detail__": "销售额",
+      "__Dim_X__": "E",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 80,
@@ -292,10 +460,10 @@ exports[`1_dimColor 1`] = `
       "type": "E",
     },
     {
-      "__Dim_Angle__": "A",
       "__Dim_ColorId__": "2020-利润",
       "__Dim_Color__": "2020-利润",
       "__Dim_Detail__": "利润",
+      "__Dim_X__": "A",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 10,
@@ -312,10 +480,10 @@ exports[`1_dimColor 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "A",
       "__Dim_ColorId__": "2020-销售额",
       "__Dim_Color__": "2020-销售额",
       "__Dim_Detail__": "销售额",
+      "__Dim_X__": "A",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 20,
@@ -332,10 +500,10 @@ exports[`1_dimColor 1`] = `
       "type": "A",
     },
     {
-      "__Dim_Angle__": "B",
       "__Dim_ColorId__": "2020-利润",
       "__Dim_Color__": "2020-利润",
       "__Dim_Detail__": "利润",
+      "__Dim_X__": "B",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 30,
@@ -352,10 +520,10 @@ exports[`1_dimColor 1`] = `
       "type": "B",
     },
     {
-      "__Dim_Angle__": "B",
       "__Dim_ColorId__": "2020-销售额",
       "__Dim_Color__": "2020-销售额",
       "__Dim_Detail__": "销售额",
+      "__Dim_X__": "B",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 60,
@@ -372,10 +540,10 @@ exports[`1_dimColor 1`] = `
       "type": "B",
     },
     {
-      "__Dim_Angle__": "C",
       "__Dim_ColorId__": "2020-利润",
       "__Dim_Color__": "2020-利润",
       "__Dim_Detail__": "利润",
+      "__Dim_X__": "C",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 30,
@@ -392,10 +560,10 @@ exports[`1_dimColor 1`] = `
       "type": "C",
     },
     {
-      "__Dim_Angle__": "C",
       "__Dim_ColorId__": "2020-销售额",
       "__Dim_Color__": "2020-销售额",
       "__Dim_Detail__": "销售额",
+      "__Dim_X__": "C",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 60,
@@ -412,10 +580,10 @@ exports[`1_dimColor 1`] = `
       "type": "C",
     },
     {
-      "__Dim_Angle__": "D",
       "__Dim_ColorId__": "2020-利润",
       "__Dim_Color__": "2020-利润",
       "__Dim_Detail__": "利润",
+      "__Dim_X__": "D",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 50,
@@ -432,10 +600,10 @@ exports[`1_dimColor 1`] = `
       "type": "D",
     },
     {
-      "__Dim_Angle__": "D",
       "__Dim_ColorId__": "2020-销售额",
       "__Dim_Color__": "2020-销售额",
       "__Dim_Detail__": "销售额",
+      "__Dim_X__": "D",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 100,
@@ -452,10 +620,10 @@ exports[`1_dimColor 1`] = `
       "type": "D",
     },
     {
-      "__Dim_Angle__": "E",
       "__Dim_ColorId__": "2020-利润",
       "__Dim_Color__": "2020-利润",
       "__Dim_Detail__": "利润",
+      "__Dim_X__": "E",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 40,
@@ -472,10 +640,10 @@ exports[`1_dimColor 1`] = `
       "type": "E",
     },
     {
-      "__Dim_Angle__": "E",
       "__Dim_ColorId__": "2020-销售额",
       "__Dim_Color__": "2020-销售额",
       "__Dim_Detail__": "销售额",
+      "__Dim_X__": "E",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 80,
@@ -511,7 +679,7 @@ exports[`1_dimColor 1`] = `
           "sum": 960,
         },
       },
-      "id": "radar",
+      "id": "line",
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
@@ -552,9 +720,6 @@ exports[`1_dimColor 1`] = `
     },
   ],
   "encoding": {
-    "angle": [
-      "type",
-    ],
     "color": [
       "date",
       "__MeaName__",
@@ -563,14 +728,14 @@ exports[`1_dimColor 1`] = `
       "__MeaName__",
     ],
     "label": [],
-    "radius": [
-      "profit",
-      "sales",
-    ],
     "tooltip": [
       "type",
       "date",
     ],
+    "x": [
+      "type",
+    ],
+    "y": [],
   },
   "locale": "zh-CN",
   "markStyle": {},
@@ -596,45 +761,133 @@ exports[`1_dimColor 1`] = `
 }
 `;
 
-exports[`1_dimColor 2`] = `
+exports[`line_multi_measure 2`] = `
 {
-  "angleField": "__Dim_Angle__",
   "animation": true,
-  "area": {
-    "style": {},
-    "visible": true,
-  },
   "axes": [
     {
       "domainLine": {
+        "style": {
+          "lineWidth": 1,
+          "stroke": "#3641594d",
+        },
         "visible": true,
       },
       "grid": {
+        "style": {
+          "lineWidth": 0.5,
+          "stroke": "#36415926",
+        },
+        "visible": false,
+      },
+      "hover": true,
+      "label": {
+        "autoHide": true,
+        "autoHideMethod": "greedy",
+        "autoHideSeparation": 4,
+        "autoLimit": true,
+        "autoRotate": false,
+        "autoRotateAngle": [
+          0,
+          -45,
+          -90,
+        ],
+        "flush": true,
+        "lastVisible": true,
+        "minGap": 4,
+        "space": 8,
+        "style": {
+          "angle": 0,
+          "fill": "#797B85",
+          "fontSize": 12,
+          "fontWeight": 400,
+          "maxLineWidth": 80,
+        },
         "visible": true,
       },
-      "nice": true,
-      "orient": "angle",
+      "maxHeight": 140,
+      "orient": "bottom",
+      "paddingInner": [
+        0.15,
+        0.1,
+      ],
+      "paddingOuter": [
+        0.075,
+        0.1,
+      ],
+      "sampling": false,
       "tick": {
-        "visible": true,
+        "inside": false,
+        "style": {
+          "stroke": "#3641594d",
+        },
+        "tickSize": 4,
+        "visible": false,
       },
+      "title": {
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "text": "",
+        "visible": false,
+      },
+      "type": "band",
       "visible": true,
-      "zero": true,
     },
     {
+      "base": 10,
       "domainLine": {
-        "visible": true,
+        "style": {
+          "lineWidth": 1,
+          "stroke": "#3641594d",
+        },
+        "visible": false,
       },
       "grid": {
+        "style": {
+          "lineWidth": 0.5,
+          "stroke": "#36415926",
+        },
         "visible": true,
       },
+      "innerOffset": {
+        "top": 7,
+      },
+      "inverse": false,
       "label": {
+        "formatMethod": [Function],
+        "style": {
+          "angle": 0,
+          "fill": "#797B85",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
         "visible": true,
       },
+      "max": undefined,
+      "min": undefined,
       "nice": true,
-      "orient": "radius",
+      "orient": "left",
       "tick": {
-        "visible": true,
+        "inside": false,
+        "style": {
+          "stroke": "#3641594d",
+        },
+        "tickSize": 4,
+        "visible": false,
       },
+      "title": {
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "text": "",
+        "visible": false,
+      },
+      "type": "linear",
       "visible": true,
       "zero": true,
     },
@@ -662,6 +915,35 @@ exports[`1_dimColor 2`] = `
     "specified": undefined,
     "type": "ordinal",
   },
+  "crosshair": {
+    "xField": {
+      "label": {
+        "labelBackground": {
+          "style": {
+            "fill": "#364159",
+          },
+          "visible": true,
+        },
+        "style": {
+          "fill": "#ffffff",
+        },
+        "visible": true,
+      },
+      "line": {
+        "style": {
+          "lineDash": [
+            4,
+            2,
+          ],
+          "lineWidth": 1,
+          "opacity": 1,
+          "stroke": "#3641594d",
+        },
+        "type": "line",
+      },
+      "visible": true,
+    },
+  },
   "data": {
     "fields": {
       "__Dim_Angle__": {
@@ -674,13 +956,13 @@ exports[`1_dimColor 2`] = `
         "sortIndex": 0,
       },
     },
-    "id": "radar",
+    "id": "line",
     "values": [
       {
-        "__Dim_Angle__": "A",
         "__Dim_ColorId__": "2019-利润",
         "__Dim_Color__": "2019-利润",
         "__Dim_Detail__": "利润",
+        "__Dim_X__": "A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 10,
@@ -697,10 +979,10 @@ exports[`1_dimColor 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "A",
         "__Dim_ColorId__": "2019-销售额",
         "__Dim_Color__": "2019-销售额",
         "__Dim_Detail__": "销售额",
+        "__Dim_X__": "A",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 20,
@@ -717,10 +999,10 @@ exports[`1_dimColor 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "B",
         "__Dim_ColorId__": "2019-利润",
         "__Dim_Color__": "2019-利润",
         "__Dim_Detail__": "利润",
+        "__Dim_X__": "B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 30,
@@ -737,10 +1019,10 @@ exports[`1_dimColor 2`] = `
         "type": "B",
       },
       {
-        "__Dim_Angle__": "B",
         "__Dim_ColorId__": "2019-销售额",
         "__Dim_Color__": "2019-销售额",
         "__Dim_Detail__": "销售额",
+        "__Dim_X__": "B",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 60,
@@ -757,10 +1039,10 @@ exports[`1_dimColor 2`] = `
         "type": "B",
       },
       {
-        "__Dim_Angle__": "C",
         "__Dim_ColorId__": "2019-利润",
         "__Dim_Color__": "2019-利润",
         "__Dim_Detail__": "利润",
+        "__Dim_X__": "C",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 30,
@@ -777,10 +1059,10 @@ exports[`1_dimColor 2`] = `
         "type": "C",
       },
       {
-        "__Dim_Angle__": "C",
         "__Dim_ColorId__": "2019-销售额",
         "__Dim_Color__": "2019-销售额",
         "__Dim_Detail__": "销售额",
+        "__Dim_X__": "C",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 60,
@@ -797,10 +1079,10 @@ exports[`1_dimColor 2`] = `
         "type": "C",
       },
       {
-        "__Dim_Angle__": "D",
         "__Dim_ColorId__": "2019-利润",
         "__Dim_Color__": "2019-利润",
         "__Dim_Detail__": "利润",
+        "__Dim_X__": "D",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 50,
@@ -817,10 +1099,10 @@ exports[`1_dimColor 2`] = `
         "type": "D",
       },
       {
-        "__Dim_Angle__": "D",
         "__Dim_ColorId__": "2019-销售额",
         "__Dim_Color__": "2019-销售额",
         "__Dim_Detail__": "销售额",
+        "__Dim_X__": "D",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 100,
@@ -837,10 +1119,10 @@ exports[`1_dimColor 2`] = `
         "type": "D",
       },
       {
-        "__Dim_Angle__": "E",
         "__Dim_ColorId__": "2019-利润",
         "__Dim_Color__": "2019-利润",
         "__Dim_Detail__": "利润",
+        "__Dim_X__": "E",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 40,
@@ -857,10 +1139,10 @@ exports[`1_dimColor 2`] = `
         "type": "E",
       },
       {
-        "__Dim_Angle__": "E",
         "__Dim_ColorId__": "2019-销售额",
         "__Dim_Color__": "2019-销售额",
         "__Dim_Detail__": "销售额",
+        "__Dim_X__": "E",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 80,
@@ -877,10 +1159,10 @@ exports[`1_dimColor 2`] = `
         "type": "E",
       },
       {
-        "__Dim_Angle__": "A",
         "__Dim_ColorId__": "2020-利润",
         "__Dim_Color__": "2020-利润",
         "__Dim_Detail__": "利润",
+        "__Dim_X__": "A",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 10,
@@ -897,10 +1179,10 @@ exports[`1_dimColor 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "A",
         "__Dim_ColorId__": "2020-销售额",
         "__Dim_Color__": "2020-销售额",
         "__Dim_Detail__": "销售额",
+        "__Dim_X__": "A",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 20,
@@ -917,10 +1199,10 @@ exports[`1_dimColor 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Angle__": "B",
         "__Dim_ColorId__": "2020-利润",
         "__Dim_Color__": "2020-利润",
         "__Dim_Detail__": "利润",
+        "__Dim_X__": "B",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 30,
@@ -937,10 +1219,10 @@ exports[`1_dimColor 2`] = `
         "type": "B",
       },
       {
-        "__Dim_Angle__": "B",
         "__Dim_ColorId__": "2020-销售额",
         "__Dim_Color__": "2020-销售额",
         "__Dim_Detail__": "销售额",
+        "__Dim_X__": "B",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 60,
@@ -957,10 +1239,10 @@ exports[`1_dimColor 2`] = `
         "type": "B",
       },
       {
-        "__Dim_Angle__": "C",
         "__Dim_ColorId__": "2020-利润",
         "__Dim_Color__": "2020-利润",
         "__Dim_Detail__": "利润",
+        "__Dim_X__": "C",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 30,
@@ -977,10 +1259,10 @@ exports[`1_dimColor 2`] = `
         "type": "C",
       },
       {
-        "__Dim_Angle__": "C",
         "__Dim_ColorId__": "2020-销售额",
         "__Dim_Color__": "2020-销售额",
         "__Dim_Detail__": "销售额",
+        "__Dim_X__": "C",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 60,
@@ -997,10 +1279,10 @@ exports[`1_dimColor 2`] = `
         "type": "C",
       },
       {
-        "__Dim_Angle__": "D",
         "__Dim_ColorId__": "2020-利润",
         "__Dim_Color__": "2020-利润",
         "__Dim_Detail__": "利润",
+        "__Dim_X__": "D",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 50,
@@ -1017,10 +1299,10 @@ exports[`1_dimColor 2`] = `
         "type": "D",
       },
       {
-        "__Dim_Angle__": "D",
         "__Dim_ColorId__": "2020-销售额",
         "__Dim_Color__": "2020-销售额",
         "__Dim_Detail__": "销售额",
+        "__Dim_X__": "D",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 100,
@@ -1037,10 +1319,10 @@ exports[`1_dimColor 2`] = `
         "type": "D",
       },
       {
-        "__Dim_Angle__": "E",
         "__Dim_ColorId__": "2020-利润",
         "__Dim_Color__": "2020-利润",
         "__Dim_Detail__": "利润",
+        "__Dim_X__": "E",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 40,
@@ -1057,10 +1339,10 @@ exports[`1_dimColor 2`] = `
         "type": "E",
       },
       {
-        "__Dim_Angle__": "E",
         "__Dim_ColorId__": "2020-销售额",
         "__Dim_Color__": "2020-销售额",
         "__Dim_Detail__": "销售额",
+        "__Dim_X__": "E",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 80,
@@ -1078,6 +1360,7 @@ exports[`1_dimColor 2`] = `
       },
     ],
   },
+  "direction": "vertical",
   "label": {
     "formatMethod": [Function],
     "visible": true,
@@ -1143,7 +1426,6 @@ exports[`1_dimColor 2`] = `
     },
     "style": {},
   },
-  "radiusField": "__MeaValue__",
   "region": [
     {
       "clip": true,
@@ -1195,13 +1477,16 @@ exports[`1_dimColor 2`] = `
     },
     "visible": true,
   },
-  "type": "radar",
+  "type": "line",
+  "xField": "__Dim_X__",
+  "yField": "__MeaValue__",
 }
 `;
 
-exports[`1_dimColor 3`] = `
+exports[`line_multi_measure 3`] = `
 {
   "advancedPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`1_dimColor 1`] = `
+exports[`radar_multi_measure 1`] = `
 {
   "annotation": {},
   "chartType": "radar",
@@ -596,7 +596,7 @@ exports[`1_dimColor 1`] = `
 }
 `;
 
-exports[`1_dimColor 2`] = `
+exports[`radar_multi_measure 2`] = `
 {
   "angleField": "__Dim_Angle__",
   "animation": true,
@@ -1199,7 +1199,7 @@ exports[`1_dimColor 2`] = `
 }
 `;
 
-exports[`1_dimColor 3`] = `
+exports[`radar_multi_measure 3`] = `
 {
   "advancedPipeline": [
     [Function],

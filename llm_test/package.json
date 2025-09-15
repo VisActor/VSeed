@@ -13,6 +13,6 @@
     "json-schema-to-typescript": "15.0.4"
   },
   "scripts": {
-    "generate": "ts-node ./generate-top-key.ts && ts-node ./generate-doc.ts"
+    "generate": "rm -rf ./new-type/* && rm -rf ./top-key/* && ts-node ./generate-top-key.ts && ts-node ./generate-doc.ts"
   }
 }

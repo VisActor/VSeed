@@ -92,8 +92,27 @@ function generateChartTypeMarkdown() {
 }
 
 const skipTopKeys = [
-  'Dimensions',
   'Measures',
+  'Dataset',
+  'measureTree',
+  'BackgroundColor',
+  'Dimensions',
+  'MeasureTree',
+  'XBandAxis',
+  'YLinearAxis',
+  'CrosshairLine',
+  'Theme',
+  'Locale',
+  'XLinearAxis',
+  'YBandAxis',
+  'CrosshairRect',
+  'StackCornerRadius',
+  'ColorLegend',
+  'DualChartType',
+  'DimensionTree',
+  'ScatterMeasures',
+  'DualMeasures',
+  'LinearColor'
 ]
 
 function generateComponentMarkdown() {
@@ -302,6 +321,28 @@ function generateAxisMarkdown() {
 }
 
 function generateMeasureMarkdown() {
+  // NumFormat
+  const numFormatDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/measures/format/numFormat.ts')
+  const numFormatFileContent = fs.readFileSync(numFormatDir)
+  const numFormatFileContentStr = numFormatFileContent.toString()
+  const interfaceNumFormatSignature = `export interface NumFormat`
+   const definitionStartIndex = numFormatFileContentStr.indexOf(interfaceNumFormatSignature)
+   if (definitionStartIndex === -1) {
+    console.log(`Could not find interface definition export interface NumFormat in numFormat.ts`)
+    return
+   }
+   const definitionEndIndex = numFormatFileContentStr.indexOf('}', definitionStartIndex)
+   if (definitionEndIndex === -1) {
+    console.log(`Could not find matching closing brace for NumFormat in numFormat.ts`)
+    return
+   }
+   const numFormatDefinition = numFormatFileContentStr.substring(definitionStartIndex, definitionEndIndex + 1)
+
+  // MeasureEncoding
+  const measureEncodingDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/encoding/measureEncoding.ts')
+  const measureEncodingFileContent = fs.readFileSync(measureEncodingDir)
+  const measureEncodingContent = measureEncodingFileContent.toString()
+
   // MeasureTree & Measures
   const measureDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/measures/measures.ts')
   const fileContent = fs.readFileSync(measureDir)
@@ -318,8 +359,8 @@ function generateMeasureMarkdown() {
 
   const startIndex = interfaceIndex
   const measureContent = fileContentStr.substring(startIndex)
-  fs.writeFileSync(path.resolve(outputDir, 'MeasureTree.md'), '### Measure\n指标\n```typescript\n' + measureContent + '\n```');
-  fs.writeFileSync(path.resolve(outputDir, 'Measures.md'), '### Measure\n指标\n```typescript\n' + measureContent + '\n```');
+  fs.writeFileSync(path.resolve(outputDir, 'MeasureTree.md'), '### Measure\n指标\n```typescript\n' + numFormatDefinition + '\n' + measureEncodingContent + '\n' + measureContent + '\n```');
+  fs.writeFileSync(path.resolve(outputDir, 'Measures.md'), '### Measure\n指标\n```typescript\n' + numFormatDefinition + '\n' + measureEncodingContent + '\n' + measureContent + '\n```');
 
   // ScatterMeasures
   const scatterMeasureDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/measures/scatterMeasures.ts')
@@ -335,9 +376,42 @@ function generateMeasureMarkdown() {
 
   const scatterStartIndex = scatterInterfaceIndex
   const scatterMeasureContent = scatterFileContentStr.substring(scatterStartIndex)
-  fs.writeFileSync(path.resolve(outputDir, 'ScatterMeasures.md'), '### ScatterMeasure\n```typescript\n' + measureContent + '\n' + scatterMeasureContent + '\n```');
+  fs.writeFileSync(path.resolve(outputDir, 'ScatterMeasures.md'), '### ScatterMeasure\n```typescript\n' + numFormatDefinition + '\n' + measureEncodingContent + '\n' + measureContent + '\n' + scatterMeasureContent + '\n```');
+
+  // DualMeasure
+  const dualMeasureDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/measures/dualMeasures.ts')
+  const dualFileContent = fs.readFileSync(dualMeasureDir)
+  const dualFileContentStr = dualFileContent.toString()
+  const dualInterfaceSignature = `export type DualMeasure`
+  const dualInterfaceIndex = dualFileContentStr.indexOf(dualInterfaceSignature)
+
+  if (dualInterfaceIndex === -1) {
+    console.log(`Could not find interface definition export type DualMeasure in dualMeasure.ts`)
+    return
+  }
+
+  const dualStartIndex = dualInterfaceIndex
+  const dualMeasureContent = dualFileContentStr.substring(dualStartIndex)
+  fs.writeFileSync(path.resolve(outputDir, 'DualMeasures.md'), '### DualMeasure\n```typescript\n' + numFormatDefinition + '\n' + measureEncodingContent + '\n' + measureContent + '\n' + dualMeasureContent + '\n```');
 }
 
+function generateDimensionMarkdown() {
+  // DimensionEncoding
+  const dimensionEncodingDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/encoding/dimensionEncoding.ts')
+  const dimensionEncodingFileContent = fs.readFileSync(dimensionEncodingDir)
+  const dimensionEncodingContent = dimensionEncodingFileContent.toString()
+
+  // Dimensions & DimensionTree
+  const dimensionDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/dimensions/dimensions.ts')
+  const dimensionFileContent = fs.readFileSync(dimensionDir)
+  const dimensionContentStr = dimensionFileContent.toString()
+  const startIndex = dimensionContentStr.indexOf('export type Dimension')
+  const dimensionContent = dimensionContentStr.substring(startIndex)
+  const outputDir = path.resolve(__dirname, './new-type')
+
+  fs.writeFileSync(path.resolve(outputDir, 'Dimensions.md'), '### Dimensions\n```typescript\n' + dimensionEncodingContent + '\n' + dimensionContent + '\n```');
+  fs.writeFileSync(path.resolve(outputDir, 'DimensionTree.md'), '### DimensionTree\n```typescript\n' + dimensionEncodingContent + '\n' + dimensionContent + '\n```');
+}
 
 function generateLinearColor() {
   // LinearColor
@@ -364,6 +438,7 @@ export async function generateMarkdown() {
   generateAxisMarkdown()
   generateMeasureMarkdown()
   generateLinearColor()
+  generateDimensionMarkdown()
 }
 
 // generateMarkdown()

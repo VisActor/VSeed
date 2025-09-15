@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { compile } from 'json-schema-to-typescript'
 import {
   zDataset, 
-  zDimensions, 
+  // zDimensions, 
   // zMeasures, 
   zBackgroundColor, 
   zCrosshairLine, 
@@ -12,10 +12,10 @@ import {
   zStackCornerRadius, 
   zSelector, 
   zSelectors,
-  zDimensionTree,
+  // zDimensionTree,
   // zMeasureTree,
   zColorLegend,
-  zDualMeasures,
+  // zDualMeasures,
   zDualChartType
 } from '@visactor/vseed';
 import fs from 'fs';
@@ -48,16 +48,16 @@ ${datasetSchema}
 \`\`\`
   `);
 
-  // Dimensions
-  const dimensionsSchema = await compile(z.toJSONSchema(zDimensions) as any, 'Dimensions', {
-    bannerComment: ''
-  });
-  fs.writeFileSync(path.join(__dirname, './new-type/Dimensions.md'), `
-### Dimensions
-\`\`\`typescript
-${dimensionsSchema}
-\`\`\`
-  `);
+//   // Dimensions
+//   const dimensionsSchema = await compile(z.toJSONSchema(zDimensions) as any, 'Dimensions', {
+//     bannerComment: ''
+//   });
+//   fs.writeFileSync(path.join(__dirname, './new-type/Dimensions.md'), `
+// ### Dimensions
+// \`\`\`typescript
+// ${dimensionsSchema}
+// \`\`\`
+//   `);
 
 //   // Measures
 //   const measuresSchema = await compile(z.toJSONSchema(zMeasures) as any, 'Measures', {
@@ -162,16 +162,16 @@ ${selectorsSchema}
 \`\`\`
   `);
 
-  // DimensionTree
-  const dimensionTreeSchema = await compile(z.toJSONSchema(zDimensionTree) as any, 'DimensionTree', {
-    bannerComment: ''
-  });
-  fs.writeFileSync(path.join(__dirname, './new-type/DimensionTree.md'), `
-### DimensionTree
-\`\`\`typescript
-${dimensionTreeSchema}
-\`\`\`
-  `);
+//   // DimensionTree
+//   const dimensionTreeSchema = await compile(z.toJSONSchema(zDimensionTree) as any, 'DimensionTree', {
+//     bannerComment: ''
+//   });
+//   fs.writeFileSync(path.join(__dirname, './new-type/DimensionTree.md'), `
+// ### DimensionTree
+// \`\`\`typescript
+// ${dimensionTreeSchema}
+// \`\`\`
+//   `);
 
 //   // MeasureTree
 //   const measureTreeSchema = await compile(z.toJSONSchema(zMeasureTree) as any, 'MeasureTree', {
@@ -196,17 +196,17 @@ ${colorLegendSchema}
 \`\`\`
   `);
 
-  // DualMeasures
-  const dualMeasuresSchema = await compile(z.toJSONSchema(zDualMeasures) as any, 'DualMeasures', {
-    bannerComment: ''
-  });
-  fs.writeFileSync(path.join(__dirname, './new-type/DualMeasures.md'), `
-### DualMeasures
-${topKeyDesc['DualMeasures']}
-\`\`\`typescript
-${dualMeasuresSchema}
-\`\`\`
-  `);
+//   // DualMeasures
+//   const dualMeasuresSchema = await compile(z.toJSONSchema(zDualMeasures) as any, 'DualMeasures', {
+//     bannerComment: ''
+//   });
+//   fs.writeFileSync(path.join(__dirname, './new-type/DualMeasures.md'), `
+// ### DualMeasures
+// ${topKeyDesc['DualMeasures']}
+// \`\`\`typescript
+// ${dualMeasuresSchema}
+// \`\`\`
+//   `);
 
   // DualChartType
   const dualChartTypeSchema = await compile(z.toJSONSchema(zDualChartType) as any, 'DualChartType', {

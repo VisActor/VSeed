@@ -1,4 +1,4 @@
-import type { NumFormat } from '../../measures'
+import type { NumFormat } from '../../format'
 
 export type Label = {
   /**
@@ -24,7 +24,7 @@ export type Label = {
   showValuePercent?: boolean
 
   /**
-   * @description 标签数值是否自动格式化
+   * @description 标签数值是否自动格式化, 当配置了 numFormat 时, 该配置项失效
    */
   autoFormat?: boolean
 

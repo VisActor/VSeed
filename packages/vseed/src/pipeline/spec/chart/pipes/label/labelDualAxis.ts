@@ -1,13 +1,13 @@
 import type { ILineChartSpec } from '@visactor/vchart'
 import type { ILineLikeLabelSpec } from '@visactor/vchart/esm/series/mixin/interface'
-import { autoFormatter, createFormatter, findMeasureById } from '../../../../utils'
+import { createFormatterByMeasure, findMeasureById } from '../../../../utils'
 import type { Datum, FoldInfo, Label, SpecPipe } from 'src/types'
-import { isEmpty, isNullish } from 'remeda'
+import { isNullish } from 'remeda'
 
 export const labelPrimary: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
   const { advancedVSeed } = context
-  const { measures, datasetReshapeInfo, locale } = advancedVSeed
+  const { measures, datasetReshapeInfo } = advancedVSeed
   const { chartType } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { label: Label }
 
@@ -28,20 +28,8 @@ export const labelPrimary: SpecPipe = (spec, context) => {
       const formatValue = (value: number) => {
         const id = datum[measureId] as string
         const measure = findMeasureById(measures, id)
-        if (!measure) {
-          return value
-        }
-
-        const { format = {}, autoFormat = true } = measure
-
-        if (!isEmpty(format)) {
-          const formatter = createFormatter(format)
-          return formatter(value)
-        }
-        if (autoFormat) {
-          return autoFormatter(value, locale)
-        }
-        return String(value)
+        const formatter = createFormatterByMeasure(measure)
+        return formatter(value)
       }
 
       result.push(formatValue(datum[measureValue] as number))
@@ -55,7 +43,7 @@ export const labelPrimary: SpecPipe = (spec, context) => {
 export const labelSecondary: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
   const { advancedVSeed } = context
-  const { measures, datasetReshapeInfo, locale } = advancedVSeed
+  const { measures, datasetReshapeInfo } = advancedVSeed
   const { chartType } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { label: Label }
 
@@ -79,20 +67,8 @@ export const labelSecondary: SpecPipe = (spec, context) => {
       const formatValue = (value: number) => {
         const id = datum[measureId] as string
         const measure = findMeasureById(measures, id)
-        if (!measure) {
-          return value
-        }
-
-        const { format = {}, autoFormat = true } = measure
-
-        if (!isEmpty(format)) {
-          const formatter = createFormatter(format)
-          return formatter(value)
-        }
-        if (autoFormat) {
-          return autoFormatter(value, locale)
-        }
-        return String(value)
+        const formatter = createFormatterByMeasure(measure)
+        return formatter(value)
       }
 
       result.push(formatValue(datum[measureValue] as number))

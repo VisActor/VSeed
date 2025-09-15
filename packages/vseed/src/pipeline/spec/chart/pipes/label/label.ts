@@ -1,9 +1,8 @@
 import type { ILineChartSpec } from '@visactor/vchart'
 import type { ILineLikeLabelSpec } from '@visactor/vchart/esm/series/mixin/interface'
-import { autoFormatter, createFormatter, findMeasureById } from '../../../../utils'
+import { createFormatter, createFormatterByMeasure, findMeasureById } from '../../../../utils'
 import type { Datum, Formatter, Label, Measure, NumFormat, SpecPipe } from 'src/types'
 import { isEmpty, merge, uniqueBy } from 'remeda'
-import { intl } from 'src/i18n'
 
 export const label: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
@@ -117,17 +116,12 @@ const generateMeasureValue = (
   if (!measure) {
     return value
   }
-  const format = merge(numFormat, measure.format)
-  const autoFormat = labelAutoFormat || measure.autoFormat
 
-  if (!isEmpty(format)) {
-    const formatter = createFormatter(format)
-    return formatter(value)
-  }
-  if (autoFormat) {
-    return autoFormatter(value, intl.getLocale())
-  }
-  return String(value)
+  const format = merge(numFormat, measure.numFormat || measure.format)
+  const mergedMeasure = { ...measure, numFormat: format, autoFormat: labelAutoFormat || measure.autoFormat }
+
+  const formatter = createFormatterByMeasure(mergedMeasure)
+  return formatter(value)
 }
 
 const generateMeasurePercent = (value: number | string, sum: number, formatter: Formatter) => {

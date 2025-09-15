@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { zNumFormat } from '../../measures'
+import { zNumFormat } from '../../format'
 
 export const zLabel = z.object({
   enable: z.boolean().nullish(),

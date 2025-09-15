@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { zNumFormat } from '../../format'
 
 export const zXLinearAxis = z.object({
   visible: z.boolean().default(true).nullish(),
@@ -10,7 +11,7 @@ export const zXLinearAxis = z.object({
   log: z.boolean().default(false).nullish(),
   logBase: z.number().default(10).nullish(),
   inverse: z.boolean().default(false).nullish(),
-
+  numFormat: zNumFormat.nullish(),
   label: z
     .object({
       visible: z.boolean().default(true).nullish(),

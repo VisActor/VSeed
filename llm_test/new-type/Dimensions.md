@@ -4,7 +4,7 @@
 export type Dimensions = {
   id: string;
   alias?: string;
-  location: "dimension" | "rowDimension" | "columnDimension";
+  encoding?: "xAxis" | "yAxis" | "angle" | "color" | "detail" | "tooltip" | "label" | "row" | "column";
 }[];
 
 ```

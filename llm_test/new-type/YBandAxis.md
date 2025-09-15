@@ -11,18 +11,8 @@ export type YBandAxis = {
 
   
   
-  /**
-   * @description 是否使用对数轴, 仅对数值轴生效
-   * @default false
-   */
-  log?: boolean
-
-  /**
-   * @description 对数轴的底数, 仅对数值轴生效
-   * @default 10
-   */
-  logBase?: number
-
+  
+  
   
   /**
    * 轴是否反向展示

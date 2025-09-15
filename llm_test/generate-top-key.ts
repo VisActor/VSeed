@@ -7,7 +7,7 @@ const dir = path.resolve(__dirname, '../packages/vseed/src/types/chartType/');
 const outDir = path.resolve(__dirname, './top-key');
 const files = fs.readdirSync(dir, {recursive: true});
 files.forEach((file: any) => {
-  console.log(file, typeof file);
+  // console.log(file, typeof file);
   if (!file.endsWith('.ts') || file.endsWith('index.ts')) {
     return;
   }

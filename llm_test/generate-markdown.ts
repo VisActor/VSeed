@@ -5,7 +5,7 @@ function generateChartTypeMarkdown() {
   const chartTypes = [
     'area',
     'areaPercent',
-    'areaRange',
+    // 'areaRange',
     'bar',
     'barParallel',
     'barPercent',
@@ -81,7 +81,7 @@ function generateChartTypeMarkdown() {
         }
         const outputFilePath = path.resolve(outputDir, `${pascalCaseChartType}.md`)
         fs.writeFileSync(outputFilePath, mdContent)
-        console.log(`Generated markdown for ${pascalCaseChartType}`)
+        // console.log(`Generated markdown for ${pascalCaseChartType}`)
       } else {
         console.log(`Could not find matching closing brace for ${pascalCaseChartType} in ${chartType}.ts`)
       }
@@ -120,7 +120,7 @@ function generateComponentMarkdown() {
     })
   })
 
-  console.log(Array.from(topKeySet).length)
+  // console.log(Array.from(topKeySet).length)
 
   // 读取dir目录下的所有文件
   const files = fs.readdirSync(dir, { recursive: true })
@@ -184,7 +184,7 @@ function generateComponentMarkdown() {
             mdContent += `\n${selectorMd}`
           }
           fs.writeFileSync(path.resolve(outputDir, `${topKey}.md`), mdContent)
-          console.log(`Generated markdown for ${topKey}`)
+          // console.log(`Generated markdown for ${topKey}`)
         } else {
           console.log(`Could not find matching closing brace for ${topKey} in ${fileName}`)
         }
@@ -236,7 +236,7 @@ function generateAxisMarkdown() {
       const mdContent = '```typescript\n' + definition + '\n```'
       const outputFilePath = path.resolve(outputDir, `Axis.md`)
       fs.writeFileSync(outputFilePath, mdContent)
-      console.log(`Generated markdown for Axis`)
+      // console.log(`Generated markdown for Axis`)
     } else {
       console.log(`Could not find matching closing brace for Axis in axis.ts`)
     }
@@ -278,33 +278,92 @@ function generateAxisMarkdown() {
     return newDefinition;
   };
 
-  const bandAxisOmit = ['min', 'max', 'nice', 'zero'];
+  const bandAxisOmit = ['min', 'max', 'nice', 'zero', 'log', 'logBase'];
   const bandAxisDefinition = removeProperties(axisDefinition, bandAxisOmit);
   
   const xBandAxisDefinition = bandAxisDefinition.replace('export type Axis', 'export type XBandAxis');
   fs.writeFileSync(path.resolve(outputDir, 'XBandAxis.md'), '### XBandAxis\n类目轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.\n```typescript\n' + xBandAxisDefinition + '\n```');
-  console.log('Generated markdown for XBandAxis');
+  // console.log('Generated markdown for XBandAxis');
 
   const yBandAxisDefinition = bandAxisDefinition.replace('export type Axis', 'export type YBandAxis');
   fs.writeFileSync(path.resolve(outputDir, 'YBandAxis.md'), '### YBandAxis\n类目轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.\n```typescript\n' + yBandAxisDefinition + '\n```');
-  console.log('Generated markdown for YBandAxis');
+  // console.log('Generated markdown for YBandAxis');
 
   const linearAxisOmit = ['labelAutoHide', 'labelAutoHideGap', 'labelAutoRotate', 'labelAutoRotateAngleRange', 'labelAutoLimit', 'labelAutoLimitLength'];
   const linearAxisDefinition = removeProperties(axisDefinition, linearAxisOmit);
 
   const xLinearAxisDefinition = linearAxisDefinition.replace('export type Axis', 'export type XLinearAxis');
   fs.writeFileSync(path.resolve(outputDir, 'XLinearAxis.md'), '### XLinearAxis\n数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.\n```typescript\n' + xLinearAxisDefinition + '\n```');
-  console.log('Generated markdown for XLinearAxis');
+  // console.log('Generated markdown for XLinearAxis');
 
   const yLinearAxisDefinition = linearAxisDefinition.replace('export type Axis', 'export type YLinearAxis');
   fs.writeFileSync(path.resolve(outputDir, 'YLinearAxis.md'), '### YLinearAxis\n数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.\n```typescript\n' + yLinearAxisDefinition + '\n```');
-  console.log('Generated markdown for YLinearAxis');
+  // console.log('Generated markdown for YLinearAxis');
+}
+
+function generateMeasureMarkdown() {
+  // MeasureTree & Measures
+  const measureDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/measures/measures.ts')
+  const fileContent = fs.readFileSync(measureDir)
+  const fileContentStr = fileContent.toString()
+  const outputDir = path.resolve(__dirname, './new-type')
+
+  const interfaceSignature = `export type Measure`
+  const interfaceIndex = fileContentStr.indexOf(interfaceSignature)
+
+  if (interfaceIndex === -1) {
+    console.log(`Could not find interface definition export type Measure in measures.ts`)
+    return
+  }
+
+  const startIndex = interfaceIndex
+  const measureContent = fileContentStr.substring(startIndex)
+  fs.writeFileSync(path.resolve(outputDir, 'MeasureTree.md'), '### Measure\n指标\n```typescript\n' + measureContent + '\n```');
+  fs.writeFileSync(path.resolve(outputDir, 'Measures.md'), '### Measure\n指标\n```typescript\n' + measureContent + '\n```');
+
+  // ScatterMeasures
+  const scatterMeasureDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/measures/scatterMeasures.ts')
+  const scatterFileContent = fs.readFileSync(scatterMeasureDir)
+  const scatterFileContentStr = scatterFileContent.toString()
+  const scatterInterfaceSignature = `export type ScatterMeasure`
+  const scatterInterfaceIndex = scatterFileContentStr.indexOf(scatterInterfaceSignature)
+
+  if (scatterInterfaceIndex === -1) {
+    console.log(`Could not find interface definition export type ScatterMeasure in scatterMeasures.ts`)
+    return
+  }
+
+  const scatterStartIndex = scatterInterfaceIndex
+  const scatterMeasureContent = scatterFileContentStr.substring(scatterStartIndex)
+  fs.writeFileSync(path.resolve(outputDir, 'ScatterMeasures.md'), '### ScatterMeasure\n```typescript\n' + measureContent + '\n' + scatterMeasureContent + '\n```');
+}
+
+
+function generateLinearColor() {
+  // LinearColor
+  const linearColorDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/config/color/color.ts')
+  const linearColorFileContent = fs.readFileSync(linearColorDir)
+  const linearColorFileContentStr = linearColorFileContent.toString()
+  const linearColorInterfaceSignature = `export type LinearColor`
+  const linearColorInterfaceIndex = linearColorFileContentStr.indexOf(linearColorInterfaceSignature)
+  const outputDir = path.resolve(__dirname, './new-type')
+
+  if (linearColorInterfaceIndex === -1) {
+    console.log(`Could not find interface definition export type LinearColor in linearColor.ts`)
+    return
+  }
+
+  const linearColorStartIndex = linearColorInterfaceIndex
+  const linearColorMeasureContent = linearColorFileContentStr.substring(linearColorStartIndex)
+  fs.writeFileSync(path.resolve(outputDir, 'LinearColor.md'), '### LinearColor\n```typescript\n' + linearColorMeasureContent + '\n```');
 }
 
 export async function generateMarkdown() {
   generateChartTypeMarkdown()
   generateComponentMarkdown()
   generateAxisMarkdown()
+  generateMeasureMarkdown()
+  generateLinearColor()
 }
 
 // generateMarkdown()

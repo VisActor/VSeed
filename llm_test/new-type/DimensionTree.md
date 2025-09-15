@@ -6,7 +6,7 @@ export type DimensionTree = (
   | {
       id: string;
       alias?: string;
-      location: "dimension" | "rowDimension" | "columnDimension";
+      encoding?: "xAxis" | "yAxis" | "angle" | "color" | "detail" | "tooltip" | "label" | "row" | "column";
     }
 )[];
 
@@ -18,7 +18,7 @@ export interface _Schema0 {
     | {
         id: string;
         alias?: string;
-        location: "dimension" | "rowDimension" | "columnDimension";
+        encoding?: "xAxis" | "yAxis" | "angle" | "color" | "detail" | "tooltip" | "label" | "row" | "column";
       }
   )[];
 }

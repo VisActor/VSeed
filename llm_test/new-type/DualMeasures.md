@@ -34,6 +34,20 @@ export type DualMeasures = {
             | "halfExpand"
             | "halfTrunc";
         };
+        encoding?:
+          | "primaryYAxis"
+          | "secondaryYAxis"
+          | "xAxis"
+          | "yAxis"
+          | "angle"
+          | "radius"
+          | "size"
+          | "color"
+          | "label"
+          | "tooltip"
+          | "detail"
+          | "column";
+        parentId?: string;
       }[]
     | {
         id: string;
@@ -60,6 +74,20 @@ export type DualMeasures = {
             | "halfExpand"
             | "halfTrunc";
         };
+        encoding?:
+          | "primaryYAxis"
+          | "secondaryYAxis"
+          | "xAxis"
+          | "yAxis"
+          | "angle"
+          | "radius"
+          | "size"
+          | "color"
+          | "label"
+          | "tooltip"
+          | "detail"
+          | "column";
+        parentId?: string;
       };
   secondaryMeasures?:
     | {
@@ -87,6 +115,20 @@ export type DualMeasures = {
             | "halfExpand"
             | "halfTrunc";
         };
+        encoding?:
+          | "primaryYAxis"
+          | "secondaryYAxis"
+          | "xAxis"
+          | "yAxis"
+          | "angle"
+          | "radius"
+          | "size"
+          | "color"
+          | "label"
+          | "tooltip"
+          | "detail"
+          | "column";
+        parentId?: string;
       }[]
     | {
         id: string;
@@ -113,6 +155,20 @@ export type DualMeasures = {
             | "halfExpand"
             | "halfTrunc";
         };
+        encoding?:
+          | "primaryYAxis"
+          | "secondaryYAxis"
+          | "xAxis"
+          | "yAxis"
+          | "angle"
+          | "radius"
+          | "size"
+          | "color"
+          | "label"
+          | "tooltip"
+          | "detail"
+          | "column";
+        parentId?: string;
       };
 }[];
 

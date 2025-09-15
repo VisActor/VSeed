@@ -1,5 +1,4 @@
-### Measure
-指标
+### ScatterMeasure
 ```typescript
 export type Measure = {
   /**
@@ -66,5 +65,13 @@ export type MeasureGroup = {
 }
 export type Measures = Measure[]
 export type MeasureTree = (Measure | MeasureGroup)[]
+
+export type ScatterMeasure = {
+  id: string
+  xMeasures?: Measure | Measure[]
+  yMeasures?: Measure | Measure[]
+}
+
+export type ScatterMeasures = ScatterMeasure[]
 
 ```

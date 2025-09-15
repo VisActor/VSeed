@@ -12,7 +12,12 @@
   {
     "name": "measures",
     "componentName": "MeasureTree",
-    "description": "散点图的第一个指标字段会放至X轴, 其余指标会进行合并, 映射至Y轴"
+    "description": "散点图指标\nmeasures可以使用2个指标组, 代表普通散点图的X轴和Y轴指标, 每个指标组内的指标会自动合并为一个指标.\nmeasures可以使用1个指标组, 再嵌套2个指标组, 绘制组合散点图. 最外层的每一个组, 代表一个散点图, 它们会纵向排列."
+  },
+  {
+    "name": "scatterMeasures",
+    "componentName": "ScatterMeasures",
+    "description": "散点图指标, 是measures的简化形式\n组合的散点图指标配置, 每个对象都代表一个散点图, 散点图之间纵向排列, 必须是数组.\n每个配置对象内, xMeasures代表所有的X轴指标, yMeasures代表所有的Y轴指标, xMeasures和yMeasures可配置为数组或一个对象\nxMeasures 如果是多个指标, 则会自动合并, 映射至X轴\nyMeasures 如果是多个指标, 则会自动合并, 映射至Y轴"
   },
   {
     "name": "backgroundColor",

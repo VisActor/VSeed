@@ -137,6 +137,8 @@ export const lightTheme = (): CustomThemeConfig => {
       wrap: true,
       showValue: true,
       showValuePercent: false,
+      labelColorSmartInvert: false,
+      labelOverlap: true,
     },
     tooltip: {
       enable: true,

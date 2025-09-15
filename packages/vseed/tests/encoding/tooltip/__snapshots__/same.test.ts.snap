@@ -40,7 +40,9 @@ exports[`same 1`] = `
       "label": {
         "enable": false,
         "labelColor": "#212121",
+        "labelColorSmartInvert": false,
         "labelMode": "single",
+        "labelOverlap": true,
         "labelPos": "outer",
         "labelWeight": "normal",
         "showValue": true,
@@ -176,6 +178,8 @@ exports[`same 1`] = `
         },
         "label": {
           "enable": true,
+          "labelColorSmartInvert": false,
+          "labelOverlap": true,
           "showValue": true,
           "showValuePercent": false,
           "wrap": true,
@@ -1049,6 +1053,18 @@ exports[`same 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
+          "overlap": {
+            "clampForce": true,
+            "hideOnHit": true,
+          },
+          "position": undefined,
+          "smartInvert": false,
+          "style": {
+            "background": undefined,
+            "fill": "#212121",
+            "fontSize": undefined,
+            "fontWeight": undefined,
+          },
           "visible": false,
         },
         "markArea": [],
@@ -1324,6 +1340,18 @@ exports[`same 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
+          "overlap": {
+            "clampForce": true,
+            "hideOnHit": true,
+          },
+          "position": undefined,
+          "smartInvert": false,
+          "style": {
+            "background": undefined,
+            "fill": "#212121",
+            "fontSize": undefined,
+            "fontWeight": undefined,
+          },
           "visible": false,
         },
         "markArea": [],
@@ -1599,6 +1627,18 @@ exports[`same 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
+          "overlap": {
+            "clampForce": true,
+            "hideOnHit": true,
+          },
+          "position": undefined,
+          "smartInvert": false,
+          "style": {
+            "background": undefined,
+            "fill": "#212121",
+            "fontSize": undefined,
+            "fontWeight": undefined,
+          },
           "visible": false,
         },
         "markArea": [],
@@ -1874,6 +1914,18 @@ exports[`same 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
+          "overlap": {
+            "clampForce": true,
+            "hideOnHit": true,
+          },
+          "position": undefined,
+          "smartInvert": false,
+          "style": {
+            "background": undefined,
+            "fill": "#212121",
+            "fontSize": undefined,
+            "fontWeight": undefined,
+          },
           "visible": false,
         },
         "markArea": [],

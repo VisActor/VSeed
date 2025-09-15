@@ -22,6 +22,10 @@ async function checkFiles() {
       topKeyData.forEach((item: any) => {
         const componentName = item.componentName;
         const expectedNewTypeFile = componentName.charAt(0).toUpperCase() + componentName.slice(1) + '.md';
+        // componentName 为基础类型，跳过
+        if (componentName === 'string' || componentName === 'number' || componentName === 'boolean') {
+          return;
+        }
         if (!newTypeFileNames.has(expectedNewTypeFile)) {
           missingComponents.push(componentName);
         }

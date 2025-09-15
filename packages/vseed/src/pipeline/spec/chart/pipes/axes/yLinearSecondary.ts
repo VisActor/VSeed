@@ -1,6 +1,6 @@
 import type { ISpec } from '@visactor/vchart'
 import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
-import { autoFormatter } from '../../../../utils'
+import { autoFormatter, createNumFormatter } from '../../../../utils'
 import type { SpecPipe, YLinearAxis } from 'src/types'
 import { isEmpty, isNullish } from 'remeda'
 
@@ -65,7 +65,11 @@ export const yLinearSecondary: SpecPipe = (spec, context) => {
     min,
     log,
     logBase = 10,
+    numFormat = {},
+    autoFormat = true,
   } = yAxisConfig
+
+  const formatter = createNumFormatter(numFormat, locale)
 
   const linearAxis = {
     visible: isEmptySecondary ? false : visible,
@@ -83,7 +87,13 @@ export const yLinearSecondary: SpecPipe = (spec, context) => {
     label: {
       visible: label?.visible,
       formatMethod: (value: string) => {
-        return autoFormatter(value, locale)
+        if (!isEmpty(numFormat)) {
+          return formatter(value)
+        }
+        if (autoFormat) {
+          return autoFormatter(value, locale)
+        }
+        return value
       },
       style: {
         fill: label?.labelColor,

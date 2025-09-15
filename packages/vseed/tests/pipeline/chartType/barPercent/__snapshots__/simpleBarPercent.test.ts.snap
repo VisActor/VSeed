@@ -79,6 +79,9 @@ exports[`simpleBarPercent 1`] = `
           "visible": false,
         },
         "nice": true,
+        "numFormat": {
+          "type": "percent",
+        },
         "tick": {
           "tickColor": "#3641594d",
           "tickInside": false,
@@ -214,6 +217,9 @@ exports[`simpleBarPercent 1`] = `
             "visible": false,
           },
           "nice": true,
+          "numFormat": {
+            "type": "percent",
+          },
           "tick": {
             "tickColor": "#3641594d",
             "tickInside": false,

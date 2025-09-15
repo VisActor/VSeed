@@ -1,12 +1,12 @@
-import { isEmpty, pipe, uniqueBy } from 'remeda'
-import { autoFormatter, createFormatter, findAllMeasures, findMeasureById } from '../../../../utils'
-import type { Datum, Dimensions, FoldInfo, Locale, Measures, SpecPipe, Tooltip, UnfoldInfo } from 'src/types'
+import { pipe, uniqueBy } from 'remeda'
+import { createFormatterByMeasure, findAllMeasures, findMeasureById } from '../../../../utils'
+import type { Datum, Dimensions, FoldInfo, Measures, SpecPipe, Tooltip, UnfoldInfo } from 'src/types'
 import { ORIGINAL_DATA } from 'src/dataReshape'
 
 export const tooltip: SpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
-  const { measures, datasetReshapeInfo, chartType, locale, dimensions, encoding } = advancedVSeed
+  const { measures, datasetReshapeInfo, chartType, dimensions, encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
@@ -25,7 +25,6 @@ export const tooltip: SpecPipe = (spec, context) => {
         encoding.tooltip || [],
         dimensions,
         findAllMeasures(vseed.measures),
-        locale,
         foldInfo,
         unfoldInfo,
       ),
@@ -34,18 +33,13 @@ export const tooltip: SpecPipe = (spec, context) => {
       title: {
         visible: true,
       },
-      content: createDimensionContent(measures, foldInfo, unfoldInfo, locale),
+      content: createDimensionContent(measures, foldInfo, unfoldInfo),
     },
   }
   return result
 }
 
-export const createDimensionContent = (
-  measures: Measures,
-  foldInfo: FoldInfo,
-  unfoldInfo: UnfoldInfo,
-  locale: Locale,
-) => {
+export const createDimensionContent = (measures: Measures, foldInfo: FoldInfo, unfoldInfo: UnfoldInfo) => {
   const { measureId, measureValue } = foldInfo
   const { encodingColor } = unfoldInfo
 
@@ -66,18 +60,8 @@ export const createDimensionContent = (
         const value = datum[measureValue] as string | number
         const id = datum[measureId] as string
         const measure = findMeasureById(measures, id)
-        if (!measure) {
-          return String(value)
-        }
-        const { format = {}, autoFormat = true } = measure
-        if (!isEmpty(format)) {
-          const formatter = createFormatter(format)
-          return formatter(value)
-        }
-        if (autoFormat) {
-          return autoFormatter(value, locale)
-        }
-        return String(value)
+        const formatter = createFormatterByMeasure(measure)
+        return formatter(value)
       },
     },
   ]
@@ -87,7 +71,6 @@ export const createMarkContent = (
   tooltip: string[],
   dimensions: Dimensions,
   measures: Measures,
-  locale: Locale,
   foldInfo: FoldInfo,
   unfoldInfo: UnfoldInfo,
 ) => {
@@ -136,18 +119,8 @@ export const createMarkContent = (
       const originalData = datum[ORIGINAL_DATA] as Datum
       const value = originalData[id] as string | number
       const measure = findMeasureById(measures, id)
-      if (!measure) {
-        return String(value)
-      }
-      const { format = {}, autoFormat = true } = measure
-      if (!isEmpty(format)) {
-        const formatter = createFormatter(format)
-        return formatter(value)
-      }
-      if (autoFormat) {
-        return autoFormatter(value, locale)
-      }
-      return String(value)
+      const formatter = createFormatterByMeasure(measure)
+      return formatter(value)
     },
   }))
 
@@ -176,16 +149,8 @@ export const createMarkContent = (
         return String(value)
       }
 
-      const { format = {}, autoFormat = true } = measure
-
-      if (!isEmpty(format)) {
-        const formatter = createFormatter(format)
-        return formatter(value)
-      }
-      if (autoFormat) {
-        return autoFormatter(value, locale)
-      }
-      return String(value)
+      const formatter = createFormatterByMeasure(measure)
+      return formatter(value)
     },
   }
 

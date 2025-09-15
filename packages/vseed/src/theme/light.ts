@@ -205,7 +205,12 @@ export const lightTheme = (): CustomThemeConfig => {
       columnPercent: {
         ...baseConfig,
         xAxis: bandAxis,
-        yAxis: linearAxis,
+        yAxis: {
+          ...linearAxis,
+          numFormat: {
+            type: 'percent',
+          },
+        },
         crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
       },
@@ -225,7 +230,12 @@ export const lightTheme = (): CustomThemeConfig => {
       },
       barPercent: {
         ...baseConfig,
-        xAxis: linearAxis,
+        xAxis: {
+          ...linearAxis,
+          numFormat: {
+            type: 'percent',
+          },
+        },
         yAxis: barBandAxis,
         crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
@@ -239,7 +249,12 @@ export const lightTheme = (): CustomThemeConfig => {
       areaPercent: {
         ...baseConfig,
         xAxis: bandAxis,
-        yAxis: linearAxis,
+        yAxis: {
+          ...linearAxis,
+          numFormat: {
+            type: 'percent',
+          },
+        },
         crosshairLine,
       },
       scatter: {

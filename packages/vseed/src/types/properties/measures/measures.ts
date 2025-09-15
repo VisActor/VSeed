@@ -1,5 +1,5 @@
 import type { MeasureEncoding } from '../encoding'
-import type { NumFormat } from './format/numFormat'
+import type { NumFormat } from '../format/numFormat'
 
 /**
  * @description 指标
@@ -15,7 +15,7 @@ export type Measure = {
    */
   alias?: string
   /**
-   * @description 自动数值格式化
+   * @description 自动数值格式化 当配置了 format 时, 该配置项失效
    * 开启后, 图表的数据标签、提示信息, 会根据指标的数值, 自动根据语言环境, 选择合适的格式化方式
    * 格式化规则为设置为十进制数值, 开启compact notation, 最小0位小数, 最大2位小数, 自动四舍五入, 使用浏览器提供的 Intl.NumberFormatOptions 实现该逻辑.
    * 例如:
@@ -24,8 +24,14 @@ export type Measure = {
    * @default true
    */
   autoFormat?: boolean
+
   /**
    * @description 指标的数值格式化, 会自动应用于label、tooltip
+   */
+  numFormat?: NumFormat
+
+  /**
+   * @description same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
    */
   format?: NumFormat
 

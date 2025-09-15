@@ -57,7 +57,7 @@
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
-标签数值是否自动格式化
+标签数值是否自动格式化, 当配置了 numFormat 时, 该配置项失效
 
 :::
 

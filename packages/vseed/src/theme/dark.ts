@@ -145,7 +145,7 @@ export const darkTheme = (): CustomThemeConfig => {
       maxSize: 1,
       position: 'rt',
       shapeType: 'rectRound',
-      labelFontColor: '#FDFDFD',
+      labelColor: '#FDFDFD',
       labelFontSize: 12,
       labelFontWeight: 400,
     },

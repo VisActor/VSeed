@@ -1,5 +1,13 @@
 # website
 
+## 0.1.17
+
+### Patch Changes
+
+- feat: add encoding size
+- Updated dependencies
+  - @visactor/vseed@0.1.17
+
 ## 0.1.16
 
 ### Patch Changes

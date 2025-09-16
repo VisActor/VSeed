@@ -63,7 +63,7 @@ export interface Rose {
   /**
    * 指标
    * @description 玫瑰图的指标会自动合并为一个指标, 映射到半径轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {Measures}
+   * @type {MeasureTree}
    * @example [{id: 'value', alias: '数值'}]
    */
   measures?: MeasureTree

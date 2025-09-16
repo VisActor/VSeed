@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`emptyPivotTable 1`] = `
+exports[`onlyDimensions 1`] = `
 {
   "chartType": "pivotTable",
   "config": {
@@ -42,7 +42,26 @@ exports[`emptyPivotTable 1`] = `
     },
   },
   "dataset": [
-    {},
+    {
+      "date": "2019",
+      "yest": "a",
+    },
+    {
+      "date": "2020",
+      "yest": "a",
+    },
+    {
+      "date": "2021",
+      "yest": "a",
+    },
+    {
+      "date": "2022",
+      "yest": "a",
+    },
+    {
+      "date": "2023",
+      "yest": "a",
+    },
   ],
   "datasetReshapeInfo": [
     {
@@ -66,16 +85,27 @@ exports[`emptyPivotTable 1`] = `
   ],
   "dimensions": [
     {
+      "alias": "date",
+      "id": "date",
+    },
+    {
+      "alias": "yest",
+      "id": "yest",
+    },
+    {
       "alias": "指标名称",
       "id": "__MeaName__",
     },
   ],
   "encoding": {
     "column": [
+      "date",
       "__MeaName__",
     ],
     "detail": [],
-    "row": [],
+    "row": [
+      "yest",
+    ],
     "tooltip": [],
   },
   "locale": "zh-CN",
@@ -83,7 +113,7 @@ exports[`emptyPivotTable 1`] = `
 }
 `;
 
-exports[`emptyPivotTable 2`] = `
+exports[`onlyDimensions 2`] = `
 {
   "animationAppear": {
     "delay": 250,
@@ -95,6 +125,11 @@ exports[`emptyPivotTable 2`] = `
   "columnResizeMode": "all",
   "columnResizeType": "column",
   "columns": [
+    {
+      "dimensionKey": "date",
+      "title": "date",
+      "width": "auto",
+    },
     {
       "dimensionKey": "__MeaName__",
       "title": "指标名称",
@@ -124,9 +159,34 @@ exports[`emptyPivotTable 2`] = `
   ],
   "indicatorsAsCol": true,
   "records": [
-    {},
+    {
+      "date": "2019",
+      "yest": "a",
+    },
+    {
+      "date": "2020",
+      "yest": "a",
+    },
+    {
+      "date": "2021",
+      "yest": "a",
+    },
+    {
+      "date": "2022",
+      "yest": "a",
+    },
+    {
+      "date": "2023",
+      "yest": "a",
+    },
   ],
-  "rows": [],
+  "rows": [
+    {
+      "dimensionKey": "yest",
+      "title": "yest",
+      "width": "auto",
+    },
+  ],
   "select": {
     "headerSelectMode": "inline",
     "highlightMode": "cell",
@@ -276,7 +336,7 @@ exports[`emptyPivotTable 2`] = `
 }
 `;
 
-exports[`emptyPivotTable 3`] = `
+exports[`onlyDimensions 3`] = `
 {
   "advancedPipeline": [
     [Function],

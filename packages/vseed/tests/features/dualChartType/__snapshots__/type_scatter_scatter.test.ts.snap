@@ -1453,6 +1453,7 @@ exports[`type_scatter_scatter 2`] = `
       "visible": true,
     },
   },
+  "labelLayout": "region",
   "legends": {
     "autoPage": true,
     "data": [Function],
@@ -1878,6 +1879,18 @@ exports[`type_scatter_scatter 2`] = `
       "id": "dualAxis-primary-series",
       "label": {
         "formatMethod": [Function],
+        "overlap": {
+          "clampForce": true,
+          "hideOnHit": true,
+        },
+        "position": undefined,
+        "smartInvert": false,
+        "style": {
+          "background": undefined,
+          "fill": undefined,
+          "fontSize": undefined,
+          "fontWeight": undefined,
+        },
         "visible": false,
       },
       "line": {
@@ -2323,6 +2336,18 @@ exports[`type_scatter_scatter 2`] = `
       "id": "dualAxis-secondary-series",
       "label": {
         "formatMethod": [Function],
+        "overlap": {
+          "clampForce": true,
+          "hideOnHit": true,
+        },
+        "position": undefined,
+        "smartInvert": false,
+        "style": {
+          "background": undefined,
+          "fill": undefined,
+          "fontSize": undefined,
+          "fontWeight": undefined,
+        },
         "visible": false,
       },
       "line": {

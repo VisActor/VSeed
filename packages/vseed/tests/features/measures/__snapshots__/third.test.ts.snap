@@ -1280,6 +1280,18 @@ exports[`third 2`] = `
             "id": "dualAxis-0-primary-series",
             "label": {
               "formatMethod": [Function],
+              "overlap": {
+                "clampForce": true,
+                "hideOnHit": true,
+              },
+              "position": undefined,
+              "smartInvert": false,
+              "style": {
+                "background": undefined,
+                "fill": undefined,
+                "fontSize": undefined,
+                "fontWeight": undefined,
+              },
               "visible": true,
             },
             "line": {
@@ -1375,6 +1387,18 @@ exports[`third 2`] = `
             "id": "dualAxis-0-secondary-series",
             "label": {
               "formatMethod": [Function],
+              "overlap": {
+                "clampForce": true,
+                "hideOnHit": true,
+              },
+              "position": undefined,
+              "smartInvert": false,
+              "style": {
+                "background": undefined,
+                "fill": undefined,
+                "fontSize": undefined,
+                "fontWeight": undefined,
+              },
               "visible": true,
             },
             "line": {
@@ -1734,6 +1758,18 @@ exports[`third 2`] = `
             "id": "dualAxis-1-primary-series",
             "label": {
               "formatMethod": [Function],
+              "overlap": {
+                "clampForce": true,
+                "hideOnHit": true,
+              },
+              "position": undefined,
+              "smartInvert": false,
+              "style": {
+                "background": undefined,
+                "fill": undefined,
+                "fontSize": undefined,
+                "fontWeight": undefined,
+              },
               "visible": true,
             },
             "line": {
@@ -1829,6 +1865,18 @@ exports[`third 2`] = `
             "id": "dualAxis-1-secondary-series",
             "label": {
               "formatMethod": [Function],
+              "overlap": {
+                "clampForce": true,
+                "hideOnHit": true,
+              },
+              "position": undefined,
+              "smartInvert": false,
+              "style": {
+                "background": undefined,
+                "fill": undefined,
+                "fontSize": undefined,
+                "fontWeight": undefined,
+              },
               "visible": true,
             },
             "line": {

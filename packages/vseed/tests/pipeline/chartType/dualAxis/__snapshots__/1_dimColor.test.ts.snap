@@ -1145,6 +1145,7 @@ exports[`1_dimColor 2`] = `
       "visible": true,
     },
   },
+  "labelLayout": "region",
   "legends": {
     "autoPage": true,
     "data": [Function],
@@ -1438,6 +1439,18 @@ exports[`1_dimColor 2`] = `
       "id": "dualAxis-primary-series",
       "label": {
         "formatMethod": [Function],
+        "overlap": {
+          "clampForce": true,
+          "hideOnHit": true,
+        },
+        "position": undefined,
+        "smartInvert": false,
+        "style": {
+          "background": undefined,
+          "fill": undefined,
+          "fontSize": undefined,
+          "fontWeight": undefined,
+        },
         "visible": true,
       },
       "line": {
@@ -1751,6 +1764,18 @@ exports[`1_dimColor 2`] = `
       "id": "dualAxis-secondary-series",
       "label": {
         "formatMethod": [Function],
+        "overlap": {
+          "clampForce": true,
+          "hideOnHit": true,
+        },
+        "position": undefined,
+        "smartInvert": false,
+        "style": {
+          "background": undefined,
+          "fill": undefined,
+          "fontSize": undefined,
+          "fontWeight": undefined,
+        },
         "visible": true,
       },
       "line": {

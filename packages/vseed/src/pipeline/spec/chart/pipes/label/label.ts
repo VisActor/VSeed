@@ -107,7 +107,7 @@ export const label: SpecPipe = (spec, context) => {
   return result
 }
 
-const generateMeasureValue = (
+export const generateMeasureValue = (
   value: number | string,
   measure?: Measure,
   labelAutoFormat: boolean = true,
@@ -124,7 +124,7 @@ const generateMeasureValue = (
   return formatter(value)
 }
 
-const generateMeasurePercent = (value: number | string, sum: number, formatter: Formatter) => {
+export const generateMeasurePercent = (value: number | string, sum: number, formatter: Formatter) => {
   if (value === undefined || value === null) return String(value)
   const num = Number(value)
   if (Number.isNaN(num)) return String(value)

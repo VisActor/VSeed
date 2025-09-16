@@ -320,6 +320,10 @@ export const lightTheme = (): CustomThemeConfig => {
       },
       heatmap: {
         ...baseConfig,
+        label: {
+          ...baseConfig.label,
+          labelColorSmartInvert: true,
+        },
       },
     },
   }

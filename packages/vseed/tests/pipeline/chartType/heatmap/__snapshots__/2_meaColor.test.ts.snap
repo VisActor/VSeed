@@ -27,7 +27,7 @@ exports[`2_meaColor 1`] = `
       },
       "label": {
         "enable": true,
-        "labelColorSmartInvert": false,
+        "labelColorSmartInvert": true,
         "labelOverlap": true,
         "showValue": true,
         "showValuePercent": false,
@@ -72,7 +72,7 @@ exports[`2_meaColor 1`] = `
         },
         "label": {
           "enable": true,
-          "labelColorSmartInvert": false,
+          "labelColorSmartInvert": true,
           "labelOverlap": true,
           "showValue": true,
           "showValuePercent": false,

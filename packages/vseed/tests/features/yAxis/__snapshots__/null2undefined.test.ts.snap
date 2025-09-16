@@ -126,6 +126,7 @@ exports[`null2undefined 1`] = `
         },
       },
       "yAxis": {
+        "autoFormat": false,
         "grid": {
           "gridColor": "#36415926",
           "gridWidth": 0.5,
@@ -145,6 +146,9 @@ exports[`null2undefined 1`] = `
           "visible": false,
         },
         "nice": true,
+        "numFormat": {
+          "prefix": "¥",
+        },
         "tick": {
           "tickColor": "#3641594d",
           "tickInside": false,

@@ -95,6 +95,7 @@ exports[`horizontal 1`] = `
         "zero": true,
       },
       "yAxis": {
+        "autoFormat": false,
         "grid": {
           "gridColor": "#606773",
           "gridWidth": 2,

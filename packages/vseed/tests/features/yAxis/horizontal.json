@@ -36,7 +36,8 @@
       "titleColor": "#606773",
       "titleFontSize": 12,
       "titleFontWeight": 500
-    }
+    },
+    "autoFormat": false
   },
   "label": {
     "enable": false

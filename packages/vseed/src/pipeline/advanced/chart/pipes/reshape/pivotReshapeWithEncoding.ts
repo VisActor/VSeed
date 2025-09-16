@@ -16,14 +16,7 @@ export const pivotReshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) =
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
-  const { dimensions, measures, encoding } = advancedVSeed
-  if (!measures || !dimensions || !dataset || !encoding) {
-    return result
-  }
-
-  if (measures.length === 0) {
-    throw new Error('measures can not be empty')
-  }
+  const { dimensions = [], measures = [], encoding } = advancedVSeed
 
   const measureGroups: MeasureGroup[] = []
   if (measures) {

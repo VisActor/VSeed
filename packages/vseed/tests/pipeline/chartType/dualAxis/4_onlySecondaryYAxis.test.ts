@@ -64,7 +64,7 @@ test('4_onlySecondaryYAxis', () => {
     }
   } catch (e) {
     console.error(e)
-    expect({expectError: true}).toMatchSnapshot()
+    expect({expectError: true, message: (e as Error).message}).toMatchSnapshot()
     expect(e).toBeInstanceOf(Error)
   }
 })

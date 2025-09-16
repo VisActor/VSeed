@@ -4,11 +4,11 @@ import type { ISpec } from '@visactor/vchart'
 import { VChart } from '@visactor/vchart'
 import * as VTable from '@visactor/vtable'
 
-import vseed from './errorMeasures.json'
+import vseed from './errorDimensions.json'
 
 VTable.register.chartModule('vchart', VChart)
 
-test('errorMeasures', () => {
+test('errorDimensions', () => {
   registerAll()
 
   try{
@@ -64,7 +64,7 @@ test('errorMeasures', () => {
     }
   } catch (e) {
     console.error(e)
-    expect({expectError: true}).toMatchSnapshot()
+    expect({expectError: true, message: (e as Error).message}).toMatchSnapshot()
     expect(e).toBeInstanceOf(Error)
   }
 })

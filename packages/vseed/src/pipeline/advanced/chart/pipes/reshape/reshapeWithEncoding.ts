@@ -8,15 +8,7 @@ export const reshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset, chartType } = vseed as ColumnParallel
-  const { dimensions, measures, encoding } = advancedVSeed
-
-  if (!measures || !dimensions || !dataset || !encoding) {
-    return result
-  }
-
-  if (measures.length === 0) {
-    throw new Error('measures can not be empty')
-  }
+  const { dimensions = [], measures = [], encoding } = advancedVSeed
 
   const hasEncoding = (vseed.dimensions || []).some((item: Dimension) => item.encoding)
 

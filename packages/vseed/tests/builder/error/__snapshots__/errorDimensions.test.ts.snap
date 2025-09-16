@@ -3,5 +3,7 @@
 exports[`errorDimensions 1`] = `
 {
   "expectError": true,
+  "message": "buildAdvanced error: dimensions must be an array.
+details info in console",
 }
 `;

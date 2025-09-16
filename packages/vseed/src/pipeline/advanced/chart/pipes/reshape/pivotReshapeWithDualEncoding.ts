@@ -19,11 +19,8 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
-  const { dimensions, measures, encoding, chartType } = advancedVSeed
+  const { dimensions = [], measures = [], encoding, chartType } = advancedVSeed
 
-  if (!measures || !dimensions || !dataset || !encoding) {
-    return result
-  }
   const hasEncoding = (vseed.dimensions || []).some((item: Dimension) => item.encoding)
 
   const datasetList: Dataset[] = []
@@ -41,12 +38,8 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
   }
 
   measureGroups.forEach((measures: MeasureGroup[], index) => {
-    if (measures.length === 0) {
-      throw new Error('measures can not be empty')
-    }
-
     if (measures.length > 2) {
-      throw new Error('measures can not be more than 2')
+      throw new Error('measures can not be more than 2 groups in dualAxis')
     }
 
     const foldInfoList: FoldInfo[] = []

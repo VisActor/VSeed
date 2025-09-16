@@ -13,14 +13,6 @@ export const defaultDimensions: AdvancedPipe = (advancedVSeed, context) => {
     }
   }
 
-  if (!dataset) {
-    throw new Error('dataset is required')
-  }
-
-  if (dataset.length === 0) {
-    return result
-  }
-
   const measures = findAllMeasures(advancedVSeed.measures as DimensionTree)
 
   const top100dataset = dataset.slice(0, 100)

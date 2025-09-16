@@ -3,5 +3,7 @@
 exports[`emptyDataset 1`] = `
 {
   "expectError": true,
+  "message": "buildAdvanced error: dataset is required, and must be an array.
+details info in console",
 }
 `;

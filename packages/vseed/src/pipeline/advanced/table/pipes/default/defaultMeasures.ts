@@ -14,17 +14,6 @@ export const defaultMeasures: AdvancedPipe = (advancedVSeed, context) => {
     }
   }
 
-  if (!dataset) {
-    throw new Error('dataset is required')
-  }
-
-  if (dataset.length === 0) {
-    return {
-      ...advancedVSeed,
-      measures: [],
-    }
-  }
-
   const top100dataset = dataset.slice(0, 100)
   const sample = top100dataset.reduce<Datum>((prev, cur) => {
     return { ...prev, ...cur }

@@ -38,7 +38,7 @@ export const label: SpecPipe = (spec, context) => {
 export const generateMeasureValue = (
   value: number | string,
   measure?: Measure,
-  labelAutoFormat: boolean = true,
+  labelAutoFormat?: boolean,
   numFormat: NumFormat = {},
 ) => {
   if (!measure) {
@@ -81,7 +81,7 @@ export const buildLabel = (
     labelFontWeight,
     labelBackgroundColor,
     labelPosition,
-    autoFormat = true,
+    autoFormat,
     numFormat = {},
   } = label
 

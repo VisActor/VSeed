@@ -1,14 +1,13 @@
 import type { ISpec } from '@visactor/vchart'
 import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
 import type { SpecPipe, XLinearAxis } from 'src/types'
-import { autoFormatter, createNumFormatter } from '../../../../utils'
-import { isEmpty } from 'remeda'
+import { createNumFormatter } from '../../../../utils'
+import { createLinearFormat } from './format/linearFormat'
 
 export const xLinear: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
-  const { locale } = advancedVSeed
   const config = advancedVSeed.config?.[chartType as 'bar']?.xAxis as XLinearAxis
 
   if (!result.axes) {
@@ -42,11 +41,11 @@ export const xLinear: SpecPipe = (spec, context) => {
     min,
     log,
     logBase = 10,
-    autoFormat = true,
+    autoFormat,
     numFormat = {},
   } = config
 
-  const formatter = createNumFormatter(numFormat, locale)
+  const formatter = createNumFormatter(numFormat)
 
   const linearAxis = {
     visible,
@@ -61,13 +60,7 @@ export const xLinear: SpecPipe = (spec, context) => {
     label: {
       visible: label?.visible,
       formatMethod: (value: string) => {
-        if (!isEmpty(numFormat)) {
-          return formatter(value)
-        }
-        if (autoFormat) {
-          return autoFormatter(value, locale)
-        }
-        return value
+        return createLinearFormat(value, autoFormat, numFormat, formatter)
       },
       style: {
         fill: label?.labelColor,

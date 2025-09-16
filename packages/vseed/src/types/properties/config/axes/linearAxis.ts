@@ -1,5 +1,4 @@
-import type { NumFormat } from "../../format"
-
+import type { NumFormat } from '../../format'
 
 export type XLinearAxis = {
   /**
@@ -42,14 +41,13 @@ export type XLinearAxis = {
    */
   zero?: boolean
 
-
   /**
-   * @description 是否自动格式化数值轴的刻度标签, 仅对数值轴生效, 当配置了 numFormat 时, 该配置项失效
+   * @description 是否自动格式化数值轴的刻度标签, 仅对数值轴生效, autoFormat 为 true 时, numFormat 配置失效
    */
   autoFormat?: boolean
 
   /**
-   * @description 数值轴的数字格式化, 仅对数值轴生效
+   * @description 数值轴的数字格式化, 仅对数值轴生效, 优先级低于 autoFormat
    */
   numFormat?: NumFormat
 

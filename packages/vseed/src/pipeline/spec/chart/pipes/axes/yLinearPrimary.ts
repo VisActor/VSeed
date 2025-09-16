@@ -1,14 +1,15 @@
 import type { ISpec } from '@visactor/vchart'
 import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
-import { autoFormatter, createNumFormatter } from '../../../../utils'
+import { createNumFormatter } from '../../../../utils'
 import type { SpecPipe, YLinearAxis } from 'src/types'
 import { isEmpty, isNullish } from 'remeda'
+import { createLinearFormat } from './format/linearFormat'
 
 export const yLinearPrimary: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
-  const { locale, datasetReshapeInfo } = advancedVSeed
+  const { datasetReshapeInfo } = advancedVSeed
   const { index, id: reshapeInfoId, foldInfoList } = datasetReshapeInfo[0]
   // TODO: default config missing
   const primaryYAxis = advancedVSeed.config?.[chartType as 'dualAxis']?.primaryYAxis as YLinearAxis | YLinearAxis[]
@@ -60,11 +61,11 @@ export const yLinearPrimary: SpecPipe = (spec, context) => {
     log,
     logBase = 10,
 
-    autoFormat = true,
+    autoFormat,
     numFormat = {},
   } = yAxisConfig
 
-  const formatter = createNumFormatter(numFormat, locale)
+  const formatter = createNumFormatter(numFormat)
 
   const linearAxis = {
     visible: isEmptySecondary ? false : visible,
@@ -82,13 +83,7 @@ export const yLinearPrimary: SpecPipe = (spec, context) => {
     label: {
       visible: label?.visible,
       formatMethod: (value: string) => {
-        if (!isEmpty(numFormat)) {
-          return formatter(value)
-        }
-        if (autoFormat) {
-          return autoFormatter(value, locale)
-        }
-        return value
+        return createLinearFormat(value, autoFormat, numFormat, formatter)
       },
       style: {
         fill: label?.labelColor,

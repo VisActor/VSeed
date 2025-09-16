@@ -104,14 +104,18 @@ const Demo = () => {
       autoFormat: true,
     },
     stackCornerRadius: 0,
+    label: {
+      enable: true,
+    },
     measures: [
       {
         id: 'co_20250916102539_ed6a',
         alias: 'sum(amount)',
         encoding: 'yAxis',
         format: {
-          auto: false,
           type: 'number',
+          suffix: 'test',
+          prefix: 'abc',
         },
         autoFormat: false,
       },

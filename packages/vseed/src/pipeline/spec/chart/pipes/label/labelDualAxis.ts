@@ -24,7 +24,7 @@ export const labelPrimary: SpecPipe = (spec, context) => {
     encoding as Encoding,
     [foldInfoList[0]],
   )
-
+  result.label.zIndex = DUAL_AXIS_LABEL_Z_INDEX
   return result
 }
 
@@ -51,8 +51,6 @@ export const labelSecondary: SpecPipe = (spec, context) => {
     encoding as Encoding,
     [foldInfoList[1]],
   )
-
   result.label.zIndex = DUAL_AXIS_LABEL_Z_INDEX
-
   return result
 }

@@ -500,16 +500,16 @@ exports[`roundingPriority 1`] = `
     {
       "foldInfo": {
         "foldMap": {
-          "num0": undefined,
-          "num1": undefined,
-          "num2": undefined,
-          "num3": undefined,
-          "num4": undefined,
-          "num5": undefined,
-          "num6": undefined,
-          "num7": undefined,
-          "num8": undefined,
-          "num9": undefined,
+          "num0": "num0",
+          "num1": "num1",
+          "num2": "num2",
+          "num3": "num3",
+          "num4": "num4",
+          "num5": "num5",
+          "num6": "num6",
+          "num7": "num7",
+          "num8": "num8",
+          "num9": "num9",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
@@ -596,6 +596,7 @@ exports[`roundingPriority 1`] = `
   "markStyle": {},
   "measures": [
     {
+      "alias": "num0",
       "format": {
         "fractionDigits": 2,
         "lessPrecision": true,
@@ -606,6 +607,7 @@ exports[`roundingPriority 1`] = `
       "id": "num0",
     },
     {
+      "alias": "num1",
       "format": {
         "fractionDigits": 2,
         "lessPrecision": true,
@@ -616,6 +618,7 @@ exports[`roundingPriority 1`] = `
       "id": "num1",
     },
     {
+      "alias": "num2",
       "format": {
         "fractionDigits": 2,
         "lessPrecision": true,
@@ -626,6 +629,7 @@ exports[`roundingPriority 1`] = `
       "id": "num2",
     },
     {
+      "alias": "num3",
       "format": {
         "fractionDigits": 2,
         "lessPrecision": true,
@@ -636,6 +640,7 @@ exports[`roundingPriority 1`] = `
       "id": "num3",
     },
     {
+      "alias": "num4",
       "format": {
         "fractionDigits": 2,
         "lessPrecision": true,
@@ -646,6 +651,7 @@ exports[`roundingPriority 1`] = `
       "id": "num4",
     },
     {
+      "alias": "num5",
       "format": {
         "fractionDigits": 2,
         "lessPrecision": false,
@@ -656,6 +662,7 @@ exports[`roundingPriority 1`] = `
       "id": "num5",
     },
     {
+      "alias": "num6",
       "format": {
         "fractionDigits": 2,
         "lessPrecision": false,
@@ -666,6 +673,7 @@ exports[`roundingPriority 1`] = `
       "id": "num6",
     },
     {
+      "alias": "num7",
       "format": {
         "fractionDigits": 2,
         "lessPrecision": false,
@@ -676,6 +684,7 @@ exports[`roundingPriority 1`] = `
       "id": "num7",
     },
     {
+      "alias": "num8",
       "format": {
         "fractionDigits": 2,
         "lessPrecision": false,
@@ -686,6 +695,7 @@ exports[`roundingPriority 1`] = `
       "id": "num8",
     },
     {
+      "alias": "num9",
       "format": {
         "fractionDigits": 2,
         "lessPrecision": false,
@@ -768,7 +778,7 @@ exports[`roundingPriority 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "指标名称",
         "visible": false,
       },
       "type": "band",
@@ -822,7 +832,7 @@ exports[`roundingPriority 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "num0 & num1 & num2 & num3 & num4 & num5 & num6 & num7 & num8 & num9",
         "visible": false,
       },
       "type": "linear",

@@ -24,12 +24,12 @@ export type Label = {
   showValuePercent?: boolean
 
   /**
-   * @description 标签数值是否自动格式化, 当配置了 numFormat 时, 该配置项失效
+   * @description 标签数值是否自动格式化, autoFormat 为 true 时, numFormat 配置失效
    */
   autoFormat?: boolean
 
   /**
-   * @description 标签数值格式化配置, 会和 `measure` 中的 `format` 进行合并, `measure` 中的 `format` 优先级更高.
+   * @description 标签数值格式化配置, 会和 `measure` 中的 `format` 进行合并, `measure` 中的 `format` 优先级更高. numFormat 优先级低于 autoFormat
    */
   numFormat?: NumFormat
 

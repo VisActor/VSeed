@@ -308,8 +308,8 @@ exports[`autoFormat 1`] = `
     {
       "foldInfo": {
         "foldMap": {
-          "profit": undefined,
-          "sales": undefined,
+          "profit": "profit",
+          "sales": "sales",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
@@ -372,10 +372,12 @@ exports[`autoFormat 1`] = `
   "markStyle": {},
   "measures": [
     {
+      "alias": "profit",
       "autoFormat": true,
       "id": "profit",
     },
     {
+      "alias": "sales",
       "autoFormat": true,
       "id": "sales",
     },
@@ -452,7 +454,7 @@ exports[`autoFormat 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "指标名称",
         "visible": false,
       },
       "type": "band",
@@ -506,7 +508,7 @@ exports[`autoFormat 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "profit & sales",
         "visible": false,
       },
       "type": "linear",

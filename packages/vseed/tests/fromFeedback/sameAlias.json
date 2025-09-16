@@ -1,0 +1,136 @@
+{
+  "color": {
+    "colorScheme": [
+      "#8D72F6",
+      "#5766EC",
+      "#66A3FE",
+      "#51D5E6",
+      "#4EC0B3",
+      "#F9DF90",
+      "#F9AD71",
+      "#ED8888",
+      "#E9A0C3",
+      "#D77DD3"
+    ]
+  },
+  "legend": {
+    "enable": true,
+    "position": "rightTop",
+    "maxSize": 1,
+    "labelFontSize": 12,
+    "labelFontColor": "#6F6F6F"
+  },
+  "label": {
+    "enable": false,
+    "labelColor": "#212121",
+    "labelMode": "single",
+    "labelPos": "outer",
+    "labelWeight": "normal",
+    "style": {},
+    "labelFontSize": 12
+  },
+  "chartType": "column",
+  "dataset": [
+    {
+      "co_20250916102528_4a14": "华东",
+      "co_20250916102539_ed6a": "11041",
+      "yA_20250916175707_8b25": "11041"
+    },
+    {
+      "co_20250916102528_4a14": "东北",
+      "co_20250916102539_ed6a": "6463",
+      "yA_20250916175707_8b25": "6463"
+    },
+    {
+      "co_20250916102528_4a14": "华北",
+      "co_20250916102539_ed6a": "5146",
+      "yA_20250916175707_8b25": "5146"
+    },
+    {
+      "co_20250916102528_4a14": "西南",
+      "co_20250916102539_ed6a": "3399",
+      "yA_20250916175707_8b25": "3399"
+    },
+    {
+      "co_20250916102528_4a14": "中南",
+      "co_20250916102539_ed6a": "9700",
+      "yA_20250916175707_8b25": "9700"
+    },
+    {
+      "co_20250916102528_4a14": "西北",
+      "co_20250916102539_ed6a": "1785",
+      "yA_20250916175707_8b25": "1785"
+    }
+  ],
+  "bar": {},
+  "xAxis": {
+    "title": {
+      "visible": false,
+      "titleFontSize": 12
+    },
+    "titleStyle": {},
+    "labelStyle": {},
+    "label": {
+      "labelFontSize": 12
+    },
+    "visible": true
+  },
+  "yAxis": {
+    "title": {
+      "visible": false,
+      "titleFontSize": 12
+    },
+    "titleStyle": {},
+    "labelStyle": {},
+    "format": {},
+    "label": {
+      "labelFontSize": 12
+    },
+    "visible": true,
+    "numFormat": {
+      "type": "number",
+      "fractionDigits": 0
+    },
+    "autoFormat": true
+  },
+  "stackCornerRadius": 0,
+  "measures": [
+    {
+      "id": "co_20250916102539_ed6a",
+      "alias": "sum(amount)",
+      "encoding": "yAxis",
+      "format": {
+        "auto": false,
+        "type": "number"
+      },
+      "autoFormat": false
+    },
+    {
+      "id": "yA_20250916175707_8b25",
+      "alias": "sum(amount)",
+      "encoding": "yAxis",
+      "format": {
+        "auto": false,
+        "type": "number"
+      },
+      "autoFormat": false
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "co_20250916102528_4a14",
+      "alias": "area",
+      "encoding": "xAxis",
+      "autoFormat": true
+    }
+  ],
+  "lineStyle": [],
+  "barStyle": [],
+  "pointStyle": [],
+  "areaStyle": [],
+  "annotationPoint": [],
+  "annotationHorizontalLine": [],
+  "annotationVerticalLine": [],
+  "annotationArea": [],
+  "locale": "zh-CN"
+}

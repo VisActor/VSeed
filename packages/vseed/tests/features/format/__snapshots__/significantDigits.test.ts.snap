@@ -510,16 +510,16 @@ exports[`significantDigits 1`] = `
     {
       "foldInfo": {
         "foldMap": {
-          "num0": undefined,
-          "num1": undefined,
-          "num2": undefined,
-          "num3": undefined,
-          "num4": undefined,
-          "num5": undefined,
-          "num6": undefined,
-          "num7": undefined,
-          "num8": undefined,
-          "num9": undefined,
+          "num0": "num0",
+          "num1": "num1",
+          "num2": "num2",
+          "num3": "num3",
+          "num4": "num4",
+          "num5": "num5",
+          "num6": "num6",
+          "num7": "num7",
+          "num8": "num8",
+          "num9": "num9",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
@@ -606,6 +606,7 @@ exports[`significantDigits 1`] = `
   "markStyle": {},
   "measures": [
     {
+      "alias": "num0",
       "format": {
         "significantDigits": 0,
         "type": "number",
@@ -613,6 +614,7 @@ exports[`significantDigits 1`] = `
       "id": "num0",
     },
     {
+      "alias": "num1",
       "format": {
         "significantDigits": 1,
         "type": "number",
@@ -620,6 +622,7 @@ exports[`significantDigits 1`] = `
       "id": "num1",
     },
     {
+      "alias": "num2",
       "format": {
         "significantDigits": 2,
         "type": "number",
@@ -627,6 +630,7 @@ exports[`significantDigits 1`] = `
       "id": "num2",
     },
     {
+      "alias": "num3",
       "format": {
         "significantDigits": 3,
         "type": "number",
@@ -634,6 +638,7 @@ exports[`significantDigits 1`] = `
       "id": "num3",
     },
     {
+      "alias": "num4",
       "format": {
         "significantDigits": 4,
         "type": "number",
@@ -641,6 +646,7 @@ exports[`significantDigits 1`] = `
       "id": "num4",
     },
     {
+      "alias": "num5",
       "format": {
         "significantDigits": 5,
         "type": "number",
@@ -648,6 +654,7 @@ exports[`significantDigits 1`] = `
       "id": "num5",
     },
     {
+      "alias": "num6",
       "format": {
         "significantDigits": 6,
         "type": "number",
@@ -655,6 +662,7 @@ exports[`significantDigits 1`] = `
       "id": "num6",
     },
     {
+      "alias": "num7",
       "format": {
         "significantDigits": 7,
         "type": "number",
@@ -662,6 +670,7 @@ exports[`significantDigits 1`] = `
       "id": "num7",
     },
     {
+      "alias": "num8",
       "format": {
         "significantDigits": 8,
         "type": "number",
@@ -669,6 +678,7 @@ exports[`significantDigits 1`] = `
       "id": "num8",
     },
     {
+      "alias": "num9",
       "format": {
         "significantDigits": 9,
         "type": "number",
@@ -748,7 +758,7 @@ exports[`significantDigits 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "指标名称",
         "visible": false,
       },
       "type": "band",
@@ -802,7 +812,7 @@ exports[`significantDigits 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "num0 & num1 & num2 & num3 & num4 & num5 & num6 & num7 & num8 & num9",
         "visible": false,
       },
       "type": "linear",

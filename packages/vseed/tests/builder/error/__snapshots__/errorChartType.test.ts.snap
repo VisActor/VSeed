@@ -3,5 +3,6 @@
 exports[`errorChartType 1`] = `
 {
   "expectError": true,
+  "message": "no advanced pipeline for chartType test_chart_type",
 }
 `;

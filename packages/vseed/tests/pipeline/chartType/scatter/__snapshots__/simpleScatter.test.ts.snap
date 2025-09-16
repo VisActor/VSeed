@@ -1280,7 +1280,7 @@ exports[`simpleScatter 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "goalProfit & profit & sales & leftCount & salesCount",
         "visible": false,
       },
       "type": "linear",

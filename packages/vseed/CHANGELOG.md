@@ -1,5 +1,13 @@
 # @visactor/vseed
 
+## 0.1.16
+
+### Patch Changes
+
+- feat: optimize the error info
+- feat: optimize pivot table with only dimensions
+- fix: same alias error
+
 ## 0.1.15
 
 ### Patch Changes

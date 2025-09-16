@@ -1,7 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`errorMeasures 1`] = `
+exports[`empty 1`] = `
 {
   "expectError": true,
+  "message": "chartType is nil in buildAdvanced",
 }
 `;

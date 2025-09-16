@@ -10,16 +10,8 @@ export const defaultDimensions: AdvancedPipe = (advancedVSeed, context) => {
   if (dimensions && dimensions.length > 0) {
     return {
       ...result,
-      dimensions: clone(dimensions),
+      dimensions: clone(dimensions.map((dim) => ({ ...dim, alias: dim.alias || dim.id }))),
     }
-  }
-
-  if (!dataset) {
-    throw new Error('dataset is required')
-  }
-
-  if (dataset.length === 0) {
-    return result
   }
 
   const measures = findAllMeasures(advancedVSeed.measures as DimensionTree)

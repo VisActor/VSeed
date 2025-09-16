@@ -19,12 +19,7 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
-  const { dimensions, measures, encoding, chartType } = advancedVSeed
-
-  if (!measures || !dimensions || !dataset || !encoding) {
-    return result
-  }
-  const hasEncoding = (vseed.dimensions || []).some((item: Dimension) => item.encoding)
+  const { dimensions = [], measures = [], encoding, chartType } = advancedVSeed
 
   const datasetList: Dataset[] = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
@@ -41,12 +36,8 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
   }
 
   measureGroups.forEach((measures: MeasureGroup[], index) => {
-    if (measures.length === 0) {
-      throw new Error('measures can not be empty')
-    }
-
     if (measures.length > 2) {
-      throw new Error('measures can not be more than 2')
+      throw new Error('measures can not be more than 2 groups in dualAxis')
     }
 
     const foldInfoList: FoldInfo[] = []
@@ -67,7 +58,7 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
         uniqueBy(primaryMeasures.children, (item) => item.id),
         encoding as Encoding,
         {
-          colorItemAsId: hasEncoding,
+          colorItemAsId: false,
           foldMeasureValue: `${FoldPrimaryMeasureValue}${index}`,
           colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
         },
@@ -89,6 +80,7 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
         uniqueBy(secondaryMeasures.children, (item) => item.id),
         encoding as Encoding,
         {
+          colorItemAsId: false,
           foldMeasureValue: `${FoldSecondaryMeasureValue}${index}`,
           colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
         },

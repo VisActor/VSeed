@@ -15,12 +15,13 @@ export const foldMeasures = (
     measureName: string
     measureValue: string
     colorMeasureId?: string
+    allowEmptyFold?: boolean
   },
 ): {
   dataset: Dataset
   foldInfo: FoldInfo
 } => {
-  const { measureId, measureName, measureValue, colorMeasureId } = options || {}
+  const { measureId, measureName, measureValue, colorMeasureId, allowEmptyFold = true } = options || {}
 
   const foldInfo: FoldInfo = {
     measureId,
@@ -36,6 +37,14 @@ export const foldMeasures = (
     },
     foldMap: {},
   }
+
+  if (!allowEmptyFold && measures.length === 0) {
+    return {
+      dataset,
+      foldInfo,
+    }
+  }
+
   const result: Dataset = new Array(dataset.length * measures.length) as Dataset
   let index = 0
   const ids = measures.map((d) => d.id)

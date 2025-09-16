@@ -97,7 +97,7 @@ exports[`detail 1`] = `
   "dataset": [
     {
       "__Dim_Angle__": "公司",
-      "__Dim_ColorId__": "中南-sum(销售额)",
+      "__Dim_ColorId__": "中南-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "中南-sum(销售额)",
       "__Dim_Detail__": "中南-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -115,7 +115,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "公司",
-      "__Dim_ColorId__": "中南-sum(数量)",
+      "__Dim_ColorId__": "中南-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "中南-sum(数量)",
       "__Dim_Detail__": "中南-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -133,7 +133,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "消费者",
-      "__Dim_ColorId__": "东北-sum(销售额)",
+      "__Dim_ColorId__": "东北-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "东北-sum(销售额)",
       "__Dim_Detail__": "东北-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -151,7 +151,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "消费者",
-      "__Dim_ColorId__": "东北-sum(数量)",
+      "__Dim_ColorId__": "东北-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "东北-sum(数量)",
       "__Dim_Detail__": "东北-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -169,7 +169,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "公司",
-      "__Dim_ColorId__": "东北-sum(销售额)",
+      "__Dim_ColorId__": "东北-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "东北-sum(销售额)",
       "__Dim_Detail__": "东北-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -187,7 +187,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "公司",
-      "__Dim_ColorId__": "东北-sum(数量)",
+      "__Dim_ColorId__": "东北-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "东北-sum(数量)",
       "__Dim_Detail__": "东北-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -205,7 +205,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "消费者",
-      "__Dim_ColorId__": "西南-sum(销售额)",
+      "__Dim_ColorId__": "西南-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "西南-sum(销售额)",
       "__Dim_Detail__": "西南-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -223,7 +223,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "消费者",
-      "__Dim_ColorId__": "西南-sum(数量)",
+      "__Dim_ColorId__": "西南-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "西南-sum(数量)",
       "__Dim_Detail__": "西南-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -241,7 +241,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "消费者",
-      "__Dim_ColorId__": "中南-sum(销售额)",
+      "__Dim_ColorId__": "中南-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "中南-sum(销售额)",
       "__Dim_Detail__": "中南-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -259,7 +259,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "消费者",
-      "__Dim_ColorId__": "中南-sum(数量)",
+      "__Dim_ColorId__": "中南-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "中南-sum(数量)",
       "__Dim_Detail__": "中南-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -277,7 +277,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "消费者",
-      "__Dim_ColorId__": "西北-sum(销售额)",
+      "__Dim_ColorId__": "西北-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "西北-sum(销售额)",
       "__Dim_Detail__": "西北-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -295,7 +295,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "消费者",
-      "__Dim_ColorId__": "西北-sum(数量)",
+      "__Dim_ColorId__": "西北-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "西北-sum(数量)",
       "__Dim_Detail__": "西北-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -313,7 +313,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "消费者",
-      "__Dim_ColorId__": "华东-sum(销售额)",
+      "__Dim_ColorId__": "华东-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "华东-sum(销售额)",
       "__Dim_Detail__": "华东-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -331,7 +331,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "消费者",
-      "__Dim_ColorId__": "华东-sum(数量)",
+      "__Dim_ColorId__": "华东-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "华东-sum(数量)",
       "__Dim_Detail__": "华东-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -349,7 +349,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "消费者",
-      "__Dim_ColorId__": "华北-sum(销售额)",
+      "__Dim_ColorId__": "华北-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "华北-sum(销售额)",
       "__Dim_Detail__": "华北-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -367,7 +367,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "消费者",
-      "__Dim_ColorId__": "华北-sum(数量)",
+      "__Dim_ColorId__": "华北-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "华北-sum(数量)",
       "__Dim_Detail__": "华北-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -385,7 +385,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "小型企业",
-      "__Dim_ColorId__": "东北-sum(销售额)",
+      "__Dim_ColorId__": "东北-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "东北-sum(销售额)",
       "__Dim_Detail__": "东北-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -403,7 +403,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "小型企业",
-      "__Dim_ColorId__": "东北-sum(数量)",
+      "__Dim_ColorId__": "东北-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "东北-sum(数量)",
       "__Dim_Detail__": "东北-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -421,7 +421,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "小型企业",
-      "__Dim_ColorId__": "中南-sum(销售额)",
+      "__Dim_ColorId__": "中南-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "中南-sum(销售额)",
       "__Dim_Detail__": "中南-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -439,7 +439,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "小型企业",
-      "__Dim_ColorId__": "中南-sum(数量)",
+      "__Dim_ColorId__": "中南-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "中南-sum(数量)",
       "__Dim_Detail__": "中南-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -457,7 +457,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "小型企业",
-      "__Dim_ColorId__": "西南-sum(销售额)",
+      "__Dim_ColorId__": "西南-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "西南-sum(销售额)",
       "__Dim_Detail__": "西南-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -475,7 +475,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "小型企业",
-      "__Dim_ColorId__": "西南-sum(数量)",
+      "__Dim_ColorId__": "西南-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "西南-sum(数量)",
       "__Dim_Detail__": "西南-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -493,7 +493,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "公司",
-      "__Dim_ColorId__": "西北-sum(销售额)",
+      "__Dim_ColorId__": "西北-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "西北-sum(销售额)",
       "__Dim_Detail__": "西北-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -511,7 +511,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "公司",
-      "__Dim_ColorId__": "西北-sum(数量)",
+      "__Dim_ColorId__": "西北-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "西北-sum(数量)",
       "__Dim_Detail__": "西北-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -529,7 +529,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "公司",
-      "__Dim_ColorId__": "华东-sum(销售额)",
+      "__Dim_ColorId__": "华东-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "华东-sum(销售额)",
       "__Dim_Detail__": "华东-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -547,7 +547,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "公司",
-      "__Dim_ColorId__": "华东-sum(数量)",
+      "__Dim_ColorId__": "华东-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "华东-sum(数量)",
       "__Dim_Detail__": "华东-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -565,7 +565,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "公司",
-      "__Dim_ColorId__": "华北-sum(销售额)",
+      "__Dim_ColorId__": "华北-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "华北-sum(销售额)",
       "__Dim_Detail__": "华北-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -583,7 +583,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "公司",
-      "__Dim_ColorId__": "华北-sum(数量)",
+      "__Dim_ColorId__": "华北-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "华北-sum(数量)",
       "__Dim_Detail__": "华北-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -601,7 +601,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "小型企业",
-      "__Dim_ColorId__": "华东-sum(销售额)",
+      "__Dim_ColorId__": "华东-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "华东-sum(销售额)",
       "__Dim_Detail__": "华东-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -619,7 +619,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "小型企业",
-      "__Dim_ColorId__": "华东-sum(数量)",
+      "__Dim_ColorId__": "华东-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "华东-sum(数量)",
       "__Dim_Detail__": "华东-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -637,7 +637,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "小型企业",
-      "__Dim_ColorId__": "华北-sum(销售额)",
+      "__Dim_ColorId__": "华北-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "华北-sum(销售额)",
       "__Dim_Detail__": "华北-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -655,7 +655,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "小型企业",
-      "__Dim_ColorId__": "华北-sum(数量)",
+      "__Dim_ColorId__": "华北-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "华北-sum(数量)",
       "__Dim_Detail__": "华北-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -673,7 +673,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "小型企业",
-      "__Dim_ColorId__": "西北-sum(销售额)",
+      "__Dim_ColorId__": "西北-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "西北-sum(销售额)",
       "__Dim_Detail__": "西北-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -691,7 +691,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "小型企业",
-      "__Dim_ColorId__": "西北-sum(数量)",
+      "__Dim_ColorId__": "西北-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "西北-sum(数量)",
       "__Dim_Detail__": "西北-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -709,7 +709,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "公司",
-      "__Dim_ColorId__": "西南-sum(销售额)",
+      "__Dim_ColorId__": "西南-sum(销售额)-me_20250914101727_9d4f",
       "__Dim_Color__": "西南-sum(销售额)",
       "__Dim_Detail__": "西南-sum(销售额)",
       "__MeaId__": "me_20250914101727_9d4f",
@@ -727,7 +727,7 @@ exports[`detail 1`] = `
     },
     {
       "__Dim_Angle__": "公司",
-      "__Dim_ColorId__": "西南-sum(数量)",
+      "__Dim_ColorId__": "西南-sum(数量)-me_20250914101727_1111",
       "__Dim_Color__": "西南-sum(数量)",
       "__Dim_Detail__": "西南-sum(数量)",
       "__MeaId__": "me_20250914101727_1111",
@@ -767,32 +767,32 @@ exports[`detail 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "东北-sum(数量)": "东北-sum(数量)",
-          "东北-sum(销售额)": "东北-sum(销售额)",
-          "中南-sum(数量)": "中南-sum(数量)",
-          "中南-sum(销售额)": "中南-sum(销售额)",
-          "华东-sum(数量)": "华东-sum(数量)",
-          "华东-sum(销售额)": "华东-sum(销售额)",
-          "华北-sum(数量)": "华北-sum(数量)",
-          "华北-sum(销售额)": "华北-sum(销售额)",
-          "西北-sum(数量)": "西北-sum(数量)",
-          "西北-sum(销售额)": "西北-sum(销售额)",
-          "西南-sum(数量)": "西南-sum(数量)",
-          "西南-sum(销售额)": "西南-sum(销售额)",
+          "东北-sum(数量)-me_20250914101727_1111": "东北-sum(数量)",
+          "东北-sum(销售额)-me_20250914101727_9d4f": "东北-sum(销售额)",
+          "中南-sum(数量)-me_20250914101727_1111": "中南-sum(数量)",
+          "中南-sum(销售额)-me_20250914101727_9d4f": "中南-sum(销售额)",
+          "华东-sum(数量)-me_20250914101727_1111": "华东-sum(数量)",
+          "华东-sum(销售额)-me_20250914101727_9d4f": "华东-sum(销售额)",
+          "华北-sum(数量)-me_20250914101727_1111": "华北-sum(数量)",
+          "华北-sum(销售额)-me_20250914101727_9d4f": "华北-sum(销售额)",
+          "西北-sum(数量)-me_20250914101727_1111": "西北-sum(数量)",
+          "西北-sum(销售额)-me_20250914101727_9d4f": "西北-sum(销售额)",
+          "西南-sum(数量)-me_20250914101727_1111": "西南-sum(数量)",
+          "西南-sum(销售额)-me_20250914101727_9d4f": "西南-sum(销售额)",
         },
         "colorItems": [
-          "中南-sum(销售额)",
-          "中南-sum(数量)",
-          "东北-sum(销售额)",
-          "东北-sum(数量)",
-          "西南-sum(销售额)",
-          "西南-sum(数量)",
-          "西北-sum(销售额)",
-          "西北-sum(数量)",
-          "华东-sum(销售额)",
-          "华东-sum(数量)",
-          "华北-sum(销售额)",
-          "华北-sum(数量)",
+          "中南-sum(销售额)-me_20250914101727_9d4f",
+          "中南-sum(数量)-me_20250914101727_1111",
+          "东北-sum(销售额)-me_20250914101727_9d4f",
+          "东北-sum(数量)-me_20250914101727_1111",
+          "西南-sum(销售额)-me_20250914101727_9d4f",
+          "西南-sum(数量)-me_20250914101727_1111",
+          "西北-sum(销售额)-me_20250914101727_9d4f",
+          "西北-sum(数量)-me_20250914101727_1111",
+          "华东-sum(销售额)-me_20250914101727_9d4f",
+          "华东-sum(数量)-me_20250914101727_1111",
+          "华北-sum(销售额)-me_20250914101727_9d4f",
+          "华北-sum(数量)-me_20250914101727_1111",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -817,6 +817,7 @@ exports[`detail 1`] = `
       "id": "di_20250914101717_a7e4",
     },
     {
+      "alias": "__MeaName__",
       "encoding": "color",
       "id": "__MeaName__",
     },
@@ -933,18 +934,18 @@ exports[`detail 2`] = `
   "background": "transparent",
   "color": {
     "domain": [
-      "中南-sum(销售额)",
-      "中南-sum(数量)",
-      "东北-sum(销售额)",
-      "东北-sum(数量)",
-      "西南-sum(销售额)",
-      "西南-sum(数量)",
-      "西北-sum(销售额)",
-      "西北-sum(数量)",
-      "华东-sum(销售额)",
-      "华东-sum(数量)",
-      "华北-sum(销售额)",
-      "华北-sum(数量)",
+      "中南-sum(销售额)-me_20250914101727_9d4f",
+      "中南-sum(数量)-me_20250914101727_1111",
+      "东北-sum(销售额)-me_20250914101727_9d4f",
+      "东北-sum(数量)-me_20250914101727_1111",
+      "西南-sum(销售额)-me_20250914101727_9d4f",
+      "西南-sum(数量)-me_20250914101727_1111",
+      "西北-sum(销售额)-me_20250914101727_9d4f",
+      "西北-sum(数量)-me_20250914101727_1111",
+      "华东-sum(销售额)-me_20250914101727_9d4f",
+      "华东-sum(数量)-me_20250914101727_1111",
+      "华北-sum(销售额)-me_20250914101727_9d4f",
+      "华北-sum(数量)-me_20250914101727_1111",
     ],
     "range": [
       "#8D72F6",
@@ -977,7 +978,7 @@ exports[`detail 2`] = `
     "values": [
       {
         "__Dim_Angle__": "公司",
-        "__Dim_ColorId__": "中南-sum(销售额)",
+        "__Dim_ColorId__": "中南-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "中南-sum(销售额)",
         "__Dim_Detail__": "中南-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -995,7 +996,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "公司",
-        "__Dim_ColorId__": "中南-sum(数量)",
+        "__Dim_ColorId__": "中南-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "中南-sum(数量)",
         "__Dim_Detail__": "中南-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1013,7 +1014,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "消费者",
-        "__Dim_ColorId__": "东北-sum(销售额)",
+        "__Dim_ColorId__": "东北-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "东北-sum(销售额)",
         "__Dim_Detail__": "东北-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1031,7 +1032,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "消费者",
-        "__Dim_ColorId__": "东北-sum(数量)",
+        "__Dim_ColorId__": "东北-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "东北-sum(数量)",
         "__Dim_Detail__": "东北-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1049,7 +1050,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "公司",
-        "__Dim_ColorId__": "东北-sum(销售额)",
+        "__Dim_ColorId__": "东北-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "东北-sum(销售额)",
         "__Dim_Detail__": "东北-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1067,7 +1068,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "公司",
-        "__Dim_ColorId__": "东北-sum(数量)",
+        "__Dim_ColorId__": "东北-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "东北-sum(数量)",
         "__Dim_Detail__": "东北-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1085,7 +1086,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "消费者",
-        "__Dim_ColorId__": "西南-sum(销售额)",
+        "__Dim_ColorId__": "西南-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "西南-sum(销售额)",
         "__Dim_Detail__": "西南-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1103,7 +1104,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "消费者",
-        "__Dim_ColorId__": "西南-sum(数量)",
+        "__Dim_ColorId__": "西南-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "西南-sum(数量)",
         "__Dim_Detail__": "西南-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1121,7 +1122,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "消费者",
-        "__Dim_ColorId__": "中南-sum(销售额)",
+        "__Dim_ColorId__": "中南-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "中南-sum(销售额)",
         "__Dim_Detail__": "中南-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1139,7 +1140,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "消费者",
-        "__Dim_ColorId__": "中南-sum(数量)",
+        "__Dim_ColorId__": "中南-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "中南-sum(数量)",
         "__Dim_Detail__": "中南-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1157,7 +1158,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "消费者",
-        "__Dim_ColorId__": "西北-sum(销售额)",
+        "__Dim_ColorId__": "西北-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "西北-sum(销售额)",
         "__Dim_Detail__": "西北-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1175,7 +1176,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "消费者",
-        "__Dim_ColorId__": "西北-sum(数量)",
+        "__Dim_ColorId__": "西北-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "西北-sum(数量)",
         "__Dim_Detail__": "西北-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1193,7 +1194,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "消费者",
-        "__Dim_ColorId__": "华东-sum(销售额)",
+        "__Dim_ColorId__": "华东-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "华东-sum(销售额)",
         "__Dim_Detail__": "华东-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1211,7 +1212,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "消费者",
-        "__Dim_ColorId__": "华东-sum(数量)",
+        "__Dim_ColorId__": "华东-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "华东-sum(数量)",
         "__Dim_Detail__": "华东-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1229,7 +1230,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "消费者",
-        "__Dim_ColorId__": "华北-sum(销售额)",
+        "__Dim_ColorId__": "华北-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "华北-sum(销售额)",
         "__Dim_Detail__": "华北-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1247,7 +1248,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "消费者",
-        "__Dim_ColorId__": "华北-sum(数量)",
+        "__Dim_ColorId__": "华北-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "华北-sum(数量)",
         "__Dim_Detail__": "华北-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1265,7 +1266,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "小型企业",
-        "__Dim_ColorId__": "东北-sum(销售额)",
+        "__Dim_ColorId__": "东北-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "东北-sum(销售额)",
         "__Dim_Detail__": "东北-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1283,7 +1284,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "小型企业",
-        "__Dim_ColorId__": "东北-sum(数量)",
+        "__Dim_ColorId__": "东北-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "东北-sum(数量)",
         "__Dim_Detail__": "东北-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1301,7 +1302,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "小型企业",
-        "__Dim_ColorId__": "中南-sum(销售额)",
+        "__Dim_ColorId__": "中南-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "中南-sum(销售额)",
         "__Dim_Detail__": "中南-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1319,7 +1320,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "小型企业",
-        "__Dim_ColorId__": "中南-sum(数量)",
+        "__Dim_ColorId__": "中南-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "中南-sum(数量)",
         "__Dim_Detail__": "中南-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1337,7 +1338,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "小型企业",
-        "__Dim_ColorId__": "西南-sum(销售额)",
+        "__Dim_ColorId__": "西南-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "西南-sum(销售额)",
         "__Dim_Detail__": "西南-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1355,7 +1356,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "小型企业",
-        "__Dim_ColorId__": "西南-sum(数量)",
+        "__Dim_ColorId__": "西南-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "西南-sum(数量)",
         "__Dim_Detail__": "西南-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1373,7 +1374,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "公司",
-        "__Dim_ColorId__": "西北-sum(销售额)",
+        "__Dim_ColorId__": "西北-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "西北-sum(销售额)",
         "__Dim_Detail__": "西北-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1391,7 +1392,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "公司",
-        "__Dim_ColorId__": "西北-sum(数量)",
+        "__Dim_ColorId__": "西北-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "西北-sum(数量)",
         "__Dim_Detail__": "西北-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1409,7 +1410,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "公司",
-        "__Dim_ColorId__": "华东-sum(销售额)",
+        "__Dim_ColorId__": "华东-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "华东-sum(销售额)",
         "__Dim_Detail__": "华东-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1427,7 +1428,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "公司",
-        "__Dim_ColorId__": "华东-sum(数量)",
+        "__Dim_ColorId__": "华东-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "华东-sum(数量)",
         "__Dim_Detail__": "华东-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1445,7 +1446,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "公司",
-        "__Dim_ColorId__": "华北-sum(销售额)",
+        "__Dim_ColorId__": "华北-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "华北-sum(销售额)",
         "__Dim_Detail__": "华北-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1463,7 +1464,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "公司",
-        "__Dim_ColorId__": "华北-sum(数量)",
+        "__Dim_ColorId__": "华北-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "华北-sum(数量)",
         "__Dim_Detail__": "华北-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1481,7 +1482,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "小型企业",
-        "__Dim_ColorId__": "华东-sum(销售额)",
+        "__Dim_ColorId__": "华东-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "华东-sum(销售额)",
         "__Dim_Detail__": "华东-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1499,7 +1500,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "小型企业",
-        "__Dim_ColorId__": "华东-sum(数量)",
+        "__Dim_ColorId__": "华东-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "华东-sum(数量)",
         "__Dim_Detail__": "华东-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1517,7 +1518,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "小型企业",
-        "__Dim_ColorId__": "华北-sum(销售额)",
+        "__Dim_ColorId__": "华北-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "华北-sum(销售额)",
         "__Dim_Detail__": "华北-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1535,7 +1536,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "小型企业",
-        "__Dim_ColorId__": "华北-sum(数量)",
+        "__Dim_ColorId__": "华北-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "华北-sum(数量)",
         "__Dim_Detail__": "华北-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1553,7 +1554,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "小型企业",
-        "__Dim_ColorId__": "西北-sum(销售额)",
+        "__Dim_ColorId__": "西北-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "西北-sum(销售额)",
         "__Dim_Detail__": "西北-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1571,7 +1572,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "小型企业",
-        "__Dim_ColorId__": "西北-sum(数量)",
+        "__Dim_ColorId__": "西北-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "西北-sum(数量)",
         "__Dim_Detail__": "西北-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1589,7 +1590,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "公司",
-        "__Dim_ColorId__": "西南-sum(销售额)",
+        "__Dim_ColorId__": "西南-sum(销售额)-me_20250914101727_9d4f",
         "__Dim_Color__": "西南-sum(销售额)",
         "__Dim_Detail__": "西南-sum(销售额)",
         "__MeaId__": "me_20250914101727_9d4f",
@@ -1607,7 +1608,7 @@ exports[`detail 2`] = `
       },
       {
         "__Dim_Angle__": "公司",
-        "__Dim_ColorId__": "西南-sum(数量)",
+        "__Dim_ColorId__": "西南-sum(数量)-me_20250914101727_1111",
         "__Dim_Color__": "西南-sum(数量)",
         "__Dim_Detail__": "西南-sum(数量)",
         "__MeaId__": "me_20250914101727_1111",
@@ -1771,18 +1772,18 @@ exports[`detail 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "东北-sum(数量)": "东北-sum(数量)",
-    "东北-sum(销售额)": "东北-sum(销售额)",
-    "中南-sum(数量)": "中南-sum(数量)",
-    "中南-sum(销售额)": "中南-sum(销售额)",
-    "华东-sum(数量)": "华东-sum(数量)",
-    "华东-sum(销售额)": "华东-sum(销售额)",
-    "华北-sum(数量)": "华北-sum(数量)",
-    "华北-sum(销售额)": "华北-sum(销售额)",
-    "西北-sum(数量)": "西北-sum(数量)",
-    "西北-sum(销售额)": "西北-sum(销售额)",
-    "西南-sum(数量)": "西南-sum(数量)",
-    "西南-sum(销售额)": "西南-sum(销售额)",
+    "东北-sum(数量)-me_20250914101727_1111": "东北-sum(数量)",
+    "东北-sum(销售额)-me_20250914101727_9d4f": "东北-sum(销售额)",
+    "中南-sum(数量)-me_20250914101727_1111": "中南-sum(数量)",
+    "中南-sum(销售额)-me_20250914101727_9d4f": "中南-sum(销售额)",
+    "华东-sum(数量)-me_20250914101727_1111": "华东-sum(数量)",
+    "华东-sum(销售额)-me_20250914101727_9d4f": "华东-sum(销售额)",
+    "华北-sum(数量)-me_20250914101727_1111": "华北-sum(数量)",
+    "华北-sum(销售额)-me_20250914101727_9d4f": "华北-sum(销售额)",
+    "西北-sum(数量)-me_20250914101727_1111": "西北-sum(数量)",
+    "西北-sum(销售额)-me_20250914101727_9d4f": "西北-sum(销售额)",
+    "西南-sum(数量)-me_20250914101727_1111": "西南-sum(数量)",
+    "西南-sum(销售额)-me_20250914101727_9d4f": "西南-sum(销售额)",
   },
   "colorItems": [
     "中南-sum(销售额)",

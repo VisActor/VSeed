@@ -17,11 +17,7 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
-  const { dimensions, measures, encoding, chartType } = advancedVSeed
-
-  if (!measures || !dimensions || !dataset || !encoding) {
-    return result
-  }
+  const { dimensions = [], measures = [], encoding, chartType } = advancedVSeed
 
   const measureGroups: Array<MeasureGroup[]> = []
 
@@ -38,12 +34,8 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
   measureGroups.forEach((measures: MeasureGroup[], index) => {
-    if (measures.length === 0) {
-      throw new Error('measures can not be empty')
-    }
-
     if (measures.length > 2) {
-      throw new Error('measures can not be more than 2')
+      throw new Error('measures can not be more than 2 groups in scatter')
     }
 
     const foldInfoList: FoldInfo[] = []

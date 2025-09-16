@@ -8,13 +8,12 @@ export const buildSpec = (builder: Builder, advancedVSeed: AdvancedVSeed): Spec 
   const start = typeof performance !== 'undefined' ? performance.now() : Date.now()
 
   const { chartType } = builder.vseed
-  if (!chartType) {
-    throw new Error('chartType is nil in buildSpec')
-  }
 
   const pipeline = Builder.getSpecPipeline(chartType)
   if (!pipeline) {
-    throw new Error(`no spec pipeline for chartType ${chartType}`)
+    throw new Error(
+      `please invoke registerAll or register ${chartType} before build, no spec pipeline for chartType ${chartType}`,
+    )
   }
 
   const context: SpecPipelineContext = {
@@ -31,7 +30,7 @@ export const buildSpec = (builder: Builder, advancedVSeed: AdvancedVSeed): Spec 
     return spec
   } catch (e) {
     console.error(e)
-    throw new Error(`buildSpec error, see error info in console`)
+    throw new Error(`buildSpec error: ${(e as Error).message}.\ndetails info in console`)
   } finally {
     const end = typeof performance !== 'undefined' ? performance.now() : Date.now()
     builder.performance['buildSpec'] = `${(end - start).toFixed(4)}ms`

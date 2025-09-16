@@ -1,5 +1,13 @@
 # website
 
+## 0.1.16
+
+### Patch Changes
+
+- feat: optimize the error info
+- Updated dependencies
+  - @visactor/vseed@0.1.16
+
 ## 0.1.15
 
 ### Patch Changes

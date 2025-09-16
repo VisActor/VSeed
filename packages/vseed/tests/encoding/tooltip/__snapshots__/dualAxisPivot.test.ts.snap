@@ -339,7 +339,7 @@ exports[`dualAxisPivot 1`] = `
   "dataset": [
     [
       {
-        "__Dim_ColorId__": "利润",
+        "__Dim_ColorId__": "利润-profit",
         "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__Dim_X__": "2019",
@@ -358,7 +358,7 @@ exports[`dualAxisPivot 1`] = `
         "sales": 200,
       },
       {
-        "__Dim_ColorId__": "利润",
+        "__Dim_ColorId__": "利润-profit",
         "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__Dim_X__": "2020",
@@ -377,7 +377,7 @@ exports[`dualAxisPivot 1`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "利润",
+        "__Dim_ColorId__": "利润-profit",
         "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__Dim_X__": "2021",
@@ -396,7 +396,7 @@ exports[`dualAxisPivot 1`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "利润",
+        "__Dim_ColorId__": "利润-profit",
         "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__Dim_X__": "2022",
@@ -415,7 +415,7 @@ exports[`dualAxisPivot 1`] = `
         "sales": 100,
       },
       {
-        "__Dim_ColorId__": "利润",
+        "__Dim_ColorId__": "利润-profit",
         "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__Dim_X__": "2023",
@@ -586,10 +586,10 @@ exports[`dualAxisPivot 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "利润": "利润",
+          "利润-profit": "利润",
         },
         "colorItems": [
-          "利润",
+          "利润-profit",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -829,7 +829,7 @@ exports[`dualAxisPivot 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "日期",
               "visible": false,
             },
             "type": "band",
@@ -885,7 +885,7 @@ exports[`dualAxisPivot 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "利润 & 销售额",
               "visible": false,
             },
             "type": "linear",
@@ -946,7 +946,7 @@ exports[`dualAxisPivot 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "利润 & 销售额",
               "visible": false,
             },
             "type": "linear",
@@ -957,7 +957,7 @@ exports[`dualAxisPivot 2`] = `
         "background": "transparent",
         "color": {
           "domain": [
-            "利润",
+            "利润-profit",
             "销售额-sales",
           ],
           "range": [
@@ -1321,7 +1321,7 @@ exports[`dualAxisPivot 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "日期",
               "visible": false,
             },
             "type": "band",
@@ -1377,7 +1377,7 @@ exports[`dualAxisPivot 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "利润 & 销售额",
               "visible": false,
             },
             "type": "linear",
@@ -1438,7 +1438,7 @@ exports[`dualAxisPivot 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "利润 & 销售额",
               "visible": false,
             },
             "type": "linear",
@@ -1449,7 +1449,7 @@ exports[`dualAxisPivot 2`] = `
         "background": "transparent",
         "color": {
           "domain": [
-            "利润",
+            "利润-profit",
             "销售额-sales",
           ],
           "range": [
@@ -1748,7 +1748,7 @@ exports[`dualAxisPivot 2`] = `
   "legends": {
     "data": [
       {
-        "label": "利润",
+        "label": "利润-profit",
         "shape": {
           "fill": "#8D72F6",
           "outerBorder": {
@@ -1812,7 +1812,7 @@ exports[`dualAxisPivot 2`] = `
   "records": {
     "dualAxis-0": [
       {
-        "__Dim_ColorId__": "利润",
+        "__Dim_ColorId__": "利润-profit",
         "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__Dim_X__": "2019",
@@ -1831,7 +1831,7 @@ exports[`dualAxisPivot 2`] = `
         "sales": 200,
       },
       {
-        "__Dim_ColorId__": "利润",
+        "__Dim_ColorId__": "利润-profit",
         "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__Dim_X__": "2020",
@@ -1850,7 +1850,7 @@ exports[`dualAxisPivot 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "利润",
+        "__Dim_ColorId__": "利润-profit",
         "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__Dim_X__": "2021",
@@ -1869,7 +1869,7 @@ exports[`dualAxisPivot 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "利润",
+        "__Dim_ColorId__": "利润-profit",
         "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__Dim_X__": "2022",
@@ -1888,7 +1888,7 @@ exports[`dualAxisPivot 2`] = `
         "sales": 100,
       },
       {
-        "__Dim_ColorId__": "利润",
+        "__Dim_ColorId__": "利润-profit",
         "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__Dim_X__": "2023",
@@ -2140,7 +2140,7 @@ exports[`dualAxisPivot 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "利润": "利润",
+    "利润-profit": "利润",
     "销售额-sales": "销售额",
   },
   "colorItems": [

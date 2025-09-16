@@ -12,6 +12,7 @@ export const reshapePivotTable: AdvancedPipe = (advancedVSeed, context) => {
     measureId: FoldMeasureId,
     measureName: FoldMeasureName,
     measureValue: FoldMeasureValue,
+    allowEmptyFold: false,
   })
 
   const datasetReshapeInfo = [

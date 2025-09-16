@@ -21,8 +21,6 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
   const { dataset } = vseed as ColumnParallel
   const { dimensions = [], measures = [], encoding, chartType } = advancedVSeed
 
-  const hasEncoding = (vseed.dimensions || []).some((item: Dimension) => item.encoding)
-
   const datasetList: Dataset[] = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
@@ -60,7 +58,7 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
         uniqueBy(primaryMeasures.children, (item) => item.id),
         encoding as Encoding,
         {
-          colorItemAsId: hasEncoding,
+          colorItemAsId: false,
           foldMeasureValue: `${FoldPrimaryMeasureValue}${index}`,
           colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
         },
@@ -82,6 +80,7 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
         uniqueBy(secondaryMeasures.children, (item) => item.id),
         encoding as Encoding,
         {
+          colorItemAsId: false,
           foldMeasureValue: `${FoldSecondaryMeasureValue}${index}`,
           colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
         },

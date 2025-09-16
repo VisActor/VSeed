@@ -339,7 +339,7 @@ exports[`pivotDualAxis 1`] = `
   "dataset": [
     [
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "1",
@@ -360,7 +360,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "2",
@@ -381,7 +381,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "3",
@@ -402,7 +402,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "4",
@@ -423,7 +423,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "5",
@@ -444,7 +444,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "6",
@@ -465,7 +465,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "1",
@@ -486,7 +486,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "2",
@@ -507,7 +507,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "3",
@@ -528,7 +528,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "4",
@@ -549,7 +549,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "5",
@@ -570,7 +570,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "6",
@@ -591,7 +591,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "1",
@@ -612,7 +612,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "2",
@@ -633,7 +633,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "3",
@@ -654,7 +654,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "4",
@@ -675,7 +675,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "5",
@@ -696,7 +696,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "6",
@@ -717,7 +717,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "1",
@@ -738,7 +738,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "2",
@@ -759,7 +759,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "3",
@@ -780,7 +780,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "4",
@@ -801,7 +801,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "5",
@@ -822,7 +822,7 @@ exports[`pivotDualAxis 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "6",
@@ -1405,10 +1405,10 @@ exports[`pivotDualAxis 1`] = `
       "unfoldInfo": {
         "colorIdMap": {
           "利润-profit": "利润",
-          "销售额": "销售额",
+          "销售额-sales": "销售额",
         },
         "colorItems": [
-          "销售额",
+          "销售额-sales",
           "利润-profit",
         ],
         "encodingAngle": "__Dim_Angle__",
@@ -1714,7 +1714,7 @@ exports[`pivotDualAxis 2`] = `
         "background": "transparent",
         "color": {
           "domain": [
-            "销售额",
+            "销售额-sales",
             "利润-profit",
           ],
           "range": [
@@ -2027,7 +2027,7 @@ exports[`pivotDualAxis 2`] = `
   "legends": {
     "data": [
       {
-        "label": "销售额",
+        "label": "销售额-sales",
         "shape": {
           "fill": "#8D72F6",
           "outerBorder": {
@@ -2091,7 +2091,7 @@ exports[`pivotDualAxis 2`] = `
   "records": {
     "dualAxis-0": [
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "1",
@@ -2112,7 +2112,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "2",
@@ -2133,7 +2133,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "3",
@@ -2154,7 +2154,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "4",
@@ -2175,7 +2175,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "5",
@@ -2196,7 +2196,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "6",
@@ -2217,7 +2217,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "1",
@@ -2238,7 +2238,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "2",
@@ -2259,7 +2259,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "3",
@@ -2280,7 +2280,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "4",
@@ -2301,7 +2301,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "5",
@@ -2322,7 +2322,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "6",
@@ -2343,7 +2343,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "1",
@@ -2364,7 +2364,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "2",
@@ -2385,7 +2385,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "3",
@@ -2406,7 +2406,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "4",
@@ -2427,7 +2427,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "5",
@@ -2448,7 +2448,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "6",
@@ -2469,7 +2469,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "1",
@@ -2490,7 +2490,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "2",
@@ -2511,7 +2511,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "3",
@@ -2532,7 +2532,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "4",
@@ -2553,7 +2553,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "5",
@@ -2574,7 +2574,7 @@ exports[`pivotDualAxis 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "销售额",
+        "__Dim_ColorId__": "销售额-sales",
         "__Dim_Color__": "销售额",
         "__Dim_Detail__": "销售额",
         "__Dim_X__": "6",
@@ -3236,7 +3236,7 @@ exports[`pivotDualAxis 3`] = `
   ],
   "colorIdMap": {
     "利润-profit": "利润",
-    "销售额": "销售额",
+    "销售额-sales": "销售额",
   },
   "colorItems": [
     "销售额",

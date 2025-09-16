@@ -28,7 +28,6 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
   const datasets: Dataset[] = []
   const primaryMeasures = measures[0] as MeasureGroup
   const secondaryMeasures = (measures[1] || []) as MeasureGroup
-  const hasEncoding = (vseed.dimensions || []).some((item: Dimension) => item.encoding)
 
   if (primaryMeasures && primaryMeasures.children) {
     const {
@@ -41,7 +40,7 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
       uniqueBy(primaryMeasures.children, (item) => item.id),
       encoding as Encoding,
       {
-        colorItemAsId: hasEncoding,
+        colorItemAsId: false,
         foldMeasureValue: FoldPrimaryMeasureValue,
         colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
       },
@@ -63,6 +62,7 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
       uniqueBy(secondaryMeasures.children, (item) => item.id),
       encoding as Encoding,
       {
+        colorItemAsId: false,
         foldMeasureValue: FoldSecondaryMeasureValue,
         colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
       },

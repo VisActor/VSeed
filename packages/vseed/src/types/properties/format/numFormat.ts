@@ -8,13 +8,11 @@ export interface NumFormat {
   type?: 'number' | 'percent' | 'permille' | 'scientific'
 
   /**
-   * @description 数值格式化比例, 百分比和千分比需要设置比例
+   * @description 数值格式化比例, 不能为0
    * @default 1
    * @example
    * - 100000 转换为 10万, ratio:10000, symbol:"万"
    * - 100000 转换为 10K, ratio:1000, symbol:"K"
-   * - 100000 转换为 100%, ratio:100, symbol:"%"
-   * - 100000 转换为 100‰, ratio:1000, symbol:"‰"
    */
   ratio?: number
 
@@ -24,8 +22,6 @@ export interface NumFormat {
    * @example
    * - 100000 转换为 10万, ratio:10000, symbol:"万"
    * - 100000 转换为 10K, ratio:1000, symbol:"K"
-   * - 100000 转换为 100%, ratio:100, symbol:"%"
-   * - 100000 转换为 100‰, ratio:1000, symbol:"‰"
    */
   symbol?: string
 

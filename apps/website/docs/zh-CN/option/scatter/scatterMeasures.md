@@ -71,15 +71,13 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 **Type:** `number | undefined`
 
 :::note{title=描述}
-数值格式化比例, 百分比和千分比需要设置比例
+数值格式化比例, 不能为0
 
 :::
 
 **示例**
 \- 100000 转换为 10万, ratio:10000, symbol:"万"
 \- 100000 转换为 10K, ratio:1000, symbol:"K"
-\- 100000 转换为 100%, ratio:100, symbol:"%"
-\- 100000 转换为 100‰, ratio:1000, symbol:"‰"
 
 
 
@@ -95,8 +93,6 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 **示例**
 \- 100000 转换为 10万, ratio:10000, symbol:"万"
 \- 100000 转换为 10K, ratio:1000, symbol:"K"
-\- 100000 转换为 100%, ratio:100, symbol:"%"
-\- 100000 转换为 100‰, ratio:1000, symbol:"‰"
 
 
 
@@ -252,15 +248,13 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 **Type:** `number | undefined`
 
 :::note{title=描述}
-数值格式化比例, 百分比和千分比需要设置比例
+数值格式化比例, 不能为0
 
 :::
 
 **示例**
 \- 100000 转换为 10万, ratio:10000, symbol:"万"
 \- 100000 转换为 10K, ratio:1000, symbol:"K"
-\- 100000 转换为 100%, ratio:100, symbol:"%"
-\- 100000 转换为 100‰, ratio:1000, symbol:"‰"
 
 
 
@@ -276,8 +270,6 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 **示例**
 \- 100000 转换为 10万, ratio:10000, symbol:"万"
 \- 100000 转换为 10K, ratio:1000, symbol:"K"
-\- 100000 转换为 100%, ratio:100, symbol:"%"
-\- 100000 转换为 100‰, ratio:1000, symbol:"‰"
 
 
 
@@ -401,15 +393,13 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 **Type:** `number | undefined`
 
 :::note{title=描述}
-数值格式化比例, 百分比和千分比需要设置比例
+数值格式化比例, 不能为0
 
 :::
 
 **示例**
 \- 100000 转换为 10万, ratio:10000, symbol:"万"
 \- 100000 转换为 10K, ratio:1000, symbol:"K"
-\- 100000 转换为 100%, ratio:100, symbol:"%"
-\- 100000 转换为 100‰, ratio:1000, symbol:"‰"
 
 
 
@@ -425,8 +415,6 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 **示例**
 \- 100000 转换为 10万, ratio:10000, symbol:"万"
 \- 100000 转换为 10K, ratio:1000, symbol:"K"
-\- 100000 转换为 100%, ratio:100, symbol:"%"
-\- 100000 转换为 100‰, ratio:1000, symbol:"‰"
 
 
 
@@ -582,15 +570,13 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 **Type:** `number | undefined`
 
 :::note{title=描述}
-数值格式化比例, 百分比和千分比需要设置比例
+数值格式化比例, 不能为0
 
 :::
 
 **示例**
 \- 100000 转换为 10万, ratio:10000, symbol:"万"
 \- 100000 转换为 10K, ratio:1000, symbol:"K"
-\- 100000 转换为 100%, ratio:100, symbol:"%"
-\- 100000 转换为 100‰, ratio:1000, symbol:"‰"
 
 
 
@@ -606,8 +592,6 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 **示例**
 \- 100000 转换为 10万, ratio:10000, symbol:"万"
 \- 100000 转换为 10K, ratio:1000, symbol:"K"
-\- 100000 转换为 100%, ratio:100, symbol:"%"
-\- 100000 转换为 100‰, ratio:1000, symbol:"‰"
 
 
 

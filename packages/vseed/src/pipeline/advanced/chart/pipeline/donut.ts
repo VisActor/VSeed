@@ -14,7 +14,7 @@ import {
   defaultMeasureName,
   encodingAdapter,
   defaultEncodingForPie,
-  deleteTooltipAndLabelMeasure,
+  deleteEncodingForMeasure,
   deleteTooltipAndLabelDimension,
 } from '../pipes'
 
@@ -26,7 +26,7 @@ export const donutAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForPie, buildMeasures],
-    [encodingForPie, buildMeasures, deleteTooltipAndLabelMeasure, deleteTooltipAndLabelDimension],
+    [encodingForPie, buildMeasures, deleteEncodingForMeasure(['tooltip', 'label']), deleteTooltipAndLabelDimension],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

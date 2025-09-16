@@ -91,6 +91,9 @@ const generateMeasureEncoding = (measures: Measures, encoding: Encoding) => {
     encoding.color = [color[0]]
   }
 
+  // size
+  encoding.size = unique(measures.filter((item) => item.encoding === 'size').map((item) => item.id))
+
   // label
   const label = unique(measures.filter((item) => item.encoding === 'label').map((item) => item.id))
   encoding.label = unique([...(encoding.label || []), ...label])

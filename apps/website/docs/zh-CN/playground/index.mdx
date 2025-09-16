@@ -9,149 +9,20 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    color: {
-      colorScheme: [
-        '#8D72F6',
-        '#5766EC',
-        '#66A3FE',
-        '#51D5E6',
-        '#4EC0B3',
-        '#F9DF90',
-        '#F9AD71',
-        '#ED8888',
-        '#E9A0C3',
-        '#D77DD3',
-      ],
-    },
-    yAxis: {
-      title: {
-        visible: true,
-        titleFontSize: 12,
-      },
-      titleStyle: {},
-      labelStyle: {},
-      format: {},
-      label: {
-        labelFontSize: 12,
-      },
-      visible: true,
-      numFormat: {
-        type: 'number',
-        fractionDigits: 0,
-      },
-      autoFormat: true,
-    },
-    legend: {
-      enable: true,
-      position: 'rightTop',
-      maxSize: 1,
-      labelFontSize: 12,
-      labelFontColor: '#6F6F6F',
-    },
-    label: {
-      enable: false,
-      labelColor: '#212121',
-      labelMode: 'single',
-      labelPos: 'outer',
-      labelWeight: 'normal',
-      style: {},
-      labelFontSize: 12,
-    },
-    chartType: 'bar',
+    chartType: 'scatter',
+    sizeRange: [10, 100],
     dataset: [
-      {
-        co_20250916102528_4a14: '华东',
-        co_20250916102539_ed6a: '11041',
-        yA_20250916175707_8b25: '11041',
-      },
-      {
-        co_20250916102528_4a14: '东北',
-        co_20250916102539_ed6a: '6463',
-        yA_20250916175707_8b25: '6463',
-      },
-      {
-        co_20250916102528_4a14: '华北',
-        co_20250916102539_ed6a: '5146',
-        yA_20250916175707_8b25: '5146',
-      },
-      {
-        co_20250916102528_4a14: '西南',
-        co_20250916102539_ed6a: '3399',
-        yA_20250916175707_8b25: '3399',
-      },
-      {
-        co_20250916102528_4a14: '中南',
-        co_20250916102539_ed6a: '9700',
-        yA_20250916175707_8b25: '9700',
-      },
-      {
-        co_20250916102528_4a14: '西北',
-        co_20250916102539_ed6a: '1785',
-        yA_20250916175707_8b25: '1785',
-      },
+      { date: '2019', profit: 20, sales: 100 },
+      { date: '2020', profit: 30, sales: 600 },
+      { date: '2021', profit: 30, sales: 600 },
+      { date: '2022', profit: 50, sales: 500 },
+      { date: '2023', profit: 10, sales: 800 },
     ],
-    bar: {},
-    xAxis: {
-      title: {
-        visible: false,
-        titleFontSize: 12,
-      },
-      titleStyle: {},
-      labelStyle: {},
-      label: {
-        labelFontSize: 12,
-      },
-      visible: true,
-    },
-    stackCornerRadius: 0,
-    label: {
-      enable: true,
-    },
     measures: [
-      {
-        id: 'co_20250916102539_ed6a',
-        alias: 'sum(amount)',
-        encoding: 'yAxis',
-        format: {
-          type: 'number',
-          suffix: 'test',
-          prefix: 'abc',
-        },
-        autoFormat: false,
-      },
-      {
-        id: 'yA_20250916175707_8b25',
-        alias: 'sum(amount)',
-        encoding: 'yAxis',
-        format: {
-          auto: false,
-          type: 'number',
-        },
-        autoFormat: false,
-      },
+      { id: 'sales', alias: '销售额', encoding: 'yAxis' },
+      { id: 'profit', alias: '利润', encoding: 'xAxis' },
+      { id: 'profit', alias: '利润', encoding: 'size' },
     ],
-    dimensions: [
-      {
-        id: 'co_20250916102528_4a14',
-        encoding: 'xAxis',
-        autoFormat: true,
-      },
-      {
-        id: 'co_20250916102528_4a14',
-        alias: 'area',
-        encoding: 'color',
-        autoFormat: true,
-      },
-    ],
-    lineStyle: [],
-    barStyle: [],
-    pointStyle: [],
-    areaStyle: [],
-    annotationPoint: [],
-    annotationHorizontalLine: [],
-    annotationVerticalLine: [],
-    annotationArea: [],
-    locale: 'zh-CN',
   }
 
   const parseRes = zVSeed.safeParse(vseed)

@@ -513,6 +513,7 @@ exports[`scatter 1`] = `
     ],
     "label": [],
     "row": [],
+    "size": [],
     "tooltip": [
       "date",
       "count",

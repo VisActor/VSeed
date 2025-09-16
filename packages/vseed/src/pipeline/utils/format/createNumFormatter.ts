@@ -38,7 +38,7 @@ export const createNumFormatter = (format?: Partial<NumFormat>, locale: Locale =
     }
   }
 
-  const numFormatter = new Intl.NumberFormat(locale, numFormatterOptions)
+  const numFormatter = new Intl.NumberFormat(locale, { ...numFormatterOptions, useGrouping: thousandSeparator })
 
   return (value?: number | string) => {
     let num = Number(value)

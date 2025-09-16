@@ -819,6 +819,7 @@ exports[`scatter_multi_measure 1`] = `
       "city",
       "count",
     ],
+    "size": [],
     "tooltip": [
       "date",
       "region",

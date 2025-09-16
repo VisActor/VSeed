@@ -82,7 +82,6 @@ export const pieConfig: AdvancedPipe = (advancedVSeed, context) => {
 
 export const areaConfig: AdvancedPipe = lineConfig
 export const areaPercentConfig: AdvancedPipe = lineConfig
-export const scatterConfig: AdvancedPipe = lineConfig
 
 export const barConfig: AdvancedPipe = columnConfig
 export const barParallelConfig: AdvancedPipe = columnConfig

@@ -311,6 +311,10 @@ export const darkTheme = (): CustomThemeConfig => {
       },
       heatmap: {
         ...baseConfig,
+        label: {
+          ...baseConfig.label,
+          labelColorSmartInvert: true,
+        },
       },
     },
   }

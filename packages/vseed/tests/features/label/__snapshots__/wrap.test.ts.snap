@@ -1,0 +1,890 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`wrap 1`] = `
+{
+  "annotation": {},
+  "chartType": "column",
+  "config": {
+    "column": {
+      "backgroundColor": "transparent",
+      "color": {
+        "colorScheme": [
+          "#8D72F6",
+          "#5766EC",
+          "#66A3FE",
+          "#51D5E6",
+          "#4EC0B3",
+          "#F9DF90",
+          "#F9AD71",
+          "#ED8888",
+          "#E9A0C3",
+          "#D77DD3",
+        ],
+        "linearColorScheme": [
+          "#C2CEFF",
+          "#5766EC",
+        ],
+      },
+      "crosshairRect": {
+        "labelBackgroundColor": "#364159",
+        "labelColor": "#ffffff",
+        "labelVisible": true,
+        "rectColor": "#3641594d",
+        "visible": true,
+      },
+      "label": {
+        "autoFormat": false,
+        "enable": true,
+        "labelColor": "red",
+        "labelColorSmartInvert": true,
+        "labelFontSize": 12,
+        "labelOverlap": true,
+        "labelPosition": "inside",
+        "numFormat": {
+          "fractionDigits": 3,
+          "prefix": "后缀-",
+          "suffix": "前缀-",
+        },
+        "showValue": true,
+        "showValuePercent": true,
+        "wrap": false,
+      },
+      "legend": {
+        "border": true,
+        "enable": true,
+        "labelColor": "#646A73",
+        "labelFontSize": 12,
+        "labelFontWeight": 400,
+        "maxSize": 1,
+        "position": "rt",
+        "shapeType": "rectRound",
+      },
+      "stackCornerRadius": [
+        4,
+        4,
+        0,
+        0,
+      ],
+      "tooltip": {
+        "enable": true,
+      },
+      "xAxis": {
+        "grid": {
+          "gridColor": "#36415926",
+          "gridWidth": 0.5,
+          "visible": false,
+        },
+        "label": {
+          "labelAngle": 0,
+          "labelColor": "#797B85",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "visible": true,
+        },
+        "labelAutoHide": true,
+        "labelAutoHideGap": 4,
+        "labelAutoLimit": true,
+        "labelAutoLimitLength": 80,
+        "labelAutoRotate": false,
+        "labelAutoRotateAngleRange": [
+          0,
+          -45,
+          -90,
+        ],
+        "line": {
+          "lineColor": "#3641594d",
+          "lineWidth": 1,
+          "visible": true,
+        },
+        "tick": {
+          "tickColor": "#3641594d",
+          "tickInside": false,
+          "tickSize": 4,
+          "visible": false,
+        },
+        "title": {
+          "titleColor": "#646A73",
+          "titleFontSize": 12,
+          "titleFontWeight": 400,
+          "titleText": "",
+          "visible": false,
+        },
+      },
+      "yAxis": {
+        "grid": {
+          "gridColor": "#36415926",
+          "gridWidth": 0.5,
+          "visible": true,
+        },
+        "inverse": false,
+        "label": {
+          "labelAngle": 0,
+          "labelColor": "#797B85",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "visible": true,
+        },
+        "line": {
+          "lineColor": "#3641594d",
+          "lineWidth": 1,
+          "visible": false,
+        },
+        "nice": true,
+        "tick": {
+          "tickColor": "#3641594d",
+          "tickInside": false,
+          "tickSize": 4,
+          "visible": false,
+        },
+        "title": {
+          "titleColor": "#646A73",
+          "titleFontSize": 12,
+          "titleFontWeight": 400,
+          "titleText": "",
+          "visible": false,
+        },
+        "zero": true,
+      },
+    },
+  },
+  "customTheme": {
+    "config": {
+      "column": {
+        "backgroundColor": "transparent",
+        "color": {
+          "colorScheme": [
+            "#8D72F6",
+            "#5766EC",
+            "#66A3FE",
+            "#51D5E6",
+            "#4EC0B3",
+            "#F9DF90",
+            "#F9AD71",
+            "#ED8888",
+            "#E9A0C3",
+            "#D77DD3",
+          ],
+          "linearColorScheme": [
+            "#C2CEFF",
+            "#5766EC",
+          ],
+        },
+        "crosshairRect": {
+          "labelBackgroundColor": "#364159",
+          "labelColor": "#ffffff",
+          "labelVisible": true,
+          "rectColor": "#3641594d",
+          "visible": true,
+        },
+        "label": {
+          "enable": true,
+          "labelColorSmartInvert": false,
+          "labelOverlap": true,
+          "showValue": true,
+          "showValuePercent": false,
+          "wrap": true,
+        },
+        "legend": {
+          "border": true,
+          "enable": true,
+          "labelColor": "#646A73",
+          "labelFontSize": 12,
+          "labelFontWeight": 400,
+          "maxSize": 1,
+          "position": "rt",
+          "shapeType": "rectRound",
+        },
+        "stackCornerRadius": [
+          4,
+          4,
+          0,
+          0,
+        ],
+        "tooltip": {
+          "enable": true,
+        },
+        "xAxis": {
+          "grid": {
+            "gridColor": "#36415926",
+            "gridWidth": 0.5,
+            "visible": false,
+          },
+          "label": {
+            "labelAngle": 0,
+            "labelColor": "#797B85",
+            "labelFontSize": 12,
+            "labelFontWeight": 400,
+            "visible": true,
+          },
+          "labelAutoHide": true,
+          "labelAutoHideGap": 4,
+          "labelAutoLimit": true,
+          "labelAutoLimitLength": 80,
+          "labelAutoRotate": false,
+          "labelAutoRotateAngleRange": [
+            0,
+            -45,
+            -90,
+          ],
+          "line": {
+            "lineColor": "#3641594d",
+            "lineWidth": 1,
+            "visible": true,
+          },
+          "tick": {
+            "tickColor": "#3641594d",
+            "tickInside": false,
+            "tickSize": 4,
+            "visible": false,
+          },
+          "title": {
+            "titleColor": "#646A73",
+            "titleFontSize": 12,
+            "titleFontWeight": 400,
+            "titleText": "",
+            "visible": false,
+          },
+        },
+        "yAxis": {
+          "grid": {
+            "gridColor": "#36415926",
+            "gridWidth": 0.5,
+            "visible": true,
+          },
+          "inverse": false,
+          "label": {
+            "labelAngle": 0,
+            "labelColor": "#797B85",
+            "labelFontSize": 12,
+            "labelFontWeight": 400,
+            "visible": true,
+          },
+          "line": {
+            "lineColor": "#3641594d",
+            "lineWidth": 1,
+            "visible": false,
+          },
+          "nice": true,
+          "tick": {
+            "tickColor": "#3641594d",
+            "tickInside": false,
+            "tickSize": 4,
+            "visible": false,
+          },
+          "title": {
+            "titleColor": "#646A73",
+            "titleFontSize": 12,
+            "titleFontWeight": 400,
+            "titleText": "",
+            "visible": false,
+          },
+          "zero": true,
+        },
+      },
+    },
+  },
+  "dataset": [
+    {
+      "__Dim_ColorId__": "a-profit-profit",
+      "__Dim_Color__": "a-profit",
+      "__Dim_Detail__": "a-profit",
+      "__Dim_X__": "2023",
+      "__MeaId__": "profit",
+      "__MeaName__": "profit",
+      "__MeaValue__": 40,
+      "__OriginalData__": {
+        "date": "2023",
+        "profit": 40,
+        "type": "a",
+      },
+      "date": "2023",
+      "profit": 40,
+      "type": "a",
+    },
+    {
+      "__Dim_ColorId__": "b-profit-profit",
+      "__Dim_Color__": "b-profit",
+      "__Dim_Detail__": "b-profit",
+      "__Dim_X__": "2022",
+      "__MeaId__": "profit",
+      "__MeaName__": "profit",
+      "__MeaValue__": 50,
+      "__OriginalData__": {
+        "date": "2022",
+        "profit": 50,
+        "type": "b",
+      },
+      "date": "2022",
+      "profit": 50,
+      "type": "b",
+    },
+    {
+      "__Dim_ColorId__": "a-profit-profit",
+      "__Dim_Color__": "a-profit",
+      "__Dim_Detail__": "a-profit",
+      "__Dim_X__": "2021",
+      "__MeaId__": "profit",
+      "__MeaName__": "profit",
+      "__MeaValue__": 25,
+      "__OriginalData__": {
+        "date": "2021",
+        "profit": 25,
+        "type": "a",
+      },
+      "date": "2021",
+      "profit": 25,
+      "type": "a",
+    },
+    {
+      "__Dim_ColorId__": "a-profit-profit",
+      "__Dim_Color__": "a-profit",
+      "__Dim_Detail__": "a-profit",
+      "__Dim_X__": "2020",
+      "__MeaId__": "profit",
+      "__MeaName__": "profit",
+      "__MeaValue__": 30,
+      "__OriginalData__": {
+        "date": "2020",
+        "profit": 30,
+        "type": "a",
+      },
+      "date": "2020",
+      "profit": 30,
+      "type": "a",
+    },
+    {
+      "__Dim_ColorId__": "b-profit-profit",
+      "__Dim_Color__": "b-profit",
+      "__Dim_Detail__": "b-profit",
+      "__Dim_X__": "2019",
+      "__MeaId__": "profit",
+      "__MeaName__": "profit",
+      "__MeaValue__": 10,
+      "__OriginalData__": {
+        "date": "2019",
+        "profit": 10,
+        "type": "b",
+      },
+      "date": "2019",
+      "profit": 10,
+      "type": "b",
+    },
+  ],
+  "datasetReshapeInfo": [
+    {
+      "foldInfo": {
+        "foldMap": {
+          "profit": undefined,
+        },
+        "measureId": "__MeaId__",
+        "measureName": "__MeaName__",
+        "measureValue": "__MeaValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 5,
+          "max": 50,
+          "min": 10,
+          "sum": 155,
+        },
+      },
+      "id": "column",
+      "index": 0,
+      "unfoldInfo": {
+        "colorIdMap": {
+          "a-profit-profit": "a-profit",
+          "b-profit-profit": "b-profit",
+        },
+        "colorItems": [
+          "a-profit-profit",
+          "b-profit-profit",
+        ],
+        "encodingAngle": "__Dim_Angle__",
+        "encodingColor": "__Dim_Color__",
+        "encodingColorId": "__Dim_ColorId__",
+        "encodingDetail": "__Dim_Detail__",
+        "encodingX": "__Dim_X__",
+        "encodingY": "__Dim_Y__",
+      },
+    },
+  ],
+  "dimensions": [
+    {
+      "id": "date",
+    },
+    {
+      "id": "type",
+    },
+    {
+      "alias": "指标名称",
+      "id": "__MeaName__",
+    },
+  ],
+  "encoding": {
+    "color": [
+      "type",
+      "__MeaName__",
+    ],
+    "column": [],
+    "detail": [
+      "type",
+      "__MeaName__",
+    ],
+    "label": [],
+    "row": [],
+    "tooltip": [
+      "date",
+      "type",
+    ],
+    "x": [
+      "date",
+    ],
+    "y": [
+      "profit",
+    ],
+  },
+  "locale": "zh-CN",
+  "markStyle": {},
+  "measures": [
+    {
+      "id": "profit",
+    },
+  ],
+}
+`;
+
+exports[`wrap 2`] = `
+{
+  "animation": true,
+  "axes": [
+    {
+      "domainLine": {
+        "style": {
+          "lineWidth": 1,
+          "stroke": "#3641594d",
+        },
+        "visible": true,
+      },
+      "grid": {
+        "style": {
+          "lineWidth": 0.5,
+          "stroke": "#36415926",
+        },
+        "visible": false,
+      },
+      "hover": true,
+      "label": {
+        "autoHide": true,
+        "autoHideMethod": "greedy",
+        "autoHideSeparation": 4,
+        "autoLimit": true,
+        "autoRotate": false,
+        "autoRotateAngle": [
+          0,
+          -45,
+          -90,
+        ],
+        "flush": true,
+        "lastVisible": true,
+        "minGap": 4,
+        "space": 8,
+        "style": {
+          "angle": 0,
+          "fill": "#797B85",
+          "fontSize": 12,
+          "fontWeight": 400,
+          "maxLineWidth": 80,
+        },
+        "visible": true,
+      },
+      "maxHeight": 140,
+      "orient": "bottom",
+      "paddingInner": [
+        0.15,
+        0.1,
+      ],
+      "paddingOuter": [
+        0.075,
+        0.1,
+      ],
+      "sampling": false,
+      "tick": {
+        "inside": false,
+        "style": {
+          "stroke": "#3641594d",
+        },
+        "tickSize": 4,
+        "visible": false,
+      },
+      "title": {
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "text": "",
+        "visible": false,
+      },
+      "type": "band",
+      "visible": true,
+    },
+    {
+      "base": 10,
+      "domainLine": {
+        "style": {
+          "lineWidth": 1,
+          "stroke": "#3641594d",
+        },
+        "visible": false,
+      },
+      "grid": {
+        "style": {
+          "lineWidth": 0.5,
+          "stroke": "#36415926",
+        },
+        "visible": true,
+      },
+      "innerOffset": {
+        "top": 7,
+      },
+      "inverse": false,
+      "label": {
+        "formatMethod": [Function],
+        "style": {
+          "angle": 0,
+          "fill": "#797B85",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "visible": true,
+      },
+      "max": undefined,
+      "min": undefined,
+      "nice": true,
+      "orient": "left",
+      "tick": {
+        "inside": false,
+        "style": {
+          "stroke": "#3641594d",
+        },
+        "tickSize": 4,
+        "visible": false,
+      },
+      "title": {
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "text": "",
+        "visible": false,
+      },
+      "type": "linear",
+      "visible": true,
+      "zero": true,
+    },
+  ],
+  "background": "transparent",
+  "bar": {
+    "state": {
+      "hover": {
+        "fillOpacity": 0.6,
+      },
+    },
+    "style": {
+      "lineWidth": 1,
+    },
+  },
+  "color": {
+    "domain": [
+      "a-profit-profit",
+      "b-profit-profit",
+    ],
+    "range": [
+      "#8D72F6",
+      "#5766EC",
+      "#66A3FE",
+      "#51D5E6",
+      "#4EC0B3",
+      "#F9DF90",
+      "#F9AD71",
+      "#ED8888",
+      "#E9A0C3",
+      "#D77DD3",
+    ],
+    "specified": undefined,
+    "type": "ordinal",
+  },
+  "crosshair": {
+    "xField": {
+      "label": {
+        "labelBackground": {
+          "style": {
+            "fill": "#364159",
+          },
+          "visible": true,
+        },
+        "style": {
+          "fill": "#ffffff",
+        },
+        "visible": true,
+      },
+      "line": {
+        "style": {
+          "fill": "#3641594d",
+          "lineWidth": 0,
+          "opacity": 0.2,
+        },
+        "type": "rect",
+      },
+      "visible": true,
+    },
+  },
+  "data": {
+    "fields": {
+      "__Dim_Angle__": {
+        "sortIndex": 0,
+      },
+      "__Dim_ColorId__": {
+        "sortIndex": 0,
+      },
+      "__Dim_X__": {
+        "sortIndex": 0,
+      },
+    },
+    "id": "column",
+    "values": [
+      {
+        "__Dim_ColorId__": "a-profit-profit",
+        "__Dim_Color__": "a-profit",
+        "__Dim_Detail__": "a-profit",
+        "__Dim_X__": "2023",
+        "__MeaId__": "profit",
+        "__MeaName__": "profit",
+        "__MeaValue__": 40,
+        "__OriginalData__": {
+          "date": "2023",
+          "profit": 40,
+          "type": "a",
+        },
+        "date": "2023",
+        "profit": 40,
+        "type": "a",
+      },
+      {
+        "__Dim_ColorId__": "b-profit-profit",
+        "__Dim_Color__": "b-profit",
+        "__Dim_Detail__": "b-profit",
+        "__Dim_X__": "2022",
+        "__MeaId__": "profit",
+        "__MeaName__": "profit",
+        "__MeaValue__": 50,
+        "__OriginalData__": {
+          "date": "2022",
+          "profit": 50,
+          "type": "b",
+        },
+        "date": "2022",
+        "profit": 50,
+        "type": "b",
+      },
+      {
+        "__Dim_ColorId__": "a-profit-profit",
+        "__Dim_Color__": "a-profit",
+        "__Dim_Detail__": "a-profit",
+        "__Dim_X__": "2021",
+        "__MeaId__": "profit",
+        "__MeaName__": "profit",
+        "__MeaValue__": 25,
+        "__OriginalData__": {
+          "date": "2021",
+          "profit": 25,
+          "type": "a",
+        },
+        "date": "2021",
+        "profit": 25,
+        "type": "a",
+      },
+      {
+        "__Dim_ColorId__": "a-profit-profit",
+        "__Dim_Color__": "a-profit",
+        "__Dim_Detail__": "a-profit",
+        "__Dim_X__": "2020",
+        "__MeaId__": "profit",
+        "__MeaName__": "profit",
+        "__MeaValue__": 30,
+        "__OriginalData__": {
+          "date": "2020",
+          "profit": 30,
+          "type": "a",
+        },
+        "date": "2020",
+        "profit": 30,
+        "type": "a",
+      },
+      {
+        "__Dim_ColorId__": "b-profit-profit",
+        "__Dim_Color__": "b-profit",
+        "__Dim_Detail__": "b-profit",
+        "__Dim_X__": "2019",
+        "__MeaId__": "profit",
+        "__MeaName__": "profit",
+        "__MeaValue__": 10,
+        "__OriginalData__": {
+          "date": "2019",
+          "profit": 10,
+          "type": "b",
+        },
+        "date": "2019",
+        "profit": 10,
+        "type": "b",
+      },
+    ],
+  },
+  "direction": "vertical",
+  "label": {
+    "formatMethod": [Function],
+    "overlap": {
+      "clampForce": true,
+      "hideOnHit": true,
+    },
+    "position": "inside",
+    "smartInvert": true,
+    "style": {
+      "background": undefined,
+      "fill": "red",
+      "fontSize": 12,
+      "fontWeight": undefined,
+    },
+    "visible": true,
+  },
+  "legends": {
+    "autoPage": true,
+    "data": [Function],
+    "item": {
+      "background": {
+        "state": {
+          "selectedHover": {
+            "fill": "#646A73",
+            "fillOpacity": 0.05,
+          },
+        },
+      },
+      "focus": true,
+      "focusIconStyle": {
+        "fill": "#646A73",
+        "fontWeight": 400,
+        "size": 14,
+      },
+      "label": {
+        "formatMethod": [Function],
+        "style": {
+          "fill": "#646A73",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+      },
+      "maxWidth": "30%",
+      "shape": {
+        "space": 6,
+        "style": {
+          "size": 8,
+          "symbolType": "rectRound",
+        },
+      },
+    },
+    "maxCol": 1,
+    "maxRow": 1,
+    "orient": "right",
+    "padding": 0,
+    "position": "start",
+    "type": "discrete",
+    "visible": true,
+  },
+  "padding": 0,
+  "region": [
+    {
+      "clip": true,
+    },
+  ],
+  "seriesField": "__Dim_ColorId__",
+  "stackCornerRadius": [Function],
+  "stackInverse": true,
+  "tooltip": {
+    "dimension": {
+      "content": [
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+      ],
+      "title": {
+        "visible": true,
+      },
+    },
+    "mark": {
+      "content": [
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
+      ],
+      "title": {
+        "visible": false,
+      },
+    },
+    "visible": true,
+  },
+  "type": "bar",
+  "xField": "__Dim_X__",
+  "yField": "__MeaValue__",
+}
+`;
+
+exports[`wrap 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {
+    "a-profit-profit": "a-profit",
+    "b-profit-profit": "b-profit",
+  },
+  "colorItems": [
+    "a-profit",
+    "b-profit",
+  ],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

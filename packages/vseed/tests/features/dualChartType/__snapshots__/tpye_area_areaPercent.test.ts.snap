@@ -1453,6 +1453,7 @@ exports[`tpye_area_areaPercent 2`] = `
       "visible": true,
     },
   },
+  "labelLayout": "region",
   "legends": {
     "autoPage": true,
     "data": [Function],
@@ -1878,7 +1879,20 @@ exports[`tpye_area_areaPercent 2`] = `
       "id": "dualAxis-primary-series",
       "label": {
         "formatMethod": [Function],
+        "overlap": {
+          "clampForce": true,
+          "hideOnHit": true,
+        },
+        "position": undefined,
+        "smartInvert": false,
+        "style": {
+          "background": undefined,
+          "fill": undefined,
+          "fontSize": undefined,
+          "fontWeight": undefined,
+        },
         "visible": false,
+        "zIndex": 1002,
       },
       "line": {
         "style": {},
@@ -2323,7 +2337,20 @@ exports[`tpye_area_areaPercent 2`] = `
       "id": "dualAxis-secondary-series",
       "label": {
         "formatMethod": [Function],
+        "overlap": {
+          "clampForce": true,
+          "hideOnHit": true,
+        },
+        "position": undefined,
+        "smartInvert": false,
+        "style": {
+          "background": undefined,
+          "fill": undefined,
+          "fontSize": undefined,
+          "fontWeight": undefined,
+        },
         "visible": false,
+        "zIndex": 1002,
       },
       "line": {
         "style": {},

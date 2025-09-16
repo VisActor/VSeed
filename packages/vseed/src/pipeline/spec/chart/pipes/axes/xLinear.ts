@@ -3,10 +3,12 @@ import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
 import type { SpecPipe, XLinearAxis } from 'src/types'
 import { createNumFormatter } from '../../../../utils'
 import { createLinearFormat } from './format/linearFormat'
+import { defaultTitleText } from './title/defaultTitleText'
 
 export const xLinear: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
+  const { encoding, dimensions, measures } = advancedVSeed
   const { chartType } = vseed
   const config = advancedVSeed.config?.[chartType as 'bar']?.xAxis as XLinearAxis
 
@@ -71,7 +73,7 @@ export const xLinear: SpecPipe = (spec, context) => {
     },
     title: {
       visible: title?.visible,
-      text: title?.titleText,
+      text: title?.titleText || defaultTitleText(measures, dimensions, encoding.x as string[]),
       style: {
         fill: title?.titleColor,
         fontSize: title?.titleFontSize,

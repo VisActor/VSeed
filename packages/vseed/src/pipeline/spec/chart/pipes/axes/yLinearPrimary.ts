@@ -4,12 +4,13 @@ import { createNumFormatter } from '../../../../utils'
 import type { SpecPipe, YLinearAxis } from 'src/types'
 import { isEmpty, isNullish } from 'remeda'
 import { createLinearFormat } from './format/linearFormat'
+import { defaultTitleText } from './title/defaultTitleText'
 
 export const yLinearPrimary: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
-  const { datasetReshapeInfo } = advancedVSeed
+  const { datasetReshapeInfo, encoding, measures, dimensions } = advancedVSeed
   const { index, id: reshapeInfoId, foldInfoList } = datasetReshapeInfo[0]
   // TODO: default config missing
   const primaryYAxis = advancedVSeed.config?.[chartType as 'dualAxis']?.primaryYAxis as YLinearAxis | YLinearAxis[]
@@ -94,7 +95,7 @@ export const yLinearPrimary: SpecPipe = (spec, context) => {
     },
     title: {
       visible: title?.visible,
-      text: title?.titleText,
+      text: title?.titleText || defaultTitleText(measures, dimensions, encoding.y as string[]),
       style: {
         fill: title?.titleColor,
         fontSize: title?.titleFontSize,

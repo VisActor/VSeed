@@ -10,7 +10,7 @@ export const defaultDimensions: AdvancedPipe = (advancedVSeed, context) => {
   if (dimensions && dimensions.length > 0) {
     return {
       ...result,
-      dimensions: clone(dimensions),
+      dimensions: clone(dimensions.map((dim) => ({ ...dim, alias: dim.alias || dim.id }))),
     }
   }
 

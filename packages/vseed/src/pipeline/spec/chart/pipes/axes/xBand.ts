@@ -1,10 +1,12 @@
 import type { ICartesianBandAxisSpec, ISpec } from '@visactor/vchart'
 import type { SpecPipe, XBandAxis } from 'src/types'
+import { defaultTitleText } from './title/defaultTitleText'
 
 export const xBand: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
+  const { measures, dimensions, encoding } = advancedVSeed
   const config = advancedVSeed.config?.[chartType as 'column']?.xAxis as XBandAxis
 
   if (!result.axes) {
@@ -71,7 +73,7 @@ export const xBand: SpecPipe = (spec, context) => {
     },
     title: {
       visible: title?.visible,
-      text: title?.titleText,
+      text: title?.titleText || defaultTitleText(measures, dimensions, encoding.x as string[]),
       style: {
         fill: title?.titleColor,
         fontSize: title?.titleFontSize,

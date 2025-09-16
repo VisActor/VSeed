@@ -23,6 +23,24 @@ const Demo = () => {
         '#D77DD3',
       ],
     },
+    yAxis: {
+      title: {
+        visible: true,
+        titleFontSize: 12,
+      },
+      titleStyle: {},
+      labelStyle: {},
+      format: {},
+      label: {
+        labelFontSize: 12,
+      },
+      visible: true,
+      numFormat: {
+        type: 'number',
+        fractionDigits: 0,
+      },
+      autoFormat: true,
+    },
     legend: {
       enable: true,
       position: 'rightTop',
@@ -39,7 +57,7 @@ const Demo = () => {
       style: {},
       labelFontSize: 12,
     },
-    chartType: 'column',
+    chartType: 'bar',
     dataset: [
       {
         co_20250916102528_4a14: '华东',
@@ -85,24 +103,6 @@ const Demo = () => {
       },
       visible: true,
     },
-    yAxis: {
-      title: {
-        visible: false,
-        titleFontSize: 12,
-      },
-      titleStyle: {},
-      labelStyle: {},
-      format: {},
-      label: {
-        labelFontSize: 12,
-      },
-      visible: true,
-      numFormat: {
-        type: 'number',
-        fractionDigits: 0,
-      },
-      autoFormat: true,
-    },
     stackCornerRadius: 0,
     label: {
       enable: true,
@@ -133,7 +133,6 @@ const Demo = () => {
     dimensions: [
       {
         id: 'co_20250916102528_4a14',
-        alias: 'area',
         encoding: 'xAxis',
         autoFormat: true,
       },

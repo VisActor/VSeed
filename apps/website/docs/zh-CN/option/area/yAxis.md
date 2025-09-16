@@ -89,7 +89,7 @@ y轴
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
-是否自动格式化数值轴的刻度标签, 仅对数值轴生效, 当配置了 numFormat 时, 该配置项失效
+是否自动格式化数值轴的刻度标签, 仅对数值轴生效, autoFormat 为 true 时, numFormat 配置失效
 
 :::
 
@@ -98,7 +98,7 @@ y轴
 **Type:** `NumFormat | undefined`
 
 :::note{title=描述}
-数值轴的数字格式化, 仅对数值轴生效
+数值轴的数字格式化, 仅对数值轴生效, 优先级低于 autoFormat
 
 :::
 

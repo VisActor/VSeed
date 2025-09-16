@@ -129,6 +129,10 @@
   },
   "locale": "zh-CN",
   "yAxis": {
+    "autoFormat": false,
+    "numFormat": {
+      "prefix": "¥"
+    },
     "title": {
       "visible": true,
       "titleText": "测试一下"

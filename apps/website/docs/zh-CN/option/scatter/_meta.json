@@ -81,6 +81,16 @@
   },
   {
     "type": "file",
+    "name": "size",
+    "label": "size "
+  },
+  {
+    "type": "file",
+    "name": "sizeRange",
+    "label": "sizeRange "
+  },
+  {
+    "type": "file",
     "name": "theme",
     "label": "theme "
   },

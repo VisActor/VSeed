@@ -152,6 +152,22 @@ export interface Scatter {
   scatterMeasures?: ScatterMeasures
 
   /**
+   * @description 散点图指标的大小, 用于定义散点图中数据点的大小 或 大小范围
+   * - 若大小范围是一个数字, 例如10, 表示数据点的大小范围固定为10
+   * - 若大小范围是一个长度为2的数组, 例如[10, 40], 表示数据点的大小范围在10到40之间
+   * - 与sizeRange互斥, 优先级低于 size
+   */
+  size?: number | number[]
+
+  /**
+   * @description 散点图指标的大小范围, 用于定义散点图中数据点的大小范围,
+   * - 若大小范围是一个长度为2的数组, 例如[10, 40], 表示数据点的大小范围在10到40之间
+   * - 若大小范围是一个数字, 例如10, 表示数据点的大小范围固定为10
+   * - 与sizeRange互斥, 优先级高于 size
+   */
+  sizeRange?: number | number[]
+
+  /**
    * 图表的背景颜色
    * @default transparent 默认为透明背景
    * @description 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'

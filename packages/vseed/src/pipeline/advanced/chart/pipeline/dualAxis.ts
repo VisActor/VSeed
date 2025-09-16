@@ -17,7 +17,7 @@ import {
   defaultMeasureName,
   encodingAdapter,
   defaultEncodingForDualAxis,
-  deleteTooltipAndLabelMeasure,
+  deleteEncodingForMeasure,
   deleteTooltipAndLabelDimension,
 } from '../pipes'
 
@@ -29,7 +29,12 @@ export const dualAxisAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForDualAxis, buildMeasuresForDualAxis],
-    [encodingForDualAxis, buildMeasuresForDualAxis, deleteTooltipAndLabelMeasure, deleteTooltipAndLabelDimension],
+    [
+      encodingForDualAxis,
+      buildMeasuresForDualAxis,
+      deleteEncodingForMeasure(['tooltip', 'label']),
+      deleteTooltipAndLabelDimension,
+    ],
   ),
   pivotAdapter([reshapeWithDualEncoding], [pivotReshapeWithDualEncoding]),
 

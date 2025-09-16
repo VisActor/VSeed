@@ -17,7 +17,7 @@ import {
   defaultMeasureName,
   encodingAdapter,
   defaultEncodingForColumn,
-  deleteTooltipAndLabelMeasure,
+  deleteEncodingForMeasure,
   deleteTooltipAndLabelDimension,
 } from '../pipes'
 
@@ -29,7 +29,7 @@ export const columnPercentAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForColumn, buildMeasures],
-    [encodingForColumn, buildMeasures, deleteTooltipAndLabelMeasure, deleteTooltipAndLabelDimension],
+    [encodingForColumn, buildMeasures, deleteEncodingForMeasure(['tooltip', 'label']), deleteTooltipAndLabelDimension],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

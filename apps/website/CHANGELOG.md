@@ -1,5 +1,13 @@
 # website
 
+## 0.1.15
+
+### Patch Changes
+
+- feat: add label and y foramt
+- Updated dependencies
+  - @visactor/vseed@0.1.15
+
 ## 0.1.14
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.15
+
+### Patch Changes
+
+- feat: add label and y foramt
+
 ## 0.1.14
 
 ### Patch Changes

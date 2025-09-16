@@ -14,7 +14,6 @@ import type {
   SpecPipe,
 } from 'src/types'
 import { isEmpty, merge, uniqueBy } from 'remeda'
-import { DUAL_AXIS_LABEL_Z_INDEX } from 'src/pipeline/utils/constant'
 
 export const label: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec

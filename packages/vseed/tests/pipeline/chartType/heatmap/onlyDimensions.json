@@ -1,0 +1,10 @@
+{
+  "chartType": "heatmap",
+  "dataset": [
+    { "date": "2019", "type": "abcde" },
+    { "date": "2020", "type": "abcde" },
+    { "date": "2021", "type": "abcde" },
+    { "date": "2022", "type": "abcde" },
+    { "date": "2023", "type": "abcde" }
+  ]
+}

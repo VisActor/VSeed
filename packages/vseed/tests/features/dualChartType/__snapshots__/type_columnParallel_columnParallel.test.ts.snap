@@ -1134,6 +1134,7 @@ exports[`type_columnParallel_columnParallel 1`] = `
       "id": "di_20250914101717_a7e4",
     },
     {
+      "alias": "__MeaName__",
       "encoding": "color",
       "id": "__MeaName__",
     },
@@ -1272,7 +1273,7 @@ exports[`type_columnParallel_columnParallel 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "细分",
         "visible": false,
       },
       "type": "band",

@@ -374,7 +374,7 @@ exports[`wrap 1`] = `
     {
       "foldInfo": {
         "foldMap": {
-          "profit": undefined,
+          "profit": "profit",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
@@ -410,9 +410,11 @@ exports[`wrap 1`] = `
   ],
   "dimensions": [
     {
+      "alias": "date",
       "id": "date",
     },
     {
+      "alias": "type",
       "id": "type",
     },
     {
@@ -447,6 +449,7 @@ exports[`wrap 1`] = `
   "markStyle": {},
   "measures": [
     {
+      "alias": "profit",
       "id": "profit",
     },
   ],
@@ -522,7 +525,7 @@ exports[`wrap 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "date",
         "visible": false,
       },
       "type": "band",
@@ -576,7 +579,7 @@ exports[`wrap 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "profit",
         "visible": false,
       },
       "type": "linear",
@@ -827,6 +830,13 @@ exports[`wrap 2`] = `
     },
     "mark": {
       "content": [
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
         {
           "hasShape": true,
           "key": [Function],

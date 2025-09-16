@@ -859,7 +859,7 @@ exports[`1_dimColor 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "利润 & 销售额",
         "visible": false,
       },
       "type": "linear",

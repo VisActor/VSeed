@@ -1405,7 +1405,7 @@ exports[`horizontal 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "profit & sales",
         "visible": false,
       },
       "type": "linear",

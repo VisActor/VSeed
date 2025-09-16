@@ -997,6 +997,7 @@ exports[`defaultDetail 1`] = `
       "id": "di_20250914101717_a7e4",
     },
     {
+      "alias": "__MeaName__",
       "encoding": "color",
       "id": "__MeaName__",
     },
@@ -1124,7 +1125,7 @@ exports[`defaultDetail 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "细分",
         "visible": false,
       },
       "type": "band",

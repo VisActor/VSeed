@@ -1348,7 +1348,7 @@ exports[`on 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "date",
         "visible": false,
       },
       "type": "band",

@@ -507,7 +507,7 @@ exports[`emptyDualAxis 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "指标名称",
         "visible": false,
       },
       "type": "band",

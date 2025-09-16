@@ -656,7 +656,7 @@ exports[`scatter 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "销售额 & 利润",
         "visible": false,
       },
       "type": "linear",

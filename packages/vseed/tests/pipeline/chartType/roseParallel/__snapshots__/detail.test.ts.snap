@@ -817,6 +817,7 @@ exports[`detail 1`] = `
       "id": "di_20250914101717_a7e4",
     },
     {
+      "alias": "__MeaName__",
       "encoding": "color",
       "id": "__MeaName__",
     },

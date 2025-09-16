@@ -325,9 +325,9 @@ exports[`type 1`] = `
     {
       "foldInfo": {
         "foldMap": {
-          "count": undefined,
-          "profit": undefined,
-          "sales": undefined,
+          "count": "count",
+          "profit": "profit",
+          "sales": "sales",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
@@ -393,18 +393,21 @@ exports[`type 1`] = `
   "markStyle": {},
   "measures": [
     {
+      "alias": "profit",
       "format": {
         "type": "percent",
       },
       "id": "profit",
     },
     {
+      "alias": "sales",
       "format": {
         "type": "permille",
       },
       "id": "sales",
     },
     {
+      "alias": "count",
       "format": {
         "type": "scientific",
       },
@@ -483,7 +486,7 @@ exports[`type 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "指标名称",
         "visible": false,
       },
       "type": "band",
@@ -537,7 +540,7 @@ exports[`type 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "profit & sales & count",
         "visible": false,
       },
       "type": "linear",

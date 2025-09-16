@@ -2,7 +2,6 @@ import type { SpecPipeline } from 'src/types'
 import {
   yLinear,
   backgroundColor,
-  label,
   tooltipScatter,
   discreteLegend,
   color,
@@ -32,6 +31,7 @@ import {
   colorPointStyleFill,
   colorLegend,
   pivotColorLegend,
+  labelScatter,
 } from '../pipes'
 
 const scatter: SpecPipeline = [
@@ -42,7 +42,7 @@ const scatter: SpecPipeline = [
   progressive,
   xLinear,
   yLinear,
-  label,
+  labelScatter,
   tooltipScatter,
   colorAdapter(discreteLegend, colorLegend),
   verticalCrosshairLine,
@@ -68,7 +68,7 @@ const pivotScatter: SpecPipeline = [
     progressive,
     xLinear,
     yLinear,
-    label,
+    labelScatter,
     tooltipScatter,
     verticalCrosshairLine,
     horizontalCrosshairLine,

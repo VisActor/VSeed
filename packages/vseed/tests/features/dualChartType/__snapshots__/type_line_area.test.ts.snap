@@ -2349,6 +2349,7 @@ exports[`type_line_area 2`] = `
           "fontWeight": undefined,
         },
         "visible": false,
+        "zIndex": 1002,
       },
       "line": {
         "style": {},

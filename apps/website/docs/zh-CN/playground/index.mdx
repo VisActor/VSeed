@@ -10,52 +10,31 @@ const Demo = () => {
 
   const vseed: VSeed = {
     chartType: 'dualAxis',
-    dataset: [
-      {
-        co_20250914131915_8e38: '7642',
-        xA_20250914131841_3aa1: '技术',
-        yA_20250914131844_6718: '7642',
-      },
-      {
-        co_20250914131915_8e38: '21401',
-        xA_20250914131841_3aa1: '办公用品',
-        yA_20250914131844_6718: '21401',
-      },
-      {
-        co_20250914131915_8e38: '8491',
-        xA_20250914131841_3aa1: '家具',
-        yA_20250914131844_6718: '8491',
-      },
-    ],
     measures: [
+      { id: 'sales', alias: '销售额', autoFormat: true },
       {
-        id: 'co_20250914131915_8e38',
-        alias: 'sum(amount)',
+        id: 'profit',
+        alias: '利润',
+        autoFormat: false,
         format: {
           type: 'number',
-        },
-      },
-      {
-        id: 'yA_20250914131844_6718',
-        alias: 'sum(amount)',
-        format: {
-          type: 'number',
+          ratio: 1000,
+          thousandSeparator: true,
+          decimalPlaces: 0,
+          symbol: '千',
+          prefix: '利润',
+          suffix: '$',
         },
       },
     ],
-
-    dimensions: [
-      {
-        id: 'xA_20250914131841_3aa1',
-        alias: 'product_type',
-        autoFormat: true,
-      },
+    dimensions: [{ id: 'date', alias: '日期' }],
+    dataset: [
+      { date: '2019', profit: 10000, sales: 200000 },
+      { date: '2020', profit: 20000, sales: 400000 },
+      { date: '2021', profit: 30000, sales: 600000 },
+      { date: '2022', profit: 40000, sales: 800000 },
+      { date: '2023', profit: 50000, sales: 1000000 },
     ],
-
-    label: {
-      enable: true,
-      showValuePercent: true,
-    },
   }
 
   const parseRes = zVSeed.safeParse(vseed)

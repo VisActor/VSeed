@@ -14,6 +14,7 @@ import type {
   SpecPipe,
 } from 'src/types'
 import { isEmpty, merge, uniqueBy } from 'remeda'
+import { DUAL_AXIS_LABEL_Z_INDEX } from 'src/pipeline/utils/constant'
 
 export const label: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
@@ -21,20 +22,16 @@ export const label: SpecPipe = (spec, context) => {
   const { datasetReshapeInfo } = advancedVSeed
   const { chartType, encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { label: Label }
-
+  const foldInfo = datasetReshapeInfo[0].foldInfo as FoldInfo
   if (!baseConfig || isEmpty(baseConfig.label)) {
     return result
   }
 
   const { label } = baseConfig
-  result.label = buildLabel(
-    label,
-    vseed.measures,
-    vseed.dimensions,
-    advancedVSeed.measures,
-    encoding as Encoding,
-    datasetReshapeInfo[0].foldInfo,
-  )
+
+  result.label = buildLabel(label, vseed.measures, vseed.dimensions, advancedVSeed.measures, encoding as Encoding, [
+    foldInfo,
+  ])
 
   return result
 }
@@ -71,10 +68,8 @@ export const buildLabel = (
   vseedDimensions: Dimensions = [],
   advancedVSeedMeasures: Measures,
   encoding: Encoding,
-  foldInfo: FoldInfo,
+  foldInfoList: FoldInfo[],
 ) => {
-  const { measureId, measureValue, statistics } = foldInfo
-
   const {
     enable,
     wrap,
@@ -116,27 +111,29 @@ export const buildLabel = (
         generateMeasureValue(datum[item.id] as number | string, item, autoFormat, numFormat),
       )
 
-      const measure = findMeasureById(advancedVSeedMeasures, datum[measureId] as string)
-      const measureValueLabel = generateMeasureValue(
-        datum[measureValue] as number | string,
-        measure,
-        autoFormat,
-        numFormat,
-      )
-      const measurePercentLabel = generateMeasurePercent(
-        datum[measureValue] as number | string,
-        statistics.sum,
-        percentFormatter,
-      )
-
       result.push(...dimLabels)
 
-      if (showValue) {
-        result.push(measureValueLabel)
-      }
-      if (showValuePercent) {
-        result.push(measurePercentLabel)
-      }
+      foldInfoList.forEach((foldInfo) => {
+        const { measureId, measureValue, statistics } = foldInfo
+        const measure = findMeasureById(advancedVSeedMeasures, datum[measureId] as string)
+        const measureValueLabel = generateMeasureValue(
+          datum[measureValue] as number | string,
+          measure,
+          autoFormat,
+          numFormat,
+        )
+        const measurePercentLabel = generateMeasurePercent(
+          datum[measureValue] as number | string,
+          statistics.sum,
+          percentFormatter,
+        )
+        if (showValue) {
+          result.push(measureValueLabel)
+        }
+        if (showValuePercent) {
+          result.push(measurePercentLabel)
+        }
+      })
 
       result.push(...meaLabels)
 

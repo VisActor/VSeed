@@ -1254,6 +1254,7 @@ exports[`basic 2`] = `
           "fontWeight": undefined,
         },
         "visible": true,
+        "zIndex": 1002,
       },
       "line": {
         "style": {},

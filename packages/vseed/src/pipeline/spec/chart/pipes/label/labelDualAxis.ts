@@ -2,6 +2,7 @@ import type { ILineChartSpec } from '@visactor/vchart'
 import type { Encoding, FoldInfo, Label, SpecPipe } from 'src/types'
 import { isNullish } from 'remeda'
 import { buildLabel } from './label'
+import { DUAL_AXIS_LABEL_Z_INDEX } from 'src/pipeline/utils/constant'
 
 export const labelPrimary: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
@@ -21,7 +22,7 @@ export const labelPrimary: SpecPipe = (spec, context) => {
     vseed.dimensions,
     advancedVSeed.measures,
     encoding as Encoding,
-    foldInfoList[0],
+    [foldInfoList[0]],
   )
 
   return result
@@ -48,8 +49,10 @@ export const labelSecondary: SpecPipe = (spec, context) => {
     vseed.dimensions,
     advancedVSeed.measures,
     encoding as Encoding,
-    foldInfoList[1],
+    [foldInfoList[1]],
   )
+
+  result.label.zIndex = DUAL_AXIS_LABEL_Z_INDEX
 
   return result
 }

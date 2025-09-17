@@ -2,6 +2,7 @@
   "name": "vseed-monorepo",
   "private": true,
   "keywords": [
+    "vseed",
     "vchart",
     "vtable",
     "visactor"
@@ -20,7 +21,7 @@
     "test": "pnpm --filter=@visactor/vseed test",
     "rstest": "pnpm --filter=@visactor/vseed rstest",
     "test:coverage": "pnpm --filter=@visactor/vseed test:coverage&& node scripts/build-coverage-badge.mjs",
-    "publish:vseed": "pnpm run build:vseed && pnpm publish --filter=@visactor/vseed --access=public"
+    "publish:vseed": "pnpm run build:vseed && pnpm publish --tag --filter=@visactor/vseed --access=public"
   },
   "workspaces": [
     "apps/*",

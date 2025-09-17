@@ -1,5 +1,12 @@
 # @visactor/vseed
 
+## 0.1.18
+
+### Patch Changes
+
+- fix: parallel chart error
+- fix: no need rose axis 
+
 ## 0.1.17
 
 ### Patch Changes

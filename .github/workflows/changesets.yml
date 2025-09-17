@@ -34,25 +34,7 @@ jobs:
           commit: 'chore: update versions'
           title: 'chore: update versions'
           publish: pnpm publish:vseed
+          createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Create and push Git tag
-        if: steps.changesets.outputs.published == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # 获取版本号
-          VERSION=$(node -p "require('./packages/vseed/package.json').version")
-          echo "Version is $VERSION"
-
-          # 配置 git 用户信息
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-
-          # 创建 tag
-          git tag "v$VERSION"
-
-          # 推送 tag
-          git push origin "v$VERSION"

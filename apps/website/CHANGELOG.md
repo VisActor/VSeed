@@ -1,5 +1,13 @@
 # website
 
+## 0.1.18
+
+### Patch Changes
+
+- fix: parallel chart error
+- Updated dependencies
+  - @visactor/vseed@0.1.18
+
 ## 0.1.17
 
 ### Patch Changes

@@ -30,7 +30,7 @@ export const zColumn = z.object({
   measures: zMeasureTree.nullish(),
   backgroundColor: zBackgroundColor.nullish(),
   color: zColor.nullish(),
-  label: zLabel.nullish(),
+  label: zLabel.omit({ labelLayout: true }).nullish(),
   legend: zLegend.nullish(),
   tooltip: zTooltip.nullish(),
   xAxis: zXBandAxis.nullish(),

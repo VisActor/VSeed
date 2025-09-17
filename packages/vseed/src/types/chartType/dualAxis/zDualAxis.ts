@@ -44,7 +44,7 @@ export const zDualAxis = z.object({
 
   backgroundColor: zBackgroundColor.nullish(),
   color: zColor.nullish(),
-  label: zLabel.nullish(),
+  label: zLabel.omit({ labelLayout: true }).nullish(),
   legend: zLegend.nullish(),
   tooltip: zTooltip.nullish(),
 

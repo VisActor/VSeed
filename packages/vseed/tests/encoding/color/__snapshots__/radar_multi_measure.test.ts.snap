@@ -1084,6 +1084,9 @@ exports[`radar_multi_measure 2`] = `
   },
   "label": {
     "formatMethod": [Function],
+    "layout": {
+      "align": undefined,
+    },
     "overlap": {
       "clampForce": true,
       "hideOnHit": true,

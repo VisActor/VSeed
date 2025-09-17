@@ -1,5 +1,13 @@
 # website
 
+## 0.1.19
+
+### Patch Changes
+
+- feat: optimize pivot table style
+- Updated dependencies
+  - @visactor/vseed@0.1.19
+
 ## 0.1.18
 
 ### Patch Changes

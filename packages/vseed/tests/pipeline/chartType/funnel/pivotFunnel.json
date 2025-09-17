@@ -42,7 +42,7 @@
   "dimensions": [
     {
       "id": "month",
-      "alias": "月",
+      "alias": "月"
     },
     {
       "id": "date",

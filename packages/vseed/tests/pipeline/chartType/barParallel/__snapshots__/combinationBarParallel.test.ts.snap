@@ -598,8 +598,19 @@ exports[`combinationBarParallel 1`] = `
 exports[`combinationBarParallel 2`] = `
 {
   "animation": true,
+  "animationAppear": {
+    "direction": "row",
+    "duration": 600,
+    "type": "all",
+  },
   "columns": [],
+  "corner": {
+    "titleOnDimension": "all",
+  },
   "heightMode": "adaptive",
+  "hover": {
+    "highlightMode": "cross",
+  },
   "indicators": [
     {
       "cellType": "chart",
@@ -809,6 +820,9 @@ exports[`combinationBarParallel 2`] = `
         "direction": "horizontal",
         "label": {
           "formatMethod": [Function],
+          "layout": {
+            "align": undefined,
+          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,
@@ -1095,6 +1109,9 @@ exports[`combinationBarParallel 2`] = `
         "direction": "horizontal",
         "label": {
           "formatMethod": [Function],
+          "layout": {
+            "align": undefined,
+          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,
@@ -1416,106 +1433,147 @@ exports[`combinationBarParallel 2`] = `
     ],
   },
   "rows": [],
+  "select": {
+    "headerSelectMode": "inline",
+    "highlightMode": "cell",
+  },
   "theme": {
     "bodyStyle": {
       "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
+      "borderColor": "#e3e5eb",
       "borderLineWidth": [
+        1,
+        1,
         0,
-        0,
-        2,
-        0,
+        1,
       ],
+      "color": "#141414",
       "hover": {
         "cellBgColor": "transparent",
       },
-      "padding": [
-        0,
-        0,
-        1,
-        0,
-      ],
     },
     "bottomFrozenStyle": {
       "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
-      "borderLineWidth": 0,
+      "borderColor": "#e3e5eb",
+      "borderLineWidth": 1,
       "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
+        "cellBgColor": "#D9DDE4",
       },
     },
     "cornerHeaderStyle": {
       "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
-      "borderLineWidth": [
-        0,
-        0,
-        0,
-        0,
-      ],
-      "color": "#333333",
+      "borderColor": "#e3e5eb",
+      "borderLineWidth": 1,
+      "color": "#21252c",
       "fontSize": 12,
       "fontWeight": "bold",
+      "frameStyle": {
+        "borderColor": "#e3e5eb",
+        "borderLineWidth": [
+          1,
+          0,
+          0,
+          1,
+        ],
+      },
       "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
+        "cellBgColor": "#D9DDE4",
+        "inlineColumnBgColor": "#D9DDE455",
+        "inlineRowBgColor": "#D9DDE455",
       },
       "textAlign": "center",
     },
     "cornerLeftBottomCellStyle": {
       "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
-      "borderLineWidth": 0,
+      "borderColor": "#e3e5eb",
+      "borderLineWidth": [
+        1,
+        0,
+        1,
+        1,
+      ],
+      "frameStyle": {
+        "borderColor": "#e3e5eb",
+        "borderLineWidth": [
+          1,
+          0,
+          1,
+          1,
+        ],
+      },
       "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
+        "cellBgColor": "#D9DDE4",
       },
     },
     "cornerRightBottomCellStyle": {
       "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
+      "borderColor": "#e3e5eb",
       "borderLineWidth": 0,
+      "frameStyle": {
+        "borderColor": "#e3e5eb",
+        "borderLineWidth": [
+          1,
+          1,
+          1,
+          1,
+        ],
+      },
       "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
+        "cellBgColor": "#D9DDE4",
       },
     },
     "cornerRightTopCellStyle": {
       "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
+      "borderColor": "#e3e5eb",
       "borderLineWidth": 0,
+      "frameStyle": {
+        "borderColor": "#e3e5eb",
+        "borderLineWidth": [
+          1,
+          1,
+          0,
+          1,
+        ],
+      },
       "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
+        "cellBgColor": "#D9DDE4",
       },
     },
     "frameStyle": {
-      "bgColor": "rgba(0,0,0,0)",
-      "borderLineWidth": 0,
+      "borderColor": "#e3e5eb",
+      "cornerRadius": 4,
     },
     "headerStyle": {
       "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
-      "borderLineWidth": 0,
-      "color": "#333333",
+      "borderColor": "#e3e5eb",
+      "borderLineWidth": 1,
+      "color": "#21252c",
       "fontSize": 12,
       "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
+        "cellBgColor": "#D9DDE4",
+        "inlineColumnBgColor": "#D9DDE455",
+        "inlineRowBgColor": "#D9DDE455",
       },
       "textAlign": "center",
     },
     "rightFrozenStyle": {
       "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
-      "borderLineWidth": 0,
+      "borderColor": "#e3e5eb",
+      "borderLineWidth": 1,
       "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
+        "cellBgColor": "#D9DDE4",
       },
     },
     "rowHeaderStyle": {
       "bgColor": "rgba(0,0,0,0)",
-      "borderColor": "rgba(0,4,20,0.2)",
-      "borderLineWidth": 0,
-      "color": "#333333",
+      "borderColor": "#e3e5eb",
+      "borderLineWidth": 1,
+      "color": "#21252c",
       "fontSize": 12,
       "hover": {
-        "cellBgColor": "rgba(178,186,207, 0.2)",
+        "cellBgColor": "#D9DDE4",
+        "inlineColumnBgColor": "#D9DDE455",
+        "inlineRowBgColor": "#D9DDE455",
       },
     },
     "selectionStyle": {
@@ -1523,6 +1581,9 @@ exports[`combinationBarParallel 2`] = `
       "cellBorderColor": "",
     },
     "underlayBackgroundColor": "rgba(0,0,0,0)",
+  },
+  "tooltip": {
+    "isShowOverflowTextTooltip": true,
   },
   "widthMode": "adaptive",
 }

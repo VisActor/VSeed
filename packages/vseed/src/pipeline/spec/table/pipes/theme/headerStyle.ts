@@ -29,8 +29,8 @@ export const headerStyle: SpecPipe = (spec, context) => {
       inlineColumnBgColor: hoverInlineColor,
     },
     frameStyle: {
-      borderColor: [null, null, borderColor, null],
-      borderLineWidth: 1,
+      borderColor: borderColor,
+      borderLineWidth: [0, 0, 1, 0],
     },
     fontSize: fontSize,
     fontVariant: 'normal',

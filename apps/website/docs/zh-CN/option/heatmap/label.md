@@ -1,6 +1,6 @@
 # label
 
-**Type:** `Label | undefined`
+**Type:** `Omit<Label, "labelLayout"> | undefined`
 
 :::note{title=描述}
 热力图标签配置, 用于定义图表的数据标签, 自动开启标签反色, 确保标签可读性.

@@ -1061,6 +1061,9 @@ exports[`1_dimColor 2`] = `
   "isTransform": true,
   "label": {
     "formatMethod": [Function],
+    "layout": {
+      "align": undefined,
+    },
     "overlap": {
       "clampForce": true,
       "hideOnHit": true,

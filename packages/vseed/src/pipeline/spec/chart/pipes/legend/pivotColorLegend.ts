@@ -53,15 +53,7 @@ export const pivotColorLegend: SpecPipe = (spec, context) => {
     max: max,
 
     maxWidth: '30%',
-    startText: {
-      visible: true,
-      style: {
-        fill: labelColor || labelFontColor,
-        fontSize: labelFontSize,
-        fontWeight: labelFontWeight,
-      },
-    },
-    endText: {
+    handlerText: {
       visible: true,
       style: {
         fill: labelColor || labelFontColor,

@@ -1388,6 +1388,9 @@ exports[`1_dimColor 2`] = `
   "direction": "horizontal",
   "label": {
     "formatMethod": [Function],
+    "layout": {
+      "align": undefined,
+    },
     "overlap": {
       "clampForce": true,
       "hideOnHit": true,

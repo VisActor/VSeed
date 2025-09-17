@@ -520,9 +520,10 @@ exports[`pivotTable 2`] = `
       ],
       "textAlign": "right",
     },
+    "cellInnerBorder": false,
     "frameStyle": {
       "borderColor": "#e3e5eb",
-      "borderLineWidth": 0,
+      "borderLineWidth": 1,
       "cornerRadius": 4,
     },
     "headerStyle": {
@@ -535,13 +536,13 @@ exports[`pivotTable 2`] = `
       "fontVariant": "normal",
       "fontWeight": "bold",
       "frameStyle": {
-        "borderColor": [
-          null,
-          null,
-          "#e3e5eb",
-          null,
+        "borderColor": "#e3e5eb",
+        "borderLineWidth": [
+          0,
+          0,
+          1,
+          0,
         ],
-        "borderLineWidth": 1,
       },
       "hover": {
         "cellBgColor": "#D9DDE4",

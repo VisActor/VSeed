@@ -292,10 +292,16 @@ export const lightTheme = (): CustomThemeConfig => {
         label: {
           ...baseConfig.label,
           showValuePercent: true,
+          labelLayout: 'labelLine',
         },
       },
       donut: {
         ...baseConfig,
+        label: {
+          ...baseConfig.label,
+          showValuePercent: true,
+          labelLayout: 'labelLine',
+        },
       },
       radar: {
         ...baseConfig,

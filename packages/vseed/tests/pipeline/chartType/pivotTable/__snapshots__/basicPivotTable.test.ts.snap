@@ -447,6 +447,7 @@ exports[`basicPivotTable 2`] = `
       ],
       "textAlign": "right",
     },
+    "cellInnerBorder": false,
     "cornerHeaderStyle": {
       "bgColor": "#f6f7f9",
       "borderColor": [
@@ -460,13 +461,13 @@ exports[`basicPivotTable 2`] = `
       "fontVariant": "normal",
       "fontWeight": "bold",
       "frameStyle": {
-        "borderColor": [
-          null,
-          "#e3e5eb",
-          "#e3e5eb",
-          null,
+        "borderColor": "#e3e5eb",
+        "borderLineWidth": [
+          0,
+          1,
+          1,
+          0,
         ],
-        "borderLineWidth": 1,
       },
       "hover": {
         "cellBgColor": "#D9DDE4",
@@ -484,7 +485,7 @@ exports[`basicPivotTable 2`] = `
     },
     "frameStyle": {
       "borderColor": "#e3e5eb",
-      "borderLineWidth": 0,
+      "borderLineWidth": 1,
       "cornerRadius": 4,
     },
     "headerStyle": {
@@ -497,13 +498,13 @@ exports[`basicPivotTable 2`] = `
       "fontVariant": "normal",
       "fontWeight": "bold",
       "frameStyle": {
-        "borderColor": [
-          null,
-          null,
-          "#e3e5eb",
-          null,
+        "borderColor": "#e3e5eb",
+        "borderLineWidth": [
+          0,
+          0,
+          1,
+          0,
         ],
-        "borderLineWidth": 1,
       },
       "hover": {
         "cellBgColor": "#D9DDE4",
@@ -529,13 +530,13 @@ exports[`basicPivotTable 2`] = `
       "fontVariant": "normal",
       "fontWeight": "bold",
       "frameStyle": {
-        "borderColor": [
-          null,
-          "#e3e5eb",
-          null,
-          null,
+        "borderColor": "#e3e5eb",
+        "borderLineWidth": [
+          0,
+          1,
+          0,
+          0,
         ],
-        "borderLineWidth": 1,
       },
       "hover": {
         "cellBgColor": "#D9DDE4",

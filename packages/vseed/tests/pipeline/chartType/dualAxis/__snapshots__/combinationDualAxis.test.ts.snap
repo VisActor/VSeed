@@ -38,6 +38,8 @@ exports[`combinationDualAxis 1`] = `
       },
       "label": {
         "enable": true,
+        "labelColorSmartInvert": false,
+        "labelOverlap": true,
         "showValue": true,
         "showValuePercent": false,
         "wrap": true,
@@ -45,7 +47,7 @@ exports[`combinationDualAxis 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelFontColor": "#646A73",
+        "labelColor": "#646A73",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
@@ -202,6 +204,8 @@ exports[`combinationDualAxis 1`] = `
         },
         "label": {
           "enable": true,
+          "labelColorSmartInvert": false,
+          "labelOverlap": true,
           "showValue": true,
           "showValuePercent": false,
           "wrap": true,
@@ -209,7 +213,7 @@ exports[`combinationDualAxis 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelFontColor": "#646A73",
+          "labelColor": "#646A73",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
@@ -723,7 +727,7 @@ exports[`combinationDualAxis 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "日期",
         "visible": false,
       },
       "type": "band",
@@ -779,7 +783,7 @@ exports[`combinationDualAxis 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "销售额 & 利润",
         "visible": false,
       },
       "type": "linear",
@@ -840,7 +844,7 @@ exports[`combinationDualAxis 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "销售额 & 利润",
         "visible": false,
       },
       "type": "linear",
@@ -894,6 +898,7 @@ exports[`combinationDualAxis 2`] = `
       "visible": true,
     },
   },
+  "labelLayout": "region",
   "legends": {
     "autoPage": true,
     "data": [Function],
@@ -1062,7 +1067,20 @@ exports[`combinationDualAxis 2`] = `
       "id": "dualAxis-primary-series",
       "label": {
         "formatMethod": [Function],
+        "overlap": {
+          "clampForce": true,
+          "hideOnHit": true,
+        },
+        "position": undefined,
+        "smartInvert": false,
+        "style": {
+          "background": undefined,
+          "fill": undefined,
+          "fontSize": undefined,
+          "fontWeight": undefined,
+        },
         "visible": true,
+        "zIndex": 1002,
       },
       "line": {
         "style": {},
@@ -1243,7 +1261,20 @@ exports[`combinationDualAxis 2`] = `
       "id": "dualAxis-secondary-series",
       "label": {
         "formatMethod": [Function],
+        "overlap": {
+          "clampForce": true,
+          "hideOnHit": true,
+        },
+        "position": undefined,
+        "smartInvert": false,
+        "style": {
+          "background": undefined,
+          "fill": undefined,
+          "fontSize": undefined,
+          "fontWeight": undefined,
+        },
         "visible": true,
+        "zIndex": 1002,
       },
       "line": {
         "style": {},

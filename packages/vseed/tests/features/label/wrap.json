@@ -1,0 +1,40 @@
+{
+  "chartType": "column",
+  "dataset": [
+    { "date": "2023", "type": "a", "profit": 40 },
+    { "date": "2022", "type": "b", "profit": 50 },
+    { "date": "2021", "type": "a", "profit": 25 },
+    { "date": "2020", "type": "a", "profit": 30 },
+    { "date": "2019", "type": "b", "profit": 10 }
+  ],
+  "label": {
+    "enable": true,
+    "wrap": false,
+    "showValue": true,
+    "showValuePercent": true,
+    "labelColor": "red",
+    "labelColorSmartInvert": true,
+    "labelFontSize": 12,
+    "labelOverlap": true,
+    "labelPosition": "inside",
+    "autoFormat": false,
+    "numFormat": {
+      "suffix": "前缀-",
+      "prefix": "后缀-",
+      "fractionDigits": 3
+    }
+  },
+  "dimensions": [
+    {
+      "id": "date"
+    },
+    {
+      "id": "type"
+    }
+  ],
+  "measures": [
+    {
+      "id": "profit"
+    }
+  ]
+}

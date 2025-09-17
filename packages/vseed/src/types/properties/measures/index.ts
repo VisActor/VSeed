@@ -1,4 +1,3 @@
-export * from './format'
 export * from './zMeasures'
 export * from './zDualMeasures'
 export * from './zScatterMeasures'

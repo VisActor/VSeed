@@ -1,0 +1,312 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`emptyPivotTable 1`] = `
+{
+  "chartType": "pivotTable",
+  "config": {
+    "pivotTable": {
+      "backgroundColor": "transparent",
+      "bodyBackgroundColor": "transparent",
+      "bodyFontColor": "#141414",
+      "bodyFontSize": 12,
+      "borderColor": "#e3e5eb",
+      "headerBackgroundColor": "#f6f7f9",
+      "headerFontColor": "#21252c",
+      "headerFontSize": 12,
+      "hoverBodyBackgroundColor": "#bedaff",
+      "hoverBodyInlineBackgroundColor": "#bedaff33",
+      "hoverHeaderBackgroundColor": "#D9DDE4",
+      "hoverHeaderInlineBackgroundColor": "#D9DDE455",
+      "selectedBackgroundColor": "#bedaff33",
+      "selectedBorderColor": "#4080ff",
+    },
+  },
+  "customTheme": {
+    "config": {
+      "pivotTable": {
+        "backgroundColor": "transparent",
+        "bodyBackgroundColor": "transparent",
+        "bodyFontColor": "#141414",
+        "bodyFontSize": 12,
+        "borderColor": "#e3e5eb",
+        "headerBackgroundColor": "#f6f7f9",
+        "headerFontColor": "#21252c",
+        "headerFontSize": 12,
+        "hoverBodyBackgroundColor": "#bedaff",
+        "hoverBodyInlineBackgroundColor": "#bedaff33",
+        "hoverHeaderBackgroundColor": "#D9DDE4",
+        "hoverHeaderInlineBackgroundColor": "#D9DDE455",
+        "selectedBackgroundColor": "#bedaff33",
+        "selectedBorderColor": "#4080ff",
+      },
+    },
+  },
+  "dataset": [
+    {},
+  ],
+  "datasetReshapeInfo": [
+    {
+      "foldInfo": {
+        "foldMap": {},
+        "measureId": "__MeaId__",
+        "measureName": "__MeaName__",
+        "measureValue": "__MeaValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 0,
+          "max": -Infinity,
+          "min": Infinity,
+          "sum": 0,
+        },
+      },
+      "id": "pivotTable",
+      "index": 0,
+    },
+  ],
+  "dimensions": [
+    {
+      "alias": "指标名称",
+      "id": "__MeaName__",
+    },
+  ],
+  "encoding": {
+    "column": [
+      "__MeaName__",
+    ],
+    "detail": [],
+    "row": [],
+    "tooltip": [],
+  },
+  "locale": "zh-CN",
+  "measures": [],
+}
+`;
+
+exports[`emptyPivotTable 2`] = `
+{
+  "animationAppear": {
+    "delay": 250,
+    "direction": "row",
+    "duration": 300,
+    "type": "one-by-one",
+  },
+  "autoWrapText": true,
+  "columnResizeMode": "all",
+  "columnResizeType": "column",
+  "columns": [
+    {
+      "dimensionKey": "__MeaName__",
+      "title": "指标名称",
+      "width": "auto",
+    },
+  ],
+  "corner": {
+    "titleOnDimension": "all",
+  },
+  "dataConfig": {
+    "aggregationRules": [],
+  },
+  "heightMode": "autoHeight",
+  "hideIndicatorName": true,
+  "hover": {
+    "highlightMode": "cross",
+  },
+  "indicatorTitle": "指标名称",
+  "indicators": [
+    {
+      "cellType": "text",
+      "format": [Function],
+      "indicatorKey": "__MeaValue__",
+      "title": "indicator",
+      "width": "auto",
+    },
+  ],
+  "indicatorsAsCol": true,
+  "records": [
+    {},
+  ],
+  "rows": [],
+  "select": {
+    "headerSelectMode": "inline",
+    "highlightMode": "cell",
+  },
+  "showColumnHeader": true,
+  "showRowHeader": true,
+  "theme": {
+    "bodyStyle": {
+      "bgColor": "transparent",
+      "borderColor": "#e3e5eb",
+      "borderLineWidth": 1,
+      "color": "#141414",
+      "fontSize": 12,
+      "fontStyle": "normal",
+      "fontVariant": "normal",
+      "fontWeight": "normal",
+      "hover": {
+        "cellBgColor": "#bedaff",
+        "inlineColumnBgColor": "#bedaff33",
+        "inlineRowBgColor": "#bedaff33",
+      },
+      "lineHeight": 18,
+      "padding": [
+        8,
+        12,
+        8,
+        12,
+      ],
+      "textAlign": "right",
+    },
+    "cornerHeaderStyle": {
+      "bgColor": "#f6f7f9",
+      "borderColor": [
+        "#e3e5eb",
+        "#e3e5eb",
+      ],
+      "borderLineWidth": 1,
+      "color": "#21252c",
+      "fontSize": 12,
+      "fontStyle": "normal",
+      "fontVariant": "normal",
+      "fontWeight": "bold",
+      "frameStyle": {
+        "borderColor": [
+          null,
+          "#e3e5eb",
+          "#e3e5eb",
+          null,
+        ],
+        "borderLineWidth": 1,
+      },
+      "hover": {
+        "cellBgColor": "#D9DDE4",
+        "inlineColumnBgColor": "#D9DDE455",
+        "inlineRowBgColor": "#D9DDE455",
+      },
+      "lineHeight": 18,
+      "padding": [
+        8,
+        12,
+        8,
+        12,
+      ],
+      "textAlign": "left",
+    },
+    "frameStyle": {
+      "borderColor": "#e3e5eb",
+      "borderLineWidth": 0,
+      "cornerRadius": 4,
+    },
+    "headerStyle": {
+      "bgColor": "#f6f7f9",
+      "borderColor": "#e3e5eb",
+      "borderLineWidth": 1,
+      "color": "#21252c",
+      "fontSize": 12,
+      "fontStyle": "normal",
+      "fontVariant": "normal",
+      "fontWeight": "bold",
+      "frameStyle": {
+        "borderColor": [
+          null,
+          null,
+          "#e3e5eb",
+          null,
+        ],
+        "borderLineWidth": 1,
+      },
+      "hover": {
+        "cellBgColor": "#D9DDE4",
+        "inlineColumnBgColor": "#D9DDE455",
+        "inlineRowBgColor": "#D9DDE455",
+      },
+      "lineHeight": 18,
+      "padding": [
+        8,
+        12,
+        8,
+        12,
+      ],
+      "textAlign": "center",
+    },
+    "rowHeaderStyle": {
+      "bgColor": "#f6f7f9",
+      "borderColor": "#e3e5eb",
+      "borderLineWidth": 1,
+      "color": "#21252c",
+      "fontSize": 12,
+      "fontStyle": "normal",
+      "fontVariant": "normal",
+      "fontWeight": "bold",
+      "frameStyle": {
+        "borderColor": [
+          null,
+          "#e3e5eb",
+          null,
+          null,
+        ],
+        "borderLineWidth": 1,
+      },
+      "hover": {
+        "cellBgColor": "#D9DDE4",
+        "inlineColumnBgColor": "#D9DDE455",
+        "inlineRowBgColor": "#D9DDE455",
+      },
+      "lineHeight": 18,
+      "padding": [
+        8,
+        12,
+        8,
+        12,
+      ],
+      "textAlign": "left",
+    },
+    "selectionStyle": {
+      "cellBgColor": "#bedaff33",
+      "cellBorderColor": "#4080ff",
+      "cellBorderLineWidth": 2,
+    },
+    "underlayBackgroundColor": "transparent",
+  },
+  "tooltip": {
+    "isShowOverflowTextTooltip": true,
+  },
+  "widthAdaptiveMode": "all",
+  "widthMode": "standard",
+}
+`;
+
+exports[`emptyPivotTable 3`] = `
+{
+  "advancedPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "colorIdMap": {},
+  "colorItems": [],
+  "hasTheme": true,
+  "specPipeline": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "themeMapKeys": [
+    "light",
+    "dark",
+  ],
+}
+`;

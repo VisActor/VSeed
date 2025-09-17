@@ -137,6 +137,8 @@ export const lightTheme = (): CustomThemeConfig => {
       wrap: true,
       showValue: true,
       showValuePercent: false,
+      labelColorSmartInvert: false,
+      labelOverlap: true,
     },
     tooltip: {
       enable: true,
@@ -147,7 +149,7 @@ export const lightTheme = (): CustomThemeConfig => {
       maxSize: 1,
       shapeType: 'rectRound',
       position: 'rt',
-      labelFontColor: '#646A73',
+      labelColor: '#646A73',
       labelFontSize: 12,
       labelFontWeight: 400,
     },
@@ -203,7 +205,12 @@ export const lightTheme = (): CustomThemeConfig => {
       columnPercent: {
         ...baseConfig,
         xAxis: bandAxis,
-        yAxis: linearAxis,
+        yAxis: {
+          ...linearAxis,
+          numFormat: {
+            type: 'percent',
+          },
+        },
         crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
       },
@@ -223,7 +230,12 @@ export const lightTheme = (): CustomThemeConfig => {
       },
       barPercent: {
         ...baseConfig,
-        xAxis: linearAxis,
+        xAxis: {
+          ...linearAxis,
+          numFormat: {
+            type: 'percent',
+          },
+        },
         yAxis: barBandAxis,
         crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
@@ -237,7 +249,12 @@ export const lightTheme = (): CustomThemeConfig => {
       areaPercent: {
         ...baseConfig,
         xAxis: bandAxis,
-        yAxis: linearAxis,
+        yAxis: {
+          ...linearAxis,
+          numFormat: {
+            type: 'percent',
+          },
+        },
         crosshairLine,
       },
       scatter: {
@@ -303,6 +320,10 @@ export const lightTheme = (): CustomThemeConfig => {
       },
       heatmap: {
         ...baseConfig,
+        label: {
+          ...baseConfig.label,
+          labelColorSmartInvert: true,
+        },
       },
     },
   }

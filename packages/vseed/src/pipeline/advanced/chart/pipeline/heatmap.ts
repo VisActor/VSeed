@@ -16,7 +16,7 @@ import {
   defaultMeasureName,
   encodingAdapter,
   defaultEncodingForHeatmap,
-  deleteTooltipAndLabelMeasure,
+  deleteEncodingForMeasure,
   deleteTooltipAndLabelDimension,
 } from '../pipes'
 
@@ -28,7 +28,7 @@ export const heatmapAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForHeatmap, buildMeasures],
-    [encodingForHeatmap, buildMeasures, deleteTooltipAndLabelMeasure, deleteTooltipAndLabelDimension],
+    [encodingForHeatmap, buildMeasures, deleteEncodingForMeasure(['tooltip', 'label']), deleteTooltipAndLabelDimension],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

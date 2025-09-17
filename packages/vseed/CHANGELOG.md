@@ -1,5 +1,39 @@
 # @visactor/vseed
 
+## 0.1.18
+
+### Patch Changes
+
+- fix: parallel chart error
+- fix: no need rose axis 
+
+## 0.1.17
+
+### Patch Changes
+
+- feat: add encoding size
+- fix: useGrouping missing in format
+
+## 0.1.16
+
+### Patch Changes
+
+- feat: optimize the error info
+- feat: optimize pivot table with only dimensions
+- fix: same alias error
+
+## 0.1.15
+
+### Patch Changes
+
+- feat: add label and y foramt
+
+## 0.1.14
+
+### Patch Changes
+
+- feat: add label features
+
 ## 0.1.13
 
 ### Patch Changes

@@ -18,7 +18,14 @@ export const pivotColorLegend: SpecPipe = (spec, context) => {
   const { legend, color } = baseConfig
   const { colorScheme, linearColorScheme } = color
 
-  const { enable, position = 'bottom', labelFontColor, labelFontSize = 12, labelFontWeight = 400 } = legend || {}
+  const {
+    enable,
+    position = 'bottom',
+    labelFontColor,
+    labelColor,
+    labelFontSize = 12,
+    labelFontWeight = 400,
+  } = legend || {}
 
   const orient = ['bottom', 'bottomLeft', 'bottomRight', 'bl', 'br'].includes(position)
     ? 'bottom'
@@ -49,7 +56,7 @@ export const pivotColorLegend: SpecPipe = (spec, context) => {
     startText: {
       visible: true,
       style: {
-        fill: labelFontColor,
+        fill: labelColor || labelFontColor,
         fontSize: labelFontSize,
         fontWeight: labelFontWeight,
       },
@@ -57,7 +64,7 @@ export const pivotColorLegend: SpecPipe = (spec, context) => {
     endText: {
       visible: true,
       style: {
-        fill: labelFontColor,
+        fill: labelColor || labelFontColor,
         fontSize: labelFontSize,
         fontWeight: labelFontWeight,
       },

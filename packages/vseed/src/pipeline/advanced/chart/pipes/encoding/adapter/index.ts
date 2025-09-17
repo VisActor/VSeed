@@ -1,0 +1,1 @@
+export { encodingAdapter } from './encodingAdapter'

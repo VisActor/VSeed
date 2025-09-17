@@ -2,6 +2,7 @@ import { unique } from 'remeda'
 import { MeasureName } from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
+import { addColorToEncoding } from './color'
 
 export const defaultEncodingForLine: AdvancedPipe = (advancedVSeed) => {
   const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
@@ -21,7 +22,7 @@ export const encodingForLine: AdvancedPipe = (advancedVSeed) => {
   const encoding: Encoding = {}
 
   if (hasDimensionEncoding) {
-    generateDimensionEncoding(dimensions, encoding)
+    generateDimensionEncoding(dimensions, encoding, measures.length > 1)
   } else {
     generateDefaultDimensionEncoding(dimensions, encoding)
   }
@@ -48,7 +49,7 @@ const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Enco
   encoding.row = []
   encoding.column = []
 }
-const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
+const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding, isMultiMeasure: boolean) => {
   // x
   encoding.x = unique(dimensions.filter((item) => item.encoding === 'xAxis').map((item) => item.id))
   if (encoding.x.length === 0) {
@@ -56,10 +57,7 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) =
   }
 
   // color
-  encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
-  if (encoding.color.length === 0) {
-    encoding.color = [MeasureName]
-  }
+  addColorToEncoding(dimensions, encoding, isMultiMeasure)
 
   // detail
   encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))

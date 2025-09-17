@@ -34,6 +34,8 @@ exports[`basicLine 1`] = `
       },
       "label": {
         "enable": true,
+        "labelColorSmartInvert": false,
+        "labelOverlap": true,
         "showValue": true,
         "showValuePercent": false,
         "wrap": true,
@@ -41,7 +43,7 @@ exports[`basicLine 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelFontColor": "#646A73",
+        "labelColor": "#646A73",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
@@ -161,6 +163,8 @@ exports[`basicLine 1`] = `
         },
         "label": {
           "enable": true,
+          "labelColorSmartInvert": false,
+          "labelOverlap": true,
           "showValue": true,
           "showValuePercent": false,
           "wrap": true,
@@ -168,7 +172,7 @@ exports[`basicLine 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelFontColor": "#646A73",
+          "labelColor": "#646A73",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
@@ -573,7 +577,7 @@ exports[`basicLine 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "日期",
         "visible": false,
       },
       "type": "band",
@@ -627,7 +631,7 @@ exports[`basicLine 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "销售额 & 利润",
         "visible": false,
       },
       "type": "linear",
@@ -854,6 +858,18 @@ exports[`basicLine 2`] = `
   "direction": "vertical",
   "label": {
     "formatMethod": [Function],
+    "overlap": {
+      "clampForce": true,
+      "hideOnHit": true,
+    },
+    "position": undefined,
+    "smartInvert": false,
+    "style": {
+      "background": undefined,
+      "fill": undefined,
+      "fontSize": undefined,
+      "fontWeight": undefined,
+    },
     "visible": true,
   },
   "legends": {

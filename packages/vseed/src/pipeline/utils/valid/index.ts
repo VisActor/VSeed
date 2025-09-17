@@ -1,0 +1,1 @@
+export { checkVSeed } from './checkVSeed'

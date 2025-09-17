@@ -1,11 +1,12 @@
 import { z } from 'zod'
-import { zNumFormat } from './format/numFormat'
+import { zNumFormat } from '../format/numFormat'
 import type { MeasureGroup } from './measures'
 
 export const zMeasure = z.object({
   id: z.string(),
   alias: z.string().optional(),
   autoFormat: z.boolean().default(true),
+  numFormat: zNumFormat.default({}),
   format: zNumFormat.default({}),
   encoding: z
     .enum([

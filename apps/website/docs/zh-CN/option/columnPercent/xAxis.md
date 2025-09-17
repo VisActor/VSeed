@@ -8,6 +8,91 @@ x轴, 类目轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格
 :::
 
 
+## visible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+轴是否可见
+
+:::
+
+## inverse
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+轴是否反向展示, 仅对数值轴生效
+
+:::
+
+## zero
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否在坐标轴上强制显示 0 值, 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
+
+:::
+
+## labelAutoHide
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+轴标签, 自动隐藏, 2个标签若重叠(间隔小于autoHideGap), 则自动隐藏导致重叠的标签. 仅对类目轴生效.
+
+:::
+
+## labelAutoHideGap
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+轴标签, 自动隐藏间隔, 若2个文本标签的间隔小于autoHideGap, 则自动隐藏导致重叠的标签. 仅对类目轴生效.
+
+autoHide开启时, 使用autoHide, 设置在autoHideSeparation上
+
+autoHide关闭时, 使用sampling采样, 设置在minGap上
+
+:::
+
+## labelAutoRotate
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+轴标签, 自动旋转, 当标签宽度超过轴长度时, 自动旋转标签. 仅对类目轴生效.
+
+:::
+
+## labelAutoRotateAngleRange
+
+**Type:** `number[] | undefined`
+
+:::note{title=描述}
+轴标签, 自动旋转角度范围, 当自动旋转开启时, 标签旋转角度范围. 仅对类目轴生效.
+
+:::
+
+## labelAutoLimit
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+轴标签, 自动限制长度, 当标签宽度超过轴长度时, 超出部分省略号表示, 鼠标悬浮后可见标签, 自动限制标签宽度. 仅对类目轴生效.
+
+:::
+
+## labelAutoLimitLength
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+轴标签, 自动限制长度的最大长度, 当标签文本长度超过最大长度时, 超出部分省略号表示, 鼠标悬浮后可见标签. 仅对类目轴生效.
+
+:::
+
 ## label
 
 **Type:** `{ visible?: boolean; labelColor?: string; labelFontSize?: number; labelFontWeight?: number; labelAngle?: number; } | undefined`
@@ -63,120 +148,6 @@ X轴刻度标签
 
 :::
 
-## visible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴是否可见
-
-:::
-
-**示例**
-true
-
-
-
-## inverse
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴是否反向展示
-
-
-
-仅对数值轴生效
-
-:::
-
-**示例**
-false
-
-
-
-## labelAutoHide
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴标签, 自动隐藏
-
-
-
-2个标签若重叠(间隔小于autoHideGap), 则自动隐藏导致重叠的标签. 仅对类目轴生效.
-
-:::
-
-## labelAutoHideGap
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-轴标签, 自动隐藏间隔
-
-
-
-若2个文本标签的间隔小于autoHideGap, 则自动隐藏导致重叠的标签. 仅对类目轴生效.
-
-autoHide开启时, 使用autoHide, 设置在autoHideSeparation上
-
-autoHide关闭时, 使用sampling采样, 设置在minGap上
-
-:::
-
-## labelAutoRotate
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴标签, 自动旋转
-
-
-
-当标签宽度超过轴长度时, 自动旋转标签. 仅对类目轴生效.
-
-:::
-
-## labelAutoRotateAngleRange
-
-**Type:** `number[] | undefined`
-
-:::note{title=描述}
-轴标签, 自动旋转角度范围
-
-
-
-当自动旋转开启时, 标签旋转角度范围. 仅对类目轴生效.
-
-:::
-
-## labelAutoLimit
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴标签, 自动限制长度,
-
-
-
-当标签宽度超过轴长度时, 超出部分省略号表示, 鼠标悬浮后可见标签, 自动限制标签宽度. 仅对类目轴生效.
-
-:::
-
-## labelAutoLimitLength
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-轴标签, 自动限制长度的最大长度
-
-
-
-当标签文本长度超过最大长度时, 超出部分省略号表示, 鼠标悬浮后可见标签. 仅对类目轴生效.
-
-:::
-
 ## line
 
 **Type:** `{ visible?: boolean; lineColor?: string; lineWidth?: number; } | undefined`
@@ -185,15 +156,6 @@ autoHide关闭时, 使用sampling采样, 设置在minGap上
 X轴线
 
 :::
-
-**示例**
-{
-  visible: true,
-  lineColor: '#ffeecc',
-  lineWidth: 2,
-}
-
-
 
 
 ### visible

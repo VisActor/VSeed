@@ -40,7 +40,9 @@ exports[`same 1`] = `
       "label": {
         "enable": false,
         "labelColor": "#212121",
+        "labelColorSmartInvert": false,
         "labelMode": "single",
+        "labelOverlap": true,
         "labelPos": "outer",
         "labelWeight": "normal",
         "showValue": true,
@@ -50,7 +52,7 @@ exports[`same 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelFontColor": "#6F6F6F",
+        "labelColor": "#6F6F6F",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
@@ -176,6 +178,8 @@ exports[`same 1`] = `
         },
         "label": {
           "enable": true,
+          "labelColorSmartInvert": false,
+          "labelOverlap": true,
           "showValue": true,
           "showValuePercent": false,
           "wrap": true,
@@ -183,7 +187,7 @@ exports[`same 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelFontColor": "#646A73",
+          "labelColor": "#646A73",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
@@ -282,7 +286,7 @@ exports[`same 1`] = `
   "dataset": [
     [
       {
-        "__Dim_ColorId__": "家具",
+        "__Dim_ColorId__": "家具-pr_20250913220806_eacd",
         "__Dim_Color__": "家具",
         "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
@@ -305,7 +309,7 @@ exports[`same 1`] = `
         "yA_20250913221908_10a4": "638735.6290000005",
       },
       {
-        "__Dim_ColorId__": "办公用品",
+        "__Dim_ColorId__": "办公用品-pr_20250913220806_eacd",
         "__Dim_Color__": "办公用品",
         "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
@@ -328,7 +332,7 @@ exports[`same 1`] = `
         "yA_20250913221908_10a4": "757640.3519999951",
       },
       {
-        "__Dim_ColorId__": "技术",
+        "__Dim_ColorId__": "技术-pr_20250913220806_eacd",
         "__Dim_Color__": "技术",
         "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
@@ -353,7 +357,7 @@ exports[`same 1`] = `
     ],
     [
       {
-        "__Dim_ColorId__": "家具",
+        "__Dim_ColorId__": "家具-yA_20250913221832_0230",
         "__Dim_Color__": "家具",
         "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
@@ -376,7 +380,7 @@ exports[`same 1`] = `
         "yA_20250913221908_10a4": "638735.6290000005",
       },
       {
-        "__Dim_ColorId__": "办公用品",
+        "__Dim_ColorId__": "办公用品-yA_20250913221832_0230",
         "__Dim_Color__": "办公用品",
         "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
@@ -399,7 +403,7 @@ exports[`same 1`] = `
         "yA_20250913221908_10a4": "757640.3519999951",
       },
       {
-        "__Dim_ColorId__": "技术",
+        "__Dim_ColorId__": "技术-yA_20250913221832_0230",
         "__Dim_Color__": "技术",
         "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
@@ -424,7 +428,7 @@ exports[`same 1`] = `
     ],
     [
       {
-        "__Dim_ColorId__": "家具",
+        "__Dim_ColorId__": "家具-yA_20250913221852_0d8a",
         "__Dim_Color__": "家具",
         "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
@@ -447,7 +451,7 @@ exports[`same 1`] = `
         "yA_20250913221908_10a4": "638735.6290000005",
       },
       {
-        "__Dim_ColorId__": "办公用品",
+        "__Dim_ColorId__": "办公用品-yA_20250913221852_0d8a",
         "__Dim_Color__": "办公用品",
         "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
@@ -470,7 +474,7 @@ exports[`same 1`] = `
         "yA_20250913221908_10a4": "757640.3519999951",
       },
       {
-        "__Dim_ColorId__": "技术",
+        "__Dim_ColorId__": "技术-yA_20250913221852_0d8a",
         "__Dim_Color__": "技术",
         "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
@@ -495,7 +499,7 @@ exports[`same 1`] = `
     ],
     [
       {
-        "__Dim_ColorId__": "家具",
+        "__Dim_ColorId__": "家具-yA_20250913221908_10a4",
         "__Dim_Color__": "家具",
         "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
@@ -518,7 +522,7 @@ exports[`same 1`] = `
         "yA_20250913221908_10a4": "638735.6290000005",
       },
       {
-        "__Dim_ColorId__": "办公用品",
+        "__Dim_ColorId__": "办公用品-yA_20250913221908_10a4",
         "__Dim_Color__": "办公用品",
         "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
@@ -541,7 +545,7 @@ exports[`same 1`] = `
         "yA_20250913221908_10a4": "757640.3519999951",
       },
       {
-        "__Dim_ColorId__": "技术",
+        "__Dim_ColorId__": "技术-yA_20250913221908_10a4",
         "__Dim_Color__": "技术",
         "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
@@ -587,14 +591,14 @@ exports[`same 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "办公用品": "办公用品",
-          "家具": "家具",
-          "技术": "技术",
+          "办公用品-pr_20250913220806_eacd": "办公用品",
+          "家具-pr_20250913220806_eacd": "家具",
+          "技术-pr_20250913220806_eacd": "技术",
         },
         "colorItems": [
-          "家具",
-          "办公用品",
-          "技术",
+          "家具-pr_20250913220806_eacd",
+          "办公用品-pr_20250913220806_eacd",
+          "技术-pr_20250913220806_eacd",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -625,14 +629,14 @@ exports[`same 1`] = `
       "index": 1,
       "unfoldInfo": {
         "colorIdMap": {
-          "办公用品": "办公用品",
-          "家具": "家具",
-          "技术": "技术",
+          "办公用品-yA_20250913221832_0230": "办公用品",
+          "家具-yA_20250913221832_0230": "家具",
+          "技术-yA_20250913221832_0230": "技术",
         },
         "colorItems": [
-          "家具",
-          "办公用品",
-          "技术",
+          "家具-yA_20250913221832_0230",
+          "办公用品-yA_20250913221832_0230",
+          "技术-yA_20250913221832_0230",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -663,14 +667,14 @@ exports[`same 1`] = `
       "index": 2,
       "unfoldInfo": {
         "colorIdMap": {
-          "办公用品": "办公用品",
-          "家具": "家具",
-          "技术": "技术",
+          "办公用品-yA_20250913221852_0d8a": "办公用品",
+          "家具-yA_20250913221852_0d8a": "家具",
+          "技术-yA_20250913221852_0d8a": "技术",
         },
         "colorItems": [
-          "家具",
-          "办公用品",
-          "技术",
+          "家具-yA_20250913221852_0d8a",
+          "办公用品-yA_20250913221852_0d8a",
+          "技术-yA_20250913221852_0d8a",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -701,14 +705,14 @@ exports[`same 1`] = `
       "index": 3,
       "unfoldInfo": {
         "colorIdMap": {
-          "办公用品": "办公用品",
-          "家具": "家具",
-          "技术": "技术",
+          "办公用品-yA_20250913221908_10a4": "办公用品",
+          "家具-yA_20250913221908_10a4": "家具",
+          "技术-yA_20250913221908_10a4": "技术",
         },
         "colorItems": [
-          "家具",
-          "办公用品",
-          "技术",
+          "家具-yA_20250913221908_10a4",
+          "办公用品-yA_20250913221908_10a4",
+          "技术-yA_20250913221908_10a4",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -912,7 +916,7 @@ exports[`same 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "product_type",
               "visible": false,
             },
             "type": "band",
@@ -966,7 +970,7 @@ exports[`same 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "min(amount) & sum(amount) & sum(discount) & sum(profit)",
               "visible": false,
             },
             "type": "linear",
@@ -987,9 +991,18 @@ exports[`same 2`] = `
         },
         "color": {
           "domain": [
-            "家具",
-            "办公用品",
-            "技术",
+            "家具-pr_20250913220806_eacd",
+            "办公用品-pr_20250913220806_eacd",
+            "技术-pr_20250913220806_eacd",
+            "家具-yA_20250913221832_0230",
+            "办公用品-yA_20250913221832_0230",
+            "技术-yA_20250913221832_0230",
+            "家具-yA_20250913221852_0d8a",
+            "办公用品-yA_20250913221852_0d8a",
+            "技术-yA_20250913221852_0d8a",
+            "家具-yA_20250913221908_10a4",
+            "办公用品-yA_20250913221908_10a4",
+            "技术-yA_20250913221908_10a4",
           ],
           "range": [
             "#8D72F6",
@@ -1049,6 +1062,18 @@ exports[`same 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
+          "overlap": {
+            "clampForce": true,
+            "hideOnHit": true,
+          },
+          "position": undefined,
+          "smartInvert": false,
+          "style": {
+            "background": undefined,
+            "fill": "#212121",
+            "fontSize": undefined,
+            "fontWeight": undefined,
+          },
           "visible": false,
         },
         "markArea": [],
@@ -1187,7 +1212,7 @@ exports[`same 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "product_type",
               "visible": false,
             },
             "type": "band",
@@ -1241,7 +1266,7 @@ exports[`same 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "min(amount) & sum(amount) & sum(discount) & sum(profit)",
               "visible": false,
             },
             "type": "linear",
@@ -1262,9 +1287,18 @@ exports[`same 2`] = `
         },
         "color": {
           "domain": [
-            "家具",
-            "办公用品",
-            "技术",
+            "家具-pr_20250913220806_eacd",
+            "办公用品-pr_20250913220806_eacd",
+            "技术-pr_20250913220806_eacd",
+            "家具-yA_20250913221832_0230",
+            "办公用品-yA_20250913221832_0230",
+            "技术-yA_20250913221832_0230",
+            "家具-yA_20250913221852_0d8a",
+            "办公用品-yA_20250913221852_0d8a",
+            "技术-yA_20250913221852_0d8a",
+            "家具-yA_20250913221908_10a4",
+            "办公用品-yA_20250913221908_10a4",
+            "技术-yA_20250913221908_10a4",
           ],
           "range": [
             "#8D72F6",
@@ -1324,6 +1358,18 @@ exports[`same 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
+          "overlap": {
+            "clampForce": true,
+            "hideOnHit": true,
+          },
+          "position": undefined,
+          "smartInvert": false,
+          "style": {
+            "background": undefined,
+            "fill": "#212121",
+            "fontSize": undefined,
+            "fontWeight": undefined,
+          },
           "visible": false,
         },
         "markArea": [],
@@ -1462,7 +1508,7 @@ exports[`same 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "product_type",
               "visible": false,
             },
             "type": "band",
@@ -1516,7 +1562,7 @@ exports[`same 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "min(amount) & sum(amount) & sum(discount) & sum(profit)",
               "visible": false,
             },
             "type": "linear",
@@ -1537,9 +1583,18 @@ exports[`same 2`] = `
         },
         "color": {
           "domain": [
-            "家具",
-            "办公用品",
-            "技术",
+            "家具-pr_20250913220806_eacd",
+            "办公用品-pr_20250913220806_eacd",
+            "技术-pr_20250913220806_eacd",
+            "家具-yA_20250913221832_0230",
+            "办公用品-yA_20250913221832_0230",
+            "技术-yA_20250913221832_0230",
+            "家具-yA_20250913221852_0d8a",
+            "办公用品-yA_20250913221852_0d8a",
+            "技术-yA_20250913221852_0d8a",
+            "家具-yA_20250913221908_10a4",
+            "办公用品-yA_20250913221908_10a4",
+            "技术-yA_20250913221908_10a4",
           ],
           "range": [
             "#8D72F6",
@@ -1599,6 +1654,18 @@ exports[`same 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
+          "overlap": {
+            "clampForce": true,
+            "hideOnHit": true,
+          },
+          "position": undefined,
+          "smartInvert": false,
+          "style": {
+            "background": undefined,
+            "fill": "#212121",
+            "fontSize": undefined,
+            "fontWeight": undefined,
+          },
           "visible": false,
         },
         "markArea": [],
@@ -1737,7 +1804,7 @@ exports[`same 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "product_type",
               "visible": false,
             },
             "type": "band",
@@ -1791,7 +1858,7 @@ exports[`same 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "min(amount) & sum(amount) & sum(discount) & sum(profit)",
               "visible": false,
             },
             "type": "linear",
@@ -1812,9 +1879,18 @@ exports[`same 2`] = `
         },
         "color": {
           "domain": [
-            "家具",
-            "办公用品",
-            "技术",
+            "家具-pr_20250913220806_eacd",
+            "办公用品-pr_20250913220806_eacd",
+            "技术-pr_20250913220806_eacd",
+            "家具-yA_20250913221832_0230",
+            "办公用品-yA_20250913221832_0230",
+            "技术-yA_20250913221832_0230",
+            "家具-yA_20250913221852_0d8a",
+            "办公用品-yA_20250913221852_0d8a",
+            "技术-yA_20250913221852_0d8a",
+            "家具-yA_20250913221908_10a4",
+            "办公用品-yA_20250913221908_10a4",
+            "技术-yA_20250913221908_10a4",
           ],
           "range": [
             "#8D72F6",
@@ -1874,6 +1950,18 @@ exports[`same 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
+          "overlap": {
+            "clampForce": true,
+            "hideOnHit": true,
+          },
+          "position": undefined,
+          "smartInvert": false,
+          "style": {
+            "background": undefined,
+            "fill": "#212121",
+            "fontSize": undefined,
+            "fontWeight": undefined,
+          },
           "visible": false,
         },
         "markArea": [],
@@ -1946,7 +2034,7 @@ exports[`same 2`] = `
   "legends": {
     "data": [
       {
-        "label": "家具",
+        "label": "家具-pr_20250913220806_eacd",
         "shape": {
           "fill": "#8D72F6",
           "outerBorder": {
@@ -1957,7 +2045,7 @@ exports[`same 2`] = `
         },
       },
       {
-        "label": "办公用品",
+        "label": "办公用品-pr_20250913220806_eacd",
         "shape": {
           "fill": "#5766EC",
           "outerBorder": {
@@ -1968,13 +2056,112 @@ exports[`same 2`] = `
         },
       },
       {
-        "label": "技术",
+        "label": "技术-pr_20250913220806_eacd",
         "shape": {
           "fill": "#66A3FE",
           "outerBorder": {
             "distance": 3,
             "lineWidth": 1,
             "stroke": "#66A3FE",
+          },
+        },
+      },
+      {
+        "label": "家具-yA_20250913221832_0230",
+        "shape": {
+          "fill": "#51D5E6",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#51D5E6",
+          },
+        },
+      },
+      {
+        "label": "办公用品-yA_20250913221832_0230",
+        "shape": {
+          "fill": "#4EC0B3",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#4EC0B3",
+          },
+        },
+      },
+      {
+        "label": "技术-yA_20250913221832_0230",
+        "shape": {
+          "fill": "#F9DF90",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#F9DF90",
+          },
+        },
+      },
+      {
+        "label": "家具-yA_20250913221852_0d8a",
+        "shape": {
+          "fill": "#F9AD71",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#F9AD71",
+          },
+        },
+      },
+      {
+        "label": "办公用品-yA_20250913221852_0d8a",
+        "shape": {
+          "fill": "#ED8888",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#ED8888",
+          },
+        },
+      },
+      {
+        "label": "技术-yA_20250913221852_0d8a",
+        "shape": {
+          "fill": "#E9A0C3",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#E9A0C3",
+          },
+        },
+      },
+      {
+        "label": "家具-yA_20250913221908_10a4",
+        "shape": {
+          "fill": "#D77DD3",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#D77DD3",
+          },
+        },
+      },
+      {
+        "label": "办公用品-yA_20250913221908_10a4",
+        "shape": {
+          "fill": "#8D72F6",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#8D72F6",
+          },
+        },
+      },
+      {
+        "label": "技术-yA_20250913221908_10a4",
+        "shape": {
+          "fill": "#5766EC",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#5766EC",
           },
         },
       },
@@ -2021,7 +2208,7 @@ exports[`same 2`] = `
   "records": {
     "0": [
       {
-        "__Dim_ColorId__": "家具",
+        "__Dim_ColorId__": "家具-pr_20250913220806_eacd",
         "__Dim_Color__": "家具",
         "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
@@ -2044,7 +2231,7 @@ exports[`same 2`] = `
         "yA_20250913221908_10a4": "638735.6290000005",
       },
       {
-        "__Dim_ColorId__": "办公用品",
+        "__Dim_ColorId__": "办公用品-pr_20250913220806_eacd",
         "__Dim_Color__": "办公用品",
         "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
@@ -2067,7 +2254,7 @@ exports[`same 2`] = `
         "yA_20250913221908_10a4": "757640.3519999951",
       },
       {
-        "__Dim_ColorId__": "技术",
+        "__Dim_ColorId__": "技术-pr_20250913220806_eacd",
         "__Dim_Color__": "技术",
         "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
@@ -2092,7 +2279,7 @@ exports[`same 2`] = `
     ],
     "1": [
       {
-        "__Dim_ColorId__": "家具",
+        "__Dim_ColorId__": "家具-yA_20250913221832_0230",
         "__Dim_Color__": "家具",
         "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
@@ -2115,7 +2302,7 @@ exports[`same 2`] = `
         "yA_20250913221908_10a4": "638735.6290000005",
       },
       {
-        "__Dim_ColorId__": "办公用品",
+        "__Dim_ColorId__": "办公用品-yA_20250913221832_0230",
         "__Dim_Color__": "办公用品",
         "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
@@ -2138,7 +2325,7 @@ exports[`same 2`] = `
         "yA_20250913221908_10a4": "757640.3519999951",
       },
       {
-        "__Dim_ColorId__": "技术",
+        "__Dim_ColorId__": "技术-yA_20250913221832_0230",
         "__Dim_Color__": "技术",
         "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
@@ -2163,7 +2350,7 @@ exports[`same 2`] = `
     ],
     "2": [
       {
-        "__Dim_ColorId__": "家具",
+        "__Dim_ColorId__": "家具-yA_20250913221852_0d8a",
         "__Dim_Color__": "家具",
         "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
@@ -2186,7 +2373,7 @@ exports[`same 2`] = `
         "yA_20250913221908_10a4": "638735.6290000005",
       },
       {
-        "__Dim_ColorId__": "办公用品",
+        "__Dim_ColorId__": "办公用品-yA_20250913221852_0d8a",
         "__Dim_Color__": "办公用品",
         "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
@@ -2209,7 +2396,7 @@ exports[`same 2`] = `
         "yA_20250913221908_10a4": "757640.3519999951",
       },
       {
-        "__Dim_ColorId__": "技术",
+        "__Dim_ColorId__": "技术-yA_20250913221852_0d8a",
         "__Dim_Color__": "技术",
         "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
@@ -2234,7 +2421,7 @@ exports[`same 2`] = `
     ],
     "3": [
       {
-        "__Dim_ColorId__": "家具",
+        "__Dim_ColorId__": "家具-yA_20250913221908_10a4",
         "__Dim_Color__": "家具",
         "__Dim_Detail__": "家具",
         "__Dim_X__": "家具",
@@ -2257,7 +2444,7 @@ exports[`same 2`] = `
         "yA_20250913221908_10a4": "638735.6290000005",
       },
       {
-        "__Dim_ColorId__": "办公用品",
+        "__Dim_ColorId__": "办公用品-yA_20250913221908_10a4",
         "__Dim_Color__": "办公用品",
         "__Dim_Detail__": "办公用品",
         "__Dim_X__": "办公用品",
@@ -2280,7 +2467,7 @@ exports[`same 2`] = `
         "yA_20250913221908_10a4": "757640.3519999951",
       },
       {
-        "__Dim_ColorId__": "技术",
+        "__Dim_ColorId__": "技术-yA_20250913221908_10a4",
         "__Dim_Color__": "技术",
         "__Dim_Detail__": "技术",
         "__Dim_X__": "技术",
@@ -2434,11 +2621,29 @@ exports[`same 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "办公用品": "办公用品",
-    "家具": "家具",
-    "技术": "技术",
+    "办公用品-pr_20250913220806_eacd": "办公用品",
+    "办公用品-yA_20250913221832_0230": "办公用品",
+    "办公用品-yA_20250913221852_0d8a": "办公用品",
+    "办公用品-yA_20250913221908_10a4": "办公用品",
+    "家具-pr_20250913220806_eacd": "家具",
+    "家具-yA_20250913221832_0230": "家具",
+    "家具-yA_20250913221852_0d8a": "家具",
+    "家具-yA_20250913221908_10a4": "家具",
+    "技术-pr_20250913220806_eacd": "技术",
+    "技术-yA_20250913221832_0230": "技术",
+    "技术-yA_20250913221852_0d8a": "技术",
+    "技术-yA_20250913221908_10a4": "技术",
   },
   "colorItems": [
+    "家具",
+    "办公用品",
+    "技术",
+    "家具",
+    "办公用品",
+    "技术",
+    "家具",
+    "办公用品",
+    "技术",
     "家具",
     "办公用品",
     "技术",

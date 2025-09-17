@@ -35,7 +35,9 @@ exports[`defaultParentId 1`] = `
       "label": {
         "enable": false,
         "labelColor": "#212121",
+        "labelColorSmartInvert": false,
         "labelMode": "single",
+        "labelOverlap": true,
         "labelPos": "outer",
         "labelWeight": "normal",
         "showValue": true,
@@ -45,7 +47,7 @@ exports[`defaultParentId 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelFontColor": "#6F6F6F",
+        "labelColor": "#6F6F6F",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
@@ -123,6 +125,9 @@ exports[`defaultParentId 1`] = `
           "visible": false,
         },
         "nice": true,
+        "numFormat": {
+          "type": "percent",
+        },
         "tick": {
           "tickColor": "#3641594d",
           "tickInside": false,
@@ -171,6 +176,8 @@ exports[`defaultParentId 1`] = `
         },
         "label": {
           "enable": true,
+          "labelColorSmartInvert": false,
+          "labelOverlap": true,
           "showValue": true,
           "showValuePercent": false,
           "wrap": true,
@@ -178,7 +185,7 @@ exports[`defaultParentId 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelFontColor": "#646A73",
+          "labelColor": "#646A73",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
@@ -256,6 +263,9 @@ exports[`defaultParentId 1`] = `
             "visible": false,
           },
           "nice": true,
+          "numFormat": {
+            "type": "percent",
+          },
           "tick": {
             "tickColor": "#3641594d",
             "tickInside": false,
@@ -277,7 +287,7 @@ exports[`defaultParentId 1`] = `
   "dataset": [
     [
       {
-        "__Dim_ColorId__": "sum(amount)",
+        "__Dim_ColorId__": "sum(amount)-co_20250914131915_8e38",
         "__Dim_Color__": "sum(amount)",
         "__Dim_Detail__": "sum(amount)",
         "__Dim_X__": "技术",
@@ -294,7 +304,7 @@ exports[`defaultParentId 1`] = `
         "yA_20250914131844_6718": "7642",
       },
       {
-        "__Dim_ColorId__": "sum(amount)",
+        "__Dim_ColorId__": "sum(amount)-co_20250914131915_8e38",
         "__Dim_Color__": "sum(amount)",
         "__Dim_Detail__": "sum(amount)",
         "__Dim_X__": "办公用品",
@@ -311,7 +321,7 @@ exports[`defaultParentId 1`] = `
         "yA_20250914131844_6718": "21401",
       },
       {
-        "__Dim_ColorId__": "sum(amount)",
+        "__Dim_ColorId__": "sum(amount)-co_20250914131915_8e38",
         "__Dim_Color__": "sum(amount)",
         "__Dim_Detail__": "sum(amount)",
         "__Dim_X__": "家具",
@@ -330,7 +340,7 @@ exports[`defaultParentId 1`] = `
     ],
     [
       {
-        "__Dim_ColorId__": "sum(amount)",
+        "__Dim_ColorId__": "sum(amount)-yA_20250914131844_6718",
         "__Dim_Color__": "sum(amount)",
         "__Dim_Detail__": "sum(amount)",
         "__Dim_X__": "技术",
@@ -347,7 +357,7 @@ exports[`defaultParentId 1`] = `
         "yA_20250914131844_6718": "7642",
       },
       {
-        "__Dim_ColorId__": "sum(amount)",
+        "__Dim_ColorId__": "sum(amount)-yA_20250914131844_6718",
         "__Dim_Color__": "sum(amount)",
         "__Dim_Detail__": "sum(amount)",
         "__Dim_X__": "办公用品",
@@ -364,7 +374,7 @@ exports[`defaultParentId 1`] = `
         "yA_20250914131844_6718": "21401",
       },
       {
-        "__Dim_ColorId__": "sum(amount)",
+        "__Dim_ColorId__": "sum(amount)-yA_20250914131844_6718",
         "__Dim_Color__": "sum(amount)",
         "__Dim_Detail__": "sum(amount)",
         "__Dim_X__": "家具",
@@ -404,10 +414,10 @@ exports[`defaultParentId 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "sum(amount)": "sum(amount)",
+          "sum(amount)-co_20250914131915_8e38": "sum(amount)",
         },
         "colorItems": [
-          "sum(amount)",
+          "sum(amount)-co_20250914131915_8e38",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -438,10 +448,10 @@ exports[`defaultParentId 1`] = `
       "index": 1,
       "unfoldInfo": {
         "colorIdMap": {
-          "sum(amount)": "sum(amount)",
+          "sum(amount)-yA_20250914131844_6718": "sum(amount)",
         },
         "colorItems": [
-          "sum(amount)",
+          "sum(amount)-yA_20250914131844_6718",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -598,7 +608,7 @@ exports[`defaultParentId 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "product_type",
               "visible": false,
             },
             "type": "band",
@@ -652,7 +662,7 @@ exports[`defaultParentId 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "sum(amount) & sum(amount)",
               "visible": false,
             },
             "type": "linear",
@@ -673,7 +683,8 @@ exports[`defaultParentId 2`] = `
         },
         "color": {
           "domain": [
-            "sum(amount)",
+            "sum(amount)-co_20250914131915_8e38",
+            "sum(amount)-yA_20250914131844_6718",
           ],
           "range": [
             "#8D72F6",
@@ -733,6 +744,18 @@ exports[`defaultParentId 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
+          "overlap": {
+            "clampForce": true,
+            "hideOnHit": true,
+          },
+          "position": undefined,
+          "smartInvert": false,
+          "style": {
+            "background": undefined,
+            "fill": "#212121",
+            "fontSize": undefined,
+            "fontWeight": undefined,
+          },
           "visible": false,
         },
         "padding": 0,
@@ -869,7 +892,7 @@ exports[`defaultParentId 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "product_type",
               "visible": false,
             },
             "type": "band",
@@ -923,7 +946,7 @@ exports[`defaultParentId 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "sum(amount) & sum(amount)",
               "visible": false,
             },
             "type": "linear",
@@ -944,7 +967,8 @@ exports[`defaultParentId 2`] = `
         },
         "color": {
           "domain": [
-            "sum(amount)",
+            "sum(amount)-co_20250914131915_8e38",
+            "sum(amount)-yA_20250914131844_6718",
           ],
           "range": [
             "#8D72F6",
@@ -1004,6 +1028,18 @@ exports[`defaultParentId 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
+          "overlap": {
+            "clampForce": true,
+            "hideOnHit": true,
+          },
+          "position": undefined,
+          "smartInvert": false,
+          "style": {
+            "background": undefined,
+            "fill": "#212121",
+            "fontSize": undefined,
+            "fontWeight": undefined,
+          },
           "visible": false,
         },
         "padding": 0,
@@ -1074,13 +1110,24 @@ exports[`defaultParentId 2`] = `
   "legends": {
     "data": [
       {
-        "label": "sum(amount)",
+        "label": "sum(amount)-co_20250914131915_8e38",
         "shape": {
           "fill": "#8D72F6",
           "outerBorder": {
             "distance": 3,
             "lineWidth": 1,
             "stroke": "#8D72F6",
+          },
+        },
+      },
+      {
+        "label": "sum(amount)-yA_20250914131844_6718",
+        "shape": {
+          "fill": "#5766EC",
+          "outerBorder": {
+            "distance": 3,
+            "lineWidth": 1,
+            "stroke": "#5766EC",
           },
         },
       },
@@ -1127,7 +1174,7 @@ exports[`defaultParentId 2`] = `
   "records": {
     "0": [
       {
-        "__Dim_ColorId__": "sum(amount)",
+        "__Dim_ColorId__": "sum(amount)-yA_20250914131844_6718",
         "__Dim_Color__": "sum(amount)",
         "__Dim_Detail__": "sum(amount)",
         "__Dim_X__": "技术",
@@ -1144,7 +1191,7 @@ exports[`defaultParentId 2`] = `
         "yA_20250914131844_6718": "7642",
       },
       {
-        "__Dim_ColorId__": "sum(amount)",
+        "__Dim_ColorId__": "sum(amount)-yA_20250914131844_6718",
         "__Dim_Color__": "sum(amount)",
         "__Dim_Detail__": "sum(amount)",
         "__Dim_X__": "办公用品",
@@ -1161,7 +1208,7 @@ exports[`defaultParentId 2`] = `
         "yA_20250914131844_6718": "21401",
       },
       {
-        "__Dim_ColorId__": "sum(amount)",
+        "__Dim_ColorId__": "sum(amount)-yA_20250914131844_6718",
         "__Dim_Color__": "sum(amount)",
         "__Dim_Detail__": "sum(amount)",
         "__Dim_X__": "家具",
@@ -1180,7 +1227,7 @@ exports[`defaultParentId 2`] = `
     ],
     "__DefaultParentId__": [
       {
-        "__Dim_ColorId__": "sum(amount)",
+        "__Dim_ColorId__": "sum(amount)-co_20250914131915_8e38",
         "__Dim_Color__": "sum(amount)",
         "__Dim_Detail__": "sum(amount)",
         "__Dim_X__": "技术",
@@ -1197,7 +1244,7 @@ exports[`defaultParentId 2`] = `
         "yA_20250914131844_6718": "7642",
       },
       {
-        "__Dim_ColorId__": "sum(amount)",
+        "__Dim_ColorId__": "sum(amount)-co_20250914131915_8e38",
         "__Dim_Color__": "sum(amount)",
         "__Dim_Detail__": "sum(amount)",
         "__Dim_X__": "办公用品",
@@ -1214,7 +1261,7 @@ exports[`defaultParentId 2`] = `
         "yA_20250914131844_6718": "21401",
       },
       {
-        "__Dim_ColorId__": "sum(amount)",
+        "__Dim_ColorId__": "sum(amount)-co_20250914131915_8e38",
         "__Dim_Color__": "sum(amount)",
         "__Dim_Detail__": "sum(amount)",
         "__Dim_X__": "家具",
@@ -1362,9 +1409,11 @@ exports[`defaultParentId 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "sum(amount)": "sum(amount)",
+    "sum(amount)-co_20250914131915_8e38": "sum(amount)",
+    "sum(amount)-yA_20250914131844_6718": "sum(amount)",
   },
   "colorItems": [
+    "sum(amount)",
     "sum(amount)",
   ],
   "hasTheme": true,

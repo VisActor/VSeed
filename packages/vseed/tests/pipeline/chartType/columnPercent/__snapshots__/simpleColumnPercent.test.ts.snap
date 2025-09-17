@@ -34,6 +34,8 @@ exports[`simpleColumnPercent 1`] = `
       },
       "label": {
         "enable": true,
+        "labelColorSmartInvert": false,
+        "labelOverlap": true,
         "showValue": true,
         "showValuePercent": false,
         "wrap": true,
@@ -41,7 +43,7 @@ exports[`simpleColumnPercent 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelFontColor": "#646A73",
+        "labelColor": "#646A73",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
@@ -119,6 +121,9 @@ exports[`simpleColumnPercent 1`] = `
           "visible": false,
         },
         "nice": true,
+        "numFormat": {
+          "type": "percent",
+        },
         "tick": {
           "tickColor": "#3641594d",
           "tickInside": false,
@@ -167,6 +172,8 @@ exports[`simpleColumnPercent 1`] = `
         },
         "label": {
           "enable": true,
+          "labelColorSmartInvert": false,
+          "labelOverlap": true,
           "showValue": true,
           "showValuePercent": false,
           "wrap": true,
@@ -174,7 +181,7 @@ exports[`simpleColumnPercent 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelFontColor": "#646A73",
+          "labelColor": "#646A73",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
@@ -252,6 +259,9 @@ exports[`simpleColumnPercent 1`] = `
             "visible": false,
           },
           "nice": true,
+          "numFormat": {
+            "type": "percent",
+          },
           "tick": {
             "tickColor": "#3641594d",
             "tickInside": false,
@@ -982,7 +992,7 @@ exports[`simpleColumnPercent 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "date",
         "visible": false,
       },
       "type": "band",
@@ -1036,7 +1046,7 @@ exports[`simpleColumnPercent 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "goalProfit & profit & sales & leftCount & salesCount",
         "visible": false,
       },
       "type": "linear",
@@ -1647,6 +1657,18 @@ exports[`simpleColumnPercent 2`] = `
   "direction": "vertical",
   "label": {
     "formatMethod": [Function],
+    "overlap": {
+      "clampForce": true,
+      "hideOnHit": true,
+    },
+    "position": undefined,
+    "smartInvert": false,
+    "style": {
+      "background": undefined,
+      "fill": undefined,
+      "fontSize": undefined,
+      "fontWeight": undefined,
+    },
     "visible": true,
   },
   "legends": {

@@ -18,7 +18,7 @@
     "position": "rightTop",
     "maxSize": 1,
     "labelFontSize": 12,
-    "labelFontColor": "#6F6F6F"
+    "labelColor": "#6F6F6F"
   },
   "chartType": "roseParallel",
   "dataset": [

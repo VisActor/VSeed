@@ -1,6 +1,6 @@
 import { clone } from 'remeda'
 import type { AdvancedPipe, Datum } from 'src/types'
-
+import { isMeasure, preorderTraverse } from 'src/pipeline/utils'
 /**
  * @description 如果用户没有配置 measures, 则基于 dataset 构建默认的 measures
  */
@@ -9,20 +9,16 @@ export const defaultMeasures: AdvancedPipe = (advancedVSeed, context) => {
   const { measures, dataset } = vseed
 
   if (measures && measures.length > 0) {
+    const clonedMeasures = clone(measures)
+    preorderTraverse(clonedMeasures, (node) => {
+      if (isMeasure(node)) {
+        node.alias = node.alias || node.id
+      }
+      return false
+    })
     return {
       ...advancedVSeed,
-      measures: clone(measures),
-    }
-  }
-
-  if (!dataset) {
-    throw new Error('dataset is required')
-  }
-
-  if (dataset.length === 0) {
-    return {
-      ...advancedVSeed,
-      measures: [],
+      measures: clonedMeasures,
     }
   }
 

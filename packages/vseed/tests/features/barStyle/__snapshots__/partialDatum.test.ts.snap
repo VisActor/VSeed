@@ -34,6 +34,8 @@ exports[`partialDatum 1`] = `
       },
       "label": {
         "enable": true,
+        "labelColorSmartInvert": false,
+        "labelOverlap": true,
         "showValue": true,
         "showValuePercent": false,
         "wrap": true,
@@ -41,7 +43,7 @@ exports[`partialDatum 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelFontColor": "#646A73",
+        "labelColor": "#646A73",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
@@ -167,6 +169,8 @@ exports[`partialDatum 1`] = `
         },
         "label": {
           "enable": true,
+          "labelColorSmartInvert": false,
+          "labelOverlap": true,
           "showValue": true,
           "showValuePercent": false,
           "wrap": true,
@@ -174,7 +178,7 @@ exports[`partialDatum 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelFontColor": "#646A73",
+          "labelColor": "#646A73",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
@@ -691,7 +695,7 @@ exports[`partialDatum 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "利润 & 销售额 & 数量",
         "visible": false,
       },
       "type": "linear",
@@ -764,7 +768,7 @@ exports[`partialDatum 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "日期",
         "visible": false,
       },
       "type": "band",
@@ -1120,6 +1124,18 @@ exports[`partialDatum 2`] = `
   "direction": "horizontal",
   "label": {
     "formatMethod": [Function],
+    "overlap": {
+      "clampForce": true,
+      "hideOnHit": true,
+    },
+    "position": undefined,
+    "smartInvert": false,
+    "style": {
+      "background": undefined,
+      "fill": undefined,
+      "fontSize": undefined,
+      "fontWeight": undefined,
+    },
     "visible": true,
   },
   "legends": {

@@ -1,6 +1,6 @@
 {
   "name": "@visactor/vseed",
-  "version": "0.1.13",
+  "version": "0.1.18",
   "type": "module",
   "exports": {
     ".": {
@@ -24,7 +24,7 @@
     "lint": "eslint .",
     "test": "vitest run",
     "rstest": "rstest",
-    "test:coverage": "vitest run --coverage && open coverage/index.html"
+    "test:coverage": "vitest run  --update --coverage && open coverage/index.html"
   },
   "dependencies": {
     "remeda": "2.28.0",

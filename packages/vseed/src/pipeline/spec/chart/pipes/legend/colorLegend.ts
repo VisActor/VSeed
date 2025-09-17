@@ -11,7 +11,7 @@ export const colorLegend: SpecPipe = (spec, context) => {
   }
 
   const { legend } = baseConfig
-  const { enable, position = 'bottom', labelFontColor, labelFontSize = 12, labelFontWeight } = legend || {}
+  const { enable, position = 'bottom', labelFontColor, labelColor, labelFontSize = 12, labelFontWeight } = legend || {}
 
   const orient = ['bottom', 'bottomLeft', 'bottomRight', 'bl', 'br'].includes(position)
     ? 'bottom'
@@ -38,7 +38,7 @@ export const colorLegend: SpecPipe = (spec, context) => {
     startText: {
       visible: true,
       style: {
-        fill: labelFontColor,
+        fill: labelColor || labelFontColor,
         fontSize: labelFontSize,
         fontWeight: labelFontWeight,
       },
@@ -46,7 +46,7 @@ export const colorLegend: SpecPipe = (spec, context) => {
     endText: {
       visible: true,
       style: {
-        fill: labelFontColor,
+        fill: labelColor || labelFontColor,
         fontSize: labelFontSize,
         fontWeight: labelFontWeight,
       },

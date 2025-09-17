@@ -6,7 +6,7 @@ import { findAllMeasures } from 'src/pipeline/utils'
 export const tooltipPrimary: SpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
-  const { measures, datasetReshapeInfo, chartType, locale, dimensions, encoding } = advancedVSeed
+  const { measures, datasetReshapeInfo, chartType, dimensions, encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
@@ -24,7 +24,6 @@ export const tooltipPrimary: SpecPipe = (spec, context) => {
         encoding.tooltip || [],
         dimensions,
         findAllMeasures(vseed.measures),
-        locale,
         foldInfoList[0],
         unfoldInfo,
       ),
@@ -33,7 +32,7 @@ export const tooltipPrimary: SpecPipe = (spec, context) => {
       title: {
         visible: true,
       },
-      content: createDimensionContent(measures, foldInfoList[0], unfoldInfo, locale),
+      content: createDimensionContent(measures, foldInfoList[0], unfoldInfo),
     },
   }
   return result
@@ -42,7 +41,7 @@ export const tooltipPrimary: SpecPipe = (spec, context) => {
 export const tooltipSecondary: SpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
-  const { measures, datasetReshapeInfo, chartType, locale, dimensions, encoding } = advancedVSeed
+  const { measures, datasetReshapeInfo, chartType, dimensions, encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
@@ -63,7 +62,6 @@ export const tooltipSecondary: SpecPipe = (spec, context) => {
         encoding.tooltip || [],
         dimensions,
         findAllMeasures(vseed.measures),
-        locale,
         foldInfoList[1],
         unfoldInfo,
       ),
@@ -72,7 +70,7 @@ export const tooltipSecondary: SpecPipe = (spec, context) => {
       title: {
         visible: true,
       },
-      content: createDimensionContent(measures, foldInfoList[1], unfoldInfo, locale),
+      content: createDimensionContent(measures, foldInfoList[1], unfoldInfo),
     },
   }
   return result

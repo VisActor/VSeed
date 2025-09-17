@@ -1,76 +1,165 @@
-import { z } from 'zod'
-import { type Axis } from './axis'
+import type { NumFormat } from '../../format'
 
-export type XLinearAxis = Omit<
-  Axis,
-  | 'labelAutoHide'
-  | 'labelAutoHideGap'
-  | 'labelAutoRotate'
-  | 'labelAutoRotateAngleRange'
-  | 'labelAutoLimit'
-  | 'labelAutoLimitLength'
->
-export type YLinearAxis = Omit<
-  Axis,
-  | 'labelAutoHide'
-  | 'labelAutoHideGap'
-  | 'labelAutoRotate'
-  | 'labelAutoRotateAngleRange'
-  | 'labelAutoLimit'
-  | 'labelAutoLimitLength'
->
+export type XLinearAxis = {
+  /**
+   * @description 轴是否可见
+   */
+  visible?: boolean
 
-export const zXLinearAxis = z.object({
-  visible: z.boolean().default(true).nullish(),
+  /**
+   * @description 轴的最小值, 优先级高于 nice 与 zero
+   */
+  min?: number
 
-  min: z.number().nullish(),
-  max: z.number().nullish(),
-  nice: z.boolean().default(true).nullish(),
-  zero: z.boolean().default(true).nullish(),
-  log: z.boolean().default(false).nullish(),
-  logBase: z.number().default(10).nullish(),
-  inverse: z.boolean().default(false).nullish(),
+  /**
+   * @description 轴的最大值, 优先级高于 nice 与 zero
+   */
+  max?: number
 
-  label: z
-    .object({
-      visible: z.boolean().default(true).nullish(),
-      labelColor: z.string().default('#797B85').nullish(),
-      labelFontSize: z.number().default(12).nullish(),
-      labelFontWeight: z.number().default(400).nullish(),
-      labelAngle: z.number().default(0).nullish(),
-    })
-    .nullish(),
-  line: z
-    .object({
-      visible: z.boolean().default(true).nullish(),
-      lineColor: z.string().default('rgba(54, 65, 89, 0.30)').nullish(),
-      lineWidth: z.number().default(1).nullish(),
-    })
-    .nullish(),
-  tick: z
-    .object({
-      visible: z.boolean().default(true).nullish(),
-      tickInside: z.boolean().default(false).nullish(),
-      tickColor: z.string().default('rgba(54, 65, 89, 0.30)').nullish(),
-      tickSize: z.number().default(4).nullish(),
-    })
-    .nullish(),
-  title: z
-    .object({
-      visible: z.boolean().default(false).nullish(),
-      titleText: z.string().default('').nullish(),
-      titleColor: z.string().default('#646A73').nullish(),
-      titleFontSize: z.number().default(12).nullish(),
-      titleFontWeight: z.number().default(400).nullish(),
-    })
-    .nullish(),
-  grid: z
-    .object({
-      visible: z.boolean().default(false).nullish(),
-      gridColor: z.string().default('rgba(54, 65, 89, 0.15)').nullish(),
-      gridWidth: z.number().default(0.5).nullish(),
-    })
-    .nullish(),
-})
+  /**
+   * @description 是否使用对数轴, 仅对数值轴生效
+   */
+  log?: boolean
 
-export const zYLinearAxis = zXLinearAxis
+  /**
+   * @description 对数轴的底数, 仅对数值轴生效
+   */
+  logBase?: number
+
+  /**
+   * @description 是否自动调整轴的刻度间隔，使刻度标签更易读, 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
+   */
+  nice?: boolean
+
+  /**
+   * @description 轴是否反向展示, 仅对数值轴生效
+   */
+  inverse?: boolean
+
+  /**
+   * @description 是否在坐标轴上强制显示 0 值, 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
+   */
+  zero?: boolean
+
+  /**
+   * @description 是否自动格式化数值轴的刻度标签, 仅对数值轴生效, autoFormat 为 true 时, numFormat 配置失效
+   */
+  autoFormat?: boolean
+
+  /**
+   * @description 数值轴的数字格式化, 仅对数值轴生效, 优先级低于 autoFormat
+   */
+  numFormat?: NumFormat
+
+  /**
+   * @description X轴刻度标签
+   */
+  label?: {
+    /**
+     * @description 标签是否可见
+     */
+    visible?: boolean
+    /**
+     * @description 标签颜色
+     */
+    labelColor?: string
+    /**
+     * @description 标签字体大小
+     */
+    labelFontSize?: number
+    /**
+     * @description 标签字体粗细
+     */
+    labelFontWeight?: number
+    /**
+     * @description 标签旋转角度
+     */
+    labelAngle?: number
+  }
+
+  /**
+   * @description X轴线
+   */
+  line?: {
+    /**
+     * @description 轴线是否可见
+     */
+    visible?: boolean
+    /**
+     * @description 轴线颜色
+     */
+    lineColor?: string
+    /**
+     * @description 轴线宽度
+     */
+    lineWidth?: number
+  }
+
+  /**
+   * @description X轴刻度
+   */
+  tick?: {
+    /**
+     * 刻度是否可见
+     * @default true
+     */
+    visible?: boolean
+    /**
+     * 刻度是否朝内
+     * @default false
+     */
+    tickInside?: boolean
+    /**
+     * 刻度颜色
+     */
+    tickColor?: string
+    /**
+     * 刻度尺寸
+     */
+    tickSize?: number
+  }
+
+  /**
+   * @description X轴标题
+   */
+  title?: {
+    /**
+     * 标题是否可见
+     * @default false
+     */
+    visible?: boolean
+    /**
+     * 标题文本, 默认跟随字段配置
+     */
+    titleText?: string
+    /**
+     * 标题颜色
+     */
+    titleColor?: string
+    /**
+     * 标题字体大小
+     */
+    titleFontSize?: number
+    /**
+     * 标题字体粗细
+     */
+    titleFontWeight?: number
+  }
+
+  /**
+   * @description X轴网格线
+   */
+  grid?: {
+    visible?: boolean
+    /**
+     * 网格线颜色
+     */
+    gridColor?: string
+    /**
+     * 网格线宽度
+     */
+    gridWidth?: number
+  }
+}
+
+export type YLinearAxis = XLinearAxis

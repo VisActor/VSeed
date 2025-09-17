@@ -64,6 +64,8 @@ exports[`null2undefined 1`] = `
       },
       "label": {
         "enable": true,
+        "labelColorSmartInvert": false,
+        "labelOverlap": true,
         "showValue": true,
         "showValuePercent": false,
         "wrap": true,
@@ -71,7 +73,7 @@ exports[`null2undefined 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelFontColor": "#646A73",
+        "labelColor": "#646A73",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
@@ -124,6 +126,7 @@ exports[`null2undefined 1`] = `
         },
       },
       "yAxis": {
+        "autoFormat": false,
         "grid": {
           "gridColor": "#36415926",
           "gridWidth": 0.5,
@@ -143,6 +146,9 @@ exports[`null2undefined 1`] = `
           "visible": false,
         },
         "nice": true,
+        "numFormat": {
+          "prefix": "¥",
+        },
         "tick": {
           "tickColor": "#3641594d",
           "tickInside": false,
@@ -191,6 +197,8 @@ exports[`null2undefined 1`] = `
         },
         "label": {
           "enable": true,
+          "labelColorSmartInvert": false,
+          "labelOverlap": true,
           "showValue": true,
           "showValuePercent": false,
           "wrap": true,
@@ -198,7 +206,7 @@ exports[`null2undefined 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelFontColor": "#646A73",
+          "labelColor": "#646A73",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
@@ -667,7 +675,7 @@ exports[`null2undefined 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "日期",
         "visible": false,
       },
       "type": "band",
@@ -1014,6 +1022,18 @@ exports[`null2undefined 2`] = `
   "direction": "vertical",
   "label": {
     "formatMethod": [Function],
+    "overlap": {
+      "clampForce": true,
+      "hideOnHit": true,
+    },
+    "position": undefined,
+    "smartInvert": false,
+    "style": {
+      "background": undefined,
+      "fill": undefined,
+      "fontSize": undefined,
+      "fontWeight": undefined,
+    },
     "visible": true,
   },
   "legends": {

@@ -34,6 +34,8 @@ exports[`horizontal 1`] = `
       },
       "label": {
         "enable": false,
+        "labelColorSmartInvert": false,
+        "labelOverlap": true,
         "showValue": true,
         "showValuePercent": false,
         "wrap": true,
@@ -41,7 +43,7 @@ exports[`horizontal 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelFontColor": "#646A73",
+        "labelColor": "#646A73",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
@@ -93,6 +95,7 @@ exports[`horizontal 1`] = `
         "zero": true,
       },
       "yAxis": {
+        "autoFormat": false,
         "grid": {
           "gridColor": "#606773",
           "gridWidth": 2,
@@ -167,6 +170,8 @@ exports[`horizontal 1`] = `
         },
         "label": {
           "enable": true,
+          "labelColorSmartInvert": false,
+          "labelOverlap": true,
           "showValue": true,
           "showValuePercent": false,
           "wrap": true,
@@ -174,7 +179,7 @@ exports[`horizontal 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelFontColor": "#646A73",
+          "labelColor": "#646A73",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
@@ -1401,7 +1406,7 @@ exports[`horizontal 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "profit & sales",
         "visible": false,
       },
       "type": "linear",
@@ -2548,6 +2553,18 @@ exports[`horizontal 2`] = `
   "direction": "horizontal",
   "label": {
     "formatMethod": [Function],
+    "overlap": {
+      "clampForce": true,
+      "hideOnHit": true,
+    },
+    "position": undefined,
+    "smartInvert": false,
+    "style": {
+      "background": undefined,
+      "fill": undefined,
+      "fontSize": undefined,
+      "fontWeight": undefined,
+    },
     "visible": false,
   },
   "legends": {

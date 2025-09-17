@@ -34,6 +34,8 @@ exports[`ratioAndSymbol 1`] = `
       },
       "label": {
         "enable": true,
+        "labelColorSmartInvert": false,
+        "labelOverlap": true,
         "showValue": true,
         "showValuePercent": false,
         "wrap": true,
@@ -41,7 +43,7 @@ exports[`ratioAndSymbol 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelFontColor": "#646A73",
+        "labelColor": "#646A73",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
@@ -169,6 +171,8 @@ exports[`ratioAndSymbol 1`] = `
         },
         "label": {
           "enable": true,
+          "labelColorSmartInvert": false,
+          "labelOverlap": true,
           "showValue": true,
           "showValuePercent": false,
           "wrap": true,
@@ -176,7 +180,7 @@ exports[`ratioAndSymbol 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelFontColor": "#646A73",
+          "labelColor": "#646A73",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
@@ -467,15 +471,15 @@ exports[`ratioAndSymbol 1`] = `
     {
       "foldInfo": {
         "foldMap": {
-          "num1": undefined,
-          "num2": undefined,
-          "num3": undefined,
-          "num4": undefined,
-          "num5": undefined,
-          "num6": undefined,
-          "num7": undefined,
-          "num8": undefined,
-          "num9": undefined,
+          "num1": "num1",
+          "num2": "num2",
+          "num3": "num3",
+          "num4": "num4",
+          "num5": "num5",
+          "num6": "num6",
+          "num7": "num7",
+          "num8": "num8",
+          "num9": "num9",
         },
         "measureId": "__MeaId__",
         "measureName": "__MeaName__",
@@ -559,6 +563,7 @@ exports[`ratioAndSymbol 1`] = `
   "markStyle": {},
   "measures": [
     {
+      "alias": "num1",
       "format": {
         "fractionDigits": 0,
         "ratio": 1,
@@ -568,6 +573,7 @@ exports[`ratioAndSymbol 1`] = `
       "id": "num1",
     },
     {
+      "alias": "num2",
       "format": {
         "fractionDigits": 0,
         "ratio": 10,
@@ -577,6 +583,7 @@ exports[`ratioAndSymbol 1`] = `
       "id": "num2",
     },
     {
+      "alias": "num3",
       "format": {
         "fractionDigits": 0,
         "ratio": 100,
@@ -586,6 +593,7 @@ exports[`ratioAndSymbol 1`] = `
       "id": "num3",
     },
     {
+      "alias": "num4",
       "format": {
         "fractionDigits": 0,
         "ratio": 1000,
@@ -595,6 +603,7 @@ exports[`ratioAndSymbol 1`] = `
       "id": "num4",
     },
     {
+      "alias": "num5",
       "format": {
         "fractionDigits": 0,
         "ratio": 10000,
@@ -604,6 +613,7 @@ exports[`ratioAndSymbol 1`] = `
       "id": "num5",
     },
     {
+      "alias": "num6",
       "format": {
         "fractionDigits": 0,
         "ratio": 100000,
@@ -613,6 +623,7 @@ exports[`ratioAndSymbol 1`] = `
       "id": "num6",
     },
     {
+      "alias": "num7",
       "format": {
         "fractionDigits": 0,
         "ratio": 1000000,
@@ -622,6 +633,7 @@ exports[`ratioAndSymbol 1`] = `
       "id": "num7",
     },
     {
+      "alias": "num8",
       "format": {
         "fractionDigits": 0,
         "ratio": 10000000,
@@ -631,6 +643,7 @@ exports[`ratioAndSymbol 1`] = `
       "id": "num8",
     },
     {
+      "alias": "num9",
       "format": {
         "fractionDigits": 0,
         "ratio": 100000000,
@@ -712,7 +725,7 @@ exports[`ratioAndSymbol 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "指标名称",
         "visible": false,
       },
       "type": "band",
@@ -766,7 +779,7 @@ exports[`ratioAndSymbol 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "",
+        "text": "num1 & num2 & num3 & num4 & num5 & num6 & num7 & num8 & num9",
         "visible": false,
       },
       "type": "log",
@@ -1045,6 +1058,18 @@ exports[`ratioAndSymbol 2`] = `
   "direction": "vertical",
   "label": {
     "formatMethod": [Function],
+    "overlap": {
+      "clampForce": true,
+      "hideOnHit": true,
+    },
+    "position": undefined,
+    "smartInvert": false,
+    "style": {
+      "background": undefined,
+      "fill": undefined,
+      "fontSize": undefined,
+      "fontWeight": undefined,
+    },
     "visible": true,
   },
   "legends": {

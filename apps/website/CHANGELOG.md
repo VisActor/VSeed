@@ -1,5 +1,45 @@
 # website
 
+## 0.1.18
+
+### Patch Changes
+
+- fix: parallel chart error
+- Updated dependencies
+  - @visactor/vseed@0.1.18
+
+## 0.1.17
+
+### Patch Changes
+
+- feat: add encoding size
+- Updated dependencies
+  - @visactor/vseed@0.1.17
+
+## 0.1.16
+
+### Patch Changes
+
+- feat: optimize the error info
+- Updated dependencies
+  - @visactor/vseed@0.1.16
+
+## 0.1.15
+
+### Patch Changes
+
+- feat: add label and y foramt
+- Updated dependencies
+  - @visactor/vseed@0.1.15
+
+## 0.1.14
+
+### Patch Changes
+
+- feat: add label features
+- Updated dependencies
+  - @visactor/vseed@0.1.14
+
 ## 0.1.13
 
 ### Patch Changes

@@ -38,6 +38,8 @@ exports[`defaultParentIdForDualAxis 1`] = `
       },
       "label": {
         "enable": true,
+        "labelColorSmartInvert": false,
+        "labelOverlap": true,
         "showValue": true,
         "showValuePercent": false,
         "wrap": true,
@@ -45,7 +47,7 @@ exports[`defaultParentIdForDualAxis 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelFontColor": "#646A73",
+        "labelColor": "#646A73",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
@@ -202,6 +204,8 @@ exports[`defaultParentIdForDualAxis 1`] = `
         },
         "label": {
           "enable": true,
+          "labelColorSmartInvert": false,
+          "labelOverlap": true,
           "showValue": true,
           "showValuePercent": false,
           "wrap": true,
@@ -209,7 +213,7 @@ exports[`defaultParentIdForDualAxis 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelFontColor": "#646A73",
+          "labelColor": "#646A73",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
@@ -742,7 +746,7 @@ exports[`defaultParentIdForDualAxis 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "product_type",
               "visible": false,
             },
             "type": "band",
@@ -798,7 +802,7 @@ exports[`defaultParentIdForDualAxis 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "sum(amount) & sum(amount)",
               "visible": false,
             },
             "type": "linear",
@@ -859,7 +863,7 @@ exports[`defaultParentIdForDualAxis 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "sum(amount) & sum(amount)",
               "visible": false,
             },
             "type": "linear",
@@ -952,7 +956,20 @@ exports[`defaultParentIdForDualAxis 2`] = `
             "id": "dualAxis-0-primary-series",
             "label": {
               "formatMethod": [Function],
+              "overlap": {
+                "clampForce": true,
+                "hideOnHit": true,
+              },
+              "position": undefined,
+              "smartInvert": false,
+              "style": {
+                "background": undefined,
+                "fill": undefined,
+                "fontSize": undefined,
+                "fontWeight": undefined,
+              },
               "visible": true,
+              "zIndex": 1002,
             },
             "line": {
               "style": {},
@@ -1047,7 +1064,20 @@ exports[`defaultParentIdForDualAxis 2`] = `
             "id": "dualAxis-0-secondary-series",
             "label": {
               "formatMethod": [Function],
+              "overlap": {
+                "clampForce": true,
+                "hideOnHit": true,
+              },
+              "position": undefined,
+              "smartInvert": false,
+              "style": {
+                "background": undefined,
+                "fill": undefined,
+                "fontSize": undefined,
+                "fontWeight": undefined,
+              },
               "visible": true,
+              "zIndex": 1002,
             },
             "line": {
               "style": {},
@@ -1194,7 +1224,7 @@ exports[`defaultParentIdForDualAxis 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "product_type",
               "visible": false,
             },
             "type": "band",
@@ -1250,7 +1280,7 @@ exports[`defaultParentIdForDualAxis 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "sum(amount) & sum(amount)",
               "visible": false,
             },
             "type": "linear",
@@ -1311,7 +1341,7 @@ exports[`defaultParentIdForDualAxis 2`] = `
                 "fontSize": 12,
                 "fontWeight": 400,
               },
-              "text": "",
+              "text": "sum(amount) & sum(amount)",
               "visible": false,
             },
             "type": "linear",
@@ -1404,7 +1434,20 @@ exports[`defaultParentIdForDualAxis 2`] = `
             "id": "dualAxis-1-primary-series",
             "label": {
               "formatMethod": [Function],
+              "overlap": {
+                "clampForce": true,
+                "hideOnHit": true,
+              },
+              "position": undefined,
+              "smartInvert": false,
+              "style": {
+                "background": undefined,
+                "fill": undefined,
+                "fontSize": undefined,
+                "fontWeight": undefined,
+              },
               "visible": true,
+              "zIndex": 1002,
             },
             "line": {
               "style": {},
@@ -1499,7 +1542,20 @@ exports[`defaultParentIdForDualAxis 2`] = `
             "id": "dualAxis-1-secondary-series",
             "label": {
               "formatMethod": [Function],
+              "overlap": {
+                "clampForce": true,
+                "hideOnHit": true,
+              },
+              "position": undefined,
+              "smartInvert": false,
+              "style": {
+                "background": undefined,
+                "fill": undefined,
+                "fontSize": undefined,
+                "fontWeight": undefined,
+              },
               "visible": true,
+              "zIndex": 1002,
             },
             "line": {
               "style": {},

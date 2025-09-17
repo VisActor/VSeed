@@ -30,6 +30,7 @@ export const seriesDualAxis = (...args: SpecPipeline[]): SpecPipe => {
   const result = {
     type: 'common',
     padding: 0,
+    labelLayout: 'region',
     region: [
       {
         clip: true,

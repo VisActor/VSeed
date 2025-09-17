@@ -2,7 +2,7 @@ import { isNumber } from 'remeda'
 import { intl } from '../../../i18n'
 import type { Formatter, Locale, NumFormat } from 'src/types'
 
-export const createNumFormatter = (format: NumFormat, locale: Locale = intl.getLocale()): Formatter => {
+export const createNumFormatter = (format?: Partial<NumFormat>, locale: Locale = intl.getLocale()): Formatter => {
   const {
     type = 'number',
     ratio = 1,
@@ -38,7 +38,7 @@ export const createNumFormatter = (format: NumFormat, locale: Locale = intl.getL
     }
   }
 
-  const numFormatter = new Intl.NumberFormat(locale, numFormatterOptions)
+  const numFormatter = new Intl.NumberFormat(locale, { ...numFormatterOptions, useGrouping: thousandSeparator })
 
   return (value?: number | string) => {
     let num = Number(value)

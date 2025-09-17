@@ -1,13 +1,15 @@
 import type { ISpec } from '@visactor/vchart'
 import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
 import type { SpecPipe, XLinearAxis } from 'src/types'
-import { autoFormatter } from '../../../../utils'
+import { createNumFormatter } from '../../../../utils'
+import { createLinearFormat } from './format/linearFormat'
+import { defaultTitleText } from './title/defaultTitleText'
 
 export const xLinear: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
+  const { encoding, dimensions, measures } = advancedVSeed
   const { chartType } = vseed
-  const { locale } = advancedVSeed
   const config = advancedVSeed.config?.[chartType as 'bar']?.xAxis as XLinearAxis
 
   if (!result.axes) {
@@ -41,7 +43,11 @@ export const xLinear: SpecPipe = (spec, context) => {
     min,
     log,
     logBase = 10,
+    autoFormat,
+    numFormat = {},
   } = config
+
+  const formatter = createNumFormatter(numFormat)
 
   const linearAxis = {
     visible,
@@ -56,7 +62,7 @@ export const xLinear: SpecPipe = (spec, context) => {
     label: {
       visible: label?.visible,
       formatMethod: (value: string) => {
-        return autoFormatter(value, locale)
+        return createLinearFormat(value, autoFormat, numFormat, formatter)
       },
       style: {
         fill: label?.labelColor,
@@ -67,7 +73,7 @@ export const xLinear: SpecPipe = (spec, context) => {
     },
     title: {
       visible: title?.visible,
-      text: title?.titleText,
+      text: title?.titleText || defaultTitleText(measures, dimensions, encoding.x as string[]),
       style: {
         fill: title?.titleColor,
         fontSize: title?.titleFontSize,

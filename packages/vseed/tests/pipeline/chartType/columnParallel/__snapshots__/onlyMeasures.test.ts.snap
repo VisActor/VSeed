@@ -951,7 +951,6 @@ exports[`onlyMeasures 2`] = `
   "type": "bar",
   "xField": [
     "__Dim_X__",
-    "__Dim_Detail__",
   ],
   "yField": "__MeaValue__",
 }

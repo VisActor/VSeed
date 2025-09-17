@@ -1,7 +1,5 @@
 name: Changesets
 
-permissions: contents: write
-
 on:
   push:
     branches:

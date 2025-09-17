@@ -884,6 +884,9 @@ exports[`1_meaColor 2`] = `
   "direction": "vertical",
   "label": {
     "formatMethod": [Function],
+    "layout": {
+      "align": undefined,
+    },
     "overlap": {
       "clampForce": true,
       "hideOnHit": true,
@@ -899,7 +902,8 @@ exports[`1_meaColor 2`] = `
     "visible": true,
   },
   "legends": {
-    "endText": {
+    "field": "__Dim_Color__",
+    "handlerText": {
       "style": {
         "fill": "#646A73",
         "fontSize": 12,
@@ -907,19 +911,10 @@ exports[`1_meaColor 2`] = `
       },
       "visible": true,
     },
-    "field": "__Dim_Color__",
     "maxWidth": "30%",
     "orient": "right",
     "padding": 0,
     "position": "start",
-    "startText": {
-      "style": {
-        "fill": "#646A73",
-        "fontSize": 12,
-        "fontWeight": 400,
-      },
-      "visible": true,
-    },
     "type": "color",
     "visible": true,
   },

@@ -1357,6 +1357,9 @@ exports[`pivotRadar 2`] = `
         },
         "label": {
           "formatMethod": [Function],
+          "layout": {
+            "align": undefined,
+          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,
@@ -1544,6 +1547,9 @@ exports[`pivotRadar 2`] = `
         },
         "label": {
           "formatMethod": [Function],
+          "layout": {
+            "align": undefined,
+          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,

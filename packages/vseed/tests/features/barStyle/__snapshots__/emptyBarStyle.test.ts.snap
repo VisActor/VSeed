@@ -744,6 +744,9 @@ exports[`emptyBarStyle 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
+          "layout": {
+            "align": undefined,
+          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,
@@ -1030,6 +1033,9 @@ exports[`emptyBarStyle 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
+          "layout": {
+            "align": undefined,
+          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,
@@ -1117,7 +1123,7 @@ exports[`emptyBarStyle 2`] = `
       "#C2CEFF",
       "#5766EC",
     ],
-    "endText": {
+    "handlerText": {
       "style": {
         "fill": "#6F6F6F",
         "fontSize": 12,
@@ -1130,14 +1136,6 @@ exports[`emptyBarStyle 2`] = `
     "min": 21401,
     "orient": "right",
     "position": "start",
-    "startText": {
-      "style": {
-        "fill": "#6F6F6F",
-        "fontSize": 12,
-        "fontWeight": 400,
-      },
-      "visible": true,
-    },
     "type": "color",
     "value": [
       21401,

@@ -28,6 +28,7 @@ exports[`1_dimColor 1`] = `
       "label": {
         "enable": true,
         "labelColorSmartInvert": false,
+        "labelLayout": "labelLine",
         "labelOverlap": true,
         "showValue": true,
         "showValuePercent": true,
@@ -73,6 +74,7 @@ exports[`1_dimColor 1`] = `
         "label": {
           "enable": true,
           "labelColorSmartInvert": false,
+          "labelLayout": "labelLine",
           "labelOverlap": true,
           "showValue": true,
           "showValuePercent": true,
@@ -992,6 +994,9 @@ exports[`1_dimColor 2`] = `
   "innerRadius": 0,
   "label": {
     "formatMethod": [Function],
+    "layout": {
+      "align": "labelLine",
+    },
     "overlap": {
       "clampForce": true,
       "hideOnHit": true,

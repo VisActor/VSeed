@@ -1668,6 +1668,9 @@ exports[`pivotBarPercent 2`] = `
         "direction": "horizontal",
         "label": {
           "formatMethod": [Function],
+          "layout": {
+            "align": undefined,
+          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,
@@ -1966,6 +1969,9 @@ exports[`pivotBarPercent 2`] = `
         "direction": "horizontal",
         "label": {
           "formatMethod": [Function],
+          "layout": {
+            "align": undefined,
+          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,

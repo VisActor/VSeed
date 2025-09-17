@@ -1048,6 +1048,9 @@ exports[`second 2`] = `
       "id": "dualAxis-primary-series",
       "label": {
         "formatMethod": [Function],
+        "layout": {
+          "align": undefined,
+        },
         "overlap": {
           "clampForce": true,
           "hideOnHit": true,
@@ -1242,6 +1245,9 @@ exports[`second 2`] = `
       "id": "dualAxis-secondary-series",
       "label": {
         "formatMethod": [Function],
+        "layout": {
+          "align": undefined,
+        },
         "overlap": {
           "clampForce": true,
           "hideOnHit": true,

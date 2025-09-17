@@ -39,6 +39,23 @@ export const PivotChart = memo((props: { vseed: VSeed }) => {
       ])
     })
 
+    tableInstance.on('legend_change', (args) => {
+      const maxValue = args.value[1]
+      const minValue = args.value[0]
+      tableInstance.updateFilterRules([
+        {
+          filterFunc: (record) => {
+            const value = record[record[ColorIdEncoding]]
+            console.log('updateFilterRules', record)
+            if (value >= minValue && value <= maxValue) {
+              return true
+            }
+            return false
+          },
+        },
+      ])
+    })
+
     return () => tableInstance.release()
   }, [dark])
 

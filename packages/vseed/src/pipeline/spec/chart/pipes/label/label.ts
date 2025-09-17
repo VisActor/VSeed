@@ -83,6 +83,7 @@ export const buildLabel = (
     labelPosition,
     autoFormat,
     numFormat = {},
+    labelLayout,
   } = label
 
   const labelDims = uniqueBy(
@@ -142,6 +143,9 @@ export const buildLabel = (
       return result.join(' ')
     },
     position: labelPosition,
+    layout: {
+      align: labelLayout,
+    },
     style: {
       fill: labelColor,
       fontSize: labelFontSize,

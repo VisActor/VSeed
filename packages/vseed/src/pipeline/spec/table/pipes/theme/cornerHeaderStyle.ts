@@ -29,8 +29,8 @@ export const cornerHeaderStyle: SpecPipe = (spec, context) => {
       inlineColumnBgColor: hoverInlineColor || undefined,
     },
     frameStyle: {
-      borderColor: [null, borderColor, borderColor, null],
-      borderLineWidth: 1,
+      borderColor: borderColor,
+      borderLineWidth: [0, 1, 1, 0],
     },
     fontSize: fontSize,
     fontVariant: 'normal',

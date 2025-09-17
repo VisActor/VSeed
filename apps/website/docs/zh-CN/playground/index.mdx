@@ -9,40 +9,45 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'heatmap',
-    dimensions: [
-      { id: 'month', alias: '月' },
-      { id: 'date', alias: '年', encoding: 'column' },
-      { id: 'type', alias: '类型', encoding: 'row' },
+    chartType: 'columnParallel',
+    measures: [
+      {
+        id: 'sales-and-profit',
+        alias: '销售额与利润',
+        children: [
+          {
+            id: 'sales',
+            alias: 'sales',
+          },
+          {
+            id: 'profit',
+            alias: '利润',
+          },
+        ],
+      },
+      {
+        id: 'ratio',
+        alias: '比率',
+        children: [
+          {
+            id: 'rateOfReturn',
+            alias: '回报率',
+          },
+        ],
+      },
     ],
     dataset: [
-      { date: '2019', type: 'A', month: '1', profit: 10000, sales: 200000 },
-      { date: '2019', type: 'A', month: '2', profit: 20000, sales: 400000 },
-      { date: '2019', type: 'A', month: '3', profit: 30000, sales: 600000 },
-      { date: '2019', type: 'A', month: '4', profit: 40000, sales: 800000 },
-      { date: '2019', type: 'A', month: '5', profit: 50000, sales: 1000000 },
-      { date: '2019', type: 'A', month: '6', profit: 10000, sales: 300000 },
-
-      { date: '2019', type: 'B', month: '1', profit: 10000, sales: 200000 },
-      { date: '2019', type: 'B', month: '2', profit: 20000, sales: 400000 },
-      { date: '2019', type: 'B', month: '3', profit: 30000, sales: 600000 },
-      { date: '2019', type: 'B', month: '4', profit: 40000, sales: 800000 },
-      { date: '2019', type: 'B', month: '5', profit: 50000, sales: 1000000 },
-      { date: '2019', type: 'B', month: '6', profit: 10000, sales: 300000 },
-
-      { date: '2020', type: 'A', month: '1', profit: 10000, sales: 200000 },
-      { date: '2020', type: 'A', month: '2', profit: 20000, sales: 400000 },
-      { date: '2020', type: 'A', month: '3', profit: 30000, sales: 600000 },
-      { date: '2020', type: 'A', month: '4', profit: 40000, sales: 800000 },
-      { date: '2020', type: 'A', month: '5', profit: 50000, sales: 1000000 },
-      { date: '2020', type: 'A', month: '6', profit: 10000, sales: 300000 },
-
-      { date: '2020', type: 'B', month: '1', profit: 10000, sales: 200000 },
-      { date: '2020', type: 'B', month: '2', profit: 20000, sales: 400000 },
-      { date: '2020', type: 'B', month: '3', profit: 30000, sales: 600000 },
-      { date: '2020', type: 'B', month: '4', profit: 40000, sales: 800000 },
-      { date: '2020', type: 'B', month: '5', profit: 50000, sales: 1000000 },
-      { date: '2020', type: 'B', month: '6', profit: 10000, sales: 300000 },
+      { date: '2019', profit: 10, sales: 20, rateOfReturn: 0.1 },
+      { date: '2020', profit: 20, sales: 40, rateOfReturn: 0.2 },
+      { date: '2021', profit: 30, sales: 60, rateOfReturn: 0.3 },
+      { date: '2022', profit: 40, sales: 80, rateOfReturn: 0.4 },
+      { date: '2023', profit: 50, sales: 100, rateOfReturn: 0.5 },
+    ],
+    dimensions: [
+      {
+        id: 'date',
+        alias: '日期',
+      },
     ],
   }
 

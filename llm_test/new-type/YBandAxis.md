@@ -3,121 +3,93 @@
 ```typescript
 export type YBandAxis = {
   /**
-   * 轴是否可见
-   * @default true
-   * @example true
+   * @description 轴是否可见
    */
   visible?: boolean
 
-  
-  
-  
-  
-  
   /**
-   * 轴是否反向展示
-   * @description 仅对数值轴生效
-   * @default false
-   * @example false
+   * @description 轴是否反向展示, 仅对数值轴生效
    */
   inverse?: boolean
 
-  
   /**
-   * 轴标签, 自动隐藏
-   * @description 2个标签若重叠(间隔小于autoHideGap), 则自动隐藏导致重叠的标签. 仅对类目轴生效.
-   * @default true
+   * @description 是否在坐标轴上强制显示 0 值, 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
+   */
+  zero?: boolean
+
+  /**
+   * @description  轴标签, 自动隐藏, 2个标签若重叠(间隔小于autoHideGap), 则自动隐藏导致重叠的标签. 仅对类目轴生效.
    */
   labelAutoHide?: boolean
   /**
-   * 轴标签, 自动隐藏间隔
-   * @description 若2个文本标签的间隔小于autoHideGap, 则自动隐藏导致重叠的标签. 仅对类目轴生效.
+   * @description 轴标签, 自动隐藏间隔, 若2个文本标签的间隔小于autoHideGap, 则自动隐藏导致重叠的标签. 仅对类目轴生效.
    *  autoHide开启时, 使用autoHide, 设置在autoHideSeparation上
    *  autoHide关闭时, 使用sampling采样, 设置在minGap上
-   * @default 4
    */
   labelAutoHideGap?: number
   /**
-   * 轴标签, 自动旋转
-   * @description 当标签宽度超过轴长度时, 自动旋转标签. 仅对类目轴生效.
-   * @default true
+   * @description  轴标签, 自动旋转, 当标签宽度超过轴长度时, 自动旋转标签. 仅对类目轴生效.
    */
   labelAutoRotate?: boolean
   /**
-   * 轴标签, 自动旋转角度范围
-   * @description 当自动旋转开启时, 标签旋转角度范围. 仅对类目轴生效.
-   * @default [0, -45, -90]
+   * @description 轴标签, 自动旋转角度范围, 当自动旋转开启时, 标签旋转角度范围. 仅对类目轴生效.
    */
   labelAutoRotateAngleRange?: number[]
   /**
-   * 轴标签, 自动限制长度,
-   * @description 当标签宽度超过轴长度时, 超出部分省略号表示, 鼠标悬浮后可见标签, 自动限制标签宽度. 仅对类目轴生效.
-   * @default true
+   * @description 轴标签, 自动限制长度, 当标签宽度超过轴长度时, 超出部分省略号表示, 鼠标悬浮后可见标签, 自动限制标签宽度. 仅对类目轴生效.
    */
   labelAutoLimit?: boolean
   /**
-   * 轴标签, 自动限制长度的最大长度
-   * @description 当标签文本长度超过最大长度时, 超出部分省略号表示, 鼠标悬浮后可见标签. 仅对类目轴生效.
+   * @description 轴标签, 自动限制长度的最大长度, 当标签文本长度超过最大长度时, 超出部分省略号表示, 鼠标悬浮后可见标签. 仅对类目轴生效.
    */
   labelAutoLimitLength?: number
 
   /**
-   * X轴刻度标签
-   * @default true
+   * @description X轴刻度标签
    */
   label?: {
     /**
-     * 标签是否可见
-     * @default true
+     * @description 标签是否可见
      */
     visible?: boolean
     /**
-     * 标签颜色
+     * @description 标签颜色
      */
     labelColor?: string
     /**
-     * 标签字体大小
+     * @description 标签字体大小
      */
     labelFontSize?: number
     /**
-     * 标签字体粗细
+     * @description 标签字体粗细
      */
     labelFontWeight?: number
     /**
-     * 标签旋转角度
+     * @description 标签旋转角度
      */
     labelAngle?: number
   }
 
   /**
-   * X轴线
-   * @example
-   * {
-   *   visible: true,
-   *   lineColor: '#ffeecc',
-   *   lineWidth: 2,
-   * }
+   * @description X轴线
    */
   line?: {
     /**
-     * 轴线是否可见
-     * @default true
+     * @description 轴线是否可见
      */
     visible?: boolean
     /**
-     * 轴线颜色
+     * @description 轴线颜色
      */
     lineColor?: string
     /**
-     * 轴线宽度
-     * @default 1
+     * @description 轴线宽度
      */
     lineWidth?: number
   }
 
   /**
-   * X轴刻度
-   * @default true
+   * @description X轴刻度
    */
   tick?: {
     /**
@@ -141,8 +113,7 @@ export type YBandAxis = {
   }
 
   /**
-   * X轴标题
-   * @default false
+   * @description X轴标题
    */
   title?: {
     /**
@@ -169,8 +140,7 @@ export type YBandAxis = {
   }
 
   /**
-   * X轴网格线
-   * @default false
+   * @description X轴网格线
    */
   grid?: {
     visible?: boolean
@@ -184,4 +154,6 @@ export type YBandAxis = {
     gridWidth?: number
   }
 }
+
+
 ```

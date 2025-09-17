@@ -100,12 +100,12 @@ const skipTopKeys = [
   'MeasureTree',
   'XBandAxis',
   'YLinearAxis',
-  'CrosshairLine',
+  // 'CrosshairLine',
   'Theme',
   'Locale',
   'XLinearAxis',
   'YBandAxis',
-  'CrosshairRect',
+  // 'CrosshairRect',
   'StackCornerRadius',
   'ColorLegend',
   'DualChartType',
@@ -139,7 +139,22 @@ function generateComponentMarkdown() {
     })
   })
 
-  // console.log(Array.from(topKeySet).length)
+  // NumFormat
+  const numFormatDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/format/numFormat.ts')
+  const numFormatFileContent = fs.readFileSync(numFormatDir)
+  const numFormatFileContentStr = numFormatFileContent.toString()
+  const interfaceNumFormatSignature = `export interface NumFormat`
+  const definitionStartIndex = numFormatFileContentStr.indexOf(interfaceNumFormatSignature)
+  if (definitionStartIndex === -1) {
+  console.log(`Could not find interface definition export interface NumFormat in numFormat.ts`)
+  return
+  }
+  const definitionEndIndex = numFormatFileContentStr.indexOf('}', definitionStartIndex)
+  if (definitionEndIndex === -1) {
+  console.log(`Could not find matching closing brace for NumFormat in numFormat.ts`)
+  return
+  }
+  const numFormatDefinition = numFormatFileContentStr.substring(definitionStartIndex, definitionEndIndex + 1)
 
   // 读取dir目录下的所有文件
   const files = fs.readdirSync(dir, { recursive: true })
@@ -163,6 +178,13 @@ function generateComponentMarkdown() {
         fileName = file
       }
     })
+    // 基础类型跳过
+    if (topKeyLower === 'boolean' || topKeyLower === 'string' || topKeyLower === 'number') {
+      return
+    }
+    if (topKeyLower.startsWith('crosshair')) {
+      fileName = 'config/crosshair/crosshair.ts'
+    }
     if (!fileName) {
       console.log(topKeyLower, 'not found')
       return
@@ -197,7 +219,8 @@ function generateComponentMarkdown() {
 
         if (definitionEndIndex !== -1) {
           const typeDefinition = fileContentStr.substring(startIndex, definitionEndIndex + 1)
-          let mdContent = `### ${topKey}\n${topKeyDesc[topKey]}\n\`\`\`typescript\n` + typeDefinition + '\n```'
+          const hasNumFormat = typeDefinition.includes(': NumFormat')
+          let mdContent = `### ${topKey}\n${topKeyDesc[topKey]}\n\`\`\`typescript\n` + (hasNumFormat ? numFormatDefinition + '\n' : '') + typeDefinition + '\n```'
           if (mdContent.includes('Selector')) {
             // 补充selector的描述
             mdContent += `\n${selectorMd}`
@@ -217,112 +240,47 @@ function generateComponentMarkdown() {
 }
 
 function generateAxisMarkdown() {
-  const axisDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/config/axes/axis.ts')
-  const fileContent = fs.readFileSync(axisDir)
-  const fileContentStr = fileContent.toString()
+  // NumFormat
+  const numFormatDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/format/numFormat.ts')
+  const numFormatFileContent = fs.readFileSync(numFormatDir)
+  const numFormatFileContentStr = numFormatFileContent.toString()
+  const interfaceNumFormatSignature = `export interface NumFormat`
+  const definitionStartIndex = numFormatFileContentStr.indexOf(interfaceNumFormatSignature)
+  if (definitionStartIndex === -1) {
+  console.log(`Could not find interface definition export interface NumFormat in numFormat.ts`)
+  return
+  }
+  const definitionEndIndex = numFormatFileContentStr.indexOf('}', definitionStartIndex)
+  if (definitionEndIndex === -1) {
+  console.log(`Could not find matching closing brace for NumFormat in numFormat.ts`)
+  return
+  }
+  const numFormatDefinition = numFormatFileContentStr.substring(definitionStartIndex, definitionEndIndex + 1)
+
+  const bandAxisDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/config/axes/bandAxis.ts')
+  const linearAxisDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/config/axes/linearAxis.ts')
+  const bandAxisFileContent = fs.readFileSync(bandAxisDir)
+  const linearAxisFileContent = fs.readFileSync(linearAxisDir)
+  const bandAxisFileContentStr = bandAxisFileContent.toString()
+  const linearAxisFileContentStr = linearAxisFileContent.toString()
   const outputDir = path.resolve(__dirname, './new-type')
-
-  const interfaceSignature = `export type Axis`
-  const interfaceIndex = fileContentStr.indexOf(interfaceSignature)
-
-  if (interfaceIndex === -1) {
-    console.log(`Could not find interface definition export type Axis in axis.ts`)
-    return
-  }
-
-  const startIndex = interfaceIndex
-  let axisDefinition = '';
-
-  const definitionStartIndex = fileContentStr.indexOf('{', interfaceIndex)
-  if (definitionStartIndex !== -1) {
-    let braceCount = 1
-    let definitionEndIndex = -1
-    for (let i = definitionStartIndex + 1; i < fileContentStr.length; i++) {
-      if (fileContentStr[i] === '{') {
-        braceCount++
-      } else if (fileContentStr[i] === '}') {
-        braceCount--
-        if (braceCount === 0) {
-          definitionEndIndex = i
-          break
-        }
-      }
-    }
-
-    if (definitionEndIndex !== -1) {
-      const definition = fileContentStr.substring(startIndex, definitionEndIndex + 1)
-      axisDefinition = definition;
-      const mdContent = '```typescript\n' + definition + '\n```'
-      const outputFilePath = path.resolve(outputDir, `Axis.md`)
-      fs.writeFileSync(outputFilePath, mdContent)
-      // console.log(`Generated markdown for Axis`)
-    } else {
-      console.log(`Could not find matching closing brace for Axis in axis.ts`)
-    }
-  } else {
-    console.log(`Could not find opening brace for Axis in axis.ts`)
-  }
-
-  if (!axisDefinition) {
-    return
-  }
-
-  const removeProperties = (typeDefinition: string, propertiesToRemove: string[]): string => {
-    let newDefinition = typeDefinition;
-    for (const prop of propertiesToRemove) {
-      const propSignature = `${prop}?:`;
-      let propIndex = newDefinition.indexOf(propSignature);
-      if (propIndex === -1) {
-        const propSignature2 = `${prop}:`;
-        propIndex = newDefinition.indexOf(propSignature2);
-        if (propIndex === -1) {
-            console.warn(`Property ${prop} not found in Axis definition.`);
-            continue;
-        }
-      }
-
-      const commentStartIndex = newDefinition.lastIndexOf('/**', propIndex);
-      if (commentStartIndex === -1) {
-        console.warn(`Could not find comment for property ${prop}.`);
-        continue;
-      }
-
-      let blockEndIndex = newDefinition.indexOf('\n', propIndex);
-      if (blockEndIndex === -1) {
-        blockEndIndex = newDefinition.length;
-      }
-      
-      newDefinition = newDefinition.substring(0, commentStartIndex) + newDefinition.substring(blockEndIndex + 1);
-    }
-    return newDefinition;
-  };
-
-  const bandAxisOmit = ['min', 'max', 'nice', 'zero', 'log', 'logBase'];
-  const bandAxisDefinition = removeProperties(axisDefinition, bandAxisOmit);
   
-  const xBandAxisDefinition = bandAxisDefinition.replace('export type Axis', 'export type XBandAxis');
+  const xBandAxisDefinition = bandAxisFileContentStr.replace('export type XBandAxis', 'export type XBandAxis').replace('export type YBandAxis = XBandAxis', '');
   fs.writeFileSync(path.resolve(outputDir, 'XBandAxis.md'), '### XBandAxis\n类目轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.\n```typescript\n' + xBandAxisDefinition + '\n```');
-  // console.log('Generated markdown for XBandAxis');
 
-  const yBandAxisDefinition = bandAxisDefinition.replace('export type Axis', 'export type YBandAxis');
+  const yBandAxisDefinition = bandAxisFileContentStr.replace('export type XBandAxis', 'export type YBandAxis').replace('export type YBandAxis = XBandAxis', '');
   fs.writeFileSync(path.resolve(outputDir, 'YBandAxis.md'), '### YBandAxis\n类目轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.\n```typescript\n' + yBandAxisDefinition + '\n```');
-  // console.log('Generated markdown for YBandAxis');
 
-  const linearAxisOmit = ['labelAutoHide', 'labelAutoHideGap', 'labelAutoRotate', 'labelAutoRotateAngleRange', 'labelAutoLimit', 'labelAutoLimitLength'];
-  const linearAxisDefinition = removeProperties(axisDefinition, linearAxisOmit);
+  const xLinearAxisDefinition = linearAxisFileContentStr.replace('export type XLinearAxis', 'export type XLinearAxis').replace('export type YLinearAxis = XLinearAxis', '').replace('import type { NumFormat } from \'../../format\'', '');
+  fs.writeFileSync(path.resolve(outputDir, 'XLinearAxis.md'), '### XLinearAxis\n数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.\n```typescript\n' + numFormatDefinition + '\n' + xLinearAxisDefinition + '\n```');
 
-  const xLinearAxisDefinition = linearAxisDefinition.replace('export type Axis', 'export type XLinearAxis');
-  fs.writeFileSync(path.resolve(outputDir, 'XLinearAxis.md'), '### XLinearAxis\n数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.\n```typescript\n' + xLinearAxisDefinition + '\n```');
-  // console.log('Generated markdown for XLinearAxis');
-
-  const yLinearAxisDefinition = linearAxisDefinition.replace('export type Axis', 'export type YLinearAxis');
-  fs.writeFileSync(path.resolve(outputDir, 'YLinearAxis.md'), '### YLinearAxis\n数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.\n```typescript\n' + yLinearAxisDefinition + '\n```');
-  // console.log('Generated markdown for YLinearAxis');
+  const yLinearAxisDefinition = linearAxisFileContentStr.replace('export type XLinearAxis', 'export type YLinearAxis').replace('export type YLinearAxis = XLinearAxis', '').replace('import type { NumFormat } from \'../../format\'', '');
+  fs.writeFileSync(path.resolve(outputDir, 'YLinearAxis.md'), '### YLinearAxis\n数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.\n```typescript\n' + numFormatDefinition + '\n' + yLinearAxisDefinition + '\n```');
 }
 
 function generateMeasureMarkdown() {
   // NumFormat
-  const numFormatDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/measures/format/numFormat.ts')
+  const numFormatDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/format/numFormat.ts')
   const numFormatFileContent = fs.readFileSync(numFormatDir)
   const numFormatFileContentStr = numFormatFileContent.toString()
   const interfaceNumFormatSignature = `export interface NumFormat`

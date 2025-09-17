@@ -1,124 +1,200 @@
 ### YLinearAxis
 数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.
 ```typescript
+export interface NumFormat {
+  /**
+   * @description 数字格式化类型, 支持数值(十进制)、百分比(%)、千分比(‰)、科学计数法
+   * @default 'number'
+   */
+  type?: 'number' | 'percent' | 'permille' | 'scientific'
+
+  /**
+   * @description 数值格式化比例, 不能为0
+   * @default 1
+   * @example
+   * - 100000 转换为 10万, ratio:10000, symbol:"万"
+   * - 100000 转换为 10K, ratio:1000, symbol:"K"
+   */
+  ratio?: number
+
+  /**
+   * @description 数值格式化符号, 例如%、‰
+   * @default ''
+   * @example
+   * - 100000 转换为 10万, ratio:10000, symbol:"万"
+   * - 100000 转换为 10K, ratio:1000, symbol:"K"
+   */
+  symbol?: string
+
+  /**
+   * @description 数值格式化千分位分隔符
+   * @default true
+   */
+  thousandSeparator?: boolean
+
+  /**
+   * @description 数值格式化后缀
+   * @default ''
+   */
+  suffix?: string
+  /**
+   * @description 数值格式化前缀
+   * @default ''
+   */
+  prefix?: string
+
+  /**
+   * @description 数值格式化小数位, 使用浏览器提供的 Intl.NumberFormat 中的 minimumFractionDigits 和 maximumFractionDigits 进行格式化, 优先级低于 significantDigits
+   * @default 2
+   * @example
+   * - 1234.5678 转换为 1235, fractionDigits:0 (roundingMode:halfCeil)
+   * - 1234.5678 转换为 1234.6, fractionDigits:1 (roundingMode:halfCeil)
+   * - 1234.5678 转换为 1234.57, fractionDigits:2 (roundingMode:halfCeil)
+   * - 1234.5678 转换为 1230.568, fractionDigits:3 (roundingMode:halfCeil)
+   * - 1234.5678 转换为 1234.5678, fractionDigits:4 (roundingMode:halfCeil)
+   * - 1234.5678 转换为 1234.56780, fractionDigits:5 (roundingMode:halfCeil)
+   */
+  fractionDigits?: number
+
+  /**
+   * @description 数值格式化有效位, 使用浏览器提供的 Intl.NumberFormat 中的 minimumSignificantDigits 和 maximumSignificantDigits 进行格式化, 优先级高于 fractionDigits
+   * @default undefined
+   * @example
+   * - 1234.5678 转换为 1000, significantDigits:1
+   * - 1234.5678 转换为 1200, significantDigits:2
+   * - 1234.5678 转换为 1230, significantDigits:3
+   * - 1234.5678 转换为 1234, significantDigits:4
+   * - 1234.5678 转换为 1234.6, significantDigits:5 (roundingMode:halfCeil)
+   * - 1234.5678 转换为 1234.57, significantDigits:6 (roundingMode:halfCeil)
+   * - 1234.5678 转换为 1234.568, significantDigits:7 (roundingMode:halfCeil)
+   * - 1234.5678 转换为 1234.5678, significantDigits:8 (roundingMode:halfCeil)
+   */
+  significantDigits?: number
+
+  /**
+   * @description 数值格式化舍入优先级, 处理同时设置了 significantDigits 和 fractionDigits 时的舍入优先级, 使用浏览器提供的 Intl.NumberFormat 进行格式化, 规则同 Intl.NumberFormat 中的 roundingPriority
+   * @default 'morePrecision'
+   * @example
+   * - 1234.5678 转换为 1230, significantDigits:3 (roundingPriority:lessPrecision)
+   * - 1234.5678 转换为 1234.5678, significantDigits:3 (roundingPriority:morePrecision)
+   */
+  roundingPriority?: 'morePrecision' | 'lessPrecision'
+
+  /**
+   * @description 数值格式化舍入模式, 使用浏览器提供的 Intl.NumberFormat 进行格式化, 规则同 Intl.NumberFormat 中的 roundingMode
+   * @default 'halfExpand'
+   * @example
+   */
+  roundingMode?:
+    | 'floor'
+    | 'ceil'
+    | 'expand'
+    | 'trunc'
+    | 'halfCeil'
+    | 'halfFloor'
+    | 'halfExpand'
+    | 'halfTrunc'
+    | 'halfEven'
+}
+
+
 export type YLinearAxis = {
   /**
-   * 轴是否可见
-   * @default true
-   * @example true
+   * @description 轴是否可见
    */
   visible?: boolean
 
   /**
-   * 轴的最小值
-   * @description 优先级高于 nice 与 zero
-   * @default undefined
-   * @example 100
+   * @description 轴的最小值, 优先级高于 nice 与 zero
    */
   min?: number
 
   /**
-   * 轴的最大值
-   * @description 优先级高于 nice 与 zero
-   * @default undefined
-   * @example 10000
+   * @description 轴的最大值, 优先级高于 nice 与 zero
    */
   max?: number
 
   /**
    * @description 是否使用对数轴, 仅对数值轴生效
-   * @default false
    */
   log?: boolean
 
   /**
    * @description 对数轴的底数, 仅对数值轴生效
-   * @default 10
    */
   logBase?: number
 
   /**
-   * 是否自动调整轴的刻度间隔，使刻度标签更易读
-   * @description 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
-   * @default true
-   * @example true
+   * @description 是否自动调整轴的刻度间隔，使刻度标签更易读, 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
    */
   nice?: boolean
 
   /**
-   * 轴是否反向展示
-   * @description 仅对数值轴生效
-   * @default false
-   * @example false
+   * @description 轴是否反向展示, 仅对数值轴生效
    */
   inverse?: boolean
 
   /**
-   * 是否在坐标轴上强制显示 0 值,
-   * @description 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
-   * @default true
-   * @example true
+   * @description 是否在坐标轴上强制显示 0 值, 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
    */
   zero?: boolean
 
-            
   /**
-   * X轴刻度标签
-   * @default true
+   * @description 是否自动格式化数值轴的刻度标签, 仅对数值轴生效, autoFormat 为 true 时, numFormat 配置失效
+   */
+  autoFormat?: boolean
+
+  /**
+   * @description 数值轴的数字格式化, 仅对数值轴生效, 优先级低于 autoFormat
+   */
+  numFormat?: NumFormat
+
+  /**
+   * @description X轴刻度标签
    */
   label?: {
     /**
-     * 标签是否可见
-     * @default true
+     * @description 标签是否可见
      */
     visible?: boolean
     /**
-     * 标签颜色
+     * @description 标签颜色
      */
     labelColor?: string
     /**
-     * 标签字体大小
+     * @description 标签字体大小
      */
     labelFontSize?: number
     /**
-     * 标签字体粗细
+     * @description 标签字体粗细
      */
     labelFontWeight?: number
     /**
-     * 标签旋转角度
+     * @description 标签旋转角度
      */
     labelAngle?: number
   }
 
   /**
-   * X轴线
-   * @example
-   * {
-   *   visible: true,
-   *   lineColor: '#ffeecc',
-   *   lineWidth: 2,
-   * }
+   * @description X轴线
    */
   line?: {
     /**
-     * 轴线是否可见
-     * @default true
+     * @description 轴线是否可见
      */
     visible?: boolean
     /**
-     * 轴线颜色
+     * @description 轴线颜色
      */
     lineColor?: string
     /**
-     * 轴线宽度
-     * @default 1
+     * @description 轴线宽度
      */
     lineWidth?: number
   }
 
   /**
-   * X轴刻度
-   * @default true
+   * @description X轴刻度
    */
   tick?: {
     /**
@@ -142,8 +218,7 @@ export type YLinearAxis = {
   }
 
   /**
-   * X轴标题
-   * @default false
+   * @description X轴标题
    */
   title?: {
     /**
@@ -170,8 +245,7 @@ export type YLinearAxis = {
   }
 
   /**
-   * X轴网格线
-   * @default false
+   * @description X轴网格线
    */
   grid?: {
     visible?: boolean
@@ -185,4 +259,7 @@ export type YLinearAxis = {
     gridWidth?: number
   }
 }
+
+
+
 ```

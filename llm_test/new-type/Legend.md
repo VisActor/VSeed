@@ -15,16 +15,24 @@ export type Legend = {
    * @example border: true
    */
   border?: boolean
+
+  /**
+   * @description 图例字体颜色
+   */
+  labelColor?: string
+
   /**
    * @description 图例字体大小
    * @example labelFontSize: 10
    */
   labelFontSize?: number
+
   /**
    * @description 图例字体颜色
-   * @example labelFontColor: '#212121'
+   * @deprecated use labelColor instead
    */
   labelFontColor?: string
+
   /**
    * @description 图例字体粗细
    * @example labelFontWeight: 400
@@ -89,7 +97,7 @@ export type Legend = {
    * @description 存在大量图例时, 最大列数 或 图例最大行数
    *  如果position为水平方向(bottom, bottomLeft, bottomRight, bl, br, top, topLeft, topRight, tl, tr), maxSize控制显示的列数
    *  如果position为垂直方向(left, leftTop, leftBottom, lt, lb, right, rightTop, rightBottom, rt, rb), maxSize控制显示的行数
-   * 
+   *
    * @warning 仅离散图例生效
    * @example maxSize: 2
    * @default 1

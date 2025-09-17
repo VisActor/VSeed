@@ -41,7 +41,7 @@ export interface Table {
 
   /**
    * @description 表格的每个指标会对应一行, 并且天生支持指标组合.
-   * @type {Measures}
+   * @type {MeasureTree}
    * @example [{id: "value", alias: "数值"}]
    */
   measures?: MeasureTree

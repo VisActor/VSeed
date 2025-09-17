@@ -82,17 +82,17 @@ ${backgroundColorSchema}
 \`\`\`
   `);
 
-  // CrosshairLine
-  const crosshairLineSchema = await compile(z.toJSONSchema(zCrosshairLine) as any, 'CrosshairLine', {
-    bannerComment: ''
-  });
-  fs.writeFileSync(path.join(__dirname, './new-type/CrosshairLine.md'), `
-### CrosshairLine
-${topKeyDesc['CrosshairLine']}
-\`\`\`typescript
-${crosshairLineSchema}
-\`\`\`
-  `);
+//   // CrosshairLine
+//   const crosshairLineSchema = await compile(z.toJSONSchema(zCrosshairLine) as any, 'CrosshairLine', {
+//     bannerComment: ''
+//   });
+//   fs.writeFileSync(path.join(__dirname, './new-type/CrosshairLine.md'), `
+// ### CrosshairLine
+// ${topKeyDesc['CrosshairLine']}
+// \`\`\`typescript
+// ${crosshairLineSchema}
+// \`\`\`
+//   `);
 
   // Theme
   const themeSchema = await compile(z.toJSONSchema(zTheme) as any, 'Theme', {
@@ -118,17 +118,17 @@ ${localeSchema}
 \`\`\`
   `);
 
-  // CrosshairRect
-  const crosshairRectSchema = await compile(z.toJSONSchema(zCrosshairRect) as any, 'CrosshairRect', {
-    bannerComment: ''
-  });
-  fs.writeFileSync(path.join(__dirname, './new-type/CrosshairRect.md'), `
-### CrosshairRect
-${topKeyDesc['CrosshairRect']}
-\`\`\`typescript
-${crosshairRectSchema}
-\`\`\`
-  `);
+//   // CrosshairRect
+//   const crosshairRectSchema = await compile(z.toJSONSchema(zCrosshairRect) as any, 'CrosshairRect', {
+//     bannerComment: ''
+//   });
+//   fs.writeFileSync(path.join(__dirname, './new-type/CrosshairRect.md'), `
+// ### CrosshairRect
+// ${topKeyDesc['CrosshairRect']}
+// \`\`\`typescript
+// ${crosshairRectSchema}
+// \`\`\`
+//   `);
 
   // StackCornerRadius
   const stackCornerRadiusSchema = await compile(z.toJSONSchema(zStackCornerRadius) as any, 'StackCornerRadius', {

@@ -9,13 +9,11 @@ export interface NumFormat {
   type?: 'number' | 'percent' | 'permille' | 'scientific'
 
   /**
-   * @description 数值格式化比例, 百分比和千分比需要设置比例
+   * @description 数值格式化比例, 不能为0
    * @default 1
    * @example
    * - 100000 转换为 10万, ratio:10000, symbol:"万"
    * - 100000 转换为 10K, ratio:1000, symbol:"K"
-   * - 100000 转换为 100%, ratio:100, symbol:"%"
-   * - 100000 转换为 100‰, ratio:1000, symbol:"‰"
    */
   ratio?: number
 
@@ -25,8 +23,6 @@ export interface NumFormat {
    * @example
    * - 100000 转换为 10万, ratio:10000, symbol:"万"
    * - 100000 转换为 10K, ratio:1000, symbol:"K"
-   * - 100000 转换为 100%, ratio:100, symbol:"%"
-   * - 100000 转换为 100‰, ratio:1000, symbol:"‰"
    */
   symbol?: string
 
@@ -125,7 +121,7 @@ export type Measure = {
    */
   alias?: string
   /**
-   * @description 自动数值格式化
+   * @description 自动数值格式化 当配置了 format 时, 该配置项失效
    * 开启后, 图表的数据标签、提示信息, 会根据指标的数值, 自动根据语言环境, 选择合适的格式化方式
    * 格式化规则为设置为十进制数值, 开启compact notation, 最小0位小数, 最大2位小数, 自动四舍五入, 使用浏览器提供的 Intl.NumberFormatOptions 实现该逻辑.
    * 例如:
@@ -134,8 +130,14 @@ export type Measure = {
    * @default true
    */
   autoFormat?: boolean
+
   /**
    * @description 指标的数值格式化, 会自动应用于label、tooltip
+   */
+  numFormat?: NumFormat
+
+  /**
+   * @description same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
    */
   format?: NumFormat
 

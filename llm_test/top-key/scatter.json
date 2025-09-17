@@ -20,6 +20,16 @@
     "description": "散点图指标, 是measures的简化形式\n组合的散点图指标配置, 每个对象都代表一个散点图, 散点图之间纵向排列, 必须是数组.\n每个配置对象内, xMeasures代表所有的X轴指标, yMeasures代表所有的Y轴指标, xMeasures和yMeasures可配置为数组或一个对象\nxMeasures 如果是多个指标, 则会自动合并, 映射至X轴\nyMeasures 如果是多个指标, 则会自动合并, 映射至Y轴"
   },
   {
+    "name": "size",
+    "componentName": "number",
+    "description": "散点图指标的大小, 用于定义散点图中数据点的大小 或 大小范围\n- 若大小范围是一个数字, 例如10, 表示数据点的大小范围固定为10\n- 若大小范围是一个长度为2的数组, 例如[10, 40], 表示数据点的大小范围在10到40之间\n- 与sizeRange互斥, 优先级低于 size"
+  },
+  {
+    "name": "sizeRange",
+    "componentName": "number",
+    "description": "散点图指标的大小范围, 用于定义散点图中数据点的大小范围,\n- 若大小范围是一个长度为2的数组, 例如[10, 40], 表示数据点的大小范围在10到40之间\n- 若大小范围是一个数字, 例如10, 表示数据点的大小范围固定为10\n- 与sizeRange互斥, 优先级高于 size"
+  },
+  {
     "name": "backgroundColor",
     "componentName": "BackgroundColor",
     "description": "背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'"

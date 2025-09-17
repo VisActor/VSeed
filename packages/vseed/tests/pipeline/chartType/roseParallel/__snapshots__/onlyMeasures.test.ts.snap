@@ -330,51 +330,14 @@ exports[`onlyMeasures 2`] = `
 {
   "angleField": [
     "__Dim_Angle__",
-    "__Dim_Detail__",
   ],
   "animation": true,
   "axes": [
     {
-      "domainLine": {
-        "visible": true,
-      },
-      "grid": {
-        "visible": true,
-      },
-      "label": {
-        "visible": true,
-      },
-      "nice": true,
+      "nice": false,
       "orient": "radius",
-      "tick": {
-        "visible": true,
-      },
       "type": "linear",
-      "visible": true,
-      "zero": true,
-    },
-    {
-      "domainLine": {
-        "visible": true,
-      },
-      "grid": {
-        "visible": true,
-      },
-      "nice": true,
-      "orient": "angle",
-      "paddingInner": [
-        0.15,
-        0.1,
-      ],
-      "paddingOuter": [
-        0.075,
-        0.1,
-      ],
-      "tick": {
-        "visible": true,
-      },
-      "type": "band",
-      "visible": true,
+      "visible": false,
       "zero": true,
     },
   ],

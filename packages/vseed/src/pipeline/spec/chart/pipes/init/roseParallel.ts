@@ -1,13 +1,14 @@
 import type { IRoseChartSpec } from '@visactor/vchart'
+import { isDeepEqual } from 'remeda'
 import type { SpecPipe } from 'src/types'
 
 export const initRoseParallel: SpecPipe = (spec, context) => {
   const result = { ...spec } as IRoseChartSpec
   const { advancedVSeed } = context
-  const { datasetReshapeInfo, dataset, dimensions } = advancedVSeed
+  const { datasetReshapeInfo, dataset, encoding } = advancedVSeed
   const { unfoldInfo, foldInfo } = datasetReshapeInfo[0]
 
-  const sameDimensionsMode = dimensions.length > 1 && dimensions.every((dim) => dim.id === dimensions[0].id)
+  const sameDimensionsMode = isDeepEqual(encoding.angle, encoding.color)
 
   result.type = 'rose'
   result.angleField = sameDimensionsMode

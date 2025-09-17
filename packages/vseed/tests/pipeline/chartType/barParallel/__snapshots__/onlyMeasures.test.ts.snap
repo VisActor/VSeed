@@ -953,7 +953,6 @@ exports[`onlyMeasures 2`] = `
   "xField": "__MeaValue__",
   "yField": [
     "__Dim_Y__",
-    "__Dim_Detail__",
   ],
 }
 `;

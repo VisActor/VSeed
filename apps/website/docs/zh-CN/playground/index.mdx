@@ -9,19 +9,13 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'scatter',
-    sizeRange: [10, 100],
+    chartType: 'roseParallel',
     dataset: [
-      { date: '2019', profit: 20, sales: 100 },
-      { date: '2020', profit: 30, sales: 600 },
-      { date: '2021', profit: 30, sales: 600 },
-      { date: '2022', profit: 50, sales: 500 },
-      { date: '2023', profit: 10, sales: 800 },
-    ],
-    measures: [
-      { id: 'sales', alias: '销售额', encoding: 'yAxis' },
-      { id: 'profit', alias: '利润', encoding: 'xAxis' },
-      { id: 'profit', alias: '利润', encoding: 'size' },
+      { date: '2019', profit: 10, sales: 20 },
+      { date: '2020', profit: 30, sales: 60 },
+      { date: '2021', profit: 30, sales: 60 },
+      { date: '2022', profit: 50, sales: 100 },
+      { date: '2023', profit: 40, sales: 80 },
     ],
   }
 

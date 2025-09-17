@@ -10,10 +10,6 @@ export const radiusAxis: SpecPipe = (spec, context) => {
     return result
   }
 
-  const is0D = dimensions.length === 0
-  const is1M1D = dimensions.length === 1 && measures.length === 1
-  const showAxis = !(is0D || is1M1D)
-
   if (!result.axes) {
     result.axes = []
   }
@@ -21,21 +17,9 @@ export const radiusAxis: SpecPipe = (spec, context) => {
   result.axes.push({
     type: 'linear',
     orient: 'radius',
-    visible: showAxis,
+    visible: false,
     zero: true,
-    nice: showAxis ? true : false,
-    grid: {
-      visible: showAxis,
-    },
-    tick: {
-      visible: showAxis,
-    },
-    label: {
-      visible: showAxis,
-    },
-    domainLine: {
-      visible: showAxis,
-    },
+    nice: false,
   })
 
   return result

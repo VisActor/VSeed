@@ -7,7 +7,6 @@ import type {
   ColumnParallel,
   Dataset,
   DatasetReshapeInfo,
-  Dimension,
   Encoding,
   MeasureGroup,
 } from 'src/types'

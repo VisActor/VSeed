@@ -9,13 +9,45 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'roseParallel',
+    chartType: 'columnParallel',
+    measures: [
+      {
+        id: 'sales-and-profit',
+        alias: '销售额与利润',
+        children: [
+          {
+            id: 'sales',
+            alias: 'sales',
+          },
+          {
+            id: 'profit',
+            alias: '利润',
+          },
+        ],
+      },
+      {
+        id: 'ratio',
+        alias: '比率',
+        children: [
+          {
+            id: 'rateOfReturn',
+            alias: '回报率',
+          },
+        ],
+      },
+    ],
     dataset: [
-      { date: '2019', profit: 10, sales: 20 },
-      { date: '2020', profit: 30, sales: 60 },
-      { date: '2021', profit: 30, sales: 60 },
-      { date: '2022', profit: 50, sales: 100 },
-      { date: '2023', profit: 40, sales: 80 },
+      { date: '2019', profit: 10, sales: 20, rateOfReturn: 0.1 },
+      { date: '2020', profit: 20, sales: 40, rateOfReturn: 0.2 },
+      { date: '2021', profit: 30, sales: 60, rateOfReturn: 0.3 },
+      { date: '2022', profit: 40, sales: 80, rateOfReturn: 0.4 },
+      { date: '2023', profit: 50, sales: 100, rateOfReturn: 0.5 },
+    ],
+    dimensions: [
+      {
+        id: 'date',
+        alias: '日期',
+      },
     ],
   }
 
@@ -73,6 +105,22 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
           {
             filterKey: ColorIdEncoding,
             filteredValues: args.value,
+          },
+        ])
+      })
+
+      tableInstance.on('legend_change', (args) => {
+        const maxValue = args.value[1]
+        const minValue = args.value[0]
+        tableInstance.updateFilterRules([
+          {
+            filterFunc: (record) => {
+              const value = record[record[ColorIdEncoding]]
+              if (value >= minValue && value <= maxValue) {
+                return true
+              }
+              return false
+            },
           },
         ])
       })

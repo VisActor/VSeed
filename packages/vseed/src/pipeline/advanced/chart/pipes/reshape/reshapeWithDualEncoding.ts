@@ -6,7 +6,6 @@ import type {
   AdvancedVSeed,
   ColumnParallel,
   Dataset,
-  Dimension,
   Encoding,
   FoldInfo,
   MeasureGroup,

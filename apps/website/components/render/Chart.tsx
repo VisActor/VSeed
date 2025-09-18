@@ -26,12 +26,10 @@ export const VChartRender = memo((props: { vseed: VSeed }) => {
         {
           id: 'date',
           alias: '日期',
-          
         },
         {
           id: 'type',
           alias: '类型',
-          
         },
       ],
       measures: [

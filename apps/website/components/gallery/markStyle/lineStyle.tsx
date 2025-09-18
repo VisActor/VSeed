@@ -21,7 +21,7 @@ export const SelectorLineValue = memo(() => {
         lineSmooth: true,
       },
     ],
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -42,12 +42,12 @@ export const SelectorLinePartialDatum = memo(() => {
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
     lineStyle: {
-      selector: [ { sales: 60 }],
+      selector: [{ sales: 60 }],
       lineColor: 'red',
       lineWidth: 2,
       lineStyle: 'solid',
     },
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -79,7 +79,7 @@ export const SelectorLineDimensionCondition = memo(() => {
       lineWidth: 2,
       lineStyle: 'solid',
     },
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -109,7 +109,7 @@ export const SelectorLineMeasureCondition = memo(() => {
       lineWidth: 2,
       lineStyle: 'solid',
     },
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -143,7 +143,7 @@ export const MultiLineStyle = memo(() => {
         lineSmooth: true,
       },
     ],
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },

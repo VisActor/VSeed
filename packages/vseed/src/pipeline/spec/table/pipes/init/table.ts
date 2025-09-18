@@ -28,6 +28,7 @@ export const initTable: SpecPipe = (spec, context) => {
       highlightMode: 'row',
     },
     theme: {
+      cellInnerBorder: false,
       underlayBackgroundColor: backgroundColor,
     },
   } as ListTableConstructorOptions

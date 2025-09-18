@@ -13,7 +13,7 @@ export const frameStyle: SpecPipe = (spec, context) => {
 
   result.theme.frameStyle = {
     borderColor,
-    borderLineWidth: 0,
+    borderLineWidth: 1,
     cornerRadius: 4,
   }
 

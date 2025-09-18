@@ -28,6 +28,7 @@ exports[`basicPie 1`] = `
       "label": {
         "enable": true,
         "labelColorSmartInvert": false,
+        "labelLayout": "labelLine",
         "labelOverlap": true,
         "showValue": true,
         "showValuePercent": true,
@@ -73,6 +74,7 @@ exports[`basicPie 1`] = `
         "label": {
           "enable": true,
           "labelColorSmartInvert": false,
+          "labelLayout": "labelLine",
           "labelOverlap": true,
           "showValue": true,
           "showValuePercent": true,
@@ -558,6 +560,9 @@ exports[`basicPie 2`] = `
   "innerRadius": 0,
   "label": {
     "formatMethod": [Function],
+    "layout": {
+      "align": "labelLine",
+    },
     "overlap": {
       "clampForce": true,
       "hideOnHit": true,

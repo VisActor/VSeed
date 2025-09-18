@@ -105,7 +105,7 @@ export interface Area {
    * 标签
    * @description 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
    */
-  label?: Label
+  label?: Omit<Label, 'labelLayout'>
 
   /**
    * 图例

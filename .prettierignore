@@ -4,4 +4,11 @@ pnpm-lock.yaml
 yarn.lock
 
 # Disable format in docs
+/apps/website/doc_build
 /apps/website/docs/**/*.md
+
+
+# Disable format in vseed
+/packages/vseed/dist/**/*
+/packages/vseed/coverage/**/*
+/packages/vseed/tests/**/*.ts

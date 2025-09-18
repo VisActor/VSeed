@@ -14,6 +14,24 @@ export const initPivot: SpecPipe = (spec) => {
     widthMode: 'adaptive',
     heightMode: 'adaptive',
     indicatorsAsCol: false,
+    select: {
+      highlightMode: 'cell',
+      headerSelectMode: 'inline',
+    },
+    hover: {
+      highlightMode: 'cross',
+    },
+    tooltip: {
+      isShowOverflowTextTooltip: true,
+    },
+    corner: {
+      titleOnDimension: 'all',
+    },
+    animationAppear: {
+      duration: 600,
+      type: 'all',
+      direction: 'row',
+    },
   }
 }
 

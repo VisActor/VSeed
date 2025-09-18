@@ -21,7 +21,7 @@ export const MeasureGroups = memo(() => {
       },
       { id: 'rateOfReturn', alias: '回报率' },
     ],
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     dataset: [
       { date: '2019', profit: 10, sales: 20, discount: 0.5, rateOfReturn: 0.1 },
       { date: '2020', profit: 20, sales: 40, discount: 0.2, rateOfReturn: 0.2 },

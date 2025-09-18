@@ -37,14 +37,14 @@ export const zDualAxis = z.object({
 
   dualChartType: z.array(zDualChartType).or(zDualChartType).nullish(),
   alignTicks: z.array(z.boolean()).or(z.boolean()).nullish(),
-  
+
   primaryYAxis: z.array(zYLinearAxis).or(zYLinearAxis).nullish(),
   secondaryYAxis: z.array(zYLinearAxis).or(zYLinearAxis).nullish(),
   xAxis: zXBandAxis.nullish(),
 
   backgroundColor: zBackgroundColor.nullish(),
   color: zColor.nullish(),
-  label: zLabel.nullish(),
+  label: zLabel.omit({ labelLayout: true }).nullish(),
   legend: zLegend.nullish(),
   tooltip: zTooltip.nullish(),
 

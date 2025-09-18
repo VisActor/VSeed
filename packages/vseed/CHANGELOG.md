@@ -1,11 +1,25 @@
 # @visactor/vseed
 
+## 0.1.20
+
+### Patch Changes
+
+- feat: test publish
+
+## 0.1.19
+
+### Patch Changes
+
+- feat: optimize pivot table style
+- fix: color linear style
+- feat: add labelLayout for pie
+
 ## 0.1.18
 
 ### Patch Changes
 
 - fix: parallel chart error
-- fix: no need rose axis 
+- fix: no need rose axis
 
 ## 0.1.17
 

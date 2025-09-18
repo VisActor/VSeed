@@ -5,91 +5,119 @@ export const pivotGridStyle: SpecPipe = (spec) => {
   const result = { ...spec } as PivotChartConstructorOptions
   const transparent = 'rgba(0,0,0,0)'
 
-  const hoverBackgroundColor = 'rgba(178,186,207, 0.2)'
+  const borderColor = '#e3e5eb'
+  const bodyFontColor = '#141414'
+  const headerFontColor = '#21252c'
+  const headerBackgroundColor = 'rgba(0,0,0,0)'
+  const hoverHeaderBackgroundColor = '#D9DDE4'
+  const hoverHeaderInlineBackgroundColor = '#D9DDE455'
+
   return {
     ...result,
     theme: {
       underlayBackgroundColor: transparent,
       bodyStyle: {
-        borderColor: 'rgba(0,4,20,0.2)',
-        borderLineWidth: [0, 0, 2, 0],
+        borderColor,
+        color: bodyFontColor,
+        borderLineWidth: [1, 1, 0, 1],
         bgColor: transparent,
-        padding: [0, 0, 1, 0],
         hover: {
           cellBgColor: 'transparent',
         },
       },
       headerStyle: {
-        borderColor: 'rgba(0,4,20,0.2)',
+        borderColor,
         fontSize: 12,
-        color: '#333333',
+        borderLineWidth: 1,
+        color: headerFontColor,
         textAlign: 'center',
-        borderLineWidth: 0,
-        bgColor: transparent,
+        bgColor: headerBackgroundColor,
         hover: {
-          cellBgColor: hoverBackgroundColor,
+          cellBgColor: hoverHeaderBackgroundColor,
+          inlineRowBgColor: hoverHeaderInlineBackgroundColor || undefined,
+          inlineColumnBgColor: hoverHeaderInlineBackgroundColor || undefined,
         },
       },
       rowHeaderStyle: {
-        borderColor: 'rgba(0,4,20,0.2)',
+        borderColor,
         fontSize: 12,
-        color: '#333333',
-        borderLineWidth: 0,
-        bgColor: transparent,
+        color: headerFontColor,
+        borderLineWidth: 1,
+        bgColor: headerBackgroundColor,
         hover: {
-          cellBgColor: hoverBackgroundColor,
+          cellBgColor: hoverHeaderBackgroundColor,
+          inlineRowBgColor: hoverHeaderInlineBackgroundColor || undefined,
+          inlineColumnBgColor: hoverHeaderInlineBackgroundColor || undefined,
         },
       },
       cornerHeaderStyle: {
-        borderColor: 'rgba(0,4,20,0.2)',
+        borderColor,
         textAlign: 'center',
         fontSize: 12,
-        color: '#333333',
+        color: headerFontColor,
         fontWeight: 'bold',
-        borderLineWidth: [0, 0, 0, 0],
-        bgColor: transparent,
+        borderLineWidth: 1,
+        bgColor: headerBackgroundColor,
+        frameStyle: {
+          borderColor,
+          borderLineWidth: [1, 0, 0, 1],
+        },
         hover: {
-          cellBgColor: hoverBackgroundColor,
+          cellBgColor: hoverHeaderBackgroundColor,
+          inlineRowBgColor: hoverHeaderInlineBackgroundColor || undefined,
+          inlineColumnBgColor: hoverHeaderInlineBackgroundColor || undefined,
         },
       },
       cornerRightTopCellStyle: {
-        borderColor: 'rgba(0,4,20,0.2)',
+        borderColor,
         borderLineWidth: 0,
-        bgColor: transparent,
+        frameStyle: {
+          borderColor,
+          borderLineWidth: [1, 1, 0, 1],
+        },
+        bgColor: headerBackgroundColor,
         hover: {
-          cellBgColor: hoverBackgroundColor,
+          cellBgColor: hoverHeaderBackgroundColor,
         },
       },
       cornerLeftBottomCellStyle: {
-        borderColor: 'rgba(0,4,20,0.2)',
-        borderLineWidth: 0,
-        bgColor: transparent,
+        borderColor,
+        borderLineWidth: [1, 0, 1, 1],
+        bgColor: headerBackgroundColor,
+        frameStyle: {
+          borderColor,
+          borderLineWidth: [1, 0, 1, 1],
+        },
         hover: {
-          cellBgColor: hoverBackgroundColor,
+          cellBgColor: hoverHeaderBackgroundColor,
         },
       },
       cornerRightBottomCellStyle: {
-        borderColor: 'rgba(0,4,20,0.2)',
+        borderColor,
         borderLineWidth: 0,
-        bgColor: transparent,
+        bgColor: headerBackgroundColor,
+        frameStyle: {
+          borderColor,
+          borderLineWidth: [1, 1, 1, 1],
+        },
         hover: {
-          cellBgColor: hoverBackgroundColor,
+          cellBgColor: hoverHeaderBackgroundColor,
         },
       },
       rightFrozenStyle: {
-        borderColor: 'rgba(0,4,20,0.2)',
-        borderLineWidth: 0,
-        bgColor: transparent,
+        borderColor,
+        borderLineWidth: 1,
+        bgColor: headerBackgroundColor,
         hover: {
-          cellBgColor: hoverBackgroundColor,
+          cellBgColor: hoverHeaderBackgroundColor,
         },
       },
       bottomFrozenStyle: {
-        borderColor: 'rgba(0,4,20,0.2)',
-        borderLineWidth: 0,
-        bgColor: transparent,
+        borderColor,
+        borderLineWidth: 1,
+        bgColor: headerBackgroundColor,
         hover: {
-          cellBgColor: hoverBackgroundColor,
+          cellBgColor: hoverHeaderBackgroundColor,
         },
       },
       selectionStyle: {
@@ -97,8 +125,8 @@ export const pivotGridStyle: SpecPipe = (spec) => {
         cellBorderColor: '',
       },
       frameStyle: {
-        borderLineWidth: 0,
-        bgColor: transparent,
+        borderColor,
+        cornerRadius: 4,
       },
     },
   }

@@ -10,8 +10,8 @@ export const Dataset = memo(() => {
       { id: 'sales', alias: '销售量' },
     ],
     dimensions: [
-      { id: 'date', alias: '日期',   },
-      { id: 'region', alias: '区域',   },
+      { id: 'date', alias: '日期' },
+      { id: 'region', alias: '区域' },
     ],
     dataset: [
       { date: '2019', region: 'east', profit: 10, sales: 20 },

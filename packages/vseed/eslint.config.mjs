@@ -1,17 +1,27 @@
 import js from '@eslint/js'
 import globals from 'globals'
-import ts from 'typescript-eslint'
 import tseslint from 'typescript-eslint'
 
 export default [
+  {
+    ignores: [
+      'dist/',
+      'coverage/',
+      'node_modules/',
+      'tsconfig.*',
+      'eslint.config.mjs',
+      'rslib.config.ts',
+      'rstest.config.ts',
+      'rstest.setup.ts',
+      'vite.config.ts',
+      'vite.setup.ts',
+    ],
+  },
   { languageOptions: { globals: globals.browser } },
   js.configs.recommended,
-  ...ts.configs.recommended,
-  { ignores: ['dist/'] },
-
   ...tseslint.configs.recommendedTypeChecked,
   {
-    files: ['src/**/*.ts', 'tests/**/*.ts'],
+    files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
       parserOptions: {
         projectService: true,

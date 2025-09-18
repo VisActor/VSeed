@@ -1,4 +1,4 @@
-import type { DimensionEncoding } from "../encoding"
+import type { DimensionEncoding } from '../encoding'
 
 /**
  * @description 维度

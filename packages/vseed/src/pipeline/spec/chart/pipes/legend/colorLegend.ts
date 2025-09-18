@@ -35,15 +35,7 @@ export const colorLegend: SpecPipe = (spec, context) => {
     padding: 0,
     field: unfoldInfo.encodingColor,
     maxWidth: '30%',
-    startText: {
-      visible: true,
-      style: {
-        fill: labelColor || labelFontColor,
-        fontSize: labelFontSize,
-        fontWeight: labelFontWeight,
-      },
-    },
-    endText: {
+    handlerText: {
       visible: true,
       style: {
         fill: labelColor || labelFontColor,

@@ -8,7 +8,6 @@ import type {
   ColumnParallel,
   Dataset,
   DatasetReshapeInfo,
-  Dimension,
   Encoding,
   FoldInfo,
   MeasureGroup,

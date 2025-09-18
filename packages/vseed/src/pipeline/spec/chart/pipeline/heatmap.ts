@@ -54,7 +54,6 @@ const pivotHeatmap: SpecPipeline = [
     datasetXY,
     colorAdapter(color, linearColor),
     label,
-    discreteLegend,
     tooltipHeatmap,
     colorCellStyleFill(cellStyle),
     annotationPoint,

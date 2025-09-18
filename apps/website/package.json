@@ -1,7 +1,7 @@
 {
   "name": "website",
   "private": true,
-  "version": "0.1.18",
+  "version": "0.1.20",
   "scripts": {
     "build": "rspress build",
     "dev": "rspress dev",
@@ -13,7 +13,7 @@
     "rspress": "1.45.3",
     "@visactor/vseed": "workspace:*",
     "@visactor/vchart": "2.0.3",
-    "@visactor/vtable": "1.19.4",
+    "@visactor/vtable": "1.19.10-alpha.1",
     "zustand": "5.0.6"
   },
   "devDependencies": {

@@ -42,7 +42,7 @@
   "dimensions": [
     {
       "id": "date",
-      "alias": "日期",
+      "alias": "日期"
     }
   ],
   "dataset": [

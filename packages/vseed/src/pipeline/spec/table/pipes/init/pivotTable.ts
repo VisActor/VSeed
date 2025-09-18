@@ -37,6 +37,7 @@ export const initPivotTable: SpecPipe = (spec, context) => {
       direction: 'row',
     },
     theme: {
+      cellInnerBorder: false,
       underlayBackgroundColor: backgroundColor,
     },
   } as PivotTableConstructorOptions

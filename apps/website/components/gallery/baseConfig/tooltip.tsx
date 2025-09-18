@@ -19,7 +19,6 @@ export const BaseConfigTooltip = memo(() => {
       {
         id: 'date',
         alias: '日期',
-        
       },
     ],
     measures: [

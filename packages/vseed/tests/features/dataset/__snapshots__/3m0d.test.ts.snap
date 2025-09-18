@@ -660,6 +660,9 @@ exports[`3m0d 2`] = `
   "direction": "vertical",
   "label": {
     "formatMethod": [Function],
+    "layout": {
+      "align": undefined,
+    },
     "overlap": {
       "clampForce": true,
       "hideOnHit": true,

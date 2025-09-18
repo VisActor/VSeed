@@ -20,7 +20,7 @@ export const SelectorPointValue = memo(() => {
         pointBorderWidth: 2,
       },
     ],
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -41,7 +41,7 @@ export const SelectorPointPartialDatum = memo(() => {
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
     pointStyle: {
-      selector: [ { sales: 60 }],
+      selector: [{ sales: 60 }],
       pointSize: 20,
       pointColor: 'lightblue',
       pointColorOpacity: 0.8,
@@ -49,7 +49,7 @@ export const SelectorPointPartialDatum = memo(() => {
       pointBorderWidth: 1,
       pointBorderStyle: 'dashed',
     },
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -84,7 +84,7 @@ export const SelectorPointDimensionCondition = memo(() => {
       pointBorderWidth: 1,
       pointBorderStyle: 'dashed',
     },
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -117,7 +117,7 @@ export const SelectorPointMeasureCondition = memo(() => {
       pointBorderWidth: 1,
       pointBorderStyle: 'dashed',
     },
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -150,7 +150,7 @@ export const MultiPointStyle = memo(() => {
         pointColorOpacity: 0.8,
       },
     ],
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },

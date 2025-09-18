@@ -29,8 +29,8 @@ export const rowHeaderStyle: SpecPipe = (spec, context) => {
       inlineColumnBgColor: hoverInlineColor,
     },
     frameStyle: {
-      borderColor: [null, borderColor, null, null],
-      borderLineWidth: 1,
+      borderColor: borderColor,
+      borderLineWidth: [0, 1, 0, 0],
     },
     fontSize: fontSize,
     fontVariant: 'normal',

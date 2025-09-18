@@ -71,7 +71,6 @@ export const CombinationDualAxisChart = memo(() => {
       {
         id: 'date',
         alias: '日期',
-        
       },
     ],
   }
@@ -108,7 +107,6 @@ export const PivotDualAxisChart = memo(() => {
       {
         id: 'date',
         alias: '日期',
-        
       },
       {
         id: 'type',
@@ -219,7 +217,6 @@ export const DualChartTypeArray = memo(() => {
       {
         id: 'date',
         alias: '日期',
-        
       },
     ],
   }
@@ -299,7 +296,6 @@ export const DualYAxisArray = memo(() => {
       {
         id: 'date',
         alias: '日期',
-        
       },
     ],
   }

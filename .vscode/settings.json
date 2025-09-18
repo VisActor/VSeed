@@ -1,4 +1,7 @@
 {
+  "files.exclude": {
+    "**/.git": false
+  },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
   },

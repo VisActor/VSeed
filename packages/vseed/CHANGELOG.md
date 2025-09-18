@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.20
+
+### Patch Changes
+
+- feat: test publish
+
 ## 0.1.19
 
 ### Patch Changes

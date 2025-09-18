@@ -1,7 +1,1 @@
-[
-  "color",
-  "label",
-  "legend",
-  "tooltip",
-  "backgroundColor"
-]
+["color", "label", "legend", "tooltip", "backgroundColor"]

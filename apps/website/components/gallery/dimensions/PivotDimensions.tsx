@@ -6,7 +6,7 @@ export const PivotDimensions = memo(() => {
   const vseed: VSeed = {
     chartType: 'columnParallel',
     dimensions: [
-      { id: 'category', alias: '类别',   },
+      { id: 'category', alias: '类别' },
       { id: 'date', alias: '日期', encoding: 'column' },
       { id: 'region', alias: '区域', encoding: 'row' },
     ],

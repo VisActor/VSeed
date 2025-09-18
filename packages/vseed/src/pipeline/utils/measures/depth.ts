@@ -1,5 +1,5 @@
-import type { Measure, MeasureGroup, MeasureTree } from "src/types"
-import { preorderTraverse } from "../tree/traverse"
+import type { Measure, MeasureGroup, MeasureTree } from 'src/types'
+import { preorderTraverse } from '../tree/traverse'
 
 /**
  * 获取measures的深度

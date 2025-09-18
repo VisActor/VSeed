@@ -12,7 +12,7 @@ export default defineConfig({
     },
     globals: true,
     environment: 'jsdom',
-    setupFiles:['./vite.setup.ts'],
+    setupFiles: ['./vite.setup.ts'],
     alias: {
       src: new URL('./src', import.meta.url).pathname,
       '@visactor/vseed': new URL('./src', import.meta.url).pathname,

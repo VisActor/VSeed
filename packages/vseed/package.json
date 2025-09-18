@@ -22,8 +22,9 @@
     "build:rsdoctor": "RSDOCTOR=true rslib build",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "test": "vitest run",
     "rstest": "rstest",
+    "test": "vitest run",
+    "test:update": "vitest run --update",
     "test:coverage": "vitest run  --update --coverage && open coverage/index.html"
   },
   "dependencies": {

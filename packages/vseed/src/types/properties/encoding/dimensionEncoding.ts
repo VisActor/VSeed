@@ -20,4 +20,3 @@ export type DimensionEncoding =
   | 'label'
   | 'row'
   | 'column'
-

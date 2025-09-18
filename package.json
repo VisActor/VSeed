@@ -24,7 +24,7 @@
     "test": "pnpm --filter=@visactor/vseed test",
     "test:update": "pnpm --filter=@visactor/vseed test:update",
     "test:coverage": "pnpm --filter=@visactor/vseed test:coverage && node scripts/build-coverage-badge.mjs",
-    "publish:vseed": "pnpm run build:vseed && pnpm publish --tag vseed --filter=@visactor/vseed --access=public",
+    "publish:vseed": "pnpm run build:vseed && pnpm changeset publish --filter=@visactor/vseed --access=public",
     "prepare": "husky"
   },
   "lint-staged": {

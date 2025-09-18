@@ -24,7 +24,7 @@ export const AnnotationPointValue = memo(() => {
       backgroundPadding: 10,
       offsetY: -5,
     },
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -63,7 +63,7 @@ export const AnnotationPointPartialDatum = memo(() => {
         offsetX: -20,
       },
     ],
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -109,7 +109,7 @@ export const AnnotationPointCondition = memo(() => {
         offsetX: 0,
       },
     ],
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },

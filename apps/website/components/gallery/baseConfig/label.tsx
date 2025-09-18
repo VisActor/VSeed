@@ -19,7 +19,6 @@ export const BaseConfigLabel = memo(() => {
       {
         id: 'date',
         alias: '日期',
-        
       },
     ],
     measures: [

@@ -9,7 +9,7 @@ export const zSort = z.object({
 /**
  * @description 类目轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
  * @default {}
- * @example 
+ * @example
  * - order:'asc'
  * - orderBy:'date'
  * 或
@@ -25,7 +25,7 @@ export type Sort = {
 
   /**
    * @description 排序依赖的字段, 可以是维度id或指标id
-   * @example 
+   * @example
    * - orderBy:'date'
    * - orderBy:'profit'
    */

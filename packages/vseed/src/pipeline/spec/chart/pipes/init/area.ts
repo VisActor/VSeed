@@ -11,7 +11,7 @@ export const initArea: SpecPipe = (spec, context) => {
   result.type = 'area'
   result.direction = 'vertical'
   result.yField = foldInfo.measureValue
-  
+
   result.xField = unfoldInfo.encodingX
   result.seriesField = isLinearColor(advancedVSeed) ? unfoldInfo.encodingDetail : unfoldInfo.encodingColorId
   result.padding = 0

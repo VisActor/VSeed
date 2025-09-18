@@ -31,7 +31,6 @@ export const CombinationAreaPercentChart = memo(() => {
       {
         id: 'date',
         alias: '日期',
-        
       },
     ],
     measures: [
@@ -68,7 +67,7 @@ export const PivotAreaPercentChart = memo(() => {
   const vseed: VSeed = {
     chartType: 'areaPercent',
     dimensions: [
-      { id: 'category', alias: '类别',   },
+      { id: 'category', alias: '类别' },
       { id: 'date', alias: '日期', encoding: 'column' },
       { id: 'region', alias: '区域', encoding: 'row' },
     ],

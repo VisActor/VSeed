@@ -99546,9 +99546,9 @@ export const Dataset20K = memo(() => {
         '250820161421423': '办公用-器具-10003836',
       },
     ],
-    label:{
+    label: {
       enable: false,
-    }
+    },
   }
   return <VChartRender vseed={vseed} />
 })

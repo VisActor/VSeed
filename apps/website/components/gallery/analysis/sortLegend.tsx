@@ -13,7 +13,7 @@ export const SortLegendBySelf = memo(() => {
       { date: '2022', profit: 50, sales: 100, count: 14 },
       { date: '2023', profit: 40, sales: 80, count: 30 },
     ],
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'count', alias: '数量' },
       { id: 'sales', alias: '销售额' },
@@ -36,7 +36,7 @@ export const SortLegendByMeasure = memo(() => {
       { date: '2022', profit: 50, sales: 100, count: 14 },
       { date: '2023', profit: 40, sales: 80, count: 30 },
     ],
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'count', alias: '数量' },
       {
@@ -66,7 +66,7 @@ export const SortLegendByDimension = memo(() => {
       { date: '2022', profit: 50, sales: 100, count: 50 },
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -90,7 +90,7 @@ export const SortLegendByCustom = memo(() => {
       { date: '2022', profit: 50, sales: 100, count: 50 },
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },
@@ -113,7 +113,7 @@ export const SortLegendByCustomId = memo(() => {
       { date: '2022', profit: 50, sales: 100, count: 50 },
       { date: '2023', profit: 40, sales: 80, count: 50 },
     ],
-    dimensions: [{ id: 'date', alias: '日期',   }],
+    dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'profit', alias: '利润' },
       { id: 'sales', alias: '销售额' },

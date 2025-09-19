@@ -1039,9 +1039,6 @@ exports[`2_meaColor 2`] = `
   "innerRadius": 0,
   "label": {
     "formatMethod": [Function],
-    "layout": {
-      "align": undefined,
-    },
     "overlap": {
       "clampForce": true,
       "hideOnHit": true,

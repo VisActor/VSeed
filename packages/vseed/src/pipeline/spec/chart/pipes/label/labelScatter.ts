@@ -1,7 +1,7 @@
 import type { IScatterChartSpec } from '@visactor/vchart'
 import type { Encoding, FoldInfo, Label, SpecPipe } from 'src/types'
-import { isEmpty } from 'remeda'
 import { buildLabel } from './label'
+import type { ILineLikeLabelSpec } from '@visactor/vchart/esm/series/mixin/interface'
 
 export const labelScatter: SpecPipe = (spec, context) => {
   const result = { ...spec } as IScatterChartSpec
@@ -10,15 +10,11 @@ export const labelScatter: SpecPipe = (spec, context) => {
   const { chartType, encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { label: Label }
 
-  if (!baseConfig || isEmpty(baseConfig.label)) {
-    return result
-  }
-
   const foldInfoList = datasetReshapeInfo[0].foldInfoList as FoldInfo[]
 
   const { label } = baseConfig
 
-  result.label = buildLabel(
+  result.label = buildLabel<ILineLikeLabelSpec>(
     label,
     vseed.measures,
     vseed.dimensions,

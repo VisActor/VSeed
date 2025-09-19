@@ -499,9 +499,6 @@ exports[`combinationFunnel 2`] = `
         "isTransform": true,
         "label": {
           "formatMethod": [Function],
-          "layout": {
-            "align": undefined,
-          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,
@@ -643,9 +640,6 @@ exports[`combinationFunnel 2`] = `
         "isTransform": true,
         "label": {
           "formatMethod": [Function],
-          "layout": {
-            "align": undefined,
-          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,

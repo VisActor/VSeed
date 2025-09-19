@@ -13,7 +13,7 @@ import type {
   NumFormat,
   SpecPipe,
 } from 'src/types'
-import { isEmpty, merge, uniqueBy } from 'remeda'
+import { merge, uniqueBy } from 'remeda'
 
 export const label: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
@@ -22,9 +22,6 @@ export const label: SpecPipe = (spec, context) => {
   const { chartType, encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { label: Label }
   const foldInfo = datasetReshapeInfo[0].foldInfo as FoldInfo
-  if (!baseConfig || isEmpty(baseConfig.label)) {
-    return result
-  }
 
   const { label } = baseConfig
 
@@ -42,14 +39,10 @@ export const label: SpecPipe = (spec, context) => {
 
 export const generateMeasureValue = (
   value: number | string,
-  measure?: Measure,
+  measure: Measure,
   labelAutoFormat?: boolean,
   numFormat: NumFormat = {},
 ) => {
-  if (!measure) {
-    return value
-  }
-
   const format = merge(numFormat, measure.numFormat || measure.format)
   const mergedMeasure = { ...measure, numFormat: format, autoFormat: labelAutoFormat || measure.autoFormat }
 
@@ -120,22 +113,24 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
       foldInfoList.forEach((foldInfo) => {
         const { measureId, measureValue, statistics } = foldInfo
         const measure = findMeasureById(advancedVSeedMeasures, datum[measureId] as string)
-        const measureValueLabel = generateMeasureValue(
-          datum[measureValue] as number | string,
-          measure,
-          autoFormat,
-          numFormat,
-        )
-        const measurePercentLabel = generateMeasurePercent(
-          datum[measureValue] as number | string,
-          statistics.sum,
-          percentFormatter,
-        )
-        if (showValue) {
-          result.push(measureValueLabel)
-        }
-        if (showValuePercent) {
-          result.push(measurePercentLabel)
+        if (measure) {
+          const measureValueLabel = generateMeasureValue(
+            datum[measureValue] as number | string,
+            measure,
+            autoFormat,
+            numFormat,
+          )
+          const measurePercentLabel = generateMeasurePercent(
+            datum[measureValue] as number | string,
+            statistics.sum,
+            percentFormatter,
+          )
+          if (showValue) {
+            result.push(measureValueLabel)
+          }
+          if (showValuePercent) {
+            result.push(measurePercentLabel)
+          }
         }
       })
 

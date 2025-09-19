@@ -1,6 +1,5 @@
 import type { IArcLabelSpec, IPieChartSpec } from '@visactor/vchart'
 import type { Encoding, FoldInfo, PieLabel, SpecPipe } from 'src/types'
-import { isEmpty } from 'remeda'
 import { buildLabel } from './label'
 
 export const labelPie: SpecPipe = (spec, context) => {
@@ -10,9 +9,6 @@ export const labelPie: SpecPipe = (spec, context) => {
   const { chartType, encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { label: PieLabel }
   const foldInfo = datasetReshapeInfo[0].foldInfo as FoldInfo
-  if (!baseConfig || isEmpty(baseConfig.label)) {
-    return result
-  }
 
   const { label } = baseConfig
 

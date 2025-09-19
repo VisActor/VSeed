@@ -1672,9 +1672,6 @@ exports[`pivotColumnParallel 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
-          "layout": {
-            "align": undefined,
-          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,
@@ -1974,9 +1971,6 @@ exports[`pivotColumnParallel 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
-          "layout": {
-            "align": undefined,
-          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,

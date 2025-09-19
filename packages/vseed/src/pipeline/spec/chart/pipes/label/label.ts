@@ -1,4 +1,4 @@
-import type { ILineChartSpec } from '@visactor/vchart'
+import type { IArcLabelSpec, ILineChartSpec } from '@visactor/vchart'
 import type { ILineLikeLabelSpec } from '@visactor/vchart/esm/series/mixin/interface'
 import { createFormatter, createFormatterByMeasure, findMeasureById } from '../../../../utils'
 import type {
@@ -28,9 +28,14 @@ export const label: SpecPipe = (spec, context) => {
 
   const { label } = baseConfig
 
-  result.label = buildLabel(label, vseed.measures, vseed.dimensions, advancedVSeed.measures, encoding as Encoding, [
-    foldInfo,
-  ])
+  result.label = buildLabel<ILineLikeLabelSpec>(
+    label,
+    vseed.measures,
+    vseed.dimensions,
+    advancedVSeed.measures,
+    encoding as Encoding,
+    [foldInfo],
+  )
 
   return result
 }
@@ -61,14 +66,14 @@ export const generateMeasurePercent = (value: number | string, sum: number, form
   return formatter(percentValue)
 }
 
-export const buildLabel = (
+export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
   label: Label,
   vseedMeasures: Measures = [],
   vseedDimensions: Dimensions = [],
   advancedVSeedMeasures: Measures,
   encoding: Encoding,
   foldInfoList: FoldInfo[],
-) => {
+): T => {
   const {
     enable,
     wrap,
@@ -83,7 +88,6 @@ export const buildLabel = (
     labelPosition,
     autoFormat,
     numFormat = {},
-    labelLayout,
   } = label
 
   const labelDims = uniqueBy(
@@ -143,9 +147,6 @@ export const buildLabel = (
       return result.join(' ')
     },
     position: labelPosition,
-    layout: {
-      align: labelLayout,
-    },
     style: {
       fill: labelColor,
       fontSize: labelFontSize,
@@ -153,7 +154,7 @@ export const buildLabel = (
       background: labelBackgroundColor,
     },
     smartInvert: labelColorSmartInvert,
-  } as ILineLikeLabelSpec
+  } as T
 
   if (labelOverlap) {
     result.overlap = {

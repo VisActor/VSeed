@@ -199,7 +199,7 @@ export interface DualAxis {
   /**
    * @description 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
    */
-  label?: Omit<Label, 'labelLayout'>
+  label?: Label
 
   /**
    * @description 图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.

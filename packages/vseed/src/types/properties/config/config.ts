@@ -4,7 +4,7 @@ import { zCrosshairLine, zCrosshairRect } from './crosshair'
 import { zStackCornerRadius } from './stackCornerRadius/stackCornerRadius'
 import { zBackgroundColor } from './backgroundColor/backgroundColor'
 import { zColor } from './color/color'
-import { zLabel } from './label'
+import { zLabel, zPieLabel } from './label'
 import { zLegend } from './legend/legend'
 import { zTooltip } from './tooltip/tooltip'
 import { zDualChartType } from '../chartType'
@@ -122,7 +122,7 @@ export const zScatterConfig = z.object({
 // polar
 export const zRoseConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
-  label: zLabel.nullish(),
+  label: zPieLabel.nullish(),
   color: zColor.nullish(),
   tooltip: zTooltip.nullish(),
   legend: zLegend.nullish(),
@@ -130,7 +130,7 @@ export const zRoseConfig = z.object({
 export const zRoseParallelConfig = zRoseConfig
 export const zPieConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
-  label: zLabel.nullish(),
+  label: zPieLabel.nullish(),
   color: zColor.nullish(),
   tooltip: zTooltip.nullish(),
   legend: zLegend.nullish(),
@@ -138,8 +138,8 @@ export const zPieConfig = z.object({
 export const zDonutConfig = zPieConfig
 export const zRadarConfig = zPieConfig
 // other
-export const zFunnelConfig = zPieConfig
-export const zHeatmapConfig = zPieConfig
+export const zFunnelConfig = zAreaConfig
+export const zHeatmapConfig = zAreaConfig
 
 /**
  * ---

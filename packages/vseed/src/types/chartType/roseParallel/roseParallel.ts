@@ -1,11 +1,10 @@
 import { type Locale } from '../../i18n'
-import type { MeasureTree } from '../../properties'
+import type { MeasureTree, PieLabel } from '../../properties'
 import {
   type BackgroundColor,
   type Color,
   type Dataset,
   type Dimensions,
-  type Label,
   type Legend,
   type Theme,
   type Tooltip,
@@ -85,7 +84,7 @@ export interface RoseParallel {
    * 标签
    * @description 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
    */
-  label?: Omit<Label, 'labelLayout'>
+  label?: PieLabel
 
   /**
    * 图例

@@ -2,7 +2,6 @@ import type { SpecPipeline } from 'src/types'
 import {
   datasetXY,
   backgroundColor,
-  label,
   tooltip,
   discreteLegend,
   color,
@@ -27,6 +26,7 @@ import {
   colorLegend,
   roseStyle,
   colorRoseStyleFill,
+  labelPie,
 } from '../pipes'
 
 const rose: SpecPipeline = [
@@ -41,7 +41,7 @@ const rose: SpecPipeline = [
   verticalCrosshairRect,
   colorRoseStyleFill(roseStyle),
   colorAdapter(discreteLegend, colorLegend),
-  label,
+  labelPie,
   tooltip,
 ]
 
@@ -61,7 +61,7 @@ const pivotRose: SpecPipeline = [
     radiusAxis,
     verticalCrosshairRect,
     colorRoseStyleFill(roseStyle),
-    label,
+    labelPie,
     tooltip,
   ]),
   pivotRowDimensions,

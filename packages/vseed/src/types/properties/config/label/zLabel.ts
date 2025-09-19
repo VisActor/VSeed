@@ -15,5 +15,4 @@ export const zLabel = z.object({
   labelColorSmartInvert: z.boolean().nullish(),
   labelPosition: z.string().nullish(),
   labelOverlap: z.boolean().nullish(),
-  labelLayout: z.enum(['arc', 'labelLine', 'edge']).nullish(),
 })

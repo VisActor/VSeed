@@ -5,9 +5,9 @@ import type {
   Color,
   Dataset,
   Dimensions,
-  Label,
   Legend,
   MeasureTree,
+  PieLabel,
   Theme,
   Tooltip,
 } from '../../properties'
@@ -85,7 +85,7 @@ export interface Pie {
    * 标签
    * @description 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
    */
-  label?: Label
+  label?: PieLabel
 
   /**
    * 图例

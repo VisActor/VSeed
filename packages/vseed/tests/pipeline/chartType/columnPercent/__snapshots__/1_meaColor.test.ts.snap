@@ -1374,9 +1374,6 @@ exports[`1_meaColor 2`] = `
   "direction": "vertical",
   "label": {
     "formatMethod": [Function],
-    "layout": {
-      "align": undefined,
-    },
     "overlap": {
       "clampForce": true,
       "hideOnHit": true,

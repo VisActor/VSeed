@@ -1,8 +1,8 @@
 import type { ILineChartSpec } from '@visactor/vchart'
 import type { Encoding, FoldInfo, Label, SpecPipe } from 'src/types'
-import { isNullish } from 'remeda'
 import { buildLabel } from './label'
 import { DUAL_AXIS_LABEL_Z_INDEX } from 'src/pipeline/utils/constant'
+import type { ILineLikeLabelSpec } from '@visactor/vchart/esm/series/mixin/interface'
 
 export const labelPrimary: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
@@ -11,12 +11,8 @@ export const labelPrimary: SpecPipe = (spec, context) => {
   const { chartType } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { label: Label }
 
-  if (!baseConfig || !baseConfig.label) {
-    return result
-  }
-
   const foldInfoList = datasetReshapeInfo[0].foldInfoList as FoldInfo[]
-  result.label = buildLabel(
+  result.label = buildLabel<ILineLikeLabelSpec>(
     baseConfig.label,
     vseed.measures,
     vseed.dimensions,
@@ -35,15 +31,9 @@ export const labelSecondary: SpecPipe = (spec, context) => {
   const { chartType } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { label: Label }
 
-  if (!baseConfig || !baseConfig.label) {
-    return result
-  }
-  if (isNullish(datasetReshapeInfo[0].foldInfoList?.[1])) {
-    return result
-  }
   const foldInfoList = datasetReshapeInfo[0].foldInfoList as FoldInfo[]
 
-  result.label = buildLabel(
+  result.label = buildLabel<ILineLikeLabelSpec>(
     baseConfig.label,
     vseed.measures,
     vseed.dimensions,

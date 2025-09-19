@@ -6,7 +6,6 @@ import {
   datasetPivot,
   initDonut,
   initPivot,
-  label,
   discreteLegend,
   pivotAdapter,
   pivotColumnDimensions,
@@ -27,6 +26,7 @@ import {
   pivotColorLegend,
   pieStyle,
   colorPieStyleFill,
+  labelPie,
 } from '../pipes'
 
 const donut: SpecPipeline = [
@@ -35,7 +35,7 @@ const donut: SpecPipeline = [
   backgroundColor,
   datasetXY,
   progressive,
-  label,
+  labelPie,
   colorPieStyleFill(pieStyle),
   colorAdapter(discreteLegend, colorLegend),
   tooltip,
@@ -56,7 +56,7 @@ const pivotDonut: SpecPipeline = [
     backgroundColor,
     datasetXY,
     progressive,
-    label,
+    labelPie,
     colorPieStyleFill(pieStyle),
     tooltip,
     annotationPoint,

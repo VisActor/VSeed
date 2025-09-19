@@ -572,9 +572,6 @@ exports[`basicRadar 2`] = `
   },
   "label": {
     "formatMethod": [Function],
-    "layout": {
-      "align": undefined,
-    },
     "overlap": {
       "clampForce": true,
       "hideOnHit": true,

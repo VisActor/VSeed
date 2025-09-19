@@ -819,9 +819,6 @@ exports[`combinationColumnParallel 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
-          "layout": {
-            "align": undefined,
-          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,
@@ -1107,9 +1104,6 @@ exports[`combinationColumnParallel 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
-          "layout": {
-            "align": undefined,
-          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,

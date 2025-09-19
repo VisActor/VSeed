@@ -1286,9 +1286,6 @@ exports[`pivotHeatmap 2`] = `
         "direction": "vertical",
         "label": {
           "formatMethod": [Function],
-          "layout": {
-            "align": undefined,
-          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,

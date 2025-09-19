@@ -971,9 +971,6 @@ exports[`4_onlySecondaryYAxis 2`] = `
       "id": "dualAxis-primary-series",
       "label": {
         "formatMethod": [Function],
-        "layout": {
-          "align": undefined,
-        },
         "overlap": {
           "clampForce": true,
           "hideOnHit": true,
@@ -1263,9 +1260,6 @@ exports[`4_onlySecondaryYAxis 2`] = `
       "id": "dualAxis-secondary-series",
       "label": {
         "formatMethod": [Function],
-        "layout": {
-          "align": undefined,
-        },
         "overlap": {
           "clampForce": true,
           "hideOnHit": true,

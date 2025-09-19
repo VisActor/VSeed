@@ -503,9 +503,6 @@ exports[`combinationRadar 2`] = `
         },
         "label": {
           "formatMethod": [Function],
-          "layout": {
-            "align": undefined,
-          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,
@@ -679,9 +676,6 @@ exports[`combinationRadar 2`] = `
         },
         "label": {
           "formatMethod": [Function],
-          "layout": {
-            "align": undefined,
-          },
           "overlap": {
             "clampForce": true,
             "hideOnHit": true,

@@ -1291,9 +1291,6 @@ exports[`third 2`] = `
             "id": "dualAxis-0-primary-series",
             "label": {
               "formatMethod": [Function],
-              "layout": {
-                "align": undefined,
-              },
               "overlap": {
                 "clampForce": true,
                 "hideOnHit": true,
@@ -1402,9 +1399,6 @@ exports[`third 2`] = `
             "id": "dualAxis-0-secondary-series",
             "label": {
               "formatMethod": [Function],
-              "layout": {
-                "align": undefined,
-              },
               "overlap": {
                 "clampForce": true,
                 "hideOnHit": true,
@@ -1777,9 +1771,6 @@ exports[`third 2`] = `
             "id": "dualAxis-1-primary-series",
             "label": {
               "formatMethod": [Function],
-              "layout": {
-                "align": undefined,
-              },
               "overlap": {
                 "clampForce": true,
                 "hideOnHit": true,
@@ -1888,9 +1879,6 @@ exports[`third 2`] = `
             "id": "dualAxis-1-secondary-series",
             "label": {
               "formatMethod": [Function],
-              "layout": {
-                "align": undefined,
-              },
               "overlap": {
                 "clampForce": true,
                 "hideOnHit": true,

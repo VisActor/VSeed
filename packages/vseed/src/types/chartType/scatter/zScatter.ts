@@ -33,7 +33,7 @@ export const zScatter = z.object({
   size: z.number().or(z.array(z.number())).nullish(),
   sizeRange: z.number().or(z.array(z.number())).nullish(),
   color: zColor.nullish(),
-  label: zLabel.omit({ labelLayout: true }).nullish(),
+  label: zLabel.nullish(),
   legend: zLegend.nullish(),
   tooltip: zTooltip.nullish(),
   xAxis: zXLinearAxis.nullish(),

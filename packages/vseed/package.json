@@ -22,6 +22,7 @@
     "build:rsdoctor": "RSDOCTOR=true rslib build",
     "format": "prettier --write .",
     "lint": "eslint . --cache",
+    "type-check": "tsc --noEmit",
     "rstest": "rstest",
     "test": "vitest run",
     "test:update": "vitest run --update",

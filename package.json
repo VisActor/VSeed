@@ -14,6 +14,7 @@
     "dev:rsdoctor": "pnpm --filter=@visactor/vseed run dev:rsdoctor",
     "format": "pnpm prettier --write .",
     "lint": "pnpm -r --color --parallel lint",
+    "type-check": "pnpm -r --color --parallel type-check",
     "build": "pnpm -r build",
     "build:vseed": "pnpm --filter=@visactor/vseed run build",
     "build:rsdoctor": "pnpm --filter=@visactor/vseed run build:rsdoctor",

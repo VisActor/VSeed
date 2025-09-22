@@ -22,6 +22,8 @@
     "build:test": "node ./scripts/build-tests.mjs",
     "build:canvasTest": "node ./scripts/build-tests-with-canvas.mjs",
     "rstest": "pnpm --filter=@visactor/vseed rstest",
+    "rstest:update": "pnpm --filter=@visactor/vseed rstest:update",
+    "rstest:coverage": "pnpm --filter=@visactor/vseed rstest:coverage",
     "test": "pnpm --filter=@visactor/vseed test",
     "test:update": "pnpm --filter=@visactor/vseed test:update",
     "test:coverage": "pnpm --filter=@visactor/vseed test:coverage && node scripts/build-coverage-badge.mjs",

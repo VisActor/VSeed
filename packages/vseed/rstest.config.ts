@@ -4,4 +4,10 @@ export default defineConfig({
   setupFiles: ['./rstest.setup.ts'],
   globals: true,
   testEnvironment: 'jsdom',
+  coverage: {
+    provider: 'istanbul',
+    reporters: ['text', 'json', 'html', 'json-summary'],
+    reportsDirectory: './coverage',
+    clean: false,
+  },
 })

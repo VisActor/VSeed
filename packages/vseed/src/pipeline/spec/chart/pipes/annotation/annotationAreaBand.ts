@@ -53,6 +53,8 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
       outerPadding = 4,
     } = annotationArea
 
+    const dy = textPosition?.includes('bottom') ? -1 * textFontSize! : textFontSize
+
     const dataset = advancedVSeed.dataset.flat()
     const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
 
@@ -165,7 +167,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
         visible: true,
         text: text,
         style: {
-          dy: textFontSize,
+          dy: dy,
           textAlign: textAlign,
           textBaseline: textBaseline,
           stroke: textBackgroundColor,
@@ -179,7 +181,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           visible: textBackgroundVisible,
           padding: textBackgroundPadding,
           style: {
-            dy: textFontSize,
+            dy: dy,
             cornerRadius: textBackgroundBorderRadius ?? 4,
             fill: textBackgroundColor,
             stroke: textBackgroundBorderColor,

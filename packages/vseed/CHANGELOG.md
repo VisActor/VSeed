@@ -1,5 +1,12 @@
 # @visactor/vseed
 
+## 0.1.21
+
+### Patch Changes
+
+- fix: band error in dualAxis
+- fix: annotation text missing in bottom
+
 ## 0.1.20
 
 ### Patch Changes

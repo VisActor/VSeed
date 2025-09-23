@@ -83,8 +83,11 @@ importers:
         specifier: 0.13.2
         version: 0.13.2(typescript@5.8.3)
       '@rstest/core':
-        specifier: 0.3.2
-        version: 0.3.2(jsdom@26.1.0)
+        specifier: 0.4.1
+        version: 0.4.1(jsdom@26.1.0)
+      '@rstest/coverage-istanbul':
+        specifier: ^0.0.2
+        version: 0.0.2(@rstest/core@0.4.1(jsdom@26.1.0))
       '@types/node':
         specifier: 22.16.5
         version: 22.16.5
@@ -114,7 +117,7 @@ importers:
         version: 26.1.0
       rstest-canvas-mock:
         specifier: 0.0.1
-        version: 0.0.1(@rstest/core@0.3.2(jsdom@26.1.0))
+        version: 0.0.1(@rstest/core@0.4.1(jsdom@26.1.0))
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -1522,8 +1525,8 @@ packages:
     resolution: {integrity: sha512-tMfjCGVzB3AWrMcrpONC/d3Wsmybaxv0PAdyjAIbRK0tTuuSyoLsKozvGMV1CpOxecCY66E0GUQOrFq9xy0OjQ==}
     engines: {node: '>=18.0.0'}
 
-  '@rstest/core@0.3.2':
-    resolution: {integrity: sha512-bb6hciMqE9S0XYerYc9gA5oJq9RvS3Kdr8/wU/K++ZQumy35A8NOJno7L7/MudyQPTqTuHzPXQjKk4mOAlsCww==}
+  '@rstest/core@0.4.1':
+    resolution: {integrity: sha512-EJwdpxPHabmBkAUunDy8JXFE7fr6BW5+9826IBPWKDoni6HZGvgkVjkuoiELwIWnwptDOXe/OD21aoNdV8V+yw==}
     engines: {node: '>=18.12.0'}
     hasBin: true
     peerDependencies:
@@ -1534,6 +1537,11 @@ packages:
         optional: true
       jsdom:
         optional: true
+
+  '@rstest/coverage-istanbul@0.0.2':
+    resolution: {integrity: sha512-fhFbde5ZJ2vT1dlve0W78C3gyXKB4gIPplzl1qhnZHdsFm/gaEg1qoo42OtW2gmqQXaTn/sGhXG0mulHJvBTWQ==}
+    peerDependencies:
+      '@rstest/core': ~0.4.1
 
   '@selderee/plugin-htmlparser2@0.11.0':
     resolution: {integrity: sha512-P33hHGdldxGabLFjPPpaTxVolMrzrcegejx+0GxjrIb9Zv48D8yAIA/QTDR2dFl7Uz7urX8aX6+5bCZslr+gWQ==}
@@ -4635,6 +4643,9 @@ packages:
     resolution: {integrity: sha512-MpUEN2OodtUzxvKQl72cUF7RQ5EiHsGvSsVG0ia9c5RbWGL2CI4C7EpPS8UTBIplnlzZiNuV56w+FuNxy3ty2Q==}
     engines: {node: '>=10'}
 
+  swc-plugin-coverage-instrument@0.0.31:
+    resolution: {integrity: sha512-Q26/ZOqk102VJ+sN5X/mab4WEtzYNRTcnV3VccrANDKRImdgjjyTpo7tH1mTxS6zopHrmZ9S0jAUeyYlT7xO7A==}
+
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
 
@@ -6755,7 +6766,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@rstest/core@0.3.2(jsdom@26.1.0)':
+  '@rstest/core@0.4.1(jsdom@26.1.0)':
     dependencies:
       '@rsbuild/core': 1.5.0
       '@types/chai': 5.2.2
@@ -6766,6 +6777,14 @@ snapshots:
       tinypool: 1.1.1
     optionalDependencies:
       jsdom: 26.1.0
+
+  '@rstest/coverage-istanbul@0.0.2(@rstest/core@0.4.1(jsdom@26.1.0))':
+    dependencies:
+      '@rstest/core': 0.4.1(jsdom@26.1.0)
+      istanbul-lib-coverage: 3.2.2
+      istanbul-lib-report: 3.0.1
+      istanbul-reports: 3.2.0
+      swc-plugin-coverage-instrument: 0.0.31
 
   '@selderee/plugin-htmlparser2@0.11.0':
     dependencies:
@@ -10640,9 +10659,9 @@ snapshots:
       - webpack
       - webpack-hot-middleware
 
-  rstest-canvas-mock@0.0.1(@rstest/core@0.3.2(jsdom@26.1.0)):
+  rstest-canvas-mock@0.0.1(@rstest/core@0.4.1(jsdom@26.1.0)):
     dependencies:
-      '@rstest/core': 0.3.2(jsdom@26.1.0)
+      '@rstest/core': 0.4.1(jsdom@26.1.0)
       jest-canvas-mock: 2.5.2
 
   run-parallel@1.2.0:
@@ -11020,6 +11039,8 @@ snapshots:
   supports-color@8.1.1:
     dependencies:
       has-flag: 4.0.0
+
+  swc-plugin-coverage-instrument@0.0.31: {}
 
   symbol-tree@3.2.4: {}
 

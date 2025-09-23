@@ -1,5 +1,13 @@
 # website
 
+## 0.1.21
+
+### Patch Changes
+
+- fix: annotation text and band error in dual axis
+- Updated dependencies
+  - @visactor/vseed@0.1.21
+
 ## 0.1.20
 
 ### Patch Changes

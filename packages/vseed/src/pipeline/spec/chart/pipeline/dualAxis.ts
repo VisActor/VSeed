@@ -16,7 +16,6 @@ import {
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
-  annotationArea,
   pointStyle,
   lineStyle,
   pointStateDimensionHover,
@@ -47,6 +46,7 @@ import {
   colorLegend,
   pivotColorLegend,
   linearColorForDualAxis,
+  annotationAreaBand,
 } from '../pipes'
 
 const dualAxis: SpecPipeline = [
@@ -93,7 +93,7 @@ const dualAxis: SpecPipeline = [
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
-  annotationArea,
+  annotationAreaBand,
 ]
 
 const pivotDualAxis: SpecPipeline = [
@@ -141,7 +141,7 @@ const pivotDualAxis: SpecPipeline = [
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,
-    annotationArea,
+    annotationAreaBand,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

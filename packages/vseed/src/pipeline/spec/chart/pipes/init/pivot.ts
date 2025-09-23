@@ -1,5 +1,5 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
-import type { SpecPipe } from 'src/types'
+import type { Spec, SpecPipe } from 'src/types'
 
 export const initPivot: SpecPipe = (spec) => {
   const result = { ...spec } as PivotChartConstructorOptions
@@ -35,7 +35,7 @@ export const initPivot: SpecPipe = (spec) => {
   }
 }
 
-export const pivotIndicatorsAsRow: SpecPipe = (spec) => {
+export const pivotIndicatorsAsRow: SpecPipe = (spec): Spec => {
   const result = { ...spec } as PivotChartConstructorOptions
 
   return {
@@ -44,7 +44,7 @@ export const pivotIndicatorsAsRow: SpecPipe = (spec) => {
   }
 }
 
-export const pivotIndicatorsAsCol: SpecPipe = (spec) => {
+export const pivotIndicatorsAsCol: SpecPipe = (spec): Spec => {
   const result = { ...spec } as PivotChartConstructorOptions
 
   return {

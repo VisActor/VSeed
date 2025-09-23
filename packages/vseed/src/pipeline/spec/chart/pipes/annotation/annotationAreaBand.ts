@@ -59,9 +59,11 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
     return {
       zIndex: ANNOTATION_Z_INDEX,
       regionRelative: true,
-      positions: (data: Datum[], context: ICartesianSeries) => {
+      positions: (data: Datum[], context: ICartesianSeries & { _scaleConfig?: { bandPosition?: number } }) => {
         const positionData = data.filter((item) => selectedData.some((datum) => isSubset(datum, item)))
         const xyList = positionData.map((datum) => context.dataToPosition(datum) as { x: number; y: number })
+
+        const bandPosition = context?._scaleConfig?.bandPosition || 0
 
         const yAxisHelper = context.getYAxisHelper() as unknown as {
           getBandwidth: (depth?: number) => number
@@ -80,9 +82,15 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           const depth = context.fieldX.length ?? 0
           const xBandWidth = xAxisHelper?.getBandwidth?.(depth - 1)
           const yScale = yAxisHelper.getScale()
+          const startX = Math.min(...xyList.map((item) => item.x)) - (outerPadding || 4)
+          const endX = Math.max(...xyList.map((item) => item.x)) + (outerPadding || 4)
 
-          const minX = Math.min(...xyList.map((item) => item.x)) - (outerPadding || 4)
-          const maxX = Math.max(...xyList.map((item) => item.x)) + xBandWidth + (outerPadding || 4)
+          const width = endX - startX + xBandWidth
+          const middleX = (endX + startX) / 2 + xBandWidth * (0.5 - bandPosition)
+
+          const minX = middleX - width / 2
+          const maxX = middleX + width / 2
+
           const minY = Math.min(...yScale.range())
           const maxY = Math.max(...yScale.range())
 
@@ -115,8 +123,14 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           const yBandWidth = yAxisHelper?.getBandwidth?.(depth - 1)
           const xScale = xAxisHelper.getScale()
 
-          const minY = Math.min(...xyList.map((item) => item.y)) - (outerPadding || 4)
-          const maxY = Math.max(...xyList.map((item) => item.y)) + yBandWidth + (outerPadding || 4)
+          const startY = Math.min(...xyList.map((item) => item.y)) - (outerPadding || 4)
+          const endY = Math.max(...xyList.map((item) => item.y)) + (outerPadding || 4)
+          const width = endY - startY + yBandWidth
+          const middleY = (endY + startY) / 2 + yBandWidth * (0.5 - bandPosition)
+
+          const minY = middleY - width / 2
+          const maxY = middleY + width / 2
+
           const minX = Math.min(...xScale.range())
           const maxX = Math.max(...xScale.range())
 

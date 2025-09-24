@@ -1,5 +1,16 @@
 # website
 
+## 0.1.22
+
+### Patch Changes
+
+- Updated dependencies [fc513d1]
+- Updated dependencies [23b9d1c]
+- Updated dependencies [23b9d1c]
+- Updated dependencies [ff4b333]
+- Updated dependencies [23b9d1c]
+  - @visactor/vseed@0.1.22
+
 ## 0.1.21
 
 ### Patch Changes

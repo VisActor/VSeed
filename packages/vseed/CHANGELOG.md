@@ -1,5 +1,15 @@
 # @visactor/vseed
 
+## 0.1.22
+
+### Patch Changes
+
+- fc513d1: feat: remove pivot indicator name in pie\donut\rose\roseParallel\funnel\radar
+- 23b9d1c: fix: lineSmooth error in radar chart
+- 23b9d1c: feat: add default sizeRange for scatter
+- ff4b333: fix: bottom line missing in combination pie
+- 23b9d1c: fix: remove useless color type in heatmap and funnel
+
 ## 0.1.21
 
 ### Patch Changes

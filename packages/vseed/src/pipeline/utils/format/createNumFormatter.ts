@@ -81,6 +81,7 @@ export const autoNumFormatter = (value?: number | string, locale: Locale = intl.
   const numFormatterOptions: Intl.NumberFormatOptions = {
     style: 'decimal',
     notation: 'compact',
+    useGrouping: true,
   }
   numFormatterOptions.minimumFractionDigits = 0
   numFormatterOptions.maximumFractionDigits = 2

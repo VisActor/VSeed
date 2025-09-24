@@ -27,7 +27,12 @@ export const roseParallelAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForRose, buildMeasures],
-    [encodingForRose, buildMeasures, deleteEncodingForMeasure(['tooltip', 'label']), deleteTooltipAndLabelDimension],
+    [
+      encodingForRose,
+      buildMeasures,
+      deleteEncodingForMeasure(['tooltip', 'label', 'color']),
+      deleteTooltipAndLabelDimension,
+    ],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

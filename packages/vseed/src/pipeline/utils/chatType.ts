@@ -1,17 +1,26 @@
-import type { Dimensions, DimensionGroup, DimensionTree, VSeed, Measure } from 'src/types'
+import { type Dimensions, type DimensionGroup, type DimensionTree, type VSeed, type Measure } from 'src/types'
 import { measureDepth } from './measures'
 import { isMeasureTreeWithChildren, isMeasureTreeWithParentId } from '../advanced/chart/pipes/measures/utils'
 import { unique } from 'remeda'
-import { DEFAULT_PARENT_ID } from './constant'
+import { ChartTypeEnum, DEFAULT_PARENT_ID } from './constant'
 
 export const isTable = (vseed: VSeed) => {
-  return vseed.chartType === 'table'
+  return vseed.chartType === ChartTypeEnum.Table
 }
 export const isPivotTable = (vseed: VSeed) => {
-  return vseed.chartType === 'pivotTable'
+  return vseed.chartType === ChartTypeEnum.PivotTable
 }
 export const isRadar = (vseed: VSeed) => {
-  return vseed.chartType === 'radar'
+  return vseed.chartType === ChartTypeEnum.Radar
+}
+export const isAreaPercent = (vseed: VSeed) => {
+  return vseed.chartType === ChartTypeEnum.AreaPercent
+}
+export const isColumnPercent = (vseed: VSeed) => {
+  return vseed.chartType === ChartTypeEnum.ColumnPercent
+}
+export const isBarPercent = (vseed: VSeed) => {
+  return vseed.chartType === ChartTypeEnum.BarPercent
 }
 
 export const isVTable = (vseed: VSeed) => {

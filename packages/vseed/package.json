@@ -1,6 +1,6 @@
 {
   "name": "@visactor/vseed",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "type": "module",
   "exports": {
     ".": {
@@ -52,8 +52,8 @@
     "rstest-canvas-mock": "0.0.1",
     "typescript": "5.8.3",
     "typescript-eslint": "8.35.1",
-    "vitest": "3.2.4",
-    "vitest-canvas-mock": "0.3.3"
+    "vi-canvas-mock": "^1.0.0",
+    "vitest": "3.2.4"
   },
   "sideEffects": false
 }

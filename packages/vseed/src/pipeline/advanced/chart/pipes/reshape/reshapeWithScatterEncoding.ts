@@ -48,7 +48,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
         foldMeasureValue: FoldXMeasureValue,
         foldMeasureId: FoldXMeasureId,
         colorItemAsId: true,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
       },
     )
 
@@ -71,7 +71,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
         foldMeasureValue: FoldYMeasureValue,
         foldMeasureId: FoldYMeasureId,
         colorItemAsId: true,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
       },
     )
 

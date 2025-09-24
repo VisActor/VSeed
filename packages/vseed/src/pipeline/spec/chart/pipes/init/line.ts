@@ -4,7 +4,7 @@ import { isLinearColor } from '../color/colorAdapter'
 
 export const initLine: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
-  const { advancedVSeed } = context
+  const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo } = advancedVSeed
   const { foldInfo, unfoldInfo } = datasetReshapeInfo[0]
 
@@ -12,7 +12,7 @@ export const initLine: SpecPipe = (spec, context) => {
   result.direction = 'vertical'
   result.xField = unfoldInfo.encodingX
   result.yField = foldInfo.measureValue
-  result.seriesField = isLinearColor(advancedVSeed) ? unfoldInfo.encodingDetail : unfoldInfo.encodingColorId
+  result.seriesField = isLinearColor(advancedVSeed, vseed) ? unfoldInfo.encodingDetail : unfoldInfo.encodingColorId
   result.padding = 0
   result.region = [
     {

@@ -28,7 +28,12 @@ export const radarAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForRadar, buildMeasures],
-    [encodingForRadar, buildMeasures, deleteEncodingForMeasure(['tooltip', 'label']), deleteTooltipAndLabelDimension],
+    [
+      encodingForRadar,
+      buildMeasures,
+      deleteEncodingForMeasure(['tooltip', 'label', 'color']),
+      deleteTooltipAndLabelDimension,
+    ],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

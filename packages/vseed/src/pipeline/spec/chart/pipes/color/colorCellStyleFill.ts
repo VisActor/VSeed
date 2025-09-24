@@ -6,11 +6,11 @@ export const colorCellStyleFill = (stylePipe: SpecPipe): SpecPipe => {
   return (spec, context) => {
     const result = stylePipe(spec, context) as IHeatmapChartSpec
 
-    const { advancedVSeed } = context
+    const { advancedVSeed, vseed } = context
     const { datasetReshapeInfo } = advancedVSeed
     const { unfoldInfo } = datasetReshapeInfo[0]
 
-    if (isLinearColor(advancedVSeed)) {
+    if (isLinearColor(advancedVSeed, vseed)) {
       if (result?.cell?.style) {
         result.cell.style.fill = {
           field: unfoldInfo.encodingColor,

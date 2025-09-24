@@ -53,7 +53,7 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
       } = dataReshapeByEncoding(dataset, dimensions, xMeasures.children, encoding as Encoding, {
         foldMeasureValue: `${FoldXMeasureValue}${index}`,
         colorItemAsId: true,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
       })
 
       datasets.push(newDataset)
@@ -69,7 +69,7 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
       } = dataReshapeByEncoding(dataset, dimensions, yMeasures.children, encoding as Encoding, {
         foldMeasureValue: `${FoldYMeasureValue}${index}`,
         colorItemAsId: true,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
       })
 
       datasets.push(newDataset)

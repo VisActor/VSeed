@@ -29,7 +29,12 @@ export const areaAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForLine, buildMeasures],
-    [encodingForLine, buildMeasures, deleteEncodingForMeasure(['tooltip', 'label']), deleteTooltipAndLabelDimension],
+    [
+      encodingForLine,
+      buildMeasures,
+      deleteEncodingForMeasure(['tooltip', 'label', 'color']),
+      deleteTooltipAndLabelDimension,
+    ],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

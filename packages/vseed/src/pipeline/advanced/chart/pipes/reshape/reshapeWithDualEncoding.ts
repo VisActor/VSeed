@@ -41,7 +41,7 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
       {
         colorItemAsId: false,
         foldMeasureValue: FoldPrimaryMeasureValue,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
       },
     )
 
@@ -63,7 +63,7 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
       {
         colorItemAsId: false,
         foldMeasureValue: FoldSecondaryMeasureValue,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
       },
     )
 

@@ -26,7 +26,12 @@ export const funnelAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForFunnel, buildMeasures],
-    [encodingForFunnel, buildMeasures, deleteEncodingForMeasure(['tooltip', 'label']), deleteTooltipAndLabelDimension],
+    [
+      encodingForFunnel,
+      buildMeasures,
+      deleteEncodingForMeasure(['tooltip', 'label', 'color']),
+      deleteTooltipAndLabelDimension,
+    ],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

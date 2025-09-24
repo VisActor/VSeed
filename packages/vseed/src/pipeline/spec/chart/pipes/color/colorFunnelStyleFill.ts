@@ -6,11 +6,11 @@ export const colorFunnelStyleFill = (stylePipe: SpecPipe): SpecPipe => {
   return (spec, context) => {
     const result = stylePipe(spec, context) as IFunnelChartSpec
 
-    const { advancedVSeed } = context
+    const { advancedVSeed, vseed } = context
     const { datasetReshapeInfo } = advancedVSeed
     const { unfoldInfo } = datasetReshapeInfo[0]
 
-    if (isLinearColor(advancedVSeed)) {
+    if (isLinearColor(advancedVSeed, vseed)) {
       if (result?.funnel?.style) {
         result.funnel.style.fill = {
           field: unfoldInfo.encodingColor,

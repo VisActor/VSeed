@@ -1,5 +1,5 @@
 import { beforeAll, vi } from 'vitest'
-import 'vitest-canvas-mock'
+import 'vi-canvas-mock'
 
 beforeAll(() => {
   const createGradientMock = () => {

@@ -32,7 +32,7 @@ export const dualAxisAdvancedPipeline: AdvancedPipeline = [
     [
       encodingForDualAxis,
       buildMeasuresForDualAxis,
-      deleteEncodingForMeasure(['tooltip', 'label']),
+      deleteEncodingForMeasure(['tooltip', 'label', 'color']),
       deleteTooltipAndLabelDimension,
     ],
   ),

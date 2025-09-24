@@ -26,7 +26,12 @@ export const pieAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForPie, buildMeasures],
-    [encodingForPie, buildMeasures, deleteEncodingForMeasure(['tooltip', 'label']), deleteTooltipAndLabelDimension],
+    [
+      encodingForPie,
+      buildMeasures,
+      deleteEncodingForMeasure(['tooltip', 'label', 'color']),
+      deleteTooltipAndLabelDimension,
+    ],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

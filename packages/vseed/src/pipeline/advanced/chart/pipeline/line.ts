@@ -29,7 +29,12 @@ export const lineAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForLine, buildMeasures],
-    [encodingForLine, buildMeasures, deleteEncodingForMeasure(['tooltip', 'label']), deleteTooltipAndLabelDimension],
+    [
+      encodingForLine,
+      buildMeasures,
+      deleteEncodingForMeasure(['tooltip', 'label', 'color']),
+      deleteTooltipAndLabelDimension,
+    ],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

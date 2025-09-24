@@ -6,11 +6,11 @@ export const colorPointStyleFill = (stylePipe: SpecPipe): SpecPipe => {
   return (spec, context) => {
     const result = stylePipe(spec, context) as ILineChartSpec
 
-    const { advancedVSeed } = context
+    const { advancedVSeed, vseed } = context
     const { datasetReshapeInfo } = advancedVSeed
     const { unfoldInfo } = datasetReshapeInfo[0]
 
-    if (isLinearColor(advancedVSeed)) {
+    if (isLinearColor(advancedVSeed, vseed)) {
       if (result?.point?.style) {
         result.point.style.fill = {
           field: unfoldInfo.encodingColor,

@@ -751,12 +751,6 @@ exports[`2_meaColor 1`] = `
           "id": "sales",
           "parentId": "1",
         },
-        {
-          "alias": "利润",
-          "encoding": "color",
-          "id": "profit",
-          "parentId": "1",
-        },
       ],
       "id": "1",
     },

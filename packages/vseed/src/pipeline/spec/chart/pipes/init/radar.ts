@@ -4,7 +4,7 @@ import { isLinearColor } from '../color/colorAdapter'
 
 export const initRadar: SpecPipe = (spec, context) => {
   const result = { ...spec } as IRadarChartSpec
-  const { advancedVSeed } = context
+  const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo } = advancedVSeed
 
   const { unfoldInfo, foldInfo } = datasetReshapeInfo[0]
@@ -12,7 +12,7 @@ export const initRadar: SpecPipe = (spec, context) => {
   result.type = 'radar'
   result.angleField = unfoldInfo.encodingAngle
   result.radiusField = foldInfo.measureValue
-  result.seriesField = isLinearColor(advancedVSeed) ? unfoldInfo.encodingDetail : unfoldInfo.encodingColorId
+  result.seriesField = isLinearColor(advancedVSeed, vseed) ? unfoldInfo.encodingDetail : unfoldInfo.encodingColorId
 
   result.padding = 0
   result.region = [

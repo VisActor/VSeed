@@ -29,7 +29,12 @@ export const columnPercentAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForColumn, buildMeasures],
-    [encodingForColumn, buildMeasures, deleteEncodingForMeasure(['tooltip', 'label']), deleteTooltipAndLabelDimension],
+    [
+      encodingForColumn,
+      buildMeasures,
+      deleteEncodingForMeasure(['tooltip', 'label', 'color']),
+      deleteTooltipAndLabelDimension,
+    ],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

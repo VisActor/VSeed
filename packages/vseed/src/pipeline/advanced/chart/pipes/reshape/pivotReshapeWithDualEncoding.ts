@@ -59,7 +59,7 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
         {
           colorItemAsId: false,
           foldMeasureValue: `${FoldPrimaryMeasureValue}${index}`,
-          colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+          colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
         },
       )
 
@@ -81,7 +81,7 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
         {
           colorItemAsId: false,
           foldMeasureValue: `${FoldSecondaryMeasureValue}${index}`,
-          colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+          colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
         },
       )
 

@@ -29,7 +29,12 @@ export const barPercentAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForBar, buildMeasures],
-    [encodingForBar, buildMeasures, deleteEncodingForMeasure(['tooltip', 'label']), deleteTooltipAndLabelDimension],
+    [
+      encodingForBar,
+      buildMeasures,
+      deleteEncodingForMeasure(['tooltip', 'label', 'color']),
+      deleteTooltipAndLabelDimension,
+    ],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

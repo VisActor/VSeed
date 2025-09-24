@@ -24,7 +24,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
       bodyStyle: {
         borderColor,
         color: bodyFontColor,
-        borderLineWidth: [1, 1, 0, 1],
+        borderLineWidth: [1, 1, 1, 1],
         bgColor: transparent,
         hover: {
           cellBgColor: 'transparent',

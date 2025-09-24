@@ -274,6 +274,7 @@ export const lightTheme = (): CustomThemeConfig => {
           },
         },
         crosshairLine,
+        sizeRange: [8, 24],
       },
       dualAxis: {
         ...baseConfig,

@@ -265,6 +265,7 @@ export const darkTheme = (): CustomThemeConfig => {
           },
         },
         crosshairLine,
+        sizeRange: [8, 24],
       },
       dualAxis: {
         ...baseConfig,

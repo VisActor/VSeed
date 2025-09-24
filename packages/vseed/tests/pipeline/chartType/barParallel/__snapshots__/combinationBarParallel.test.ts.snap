@@ -1451,7 +1451,7 @@ exports[`combinationBarParallel 2`] = `
       "borderColor": "#e3e5eb",
       "borderLineWidth": 1,
       "hover": {
-        "cellBgColor": "#D9DDE4",
+        "cellBgColor": "rgba(0,0,0,0)",
       },
     },
     "cornerHeaderStyle": {
@@ -1471,9 +1471,9 @@ exports[`combinationBarParallel 2`] = `
         ],
       },
       "hover": {
-        "cellBgColor": "#D9DDE4",
-        "inlineColumnBgColor": "#D9DDE455",
-        "inlineRowBgColor": "#D9DDE455",
+        "cellBgColor": "rgba(0,0,0,0)",
+        "inlineColumnBgColor": "rgba(0,0,0,0)",
+        "inlineRowBgColor": "rgba(0,0,0,0)",
       },
       "textAlign": "center",
     },
@@ -1496,7 +1496,7 @@ exports[`combinationBarParallel 2`] = `
         ],
       },
       "hover": {
-        "cellBgColor": "#D9DDE4",
+        "cellBgColor": "rgba(0,0,0,0)",
       },
     },
     "cornerRightBottomCellStyle": {
@@ -1513,7 +1513,7 @@ exports[`combinationBarParallel 2`] = `
         ],
       },
       "hover": {
-        "cellBgColor": "#D9DDE4",
+        "cellBgColor": "rgba(0,0,0,0)",
       },
     },
     "cornerRightTopCellStyle": {
@@ -1530,7 +1530,7 @@ exports[`combinationBarParallel 2`] = `
         ],
       },
       "hover": {
-        "cellBgColor": "#D9DDE4",
+        "cellBgColor": "rgba(0,0,0,0)",
       },
     },
     "frameStyle": {
@@ -1544,9 +1544,9 @@ exports[`combinationBarParallel 2`] = `
       "color": "#21252c",
       "fontSize": 12,
       "hover": {
-        "cellBgColor": "#D9DDE4",
-        "inlineColumnBgColor": "#D9DDE455",
-        "inlineRowBgColor": "#D9DDE455",
+        "cellBgColor": "rgba(0,0,0,0)",
+        "inlineColumnBgColor": "rgba(0,0,0,0)",
+        "inlineRowBgColor": "rgba(0,0,0,0)",
       },
       "textAlign": "center",
     },
@@ -1555,7 +1555,7 @@ exports[`combinationBarParallel 2`] = `
       "borderColor": "#e3e5eb",
       "borderLineWidth": 1,
       "hover": {
-        "cellBgColor": "#D9DDE4",
+        "cellBgColor": "rgba(0,0,0,0)",
       },
     },
     "rowHeaderStyle": {
@@ -1565,9 +1565,9 @@ exports[`combinationBarParallel 2`] = `
       "color": "#21252c",
       "fontSize": 12,
       "hover": {
-        "cellBgColor": "#D9DDE4",
-        "inlineColumnBgColor": "#D9DDE455",
-        "inlineRowBgColor": "#D9DDE455",
+        "cellBgColor": "rgba(0,0,0,0)",
+        "inlineColumnBgColor": "rgba(0,0,0,0)",
+        "inlineRowBgColor": "rgba(0,0,0,0)",
       },
     },
     "selectionStyle": {

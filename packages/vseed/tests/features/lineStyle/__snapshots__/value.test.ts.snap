@@ -611,6 +611,8 @@ exports[`value 2`] = `
         "filter": [Function],
         "level": 1,
         "style": {
+          "curveTension": 0,
+          "curveType": "linear",
           "fill": undefined,
           "fillOpacity": 0.05,
           "visible": true,

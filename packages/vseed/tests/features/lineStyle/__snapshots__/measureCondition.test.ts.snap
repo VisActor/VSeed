@@ -622,6 +622,8 @@ exports[`measureCondition 2`] = `
         "filter": [Function],
         "level": 1,
         "style": {
+          "curveTension": 0,
+          "curveType": "linear",
           "fill": undefined,
           "fillOpacity": 1,
           "visible": true,

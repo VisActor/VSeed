@@ -33,10 +33,44 @@ const Demo = () => {
     label: {
       enable: false,
       labelColor: '#212121',
+      labelFontSize: 12,
     },
-    lineStyle: [],
+    lineStyle: [
+      {
+        lineStyle: 'solid',
+        lineWidth: 3,
+      },
+    ],
+    pointStyle: [
+      {
+        pointSize: 8,
+      },
+    ],
+    xAxis: {
+      visible: true,
+      title: {
+        visible: false,
+        titleFontSize: 12,
+      },
+      label: {
+        labelFontSize: 12,
+      },
+    },
+    yAxis: {
+      visible: true,
+      title: {
+        visible: false,
+        titleFontSize: 12,
+      },
+      label: {
+        labelFontSize: 12,
+      },
+      // "numFormat": {
+      //     "type": "number"
+      // },
+      autoFormat: true,
+    },
     barStyle: [],
-    pointStyle: [],
     areaStyle: [],
     annotationPoint: [],
     annotationHorizontalLine: [],
@@ -44,56 +78,114 @@ const Demo = () => {
     annotationArea: [],
     measures: [
       {
-        id: 'co_20250922180024_3362',
-        alias: 'sum(discount)',
+        id: 'yA_20250917172659_3c5d',
+        alias: 'sum(amount)',
         encoding: 'yAxis',
         format: {
           auto: false,
-          significantDigits: 4,
-          thousandSeparator: true,
           type: 'number',
         },
         autoFormat: false,
+        parentId: '0',
       },
       {
-        id: 'co_20250922192138_fc99',
-        alias: 'sum(discount)',
-        encoding: 'color',
+        id: 'yA_20250917172803_3e9a',
+        alias: 'sum(amount)',
+        encoding: 'yAxis',
         format: {
           auto: false,
-          significantDigits: 4,
-          thousandSeparator: true,
           type: 'number',
         },
         autoFormat: false,
+        parentId: '1',
       },
     ],
     dimensions: [
       {
-        id: 'yA_20250922174436_92f4',
-        alias: 'product_type',
+        id: 'xA_20250917172811_39d1',
+        alias: 'amount',
         encoding: 'xAxis',
-        autoFormat: true,
+        format: {
+          auto: false,
+          type: 'number',
+        },
+        autoFormat: false,
       },
     ],
-    chartType: 'column',
+    chartType: 'areaPercent',
     dataset: [
       {
-        co_20250922180024_3362: '483.99999999999267',
-        co_20250922192138_fc99: '483.99999999999267',
-        yA_20250922174436_92f4: '办公用品',
+        xA_20250917172811_39d1: '1',
+        yA_20250917172659_3c5d: '978',
+        yA_20250917172803_3e9a: '978',
       },
       {
-        co_20250922180024_3362: '325.0999999999991',
-        co_20250922192138_fc99: '325.0999999999991',
-        yA_20250922174436_92f4: '家具',
+        xA_20250917172811_39d1: '2',
+        yA_20250917172659_3c5d: '4758',
+        yA_20250917172803_3e9a: '4758',
       },
       {
-        co_20250922180024_3362: '250.60000000000227',
-        co_20250922192138_fc99: '250.60000000000227',
-        yA_20250922174436_92f4: '技术',
+        xA_20250917172811_39d1: '3',
+        yA_20250917172659_3c5d: '7092',
+        yA_20250917172803_3e9a: '7092',
+      },
+      {
+        xA_20250917172811_39d1: '4',
+        yA_20250917172659_3c5d: '4676',
+        yA_20250917172803_3e9a: '4676',
+      },
+      {
+        xA_20250917172811_39d1: '5',
+        yA_20250917172659_3c5d: '6060',
+        yA_20250917172803_3e9a: '6060',
+      },
+      {
+        xA_20250917172811_39d1: '6',
+        yA_20250917172659_3c5d: '3642',
+        yA_20250917172803_3e9a: '3642',
+      },
+      {
+        xA_20250917172811_39d1: '7',
+        yA_20250917172659_3c5d: '3941',
+        yA_20250917172803_3e9a: '3941',
+      },
+      {
+        xA_20250917172811_39d1: '8',
+        yA_20250917172659_3c5d: '2072',
+        yA_20250917172803_3e9a: '2072',
+      },
+      {
+        xA_20250917172811_39d1: '9',
+        yA_20250917172659_3c5d: '2196',
+        yA_20250917172803_3e9a: '2196',
+      },
+      {
+        xA_20250917172811_39d1: '10',
+        yA_20250917172659_3c5d: '510',
+        yA_20250917172803_3e9a: '510',
+      },
+      {
+        xA_20250917172811_39d1: '11',
+        yA_20250917172659_3c5d: '594',
+        yA_20250917172803_3e9a: '594',
+      },
+      {
+        xA_20250917172811_39d1: '12',
+        yA_20250917172659_3c5d: '396',
+        yA_20250917172803_3e9a: '396',
+      },
+      {
+        xA_20250917172811_39d1: '13',
+        yA_20250917172659_3c5d: '325',
+        yA_20250917172803_3e9a: '325',
+      },
+      {
+        xA_20250917172811_39d1: '14',
+        yA_20250917172659_3c5d: '294',
+        yA_20250917172803_3e9a: '294',
       },
     ],
+    locale: 'zh-CN',
   }
   const parseRes = zVSeed.safeParse(vseed)
   if (parseRes.success) {

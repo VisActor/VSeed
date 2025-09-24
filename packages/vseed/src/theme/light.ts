@@ -207,9 +207,6 @@ export const lightTheme = (): CustomThemeConfig => {
         xAxis: bandAxis,
         yAxis: {
           ...linearAxis,
-          numFormat: {
-            type: 'percent',
-          },
         },
         crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
@@ -232,9 +229,6 @@ export const lightTheme = (): CustomThemeConfig => {
         ...baseConfig,
         xAxis: {
           ...linearAxis,
-          numFormat: {
-            type: 'percent',
-          },
         },
         yAxis: barBandAxis,
         crosshairRect,
@@ -251,9 +245,6 @@ export const lightTheme = (): CustomThemeConfig => {
         xAxis: bandAxis,
         yAxis: {
           ...linearAxis,
-          numFormat: {
-            type: 'percent',
-          },
         },
         crosshairLine,
       },

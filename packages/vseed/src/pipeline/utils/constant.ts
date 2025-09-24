@@ -10,3 +10,30 @@ export const DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX = 1001
 export const DUAL_AXIS_LABEL_Z_INDEX = 1002
 // 默认父级id
 export const DEFAULT_PARENT_ID = '__DefaultParentId__'
+
+// 图表类型枚举
+export const ChartTypeEnum = {
+  Table: 'table',
+  PivotTable: 'pivotTable',
+  // cartesian
+  Line: 'line',
+  Column: 'column',
+  ColumnPercent: 'columnPercent',
+  ColumnParallel: 'columnParallel',
+  Bar: 'bar',
+  BarPercent: 'barPercent',
+  BarParallel: 'barParallel',
+  Area: 'area',
+  AreaPercent: 'areaPercent',
+  DualAxis: 'dualAxis',
+  Scatter: 'scatter',
+  // polar
+  Rose: 'rose',
+  RoseParallel: 'roseParallel',
+  Pie: 'pie',
+  Donut: 'donut',
+  Radar: 'radar',
+  // other
+  Funnel: 'funnel',
+  Heatmap: 'heatmap',
+} as const

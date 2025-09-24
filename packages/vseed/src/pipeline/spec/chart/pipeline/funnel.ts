@@ -26,6 +26,7 @@ import {
   colorFunnelStyleFill,
   pivotDiscreteLegend,
   pivotColorLegend,
+  pivotHideIndicatorName,
 } from '../pipes'
 
 const funnel: SpecPipeline = [
@@ -47,6 +48,7 @@ const pivotFunnel: SpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
+  pivotHideIndicatorName,
   datasetPivot,
   pivotIndicators([
     initFunnel,

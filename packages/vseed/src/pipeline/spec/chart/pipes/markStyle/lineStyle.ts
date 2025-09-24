@@ -2,6 +2,7 @@ import type { IAreaChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { Datum, LineStyle, SpecPipe } from 'src/types'
 import { groupBy, isEmpty, isNullish } from 'remeda'
+import { getCurveTension, getCurveType } from './curve'
 
 export const lineStyle: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
@@ -33,7 +34,8 @@ export const lineStyle: SpecPipe = (spec, context) => {
     const lineDash =
       lineStyle === 'dashed' ? [dashSegment, dashSegment] : lineStyle === 'dotted' ? [dashGap / 2, dashGap * 2] : [0, 0]
 
-    const curveType = lineSmooth ? 'monotone' : 'linear'
+    const curveType = getCurveType(context.vseed, lineSmooth)
+    const curveTension = getCurveTension(context.vseed, lineSmooth)
 
     return {
       ...result,
@@ -52,6 +54,7 @@ export const lineStyle: SpecPipe = (spec, context) => {
         style: {
           visible: lineVisible,
           curveType: curveType,
+          curveTension: curveTension,
           strokeOpacity: lineColorOpacity,
           stroke: lineColor,
           lineWidth: lineWidth,

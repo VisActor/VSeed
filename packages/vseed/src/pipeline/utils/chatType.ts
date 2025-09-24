@@ -10,6 +10,10 @@ export const isTable = (vseed: VSeed) => {
 export const isPivotTable = (vseed: VSeed) => {
   return vseed.chartType === 'pivotTable'
 }
+export const isRadar = (vseed: VSeed) => {
+  return vseed.chartType === 'radar'
+}
+
 export const isVTable = (vseed: VSeed) => {
   return ['table', 'pivotTable'].includes(vseed.chartType)
 }

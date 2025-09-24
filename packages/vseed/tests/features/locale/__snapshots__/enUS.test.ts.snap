@@ -2273,7 +2273,7 @@ exports[`enUS 2`] = `
       "borderLineWidth": [
         1,
         1,
-        0,
+        1,
         1,
       ],
       "color": "#141414",

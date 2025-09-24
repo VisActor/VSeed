@@ -416,6 +416,7 @@ exports[`combinationRadar 2`] = `
     "titleOnDimension": "all",
   },
   "heightMode": "adaptive",
+  "hideIndicatorName": true,
   "hover": {
     "highlightMode": "cross",
   },
@@ -1010,7 +1011,7 @@ exports[`combinationRadar 2`] = `
       "borderLineWidth": [
         1,
         1,
-        0,
+        1,
         1,
       ],
       "color": "#141414",

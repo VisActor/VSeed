@@ -96,6 +96,7 @@ exports[`simpleAreaPercent 1`] = `
         },
       },
       "yAxis": {
+        "autoFormat": false,
         "grid": {
           "gridColor": "#36415926",
           "gridWidth": 0.5,
@@ -128,6 +129,7 @@ exports[`simpleAreaPercent 1`] = `
           "titleText": "",
           "visible": false,
         },
+        "visible": true,
         "zero": true,
       },
     },

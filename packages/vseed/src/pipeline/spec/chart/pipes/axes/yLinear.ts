@@ -21,18 +21,6 @@ export const yLinear: SpecPipe = (spec, context) => {
     result.axes = []
   }
 
-  if (!config) {
-    result.axes = [
-      ...result.axes,
-      {
-        visible: true,
-        type: 'linear',
-        orient: 'left',
-      },
-    ] as ISpec['axes']
-    return result
-  }
-
   const {
     visible = true,
     label,

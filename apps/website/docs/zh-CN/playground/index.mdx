@@ -9,48 +9,92 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'columnParallel',
+    color: {
+      colorScheme: [
+        '#8D72F6',
+        '#5766EC',
+        '#66A3FE',
+        '#51D5E6',
+        '#4EC0B3',
+        '#F9DF90',
+        '#F9AD71',
+        '#ED8888',
+        '#E9A0C3',
+        '#D77DD3',
+      ],
+    },
+    legend: {
+      enable: true,
+      position: 'rightTop',
+      maxSize: 1,
+      labelFontSize: 12,
+      labelFontColor: '#6F6F6F',
+    },
+    label: {
+      enable: false,
+      labelColor: '#212121',
+    },
+    lineStyle: [],
+    barStyle: [],
+    pointStyle: [],
+    areaStyle: [],
+    annotationPoint: [],
+    annotationHorizontalLine: [],
+    annotationVerticalLine: [],
+    annotationArea: [],
     measures: [
       {
-        id: 'sales-and-profit',
-        alias: '销售额与利润',
-        children: [
-          {
-            id: 'sales',
-            alias: 'sales',
-          },
-          {
-            id: 'profit',
-            alias: '利润',
-          },
-        ],
+        id: 'co_20250922180024_3362',
+        alias: 'sum(discount)',
+        encoding: 'yAxis',
+        format: {
+          auto: false,
+          significantDigits: 4,
+          thousandSeparator: true,
+          type: 'number',
+        },
+        autoFormat: false,
       },
       {
-        id: 'ratio',
-        alias: '比率',
-        children: [
-          {
-            id: 'rateOfReturn',
-            alias: '回报率',
-          },
-        ],
+        id: 'co_20250922192138_fc99',
+        alias: 'sum(discount)',
+        encoding: 'color',
+        format: {
+          auto: false,
+          significantDigits: 4,
+          thousandSeparator: true,
+          type: 'number',
+        },
+        autoFormat: false,
       },
-    ],
-    dataset: [
-      { date: '2019', profit: 10, sales: 20, rateOfReturn: 0.1 },
-      { date: '2020', profit: 20, sales: 40, rateOfReturn: 0.2 },
-      { date: '2021', profit: 30, sales: 60, rateOfReturn: 0.3 },
-      { date: '2022', profit: 40, sales: 80, rateOfReturn: 0.4 },
-      { date: '2023', profit: 50, sales: 100, rateOfReturn: 0.5 },
     ],
     dimensions: [
       {
-        id: 'date',
-        alias: '日期',
+        id: 'yA_20250922174436_92f4',
+        alias: 'product_type',
+        encoding: 'xAxis',
+        autoFormat: true,
+      },
+    ],
+    chartType: 'column',
+    dataset: [
+      {
+        co_20250922180024_3362: '483.99999999999267',
+        co_20250922192138_fc99: '483.99999999999267',
+        yA_20250922174436_92f4: '办公用品',
+      },
+      {
+        co_20250922180024_3362: '325.0999999999991',
+        co_20250922192138_fc99: '325.0999999999991',
+        yA_20250922174436_92f4: '家具',
+      },
+      {
+        co_20250922180024_3362: '250.60000000000227',
+        co_20250922192138_fc99: '250.60000000000227',
+        yA_20250922174436_92f4: '技术',
       },
     ],
   }
-
   const parseRes = zVSeed.safeParse(vseed)
   if (parseRes.success) {
     console.log('zVSeed parse success!!!')

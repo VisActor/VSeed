@@ -130,9 +130,6 @@ exports[`emptyBarStyle 1`] = `
           "visible": false,
         },
         "nice": true,
-        "numFormat": {
-          "type": "percent",
-        },
         "tick": {
           "tickColor": "#3641594d",
           "tickInside": false,
@@ -268,9 +265,6 @@ exports[`emptyBarStyle 1`] = `
             "visible": false,
           },
           "nice": true,
-          "numFormat": {
-            "type": "percent",
-          },
           "tick": {
             "tickColor": "#3641594d",
             "tickInside": false,

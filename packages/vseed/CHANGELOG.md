@@ -1,5 +1,12 @@
 # @visactor/vseed
 
+## 0.1.23
+
+### Patch Changes
+
+- c07eea4: fix: linear color encoding should not fold measures
+- c9da8cf: fix: percent linear axis label format not working with autoFormat
+
 ## 0.1.22
 
 ### Patch Changes

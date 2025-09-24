@@ -1,7 +1,12 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
+import { isCombination, isPivot } from 'src/pipeline/utils'
 import type { SpecPipe } from 'src/types'
 
-export const pivotGridStyle: SpecPipe = (spec) => {
+export const pivotGridStyle: SpecPipe = (spec, context) => {
+  const { vseed } = context
+
+  const onlyCombination = !isPivot(vseed) && isCombination(vseed)
+
   const result = { ...spec } as PivotChartConstructorOptions
   const transparent = 'rgba(0,0,0,0)'
 
@@ -9,8 +14,8 @@ export const pivotGridStyle: SpecPipe = (spec) => {
   const bodyFontColor = '#141414'
   const headerFontColor = '#21252c'
   const headerBackgroundColor = 'rgba(0,0,0,0)'
-  const hoverHeaderBackgroundColor = '#D9DDE4'
-  const hoverHeaderInlineBackgroundColor = '#D9DDE455'
+  const hoverHeaderBackgroundColor = onlyCombination ? transparent : '#D9DDE4'
+  const hoverHeaderInlineBackgroundColor = onlyCombination ? transparent : '#D9DDE455'
 
   return {
     ...result,

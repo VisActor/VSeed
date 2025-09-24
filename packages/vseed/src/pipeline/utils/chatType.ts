@@ -16,27 +16,46 @@ export const isVTable = (vseed: VSeed) => {
 export const isVChart = (vseed: VSeed): boolean => {
   return !isVTable(vseed)
 }
+
+/**
+ * @description 透视图表或组合图
+ * - 透视图表定义: 存在 column 或 row的 encoding
+ * - 组合图表定义: 存在多组指标的情况
+ * - 透视组合图表: 存在 column 或 row的 encoding 且 存在多组指标的情况
+ * 上述三者都只能使用 VTable.PivotChart 绘制
+ */
 export const isPivotChart = (vseed: VSeed) => {
   if (isVTable(vseed)) {
     return false
   }
 
+  if (isPivot(vseed)) {
+    return true
+  }
+
+  return isCombination(vseed)
+}
+
+/**
+ * @description 存在column 或 row的encoding
+ */
+export const isPivot = (vseed: VSeed) => {
+  const { dimensions = [] } = vseed as {
+    dimensions: Dimensions
+  }
+
+  return dimensions && dimensions.some((dimension) => dimension.encoding === 'row' || dimension.encoding === 'column')
+}
+/**
+ * @description 不存在column 或 row的encoding, 但是有多组指标的情况
+ */
+export const isCombination = (vseed: VSeed) => {
   if (isMeasureTreeWithParentId(vseed.measures)) {
     const parentIds = vseed.measures?.map((measure: Measure) => measure.parentId || DEFAULT_PARENT_ID)
     return parentIds && unique(parentIds).length > 1
   }
 
   if (vseed.chartType === 'dualAxis' || vseed.chartType === 'scatter') {
-    const { dimensions = [] } = vseed as {
-      dimensions: Dimensions
-    }
-    const hasRowOrColumnDimension =
-      dimensions && dimensions.some((dimension) => dimension.encoding === 'row' || dimension.encoding === 'column')
-
-    if (hasRowOrColumnDimension) {
-      return true
-    }
-
     if (vseed.chartType === 'scatter') {
       if (isMeasureTreeWithChildren(vseed.measures)) {
         const depth = measureDepth(vseed.measures)
@@ -62,15 +81,12 @@ export const isPivotChart = (vseed: VSeed) => {
     return false
   }
 
-  const { measures = [], dimensions = [] } = vseed as {
+  const { measures = [] } = vseed as {
     measures: DimensionTree
     dimensions: Dimensions
   }
 
-  const hasRowOrColumnDimension =
-    dimensions && dimensions.some((dimension) => dimension.encoding === 'row' || dimension.encoding === 'column')
-
   const hasMeasureGroup = measures && measures.some((measure: DimensionGroup) => measure && measure.children)
 
-  return hasRowOrColumnDimension || hasMeasureGroup
+  return hasMeasureGroup
 }

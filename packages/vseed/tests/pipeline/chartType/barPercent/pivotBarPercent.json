@@ -72,5 +72,44 @@
     { "date": "2020", "type": "B", "month": "4", "profit": 40000, "sales": 800000 },
     { "date": "2020", "type": "B", "month": "5", "profit": 50000, "sales": 1000000 },
     { "date": "2020", "type": "B", "month": "6", "profit": 10000, "sales": 300000 }
-  ]
+  ],
+  "xAxis": {
+    "labelAutoHide": true,
+    "labelAutoLimit": true,
+    "labelAutoRotate": true,
+    "labelAutoHideGap": 5,
+    "labelAutoLimitLength": 80,
+    "labelAutoRotateAngleRange": [0, -45, -90],
+    "line": {
+      "visible": true,
+      "lineColor": "#606773",
+      "lineWidth": 2
+    },
+    "label": {
+      "visible": true,
+      "labelColor": "#606773",
+      "labelFontSize": 12,
+      "labelFontWeight": 500,
+      "labelAngle": 0
+    },
+    "grid": {
+      "visible": true,
+      "gridColor": "#606773",
+      "gridWidth": 2
+    },
+    "tick": {
+      "visible": true,
+      "tickColor": "#606773",
+      "tickInside": true,
+      "tickSize": 10
+    },
+    "title": {
+      "visible": true,
+      "titleText": "日期",
+      "titleColor": "#606773",
+      "titleFontSize": 12,
+      "titleFontWeight": 500
+    },
+    "autoFormat": false
+  }
 }

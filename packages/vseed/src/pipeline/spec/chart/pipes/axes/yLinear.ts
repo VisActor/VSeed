@@ -7,9 +7,8 @@ import {
   LINEAR_AXIS_INNER_OFFSET_TOP,
 } from 'src/pipeline/utils'
 import type { SpecPipe, YLinearAxis } from 'src/types'
-import { createLinearFormat } from './format/linearFormat'
+import { createLinearFormat, createLinearPercentFormat } from './format/linearFormat'
 import { defaultTitleText } from './title/defaultTitleText'
-import { isEmpty, isNullish } from 'remeda'
 
 export const yLinear: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
@@ -20,18 +19,6 @@ export const yLinear: SpecPipe = (spec, context) => {
 
   if (!result.axes) {
     result.axes = []
-  }
-
-  if (!config) {
-    result.axes = [
-      ...result.axes,
-      {
-        visible: true,
-        type: 'linear',
-        orient: 'left',
-      },
-    ] as ISpec['axes']
-    return result
   }
 
   const {
@@ -71,12 +58,8 @@ export const yLinear: SpecPipe = (spec, context) => {
     label: {
       visible: label?.visible,
       formatMethod: (value: string) => {
-        if (
-          (isBarPercent(vseed) || isColumnPercent(vseed) || isAreaPercent(vseed)) &&
-          isEmpty(numFormat) &&
-          (autoFormat === true || isNullish(autoFormat))
-        ) {
-          return percentFormatter(value)
+        if (isBarPercent(vseed) || isColumnPercent(vseed) || isAreaPercent(vseed)) {
+          return createLinearPercentFormat(value, autoFormat, numFormat, formatter, percentFormatter)
         }
         return createLinearFormat(value, autoFormat, numFormat, formatter)
       },

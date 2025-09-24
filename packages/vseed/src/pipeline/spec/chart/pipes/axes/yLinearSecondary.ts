@@ -37,21 +37,6 @@ export const yLinearSecondary: SpecPipe = (spec, context) => {
     result.axes = []
   }
 
-  if (!yAxisConfig) {
-    result.axes = [
-      ...result.axes,
-      {
-        visible: true,
-        id,
-        seriesId,
-        type: 'linear',
-        orient: 'right',
-        sync,
-      },
-    ] as ISpec['axes']
-    return result
-  }
-
   const {
     visible = true,
     label,

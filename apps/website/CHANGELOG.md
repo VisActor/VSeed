@@ -1,5 +1,13 @@
 # website
 
+## 0.1.24
+
+### Patch Changes
+
+- Updated dependencies [56cab1e]
+- Updated dependencies [e683f39]
+  - @visactor/vseed@0.1.24
+
 ## 0.1.23
 
 ### Patch Changes

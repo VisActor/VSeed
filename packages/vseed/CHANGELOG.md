@@ -1,5 +1,12 @@
 # @visactor/vseed
 
+## 0.1.24
+
+### Patch Changes
+
+- 56cab1e: fix: heatmap render error
+- e683f39: fix: percent auto formatter error
+
 ## 0.1.23
 
 ### Patch Changes

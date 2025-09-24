@@ -13,18 +13,6 @@ export const yBand: SpecPipe = (spec, context) => {
     result.axes = []
   }
 
-  if (!config) {
-    result.axes = [
-      ...result.axes,
-      {
-        visible: true,
-        type: 'band',
-        orient: 'left',
-      },
-    ] as ISpec['axes']
-    return result
-  }
-
   const {
     visible = true,
     label,

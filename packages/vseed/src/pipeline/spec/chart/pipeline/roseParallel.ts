@@ -30,6 +30,7 @@ import {
   roseStyle,
   colorRoseStyleFill,
   labelPie,
+  pivotHideIndicatorName,
 } from '../pipes'
 
 const roseParallel: SpecPipeline = [
@@ -55,6 +56,7 @@ const pivotRoseParallel: SpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
+  pivotHideIndicatorName,
   datasetPivot,
   pivotIndicators([
     initRoseParallel,

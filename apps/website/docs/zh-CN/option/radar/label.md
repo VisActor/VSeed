@@ -1,6 +1,6 @@
 # label
 
-**Type:** `Omit<Label, "labelLayout"> | undefined`
+**Type:** `Label | undefined`
 
 :::note{title=描述}
 标签

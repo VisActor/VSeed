@@ -9,8 +9,8 @@ export const scatterSize: SpecPipe = (spec, context) => {
     sizeRange: number | number[]
     size?: number | number[]
   }
-
-  if (!baseConfig || (!baseConfig.sizeRange && !baseConfig.size)) {
+  const hasSizeEncoding = encoding?.size?.[0]
+  if (!hasSizeEncoding) {
     return result
   }
 

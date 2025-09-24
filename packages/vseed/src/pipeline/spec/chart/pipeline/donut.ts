@@ -27,6 +27,7 @@ import {
   pieStyle,
   colorPieStyleFill,
   labelPie,
+  pivotHideIndicatorName,
 } from '../pipes'
 
 const donut: SpecPipeline = [
@@ -49,6 +50,7 @@ const pivotDonut: SpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
+  pivotHideIndicatorName,
   datasetPivot,
   pivotIndicators([
     initDonut,

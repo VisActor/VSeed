@@ -1434,7 +1434,7 @@ exports[`combinationAreaPercent 2`] = `
       "borderLineWidth": [
         1,
         1,
-        0,
+        1,
         1,
       ],
       "color": "#141414",
@@ -1447,7 +1447,7 @@ exports[`combinationAreaPercent 2`] = `
       "borderColor": "#e3e5eb",
       "borderLineWidth": 1,
       "hover": {
-        "cellBgColor": "#D9DDE4",
+        "cellBgColor": "rgba(0,0,0,0)",
       },
     },
     "cornerHeaderStyle": {
@@ -1467,9 +1467,9 @@ exports[`combinationAreaPercent 2`] = `
         ],
       },
       "hover": {
-        "cellBgColor": "#D9DDE4",
-        "inlineColumnBgColor": "#D9DDE455",
-        "inlineRowBgColor": "#D9DDE455",
+        "cellBgColor": "rgba(0,0,0,0)",
+        "inlineColumnBgColor": "rgba(0,0,0,0)",
+        "inlineRowBgColor": "rgba(0,0,0,0)",
       },
       "textAlign": "center",
     },
@@ -1492,7 +1492,7 @@ exports[`combinationAreaPercent 2`] = `
         ],
       },
       "hover": {
-        "cellBgColor": "#D9DDE4",
+        "cellBgColor": "rgba(0,0,0,0)",
       },
     },
     "cornerRightBottomCellStyle": {
@@ -1509,7 +1509,7 @@ exports[`combinationAreaPercent 2`] = `
         ],
       },
       "hover": {
-        "cellBgColor": "#D9DDE4",
+        "cellBgColor": "rgba(0,0,0,0)",
       },
     },
     "cornerRightTopCellStyle": {
@@ -1526,7 +1526,7 @@ exports[`combinationAreaPercent 2`] = `
         ],
       },
       "hover": {
-        "cellBgColor": "#D9DDE4",
+        "cellBgColor": "rgba(0,0,0,0)",
       },
     },
     "frameStyle": {
@@ -1540,9 +1540,9 @@ exports[`combinationAreaPercent 2`] = `
       "color": "#21252c",
       "fontSize": 12,
       "hover": {
-        "cellBgColor": "#D9DDE4",
-        "inlineColumnBgColor": "#D9DDE455",
-        "inlineRowBgColor": "#D9DDE455",
+        "cellBgColor": "rgba(0,0,0,0)",
+        "inlineColumnBgColor": "rgba(0,0,0,0)",
+        "inlineRowBgColor": "rgba(0,0,0,0)",
       },
       "textAlign": "center",
     },
@@ -1551,7 +1551,7 @@ exports[`combinationAreaPercent 2`] = `
       "borderColor": "#e3e5eb",
       "borderLineWidth": 1,
       "hover": {
-        "cellBgColor": "#D9DDE4",
+        "cellBgColor": "rgba(0,0,0,0)",
       },
     },
     "rowHeaderStyle": {
@@ -1561,9 +1561,9 @@ exports[`combinationAreaPercent 2`] = `
       "color": "#21252c",
       "fontSize": 12,
       "hover": {
-        "cellBgColor": "#D9DDE4",
-        "inlineColumnBgColor": "#D9DDE455",
-        "inlineRowBgColor": "#D9DDE455",
+        "cellBgColor": "rgba(0,0,0,0)",
+        "inlineColumnBgColor": "rgba(0,0,0,0)",
+        "inlineRowBgColor": "rgba(0,0,0,0)",
       },
     },
     "selectionStyle": {

@@ -50,6 +50,10 @@ exports[`pivotScatter 1`] = `
         "position": "rt",
         "shapeType": "rectRound",
       },
+      "sizeRange": [
+        8,
+        24,
+      ],
       "tooltip": {
         "enable": true,
       },
@@ -172,6 +176,10 @@ exports[`pivotScatter 1`] = `
           "position": "rt",
           "shapeType": "rectRound",
         },
+        "sizeRange": [
+          8,
+          24,
+        ],
         "tooltip": {
           "enable": true,
         },
@@ -1821,7 +1829,7 @@ exports[`pivotScatter 2`] = `
       "borderLineWidth": [
         1,
         1,
-        0,
+        1,
         1,
       ],
       "color": "#141414",

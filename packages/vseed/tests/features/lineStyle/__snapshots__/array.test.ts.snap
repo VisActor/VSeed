@@ -618,6 +618,8 @@ exports[`array 2`] = `
         "filter": [Function],
         "level": 1,
         "style": {
+          "curveTension": 0,
+          "curveType": "linear",
           "fill": "red",
           "fillOpacity": 0.5,
           "visible": true,
@@ -627,6 +629,8 @@ exports[`array 2`] = `
         "filter": [Function],
         "level": 2,
         "style": {
+          "curveTension": 0,
+          "curveType": "linear",
           "fill": undefined,
           "fillOpacity": 0.05,
           "visible": true,

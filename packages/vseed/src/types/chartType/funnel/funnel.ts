@@ -2,11 +2,11 @@ import type { Locale } from '../../i18n'
 
 import type {
   BackgroundColor,
+  Color,
   ColorLegend,
   Dataset,
   Dimensions,
   Label,
-  LinearColor,
   MeasureTree,
   Theme,
   Tooltip,
@@ -77,7 +77,7 @@ export interface Funnel {
   /**
    * @description 线性渐变颜色配置, 用于定义图表的颜色方案
    */
-  color?: LinearColor
+  color?: Color
 
   /**
    * @description 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.

@@ -1116,6 +1116,7 @@ exports[`value 2`] = `
         "filter": [Function],
         "level": 1,
         "style": {
+          "curveTension": 0,
           "curveType": "monotone",
           "lineDash": [
             0,

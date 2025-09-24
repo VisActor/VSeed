@@ -619,6 +619,8 @@ exports[`parialDatum 2`] = `
         "filter": [Function],
         "level": 1,
         "style": {
+          "curveTension": 0,
+          "curveType": "linear",
           "fill": "red",
           "fillOpacity": undefined,
           "visible": true,

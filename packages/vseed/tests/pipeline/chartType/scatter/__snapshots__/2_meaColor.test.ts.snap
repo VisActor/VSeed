@@ -50,6 +50,10 @@ exports[`2_meaColor 1`] = `
         "position": "rt",
         "shapeType": "rectRound",
       },
+      "sizeRange": [
+        8,
+        24,
+      ],
       "tooltip": {
         "enable": true,
       },
@@ -172,6 +176,10 @@ exports[`2_meaColor 1`] = `
           "position": "rt",
           "shapeType": "rectRound",
         },
+        "sizeRange": [
+          8,
+          24,
+        ],
         "tooltip": {
           "enable": true,
         },

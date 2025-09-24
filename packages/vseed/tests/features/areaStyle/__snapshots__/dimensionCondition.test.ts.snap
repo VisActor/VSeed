@@ -1114,6 +1114,7 @@ exports[`dimensionCondition 2`] = `
         "filter": [Function],
         "level": 1,
         "style": {
+          "curveTension": 0,
           "curveType": "linear",
           "lineDash": [
             0,

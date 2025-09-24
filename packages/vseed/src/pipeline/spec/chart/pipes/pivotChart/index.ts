@@ -3,3 +3,4 @@ export { pivotIndicators, pivotIndicatorsAsRow, pivotIndicatorsAsCol } from './p
 export { pivotGridStyle } from './pivotGridStyle'
 export { pivotColumnDimensions } from './pivotColumnDimensions'
 export { pivotRowDimensions } from './pivotRowDimensions'
+export { pivotHideIndicatorName } from './pivotHideIndicatorName'

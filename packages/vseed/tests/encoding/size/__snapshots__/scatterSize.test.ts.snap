@@ -51,6 +51,10 @@ exports[`scatterSize 1`] = `
         "shapeType": "rectRound",
       },
       "size": 30,
+      "sizeRange": [
+        8,
+        24,
+      ],
       "tooltip": {
         "enable": true,
       },
@@ -173,6 +177,10 @@ exports[`scatterSize 1`] = `
           "position": "rt",
           "shapeType": "rectRound",
         },
+        "sizeRange": [
+          8,
+          24,
+        ],
         "tooltip": {
           "enable": true,
         },

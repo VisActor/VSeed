@@ -1117,6 +1117,7 @@ exports[`array 2`] = `
         "filter": [Function],
         "level": 1,
         "style": {
+          "curveTension": 0,
           "curveType": "linear",
           "lineDash": [
             0,
@@ -1132,6 +1133,7 @@ exports[`array 2`] = `
         "filter": [Function],
         "level": 2,
         "style": {
+          "curveTension": 0,
           "curveType": "monotone",
           "lineDash": [
             4,

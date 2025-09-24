@@ -117,6 +117,8 @@ export const zScatterConfig = z.object({
   xAxis: zXLinearAxis.nullish(),
   yAxis: zYLinearAxis.nullish(),
   crosshairLine: zCrosshairLine.nullish(),
+  size: z.number().or(z.array(z.number())).nullish(),
+  sizeRange: z.number().or(z.array(z.number())).nullish(),
 })
 
 // polar

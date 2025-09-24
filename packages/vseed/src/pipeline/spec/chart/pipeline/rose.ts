@@ -27,6 +27,7 @@ import {
   roseStyle,
   colorRoseStyleFill,
   labelPie,
+  pivotHideIndicatorName,
 } from '../pipes'
 
 const rose: SpecPipeline = [
@@ -49,6 +50,7 @@ const pivotRose: SpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
+  pivotHideIndicatorName,
   datasetPivot,
   pivotIndicators([
     initRose,

@@ -7,9 +7,8 @@ import {
   isColumnPercent,
   LINEAR_AXIS_INNER_OFFSET_TOP,
 } from 'src/pipeline/utils'
-import { createLinearFormat } from './format/linearFormat'
+import { createLinearFormat, createLinearPercentFormat } from './format/linearFormat'
 import { defaultTitleText } from './title/defaultTitleText'
-import { isEmpty, isNullish } from 'remeda'
 
 export const xLinear: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
@@ -71,12 +70,8 @@ export const xLinear: SpecPipe = (spec, context) => {
     label: {
       visible: label?.visible,
       formatMethod: (value: string) => {
-        if (
-          isEmpty(numFormat) &&
-          (autoFormat === true || isNullish(autoFormat)) &&
-          (isBarPercent(vseed) || isColumnPercent(vseed) || isAreaPercent(vseed))
-        ) {
-          return percentFormatter(value)
+        if (isBarPercent(vseed) || isColumnPercent(vseed) || isAreaPercent(vseed)) {
+          return createLinearPercentFormat(value, autoFormat, numFormat, formatter, percentFormatter)
         }
         return createLinearFormat(value, autoFormat, numFormat, formatter)
       },

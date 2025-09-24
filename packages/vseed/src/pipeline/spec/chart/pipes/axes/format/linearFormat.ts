@@ -22,3 +22,25 @@ export const createLinearFormat = (
 
   return String(value)
 }
+
+export const createLinearPercentFormat = (
+  value: string | number,
+  autoFormat: boolean | undefined,
+  numFormat: NumFormat,
+  formatter: Formatter,
+  percentFormatter: Formatter,
+) => {
+  if (isNullish(autoFormat) && isEmpty(numFormat)) {
+    return percentFormatter(value)
+  }
+
+  if (autoFormat === true) {
+    return percentFormatter(value)
+  }
+
+  if (!isEmpty(numFormat)) {
+    return formatter(value)
+  }
+
+  return String(value)
+}

@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.25
+
+### Patch Changes
+
+- ac2b2e7: fix: line style error in pivot line
+
 ## 0.1.24
 
 ### Patch Changes

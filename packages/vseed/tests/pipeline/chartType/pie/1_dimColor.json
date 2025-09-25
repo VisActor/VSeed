@@ -26,7 +26,21 @@
     }
   ],
   "measures": [
-    { "id": "profit", "alias": "利润", "encoding": "radius", "parentId": "1" },
+    {
+      "id": "profit",
+      "alias": "利润",
+      "encoding": "radius",
+      "parentId": "1",
+      "format": {
+        "auto": false,
+        "significantDigits": 4,
+        "thousandSeparator": false,
+        "type": "number",
+        "ratio": null,
+        "symbol": null,
+        "fractionDigits": 5
+      }
+    },
     { "id": "sales", "alias": "销售额", "encoding": "radius", "parentId": "1" }
   ]
 }

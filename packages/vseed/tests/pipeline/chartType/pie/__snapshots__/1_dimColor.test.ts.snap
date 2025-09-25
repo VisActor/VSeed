@@ -554,6 +554,15 @@ exports[`1_dimColor 1`] = `
         {
           "alias": "利润",
           "encoding": "radius",
+          "format": {
+            "auto": false,
+            "fractionDigits": 5,
+            "ratio": null,
+            "significantDigits": 4,
+            "symbol": null,
+            "thousandSeparator": false,
+            "type": "number",
+          },
           "id": "profit",
           "parentId": "1",
         },

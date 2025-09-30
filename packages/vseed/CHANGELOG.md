@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.26
+
+### Patch Changes
+
+- a05daa3: break change: getColorItems return object array, each has id and alias.
+
 ## 0.1.25
 
 ### Patch Changes

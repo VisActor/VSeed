@@ -1362,8 +1362,14 @@ exports[`4_onlySecondaryYAxis 3`] = `
     "利润-profit": "利润",
   },
   "colorItems": [
-    "利润",
-    "sales",
+    {
+      "alias": "利润",
+      "id": "利润-profit",
+    },
+    {
+      "alias": "sales",
+      "id": "sales-sales",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

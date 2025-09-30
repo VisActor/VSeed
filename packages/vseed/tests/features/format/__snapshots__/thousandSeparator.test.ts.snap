@@ -797,9 +797,18 @@ exports[`thousandSeparator 3`] = `
     "sales-sales": "sales",
   },
   "colorItems": [
-    "profit",
-    "sales",
-    "count",
+    {
+      "alias": "profit",
+      "id": "profit-profit",
+    },
+    {
+      "alias": "sales",
+      "id": "sales-sales",
+    },
+    {
+      "alias": "count",
+      "id": "count-count",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

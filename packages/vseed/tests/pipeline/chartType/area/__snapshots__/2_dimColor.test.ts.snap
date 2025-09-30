@@ -1548,16 +1548,46 @@ exports[`2_dimColor 3`] = `
     "E-sales": "E",
   },
   "colorItems": [
-    "A",
-    "A",
-    "B",
-    "B",
-    "C",
-    "C",
-    "D",
-    "D",
-    "E",
-    "E",
+    {
+      "alias": "A",
+      "id": "A-profit",
+    },
+    {
+      "alias": "A",
+      "id": "A-sales",
+    },
+    {
+      "alias": "B",
+      "id": "B-profit",
+    },
+    {
+      "alias": "B",
+      "id": "B-sales",
+    },
+    {
+      "alias": "C",
+      "id": "C-profit",
+    },
+    {
+      "alias": "C",
+      "id": "C-sales",
+    },
+    {
+      "alias": "D",
+      "id": "D-profit",
+    },
+    {
+      "alias": "D",
+      "id": "D-sales",
+    },
+    {
+      "alias": "E",
+      "id": "E-profit",
+    },
+    {
+      "alias": "E",
+      "id": "E-sales",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

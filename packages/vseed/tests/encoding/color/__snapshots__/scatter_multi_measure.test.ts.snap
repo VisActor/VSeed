@@ -1687,10 +1687,22 @@ exports[`scatter_multi_measure 3`] = `
     "west-B": "west-B",
   },
   "colorItems": [
-    "east-A",
-    "east-B",
-    "west-A",
-    "west-B",
+    {
+      "alias": "east-A",
+      "id": "east-A",
+    },
+    {
+      "alias": "east-B",
+      "id": "east-B",
+    },
+    {
+      "alias": "west-A",
+      "id": "west-A",
+    },
+    {
+      "alias": "west-B",
+      "id": "west-B",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

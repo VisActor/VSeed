@@ -786,9 +786,18 @@ exports[`3m0d 3`] = `
     "sales-sales": "sales",
   },
   "colorItems": [
-    "profit",
-    "sales",
-    "discount",
+    {
+      "alias": "profit",
+      "id": "profit-profit",
+    },
+    {
+      "alias": "sales",
+      "id": "sales-sales",
+    },
+    {
+      "alias": "discount",
+      "id": "discount-discount",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

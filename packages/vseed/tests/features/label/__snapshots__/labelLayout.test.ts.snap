@@ -696,16 +696,46 @@ exports[`labelLayout 3`] = `
     "2023-sales-sales": "2023-sales",
   },
   "colorItems": [
-    "2019-profit",
-    "2019-sales",
-    "2020-profit",
-    "2020-sales",
-    "2021-profit",
-    "2021-sales",
-    "2022-profit",
-    "2022-sales",
-    "2023-profit",
-    "2023-sales",
+    {
+      "alias": "2019-profit",
+      "id": "2019-profit-profit",
+    },
+    {
+      "alias": "2019-sales",
+      "id": "2019-sales-sales",
+    },
+    {
+      "alias": "2020-profit",
+      "id": "2020-profit-profit",
+    },
+    {
+      "alias": "2020-sales",
+      "id": "2020-sales-sales",
+    },
+    {
+      "alias": "2021-profit",
+      "id": "2021-profit-profit",
+    },
+    {
+      "alias": "2021-sales",
+      "id": "2021-sales-sales",
+    },
+    {
+      "alias": "2022-profit",
+      "id": "2022-profit-profit",
+    },
+    {
+      "alias": "2022-sales",
+      "id": "2022-sales-sales",
+    },
+    {
+      "alias": "2023-profit",
+      "id": "2023-profit-profit",
+    },
+    {
+      "alias": "2023-sales",
+      "id": "2023-sales-sales",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

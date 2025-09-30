@@ -708,8 +708,14 @@ exports[`basicRoseParallel 3`] = `
     "销售额-sales": "销售额",
   },
   "colorItems": [
-    "销售额",
-    "利润",
+    {
+      "alias": "销售额",
+      "id": "销售额-sales",
+    },
+    {
+      "alias": "利润",
+      "id": "利润-profit",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

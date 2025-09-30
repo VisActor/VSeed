@@ -1305,7 +1305,10 @@ exports[`null2undefined 3`] = `
     "股价（美元）-price": "股价（美元）",
   },
   "colorItems": [
-    "股价（美元）",
+    {
+      "alias": "股价（美元）",
+      "id": "股价（美元）-price",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

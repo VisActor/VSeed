@@ -1465,11 +1465,26 @@ exports[`1_dimColor 3`] = `
     "E": "E",
   },
   "colorItems": [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
+    {
+      "alias": "A",
+      "id": "A",
+    },
+    {
+      "alias": "B",
+      "id": "B",
+    },
+    {
+      "alias": "C",
+      "id": "C",
+    },
+    {
+      "alias": "D",
+      "id": "D",
+    },
+    {
+      "alias": "E",
+      "id": "E",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

@@ -1265,16 +1265,46 @@ exports[`significantDigits 3`] = `
     "num9-num9": "num9",
   },
   "colorItems": [
-    "num0",
-    "num1",
-    "num2",
-    "num3",
-    "num4",
-    "num5",
-    "num6",
-    "num7",
-    "num8",
-    "num9",
+    {
+      "alias": "num0",
+      "id": "num0-num0",
+    },
+    {
+      "alias": "num1",
+      "id": "num1-num1",
+    },
+    {
+      "alias": "num2",
+      "id": "num2-num2",
+    },
+    {
+      "alias": "num3",
+      "id": "num3-num3",
+    },
+    {
+      "alias": "num4",
+      "id": "num4-num4",
+    },
+    {
+      "alias": "num5",
+      "id": "num5-num5",
+    },
+    {
+      "alias": "num6",
+      "id": "num6-num6",
+    },
+    {
+      "alias": "num7",
+      "id": "num7-num7",
+    },
+    {
+      "alias": "num8",
+      "id": "num8-num8",
+    },
+    {
+      "alias": "num9",
+      "id": "num9-num9",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

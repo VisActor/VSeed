@@ -1532,9 +1532,18 @@ exports[`defaultParentIdForScatter 3`] = `
     "技术": "技术",
   },
   "colorItems": [
-    "技术",
-    "办公用品",
-    "家具",
+    {
+      "alias": "技术",
+      "id": "技术",
+    },
+    {
+      "alias": "办公用品",
+      "id": "办公用品",
+    },
+    {
+      "alias": "家具",
+      "id": "家具",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

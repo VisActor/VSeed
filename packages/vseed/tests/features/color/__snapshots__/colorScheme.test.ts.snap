@@ -1456,16 +1456,46 @@ exports[`colorScheme 3`] = `
     "E-销售额-sales": "E-销售额",
   },
   "colorItems": [
-    "A-利润",
-    "A-销售额",
-    "B-利润",
-    "B-销售额",
-    "C-利润",
-    "C-销售额",
-    "D-利润",
-    "D-销售额",
-    "E-利润",
-    "E-销售额",
+    {
+      "alias": "A-利润",
+      "id": "A-利润-profit",
+    },
+    {
+      "alias": "A-销售额",
+      "id": "A-销售额-sales",
+    },
+    {
+      "alias": "B-利润",
+      "id": "B-利润-profit",
+    },
+    {
+      "alias": "B-销售额",
+      "id": "B-销售额-sales",
+    },
+    {
+      "alias": "C-利润",
+      "id": "C-利润-profit",
+    },
+    {
+      "alias": "C-销售额",
+      "id": "C-销售额-sales",
+    },
+    {
+      "alias": "D-利润",
+      "id": "D-利润-profit",
+    },
+    {
+      "alias": "D-销售额",
+      "id": "D-销售额-sales",
+    },
+    {
+      "alias": "E-利润",
+      "id": "E-利润-profit",
+    },
+    {
+      "alias": "E-销售额",
+      "id": "E-销售额-sales",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

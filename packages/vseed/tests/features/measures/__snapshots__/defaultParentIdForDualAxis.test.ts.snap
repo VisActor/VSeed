@@ -1995,8 +1995,14 @@ exports[`defaultParentIdForDualAxis 3`] = `
     "sum(amount)-yA_20250914131844_6718": "sum(amount)",
   },
   "colorItems": [
-    "sum(amount)",
-    "sum(amount)",
+    {
+      "alias": "sum(amount)",
+      "id": "sum(amount)-co_20250914131915_8e38",
+    },
+    {
+      "alias": "sum(amount)",
+      "id": "sum(amount)-yA_20250914131844_6718",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

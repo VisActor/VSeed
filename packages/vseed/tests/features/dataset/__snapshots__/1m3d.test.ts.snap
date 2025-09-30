@@ -1134,16 +1134,46 @@ exports[`1m3d 3`] = `
     "north of east-E-profit-profit": "north of east-E-profit",
   },
   "colorItems": [
-    "east-A-profit",
-    "east-B-profit",
-    "east-C-profit",
-    "east-D-profit",
-    "east-E-profit",
-    "north of east-A-profit",
-    "north of east-B-profit",
-    "north of east-C-profit",
-    "north of east-D-profit",
-    "north of east-E-profit",
+    {
+      "alias": "east-A-profit",
+      "id": "east-A-profit-profit",
+    },
+    {
+      "alias": "east-B-profit",
+      "id": "east-B-profit-profit",
+    },
+    {
+      "alias": "east-C-profit",
+      "id": "east-C-profit-profit",
+    },
+    {
+      "alias": "east-D-profit",
+      "id": "east-D-profit-profit",
+    },
+    {
+      "alias": "east-E-profit",
+      "id": "east-E-profit-profit",
+    },
+    {
+      "alias": "north of east-A-profit",
+      "id": "north of east-A-profit-profit",
+    },
+    {
+      "alias": "north of east-B-profit",
+      "id": "north of east-B-profit-profit",
+    },
+    {
+      "alias": "north of east-C-profit",
+      "id": "north of east-C-profit-profit",
+    },
+    {
+      "alias": "north of east-D-profit",
+      "id": "north of east-D-profit-profit",
+    },
+    {
+      "alias": "north of east-E-profit",
+      "id": "north of east-E-profit-profit",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

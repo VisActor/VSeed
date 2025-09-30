@@ -75,6 +75,7 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
     wrap,
     showValue,
     showValuePercent,
+    showDimension,
     labelOverlap,
     labelColorSmartInvert,
     labelColor,
@@ -91,7 +92,9 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
   const labelDims = uniqueBy(
     hasDimLabelEncoding
       ? vseedDimensions.filter((item) => encoding.label?.includes(item.id))
-      : advancedVSeedDimensions.filter((d) => d.id !== MeasureName),
+      : showDimension
+        ? advancedVSeedDimensions.filter((d) => d.id !== MeasureName)
+        : [],
     (item) => item.id,
   )
 

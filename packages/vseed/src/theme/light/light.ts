@@ -149,6 +149,7 @@ export const lightTheme = (): CustomThemeConfig => {
           ...baseConfig.label,
           showValuePercent: true,
           labelLayout: 'labelLine',
+          showDimension: true,
         },
       },
       donut: {
@@ -157,6 +158,7 @@ export const lightTheme = (): CustomThemeConfig => {
           ...baseConfig.label,
           showValuePercent: true,
           labelLayout: 'labelLine',
+          showDimension: true,
         },
       },
       radar: {
@@ -167,6 +169,7 @@ export const lightTheme = (): CustomThemeConfig => {
         label: {
           ...baseConfig.label,
           showValuePercent: true,
+          showDimension: true,
         },
       },
       roseParallel: {
@@ -174,6 +177,7 @@ export const lightTheme = (): CustomThemeConfig => {
         label: {
           ...baseConfig.label,
           showValuePercent: true,
+          showDimension: true,
         },
       },
       // other

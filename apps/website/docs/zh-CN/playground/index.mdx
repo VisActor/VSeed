@@ -9,15 +9,170 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'column',
-    chartType: 'columnParallel',
-    dataset: [
-      { date: '2019', test: 'a', profit: 10 },
-      { date: '2020', test: 'a', profit: 30 },
-      { date: '2021', test: 'a', profit: 30 },
-      { date: '2022', test: 'a', profit: 50 },
-      { date: '2023', test: 'a', profit: 40 },
+    color: {
+      colorScheme: [
+        '#8D72F6',
+        '#5766EC',
+        '#66A3FE',
+        '#51D5E6',
+        '#4EC0B3',
+        '#F9DF90',
+        '#F9AD71',
+        '#ED8888',
+        '#E9A0C3',
+        '#D77DD3',
+        '#07A199',
+        '#87DBDD',
+      ],
+    },
+    legend: {
+      enable: true,
+      position: 'rightTop',
+      maxSize: 1,
+      labelFontSize: 12,
+      labelFontColor: '#6F6F6F',
+    },
+    label: {
+      enable: true,
+      labelColor: '#212121',
+      labelFontSize: 12,
+    },
+    xAxis: {
+      visible: true,
+      title: {
+        titleText: 'q1111',
+        visible: false,
+        titleFontSize: 12,
+        titleColor: '#212121',
+      },
+      label: {
+        labelFontSize: 12,
+      },
+      numFormat: {
+        type: 'number',
+      },
+      autoFormat: false,
+    },
+    yAxis: {
+      visible: true,
+      title: {
+        titleText: '11111',
+        visible: false,
+        titleFontSize: 12,
+        titleColor: '#212121',
+      },
+      label: {
+        labelFontSize: 12,
+      },
+    },
+    annotationPoint: [
+      {
+        text: '请输入标注文本',
+        textFontSize: 12,
+        textColor: '#ccc',
+        textBackgroundColor: '#000',
+      },
+      {
+        text: '请输入标注文本',
+        textFontSize: 12,
+        textColor: '#ccc',
+        textBackgroundColor: '#000',
+      },
+      {
+        text: '请输入标注文本',
+        textFontSize: 12,
+        textColor: '#ccc',
+        textBackgroundColor: '#000',
+      },
+      {
+        text: '请输入标注文本',
+        textFontSize: 12,
+        textColor: '#ccc',
+        textBackgroundColor: '#000',
+      },
     ],
+    annotationHorizontalLine: [
+      {
+        yValue: 111,
+        text: '平均值',
+        textColor: '#ccc',
+        textFontSize: 12,
+        textBackgroundColor: '#000',
+      },
+      {
+        textFontSize: 12,
+        textColor: '#ccc',
+        textBackgroundColor: '#000',
+        lineColor: '#000',
+      },
+    ],
+    lineStyle: [],
+    barStyle: [],
+    pointStyle: [],
+    areaStyle: [],
+    annotationVerticalLine: [],
+    annotationArea: [],
+    measures: [
+      {
+        id: 'xA_20250917170732_de35',
+        alias: 'sum(sales)',
+        encoding: 'xAxis',
+        format: {
+          auto: false,
+          significantDigits: 4,
+          thousandSeparator: true,
+          type: 'number',
+        },
+        autoFormat: false,
+      },
+      {
+        id: 'yA_20250917170733_9510',
+        alias: 'sum(amount)',
+        encoding: 'yAxis',
+        format: {
+          auto: false,
+          type: 'number',
+        },
+        autoFormat: false,
+      },
+    ],
+    dimensions: [
+      {
+        id: 'co_20250917174753_4e13',
+        alias: 'product_type',
+        encoding: 'color',
+        autoFormat: true,
+      },
+      {
+        id: 'la_20250928171303_9cc9',
+        alias: 'product_type',
+        encoding: 'label',
+        autoFormat: true,
+      },
+    ],
+    chartType: 'scatter',
+    dataset: [
+      {
+        co_20250917174753_4e13: '办公用品',
+        la_20250928171303_9cc9: '办公用品',
+        xA_20250917170732_de35: '4865589.791999991',
+        yA_20250917170733_9510: '21401',
+      },
+      {
+        co_20250917174753_4e13: '家具',
+        la_20250928171303_9cc9: '家具',
+        xA_20250917170732_de35: '5734340.829',
+        yA_20250917170733_9510: '8491',
+      },
+      {
+        co_20250917174753_4e13: '技术',
+        la_20250928171303_9cc9: '技术',
+        xA_20250917170732_de35: '5469023.503999994',
+        yA_20250917170733_9510: '7642',
+      },
+    ],
+    theme: 'light',
+    locale: 'zh-CN',
   }
 
   const parseRes = zVSeed.safeParse(vseed)

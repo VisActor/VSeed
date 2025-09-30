@@ -103,7 +103,11 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
     formatMethod: (_, datum: Datum) => {
       const result = []
 
-      const dimLabels = labelDims.map((item) => item.alias || item.id)
+      const dimLabels = labelDims.map((item) => {
+        const id = item.id
+        return datum[id] as number | string
+      })
+
       const meaLabels = labelMeas.map((item) =>
         generateMeasureValue(datum[item.id] as number | string, item, autoFormat, numFormat),
       )

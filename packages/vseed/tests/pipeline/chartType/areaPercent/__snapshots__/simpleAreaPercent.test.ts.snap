@@ -1744,11 +1744,26 @@ exports[`simpleAreaPercent 3`] = `
     "A-salesCount-salesCount": "A-salesCount",
   },
   "colorItems": [
-    "A-goalProfit",
-    "A-profit",
-    "A-sales",
-    "A-leftCount",
-    "A-salesCount",
+    {
+      "alias": "A-goalProfit",
+      "id": "A-goalProfit-goalProfit",
+    },
+    {
+      "alias": "A-profit",
+      "id": "A-profit-profit",
+    },
+    {
+      "alias": "A-sales",
+      "id": "A-sales-sales",
+    },
+    {
+      "alias": "A-leftCount",
+      "id": "A-leftCount-leftCount",
+    },
+    {
+      "alias": "A-salesCount",
+      "id": "A-salesCount-salesCount",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

@@ -702,7 +702,10 @@ exports[`1m0d 3`] = `
     "profit-profit": "profit",
   },
   "colorItems": [
-    "profit",
+    {
+      "alias": "profit",
+      "id": "profit-profit",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

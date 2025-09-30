@@ -2669,10 +2669,22 @@ exports[`array 3`] = `
     "销售额-sales": "销售额",
   },
   "colorItems": [
-    "利润",
-    "销售额",
-    "比率",
-    "回报率",
+    {
+      "alias": "利润",
+      "id": "利润-profit",
+    },
+    {
+      "alias": "销售额",
+      "id": "销售额-sales",
+    },
+    {
+      "alias": "比率",
+      "id": "比率-ratio",
+    },
+    {
+      "alias": "回报率",
+      "id": "回报率-returnRatio",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

@@ -1487,31 +1487,106 @@ exports[`simpleFunnel 3`] = `
     "2023-A-salesCount-salesCount": "2023-A-salesCount",
   },
   "colorItems": [
-    "2019-A-goalProfit",
-    "2019-A-profit",
-    "2019-A-sales",
-    "2019-A-leftCount",
-    "2019-A-salesCount",
-    "2020-A-goalProfit",
-    "2020-A-profit",
-    "2020-A-sales",
-    "2020-A-leftCount",
-    "2020-A-salesCount",
-    "2021-A-goalProfit",
-    "2021-A-profit",
-    "2021-A-sales",
-    "2021-A-leftCount",
-    "2021-A-salesCount",
-    "2022-A-goalProfit",
-    "2022-A-profit",
-    "2022-A-sales",
-    "2022-A-leftCount",
-    "2022-A-salesCount",
-    "2023-A-goalProfit",
-    "2023-A-profit",
-    "2023-A-sales",
-    "2023-A-leftCount",
-    "2023-A-salesCount",
+    {
+      "alias": "2019-A-goalProfit",
+      "id": "2019-A-goalProfit-goalProfit",
+    },
+    {
+      "alias": "2019-A-profit",
+      "id": "2019-A-profit-profit",
+    },
+    {
+      "alias": "2019-A-sales",
+      "id": "2019-A-sales-sales",
+    },
+    {
+      "alias": "2019-A-leftCount",
+      "id": "2019-A-leftCount-leftCount",
+    },
+    {
+      "alias": "2019-A-salesCount",
+      "id": "2019-A-salesCount-salesCount",
+    },
+    {
+      "alias": "2020-A-goalProfit",
+      "id": "2020-A-goalProfit-goalProfit",
+    },
+    {
+      "alias": "2020-A-profit",
+      "id": "2020-A-profit-profit",
+    },
+    {
+      "alias": "2020-A-sales",
+      "id": "2020-A-sales-sales",
+    },
+    {
+      "alias": "2020-A-leftCount",
+      "id": "2020-A-leftCount-leftCount",
+    },
+    {
+      "alias": "2020-A-salesCount",
+      "id": "2020-A-salesCount-salesCount",
+    },
+    {
+      "alias": "2021-A-goalProfit",
+      "id": "2021-A-goalProfit-goalProfit",
+    },
+    {
+      "alias": "2021-A-profit",
+      "id": "2021-A-profit-profit",
+    },
+    {
+      "alias": "2021-A-sales",
+      "id": "2021-A-sales-sales",
+    },
+    {
+      "alias": "2021-A-leftCount",
+      "id": "2021-A-leftCount-leftCount",
+    },
+    {
+      "alias": "2021-A-salesCount",
+      "id": "2021-A-salesCount-salesCount",
+    },
+    {
+      "alias": "2022-A-goalProfit",
+      "id": "2022-A-goalProfit-goalProfit",
+    },
+    {
+      "alias": "2022-A-profit",
+      "id": "2022-A-profit-profit",
+    },
+    {
+      "alias": "2022-A-sales",
+      "id": "2022-A-sales-sales",
+    },
+    {
+      "alias": "2022-A-leftCount",
+      "id": "2022-A-leftCount-leftCount",
+    },
+    {
+      "alias": "2022-A-salesCount",
+      "id": "2022-A-salesCount-salesCount",
+    },
+    {
+      "alias": "2023-A-goalProfit",
+      "id": "2023-A-goalProfit-goalProfit",
+    },
+    {
+      "alias": "2023-A-profit",
+      "id": "2023-A-profit-profit",
+    },
+    {
+      "alias": "2023-A-sales",
+      "id": "2023-A-sales-sales",
+    },
+    {
+      "alias": "2023-A-leftCount",
+      "id": "2023-A-leftCount-leftCount",
+    },
+    {
+      "alias": "2023-A-salesCount",
+      "id": "2023-A-salesCount-salesCount",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

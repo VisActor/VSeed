@@ -2553,8 +2553,14 @@ exports[`on 3`] = `
     "sales-sales": "sales",
   },
   "colorItems": [
-    "profit",
-    "sales",
+    {
+      "alias": "profit",
+      "id": "profit-profit",
+    },
+    {
+      "alias": "sales",
+      "id": "sales-sales",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

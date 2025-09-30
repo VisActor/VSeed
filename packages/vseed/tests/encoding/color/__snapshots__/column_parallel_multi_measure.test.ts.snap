@@ -1820,14 +1820,38 @@ exports[`column_parallel_multi_measure 3`] = `
     "west-B-销售额-sales": "west-B-销售额",
   },
   "colorItems": [
-    "east-A-利润",
-    "east-A-销售额",
-    "east-B-利润",
-    "east-B-销售额",
-    "west-A-利润",
-    "west-A-销售额",
-    "west-B-利润",
-    "west-B-销售额",
+    {
+      "alias": "east-A-利润",
+      "id": "east-A-利润-profit",
+    },
+    {
+      "alias": "east-A-销售额",
+      "id": "east-A-销售额-sales",
+    },
+    {
+      "alias": "east-B-利润",
+      "id": "east-B-利润-profit",
+    },
+    {
+      "alias": "east-B-销售额",
+      "id": "east-B-销售额-sales",
+    },
+    {
+      "alias": "west-A-利润",
+      "id": "west-A-利润-profit",
+    },
+    {
+      "alias": "west-A-销售额",
+      "id": "west-A-销售额-sales",
+    },
+    {
+      "alias": "west-B-利润",
+      "id": "west-B-利润-profit",
+    },
+    {
+      "alias": "west-B-销售额",
+      "id": "west-B-销售额-sales",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

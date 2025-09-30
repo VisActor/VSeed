@@ -1235,9 +1235,18 @@ exports[`sortLegendByColorItemIds 3`] = `
     "销售额-sales": "销售额",
   },
   "colorItems": [
-    "利润",
-    "销售额",
-    "数量",
+    {
+      "alias": "利润",
+      "id": "利润-profit",
+    },
+    {
+      "alias": "销售额",
+      "id": "销售额-sales",
+    },
+    {
+      "alias": "数量",
+      "id": "数量-count",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

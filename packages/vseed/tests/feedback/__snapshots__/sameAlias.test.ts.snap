@@ -1121,8 +1121,14 @@ exports[`sameAlias 3`] = `
     "sum(amount)-yA_20250916175707_8b25": "sum(amount)",
   },
   "colorItems": [
-    "sum(amount)",
-    "sum(amount)",
+    {
+      "alias": "sum(amount)",
+      "id": "sum(amount)-co_20250916102539_ed6a",
+    },
+    {
+      "alias": "sum(amount)",
+      "id": "sum(amount)-yA_20250916175707_8b25",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

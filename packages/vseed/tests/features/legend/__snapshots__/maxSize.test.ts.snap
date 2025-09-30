@@ -2106,36 +2106,126 @@ exports[`maxSize 3`] = `
     "north of east-E-sales-sales": "north of east-E-sales",
   },
   "colorItems": [
-    "east-A-profit",
-    "east-A-sales",
-    "east-A-discount",
-    "east-B-profit",
-    "east-B-sales",
-    "east-B-discount",
-    "east-C-profit",
-    "east-C-sales",
-    "east-C-discount",
-    "east-D-profit",
-    "east-D-sales",
-    "east-D-discount",
-    "east-E-profit",
-    "east-E-sales",
-    "east-E-discount",
-    "north of east-A-profit",
-    "north of east-A-sales",
-    "north of east-A-discount",
-    "north of east-B-profit",
-    "north of east-B-sales",
-    "north of east-B-discount",
-    "north of east-C-profit",
-    "north of east-C-sales",
-    "north of east-C-discount",
-    "north of east-D-profit",
-    "north of east-D-sales",
-    "north of east-D-discount",
-    "north of east-E-profit",
-    "north of east-E-sales",
-    "north of east-E-discount",
+    {
+      "alias": "east-A-profit",
+      "id": "east-A-profit-profit",
+    },
+    {
+      "alias": "east-A-sales",
+      "id": "east-A-sales-sales",
+    },
+    {
+      "alias": "east-A-discount",
+      "id": "east-A-discount-discount",
+    },
+    {
+      "alias": "east-B-profit",
+      "id": "east-B-profit-profit",
+    },
+    {
+      "alias": "east-B-sales",
+      "id": "east-B-sales-sales",
+    },
+    {
+      "alias": "east-B-discount",
+      "id": "east-B-discount-discount",
+    },
+    {
+      "alias": "east-C-profit",
+      "id": "east-C-profit-profit",
+    },
+    {
+      "alias": "east-C-sales",
+      "id": "east-C-sales-sales",
+    },
+    {
+      "alias": "east-C-discount",
+      "id": "east-C-discount-discount",
+    },
+    {
+      "alias": "east-D-profit",
+      "id": "east-D-profit-profit",
+    },
+    {
+      "alias": "east-D-sales",
+      "id": "east-D-sales-sales",
+    },
+    {
+      "alias": "east-D-discount",
+      "id": "east-D-discount-discount",
+    },
+    {
+      "alias": "east-E-profit",
+      "id": "east-E-profit-profit",
+    },
+    {
+      "alias": "east-E-sales",
+      "id": "east-E-sales-sales",
+    },
+    {
+      "alias": "east-E-discount",
+      "id": "east-E-discount-discount",
+    },
+    {
+      "alias": "north of east-A-profit",
+      "id": "north of east-A-profit-profit",
+    },
+    {
+      "alias": "north of east-A-sales",
+      "id": "north of east-A-sales-sales",
+    },
+    {
+      "alias": "north of east-A-discount",
+      "id": "north of east-A-discount-discount",
+    },
+    {
+      "alias": "north of east-B-profit",
+      "id": "north of east-B-profit-profit",
+    },
+    {
+      "alias": "north of east-B-sales",
+      "id": "north of east-B-sales-sales",
+    },
+    {
+      "alias": "north of east-B-discount",
+      "id": "north of east-B-discount-discount",
+    },
+    {
+      "alias": "north of east-C-profit",
+      "id": "north of east-C-profit-profit",
+    },
+    {
+      "alias": "north of east-C-sales",
+      "id": "north of east-C-sales-sales",
+    },
+    {
+      "alias": "north of east-C-discount",
+      "id": "north of east-C-discount-discount",
+    },
+    {
+      "alias": "north of east-D-profit",
+      "id": "north of east-D-profit-profit",
+    },
+    {
+      "alias": "north of east-D-sales",
+      "id": "north of east-D-sales-sales",
+    },
+    {
+      "alias": "north of east-D-discount",
+      "id": "north of east-D-discount-discount",
+    },
+    {
+      "alias": "north of east-E-profit",
+      "id": "north of east-E-profit-profit",
+    },
+    {
+      "alias": "north of east-E-sales",
+      "id": "north of east-E-sales-sales",
+    },
+    {
+      "alias": "north of east-E-discount",
+      "id": "north of east-E-discount-discount",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

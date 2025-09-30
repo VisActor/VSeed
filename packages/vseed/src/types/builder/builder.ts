@@ -14,7 +14,7 @@ export abstract class VSeedBuilder {
   static getTheme: (themeKey: string) => CustomThemeConfig
   static getThemeMap: () => Record<string, CustomThemeConfig>
 
-  abstract getColorItems: () => string[]
+  abstract getColorItems: () => { id: string; alias: string }[]
   abstract getColorIdMap: () => Record<string, string>
 
   abstract get spec(): Spec | null

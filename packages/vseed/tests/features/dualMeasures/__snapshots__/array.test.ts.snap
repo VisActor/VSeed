@@ -2663,10 +2663,22 @@ exports[`array 3`] = `
     "sales-sales": "sales",
   },
   "colorItems": [
-    "profit",
-    "sales",
-    "ratio",
-    "returnRatio",
+    {
+      "alias": "profit",
+      "id": "profit-profit",
+    },
+    {
+      "alias": "sales",
+      "id": "sales-sales",
+    },
+    {
+      "alias": "ratio",
+      "id": "ratio-ratio",
+    },
+    {
+      "alias": "returnRatio",
+      "id": "returnRatio-returnRatio",
+    },
   ],
   "hasTheme": true,
   "specPipeline": [

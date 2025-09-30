@@ -39,6 +39,10 @@ export const selector = (vchartDatum: Datum, selector: Selector | Selectors | un
 
       switch (op) {
         case '=':
+          if (String(datum[selector.field]) === String(selectorValueArr[0])) {
+            return true
+          }
+          break
         case '==':
           if (datum[selector.field] === selectorValueArr[0]) {
             return true

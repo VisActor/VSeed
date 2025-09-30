@@ -1,89 +1,18 @@
-import type {
-  BackgroundColor,
-  Color,
-  CustomThemeConfig,
-  Label,
-  Legend,
-  TableConfig,
-  Tooltip,
-  YBandAxis,
-  YLinearAxis,
-} from 'src/types'
+import type { CustomThemeConfig, YBandAxis } from 'src/types'
+import {
+  getDefaultLabel,
+  getDefaultLegend,
+  getLightColor,
+  getLightCrosshairLine,
+  getLightCrosshairRect,
+  getLightTableConfig,
+} from '../common'
+import { getDefaultTooltip } from '../common/tooltip'
+import { getLightBandAxis, getLightLinearAxis } from '../common/axes'
 
 export const lightTheme = (): CustomThemeConfig => {
-  const linearAxis: YLinearAxis = {
-    nice: true,
-    zero: true,
-    inverse: false,
-    label: {
-      visible: true,
-      labelAngle: 0,
-      labelColor: '#797B85',
-      labelFontSize: 12,
-      labelFontWeight: 400,
-    },
-    title: {
-      visible: false,
-      titleText: '',
-      titleColor: '#646A73',
-      titleFontSize: 12,
-      titleFontWeight: 400,
-    },
-    grid: {
-      visible: true,
-      gridColor: '#36415926',
-      gridWidth: 0.5,
-    },
-    tick: {
-      visible: false,
-      tickInside: false,
-      tickSize: 4,
-      tickColor: '#3641594d',
-    },
-    line: {
-      visible: false,
-      lineColor: '#3641594d',
-      lineWidth: 1,
-    },
-  }
-  const bandAxis: YBandAxis = {
-    labelAutoHide: true,
-    labelAutoHideGap: 4,
-    labelAutoLimit: true,
-    labelAutoLimitLength: 80,
-    labelAutoRotate: false,
-    labelAutoRotateAngleRange: [0, -45, -90],
-    label: {
-      visible: true,
-      labelAngle: 0,
-      labelColor: '#797B85',
-      labelFontSize: 12,
-      labelFontWeight: 400,
-    },
-    title: {
-      visible: false,
-      titleText: '',
-      titleColor: '#646A73',
-      titleFontSize: 12,
-      titleFontWeight: 400,
-    },
-    grid: {
-      visible: false,
-      gridColor: '#36415926',
-      gridWidth: 0.5,
-    },
-    tick: {
-      visible: false,
-      tickInside: false,
-      tickSize: 4,
-      tickColor: '#3641594d',
-    },
-    line: {
-      visible: true,
-      lineColor: '#3641594d',
-      lineWidth: 1,
-    },
-  }
+  const linearAxis = getLightLinearAxis()
+  const bandAxis: YBandAxis = getLightBandAxis()
   const barBandAxis: YBandAxis = {
     ...bandAxis,
     labelAutoHide: false,
@@ -94,87 +23,17 @@ export const lightTheme = (): CustomThemeConfig => {
     labelAutoRotateAngleRange: [0, -45, -90],
   }
 
-  const crosshairLine = {
-    visible: true,
-    labelVisible: true,
-    lineColor: '#3641594d',
-    labelColor: '#ffffff',
-    labelBackgroundColor: '#364159',
-  }
-  const crosshairRect = {
-    visible: true,
-    labelVisible: true,
-    rectColor: '#3641594d',
-    labelColor: '#ffffff',
-    labelBackgroundColor: '#364159',
-  }
+  const crosshairLine = getLightCrosshairLine()
+  const crosshairRect = getLightCrosshairRect()
 
-  const baseConfig: {
-    backgroundColor?: BackgroundColor
-    color?: Color
-    label?: Label
-    tooltip?: Tooltip
-    legend?: Legend
-  } = {
+  const baseConfig = {
     backgroundColor: 'transparent',
-    color: {
-      linearColorScheme: ['#C2CEFF', '#5766EC'],
-      colorScheme: [
-        '#8D72F6',
-        '#5766EC',
-        '#66A3FE',
-        '#51D5E6',
-        '#4EC0B3',
-        '#F9DF90',
-        '#F9AD71',
-        '#ED8888',
-        '#E9A0C3',
-        '#D77DD3',
-      ],
-    },
-    label: {
-      enable: true,
-      wrap: true,
-      showValue: true,
-      showValuePercent: false,
-      labelColorSmartInvert: false,
-      labelOverlap: true,
-    },
-    tooltip: {
-      enable: true,
-    },
-    legend: {
-      enable: true,
-      border: true,
-      maxSize: 1,
-      shapeType: 'rectRound',
-      position: 'rt',
-      labelColor: '#646A73',
-      labelFontSize: 12,
-      labelFontWeight: 400,
-    },
+    color: getLightColor(),
+    label: getDefaultLabel(),
+    legend: getDefaultLegend(),
+    tooltip: getDefaultTooltip(),
   }
-  const tableConfig: TableConfig = {
-    borderColor: '#e3e5eb',
-
-    bodyFontSize: 12,
-    bodyFontColor: '#141414',
-    bodyBackgroundColor: 'transparent',
-
-    headerFontSize: 12,
-    headerFontColor: '#21252c',
-    headerBackgroundColor: '#f6f7f9',
-
-    hoverBodyBackgroundColor: '#bedaff',
-    hoverBodyInlineBackgroundColor: '#bedaff33',
-    hoverHeaderBackgroundColor: '#D9DDE4',
-    hoverHeaderInlineBackgroundColor: '#D9DDE455',
-
-    selectedBorderColor: '#4080ff',
-    selectedBackgroundColor: '#bedaff33',
-
-    backgroundColor: 'transparent',
-  }
+  const tableConfig = getLightTableConfig()
 
   return {
     config: {
@@ -250,6 +109,8 @@ export const lightTheme = (): CustomThemeConfig => {
       },
       scatter: {
         ...baseConfig,
+        crosshairLine,
+        sizeRange: [8, 24],
         xAxis: {
           ...linearAxis,
           line: {
@@ -264,8 +125,11 @@ export const lightTheme = (): CustomThemeConfig => {
             visible: true,
           },
         },
-        crosshairLine,
-        sizeRange: [8, 24],
+        label: {
+          ...baseConfig.label,
+          showValue: false,
+          showValuePercent: false,
+        },
       },
       dualAxis: {
         ...baseConfig,
@@ -285,6 +149,7 @@ export const lightTheme = (): CustomThemeConfig => {
           ...baseConfig.label,
           showValuePercent: true,
           labelLayout: 'labelLine',
+          showDimension: true,
         },
       },
       donut: {
@@ -293,6 +158,7 @@ export const lightTheme = (): CustomThemeConfig => {
           ...baseConfig.label,
           showValuePercent: true,
           labelLayout: 'labelLine',
+          showDimension: true,
         },
       },
       radar: {
@@ -303,6 +169,7 @@ export const lightTheme = (): CustomThemeConfig => {
         label: {
           ...baseConfig.label,
           showValuePercent: true,
+          showDimension: true,
         },
       },
       roseParallel: {
@@ -310,6 +177,7 @@ export const lightTheme = (): CustomThemeConfig => {
         label: {
           ...baseConfig.label,
           showValuePercent: true,
+          showDimension: true,
         },
       },
       // other

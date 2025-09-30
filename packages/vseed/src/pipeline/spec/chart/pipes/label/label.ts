@@ -14,6 +14,7 @@ import type {
   SpecPipe,
 } from 'src/types'
 import { merge, uniqueBy } from 'remeda'
+import { MeasureName } from 'src/dataReshape'
 
 export const label: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
@@ -29,6 +30,7 @@ export const label: SpecPipe = (spec, context) => {
     label,
     vseed.measures,
     vseed.dimensions,
+    advancedVSeed.dimensions,
     advancedVSeed.measures,
     encoding as Encoding,
     [foldInfo],
@@ -63,6 +65,7 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
   label: Label,
   vseedMeasures: Measures = [],
   vseedDimensions: Dimensions = [],
+  advancedVSeedDimensions: Dimensions,
   advancedVSeedMeasures: Measures,
   encoding: Encoding,
   foldInfoList: FoldInfo[],
@@ -72,6 +75,7 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
     wrap,
     showValue,
     showValuePercent,
+    showDimension,
     labelOverlap,
     labelColorSmartInvert,
     labelColor,
@@ -83,12 +87,19 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
     numFormat = {},
   } = label
 
+  const hasDimLabelEncoding = vseedDimensions.some((item) => encoding.label?.includes(item.id))
+
   const labelDims = uniqueBy(
-    (vseedDimensions || []).filter((item) => encoding.label?.includes(item.id)),
+    hasDimLabelEncoding
+      ? vseedDimensions.filter((item) => encoding.label?.includes(item.id))
+      : showDimension
+        ? advancedVSeedDimensions.filter((d) => d.id !== MeasureName)
+        : [],
     (item) => item.id,
   )
+
   const labelMeas = uniqueBy(
-    (vseedMeasures || []).filter((item) => encoding.label?.includes(item.id)),
+    vseedMeasures.filter((item) => encoding.label?.includes(item.id)),
     (item) => item.id,
   )
 
@@ -103,7 +114,11 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
     formatMethod: (_, datum: Datum) => {
       const result = []
 
-      const dimLabels = labelDims.map((item) => item.alias || item.id)
+      const dimLabels = labelDims.map((item) => {
+        const id = item.id
+        return datum[id] as number | string
+      })
+
       const meaLabels = labelMeas.map((item) =>
         generateMeasureValue(datum[item.id] as number | string, item, autoFormat, numFormat),
       )

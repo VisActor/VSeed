@@ -6,6 +6,7 @@ export const zLabel = z.object({
   wrap: z.boolean().nullish(),
   showValue: z.boolean().nullish(),
   showValuePercent: z.boolean().nullish(),
+  showDimension: z.boolean().nullish(),
   autoFormat: z.boolean().nullish(),
   numFormat: zNumFormat.nullish(),
   labelFontSize: z.number().nullish(),

@@ -6,7 +6,7 @@ export type AnnotationPoint = {
   /**
    * @description 标注点的选择器, 用于选择数据点.
    */
-  selector: Selector | Selectors
+  selector?: Selector | Selectors
   /**
    * @description 标注的文本
    * @default ''

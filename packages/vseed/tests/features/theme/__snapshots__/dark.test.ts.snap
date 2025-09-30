@@ -29,7 +29,7 @@ exports[`dark 1`] = `
         "labelBackgroundColor": "#ffffff",
         "labelColor": "#4B4F54",
         "labelVisible": true,
-        "lineColor": "#E2E3E6",
+        "rectColor": "#E2E3E6",
         "visible": true,
       },
       "label": {
@@ -43,7 +43,7 @@ exports[`dark 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelColor": "#FDFDFD",
+        "labelColor": "#646A73",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
@@ -163,7 +163,7 @@ exports[`dark 1`] = `
           "labelBackgroundColor": "#ffffff",
           "labelColor": "#4B4F54",
           "labelVisible": true,
-          "lineColor": "#E2E3E6",
+          "rectColor": "#E2E3E6",
           "visible": true,
         },
         "label": {
@@ -177,7 +177,7 @@ exports[`dark 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelColor": "#FDFDFD",
+          "labelColor": "#646A73",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
@@ -697,7 +697,7 @@ exports[`dark 2`] = `
       },
       "line": {
         "style": {
-          "fill": undefined,
+          "fill": "#E2E3E6",
           "lineWidth": 0,
           "opacity": 0.2,
         },
@@ -906,21 +906,21 @@ exports[`dark 2`] = `
       "background": {
         "state": {
           "selectedHover": {
-            "fill": "#FDFDFD",
+            "fill": "#646A73",
             "fillOpacity": 0.05,
           },
         },
       },
       "focus": true,
       "focusIconStyle": {
-        "fill": "#FDFDFD",
+        "fill": "#646A73",
         "fontWeight": 400,
         "size": 14,
       },
       "label": {
         "formatMethod": [Function],
         "style": {
-          "fill": "#FDFDFD",
+          "fill": "#646A73",
           "fontSize": 12,
           "fontWeight": 400,
         },

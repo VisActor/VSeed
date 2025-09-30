@@ -10,7 +10,7 @@
 
 ## selector
 
-**Type:** `Selector | Selectors`
+**Type:** `Selector | Selectors | undefined`
 
 :::note{title=描述}
 依赖选择的数据, 进行数据标记.

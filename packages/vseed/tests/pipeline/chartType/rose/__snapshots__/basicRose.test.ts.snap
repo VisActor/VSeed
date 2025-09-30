@@ -102,14 +102,14 @@ exports[`basicRose 1`] = `
       "__Dim_Detail__": "销售额",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
-      "__MeaValue__": 200000,
+      "__MeaValue__": -200000,
       "__OriginalData__": {
         "date": "2019",
         "profit": 10000,
-        "sales": 200000,
+        "sales": -200000,
       },
       "date": "2019",
-      "sales": 200000,
+      "sales": -200000,
     },
     {
       "__Dim_Angle__": "2019",
@@ -122,7 +122,7 @@ exports[`basicRose 1`] = `
       "__OriginalData__": {
         "date": "2019",
         "profit": 10000,
-        "sales": 200000,
+        "sales": -200000,
       },
       "date": "2019",
       "profit": 10000,
@@ -271,8 +271,8 @@ exports[`basicRose 1`] = `
           "colorMin": Infinity,
           "count": 10,
           "max": 1000000,
-          "min": 10000,
-          "sum": 3150000,
+          "min": -200000,
+          "sum": 2750000,
         },
       },
       "id": "rose",
@@ -407,14 +407,14 @@ exports[`basicRose 2`] = `
         "__Dim_Detail__": "销售额",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
-        "__MeaValue__": 200000,
+        "__MeaValue__": -200000,
         "__OriginalData__": {
           "date": "2019",
           "profit": 10000,
-          "sales": 200000,
+          "sales": -200000,
         },
         "date": "2019",
-        "sales": 200000,
+        "sales": -200000,
       },
       {
         "__Dim_Angle__": "2019",
@@ -427,7 +427,7 @@ exports[`basicRose 2`] = `
         "__OriginalData__": {
           "date": "2019",
           "profit": 10000,
-          "sales": 200000,
+          "sales": -200000,
         },
         "date": "2019",
         "profit": 10000,
@@ -562,7 +562,7 @@ exports[`basicRose 2`] = `
       },
     ],
   },
-  "innerRadius": 0,
+  "innerRadius": 0.05,
   "label": {
     "formatMethod": [Function],
     "overlap": {

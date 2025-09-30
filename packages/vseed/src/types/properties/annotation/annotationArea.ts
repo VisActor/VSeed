@@ -4,7 +4,7 @@ export type AnnotationArea = {
   /**
    * @description 依赖选择的数据, 进行数据标记.
    */
-  selector: Selector | Selectors
+  selector?: Selector | Selectors
   /**
    * @description 标注的文本
    * @default ''

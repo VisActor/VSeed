@@ -18,6 +18,7 @@ export const labelScatter: SpecPipe = (spec, context) => {
     label,
     vseed.measures,
     vseed.dimensions,
+    advancedVSeed.dimensions,
     advancedVSeed.measures,
     encoding as Encoding,
     foldInfoList,

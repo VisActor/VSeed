@@ -14,6 +14,7 @@ import type {
   SpecPipe,
 } from 'src/types'
 import { merge, uniqueBy } from 'remeda'
+import { MeasureName } from 'src/dataReshape'
 
 export const label: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
@@ -29,6 +30,7 @@ export const label: SpecPipe = (spec, context) => {
     label,
     vseed.measures,
     vseed.dimensions,
+    advancedVSeed.dimensions,
     advancedVSeed.measures,
     encoding as Encoding,
     [foldInfo],
@@ -63,6 +65,7 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
   label: Label,
   vseedMeasures: Measures = [],
   vseedDimensions: Dimensions = [],
+  advancedVSeedDimensions: Dimensions,
   advancedVSeedMeasures: Measures,
   encoding: Encoding,
   foldInfoList: FoldInfo[],
@@ -83,12 +86,17 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
     numFormat = {},
   } = label
 
+  const hasDimLabelEncoding = vseedDimensions.some((item) => encoding.label?.includes(item.id))
+
   const labelDims = uniqueBy(
-    (vseedDimensions || []).filter((item) => encoding.label?.includes(item.id)),
+    hasDimLabelEncoding
+      ? vseedDimensions.filter((item) => encoding.label?.includes(item.id))
+      : advancedVSeedDimensions.filter((d) => d.id !== MeasureName),
     (item) => item.id,
   )
+
   const labelMeas = uniqueBy(
-    (vseedMeasures || []).filter((item) => encoding.label?.includes(item.id)),
+    vseedMeasures.filter((item) => encoding.label?.includes(item.id)),
     (item) => item.id,
   )
 

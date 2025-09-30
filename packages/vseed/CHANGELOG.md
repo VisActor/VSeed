@@ -1,5 +1,16 @@
 # @visactor/vseed
 
+## 0.1.27
+
+### Patch Changes
+
+- be843e0: feat: add default dimension encoding for label
+- a41f30b: feat: add showDimension in label
+- 1d77977: feat: optimize the group paralell only has one measure name
+- 2ddda7f: feat: add string equal for =, accurate equak for == in selector
+- 40971c8: fix: dim label display error
+- 2e01a77: feat: hide scatter measure value label in default
+
 ## 0.1.26
 
 ### Patch Changes

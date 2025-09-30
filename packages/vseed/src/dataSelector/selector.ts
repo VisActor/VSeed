@@ -82,8 +82,6 @@ export const selector = (vchartDatum: Datum, selector: Selector | Selectors | un
             return true
           }
           break
-        default:
-          break
       }
     }
     // 3. 维度选择器
@@ -100,8 +98,6 @@ export const selector = (vchartDatum: Datum, selector: Selector | Selectors | un
           if (!selectorValueArr.includes(datum[selector.field] as string | number)) {
             return true
           }
-          break
-        default:
           break
       }
     }

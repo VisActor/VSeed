@@ -5,6 +5,32 @@ pageType: custom
 ---
 
 ```tsx
+import { VQuery } from '@visactor/vquery'
+
+const run = async () => {
+  const vquery = new VQuery()
+  await vquery.instantiate()
+  await vquery.registerFile('supermarket.csv', 'https://tosv.byted.org/obj/dpvis/yjt/supermarket.csv')
+  const start1 = performance.now()
+  const data1 = await vquery.query(`
+    SELECT "区域" as region, SUM("销售额") as total_sales, SUM("利润") as total_profit
+    FROM read_csv_auto('supermarket.csv')
+    GROUP BY "区域"
+    ORDER BY region;
+  `)
+  console.log('debug', data1, performance.now() - start1)
+  const start2 = performance.now()
+  const data2 = await vquery.query(`
+    SELECT "区域" as region, SUM("销售额") as total_sales
+    FROM read_csv_auto('supermarket.csv')
+    GROUP BY "区域"
+    ORDER BY region;
+  `)
+  console.log('debug', data2, performance.now() - start2)
+}
+
+run()
+
 const Demo = () => {
   const MeasureNames = '__MeaName__'
 

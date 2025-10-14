@@ -12,6 +12,7 @@
   "dependencies": {
     "rspress": "1.45.3",
     "@visactor/vseed": "workspace:*",
+    "@visactor/vquery": "workspace:*",
     "@visactor/vchart": "2.0.3",
     "@visactor/vtable": "1.19.10-alpha.1",
     "zustand": "5.0.6"

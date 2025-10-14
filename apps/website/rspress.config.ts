@@ -9,7 +9,7 @@ export default defineConfig({
   globalStyles: path.join(__dirname, 'components/styles/index.css'),
   plugins: [
     pluginPlayground({
-      include: ['@visactor/vchart', '@visactor/vtable', '@visactor/vseed', 'rspress/runtime'],
+      include: ['@visactor/vchart', '@visactor/vtable', '@visactor/vseed', '@visactor/vquery', 'rspress/runtime'],
     }),
   ],
   lang: 'zh-CN',

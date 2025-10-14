@@ -35,14 +35,14 @@ export class VQuery {
     await this.db.registerFileBuffer(fileName, new Uint8Array(csvBuffer))
   }
 
-  query = async (sql: string): Promise<{ data: any[]; table: any }> => {
+  query = async (sql: string): Promise<{ dataset: any[]; table: any }> => {
     if (!this.connection) {
       throw new Error('connection is null')
     }
     const table = await this.connection.query(sql)
-    const data = table.toArray().map((row) => row.toJSON())
+    const dataset = table.toArray().map((row) => row.toJSON())
     return {
-      data,
+      dataset,
       table,
     }
   }

@@ -18,7 +18,8 @@
     "build": "rslib build",
     "dev": "rslib build --watch",
     "lint": "eslint .",
-    "test": "rstest"
+    "test": "rstest",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@duckdb/duckdb-wasm": "latest"

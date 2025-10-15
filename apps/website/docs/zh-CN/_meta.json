@@ -21,6 +21,8 @@
   },
   {
     "text": "Playground",
+    "link": "/playground/vseed",
+    "activeMatch": "/playground",
     "items": [
       {
         "link": "/playground/vseed",

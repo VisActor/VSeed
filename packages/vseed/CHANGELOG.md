@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.28
+
+### Patch Changes
+
+- feat: add package vquery
+
 ## 0.1.27
 
 ### Patch Changes

@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src", "tests/**/*"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "noEmit": true,
+    "lib": ["ESNext", "DOM"],
+    "paths": {
+      "@visactor/vquery": ["./src"]
+    }
+  }
+}

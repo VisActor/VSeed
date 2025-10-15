@@ -1,7 +1,7 @@
 export class IndexedDB {
   private db: IDBDatabase | null = null
   private dbName: string
-  private storeName = 'files'
+  private storeName = 'vqueryFiles'
 
   constructor(dbName: string) {
     this.dbName = dbName

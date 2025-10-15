@@ -21,6 +21,9 @@
   "references": [
     {
       "path": "../../packages/vseed"
+    },
+    {
+      "path": "../../packages/vquery"
     }
   ],
   "include": ["docs", "components", "theme", "rspress.config.ts"],

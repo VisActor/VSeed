@@ -1,0 +1,37 @@
+{
+  "name": "@visactor/vquery",
+  "version": "0.1.28",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build --watch",
+    "lint": "eslint .",
+    "test": "rstest"
+  },
+  "dependencies": {
+    "@duckdb/duckdb-wasm": "latest"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@rslib/core": "^0.15.1",
+    "@rstest/core": "^0.5.1",
+    "@types/node": "^22.18.10",
+    "@rstest/coverage-istanbul": "^0.0.2",
+    "eslint": "^9.35.0",
+    "globals": "^16.3.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.43.0"
+  }
+}

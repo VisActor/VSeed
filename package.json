@@ -17,6 +17,7 @@
     "type-check": "pnpm -r --color --parallel type-check",
     "build": "pnpm -r build",
     "build:vseed": "pnpm --filter=@visactor/vseed run build",
+    "build:vquery": "pnpm --filter=@visactor/vquery run build",
     "build:rsdoctor": "pnpm --filter=@visactor/vseed run build:rsdoctor",
     "build:docs": "node ./scripts/build-docs.js",
     "build:test": "node ./scripts/build-tests.mjs",
@@ -27,7 +28,7 @@
     "test": "pnpm --filter=@visactor/vseed test",
     "test:update": "pnpm --filter=@visactor/vseed test:update",
     "test:coverage": "pnpm --filter=@visactor/vseed test:coverage && node scripts/build-coverage-badge.mjs",
-    "publish:vseed": "pnpm run build:vseed && pnpm changeset publish --filter=@visactor/vseed --access=public",
+    "publish:ci": "pnpm run build:vseed && pnpm run build:vquery && pnpm changeset publish --filter=@visactor/vseed,@visactor/vquery --access=public",
     "prepare": "husky"
   },
   "lint-staged": {

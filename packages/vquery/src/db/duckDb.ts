@@ -1,11 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-  AsyncDuckDB,
-  AsyncDuckDBConnection,
-  getJsDelivrBundles,
-  selectBundle,
-  ConsoleLogger,
-} from '@duckdb/duckdb-wasm'
+import type { AsyncDuckDBConnection } from '@duckdb/duckdb-wasm'
+import { AsyncDuckDB, getJsDelivrBundles, selectBundle, ConsoleLogger } from '@duckdb/duckdb-wasm'
 
 export class DuckDB {
   private db: AsyncDuckDB | null = null

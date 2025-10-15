@@ -1,7 +1,5 @@
 import { DuckDB } from './db/duckDb'
 import { IndexedDB } from './db/indexedDb'
-import { generateSql } from './sql/generateSql'
-import { Query } from './types/VQuery'
 
 export class VQuery {
   private duckDB: DuckDB
@@ -28,9 +26,6 @@ export class VQuery {
     this.indexedDB.close()
   }
 
-  public generateSql = (query: Query, tableName: string): string => {
-    return generateSql(query, tableName)
-  }
   /**
    * @description 注册文件
    * @param fileName 文件名
@@ -81,9 +76,9 @@ export class VQuery {
    * @param sql SQL 语句
    */
   public query = async (sql: string) => {
-    const start = performance.now().toFixed(3)
+    const start = performance?.now?.()?.toFixed(3) ?? Date.now().toFixed(3)
     const result = await this.duckDB.query(sql)
-    const end = performance.now().toFixed(3)
+    const end = performance?.now?.()?.toFixed(3) ?? Date.now().toFixed(3)
     return {
       ...result,
       performance: {

@@ -12,7 +12,6 @@ export const colorAdapter = (ordinalPipe: SpecPipe, linearPipe: SpecPipe): SpecP
 }
 
 export const isLinearColor = <T extends AdvancedVSeed, U extends VSeed>(advancedVSeed: T, vseed: U) => {
-  console.log(vseed)
   const { encoding } = advancedVSeed
   const measures = vseed.measures || advancedVSeed.measures
   const measureIdList = findAllMeasures(measures).map((measure) => measure.id)

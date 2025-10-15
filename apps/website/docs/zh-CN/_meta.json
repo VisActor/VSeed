@@ -21,8 +21,18 @@
   },
   {
     "text": "Playground",
-    "link": "/playground/",
-    "activeMatch": "/playground/"
+    "items": [
+      {
+        "link": "/playground/vseed",
+        "text": "VSeed",
+        "activeMatch": "/playground/vseed"
+      },
+      {
+        "link": "/playground/vquery",
+        "text": "VQuery",
+        "activeMatch": "/playground/vquery"
+      }
+    ]
   },
   {
     "text": "了解VChart",

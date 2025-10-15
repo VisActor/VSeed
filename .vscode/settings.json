@@ -17,5 +17,5 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["catmull", "permille", "preorder", "rsdoctor", "vquery"]
+  "cSpell.words": ["catmull", "permille", "preorder", "rsdoctor", "vquery", "vseed"]
 }

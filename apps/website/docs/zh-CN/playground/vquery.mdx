@@ -1,0 +1,162 @@
+---
+title: 标题
+playgroundDirection: horizontal
+pageType: custom
+---
+
+```tsx
+const Demo = () => {
+  const [vseed, setVSeed] = useState<VSeed>()
+  const vquery = useRef<VQuery>()
+
+  useEffect(() => {
+    const run = async () => {
+      // 1. init vquery
+      const vquery = new VQuery()
+      await vquery.instantiate()
+
+      // 2. write or read dataset from indexedDB
+      const files = await vquery.listFiles()
+      const tableName = 'supermarket'
+      if (files.includes(tableName)) {
+        await vquery.loadFile(tableName)
+      } else {
+        await vquery.registerFile(tableName, 'https://visactor.github.io/VSeed/dataset/supermarket.csv')
+      }
+
+      // 3. query data using duckDb sql
+      const sql = `
+        SELECT
+          STRFTIME('%Y', "order_date") as Date,
+          "area" as Area,
+          SUM("sales") as Sales,
+          SUM("profit") as Profit
+        FROM read_csv_auto(${tableName})
+        GROUP BY Date, Area
+        ORDER BY Date;
+      `
+      // 4. execute query
+      const { dataset, performance } = await vquery.query(sql)
+      console.log('debug dataset', dataset)
+      console.log('debug query performance', performance)
+
+      // 5.render chart using vseed
+      setVSeed({
+        chartType: 'table',
+        chartType: 'pivotTable',
+        dataset: dataset,
+      })
+
+      // 6. close
+      await vquery.close()
+
+      return () => {
+        vquery = null
+      }
+    }
+
+    run()
+  }, [])
+
+  return vseed && <SimpleVSeedRender vseed={vseed} />
+}
+
+import { VQuery } from '@visactor/vquery'
+import { useRef, useEffect, useState } from 'react'
+import { useDark } from 'rspress/runtime'
+import VChart from '@visactor/vchart'
+import { ListTable, PivotTable, PivotChart, register } from '@visactor/vtable'
+import {
+  registerAll,
+  VSeed,
+  Builder,
+  isPivotChart,
+  isVChart,
+  isPivotTable,
+  isTable,
+  zVSeed,
+  ColorIdEncoding,
+} from '@visactor/vseed'
+
+registerAll()
+register.chartModule('vchart', VChart)
+
+const SimpleVSeedRender = (props: { vseed: VSeed }) => {
+  const { vseed } = props
+  const ref = useRef<HTMLDivElement>(null)
+  const builderRef = useRef<Builder>()
+  const dark = useDark()
+  useEffect(() => {
+    if (!ref.current) {
+      return
+    }
+    const theme = dark ? 'dark' : 'light'
+    const builder = Builder.from({ ...vseed, theme })
+    const spec = builder.build()
+    console.log('builder', builder)
+    console.log('builder performance', builder.performance)
+
+    builderRef.current = builder
+    if (isPivotChart(vseed)) {
+      const tableInstance = new PivotChart(ref.current, spec)
+
+      tableInstance.on('legend_item_click', (args) => {
+        console.log('LEGEND_ITEM_CLICK', args)
+        tableInstance.updateFilterRules([
+          {
+            filterKey: ColorIdEncoding,
+            filteredValues: args.value,
+          },
+        ])
+      })
+
+      tableInstance.on('legend_change', (args) => {
+        const maxValue = args.value[1]
+        const minValue = args.value[0]
+        tableInstance.updateFilterRules([
+          {
+            filterFunc: (record) => {
+              const value = record[record[ColorIdEncoding]]
+              if (value >= minValue && value <= maxValue) {
+                return true
+              }
+              return false
+            },
+          },
+        ])
+      })
+
+      return () => tableInstance.release()
+    } else if (isVChart(vseed)) {
+      const vchart = new VChart(spec, { dom: ref.current })
+      vchart.renderSync()
+      return () => vchart.release()
+    } else if (isTable(vseed)) {
+      const tableInstance = new ListTable(ref.current, spec)
+      return () => tableInstance.release()
+    } else if (isPivotTable(vseed)) {
+      const tableInstance = new PivotTable(ref.current, spec)
+      return () => tableInstance.release()
+    }
+  }, [vseed, dark])
+
+  return (
+    <div
+      ref={ref}
+      style={{ height: 300, width: '100%' }}
+      onClick={() => {
+        console.group(`selected ${vseed.chartType}`)
+        console.log('builder', builderRef.current)
+        console.log('spec', builderRef.current.spec)
+        console.log('vseed', builderRef.current.vseed)
+        console.log('advancedVSeed', builderRef.current.advancedVSeed)
+        console.groupEnd()
+      }}
+    >
+      {' '}
+    </div>
+  )
+}
+
+export default Demo
+```

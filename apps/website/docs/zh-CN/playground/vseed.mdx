@@ -6,47 +6,41 @@ pageType: custom
 
 ```tsx
 const Demo = () => {
-  const [vseed, setVSeed] = useState<VSeed>()
+  const MeasureNames = '__MeaName__'
 
-  useEffect(() => {
-    const run = async () => {
-      const vquery = new VQuery()
-      await vquery.instantiate()
-      await vquery.registerFile('supermarket.csv', 'https://tosv.byted.org/obj/dpvis/yjt/supermarket.csv')
-      const start1 = performance.now()
-      const { dataset } = await vquery.query(`
-        SELECT 
-          "类别" as category, 
-          "区域" as region, 
-          max("销售额") as total_sales, 
-          min("利润") as total_profit
-        FROM read_csv_auto('supermarket.csv')
-        GROUP BY region, category
-        ORDER BY total_sales;
-      `)
-      console.log('debug', dataset, performance.now() - start1)
+  const vseed: VSeed = {
+    chartType: 'column',
+    dataset: [
+      { date: '2019', profit: 10, sales: 20 },
+      { date: '2020', profit: 30, sales: 60 },
+      { date: '2021', profit: 30, sales: 60 },
+    ],
+    dimensions: [
+      { id: MeasureNames, encoding: 'xAxis' },
+      { id: 'date', encoding: 'xAxis' },
+    ],
+    measures: [
+      { id: 'profit', alias: '利润' },
+      { id: 'sales', alias: '销售额' },
+    ],
+    xAxis: {
+      label: {
+        labelAngle: -45,
+      },
+    },
+  }
 
-      const parseRes = zVSeed.safeParse(vseed)
-      if (parseRes.success) {
-        console.log('zVSeed parse success!!!')
-      } else {
-        console.error('zVSeed parse error!!!', parseRes)
-      }
+  const parseRes = zVSeed.safeParse(vseed)
+  if (parseRes.success) {
+    console.log('zVSeed parse success!!!')
+  } else {
+    console.error('zVSeed parse error!!!', parseRes)
+  }
 
-      setVSeed({
-        chartType: 'table',
-        dataset: dataset,
-      })
-    }
-
-    run()
-  }, [])
-
-  return vseed && <SimpleVSeedRender vseed={vseed} />
+  return <SimpleVSeedRender vseed={vseed} />
 }
 
-import { VQuery } from '@visactor/vquery'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 import { useDark } from 'rspress/runtime'
 import VChart from '@visactor/vchart'
 import { ListTable, PivotTable, PivotChart, register } from '@visactor/vtable'

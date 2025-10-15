@@ -1,97 +1,96 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-  AsyncDuckDB,
-  AsyncDuckDBConnection,
-  getJsDelivrBundles,
-  selectBundle,
-  ConsoleLogger,
-} from '@duckdb/duckdb-wasm'
+import { DuckDB } from './db/duckDb'
+import { IndexedDB } from './db/indexedDb'
+import { generateSql } from './sql/generateSql'
+import { Query } from './types/VQuery'
 
 export class VQuery {
-  private db: AsyncDuckDB | null = null
-  private connection: AsyncDuckDBConnection | null = null
+  private duckDB: DuckDB
+  private indexedDB: IndexedDB
 
-  constructor() {}
-
-  /**
-   * @description 初始化 DuckDB 实例
-   */
-  instantiate = async () => {
-    const JSDELIVR_BUNDLES = getJsDelivrBundles()
-    const bundle = await selectBundle(JSDELIVR_BUNDLES)
-    const worker_url = URL.createObjectURL(
-      new Blob([`importScripts("${bundle.mainWorker!}");`], { type: 'text/javascript' }),
-    )
-    const worker = new Worker(worker_url)
-    const logger = new ConsoleLogger()
-
-    this.db = new AsyncDuckDB(logger, worker)
-    await this.db.instantiate(bundle.mainModule, bundle.pthreadWorker)
-    URL.revokeObjectURL(worker_url)
-
-    this.connection = await this.db.connect()
+  constructor(dbName: string = 'vquery') {
+    this.duckDB = new DuckDB()
+    this.indexedDB = new IndexedDB(dbName)
   }
 
   /**
-   * @description 释放 DuckDB 实例
+   * @description 初始化数据库
    */
-  release = async () => {
-    if (this.connection) {
-      await this.connection.close()
-      this.connection = null
-    }
-    if (this.db) {
-      await this.db.terminate()
-      this.db = null
-    }
+  public instantiate = async () => {
+    await this.duckDB.instantiate()
+    await this.indexedDB.open()
   }
 
   /**
-   * 注册文件到 DuckDB 实例
+   * @description 关闭数据库
+   */
+  public close = async () => {
+    await this.duckDB.close()
+    this.indexedDB.close()
+  }
+
+  public generateSql = (query: Query, tableName: string): string => {
+    return generateSql(query, tableName)
+  }
+  /**
+   * @description 注册文件
    * @param fileName 文件名
    * @param source 文件内容
    */
-  registerFile = async <T extends string | ArrayBuffer | Uint8Array | Blob>(fileName: string, source: T) => {
-    if (!this.db) {
-      throw new Error('db is null')
-    }
-    let uint8Array: Uint8Array
+  public registerFile = async (fileName: string, source: string | ArrayBuffer | Uint8Array | Blob) => {
+    let blob: Blob
 
     if (typeof source === 'string') {
-      // fetch url
       const response = await fetch(source)
-      const buffer = await response.arrayBuffer()
-      uint8Array = new Uint8Array(buffer)
-    } else if (source instanceof Blob) {
-      // blob object
-      const buffer = await source.arrayBuffer()
-      uint8Array = new Uint8Array(buffer)
+      blob = await response.blob()
     } else if (source instanceof ArrayBuffer) {
-      // array buffer
-      uint8Array = new Uint8Array(source)
+      blob = new Blob([source])
     } else if (source instanceof Uint8Array) {
-      uint8Array = source
+      blob = new Blob([source.slice()])
+    } else if (source instanceof Blob) {
+      blob = source
     } else {
       throw new Error('Unsupported source type')
     }
 
-    await this.db.registerFileBuffer(fileName, uint8Array)
+    await this.indexedDB.writeFile(fileName, blob)
+    await this.duckDB.registerFile(fileName, blob)
+  }
+
+  /**
+   * @description 从 IndexedDB 读取文件并注册到 DuckDB
+   * @param fileName 文件名
+   */
+  public loadFile = async (fileName: string) => {
+    const blob = await this.indexedDB.readFile(fileName)
+    if (blob) {
+      await this.duckDB.registerFile(fileName, blob)
+    } else {
+      throw new Error(`File ${fileName} not found in IndexedDB`)
+    }
+  }
+
+  /**
+   * @description 列出 IndexedDB 中的所有文件
+   */
+  public listFiles = (): Promise<string[]> => {
+    return this.indexedDB.listFiles()
   }
 
   /**
    * @description 执行 SQL 查询
    * @param sql SQL 语句
-   * @returns 查询结果
    */
-  query = async (sql: string): Promise<{ dataset: any[]; table: any }> => {
-    if (!this.connection) {
-      throw new Error('connection is null')
-    }
-    const table = await this.connection.query(sql)
-    const dataset = table.toArray().map((row) => row.toJSON())
+  public query = async (sql: string) => {
+    const start = performance.now().toFixed(3)
+    const result = await this.duckDB.query(sql)
+    const end = performance.now().toFixed(3)
     return {
-      dataset,
-      table,
+      ...result,
+      performance: {
+        startAt: start,
+        endAt: end,
+        duration: Number(end) - Number(start),
+      },
     }
   }
 }

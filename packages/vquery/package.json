@@ -1,6 +1,6 @@
 {
   "name": "@visactor/vquery",
-  "version": "0.0.0",
+  "version": "0.1.28",
   "type": "module",
   "exports": {
     ".": {
@@ -33,6 +33,5 @@
     "globals": "^16.3.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.43.0"
-  },
-  "private": true
+  }
 }

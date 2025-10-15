@@ -12,11 +12,11 @@ const run = async (setVSeed) => {
 
   // 2. write or read dataset from indexedDB
   const files = await vquery.listFiles()
-  const tableName = 'supermarket'
-  if (files.includes(tableName)) {
-    await vquery.loadFile(tableName)
+  const fileName = 'supermarket'
+  if (files.includes(fileName)) {
+    await vquery.readFile(fileName)
   } else {
-    await vquery.registerFile(tableName, 'https://visactor.github.io/VSeed/dataset/supermarket.csv')
+    await vquery.writeFile(fileName, 'https://visactor.github.io/VSeed/dataset/supermarket.csv')
   }
 
   // 3. query data using duckDb sql
@@ -26,7 +26,7 @@ const run = async (setVSeed) => {
       "area" as Area,
       SUM("sales") as Sales,
       SUM("profit") as Profit
-    FROM read_csv_auto(${tableName})
+    FROM read_csv_auto(${fileName})
     GROUP BY Date, Area
     ORDER BY Date;
   `

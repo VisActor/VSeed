@@ -46,7 +46,7 @@ export class DuckDB {
    * @param fileName 文件名
    * @param source 文件内容
    */
-  registerFile = async <T extends string | ArrayBuffer | Uint8Array | Blob>(fileName: string, source: T) => {
+  writeFile = async <T extends string | ArrayBuffer | Uint8Array | Blob>(fileName: string, source: T) => {
     if (!this.db) {
       throw new Error('db is null')
     }

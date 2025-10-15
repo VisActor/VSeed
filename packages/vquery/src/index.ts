@@ -31,7 +31,7 @@ export class VQuery {
    * @param fileName 文件名
    * @param source 文件内容
    */
-  public registerFile = async (fileName: string, source: string | ArrayBuffer | Uint8Array | Blob) => {
+  public writeFile = async (fileName: string, source: string | ArrayBuffer | Uint8Array | Blob) => {
     let blob: Blob
 
     if (typeof source === 'string') {
@@ -48,17 +48,17 @@ export class VQuery {
     }
 
     await this.indexedDB.writeFile(fileName, blob)
-    await this.duckDB.registerFile(fileName, blob)
+    await this.duckDB.writeFile(fileName, blob)
   }
 
   /**
    * @description 从 IndexedDB 读取文件并注册到 DuckDB
    * @param fileName 文件名
    */
-  public loadFile = async (fileName: string) => {
+  public readFile = async (fileName: string) => {
     const blob = await this.indexedDB.readFile(fileName)
     if (blob) {
-      await this.duckDB.registerFile(fileName, blob)
+      await this.duckDB.writeFile(fileName, blob)
     } else {
       throw new Error(`File ${fileName} not found in IndexedDB`)
     }

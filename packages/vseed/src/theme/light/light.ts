@@ -5,6 +5,7 @@ import {
   getLightColor,
   getLightCrosshairLine,
   getLightCrosshairRect,
+  getLightPivotChartGridConfig,
   getLightTableConfig,
 } from '../common'
 import { getDefaultTooltip } from '../common/tooltip'
@@ -46,6 +47,8 @@ export const lightTheme = (): CustomThemeConfig => {
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairLine,
+
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       column: {
         ...baseConfig,
@@ -53,6 +56,7 @@ export const lightTheme = (): CustomThemeConfig => {
         yAxis: linearAxis,
         crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       columnParallel: {
         ...baseConfig,
@@ -60,6 +64,7 @@ export const lightTheme = (): CustomThemeConfig => {
         yAxis: linearAxis,
         crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       columnPercent: {
         ...baseConfig,
@@ -69,6 +74,7 @@ export const lightTheme = (): CustomThemeConfig => {
         },
         crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       bar: {
         ...baseConfig,
@@ -76,6 +82,7 @@ export const lightTheme = (): CustomThemeConfig => {
         yAxis: barBandAxis,
         crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       barParallel: {
         ...baseConfig,
@@ -83,6 +90,7 @@ export const lightTheme = (): CustomThemeConfig => {
         yAxis: barBandAxis,
         crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       barPercent: {
         ...baseConfig,
@@ -92,12 +100,14 @@ export const lightTheme = (): CustomThemeConfig => {
         yAxis: barBandAxis,
         crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       area: {
         ...baseConfig,
         xAxis: bandAxis,
         yAxis: linearAxis,
         crosshairLine,
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       areaPercent: {
         ...baseConfig,
@@ -106,6 +116,7 @@ export const lightTheme = (): CustomThemeConfig => {
           ...linearAxis,
         },
         crosshairLine,
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       scatter: {
         ...baseConfig,
@@ -130,6 +141,7 @@ export const lightTheme = (): CustomThemeConfig => {
           showValue: false,
           showValuePercent: false,
         },
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       dualAxis: {
         ...baseConfig,
@@ -141,6 +153,7 @@ export const lightTheme = (): CustomThemeConfig => {
           secondary: 'line',
         },
         crosshairRect,
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       // polar
       pie: {
@@ -151,6 +164,7 @@ export const lightTheme = (): CustomThemeConfig => {
           labelLayout: 'labelLine',
           showDimension: true,
         },
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       donut: {
         ...baseConfig,
@@ -160,9 +174,11 @@ export const lightTheme = (): CustomThemeConfig => {
           labelLayout: 'labelLine',
           showDimension: true,
         },
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       radar: {
         ...baseConfig,
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       rose: {
         ...baseConfig,
@@ -171,6 +187,7 @@ export const lightTheme = (): CustomThemeConfig => {
           showValuePercent: true,
           showDimension: true,
         },
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       roseParallel: {
         ...baseConfig,
@@ -179,10 +196,14 @@ export const lightTheme = (): CustomThemeConfig => {
           showValuePercent: true,
           showDimension: true,
         },
+
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       // other
       funnel: {
         ...baseConfig,
+
+        pivotGrid: getLightPivotChartGridConfig(),
       },
       heatmap: {
         ...baseConfig,
@@ -190,6 +211,8 @@ export const lightTheme = (): CustomThemeConfig => {
           ...baseConfig.label,
           labelColorSmartInvert: true,
         },
+
+        pivotGrid: getLightPivotChartGridConfig(),
       },
     },
   }

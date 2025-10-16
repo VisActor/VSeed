@@ -64,6 +64,7 @@ export const annotationPoint: SpecPipe = (spec, context) => {
               fontSize: textFontSize,
               fontWeight: textFontWeight,
               dy: textFontSize,
+              dx: -10, // 由于vchart tag实现问题，需要设置这个强制偏移量
             },
             labelBackground: {
               visible: textBackgroundVisible,
@@ -74,6 +75,7 @@ export const annotationPoint: SpecPipe = (spec, context) => {
                 stroke: textBackgroundBorderColor,
                 lineWidth: textBackgroundBorderWidth,
                 dy: textFontSize,
+                dx: -10, // 由于vchart tag实现问题，需要设置这个强制偏移量
               },
             },
           },

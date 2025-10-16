@@ -35,6 +35,8 @@
 
 多指标的场景, 无需担心多个指标的值会矛盾, 因为所有的绘图相关的指标, 都会经过`foldMeasures`处理, 合并为一个指标, 代表一个数据点, 所以不会矛盾
 
+注意: encoding的label优先级更高, 此配置不影响encoding的label
+
 :::
 
 ## showValuePercent
@@ -45,6 +47,21 @@
 标签是否显示指标值的百分比
 
 多指标的场景, 无需担心多个指标的值会矛盾, 因为所有的绘图相关的指标, 都会经过`foldMeasures`处理, 合并为一个指标, 代表一个数据点, 所以不会矛盾
+
+注意: encoding的label优先级更高, 此配置不影响encoding的label
+
+:::
+
+## showDimension
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+标签是否显示维度标签
+
+展示所有维度标签
+
+注意: encoding的label优先级更高, 此配置不影响encoding的label
 
 :::
 

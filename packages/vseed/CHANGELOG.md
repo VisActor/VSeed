@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.30
+
+### Patch Changes
+
+- feat: pivot chart theme and one measure name
+
 ## 0.1.29
 
 ## 0.1.28

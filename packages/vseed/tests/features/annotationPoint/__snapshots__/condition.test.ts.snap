@@ -1129,7 +1129,9 @@ exports[`condition 2`] = `
   },
   "markPoint": [
     {
+      "coordinate": [Function],
       "itemContent": {
+        "confine": true,
         "offsetX": -15,
         "offsetY": 0,
         "text": {
@@ -1137,6 +1139,7 @@ exports[`condition 2`] = `
             "padding": 2,
             "style": {
               "cornerRadius": 4,
+              "dx": -10,
               "dy": 12,
               "fill": "#212121",
               "lineWidth": 1,
@@ -1145,6 +1148,7 @@ exports[`condition 2`] = `
             "visible": true,
           },
           "style": {
+            "dx": -10,
             "dy": 12,
             "fill": "#ffffff",
             "fontSize": 12,
@@ -1161,12 +1165,13 @@ exports[`condition 2`] = `
       "itemLine": {
         "visible": false,
       },
-      "position": [Function],
       "regionRelative": true,
       "zIndex": 1000,
     },
     {
+      "coordinate": [Function],
       "itemContent": {
+        "confine": true,
         "offsetX": -15,
         "offsetY": 0,
         "text": {
@@ -1174,6 +1179,7 @@ exports[`condition 2`] = `
             "padding": 2,
             "style": {
               "cornerRadius": 4,
+              "dx": -10,
               "dy": 12,
               "fill": "#212121",
               "lineWidth": 1,
@@ -1182,6 +1188,7 @@ exports[`condition 2`] = `
             "visible": true,
           },
           "style": {
+            "dx": -10,
             "dy": 12,
             "fill": "#ffffff",
             "fontSize": 12,
@@ -1198,12 +1205,13 @@ exports[`condition 2`] = `
       "itemLine": {
         "visible": false,
       },
-      "position": [Function],
       "regionRelative": true,
       "zIndex": 1000,
     },
     {
+      "coordinate": [Function],
       "itemContent": {
+        "confine": true,
         "offsetX": -15,
         "offsetY": 0,
         "text": {
@@ -1211,6 +1219,7 @@ exports[`condition 2`] = `
             "padding": 2,
             "style": {
               "cornerRadius": 4,
+              "dx": -10,
               "dy": 12,
               "fill": "#212121",
               "lineWidth": 1,
@@ -1219,6 +1228,7 @@ exports[`condition 2`] = `
             "visible": true,
           },
           "style": {
+            "dx": -10,
             "dy": 12,
             "fill": "#ffffff",
             "fontSize": 12,
@@ -1235,12 +1245,13 @@ exports[`condition 2`] = `
       "itemLine": {
         "visible": false,
       },
-      "position": [Function],
       "regionRelative": true,
       "zIndex": 1000,
     },
     {
+      "coordinate": [Function],
       "itemContent": {
+        "confine": true,
         "offsetX": -15,
         "offsetY": 0,
         "text": {
@@ -1248,6 +1259,7 @@ exports[`condition 2`] = `
             "padding": 2,
             "style": {
               "cornerRadius": 4,
+              "dx": -10,
               "dy": 12,
               "fill": "#212121",
               "lineWidth": 1,
@@ -1256,6 +1268,7 @@ exports[`condition 2`] = `
             "visible": true,
           },
           "style": {
+            "dx": -10,
             "dy": 12,
             "fill": "#ffffff",
             "fontSize": 12,
@@ -1272,12 +1285,13 @@ exports[`condition 2`] = `
       "itemLine": {
         "visible": false,
       },
-      "position": [Function],
       "regionRelative": true,
       "zIndex": 1000,
     },
     {
+      "coordinate": [Function],
       "itemContent": {
+        "confine": true,
         "offsetX": 0,
         "offsetY": 0,
         "text": {
@@ -1285,6 +1299,7 @@ exports[`condition 2`] = `
             "padding": 2,
             "style": {
               "cornerRadius": 4,
+              "dx": -10,
               "dy": 12,
               "fill": "#212121",
               "lineWidth": 1,
@@ -1293,6 +1308,7 @@ exports[`condition 2`] = `
             "visible": true,
           },
           "style": {
+            "dx": -10,
             "dy": 12,
             "fill": "#ffffff",
             "fontSize": 12,
@@ -1309,12 +1325,13 @@ exports[`condition 2`] = `
       "itemLine": {
         "visible": false,
       },
-      "position": [Function],
       "regionRelative": true,
       "zIndex": 1000,
     },
     {
+      "coordinate": [Function],
       "itemContent": {
+        "confine": true,
         "offsetX": 0,
         "offsetY": 0,
         "text": {
@@ -1322,6 +1339,7 @@ exports[`condition 2`] = `
             "padding": 2,
             "style": {
               "cornerRadius": 4,
+              "dx": -10,
               "dy": 12,
               "fill": "#212121",
               "lineWidth": 1,
@@ -1330,6 +1348,7 @@ exports[`condition 2`] = `
             "visible": true,
           },
           "style": {
+            "dx": -10,
             "dy": 12,
             "fill": "#ffffff",
             "fontSize": 12,
@@ -1346,12 +1365,13 @@ exports[`condition 2`] = `
       "itemLine": {
         "visible": false,
       },
-      "position": [Function],
       "regionRelative": true,
       "zIndex": 1000,
     },
     {
+      "coordinate": [Function],
       "itemContent": {
+        "confine": true,
         "offsetX": 0,
         "offsetY": 0,
         "text": {
@@ -1359,6 +1379,7 @@ exports[`condition 2`] = `
             "padding": 2,
             "style": {
               "cornerRadius": 4,
+              "dx": -10,
               "dy": 12,
               "fill": "#212121",
               "lineWidth": 1,
@@ -1367,6 +1388,7 @@ exports[`condition 2`] = `
             "visible": true,
           },
           "style": {
+            "dx": -10,
             "dy": 12,
             "fill": "#ffffff",
             "fontSize": 12,
@@ -1383,7 +1405,6 @@ exports[`condition 2`] = `
       "itemLine": {
         "visible": false,
       },
-      "position": [Function],
       "regionRelative": true,
       "zIndex": 1000,
     },

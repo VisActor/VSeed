@@ -1,4 +1,4 @@
-import type { ICartesianSeries, ILineChartSpec } from '@visactor/vchart'
+import type { ILineChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { Datum, SpecPipe } from 'src/types'
 import { isSubset } from './utils'
@@ -41,15 +41,8 @@ export const annotationPoint: SpecPipe = (spec, context) => {
       return {
         zIndex: ANNOTATION_Z_INDEX,
         regionRelative: true,
-        position: (data: Datum[], context: ICartesianSeries) => {
-          const targetDatum = data.find((item) => isSubset(datum, item))
-          if (targetDatum) {
-            const { x, y } = context.dataToPosition(targetDatum) as { x: number; y: number }
-            return {
-              x,
-              y,
-            }
-          }
+        coordinate: (data: Datum[]) => {
+          return data.find((item) => isSubset(datum, item))
         },
 
         itemLine: {
@@ -58,6 +51,7 @@ export const annotationPoint: SpecPipe = (spec, context) => {
         itemContent: {
           offsetY,
           offsetX,
+          confine: true,
           text: {
             text: text,
             style: {
@@ -70,6 +64,7 @@ export const annotationPoint: SpecPipe = (spec, context) => {
               fontSize: textFontSize,
               fontWeight: textFontWeight,
               dy: textFontSize,
+              dx: -10, // 由于vchart tag实现问题，需要设置这个强制偏移量
             },
             labelBackground: {
               visible: textBackgroundVisible,
@@ -80,6 +75,7 @@ export const annotationPoint: SpecPipe = (spec, context) => {
                 stroke: textBackgroundBorderColor,
                 lineWidth: textBackgroundBorderWidth,
                 dy: textFontSize,
+                dx: -10, // 由于vchart tag实现问题，需要设置这个强制偏移量
               },
             },
           },

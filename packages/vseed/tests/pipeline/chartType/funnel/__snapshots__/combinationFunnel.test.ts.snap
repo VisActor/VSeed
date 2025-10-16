@@ -43,6 +43,14 @@ exports[`combinationFunnel 1`] = `
         "position": "rt",
         "shapeType": "rectRound",
       },
+      "pivotGrid": {
+        "bodyFontColor": "#141414",
+        "borderColor": "#e3e5eb",
+        "headerBackgroundColor": "#f6f7f9",
+        "headerFontColor": "#21252c",
+        "hoverHeaderBackgroundColor": "#D9DDE4",
+        "hoverHeaderInlineBackgroundColor": "#D9DDE455",
+      },
       "tooltip": {
         "enable": true,
       },
@@ -87,6 +95,14 @@ exports[`combinationFunnel 1`] = `
           "maxSize": 1,
           "position": "rt",
           "shapeType": "rectRound",
+        },
+        "pivotGrid": {
+          "bodyFontColor": "#141414",
+          "borderColor": "#e3e5eb",
+          "headerBackgroundColor": "#f6f7f9",
+          "headerFontColor": "#21252c",
+          "hoverHeaderBackgroundColor": "#D9DDE4",
+          "hoverHeaderInlineBackgroundColor": "#D9DDE455",
         },
         "tooltip": {
           "enable": true,
@@ -1060,7 +1076,7 @@ exports[`combinationFunnel 2`] = `
       },
     },
     "bottomFrozenStyle": {
-      "bgColor": "rgba(0,0,0,0)",
+      "bgColor": "#f6f7f9",
       "borderColor": "#e3e5eb",
       "borderLineWidth": 1,
       "hover": {
@@ -1068,7 +1084,7 @@ exports[`combinationFunnel 2`] = `
       },
     },
     "cornerHeaderStyle": {
-      "bgColor": "rgba(0,0,0,0)",
+      "bgColor": "#f6f7f9",
       "borderColor": "#e3e5eb",
       "borderLineWidth": 1,
       "color": "#21252c",
@@ -1091,7 +1107,7 @@ exports[`combinationFunnel 2`] = `
       "textAlign": "center",
     },
     "cornerLeftBottomCellStyle": {
-      "bgColor": "rgba(0,0,0,0)",
+      "bgColor": "#f6f7f9",
       "borderColor": "#e3e5eb",
       "borderLineWidth": [
         1,
@@ -1113,7 +1129,7 @@ exports[`combinationFunnel 2`] = `
       },
     },
     "cornerRightBottomCellStyle": {
-      "bgColor": "rgba(0,0,0,0)",
+      "bgColor": "#f6f7f9",
       "borderColor": "#e3e5eb",
       "borderLineWidth": 0,
       "frameStyle": {
@@ -1130,7 +1146,7 @@ exports[`combinationFunnel 2`] = `
       },
     },
     "cornerRightTopCellStyle": {
-      "bgColor": "rgba(0,0,0,0)",
+      "bgColor": "#f6f7f9",
       "borderColor": "#e3e5eb",
       "borderLineWidth": 0,
       "frameStyle": {
@@ -1151,7 +1167,7 @@ exports[`combinationFunnel 2`] = `
       "cornerRadius": 4,
     },
     "headerStyle": {
-      "bgColor": "rgba(0,0,0,0)",
+      "bgColor": "#f6f7f9",
       "borderColor": "#e3e5eb",
       "borderLineWidth": 1,
       "color": "#21252c",
@@ -1164,7 +1180,7 @@ exports[`combinationFunnel 2`] = `
       "textAlign": "center",
     },
     "rightFrozenStyle": {
-      "bgColor": "rgba(0,0,0,0)",
+      "bgColor": "#f6f7f9",
       "borderColor": "#e3e5eb",
       "borderLineWidth": 1,
       "hover": {
@@ -1172,7 +1188,7 @@ exports[`combinationFunnel 2`] = `
       },
     },
     "rowHeaderStyle": {
-      "bgColor": "rgba(0,0,0,0)",
+      "bgColor": "#f6f7f9",
       "borderColor": "#e3e5eb",
       "borderLineWidth": 1,
       "color": "#21252c",

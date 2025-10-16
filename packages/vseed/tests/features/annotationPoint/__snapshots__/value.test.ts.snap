@@ -63,6 +63,14 @@ exports[`value 1`] = `
         "position": "rt",
         "shapeType": "rectRound",
       },
+      "pivotGrid": {
+        "bodyFontColor": "#141414",
+        "borderColor": "#e3e5eb",
+        "headerBackgroundColor": "#f6f7f9",
+        "headerFontColor": "#21252c",
+        "hoverHeaderBackgroundColor": "#D9DDE4",
+        "hoverHeaderInlineBackgroundColor": "#D9DDE455",
+      },
       "stackCornerRadius": [
         4,
         4,
@@ -197,6 +205,14 @@ exports[`value 1`] = `
           "maxSize": 1,
           "position": "rt",
           "shapeType": "rectRound",
+        },
+        "pivotGrid": {
+          "bodyFontColor": "#141414",
+          "borderColor": "#e3e5eb",
+          "headerBackgroundColor": "#f6f7f9",
+          "headerFontColor": "#21252c",
+          "hoverHeaderBackgroundColor": "#D9DDE4",
+          "hoverHeaderInlineBackgroundColor": "#D9DDE455",
         },
         "stackCornerRadius": [
           4,

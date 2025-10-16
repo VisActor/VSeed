@@ -64,16 +64,9 @@ exports[`emptyPivotTable 1`] = `
       "index": 0,
     },
   ],
-  "dimensions": [
-    {
-      "alias": "指标名称",
-      "id": "__MeaName__",
-    },
-  ],
+  "dimensions": [],
   "encoding": {
-    "column": [
-      "__MeaName__",
-    ],
+    "column": [],
     "detail": [],
     "row": [],
     "tooltip": [],
@@ -94,13 +87,7 @@ exports[`emptyPivotTable 2`] = `
   "autoWrapText": true,
   "columnResizeMode": "all",
   "columnResizeType": "column",
-  "columns": [
-    {
-      "dimensionKey": "__MeaName__",
-      "title": "指标名称",
-      "width": "auto",
-    },
-  ],
+  "columns": [],
   "corner": {
     "titleOnDimension": "all",
   },

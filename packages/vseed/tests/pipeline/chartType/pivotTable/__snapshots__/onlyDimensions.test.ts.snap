@@ -92,15 +92,10 @@ exports[`onlyDimensions 1`] = `
       "alias": "yest",
       "id": "yest",
     },
-    {
-      "alias": "指标名称",
-      "id": "__MeaName__",
-    },
   ],
   "encoding": {
     "column": [
       "date",
-      "__MeaName__",
     ],
     "detail": [],
     "row": [
@@ -128,11 +123,6 @@ exports[`onlyDimensions 2`] = `
     {
       "dimensionKey": "date",
       "title": "date",
-      "width": "auto",
-    },
-    {
-      "dimensionKey": "__MeaName__",
-      "title": "指标名称",
       "width": "auto",
     },
   ],

@@ -70,5 +70,9 @@
   "analysis": {
     "en-US": "analysis",
     "zh-CN": "分析"
+  },
+  "designPhilosophy": {
+    "en-US": "designPhilosophy",
+    "zh-CN": "设计哲学"
   }
 }

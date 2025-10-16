@@ -1,1 +1,14 @@
-["index", "devProgress", "scripts", "tests", "docs", "publish"]
+[
+  "index",
+  "devProgress",
+  "scripts",
+  "tests",
+  "docs",
+  "publish",
+  {
+    "type": "dir",
+    "name": "designPhilosophy",
+    "label": "设计哲学",
+    "collapsed": false
+  }
+]

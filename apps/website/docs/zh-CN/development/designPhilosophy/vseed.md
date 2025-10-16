@@ -17,7 +17,7 @@
 3. 强大的数据重塑能力, 无需进行任何数据处理, 任意数量维度、指标, 任意图表类型皆可出图 [Demo](/guide/intro/dataReshape)
 4. `VSeed`是完全可序列化的, 因此支持跨平台传输`VSeed DSL` [Demo](/guide/intro/crossPlatformRender)
 5. 开箱即用: 如数值格式、国际化、深浅色主题、常用样式等等 [Demo](/guide/intro/internationalization)
-6. 优秀的数据处理性能, 支持在`Node`端处理数据, 在`Web`端进行可视化 [Demo](/guide/intro/separateBuildtml)
+6. 优秀的数据处理性能, 支持在`Node`端处理数据, 在`Web`端进行可视化 [Demo](/guide/intro/separateBuild)
 
 ## VSeed 的劣势是什么
 

@@ -5,6 +5,7 @@
   "tests",
   "docs",
   "publish",
+  "architecture",
   {
     "type": "dir",
     "name": "designPhilosophy",

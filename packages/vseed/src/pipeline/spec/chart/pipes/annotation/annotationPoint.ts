@@ -1,4 +1,4 @@
-import type { ICartesianSeries, ILineChartSpec } from '@visactor/vchart'
+import type { ILineChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { Datum, SpecPipe } from 'src/types'
 import { isSubset } from './utils'
@@ -41,15 +41,8 @@ export const annotationPoint: SpecPipe = (spec, context) => {
       return {
         zIndex: ANNOTATION_Z_INDEX,
         regionRelative: true,
-        position: (data: Datum[], context: ICartesianSeries) => {
-          const targetDatum = data.find((item) => isSubset(datum, item))
-          if (targetDatum) {
-            const { x, y } = context.dataToPosition(targetDatum) as { x: number; y: number }
-            return {
-              x,
-              y,
-            }
-          }
+        coordinate: (data: Datum[]) => {
+          return data.find((item) => isSubset(datum, item))
         },
 
         itemLine: {

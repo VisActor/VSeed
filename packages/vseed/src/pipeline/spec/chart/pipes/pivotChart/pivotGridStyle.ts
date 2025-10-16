@@ -1,21 +1,27 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
 import { isCombination, isPivot } from 'src/pipeline/utils'
-import type { SpecPipe } from 'src/types'
+import type { Config, SpecPipe } from 'src/types'
 
 export const pivotGridStyle: SpecPipe = (spec, context) => {
-  const { vseed } = context
+  const { vseed, advancedVSeed } = context
+  const { config, chartType } = advancedVSeed
+  const themConfig = (config?.[chartType] as Config['line'])?.pivotGrid ?? {}
 
   const onlyCombination = !isPivot(vseed) && isCombination(vseed)
 
   const result = { ...spec } as PivotChartConstructorOptions
   const transparent = 'rgba(0,0,0,0)'
 
-  const borderColor = '#e3e5eb'
-  const bodyFontColor = '#141414'
-  const headerFontColor = '#21252c'
-  const headerBackgroundColor = 'rgba(0,0,0,0)'
-  const hoverHeaderBackgroundColor = onlyCombination ? transparent : '#D9DDE4'
-  const hoverHeaderInlineBackgroundColor = onlyCombination ? transparent : '#D9DDE455'
+  const borderColor = themConfig.borderColor ?? '#e3e5eb'
+  const bodyFontColor = themConfig.bodyFontColor ?? '#141414'
+  const headerFontColor = themConfig.headerFontColor ?? '#21252c'
+  const headerBackgroundColor = themConfig.headerBackgroundColor ?? 'rgba(0,0,0,0)'
+  const hoverHeaderBackgroundColor = onlyCombination
+    ? transparent
+    : (themConfig.hoverHeaderBackgroundColor ?? '#D9DDE4')
+  const hoverHeaderInlineBackgroundColor = onlyCombination
+    ? transparent
+    : (themConfig.hoverHeaderInlineBackgroundColor ?? '#D9DDE455')
 
   return {
     ...result,

@@ -40,6 +40,15 @@ export const zTableConfig = z.object({
 })
 export const zPivotTableConfig = zTableConfig
 
+export const zPivotChartGridConfig = z.object({
+  borderColor: z.string().nullish(),
+  bodyFontColor: z.string().nullish(),
+  headerFontColor: z.string().nullish(),
+  headerBackgroundColor: z.string().nullish(),
+  hoverHeaderBackgroundColor: z.string().nullish(),
+  hoverHeaderInlineBackgroundColor: z.string().nullish(),
+})
+
 export const zLineConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
   label: zLabel.nullish(),
@@ -50,6 +59,7 @@ export const zLineConfig = z.object({
   xAxis: zXBandAxis.nullish(),
   yAxis: zYLinearAxis.nullish(),
   crosshairLine: zCrosshairLine.nullish(),
+  pivotGrid: zPivotChartGridConfig.nullish(),
 })
 export const zColumnConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -62,6 +72,7 @@ export const zColumnConfig = z.object({
   yAxis: zYLinearAxis.nullish(),
   crosshairRect: zCrosshairRect.nullish(),
   stackCornerRadius: zStackCornerRadius.nullish(),
+  pivotGrid: zPivotChartGridConfig.nullish(),
 })
 export const zColumnParallelConfig = zColumnConfig
 export const zColumnPercentConfig = zColumnConfig
@@ -76,6 +87,7 @@ export const zBarConfig = z.object({
   yAxis: zYBandAxis.nullish(),
   crosshairRect: zCrosshairRect.nullish(),
   stackCornerRadius: zStackCornerRadius.nullish(),
+  pivotGrid: zPivotChartGridConfig.nullish(),
 })
 export const zBarParallelConfig = zBarConfig
 export const zBarPercentConfig = zBarConfig
@@ -89,6 +101,7 @@ export const zAreaConfig = z.object({
   xAxis: zXBandAxis.nullish(),
   yAxis: zYLinearAxis.nullish(),
   crosshairLine: zCrosshairLine.nullish(),
+  pivotGrid: zPivotChartGridConfig.nullish(),
 })
 export const zAreaPercentConfig = zAreaConfig
 
@@ -106,6 +119,7 @@ export const zDualAxisConfig = z.object({
 
   xAxis: zXBandAxis.nullish(),
   crosshairRect: zCrosshairRect.nullish(),
+  pivotGrid: zPivotChartGridConfig.nullish(),
 })
 export const zScatterConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -119,6 +133,7 @@ export const zScatterConfig = z.object({
   crosshairLine: zCrosshairLine.nullish(),
   size: z.number().or(z.array(z.number())).nullish(),
   sizeRange: z.number().or(z.array(z.number())).nullish(),
+  pivotGrid: zPivotChartGridConfig.nullish(),
 })
 
 // polar
@@ -128,6 +143,7 @@ export const zRoseConfig = z.object({
   color: zColor.nullish(),
   tooltip: zTooltip.nullish(),
   legend: zLegend.nullish(),
+  pivotGrid: zPivotChartGridConfig.nullish(),
 })
 export const zRoseParallelConfig = zRoseConfig
 export const zPieConfig = z.object({
@@ -136,6 +152,7 @@ export const zPieConfig = z.object({
   color: zColor.nullish(),
   tooltip: zTooltip.nullish(),
   legend: zLegend.nullish(),
+  pivotGrid: zPivotChartGridConfig.nullish(),
 })
 export const zDonutConfig = zPieConfig
 export const zRadarConfig = zPieConfig
@@ -149,6 +166,7 @@ export const zHeatmapConfig = zAreaConfig
  */
 export type TableConfig = z.infer<typeof zTableConfig>
 export type PivotTableConfig = z.infer<typeof zPivotTableConfig>
+export type PivotChartGridConfig = z.infer<typeof zPivotChartGridConfig>
 // cartesian
 export type LineConfig = z.infer<typeof zLineConfig>
 export type ColumnConfig = z.infer<typeof zColumnConfig>

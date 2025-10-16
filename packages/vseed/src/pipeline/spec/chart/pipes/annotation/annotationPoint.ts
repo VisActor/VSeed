@@ -51,6 +51,7 @@ export const annotationPoint: SpecPipe = (spec, context) => {
         itemContent: {
           offsetY,
           offsetX,
+          confine: true,
           text: {
             text: text,
             style: {

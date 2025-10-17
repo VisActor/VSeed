@@ -193,20 +193,20 @@ exports[`combinationPivotTable 1`] = `
     },
     {
       "alias": "指标名称",
+      "encoding": "column",
       "id": "__MeaName__",
     },
   ],
   "encoding": {
     "column": [
       "date",
+      "__MeaName__",
     ],
     "detail": [
       "sales",
       "profit",
     ],
-    "row": [
-      "__MeaName__",
-    ],
+    "row": [],
     "tooltip": [
       "sales",
       "profit",
@@ -272,9 +272,14 @@ exports[`combinationPivotTable 2`] = `
       "title": "日期",
       "width": "auto",
     },
+    {
+      "dimensionKey": "__MeaName__",
+      "title": "指标名称",
+      "width": "auto",
+    },
   ],
   "corner": {
-    "titleOnDimension": "all",
+    "titleOnDimension": "column",
   },
   "dataConfig": {
     "aggregationRules": [
@@ -291,7 +296,7 @@ exports[`combinationPivotTable 2`] = `
     ],
   },
   "heightMode": "autoHeight",
-  "hideIndicatorName": true,
+  "hideIndicatorName": false,
   "hover": {
     "highlightMode": "cross",
   },
@@ -301,11 +306,11 @@ exports[`combinationPivotTable 2`] = `
       "cellType": "text",
       "format": [Function],
       "indicatorKey": "__MeaValue__",
-      "title": "indicator",
+      "title": "",
       "width": "auto",
     },
   ],
-  "indicatorsAsCol": true,
+  "indicatorsAsCol": false,
   "records": [
     {
       "__MeaId__": "sales",
@@ -428,13 +433,7 @@ exports[`combinationPivotTable 2`] = `
       "profit": 50000,
     },
   ],
-  "rows": [
-    {
-      "dimensionKey": "__MeaName__",
-      "title": "指标名称",
-      "width": "auto",
-    },
-  ],
+  "rows": [],
   "select": {
     "headerSelectMode": "inline",
     "highlightMode": "cell",
@@ -601,6 +600,7 @@ exports[`combinationPivotTable 3`] = `
   "colorItems": [],
   "hasTheme": true,
   "specPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

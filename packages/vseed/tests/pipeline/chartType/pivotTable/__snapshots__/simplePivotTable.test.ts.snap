@@ -505,6 +505,7 @@ exports[`simplePivotTable 1`] = `
     },
     {
       "alias": "指标名称",
+      "encoding": "column",
       "id": "__MeaName__",
     },
   ],
@@ -581,7 +582,7 @@ exports[`simplePivotTable 2`] = `
     },
   ],
   "corner": {
-    "titleOnDimension": "all",
+    "titleOnDimension": "column",
   },
   "dataConfig": {
     "aggregationRules": [
@@ -623,7 +624,7 @@ exports[`simplePivotTable 2`] = `
       "cellType": "text",
       "format": [Function],
       "indicatorKey": "__MeaValue__",
-      "title": "indicator",
+      "title": "",
       "width": "auto",
     },
   ],
@@ -1228,6 +1229,7 @@ exports[`simplePivotTable 3`] = `
   "colorItems": [],
   "hasTheme": true,
   "specPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

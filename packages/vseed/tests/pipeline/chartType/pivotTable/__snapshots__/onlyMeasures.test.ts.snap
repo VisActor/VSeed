@@ -169,6 +169,7 @@ exports[`onlyMeasures 1`] = `
   "dimensions": [
     {
       "alias": "指标名称",
+      "encoding": "column",
       "id": "__MeaName__",
     },
   ],
@@ -230,7 +231,7 @@ exports[`onlyMeasures 2`] = `
     },
   ],
   "corner": {
-    "titleOnDimension": "all",
+    "titleOnDimension": "column",
   },
   "dataConfig": {
     "aggregationRules": [
@@ -247,7 +248,7 @@ exports[`onlyMeasures 2`] = `
     ],
   },
   "heightMode": "autoHeight",
-  "hideIndicatorName": true,
+  "hideIndicatorName": false,
   "hover": {
     "highlightMode": "cross",
   },
@@ -257,11 +258,11 @@ exports[`onlyMeasures 2`] = `
       "cellType": "text",
       "format": [Function],
       "indicatorKey": "__MeaValue__",
-      "title": "indicator",
+      "title": "",
       "width": "auto",
     },
   ],
-  "indicatorsAsCol": true,
+  "indicatorsAsCol": false,
   "records": [
     {
       "__MeaId__": "sales",
@@ -531,6 +532,7 @@ exports[`onlyMeasures 3`] = `
   "colorItems": [],
   "hasTheme": true,
   "specPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

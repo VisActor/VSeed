@@ -5,6 +5,7 @@ export const pivotRows: SpecPipe = (spec, context) => {
   const dimensions = advancedVSeed.dimensions as Dimensions
   const { encoding } = advancedVSeed
   const rows = dimensions.filter((item) => encoding.row?.includes(item.id))
+
   return {
     ...spec,
     rows: rows.map((item) => {

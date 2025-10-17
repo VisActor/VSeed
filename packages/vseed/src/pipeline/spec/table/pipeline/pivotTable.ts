@@ -10,6 +10,7 @@ import {
   cornerHeaderStyle,
   frameStyle,
   selectionStyle,
+  titleOnDimension,
 } from '../pipes'
 import { dataConfig } from '../pipes/indicators/pivotDataConfig'
 
@@ -17,6 +18,7 @@ export const pivotTableSpecPipeline: SpecPipeline = [
   initPivotTable,
   pivotColumns,
   pivotRows,
+  titleOnDimension,
   pivotIndicators,
   bodyStyle,
   headerStyle,

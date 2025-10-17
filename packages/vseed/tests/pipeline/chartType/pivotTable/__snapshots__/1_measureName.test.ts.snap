@@ -530,7 +530,7 @@ exports[`1_measureName 2`] = `
     },
   ],
   "corner": {
-    "titleOnDimension": "all",
+    "titleOnDimension": "row",
   },
   "dataConfig": {
     "aggregationRules": [
@@ -557,7 +557,7 @@ exports[`1_measureName 2`] = `
       "cellType": "text",
       "format": [Function],
       "indicatorKey": "__MeaValue__",
-      "title": "indicator",
+      "title": "",
       "width": "auto",
     },
   ],
@@ -1126,6 +1126,7 @@ exports[`1_measureName 3`] = `
   "colorItems": [],
   "hasTheme": true,
   "specPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

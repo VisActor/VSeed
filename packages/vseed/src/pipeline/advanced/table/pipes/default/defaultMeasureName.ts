@@ -12,6 +12,7 @@ export const defaultMeasureName: AdvancedPipe = (advancedVSeed) => {
     result.dimensions?.push({
       id: MeasureName,
       alias: intl.i18n`指标名称`,
+      encoding: 'column',
     } as Dimension)
   }
 

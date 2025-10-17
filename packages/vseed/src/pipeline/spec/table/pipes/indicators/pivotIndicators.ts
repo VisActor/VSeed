@@ -9,17 +9,20 @@ export const pivotIndicators: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { measures, datasetReshapeInfo } = advancedVSeed
   const { foldInfo } = datasetReshapeInfo[0]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
+  const hasRow = ((spec as any)?.rows as any[])?.length > 0
+  const foldMapValues = Object.values(foldInfo.foldMap)
 
   return {
     ...spec,
-    indicatorsAsCol: true,
     indicatorTitle: intl.i18n`指标名称`,
-    hideIndicatorName: true,
+    indicatorsAsCol: hasRow,
+    hideIndicatorName: hasRow,
     indicators: [
       {
         cellType: 'text',
         indicatorKey: foldInfo.measureValue,
-        title: 'indicator',
+        title: foldMapValues.length > 1 ? '' : foldMapValues[0],
         width: 'auto',
         format: fieldFormat(measures, foldInfo as FoldInfo),
       },

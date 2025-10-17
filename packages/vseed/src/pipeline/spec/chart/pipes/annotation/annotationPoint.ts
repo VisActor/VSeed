@@ -3,6 +3,7 @@ import { selector } from '../../../../../dataSelector'
 import type { Datum, SpecPipe } from 'src/types'
 import { isSubset } from './utils'
 import { ANNOTATION_Z_INDEX } from '../../../../utils/constant'
+import { isBarLikeChart } from 'src/pipeline/utils/chatType'
 
 export const annotationPoint: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
@@ -14,6 +15,16 @@ export const annotationPoint: SpecPipe = (spec, context) => {
 
   const { annotationPoint } = annotation
   const annotationPointList = Array.isArray(annotationPoint) ? annotationPoint : [annotationPoint]
+  const isHorizontalBar = isBarLikeChart(advancedVSeed)
+  const defaultStyle = isHorizontalBar
+    ? {
+        textAlign: 'right',
+        textBaseline: 'middle',
+      }
+    : {
+        textAlign: 'center',
+        textBaseline: 'top',
+      }
 
   const markPoint = annotationPointList.flatMap((annotationPoint) => {
     const {
@@ -22,8 +33,8 @@ export const annotationPoint: SpecPipe = (spec, context) => {
       textColor = '#ffffff',
       textFontSize = 12,
       textFontWeight = 400,
-      textAlign = 'center',
-      textBaseline = 'top',
+      textAlign = defaultStyle.textAlign,
+      textBaseline = defaultStyle.textBaseline,
       textBackgroundBorderColor,
       textBackgroundBorderRadius = 4,
       textBackgroundBorderWidth = 1,
@@ -36,6 +47,8 @@ export const annotationPoint: SpecPipe = (spec, context) => {
 
     const dataset = advancedVSeed.dataset.flat()
     const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
+    const dx = -10 - (isHorizontalBar ? (textFontSize as number) : 0) // 由于vchart tag实现问题，需要设置这个强制偏移量
+    const dy = isHorizontalBar ? 0 : (textFontSize as number)
 
     return selectedData.map((datum) => {
       return {
@@ -63,8 +76,8 @@ export const annotationPoint: SpecPipe = (spec, context) => {
               lineWidth: 1,
               fontSize: textFontSize,
               fontWeight: textFontWeight,
-              dy: textFontSize,
-              dx: -10, // 由于vchart tag实现问题，需要设置这个强制偏移量
+              dx,
+              dy,
             },
             labelBackground: {
               visible: textBackgroundVisible,
@@ -74,8 +87,8 @@ export const annotationPoint: SpecPipe = (spec, context) => {
                 fill: textBackgroundColor,
                 stroke: textBackgroundBorderColor,
                 lineWidth: textBackgroundBorderWidth,
-                dy: textFontSize,
-                dx: -10, // 由于vchart tag实现问题，需要设置这个强制偏移量
+                dx,
+                dy,
               },
             },
           },

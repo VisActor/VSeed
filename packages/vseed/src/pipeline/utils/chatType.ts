@@ -23,6 +23,14 @@ export const isBarPercent = (vseed: VSeed) => {
   return vseed.chartType === ChartTypeEnum.BarPercent
 }
 
+export const isBarLikeChart = (vseed: VSeed) => {
+  return (
+    vseed.chartType === ChartTypeEnum.Bar ||
+    vseed.chartType === ChartTypeEnum.BarPercent ||
+    vseed.chartType === ChartTypeEnum.BarParallel
+  )
+}
+
 export const isVTable = (vseed: VSeed) => {
   return ['table', 'pivotTable'].includes(vseed.chartType)
 }

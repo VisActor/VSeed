@@ -89,13 +89,13 @@ exports[`emptyPivotTable 2`] = `
   "columnResizeType": "column",
   "columns": [],
   "corner": {
-    "titleOnDimension": "all",
+    "titleOnDimension": "row",
   },
   "dataConfig": {
     "aggregationRules": [],
   },
   "heightMode": "autoHeight",
-  "hideIndicatorName": true,
+  "hideIndicatorName": false,
   "hover": {
     "highlightMode": "cross",
   },
@@ -105,11 +105,11 @@ exports[`emptyPivotTable 2`] = `
       "cellType": "text",
       "format": [Function],
       "indicatorKey": "__MeaValue__",
-      "title": "indicator",
+      "title": undefined,
       "width": "auto",
     },
   ],
-  "indicatorsAsCol": true,
+  "indicatorsAsCol": false,
   "records": [
     {},
   ],
@@ -280,6 +280,7 @@ exports[`emptyPivotTable 3`] = `
   "colorItems": [],
   "hasTheme": true,
   "specPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

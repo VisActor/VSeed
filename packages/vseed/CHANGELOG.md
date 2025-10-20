@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.31
+
+### Patch Changes
+
+- 264c43b: fix: fix header of pivot table
+
 ## 0.1.30
 
 ### Patch Changes

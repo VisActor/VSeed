@@ -5,12 +5,24 @@ title: 发布
 
 # 发布
 
+## 生成 changeset
+
 要生成新的 changesets，请在仓库的根目录中执行 pnpm changeset。 .changeset 目录中生成的 markdown 文件应被提交到存储库。
 ```bash
 pnpm changeset
 ```
 
-指定版本，并更新变更日志文件。
+生成changeset后执行 git commit
+```bash
+git add .
+git commit -m "chore: commit message"
+```
+
+上述过程可多次重复, 每一次的changeset内容都会被累加至最终的版本发布.
+
+## 更新版本
+
+执行如下命令更新版本, 并更新ChangeLog。
 ```bash
 pnpm changeset version
 ```

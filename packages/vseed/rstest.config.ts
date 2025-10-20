@@ -10,4 +10,7 @@ export default defineConfig({
     reportsDirectory: './coverage',
     clean: false,
   },
+  output: {
+    externals: ['@visactor/vchart', '@visactor/vtable'],
+  },
 })

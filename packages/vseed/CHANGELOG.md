@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.32
+
+### Patch Changes
+
+- 4193252: feat: update theme about annotation
+
 ## 0.1.31
 
 ### Patch Changes

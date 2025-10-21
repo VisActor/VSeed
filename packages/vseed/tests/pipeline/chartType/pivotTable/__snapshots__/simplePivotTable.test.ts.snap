@@ -505,14 +505,13 @@ exports[`simplePivotTable 1`] = `
     },
     {
       "alias": "指标名称",
-      "encoding": "column",
+      "encoding": "row",
       "id": "__MeaName__",
     },
   ],
   "encoding": {
     "column": [
       "date",
-      "__MeaName__",
     ],
     "detail": [
       "goalProfit",
@@ -523,6 +522,7 @@ exports[`simplePivotTable 1`] = `
     ],
     "row": [
       "type",
+      "__MeaName__",
     ],
     "tooltip": [
       "goalProfit",
@@ -575,14 +575,9 @@ exports[`simplePivotTable 2`] = `
       "title": "date",
       "width": "auto",
     },
-    {
-      "dimensionKey": "__MeaName__",
-      "title": "指标名称",
-      "width": "auto",
-    },
   ],
   "corner": {
-    "titleOnDimension": "column",
+    "titleOnDimension": "row",
   },
   "dataConfig": {
     "aggregationRules": [
@@ -1060,6 +1055,11 @@ exports[`simplePivotTable 2`] = `
     {
       "dimensionKey": "type",
       "title": "type",
+      "width": "auto",
+    },
+    {
+      "dimensionKey": "__MeaName__",
+      "title": "指标名称",
       "width": "auto",
     },
   ],

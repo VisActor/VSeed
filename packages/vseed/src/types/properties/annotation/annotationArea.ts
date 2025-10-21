@@ -97,7 +97,7 @@ export type AnnotationArea = {
    * @description 标注区域区域边框颜色
    * @example 'red'
    */
-  areaBorderColor?: number
+  areaBorderColor?: string
   /**
    * @description 标注区域区域边框宽度
    * @example 2

@@ -6,6 +6,70 @@ exports[`array 1`] = `
   "chartType": "dualAxis",
   "config": {
     "dualAxis": {
+      "annotation": {
+        "annotationArea": {
+          "areaBorderColor": "#364159",
+          "areaBorderRadius": 4,
+          "areaBorderWidth": 1,
+          "areaColor": "#364159",
+          "areaColorOpacity": 0.15,
+          "outerPadding": 4,
+          "textBackgroundBorderColor": "#3641594d",
+          "textBackgroundBorderRadius": 4,
+          "textBackgroundBorderWidth": 1,
+          "textBackgroundColor": "#364159",
+          "textBackgroundPadding": 4,
+          "textBackgroundVisible": true,
+          "textColor": "#ffffff",
+          "textFontSize": 12,
+          "textFontWeight": 400,
+        },
+        "annotationHorizontalLine": {
+          "endSymbolVisible": false,
+          "lineColor": "#BCC1CB",
+          "lineStyle": "solid",
+          "lineVisible": true,
+          "lineWidth": 1,
+          "startSymbolVisible": true,
+          "textBackgroundBorderColor": "#BCC1CB",
+          "textBackgroundBorderRadius": 0,
+          "textBackgroundBorderWidth": 1,
+          "textBackgroundColor": "#BCC1CB",
+          "textBackgroundPadding": 2,
+          "textBackgroundVisible": true,
+          "textColor": "#ffffff",
+          "textFontSize": 12,
+          "textFontWeight": 400,
+        },
+        "annotationPoint": {
+          "textBackgroundBorderColor": "#3641594d",
+          "textBackgroundBorderRadius": 4,
+          "textBackgroundBorderWidth": 1,
+          "textBackgroundColor": "#364159",
+          "textBackgroundPadding": 2,
+          "textBackgroundVisible": true,
+          "textColor": "#ffffff",
+          "textFontSize": 12,
+          "textFontWeight": 400,
+        },
+        "annotationVerticalLine": {
+          "endSymbolVisible": false,
+          "lineColor": "#BCC1CB",
+          "lineStyle": "solid",
+          "lineVisible": true,
+          "lineWidth": 1,
+          "startSymbolVisible": true,
+          "textBackgroundBorderColor": "#BCC1CB",
+          "textBackgroundBorderRadius": 0,
+          "textBackgroundBorderWidth": 1,
+          "textBackgroundColor": "#BCC1CB",
+          "textBackgroundPadding": 2,
+          "textBackgroundVisible": true,
+          "textColor": "#ffffff",
+          "textFontSize": 12,
+          "textFontWeight": 400,
+        },
+      },
       "backgroundColor": "transparent",
       "color": {
         "colorScheme": [
@@ -180,6 +244,70 @@ exports[`array 1`] = `
   "customTheme": {
     "config": {
       "dualAxis": {
+        "annotation": {
+          "annotationArea": {
+            "areaBorderColor": "#364159",
+            "areaBorderRadius": 4,
+            "areaBorderWidth": 1,
+            "areaColor": "#364159",
+            "areaColorOpacity": 0.15,
+            "outerPadding": 4,
+            "textBackgroundBorderColor": "#3641594d",
+            "textBackgroundBorderRadius": 4,
+            "textBackgroundBorderWidth": 1,
+            "textBackgroundColor": "#364159",
+            "textBackgroundPadding": 4,
+            "textBackgroundVisible": true,
+            "textColor": "#ffffff",
+            "textFontSize": 12,
+            "textFontWeight": 400,
+          },
+          "annotationHorizontalLine": {
+            "endSymbolVisible": false,
+            "lineColor": "#BCC1CB",
+            "lineStyle": "solid",
+            "lineVisible": true,
+            "lineWidth": 1,
+            "startSymbolVisible": true,
+            "textBackgroundBorderColor": "#BCC1CB",
+            "textBackgroundBorderRadius": 0,
+            "textBackgroundBorderWidth": 1,
+            "textBackgroundColor": "#BCC1CB",
+            "textBackgroundPadding": 2,
+            "textBackgroundVisible": true,
+            "textColor": "#ffffff",
+            "textFontSize": 12,
+            "textFontWeight": 400,
+          },
+          "annotationPoint": {
+            "textBackgroundBorderColor": "#3641594d",
+            "textBackgroundBorderRadius": 4,
+            "textBackgroundBorderWidth": 1,
+            "textBackgroundColor": "#364159",
+            "textBackgroundPadding": 2,
+            "textBackgroundVisible": true,
+            "textColor": "#ffffff",
+            "textFontSize": 12,
+            "textFontWeight": 400,
+          },
+          "annotationVerticalLine": {
+            "endSymbolVisible": false,
+            "lineColor": "#BCC1CB",
+            "lineStyle": "solid",
+            "lineVisible": true,
+            "lineWidth": 1,
+            "startSymbolVisible": true,
+            "textBackgroundBorderColor": "#BCC1CB",
+            "textBackgroundBorderRadius": 0,
+            "textBackgroundBorderWidth": 1,
+            "textBackgroundColor": "#BCC1CB",
+            "textBackgroundPadding": 2,
+            "textBackgroundVisible": true,
+            "textColor": "#ffffff",
+            "textFontSize": 12,
+            "textFontWeight": 400,
+          },
+        },
         "backgroundColor": "transparent",
         "color": {
           "colorScheme": [
@@ -1040,6 +1168,7 @@ exports[`array 2`] = `
             },
             "grid": {
               "style": {
+                "lineDash": undefined,
                 "lineWidth": 0.5,
                 "stroke": "#36415926",
               },
@@ -1112,6 +1241,7 @@ exports[`array 2`] = `
             },
             "grid": {
               "style": {
+                "lineDash": undefined,
                 "lineWidth": 0.5,
                 "stroke": "#36415926",
               },
@@ -1169,6 +1299,7 @@ exports[`array 2`] = `
             },
             "grid": {
               "style": {
+                "lineDash": undefined,
                 "lineWidth": undefined,
                 "stroke": undefined,
               },
@@ -1520,6 +1651,7 @@ exports[`array 2`] = `
             },
             "grid": {
               "style": {
+                "lineDash": undefined,
                 "lineWidth": 0.5,
                 "stroke": "#36415926",
               },
@@ -1592,6 +1724,7 @@ exports[`array 2`] = `
             },
             "grid": {
               "style": {
+                "lineDash": undefined,
                 "lineWidth": 0.5,
                 "stroke": "#36415926",
               },
@@ -1649,6 +1782,7 @@ exports[`array 2`] = `
             },
             "grid": {
               "style": {
+                "lineDash": undefined,
                 "lineWidth": undefined,
                 "stroke": undefined,
               },

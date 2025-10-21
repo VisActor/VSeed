@@ -288,7 +288,7 @@ X轴标题
 
 ## grid
 
-**Type:** `{ visible?: boolean; gridColor?: string; gridWidth?: number; } | undefined`
+**Type:** `{ visible?: boolean; gridColor?: string; gridWidth?: number; gridLineDash?: number[]; } | undefined`
 
 :::note{title=描述}
 X轴网格线
@@ -315,6 +315,15 @@ X轴网格线
 
 :::note{title=描述}
 网格线宽度
+
+:::
+
+### gridLineDash
+
+**Type:** `number[] | undefined`
+
+:::note{title=描述}
+网格线类型
 
 :::
 

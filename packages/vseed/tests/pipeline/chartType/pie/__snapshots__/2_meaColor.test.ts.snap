@@ -685,7 +685,7 @@ exports[`2_meaColor 2`] = `
         "scale": "color",
       },
       "lineWidth": 1,
-      "stroke": "#ffffff",
+      "stroke": "transparent",
     },
   },
   "region": [

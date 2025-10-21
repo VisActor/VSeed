@@ -81,6 +81,7 @@ export const yBand: SpecPipe = (spec, context) => {
       style: {
         lineWidth: grid?.gridWidth,
         stroke: grid?.gridColor,
+        lineDash: grid?.gridLineDash,
       },
     },
     domainLine: {

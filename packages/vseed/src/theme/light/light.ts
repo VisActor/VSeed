@@ -10,6 +10,7 @@ import {
 } from '../common'
 import { getDefaultTooltip } from '../common/tooltip'
 import { getLightBandAxis, getLightLinearAxis } from '../common/axes'
+import { getLightAnnotation } from '../common/annotaion'
 
 export const lightTheme = (): CustomThemeConfig => {
   const linearAxis = getLightLinearAxis()
@@ -49,6 +50,7 @@ export const lightTheme = (): CustomThemeConfig => {
         crosshairLine,
 
         pivotGrid: getLightPivotChartGridConfig(),
+        annotation: getLightAnnotation(),
       },
       column: {
         ...baseConfig,
@@ -57,6 +59,7 @@ export const lightTheme = (): CustomThemeConfig => {
         crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
         pivotGrid: getLightPivotChartGridConfig(),
+        annotation: getLightAnnotation(),
       },
       columnParallel: {
         ...baseConfig,
@@ -65,6 +68,7 @@ export const lightTheme = (): CustomThemeConfig => {
         crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
         pivotGrid: getLightPivotChartGridConfig(),
+        annotation: getLightAnnotation(),
       },
       columnPercent: {
         ...baseConfig,
@@ -75,6 +79,7 @@ export const lightTheme = (): CustomThemeConfig => {
         crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
         pivotGrid: getLightPivotChartGridConfig(),
+        annotation: getLightAnnotation(),
       },
       bar: {
         ...baseConfig,
@@ -83,6 +88,7 @@ export const lightTheme = (): CustomThemeConfig => {
         crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
         pivotGrid: getLightPivotChartGridConfig(),
+        annotation: getLightAnnotation(),
       },
       barParallel: {
         ...baseConfig,
@@ -91,6 +97,7 @@ export const lightTheme = (): CustomThemeConfig => {
         crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
         pivotGrid: getLightPivotChartGridConfig(),
+        annotation: getLightAnnotation(),
       },
       barPercent: {
         ...baseConfig,
@@ -101,6 +108,7 @@ export const lightTheme = (): CustomThemeConfig => {
         crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
         pivotGrid: getLightPivotChartGridConfig(),
+        annotation: getLightAnnotation(),
       },
       area: {
         ...baseConfig,
@@ -108,6 +116,7 @@ export const lightTheme = (): CustomThemeConfig => {
         yAxis: linearAxis,
         crosshairLine,
         pivotGrid: getLightPivotChartGridConfig(),
+        annotation: getLightAnnotation(),
       },
       areaPercent: {
         ...baseConfig,
@@ -117,6 +126,7 @@ export const lightTheme = (): CustomThemeConfig => {
         },
         crosshairLine,
         pivotGrid: getLightPivotChartGridConfig(),
+        annotation: getLightAnnotation(),
       },
       scatter: {
         ...baseConfig,
@@ -142,6 +152,7 @@ export const lightTheme = (): CustomThemeConfig => {
           showValuePercent: false,
         },
         pivotGrid: getLightPivotChartGridConfig(),
+        annotation: getLightAnnotation(),
       },
       dualAxis: {
         ...baseConfig,
@@ -154,6 +165,7 @@ export const lightTheme = (): CustomThemeConfig => {
         },
         crosshairRect,
         pivotGrid: getLightPivotChartGridConfig(),
+        annotation: getLightAnnotation(),
       },
       // polar
       pie: {

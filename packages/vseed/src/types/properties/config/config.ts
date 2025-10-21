@@ -8,6 +8,7 @@ import { zLabel, zPieLabel } from './label'
 import { zLegend } from './legend/legend'
 import { zTooltip } from './tooltip/tooltip'
 import { zDualChartType } from '../chartType'
+import { zAnnotaionConfig } from './annotation/zAnnotaion'
 
 /**
  * zConfig by 图表类型
@@ -60,6 +61,7 @@ export const zLineConfig = z.object({
   yAxis: zYLinearAxis.nullish(),
   crosshairLine: zCrosshairLine.nullish(),
   pivotGrid: zPivotChartGridConfig.nullish(),
+  annotation: zAnnotaionConfig.nullish(),
 })
 export const zColumnConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -73,6 +75,7 @@ export const zColumnConfig = z.object({
   crosshairRect: zCrosshairRect.nullish(),
   stackCornerRadius: zStackCornerRadius.nullish(),
   pivotGrid: zPivotChartGridConfig.nullish(),
+  annotation: zAnnotaionConfig.nullish(),
 })
 export const zColumnParallelConfig = zColumnConfig
 export const zColumnPercentConfig = zColumnConfig
@@ -88,6 +91,7 @@ export const zBarConfig = z.object({
   crosshairRect: zCrosshairRect.nullish(),
   stackCornerRadius: zStackCornerRadius.nullish(),
   pivotGrid: zPivotChartGridConfig.nullish(),
+  annotation: zAnnotaionConfig.nullish(),
 })
 export const zBarParallelConfig = zBarConfig
 export const zBarPercentConfig = zBarConfig
@@ -102,6 +106,7 @@ export const zAreaConfig = z.object({
   yAxis: zYLinearAxis.nullish(),
   crosshairLine: zCrosshairLine.nullish(),
   pivotGrid: zPivotChartGridConfig.nullish(),
+  annotation: zAnnotaionConfig.nullish(),
 })
 export const zAreaPercentConfig = zAreaConfig
 
@@ -120,6 +125,7 @@ export const zDualAxisConfig = z.object({
   xAxis: zXBandAxis.nullish(),
   crosshairRect: zCrosshairRect.nullish(),
   pivotGrid: zPivotChartGridConfig.nullish(),
+  annotation: zAnnotaionConfig.nullish(),
 })
 export const zScatterConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -134,6 +140,7 @@ export const zScatterConfig = z.object({
   size: z.number().or(z.array(z.number())).nullish(),
   sizeRange: z.number().or(z.array(z.number())).nullish(),
   pivotGrid: zPivotChartGridConfig.nullish(),
+  annotation: zAnnotaionConfig.nullish(),
 })
 
 // polar
@@ -153,6 +160,7 @@ export const zPieConfig = z.object({
   tooltip: zTooltip.nullish(),
   legend: zLegend.nullish(),
   pivotGrid: zPivotChartGridConfig.nullish(),
+  cornerRadius: z.number().nullish(),
 })
 export const zDonutConfig = zPieConfig
 export const zRadarConfig = zPieConfig

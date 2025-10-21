@@ -169,19 +169,19 @@ exports[`onlyMeasures 1`] = `
   "dimensions": [
     {
       "alias": "指标名称",
-      "encoding": "column",
+      "encoding": "row",
       "id": "__MeaName__",
     },
   ],
   "encoding": {
-    "column": [
-      "__MeaName__",
-    ],
+    "column": [],
     "detail": [
       "sales",
       "profit",
     ],
-    "row": [],
+    "row": [
+      "__MeaName__",
+    ],
     "tooltip": [
       "sales",
       "profit",
@@ -223,15 +223,9 @@ exports[`onlyMeasures 2`] = `
   "autoWrapText": true,
   "columnResizeMode": "all",
   "columnResizeType": "column",
-  "columns": [
-    {
-      "dimensionKey": "__MeaName__",
-      "title": "指标名称",
-      "width": "auto",
-    },
-  ],
+  "columns": [],
   "corner": {
-    "titleOnDimension": "column",
+    "titleOnDimension": "row",
   },
   "dataConfig": {
     "aggregationRules": [
@@ -248,7 +242,7 @@ exports[`onlyMeasures 2`] = `
     ],
   },
   "heightMode": "autoHeight",
-  "hideIndicatorName": false,
+  "hideIndicatorName": true,
   "hover": {
     "highlightMode": "cross",
   },
@@ -262,7 +256,7 @@ exports[`onlyMeasures 2`] = `
       "width": "auto",
     },
   ],
-  "indicatorsAsCol": false,
+  "indicatorsAsCol": true,
   "records": [
     {
       "__MeaId__": "sales",
@@ -365,7 +359,13 @@ exports[`onlyMeasures 2`] = `
       "profit": 50000,
     },
   ],
-  "rows": [],
+  "rows": [
+    {
+      "dimensionKey": "__MeaName__",
+      "title": "指标名称",
+      "width": "auto",
+    },
+  ],
   "select": {
     "headerSelectMode": "inline",
     "highlightMode": "cell",

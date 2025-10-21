@@ -304,7 +304,7 @@ true
 
 ## areaBorderColor
 
-**Type:** `number | undefined`
+**Type:** `string | undefined`
 
 :::note{title=描述}
 标注区域区域边框颜色

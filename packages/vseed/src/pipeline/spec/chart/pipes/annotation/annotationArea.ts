@@ -5,13 +5,14 @@ import { isSubset } from './utils'
 import { ANNOTATION_Z_INDEX } from '../../../../utils/constant'
 
 export const annotationArea: SpecPipe = (spec, context) => {
-  const { advancedVSeed } = context
-  const { annotation } = advancedVSeed
+  const { advancedVSeed, vseed } = context
+  const { annotation, config } = advancedVSeed
 
   if (!annotation || !annotation.annotationArea) {
     return spec
   }
 
+  const theme = config?.[vseed.chartType as 'column']?.annotation?.annotationArea
   const { annotationArea } = annotation
   const annotationAreaList = Array.isArray(annotationArea) ? annotationArea : [annotationArea]
 
@@ -31,26 +32,26 @@ export const annotationArea: SpecPipe = (spec, context) => {
       selector: selectorPoint,
       text = '',
       textPosition = 'top',
-      textColor = '#ffffff',
-      textFontSize = 12,
-      textFontWeight = 400,
+      textColor = theme?.textColor ?? '#ffffff',
+      textFontSize = theme?.textFontSize ?? 12,
+      textFontWeight = theme?.textFontWeight ?? 400,
       textAlign = 'center',
       textBaseline = 'top',
 
-      textBackgroundVisible = true,
-      textBackgroundColor = '#191d24',
-      textBackgroundBorderColor = '#191d24',
-      textBackgroundBorderWidth = 1,
-      textBackgroundBorderRadius = 4,
-      textBackgroundPadding = 4,
+      textBackgroundVisible = theme?.textBackgroundVisible ?? true,
+      textBackgroundColor = theme?.textBackgroundColor ?? '#191d24',
+      textBackgroundBorderColor = theme?.textBackgroundBorderColor ?? '#191d24',
+      textBackgroundBorderWidth = theme?.textBackgroundBorderWidth ?? 1,
+      textBackgroundBorderRadius = theme?.textBackgroundBorderRadius ?? 4,
+      textBackgroundPadding = theme?.textBackgroundPadding ?? 4,
 
-      areaColor = '#888888',
-      areaColorOpacity = 0.15,
-      areaBorderColor = '#888888',
-      areaBorderRadius = 4,
-      areaBorderWidth = 1,
+      areaColor = theme?.areaColor ?? '#888888',
+      areaColorOpacity = theme?.areaColorOpacity ?? 0.15,
+      areaBorderColor = theme?.areaBorderColor ?? '#888888',
+      areaBorderRadius = theme?.areaBorderRadius ?? 4,
+      areaBorderWidth = theme?.areaBorderWidth ?? 1,
 
-      outerPadding = 4,
+      outerPadding = theme?.outerPadding ?? 4,
     } = annotationArea
 
     const dataset = advancedVSeed.dataset.flat()

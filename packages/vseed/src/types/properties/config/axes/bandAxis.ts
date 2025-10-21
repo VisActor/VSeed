@@ -149,6 +149,10 @@ export type XBandAxis = {
      * 网格线宽度
      */
     gridWidth?: number
+    /**
+     * 网格线类型
+     */
+    gridLineDash?: number[]
   }
 }
 export type YBandAxis = XBandAxis

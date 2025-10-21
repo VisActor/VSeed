@@ -6,6 +6,7 @@ export const zCrosshairLine = z.object({
   labelColor: z.string().nullish(),
   labelVisible: z.boolean().nullish(),
   labelBackgroundColor: z.string().nullish(),
+  lineDash: z.array(z.number()).nullish(),
 })
 
 export const zCrosshairRect = z.object({

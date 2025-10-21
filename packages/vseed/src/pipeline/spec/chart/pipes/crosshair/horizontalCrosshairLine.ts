@@ -30,7 +30,7 @@ export const horizontalCrosshairLine: SpecPipe = (spec, context) => {
         lineWidth: 1,
         opacity: 1,
         stroke: lineColor,
-        lineDash: [4, 2],
+        lineDash: config.lineDash ?? [4, 2],
       },
     },
     label: {

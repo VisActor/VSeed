@@ -5,8 +5,8 @@ import { isArray, isNumber, isString } from 'remeda'
 import { ANNOTATION_Z_INDEX } from '../../../../utils/constant'
 
 export const annotationVerticalLine: SpecPipe = (spec, context) => {
-  const { advancedVSeed } = context
-  const { annotation, datasetReshapeInfo } = advancedVSeed
+  const { advancedVSeed, vseed } = context
+  const { annotation, datasetReshapeInfo, config } = advancedVSeed
 
   const { unfoldInfo, foldInfo } = datasetReshapeInfo[0]
 
@@ -14,6 +14,7 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
     return spec
   }
 
+  const theme = config?.[vseed.chartType as 'column']?.annotation?.annotationVerticalLine
   const { annotationVerticalLine } = annotation
   const annotationVerticalLineList = Array.isArray(annotationVerticalLine)
     ? annotationVerticalLine
@@ -33,23 +34,23 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
       xValue,
       text = '',
       textPosition = 'insideEnd',
-      textColor = '#ffffff',
-      textFontSize = 12,
-      textFontWeight = 400,
-      textAlign = 'right',
+      textColor = theme?.textColor ?? '#ffffff',
+      textFontSize = theme?.textFontSize ?? 12,
+      textFontWeight = theme?.textFontWeight ?? 400,
+      textAlign = 'center',
       textBaseline = 'top',
 
-      textBackgroundVisible = true,
-      textBackgroundBorderColor = '#212121',
-      textBackgroundColor = '#212121',
-      textBackgroundBorderRadius = 4,
-      textBackgroundBorderWidth = 1,
-      textBackgroundPadding = 2,
+      lineColor = theme?.lineColor ?? '#212121',
+      lineStyle = theme?.lineStyle ?? 'dashed',
+      lineVisible = theme?.lineStyle ?? true,
+      lineWidth = theme?.lineWidth ?? 1,
 
-      lineVisible = true,
-      lineColor = '#212121',
-      lineWidth = 1,
-      lineStyle = 'dashed',
+      textBackgroundVisible = theme?.textBackgroundVisible ?? true,
+      textBackgroundColor = theme?.textBackgroundColor ?? '#212121',
+      textBackgroundBorderColor = theme?.textBackgroundBorderColor ?? '#212121',
+      textBackgroundBorderRadius = theme?.textBackgroundBorderRadius ?? 4,
+      textBackgroundBorderWidth = theme?.textBackgroundBorderWidth ?? 1,
+      textBackgroundPadding = theme?.textBackgroundPadding ?? 2,
     } = annotationVerticalLine
 
     const dataset = advancedVSeed.dataset.flat()
@@ -70,6 +71,7 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
         text: text,
         position: positionMap[textPosition || 'insideEnd'],
         style: {
+          dx: 5,
           visible: true,
           stroke: textBackgroundColor,
           lineWidth: 1,
@@ -78,22 +80,32 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
           fill: textColor,
           fontSize: textFontSize,
           fontWeight: textFontWeight,
-          dy: textFontSize,
         },
         labelBackground: {
           visible: textBackgroundVisible,
           padding: textBackgroundPadding,
           style: {
-            dy: textFontSize,
-            cornerRadius: textBackgroundBorderRadius ?? 4,
+            dx: 5,
+            cornerRadius: textBackgroundBorderRadius,
             fill: textBackgroundColor,
+            fillOpacity: 1,
             stroke: textBackgroundBorderColor,
             lineWidth: textBackgroundBorderWidth,
           },
         },
       },
+      startSymbol: {
+        visible: theme?.startSymbolVisible ?? true,
+        symbolType: theme?.startSymbolType ?? 'triangleDown',
+        size: 5 + (lineWidth || 1),
+        style: {
+          dy: -3,
+          fill: lineColor,
+        },
+      },
       endSymbol: {
-        visible: true,
+        visible: theme?.endSymbolVisible ?? false,
+        symbolType: theme?.endSymbolType ?? 'arrow',
         size: 10 + (lineWidth || 1),
         style: {
           dy: 4,

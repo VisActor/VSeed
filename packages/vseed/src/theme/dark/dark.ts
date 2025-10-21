@@ -10,6 +10,7 @@ import {
 } from '../common'
 import { getDefaultTooltip } from '../common/tooltip'
 import { getDarkBandAxis, getDarkLinearAxis } from '../common/axes'
+import { getDarkAnnotation } from '../common/annotaion'
 
 export const darkTheme = (): CustomThemeConfig => {
   const linearAxis = getDarkLinearAxis()
@@ -48,6 +49,7 @@ export const darkTheme = (): CustomThemeConfig => {
         yAxis: linearAxis,
         crosshairLine: crosshairLine,
         pivotGrid: getDarkPivotChartGridConfig(),
+        annotation: getDarkAnnotation(),
       },
       column: {
         ...baseConfig,
@@ -57,6 +59,7 @@ export const darkTheme = (): CustomThemeConfig => {
         crosshairRect: crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
         pivotGrid: getDarkPivotChartGridConfig(),
+        annotation: getDarkAnnotation(),
       },
       columnParallel: {
         ...baseConfig,
@@ -66,6 +69,7 @@ export const darkTheme = (): CustomThemeConfig => {
         crosshairRect: crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
         pivotGrid: getDarkPivotChartGridConfig(),
+        annotation: getDarkAnnotation(),
       },
       columnPercent: {
         ...baseConfig,
@@ -75,6 +79,7 @@ export const darkTheme = (): CustomThemeConfig => {
         crosshairRect: crosshairRect,
         stackCornerRadius: [4, 4, 0, 0],
         pivotGrid: getDarkPivotChartGridConfig(),
+        annotation: getDarkAnnotation(),
       },
       bar: {
         ...baseConfig,
@@ -84,6 +89,7 @@ export const darkTheme = (): CustomThemeConfig => {
         crosshairRect: crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
         pivotGrid: getDarkPivotChartGridConfig(),
+        annotation: getDarkAnnotation(),
       },
       barParallel: {
         ...baseConfig,
@@ -93,6 +99,7 @@ export const darkTheme = (): CustomThemeConfig => {
         crosshairRect: crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
         pivotGrid: getDarkPivotChartGridConfig(),
+        annotation: getDarkAnnotation(),
       },
       barPercent: {
         ...baseConfig,
@@ -102,6 +109,7 @@ export const darkTheme = (): CustomThemeConfig => {
         crosshairRect: crosshairRect,
         stackCornerRadius: [0, 4, 4, 0],
         pivotGrid: getDarkPivotChartGridConfig(),
+        annotation: getDarkAnnotation(),
       },
       area: {
         ...baseConfig,
@@ -110,6 +118,7 @@ export const darkTheme = (): CustomThemeConfig => {
         yAxis: linearAxis,
         crosshairLine: crosshairLine,
         pivotGrid: getDarkPivotChartGridConfig(),
+        annotation: getDarkAnnotation(),
       },
       areaPercent: {
         ...baseConfig,
@@ -118,6 +127,7 @@ export const darkTheme = (): CustomThemeConfig => {
         yAxis: linearAxis,
         crosshairLine: crosshairLine,
         pivotGrid: getDarkPivotChartGridConfig(),
+        annotation: getDarkAnnotation(),
       },
       scatter: {
         ...baseConfig,
@@ -143,6 +153,7 @@ export const darkTheme = (): CustomThemeConfig => {
           showValuePercent: false,
         },
         pivotGrid: getDarkPivotChartGridConfig(),
+        annotation: getDarkAnnotation(),
       },
       dualAxis: {
         ...baseConfig,
@@ -155,6 +166,7 @@ export const darkTheme = (): CustomThemeConfig => {
         },
         crosshairRect,
         pivotGrid: getDarkPivotChartGridConfig(),
+        annotation: getDarkAnnotation(),
       },
       // polar
       pie: {

@@ -50,6 +50,7 @@ export const zXLinearAxis = z.object({
       visible: z.boolean().default(false).nullish(),
       gridColor: z.string().default('rgba(54, 65, 89, 0.15)').nullish(),
       gridWidth: z.number().default(0.5).nullish(),
+      gridLineDash: z.array(z.number()).nullish(),
     })
     .nullish(),
 })

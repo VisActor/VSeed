@@ -6,13 +6,14 @@ import { ANNOTATION_Z_INDEX } from '../../../../utils/constant'
 import { isBarLikeChart } from 'src/pipeline/utils/chatType'
 
 export const annotationPoint: SpecPipe = (spec, context) => {
-  const { advancedVSeed } = context
-  const { annotation } = advancedVSeed
+  const { advancedVSeed, vseed } = context
+  const { annotation, config } = advancedVSeed
 
   if (!annotation || !annotation.annotationPoint) {
     return spec
   }
 
+  const theme = config?.[vseed.chartType as 'column']?.annotation?.annotationPoint
   const { annotationPoint } = annotation
   const annotationPointList = Array.isArray(annotationPoint) ? annotationPoint : [annotationPoint]
   const isHorizontalBar = isBarLikeChart(advancedVSeed)
@@ -30,19 +31,19 @@ export const annotationPoint: SpecPipe = (spec, context) => {
     const {
       selector: selectorPoint,
       text = '',
-      textColor = '#ffffff',
-      textFontSize = 12,
-      textFontWeight = 400,
+      textColor = theme?.textColor ?? '#ffffff',
+      textFontSize = theme?.textFontSize ?? 12,
+      textFontWeight = theme?.textFontWeight ?? 400,
       textAlign = defaultStyle.textAlign,
       textBaseline = defaultStyle.textBaseline,
-      textBackgroundBorderColor,
-      textBackgroundBorderRadius = 4,
-      textBackgroundBorderWidth = 1,
-      textBackgroundColor = '#212121',
-      textBackgroundPadding = 2,
-      textBackgroundVisible = true,
-      offsetX = 0,
-      offsetY = 0,
+      textBackgroundBorderColor = theme?.textBackgroundBorderColor,
+      textBackgroundBorderRadius = theme?.textBackgroundBorderRadius ?? 4,
+      textBackgroundBorderWidth = theme?.textBackgroundBorderWidth ?? 1,
+      textBackgroundColor = theme?.textBackgroundColor ?? '#212121',
+      textBackgroundPadding = theme?.textBackgroundPadding ?? 2,
+      textBackgroundVisible = theme?.textBackgroundVisible ?? true,
+      offsetX = theme?.offsetX ?? 0,
+      offsetY = theme?.offsetY ?? 0,
     } = annotationPoint
 
     const dataset = advancedVSeed.dataset.flat()

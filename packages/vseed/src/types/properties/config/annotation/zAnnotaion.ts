@@ -1,72 +1,69 @@
 import { z } from 'zod'
+import { zAnnotationPoint } from '../../annotation/zAnnotationPoint'
+import { zAnnotationHorizontalLine } from '../../annotation/zAnnotationHorizontalLine'
+import { zAnnotationArea } from '../../annotation/zAnnotationArea'
 
-export const zAnnotationPoint = z.object({
-  textColor: z.string().nullish(),
-  textFontSize: z.number().nullish(),
-  textFontWeight: z.number().nullish(),
+export const zAnnotationPointConfig = zAnnotationPoint.omit({ selector: true, text: true }).partial()
 
-  textBackgroundColor: z.string().nullish(),
-  textBackgroundBorderColor: z.string().nullish(),
-  textBackgroundBorderWidth: z.number().nullish(),
-  textBackgroundVisible: z.boolean().nullish(),
-  textBackgroundPadding: z.number().nullish(),
-  textBackgroundBorderRadius: z.number().nullish(),
+// Use pick to explicitly list fields we want to expose in config variants.
+export const zAnnotationHorizontalLineConfig = zAnnotationHorizontalLine
+  .pick({
+    // only pick fields that exist on the runtime schema
+    lineColor: true,
+    lineWidth: true,
+    lineVisible: true,
+    lineStyle: true,
 
-  offsetX: z.number().nullish(),
-  offsetY: z.number().nullish(),
-})
+    textBackgroundVisible: true,
+    textColor: true,
+    textFontSize: true,
+    textFontWeight: true,
+    textBackgroundColor: true,
+    textBackgroundBorderColor: true,
+    textBackgroundBorderWidth: true,
+    textBackgroundBorderRadius: true,
+    textBackgroundPadding: true,
+  })
+  // extend with additional config-only fields that runtime schema doesn't include
+  .extend({
+    endSymbolVisible: z.boolean().nullish(),
+    endSymbolType: z.string().nullish(),
+    endSymbolSize: z.number().nullish(),
 
-export const zAnnotationHorizontalLine = z.object({
-  lineColor: z.string().nullish(),
-  lineWidth: z.number().nullish(),
-  lineVisible: z.boolean().nullish(),
-  lineStyle: z.enum(['solid', 'dashed', 'dotted']).nullish(),
+    startSymbolVisible: z.boolean().nullish(),
+    startSymbolType: z.string().nullish(),
+    startSymbolSize: z.number().nullish(),
+  })
+  .partial()
 
-  endSymbolVisible: z.boolean().nullish(),
-  endSymbolType: z.string().nullish(),
-  endSymbolSize: z.number().nullish(),
+export const zAnnotationVerticalLineConfig = zAnnotationHorizontalLineConfig.clone()
 
-  startSymbolVisible: z.boolean().nullish(),
-  startSymbolType: z.string().nullish(),
-  startSymbolSize: z.number().nullish(),
+export const zAnnotationAreaConfig = zAnnotationArea
+  .pick({
+    textColor: true,
+    textFontSize: true,
+    textFontWeight: true,
 
-  textBackgroundVisible: z.boolean().nullish(),
-  textColor: z.string().nullish(),
-  textFontSize: z.number().nullish(),
-  textFontWeight: z.number().nullish(),
-  textBackgroundColor: z.string().nullish(),
-  textBackgroundBorderColor: z.string().nullish(),
-  textBackgroundBorderWidth: z.number().nullish(),
-  textBackgroundBorderRadius: z.number().nullish(),
-  textBackgroundPadding: z.number().nullish(),
-})
+    textBackgroundVisible: true,
+    textBackgroundColor: true,
+    textBackgroundBorderColor: true,
+    textBackgroundBorderWidth: true,
+    textBackgroundBorderRadius: true,
+    textBackgroundPadding: true,
 
-export const zAnnotationVerticalLine = zAnnotationHorizontalLine.clone()
+    areaColor: true,
+    areaColorOpacity: true,
+    areaBorderColor: true,
+    areaBorderWidth: true,
+    areaBorderRadius: true,
 
-export const zAnnotationArea = z.object({
-  textColor: z.string().nullish(),
-  textFontSize: z.number().nullish(),
-  textFontWeight: z.number().nullish(),
-
-  textBackgroundVisible: z.boolean().nullish(),
-  textBackgroundColor: z.string().nullish(),
-  textBackgroundBorderColor: z.string().nullish(),
-  textBackgroundBorderWidth: z.number().nullish(),
-  textBackgroundBorderRadius: z.number().nullish(),
-  textBackgroundPadding: z.number().nullish(),
-
-  areaColor: z.string().nullish(),
-  areaColorOpacity: z.number().nullish(),
-  areaBorderColor: z.string().nullish(),
-  areaBorderWidth: z.number().nullish(),
-  areaBorderRadius: z.number().nullish(),
-
-  outerPadding: z.number().nullish(),
-})
+    outerPadding: true,
+  })
+  .partial()
 
 export const zAnnotaionConfig = z.object({
-  annotationPoint: zAnnotationPoint.nullish(),
-  annotationHorizontalLine: zAnnotationHorizontalLine.nullish(),
-  annotationVerticalLine: zAnnotationVerticalLine.nullish(),
-  annotationArea: zAnnotationArea.nullish(),
+  annotationPoint: zAnnotationPointConfig.nullish(),
+  annotationHorizontalLine: zAnnotationHorizontalLineConfig.nullish(),
+  annotationVerticalLine: zAnnotationVerticalLineConfig.nullish(),
+  annotationArea: zAnnotationAreaConfig.nullish(),
 })

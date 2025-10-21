@@ -1,6 +1,10 @@
-import type { AnnotationHorizontalLine } from 'src/types/properties/config/annotation/annotation'
+import type {
+  AnnotationAreaConfig,
+  AnnotationHorizontalLineConfig,
+  AnnotationPointConfig,
+} from 'src/types/properties/config/annotation/annotation'
 
-export const getLightAnnotationPoint = () => ({
+export const getLightAnnotationPoint = (): AnnotationPointConfig => ({
   textColor: '#ffffff',
 
   textBackgroundVisible: true,
@@ -15,7 +19,7 @@ export const getLightAnnotationPoint = () => ({
   textBackgroundPadding: 2,
 })
 
-export const getLightAnnotationHorizontalLine = (): AnnotationHorizontalLine => ({
+export const getLightAnnotationHorizontalLine = (): AnnotationHorizontalLineConfig => ({
   lineColor: '#BCC1CB',
   lineWidth: 1,
   lineStyle: 'solid' as const,
@@ -38,7 +42,7 @@ export const getLightAnnotationHorizontalLine = (): AnnotationHorizontalLine => 
 
 export const getLightAnnotationVerticalLine = () => getLightAnnotationHorizontalLine()
 
-export const getLightAnnotationArea = () => ({
+export const getLightAnnotationArea = (): AnnotationAreaConfig => ({
   textColor: '#ffffff',
   textFontSize: 12,
   textFontWeight: 400,
@@ -67,7 +71,7 @@ export const getLightAnnotation = () => ({
 })
 
 // --- dark ---
-export const getDarkAnnotationPoint = () => ({
+export const getDarkAnnotationPoint = (): AnnotationPointConfig => ({
   textColor: '#4B4F54',
 
   textBackgroundVisible: true,
@@ -82,7 +86,7 @@ export const getDarkAnnotationPoint = () => ({
   textBackgroundPadding: 2,
 })
 
-export const getDarkAnnotationHorizontalLine = () => ({
+export const getDarkAnnotationHorizontalLine = (): AnnotationHorizontalLineConfig => ({
   lineColor: '#55595F',
   lineWidth: 1,
   lineStyle: 'solid' as const,
@@ -102,7 +106,7 @@ export const getDarkAnnotationHorizontalLine = () => ({
 
 export const getDarkAnnotationVerticalLine = () => getDarkAnnotationHorizontalLine()
 
-export const getDarkAnnotationArea = () => ({
+export const getDarkAnnotationArea = (): AnnotationAreaConfig => ({
   textColor: '#4B4F54',
   textFontSize: 12,
   textFontWeight: 400,

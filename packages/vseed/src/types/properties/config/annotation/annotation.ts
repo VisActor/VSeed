@@ -1,60 +1,127 @@
-export interface AnnotationPoint {
-  textColor?: string | null
-  textFontSize?: number | null
-  textFontWeight?: number | null
+import type { AnnotationArea } from '../../annotation/annotationArea'
+import type { AnnotationHorizontalLine } from '../../annotation/annotationHorizontalLine'
+import type { AnnotationPoint } from '../../annotation/annotationPoint'
 
-  textBackgroundColor?: string | null
-  textBackgroundBorderColor?: string | null
-  textBackgroundBorderWidth?: number | null
-  textBackgroundVisible?: boolean | null
-  textBackgroundPadding?: number | null
-}
+export type AnnotationPointConfig = Pick<
+  AnnotationPoint,
+  | 'textColor'
+  | 'textFontSize'
+  | 'textFontWeight'
+  | 'textBackgroundVisible'
+  | 'textBackgroundColor'
+  | 'textBackgroundBorderColor'
+  | 'textBackgroundBorderWidth'
+  | 'textBackgroundPadding'
+  | 'textBackgroundBorderRadius'
+  | 'offsetX'
+  | 'offsetY'
+>
 
-export interface AnnotationHorizontalLine {
-  lineColor?: string | null
-  lineWidth?: number | null
-  lineVisible?: boolean | null
-
-  lineStyle?: 'solid' | 'dashed' | 'dotted' | null
-
+export interface AnnotationHorizontalLineConfig
+  extends Pick<
+    AnnotationHorizontalLine,
+    | 'textFontSize'
+    | 'lineColor'
+    | 'lineStyle'
+    | 'lineVisible'
+    | 'lineWidth'
+    | 'textColor'
+    | 'textBackgroundBorderColor'
+    | 'textBackgroundBorderRadius'
+    | 'textBackgroundBorderWidth'
+    | 'textBackgroundColor'
+    | 'textBackgroundPadding'
+    | 'textBackgroundVisible'
+    | 'textFontWeight'
+  > {
+  /**
+   * 起点图标是否显示
+   */
   startSymbolVisible?: boolean | null
+  /**
+   * 起点图标的类型，支持如下枚举值：
+   * 'circle'
+   * | 'cross'
+   * | 'diamond'
+   * | 'square'
+   * | 'arrow'
+   * | 'arrowLeft'
+   * | 'arrowRight'
+   * | 'arrow2Left'
+   * | 'arrow2Right'
+   * | 'wedge'
+   * | 'thinTriangle'
+   * | 'triangle'
+   * | 'triangleUp'
+   * | 'triangleDown'
+   * | 'triangleRight'
+   * | 'triangleLeft'
+   * | 'stroke'
+   * | 'star'
+   * | 'wye'
+   * | 'rect'
+   * | 'rectRound'
+   * | 'roundLine'
+   */
   startSymbolType?: string | null
+  /**
+   * 起点图标的大小
+   */
   startSymbolSize?: number | null
 
+  /**
+   * 终点图标是否显示
+   */
   endSymbolVisible?: boolean | null
+  /**
+   * 终点图标的类型，支持如下枚举值：
+   * 'circle'
+   * | 'cross'
+   * | 'diamond'
+   * | 'square'
+   * | 'arrow'
+   * | 'arrowLeft'
+   * | 'arrowRight'
+   * | 'arrow2Left'
+   * | 'arrow2Right'
+   * | 'wedge'
+   * | 'thinTriangle'
+   * | 'triangle'
+   * | 'triangleUp'
+   * | 'triangleDown'
+   * | 'triangleRight'
+   * | 'triangleLeft'
+   * | 'stroke'
+   * | 'star'
+   * | 'wye'
+   * | 'rect'
+   * | 'rectRound'
+   * | 'roundLine'
+   */
   endSymbolType?: string | null
+  /**
+   * 终点图标的大小
+   */
   endSymbolSize?: number | null
-
-  textFontSize?: number | null
-  textFontWeight?: number | null
-  textColor?: string | null
-  textBackgroundVisible?: boolean | null
-  textBackgroundColor?: string | null
-  textBackgroundBorderColor?: string | null
-  textBackgroundBorderWidth?: number | null
-  textBackgroundBorderRadius?: number | null
-  textBackgroundPadding?: number | null
 }
 
-export type AnnotationVerticalLine = AnnotationHorizontalLine
+export type AnnotationVerticalLineConfig = AnnotationHorizontalLineConfig
 
-export interface AnnotationArea {
-  textColor?: string | null
-  textFontSize?: number | null
-  textFontWeight?: number | null
-
-  textBackgroundVisible?: boolean | null
-  textBackgroundColor?: string | null
-  textBackgroundBorderColor?: string | null
-  textBackgroundBorderWidth?: number | null
-  textBackgroundBorderRadius?: number | null
-  textBackgroundPadding?: number | null
-
-  areaColor?: string | null
-  areaColorOpacity?: number | null
-  areaBorderColor?: string | null
-  areaBorderWidth?: number | null
-  areaBorderRadius?: number | null
-
-  outerPadding?: number | null
-}
+export type AnnotationAreaConfig = Pick<
+  AnnotationArea,
+  | 'areaBorderColor'
+  | 'areaBorderRadius'
+  | 'areaBorderWidth'
+  | 'areaColor'
+  | 'areaColorOpacity'
+  | 'outerPadding'
+  | 'textBackgroundBorderColor'
+  | 'textBackgroundBorderRadius'
+  | 'textBackgroundBorderWidth'
+  | 'textBackgroundColor'
+  | 'textBackgroundPadding'
+  | 'textBackgroundVisible'
+  | 'textColor'
+  | 'textFontSize'
+  | 'textFontWeight'
+>

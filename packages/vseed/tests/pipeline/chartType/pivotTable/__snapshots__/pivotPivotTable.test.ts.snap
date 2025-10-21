@@ -851,7 +851,7 @@ exports[`pivotPivotTable 1`] = `
     },
     {
       "alias": "指标名称",
-      "encoding": "column",
+      "encoding": "row",
       "id": "__MeaName__",
     },
   ],
@@ -859,7 +859,6 @@ exports[`pivotPivotTable 1`] = `
     "column": [
       "month",
       "date",
-      "__MeaName__",
     ],
     "detail": [
       "sales",
@@ -867,6 +866,7 @@ exports[`pivotPivotTable 1`] = `
     ],
     "row": [
       "type",
+      "__MeaName__",
     ],
     "tooltip": [
       "sales",
@@ -938,14 +938,9 @@ exports[`pivotPivotTable 2`] = `
       "title": "年",
       "width": "auto",
     },
-    {
-      "dimensionKey": "__MeaName__",
-      "title": "指标名称",
-      "width": "auto",
-    },
   ],
   "corner": {
-    "titleOnDimension": "column",
+    "titleOnDimension": "row",
   },
   "dataConfig": {
     "aggregationRules": [
@@ -1751,6 +1746,11 @@ exports[`pivotPivotTable 2`] = `
     {
       "dimensionKey": "type",
       "title": "类型",
+      "width": "auto",
+    },
+    {
+      "dimensionKey": "__MeaName__",
+      "title": "指标名称",
       "width": "auto",
     },
   ],

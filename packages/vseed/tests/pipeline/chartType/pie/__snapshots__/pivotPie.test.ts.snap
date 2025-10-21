@@ -1326,7 +1326,7 @@ exports[`pivotPie 2`] = `
           },
           "style": {
             "lineWidth": 1,
-            "stroke": "#ffffff",
+            "stroke": "transparent",
           },
         },
         "region": [
@@ -1472,7 +1472,7 @@ exports[`pivotPie 2`] = `
           },
           "style": {
             "lineWidth": 1,
-            "stroke": "#ffffff",
+            "stroke": "transparent",
           },
         },
         "region": [

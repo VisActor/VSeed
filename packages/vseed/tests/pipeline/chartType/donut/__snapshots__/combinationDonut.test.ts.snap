@@ -537,7 +537,7 @@ exports[`combinationDonut 2`] = `
           },
           "style": {
             "lineWidth": 1,
-            "stroke": "#ffffff",
+            "stroke": "transparent",
           },
         },
         "region": [
@@ -677,7 +677,7 @@ exports[`combinationDonut 2`] = `
           },
           "style": {
             "lineWidth": 1,
-            "stroke": "#ffffff",
+            "stroke": "transparent",
           },
         },
         "region": [

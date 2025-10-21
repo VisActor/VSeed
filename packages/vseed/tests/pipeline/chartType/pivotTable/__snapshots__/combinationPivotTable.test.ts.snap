@@ -193,20 +193,21 @@ exports[`combinationPivotTable 1`] = `
     },
     {
       "alias": "指标名称",
-      "encoding": "column",
+      "encoding": "row",
       "id": "__MeaName__",
     },
   ],
   "encoding": {
     "column": [
       "date",
-      "__MeaName__",
     ],
     "detail": [
       "sales",
       "profit",
     ],
-    "row": [],
+    "row": [
+      "__MeaName__",
+    ],
     "tooltip": [
       "sales",
       "profit",
@@ -272,11 +273,6 @@ exports[`combinationPivotTable 2`] = `
       "title": "日期",
       "width": "auto",
     },
-    {
-      "dimensionKey": "__MeaName__",
-      "title": "指标名称",
-      "width": "auto",
-    },
   ],
   "corner": {
     "titleOnDimension": "column",
@@ -296,7 +292,7 @@ exports[`combinationPivotTable 2`] = `
     ],
   },
   "heightMode": "autoHeight",
-  "hideIndicatorName": false,
+  "hideIndicatorName": true,
   "hover": {
     "highlightMode": "cross",
   },
@@ -310,7 +306,7 @@ exports[`combinationPivotTable 2`] = `
       "width": "auto",
     },
   ],
-  "indicatorsAsCol": false,
+  "indicatorsAsCol": true,
   "records": [
     {
       "__MeaId__": "sales",
@@ -433,7 +429,13 @@ exports[`combinationPivotTable 2`] = `
       "profit": 50000,
     },
   ],
-  "rows": [],
+  "rows": [
+    {
+      "dimensionKey": "__MeaName__",
+      "title": "指标名称",
+      "width": "auto",
+    },
+  ],
   "select": {
     "headerSelectMode": "inline",
     "highlightMode": "cell",

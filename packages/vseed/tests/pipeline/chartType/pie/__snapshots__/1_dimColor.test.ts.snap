@@ -1091,7 +1091,7 @@ exports[`1_dimColor 2`] = `
     },
     "style": {
       "lineWidth": 1,
-      "stroke": "#ffffff",
+      "stroke": "transparent",
     },
   },
   "region": [

@@ -576,7 +576,7 @@ exports[`onlyMeasures 2`] = `
     },
     "style": {
       "lineWidth": 1,
-      "stroke": "#ffffff",
+      "stroke": "transparent",
     },
   },
   "region": [

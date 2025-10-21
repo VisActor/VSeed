@@ -1,6 +1,6 @@
 # secondaryYAxis
 
-**Type:** `import("/Users/bytedance/Projects/VSeed/packages/vseed/src/index").XLinearAxis | import("/Users/bytedance/Projects/VSeed/packages/vseed/src/index").XLinearAxis[] | undefined`
+**Type:** `import("/Users/bytedance/Documents/opensource/VSeed/packages/vseed/src/index").XLinearAxis | import("/Users/bytedance/Documents/opensource/VSeed/packages/vseed/src/index").XLinearAxis[] | undefined`
 
 :::note{title=描述}
 双轴图的次Y轴配置, 用于定义双轴图的次Y轴, 包括次Y轴的位置, 样式等. 当measures有多组时, secondaryYAxis可以配置为数组, 每项对应一个双轴图的次Y轴.
@@ -424,7 +424,7 @@ X轴标题
 
 ## grid
 
-**Type:** `{ visible?: boolean; gridColor?: string; gridWidth?: number; } | undefined`
+**Type:** `{ visible?: boolean; gridColor?: string; gridWidth?: number; gridLineDash?: number[]; } | undefined`
 
 :::note{title=描述}
 X轴网格线
@@ -451,6 +451,15 @@ X轴网格线
 
 :::note{title=描述}
 网格线宽度
+
+:::
+
+### gridLineDash
+
+**Type:** `number[] | undefined`
+
+:::note{title=描述}
+网格线类型
 
 :::
 

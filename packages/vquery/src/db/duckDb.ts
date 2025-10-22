@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { AsyncDuckDBConnection } from '@duckdb/duckdb-wasm'
-import { AsyncDuckDB, getJsDelivrBundles, selectBundle, ConsoleLogger } from '@duckdb/duckdb-wasm'
+import type { DuckDBBundles, AsyncDuckDBConnection } from '@duckdb/duckdb-wasm'
+import { AsyncDuckDB, selectBundle, ConsoleLogger } from '@duckdb/duckdb-wasm'
 
 export class DuckDB {
   private db: AsyncDuckDB | null = null
@@ -11,9 +11,19 @@ export class DuckDB {
   /**
    * @description 初始化 DuckDB 实例
    */
-  instantiate = async () => {
-    const JSDELIVR_BUNDLES = getJsDelivrBundles()
-    const bundle = await selectBundle(JSDELIVR_BUNDLES)
+  init = async () => {
+    const MANUAL_BUNDLES: DuckDBBundles = {
+      mvp: {
+        mainModule: new URL('@duckdb/duckdb-wasm/dist/duckdb-mvp.wasm', import.meta.url).href,
+        mainWorker: new URL('@duckdb/duckdb-wasm/dist/duckdb-browser-mvp.worker.js', import.meta.url).toString(),
+      },
+      eh: {
+        mainModule: new URL('@duckdb/duckdb-wasm/dist/duckdb-eh.wasm', import.meta.url).href,
+        mainWorker: new URL('@duckdb/duckdb-wasm/dist/duckdb-browser-eh.worker.js', import.meta.url).toString(),
+      },
+    }
+
+    const bundle = await selectBundle(MANUAL_BUNDLES)
     const worker_url = URL.createObjectURL(
       new Blob([`importScripts("${bundle.mainWorker!}");`], { type: 'text/javascript' }),
     )

@@ -50,6 +50,7 @@ export const annotationArea: SpecPipe = (spec, context) => {
       areaBorderColor = theme?.areaBorderColor ?? '#888888',
       areaBorderRadius = theme?.areaBorderRadius ?? 4,
       areaBorderWidth = theme?.areaBorderWidth ?? 1,
+      areaLineDash = theme?.areaLineDash,
 
       outerPadding = theme?.outerPadding ?? 4,
     } = annotationArea
@@ -150,7 +151,7 @@ export const annotationArea: SpecPipe = (spec, context) => {
         visible: true,
         text: text,
         style: {
-          dy: isBottom ? -(textFontSize || 12) * 2 : textFontSize,
+          dy: isBottom ? -(textFontSize || 12) * 2 : 0,
           textAlign: textAlign,
           textBaseline: textBaseline,
           fill: textColor,
@@ -164,11 +165,12 @@ export const annotationArea: SpecPipe = (spec, context) => {
           visible: textBackgroundVisible,
           padding: textBackgroundPadding,
           style: {
-            dy: isBottom ? -(textFontSize || 12) * 2 : textFontSize,
+            dy: isBottom ? -(textFontSize || 12) * 2 : 0,
             cornerRadius: textBackgroundBorderRadius ?? 4,
             fill: textBackgroundColor,
             stroke: textBackgroundBorderColor,
             lineWidth: textBackgroundBorderWidth,
+            fillOpacity: 1,
           },
         },
       },
@@ -180,6 +182,7 @@ export const annotationArea: SpecPipe = (spec, context) => {
           stroke: areaBorderColor,
           lineWidth: areaBorderWidth,
           cornerRadius: areaBorderRadius,
+          lineDash: areaLineDash,
         },
       },
     }

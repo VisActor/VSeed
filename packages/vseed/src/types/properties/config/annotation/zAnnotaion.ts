@@ -56,6 +56,7 @@ export const zAnnotationAreaConfig = zAnnotationArea
     areaBorderColor: true,
     areaBorderWidth: true,
     areaBorderRadius: true,
+    areaLineDash: true,
 
     outerPadding: true,
   })

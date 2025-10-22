@@ -49,6 +49,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
       areaBorderColor = theme?.areaBorderColor ?? '#888888',
       areaBorderRadius = theme?.areaBorderRadius ?? 4,
       areaBorderWidth = theme?.areaBorderWidth ?? 1,
+      areaLineDash = theme?.areaLineDash,
 
       outerPadding = theme?.outerPadding ?? 4,
     } = annotationArea
@@ -186,6 +187,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
             fill: textBackgroundColor,
             stroke: textBackgroundBorderColor,
             lineWidth: textBackgroundBorderWidth,
+            fillOpacity: 1,
           },
         },
       },
@@ -197,6 +199,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           stroke: areaBorderColor,
           lineWidth: areaBorderWidth,
           cornerRadius: areaBorderRadius,
+          lineDash: areaLineDash,
         },
       },
     }

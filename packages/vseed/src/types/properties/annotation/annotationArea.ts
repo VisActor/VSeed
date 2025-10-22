@@ -82,7 +82,6 @@ export type AnnotationArea = {
    * @example 4
    */
   textBackgroundPadding?: number
-
   /**
    * @description 标注区域区域颜色
    * @example 'red'
@@ -108,6 +107,11 @@ export type AnnotationArea = {
    * @example 4
    */
   areaBorderRadius?: number
+  /**
+   * @description 标注区域区域边框的线型
+   * @example [2, 2]
+   */
+  areaLineDash?: number[]
   /**
    * @description 标注区域区域的边距
    * @example 0

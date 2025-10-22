@@ -22,6 +22,7 @@ export const getLightLinearAxis = (): YLinearAxis => ({
     visible: true,
     gridColor: '#36415926',
     gridWidth: 0.5,
+    gridLineDash: [4, 2],
   },
   tick: {
     visible: false,
@@ -61,6 +62,7 @@ export const getLightBandAxis = (): YBandAxis => ({
     visible: false,
     gridColor: '#36415926',
     gridWidth: 0.5,
+    gridLineDash: [4, 2],
   },
   tick: {
     visible: false,
@@ -94,8 +96,9 @@ export const getDarkLinearAxis = (): YLinearAxis => ({
   },
   grid: {
     visible: true,
-    gridColor: '#404349',
+    gridColor: '#303339',
     gridWidth: 0.5,
+    gridLineDash: [4, 2],
   },
   tick: {
     visible: false,
@@ -133,8 +136,9 @@ export const getDarkBandAxis = (): YBandAxis => ({
   },
   grid: {
     visible: false,
-    gridColor: '#404349',
+    gridColor: '#303339',
     gridWidth: 0.5,
+    gridLineDash: [4, 2],
   },
   tick: {
     visible: false,

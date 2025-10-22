@@ -48,17 +48,18 @@ export const getLightAnnotationArea = (): AnnotationAreaConfig => ({
   textFontWeight: 400,
 
   textBackgroundVisible: true,
-  textBackgroundColor: '#364159',
-  textBackgroundBorderColor: '#3641594d',
+  textBackgroundColor: '#BCC1CB',
+  textBackgroundBorderColor: '#BCC1CB',
   textBackgroundBorderWidth: 1,
-  textBackgroundBorderRadius: 4,
+  textBackgroundBorderRadius: 0,
   textBackgroundPadding: 4,
 
-  areaColor: '#364159',
-  areaColorOpacity: 0.15,
-  areaBorderColor: '#364159',
-  areaBorderWidth: 1,
-  areaBorderRadius: 4,
+  areaColor: '#BCC1CB',
+  areaColorOpacity: 0.12,
+  areaBorderColor: '#BCC1CB',
+  areaBorderWidth: 0,
+  areaBorderRadius: 0,
+  areaLineDash: [2, 2],
 
   outerPadding: 4,
 })
@@ -107,22 +108,23 @@ export const getDarkAnnotationHorizontalLine = (): AnnotationHorizontalLineConfi
 export const getDarkAnnotationVerticalLine = () => getDarkAnnotationHorizontalLine()
 
 export const getDarkAnnotationArea = (): AnnotationAreaConfig => ({
-  textColor: '#4B4F54',
+  textColor: '#E2E3E6',
   textFontSize: 12,
   textFontWeight: 400,
 
   textBackgroundVisible: true,
-  textBackgroundColor: '#ffffff',
-  textBackgroundBorderColor: '#ffffff',
+  textBackgroundColor: '#55595F',
+  textBackgroundBorderColor: '#55595F',
   textBackgroundBorderWidth: 1,
-  textBackgroundBorderRadius: 4,
+  textBackgroundBorderRadius: 0,
   textBackgroundPadding: 4,
 
   areaColor: '#E2E3E6',
   areaColorOpacity: 0.15,
   areaBorderColor: '#E2E3E6',
-  areaBorderWidth: 1,
-  areaBorderRadius: 4,
+  areaBorderWidth: 0,
+  areaBorderRadius: 0,
+  areaLineDash: [2, 2],
 
   outerPadding: 4,
 })

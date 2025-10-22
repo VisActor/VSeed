@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.33
+
+### Patch Changes
+
+- 7f62f8b: fix: fix theme of annotaion and crosshair
+
 ## 0.1.32
 
 ### Patch Changes

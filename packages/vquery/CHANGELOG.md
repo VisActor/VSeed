@@ -1,5 +1,11 @@
 # @visactor/vquery
 
+## 0.1.34
+
+### Patch Changes
+
+- c646163: feat: use duckdb wasm URL instead of js deliver
+
 ## 0.1.33
 
 ## 0.1.32

@@ -8,7 +8,7 @@ pageType: custom
 const run = async (setVSeed) => {
   // 1. init vquery
   const vquery = new VQuery()
-  await vquery.instantiate()
+  await vquery.init()
 
   // 2. write or read dataset from indexedDB
   const files = await vquery.listFiles()

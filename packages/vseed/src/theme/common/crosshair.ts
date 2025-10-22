@@ -18,8 +18,8 @@ export const getLightCrosshairLine = () => ({
   visible: true,
   labelVisible: true,
   labelColor: '#ffffff',
-  labelBackgroundColor: '##21252C',
-  lineColor: '#000000',
+  labelBackgroundColor: '#21252C',
+  lineColor: '#21252C',
 })
 export const getLightCrosshairRect = () => ({
   visible: true,

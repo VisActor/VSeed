@@ -3,6 +3,7 @@ import { selector } from '../../../../../dataSelector'
 import type { Datum, SpecPipe } from 'src/types'
 import { isSubset } from './utils'
 import { ANNOTATION_Z_INDEX } from '../../../../utils/constant'
+import { isBarLikeChart } from 'src/pipeline/utils/chatType'
 
 export const annotationAreaBand: SpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
@@ -25,17 +26,25 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
     left: 'insideLeft',
     right: 'insideRight',
   }
+  const defaultOptions = isBarLikeChart(advancedVSeed)
+    ? {
+        textPosition: 'right',
+        textAlign: 'right',
+      }
+    : {
+        textPosition: 'top',
+        textAlign: 'center',
+      }
 
   const markArea = annotationAreaList.flatMap((annotationArea) => {
     const {
       selector: selectorPoint,
       text = '',
-      textPosition = 'top',
       textColor = theme?.textColor ?? '#ffffff',
       textFontSize = theme?.textFontSize ?? 12,
       textFontWeight = theme?.textFontWeight ?? 400,
-      textAlign = 'center',
-      textBaseline = 'top',
+      textAlign = defaultOptions.textAlign,
+      textBaseline = 'middle',
 
       textBackgroundVisible = theme?.textBackgroundVisible ?? true,
       textBackgroundColor = theme?.textBackgroundColor ?? '#191d24',
@@ -49,11 +58,13 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
       areaBorderColor = theme?.areaBorderColor ?? '#888888',
       areaBorderRadius = theme?.areaBorderRadius ?? 4,
       areaBorderWidth = theme?.areaBorderWidth ?? 1,
+      areaLineDash = theme?.areaLineDash,
 
       outerPadding = theme?.outerPadding ?? 4,
     } = annotationArea
+    const textPosition: string = annotationArea.textPosition ?? defaultOptions.textPosition
 
-    const dy = textPosition?.includes('bottom') ? -1 * textFontSize! : textFontSize
+    const dy = textPosition.includes('bottom') ? -1 * textFontSize! : 0
 
     const dataset = advancedVSeed.dataset.flat()
     const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
@@ -163,7 +174,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
         return []
       },
       label: {
-        position: positionMap[textPosition || 'top'],
+        position: positionMap[textPosition as 'bottom'],
         visible: true,
         text: text,
         style: {
@@ -186,6 +197,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
             fill: textBackgroundColor,
             stroke: textBackgroundBorderColor,
             lineWidth: textBackgroundBorderWidth,
+            fillOpacity: 1,
           },
         },
       },
@@ -197,6 +209,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           stroke: areaBorderColor,
           lineWidth: areaBorderWidth,
           cornerRadius: areaBorderRadius,
+          lineDash: areaLineDash,
         },
       },
     }

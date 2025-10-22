@@ -114,6 +114,7 @@ export type AnnotationAreaConfig = Pick<
   | 'areaBorderWidth'
   | 'areaColor'
   | 'areaColorOpacity'
+  | 'areaLineDash'
   | 'outerPadding'
   | 'textBackgroundBorderColor'
   | 'textBackgroundBorderRadius'

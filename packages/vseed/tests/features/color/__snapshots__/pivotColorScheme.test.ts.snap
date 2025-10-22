@@ -8,16 +8,20 @@ exports[`pivotColorScheme 1`] = `
     "columnParallel": {
       "annotation": {
         "annotationArea": {
-          "areaBorderColor": "#364159",
-          "areaBorderRadius": 4,
-          "areaBorderWidth": 1,
-          "areaColor": "#364159",
-          "areaColorOpacity": 0.15,
+          "areaBorderColor": "#BCC1CB",
+          "areaBorderRadius": 0,
+          "areaBorderWidth": 0,
+          "areaColor": "#BCC1CB",
+          "areaColorOpacity": 0.12,
+          "areaLineDash": [
+            2,
+            2,
+          ],
           "outerPadding": 4,
-          "textBackgroundBorderColor": "#3641594d",
-          "textBackgroundBorderRadius": 4,
+          "textBackgroundBorderColor": "#BCC1CB",
+          "textBackgroundBorderRadius": 0,
           "textBackgroundBorderWidth": 1,
-          "textBackgroundColor": "#364159",
+          "textBackgroundColor": "#BCC1CB",
           "textBackgroundPadding": 4,
           "textBackgroundVisible": true,
           "textColor": "#ffffff",
@@ -129,6 +133,10 @@ exports[`pivotColorScheme 1`] = `
       "xAxis": {
         "grid": {
           "gridColor": "#36415926",
+          "gridLineDash": [
+            4,
+            2,
+          ],
           "gridWidth": 0.5,
           "visible": false,
         },
@@ -171,6 +179,10 @@ exports[`pivotColorScheme 1`] = `
       "yAxis": {
         "grid": {
           "gridColor": "#36415926",
+          "gridLineDash": [
+            4,
+            2,
+          ],
           "gridWidth": 0.5,
           "visible": true,
         },
@@ -210,16 +222,20 @@ exports[`pivotColorScheme 1`] = `
       "columnParallel": {
         "annotation": {
           "annotationArea": {
-            "areaBorderColor": "#364159",
-            "areaBorderRadius": 4,
-            "areaBorderWidth": 1,
-            "areaColor": "#364159",
-            "areaColorOpacity": 0.15,
+            "areaBorderColor": "#BCC1CB",
+            "areaBorderRadius": 0,
+            "areaBorderWidth": 0,
+            "areaColor": "#BCC1CB",
+            "areaColorOpacity": 0.12,
+            "areaLineDash": [
+              2,
+              2,
+            ],
             "outerPadding": 4,
-            "textBackgroundBorderColor": "#3641594d",
-            "textBackgroundBorderRadius": 4,
+            "textBackgroundBorderColor": "#BCC1CB",
+            "textBackgroundBorderRadius": 0,
             "textBackgroundBorderWidth": 1,
-            "textBackgroundColor": "#364159",
+            "textBackgroundColor": "#BCC1CB",
             "textBackgroundPadding": 4,
             "textBackgroundVisible": true,
             "textColor": "#ffffff",
@@ -336,6 +352,10 @@ exports[`pivotColorScheme 1`] = `
         "xAxis": {
           "grid": {
             "gridColor": "#36415926",
+            "gridLineDash": [
+              4,
+              2,
+            ],
             "gridWidth": 0.5,
             "visible": false,
           },
@@ -378,6 +398,10 @@ exports[`pivotColorScheme 1`] = `
         "yAxis": {
           "grid": {
             "gridColor": "#36415926",
+            "gridLineDash": [
+              4,
+              2,
+            ],
             "gridWidth": 0.5,
             "visible": true,
           },
@@ -905,7 +929,10 @@ exports[`pivotColorScheme 2`] = `
             },
             "grid": {
               "style": {
-                "lineDash": undefined,
+                "lineDash": [
+                  4,
+                  2,
+                ],
                 "lineWidth": 0.5,
                 "stroke": "#36415926",
               },
@@ -978,7 +1005,10 @@ exports[`pivotColorScheme 2`] = `
             },
             "grid": {
               "style": {
-                "lineDash": undefined,
+                "lineDash": [
+                  4,
+                  2,
+                ],
                 "lineWidth": 0.5,
                 "stroke": "#36415926",
               },

@@ -26,6 +26,7 @@ export const zAnnotationArea = z.object({
   areaBorderColor: z.string().default('#888888').nullish(),
   areaBorderWidth: z.number().default(1).nullish(),
   areaBorderRadius: z.number().default(4).nullish(),
+  areaLineDash: z.array(z.number()).nullish(),
 
   outerPadding: z.number().default(4).nullish(),
 })

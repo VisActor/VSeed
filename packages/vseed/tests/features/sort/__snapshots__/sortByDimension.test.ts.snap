@@ -19,16 +19,20 @@ exports[`sortByDimension 1`] = `
     "line": {
       "annotation": {
         "annotationArea": {
-          "areaBorderColor": "#364159",
-          "areaBorderRadius": 4,
-          "areaBorderWidth": 1,
-          "areaColor": "#364159",
-          "areaColorOpacity": 0.15,
+          "areaBorderColor": "#BCC1CB",
+          "areaBorderRadius": 0,
+          "areaBorderWidth": 0,
+          "areaColor": "#BCC1CB",
+          "areaColorOpacity": 0.12,
+          "areaLineDash": [
+            2,
+            2,
+          ],
           "outerPadding": 4,
-          "textBackgroundBorderColor": "#3641594d",
-          "textBackgroundBorderRadius": 4,
+          "textBackgroundBorderColor": "#BCC1CB",
+          "textBackgroundBorderRadius": 0,
           "textBackgroundBorderWidth": 1,
-          "textBackgroundColor": "#364159",
+          "textBackgroundColor": "#BCC1CB",
           "textBackgroundPadding": 4,
           "textBackgroundVisible": true,
           "textColor": "#ffffff",
@@ -101,10 +105,10 @@ exports[`sortByDimension 1`] = `
         ],
       },
       "crosshairLine": {
-        "labelBackgroundColor": "##21252C",
+        "labelBackgroundColor": "#21252C",
         "labelColor": "#ffffff",
         "labelVisible": true,
-        "lineColor": "#000000",
+        "lineColor": "#21252C",
         "visible": true,
       },
       "label": {
@@ -139,6 +143,10 @@ exports[`sortByDimension 1`] = `
       "xAxis": {
         "grid": {
           "gridColor": "#36415926",
+          "gridLineDash": [
+            4,
+            2,
+          ],
           "gridWidth": 0.5,
           "visible": false,
         },
@@ -181,6 +189,10 @@ exports[`sortByDimension 1`] = `
       "yAxis": {
         "grid": {
           "gridColor": "#36415926",
+          "gridLineDash": [
+            4,
+            2,
+          ],
           "gridWidth": 0.5,
           "visible": true,
         },
@@ -220,16 +232,20 @@ exports[`sortByDimension 1`] = `
       "line": {
         "annotation": {
           "annotationArea": {
-            "areaBorderColor": "#364159",
-            "areaBorderRadius": 4,
-            "areaBorderWidth": 1,
-            "areaColor": "#364159",
-            "areaColorOpacity": 0.15,
+            "areaBorderColor": "#BCC1CB",
+            "areaBorderRadius": 0,
+            "areaBorderWidth": 0,
+            "areaColor": "#BCC1CB",
+            "areaColorOpacity": 0.12,
+            "areaLineDash": [
+              2,
+              2,
+            ],
             "outerPadding": 4,
-            "textBackgroundBorderColor": "#3641594d",
-            "textBackgroundBorderRadius": 4,
+            "textBackgroundBorderColor": "#BCC1CB",
+            "textBackgroundBorderRadius": 0,
             "textBackgroundBorderWidth": 1,
-            "textBackgroundColor": "#364159",
+            "textBackgroundColor": "#BCC1CB",
             "textBackgroundPadding": 4,
             "textBackgroundVisible": true,
             "textColor": "#ffffff",
@@ -302,10 +318,10 @@ exports[`sortByDimension 1`] = `
           ],
         },
         "crosshairLine": {
-          "labelBackgroundColor": "##21252C",
+          "labelBackgroundColor": "#21252C",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "lineColor": "#000000",
+          "lineColor": "#21252C",
           "visible": true,
         },
         "label": {
@@ -340,6 +356,10 @@ exports[`sortByDimension 1`] = `
         "xAxis": {
           "grid": {
             "gridColor": "#36415926",
+            "gridLineDash": [
+              4,
+              2,
+            ],
             "gridWidth": 0.5,
             "visible": false,
           },
@@ -382,6 +402,10 @@ exports[`sortByDimension 1`] = `
         "yAxis": {
           "grid": {
             "gridColor": "#36415926",
+            "gridLineDash": [
+              4,
+              2,
+            ],
             "gridWidth": 0.5,
             "visible": true,
           },
@@ -764,7 +788,10 @@ exports[`sortByDimension 2`] = `
       },
       "grid": {
         "style": {
-          "lineDash": undefined,
+          "lineDash": [
+            4,
+            2,
+          ],
           "lineWidth": 0.5,
           "stroke": "#36415926",
         },
@@ -837,7 +864,10 @@ exports[`sortByDimension 2`] = `
       },
       "grid": {
         "style": {
-          "lineDash": undefined,
+          "lineDash": [
+            4,
+            2,
+          ],
           "lineWidth": 0.5,
           "stroke": "#36415926",
         },
@@ -910,7 +940,7 @@ exports[`sortByDimension 2`] = `
       "label": {
         "labelBackground": {
           "style": {
-            "fill": "##21252C",
+            "fill": "#21252C",
           },
           "visible": true,
         },
@@ -927,7 +957,7 @@ exports[`sortByDimension 2`] = `
           ],
           "lineWidth": 1,
           "opacity": 1,
-          "stroke": "#000000",
+          "stroke": "#21252C",
         },
         "type": "line",
       },

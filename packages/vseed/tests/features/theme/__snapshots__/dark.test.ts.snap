@@ -9,18 +9,22 @@ exports[`dark 1`] = `
       "annotation": {
         "annotationArea": {
           "areaBorderColor": "#E2E3E6",
-          "areaBorderRadius": 4,
-          "areaBorderWidth": 1,
+          "areaBorderRadius": 0,
+          "areaBorderWidth": 0,
           "areaColor": "#E2E3E6",
           "areaColorOpacity": 0.15,
+          "areaLineDash": [
+            2,
+            2,
+          ],
           "outerPadding": 4,
-          "textBackgroundBorderColor": "#ffffff",
-          "textBackgroundBorderRadius": 4,
+          "textBackgroundBorderColor": "#55595F",
+          "textBackgroundBorderRadius": 0,
           "textBackgroundBorderWidth": 1,
-          "textBackgroundColor": "#ffffff",
+          "textBackgroundColor": "#55595F",
           "textBackgroundPadding": 4,
           "textBackgroundVisible": true,
-          "textColor": "#4B4F54",
+          "textColor": "#E2E3E6",
           "textFontSize": 12,
           "textFontWeight": 400,
         },
@@ -129,7 +133,11 @@ exports[`dark 1`] = `
       },
       "xAxis": {
         "grid": {
-          "gridColor": "#404349",
+          "gridColor": "#303339",
+          "gridLineDash": [
+            4,
+            2,
+          ],
           "gridWidth": 0.5,
           "visible": false,
         },
@@ -171,7 +179,11 @@ exports[`dark 1`] = `
       },
       "yAxis": {
         "grid": {
-          "gridColor": "#404349",
+          "gridColor": "#303339",
+          "gridLineDash": [
+            4,
+            2,
+          ],
           "gridWidth": 0.5,
           "visible": true,
         },
@@ -211,18 +223,22 @@ exports[`dark 1`] = `
         "annotation": {
           "annotationArea": {
             "areaBorderColor": "#E2E3E6",
-            "areaBorderRadius": 4,
-            "areaBorderWidth": 1,
+            "areaBorderRadius": 0,
+            "areaBorderWidth": 0,
             "areaColor": "#E2E3E6",
             "areaColorOpacity": 0.15,
+            "areaLineDash": [
+              2,
+              2,
+            ],
             "outerPadding": 4,
-            "textBackgroundBorderColor": "#ffffff",
-            "textBackgroundBorderRadius": 4,
+            "textBackgroundBorderColor": "#55595F",
+            "textBackgroundBorderRadius": 0,
             "textBackgroundBorderWidth": 1,
-            "textBackgroundColor": "#ffffff",
+            "textBackgroundColor": "#55595F",
             "textBackgroundPadding": 4,
             "textBackgroundVisible": true,
-            "textColor": "#4B4F54",
+            "textColor": "#E2E3E6",
             "textFontSize": 12,
             "textFontWeight": 400,
           },
@@ -331,7 +347,11 @@ exports[`dark 1`] = `
         },
         "xAxis": {
           "grid": {
-            "gridColor": "#404349",
+            "gridColor": "#303339",
+            "gridLineDash": [
+              4,
+              2,
+            ],
             "gridWidth": 0.5,
             "visible": false,
           },
@@ -373,7 +393,11 @@ exports[`dark 1`] = `
         },
         "yAxis": {
           "grid": {
-            "gridColor": "#404349",
+            "gridColor": "#303339",
+            "gridLineDash": [
+              4,
+              2,
+            ],
             "gridWidth": 0.5,
             "visible": true,
           },
@@ -669,9 +693,12 @@ exports[`dark 2`] = `
       },
       "grid": {
         "style": {
-          "lineDash": undefined,
+          "lineDash": [
+            4,
+            2,
+          ],
           "lineWidth": 0.5,
-          "stroke": "#404349",
+          "stroke": "#303339",
         },
         "visible": false,
       },
@@ -742,9 +769,12 @@ exports[`dark 2`] = `
       },
       "grid": {
         "style": {
-          "lineDash": undefined,
+          "lineDash": [
+            4,
+            2,
+          ],
           "lineWidth": 0.5,
-          "stroke": "#404349",
+          "stroke": "#303339",
         },
         "visible": true,
       },

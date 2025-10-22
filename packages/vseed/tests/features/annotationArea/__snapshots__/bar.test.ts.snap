@@ -17,16 +17,20 @@ exports[`bar 1`] = `
     "bar": {
       "annotation": {
         "annotationArea": {
-          "areaBorderColor": "#364159",
-          "areaBorderRadius": 4,
-          "areaBorderWidth": 1,
-          "areaColor": "#364159",
-          "areaColorOpacity": 0.15,
+          "areaBorderColor": "#BCC1CB",
+          "areaBorderRadius": 0,
+          "areaBorderWidth": 0,
+          "areaColor": "#BCC1CB",
+          "areaColorOpacity": 0.12,
+          "areaLineDash": [
+            2,
+            2,
+          ],
           "outerPadding": 4,
-          "textBackgroundBorderColor": "#3641594d",
-          "textBackgroundBorderRadius": 4,
+          "textBackgroundBorderColor": "#BCC1CB",
+          "textBackgroundBorderRadius": 0,
           "textBackgroundBorderWidth": 1,
-          "textBackgroundColor": "#364159",
+          "textBackgroundColor": "#BCC1CB",
           "textBackgroundPadding": 4,
           "textBackgroundVisible": true,
           "textColor": "#ffffff",
@@ -143,6 +147,10 @@ exports[`bar 1`] = `
       "xAxis": {
         "grid": {
           "gridColor": "#36415926",
+          "gridLineDash": [
+            4,
+            2,
+          ],
           "gridWidth": 0.5,
           "visible": true,
         },
@@ -178,6 +186,10 @@ exports[`bar 1`] = `
       "yAxis": {
         "grid": {
           "gridColor": "#36415926",
+          "gridLineDash": [
+            4,
+            2,
+          ],
           "gridWidth": 0.5,
           "visible": false,
         },
@@ -224,16 +236,20 @@ exports[`bar 1`] = `
       "bar": {
         "annotation": {
           "annotationArea": {
-            "areaBorderColor": "#364159",
-            "areaBorderRadius": 4,
-            "areaBorderWidth": 1,
-            "areaColor": "#364159",
-            "areaColorOpacity": 0.15,
+            "areaBorderColor": "#BCC1CB",
+            "areaBorderRadius": 0,
+            "areaBorderWidth": 0,
+            "areaColor": "#BCC1CB",
+            "areaColorOpacity": 0.12,
+            "areaLineDash": [
+              2,
+              2,
+            ],
             "outerPadding": 4,
-            "textBackgroundBorderColor": "#3641594d",
-            "textBackgroundBorderRadius": 4,
+            "textBackgroundBorderColor": "#BCC1CB",
+            "textBackgroundBorderRadius": 0,
             "textBackgroundBorderWidth": 1,
-            "textBackgroundColor": "#364159",
+            "textBackgroundColor": "#BCC1CB",
             "textBackgroundPadding": 4,
             "textBackgroundVisible": true,
             "textColor": "#ffffff",
@@ -350,6 +366,10 @@ exports[`bar 1`] = `
         "xAxis": {
           "grid": {
             "gridColor": "#36415926",
+            "gridLineDash": [
+              4,
+              2,
+            ],
             "gridWidth": 0.5,
             "visible": true,
           },
@@ -385,6 +405,10 @@ exports[`bar 1`] = `
         "yAxis": {
           "grid": {
             "gridColor": "#36415926",
+            "gridLineDash": [
+              4,
+              2,
+            ],
             "gridWidth": 0.5,
             "visible": false,
           },
@@ -792,7 +816,10 @@ exports[`bar 2`] = `
       },
       "grid": {
         "style": {
-          "lineDash": undefined,
+          "lineDash": [
+            4,
+            2,
+          ],
           "lineWidth": 0.5,
           "stroke": "#36415926",
         },
@@ -847,7 +874,10 @@ exports[`bar 2`] = `
       },
       "grid": {
         "style": {
-          "lineDash": undefined,
+          "lineDash": [
+            4,
+            2,
+          ],
           "lineWidth": 0.5,
           "stroke": "#36415926",
         },
@@ -1303,11 +1333,15 @@ exports[`bar 2`] = `
     {
       "area": {
         "style": {
-          "cornerRadius": 4,
-          "fill": "#364159",
-          "fillOpacity": 0.15,
-          "lineWidth": 1,
-          "stroke": "#364159",
+          "cornerRadius": 0,
+          "fill": "#BCC1CB",
+          "fillOpacity": 0.12,
+          "lineDash": [
+            2,
+            2,
+          ],
+          "lineWidth": 0,
+          "stroke": "#BCC1CB",
           "visible": true,
         },
       },
@@ -1315,24 +1349,25 @@ exports[`bar 2`] = `
         "labelBackground": {
           "padding": 4,
           "style": {
-            "cornerRadius": 4,
-            "dy": 12,
-            "fill": "#364159",
+            "cornerRadius": 0,
+            "dy": 0,
+            "fill": "#BCC1CB",
+            "fillOpacity": 1,
             "lineWidth": 1,
-            "stroke": "#3641594d",
+            "stroke": "#BCC1CB",
           },
           "visible": true,
         },
         "position": "insideTopRight",
         "style": {
-          "dy": 12,
+          "dy": 0,
           "fill": "#ffffff",
           "fontSize": 12,
           "fontWeight": 400,
           "lineWidth": 1,
-          "stroke": "#364159",
+          "stroke": "#BCC1CB",
           "textAlign": "right",
-          "textBaseline": "top",
+          "textBaseline": "middle",
         },
         "text": "区域",
         "visible": true,

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { DuckDBBundles, AsyncDuckDBConnection } from '@duckdb/duckdb-wasm'
 import { AsyncDuckDB, selectBundle, ConsoleLogger } from '@duckdb/duckdb-wasm'
+import { QueryResult } from 'src/types'
 
 export class DuckDB {
   private db: AsyncDuckDB | null = null
@@ -98,5 +99,34 @@ export class DuckDB {
       dataset,
       table,
     }
+  }
+
+  /**
+   * 确保一个文件存在，如果不存在，则根据同名文件创建临时表
+   * @param fileName 文件名
+   */
+  private ensureSchema = async (fileName: string) => {
+    if (!this.connection) {
+      throw new Error('connection is null')
+    }
+    await this.connection.query(
+      `CREATE TEMP TABLE IF NOT EXISTS "${fileName}" AS SELECT * FROM read_csv_auto('${fileName}')`,
+    )
+  }
+
+  /**
+   * @description 获取文件的 Schema
+   * @param fileName 文件名
+   * @returns 文件的 Schema
+   */
+  getSchema = async (fileName: string): Promise<QueryResult> => {
+    if (!this.connection) {
+      throw new Error('connection is null')
+    }
+
+    await this.ensureSchema(fileName)
+
+    const result = await this.connection.query(`PRAGMA table_info('${fileName}')`)
+    return result.toArray().map((row) => row.toJSON())
   }
 }

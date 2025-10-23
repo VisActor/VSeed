@@ -1,5 +1,6 @@
 import { DuckDB } from './db/duckDb'
 import { IndexedDB } from './db/indexedDb'
+import { QueryResult } from './types'
 
 export class VQuery {
   private duckDB: DuckDB
@@ -87,5 +88,14 @@ export class VQuery {
         duration: Number(end) - Number(start),
       },
     }
+  }
+
+  /**
+   * @description 获取文件的 Schema
+   * @param fileName 文件名
+   * @returns 文件的 Schema
+   */
+  public getSchema = async (fileName: string): Promise<QueryResult> => {
+    return this.duckDB.getSchema(fileName)
   }
 }

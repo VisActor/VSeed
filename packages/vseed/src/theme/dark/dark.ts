@@ -11,6 +11,7 @@ import {
 import { getDefaultTooltip } from '../common/tooltip'
 import { getDarkBandAxis, getDarkLinearAxis } from '../common/axes'
 import { getDarkAnnotation } from '../common/annotaion'
+import { getDarkFunnelTransformTheme } from '../common/funnelTransform'
 
 export const darkTheme = (): CustomThemeConfig => {
   const linearAxis = getDarkLinearAxis()
@@ -215,6 +216,7 @@ export const darkTheme = (): CustomThemeConfig => {
       // other
       funnel: {
         ...baseConfig,
+        transform: getDarkFunnelTransformTheme(),
 
         pivotGrid: getDarkPivotChartGridConfig(),
       },

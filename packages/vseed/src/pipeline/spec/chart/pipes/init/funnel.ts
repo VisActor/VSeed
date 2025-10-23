@@ -22,10 +22,6 @@ export const initFunnel: SpecPipe = (spec, context) => {
     },
   ]
 
-  result.transformLabel = {
-    visible: true,
-  }
-
   result.animation = true
 
   return result

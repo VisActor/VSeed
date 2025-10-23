@@ -9,6 +9,7 @@ import { zLegend } from './legend/legend'
 import { zTooltip } from './tooltip/tooltip'
 import { zDualChartType } from '../chartType'
 import { zAnnotaionConfig } from './annotation/zAnnotaion'
+import { zFunnelTransform } from './funnelTransform/zFunnelTransform'
 
 /**
  * zConfig by 图表类型
@@ -165,7 +166,17 @@ export const zPieConfig = z.object({
 export const zDonutConfig = zPieConfig
 export const zRadarConfig = zPieConfig
 // other
-export const zFunnelConfig = zAreaConfig
+
+export const zFunnelConfig = z.object({
+  backgroundColor: zBackgroundColor.nullish(),
+  label: zLabel.nullish(),
+  color: zColor.nullish(),
+  tooltip: zTooltip.nullish(),
+  legend: zLegend.nullish(),
+
+  pivotGrid: zPivotChartGridConfig.nullish(),
+  transform: zFunnelTransform.nullish(),
+})
 export const zHeatmapConfig = zAreaConfig
 
 /**

@@ -54,6 +54,10 @@ exports[`simpleFunnel 1`] = `
       "tooltip": {
         "enable": true,
       },
+      "transform": {
+        "backgroundColor": "#F6F7F9",
+        "textColor": "#737880",
+      },
     },
   },
   "customTheme": {
@@ -106,6 +110,10 @@ exports[`simpleFunnel 1`] = `
         },
         "tooltip": {
           "enable": true,
+        },
+        "transform": {
+          "backgroundColor": "#F6F7F9",
+          "textColor": "#737880",
         },
       },
     },
@@ -1337,7 +1345,7 @@ exports[`simpleFunnel 2`] = `
       },
     },
     "style": {
-      "cornerRadius": 4,
+      "cornerRadius": 0,
     },
   },
   "isTransform": true,
@@ -1454,7 +1462,15 @@ exports[`simpleFunnel 2`] = `
     },
     "visible": true,
   },
+  "transform": {
+    "style": {
+      "fill": "#F6F7F9",
+    },
+  },
   "transformLabel": {
+    "style": {
+      "fill": "#737880",
+    },
     "visible": true,
   },
   "type": "funnel",

@@ -54,6 +54,10 @@ exports[`2_meaColor 1`] = `
       "tooltip": {
         "enable": true,
       },
+      "transform": {
+        "backgroundColor": "#F6F7F9",
+        "textColor": "#737880",
+      },
     },
   },
   "customTheme": {
@@ -106,6 +110,10 @@ exports[`2_meaColor 1`] = `
         },
         "tooltip": {
           "enable": true,
+        },
+        "transform": {
+          "backgroundColor": "#F6F7F9",
+          "textColor": "#737880",
         },
       },
     },
@@ -637,7 +645,7 @@ exports[`2_meaColor 2`] = `
       },
     },
     "style": {
-      "cornerRadius": 4,
+      "cornerRadius": 0,
       "fill": {
         "field": "__Dim_Color__",
         "scale": "color",
@@ -732,7 +740,15 @@ exports[`2_meaColor 2`] = `
     },
     "visible": true,
   },
+  "transform": {
+    "style": {
+      "fill": "#F6F7F9",
+    },
+  },
   "transformLabel": {
+    "style": {
+      "fill": "#737880",
+    },
     "visible": true,
   },
   "type": "funnel",

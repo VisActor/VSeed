@@ -54,6 +54,10 @@ exports[`combinationFunnel 1`] = `
       "tooltip": {
         "enable": true,
       },
+      "transform": {
+        "backgroundColor": "#F6F7F9",
+        "textColor": "#737880",
+      },
     },
   },
   "customTheme": {
@@ -106,6 +110,10 @@ exports[`combinationFunnel 1`] = `
         },
         "tooltip": {
           "enable": true,
+        },
+        "transform": {
+          "backgroundColor": "#F6F7F9",
+          "textColor": "#737880",
         },
       },
     },
@@ -510,7 +518,7 @@ exports[`combinationFunnel 2`] = `
             },
           },
           "style": {
-            "cornerRadius": 4,
+            "cornerRadius": 0,
           },
         },
         "isTransform": true,
@@ -577,7 +585,15 @@ exports[`combinationFunnel 2`] = `
           },
           "visible": true,
         },
+        "transform": {
+          "style": {
+            "fill": "#F6F7F9",
+          },
+        },
         "transformLabel": {
+          "style": {
+            "fill": "#737880",
+          },
           "visible": true,
         },
         "type": "funnel",
@@ -651,7 +667,7 @@ exports[`combinationFunnel 2`] = `
             },
           },
           "style": {
-            "cornerRadius": 4,
+            "cornerRadius": 0,
           },
         },
         "isTransform": true,
@@ -718,7 +734,15 @@ exports[`combinationFunnel 2`] = `
           },
           "visible": true,
         },
+        "transform": {
+          "style": {
+            "fill": "#F6F7F9",
+          },
+        },
         "transformLabel": {
+          "style": {
+            "fill": "#737880",
+          },
           "visible": true,
         },
         "type": "funnel",

@@ -19,6 +19,8 @@ const run = async (setVSeed) => {
     await vquery.writeFile(fileName, 'https://visactor.github.io/VSeed/dataset/supermarket.csv')
   }
 
+  const schema = await vquery.getSchema(fileName)
+
   // 3. query data using duckDb sql
   const sql = `
     SELECT
@@ -33,6 +35,7 @@ const run = async (setVSeed) => {
 
   // 4. execute query
   const { dataset, performance } = await vquery.query(sql)
+  console.log('debug schema', schema)
   console.log('debug dataset', dataset)
   console.log('debug query performance', performance)
 

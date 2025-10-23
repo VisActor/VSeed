@@ -340,6 +340,20 @@ true
 
 
 
+## areaLineDash
+
+**Type:** `number[] | undefined`
+
+:::note{title=描述}
+标注区域区域边框的线型
+
+:::
+
+**示例**
+[2, 2]
+
+
+
 ## outerPadding
 
 **Type:** `number | undefined`

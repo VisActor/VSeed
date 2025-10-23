@@ -1,6 +1,6 @@
 # yAxis
 
-**Type:** `import("/Users/bytedance/Documents/opensource/VSeed/packages/vseed/src/index").XLinearAxis | undefined`
+**Type:** `YLinearAxis | undefined`
 
 :::note{title=描述}
 y轴

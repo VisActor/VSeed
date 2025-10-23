@@ -1,6 +1,6 @@
 # yAxis
 
-**Type:** `XLinearAxis | undefined`
+**Type:** `YLinearAxis | undefined`
 
 :::note{title=描述}
 y轴

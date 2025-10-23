@@ -1,2 +1,2 @@
 export * from './zFunnelTransform'
-export type * from './funntlTransform'
+export type * from './funnelTransform'

@@ -62,7 +62,7 @@ export const zAnnotationAreaConfig = zAnnotationArea
   })
   .partial()
 
-export const zAnnotaionConfig = z.object({
+export const zAnnotationConfig = z.object({
   annotationPoint: zAnnotationPointConfig.nullish(),
   annotationHorizontalLine: zAnnotationHorizontalLineConfig.nullish(),
   annotationVerticalLine: zAnnotationVerticalLineConfig.nullish(),

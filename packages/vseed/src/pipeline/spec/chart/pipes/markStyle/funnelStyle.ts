@@ -13,7 +13,7 @@ export const funnelStyle: SpecPipe = (spec) => {
     ...result,
     funnel: {
       style: {
-        cornerRadius: 4,
+        cornerRadius: 0,
       },
       state: {
         hover: {

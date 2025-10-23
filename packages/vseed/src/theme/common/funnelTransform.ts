@@ -2,14 +2,14 @@ import type { FunnelTransformConfig } from 'src/types/properties/config/funnelTr
 
 export const getLightFunnelTransformTheme = (): FunnelTransformConfig => {
   return {
-    backgroundColor: '#EAEBEC',
-    textColor: '#595959',
+    backgroundColor: '#F6F7F9',
+    textColor: '#737880',
   }
 }
 
 export const getDarkFunnelTransformTheme = (): FunnelTransformConfig => {
   return {
-    backgroundColor: '#404349',
+    backgroundColor: '#2A2D33',
     textColor: '#888C93',
   }
 }

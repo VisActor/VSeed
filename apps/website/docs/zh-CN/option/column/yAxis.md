@@ -1,6 +1,6 @@
 # yAxis
 
-**Type:** `import("/Users/bytedance/Documents/opensource/VSeed/packages/vseed/src/index").XLinearAxis | undefined`
+**Type:** `YLinearAxis | undefined`
 
 :::note{title=描述}
 y轴, 数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.

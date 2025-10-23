@@ -27,6 +27,7 @@ import {
   pivotDiscreteLegend,
   pivotColorLegend,
   pivotHideIndicatorName,
+  funnelTransformStyle,
 } from '../pipes'
 
 const funnel: SpecPipeline = [
@@ -37,6 +38,7 @@ const funnel: SpecPipeline = [
   label,
   colorAdapter(discreteLegend, colorLegend),
   colorFunnelStyleFill(funnelStyle),
+  funnelTransformStyle,
   tooltip,
   annotationPoint,
   annotationVerticalLine,
@@ -58,6 +60,7 @@ const pivotFunnel: SpecPipeline = [
     label,
     tooltip,
     colorFunnelStyleFill(funnelStyle),
+    funnelTransformStyle,
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,

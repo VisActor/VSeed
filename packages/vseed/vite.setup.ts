@@ -7,24 +7,21 @@ beforeAll(async () => {
 })
 
 beforeAll(() => {
-  const createGradientMock = () => {
-    return {
-      addColorStop: vi.fn(),
-    }
-  }
-  CanvasRenderingContext2D.prototype.createLinearGradient = createGradientMock
-  CanvasRenderingContext2D.prototype.createRadialGradient = createGradientMock
+  // 2. 优化 Canvas mock
+  vi.spyOn(CanvasRenderingContext2D.prototype, 'createLinearGradient').mockImplementation(() => ({
+    addColorStop: vi.fn(),
+  }))
 
-  // Mock ResizeObserver for Node.js environment
-  if (typeof ResizeObserver === 'undefined') {
-    window.ResizeObserver = class ResizeObserver {
-      callback: any
-      constructor(callback) {
-        this.callback = callback
-      }
-      observe() {}
-      unobserve() {}
-      disconnect() {}
-    }
+  vi.spyOn(CanvasRenderingContext2D.prototype, 'createRadialGradient').mockImplementation(() => ({
+    addColorStop: vi.fn(),
+  }))
+
+  // 3. 优化 ResizeObserver
+  if (!window.ResizeObserver) {
+    window.ResizeObserver = vi.fn(() => ({
+      observe: vi.fn(),
+      unobserve: vi.fn(),
+      disconnect: vi.fn(),
+    }))
   }
 })

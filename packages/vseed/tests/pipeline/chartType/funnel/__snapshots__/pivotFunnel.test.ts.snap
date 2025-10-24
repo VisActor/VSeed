@@ -1312,6 +1312,7 @@ exports[`pivotFunnel 2`] = `
         },
         "isTransform": true,
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,
@@ -1467,6 +1468,7 @@ exports[`pivotFunnel 2`] = `
         },
         "isTransform": true,
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,

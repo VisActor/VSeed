@@ -519,6 +519,7 @@ exports[`combinationRadar 2`] = `
           "values": undefined,
         },
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,
@@ -692,6 +693,7 @@ exports[`combinationRadar 2`] = `
           "values": undefined,
         },
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,

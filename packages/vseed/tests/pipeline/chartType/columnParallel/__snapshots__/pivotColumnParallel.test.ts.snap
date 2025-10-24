@@ -1858,6 +1858,7 @@ exports[`pivotColumnParallel 2`] = `
         },
         "direction": "vertical",
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,
@@ -2165,6 +2166,7 @@ exports[`pivotColumnParallel 2`] = `
         },
         "direction": "vertical",
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,

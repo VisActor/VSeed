@@ -995,6 +995,7 @@ exports[`combinationBar 2`] = `
         },
         "direction": "horizontal",
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,
@@ -1286,6 +1287,7 @@ exports[`combinationBar 2`] = `
         },
         "direction": "horizontal",
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,

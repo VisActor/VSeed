@@ -12,6 +12,7 @@ import { getDefaultTooltip } from '../common/tooltip'
 import { getDarkBandAxis, getDarkLinearAxis } from '../common/axes'
 import { getDarkAnnotation } from '../common/annotaion'
 import { getDarkFunnelTransformTheme } from '../common/funnelTransform'
+import { getDarkHeatmapCellTheme } from '../common/heatmapCell'
 
 export const darkTheme = (): CustomThemeConfig => {
   const linearAxis = getDarkLinearAxis()
@@ -227,6 +228,7 @@ export const darkTheme = (): CustomThemeConfig => {
           labelColorSmartInvert: true,
         },
 
+        cell: getDarkHeatmapCellTheme(),
         pivotGrid: getDarkPivotChartGridConfig(),
       },
     },

@@ -1,6 +1,4 @@
-import type { PivotChartGridConfig, TableConfig } from 'src/types'
-
-export const getLightTableConfig = (): TableConfig => ({
+export const getLightTableConfig = () => ({
   borderColor: '#e3e5eb',
 
   bodyFontSize: 12,
@@ -22,7 +20,7 @@ export const getLightTableConfig = (): TableConfig => ({
   backgroundColor: 'transparent',
 })
 
-export const getDarkTableConfig = (): TableConfig => ({
+export const getDarkTableConfig = () => ({
   borderColor: '#4b4e53',
 
   bodyFontSize: 12,
@@ -42,7 +40,7 @@ export const getDarkTableConfig = (): TableConfig => ({
   selectedBackgroundColor: '#4284ff33',
 })
 
-const pickPivotChartGridConfig = (tableConfig: TableConfig) => {
+const pickPivotChartGridConfig = (tableConfig: any) => {
   return {
     borderColor: tableConfig.borderColor,
     bodyFontColor: tableConfig.bodyFontColor,
@@ -53,10 +51,10 @@ const pickPivotChartGridConfig = (tableConfig: TableConfig) => {
   }
 }
 
-export const getLightPivotChartGridConfig = (): PivotChartGridConfig => {
+export const getLightPivotChartGridConfig = () => {
   return pickPivotChartGridConfig(getLightTableConfig())
 }
 
-export const getDarkPivotChartGridConfig = (): PivotChartGridConfig => {
+export const getDarkPivotChartGridConfig = () => {
   return pickPivotChartGridConfig(getDarkTableConfig())
 }

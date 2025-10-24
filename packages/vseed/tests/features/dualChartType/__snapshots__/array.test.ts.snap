@@ -1473,6 +1473,7 @@ exports[`array 2`] = `
             "direction": "vertical",
             "id": "dualAxis-0-primary-series",
             "label": {
+              "dataFilter": [Function],
               "formatMethod": [Function],
               "overlap": {
                 "clampForce": true,
@@ -1581,6 +1582,7 @@ exports[`array 2`] = `
             "direction": "vertical",
             "id": "dualAxis-0-secondary-series",
             "label": {
+              "dataFilter": [Function],
               "formatMethod": [Function],
               "overlap": {
                 "clampForce": true,
@@ -1962,6 +1964,7 @@ exports[`array 2`] = `
             "direction": "vertical",
             "id": "dualAxis-1-primary-series",
             "label": {
+              "dataFilter": [Function],
               "formatMethod": [Function],
               "overlap": {
                 "clampForce": true,
@@ -2070,6 +2073,7 @@ exports[`array 2`] = `
             "direction": "vertical",
             "id": "dualAxis-1-secondary-series",
             "label": {
+              "dataFilter": [Function],
               "formatMethod": [Function],
               "overlap": {
                 "clampForce": true,

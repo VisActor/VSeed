@@ -1020,6 +1020,7 @@ exports[`1_dimColor 2`] = `
   },
   "innerRadius": 0,
   "label": {
+    "dataFilter": [Function],
     "formatMethod": [Function],
     "layout": {
       "align": "labelLine",
@@ -1040,13 +1041,15 @@ exports[`1_dimColor 2`] = `
   },
   "legends": {
     "autoPage": true,
-    "data": [Function],
     "item": {
       "background": {
         "state": {
           "selectedHover": {
             "fill": "#646A73",
             "fillOpacity": 0.05,
+          },
+          "unSelectedHover": {
+            "fill": null,
           },
         },
       },
@@ -1058,6 +1061,12 @@ exports[`1_dimColor 2`] = `
       },
       "label": {
         "formatMethod": [Function],
+        "state": {
+          "unSelected": {
+            "fill": "#646A73",
+            "fillOpacity": 0.8,
+          },
+        },
         "style": {
           "fill": "#646A73",
           "fontSize": 12,
@@ -1067,10 +1076,13 @@ exports[`1_dimColor 2`] = `
       "maxWidth": "30%",
       "shape": {
         "space": 6,
-        "style": {
-          "size": 8,
-          "symbolType": "rectRound",
+        "state": {
+          "unSelected": {
+            "fillOpacity": 1,
+            "opacity": 0.2,
+          },
         },
+        "style": [Function],
       },
     },
     "maxCol": 1,

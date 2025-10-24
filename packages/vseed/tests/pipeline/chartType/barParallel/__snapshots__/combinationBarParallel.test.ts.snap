@@ -995,6 +995,7 @@ exports[`combinationBarParallel 2`] = `
         },
         "direction": "horizontal",
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,
@@ -1289,6 +1290,7 @@ exports[`combinationBarParallel 2`] = `
         },
         "direction": "horizontal",
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,

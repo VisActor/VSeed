@@ -1384,6 +1384,7 @@ exports[`pivotRadar 2`] = `
           "values": undefined,
         },
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,
@@ -1571,6 +1572,7 @@ exports[`pivotRadar 2`] = `
           "values": undefined,
         },
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,

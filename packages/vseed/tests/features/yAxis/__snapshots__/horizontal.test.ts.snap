@@ -2728,6 +2728,7 @@ exports[`horizontal 2`] = `
   },
   "direction": "horizontal",
   "label": {
+    "dataFilter": [Function],
     "formatMethod": [Function],
     "overlap": {
       "clampForce": true,
@@ -2745,13 +2746,15 @@ exports[`horizontal 2`] = `
   },
   "legends": {
     "autoPage": true,
-    "data": [Function],
     "item": {
       "background": {
         "state": {
           "selectedHover": {
             "fill": "#646A73",
             "fillOpacity": 0.05,
+          },
+          "unSelectedHover": {
+            "fill": null,
           },
         },
       },
@@ -2763,6 +2766,12 @@ exports[`horizontal 2`] = `
       },
       "label": {
         "formatMethod": [Function],
+        "state": {
+          "unSelected": {
+            "fill": "#646A73",
+            "fillOpacity": 0.8,
+          },
+        },
         "style": {
           "fill": "#646A73",
           "fontSize": 12,
@@ -2772,10 +2781,13 @@ exports[`horizontal 2`] = `
       "maxWidth": "30%",
       "shape": {
         "space": 6,
-        "style": {
-          "size": 8,
-          "symbolType": "rectRound",
+        "state": {
+          "unSelected": {
+            "fillOpacity": 1,
+            "opacity": 0.2,
+          },
         },
+        "style": [Function],
       },
     },
     "maxCol": 1,

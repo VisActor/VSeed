@@ -1317,6 +1317,7 @@ exports[`pivotScatter 2`] = `
         },
         "direction": "vertical",
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,

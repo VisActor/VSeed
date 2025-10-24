@@ -7,6 +7,9 @@ exports[`pivotHeatmap 1`] = `
   "config": {
     "heatmap": {
       "backgroundColor": "transparent",
+      "cell": {
+        "stroke": "#fff",
+      },
       "color": {
         "colorScheme": [
           "#8D72F6",
@@ -60,6 +63,9 @@ exports[`pivotHeatmap 1`] = `
     "config": {
       "heatmap": {
         "backgroundColor": "transparent",
+        "cell": {
+          "stroke": "#fff",
+        },
         "color": {
           "colorScheme": [
             "#8D72F6",
@@ -1266,7 +1272,8 @@ exports[`pivotHeatmap 2`] = `
             },
             "lineWidth": 1,
             "shape": "rect",
-            "stroke": "#ffffff",
+            "stroke": "#fff",
+            "visible": [Function],
           },
         },
         "color": {
@@ -1301,6 +1308,7 @@ exports[`pivotHeatmap 2`] = `
         },
         "direction": "vertical",
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,

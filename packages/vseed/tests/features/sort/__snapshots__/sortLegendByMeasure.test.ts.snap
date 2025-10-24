@@ -1071,6 +1071,7 @@ exports[`sortLegendByMeasure 2`] = `
         },
         "direction": "vertical",
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,
@@ -1378,6 +1379,7 @@ exports[`sortLegendByMeasure 2`] = `
         },
         "direction": "vertical",
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,

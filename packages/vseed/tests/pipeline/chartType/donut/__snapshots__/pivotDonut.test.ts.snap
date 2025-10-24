@@ -1298,6 +1298,7 @@ exports[`pivotDonut 2`] = `
         },
         "innerRadius": 0.6400000000000001,
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "layout": {
             "align": "labelLine",
@@ -1444,6 +1445,7 @@ exports[`pivotDonut 2`] = `
         },
         "innerRadius": 0.6400000000000001,
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "layout": {
             "align": "labelLine",

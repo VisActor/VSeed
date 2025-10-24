@@ -523,6 +523,7 @@ exports[`combinationFunnel 2`] = `
         },
         "isTransform": true,
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,
@@ -672,6 +673,7 @@ exports[`combinationFunnel 2`] = `
         },
         "isTransform": true,
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,

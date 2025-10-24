@@ -1848,6 +1848,7 @@ exports[`pivotBarParallel 2`] = `
         },
         "direction": "horizontal",
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,
@@ -2156,6 +2157,7 @@ exports[`pivotBarParallel 2`] = `
         },
         "direction": "horizontal",
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,

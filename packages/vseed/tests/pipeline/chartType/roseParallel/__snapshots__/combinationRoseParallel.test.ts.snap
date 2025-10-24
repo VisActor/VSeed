@@ -507,6 +507,7 @@ exports[`combinationRoseParallel 2`] = `
         },
         "innerRadius": 0,
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,
@@ -651,6 +652,7 @@ exports[`combinationRoseParallel 2`] = `
         },
         "innerRadius": 0,
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,

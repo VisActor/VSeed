@@ -1075,6 +1075,7 @@ exports[`sortByMeasure 2`] = `
         },
         "direction": "vertical",
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,
@@ -1384,6 +1385,7 @@ exports[`sortByMeasure 2`] = `
         },
         "direction": "vertical",
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,

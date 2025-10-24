@@ -1357,6 +1357,7 @@ exports[`pivotRose 2`] = `
         },
         "innerRadius": 0,
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,
@@ -1513,6 +1514,7 @@ exports[`pivotRose 2`] = `
         },
         "innerRadius": 0,
         "label": {
+          "dataFilter": [Function],
           "formatMethod": [Function],
           "overlap": {
             "clampForce": true,

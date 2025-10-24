@@ -698,6 +698,7 @@ exports[`2_meaColor 2`] = `
     ],
   },
   "label": {
+    "dataFilter": [Function],
     "formatMethod": [Function],
     "overlap": {
       "clampForce": true,

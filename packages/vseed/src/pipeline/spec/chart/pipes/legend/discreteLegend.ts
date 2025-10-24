@@ -59,6 +59,9 @@ export const discreteLegend: SpecPipe = (spec, context) => {
           return {
             symbolType: shapeType,
             size: border ? 8 : 10,
+            fillOpacity: 1,
+            opacity: 1,
+            stroke: false,
             outerBorder: border
               ? {
                   stroke: item.shape.fill,

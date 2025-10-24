@@ -1,5 +1,5 @@
 import type { IHeatmapChartSpec } from '@visactor/vchart'
-import { HideItemEncoding } from 'src/dataReshape/constant'
+import { DATUM_HIDE_KEY } from 'src/pipeline/utils/constant'
 import type { SpecPipe } from 'src/types'
 
 export const cellStyle: SpecPipe = (spec, context) => {
@@ -17,8 +17,8 @@ export const cellStyle: SpecPipe = (spec, context) => {
     ...result,
     cell: {
       style: {
-        visible: (datum) => {
-          return datum[HideItemEncoding] !== true
+        visible: (datum: any) => {
+          return datum?.[DATUM_HIDE_KEY] !== true
         },
         shape: 'rect',
         stroke: cell?.stroke,

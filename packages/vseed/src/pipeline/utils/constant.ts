@@ -37,3 +37,6 @@ export const ChartTypeEnum = {
   Funnel: 'funnel',
   Heatmap: 'heatmap',
 } as const
+
+// Heatmap hide cell
+export const DATUM_HIDE_KEY = '__VSEED_HideItem__'

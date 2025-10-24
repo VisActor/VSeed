@@ -16,7 +16,6 @@ export const pivotColumnDimensions: SpecPipe = (spec, context) => {
     title: dim.alias || dim.id,
   }))
 
-  console.log('Pivot Column Dimensions:', columns)
   return {
     ...result,
     columns: columns,

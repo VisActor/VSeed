@@ -1,6 +1,6 @@
 import type { IArcLabelSpec, ILineChartSpec } from '@visactor/vchart'
 import type { ILineLikeLabelSpec } from '@visactor/vchart/esm/series/mixin/interface'
-import { createFormatter, createFormatterByMeasure, findMeasureById } from '../../../../utils'
+import { createFormatter, createFormatterByMeasure, DATUM_HIDE_KEY, findMeasureById } from '../../../../utils'
 import type {
   Datum,
   Dimensions,
@@ -14,7 +14,7 @@ import type {
   SpecPipe,
 } from 'src/types'
 import { isNumber, merge, uniqueBy } from 'remeda'
-import { HideItemEncoding, MeasureName } from 'src/dataReshape'
+import { MeasureName } from 'src/dataReshape/constant'
 
 export const label: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
@@ -113,7 +113,7 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
     visible: enable,
     dataFilter: (data) => {
       return data.filter((entry) => {
-        return entry.data?.[HideItemEncoding] !== true
+        return entry.data?.[DATUM_HIDE_KEY] !== true
       })
     },
     formatMethod: (_, datum: Datum) => {

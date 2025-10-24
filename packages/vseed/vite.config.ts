@@ -4,6 +4,12 @@ export default defineConfig({
   cacheDir: 'node_modules/.vitest',
   test: {
     root: '.',
+    pool: 'forks',
+    poolOptions: {
+      forks: {
+        singleFork: true,
+      },
+    },
     include: ['tests/**/*.test.ts'],
     exclude: ['node_modules/**', 'dist/**', 'docs/**', '**/*.d.ts'],
     coverage: {

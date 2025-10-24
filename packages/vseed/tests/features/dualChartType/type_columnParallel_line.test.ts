@@ -44,12 +44,15 @@ test('type_columnParallel_line', () => {
       if (isPivotChart(builder.vseed)) {
         const vtable = new VTable.PivotChart(div, spec as VTable.PivotChartConstructorOptions)
         void vtable.updateOption(spec as VTable.PivotChartConstructorOptions)
+        void vtable.release()
       } else if (isTable(builder.vseed)) {
         const vtable = new VTable.ListTable(div, spec as VTable.ListTableConstructorOptions)
         void vtable.updateOption(spec as VTable.ListTableConstructorOptions)
+        void vtable.release()
       } else if (isPivotTable(builder.vseed)) {
         const vtable = new VTable.PivotTable(div, spec as VTable.PivotTableConstructorOptions)
         void vtable.updateOption(spec as VTable.PivotTableConstructorOptions)
+        void vtable.release()
       } else {
         const vchart = new VChart(spec as ISpec, {
           dom: div,
@@ -57,6 +60,7 @@ test('type_columnParallel_line', () => {
         })
         void vchart.renderSync()
         void vchart.updateSpec(spec as ISpec)
+        void vchart.release()
       }
     } catch (e) {
       console.error(e)

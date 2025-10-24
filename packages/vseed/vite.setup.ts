@@ -1,6 +1,11 @@
 import { beforeAll, vi } from 'vitest'
 import 'vi-canvas-mock'
 
+beforeAll(async () => {
+  await import('@visactor/vchart')
+  await import('@visactor/vtable')
+})
+
 beforeAll(() => {
   const createGradientMock = () => {
     return {

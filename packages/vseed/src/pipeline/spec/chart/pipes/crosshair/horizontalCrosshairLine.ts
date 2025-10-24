@@ -12,9 +12,7 @@ export const horizontalCrosshairLine: SpecPipe = (spec, context) => {
   }
 
   if (!result.crosshair) {
-    result.crosshair = {
-      followTooltip: true,
-    }
+    result.crosshair = {}
   }
 
   const visible = config.visible || true

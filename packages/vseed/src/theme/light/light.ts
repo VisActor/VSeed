@@ -12,6 +12,7 @@ import { getDefaultTooltip } from '../common/tooltip'
 import { getLightBandAxis, getLightLinearAxis } from '../common/axes'
 import { getLightAnnotation } from '../common/annotaion'
 import { getLightFunnelTransformTheme } from '../common/funnelTransform'
+import { getLightHeatmapCellTheme } from '../common/heatmapCell'
 
 export const lightTheme = (): CustomThemeConfig => {
   const linearAxis = getLightLinearAxis()
@@ -226,7 +227,7 @@ export const lightTheme = (): CustomThemeConfig => {
           ...baseConfig.label,
           labelColorSmartInvert: true,
         },
-
+        cell: getLightHeatmapCellTheme(),
         pivotGrid: getLightPivotChartGridConfig(),
       },
     },

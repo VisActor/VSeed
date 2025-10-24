@@ -45,20 +45,6 @@ export const discreteLegend: SpecPipe = (spec, context) => {
     autoPage: true,
     orient,
     position: legendPosition,
-    data: border
-      ? (items) => {
-          return items.map((item) => {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            item.shape.outerBorder = {
-              stroke: item.shape.fill,
-              distance: 3,
-              lineWidth: 1,
-            }
-            return item
-          })
-        }
-      : undefined,
     item: {
       focus: true,
       maxWidth: '30%',
@@ -69,9 +55,24 @@ export const discreteLegend: SpecPipe = (spec, context) => {
       },
       shape: {
         space: border ? 6 : 4,
-        style: {
-          symbolType: shapeType,
-          size: border ? 8 : 10,
+        style: (item) => {
+          return {
+            symbolType: shapeType,
+            size: border ? 8 : 10,
+            outerBorder: border
+              ? {
+                  stroke: item.shape.fill,
+                  distance: 3,
+                  lineWidth: 1,
+                }
+              : null,
+          }
+        },
+        state: {
+          unSelected: {
+            opacity: 0.2,
+            fillOpacity: 1, // 覆盖 vchart 里的默认值
+          },
         },
       },
       label: {
@@ -83,12 +84,21 @@ export const discreteLegend: SpecPipe = (spec, context) => {
           fill: labelColor || labelFontColor,
           fontWeight: labelFontWeight,
         },
+        state: {
+          unSelected: {
+            fill: labelColor || labelFontColor, // 覆盖vchart里面的默认值
+            fillOpacity: 0.8, // 覆盖 vchart 里的默认值
+          },
+        },
       },
       background: {
         state: {
           selectedHover: {
             fill: labelColor || labelFontColor,
             fillOpacity: 0.05,
+          },
+          unSelectedHover: {
+            fill: null,
           },
         },
       },

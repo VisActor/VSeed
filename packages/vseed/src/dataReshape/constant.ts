@@ -24,3 +24,5 @@ export const AngleEncoding = '__Dim_Angle__'
 export const DetailEncoding = '__Dim_Detail__'
 export const ColorEncoding = '__Dim_Color__'
 export const ColorIdEncoding = '__Dim_ColorId__'
+// Heatmap hide cell
+export const HideItemEncoding = '__Dim_HideItem__'

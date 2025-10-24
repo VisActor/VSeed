@@ -13,8 +13,8 @@ import type {
   NumFormat,
   SpecPipe,
 } from 'src/types'
-import { merge, uniqueBy } from 'remeda'
-import { MeasureName } from 'src/dataReshape'
+import { isNumber, merge, uniqueBy } from 'remeda'
+import { HideItemEncoding, MeasureName } from 'src/dataReshape'
 
 export const label: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
@@ -111,6 +111,11 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
 
   const result = {
     visible: enable,
+    dataFilter: (data) => {
+      return data.filter((entry) => {
+        return entry.data?.[HideItemEncoding] !== true
+      })
+    },
     formatMethod: (_, datum: Datum) => {
       const result = []
 
@@ -135,11 +140,10 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
             autoFormat,
             numFormat,
           )
-          const measurePercentLabel = generateMeasurePercent(
-            datum[measureValue] as number | string,
-            statistics.sum,
-            percentFormatter,
-          )
+          // 饼图/环图需要使用实际占比数据
+          const measurePercentLabel = isNumber(datum['__VCHART_ARC_RATIO'])
+            ? generateMeasurePercent(datum['__VCHART_ARC_RATIO'], 1, percentFormatter)
+            : generateMeasurePercent(datum[measureValue] as number | string, statistics.sum, percentFormatter)
           if (showValue) {
             result.push(measureValueLabel)
           }

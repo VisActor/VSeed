@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.35
+
+### Patch Changes
+
+- 67316e6: fix: fix bug about legends in pie/funnel
+
 ## 0.1.34
 
 ## 0.1.33

@@ -427,9 +427,6 @@ exports[`defaultParentIdForScatter 1`] = `
   "dataset": [
     [
       {
-        "__Dim_ColorId__": "技术",
-        "__Dim_Color__": "技术",
-        "__Dim_Detail__": "技术",
         "__MeaId__": "co_20250914131915_8e38",
         "__MeaName__": "sum(amount)",
         "__MeaXValue__0": "7642",
@@ -443,9 +440,6 @@ exports[`defaultParentIdForScatter 1`] = `
         "yA_20250914131844_6718": "7642",
       },
       {
-        "__Dim_ColorId__": "办公用品",
-        "__Dim_Color__": "办公用品",
-        "__Dim_Detail__": "办公用品",
         "__MeaId__": "co_20250914131915_8e38",
         "__MeaName__": "sum(amount)",
         "__MeaXValue__0": "21401",
@@ -459,9 +453,6 @@ exports[`defaultParentIdForScatter 1`] = `
         "yA_20250914131844_6718": "21401",
       },
       {
-        "__Dim_ColorId__": "家具",
-        "__Dim_Color__": "家具",
-        "__Dim_Detail__": "家具",
         "__MeaId__": "co_20250914131915_8e38",
         "__MeaName__": "sum(amount)",
         "__MeaXValue__0": "8491",
@@ -477,9 +468,6 @@ exports[`defaultParentIdForScatter 1`] = `
     ],
     [
       {
-        "__Dim_ColorId__": "技术",
-        "__Dim_Color__": "技术",
-        "__Dim_Detail__": "技术",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
         "__MeaXValue__1": "7642",
@@ -493,9 +481,6 @@ exports[`defaultParentIdForScatter 1`] = `
         "yA_20250914131844_6718": "7642",
       },
       {
-        "__Dim_ColorId__": "办公用品",
-        "__Dim_Color__": "办公用品",
-        "__Dim_Detail__": "办公用品",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
         "__MeaXValue__1": "21401",
@@ -509,9 +494,6 @@ exports[`defaultParentIdForScatter 1`] = `
         "yA_20250914131844_6718": "21401",
       },
       {
-        "__Dim_ColorId__": "家具",
-        "__Dim_Color__": "家具",
-        "__Dim_Detail__": "家具",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
         "__MeaXValue__1": "8491",
@@ -579,16 +561,8 @@ exports[`defaultParentIdForScatter 1`] = `
       "id": "scatter-0",
       "index": 0,
       "unfoldInfo": {
-        "colorIdMap": {
-          "办公用品": "办公用品",
-          "家具": "家具",
-          "技术": "技术",
-        },
-        "colorItems": [
-          "技术",
-          "办公用品",
-          "家具",
-        ],
+        "colorIdMap": {},
+        "colorItems": [],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
         "encodingColorId": "__Dim_ColorId__",
@@ -649,16 +623,8 @@ exports[`defaultParentIdForScatter 1`] = `
       "id": "scatter-1",
       "index": 1,
       "unfoldInfo": {
-        "colorIdMap": {
-          "办公用品": "办公用品",
-          "家具": "家具",
-          "技术": "技术",
-        },
-        "colorItems": [
-          "技术",
-          "办公用品",
-          "家具",
-        ],
+        "colorIdMap": {},
+        "colorItems": [],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
         "encodingColorId": "__Dim_ColorId__",
@@ -680,13 +646,8 @@ exports[`defaultParentIdForScatter 1`] = `
     },
   ],
   "encoding": {
-    "color": [
-      "xA_20250914131841_3aa1",
-    ],
     "column": [],
-    "detail": [
-      "xA_20250914131841_3aa1",
-    ],
+    "detail": undefined,
     "label": [],
     "row": [],
     "tooltip": [
@@ -901,11 +862,7 @@ exports[`defaultParentIdForScatter 2`] = `
         ],
         "background": "transparent",
         "color": {
-          "domain": [
-            "技术",
-            "办公用品",
-            "家具",
-          ],
+          "domain": [],
           "range": [
             "#8D72F6",
             "#5766EC",
@@ -1195,11 +1152,7 @@ exports[`defaultParentIdForScatter 2`] = `
         ],
         "background": "transparent",
         "color": {
-          "domain": [
-            "技术",
-            "办公用品",
-            "家具",
-          ],
+          "domain": [],
           "range": [
             "#8D72F6",
             "#5766EC",
@@ -1365,41 +1318,7 @@ exports[`defaultParentIdForScatter 2`] = `
   ],
   "indicatorsAsCol": false,
   "legends": {
-    "data": [
-      {
-        "label": "技术",
-        "shape": {
-          "fill": "#8D72F6",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#8D72F6",
-          },
-        },
-      },
-      {
-        "label": "办公用品",
-        "shape": {
-          "fill": "#5766EC",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#5766EC",
-          },
-        },
-      },
-      {
-        "label": "家具",
-        "shape": {
-          "fill": "#66A3FE",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#66A3FE",
-          },
-        },
-      },
-    ],
+    "data": [],
     "item": {
       "background": {
         "state": {
@@ -1442,9 +1361,6 @@ exports[`defaultParentIdForScatter 2`] = `
   "records": {
     "scatter-0": [
       {
-        "__Dim_ColorId__": "技术",
-        "__Dim_Color__": "技术",
-        "__Dim_Detail__": "技术",
         "__MeaId__": "co_20250914131915_8e38",
         "__MeaName__": "sum(amount)",
         "__MeaXValue__0": "7642",
@@ -1458,9 +1374,6 @@ exports[`defaultParentIdForScatter 2`] = `
         "yA_20250914131844_6718": "7642",
       },
       {
-        "__Dim_ColorId__": "办公用品",
-        "__Dim_Color__": "办公用品",
-        "__Dim_Detail__": "办公用品",
         "__MeaId__": "co_20250914131915_8e38",
         "__MeaName__": "sum(amount)",
         "__MeaXValue__0": "21401",
@@ -1474,9 +1387,6 @@ exports[`defaultParentIdForScatter 2`] = `
         "yA_20250914131844_6718": "21401",
       },
       {
-        "__Dim_ColorId__": "家具",
-        "__Dim_Color__": "家具",
-        "__Dim_Detail__": "家具",
         "__MeaId__": "co_20250914131915_8e38",
         "__MeaName__": "sum(amount)",
         "__MeaXValue__0": "8491",
@@ -1492,9 +1402,6 @@ exports[`defaultParentIdForScatter 2`] = `
     ],
     "scatter-1": [
       {
-        "__Dim_ColorId__": "技术",
-        "__Dim_Color__": "技术",
-        "__Dim_Detail__": "技术",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
         "__MeaXValue__1": "7642",
@@ -1508,9 +1415,6 @@ exports[`defaultParentIdForScatter 2`] = `
         "yA_20250914131844_6718": "7642",
       },
       {
-        "__Dim_ColorId__": "办公用品",
-        "__Dim_Color__": "办公用品",
-        "__Dim_Detail__": "办公用品",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
         "__MeaXValue__1": "21401",
@@ -1524,9 +1428,6 @@ exports[`defaultParentIdForScatter 2`] = `
         "yA_20250914131844_6718": "21401",
       },
       {
-        "__Dim_ColorId__": "家具",
-        "__Dim_Color__": "家具",
-        "__Dim_Detail__": "家具",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
         "__MeaXValue__1": "8491",
@@ -1712,25 +1613,8 @@ exports[`defaultParentIdForScatter 3`] = `
     [Function],
     [Function],
   ],
-  "colorIdMap": {
-    "办公用品": "办公用品",
-    "家具": "家具",
-    "技术": "技术",
-  },
-  "colorItems": [
-    {
-      "alias": "技术",
-      "id": "技术",
-    },
-    {
-      "alias": "办公用品",
-      "id": "办公用品",
-    },
-    {
-      "alias": "家具",
-      "id": "家具",
-    },
-  ],
+  "colorIdMap": {},
+  "colorItems": [],
   "hasTheme": true,
   "specPipeline": [
     [Function],

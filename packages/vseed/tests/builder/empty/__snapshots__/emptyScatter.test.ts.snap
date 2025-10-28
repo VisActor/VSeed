@@ -492,9 +492,8 @@ exports[`emptyScatter 1`] = `
     },
   ],
   "encoding": {
-    "color": [],
     "column": [],
-    "detail": [],
+    "detail": undefined,
     "label": [],
     "row": [],
     "tooltip": [],

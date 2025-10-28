@@ -2,7 +2,6 @@ import { unique } from 'remeda'
 import { MeasureName } from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
-import { addColorToEncoding } from './color'
 
 export const defaultEncodingForScatter: AdvancedPipe = (advancedVSeed) => {
   const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
@@ -45,7 +44,7 @@ export const encodingForScatter: AdvancedPipe = (advancedVSeed) => {
 const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
   const dimensionsWithoutMeasureName = dimensions.filter((item) => item.id !== MeasureName)
   const uniqueDimIds = unique(dimensionsWithoutMeasureName.map((d) => d.id))
-  encoding.color = uniqueDimIds.slice(0)
+
   encoding.detail = encoding.color
   encoding.tooltip = uniqueDimIds.filter((d) => d !== MeasureName) // 展示指标名称之外的所有维度
   encoding.label = [] // 默认不展示标签
@@ -54,7 +53,7 @@ const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Enco
 }
 const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
   // color
-  addColorToEncoding(dimensions, encoding, false)
+  encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
 
   // detail
   encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))

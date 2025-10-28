@@ -859,7 +859,9 @@ exports[`defaultParentId 2`] = `
             },
           },
           "style": {
+            "fillOpacity": 1,
             "lineWidth": 1,
+            "visible": true,
           },
         },
         "color": {
@@ -1152,7 +1154,9 @@ exports[`defaultParentId 2`] = `
             },
           },
           "style": {
+            "fillOpacity": 1,
             "lineWidth": 1,
+            "visible": true,
           },
         },
         "color": {

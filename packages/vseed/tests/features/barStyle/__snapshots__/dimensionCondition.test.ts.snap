@@ -982,6 +982,14 @@ exports[`dimensionCondition 2`] = `
           "visible": true,
         },
       },
+      "hover": {
+        "fillOpacity": 0.6,
+      },
+    },
+    "style": {
+      "fillOpacity": 1,
+      "lineWidth": 1,
+      "visible": true,
     },
   },
   "color": {

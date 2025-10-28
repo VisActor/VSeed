@@ -1203,7 +1203,9 @@ exports[`3_pivotOnlyOneAxis 2`] = `
                 },
               },
               "style": {
+                "fillOpacity": 1,
                 "lineWidth": 1,
+                "visible": true,
               },
             },
             "data": {
@@ -1312,7 +1314,9 @@ exports[`3_pivotOnlyOneAxis 2`] = `
                 },
               },
               "style": {
+                "fillOpacity": 1,
                 "lineWidth": 1,
+                "visible": true,
               },
             },
             "data": {
@@ -1692,7 +1696,9 @@ exports[`3_pivotOnlyOneAxis 2`] = `
                 },
               },
               "style": {
+                "fillOpacity": 1,
                 "lineWidth": 1,
+                "visible": true,
               },
             },
             "data": {
@@ -1801,7 +1807,9 @@ exports[`3_pivotOnlyOneAxis 2`] = `
                 },
               },
               "style": {
+                "fillOpacity": 1,
                 "lineWidth": 1,
+                "visible": true,
               },
             },
             "data": {

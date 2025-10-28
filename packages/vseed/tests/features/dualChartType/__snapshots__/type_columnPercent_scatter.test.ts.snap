@@ -1706,7 +1706,9 @@ exports[`type_columnPercent_scatter 2`] = `
           },
         },
         "style": {
+          "fillOpacity": 1,
           "lineWidth": 1,
+          "visible": true,
         },
       },
       "data": {
@@ -2166,7 +2168,9 @@ exports[`type_columnPercent_scatter 2`] = `
           },
         },
         "style": {
+          "fillOpacity": 1,
           "lineWidth": 1,
+          "visible": true,
         },
       },
       "data": {

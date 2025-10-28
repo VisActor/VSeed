@@ -14,6 +14,8 @@ export const barStyle: SpecPipe = (spec, context) => {
     ...spec,
     bar: {
       style: {
+        visible: true,
+        fillOpacity: 1,
         lineWidth: showStroke ? 1 : 0,
       },
       state: {
@@ -69,12 +71,10 @@ export const barStyle: SpecPipe = (spec, context) => {
     }
   }, {})
 
-  return {
-    ...result,
-    bar: {
-      state: {
-        ...customMap,
-      },
-    },
+  result.bar!.state = {
+    ...result.bar!.state,
+    ...customMap,
   }
+
+  return result
 }

@@ -1783,7 +1783,9 @@ exports[`pivotBar 2`] = `
             },
           },
           "style": {
+            "fillOpacity": 1,
             "lineWidth": 1,
+            "visible": true,
           },
         },
         "color": {
@@ -2089,7 +2091,9 @@ exports[`pivotBar 2`] = `
             },
           },
           "style": {
+            "fillOpacity": 1,
             "lineWidth": 1,
+            "visible": true,
           },
         },
         "color": {

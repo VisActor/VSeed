@@ -978,6 +978,12 @@ exports[`partialDatum 2`] = `
           "visible": true,
         },
       },
+      "hover": {
+        "fillOpacity": 0.6,
+      },
+    },
+    "style": {
+      "lineWidth": 1,
     },
   },
   "color": {

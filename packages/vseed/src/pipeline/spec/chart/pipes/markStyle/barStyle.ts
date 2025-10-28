@@ -69,12 +69,10 @@ export const barStyle: SpecPipe = (spec, context) => {
     }
   }, {})
 
-  return {
-    ...result,
-    bar: {
-      state: {
-        ...customMap,
-      },
-    },
+  result.bar!.state = {
+    ...result.bar!.state,
+    ...customMap,
   }
+
+  return result
 }

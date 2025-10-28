@@ -427,8 +427,6 @@ exports[`pivotScatter 1`] = `
   "dataset": [
     [
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -448,8 +446,6 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -469,8 +465,6 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -490,8 +484,6 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -511,8 +503,6 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -532,8 +522,6 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -553,8 +541,6 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -574,8 +560,6 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -595,8 +579,6 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -616,8 +598,6 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -637,8 +617,6 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -658,8 +636,6 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -679,8 +655,6 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -700,8 +674,6 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -721,8 +693,6 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -742,8 +712,6 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -763,8 +731,6 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -784,8 +750,6 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -805,8 +769,6 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -826,8 +788,6 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -847,8 +807,6 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -868,8 +826,6 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -889,8 +845,6 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -910,8 +864,6 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -987,14 +939,8 @@ exports[`pivotScatter 1`] = `
       "id": "scatter-0",
       "index": 0,
       "unfoldInfo": {
-        "colorIdMap": {
-          "利润": "利润",
-          "销售额": "销售额",
-        },
-        "colorItems": [
-          "销售额",
-          "利润",
-        ],
+        "colorIdMap": {},
+        "colorItems": [],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
         "encodingColorId": "__Dim_ColorId__",
@@ -1025,9 +971,7 @@ exports[`pivotScatter 1`] = `
     },
   ],
   "encoding": {
-    "color": [
-      "__MeaName__",
-    ],
+    "color": [],
     "detail": [
       "__MeaName__",
     ],
@@ -1235,10 +1179,7 @@ exports[`pivotScatter 2`] = `
         ],
         "background": "transparent",
         "color": {
-          "domain": [
-            "销售额",
-            "利润",
-          ],
+          "domain": [],
           "range": [
             "#8D72F6",
             "#5766EC",
@@ -1418,30 +1359,7 @@ exports[`pivotScatter 2`] = `
   ],
   "indicatorsAsCol": false,
   "legends": {
-    "data": [
-      {
-        "label": "销售额",
-        "shape": {
-          "fill": "#8D72F6",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#8D72F6",
-          },
-        },
-      },
-      {
-        "label": "利润",
-        "shape": {
-          "fill": "#5766EC",
-          "outerBorder": {
-            "distance": 3,
-            "lineWidth": 1,
-            "stroke": "#5766EC",
-          },
-        },
-      },
-    ],
+    "data": [],
     "item": {
       "background": {
         "state": {
@@ -1484,8 +1402,6 @@ exports[`pivotScatter 2`] = `
   "records": {
     "scatter-0": [
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1505,8 +1421,6 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1526,8 +1440,6 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1547,8 +1459,6 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1568,8 +1478,6 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1589,8 +1497,6 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1610,8 +1516,6 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1631,8 +1535,6 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1652,8 +1554,6 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1673,8 +1573,6 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1694,8 +1592,6 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1715,8 +1611,6 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1736,8 +1630,6 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1757,8 +1649,6 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1778,8 +1668,6 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1799,8 +1687,6 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1820,8 +1706,6 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1841,8 +1725,6 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1862,8 +1744,6 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1883,8 +1763,6 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1904,8 +1782,6 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1925,8 +1801,6 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1946,8 +1820,6 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -1967,8 +1839,6 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_ColorId__": "利润",
-        "__Dim_Color__": "利润",
         "__Dim_Detail__": "利润",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -2165,20 +2035,8 @@ exports[`pivotScatter 3`] = `
     [Function],
     [Function],
   ],
-  "colorIdMap": {
-    "利润": "利润",
-    "销售额": "销售额",
-  },
-  "colorItems": [
-    {
-      "alias": "销售额",
-      "id": "销售额",
-    },
-    {
-      "alias": "利润",
-      "id": "利润",
-    },
-  ],
+  "colorIdMap": {},
+  "colorItems": [],
   "hasTheme": true,
   "specPipeline": [
     [Function],

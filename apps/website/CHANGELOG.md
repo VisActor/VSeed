@@ -1,5 +1,13 @@
 # website
 
+## 0.1.36
+
+### Patch Changes
+
+- Updated dependencies [e8027fb]
+  - @visactor/vseed@0.1.36
+  - @visactor/vquery@0.1.36
+
 ## 0.1.35
 
 ### Patch Changes

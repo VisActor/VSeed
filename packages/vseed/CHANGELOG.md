@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.36
+
+### Patch Changes
+
+- e8027fb: fix: fix error of `barStyle`
+
 ## 0.1.35
 
 ### Patch Changes

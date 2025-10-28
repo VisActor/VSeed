@@ -1706,7 +1706,9 @@ exports[`tpye_area_area 2`] = `
           },
         },
         "style": {
+          "fillOpacity": 1,
           "lineWidth": 1,
+          "visible": true,
         },
       },
       "data": {
@@ -2165,7 +2167,9 @@ exports[`tpye_area_area 2`] = `
           },
         },
         "style": {
+          "fillOpacity": 1,
           "lineWidth": 1,
+          "visible": true,
         },
       },
       "data": {

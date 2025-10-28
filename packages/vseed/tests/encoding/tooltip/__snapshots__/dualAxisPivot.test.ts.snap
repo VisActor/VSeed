@@ -1208,7 +1208,9 @@ exports[`dualAxisPivot 2`] = `
                 },
               },
               "style": {
+                "fillOpacity": 1,
                 "lineWidth": 1,
+                "visible": true,
               },
             },
             "data": {
@@ -1324,7 +1326,9 @@ exports[`dualAxisPivot 2`] = `
                 },
               },
               "style": {
+                "fillOpacity": 1,
                 "lineWidth": 1,
+                "visible": true,
               },
             },
             "data": {
@@ -1711,7 +1715,9 @@ exports[`dualAxisPivot 2`] = `
                 },
               },
               "style": {
+                "fillOpacity": 1,
                 "lineWidth": 1,
+                "visible": true,
               },
             },
             "data": {
@@ -1827,7 +1833,9 @@ exports[`dualAxisPivot 2`] = `
                 },
               },
               "style": {
+                "fillOpacity": 1,
                 "lineWidth": 1,
+                "visible": true,
               },
             },
             "data": {

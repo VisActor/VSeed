@@ -723,7 +723,9 @@ exports[`3m0d 2`] = `
       },
     },
     "style": {
+      "fillOpacity": 1,
       "lineWidth": 1,
+      "visible": true,
     },
   },
   "color": {

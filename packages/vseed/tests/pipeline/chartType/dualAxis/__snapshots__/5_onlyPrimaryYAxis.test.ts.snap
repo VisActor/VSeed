@@ -1143,7 +1143,9 @@ exports[`5_onlyPrimaryYAxis 2`] = `
           },
         },
         "style": {
+          "fillOpacity": 1,
           "lineWidth": 1,
+          "visible": true,
         },
       },
       "data": {
@@ -1433,7 +1435,9 @@ exports[`5_onlyPrimaryYAxis 2`] = `
           },
         },
         "style": {
+          "fillOpacity": 1,
           "lineWidth": 1,
+          "visible": true,
         },
       },
       "data": {

@@ -1118,7 +1118,9 @@ exports[`onlyMeasures 2`] = `
           },
         },
         "style": {
+          "fillOpacity": 1,
           "lineWidth": 1,
+          "visible": true,
         },
       },
       "data": {
@@ -1296,7 +1298,9 @@ exports[`onlyMeasures 2`] = `
           },
         },
         "style": {
+          "fillOpacity": 1,
           "lineWidth": 1,
+          "visible": true,
         },
       },
       "data": {

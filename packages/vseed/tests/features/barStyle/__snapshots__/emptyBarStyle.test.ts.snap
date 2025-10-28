@@ -770,7 +770,9 @@ exports[`emptyBarStyle 2`] = `
               "field": "__Dim_Color__",
               "scale": "color",
             },
+            "fillOpacity": 1,
             "lineWidth": 1,
+            "visible": true,
           },
         },
         "color": {

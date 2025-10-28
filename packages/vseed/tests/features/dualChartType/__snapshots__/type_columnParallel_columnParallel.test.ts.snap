@@ -1706,7 +1706,9 @@ exports[`type_columnParallel_columnParallel 2`] = `
           },
         },
         "style": {
+          "fillOpacity": 1,
           "lineWidth": 1,
+          "visible": true,
         },
       },
       "data": {
@@ -2168,7 +2170,9 @@ exports[`type_columnParallel_columnParallel 2`] = `
           },
         },
         "style": {
+          "fillOpacity": 1,
           "lineWidth": 1,
+          "visible": true,
         },
       },
       "data": {

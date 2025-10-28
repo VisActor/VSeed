@@ -1140,7 +1140,9 @@ exports[`4_onlySecondaryYAxis 2`] = `
           },
         },
         "style": {
+          "fillOpacity": 1,
           "lineWidth": 1,
+          "visible": true,
         },
       },
       "data": {
@@ -1249,7 +1251,9 @@ exports[`4_onlySecondaryYAxis 2`] = `
           },
         },
         "style": {
+          "fillOpacity": 1,
           "lineWidth": 1,
+          "visible": true,
         },
       },
       "data": {

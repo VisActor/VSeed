@@ -930,7 +930,9 @@ exports[`combinationBar 2`] = `
             },
           },
           "style": {
+            "fillOpacity": 1,
             "lineWidth": 1,
+            "visible": true,
           },
         },
         "color": {
@@ -1222,7 +1224,9 @@ exports[`combinationBar 2`] = `
             },
           },
           "style": {
+            "fillOpacity": 1,
             "lineWidth": 1,
+            "visible": true,
           },
         },
         "color": {

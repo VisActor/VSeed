@@ -6,6 +6,8 @@ import type {
   AnnotationVerticalLine,
   AreaStyle,
   BackgroundColor,
+  BarGapInGroup,
+  BarMaxWidth,
   BarStyle,
   Color,
   CrosshairRect,
@@ -250,7 +252,14 @@ export interface DualAxis {
    * @example 'customThemeName'
    */
   theme?: Theme
-
+  /**
+   * @description 柱子的最大宽度，可以是像素值或者百分比字符串
+   */
+  barMaxWidth?: BarMaxWidth
+  /**
+   * @description 同一分类下，柱子之间的距离，可以是像素值或者百分比字符串
+   */
+  barGapInGroup?: BarGapInGroup
   /**
    * 矩形图元样式
    * @description 条形图样式配置, 用于定义图表的条形图样式, 包括条形图的颜色, 边框, 圆角等.

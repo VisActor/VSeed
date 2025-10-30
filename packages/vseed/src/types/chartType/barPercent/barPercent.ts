@@ -21,6 +21,7 @@ import type {
   MeasureTree,
   Sort,
   SortLegend,
+  BarMaxWidth,
 } from '../../properties'
 
 /**
@@ -121,7 +122,10 @@ export interface BarPercent {
    * @default 8
    */
   stackCornerRadius?: StackCornerRadius
-
+  /**
+   * @description 矩形的最大高度，可以是像素值或者百分比字符串
+   */
+  barMaxWidth?: BarMaxWidth
   /**
    * @description Y轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
    * @example

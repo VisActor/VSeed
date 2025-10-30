@@ -32,11 +32,13 @@ import {
   colorLegend,
   colorBarStyleFill,
   pivotColorLegend,
+  barMaxWidth,
 } from '../pipes'
 
 const barPercent: SpecPipeline = [
   initBar,
   stackCornerRadius,
+  barMaxWidth,
   colorAdapter(color, linearColor),
   backgroundColor,
   percent,

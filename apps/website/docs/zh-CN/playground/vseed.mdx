@@ -9,14 +9,29 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'funnel',
+    chartType: 'columnParallel',
     dataset: [
-      { date: '2022', profit: 100, sales: 100 },
-      { date: '2023', profit: 80, sales: 80 },
-      { date: '2020', profit: 60, sales: 60 },
-      { date: '2021', profit: 40, sales: 40 },
-      { date: '2019', profit: 20, sales: 20 },
+      { date: '2019', region: 'east', profit: 10, sales: 20 },
+      { date: '2020', region: 'east', profit: 30, sales: 60 },
+      { date: '2021', region: 'east', profit: 30, sales: 60 },
+      { date: '2022', region: 'east', profit: 50, sales: 100 },
+      { date: '2023', region: 'east', profit: 40, sales: 80 },
+
+      { date: '2019', region: 'north of east', profit: 10, sales: 20 },
+      { date: '2020', region: 'north of east', profit: 30, sales: 60 },
+      { date: '2021', region: 'north of east', profit: 30, sales: 60 },
+      { date: '2022', region: 'north of east', profit: 50, sales: 100 },
+      { date: '2023', region: 'north of east', profit: 40, sales: 80 },
     ],
+    measures: [
+      { id: 'profit', alias: '利润' },
+      { id: 'sales', alias: '销售量' },
+    ],
+    dimensions: [
+      { id: 'date', alias: '日期' },
+      { id: 'region', alias: '区域' },
+    ],
+    barMaxWidth: 5,
   }
 
   const parseRes = zVSeed.safeParse(vseed)

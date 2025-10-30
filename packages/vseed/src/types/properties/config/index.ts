@@ -9,6 +9,7 @@ export * from './label'
 export * from './legend'
 export * from './pivotGrid'
 export * from './stackCornerRadius'
+export * from './barWidth'
 export * from './tooltip'
 
 export * from './area'

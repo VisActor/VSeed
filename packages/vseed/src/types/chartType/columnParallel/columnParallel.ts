@@ -20,6 +20,8 @@ import type {
   MeasureTree,
   SortLegend,
   Sort,
+  BarMaxWidth,
+  BarGapInGroup,
 } from '../../properties'
 
 /**
@@ -120,7 +122,14 @@ export interface ColumnParallel {
    * @default 8
    */
   stackCornerRadius?: StackCornerRadius
-
+  /**
+   * @description 柱子的最大宽度，可以是像素值或者百分比字符串
+   */
+  barMaxWidth?: BarMaxWidth
+  /**
+   * @description 同一分类下，柱子之间的距离，可以是像素值或者百分比字符串
+   */
+  barGapInGroup?: BarGapInGroup
   /**
    * @description X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
    * @example

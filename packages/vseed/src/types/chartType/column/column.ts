@@ -20,6 +20,7 @@ import type {
   MeasureTree,
   Sort,
   SortLegend,
+  BarMaxWidth,
 } from '../../properties'
 
 /**
@@ -155,7 +156,10 @@ export interface Column {
    * @default 8
    */
   stackCornerRadius?: StackCornerRadius
-
+  /**
+   * @description 柱子的最大宽度，可以是像素值或者百分比字符串
+   */
+  barMaxWidth?: BarMaxWidth
   /**
    * @description 矩形图元样式, 柱状图样式配置, 用于定义图表的柱状图样式, 包括柱状图的颜色, 边框, 圆角等.
    * 支持全局样式或条件样式配置

@@ -108,6 +108,7 @@ exports[`wrap 1`] = `
         "labelFontSize": 12,
         "labelOverlap": true,
         "labelPosition": "inside",
+        "labelStroke": "#fff",
         "numFormat": {
           "fractionDigits": 3,
           "prefix": "后缀-",
@@ -332,6 +333,7 @@ exports[`wrap 1`] = `
           "enable": true,
           "labelColorSmartInvert": false,
           "labelOverlap": true,
+          "labelStroke": "#fff",
           "showValue": true,
           "showValuePercent": false,
           "wrap": true,
@@ -937,6 +939,7 @@ exports[`wrap 2`] = `
       "fill": "red",
       "fontSize": 12,
       "fontWeight": undefined,
+      "stroke": "#fff",
     },
     "visible": true,
   },

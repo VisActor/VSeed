@@ -4,13 +4,8 @@ import type {
   AnnotationPointConfig,
 } from 'src/types/properties/config/annotation/annotation'
 
-export const getLightAnnotationPoint = (): AnnotationPointConfig => ({
-  textColor: '#ffffff',
-
+export const getDefaultAnnotationPoint = (): AnnotationPointConfig => ({
   textBackgroundVisible: true,
-  textBackgroundColor: '#364159',
-  textBackgroundBorderColor: '#3641594d',
-
   textFontSize: 12,
   textFontWeight: 400,
 
@@ -19,49 +14,65 @@ export const getLightAnnotationPoint = (): AnnotationPointConfig => ({
   textBackgroundPadding: 2,
 })
 
-export const getLightAnnotationHorizontalLine = (): AnnotationHorizontalLineConfig => ({
-  lineColor: '#BCC1CB',
+export const getLightAnnotationPoint = (): AnnotationPointConfig => ({
+  ...getDefaultAnnotationPoint(),
+  textColor: '#ffffff',
+  textBackgroundColor: '#364159',
+  textBackgroundBorderColor: '#3641594d',
+})
+
+export const getDefaultAnnotationLine = (): AnnotationHorizontalLineConfig => ({
+  lineVisible: true,
   lineWidth: 1,
   lineStyle: 'solid' as const,
-  lineVisible: true,
 
-  textColor: '#ffffff',
   textFontSize: 12,
   textFontWeight: 400,
-
   startSymbolVisible: true,
   endSymbolVisible: false,
 
   textBackgroundVisible: true,
-  textBackgroundColor: '#BCC1CB',
-  textBackgroundBorderColor: '#BCC1CB',
   textBackgroundBorderWidth: 1,
   textBackgroundBorderRadius: 0,
   textBackgroundPadding: 2,
 })
 
-export const getLightAnnotationVerticalLine = () => getLightAnnotationHorizontalLine()
+export const getLightAnnotationHorizontalLine = (): AnnotationHorizontalLineConfig => ({
+  ...getDefaultAnnotationLine(),
+  lineColor: '#BCC1CB',
 
-export const getLightAnnotationArea = (): AnnotationAreaConfig => ({
   textColor: '#ffffff',
-  textFontSize: 12,
-  textFontWeight: 400,
 
-  textBackgroundVisible: true,
   textBackgroundColor: '#BCC1CB',
   textBackgroundBorderColor: '#BCC1CB',
+})
+
+export const getLightAnnotationVerticalLine = () => getLightAnnotationHorizontalLine()
+
+export const getDefaultAnnotationArea = (): AnnotationAreaConfig => ({
+  textFontSize: 12,
+  textFontWeight: 400,
+  textBackgroundVisible: true,
   textBackgroundBorderWidth: 1,
   textBackgroundBorderRadius: 0,
   textBackgroundPadding: 4,
-
-  areaColor: '#BCC1CB',
-  areaColorOpacity: 0.12,
-  areaBorderColor: '#BCC1CB',
   areaBorderWidth: 0,
   areaBorderRadius: 0,
   areaLineDash: [2, 2],
 
   outerPadding: 4,
+})
+
+export const getLightAnnotationArea = (): AnnotationAreaConfig => ({
+  ...getDefaultAnnotationArea(),
+  textColor: '#ffffff',
+
+  textBackgroundColor: '#BCC1CB',
+  textBackgroundBorderColor: '#BCC1CB',
+
+  areaColor: '#BCC1CB',
+  areaColorOpacity: 0.12,
+  areaBorderColor: '#BCC1CB',
 })
 
 export const getLightAnnotation = () => ({
@@ -73,60 +84,34 @@ export const getLightAnnotation = () => ({
 
 // --- dark ---
 export const getDarkAnnotationPoint = (): AnnotationPointConfig => ({
+  ...getDefaultAnnotationPoint(),
   textColor: '#4B4F54',
 
-  textBackgroundVisible: true,
   textBackgroundColor: '#ffffff',
   textBackgroundBorderColor: '#ffffff',
-
-  textFontSize: 12,
-  textFontWeight: 400,
-
-  textBackgroundBorderRadius: 4,
-  textBackgroundBorderWidth: 1,
-  textBackgroundPadding: 2,
 })
 
 export const getDarkAnnotationHorizontalLine = (): AnnotationHorizontalLineConfig => ({
+  ...getDefaultAnnotationLine(),
   lineColor: '#55595F',
-  lineWidth: 1,
-  lineStyle: 'solid' as const,
-  lineVisible: true,
 
-  textFontSize: 12,
-  textFontWeight: 400,
-
-  textBackgroundVisible: true,
   textColor: '#E2E3E6',
   textBackgroundColor: '#55595F',
   textBackgroundBorderColor: '#55595F',
-  textBackgroundBorderWidth: 1,
-  textBackgroundBorderRadius: 0,
-  textBackgroundPadding: 2,
 })
 
 export const getDarkAnnotationVerticalLine = () => getDarkAnnotationHorizontalLine()
 
 export const getDarkAnnotationArea = (): AnnotationAreaConfig => ({
+  ...getDefaultAnnotationArea(),
   textColor: '#E2E3E6',
-  textFontSize: 12,
-  textFontWeight: 400,
 
-  textBackgroundVisible: true,
   textBackgroundColor: '#55595F',
   textBackgroundBorderColor: '#55595F',
-  textBackgroundBorderWidth: 1,
-  textBackgroundBorderRadius: 0,
-  textBackgroundPadding: 4,
 
   areaColor: '#E2E3E6',
   areaColorOpacity: 0.15,
   areaBorderColor: '#E2E3E6',
-  areaBorderWidth: 0,
-  areaBorderRadius: 0,
-  areaLineDash: [2, 2],
-
-  outerPadding: 4,
 })
 
 export const getDarkAnnotation = () => ({

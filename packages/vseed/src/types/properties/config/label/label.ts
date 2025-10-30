@@ -56,6 +56,10 @@ export type Label = {
    * @description 标签背景色
    */
   labelBackgroundColor?: string
+  /**
+   * @description 标签描边颜色
+   */
+  labelStroke?: string
 
   /**
    * @description 标签字体颜色

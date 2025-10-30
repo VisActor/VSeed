@@ -1,10 +1,10 @@
 import type { CustomThemeConfig, YBandAxis } from 'src/types'
 import {
-  getDefaultLabel,
   getDefaultLegend,
   getLightColor,
   getLightCrosshairLine,
   getLightCrosshairRect,
+  getLightLabel,
   getLightPivotChartGridConfig,
   getLightTableConfig,
 } from '../common'
@@ -33,7 +33,7 @@ export const lightTheme = (): CustomThemeConfig => {
   const baseConfig = {
     backgroundColor: 'transparent',
     color: getLightColor(),
-    label: getDefaultLabel(),
+    label: getLightLabel(),
     legend: getDefaultLegend(),
     tooltip: getDefaultTooltip(),
   }

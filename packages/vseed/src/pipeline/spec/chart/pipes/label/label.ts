@@ -78,6 +78,7 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
     showDimension,
     labelOverlap,
     labelColorSmartInvert,
+    labelStroke,
     labelColor,
     labelFontSize,
     labelFontWeight,
@@ -162,6 +163,7 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
     },
     position: labelPosition,
     style: {
+      stroke: labelStroke,
       fill: labelColor,
       fontSize: labelFontSize,
       fontWeight: labelFontWeight,

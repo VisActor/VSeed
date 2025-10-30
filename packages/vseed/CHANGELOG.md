@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.37
+
+### Patch Changes
+
+- feat: add `barMaxWidth` and `barGapInGroup`, and `labelStroke`
+
 ## 0.1.36
 
 ### Patch Changes

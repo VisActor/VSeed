@@ -64,7 +64,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
     position: legendPosition,
     maxCol: Math.max(1, maxSize),
     maxRow: Math.max(1, maxSize),
-    data: colorItems.map((d, index) => {
+    data: colorItems.map((d: string, index: number) => {
       const color = colorSpecified?.[d] ?? colorScheme?.[index % colorScheme.length]
       return {
         label: d,

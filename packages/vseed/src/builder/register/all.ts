@@ -19,6 +19,8 @@ import {
   registerHeatmap,
   registerRadar,
   registerDualAxis,
+  registerBoxplot,
+  registerHistogram,
 } from './chartType'
 import { registerDarkTheme, registerLightTheme } from './theme'
 
@@ -47,6 +49,8 @@ export const registerAll = () => {
   // other
   registerFunnel()
   registerHeatmap()
+  registerBoxplot()
+  registerHistogram()
   // theme
   registerLightTheme()
   registerDarkTheme()

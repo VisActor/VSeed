@@ -1,6 +1,6 @@
 import type { ILineChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
-import type { Datum, SpecPipe } from 'src/types'
+import type { Datum, SpecPipe, VSeed } from 'src/types'
 import { isSubset } from './utils'
 import { ANNOTATION_Z_INDEX } from '../../../../utils/constant'
 import { isBarLikeChart } from 'src/pipeline/utils/chatType'
@@ -16,7 +16,7 @@ export const annotationPoint: SpecPipe = (spec, context) => {
   const theme = config?.[vseed.chartType as 'column']?.annotation?.annotationPoint
   const { annotationPoint } = annotation
   const annotationPointList = Array.isArray(annotationPoint) ? annotationPoint : [annotationPoint]
-  const isHorizontalBar = isBarLikeChart(advancedVSeed)
+  const isHorizontalBar = isBarLikeChart(advancedVSeed as VSeed)
   const defaultStyle = isHorizontalBar
     ? {
         textAlign: 'right',

@@ -14,6 +14,7 @@ export * from './area'
 export * from './areaPercent'
 export * from './scatter'
 export * from './dualAxis'
+export * from './histogram'
 
 // polar
 export * from './rose'
@@ -25,3 +26,5 @@ export * from './radar'
 // other
 export * from './funnel'
 export * from './heatmap'
+export * from './histogram'
+export * from './boxplot'

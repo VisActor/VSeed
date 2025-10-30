@@ -1,12 +1,9 @@
 import type { SpecPipeline } from 'src/types'
 import {
   initBar,
-  datasetYX,
-  xLinear,
-  yBand,
   backgroundColor,
   label,
-  tooltip,
+  tooltipBoxplot,
   discreteLegend,
   color,
   pivotAdapter,
@@ -23,7 +20,6 @@ import {
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationAreaBand,
-  horizontalCrosshairRect,
   stackCornerRadius,
   progressive,
   colorAdapter,
@@ -31,23 +27,26 @@ import {
   colorLegend,
   colorBarStyleFill,
   pivotColorLegend,
-  barMaxWidth,
+  initBoxplot,
+  xBand,
+  yLinear,
+  verticalCrosshairRect,
+  datasetBoxplot,
 } from '../pipes'
 
-const bar: SpecPipeline = [
-  initBar,
+const boxplot: SpecPipeline = [
+  initBoxplot,
   stackCornerRadius,
-  barMaxWidth,
   colorAdapter(color, linearColor),
   backgroundColor,
-  datasetYX,
+  datasetBoxplot,
   progressive,
-  xLinear,
-  yBand,
+  xBand,
+  yLinear,
   label,
-  tooltip,
+  tooltipBoxplot,
   colorAdapter(discreteLegend, colorLegend),
-  horizontalCrosshairRect,
+  verticalCrosshairRect,
   colorBarStyleFill(barStyle),
   annotationPoint,
   annotationVerticalLine,
@@ -55,7 +54,7 @@ const bar: SpecPipeline = [
   annotationAreaBand,
 ]
 
-const pivotBar: SpecPipeline = [
+const pivotBoxplot: SpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsCol,
@@ -65,14 +64,14 @@ const pivotBar: SpecPipeline = [
     stackCornerRadius,
     colorAdapter(color, linearColor),
     backgroundColor,
-    datasetYX,
+    datasetBoxplot,
     progressive,
-    xLinear,
-    yBand,
+    xBand,
+    yLinear,
     label,
-    tooltip,
+    tooltipBoxplot,
     colorBarStyleFill(barStyle),
-    horizontalCrosshairRect,
+    verticalCrosshairRect,
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,
@@ -83,4 +82,4 @@ const pivotBar: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const barSpecPipeline: SpecPipeline = [pivotAdapter(bar, pivotBar)]
+export const boxplotSpecPipeline: SpecPipeline = [pivotAdapter(boxplot, pivotBoxplot)]

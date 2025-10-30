@@ -12,7 +12,18 @@ import { zPie } from './chartType/pie'
 import { zDonut } from './chartType/donut'
 import { zArea } from './chartType/area'
 import { zAreaPercent } from './chartType/areaPercent'
-import { zDualAxis, zFunnel, zHeatmap, zPivotTable, zRadar, zRoseParallel, zScatter, zTable } from './chartType'
+import {
+  zBoxplot,
+  zDualAxis,
+  zFunnel,
+  zHeatmap,
+  zHistogram,
+  zPivotTable,
+  zRadar,
+  zRoseParallel,
+  zScatter,
+  zTable,
+} from './chartType'
 
 export const zVSeed = z.discriminatedUnion('chartType', [
   zTable,
@@ -38,4 +49,6 @@ export const zVSeed = z.discriminatedUnion('chartType', [
   // other
   zFunnel,
   zHeatmap,
+  zBoxplot,
+  zHistogram,
 ])

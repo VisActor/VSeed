@@ -1,4 +1,4 @@
-import type { AdvancedPipe, AdvancedVSeed, MeasureGroup, Measures, MeasureTree } from 'src/types'
+import type { AdvancedPipe, MeasureGroup, Measures, MeasureTree, VSeed } from 'src/types'
 import { isMeasureTreeWithChildren, isMeasureTreeWithParentId, normalizeMeasureTree } from './utils'
 import { isPivotChart } from 'src/pipeline/utils'
 import { DEFAULT_PARENT_ID } from 'src/pipeline/utils/constant'
@@ -18,7 +18,7 @@ export const buildMeasures: AdvancedPipe = (advancedVSeed) => {
   /**
    * 透视图表, 自动生成指标树
    */
-  if (isPivotChart(advancedVSeed as AdvancedVSeed)) {
+  if (isPivotChart(advancedVSeed as VSeed)) {
     advancedVSeed.measures = basicMeasuresToMeasureTree(advancedVSeed.measures as Measures)
   }
 

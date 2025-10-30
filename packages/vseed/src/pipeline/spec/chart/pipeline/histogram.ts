@@ -1,9 +1,6 @@
 import type { SpecPipeline } from 'src/types'
 import {
-  initBar,
-  datasetYX,
   xLinear,
-  yBand,
   backgroundColor,
   label,
   tooltip,
@@ -23,31 +20,30 @@ import {
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationAreaBand,
-  horizontalCrosshairRect,
-  stackCornerRadius,
+  datasetHistogram,
   progressive,
   colorAdapter,
   linearColor,
   colorLegend,
   colorBarStyleFill,
   pivotColorLegend,
-  barMaxWidth,
+  initHistogram,
+  yLinear,
+  verticalCrosshairRect,
 } from '../pipes'
 
-const bar: SpecPipeline = [
-  initBar,
-  stackCornerRadius,
-  barMaxWidth,
+const histogram: SpecPipeline = [
+  initHistogram,
   colorAdapter(color, linearColor),
   backgroundColor,
-  datasetYX,
+  datasetHistogram,
   progressive,
   xLinear,
-  yBand,
+  yLinear,
   label,
   tooltip,
   colorAdapter(discreteLegend, colorLegend),
-  horizontalCrosshairRect,
+  verticalCrosshairRect,
   colorBarStyleFill(barStyle),
   annotationPoint,
   annotationVerticalLine,
@@ -55,24 +51,23 @@ const bar: SpecPipeline = [
   annotationAreaBand,
 ]
 
-const pivotBar: SpecPipeline = [
+const pivotHistogram: SpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsCol,
   datasetPivot,
   pivotIndicators([
-    initBar,
-    stackCornerRadius,
+    initHistogram,
     colorAdapter(color, linearColor),
     backgroundColor,
-    datasetYX,
+    datasetHistogram,
     progressive,
     xLinear,
-    yBand,
+    yLinear,
     label,
     tooltip,
     colorBarStyleFill(barStyle),
-    horizontalCrosshairRect,
+    verticalCrosshairRect,
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,
@@ -83,4 +78,4 @@ const pivotBar: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const barSpecPipeline: SpecPipeline = [pivotAdapter(bar, pivotBar)]
+export const histogramSpecPipeline: SpecPipeline = [pivotAdapter(histogram, pivotHistogram)]

@@ -6,7 +6,6 @@ import {
   zAnnotationPoint,
   zAnnotationVerticalLine,
   zBackgroundColor,
-  zBarMaxWidth,
   zBarStyle,
   zColor,
   zCrosshairRect,
@@ -25,8 +24,8 @@ import {
   zYLinearAxis,
 } from '../../properties'
 
-export const zColumn = z.object({
-  chartType: z.literal('column'),
+export const zBoxplot = z.object({
+  chartType: z.literal('boxPlot'),
   dataset: zDataset.nullish(),
   encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
@@ -42,7 +41,6 @@ export const zColumn = z.object({
   sortLegent: zSortLegend.nullish(),
   crosshairRect: zCrosshairRect.nullish(),
   stackCornerRadius: zStackCornerRadius.nullish(),
-  barMaxWidth: zBarMaxWidth.nullish(),
   theme: zTheme.nullish(),
   barStyle: z.array(zBarStyle).or(zBarStyle).nullish(),
   annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).nullish(),

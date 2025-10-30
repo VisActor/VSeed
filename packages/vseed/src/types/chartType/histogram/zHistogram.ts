@@ -6,7 +6,6 @@ import {
   zAnnotationPoint,
   zAnnotationVerticalLine,
   zBackgroundColor,
-  zBarMaxWidth,
   zBarStyle,
   zColor,
   zCrosshairRect,
@@ -16,17 +15,14 @@ import {
   zLabel,
   zLegend,
   zMeasureTree,
-  zSort,
-  zSortLegend,
-  zStackCornerRadius,
   zTheme,
   zTooltip,
-  zXBandAxis,
+  zXLinearAxis,
   zYLinearAxis,
 } from '../../properties'
 
-export const zColumn = z.object({
-  chartType: z.literal('column'),
+export const zHistogram = z.object({
+  chartType: z.literal('histogram'),
   dataset: zDataset.nullish(),
   encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
@@ -36,13 +32,9 @@ export const zColumn = z.object({
   label: zLabel.nullish(),
   legend: zLegend.nullish(),
   tooltip: zTooltip.nullish(),
-  xAxis: zXBandAxis.nullish(),
+  xAxis: zXLinearAxis.nullish(),
   yAxis: zYLinearAxis.nullish(),
-  sort: zSort.nullish(),
-  sortLegent: zSortLegend.nullish(),
   crosshairRect: zCrosshairRect.nullish(),
-  stackCornerRadius: zStackCornerRadius.nullish(),
-  barMaxWidth: zBarMaxWidth.nullish(),
   theme: zTheme.nullish(),
   barStyle: z.array(zBarStyle).or(zBarStyle).nullish(),
   annotationPoint: z.array(zAnnotationPoint).or(zAnnotationPoint).nullish(),
@@ -51,3 +43,5 @@ export const zColumn = z.object({
   annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).nullish(),
   locale: zLocale.nullish(),
 })
+
+export type Histogram = z.infer<typeof zHistogram>

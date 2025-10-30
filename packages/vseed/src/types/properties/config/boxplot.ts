@@ -8,6 +8,7 @@ import { zLegend } from './legend/legend'
 import { zTooltip } from './tooltip/tooltip'
 import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
+import { zWhiskersConfig } from './whiskers'
 
 export const zBoxplotConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -21,6 +22,8 @@ export const zBoxplotConfig = z.object({
   crosshairRect: zCrosshairRect.nullish(),
   pivotGrid: zPivotChartGridConfig.nullish(),
   annotation: zAnnotationConfig.nullish(),
+
+  whiskers: zWhiskersConfig.nullish(),
 })
 
 export type BoxplotConfig = z.infer<typeof zBoxplotConfig>

@@ -29,9 +29,6 @@ importers:
       '@visactor/vchart':
         specifier: 2.0.7-alpha.5
         version: 2.0.7-alpha.5
-      '@visactor/vdataset':
-        specifier: 1.0.12
-        version: 1.0.12
       '@visactor/vquery':
         specifier: workspace:*
         version: link:../../packages/vquery
@@ -106,6 +103,12 @@ importers:
 
   packages/vseed:
     dependencies:
+      '@visactor/vdataset':
+        specifier: 1.0.13
+        version: 1.0.13
+      '@visactor/vutils':
+        specifier: 1.0.13
+        version: 1.0.13
       remeda:
         specifier: 2.28.0
         version: 2.28.0
@@ -133,7 +136,7 @@ importers:
         version: 22.16.5
       '@typescript-eslint/eslint-plugin':
         specifier: 8.38.0
-        version: 8.38.0(@typescript-eslint/parser@8.46.1(eslint@9.30.0(jiti@2.6.1))(typescript@5.8.3))(eslint@9.30.0(jiti@2.6.1))(typescript@5.8.3)
+        version: 8.38.0(@typescript-eslint/parser@8.35.1(eslint@9.30.0(jiti@2.6.1))(typescript@5.8.3))(eslint@9.30.0(jiti@2.6.1))(typescript@5.8.3)
       '@visactor/vchart':
         specifier: 2.0.7-alpha.5
         version: 2.0.7-alpha.5
@@ -2063,8 +2066,8 @@ packages:
   '@visactor/vdataset@0.18.18':
     resolution: {integrity: sha512-lye23zpineMKV42JmuJaOY3fgl7aWhyDIwK9dWooqZzP14AFukPoK7ZvUeuKZihLrHxqtCg2VWEjovnh9O1RUg==}
 
-  '@visactor/vdataset@1.0.12':
-    resolution: {integrity: sha512-QI2YwyCHTJoWSDGcej3Fr+z+ZLg9u7i7nKnnudCbltRqY6tadkEtDm4C8WiAXGoHmfpedOYIklhRINsGSRR39g==}
+  '@visactor/vdataset@1.0.13':
+    resolution: {integrity: sha512-6RUju6StQGSxkP5QBbEmydIxWToCt0boM7Jtfi4HYQ63W4PEey3bkbCr1KWfvceiFR+JBrXu2CZsshmuTN1UzA==}
 
   '@visactor/vlayouts@1.0.12':
     resolution: {integrity: sha512-yoQywYICsNtLdiGIU6Ds99QTcZ8k+2qq7Kmqrjep9mhCBu0egjRhSVFALXYwbuO4rkSpLJLXdgtiMxh2n1PfOA==}
@@ -2122,6 +2125,9 @@ packages:
 
   '@visactor/vutils@1.0.12':
     resolution: {integrity: sha512-lHvWbB2gC+IvkGkgnGbxiAeRQ99EEvgPqor6joyZ5KOU2lelHo8KPeSGzZMbN6LNwrpAsnV3x9jds7lGdC1NHQ==}
+
+  '@visactor/vutils@1.0.13':
+    resolution: {integrity: sha512-Mlb2Ulse91jyTSgQoic49IoYq4+tywWv83MH9N4tusESM7e7Qdpf/cu07ExNQ95/JPeoV/G0HTwNvRPQVN7y7A==}
 
   '@visactor/vutils@1.0.6':
     resolution: {integrity: sha512-87/AYLrjY1rtvIT0N/9S+sESialMQUKYv7MDjLjUo37u0hmeL/AwRSGBSvjxdxayKHOmdwUK1BLpQrDIrssKLg==}
@@ -7502,10 +7508,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/eslint-plugin@8.38.0(@typescript-eslint/parser@8.46.1(eslint@9.30.0(jiti@2.6.1))(typescript@5.8.3))(eslint@9.30.0(jiti@2.6.1))(typescript@5.8.3)':
+  '@typescript-eslint/eslint-plugin@8.38.0(@typescript-eslint/parser@8.35.1(eslint@9.30.0(jiti@2.6.1))(typescript@5.8.3))(eslint@9.30.0(jiti@2.6.1))(typescript@5.8.3)':
     dependencies:
       '@eslint-community/regexpp': 4.12.1
-      '@typescript-eslint/parser': 8.46.1(eslint@9.30.0(jiti@2.6.1))(typescript@5.8.3)
+      '@typescript-eslint/parser': 8.35.1(eslint@9.30.0(jiti@2.6.1))(typescript@5.8.3)
       '@typescript-eslint/scope-manager': 8.38.0
       '@typescript-eslint/type-utils': 8.38.0(eslint@9.30.0(jiti@2.6.1))(typescript@5.8.3)
       '@typescript-eslint/utils': 8.38.0(eslint@9.30.0(jiti@2.6.1))(typescript@5.8.3)
@@ -7560,18 +7566,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/parser@8.46.1(eslint@9.30.0(jiti@2.6.1))(typescript@5.8.3)':
-    dependencies:
-      '@typescript-eslint/scope-manager': 8.46.1
-      '@typescript-eslint/types': 8.46.1
-      '@typescript-eslint/typescript-estree': 8.46.1(typescript@5.8.3)
-      '@typescript-eslint/visitor-keys': 8.46.1
-      debug: 4.4.1
-      eslint: 9.30.0(jiti@2.6.1)
-      typescript: 5.8.3
-    transitivePeerDependencies:
-      - supports-color
-
   '@typescript-eslint/parser@8.46.1(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
       '@typescript-eslint/scope-manager': 8.46.1
@@ -7606,15 +7600,6 @@ snapshots:
     dependencies:
       '@typescript-eslint/tsconfig-utils': 8.38.0(typescript@5.8.3)
       '@typescript-eslint/types': 8.38.0
-      debug: 4.4.1
-      typescript: 5.8.3
-    transitivePeerDependencies:
-      - supports-color
-
-  '@typescript-eslint/project-service@8.46.1(typescript@5.8.3)':
-    dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.46.1(typescript@5.8.3)
-      '@typescript-eslint/types': 8.46.1
       debug: 4.4.1
       typescript: 5.8.3
     transitivePeerDependencies:
@@ -7659,10 +7644,6 @@ snapshots:
   '@typescript-eslint/tsconfig-utils@8.38.0(typescript@5.9.3)':
     dependencies:
       typescript: 5.9.3
-
-  '@typescript-eslint/tsconfig-utils@8.46.1(typescript@5.8.3)':
-    dependencies:
-      typescript: 5.8.3
 
   '@typescript-eslint/tsconfig-utils@8.46.1(typescript@5.9.3)':
     dependencies:
@@ -7768,22 +7749,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/typescript-estree@8.46.1(typescript@5.8.3)':
-    dependencies:
-      '@typescript-eslint/project-service': 8.46.1(typescript@5.8.3)
-      '@typescript-eslint/tsconfig-utils': 8.46.1(typescript@5.8.3)
-      '@typescript-eslint/types': 8.46.1
-      '@typescript-eslint/visitor-keys': 8.46.1
-      debug: 4.4.1
-      fast-glob: 3.3.3
-      is-glob: 4.0.3
-      minimatch: 9.0.5
-      semver: 7.7.2
-      ts-api-utils: 2.1.0(typescript@5.8.3)
-      typescript: 5.8.3
-    transitivePeerDependencies:
-      - supports-color
-
   '@typescript-eslint/typescript-estree@8.46.1(typescript@5.9.3)':
     dependencies:
       '@typescript-eslint/project-service': 8.46.1(typescript@5.9.3)
@@ -7868,14 +7833,14 @@ snapshots:
 
   '@visactor/vchart@2.0.7-alpha.5':
     dependencies:
-      '@visactor/vdataset': 1.0.12
+      '@visactor/vdataset': 1.0.13
       '@visactor/vlayouts': 1.0.12
       '@visactor/vrender-animate': 1.0.21
       '@visactor/vrender-components': 1.0.21
       '@visactor/vrender-core': 1.0.21
       '@visactor/vrender-kits': 1.0.21
       '@visactor/vscale': 1.0.12
-      '@visactor/vutils': 1.0.12
+      '@visactor/vutils': 1.0.13
       '@visactor/vutils-extension': 2.0.7-alpha.5
 
   '@visactor/vdataset@0.18.18':
@@ -7898,12 +7863,12 @@ snapshots:
       simplify-geojson: 1.0.5
       topojson-client: 3.1.0
 
-  '@visactor/vdataset@1.0.12':
+  '@visactor/vdataset@1.0.13':
     dependencies:
       '@turf/flatten': 6.5.0
       '@turf/helpers': 6.5.0
       '@turf/rewind': 6.5.0
-      '@visactor/vutils': 1.0.12
+      '@visactor/vutils': 1.0.13
       d3-dsv: 2.0.0
       d3-geo: 1.12.1
       d3-hexbin: 0.2.2
@@ -7934,7 +7899,7 @@ snapshots:
   '@visactor/vrender-animate@1.0.21':
     dependencies:
       '@visactor/vrender-core': 1.0.21
-      '@visactor/vutils': 1.0.12
+      '@visactor/vutils': 1.0.13
 
   '@visactor/vrender-components@1.0.19':
     dependencies:
@@ -7950,7 +7915,7 @@ snapshots:
       '@visactor/vrender-core': 1.0.21
       '@visactor/vrender-kits': 1.0.21
       '@visactor/vscale': 1.0.12
-      '@visactor/vutils': 1.0.12
+      '@visactor/vutils': 1.0.13
 
   '@visactor/vrender-core@1.0.19':
     dependencies:
@@ -7959,7 +7924,7 @@ snapshots:
 
   '@visactor/vrender-core@1.0.21':
     dependencies:
-      '@visactor/vutils': 1.0.12
+      '@visactor/vutils': 1.0.13
       color-convert: 2.0.1
 
   '@visactor/vrender-kits@1.0.19':
@@ -7975,7 +7940,7 @@ snapshots:
     dependencies:
       '@resvg/resvg-js': 2.4.1
       '@visactor/vrender-core': 1.0.21
-      '@visactor/vutils': 1.0.12
+      '@visactor/vutils': 1.0.13
       gifuct-js: 2.1.2
       lottie-web: 5.13.0
       roughjs: 4.5.2
@@ -8016,8 +7981,8 @@ snapshots:
 
   '@visactor/vutils-extension@2.0.7-alpha.5':
     dependencies:
-      '@visactor/vdataset': 1.0.12
-      '@visactor/vutils': 1.0.12
+      '@visactor/vdataset': 1.0.13
+      '@visactor/vutils': 1.0.13
 
   '@visactor/vutils@0.18.18':
     dependencies:
@@ -8032,6 +7997,12 @@ snapshots:
       eventemitter3: 4.0.7
 
   '@visactor/vutils@1.0.12':
+    dependencies:
+      '@turf/helpers': 6.5.0
+      '@turf/invariant': 6.5.0
+      eventemitter3: 4.0.7
+
+  '@visactor/vutils@1.0.13':
     dependencies:
       '@turf/helpers': 6.5.0
       '@turf/invariant': 6.5.0

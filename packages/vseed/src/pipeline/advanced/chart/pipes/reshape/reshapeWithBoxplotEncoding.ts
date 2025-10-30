@@ -1,30 +1,93 @@
-import { uniqueBy } from 'remeda'
-import { dataReshapeByEncoding } from 'src/dataReshape'
-import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
+import {
+  FoldMeasureId,
+  FoldMeasureName,
+  MaxMeasureId,
+  MedianMeasureId,
+  MinMeasureId,
+  OutliersMeasureId,
+  Q1MeasureValue,
+  Q3MeasureValue,
+  Separator,
+  unfoldDimensions,
+} from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils'
-import type { AdvancedPipe, AdvancedVSeed, ColumnParallel, Encoding } from 'src/types'
+import type { AdvancedPipe, ColumnParallel, Dataset, Encoding } from 'src/types'
+import { boxplot } from '@visactor/vdataset'
+import { uniqueBy } from 'remeda'
 
 export const reshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset, chartType } = vseed as ColumnParallel
-  const { dimensions = [], measures = [], encoding } = advancedVSeed
+  const { dimensions = [], measures = [], encoding = {}, config } = advancedVSeed
+  const uniqDims = uniqueBy(dimensions, (item) => item.id)
 
-  const colorMeasureId = getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed)
-  const {
-    dataset: newDatasets,
-    foldInfo,
-    unfoldInfo,
-  } = dataReshapeByEncoding(
-    dataset,
-    uniqueBy(dimensions, (item) => item.id),
-    uniqueBy(findAllMeasures(measures), (item) => item.id),
-    encoding as Encoding,
-    {
+  const whiskers = config?.[chartType as 'boxPlot']?.whiskers
+
+  let newDatasets: any[] = []
+  let foldInfo: any = {}
+  let unfoldInfo: any = {}
+
+  const allMeasures = findAllMeasures(measures)
+
+  if (encoding.value?.length) {
+    encoding.value.forEach((f) => {
+      const m = allMeasures.find((m) => m.id === f)
+      const boxPlotData = boxplot(dataset, {
+        field: f,
+        groupField: [...(encoding.x ?? []), ...(encoding.color ?? [])] as string[],
+        whiskers,
+        outputNames: {
+          q1: Q1MeasureValue,
+          q3: Q3MeasureValue,
+          min: MinMeasureId,
+          max: MaxMeasureId,
+          median: MedianMeasureId,
+          outliers: OutliersMeasureId,
+        },
+      }) as Dataset
+
+      boxPlotData.forEach((datum) => {
+        datum[FoldMeasureId] = f
+        datum[FoldMeasureName] = m?.alias ?? f
+      })
+
+      const res = unfoldDimensions(boxPlotData, uniqDims, encoding as Encoding, {
+        foldMeasureId: FoldMeasureId,
+        separator: Separator,
+        colorItemAsId: false,
+      })
+
+      res.dataset.forEach((d) => {
+        newDatasets.push(d)
+      })
+      unfoldInfo = res.unfoldInfo
+    })
+  } else if (
+    encoding.q1?.length &&
+    encoding.q3?.length &&
+    encoding.min?.length &&
+    encoding.max?.length &&
+    encoding.median?.length
+  ) {
+    const res = unfoldDimensions(dataset, uniqDims, encoding as Encoding, {
+      foldMeasureId: FoldMeasureId,
+      separator: Separator,
       colorItemAsId: false,
-      colorMeasureId,
-    },
-  )
+    })
+
+    res.dataset.forEach((datum) => {
+      datum[MaxMeasureId] = datum[encoding.max![0]]
+      datum[MinMeasureId] = datum[encoding.min![0]]
+      datum[Q1MeasureValue] = datum[encoding.q1![0]]
+      datum[Q3MeasureValue] = datum[encoding.q3![0]]
+      datum[MedianMeasureId] = datum[encoding.median![0]]
+    })
+
+    newDatasets = res.dataset
+    foldInfo = {}
+    unfoldInfo = res.unfoldInfo
+  }
 
   return {
     ...result,

@@ -33,6 +33,10 @@ export const encodingForBoxplot: AdvancedPipe = (advancedVSeed) => {
     generateDefaultMeasureEncoding(measures, encoding)
   }
 
+  if ((!encoding.value || encoding.value.length <= 1) && encoding.color && encoding.color.length > 1) {
+    encoding.color = encoding.color.filter((c) => c !== MeasureName)
+  }
+
   return { ...advancedVSeed, encoding }
 }
 

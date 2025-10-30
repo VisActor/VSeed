@@ -32,11 +32,13 @@ import {
   colorLegend,
   colorBarStyleFill,
   pivotColorLegend,
+  barMaxWidth,
 } from '../pipes'
 
 const column: SpecPipeline = [
   initColumn,
   stackCornerRadius,
+  barMaxWidth,
   stackInverse,
   colorAdapter(color, linearColor),
   backgroundColor,

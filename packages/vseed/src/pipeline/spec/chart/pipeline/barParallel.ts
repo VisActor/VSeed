@@ -31,11 +31,15 @@ import {
   colorLegend,
   colorBarStyleFill,
   pivotColorLegend,
+  barMaxWidth,
+  barGapInGroup,
 } from '../pipes'
 
 const barParallel: SpecPipeline = [
   initBarParallel,
   stackCornerRadius,
+  barMaxWidth,
+  barGapInGroup,
   colorAdapter(color, linearColor),
   backgroundColor,
   datasetYX,

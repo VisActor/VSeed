@@ -20,6 +20,7 @@ import type {
   MeasureTree,
   Sort,
   SortLegend,
+  BarMaxWidth,
 } from '../../properties'
 
 /**
@@ -123,7 +124,10 @@ export interface ColumnPercent {
    * @description 并列柱状图 堆叠圆角
    */
   stackCornerRadius?: StackCornerRadius
-
+  /**
+   * @description 柱子的最大宽度，可以是像素值或者百分比字符串
+   */
+  barMaxWidth?: BarMaxWidth
   /**
    * @description X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
    * @example

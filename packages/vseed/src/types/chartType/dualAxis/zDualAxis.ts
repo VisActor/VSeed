@@ -7,6 +7,8 @@ import {
   zAnnotationVerticalLine,
   zAreaStyle,
   zBackgroundColor,
+  zBarGapInGroup,
+  zBarMaxWidth,
   zBarStyle,
   zColor,
   zCrosshairRect,
@@ -52,6 +54,8 @@ export const zDualAxis = z.object({
   sort: zSort.nullish(),
   sortLegend: zSortLegend.nullish(),
   theme: zTheme.nullish(),
+  barMaxWidth: zBarMaxWidth.nullish(),
+  barGapInGroup: zBarGapInGroup.nullish(),
 
   barStyle: z.array(zBarStyle).or(zBarStyle).nullish(),
   pointStyle: z.array(zPointStyle).or(zPointStyle).nullish(),

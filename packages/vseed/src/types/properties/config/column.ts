@@ -9,6 +9,7 @@ import { zLegend } from './legend/legend'
 import { zTooltip } from './tooltip/tooltip'
 import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
+import { zBarGapInGroup, zBarMaxWidth } from './barWidth'
 
 export const zColumnConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -21,6 +22,8 @@ export const zColumnConfig = z.object({
   yAxis: zYLinearAxis.nullish(),
   crosshairRect: zCrosshairRect.nullish(),
   stackCornerRadius: zStackCornerRadius.nullish(),
+  barMaxWidth: zBarMaxWidth.nullish(),
+  barGapInGroup: zBarGapInGroup.nullish(),
   pivotGrid: zPivotChartGridConfig.nullish(),
   annotation: zAnnotationConfig.nullish(),
 })

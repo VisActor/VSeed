@@ -47,6 +47,8 @@ import {
   pivotColorLegend,
   linearColorForDualAxis,
   annotationAreaBand,
+  barMaxWidth,
+  barGapInGroup,
 } from '../pipes'
 
 const dualAxis: SpecPipeline = [
@@ -58,6 +60,9 @@ const dualAxis: SpecPipeline = [
       labelPrimary,
       tooltipPrimary,
       progressive,
+
+      barMaxWidth,
+      barGapInGroup,
 
       colorBarStyleFill(barStyle),
       colorPointStyleFill(pointStyle),
@@ -72,6 +77,9 @@ const dualAxis: SpecPipeline = [
       labelSecondary,
       tooltipSecondary,
       progressive,
+
+      barMaxWidth,
+      barGapInGroup,
 
       colorBarStyleFill(barStyle),
       colorPointStyleFill(pointStyle),
@@ -111,6 +119,9 @@ const pivotDualAxis: SpecPipeline = [
         tooltipPrimary,
         progressive,
 
+        barMaxWidth,
+        barGapInGroup,
+
         colorBarStyleFill(barStyle),
         colorPointStyleFill(pointStyle),
         pointStateDimensionHover,
@@ -124,6 +135,9 @@ const pivotDualAxis: SpecPipeline = [
         labelSecondary,
         tooltipSecondary,
         progressive,
+
+        barMaxWidth,
+        barGapInGroup,
 
         colorBarStyleFill(barStyle),
         colorPointStyleFill(pointStyle),

@@ -9,8 +9,6 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { annotation, config } = advancedVSeed
 
-  console.log(spec)
-
   if (!annotation || !annotation.annotationArea) {
     return spec
   }

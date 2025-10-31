@@ -3,7 +3,6 @@ import {
   xLinear,
   backgroundColor,
   label,
-  tooltip,
   discreteLegend,
   color,
   pivotAdapter,
@@ -30,6 +29,7 @@ import {
   initHistogram,
   yLinear,
   verticalCrosshairRect,
+  tooltipHistogram,
 } from '../pipes'
 
 const histogram: SpecPipeline = [
@@ -41,7 +41,7 @@ const histogram: SpecPipeline = [
   xLinear,
   yLinear,
   label,
-  tooltip,
+  tooltipHistogram,
   colorAdapter(discreteLegend, colorLegend),
   verticalCrosshairRect,
   colorBarStyleFill(barStyle),
@@ -65,7 +65,7 @@ const pivotHistogram: SpecPipeline = [
     xLinear,
     yLinear,
     label,
-    tooltip,
+    tooltipHistogram,
     colorBarStyleFill(barStyle),
     verticalCrosshairRect,
     annotationPoint,

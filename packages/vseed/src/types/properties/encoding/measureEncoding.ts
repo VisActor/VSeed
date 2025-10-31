@@ -18,3 +18,5 @@ export type MeasureEncoding =
   | 'min'
   | 'max'
   | 'outliers'
+  | 'x0'
+  | 'x1'

@@ -23,6 +23,9 @@ export const zEncoding = z.object({
   min: z.array(z.string()).nullish(),
   max: z.array(z.string()).nullish(),
   outliers: z.array(z.string()).nullish(),
+
+  x0: z.array(z.string()).nullish(),
+  x1: z.array(z.string()).nullish(),
 })
 
 /**

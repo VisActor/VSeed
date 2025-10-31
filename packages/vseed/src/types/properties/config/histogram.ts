@@ -9,6 +9,7 @@ import { zLegend } from './legend/legend'
 import { zTooltip } from './tooltip/tooltip'
 import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
+import { zBinCountConfig, zBinStepConfig, zBinValueTypeConfig } from './bin'
 
 export const zHistogramConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -23,6 +24,9 @@ export const zHistogramConfig = z.object({
   stackCornerRadius: zStackCornerRadius.nullish(),
   pivotGrid: zPivotChartGridConfig.nullish(),
   annotation: zAnnotationConfig.nullish(),
+  binCount: zBinCountConfig.nullish(),
+  binStep: zBinStepConfig.nullish(),
+  binValueType: zBinValueTypeConfig.nullish(),
 })
 
 export type HistogramConfig = z.infer<typeof zHistogramConfig>

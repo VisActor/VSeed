@@ -12,6 +12,7 @@ export * from './stackCornerRadius'
 export * from './barWidth'
 export * from './tooltip'
 export * from './whiskers'
+export * from './bin'
 
 export * from './area'
 export * from './bar'

@@ -79,4 +79,12 @@ export type Encoding = {
    * @description 异常值数据通道，用于boxplot图表设置异常值数据
    */
   outliers?: string[]
+  /**
+   * @description 连续x轴起始数据通道，用于直方图图表设置连续x轴起始数据
+   */
+  x0?: string[]
+  /**
+   * @description 连续x轴结束数据通道，用于直方图图表设置连续x轴结束数据
+   */
+  x1?: string[]
 }

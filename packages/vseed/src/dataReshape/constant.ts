@@ -32,3 +32,9 @@ export const MinMeasureId = '__Min__'
 export const MaxMeasureId = '__Max__'
 export const OutliersMeasureId = '__Outliers__'
 export const MedianMeasureId = '__Meadian__'
+
+// Measures For Histogram
+export const BinStartMeasureId = '__BinStart__'
+export const BinEndMeasureId = '__BinEnd__'
+export const BinCountMeasureId = '__BinCount__'
+export const BinPercentageMeasureId = '__BinPercentage__'

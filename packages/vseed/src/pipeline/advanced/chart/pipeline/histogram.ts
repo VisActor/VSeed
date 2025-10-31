@@ -3,11 +3,10 @@ import {
   initAdvancedVSeed,
   theme,
   pivotAdapter,
-  columnConfig,
+  histogramConfig,
   markStyle,
   annotation,
   sortLegend,
-  reshapeWithEncoding,
   pivotReshapeWithEncoding,
   buildMeasures,
   defaultMeasures,
@@ -18,6 +17,7 @@ import {
   deleteTooltipAndLabelDimension,
   defaultEncodingForHistogram,
   encodingForHistogram,
+  reshapeWithHistogramEncoding,
 } from '../pipes'
 
 export const histogramAdvancedPipeline: AdvancedPipeline = [
@@ -25,6 +25,7 @@ export const histogramAdvancedPipeline: AdvancedPipeline = [
   defaultMeasures,
   defaultDimensions,
   defaultMeasureName,
+  histogramConfig,
 
   encodingAdapter(
     [defaultEncodingForHistogram, buildMeasures],
@@ -35,10 +36,9 @@ export const histogramAdvancedPipeline: AdvancedPipeline = [
       deleteTooltipAndLabelDimension,
     ],
   ),
-  pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
+  pivotAdapter([reshapeWithHistogramEncoding], [pivotReshapeWithEncoding]),
 
   sortLegend,
-  columnConfig,
   theme,
   markStyle,
   annotation,

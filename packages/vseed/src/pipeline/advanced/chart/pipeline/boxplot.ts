@@ -3,7 +3,6 @@ import {
   initAdvancedVSeed,
   theme,
   pivotAdapter,
-  columnConfig,
   markStyle,
   annotation,
   sortLegend,
@@ -18,6 +17,7 @@ import {
   defaultEncodingForBoxplot,
   encodingForBoxplot,
   reshapeWithBoxplotEncoding,
+  boxplotConfig,
 } from '../pipes'
 
 export const boxplotAdvancedPipeline: AdvancedPipeline = [
@@ -25,6 +25,7 @@ export const boxplotAdvancedPipeline: AdvancedPipeline = [
   defaultMeasures,
   defaultDimensions,
   defaultMeasureName,
+  boxplotConfig,
 
   encodingAdapter(
     [defaultEncodingForBoxplot, buildMeasures],
@@ -38,7 +39,6 @@ export const boxplotAdvancedPipeline: AdvancedPipeline = [
   pivotAdapter([reshapeWithBoxplotEncoding], [pivotReshapeWithEncoding]),
 
   sortLegend,
-  columnConfig,
   theme,
   markStyle,
   annotation,

@@ -971,6 +971,8 @@ exports[`onlyMeasures 2`] = `
     },
     "visible": true,
   },
+  "large": false,
+  "largeThreshold": Infinity,
   "legends": {
     "autoPage": true,
     "item": {
@@ -1038,6 +1040,8 @@ exports[`onlyMeasures 2`] = `
     },
     "style": {},
   },
+  "progressiveStep": 400,
+  "progressiveThreshold": Infinity,
   "region": [
     {
       "clip": true,

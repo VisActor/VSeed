@@ -1094,6 +1094,8 @@ exports[`basicColumnPercent 2`] = `
     },
     "visible": true,
   },
+  "large": false,
+  "largeThreshold": Infinity,
   "legends": {
     "autoPage": true,
     "item": {
@@ -1150,6 +1152,8 @@ exports[`basicColumnPercent 2`] = `
   },
   "padding": 0,
   "percent": true,
+  "progressiveStep": 400,
+  "progressiveThreshold": Infinity,
   "region": [
     {
       "clip": true,

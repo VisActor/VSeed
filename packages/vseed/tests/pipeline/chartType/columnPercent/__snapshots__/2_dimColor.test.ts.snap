@@ -1570,6 +1570,8 @@ exports[`2_dimColor 2`] = `
     },
     "visible": true,
   },
+  "large": false,
+  "largeThreshold": Infinity,
   "legends": {
     "autoPage": true,
     "item": {
@@ -1626,6 +1628,8 @@ exports[`2_dimColor 2`] = `
   },
   "padding": 0,
   "percent": true,
+  "progressiveStep": 400,
+  "progressiveThreshold": Infinity,
   "region": [
     {
       "clip": true,

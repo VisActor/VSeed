@@ -658,6 +658,8 @@ exports[`2_meaColor 2`] = `
     },
     "visible": true,
   },
+  "large": false,
+  "largeThreshold": Infinity,
   "legends": {
     "field": "__Dim_Color__",
     "handlerText": {
@@ -692,6 +694,8 @@ exports[`2_meaColor 2`] = `
       "stroke": "transparent",
     },
   },
+  "progressiveStep": 400,
+  "progressiveThreshold": Infinity,
   "region": [
     {
       "clip": true,

@@ -1403,6 +1403,8 @@ exports[`pivotRadar 2`] = `
           },
           "visible": true,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "line": {
           "style": {},
         },
@@ -1421,6 +1423,8 @@ exports[`pivotRadar 2`] = `
           },
           "style": {},
         },
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "radiusField": "__MeaValue__line1",
         "region": [
           {
@@ -1592,6 +1596,8 @@ exports[`pivotRadar 2`] = `
           },
           "visible": true,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "line": {
           "style": {},
         },
@@ -1610,6 +1616,8 @@ exports[`pivotRadar 2`] = `
           },
           "style": {},
         },
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "radiusField": "__MeaValue__line2",
         "region": [
           {

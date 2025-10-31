@@ -717,6 +717,8 @@ exports[`2_meaColor 2`] = `
     },
     "visible": true,
   },
+  "large": false,
+  "largeThreshold": Infinity,
   "legends": {
     "field": "__Dim_Color__",
     "handlerText": {
@@ -762,6 +764,8 @@ exports[`2_meaColor 2`] = `
       },
     },
   },
+  "progressiveStep": 400,
+  "progressiveThreshold": Infinity,
   "radiusField": "__MeaValue__",
   "region": [
     {

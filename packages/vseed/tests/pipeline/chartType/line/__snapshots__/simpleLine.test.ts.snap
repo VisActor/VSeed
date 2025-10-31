@@ -1774,6 +1774,8 @@ exports[`simpleLine 2`] = `
     },
     "visible": true,
   },
+  "large": false,
+  "largeThreshold": Infinity,
   "legends": {
     "autoPage": true,
     "item": {
@@ -1846,6 +1848,8 @@ exports[`simpleLine 2`] = `
     },
     "style": {},
   },
+  "progressiveStep": 400,
+  "progressiveThreshold": Infinity,
   "region": [
     {
       "clip": true,

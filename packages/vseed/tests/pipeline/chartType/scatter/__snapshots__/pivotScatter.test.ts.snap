@@ -1277,6 +1277,8 @@ exports[`pivotScatter 2`] = `
           },
           "visible": true,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "padding": 0,
         "point": {
           "state": {
@@ -1290,6 +1292,8 @@ exports[`pivotScatter 2`] = `
           },
           "style": {},
         },
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,

@@ -960,6 +960,8 @@ exports[`defaultParentIdForScatter 2`] = `
           },
           "visible": true,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "padding": 0,
         "point": {
           "state": {
@@ -973,6 +975,8 @@ exports[`defaultParentIdForScatter 2`] = `
           },
           "style": {},
         },
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,
@@ -1251,6 +1255,8 @@ exports[`defaultParentIdForScatter 2`] = `
           },
           "visible": true,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "padding": 0,
         "point": {
           "state": {
@@ -1264,6 +1270,8 @@ exports[`defaultParentIdForScatter 2`] = `
           },
           "style": {},
         },
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,

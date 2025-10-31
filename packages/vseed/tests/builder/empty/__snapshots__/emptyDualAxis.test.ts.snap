@@ -967,6 +967,8 @@ exports[`emptyDualAxis 2`] = `
         "visible": true,
         "zIndex": 1002,
       },
+      "large": false,
+      "largeThreshold": Infinity,
       "line": {
         "style": {},
       },
@@ -984,6 +986,8 @@ exports[`emptyDualAxis 2`] = `
         },
         "style": {},
       },
+      "progressiveStep": 400,
+      "progressiveThreshold": Infinity,
       "seriesField": "__Dim_ColorId__",
       "tooltip": {
         "dimension": {
@@ -1072,6 +1076,8 @@ exports[`emptyDualAxis 2`] = `
         "visible": true,
         "zIndex": 1002,
       },
+      "large": false,
+      "largeThreshold": Infinity,
       "line": {
         "style": {},
       },
@@ -1089,6 +1095,8 @@ exports[`emptyDualAxis 2`] = `
         },
         "style": {},
       },
+      "progressiveStep": 400,
+      "progressiveThreshold": Infinity,
       "seriesField": "__Dim_ColorId__",
       "tooltip": {
         "dimension": {

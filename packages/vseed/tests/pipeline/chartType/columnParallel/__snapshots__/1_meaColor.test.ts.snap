@@ -1177,6 +1177,8 @@ exports[`1_meaColor 2`] = `
     },
     "visible": true,
   },
+  "large": false,
+  "largeThreshold": Infinity,
   "legends": {
     "field": "__Dim_Color__",
     "handlerText": {
@@ -1195,6 +1197,8 @@ exports[`1_meaColor 2`] = `
     "visible": true,
   },
   "padding": 0,
+  "progressiveStep": 400,
+  "progressiveThreshold": Infinity,
   "region": [
     {
       "clip": true,

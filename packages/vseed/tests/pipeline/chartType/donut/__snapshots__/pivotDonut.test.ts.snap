@@ -1320,6 +1320,8 @@ exports[`pivotDonut 2`] = `
           },
           "visible": true,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "outerRadius": 0.8,
         "padding": 0,
         "pie": {
@@ -1333,6 +1335,8 @@ exports[`pivotDonut 2`] = `
             "stroke": "transparent",
           },
         },
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,
@@ -1468,6 +1472,8 @@ exports[`pivotDonut 2`] = `
           },
           "visible": true,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "outerRadius": 0.8,
         "padding": 0,
         "pie": {
@@ -1481,6 +1487,8 @@ exports[`pivotDonut 2`] = `
             "stroke": "transparent",
           },
         },
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,

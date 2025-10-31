@@ -1257,6 +1257,8 @@ exports[`second 2`] = `
         "visible": true,
         "zIndex": 1002,
       },
+      "large": false,
+      "largeThreshold": Infinity,
       "line": {
         "style": {},
       },
@@ -1274,6 +1276,8 @@ exports[`second 2`] = `
         },
         "style": {},
       },
+      "progressiveStep": 400,
+      "progressiveThreshold": Infinity,
       "seriesField": "__Dim_ColorId__",
       "tooltip": {
         "dimension": {
@@ -1455,6 +1459,8 @@ exports[`second 2`] = `
         "visible": true,
         "zIndex": 1002,
       },
+      "large": false,
+      "largeThreshold": Infinity,
       "line": {
         "style": {},
       },
@@ -1472,6 +1478,8 @@ exports[`second 2`] = `
         },
         "style": {},
       },
+      "progressiveStep": 400,
+      "progressiveThreshold": Infinity,
       "seriesField": "__Dim_ColorId__",
       "tooltip": {
         "dimension": {

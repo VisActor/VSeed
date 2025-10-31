@@ -1,5 +1,4 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
-import type { IDiscreteTableLegendOption } from '@visactor/vtable/es/ts-types/component/legend'
 import { unique } from 'remeda'
 import type { Color, Legend, Spec, SpecPipe } from 'src/types'
 import { createSpecifiedForColorMapping } from '../color/color'
@@ -57,7 +56,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context): Partial<Spec> => {
       ? 'end'
       : 'middle'
 
-  const legends: IDiscreteTableLegendOption = {
+  const legends = {
     visible: enable,
     type: 'discrete',
     orient,
@@ -115,6 +114,6 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context): Partial<Spec> => {
         },
       },
     },
-  } as unknown as IDiscreteTableLegendOption
-  return { ...result, legends } as PivotChartConstructorOptions
+  }
+  return { ...result, legends } as unknown as PivotChartConstructorOptions
 }

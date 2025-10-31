@@ -1,11 +1,11 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
 import { execPipeline } from '../../../../utils'
-import type { Dataset, SpecPipe, SpecPipeline, SpecPipelineContext } from 'src/types'
+import type { Dataset, Spec, SpecPipe, SpecPipeline, SpecPipelineContext } from 'src/types'
 import { unique } from 'remeda'
 
 export const pivotIndicators =
   (chartPipeline: SpecPipeline): SpecPipe =>
-  (spec, context) => {
+  (spec, context): Partial<Spec> => {
     const result = { ...spec } as PivotChartConstructorOptions
     const { advancedVSeed } = context
     const { measures, datasetReshapeInfo, dataset } = advancedVSeed

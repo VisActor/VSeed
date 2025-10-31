@@ -5,14 +5,12 @@ import type {
   AnnotationPoint,
   AnnotationVerticalLine,
   BackgroundColor,
-  BarStyle,
   Color,
   CrosshairRect,
   Dataset,
   Dimensions,
   Label,
   Legend,
-  StackCornerRadius,
   Theme,
   Tooltip,
   XBandAxis,
@@ -20,6 +18,7 @@ import type {
   MeasureTree,
   Sort,
   SortLegend,
+  WhiskersConfig,
 } from '../../properties'
 
 /**
@@ -148,21 +147,13 @@ export interface Boxplot {
    * @description 垂直提示框配置, 用于定义图表的垂直提示框, 包括垂直提示框的颜色、标签样式等.
    */
   crosshairRect?: CrosshairRect
-
   /**
-   * @description 柱状图 堆叠圆角
-   * @default 8
+   * @description 直方图的须长配置，支持标量值和长度为2 的数组
+   * 当值为标量的时候，使用 whiskers * IQR 来计算上界值和下界值
+   * 当值为2元数组的时候，whiskers[0] 需要在[0, 0.25)之间，表示下界值取对应的百分位数；
+   * whiskers[1] 需要在(0.75, 1]之间，表示上界值取对应的百分位数；
    */
-  stackCornerRadius?: StackCornerRadius
-
-  /**
-   * @description 矩形图元样式, 柱状图样式配置, 用于定义图表的柱状图样式, 包括柱状图的颜色, 边框, 圆角等.
-   * 支持全局样式或条件样式配置
-   * 数据筛选器
-   * 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
-   * 若未配置selector, 则样式全局生效.
-   */
-  barStyle?: BarStyle | BarStyle[]
+  whiskers?: WhiskersConfig
 
   /**
    * @description 标注点配置, 根据选择的数据, 定义图表的标注点, 包括标注点的位置, 格式, 样式等.

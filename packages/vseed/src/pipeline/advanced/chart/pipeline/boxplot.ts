@@ -6,7 +6,7 @@ import {
   markStyle,
   annotation,
   sortLegend,
-  pivotReshapeWithEncoding,
+  pivotReshapeWithBoxplotEncoding,
   buildMeasures,
   defaultMeasures,
   defaultDimensions,
@@ -36,7 +36,7 @@ export const boxplotAdvancedPipeline: AdvancedPipeline = [
       deleteTooltipAndLabelDimension,
     ],
   ),
-  pivotAdapter([reshapeWithBoxplotEncoding], [pivotReshapeWithEncoding]),
+  pivotAdapter([reshapeWithBoxplotEncoding], [pivotReshapeWithBoxplotEncoding]),
 
   sortLegend,
   theme,

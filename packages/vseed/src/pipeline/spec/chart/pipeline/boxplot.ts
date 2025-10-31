@@ -1,6 +1,5 @@
 import type { SpecPipeline } from 'src/types'
 import {
-  initBar,
   backgroundColor,
   label,
   tooltipBoxplot,
@@ -60,7 +59,7 @@ const pivotBoxplot: SpecPipeline = [
   pivotIndicatorsAsCol,
   datasetPivot,
   pivotIndicators([
-    initBar,
+    initBoxplot,
     stackCornerRadius,
     colorAdapter(color, linearColor),
     backgroundColor,

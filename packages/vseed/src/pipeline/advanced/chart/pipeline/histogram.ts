@@ -7,7 +7,7 @@ import {
   markStyle,
   annotation,
   sortLegend,
-  pivotReshapeWithEncoding,
+  pivotReshapeWithHistogramEncoding,
   buildMeasures,
   defaultMeasures,
   defaultDimensions,
@@ -36,7 +36,7 @@ export const histogramAdvancedPipeline: AdvancedPipeline = [
       deleteTooltipAndLabelDimension,
     ],
   ),
-  pivotAdapter([reshapeWithHistogramEncoding], [pivotReshapeWithEncoding]),
+  pivotAdapter([reshapeWithHistogramEncoding], [pivotReshapeWithHistogramEncoding]),
 
   sortLegend,
   theme,

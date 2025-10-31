@@ -13,8 +13,8 @@
     "rspress": "1.45.3",
     "@visactor/vseed": "workspace:*",
     "@visactor/vquery": "workspace:*",
-    "@visactor/vchart": "2.0.7-alpha.5",
-    "@visactor/vtable": "1.22.0",
+    "@visactor/vchart": "2.0.7",
+    "@visactor/vtable": "1.22.3-alpha.0",
     "zustand": "5.0.6"
   },
   "devDependencies": {

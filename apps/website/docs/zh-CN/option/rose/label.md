@@ -260,6 +260,15 @@
 
 :::
 
+## labelStroke
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+标签描边颜色
+
+:::
+
 ## labelColor
 
 **Type:** `string | undefined`

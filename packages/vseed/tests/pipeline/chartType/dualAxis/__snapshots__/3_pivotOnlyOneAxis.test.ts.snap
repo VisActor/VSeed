@@ -1243,6 +1243,8 @@ exports[`3_pivotOnlyOneAxis 2`] = `
               "visible": true,
               "zIndex": 1002,
             },
+            "large": false,
+            "largeThreshold": Infinity,
             "line": {
               "style": {},
             },
@@ -1260,6 +1262,8 @@ exports[`3_pivotOnlyOneAxis 2`] = `
               },
               "style": {},
             },
+            "progressiveStep": 400,
+            "progressiveThreshold": Infinity,
             "seriesField": "__Dim_ColorId__",
             "tooltip": {
               "dimension": {
@@ -1355,6 +1359,8 @@ exports[`3_pivotOnlyOneAxis 2`] = `
               "visible": true,
               "zIndex": 1002,
             },
+            "large": false,
+            "largeThreshold": Infinity,
             "line": {
               "style": {},
             },
@@ -1372,6 +1378,8 @@ exports[`3_pivotOnlyOneAxis 2`] = `
               },
               "style": {},
             },
+            "progressiveStep": 400,
+            "progressiveThreshold": Infinity,
             "seriesField": "__Dim_ColorId__",
             "tooltip": {
               "dimension": {
@@ -1738,6 +1746,8 @@ exports[`3_pivotOnlyOneAxis 2`] = `
               "visible": true,
               "zIndex": 1002,
             },
+            "large": false,
+            "largeThreshold": Infinity,
             "line": {
               "style": {},
             },
@@ -1755,6 +1765,8 @@ exports[`3_pivotOnlyOneAxis 2`] = `
               },
               "style": {},
             },
+            "progressiveStep": 400,
+            "progressiveThreshold": Infinity,
             "seriesField": "__Dim_ColorId__",
             "tooltip": {
               "dimension": {
@@ -1850,6 +1862,8 @@ exports[`3_pivotOnlyOneAxis 2`] = `
               "visible": true,
               "zIndex": 1002,
             },
+            "large": false,
+            "largeThreshold": Infinity,
             "line": {
               "style": {},
             },
@@ -1867,6 +1881,8 @@ exports[`3_pivotOnlyOneAxis 2`] = `
               },
               "style": {},
             },
+            "progressiveStep": 400,
+            "progressiveThreshold": Infinity,
             "seriesField": "__Dim_ColorId__",
             "tooltip": {
               "dimension": {

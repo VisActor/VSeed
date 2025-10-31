@@ -1094,6 +1094,8 @@ exports[`sortByMeasure 2`] = `
           },
           "visible": true,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "line": {
           "style": {},
         },
@@ -1112,6 +1114,8 @@ exports[`sortByMeasure 2`] = `
           },
           "style": {},
         },
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,
@@ -1405,6 +1409,8 @@ exports[`sortByMeasure 2`] = `
           },
           "visible": true,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "line": {
           "style": {},
         },
@@ -1423,6 +1429,8 @@ exports[`sortByMeasure 2`] = `
           },
           "style": {},
         },
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,

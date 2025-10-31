@@ -2750,6 +2750,8 @@ exports[`horizontal 2`] = `
     },
     "visible": false,
   },
+  "large": false,
+  "largeThreshold": Infinity,
   "legends": {
     "autoPage": true,
     "item": {
@@ -2805,6 +2807,8 @@ exports[`horizontal 2`] = `
     "visible": true,
   },
   "padding": 0,
+  "progressiveStep": 400,
+  "progressiveThreshold": Infinity,
   "region": [
     {
       "clip": true,

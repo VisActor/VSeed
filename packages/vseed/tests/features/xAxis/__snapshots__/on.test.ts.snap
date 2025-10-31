@@ -2601,6 +2601,8 @@ exports[`on 2`] = `
     },
     "visible": false,
   },
+  "large": false,
+  "largeThreshold": Infinity,
   "legends": {
     "autoPage": true,
     "item": {
@@ -2673,6 +2675,8 @@ exports[`on 2`] = `
     },
     "style": {},
   },
+  "progressiveStep": 400,
+  "progressiveThreshold": Infinity,
   "region": [
     {
       "clip": true,

@@ -851,11 +851,15 @@ exports[`emptyBarStyle 2`] = `
           },
           "visible": false,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "markArea": [],
         "markLine": [],
         "markPoint": [],
         "padding": 0,
         "percent": true,
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,

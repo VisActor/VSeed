@@ -1852,6 +1852,8 @@ exports[`pivotAreaPercent 2`] = `
           },
           "visible": true,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "line": {
           "style": {},
         },
@@ -1871,6 +1873,8 @@ exports[`pivotAreaPercent 2`] = `
           },
           "style": {},
         },
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,
@@ -2174,6 +2178,8 @@ exports[`pivotAreaPercent 2`] = `
           },
           "visible": true,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "line": {
           "style": {},
         },
@@ -2193,6 +2199,8 @@ exports[`pivotAreaPercent 2`] = `
           },
           "style": {},
         },
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,

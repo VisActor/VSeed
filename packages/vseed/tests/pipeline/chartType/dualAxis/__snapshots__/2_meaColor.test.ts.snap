@@ -1612,6 +1612,8 @@ exports[`2_meaColor 2`] = `
         "visible": true,
         "zIndex": 1002,
       },
+      "large": false,
+      "largeThreshold": Infinity,
       "line": {
         "style": {
           "stroke": {
@@ -1639,6 +1641,8 @@ exports[`2_meaColor 2`] = `
           },
         },
       },
+      "progressiveStep": 400,
+      "progressiveThreshold": Infinity,
       "seriesField": "__Dim_ColorId__",
       "tooltip": {
         "dimension": {
@@ -1961,6 +1965,8 @@ exports[`2_meaColor 2`] = `
         "visible": true,
         "zIndex": 1002,
       },
+      "large": false,
+      "largeThreshold": Infinity,
       "line": {
         "style": {
           "stroke": {
@@ -1988,6 +1994,8 @@ exports[`2_meaColor 2`] = `
           },
         },
       },
+      "progressiveStep": 400,
+      "progressiveThreshold": Infinity,
       "seriesField": "__Dim_Detail__",
       "tooltip": {
         "dimension": {

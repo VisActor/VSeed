@@ -1118,6 +1118,8 @@ exports[`1_dimColor 2`] = `
     },
     "visible": true,
   },
+  "large": false,
+  "largeThreshold": Infinity,
   "legends": {
     "autoPage": true,
     "item": {
@@ -1190,6 +1192,8 @@ exports[`1_dimColor 2`] = `
     },
     "style": {},
   },
+  "progressiveStep": 400,
+  "progressiveThreshold": Infinity,
   "radiusField": "__MeaValue__",
   "region": [
     {

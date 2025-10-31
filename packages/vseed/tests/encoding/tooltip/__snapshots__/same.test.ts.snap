@@ -1269,10 +1269,14 @@ exports[`same 2`] = `
           },
           "visible": false,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "markArea": [],
         "markLine": [],
         "markPoint": [],
         "padding": 0,
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,
@@ -1577,10 +1581,14 @@ exports[`same 2`] = `
           },
           "visible": false,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "markArea": [],
         "markLine": [],
         "markPoint": [],
         "padding": 0,
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,
@@ -1885,10 +1893,14 @@ exports[`same 2`] = `
           },
           "visible": false,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "markArea": [],
         "markLine": [],
         "markPoint": [],
         "padding": 0,
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,
@@ -2193,10 +2205,14 @@ exports[`same 2`] = `
           },
           "visible": false,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "markArea": [],
         "markLine": [],
         "markPoint": [],
         "padding": 0,
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,

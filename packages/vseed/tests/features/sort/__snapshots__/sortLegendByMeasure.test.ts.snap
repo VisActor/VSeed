@@ -1090,6 +1090,8 @@ exports[`sortLegendByMeasure 2`] = `
           },
           "visible": true,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "line": {
           "style": {},
         },
@@ -1108,6 +1110,8 @@ exports[`sortLegendByMeasure 2`] = `
           },
           "style": {},
         },
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,
@@ -1399,6 +1403,8 @@ exports[`sortLegendByMeasure 2`] = `
           },
           "visible": true,
         },
+        "large": false,
+        "largeThreshold": Infinity,
         "line": {
           "style": {},
         },
@@ -1417,6 +1423,8 @@ exports[`sortLegendByMeasure 2`] = `
           },
           "style": {},
         },
+        "progressiveStep": 400,
+        "progressiveThreshold": Infinity,
         "region": [
           {
             "clip": true,

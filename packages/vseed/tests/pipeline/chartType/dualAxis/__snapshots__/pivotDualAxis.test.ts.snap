@@ -2005,6 +2005,8 @@ exports[`pivotDualAxis 2`] = `
               "visible": true,
               "zIndex": 1002,
             },
+            "large": false,
+            "largeThreshold": Infinity,
             "line": {
               "style": {},
             },
@@ -2022,6 +2024,8 @@ exports[`pivotDualAxis 2`] = `
               },
               "style": {},
             },
+            "progressiveStep": 400,
+            "progressiveThreshold": Infinity,
             "seriesField": "__Dim_ColorId__",
             "tooltip": {
               "dimension": {
@@ -2131,6 +2135,8 @@ exports[`pivotDualAxis 2`] = `
               "visible": true,
               "zIndex": 1002,
             },
+            "large": false,
+            "largeThreshold": Infinity,
             "line": {
               "style": {},
             },
@@ -2148,6 +2154,8 @@ exports[`pivotDualAxis 2`] = `
               },
               "style": {},
             },
+            "progressiveStep": 400,
+            "progressiveThreshold": Infinity,
             "seriesField": "__Dim_ColorId__",
             "tooltip": {
               "dimension": {

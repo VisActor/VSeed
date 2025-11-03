@@ -19,9 +19,6 @@ import type {
   MeasureTree,
   XLinearAxis,
   HistogramRegressionLine,
-  BinCountConfig,
-  BinStepConfig,
-  BinValueTypeConfig,
 } from '../../properties'
 
 /**
@@ -162,19 +159,6 @@ export interface Histogram {
    * @description 直方图回归线配置, 用于展示数据的趋势和分布情况
    */
   histogramRegressionLine?: HistogramRegressionLine | HistogramRegressionLine[]
-  /**
-   * @description 分箱数量配置, 用于设置直方图的分箱数量
-   */
-  binCount?: BinCountConfig
-  /**
-   * @description 分箱步长配置, 用于设置直方图的分箱步长
-   */
-  binStep?: BinStepConfig
-  /**
-   * @description 分箱值类型配置, 用于设置直方图的分箱值类型
-   *
-   */
-  binValueType?: BinValueTypeConfig
 
   /**
    * @description 图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言

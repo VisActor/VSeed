@@ -7,9 +7,6 @@ import {
   zAnnotationVerticalLine,
   zBackgroundColor,
   zBarStyle,
-  zBinCountConfig,
-  zBinStepConfig,
-  zBinValueTypeConfig,
   zColor,
   zCrosshairRect,
   zDataset,
@@ -49,9 +46,6 @@ export const zHistogram = z.object({
   annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).nullish(),
   annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).nullish(),
   histogramRegressionLine: z.array(zHistogramRegressionLine).or(zHistogramRegressionLine).nullish(),
-  binCount: zBinCountConfig.nullish(),
-  binStep: zBinStepConfig.nullish(),
-  binValueType: zBinValueTypeConfig.nullish(),
   locale: zLocale.nullish(),
 })
 

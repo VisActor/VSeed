@@ -9,7 +9,7 @@ export const boxplotConfig: AdvancedPipe = (advancedVSeed, context) => {
     ...advancedVSeed,
   }
 
-  const pickedConfig = pick(vseed as any, [
+  const pickedConfig = pick(vseed, [
     'backgroundColor',
     'color',
     'label',

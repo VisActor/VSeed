@@ -92,15 +92,6 @@ export interface Histogram {
   yAxis?: YLinearAxis
 
   /**
-   * @description 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置, 内置light与dark两种主题, 用户可以通过Builder自定义主题
-   * @default light 默认为亮色主题
-   * @example 'dark'
-   * @example 'light'
-   * @example 'customThemeName'
-   */
-  theme?: Theme
-
-  /**
    * @description 垂直提示框配置, 用于定义图表的垂直提示框, 包括垂直提示框的颜色、标签样式等.
    */
   crosshairRect?: CrosshairRect
@@ -110,6 +101,30 @@ export interface Histogram {
    * @default 8
    */
   stackCornerRadius?: StackCornerRadius
+
+  /**
+   * @description 直方图分箱数量, 用于定义直方图的分箱数量
+   */
+  binCount?: number
+
+  /**
+   * @description 直方图分箱步长, 用于定义直方图的分箱步长
+   */
+  binStep?: number
+  /**
+   * @description 直方图分箱值类型, 用于定义直方图的分箱值类型, 默认为'count'
+   * @default 'count'
+   */
+  binValueType?: 'count' | 'percentage'
+
+  /**
+   * @description 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置, 内置light与dark两种主题, 用户可以通过Builder自定义主题
+   * @default light 默认为亮色主题
+   * @example 'dark'
+   * @example 'light'
+   * @example 'customThemeName'
+   */
+  theme?: Theme
 
   /**
    * @description 矩形图元样式, 柱状图样式配置, 用于定义图表的柱状图样式, 包括柱状图的颜色, 边框, 圆角等.

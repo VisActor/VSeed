@@ -10,7 +10,6 @@ import {
   datasetPivot,
   pivotIndicators,
   pivotDiscreteLegend,
-  pivotIndicatorsAsCol,
   pivotGridStyle,
   pivotColumnDimensions,
   pivotRowDimensions,
@@ -56,7 +55,6 @@ const boxplot: SpecPipeline = [
 const pivotBoxplot: SpecPipeline = [
   initPivot,
   pivotGridStyle,
-  pivotIndicatorsAsCol,
   datasetPivot,
   pivotIndicators([
     initBoxplot,

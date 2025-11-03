@@ -18,6 +18,7 @@ import {
   defaultEncodingForHistogram,
   encodingForHistogram,
   reshapeWithHistogramEncoding,
+  regressionLine,
 } from '../pipes'
 
 export const histogramAdvancedPipeline: AdvancedPipeline = [
@@ -42,4 +43,5 @@ export const histogramAdvancedPipeline: AdvancedPipeline = [
   theme,
   markStyle,
   annotation,
+  regressionLine,
 ]

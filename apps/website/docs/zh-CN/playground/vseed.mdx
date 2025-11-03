@@ -2914,6 +2914,10 @@ const Demo = () => {
     ],
     measures: [{ id: 'Age', encoding: 'value' }],
     binStep: 10,
+    histogramRegressionLine: {
+      type: 'kde',
+      text: 'KDE-text',
+    },
   }
 
   const parseRes = zVSeed.safeParse(vseed)

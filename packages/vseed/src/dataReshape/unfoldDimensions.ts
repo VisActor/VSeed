@@ -72,8 +72,8 @@ export const unfoldDimensions = (
       // 无颜色通道, 则跳过
       continue
     }
-    const measureId = String(datum[foldMeasureId])
-    const colorItem = String(datum[ColorEncoding])
+    const measureId = String(datum[foldMeasureId] ?? '')
+    const colorItem = String(datum[ColorEncoding] ?? '')
     const colorId = colorItemAsId ? colorItem : measureId ? [colorItem, measureId].join(separator) : colorItem
     datum[ColorIdEncoding] = colorId
     colorIdMap[colorId] = colorItem

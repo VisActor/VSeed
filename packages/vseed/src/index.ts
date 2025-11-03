@@ -22,6 +22,9 @@ export {
   registerPivotTable,
   registerHeatmap,
   registerRadar,
+  registerBoxplot,
+  registerHistogram,
+  registerDualAxis,
 } from './builder/register/chartType'
 
 export * from './pipeline'

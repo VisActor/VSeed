@@ -231,6 +231,24 @@ export const darkTheme = (): CustomThemeConfig => {
         cell: getDarkHeatmapCellTheme(),
         pivotGrid: getDarkPivotChartGridConfig(),
       },
+      histogram: {
+        ...baseConfig,
+
+        xAxis: linearAxis,
+        yAxis: linearAxis,
+        crosshairRect: crosshairRect,
+        pivotGrid: getDarkPivotChartGridConfig(),
+        annotation: getDarkAnnotation(),
+      },
+      boxPlot: {
+        ...baseConfig,
+
+        xAxis: bandAxis,
+        yAxis: linearAxis,
+        crosshairRect: crosshairRect,
+        pivotGrid: getDarkPivotChartGridConfig(),
+        annotation: getDarkAnnotation(),
+      },
     },
   }
 }

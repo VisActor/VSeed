@@ -70,7 +70,6 @@ const pivotBar: SpecPipeline = [
     xLinear,
     yBand,
     label,
-    label,
     tooltip,
     colorBarStyleFill(barStyle),
     horizontalCrosshairRect,

@@ -26,6 +26,11 @@
   },
   {
     "type": "file",
+    "name": "barMaxWidth",
+    "label": "barMaxWidth "
+  },
+  {
+    "type": "file",
     "name": "barStyle",
     "label": "barStyle "
   },

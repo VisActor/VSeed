@@ -11,6 +11,8 @@ import { zRoseConfig, zRoseParallelConfig } from './rose'
 import { zFunnelConfig } from './funnel'
 import { zHeatmapConfig } from './heatmap'
 import { zPivotTableConfig } from './pivotTable'
+import { zBoxplotConfig } from './boxplot'
+import { zHistogramConfig } from './histogram'
 
 export type Config = z.infer<typeof zConfig>
 export const zConfig = z.object({
@@ -40,4 +42,6 @@ export const zConfig = z.object({
   // other
   funnel: zFunnelConfig.nullish(),
   heatmap: zHeatmapConfig.nullish(),
+  boxPlot: zBoxplotConfig.nullish(),
+  histogram: zHistogramConfig.nullish(),
 })

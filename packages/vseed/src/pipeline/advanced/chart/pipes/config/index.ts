@@ -3,8 +3,10 @@ import { columnConfig } from './column'
 import { pieConfig } from './pie'
 import { dualAxisConfig } from './dualAxis'
 import { scatterConfig } from './scatter'
+import { histogramConfig } from './histogram'
+import { boxplotConfig } from './boxplot'
 
-export { lineConfig, columnConfig, pieConfig, dualAxisConfig, scatterConfig }
+export { lineConfig, columnConfig, pieConfig, dualAxisConfig, scatterConfig, histogramConfig, boxplotConfig }
 
 // area
 export const areaConfig = lineConfig

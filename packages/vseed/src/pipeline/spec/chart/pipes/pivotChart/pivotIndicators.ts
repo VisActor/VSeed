@@ -5,7 +5,7 @@ import { unique } from 'remeda'
 
 export const pivotIndicators =
   (chartPipeline: SpecPipeline): SpecPipe =>
-  (spec, context) => {
+  (spec, context): Partial<PivotChartConstructorOptions> => {
     const result = { ...spec } as PivotChartConstructorOptions
     const { advancedVSeed } = context
     const { measures, datasetReshapeInfo, dataset } = advancedVSeed
@@ -46,7 +46,7 @@ export const pivotIndicators =
     return {
       ...result,
       indicators: indicators,
-    } as PivotChartConstructorOptions
+    } as Partial<PivotChartConstructorOptions>
   }
 
 export const pivotIndicatorsAsRow: SpecPipe = (spec) => {

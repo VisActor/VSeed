@@ -230,6 +230,22 @@ export const lightTheme = (): CustomThemeConfig => {
         cell: getLightHeatmapCellTheme(),
         pivotGrid: getLightPivotChartGridConfig(),
       },
+      histogram: {
+        ...baseConfig,
+        xAxis: linearAxis,
+        yAxis: linearAxis,
+        crosshairRect,
+        pivotGrid: getLightPivotChartGridConfig(),
+        annotation: getLightAnnotation(),
+      },
+      boxPlot: {
+        ...baseConfig,
+        xAxis: linearAxis,
+        yAxis: linearAxis,
+        crosshairRect,
+        pivotGrid: getLightPivotChartGridConfig(),
+        annotation: getLightAnnotation(),
+      },
     },
   }
 }

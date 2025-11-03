@@ -24,3 +24,17 @@ export const AngleEncoding = '__Dim_Angle__'
 export const DetailEncoding = '__Dim_Detail__'
 export const ColorEncoding = '__Dim_Color__'
 export const ColorIdEncoding = '__Dim_ColorId__'
+
+// Measures For boxPlot
+export const Q1MeasureValue = '__Q1__'
+export const Q3MeasureValue = '__Q3__'
+export const MinMeasureId = '__Min__'
+export const MaxMeasureId = '__Max__'
+export const OutliersMeasureId = '__Outliers__'
+export const MedianMeasureId = '__Meadian__'
+
+// Measures For Histogram
+export const BinStartMeasureId = '__BinStart__'
+export const BinEndMeasureId = '__BinEnd__'
+export const BinCountMeasureId = '__BinCount__'
+export const BinPercentageMeasureId = '__BinPercentage__'

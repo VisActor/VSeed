@@ -19,3 +19,5 @@ export { radarSpecPipeline } from './radar'
 // other
 export { funnelSpecPipeline } from './funnel'
 export { heatmapSpecPipeline } from './heatmap'
+export { boxplotSpecPipeline } from './boxplot'
+export { histogramSpecPipeline } from './histogram'

@@ -16,6 +16,16 @@ export const zEncoding = z.object({
   column: z.array(z.string()).nullish(),
 
   group: z.array(z.string()).nullish().describe('已弃用, 请使用颜色替代'),
+  value: z.array(z.string()).nullish(),
+  q1: z.array(z.string()).nullish(),
+  q3: z.array(z.string()).nullish(),
+  median: z.array(z.string()).nullish(),
+  min: z.array(z.string()).nullish(),
+  max: z.array(z.string()).nullish(),
+  outliers: z.array(z.string()).nullish(),
+
+  x0: z.array(z.string()).nullish(),
+  x1: z.array(z.string()).nullish(),
 })
 
 /**

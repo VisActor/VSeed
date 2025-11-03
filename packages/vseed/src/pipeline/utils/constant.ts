@@ -36,6 +36,8 @@ export const ChartTypeEnum = {
   // other
   Funnel: 'funnel',
   Heatmap: 'heatmap',
+  Boxplot: 'boxPlot',
+  Histogram: 'histogram',
 } as const
 
 // Heatmap hide cell

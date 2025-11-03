@@ -24,6 +24,8 @@ export type ChartType =
   // other
   | 'heatmap'
   | 'funnel'
+  | 'boxPlot'
+  | 'histogram'
 
 export const zChartType = z.enum([
   'table',
@@ -49,4 +51,6 @@ export const zChartType = z.enum([
   // other
   'funnel',
   'heatmap',
+  'boxPlot',
+  'histogram',
 ])

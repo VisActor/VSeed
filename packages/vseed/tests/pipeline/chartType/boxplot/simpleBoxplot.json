@@ -1,0 +1,22 @@
+{
+  "chartType": "boxPlot",
+  "dataset": [
+    { "Survived": 0, "Sex": "male", "Age": 55 },
+    { "Survived": 1, "Sex": "female", "Age": 49 },
+    { "Survived": 1, "Sex": "female", "Age": 36 },
+    { "Survived": 0, "Sex": "male", "Age": 19 },
+    { "Survived": 0, "Sex": "male", "Age": 14 },
+    { "Survived": 1, "Sex": "female", "Age": 55 },
+    { "Survived": 0, "Sex": "female", "Age": null },
+    { "Survived": 0, "Sex": "male", "Age": 28 },
+    { "Survived": 0, "Sex": "female", "Age": 45 },
+    { "Survived": 1, "Sex": "male", "Age": 6 },
+    { "Survived": 1, "Sex": "female", "Age": 36 },
+    { "Survived": 0, "Sex": "male", "Age": 28 }
+  ],
+  "dimensions": [
+    { "id": "Survived", "encoding": "xAxis" },
+    { "id": "Sex", "encoding": "color" }
+  ],
+  "measures": [{ "id": "Age", "encoding": "value" }]
+}

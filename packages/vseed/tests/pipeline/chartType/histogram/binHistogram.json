@@ -1,0 +1,13 @@
+{
+  "chartType": "histogram",
+  "dataset": [
+    { "x0": 0, "x1": 10, "frequency": 5 },
+    { "x0": 10, "x1": 20, "frequency": 10 },
+    { "x0": 20, "x1": 30, "frequency": 2 }
+  ],
+  "measures": [
+    { "id": "x0", "encoding": "x0" },
+    { "id": "x1", "encoding": "x1" },
+    { "id": "frequency", "encoding": "yAxis" }
+  ]
+}

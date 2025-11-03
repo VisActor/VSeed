@@ -31,6 +31,21 @@
   },
   {
     "type": "file",
+    "name": "binCount",
+    "label": "binCount "
+  },
+  {
+    "type": "file",
+    "name": "binStep",
+    "label": "binStep "
+  },
+  {
+    "type": "file",
+    "name": "binValueType",
+    "label": "binValueType "
+  },
+  {
+    "type": "file",
     "name": "chartType",
     "label": "chartType "
   },
@@ -53,6 +68,11 @@
     "type": "file",
     "name": "dimensions",
     "label": "dimensions "
+  },
+  {
+    "type": "file",
+    "name": "histogramRegressionLine",
+    "label": "histogramRegressionLine "
   },
   {
     "type": "file",

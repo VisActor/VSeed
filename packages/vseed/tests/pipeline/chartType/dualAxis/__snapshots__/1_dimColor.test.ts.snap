@@ -1672,6 +1672,7 @@ exports[`1_dimColor 2`] = `
       "progressiveStep": 400,
       "progressiveThreshold": Infinity,
       "seriesField": "__Dim_ColorId__",
+      "stackCornerRadius": [Function],
       "tooltip": {
         "dimension": {
           "content": [

@@ -55,6 +55,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
         borderColor,
         fontSize: 12,
         color: headerFontColor,
+        padding: [0, 4, 0, 4],
         borderLineWidth: [1, 1, 1, outlineBorderLineWidth],
         bgColor: headerBackgroundColor,
         hover: {
@@ -68,6 +69,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
         textAlign: 'center',
         fontSize: 12,
         color: headerFontColor,
+        padding: [0, 4, 0, 4],
         fontWeight: 'bold',
         borderLineWidth: [outlineBorderLineWidth, 1, 1, outlineBorderLineWidth],
         bgColor: headerBackgroundColor,

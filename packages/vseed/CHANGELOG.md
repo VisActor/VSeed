@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.38
+
+### Patch Changes
+
+- fix: fix `stackCornerRadius` of dualAxis chart and add config of pivotchart
+
 ## 0.1.37
 
 ### Patch Changes

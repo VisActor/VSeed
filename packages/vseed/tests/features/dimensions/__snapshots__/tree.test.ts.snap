@@ -224,6 +224,7 @@ exports[`tree 2`] = `
       "title": "销售指标",
     },
   ],
+  "defaultHeaderColWidth": "auto",
   "heightMode": "autoHeight",
   "hover": {
     "highlightMode": "row",

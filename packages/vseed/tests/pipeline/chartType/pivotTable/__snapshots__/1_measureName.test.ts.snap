@@ -546,6 +546,7 @@ exports[`1_measureName 2`] = `
       },
     ],
   },
+  "defaultHeaderColWidth": "auto",
   "heightMode": "autoHeight",
   "hideIndicatorName": true,
   "hover": {

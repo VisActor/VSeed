@@ -94,6 +94,7 @@ exports[`emptyPivotTable 2`] = `
   "dataConfig": {
     "aggregationRules": [],
   },
+  "defaultHeaderColWidth": "auto",
   "heightMode": "autoHeight",
   "hideIndicatorName": false,
   "hover": {

@@ -956,6 +956,7 @@ exports[`pivotPivotTable 2`] = `
       },
     ],
   },
+  "defaultHeaderColWidth": "auto",
   "heightMode": "autoHeight",
   "hideIndicatorName": true,
   "hover": {

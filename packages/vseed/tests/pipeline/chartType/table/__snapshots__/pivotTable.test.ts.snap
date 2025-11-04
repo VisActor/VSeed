@@ -321,6 +321,7 @@ exports[`pivotTable 2`] = `
       "title": "line2",
     },
   ],
+  "defaultHeaderColWidth": "auto",
   "heightMode": "autoHeight",
   "hover": {
     "highlightMode": "row",

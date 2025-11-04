@@ -935,6 +935,7 @@ exports[`dualAxisCombination 2`] = `
   "corner": {
     "titleOnDimension": "all",
   },
+  "defaultHeaderColWidth": "auto",
   "heightMode": "adaptive",
   "hover": {
     "highlightMode": "cross",
@@ -2297,6 +2298,12 @@ exports[`dualAxisCombination 2`] = `
         "inlineColumnBgColor": "rgba(0,0,0,0)",
         "inlineRowBgColor": "rgba(0,0,0,0)",
       },
+      "padding": [
+        0,
+        4,
+        0,
+        4,
+      ],
       "textAlign": "center",
     },
     "cornerLeftBottomCellStyle": {
@@ -2402,6 +2409,12 @@ exports[`dualAxisCombination 2`] = `
         "inlineColumnBgColor": "rgba(0,0,0,0)",
         "inlineRowBgColor": "rgba(0,0,0,0)",
       },
+      "padding": [
+        0,
+        4,
+        0,
+        4,
+      ],
     },
     "selectionStyle": {
       "cellBgColor": "",

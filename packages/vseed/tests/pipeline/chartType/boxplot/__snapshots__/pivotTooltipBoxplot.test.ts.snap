@@ -589,6 +589,7 @@ exports[`pivotTooltipBoxplot 2`] = `
   "corner": {
     "titleOnDimension": "all",
   },
+  "defaultHeaderColWidth": "auto",
   "heightMode": "adaptive",
   "hover": {
     "highlightMode": "cross",
@@ -1103,6 +1104,12 @@ exports[`pivotTooltipBoxplot 2`] = `
         "inlineColumnBgColor": "#D9DDE455",
         "inlineRowBgColor": "#D9DDE455",
       },
+      "padding": [
+        0,
+        4,
+        0,
+        4,
+      ],
       "textAlign": "center",
     },
     "cornerLeftBottomCellStyle": {
@@ -1208,6 +1215,12 @@ exports[`pivotTooltipBoxplot 2`] = `
         "inlineColumnBgColor": "#D9DDE455",
         "inlineRowBgColor": "#D9DDE455",
       },
+      "padding": [
+        0,
+        4,
+        0,
+        4,
+      ],
     },
     "selectionStyle": {
       "cellBgColor": "",

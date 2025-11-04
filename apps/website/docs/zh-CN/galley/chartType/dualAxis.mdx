@@ -3,6 +3,7 @@ pageType: doc
 ---
 
 import {
+  SimpleDualAxisChart,
   DualAxisChart,
   CombinationDualAxisChart,
   PivotDualAxisChart,
@@ -18,20 +19,17 @@ import {
 :::info
 配置双轴图指标
 
-若measures有`1`层, 第一个指标应用于主轴, 第二个指标及其之后的指标, 一起应用于次轴. 绘制一个普通双轴图.
-
-若measures有`2`层, 第一组指标应用于主轴, 第二组指标用于次轴, 第三组及其之后的指标组会被忽略. 绘制一个普通双轴图.
-
-若measures有`3`层, 每一组指标用于绘制一个双轴图, 自上而下, 纵向排列. 绘制一个组合双轴图.
+度量不设置encoding 的时候，第一个指标应用于主轴, 第二个指标及其之后的指标, 一起应用于次轴. 绘制一个普通双轴图.
+通过设置 `parentId` 实现指标分组，展示在不同的视图中
 
 :::
 
-### 双轴图(measures 1 层)
+### 双轴图默认效果
 
-<DualAxisChart />
+<SimpleDualAxisChart />
 
 ```tsx pure {4-7}
-export const DualAxisChart = memo(() => {
+export const SimpleDualAxisChart = memo(() => {
   const vseed: VSeed = {
     chartType: 'dualAxis',
     measures: [
@@ -50,7 +48,7 @@ export const DualAxisChart = memo(() => {
 })
 ```
 
-### 双轴图(measures 2 层)
+### 双轴图
 
 <DualAxisChart />
 
@@ -59,14 +57,8 @@ export const DualAxisChart = memo(() => {
   const vseed: VSeed = {
     chartType: 'dualAxis',
     measures: [
-      {
-        id: 'primary',
-        children: [{ id: 'sales', alias: '销售额' }],
-      },
-      {
-        id: 'secondary',
-        children: [{ id: 'profit', alias: '利润' }],
-      },
+      { id: 'sales', alias: '销售额', encoding: 'primaryYAxis' },
+      { id: 'profit', alias: '利润', encoding: 'secondaryYAxis' },
     ],
     dataset: [
       { date: '2019', profit: 10, sales: 200 },
@@ -80,7 +72,7 @@ export const DualAxisChart = memo(() => {
 })
 ```
 
-### 组合双轴图(measures 3 层)
+### 组合双轴图
 
 <CombinationDualAxisChart />
 
@@ -89,107 +81,10 @@ export const CombinationDualAxisChart = memo(() => {
   const vseed: VSeed = {
     chartType: 'dualAxis',
     measures: [
-      {
-        id: 'first',
-        alias: '第一个双轴图',
-        children: [
-          {
-            id: 'secondary-profit',
-            children: [{ id: 'profit', alias: '利润' }],
-          },
-          {
-            id: 'primary-sales',
-            children: [{ id: 'sales', alias: '销售额' }],
-          },
-        ],
-      },
-      {
-        id: 'second',
-        alias: '第一个双轴图',
-        children: [
-          {
-            id: 'primary-ratio',
-            children: [{ id: 'ratio', alias: '比率' }],
-          },
-          {
-            id: 'returnRatio',
-            children: [{ id: 'returnRatio', alias: '回报率' }],
-          },
-        ],
-      },
-    ],
-    dataset: [
-      { date: '2019', profit: 10, sales: 100, ratio: 301, returnRatio: 301 },
-      { date: '2020', profit: 30, sales: 3200, ratio: 32, returnRatio: 30 },
-      { date: '2021', profit: 30, sales: 300, ratio: 103, returnRatio: 503 },
-      { date: '2022', profit: 50, sales: 2400, ratio: 30, returnRatio: 24 },
-      { date: '2023', profit: 40, sales: 500, ratio: 305, returnRatio: 305 },
-    ],
-    dimensions: [
-      {
-        id: 'date',
-        alias: '日期',
-      },
-    ],
-  }
-  return <PivotChart vseed={vseed} />
-})
-```
-
-## dualMeasures
-
-:::info
-dualMeasures 是 measures 的一个便捷扩展, 用于配置双轴图的指标.
-
-若dualMeasures仅有`1`项, 则绘制一个普通双轴图.
-
-若dualMeasures至少有`2`项, 则绘制一个组合双轴图.
-
-:::
-
-### 双轴图(dualMeasures 1 项)
-
-<DualAxisChart />
-
-```tsx pure {4-11}
-export const DualAxisChart = memo(() => {
-  const vseed: VSeed = {
-    chartType: 'dualAxis',
-    dualMeasures: [
-      {
-        primaryMeasures: [{ id: 'profit' }],
-        secondaryMeasures: [{ id: 'sales' }],
-      },
-    ],
-    dataset: [
-      { date: '2019', profit: 10, sales: 200 },
-      { date: '2020', profit: 30, sales: 600 },
-      { date: '2021', profit: 30, sales: 600 },
-      { date: '2022', profit: 50, sales: 1000 },
-      { date: '2023', profit: 40, sales: 800 },
-    ],
-  }
-  return <VChartRender vseed={vseed} />
-})
-```
-
-### 组合透视图(dualMeasures 2 项)
-
-<CombinationDualAxisChart />
-
-```tsx pure {4-17}
-export const CombinationDualAxisChart = memo(() => {
-  const vseed: VSeed = {
-    chartType: 'dualAxis',
-    dualMeasures: [
-      {
-        primaryMeasures: [{ id: 'profit' }],
-        secondaryMeasures: [{ id: 'sales' }],
-      },
-      {
-        primaryMeasures: [{ id: 'ratio' }],
-        secondaryMeasures: [{ id: 'returnRatio' }],
-      },
+      { id: 'profit', alias: '利润', encoding: 'primaryYAxis', parentId: 'first' },
+      { id: 'sales', alias: '销售额', encoding: 'secondaryYAxis', parentId: 'first' },
+      { id: 'ratio', alias: '比率', encoding: 'primaryYAxis', parentId: 'second' },
+      { id: 'returnRatio', alias: '回报率', encoding: 'secondaryYAxis', parentId: 'second' },
     ],
     dataset: [
       { date: '2019', profit: 10, sales: 100, ratio: 301, returnRatio: 301 },
@@ -258,15 +153,11 @@ export const PivotDualAxisChart = memo(() => {
       { date: '2022', type: 'B', test: 'TEST-D', profit: 50, sales: 2400, ratio: 5, returnRatio: 34 },
       { date: '2023', type: 'B', test: 'TEST-D', profit: 40, sales: 500, ratio: 1, returnRatio: 35 },
     ],
-    dualMeasures: [
-      {
-        primaryMeasures: [{ id: 'profit' }],
-        secondaryMeasures: [{ id: 'sales' }],
-      },
-      {
-        primaryMeasures: [{ id: 'ratio' }],
-        secondaryMeasures: [{ id: 'returnRatio' }],
-      },
+    measures: [
+      { id: 'profit', alias: '利润', encoding: 'primaryYAxis', parentId: 'first' },
+      { id: 'sales', alias: '销售额', encoding: 'secondaryYAxis', parentId: 'first' },
+      { id: 'ratio', alias: '比率', encoding: 'primaryYAxis', parentId: 'second' },
+      { id: 'returnRatio', alias: '回报率', encoding: 'secondaryYAxis', parentId: 'second' },
     ],
   }
   return <PivotChart vseed={vseed} />
@@ -295,14 +186,8 @@ export const DualChartType = memo(() => {
       { date: '2023', profit: 10, sales: 800 },
     ],
     measures: [
-      {
-        id: 'primary',
-        children: [{ id: 'sales', alias: '销售额' }],
-      },
-      {
-        id: 'secondary',
-        children: [{ id: 'profit', alias: '利润' }],
-      },
+      { id: 'sales', alias: '销售额', encoding: 'primaryYAxis' },
+      { id: 'profit', alias: '利润', encoding: 'secondaryYAxis' },
     ],
   }
   return <VChartRender vseed={vseed} />
@@ -328,34 +213,10 @@ export const DualChartTypeArray = memo(() => {
       },
     ],
     measures: [
-      {
-        id: 'first',
-        alias: '第一个双轴图',
-        children: [
-          {
-            id: 'secondary-profit',
-            children: [{ id: 'profit', alias: '利润' }],
-          },
-          {
-            id: 'primary-sales',
-            children: [{ id: 'sales', alias: '销售额' }],
-          },
-        ],
-      },
-      {
-        id: 'second',
-        alias: '第一个双轴图',
-        children: [
-          {
-            id: 'primary-ratio',
-            children: [{ id: 'ratio', alias: '比率' }],
-          },
-          {
-            id: 'returnRatio',
-            children: [{ id: 'returnRatio', alias: '回报率' }],
-          },
-        ],
-      },
+      { id: 'profit', alias: '利润', encoding: 'primaryYAxis', parentId: 'first' },
+      { id: 'sales', alias: '销售额', encoding: 'secondaryYAxis', parentId: 'first' },
+      { id: 'ratio', alias: '比率', encoding: 'primaryYAxis', parentId: 'second' },
+      { id: 'returnRatio', alias: '回报率', encoding: 'secondaryYAxis', parentId: 'second' },
     ],
     dataset: [
       { date: '2019', profit: 10, sales: 100, ratio: 301, returnRatio: 301 },
@@ -412,34 +273,10 @@ export const DualYAxisArray = memo(() => {
       },
     ],
     measures: [
-      {
-        id: 'first',
-        alias: '第一个双轴图',
-        children: [
-          {
-            id: 'secondary-profit',
-            children: [{ id: 'profit', alias: '利润' }],
-          },
-          {
-            id: 'primary-sales',
-            children: [{ id: 'sales', alias: '销售额' }],
-          },
-        ],
-      },
-      {
-        id: 'second',
-        alias: '第一个双轴图',
-        children: [
-          {
-            id: 'primary-ratio',
-            children: [{ id: 'ratio', alias: '比率' }],
-          },
-          {
-            id: 'returnRatio',
-            children: [{ id: 'returnRatio', alias: '回报率' }],
-          },
-        ],
-      },
+      { id: 'profit', alias: '利润', encoding: 'primaryYAxis', parentId: 'first' },
+      { id: 'sales', alias: '销售额', encoding: 'secondaryYAxis', parentId: 'first' },
+      { id: 'ratio', alias: '比率', encoding: 'primaryYAxis', parentId: 'second' },
+      { id: 'returnRatio', alias: '回报率', encoding: 'secondaryYAxis', parentId: 'second' },
     ],
     dataset: [
       { date: '2019', profit: 10, sales: 100, ratio: 301, returnRatio: 301 },

@@ -1,8 +1,8 @@
-import type { IArcLabelSpec, ILineChartSpec } from '@visactor/vchart'
-import type { ILineLikeLabelSpec } from '@visactor/vchart/esm/series/mixin/interface'
+import type { ILineChartSpec } from '@visactor/vchart'
 import { createFormatter, createFormatterByMeasure, DATUM_HIDE_KEY, findMeasureById } from '../../../../utils'
 import type {
   Datum,
+  Dimension,
   Dimensions,
   Encoding,
   FoldInfo,
@@ -26,7 +26,7 @@ export const label: SpecPipe = (spec, context) => {
 
   const { label } = baseConfig
 
-  result.label = buildLabel<ILineLikeLabelSpec>(
+  result.label = buildLabel(
     label,
     vseed.measures,
     vseed.dimensions,
@@ -34,7 +34,7 @@ export const label: SpecPipe = (spec, context) => {
     advancedVSeed.measures,
     encoding as Encoding,
     [foldInfo],
-  )
+  ) as unknown as ILineChartSpec['label']
 
   return result
 }
@@ -61,7 +61,7 @@ export const generateMeasurePercent = (value: number | string, sum: number, form
   return formatter(percentValue)
 }
 
-export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
+export const buildLabel = (
   label: Label,
   vseedMeasures: Measures = [],
   vseedDimensions: Dimensions = [],
@@ -69,7 +69,7 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
   advancedVSeedMeasures: Measures,
   encoding: Encoding,
   foldInfoList: FoldInfo[],
-): T => {
+) => {
   const {
     enable,
     wrap,
@@ -96,12 +96,12 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
       : showDimension
         ? advancedVSeedDimensions.filter((d) => d.id !== MeasureName)
         : [],
-    (item) => item.id,
+    (item: Dimension) => item.id,
   )
 
   const labelMeas = uniqueBy(
     vseedMeasures.filter((item) => encoding.label?.includes(item.id)),
-    (item) => item.id,
+    (item: Measure) => item.id,
   )
 
   const percentFormat: NumFormat = merge(numFormat, {
@@ -112,20 +112,20 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
 
   const result = {
     visible: enable,
-    dataFilter: (data) => {
+    dataFilter: (data: Datum[]) => {
       return data.filter((entry) => {
         return entry.data?.[DATUM_HIDE_KEY] !== true
       })
     },
-    formatMethod: (_, datum: Datum) => {
+    formatMethod: (_: unknown, datum: Datum) => {
       const result = []
 
-      const dimLabels = labelDims.map((item) => {
+      const dimLabels = labelDims.map((item: Dimension) => {
         const id = item.id
         return datum[id] as number | string
       })
 
-      const meaLabels = labelMeas.map((item) =>
+      const meaLabels = labelMeas.map((item: Measure) =>
         generateMeasureValue(datum[item.id] as number | string, item, autoFormat, numFormat),
       )
 
@@ -170,10 +170,10 @@ export const buildLabel = <T extends ILineLikeLabelSpec | IArcLabelSpec>(
       background: labelBackgroundColor,
     },
     smartInvert: labelColorSmartInvert,
-  } as T
+  }
 
   if (labelOverlap) {
-    result.overlap = {
+    ;(result as any).overlap = {
       hideOnHit: true,
       clampForce: true,
     }

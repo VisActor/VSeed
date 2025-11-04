@@ -1,8 +1,8 @@
-import type { BaseTableConstructorOptions } from '@visactor/vtable/es/ts-types'
 import type { SpecPipe, TableConfig } from 'src/types'
+import type { ThemeLike, WithTheme } from './type'
 
 export const frameStyle: SpecPipe = (spec, context) => {
-  const result = { ...spec } as BaseTableConstructorOptions
+  const result = { ...spec } as Partial<typeof spec> & WithTheme
   const { advancedVSeed } = context
   const { config, chartType } = advancedVSeed
   const themConfig = config?.[chartType] as TableConfig
@@ -11,7 +11,7 @@ export const frameStyle: SpecPipe = (spec, context) => {
 
   const borderColor = themConfig.borderColor || 'rgb(224, 224, 224)'
 
-  result.theme.frameStyle = {
+  ;(result.theme as ThemeLike).frameStyle = {
     borderColor,
     borderLineWidth: 1,
     cornerRadius: 4,

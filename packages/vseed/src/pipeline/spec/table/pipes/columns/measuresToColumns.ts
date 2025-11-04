@@ -1,5 +1,4 @@
 import type { ColumnsDefine, ListTableConstructorOptions } from '@visactor/vtable'
-import type { FieldFormat } from '@visactor/vtable/es/ts-types'
 import { createFormatterByMeasure, isMeasure } from 'src/pipeline/utils'
 import type { MeasureGroup, Measure, MeasureTree, SpecPipe, Datum } from 'src/types'
 
@@ -25,7 +24,7 @@ export const measureTreeToColumns: SpecPipe = (spec, context) => {
   }
 }
 
-const fieldFormat = (node: Measure): FieldFormat => {
+const fieldFormat = (node: Measure) => {
   const formatter = createFormatterByMeasure(node)
 
   return (datum: Datum) => {

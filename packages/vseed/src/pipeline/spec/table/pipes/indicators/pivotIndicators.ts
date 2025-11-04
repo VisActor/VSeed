@@ -1,5 +1,4 @@
-import type { PivotChartConstructorOptions } from '@visactor/vtable'
-import type { BaseTableAPI, FieldFormat } from '@visactor/vtable/es/ts-types'
+import type { PivotChartConstructorOptions, BaseTableAPI } from '@visactor/vtable'
 import { isNumber } from 'remeda'
 import { intl } from 'src/i18n'
 import { createFormatterByMeasure, findMeasureById } from 'src/pipeline/utils'
@@ -30,7 +29,7 @@ export const pivotIndicators: SpecPipe = (spec, context) => {
   }
 }
 
-const fieldFormat = (measures: MeasureTree, foldInfo: FoldInfo): FieldFormat => {
+const fieldFormat = (measures: MeasureTree, foldInfo: FoldInfo) => {
   return (value: number | string, col?: number, row?: number, table?: BaseTableAPI) => {
     if (!isNumber(col) || !isNumber(row) || !table) {
       return value

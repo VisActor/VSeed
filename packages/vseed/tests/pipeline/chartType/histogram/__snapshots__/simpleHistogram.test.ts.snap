@@ -128,10 +128,12 @@ exports[`simpleHistogram 1`] = `
       "pivotGrid": {
         "bodyFontColor": "#141414",
         "borderColor": "#e3e5eb",
-        "headerBackgroundColor": "#f6f7f9",
+        "frameCornerRadius": 0,
+        "headerBackgroundColor": "transparent",
         "headerFontColor": "#21252c",
         "hoverHeaderBackgroundColor": "#D9DDE4",
         "hoverHeaderInlineBackgroundColor": "#D9DDE455",
+        "outlineBorderLineWidth": 0,
       },
       "tooltip": {
         "enable": true,
@@ -341,10 +343,12 @@ exports[`simpleHistogram 1`] = `
         "pivotGrid": {
           "bodyFontColor": "#141414",
           "borderColor": "#e3e5eb",
-          "headerBackgroundColor": "#f6f7f9",
+          "frameCornerRadius": 0,
+          "headerBackgroundColor": "transparent",
           "headerFontColor": "#21252c",
           "hoverHeaderBackgroundColor": "#D9DDE4",
           "hoverHeaderInlineBackgroundColor": "#D9DDE455",
+          "outlineBorderLineWidth": 0,
         },
         "tooltip": {
           "enable": true,

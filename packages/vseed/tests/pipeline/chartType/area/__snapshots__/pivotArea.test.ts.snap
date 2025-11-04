@@ -122,10 +122,12 @@ exports[`pivotArea 1`] = `
       "pivotGrid": {
         "bodyFontColor": "#141414",
         "borderColor": "#e3e5eb",
-        "headerBackgroundColor": "#f6f7f9",
+        "frameCornerRadius": 0,
+        "headerBackgroundColor": "transparent",
         "headerFontColor": "#21252c",
         "hoverHeaderBackgroundColor": "#D9DDE4",
         "hoverHeaderInlineBackgroundColor": "#D9DDE455",
+        "outlineBorderLineWidth": 0,
       },
       "tooltip": {
         "enable": true,
@@ -336,10 +338,12 @@ exports[`pivotArea 1`] = `
         "pivotGrid": {
           "bodyFontColor": "#141414",
           "borderColor": "#e3e5eb",
-          "headerBackgroundColor": "#f6f7f9",
+          "frameCornerRadius": 0,
+          "headerBackgroundColor": "transparent",
           "headerFontColor": "#21252c",
           "hoverHeaderBackgroundColor": "#D9DDE4",
           "hoverHeaderInlineBackgroundColor": "#D9DDE455",
+          "outlineBorderLineWidth": 0,
         },
         "tooltip": {
           "enable": true,
@@ -3369,8 +3373,8 @@ exports[`pivotArea 2`] = `
       "borderColor": "#e3e5eb",
       "borderLineWidth": [
         1,
-        1,
-        1,
+        0,
+        0,
         1,
       ],
       "color": "#141414",
@@ -3379,27 +3383,37 @@ exports[`pivotArea 2`] = `
       },
     },
     "bottomFrozenStyle": {
-      "bgColor": "#f6f7f9",
+      "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": 1,
+      "borderLineWidth": [
+        1,
+        0,
+        0,
+        1,
+      ],
       "hover": {
         "cellBgColor": "#D9DDE4",
       },
     },
     "cornerHeaderStyle": {
-      "bgColor": "#f6f7f9",
+      "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": 1,
+      "borderLineWidth": [
+        0,
+        1,
+        1,
+        0,
+      ],
       "color": "#21252c",
       "fontSize": 12,
       "fontWeight": "bold",
       "frameStyle": {
         "borderColor": "#e3e5eb",
         "borderLineWidth": [
-          1,
           0,
           0,
-          1,
+          0,
+          0,
         ],
       },
       "hover": {
@@ -3410,21 +3424,21 @@ exports[`pivotArea 2`] = `
       "textAlign": "center",
     },
     "cornerLeftBottomCellStyle": {
-      "bgColor": "#f6f7f9",
+      "bgColor": "transparent",
       "borderColor": "#e3e5eb",
       "borderLineWidth": [
         1,
         0,
-        1,
-        1,
+        0,
+        0,
       ],
       "frameStyle": {
         "borderColor": "#e3e5eb",
         "borderLineWidth": [
           1,
           0,
-          1,
-          1,
+          0,
+          0,
         ],
       },
       "hover": {
@@ -3432,7 +3446,7 @@ exports[`pivotArea 2`] = `
       },
     },
     "cornerRightBottomCellStyle": {
-      "bgColor": "#f6f7f9",
+      "bgColor": "transparent",
       "borderColor": "#e3e5eb",
       "borderLineWidth": 0,
       "frameStyle": {
@@ -3449,13 +3463,13 @@ exports[`pivotArea 2`] = `
       },
     },
     "cornerRightTopCellStyle": {
-      "bgColor": "#f6f7f9",
+      "bgColor": "transparent",
       "borderColor": "#e3e5eb",
       "borderLineWidth": 0,
       "frameStyle": {
         "borderColor": "#e3e5eb",
         "borderLineWidth": [
-          1,
+          0,
           1,
           0,
           1,
@@ -3467,12 +3481,18 @@ exports[`pivotArea 2`] = `
     },
     "frameStyle": {
       "borderColor": "#e3e5eb",
-      "cornerRadius": 4,
+      "borderLineWidth": 0,
+      "cornerRadius": 0,
     },
     "headerStyle": {
-      "bgColor": "#f6f7f9",
+      "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": 1,
+      "borderLineWidth": [
+        0,
+        0,
+        1,
+        1,
+      ],
       "color": "#21252c",
       "fontSize": 12,
       "hover": {
@@ -3483,7 +3503,7 @@ exports[`pivotArea 2`] = `
       "textAlign": "center",
     },
     "rightFrozenStyle": {
-      "bgColor": "#f6f7f9",
+      "bgColor": "transparent",
       "borderColor": "#e3e5eb",
       "borderLineWidth": 1,
       "hover": {
@@ -3491,9 +3511,14 @@ exports[`pivotArea 2`] = `
       },
     },
     "rowHeaderStyle": {
-      "bgColor": "#f6f7f9",
+      "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": 1,
+      "borderLineWidth": [
+        1,
+        1,
+        1,
+        0,
+      ],
       "color": "#21252c",
       "fontSize": 12,
       "hover": {

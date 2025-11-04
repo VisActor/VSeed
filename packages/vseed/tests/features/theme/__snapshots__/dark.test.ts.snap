@@ -122,10 +122,12 @@ exports[`dark 1`] = `
       "pivotGrid": {
         "bodyFontColor": "#fdfdfd",
         "borderColor": "#4b4e53",
-        "headerBackgroundColor": "#36393e",
+        "frameCornerRadius": 0,
+        "headerBackgroundColor": "transparent",
         "headerFontColor": "#fdfdfd",
         "hoverHeaderBackgroundColor": "#6f7984cc",
         "hoverHeaderInlineBackgroundColor": "#4b4f54",
+        "outlineBorderLineWidth": 0,
       },
       "stackCornerRadius": [
         4,
@@ -341,10 +343,12 @@ exports[`dark 1`] = `
         "pivotGrid": {
           "bodyFontColor": "#fdfdfd",
           "borderColor": "#4b4e53",
-          "headerBackgroundColor": "#36393e",
+          "frameCornerRadius": 0,
+          "headerBackgroundColor": "transparent",
           "headerFontColor": "#fdfdfd",
           "hoverHeaderBackgroundColor": "#6f7984cc",
           "hoverHeaderInlineBackgroundColor": "#4b4f54",
+          "outlineBorderLineWidth": 0,
         },
         "stackCornerRadius": [
           4,

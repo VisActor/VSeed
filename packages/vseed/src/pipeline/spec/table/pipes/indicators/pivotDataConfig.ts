@@ -1,4 +1,3 @@
-import { AggregationType } from '@visactor/vtable/es/ts-types'
 import { findAllMeasures } from 'src/pipeline/utils'
 import type { SpecPipe } from 'src/types'
 
@@ -8,7 +7,7 @@ export const dataConfig: SpecPipe = (spec, context) => {
 
   const aggregationRules = measures.map((measure) => ({
     field: measure.id,
-    aggregationType: AggregationType.NONE,
+    aggregationType: 'NONE',
     indicatorKey: measure.id,
   }))
 

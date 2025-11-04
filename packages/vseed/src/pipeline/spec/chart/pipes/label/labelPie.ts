@@ -1,4 +1,4 @@
-import type { IArcLabelSpec, IPieChartSpec } from '@visactor/vchart'
+import type { IPieChartSpec } from '@visactor/vchart'
 import type { Encoding, FoldInfo, PieLabel, SpecPipe } from 'src/types'
 import { buildLabel } from './label'
 
@@ -12,7 +12,7 @@ export const labelPie: SpecPipe = (spec, context) => {
 
   const { label } = baseConfig
 
-  result.label = buildLabel<IArcLabelSpec>(
+  result.label = buildLabel(
     label,
     vseed.measures,
     vseed.dimensions,
@@ -20,9 +20,9 @@ export const labelPie: SpecPipe = (spec, context) => {
     advancedVSeed.measures,
     encoding as Encoding,
     [foldInfo],
-  )
+  ) as unknown as IPieChartSpec['label']
   if (label.labelLayout) {
-    result.label.layout = {
+    ;(result.label as any)!.layout = {
       align: label.labelLayout,
     }
   }

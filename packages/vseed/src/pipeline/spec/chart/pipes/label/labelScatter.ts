@@ -1,7 +1,6 @@
 import type { IScatterChartSpec } from '@visactor/vchart'
 import type { Encoding, FoldInfo, Label, SpecPipe } from 'src/types'
 import { buildLabel } from './label'
-import type { ILineLikeLabelSpec } from '@visactor/vchart/esm/series/mixin/interface'
 
 export const labelScatter: SpecPipe = (spec, context) => {
   const result = { ...spec } as IScatterChartSpec
@@ -14,7 +13,7 @@ export const labelScatter: SpecPipe = (spec, context) => {
 
   const { label } = baseConfig
 
-  result.label = buildLabel<ILineLikeLabelSpec>(
+  result.label = buildLabel(
     label,
     vseed.measures,
     vseed.dimensions,
@@ -22,7 +21,7 @@ export const labelScatter: SpecPipe = (spec, context) => {
     advancedVSeed.measures,
     encoding as Encoding,
     foldInfoList,
-  )
+  ) as unknown as IScatterChartSpec['label']
 
   return result
 }

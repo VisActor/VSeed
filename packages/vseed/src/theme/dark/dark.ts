@@ -13,6 +13,7 @@ import { getDarkBandAxis, getDarkLinearAxis } from '../common/axes'
 import { getDarkAnnotation } from '../common/annotaion'
 import { getDarkFunnelTransformTheme } from '../common/funnelTransform'
 import { getDarkHeatmapCellTheme } from '../common/heatmapCell'
+import { getDarkHistogramRegressionLine } from '../common/regressionLine'
 
 export const darkTheme = (): CustomThemeConfig => {
   const linearAxis = getDarkLinearAxis()
@@ -239,6 +240,7 @@ export const darkTheme = (): CustomThemeConfig => {
         crosshairRect: crosshairRect,
         pivotGrid: getDarkPivotChartGridConfig(),
         annotation: getDarkAnnotation(),
+        histogramRegressionLine: getDarkHistogramRegressionLine(),
       },
       boxPlot: {
         ...baseConfig,

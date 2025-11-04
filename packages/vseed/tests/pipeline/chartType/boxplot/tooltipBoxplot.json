@@ -1,0 +1,12 @@
+{
+  "chartType": "boxPlot",
+  "dataset": [
+    { "Sex": "male", "Age": 10, "Survived": 1 },
+    { "Sex": "male", "Age": 20, "Survived": 0 },
+    { "Sex": "female", "Age": 30, "Survived": 1 },
+    { "Sex": "female", "Age": 40, "Survived": 0 }
+  ],
+  "dimensions": [{ "id": "Sex", "encoding": "xAxis" }],
+  "measures": [{ "id": "Age", "encoding": "value" }],
+  "tooltip": { "enable": false }
+}

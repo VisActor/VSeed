@@ -10,7 +10,6 @@ import {
   datasetPivot,
   pivotIndicators,
   pivotDiscreteLegend,
-  pivotIndicatorsAsCol,
   pivotGridStyle,
   pivotColumnDimensions,
   pivotRowDimensions,
@@ -30,6 +29,7 @@ import {
   yLinear,
   verticalCrosshairRect,
   tooltipHistogram,
+  histogramRegressionLine,
 } from '../pipes'
 
 const histogram: SpecPipeline = [
@@ -49,12 +49,12 @@ const histogram: SpecPipeline = [
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationAreaBand,
+  histogramRegressionLine,
 ]
 
 const pivotHistogram: SpecPipeline = [
   initPivot,
   pivotGridStyle,
-  pivotIndicatorsAsCol,
   datasetPivot,
   pivotIndicators([
     initHistogram,
@@ -72,6 +72,7 @@ const pivotHistogram: SpecPipeline = [
     annotationVerticalLine,
     annotationHorizontalLine,
     annotationAreaBand,
+    histogramRegressionLine,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

@@ -8,7 +8,7 @@
 :::
 
 **示例**
-'boxplot'
+'boxPlot'
 
 
 

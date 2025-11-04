@@ -1,0 +1,4 @@
+{
+  "chartType": "histogram",
+  "dataset": [{ "v": 1 }, { "v": 1 }, { "v": 2 }, { "v": 3 }, { "v": 5 }, { "v": 8 }]
+}

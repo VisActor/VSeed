@@ -1,0 +1,16 @@
+{
+  "chartType": "boxPlot",
+  "dataset": [
+    { "color": "red", "shape": "circle", "Sex": "male", "Age": 10 },
+    { "color": "red", "shape": "circle", "Sex": "male", "Age": 20 },
+    { "color": "blue", "shape": "circle", "Sex": "female", "Age": 30 },
+    { "color": "blue", "shape": "triangle", "Sex": "female", "Age": 40 }
+  ],
+  "dimensions": [
+    { "id": "color", "encoding": "row" },
+    { "id": "shape", "encoding": "column" },
+    { "id": "Sex", "encoding": "xAxis" }
+  ],
+  "measures": [{ "id": "Age", "encoding": "value" }],
+  "tooltip": { "enable": false }
+}

@@ -1,0 +1,19 @@
+{
+  "chartType": "boxPlot",
+  "dataset": [
+    { "color": "red", "shape": "circle", "Sex": "male", "v": 1 },
+    { "color": "red", "shape": "circle", "Sex": "male", "v": 1 },
+    { "color": "red", "shape": "circle", "Sex": "male", "v": 2 },
+    { "color": "red", "shape": "circle", "Sex": "female", "v": 5 },
+    { "color": "blue", "shape": "circle", "Sex": "male", "v": 1 },
+    { "color": "blue", "shape": "circle", "Sex": "male", "v": 2 },
+    { "color": "red", "shape": "triangle", "Sex": "female", "v": 7 },
+    { "color": "blue", "shape": "triangle", "Sex": "female", "v": 8 }
+  ],
+  "dimensions": [
+    { "id": "color", "encoding": "row" },
+    { "id": "shape", "encoding": "column" },
+    { "id": "Sex", "encoding": "xAxis" }
+  ],
+  "measures": [{ "id": "v", "encoding": "value" }]
+}

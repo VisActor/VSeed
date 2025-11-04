@@ -22,6 +22,8 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
   const hoverHeaderInlineBackgroundColor = onlyCombination
     ? transparent
     : (themConfig.hoverHeaderInlineBackgroundColor ?? '#D9DDE455')
+  const outlineBorderLineWidth = themConfig.outlineBorderLineWidth ?? 0
+  const frameCornerRadius = themConfig.frameCornerRadius ?? 0
 
   return {
     ...result,
@@ -30,7 +32,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
       bodyStyle: {
         borderColor,
         color: bodyFontColor,
-        borderLineWidth: [1, 1, 1, 1],
+        borderLineWidth: [1, outlineBorderLineWidth, 0, 1],
         bgColor: transparent,
         hover: {
           cellBgColor: 'transparent',
@@ -39,7 +41,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
       headerStyle: {
         borderColor,
         fontSize: 12,
-        borderLineWidth: 1,
+        borderLineWidth: [outlineBorderLineWidth, outlineBorderLineWidth, 1, 1],
         color: headerFontColor,
         textAlign: 'center',
         bgColor: headerBackgroundColor,
@@ -53,7 +55,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
         borderColor,
         fontSize: 12,
         color: headerFontColor,
-        borderLineWidth: 1,
+        borderLineWidth: [1, 1, 1, outlineBorderLineWidth],
         bgColor: headerBackgroundColor,
         hover: {
           cellBgColor: hoverHeaderBackgroundColor,
@@ -67,11 +69,11 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
         fontSize: 12,
         color: headerFontColor,
         fontWeight: 'bold',
-        borderLineWidth: 1,
+        borderLineWidth: [outlineBorderLineWidth, 1, 1, outlineBorderLineWidth],
         bgColor: headerBackgroundColor,
         frameStyle: {
           borderColor,
-          borderLineWidth: [1, 0, 0, 1],
+          borderLineWidth: [outlineBorderLineWidth, 0, 0, outlineBorderLineWidth],
         },
         hover: {
           cellBgColor: hoverHeaderBackgroundColor,
@@ -84,7 +86,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
         borderLineWidth: 0,
         frameStyle: {
           borderColor,
-          borderLineWidth: [1, 1, 0, 1],
+          borderLineWidth: [outlineBorderLineWidth, 1, 0, 1],
         },
         bgColor: headerBackgroundColor,
         hover: {
@@ -93,11 +95,11 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
       },
       cornerLeftBottomCellStyle: {
         borderColor,
-        borderLineWidth: [1, 0, 1, 1],
+        borderLineWidth: [1, 0, outlineBorderLineWidth, outlineBorderLineWidth],
         bgColor: headerBackgroundColor,
         frameStyle: {
           borderColor,
-          borderLineWidth: [1, 0, 1, 1],
+          borderLineWidth: [1, 0, outlineBorderLineWidth, outlineBorderLineWidth],
         },
         hover: {
           cellBgColor: hoverHeaderBackgroundColor,
@@ -125,7 +127,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
       },
       bottomFrozenStyle: {
         borderColor,
-        borderLineWidth: 1,
+        borderLineWidth: [1, outlineBorderLineWidth, outlineBorderLineWidth, 1],
         bgColor: headerBackgroundColor,
         hover: {
           cellBgColor: hoverHeaderBackgroundColor,
@@ -137,7 +139,8 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
       },
       frameStyle: {
         borderColor,
-        cornerRadius: 4,
+        cornerRadius: frameCornerRadius,
+        borderLineWidth: outlineBorderLineWidth,
       },
     },
   }

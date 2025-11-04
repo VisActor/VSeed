@@ -1,11 +1,15 @@
+export const getDefaultTableConfig = () => ({
+  bodyFontSize: 12,
+  bodyBackgroundColor: 'transparent',
+  headerFontSize: 12,
+})
+
 export const getLightTableConfig = () => ({
+  ...getDefaultTableConfig(),
   borderColor: '#e3e5eb',
 
-  bodyFontSize: 12,
   bodyFontColor: '#141414',
-  bodyBackgroundColor: 'transparent',
 
-  headerFontSize: 12,
   headerFontColor: '#21252c',
   headerBackgroundColor: '#f6f7f9',
 
@@ -21,13 +25,10 @@ export const getLightTableConfig = () => ({
 })
 
 export const getDarkTableConfig = () => ({
+  ...getDefaultTableConfig(),
   borderColor: '#4b4e53',
 
-  bodyFontSize: 12,
   bodyFontColor: '#fdfdfd',
-  bodyBackgroundColor: 'transparent',
-
-  headerFontSize: 12,
   headerFontColor: '#fdfdfd',
   headerBackgroundColor: '#36393e',
 
@@ -42,10 +43,12 @@ export const getDarkTableConfig = () => ({
 
 const pickPivotChartGridConfig = (tableConfig: any) => {
   return {
+    outlineBorderLineWidth: 0,
+    frameCornerRadius: 0,
     borderColor: tableConfig.borderColor,
     bodyFontColor: tableConfig.bodyFontColor,
     headerFontColor: tableConfig.headerFontColor,
-    headerBackgroundColor: tableConfig.headerBackgroundColor,
+    headerBackgroundColor: 'transparent',
     hoverHeaderBackgroundColor: tableConfig.hoverHeaderBackgroundColor,
     hoverHeaderInlineBackgroundColor: tableConfig.hoverHeaderInlineBackgroundColor,
   }

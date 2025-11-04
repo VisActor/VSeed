@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.39
+
+### Patch Changes
+
+- fix: fix width of columnHeader in pivotChart and pivotTable
+
 ## 0.1.38
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # website
 
+## 0.1.39
+
+### Patch Changes
+
+- Updated dependencies
+  - @visactor/vseed@0.1.39
+  - @visactor/vquery@0.1.39
+
 ## 0.1.38
 
 ### Patch Changes

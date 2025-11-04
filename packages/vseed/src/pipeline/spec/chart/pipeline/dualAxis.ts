@@ -49,6 +49,7 @@ import {
   annotationAreaBand,
   barMaxWidth,
   barGapInGroup,
+  stackCornerRadius,
 } from '../pipes'
 
 const dualAxis: SpecPipeline = [
@@ -63,6 +64,7 @@ const dualAxis: SpecPipeline = [
 
       barMaxWidth,
       barGapInGroup,
+      stackCornerRadius,
 
       colorBarStyleFill(barStyle),
       colorPointStyleFill(pointStyle),
@@ -80,6 +82,7 @@ const dualAxis: SpecPipeline = [
 
       barMaxWidth,
       barGapInGroup,
+      stackCornerRadius,
 
       colorBarStyleFill(barStyle),
       colorPointStyleFill(pointStyle),
@@ -119,6 +122,7 @@ const pivotDualAxis: SpecPipeline = [
         tooltipPrimary,
         progressive,
 
+        stackCornerRadius,
         barMaxWidth,
         barGapInGroup,
 
@@ -136,6 +140,7 @@ const pivotDualAxis: SpecPipeline = [
         tooltipSecondary,
         progressive,
 
+        stackCornerRadius,
         barMaxWidth,
         barGapInGroup,
 

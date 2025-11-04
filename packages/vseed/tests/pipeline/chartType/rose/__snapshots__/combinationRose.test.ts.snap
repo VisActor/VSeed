@@ -451,6 +451,7 @@ exports[`combinationRose 2`] = `
   "corner": {
     "titleOnDimension": "all",
   },
+  "defaultHeaderColWidth": "auto",
   "heightMode": "adaptive",
   "hideIndicatorName": true,
   "hover": {
@@ -1054,6 +1055,12 @@ exports[`combinationRose 2`] = `
         "inlineColumnBgColor": "rgba(0,0,0,0)",
         "inlineRowBgColor": "rgba(0,0,0,0)",
       },
+      "padding": [
+        0,
+        4,
+        0,
+        4,
+      ],
       "textAlign": "center",
     },
     "cornerLeftBottomCellStyle": {
@@ -1159,6 +1166,12 @@ exports[`combinationRose 2`] = `
         "inlineColumnBgColor": "rgba(0,0,0,0)",
         "inlineRowBgColor": "rgba(0,0,0,0)",
       },
+      "padding": [
+        0,
+        4,
+        0,
+        4,
+      ],
     },
     "selectionStyle": {
       "cellBgColor": "",

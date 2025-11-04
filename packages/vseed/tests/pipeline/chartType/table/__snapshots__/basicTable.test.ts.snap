@@ -128,6 +128,7 @@ exports[`basicTable 2`] = `
       "width": "auto",
     },
   ],
+  "defaultHeaderColWidth": "auto",
   "heightMode": "autoHeight",
   "hover": {
     "highlightMode": "row",

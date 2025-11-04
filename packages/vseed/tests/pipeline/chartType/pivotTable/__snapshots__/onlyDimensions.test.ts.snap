@@ -132,6 +132,7 @@ exports[`onlyDimensions 2`] = `
   "dataConfig": {
     "aggregationRules": [],
   },
+  "defaultHeaderColWidth": "auto",
   "heightMode": "autoHeight",
   "hideIndicatorName": true,
   "hover": {

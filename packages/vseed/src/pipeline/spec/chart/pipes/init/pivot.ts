@@ -12,6 +12,7 @@ export const initPivot: SpecPipe = (spec) => {
     indicators: [],
     records: [],
     widthMode: 'adaptive',
+    defaultHeaderColWidth: 'auto',
     heightMode: 'adaptive',
     indicatorsAsCol: false,
     select: {

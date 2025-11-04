@@ -1304,6 +1304,7 @@ exports[`pivotRoseParallel 2`] = `
   "corner": {
     "titleOnDimension": "all",
   },
+  "defaultHeaderColWidth": "auto",
   "heightMode": "adaptive",
   "hideIndicatorName": true,
   "hover": {
@@ -2782,6 +2783,12 @@ exports[`pivotRoseParallel 2`] = `
         "inlineColumnBgColor": "#D9DDE455",
         "inlineRowBgColor": "#D9DDE455",
       },
+      "padding": [
+        0,
+        4,
+        0,
+        4,
+      ],
       "textAlign": "center",
     },
     "cornerLeftBottomCellStyle": {
@@ -2887,6 +2894,12 @@ exports[`pivotRoseParallel 2`] = `
         "inlineColumnBgColor": "#D9DDE455",
         "inlineRowBgColor": "#D9DDE455",
       },
+      "padding": [
+        0,
+        4,
+        0,
+        4,
+      ],
     },
     "selectionStyle": {
       "cellBgColor": "",

@@ -11,6 +11,7 @@ export const initTable: SpecPipe = (spec, context) => {
     ...spec,
     records: dataset,
     widthMode: 'standard',
+    defaultHeaderColWidth: 'auto',
     heightMode: 'autoHeight',
     autoWrapText: true,
     columnResizeMode: 'all',

@@ -129,8 +129,6 @@ export const generateRegressionLinePipe = (
                   })
                 })
 
-                console.log(segments)
-
                 return segments
               }
               return []

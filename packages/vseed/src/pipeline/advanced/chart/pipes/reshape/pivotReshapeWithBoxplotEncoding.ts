@@ -130,8 +130,6 @@ export const pivotReshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, con
     datasetReshapeInfo.push(reshapeInfo)
   })
 
-  console.log(datasets)
-
   return {
     ...result,
     dataset: datasets,

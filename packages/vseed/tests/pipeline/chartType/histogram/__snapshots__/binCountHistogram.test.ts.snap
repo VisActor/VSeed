@@ -100,12 +100,6 @@ exports[`binCountHistogram 1`] = `
         "rectColor": "#3641594d",
         "visible": true,
       },
-      "histogramRegressionLine": {
-        "lineWidth": 2,
-        "textColor": "#364159",
-        "textFontSize": 12,
-        "textFontWeight": 400,
-      },
       "label": {
         "enable": true,
         "labelColorSmartInvert": false,
@@ -134,6 +128,48 @@ exports[`binCountHistogram 1`] = `
         "hoverHeaderBackgroundColor": "#D9DDE4",
         "hoverHeaderInlineBackgroundColor": "#D9DDE455",
         "outlineBorderLineWidth": 0,
+      },
+      "regressionLine": {
+        "ecdfRegressionLine": {
+          "lineWidth": 2,
+          "textColor": "#364159",
+          "textFontSize": 12,
+          "textFontWeight": 400,
+        },
+        "kdeRegressionLine": {
+          "lineWidth": 2,
+          "textColor": "#364159",
+          "textFontSize": 12,
+          "textFontWeight": 400,
+        },
+        "linearRegressionLine": {
+          "confidenceIntervalOpacity": 0.2,
+          "lineWidth": 2,
+          "textColor": "#364159",
+          "textFontSize": 12,
+          "textFontWeight": 400,
+        },
+        "logisticRegressionLine": {
+          "confidenceIntervalOpacity": 0.2,
+          "lineWidth": 2,
+          "textColor": "#364159",
+          "textFontSize": 12,
+          "textFontWeight": 400,
+        },
+        "lowessRegressionLine": {
+          "confidenceIntervalOpacity": 0.2,
+          "lineWidth": 2,
+          "textColor": "#364159",
+          "textFontSize": 12,
+          "textFontWeight": 400,
+        },
+        "polynomialRegressionLine": {
+          "confidenceIntervalOpacity": 0.2,
+          "lineWidth": 2,
+          "textColor": "#364159",
+          "textFontSize": 12,
+          "textFontWeight": 400,
+        },
       },
       "tooltip": {
         "enable": true,
@@ -315,12 +351,6 @@ exports[`binCountHistogram 1`] = `
           "rectColor": "#3641594d",
           "visible": true,
         },
-        "histogramRegressionLine": {
-          "lineWidth": 2,
-          "textColor": "#364159",
-          "textFontSize": 12,
-          "textFontWeight": 400,
-        },
         "label": {
           "enable": true,
           "labelColorSmartInvert": false,
@@ -349,6 +379,48 @@ exports[`binCountHistogram 1`] = `
           "hoverHeaderBackgroundColor": "#D9DDE4",
           "hoverHeaderInlineBackgroundColor": "#D9DDE455",
           "outlineBorderLineWidth": 0,
+        },
+        "regressionLine": {
+          "ecdfRegressionLine": {
+            "lineWidth": 2,
+            "textColor": "#364159",
+            "textFontSize": 12,
+            "textFontWeight": 400,
+          },
+          "kdeRegressionLine": {
+            "lineWidth": 2,
+            "textColor": "#364159",
+            "textFontSize": 12,
+            "textFontWeight": 400,
+          },
+          "linearRegressionLine": {
+            "confidenceIntervalOpacity": 0.2,
+            "lineWidth": 2,
+            "textColor": "#364159",
+            "textFontSize": 12,
+            "textFontWeight": 400,
+          },
+          "logisticRegressionLine": {
+            "confidenceIntervalOpacity": 0.2,
+            "lineWidth": 2,
+            "textColor": "#364159",
+            "textFontSize": 12,
+            "textFontWeight": 400,
+          },
+          "lowessRegressionLine": {
+            "confidenceIntervalOpacity": 0.2,
+            "lineWidth": 2,
+            "textColor": "#364159",
+            "textFontSize": 12,
+            "textFontWeight": 400,
+          },
+          "polynomialRegressionLine": {
+            "confidenceIntervalOpacity": 0.2,
+            "lineWidth": 2,
+            "textColor": "#364159",
+            "textFontSize": 12,
+            "textFontWeight": 400,
+          },
         },
         "tooltip": {
           "enable": true,

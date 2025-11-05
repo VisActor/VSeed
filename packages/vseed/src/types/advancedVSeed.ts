@@ -7,7 +7,7 @@ import { zEncoding } from './properties/encoding'
 import { zDatasetReshapeInfo } from './properties/datasetReshapeInfo'
 import { zTheme, zCustomThemeConfig } from './properties/theme'
 import { zConfig } from './properties/config'
-import { zAnalysis, zAnnotation, zHistogramRegressionLine, zMarkStyle } from './properties'
+import { zAnalysis, zAnnotation, zRegressionLine, zMarkStyle } from './properties'
 import { zLocale } from './i18n'
 
 export const zAdvancedVSeed = z.object({
@@ -24,7 +24,7 @@ export const zAdvancedVSeed = z.object({
   customTheme: zCustomThemeConfig,
   annotation: zAnnotation,
   locale: zLocale,
-  histogramRegressionLine: zHistogramRegressionLine.or(z.array(zHistogramRegressionLine)).nullish(),
+  regressionLine: zRegressionLine,
 })
 
 export type AdvancedVSeed = z.infer<typeof zAdvancedVSeed>

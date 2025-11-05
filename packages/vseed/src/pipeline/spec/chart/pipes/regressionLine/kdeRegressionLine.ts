@@ -1,31 +1,19 @@
 import type { ICartesianSeries, IChart, IHistogramChartSpec, IVChart } from '@visactor/vchart'
-import type { KDEEvaluator, KDEOptions } from '@visactor/vutils'
+import type { KDEOptions } from '@visactor/vutils'
 import { isNullish, uniqueBy } from 'remeda'
-import { ecdf, kde, array } from '@visactor/vutils'
+import { kde, array } from '@visactor/vutils'
 import { BinEndMeasureId, BinStartMeasureId } from 'src/dataReshape'
 import type { Datum, Dimension, SpecPipe, Encoding, RegressionLineConfig, KdeRegressionLine } from 'src/types'
+import { defaultRegressionLineColor, defaultRegressionLineLabelX } from './common'
 
-const getRegressionByType = (
-  type: 'kdeRegressionLine' | 'ecdfRegressionLine',
-  data: number[],
-  kdeOptions?: KDEOptions,
-) => {
-  switch (type) {
-    case 'kdeRegressionLine':
-      return kde(data, kdeOptions)
-    case 'ecdfRegressionLine':
-      return ecdf(data)
-  }
-}
-
-export const histogramRegressionLine: SpecPipe = (spec, context) => {
+export const kdeRegressionLine: SpecPipe = (spec, context) => {
   const result = { ...spec } as IHistogramChartSpec
   const { advancedVSeed, vseed } = context
   const { chartType, encoding = {} as Encoding, dimensions, regressionLine } = advancedVSeed
   const { dataset } = vseed
   const lineTheme = advancedVSeed.config[chartType as 'histogram']?.regressionLine as RegressionLineConfig
 
-  if (!regressionLine) {
+  if (!regressionLine || !regressionLine.kdeRegressionLine) {
     return result
   }
 
@@ -33,22 +21,16 @@ export const histogramRegressionLine: SpecPipe = (spec, context) => {
     dimensions.filter((dim: Dimension) => dim.encoding === 'row' || dim.encoding === 'column'),
     (item: Dimension) => item.id,
   )
-  const kdeLineList = array(regressionLine.kdeRegressionLine)
-  const ecdfLineList = array(regressionLine.ecdfRegressionLine)
 
-  const lineList = [
-    ...kdeLineList.map((line) => ({ ...line, type: 'kdeRegressionLine' })),
-    ...ecdfLineList.map((line) => ({ ...line, type: 'ecdfRegressionLine' })),
-  ] as ((typeof kdeLineList)[number] & { type: 'kdeRegressionLine' | 'ecdfRegressionLine' })[]
+  const lineList = array(regressionLine.kdeRegressionLine)
 
   if (!result.customMark) {
     result.customMark = []
   }
 
   lineList.forEach((line) => {
-    const theme = (lineTheme?.[line.type] ?? {}) as KdeRegressionLine
-    const { color, type, lineWidth, lineDash, text, textColor, textFontSize, textFontWeight } =
-      line as KdeRegressionLine & { type: 'kdeRegressionLine' | 'ecdfRegressionLine' }
+    const theme = (lineTheme.kdeRegressionLine ?? {}) as KdeRegressionLine
+    const { color, lineWidth, lineDash, text, textColor, textFontSize, textFontWeight } = line as KdeRegressionLine
 
     ;(result.customMark as any[]).push({
       type: 'line',
@@ -57,17 +39,7 @@ export const histogramRegressionLine: SpecPipe = (spec, context) => {
       style: {
         lineWidth: lineWidth ?? theme.lineWidth,
         lineDash: lineDash ?? theme.lineDash,
-        stroke:
-          color ??
-          ((datum: Datum, ctx: any): string | undefined => {
-            const vchart = ctx.vchart as IVChart
-            const chart = vchart.getChart() as IChart
-            const series = chart.getAllSeries().filter((s: any) => s.type === 'bar')
-
-            return series.length
-              ? series[0].getOption().globalScale.getScale('color')?.scale(series[0].getSeriesKeys()[0])
-              : undefined
-          }),
+        stroke: color ?? defaultRegressionLineColor,
         points: (datum: any, ctx: any) => {
           const vchart = ctx.vchart as IVChart
           const chart = vchart.getChart() as IChart
@@ -94,29 +66,14 @@ export const histogramRegressionLine: SpecPipe = (spec, context) => {
                   : true
               })
               .map((d: Datum) => (d as any)[encoding.value?.[0] as string]) as number[]
-            const res = getRegressionByType(
-              type,
-              simpleData,
-              type === 'kdeRegressionLine'
-                ? ({
-                    bandwidth: Math.abs(viewData[0][BinEndMeasureId] - viewData[0][BinStartMeasureId]),
-                  } as KDEOptions)
-                : undefined,
-            )
+            const res = kde(simpleData, {
+              bandwidth: Math.abs(viewData[0][BinEndMeasureId] - viewData[0][BinStartMeasureId]),
+            } as KDEOptions)
             const N = Math.max(3, Math.floor(simpleData.length / 4))
             const lineData = res.evaluateGrid(N)
-            const yRange = scaleY.range()
-            const y0 = yRange[0]
-            const y1 = yRange[yRange.length - 1]
-            const scaleR =
-              type === 'kdeRegressionLine'
-                ? (k: number) => {
-                    return scaleY.scale(k * simpleData.length * (res as KDEEvaluator).bandwidth)
-                  }
-                : (e: number) => {
-                    return y0 + (y1 - y0) * e
-                  }
-
+            const scaleR = (k: number) => {
+              return scaleY.scale(k * simpleData.length * res.bandwidth)
+            }
             //color: color ?? s.getOption().globalScale.getScale('color')?.scale(s.getSeriesKeys()[0]),
 
             return lineData.map((ld: Datum) => {
@@ -143,33 +100,7 @@ export const histogramRegressionLine: SpecPipe = (spec, context) => {
           fontSize: textFontSize ?? theme.textFontSize,
           fontWeight: textFontWeight ?? theme.textFontWeight,
           text: text,
-          x: (datum: any, ctx: any) => {
-            const vchart = ctx.vchart as IVChart
-            const chart = vchart.getChart() as IChart
-            const series = chart.getAllSeries().filter((s: any) => s.type === 'bar')
-            // 直方图使用的是bar系列
-            if (series && series.length) {
-              const s = series[0] as ICartesianSeries
-              const startPoint = s.getRegion().getLayoutStartPoint()
-
-              const fieldX = s.fieldX[0]
-              const fieldX2 = s.fieldX2
-              const scaleY = s.getYAxisHelper().getScale?.(0)
-              const viewData = s.getViewData()?.latestData
-              if (!dataset || !dataset.length || !viewData || !viewData.length || !scaleY) {
-                return undefined
-              }
-              const maxX = Math.max.apply(
-                null,
-                (viewData as any[]).map((d: Datum) =>
-                  Math.max((d as any)[fieldX] as number, (d as any)[fieldX2] as number),
-                ),
-              )
-              return startPoint.x + s.dataToPositionX({ [fieldX]: maxX })!
-            }
-
-            return undefined
-          },
+          x: defaultRegressionLineLabelX,
           y: (datum: any, ctx: any) => {
             const vchart = ctx.vchart as IVChart
             const chart = vchart.getChart() as IChart
@@ -184,9 +115,7 @@ export const histogramRegressionLine: SpecPipe = (spec, context) => {
               if (!viewData || !viewData.length) {
                 return undefined
               }
-              return type === 'ecdfRegressionLine'
-                ? startPoint.y + 12
-                : startPoint.y + s.dataToPositionY({ [fieldY]: viewData[viewData.length - 1]?.[fieldY] })!
+              return startPoint.y + s.dataToPositionY({ [fieldY]: viewData[viewData.length - 1]?.[fieldY] })!
             }
 
             return undefined

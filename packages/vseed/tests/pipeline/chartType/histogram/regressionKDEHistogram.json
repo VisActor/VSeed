@@ -2,7 +2,7 @@
   "chartType": "histogram",
   "dataset": [{ "v": 1 }, { "v": 1 }, { "v": 2 }, { "v": 3 }, { "v": 5 }, { "v": 8 }],
   "measures": [{ "id": "v", "encoding": "value" }],
-  "histogramRegressionLine": {
+  "kdeRegressionLine": {
     "type": "kde",
     "text": "KDE Regression",
     "lineWidth": 2

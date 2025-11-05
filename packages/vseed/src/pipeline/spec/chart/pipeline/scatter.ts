@@ -33,6 +33,10 @@ import {
   pivotColorLegend,
   labelScatter,
   scatterSize,
+  linearRegressionLine,
+  lowessRegressionLine,
+  polynomialRegressionLine,
+  logisticRegressionLine,
 } from '../pipes'
 
 const scatter: SpecPipeline = [
@@ -55,6 +59,10 @@ const scatter: SpecPipeline = [
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationArea,
+  linearRegressionLine,
+  lowessRegressionLine,
+  polynomialRegressionLine,
+  logisticRegressionLine,
 ]
 
 const pivotScatter: SpecPipeline = [
@@ -81,6 +89,8 @@ const pivotScatter: SpecPipeline = [
     annotationVerticalLine,
     annotationHorizontalLine,
     annotationArea,
+    linearRegressionLine,
+    lowessRegressionLine,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

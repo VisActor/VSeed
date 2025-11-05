@@ -29,7 +29,8 @@ import {
   yLinear,
   verticalCrosshairRect,
   tooltipHistogram,
-  histogramRegressionLine,
+  kdeRegressionLine,
+  ecdfRegressionLine,
 } from '../pipes'
 
 const histogram: SpecPipeline = [
@@ -49,7 +50,8 @@ const histogram: SpecPipeline = [
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationAreaBand,
-  histogramRegressionLine,
+  kdeRegressionLine,
+  ecdfRegressionLine,
 ]
 
 const pivotHistogram: SpecPipeline = [
@@ -72,7 +74,8 @@ const pivotHistogram: SpecPipeline = [
     annotationVerticalLine,
     annotationHorizontalLine,
     annotationAreaBand,
-    histogramRegressionLine,
+    kdeRegressionLine,
+    ecdfRegressionLine,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

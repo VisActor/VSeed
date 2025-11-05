@@ -19,6 +19,10 @@ import type {
   XLinearAxis,
   MeasureTree,
   ScatterMeasures,
+  LinearRegressionLine,
+  LowessRegressionLine,
+  PolynomialRegressionLine,
+  LogisticRegressionLine,
 } from '../../properties'
 
 /**
@@ -259,7 +263,26 @@ export interface Scatter {
    * @description 标注区域配置, 根据选择的数据, 定义图表的标注区域, 包括标注区域的位置, 样式等.
    */
   annotationArea?: AnnotationArea | AnnotationArea[]
-
+  /**
+   * 线性回归线
+   * @description 线性回归线配置, 包括线性回归线的样式等.
+   */
+  linearRegressionLine?: boolean | LinearRegressionLine | LinearRegressionLine[]
+  /**
+   * 局部加权回归线配置项
+   * @description 局部加权回归线配置项, 包括局部加权回归线的样式等.
+   */
+  lowessRegressionLine?: boolean | LowessRegressionLine | LowessRegressionLine[]
+  /**
+   * 多项式回归线
+   * @description 多项式回归线配置, 包括多项式的阶数、回归线的样式等.
+   */
+  polynomialRegressionLine?: boolean | PolynomialRegressionLine | PolynomialRegressionLine[]
+  /**
+   * 逻辑回归线
+   * @description 逻辑回归线配置, 包括逻辑回归线的样式等.
+   */
+  logisticRegressionLine?: boolean | LogisticRegressionLine | LogisticRegressionLine[]
   /**
    * 语言
    * @description 图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言

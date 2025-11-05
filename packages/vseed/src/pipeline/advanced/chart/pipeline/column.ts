@@ -19,6 +19,7 @@ import {
   defaultEncodingForColumn,
   deleteEncodingForMeasure,
   deleteTooltipAndLabelDimension,
+  regressionLine,
 } from '../pipes'
 
 export const columnAdvancedPipeline: AdvancedPipeline = [
@@ -44,4 +45,5 @@ export const columnAdvancedPipeline: AdvancedPipeline = [
   theme,
   markStyle,
   annotation,
+  regressionLine,
 ]

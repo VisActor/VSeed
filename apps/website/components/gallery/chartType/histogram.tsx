@@ -15,8 +15,7 @@ export const HistogramWithKDE = memo(() => {
   const vseed: VSeed = {
     chartType: 'histogram',
     dataset: [{ v: 1 }, { v: 1 }, { v: 1 }, { v: 2 }, { v: 5 }, { v: 7 }, { v: 8 }, { v: 9 }, { v: 10 }],
-    histogramRegressionLine: {
-      type: 'kde',
+    kdeRegressionLine: {
       color: 'red',
     },
   }
@@ -440,8 +439,7 @@ export const PivotHistogramWithECDF = memo(() => {
         encoding: 'value',
       },
     ],
-    histogramRegressionLine: {
-      type: 'ecdf',
+    ecdfRegressionLine: {
       color: 'red',
     },
   }

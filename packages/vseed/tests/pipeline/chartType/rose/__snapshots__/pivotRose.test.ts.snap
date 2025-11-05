@@ -1295,6 +1295,8 @@ exports[`pivotRose 2`] = `
     "duration": 600,
     "type": "all",
   },
+  "autoFillHeight": true,
+  "autoFillWidth": true,
   "columns": [
     {
       "dimensionKey": "date",
@@ -1304,8 +1306,11 @@ exports[`pivotRose 2`] = `
   "corner": {
     "titleOnDimension": "all",
   },
+  "defaultColWidth": 200,
   "defaultHeaderColWidth": "auto",
-  "heightMode": "adaptive",
+  "defaultHeaderRowHeight": "auto",
+  "defaultRowHeight": 100,
+  "heightMode": "standard",
   "hideIndicatorName": true,
   "hover": {
     "highlightMode": "cross",
@@ -2906,7 +2911,7 @@ exports[`pivotRose 2`] = `
   "tooltip": {
     "isShowOverflowTextTooltip": true,
   },
-  "widthMode": "adaptive",
+  "widthMode": "standard",
 }
 `;
 

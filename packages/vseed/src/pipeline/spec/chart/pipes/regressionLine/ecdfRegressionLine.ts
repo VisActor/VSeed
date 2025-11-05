@@ -2,7 +2,7 @@ import type { ICartesianSeries, IChart, IHistogramChartSpec, IVChart } from '@vi
 import { isNullish, uniqueBy } from 'remeda'
 import { ecdf, array } from '@visactor/vutils'
 import type { Datum, Dimension, SpecPipe, Encoding, RegressionLineConfig, EcdfRegressionLine } from 'src/types'
-import { defaultRegressionLineColor, defaultRegressionLineLabelX } from './common'
+import { defaultRegressionLineColor, defaultRegressionLineLabelX, defaultRegressionLineLabelY } from './common'
 
 export const ecdfRegressionLine: SpecPipe = (spec, context) => {
   const result = { ...spec } as IHistogramChartSpec
@@ -26,19 +26,19 @@ export const ecdfRegressionLine: SpecPipe = (spec, context) => {
     result.customMark = []
   }
 
-  lineList.forEach((line) => {
+  lineList.forEach((line, lineIndex) => {
     const theme = (lineTheme?.ecdfRegressionLine ?? {}) as EcdfRegressionLine
     const { color, lineWidth, lineDash, text, textColor, textFontSize, textFontWeight } = line as EcdfRegressionLine
 
+    const childrenMarks: any[] = []
+
     ;(result.customMark as any[]).push({
-      type: 'line',
+      type: 'group',
       interactive: false,
       zIndex: 500,
+      name: `ecdfRegressionLine-${lineIndex}`,
       style: {
-        lineWidth: lineWidth ?? theme.lineWidth,
-        lineDash: lineDash ?? theme.lineDash,
-        stroke: color ?? defaultRegressionLineColor,
-        points: (datum: any, ctx: any) => {
+        data: (datum: any, ctx: any) => {
           const vchart = ctx.vchart as IVChart
           const chart = vchart.getChart() as IChart
           const series = chart.getAllSeries().filter((s: any) => s.type === 'bar')
@@ -53,7 +53,7 @@ export const ecdfRegressionLine: SpecPipe = (spec, context) => {
             const viewData = s.getViewData()?.latestData
 
             if (!dataset || !dataset.length || !viewData || !viewData.length || !scaleY) {
-              return
+              return null
             }
             const simpleData = dataset
               .filter((entry: Datum) => {
@@ -74,23 +74,48 @@ export const ecdfRegressionLine: SpecPipe = (spec, context) => {
               return y0 + (y1 - y0) * e
             }
 
-            //color: color ?? s.getOption().globalScale.getScale('color')?.scale(s.getSeriesKeys()[0]),
-
-            return lineData.map((ld: Datum) => {
+            const linePoints = lineData.map((ld: Datum) => {
               const d = { [fieldX]: ld.x }
               return {
                 x: s.dataToPositionX(d)! + region.x,
                 y: scaleR(ld.y as number) + region.y,
               }
             })
+
+            return {
+              linePoints,
+              color: color ?? s.getOption().globalScale.getScale('color')?.scale(s.getSeriesKeys()[0]),
+            }
           }
+          return null
+        },
+      },
+      children: childrenMarks,
+    })
+
+    childrenMarks.push({
+      type: 'line',
+      interactive: false,
+      zIndex: 500,
+      style: {
+        lineWidth: lineWidth ?? theme.lineWidth,
+        lineDash: lineDash ?? theme.lineDash,
+        stroke: color ?? defaultRegressionLineColor,
+        points: (datum: any, ctx: any, opt: any) => {
+          const parentNode = opt.mark?._product?.parent
+
+          if (parentNode?.attribute?.data) {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+            return parentNode.attribute.data.linePoints
+          }
+
           return []
         },
       },
     })
 
     if (!isNullish(text)) {
-      ;(result.customMark as any[]).push({
+      childrenMarks.push({
         type: 'text',
         interactive: false,
         zIndex: 500,
@@ -101,24 +126,7 @@ export const ecdfRegressionLine: SpecPipe = (spec, context) => {
           fontWeight: textFontWeight ?? theme.textFontWeight,
           text: text,
           x: defaultRegressionLineLabelX,
-          y: (datum: any, ctx: any) => {
-            const vchart = ctx.vchart as IVChart
-            const chart = vchart.getChart() as IChart
-            const series = chart.getAllSeries().filter((s: any) => s.type === 'bar')
-            // 直方图使用的是bar系列
-            if (series && series.length) {
-              const s = series[0] as ICartesianSeries
-              const startPoint = s.getRegion().getLayoutStartPoint()
-
-              const viewData = s.getViewData()?.latestData
-              if (!viewData || !viewData.length) {
-                return undefined
-              }
-              return startPoint.y + 12
-            }
-
-            return undefined
-          },
+          y: defaultRegressionLineLabelY,
         },
       })
     }

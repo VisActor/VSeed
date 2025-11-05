@@ -8,6 +8,7 @@ export const HistogramEcdf = memo(() => {
     dataset: [{ v: 1 }, { v: 1 }, { v: 1 }, { v: 2 }, { v: 5 }, { v: 7 }, { v: 8 }, { v: 9 }, { v: 10 }],
     kdeRegressionLine: {
       color: 'red',
+      text: 'ECDF 回归线',
     },
   }
   return <VChartRender vseed={vseed} />

@@ -16,7 +16,6 @@ import type {
   SpecPipelineContext,
   PolynomialRegressionLine,
 } from 'src/types'
-import { defaultRegressionLineLabelX } from './common'
 
 export const generateRegressionLinePipe = (
   type: 'linearRegressionLine' | 'lowessRegressionLine' | 'polynomialRegressionLine' | 'logisticRegressionLine',
@@ -47,7 +46,7 @@ export const generateRegressionLinePipe = (
       result.customMark = []
     }
 
-    lineList.forEach((line) => {
+    lineList.forEach((line, lineIndex) => {
       const theme = (lineTheme.linearRegressionLine ?? {}) as LinearRegressionLine
       const {
         color,
@@ -61,92 +60,15 @@ export const generateRegressionLinePipe = (
         confidenceIntervalVisible = theme.confidenceIntervalVisible,
       } = line as LinearRegressionLine
 
-      if (confidenceIntervalVisible) {
-        ;(result.customMark as any[]).push({
-          type: 'area',
-          interactive: false,
-          zIndex: 500,
-          style: {
-            lineWidth: lineWidth ?? theme.lineWidth,
-            lineDash: lineDash ?? theme.lineDash,
-            fillOpacity: confidenceIntervalOpacity ?? theme.confidenceIntervalOpacity,
-            strokeOpacity: 0,
-            fill: 'red', // vrender bug，必须要设置一个全局的fill，才会绘制
-            segments: (datum: any, ctx: any) => {
-              const vchart = ctx.vchart as IVChart
-              const chart = vchart.getChart() as IChart
-              const s = chart.getAllSeries()[0] as ICartesianSeries
-
-              if (s) {
-                const rect = s.getRegion().getLayoutRect()
-                const segments: {
-                  points: { x: number; y: number; y1: number }[]
-                  fill: string
-                }[] = []
-
-                if (rect.width === 0 || rect.height === 0) {
-                  return segments
-                }
-
-                const start = s.getRegion().getLayoutStartPoint()
-                const yClamper = clamper(start.y, start.y + rect.height)
-                const colorAttrOptions = s.getColorAttribute()
-                const groups: (string | undefined)[] = s.getSeriesKeys()
-                const data = s.getViewData()?.latestData as Datum[]
-                const fieldX = s.fieldX?.[0]
-                const fieldY = s.fieldY?.[0]
-
-                if (!groups.length) {
-                  groups.push(undefined)
-                }
-
-                groups.forEach((group) => {
-                  const groupData = data.filter((d: Datum) => d[colorAttrOptions?.field] === group)
-
-                  if (!groupData.length) {
-                    return
-                  }
-                  const { confidenceInterval } = regressionFunction(
-                    groupData,
-                    (datum: Datum) => datum?.[fieldX],
-                    (datum: Datum) => datum?.[fieldY],
-                    getOptions?.(line),
-                  )
-                  const N = Math.max(3, Math.floor(groupData.length / 4))
-                  const intervalData = confidenceInterval(N)
-                  const mainColor = color ?? colorAttrOptions?.scale?.scale(group)
-
-                  segments.push({
-                    fill: mainColor,
-                    points: intervalData.map((datum: Datum) => {
-                      const d = { [fieldX]: datum.x, [fieldY]: datum.lower }
-                      return {
-                        x: s.dataToPositionX(d)! + start.x,
-                        y: yClamper(s.dataToPositionY(d)! + start.y),
-                        y1: yClamper(s.dataToPositionY({ [fieldY]: datum.upper })! + start.y),
-                      }
-                    }),
-                  })
-                })
-
-                return segments
-              }
-              return []
-            },
-          },
-        })
-      }
+      const childrenMarks: any[] = []
 
       ;(result.customMark as any[]).push({
-        type: 'line',
+        type: 'group',
         interactive: false,
         zIndex: 500,
+        name: `${type}-${lineIndex}`,
         style: {
-          lineWidth: lineWidth ?? theme.lineWidth,
-          lineDash: lineDash ?? theme.lineDash,
-          fillOpacity: 0,
-          stroke: 'red', // vrender bug，必须要设置一个全局的stroke，才会绘制
-          segments: (datum: any, ctx: any) => {
+          data: (datum: any, ctx: any) => {
             const vchart = ctx.vchart as IVChart
             const chart = vchart.getChart() as IChart
             const s = chart.getAllSeries()[0] as ICartesianSeries
@@ -154,8 +76,9 @@ export const generateRegressionLinePipe = (
             if (s) {
               const rect = s.getRegion().getLayoutRect()
               const segments: {
-                points: { x: number; y: number }[]
-                stroke: string
+                areaPoints?: { x: number; y: number; y1: number }[]
+                linePoints: { x: number; y: number }[]
+                color: string
               }[] = []
 
               if (rect.width === 0 || rect.height === 0) {
@@ -180,26 +103,42 @@ export const generateRegressionLinePipe = (
                 if (!groupData.length) {
                   return
                 }
-                const { evaluateGrid } = regressionFunction(
+                const { confidenceInterval, evaluateGrid } = regressionFunction(
                   groupData,
                   (datum: Datum) => datum?.[fieldX],
                   (datum: Datum) => datum?.[fieldY],
                   getOptions?.(line),
                 )
                 const N = Math.max(3, Math.floor(groupData.length / 4))
-                const lineData = evaluateGrid(N)
                 const mainColor = color ?? colorAttrOptions?.scale?.scale(group)
 
+                const lineData = evaluateGrid(N)
+                const linePoints = lineData.map((ld: Datum) => {
+                  const d = { [fieldX]: ld.x, [fieldY]: ld.y }
+                  return {
+                    x: s.dataToPositionX(d)! + start.x,
+                    y: yClamper(s.dataToPositionY(d)! + start.y),
+                  }
+                })
+
                 segments.push({
-                  stroke: mainColor,
-                  points: lineData.map((ld: Datum) => {
-                    const d = { [fieldX]: ld.x, [fieldY]: ld.y }
+                  color: mainColor,
+                  linePoints,
+                })
+
+                if (confidenceIntervalVisible) {
+                  const intervalData = confidenceInterval(N)
+                  const areaPoints = intervalData.map((datum: Datum) => {
+                    const d = { [fieldX]: datum.x, [fieldY]: datum.lower }
                     return {
                       x: s.dataToPositionX(d)! + start.x,
                       y: yClamper(s.dataToPositionY(d)! + start.y),
+                      y1: yClamper(s.dataToPositionY({ [fieldY]: datum.upper })! + start.y),
                     }
-                  }),
-                })
+                  })
+
+                  segments[segments.length - 1].areaPoints = areaPoints
+                }
               })
 
               return segments
@@ -207,10 +146,66 @@ export const generateRegressionLinePipe = (
             return []
           },
         },
+        children: childrenMarks,
+      })
+
+      if (confidenceIntervalVisible) {
+        childrenMarks.push({
+          type: 'area',
+          interactive: false,
+          zIndex: 500,
+          style: {
+            lineWidth: lineWidth ?? theme.lineWidth,
+            lineDash: lineDash ?? theme.lineDash,
+            fillOpacity: confidenceIntervalOpacity ?? theme.confidenceIntervalOpacity,
+            fill: 'red', // vrender bug，必须要设置一个全局的fill，才会绘制
+            segments: (datum: any, ctx: any, opt: any) => {
+              const parentNode = opt.mark?._product?.parent
+
+              if (parentNode?.attribute?.data?.length) {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
+                return parentNode.attribute.data.map((d: any) => {
+                  return {
+                    points: d.areaPoints ?? [],
+                    fill: d.color,
+                  }
+                })
+              }
+
+              return []
+            },
+          },
+        })
+      }
+
+      childrenMarks.push({
+        type: 'line',
+        interactive: false,
+        zIndex: 500,
+        style: {
+          lineWidth: lineWidth ?? theme.lineWidth,
+          lineDash: lineDash ?? theme.lineDash,
+          stroke: 'red', // vrender bug，必须要设置一个全局的stroke，才会绘制
+          segments: (datum: any, ctx: any, opt: any) => {
+            const parentNode = opt.mark?._product?.parent
+
+            if (parentNode?.attribute?.data?.length) {
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
+              return parentNode.attribute.data.map((d: any) => {
+                return {
+                  points: d.linePoints,
+                  stroke: d.color,
+                }
+              })
+            }
+
+            return []
+          },
+        },
       })
 
       if (!isNullish(text)) {
-        ;(result.customMark as any[]).push({
+        childrenMarks.push({
           type: 'text',
           interactive: false,
           zIndex: 500,
@@ -220,22 +215,22 @@ export const generateRegressionLinePipe = (
             fontSize: textFontSize ?? theme.textFontSize,
             fontWeight: textFontWeight ?? theme.textFontWeight,
             text: text,
-            x: defaultRegressionLineLabelX,
-            y: (datum: any, ctx: any) => {
-              const vchart = ctx.vchart as IVChart
-              const chart = vchart.getChart() as IChart
-              const series = chart.getAllSeries().filter((s: any) => s.type === 'bar')
-              // 直方图使用的是bar系列
-              if (series && series.length) {
-                const s = series[0] as ICartesianSeries
-                const startPoint = s.getRegion().getLayoutStartPoint()
+            x: (datum: any, ctx: any, opt: any) => {
+              const parentNode = opt.mark?._product?.parent
 
-                const fieldY = s.fieldY[0]
-                const viewData = s.getViewData()?.latestData
-                if (!viewData || !viewData.length) {
-                  return undefined
-                }
-                return startPoint.y + s.dataToPositionY({ [fieldY]: viewData[viewData.length - 1]?.[fieldY] })!
+              if (parentNode?.attribute?.data?.length) {
+                const point = parentNode.attribute.data[parentNode.attribute.data.length - 1].linePoints
+                return point[point.length - 1]?.x
+              }
+
+              return undefined
+            },
+            y: (datum: any, ctx: any, opt: any) => {
+              const parentNode = opt.mark?._product?.parent
+
+              if (parentNode?.attribute?.data?.length) {
+                const point = parentNode.attribute.data[parentNode.attribute.data.length - 1].linePoints
+                return point[point.length - 1]?.y
               }
 
               return undefined

@@ -753,12 +753,17 @@ exports[`combinationLine 2`] = `
     "duration": 600,
     "type": "all",
   },
+  "autoFillHeight": true,
+  "autoFillWidth": true,
   "columns": [],
   "corner": {
     "titleOnDimension": "all",
   },
+  "defaultColWidth": 200,
   "defaultHeaderColWidth": "auto",
-  "heightMode": "adaptive",
+  "defaultHeaderRowHeight": "auto",
+  "defaultRowHeight": 100,
+  "heightMode": "standard",
   "hover": {
     "highlightMode": "cross",
   },
@@ -1793,7 +1798,7 @@ exports[`combinationLine 2`] = `
   "tooltip": {
     "isShowOverflowTextTooltip": true,
   },
-  "widthMode": "adaptive",
+  "widthMode": "standard",
 }
 `;
 

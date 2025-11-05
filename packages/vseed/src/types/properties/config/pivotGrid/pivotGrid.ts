@@ -9,6 +9,8 @@ export const zPivotChartGridConfig = z.object({
   hoverHeaderInlineBackgroundColor: z.string().nullish(),
   outlineBorderLineWidth: z.number().nullish(),
   frameCornerRadius: z.number().nullish(),
+  minChartWidth: z.number().nullish(),
+  minChartHeight: z.number().nullish(),
 })
 
 export type PivotChartGridConfig = z.infer<typeof zPivotChartGridConfig>

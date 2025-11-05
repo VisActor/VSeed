@@ -1,6 +1,7 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
 import { isCombination, isPivot } from 'src/pipeline/utils'
 import type { Config, SpecPipe } from 'src/types'
+import { isNullish } from 'remeda'
 
 export const pivotGridStyle: SpecPipe = (spec, context) => {
   const { vseed, advancedVSeed } = context
@@ -24,6 +25,14 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
     : (themConfig.hoverHeaderInlineBackgroundColor ?? '#D9DDE455')
   const outlineBorderLineWidth = themConfig.outlineBorderLineWidth ?? 0
   const frameCornerRadius = themConfig.frameCornerRadius ?? 0
+
+  if (!isNullish(themConfig.minChartWidth)) {
+    result.defaultColWidth = themConfig.minChartWidth
+  }
+
+  if (!isNullish(themConfig.minChartHeight)) {
+    result.defaultRowHeight = themConfig.minChartHeight
+  }
 
   return {
     ...result,

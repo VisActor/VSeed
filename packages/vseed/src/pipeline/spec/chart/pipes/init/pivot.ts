@@ -11,9 +11,16 @@ export const initPivot: SpecPipe = (spec) => {
     columns: [],
     indicators: [],
     records: [],
-    widthMode: 'adaptive',
+    widthMode: 'standard',
+    autoFillWidth: true,
     defaultHeaderColWidth: 'auto',
-    heightMode: 'adaptive',
+    defaultColWidth: 200,
+
+    heightMode: 'standard',
+    autoFillHeight: true,
+    defaultRowHeight: 100,
+    defaultHeaderRowHeight: 'auto',
+
     indicatorsAsCol: false,
     select: {
       highlightMode: 'cell',

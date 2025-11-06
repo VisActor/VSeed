@@ -13,7 +13,7 @@ import { getLightBandAxis, getLightLinearAxis } from '../common/axes'
 import { getLightAnnotation } from '../common/annotaion'
 import { getLightFunnelTransformTheme } from '../common/funnelTransform'
 import { getLightHeatmapCellTheme } from '../common/heatmapCell'
-import { getLightHistogramRegressionLine } from '../common/regressionLine'
+import { getLightRegressionLine } from '../common/regressionLine'
 
 export const lightTheme = (): CustomThemeConfig => {
   const linearAxis = getLightLinearAxis()
@@ -63,6 +63,8 @@ export const lightTheme = (): CustomThemeConfig => {
         stackCornerRadius: [4, 4, 0, 0],
         pivotGrid: getLightPivotChartGridConfig(),
         annotation: getLightAnnotation(),
+
+        regressionLine: getLightRegressionLine(),
       },
       columnParallel: {
         ...baseConfig,
@@ -156,6 +158,8 @@ export const lightTheme = (): CustomThemeConfig => {
         },
         pivotGrid: getLightPivotChartGridConfig(),
         annotation: getLightAnnotation(),
+
+        regressionLine: getLightRegressionLine(),
       },
       dualAxis: {
         ...baseConfig,
@@ -238,7 +242,7 @@ export const lightTheme = (): CustomThemeConfig => {
         crosshairRect,
         pivotGrid: getLightPivotChartGridConfig(),
         annotation: getLightAnnotation(),
-        histogramRegressionLine: getLightHistogramRegressionLine(),
+        regressionLine: getLightRegressionLine(),
       },
       boxPlot: {
         ...baseConfig,

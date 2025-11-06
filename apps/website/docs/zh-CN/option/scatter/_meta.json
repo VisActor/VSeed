@@ -61,8 +61,23 @@
   },
   {
     "type": "file",
+    "name": "linearRegressionLine",
+    "label": "linearRegressionLine "
+  },
+  {
+    "type": "file",
     "name": "locale",
     "label": "locale "
+  },
+  {
+    "type": "file",
+    "name": "logisticRegressionLine",
+    "label": "logisticRegressionLine "
+  },
+  {
+    "type": "file",
+    "name": "lowessRegressionLine",
+    "label": "lowessRegressionLine "
   },
   {
     "type": "file",
@@ -73,6 +88,11 @@
     "type": "file",
     "name": "pointStyle",
     "label": "pointStyle "
+  },
+  {
+    "type": "file",
+    "name": "polynomialRegressionLine",
+    "label": "polynomialRegressionLine "
   },
   {
     "type": "file",

@@ -1,23 +1,16 @@
-# histogramRegressionLine
+# lowessRegressionLine
 
-**Type:** `HistogramRegressionLine | HistogramRegressionLine[] | undefined`
+**Type:** `boolean | LowessRegressionLine | LowessRegressionLine[] | undefined`
 
 :::note{title=描述}
-直方图回归线配置, 用于展示数据的趋势和分布情况
+局部加权回归线配置项
+
+
+
+局部加权回归线配置项, 包括局部加权回归线的样式等.
 
 :::
 
-
-## type
-
-**Type:** `"kde" | "ecdf"`
-
-:::note{title=描述}
-回归线类型
-
-'kde'表示核密度估计回归线，'ecdf'表示经验累积分布函数回归线
-
-:::
 
 ## color
 
@@ -102,6 +95,38 @@
 
 **示例**
 400
+
+
+
+## confidenceIntervalVisible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否显示置信区间
+
+:::
+
+## confidenceIntervalColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+置信区间颜色
+
+:::
+
+## confidenceIntervalOpacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+置信区间透明度
+
+:::
+
+**示例**
+0.5
 
 
 

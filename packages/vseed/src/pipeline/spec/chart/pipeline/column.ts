@@ -33,6 +33,7 @@ import {
   colorBarStyleFill,
   pivotColorLegend,
   barMaxWidth,
+  columnPolynomialRegressionLine,
 } from '../pipes'
 
 const column: SpecPipeline = [
@@ -55,6 +56,7 @@ const column: SpecPipeline = [
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationAreaBand,
+  columnPolynomialRegressionLine,
 ]
 
 const pivotColumn: SpecPipeline = [
@@ -80,6 +82,7 @@ const pivotColumn: SpecPipeline = [
     annotationVerticalLine,
     annotationHorizontalLine,
     annotationAreaBand,
+    columnPolynomialRegressionLine,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

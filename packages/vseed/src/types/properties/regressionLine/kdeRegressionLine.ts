@@ -1,12 +1,7 @@
 /**
- * @description 直方图回归线配置项
+ * @description 核密度估计回归线配置项
  */
-export interface HistogramRegressionLine {
-  /**
-   * @description 回归线类型
-   * 'kde'表示核密度估计回归线，'ecdf'表示经验累积分布函数回归线
-   */
-  type: 'kde' | 'ecdf'
+export interface KdeRegressionLine {
   /**
    * @description 回归线颜色
    * 用于设置回归线的颜色，如果不设置，默认使用图表的主颜色

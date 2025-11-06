@@ -71,8 +71,13 @@
   },
   {
     "type": "file",
-    "name": "histogramRegressionLine",
-    "label": "histogramRegressionLine "
+    "name": "ecdfRegressionLine",
+    "label": "ecdfRegressionLine "
+  },
+  {
+    "type": "file",
+    "name": "kdeRegressionLine",
+    "label": "kdeRegressionLine "
   },
   {
     "type": "file",

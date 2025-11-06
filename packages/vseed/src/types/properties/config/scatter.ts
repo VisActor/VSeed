@@ -8,6 +8,7 @@ import { zLegend } from './legend/legend'
 import { zTooltip } from './tooltip/tooltip'
 import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
+import { zRegressionLine } from '../regressionLine/zRegressionLine'
 
 export const zScatterConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -23,6 +24,7 @@ export const zScatterConfig = z.object({
   sizeRange: z.number().or(z.array(z.number())).nullish(),
   pivotGrid: zPivotChartGridConfig.nullish(),
   annotation: zAnnotationConfig.nullish(),
+  regressionLine: zRegressionLine.nullish(),
 })
 
 export type ScatterConfig = z.infer<typeof zScatterConfig>

@@ -10,8 +10,9 @@ import { zTooltip } from './tooltip/tooltip'
 import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
 import { zBarGapInGroup, zBarMaxWidth } from './barWidth'
+import { zRegressionLine } from '../regressionLine'
 
-export const zColumnConfig = z.object({
+export const zColumnParallelConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
   label: zLabel.nullish(),
   color: zColor.nullish(),
@@ -27,8 +28,10 @@ export const zColumnConfig = z.object({
   pivotGrid: zPivotChartGridConfig.nullish(),
   annotation: zAnnotationConfig.nullish(),
 })
-export const zColumnParallelConfig = zColumnConfig
-export const zColumnPercentConfig = zColumnConfig
+export const zColumnConfig = zColumnParallelConfig.extend({
+  regressionLine: zRegressionLine.nullish(),
+})
+export const zColumnPercentConfig = zColumnParallelConfig.extend({})
 
 export type ColumnConfig = z.infer<typeof zColumnConfig>
 export type ColumnParallelConfig = z.infer<typeof zColumnParallelConfig>

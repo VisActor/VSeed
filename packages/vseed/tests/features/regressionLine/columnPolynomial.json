@@ -1,0 +1,23 @@
+{
+  "chartType": "column",
+  "dataset": [
+    { "category": "A", "value": 10 },
+    { "category": "B", "value": 15 },
+    { "category": "C", "value": 8 },
+    { "category": "D", "value": 20 },
+    { "category": "E", "value": 12 }
+  ],
+  "measures": [
+    { "id": "category", "encoding": "xAxis" },
+    { "id": "value", "encoding": "yAxis" }
+  ],
+  "polynomialRegressionLine": [
+    {
+      "color": "#ff4d4f",
+      "text": "Degree-2",
+      "degree": 2,
+      "confidenceIntervalVisible": true,
+      "confidenceIntervalOpacity": 0.5
+    }
+  ]
+}

@@ -55,6 +55,10 @@
     "en-US": "Annotation",
     "zh-CN": "标注"
   },
+  "regressionLine": {
+    "en-US": "Regression Line",
+    "zh-CN": "回归线"
+  },
   "theme": {
     "en-US": "Theme",
     "zh-CN": "主题"

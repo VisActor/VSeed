@@ -1,0 +1,18 @@
+{
+  "chartType": "scatter",
+  "dataset": [
+    { "GDP": 12779.37964, "LifeExpectancy": 75.32 },
+    { "GDP": 9065.800825, "LifeExpectancy": 72.39 },
+    { "GDP": 36319.23501, "LifeExpectancy": 80.653 },
+    { "GDP": 13171.63885, "LifeExpectancy": 78.553 },
+    { "GDP": 7006.580419, "LifeExpectancy": 72.889 }
+  ],
+  "measures": [
+    { "id": "GDP", "encoding": "xAxis" },
+    { "id": "LifeExpectancy", "encoding": "yAxis" }
+  ],
+  "polynomialRegressionLine": [
+    { "color": "red", "text": "Degree-2", "degree": 2 },
+    { "color": "green", "text": "Degree-3", "degree": 3 }
+  ]
+}

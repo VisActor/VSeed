@@ -11,8 +11,9 @@ import {
   zCrosshairRect,
   zDataset,
   zDimensions,
+  zEcdfRegressionLine,
   zEncoding,
-  zHistogramRegressionLine,
+  zKdeRegressionLine,
   zLabel,
   zLegend,
   zMeasureTree,
@@ -45,7 +46,8 @@ export const zHistogram = z.object({
   annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).nullish(),
   annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).nullish(),
   annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).nullish(),
-  histogramRegressionLine: z.array(zHistogramRegressionLine).or(zHistogramRegressionLine).nullish(),
+  ecdfRegressionLine: z.array(zEcdfRegressionLine).or(zEcdfRegressionLine).or(z.boolean()).nullish(),
+  kdeRegressionLine: z.array(zKdeRegressionLine).or(zKdeRegressionLine).or(z.boolean()).nullish(),
   locale: zLocale.nullish(),
 })
 

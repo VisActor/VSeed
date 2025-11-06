@@ -9,45 +9,18 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'line',
-    dimensions: [
-      { id: 'category', alias: '类别' },
-      { id: 'date', alias: '日期', encoding: 'column' },
-      { id: 'region', alias: '区域', encoding: 'row' },
-    ],
-    measures: [
-      {
-        id: 'group-sales',
-        alias: '销售额分组',
-        children: [{ id: 'sales', alias: '销售额' }],
-      },
-      { id: 'profit', alias: '利润' },
-    ],
+    chartType: 'column',
     dataset: [
-      { date: '2019', region: 'east', category: 'Grocery', profit: 10, sales: 100 },
-      { date: '2019', region: 'east', category: 'Beverages', profit: 30, sales: 3200 },
-      { date: '2019', region: 'east', category: 'Dairy', profit: 30, sales: 300 },
-      { date: '2019', region: 'east', category: 'Household', profit: 50, sales: 2400 },
-      { date: '2019', region: 'east', category: 'Personal', profit: 40, sales: 500 },
-      { date: '2019', region: 'west', category: 'Grocery', profit: 10, sales: 100 },
-      { date: '2019', region: 'west', category: 'Beverages', profit: 30, sales: 3200 },
-      { date: '2019', region: 'west', category: 'Dairy', profit: 30, sales: 300 },
-      { date: '2019', region: 'west', category: 'Household', profit: 50, sales: 2400 },
-      { date: '2019', region: 'west', category: 'Personal', profit: 40, sales: 500 },
-
-      { date: '2020', region: 'east', category: 'Grocery', profit: 10, sales: 100 },
-      { date: '2020', region: 'east', category: 'Beverages', profit: 30, sales: 3200 },
-      { date: '2020', region: 'east', category: 'Dairy', profit: 30, sales: 300 },
-      { date: '2020', region: 'east', category: 'Household', profit: 50, sales: 2400 },
-      { date: '2020', region: 'east', category: 'Personal', profit: 40, sales: 500 },
-      { date: '2020', region: 'west', category: 'Grocery', profit: 10, sales: 100 },
-      { date: '2020', region: 'west', category: 'Beverages', profit: 30, sales: 3200 },
-      { date: '2020', region: 'west', category: 'Dairy', profit: 30, sales: 300 },
-      { date: '2020', region: 'west', category: 'Household', profit: 50, sales: 2400 },
-      { date: '2020', region: 'west', category: 'Personal', profit: 40, sales: 500 },
+      { date: '2019', profit: 10, sales: 20 },
+      { date: '2020', profit: 30, sales: 60 },
+      { date: '2021', profit: 30, sales: 60 },
+      { date: '2022', profit: 50, sales: 100 },
+      { date: '2023', profit: 40, sales: 80 },
     ],
+    polynomialRegressionLine: {
+      confidenceIntervalVisible: true,
+    },
   }
-
   const parseRes = zVSeed.safeParse(vseed)
   if (parseRes.success) {
     console.log('zVSeed parse success!!!')
@@ -126,6 +99,8 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
     } else if (isVChart(vseed)) {
       const vchart = new VChart(spec, { dom: ref.current })
       vchart.renderSync()
+
+      window.vchart = vchart
       return () => vchart.release()
     } else if (isTable(vseed)) {
       const tableInstance = new ListTable(ref.current, spec)

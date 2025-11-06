@@ -10,6 +10,10 @@ export const pivotAxisStyle = (axisStyle: SpecPipe): SpecPipe => {
         axis.domainLine = {
           visible: false,
         }
+
+        if (axis.grid && axis.grid.visible && axis.grid.style) {
+          axis.grid.style.strokeOpacity = 0.3
+        }
       })
     }
 

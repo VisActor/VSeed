@@ -42,8 +42,13 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
       bodyStyle: {
         borderColor,
         color: bodyFontColor,
-        borderLineWidth: (arg: { row: number }) => {
-          return [arg.row === 0 ? outlineBorderLineWidth : 1, outlineBorderLineWidth, 0, 1]
+        borderLineWidth: (arg: { row: number; col: number }) => {
+          return [
+            arg.row === 0 ? outlineBorderLineWidth : 1,
+            outlineBorderLineWidth,
+            0,
+            arg.col === 0 ? outlineBorderLineWidth : 1,
+          ]
         },
         bgColor: transparent,
         hover: {
@@ -53,7 +58,10 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
       headerStyle: {
         borderColor,
         fontSize: 12,
-        borderLineWidth: [outlineBorderLineWidth, outlineBorderLineWidth, 1, 1],
+        // borderLineWidth: [outlineBorderLineWidth, outlineBorderLineWidth, 1, 1],
+        borderLineWidth: (arg: { row: number; col: number }) => {
+          return [outlineBorderLineWidth, outlineBorderLineWidth, 1, arg.col === 0 ? outlineBorderLineWidth : 1]
+        },
         color: headerFontColor,
         textAlign: 'center',
         bgColor: headerBackgroundColor,
@@ -69,7 +77,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
         color: headerFontColor,
         padding: [0, 4, 0, 4],
         borderLineWidth: (arg: { row: number }) => {
-          return [arg.row === 0 ? outlineBorderLineWidth : 1, 1, 1, outlineBorderLineWidth]
+          return [arg.row === 0 ? outlineBorderLineWidth : 1, 1, 0, outlineBorderLineWidth]
         },
         bgColor: headerBackgroundColor,
         hover: {
@@ -79,7 +87,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
         },
       },
       cornerHeaderStyle: {
-        borderColor: 'red',
+        borderColor,
         textAlign: 'center',
         fontSize: 12,
         color: headerFontColor,
@@ -88,7 +96,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
         borderLineWidth: [outlineBorderLineWidth, 1, 1, outlineBorderLineWidth],
         bgColor: headerBackgroundColor,
         frameStyle: {
-          borderColor: 'red',
+          borderColor,
         },
         hover: {
           cellBgColor: hoverHeaderBackgroundColor,

@@ -29,6 +29,7 @@ import {
   labelPie,
   pivotHideIndicatorName,
   pivotTitle,
+  addRegionPadding,
 } from '../pipes'
 
 const donut: SpecPipeline = [
@@ -55,6 +56,7 @@ const pivotDonut: SpecPipeline = [
   datasetPivot,
   pivotIndicators([
     initDonut,
+    addRegionPadding,
     colorAdapter(color, linearColor),
     backgroundColor,
     datasetXY,

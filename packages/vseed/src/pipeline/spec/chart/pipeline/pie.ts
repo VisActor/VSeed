@@ -29,6 +29,7 @@ import {
   labelPie,
   pivotHideIndicatorName,
   pivotTitle,
+  addRegionPadding,
 } from '../pipes'
 
 const pie: SpecPipeline = [
@@ -66,6 +67,7 @@ const pivotPie: SpecPipeline = [
     annotationVerticalLine,
     annotationHorizontalLine,
     annotationArea,
+    addRegionPadding,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

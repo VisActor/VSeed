@@ -580,6 +580,7 @@ exports[`combinationRadar 2`] = `
         "region": [
           {
             "clip": true,
+            "padding": 10,
           },
         ],
         "seriesField": "__Dim_ColorId__",
@@ -759,6 +760,7 @@ exports[`combinationRadar 2`] = `
         "region": [
           {
             "clip": true,
+            "padding": 10,
           },
         ],
         "seriesField": "__Dim_ColorId__",

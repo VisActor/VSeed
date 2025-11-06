@@ -567,6 +567,7 @@ exports[`combinationPie 2`] = `
         "region": [
           {
             "clip": true,
+            "padding": 10,
           },
         ],
         "tooltip": {
@@ -713,6 +714,7 @@ exports[`combinationPie 2`] = `
         "region": [
           {
             "clip": true,
+            "padding": 10,
           },
         ],
         "tooltip": {

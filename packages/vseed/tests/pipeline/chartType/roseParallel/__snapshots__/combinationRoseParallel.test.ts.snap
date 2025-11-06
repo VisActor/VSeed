@@ -551,6 +551,7 @@ exports[`combinationRoseParallel 2`] = `
         "region": [
           {
             "clip": true,
+            "padding": 10,
           },
         ],
         "rose": {
@@ -701,6 +702,7 @@ exports[`combinationRoseParallel 2`] = `
         "region": [
           {
             "clip": true,
+            "padding": 10,
           },
         ],
         "rose": {

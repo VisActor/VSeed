@@ -1401,6 +1401,7 @@ exports[`pivotRose 2`] = `
         "region": [
           {
             "clip": true,
+            "padding": 10,
           },
         ],
         "rose": {
@@ -1563,6 +1564,7 @@ exports[`pivotRose 2`] = `
         "region": [
           {
             "clip": true,
+            "padding": 10,
           },
         ],
         "rose": {

@@ -1445,6 +1445,7 @@ exports[`pivotRadar 2`] = `
         "region": [
           {
             "clip": true,
+            "padding": 10,
           },
         ],
         "seriesField": "__Dim_ColorId__",
@@ -1638,6 +1639,7 @@ exports[`pivotRadar 2`] = `
         "region": [
           {
             "clip": true,
+            "padding": 10,
           },
         ],
         "seriesField": "__Dim_ColorId__",

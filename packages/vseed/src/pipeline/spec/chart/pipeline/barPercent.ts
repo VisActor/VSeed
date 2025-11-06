@@ -67,6 +67,7 @@ const pivotBarPercent: SpecPipeline = [
   pivotIndicators([
     initBar,
     stackCornerRadius,
+    barMaxWidth,
     colorAdapter(color, linearColor),
     backgroundColor,
     percent,

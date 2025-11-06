@@ -67,6 +67,7 @@ const pivotColumnParallel: SpecPipeline = [
   pivotIndicators([
     initColumnParallel,
     stackCornerRadius,
+    barMaxWidth,
     colorAdapter(color, linearColor),
     backgroundColor,
     datasetXY,

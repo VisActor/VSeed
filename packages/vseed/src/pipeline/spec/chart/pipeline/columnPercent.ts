@@ -70,6 +70,7 @@ const pivotColumnPercent: SpecPipeline = [
     initColumn,
     stackCornerRadius,
     stackInverse,
+    barMaxWidth,
     colorAdapter(color, linearColor),
     percent,
     backgroundColor,

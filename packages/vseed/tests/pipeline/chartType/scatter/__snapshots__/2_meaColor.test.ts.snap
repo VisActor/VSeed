@@ -128,6 +128,9 @@ exports[`2_meaColor 1`] = `
         "hoverHeaderBackgroundColor": "#D9DDE4",
         "hoverHeaderInlineBackgroundColor": "#D9DDE455",
         "outlineBorderLineWidth": 0,
+        "titleFontColor": "#21252c",
+        "titleFontSize": 12,
+        "titleFontWeight": "bold",
       },
       "regressionLine": {
         "ecdfRegressionLine": {
@@ -383,6 +386,9 @@ exports[`2_meaColor 1`] = `
           "hoverHeaderBackgroundColor": "#D9DDE4",
           "hoverHeaderInlineBackgroundColor": "#D9DDE455",
           "outlineBorderLineWidth": 0,
+          "titleFontColor": "#21252c",
+          "titleFontSize": 12,
+          "titleFontWeight": "bold",
         },
         "regressionLine": {
           "ecdfRegressionLine": {

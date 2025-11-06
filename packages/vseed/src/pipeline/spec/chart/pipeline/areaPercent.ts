@@ -37,6 +37,8 @@ import {
   colorPointStyleFill,
   colorLineStyleFill,
   colorAreaStyleFill,
+  pivotAxisStyle,
+  pivotTitle,
 } from '../pipes'
 
 const areaPercent: SpecPipeline = [
@@ -78,7 +80,7 @@ const pivotAreaPercent: SpecPipeline = [
     datasetXY,
     progressive,
     xBand,
-    yLinear,
+    pivotAxisStyle(yLinear),
     label,
     tooltip,
     verticalCrosshairLine,
@@ -93,6 +95,7 @@ const pivotAreaPercent: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 

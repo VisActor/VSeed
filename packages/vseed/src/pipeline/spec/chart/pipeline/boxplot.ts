@@ -30,6 +30,8 @@ import {
   yLinear,
   verticalCrosshairRect,
   datasetBoxplot,
+  pivotAxisStyle,
+  pivotTitle,
 } from '../pipes'
 
 const boxplot: SpecPipeline = [
@@ -64,7 +66,7 @@ const pivotBoxplot: SpecPipeline = [
     datasetBoxplot,
     progressive,
     xBand,
-    yLinear,
+    pivotAxisStyle(yLinear),
     label,
     tooltipBoxplot,
     colorBarStyleFill(barStyle),
@@ -76,6 +78,7 @@ const pivotBoxplot: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 

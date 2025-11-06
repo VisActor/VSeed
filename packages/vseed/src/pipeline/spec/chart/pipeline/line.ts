@@ -33,6 +33,8 @@ import {
   colorLineStyleFill,
   colorPointStyleFill,
   pivotColorLegend,
+  pivotTitle,
+  pivotAxisStyle,
 } from '../pipes'
 
 const line: SpecPipeline = [
@@ -68,7 +70,7 @@ const pivotLine: SpecPipeline = [
     datasetXY,
     progressive,
     xBand,
-    yLinear,
+    pivotAxisStyle(yLinear),
     verticalCrosshairLine,
     colorPointStyleFill(pointStyle),
     pointStateDimensionHover,
@@ -82,6 +84,7 @@ const pivotLine: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 

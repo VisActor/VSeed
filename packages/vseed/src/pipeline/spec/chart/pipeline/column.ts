@@ -34,6 +34,8 @@ import {
   pivotColorLegend,
   barMaxWidth,
   columnPolynomialRegressionLine,
+  pivotAxisStyle,
+  pivotTitle,
 } from '../pipes'
 
 const column: SpecPipeline = [
@@ -67,13 +69,14 @@ const pivotColumn: SpecPipeline = [
   pivotIndicators([
     initColumn,
     stackCornerRadius,
+    barMaxWidth,
     stackInverse,
     colorAdapter(color, linearColor),
     backgroundColor,
     datasetXY,
     progressive,
     xBand,
-    yLinear,
+    pivotAxisStyle(yLinear),
     label,
     tooltip,
     verticalCrosshairRect,
@@ -86,6 +89,7 @@ const pivotColumn: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 

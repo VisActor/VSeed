@@ -50,6 +50,8 @@ import {
   barMaxWidth,
   barGapInGroup,
   stackCornerRadius,
+  pivotTitle,
+  pivotAxisStyle,
 } from '../pipes'
 
 const dualAxis: SpecPipeline = [
@@ -153,7 +155,7 @@ const pivotDualAxis: SpecPipeline = [
     ),
     xBand,
     yLinearPrimary,
-    yLinearSecondary,
+    pivotAxisStyle(yLinearSecondary),
     colorAdapter(color, linearColor),
     backgroundColor,
     verticalCrosshairRect,
@@ -164,6 +166,7 @@ const pivotDualAxis: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 

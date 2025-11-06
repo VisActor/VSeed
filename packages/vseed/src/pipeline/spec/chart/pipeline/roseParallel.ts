@@ -31,6 +31,8 @@ import {
   colorRoseStyleFill,
   labelPie,
   pivotHideIndicatorName,
+  pivotTitle,
+  addRegionPadding,
 } from '../pipes'
 
 const roseParallel: SpecPipeline = [
@@ -60,6 +62,7 @@ const pivotRoseParallel: SpecPipeline = [
   datasetPivot,
   pivotIndicators([
     initRoseParallel,
+    addRegionPadding,
     stackCornerRadius,
     colorAdapter(color, linearColor),
     backgroundColor,
@@ -77,6 +80,7 @@ const pivotRoseParallel: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 

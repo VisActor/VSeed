@@ -37,6 +37,8 @@ import {
   lowessRegressionLine,
   polynomialRegressionLine,
   logisticRegressionLine,
+  pivotAxisStyle,
+  pivotTitle,
 } from '../pipes'
 
 const scatter: SpecPipeline = [
@@ -77,7 +79,7 @@ const pivotScatter: SpecPipeline = [
     datasetScatter,
     progressive,
     xLinear,
-    yLinear,
+    pivotAxisStyle(yLinear),
     scatterSize,
     labelScatter,
     tooltipScatter,
@@ -94,6 +96,7 @@ const pivotScatter: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 

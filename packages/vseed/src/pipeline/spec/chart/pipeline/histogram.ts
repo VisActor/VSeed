@@ -31,6 +31,8 @@ import {
   tooltipHistogram,
   kdeRegressionLine,
   ecdfRegressionLine,
+  pivotTitle,
+  pivotAxisStyle,
 } from '../pipes'
 
 const histogram: SpecPipeline = [
@@ -65,7 +67,7 @@ const pivotHistogram: SpecPipeline = [
     datasetHistogram,
     progressive,
     xLinear,
-    yLinear,
+    pivotAxisStyle(yLinear),
     label,
     tooltipHistogram,
     colorBarStyleFill(barStyle),
@@ -79,6 +81,7 @@ const pivotHistogram: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 

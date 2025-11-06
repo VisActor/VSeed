@@ -128,6 +128,9 @@ exports[`pivotBarPercent 1`] = `
         "hoverHeaderBackgroundColor": "#D9DDE4",
         "hoverHeaderInlineBackgroundColor": "#D9DDE455",
         "outlineBorderLineWidth": 0,
+        "titleFontColor": "#21252c",
+        "titleFontSize": 12,
+        "titleFontWeight": "bold",
       },
       "stackCornerRadius": [
         0,
@@ -361,6 +364,9 @@ exports[`pivotBarPercent 1`] = `
           "hoverHeaderBackgroundColor": "#D9DDE4",
           "hoverHeaderInlineBackgroundColor": "#D9DDE455",
           "outlineBorderLineWidth": 0,
+          "titleFontColor": "#21252c",
+          "titleFontSize": 12,
+          "titleFontWeight": "bold",
         },
         "stackCornerRadius": [
           0,
@@ -1645,7 +1651,7 @@ exports[`pivotBarPercent 2`] = `
     },
   ],
   "corner": {
-    "titleOnDimension": "all",
+    "titleOnDimension": "row",
   },
   "defaultColWidth": 200,
   "defaultHeaderColWidth": "auto",
@@ -1663,12 +1669,64 @@ exports[`pivotBarPercent 2`] = `
         "animation": true,
         "axes": [
           {
+            "base": 10,
             "domainLine": {
+              "visible": false,
+            },
+            "grid": {
               "style": {
-                "lineWidth": 1,
-                "stroke": "#3641594d",
+                "lineDash": [
+                  4,
+                  2,
+                ],
+                "lineWidth": 2,
+                "stroke": "#606773",
+                "strokeOpacity": 0.3,
               },
               "visible": true,
+            },
+            "innerOffset": {
+              "right": 7,
+            },
+            "inverse": false,
+            "label": {
+              "formatMethod": [Function],
+              "style": {
+                "angle": 0,
+                "fill": "#606773",
+                "fontSize": 12,
+                "fontWeight": 500,
+              },
+              "visible": true,
+            },
+            "max": undefined,
+            "min": undefined,
+            "nice": true,
+            "orient": "bottom",
+            "tick": {
+              "inside": true,
+              "style": {
+                "stroke": "#606773",
+              },
+              "tickSize": 10,
+              "visible": true,
+            },
+            "title": {
+              "style": {
+                "fill": "#606773",
+                "fontSize": 12,
+                "fontWeight": 500,
+              },
+              "text": "日期",
+              "visible": true,
+            },
+            "type": "linear",
+            "visible": true,
+            "zero": true,
+          },
+          {
+            "domainLine": {
+              "visible": false,
             },
             "grid": {
               "style": {
@@ -1737,65 +1795,6 @@ exports[`pivotBarPercent 2`] = `
             },
             "type": "band",
             "visible": true,
-          },
-          {
-            "base": 10,
-            "domainLine": {
-              "style": {
-                "lineWidth": 2,
-                "stroke": "#606773",
-              },
-              "visible": true,
-            },
-            "grid": {
-              "style": {
-                "lineDash": [
-                  4,
-                  2,
-                ],
-                "lineWidth": 2,
-                "stroke": "#606773",
-              },
-              "visible": true,
-            },
-            "innerOffset": {
-              "right": 7,
-            },
-            "inverse": false,
-            "label": {
-              "formatMethod": [Function],
-              "style": {
-                "angle": 0,
-                "fill": "#606773",
-                "fontSize": 12,
-                "fontWeight": 500,
-              },
-              "visible": true,
-            },
-            "max": undefined,
-            "min": undefined,
-            "nice": true,
-            "orient": "bottom",
-            "tick": {
-              "inside": true,
-              "style": {
-                "stroke": "#606773",
-              },
-              "tickSize": 10,
-              "visible": true,
-            },
-            "title": {
-              "style": {
-                "fill": "#606773",
-                "fontSize": 12,
-                "fontWeight": 500,
-              },
-              "text": "日期",
-              "visible": true,
-            },
-            "type": "linear",
-            "visible": true,
-            "zero": true,
           },
         ],
         "background": "transparent",
@@ -1973,12 +1972,64 @@ exports[`pivotBarPercent 2`] = `
         "animation": true,
         "axes": [
           {
+            "base": 10,
             "domainLine": {
+              "visible": false,
+            },
+            "grid": {
               "style": {
-                "lineWidth": 1,
-                "stroke": "#3641594d",
+                "lineDash": [
+                  4,
+                  2,
+                ],
+                "lineWidth": 2,
+                "stroke": "#606773",
+                "strokeOpacity": 0.3,
               },
               "visible": true,
+            },
+            "innerOffset": {
+              "right": 7,
+            },
+            "inverse": false,
+            "label": {
+              "formatMethod": [Function],
+              "style": {
+                "angle": 0,
+                "fill": "#606773",
+                "fontSize": 12,
+                "fontWeight": 500,
+              },
+              "visible": true,
+            },
+            "max": undefined,
+            "min": undefined,
+            "nice": true,
+            "orient": "bottom",
+            "tick": {
+              "inside": true,
+              "style": {
+                "stroke": "#606773",
+              },
+              "tickSize": 10,
+              "visible": true,
+            },
+            "title": {
+              "style": {
+                "fill": "#606773",
+                "fontSize": 12,
+                "fontWeight": 500,
+              },
+              "text": "日期",
+              "visible": true,
+            },
+            "type": "linear",
+            "visible": true,
+            "zero": true,
+          },
+          {
+            "domainLine": {
+              "visible": false,
             },
             "grid": {
               "style": {
@@ -2047,65 +2098,6 @@ exports[`pivotBarPercent 2`] = `
             },
             "type": "band",
             "visible": true,
-          },
-          {
-            "base": 10,
-            "domainLine": {
-              "style": {
-                "lineWidth": 2,
-                "stroke": "#606773",
-              },
-              "visible": true,
-            },
-            "grid": {
-              "style": {
-                "lineDash": [
-                  4,
-                  2,
-                ],
-                "lineWidth": 2,
-                "stroke": "#606773",
-              },
-              "visible": true,
-            },
-            "innerOffset": {
-              "right": 7,
-            },
-            "inverse": false,
-            "label": {
-              "formatMethod": [Function],
-              "style": {
-                "angle": 0,
-                "fill": "#606773",
-                "fontSize": 12,
-                "fontWeight": 500,
-              },
-              "visible": true,
-            },
-            "max": undefined,
-            "min": undefined,
-            "nice": true,
-            "orient": "bottom",
-            "tick": {
-              "inside": true,
-              "style": {
-                "stroke": "#606773",
-              },
-              "tickSize": 10,
-              "visible": true,
-            },
-            "title": {
-              "style": {
-                "fill": "#606773",
-                "fontSize": 12,
-                "fontWeight": 500,
-              },
-              "text": "日期",
-              "visible": true,
-            },
-            "type": "linear",
-            "visible": true,
-            "zero": true,
           },
         ],
         "background": "transparent",
@@ -3370,12 +3362,7 @@ exports[`pivotBarPercent 2`] = `
     "bodyStyle": {
       "bgColor": "rgba(0,0,0,0)",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": [
-        1,
-        0,
-        0,
-        1,
-      ],
+      "borderLineWidth": [Function],
       "color": "#141414",
       "hover": {
         "cellBgColor": "transparent",
@@ -3408,12 +3395,6 @@ exports[`pivotBarPercent 2`] = `
       "fontWeight": "bold",
       "frameStyle": {
         "borderColor": "#e3e5eb",
-        "borderLineWidth": [
-          0,
-          0,
-          0,
-          0,
-        ],
       },
       "hover": {
         "cellBgColor": "#D9DDE4",
@@ -3432,7 +3413,7 @@ exports[`pivotBarPercent 2`] = `
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
       "borderLineWidth": [
-        1,
+        0,
         0,
         0,
         0,
@@ -3453,13 +3434,18 @@ exports[`pivotBarPercent 2`] = `
     "cornerRightBottomCellStyle": {
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": 0,
+      "borderLineWidth": [
+        1,
+        0,
+        0,
+        1,
+      ],
       "frameStyle": {
         "borderColor": "#e3e5eb",
         "borderLineWidth": [
           1,
-          1,
-          1,
+          0,
+          0,
           1,
         ],
       },
@@ -3475,8 +3461,8 @@ exports[`pivotBarPercent 2`] = `
         "borderColor": "#e3e5eb",
         "borderLineWidth": [
           0,
-          1,
           0,
+          1,
           1,
         ],
       },
@@ -3492,12 +3478,7 @@ exports[`pivotBarPercent 2`] = `
     "headerStyle": {
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": [
-        0,
-        0,
-        1,
-        1,
-      ],
+      "borderLineWidth": [Function],
       "color": "#21252c",
       "fontSize": 12,
       "hover": {
@@ -3510,20 +3491,16 @@ exports[`pivotBarPercent 2`] = `
     "rightFrozenStyle": {
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": 1,
+      "borderLineWidth": [Function],
       "hover": {
+        "borderLineWidth": 0,
         "cellBgColor": "#D9DDE4",
       },
     },
     "rowHeaderStyle": {
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": [
-        1,
-        1,
-        1,
-        0,
-      ],
+      "borderLineWidth": [Function],
       "color": "#21252c",
       "fontSize": 12,
       "hover": {
@@ -3543,6 +3520,22 @@ exports[`pivotBarPercent 2`] = `
       "cellBorderColor": "",
     },
     "underlayBackgroundColor": "rgba(0,0,0,0)",
+  },
+  "title": {
+    "align": "center",
+    "orient": "top",
+    "padding": [
+      2,
+      0,
+      0,
+      0,
+    ],
+    "text": "年",
+    "textStyle": {
+      "fill": "#21252c",
+      "fontSize": 12,
+      "fontWeight": "bold",
+    },
   },
   "tooltip": {
     "isShowOverflowTextTooltip": true,

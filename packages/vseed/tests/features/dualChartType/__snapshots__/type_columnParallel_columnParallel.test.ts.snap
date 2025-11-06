@@ -134,6 +134,9 @@ exports[`type_columnParallel_columnParallel 1`] = `
         "hoverHeaderBackgroundColor": "#D9DDE4",
         "hoverHeaderInlineBackgroundColor": "#D9DDE455",
         "outlineBorderLineWidth": 0,
+        "titleFontColor": "#21252c",
+        "titleFontSize": 12,
+        "titleFontWeight": "bold",
       },
       "primaryYAxis": {
         "grid": {
@@ -387,6 +390,9 @@ exports[`type_columnParallel_columnParallel 1`] = `
           "hoverHeaderBackgroundColor": "#D9DDE4",
           "hoverHeaderInlineBackgroundColor": "#D9DDE455",
           "outlineBorderLineWidth": 0,
+          "titleFontColor": "#21252c",
+          "titleFontSize": 12,
+          "titleFontWeight": "bold",
         },
         "primaryYAxis": {
           "grid": {

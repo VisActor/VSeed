@@ -54,6 +54,9 @@ exports[`pivotRose 1`] = `
         "hoverHeaderBackgroundColor": "#D9DDE4",
         "hoverHeaderInlineBackgroundColor": "#D9DDE455",
         "outlineBorderLineWidth": 0,
+        "titleFontColor": "#21252c",
+        "titleFontSize": 12,
+        "titleFontWeight": "bold",
       },
       "tooltip": {
         "enable": true,
@@ -111,6 +114,9 @@ exports[`pivotRose 1`] = `
           "hoverHeaderBackgroundColor": "#D9DDE4",
           "hoverHeaderInlineBackgroundColor": "#D9DDE455",
           "outlineBorderLineWidth": 0,
+          "titleFontColor": "#21252c",
+          "titleFontSize": 12,
+          "titleFontWeight": "bold",
         },
         "tooltip": {
           "enable": true,
@@ -1304,7 +1310,7 @@ exports[`pivotRose 2`] = `
     },
   ],
   "corner": {
-    "titleOnDimension": "all",
+    "titleOnDimension": "row",
   },
   "defaultColWidth": 200,
   "defaultHeaderColWidth": "auto",
@@ -2734,12 +2740,7 @@ exports[`pivotRose 2`] = `
     "bodyStyle": {
       "bgColor": "rgba(0,0,0,0)",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": [
-        1,
-        0,
-        0,
-        1,
-      ],
+      "borderLineWidth": [Function],
       "color": "#141414",
       "hover": {
         "cellBgColor": "transparent",
@@ -2772,12 +2773,6 @@ exports[`pivotRose 2`] = `
       "fontWeight": "bold",
       "frameStyle": {
         "borderColor": "#e3e5eb",
-        "borderLineWidth": [
-          0,
-          0,
-          0,
-          0,
-        ],
       },
       "hover": {
         "cellBgColor": "#D9DDE4",
@@ -2796,7 +2791,7 @@ exports[`pivotRose 2`] = `
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
       "borderLineWidth": [
-        1,
+        0,
         0,
         0,
         0,
@@ -2817,13 +2812,18 @@ exports[`pivotRose 2`] = `
     "cornerRightBottomCellStyle": {
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": 0,
+      "borderLineWidth": [
+        1,
+        0,
+        0,
+        1,
+      ],
       "frameStyle": {
         "borderColor": "#e3e5eb",
         "borderLineWidth": [
           1,
-          1,
-          1,
+          0,
+          0,
           1,
         ],
       },
@@ -2839,8 +2839,8 @@ exports[`pivotRose 2`] = `
         "borderColor": "#e3e5eb",
         "borderLineWidth": [
           0,
-          1,
           0,
+          1,
           1,
         ],
       },
@@ -2856,12 +2856,7 @@ exports[`pivotRose 2`] = `
     "headerStyle": {
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": [
-        0,
-        0,
-        1,
-        1,
-      ],
+      "borderLineWidth": [Function],
       "color": "#21252c",
       "fontSize": 12,
       "hover": {
@@ -2874,20 +2869,16 @@ exports[`pivotRose 2`] = `
     "rightFrozenStyle": {
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": 1,
+      "borderLineWidth": [Function],
       "hover": {
+        "borderLineWidth": 0,
         "cellBgColor": "#D9DDE4",
       },
     },
     "rowHeaderStyle": {
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": [
-        1,
-        1,
-        1,
-        0,
-      ],
+      "borderLineWidth": [Function],
       "color": "#21252c",
       "fontSize": 12,
       "hover": {
@@ -2907,6 +2898,22 @@ exports[`pivotRose 2`] = `
       "cellBorderColor": "",
     },
     "underlayBackgroundColor": "rgba(0,0,0,0)",
+  },
+  "title": {
+    "align": "center",
+    "orient": "top",
+    "padding": [
+      2,
+      0,
+      0,
+      0,
+    ],
+    "text": "年",
+    "textStyle": {
+      "fill": "#21252c",
+      "fontSize": 12,
+      "fontWeight": "bold",
+    },
   },
   "tooltip": {
     "isShowOverflowTextTooltip": true,

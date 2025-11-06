@@ -128,6 +128,9 @@ exports[`dark 1`] = `
         "hoverHeaderBackgroundColor": "#6f7984cc",
         "hoverHeaderInlineBackgroundColor": "#4b4f54",
         "outlineBorderLineWidth": 0,
+        "titleFontColor": "#fdfdfd",
+        "titleFontSize": 12,
+        "titleFontWeight": "bold",
       },
       "regressionLine": {
         "ecdfRegressionLine": {
@@ -391,6 +394,9 @@ exports[`dark 1`] = `
           "hoverHeaderBackgroundColor": "#6f7984cc",
           "hoverHeaderInlineBackgroundColor": "#4b4f54",
           "outlineBorderLineWidth": 0,
+          "titleFontColor": "#fdfdfd",
+          "titleFontSize": 12,
+          "titleFontWeight": "bold",
         },
         "regressionLine": {
           "ecdfRegressionLine": {

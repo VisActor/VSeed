@@ -132,6 +132,9 @@ exports[`dualAxisPivot 1`] = `
         "hoverHeaderBackgroundColor": "#D9DDE4",
         "hoverHeaderInlineBackgroundColor": "#D9DDE455",
         "outlineBorderLineWidth": 0,
+        "titleFontColor": "#21252c",
+        "titleFontSize": 12,
+        "titleFontWeight": "bold",
       },
       "primaryYAxis": {
         "grid": {
@@ -385,6 +388,9 @@ exports[`dualAxisPivot 1`] = `
           "hoverHeaderBackgroundColor": "#D9DDE4",
           "hoverHeaderInlineBackgroundColor": "#D9DDE455",
           "outlineBorderLineWidth": 0,
+          "titleFontColor": "#21252c",
+          "titleFontSize": 12,
+          "titleFontWeight": "bold",
         },
         "primaryYAxis": {
           "grid": {
@@ -939,7 +945,7 @@ exports[`dualAxisPivot 2`] = `
   "autoFillWidth": true,
   "columns": [],
   "corner": {
-    "titleOnDimension": "all",
+    "titleOnDimension": "row",
   },
   "defaultColWidth": 200,
   "defaultHeaderColWidth": "auto",
@@ -957,11 +963,7 @@ exports[`dualAxisPivot 2`] = `
         "axes": [
           {
             "domainLine": {
-              "style": {
-                "lineWidth": 1,
-                "stroke": "#3641594d",
-              },
-              "visible": true,
+              "visible": false,
             },
             "grid": {
               "style": {
@@ -1033,10 +1035,6 @@ exports[`dualAxisPivot 2`] = `
           {
             "base": 10,
             "domainLine": {
-              "style": {
-                "lineWidth": 1,
-                "stroke": "#3641594d",
-              },
               "visible": false,
             },
             "grid": {
@@ -1047,6 +1045,7 @@ exports[`dualAxisPivot 2`] = `
                 ],
                 "lineWidth": 0.5,
                 "stroke": "#36415926",
+                "strokeOpacity": 0.3,
               },
               "visible": true,
             },
@@ -1094,10 +1093,6 @@ exports[`dualAxisPivot 2`] = `
           {
             "base": 10,
             "domainLine": {
-              "style": {
-                "lineWidth": 1,
-                "stroke": "#3641594d",
-              },
               "visible": false,
             },
             "grid": {
@@ -1475,11 +1470,7 @@ exports[`dualAxisPivot 2`] = `
         "axes": [
           {
             "domainLine": {
-              "style": {
-                "lineWidth": 1,
-                "stroke": "#3641594d",
-              },
-              "visible": true,
+              "visible": false,
             },
             "grid": {
               "style": {
@@ -1551,10 +1542,6 @@ exports[`dualAxisPivot 2`] = `
           {
             "base": 10,
             "domainLine": {
-              "style": {
-                "lineWidth": 1,
-                "stroke": "#3641594d",
-              },
               "visible": false,
             },
             "grid": {
@@ -1565,6 +1552,7 @@ exports[`dualAxisPivot 2`] = `
                 ],
                 "lineWidth": 0.5,
                 "stroke": "#36415926",
+                "strokeOpacity": 0.3,
               },
               "visible": true,
             },
@@ -1612,10 +1600,6 @@ exports[`dualAxisPivot 2`] = `
           {
             "base": 10,
             "domainLine": {
-              "style": {
-                "lineWidth": 1,
-                "stroke": "#3641594d",
-              },
               "visible": false,
             },
             "grid": {
@@ -1623,6 +1607,7 @@ exports[`dualAxisPivot 2`] = `
                 "lineDash": undefined,
                 "lineWidth": undefined,
                 "stroke": undefined,
+                "strokeOpacity": 0.3,
               },
               "visible": true,
             },
@@ -2262,12 +2247,7 @@ exports[`dualAxisPivot 2`] = `
     "bodyStyle": {
       "bgColor": "rgba(0,0,0,0)",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": [
-        1,
-        0,
-        0,
-        1,
-      ],
+      "borderLineWidth": [Function],
       "color": "#141414",
       "hover": {
         "cellBgColor": "transparent",
@@ -2300,12 +2280,6 @@ exports[`dualAxisPivot 2`] = `
       "fontWeight": "bold",
       "frameStyle": {
         "borderColor": "#e3e5eb",
-        "borderLineWidth": [
-          0,
-          0,
-          0,
-          0,
-        ],
       },
       "hover": {
         "cellBgColor": "#D9DDE4",
@@ -2324,7 +2298,7 @@ exports[`dualAxisPivot 2`] = `
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
       "borderLineWidth": [
-        1,
+        0,
         0,
         0,
         0,
@@ -2345,13 +2319,18 @@ exports[`dualAxisPivot 2`] = `
     "cornerRightBottomCellStyle": {
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": 0,
+      "borderLineWidth": [
+        1,
+        0,
+        0,
+        1,
+      ],
       "frameStyle": {
         "borderColor": "#e3e5eb",
         "borderLineWidth": [
           1,
-          1,
-          1,
+          0,
+          0,
           1,
         ],
       },
@@ -2367,8 +2346,8 @@ exports[`dualAxisPivot 2`] = `
         "borderColor": "#e3e5eb",
         "borderLineWidth": [
           0,
-          1,
           0,
+          1,
           1,
         ],
       },
@@ -2384,12 +2363,7 @@ exports[`dualAxisPivot 2`] = `
     "headerStyle": {
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": [
-        0,
-        0,
-        1,
-        1,
-      ],
+      "borderLineWidth": [Function],
       "color": "#21252c",
       "fontSize": 12,
       "hover": {
@@ -2402,20 +2376,16 @@ exports[`dualAxisPivot 2`] = `
     "rightFrozenStyle": {
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": 1,
+      "borderLineWidth": [Function],
       "hover": {
+        "borderLineWidth": 0,
         "cellBgColor": "#D9DDE4",
       },
     },
     "rowHeaderStyle": {
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": [
-        1,
-        1,
-        1,
-        0,
-      ],
+      "borderLineWidth": [Function],
       "color": "#21252c",
       "fontSize": 12,
       "hover": {

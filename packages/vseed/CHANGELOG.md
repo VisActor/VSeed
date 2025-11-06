@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.41
+
+### Patch Changes
+
+- feat: add `regressionLine` to vseed
+
 ## 0.1.40
 
 ### Patch Changes

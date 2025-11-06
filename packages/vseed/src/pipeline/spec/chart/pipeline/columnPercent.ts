@@ -34,6 +34,8 @@ import {
   colorBarStyleFill,
   pivotColorLegend,
   barMaxWidth,
+  pivotAxisStyle,
+  pivotTitle,
 } from '../pipes'
 
 const columnPercent: SpecPipeline = [
@@ -74,7 +76,7 @@ const pivotColumnPercent: SpecPipeline = [
     datasetXY,
     progressive,
     xBand,
-    yLinear,
+    pivotAxisStyle(yLinear),
     label,
     tooltip,
     verticalCrosshairRect,
@@ -86,6 +88,7 @@ const pivotColumnPercent: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 

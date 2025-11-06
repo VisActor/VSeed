@@ -32,6 +32,7 @@ import {
   colorAreaStyleFill,
   pivotColorLegend,
   pivotHideIndicatorName,
+  pivotTitle,
 } from '../pipes'
 
 const radar: SpecPipeline = [
@@ -84,6 +85,7 @@ const pivotRadar: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 

@@ -28,6 +28,7 @@ import {
   pivotColorLegend,
   labelPie,
   pivotHideIndicatorName,
+  pivotTitle,
 } from '../pipes'
 
 const pie: SpecPipeline = [
@@ -68,6 +69,7 @@ const pivotPie: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 

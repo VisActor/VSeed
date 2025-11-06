@@ -25,6 +25,8 @@ import {
   colorCellStyleFill,
   pivotDiscreteLegend,
   pivotColorLegend,
+  pivotTitle,
+  pivotAxisStyle,
 } from '../pipes'
 import { initHeatmap } from '../pipes/init/heatmap'
 
@@ -49,7 +51,7 @@ const pivotHeatmap: SpecPipeline = [
   pivotIndicatorsAsRow,
   datasetPivot,
   pivotIndicators([
-    initHeatmap,
+    pivotAxisStyle(initHeatmap),
     backgroundColor,
     datasetXY,
     colorAdapter(color, linearColor),
@@ -63,6 +65,7 @@ const pivotHeatmap: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 

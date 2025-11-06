@@ -1,17 +1,18 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
 import { isCombination, isPivot } from 'src/pipeline/utils'
-import type { Config, SpecPipe } from 'src/types'
+import type { Config, Dimension, SpecPipe } from 'src/types'
 import { isNullish } from 'remeda'
 
 export const pivotGridStyle: SpecPipe = (spec, context) => {
   const { vseed, advancedVSeed } = context
-  const { config, chartType } = advancedVSeed
+  const { config, chartType, dimensions } = advancedVSeed
   const themConfig = (config?.[chartType] as Config['line'])?.pivotGrid ?? {}
 
   const onlyCombination = !isPivot(vseed) && isCombination(vseed)
 
   const result = { ...spec } as PivotChartConstructorOptions
   const transparent = 'rgba(0,0,0,0)'
+  const hasColumnDimension = dimensions.some((dim: Dimension) => dim.encoding === 'column')
 
   const borderColor = themConfig.borderColor ?? '#e3e5eb'
   const bodyFontColor = themConfig.bodyFontColor ?? '#141414'
@@ -41,7 +42,9 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
       bodyStyle: {
         borderColor,
         color: bodyFontColor,
-        borderLineWidth: [1, outlineBorderLineWidth, 0, 1],
+        borderLineWidth: (arg: { row: number }) => {
+          return [arg.row === 0 ? outlineBorderLineWidth : 1, outlineBorderLineWidth, 0, 1]
+        },
         bgColor: transparent,
         hover: {
           cellBgColor: 'transparent',
@@ -65,7 +68,9 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
         fontSize: 12,
         color: headerFontColor,
         padding: [0, 4, 0, 4],
-        borderLineWidth: [1, 1, 1, outlineBorderLineWidth],
+        borderLineWidth: (arg: { row: number }) => {
+          return [arg.row === 0 ? outlineBorderLineWidth : 1, 1, 1, outlineBorderLineWidth]
+        },
         bgColor: headerBackgroundColor,
         hover: {
           cellBgColor: hoverHeaderBackgroundColor,
@@ -74,7 +79,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
         },
       },
       cornerHeaderStyle: {
-        borderColor,
+        borderColor: 'red',
         textAlign: 'center',
         fontSize: 12,
         color: headerFontColor,
@@ -83,8 +88,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
         borderLineWidth: [outlineBorderLineWidth, 1, 1, outlineBorderLineWidth],
         bgColor: headerBackgroundColor,
         frameStyle: {
-          borderColor,
-          borderLineWidth: [outlineBorderLineWidth, 0, 0, outlineBorderLineWidth],
+          borderColor: 'red',
         },
         hover: {
           cellBgColor: hoverHeaderBackgroundColor,
@@ -97,7 +101,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
         borderLineWidth: 0,
         frameStyle: {
           borderColor,
-          borderLineWidth: [outlineBorderLineWidth, 1, 0, 1],
+          borderLineWidth: [outlineBorderLineWidth, outlineBorderLineWidth, 1, 1],
         },
         bgColor: headerBackgroundColor,
         hover: {
@@ -106,7 +110,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
       },
       cornerLeftBottomCellStyle: {
         borderColor,
-        borderLineWidth: [1, 0, outlineBorderLineWidth, outlineBorderLineWidth],
+        borderLineWidth: [outlineBorderLineWidth, 0, outlineBorderLineWidth, outlineBorderLineWidth],
         bgColor: headerBackgroundColor,
         frameStyle: {
           borderColor,
@@ -118,11 +122,11 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
       },
       cornerRightBottomCellStyle: {
         borderColor,
-        borderLineWidth: 0,
         bgColor: headerBackgroundColor,
+        borderLineWidth: [1, outlineBorderLineWidth, outlineBorderLineWidth, 1],
         frameStyle: {
           borderColor,
-          borderLineWidth: [1, 1, 1, 1],
+          borderLineWidth: [1, outlineBorderLineWidth, outlineBorderLineWidth, 1],
         },
         hover: {
           cellBgColor: hoverHeaderBackgroundColor,
@@ -130,9 +134,17 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
       },
       rightFrozenStyle: {
         borderColor,
-        borderLineWidth: 1,
         bgColor: headerBackgroundColor,
+        borderLineWidth: (arg: { row: number }) => {
+          return [
+            arg.row === 0 || (hasColumnDimension && arg.row === 1) ? outlineBorderLineWidth : 1,
+            outlineBorderLineWidth,
+            0,
+            1,
+          ]
+        },
         hover: {
+          borderLineWidth: 0,
           cellBgColor: hoverHeaderBackgroundColor,
         },
       },

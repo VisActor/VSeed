@@ -48,9 +48,14 @@ const pickPivotChartGridConfig = (tableConfig: any) => {
     borderColor: tableConfig.borderColor,
     bodyFontColor: tableConfig.bodyFontColor,
     headerFontColor: tableConfig.headerFontColor,
+
     headerBackgroundColor: 'transparent',
     hoverHeaderBackgroundColor: tableConfig.hoverHeaderBackgroundColor,
     hoverHeaderInlineBackgroundColor: tableConfig.hoverHeaderInlineBackgroundColor,
+
+    titleFontColor: tableConfig.headerFontColor,
+    titleFontSize: tableConfig.headerFontSize,
+    titleFontWeight: 'bold',
   }
 }
 

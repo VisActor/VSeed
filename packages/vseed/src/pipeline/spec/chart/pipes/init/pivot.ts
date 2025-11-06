@@ -33,7 +33,7 @@ export const initPivot: SpecPipe = (spec) => {
       isShowOverflowTextTooltip: true,
     },
     corner: {
-      titleOnDimension: 'all',
+      titleOnDimension: 'row',
     },
     animationAppear: {
       duration: 600,

@@ -33,6 +33,8 @@ import {
   pivotColorLegend,
   barMaxWidth,
   barGapInGroup,
+  pivotAxisStyle,
+  pivotTitle,
 } from '../pipes'
 
 const barParallel: SpecPipeline = [
@@ -69,7 +71,7 @@ const pivotBarParallel: SpecPipeline = [
     backgroundColor,
     datasetYX,
     xLinear,
-    yBand,
+    pivotAxisStyle(yBand),
     label,
     tooltip,
     colorBarStyleFill(barStyle),
@@ -81,6 +83,7 @@ const pivotBarParallel: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 

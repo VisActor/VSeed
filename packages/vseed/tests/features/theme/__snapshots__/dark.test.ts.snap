@@ -92,6 +92,8 @@ exports[`dark 1`] = `
           "#A0CEFF",
           "#2E62F1",
         ],
+        "negativeColor": "#EB3373",
+        "positiveColor": "#7E5DFF",
       },
       "crosshairRect": {
         "labelBackgroundColor": "#ffffff",
@@ -358,6 +360,8 @@ exports[`dark 1`] = `
             "#A0CEFF",
             "#2E62F1",
           ],
+          "negativeColor": "#EB3373",
+          "positiveColor": "#7E5DFF",
         },
         "crosshairRect": {
           "labelBackgroundColor": "#ffffff",
@@ -1247,7 +1251,7 @@ exports[`dark 2`] = `
       "content": [
         {
           "hasShape": true,
-          "key": [Function],
+          "key": "profit",
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

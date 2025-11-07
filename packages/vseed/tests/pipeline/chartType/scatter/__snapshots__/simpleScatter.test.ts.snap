@@ -92,6 +92,8 @@ exports[`simpleScatter 1`] = `
           "#C2CEFF",
           "#5766EC",
         ],
+        "negativeColor": "#EB3373",
+        "positiveColor": "#7E5DFF",
       },
       "crosshairLine": {
         "labelBackgroundColor": "#21252C",
@@ -350,6 +352,8 @@ exports[`simpleScatter 1`] = `
             "#C2CEFF",
             "#5766EC",
           ],
+          "negativeColor": "#EB3373",
+          "positiveColor": "#7E5DFF",
         },
         "crosshairLine": {
           "labelBackgroundColor": "#21252C",
@@ -2262,14 +2266,14 @@ exports[`simpleScatter 2`] = `
         },
         {
           "hasShape": true,
-          "key": [Function],
+          "key": "goalProfit",
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,
         },
         {
           "hasShape": true,
-          "key": [Function],
+          "key": "profit",
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

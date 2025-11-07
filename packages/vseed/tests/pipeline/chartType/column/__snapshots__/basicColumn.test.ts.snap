@@ -92,6 +92,8 @@ exports[`basicColumn 1`] = `
           "#C2CEFF",
           "#5766EC",
         ],
+        "negativeColor": "#EB3373",
+        "positiveColor": "#7E5DFF",
       },
       "crosshairRect": {
         "labelBackgroundColor": "#364159",
@@ -359,6 +361,8 @@ exports[`basicColumn 1`] = `
             "#C2CEFF",
             "#5766EC",
           ],
+          "negativeColor": "#EB3373",
+          "positiveColor": "#7E5DFF",
         },
         "crosshairRect": {
           "labelBackgroundColor": "#364159",
@@ -1260,7 +1264,7 @@ exports[`basicColumn 2`] = `
       "content": [
         {
           "hasShape": true,
-          "key": [Function],
+          "key": "销售额",
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

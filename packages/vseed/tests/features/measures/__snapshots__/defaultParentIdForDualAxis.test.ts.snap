@@ -92,6 +92,8 @@ exports[`defaultParentIdForDualAxis 1`] = `
           "#C2CEFF",
           "#5766EC",
         ],
+        "negativeColor": "#EB3373",
+        "positiveColor": "#7E5DFF",
       },
       "crosshairRect": {
         "labelBackgroundColor": "#364159",
@@ -348,6 +350,8 @@ exports[`defaultParentIdForDualAxis 1`] = `
             "#C2CEFF",
             "#5766EC",
           ],
+          "negativeColor": "#EB3373",
+          "positiveColor": "#7E5DFF",
         },
         "crosshairRect": {
           "labelBackgroundColor": "#364159",
@@ -1198,7 +1202,7 @@ exports[`defaultParentIdForDualAxis 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": [Function],
+                    "key": "sum(amount)",
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
@@ -1314,7 +1318,7 @@ exports[`defaultParentIdForDualAxis 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": [Function],
+                    "key": undefined,
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
@@ -1691,7 +1695,7 @@ exports[`defaultParentIdForDualAxis 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": [Function],
+                    "key": "sum(amount)",
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
@@ -1807,7 +1811,7 @@ exports[`defaultParentIdForDualAxis 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": [Function],
+                    "key": undefined,
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,

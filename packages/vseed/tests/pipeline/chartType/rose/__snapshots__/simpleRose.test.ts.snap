@@ -24,6 +24,8 @@ exports[`simpleRose 1`] = `
           "#C2CEFF",
           "#5766EC",
         ],
+        "negativeColor": "#EB3373",
+        "positiveColor": "#7E5DFF",
       },
       "label": {
         "enable": true,
@@ -84,6 +86,8 @@ exports[`simpleRose 1`] = `
             "#C2CEFF",
             "#5766EC",
           ],
+          "negativeColor": "#EB3373",
+          "positiveColor": "#7E5DFF",
         },
         "label": {
           "enable": true,
@@ -1449,7 +1453,7 @@ exports[`simpleRose 2`] = `
       "content": [
         {
           "hasShape": true,
-          "key": [Function],
+          "key": "goalProfit",
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

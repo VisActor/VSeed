@@ -92,6 +92,8 @@ exports[`zhCN 1`] = `
           "#C2CEFF",
           "#5766EC",
         ],
+        "negativeColor": "#EB3373",
+        "positiveColor": "#7E5DFF",
       },
       "crosshairRect": {
         "labelBackgroundColor": "#364159",
@@ -317,6 +319,8 @@ exports[`zhCN 1`] = `
             "#C2CEFF",
             "#5766EC",
           ],
+          "negativeColor": "#EB3373",
+          "positiveColor": "#7E5DFF",
         },
         "crosshairRect": {
           "labelBackgroundColor": "#364159",
@@ -1325,7 +1329,7 @@ exports[`zhCN 2`] = `
             "content": [
               {
                 "hasShape": true,
-                "key": [Function],
+                "key": "利润",
                 "shapeType": "rectRound",
                 "value": [Function],
                 "visible": true,
@@ -1621,7 +1625,7 @@ exports[`zhCN 2`] = `
             "content": [
               {
                 "hasShape": true,
-                "key": [Function],
+                "key": "折扣",
                 "shapeType": "rectRound",
                 "value": [Function],
                 "visible": true,
@@ -1917,7 +1921,7 @@ exports[`zhCN 2`] = `
             "content": [
               {
                 "hasShape": true,
-                "key": [Function],
+                "key": "回报率",
                 "shapeType": "rectRound",
                 "value": [Function],
                 "visible": true,

@@ -92,6 +92,8 @@ exports[`scatterSize 1`] = `
           "#C2CEFF",
           "#5766EC",
         ],
+        "negativeColor": "#EB3373",
+        "positiveColor": "#7E5DFF",
       },
       "crosshairLine": {
         "labelBackgroundColor": "#21252C",
@@ -351,6 +353,8 @@ exports[`scatterSize 1`] = `
             "#C2CEFF",
             "#5766EC",
           ],
+          "negativeColor": "#EB3373",
+          "positiveColor": "#7E5DFF",
         },
         "crosshairLine": {
           "labelBackgroundColor": "#21252C",
@@ -1196,14 +1200,14 @@ exports[`scatterSize 2`] = `
         },
         {
           "hasShape": true,
-          "key": [Function],
+          "key": "利润",
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,
         },
         {
           "hasShape": true,
-          "key": [Function],
+          "key": "销售额",
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

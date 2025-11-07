@@ -92,6 +92,8 @@ exports[`type_line_area 1`] = `
           "#C2CEFF",
           "#5766EC",
         ],
+        "negativeColor": "#EB3373",
+        "positiveColor": "#7E5DFF",
       },
       "crosshairRect": {
         "labelBackgroundColor": "#364159",
@@ -350,6 +352,8 @@ exports[`type_line_area 1`] = `
             "#C2CEFF",
             "#5766EC",
           ],
+          "negativeColor": "#EB3373",
+          "positiveColor": "#7E5DFF",
         },
         "crosshairRect": {
           "labelBackgroundColor": "#364159",

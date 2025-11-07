@@ -92,6 +92,8 @@ exports[`crosshairRect 1`] = `
           "#C2CEFF",
           "#5766EC",
         ],
+        "negativeColor": "#EB3373",
+        "positiveColor": "#7E5DFF",
       },
       "crosshairLine": {
         "labelBackgroundColor": "#21252C",
@@ -311,6 +313,8 @@ exports[`crosshairRect 1`] = `
             "#C2CEFF",
             "#5766EC",
           ],
+          "negativeColor": "#EB3373",
+          "positiveColor": "#7E5DFF",
         },
         "crosshairLine": {
           "labelBackgroundColor": "#21252C",
@@ -969,7 +973,7 @@ exports[`crosshairRect 2`] = `
       "content": [
         {
           "hasShape": true,
-          "key": [Function],
+          "key": "销售额",
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

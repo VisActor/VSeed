@@ -1,13 +1,12 @@
 import type { ICartesianSeries, IChart, ILineChartSpec, IVChart } from '@visactor/vchart'
 import { array, Color as VUtilColor } from '@visactor/vutils'
-import { isNumber, isPlainObject } from 'remeda'
-import { FoldMeasureValue } from 'src/dataReshape/constant'
+import { isNullish, isNumber, isPlainObject } from 'remeda'
 import type { AnnotationHorizontalLine, SpecPipe, Color } from 'src/types'
 
 interface SplitConfig {
   points: { x: number; y: number }[]
   splitCoordinate: number
-  fill: {
+  lineStroke: {
     gradient: string
     x0: number
     x1: number
@@ -16,14 +15,24 @@ interface SplitConfig {
     stops: {
       color: string
       offset: number
-      opacity?: number
+    }[]
+  }
+  areaFill: {
+    gradient: string
+    x0: number
+    x1: number
+    y0: number
+    y1: number
+    stops: {
+      color: string
+      offset: number
     }[]
   }
 }
 
 export const splitLine: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const { annotation, chartType } = advancedVSeed
+  const { annotation, chartType, datasetReshapeInfo } = advancedVSeed
 
   if (!annotation || !annotation.annotationHorizontalLine) {
     return spec
@@ -50,17 +59,17 @@ export const splitLine: SpecPipe = (spec, context) => {
   const groupMark = {
     type: 'group',
     name: 'annotationHorizontalLine-splitLine',
-    zIndex: 500,
+    zIndex: 300,
     style: {
       splitConfig: (datum: any, ctx: any) => {
         const vchart = ctx.vchart as IVChart
         const chart = vchart.getChart() as IChart
-        const lineSeries = chart.getAllSeries().find((s) => s.type === 'line') as ICartesianSeries
+        const lineSeries = chart.getAllSeries().find((s) => s.type === 'line' || s.type === 'area') as ICartesianSeries
 
         if (!lineSeries) {
           return
         }
-        const lineMark = lineSeries.getMarkInName('line')
+        const lineMark = lineSeries.getMarkInName('line') ?? lineSeries.getMarkInName('area')
 
         if (!lineMark) {
           return
@@ -89,34 +98,66 @@ export const splitLine: SpecPipe = (spec, context) => {
         const minY = Math.min(...points.map((p) => p.y))
         const maxY = Math.max(...points.map((p) => p.y))
         const ratio = (splitCoordinate - minY) / (maxY - minY)
-        const attrs = {
+        const lineStroke = {
+          gradient: 'linear',
+          x0: 0,
+          x1: 0,
+          y0: 0,
+          y1: 1,
+          stops: [
+            {
+              color: colorConfig.positiveColor,
+              offset: 0,
+            },
+            {
+              color: colorConfig.positiveColor,
+              offset: ratio,
+            },
+            {
+              color: colorConfig.negativeColor,
+              offset: ratio + 0.0000001,
+            },
+            {
+              color: colorConfig.negativeColor,
+              offset: 1,
+            },
+          ],
+        }
+        const areaFill = {
+          gradient: 'linear',
+          x0: 0,
+          x1: 0,
+          y0: 0,
+          y1: 1,
+          stops: [
+            {
+              color: colorConfig.positiveColor,
+              offset: 0,
+            },
+            {
+              color: new VUtilColor(colorConfig.positiveColor).setOpacity(0).toRGBA(),
+              offset: ratio,
+            },
+            {
+              offset: ratio + 0.0000001,
+              color: new VUtilColor(colorConfig.negativeColor).setOpacity(0).toRGBA(),
+            },
+            {
+              color: colorConfig.negativeColor,
+              offset: 1,
+            },
+          ],
+        }
+        const attrs: any = {
           segments: null,
           points,
-          stroke: {
-            gradient: 'linear',
-            x0: 0,
-            x1: 0,
-            y0: 0,
-            y1: 1,
-            stops: [
-              {
-                color: colorConfig.positiveColor,
-                offset: 0,
-              },
-              {
-                color: colorConfig.positiveColor,
-                offset: ratio,
-              },
-              {
-                color: colorConfig.negativeColor,
-                offset: ratio + 0.0000001,
-              },
-              {
-                color: colorConfig.negativeColor,
-                offset: 1,
-              },
-            ],
-          },
+        }
+
+        if (lineGraphics[0].type === 'area') {
+          attrs.stroke = lineStroke
+          attrs.fill = areaFill
+        } else {
+          attrs.stroke = lineStroke
         }
 
         lineGraphics[0].setAttributes(attrs as unknown as Record<string, any>)
@@ -127,31 +168,8 @@ export const splitLine: SpecPipe = (spec, context) => {
         return {
           points: points.map((entry) => ({ x: entry.x + start.x, y: entry.y + start.y })),
           splitCoordinate,
-          fill: {
-            gradient: 'linear',
-            x0: 0,
-            x1: 0,
-            y0: 0,
-            y1: 1,
-            stops: [
-              {
-                color: colorConfig.positiveColor,
-                offset: 0,
-              },
-              {
-                color: new VUtilColor(colorConfig.positiveColor).setOpacity(0).toRGBA(),
-                offset: ratio,
-              },
-              {
-                offset: ratio + 0.0000001,
-                color: new VUtilColor(colorConfig.negativeColor).setOpacity(0).toRGBA(),
-              },
-              {
-                color: colorConfig.negativeColor,
-                offset: 1,
-              },
-            ],
-          },
+          areaFill,
+          lineStroke,
         } as SplitConfig
       },
     },
@@ -182,9 +200,9 @@ export const splitLine: SpecPipe = (spec, context) => {
             const parentNode = opt.mark?._product?.parent
 
             if (parentNode?.attribute?.splitConfig) {
-              const { fill } = parentNode.attribute.splitConfig as SplitConfig
+              const { areaFill } = parentNode.attribute.splitConfig as SplitConfig
 
-              return fill
+              return areaFill
             }
 
             return
@@ -200,26 +218,43 @@ export const splitLine: SpecPipe = (spec, context) => {
 
   ;(result.customMark as any[]).push(groupMark)
 
-  if (result.type === 'line') {
-    if (!result.point) {
-      result.point = {}
+  const seriesSpec =
+    result.type === 'line' || result.type === 'area'
+      ? result
+      : result.series?.find((s) => s.type === 'line' || s.type === 'area')
+
+  if (seriesSpec) {
+    if (!seriesSpec.point) {
+      seriesSpec.point = {}
     }
-    if (!result.line) {
-      result.line = {}
+    if (!seriesSpec.line) {
+      seriesSpec.line = {}
     }
 
-    if (!result.point.style) {
-      result.point.style = {}
+    if (!seriesSpec.point.style) {
+      seriesSpec.point.style = {}
     }
-    if (!result.line.style) {
-      result.line.style = {}
+    if (!seriesSpec.line.style) {
+      seriesSpec.line.style = {}
     }
 
-    result.point.style.fill = (datum) => {
-      return datum?.[FoldMeasureValue] >= splitValue ? colorConfig.positiveColor : colorConfig.negativeColor
+    const measureValueKey = datasetReshapeInfo[0].foldInfo.measureValue
+
+    seriesSpec.point.style.fill = (datum) => {
+      console.log(datum)
+      return datum?.[measureValueKey] >= splitValue ? colorConfig.positiveColor : colorConfig.negativeColor
     }
-    result.line.style.stroke = (datum) => {
-      return datum?.[FoldMeasureValue] >= splitValue ? colorConfig.positiveColor : colorConfig.negativeColor
+    seriesSpec.line.style.stroke = (datum) => {
+      return datum?.[measureValueKey] >= splitValue ? colorConfig.positiveColor : colorConfig.negativeColor
+    }
+    if (seriesSpec.label && (seriesSpec.label as any).visible && isNullish((seriesSpec.label as any).style?.fill)) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      ;(seriesSpec.label as any).style = {
+        ...(seriesSpec.label as any).style,
+        fill: (datum: any) => {
+          return datum?.[measureValueKey] >= splitValue ? colorConfig.positiveColor : colorConfig.negativeColor
+        },
+      }
     }
   }
 

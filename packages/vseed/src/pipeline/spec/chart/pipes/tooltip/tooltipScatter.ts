@@ -97,12 +97,7 @@ export const createMarkContent = (
       visible: true,
       hasShape: true,
       shapeType: 'rectRound',
-      key: (v: unknown) => {
-        const { measureId, foldMap } = foldInfo
-        const datum = v as Datum
-        const id = datum[measureId] as string
-        return foldMap[id] || id
-      },
+      key: Object.values(foldInfo.foldMap)[0],
       value: (v: unknown) => {
         const { measureId, measureValue } = foldInfo
 

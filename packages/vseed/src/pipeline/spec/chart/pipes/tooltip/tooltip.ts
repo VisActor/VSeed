@@ -33,14 +33,19 @@ export const tooltip: SpecPipe = (spec, context) => {
       title: {
         visible: true,
       },
-      content: createDimensionContent(measures, foldInfo, unfoldInfo),
+      content: createDimensionContent(dimensions, measures, foldInfo, unfoldInfo),
     },
   }
   return result
 }
 
-export const createDimensionContent = (measures: Measures, foldInfo: FoldInfo, unfoldInfo: UnfoldInfo) => {
-  const { measureId, measureValue } = foldInfo
+export const createDimensionContent = (
+  dimensions: Dimensions,
+  measures: Measures,
+  foldInfo: FoldInfo,
+  unfoldInfo: UnfoldInfo,
+) => {
+  const { measureId, measureValue, foldMap } = foldInfo
   const { encodingColor } = unfoldInfo
 
   return [
@@ -48,10 +53,12 @@ export const createDimensionContent = (measures: Measures, foldInfo: FoldInfo, u
       visible: true,
       shapeType: 'rectRound',
       hasShape: true,
-      key: (v: unknown) => {
-        const datum = v as Datum
-        return (datum && (datum[encodingColor] as string)) || ''
-      },
+      key: dimensions.some((d) => d.encoding === 'color')
+        ? (v: unknown) => {
+            const datum = v as Datum
+            return (datum && (datum[encodingColor] as string)) || ''
+          }
+        : Object.values(foldMap)[0],
       value: (v: unknown) => {
         const datum = v as Datum
         if (!datum) {

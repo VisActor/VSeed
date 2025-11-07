@@ -32,7 +32,7 @@ export const tooltipPrimary: SpecPipe = (spec, context) => {
       title: {
         visible: true,
       },
-      content: createDimensionContent(measures, foldInfoList[0], unfoldInfo),
+      content: createDimensionContent(dimensions, measures, foldInfoList[0], unfoldInfo),
     },
   }
   return result
@@ -70,7 +70,7 @@ export const tooltipSecondary: SpecPipe = (spec, context) => {
       title: {
         visible: true,
       },
-      content: createDimensionContent(measures, foldInfoList[1], unfoldInfo),
+      content: createDimensionContent(dimensions, measures, foldInfoList[1], unfoldInfo),
     },
   }
   return result

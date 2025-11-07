@@ -339,3 +339,31 @@ true
 
 
 
+## splitLine
+
+**Type:** `boolean | { positiveColor?: string; negativeColor?: string; } | undefined`
+
+:::note{title=描述}
+是否开启将主线分隔成两段的功能
+
+:::
+
+
+### positiveColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+大于标注值的部分，对应的主色
+
+:::
+
+### negativeColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+小于标注值的部分，对应的主色
+
+:::
+

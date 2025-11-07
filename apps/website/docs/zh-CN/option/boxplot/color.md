@@ -53,3 +53,21 @@
 
 
 
+## positiveColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+正负颜色配置, 用于定义图表中正值的颜色
+
+:::
+
+## negativeColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+正负颜色配置, 用于定义图表中负值的颜色
+
+:::
+

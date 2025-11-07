@@ -110,4 +110,20 @@ export type AnnotationHorizontalLine = {
    * @example 'solid'
    */
   lineStyle?: 'solid' | 'dashed' | 'dotted'
+
+  /**
+   * 是否开启将主线分隔成两段的功能
+   */
+  splitLine?:
+    | boolean
+    | {
+        /**
+         * 大于标注值的部分，对应的主色
+         */
+        positiveColor?: string
+        /**
+         * 小于标注值的部分，对应的主色
+         */
+        negativeColor?: string
+      }
 }

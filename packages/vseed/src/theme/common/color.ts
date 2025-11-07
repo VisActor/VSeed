@@ -27,8 +27,12 @@ export const getDarkLinearColorScheme = () => ['#A0CEFF', '#2E62F1']
 export const getLightColor = () => ({
   linearColorScheme: getLightLinearColorScheme(),
   colorScheme: getLightColorScheme(),
+  positiveColor: '#7E5DFF',
+  negativeColor: '#EB3373',
 })
 export const getDarkColor = () => ({
   linearColorScheme: getDarkLinearColorScheme(),
   colorScheme: getDarkColorScheme(),
+  positiveColor: '#7E5DFF',
+  negativeColor: '#EB3373',
 })

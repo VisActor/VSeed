@@ -35,6 +35,7 @@ import {
   pivotColorLegend,
   pivotTitle,
   pivotAxisStyle,
+  splitLine,
 } from '../pipes'
 
 const line: SpecPipeline = [
@@ -56,6 +57,7 @@ const line: SpecPipeline = [
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationArea,
+  splitLine,
 ]
 
 const pivotLine: SpecPipeline = [
@@ -81,6 +83,7 @@ const pivotLine: SpecPipeline = [
     annotationVerticalLine,
     annotationHorizontalLine,
     annotationArea,
+    splitLine,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

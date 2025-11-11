@@ -539,7 +539,6 @@ exports[`dualAxisCombination 1`] = `
         "count": 500,
         "date": "2019",
         "profit": 100,
-        "sales": 200,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -558,7 +557,6 @@ exports[`dualAxisCombination 1`] = `
         "count": 50,
         "date": "2020",
         "profit": 30,
-        "sales": 60,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -577,7 +575,6 @@ exports[`dualAxisCombination 1`] = `
         "count": 50,
         "date": "2021",
         "profit": 30,
-        "sales": 60,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -596,7 +593,6 @@ exports[`dualAxisCombination 1`] = `
         "count": 50,
         "date": "2022",
         "profit": 50,
-        "sales": 100,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -615,7 +611,6 @@ exports[`dualAxisCombination 1`] = `
         "count": 50,
         "date": "2023",
         "profit": 40,
-        "sales": 80,
       },
     ],
     [
@@ -635,7 +630,6 @@ exports[`dualAxisCombination 1`] = `
         },
         "count": 500,
         "date": "2019",
-        "profit": 100,
         "sales": 200,
       },
       {
@@ -654,7 +648,6 @@ exports[`dualAxisCombination 1`] = `
         },
         "count": 50,
         "date": "2020",
-        "profit": 30,
         "sales": 60,
       },
       {
@@ -673,7 +666,6 @@ exports[`dualAxisCombination 1`] = `
         },
         "count": 50,
         "date": "2021",
-        "profit": 30,
         "sales": 60,
       },
       {
@@ -692,7 +684,6 @@ exports[`dualAxisCombination 1`] = `
         },
         "count": 50,
         "date": "2022",
-        "profit": 50,
         "sales": 100,
       },
       {
@@ -711,7 +702,6 @@ exports[`dualAxisCombination 1`] = `
         },
         "count": 50,
         "date": "2023",
-        "profit": 40,
         "sales": 80,
       },
     ],
@@ -2056,7 +2046,6 @@ exports[`dualAxisCombination 2`] = `
         "count": 500,
         "date": "2019",
         "profit": 100,
-        "sales": 200,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -2075,7 +2064,6 @@ exports[`dualAxisCombination 2`] = `
         "count": 50,
         "date": "2020",
         "profit": 30,
-        "sales": 60,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -2094,7 +2082,6 @@ exports[`dualAxisCombination 2`] = `
         "count": 50,
         "date": "2021",
         "profit": 30,
-        "sales": 60,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -2113,7 +2100,6 @@ exports[`dualAxisCombination 2`] = `
         "count": 50,
         "date": "2022",
         "profit": 50,
-        "sales": 100,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -2132,7 +2118,6 @@ exports[`dualAxisCombination 2`] = `
         "count": 50,
         "date": "2023",
         "profit": 40,
-        "sales": 80,
       },
     ],
     "dualAxis-1": [
@@ -2152,7 +2137,6 @@ exports[`dualAxisCombination 2`] = `
         },
         "count": 500,
         "date": "2019",
-        "profit": 100,
         "sales": 200,
       },
       {
@@ -2171,7 +2155,6 @@ exports[`dualAxisCombination 2`] = `
         },
         "count": 50,
         "date": "2020",
-        "profit": 30,
         "sales": 60,
       },
       {
@@ -2190,7 +2173,6 @@ exports[`dualAxisCombination 2`] = `
         },
         "count": 50,
         "date": "2021",
-        "profit": 30,
         "sales": 60,
       },
       {
@@ -2209,7 +2191,6 @@ exports[`dualAxisCombination 2`] = `
         },
         "count": 50,
         "date": "2022",
-        "profit": 50,
         "sales": 100,
       },
       {
@@ -2228,7 +2209,6 @@ exports[`dualAxisCombination 2`] = `
         },
         "count": 50,
         "date": "2023",
-        "profit": 40,
         "sales": 80,
       },
     ],

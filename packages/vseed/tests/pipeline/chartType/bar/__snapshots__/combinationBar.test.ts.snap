@@ -474,7 +474,6 @@ exports[`combinationBar 1`] = `
           "sales": 200000,
         },
         "date": "2019",
-        "profit": 10000,
         "sales": 200000,
       },
       {
@@ -491,7 +490,6 @@ exports[`combinationBar 1`] = `
           "sales": 400000,
         },
         "date": "2020",
-        "profit": 20000,
         "sales": 400000,
       },
       {
@@ -508,7 +506,6 @@ exports[`combinationBar 1`] = `
           "sales": 600000,
         },
         "date": "2021",
-        "profit": 30000,
         "sales": 600000,
       },
       {
@@ -525,7 +522,6 @@ exports[`combinationBar 1`] = `
           "sales": 800000,
         },
         "date": "2022",
-        "profit": 40000,
         "sales": 800000,
       },
       {
@@ -542,7 +538,6 @@ exports[`combinationBar 1`] = `
           "sales": 1000000,
         },
         "date": "2023",
-        "profit": 50000,
         "sales": 1000000,
       },
     ],
@@ -562,7 +557,6 @@ exports[`combinationBar 1`] = `
         },
         "date": "2019",
         "profit": 10000,
-        "sales": 200000,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -579,7 +573,6 @@ exports[`combinationBar 1`] = `
         },
         "date": "2020",
         "profit": 20000,
-        "sales": 400000,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -596,7 +589,6 @@ exports[`combinationBar 1`] = `
         },
         "date": "2021",
         "profit": 30000,
-        "sales": 600000,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -613,7 +605,6 @@ exports[`combinationBar 1`] = `
         },
         "date": "2022",
         "profit": 40000,
-        "sales": 800000,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -630,7 +621,6 @@ exports[`combinationBar 1`] = `
         },
         "date": "2023",
         "profit": 50000,
-        "sales": 1000000,
       },
     ],
   ],
@@ -1468,7 +1458,6 @@ exports[`combinationBar 2`] = `
           "sales": 200000,
         },
         "date": "2019",
-        "profit": 10000,
         "sales": 200000,
       },
       {
@@ -1485,7 +1474,6 @@ exports[`combinationBar 2`] = `
           "sales": 400000,
         },
         "date": "2020",
-        "profit": 20000,
         "sales": 400000,
       },
       {
@@ -1502,7 +1490,6 @@ exports[`combinationBar 2`] = `
           "sales": 600000,
         },
         "date": "2021",
-        "profit": 30000,
         "sales": 600000,
       },
       {
@@ -1519,7 +1506,6 @@ exports[`combinationBar 2`] = `
           "sales": 800000,
         },
         "date": "2022",
-        "profit": 40000,
         "sales": 800000,
       },
       {
@@ -1536,7 +1522,6 @@ exports[`combinationBar 2`] = `
           "sales": 1000000,
         },
         "date": "2023",
-        "profit": 50000,
         "sales": 1000000,
       },
     ],
@@ -1556,7 +1541,6 @@ exports[`combinationBar 2`] = `
         },
         "date": "2019",
         "profit": 10000,
-        "sales": 200000,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -1573,7 +1557,6 @@ exports[`combinationBar 2`] = `
         },
         "date": "2020",
         "profit": 20000,
-        "sales": 400000,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -1590,7 +1573,6 @@ exports[`combinationBar 2`] = `
         },
         "date": "2021",
         "profit": 30000,
-        "sales": 600000,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -1607,7 +1589,6 @@ exports[`combinationBar 2`] = `
         },
         "date": "2022",
         "profit": 40000,
-        "sales": 800000,
       },
       {
         "__Dim_ColorId__": "利润-profit",
@@ -1624,7 +1605,6 @@ exports[`combinationBar 2`] = `
         },
         "date": "2023",
         "profit": 50000,
-        "sales": 1000000,
       },
     ],
   },

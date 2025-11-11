@@ -982,15 +982,13 @@ exports[`partialDatum 2`] = `
           ],
           "fill": "lightblue",
           "fillOpacity": 0.8,
-          "innerBorder": {
-            "distance": 2,
-            "lineDash": [
-              5,
-              2,
-            ],
-            "lineWidth": 4,
-            "stroke": "lightblue",
-          },
+          "lineDash": [
+            5,
+            2,
+          ],
+          "lineWidth": 4,
+          "stroke": "lightblue",
+          "strokeOpacity": undefined,
           "visible": true,
         },
       },

@@ -79,6 +79,11 @@ export type BarStyle = {
    * @example 4
    * @example [0, 0, 10, 10]
    */
+  /**
+   * @description 柱图元(矩形图元)描边透明度
+   * @type {number}
+   */
+  barBorderOpacity?: number
   barRadius?: number | number[]
 }
 

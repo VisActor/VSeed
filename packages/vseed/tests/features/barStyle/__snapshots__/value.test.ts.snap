@@ -1063,15 +1063,13 @@ exports[`value 2`] = `
           ],
           "fill": "lightpink",
           "fillOpacity": 0.8,
-          "innerBorder": {
-            "distance": 2,
-            "lineDash": [
-              5,
-              2,
-            ],
-            "lineWidth": 4,
-            "stroke": "lightpink",
-          },
+          "lineDash": [
+            5,
+            2,
+          ],
+          "lineWidth": 4,
+          "stroke": "lightpink",
+          "strokeOpacity": undefined,
           "visible": true,
         },
       },

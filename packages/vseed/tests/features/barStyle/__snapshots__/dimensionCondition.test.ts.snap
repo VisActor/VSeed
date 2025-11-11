@@ -986,15 +986,13 @@ exports[`dimensionCondition 2`] = `
           ],
           "fill": "gray",
           "fillOpacity": 0.8,
-          "innerBorder": {
-            "distance": 2,
-            "lineDash": [
-              5,
-              2,
-            ],
-            "lineWidth": 4,
-            "stroke": "gray",
-          },
+          "lineDash": [
+            5,
+            2,
+          ],
+          "lineWidth": 4,
+          "stroke": "gray",
+          "strokeOpacity": undefined,
           "visible": true,
         },
       },

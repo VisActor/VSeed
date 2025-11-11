@@ -75,7 +75,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
         borderColor,
         fontSize: 12,
         color: headerFontColor,
-        padding: [0, 4, 0, 4],
+        padding: [0, 12, 0, 4],
         borderLineWidth: (arg: { row: number }) => {
           return [arg.row === 0 ? outlineBorderLineWidth : 1, 1, 0, outlineBorderLineWidth]
         },
@@ -91,7 +91,7 @@ export const pivotGridStyle: SpecPipe = (spec, context) => {
         textAlign: 'center',
         fontSize: 12,
         color: headerFontColor,
-        padding: [0, 4, 0, 4],
+        padding: [0, 12, 0, 4],
         fontWeight: 'bold',
         borderLineWidth: [outlineBorderLineWidth, 1, 1, outlineBorderLineWidth],
         bgColor: headerBackgroundColor,

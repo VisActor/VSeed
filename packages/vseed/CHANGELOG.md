@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.42
+
+### Patch Changes
+
+- feat: support `splitLine` of line/area chart
+
 ## 0.1.41
 
 ### Patch Changes

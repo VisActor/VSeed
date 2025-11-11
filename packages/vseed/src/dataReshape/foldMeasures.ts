@@ -16,12 +16,13 @@ export const foldMeasures = (
     measureValue: string
     colorMeasureId?: string
     allowEmptyFold?: boolean
+    omitIds?: string[]
   },
 ): {
   dataset: Dataset
   foldInfo: FoldInfo
 } => {
-  const { measureId, measureName, measureValue, colorMeasureId, allowEmptyFold = true } = options || {}
+  const { measureId, measureName, measureValue, colorMeasureId, allowEmptyFold = true, omitIds = [] } = options || {}
 
   const foldInfo: FoldInfo = {
     measureId,
@@ -50,7 +51,7 @@ export const foldMeasures = (
   const ids = measures.map((d) => d.id)
   for (let i = 0; i < dataset.length; i++) {
     for (let j = 0; j < measures.length; j++) {
-      const datum: Record<string, any> = omit({ ...dataset[i] }, ids)
+      const datum: Record<string, any> = omit({ ...dataset[i] }, [...ids, ...omitIds])
 
       datum[ORIGINAL_DATA] = dataset[i]
 

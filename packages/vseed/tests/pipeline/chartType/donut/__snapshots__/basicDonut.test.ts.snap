@@ -24,11 +24,13 @@ exports[`basicDonut 1`] = `
           "#C2CEFF",
           "#5766EC",
         ],
+        "negativeColor": "#EB3373",
+        "positiveColor": "#7E5DFF",
       },
       "label": {
         "enable": true,
         "labelColorSmartInvert": false,
-        "labelLayout": "labelLine",
+        "labelLayout": "arc",
         "labelOverlap": true,
         "labelStroke": "#fff",
         "showDimension": true,
@@ -85,11 +87,13 @@ exports[`basicDonut 1`] = `
             "#C2CEFF",
             "#5766EC",
           ],
+          "negativeColor": "#EB3373",
+          "positiveColor": "#7E5DFF",
         },
         "label": {
           "enable": true,
           "labelColorSmartInvert": false,
-          "labelLayout": "labelLine",
+          "labelLayout": "arc",
           "labelOverlap": true,
           "labelStroke": "#fff",
           "showDimension": true,
@@ -592,7 +596,7 @@ exports[`basicDonut 2`] = `
     "dataFilter": [Function],
     "formatMethod": [Function],
     "layout": {
-      "align": "labelLine",
+      "align": "arc",
     },
     "overlap": {
       "clampForce": true,
@@ -690,7 +694,7 @@ exports[`basicDonut 2`] = `
       "content": [
         {
           "hasShape": true,
-          "key": [Function],
+          "key": "销售额",
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

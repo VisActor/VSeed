@@ -92,6 +92,8 @@ exports[`third 1`] = `
           "#C2CEFF",
           "#5766EC",
         ],
+        "negativeColor": "#EB3373",
+        "positiveColor": "#7E5DFF",
       },
       "crosshairRect": {
         "labelBackgroundColor": "#364159",
@@ -348,6 +350,8 @@ exports[`third 1`] = `
             "#C2CEFF",
             "#5766EC",
           ],
+          "negativeColor": "#EB3373",
+          "positiveColor": "#7E5DFF",
         },
         "crosshairRect": {
           "labelBackgroundColor": "#364159",
@@ -1522,7 +1526,7 @@ exports[`third 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": [Function],
+                    "key": "利润",
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
@@ -1638,7 +1642,7 @@ exports[`third 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": [Function],
+                    "key": "销售额",
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
@@ -2017,7 +2021,7 @@ exports[`third 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": [Function],
+                    "key": "比率",
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
@@ -2133,7 +2137,7 @@ exports[`third 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": [Function],
+                    "key": "回报率",
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,

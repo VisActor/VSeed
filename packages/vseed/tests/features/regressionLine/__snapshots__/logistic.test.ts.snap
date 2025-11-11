@@ -92,6 +92,8 @@ exports[`logistic 1`] = `
           "#C2CEFF",
           "#5766EC",
         ],
+        "negativeColor": "#EB3373",
+        "positiveColor": "#7E5DFF",
       },
       "crosshairLine": {
         "labelBackgroundColor": "#21252C",
@@ -350,6 +352,8 @@ exports[`logistic 1`] = `
             "#C2CEFF",
             "#5766EC",
           ],
+          "negativeColor": "#EB3373",
+          "positiveColor": "#7E5DFF",
         },
         "crosshairLine": {
           "labelBackgroundColor": "#21252C",
@@ -1184,14 +1188,14 @@ exports[`logistic 2`] = `
       "content": [
         {
           "hasShape": true,
-          "key": [Function],
+          "key": "x",
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,
         },
         {
           "hasShape": true,
-          "key": [Function],
+          "key": "y",
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

@@ -180,7 +180,7 @@ export const darkTheme = (): CustomThemeConfig => {
         label: {
           ...baseConfig.label,
           showValuePercent: true,
-          labelLayout: 'labelLine',
+          labelLayout: 'arc',
           showDimension: true,
         },
         pivotGrid: getDarkPivotChartGridConfig(),
@@ -190,7 +190,7 @@ export const darkTheme = (): CustomThemeConfig => {
         label: {
           ...baseConfig.label,
           showValuePercent: true,
-          labelLayout: 'labelLine',
+          labelLayout: 'arc',
           showDimension: true,
         },
         pivotGrid: getDarkPivotChartGridConfig(),

@@ -92,6 +92,8 @@ exports[`horizontal 1`] = `
           "#C2CEFF",
           "#5766EC",
         ],
+        "negativeColor": "#EB3373",
+        "positiveColor": "#7E5DFF",
       },
       "crosshairRect": {
         "labelBackgroundColor": "#364159",
@@ -318,6 +320,8 @@ exports[`horizontal 1`] = `
             "#C2CEFF",
             "#5766EC",
           ],
+          "negativeColor": "#EB3373",
+          "positiveColor": "#7E5DFF",
         },
         "crosshairRect": {
           "labelBackgroundColor": "#364159",
@@ -2830,7 +2834,7 @@ exports[`horizontal 2`] = `
       "content": [
         {
           "hasShape": true,
-          "key": [Function],
+          "key": "profit",
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

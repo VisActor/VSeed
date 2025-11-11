@@ -122,6 +122,8 @@ exports[`null2undefined 1`] = `
           "#C2CEFF",
           "#5766EC",
         ],
+        "negativeColor": "#EB3373",
+        "positiveColor": "#7E5DFF",
       },
       "crosshairLine": {
         "labelBackgroundColor": "#21252C",
@@ -345,6 +347,8 @@ exports[`null2undefined 1`] = `
             "#C2CEFF",
             "#5766EC",
           ],
+          "negativeColor": "#EB3373",
+          "positiveColor": "#7E5DFF",
         },
         "crosshairLine": {
           "labelBackgroundColor": "#21252C",
@@ -1462,7 +1466,7 @@ exports[`null2undefined 2`] = `
       "content": [
         {
           "hasShape": true,
-          "key": [Function],
+          "key": "股价（美元）",
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

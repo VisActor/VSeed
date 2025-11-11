@@ -241,7 +241,6 @@ export const splitLine: SpecPipe = (spec, context) => {
     const measureValueKey = datasetReshapeInfo[0].foldInfo.measureValue
 
     seriesSpec.point.style.fill = (datum) => {
-      console.log(datum)
       return datum?.[measureValueKey] >= splitValue ? colorConfig.positiveColor : colorConfig.negativeColor
     }
     seriesSpec.line.style.stroke = (datum) => {

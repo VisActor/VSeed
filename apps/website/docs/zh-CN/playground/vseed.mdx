@@ -23,13 +23,22 @@ const Demo = () => {
       labelFontColor: '#606773',
     },
     label: {
-      enable: false,
+      enable: true,
       labelColor: '#80E1D9',
       labelFontSize: 12,
+      selector: [
+        {
+          xA_20251110170508_a1e1: '1785',
+          yA_20251110170502_1b77: '西北',
+        },
+        {
+          xA_20251110170516_c40e: '4684506.442',
+          yA_20251110170502_1b77: '华东',
+        },
+      ],
     },
     stackCornerRadius: 0,
     barMaxWidth: 72,
-    theme: 'energy',
     barStyle: [
       {
         barColorOpacity: 0.2,
@@ -63,13 +72,6 @@ const Demo = () => {
         barColorOpacity: 1,
       },
     ],
-    annotationPoint: [],
-    annotationVerticalLine: [],
-    annotationArea: [],
-    lineStyle: [],
-    pointStyle: [],
-    areaStyle: [],
-    annotationHorizontalLine: [],
     measures: [
       {
         id: 'xA_20251110170508_a1e1',

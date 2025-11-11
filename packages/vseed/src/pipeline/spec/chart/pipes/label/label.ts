@@ -15,6 +15,7 @@ import type {
 } from 'src/types'
 import { isNumber, merge, uniqueBy } from 'remeda'
 import { MeasureName } from 'src/dataReshape/constant'
+import { selector } from 'src/dataSelector'
 
 export const label: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
@@ -114,7 +115,7 @@ export const buildLabel = (
     visible: enable,
     dataFilter: (data: Datum[]) => {
       return data.filter((entry) => {
-        return entry.data?.[DATUM_HIDE_KEY] !== true
+        return entry.data?.[DATUM_HIDE_KEY] !== true && selector(entry.data as Datum, label.selector, 'Or')
       })
     },
     formatMethod: (_: unknown, datum: Datum) => {

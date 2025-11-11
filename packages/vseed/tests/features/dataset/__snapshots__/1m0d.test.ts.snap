@@ -460,7 +460,7 @@ exports[`1m0d 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "profit",
@@ -495,10 +495,13 @@ exports[`1m0d 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "profit-profit": "profit",
+          "profit": {
+            "alias": "profit",
+            "id": "profit",
+          },
         },
         "colorItems": [
-          "profit-profit",
+          "profit",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -511,23 +514,23 @@ exports[`1m0d 1`] = `
   ],
   "dimensions": [
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
     "tooltip": [],
     "x": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "y": [
       "profit",
@@ -617,7 +620,7 @@ exports[`1m0d 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "指标名称",
+        "text": "指标Id",
         "visible": false,
       },
       "type": "band",
@@ -698,7 +701,7 @@ exports[`1m0d 2`] = `
   },
   "color": {
     "domain": [
-      "profit-profit",
+      "profit",
     ],
     "range": [
       "#8D72F6",
@@ -755,7 +758,7 @@ exports[`1m0d 2`] = `
     "id": "columnParallel",
     "values": [
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "profit",
@@ -910,12 +913,15 @@ exports[`1m0d 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "profit-profit": "profit",
+    "profit": {
+      "alias": "profit",
+      "id": "profit",
+    },
   },
   "colorItems": [
     {
       "alias": "profit",
-      "id": "profit-profit",
+      "id": "profit",
     },
   ],
   "hasTheme": true,

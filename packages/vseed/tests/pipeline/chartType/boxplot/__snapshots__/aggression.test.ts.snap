@@ -649,8 +649,14 @@ exports[`aggression 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "High income": "High income",
-          "Low income": "Low income",
+          "High income": {
+            "alias": "High income",
+            "id": "High income",
+          },
+          "Low income": {
+            "alias": "Low income",
+            "id": "Low income",
+          },
         },
         "colorItems": [
           "High income",
@@ -677,8 +683,8 @@ exports[`aggression 1`] = `
       "id": "group",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
@@ -1336,8 +1342,14 @@ exports[`aggression 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "High income": "High income",
-    "Low income": "Low income",
+    "High income": {
+      "alias": "High income",
+      "id": "High income",
+    },
+    "Low income": {
+      "alias": "Low income",
+      "id": "Low income",
+    },
   },
   "colorItems": [
     {

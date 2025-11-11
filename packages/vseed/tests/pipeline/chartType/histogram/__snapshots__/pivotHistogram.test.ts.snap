@@ -523,7 +523,7 @@ exports[`pivotHistogram 1`] = `
         "__BinEnd__": 2,
         "__BinPercentage__": 0.25,
         "__BinStart__": 1,
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_Detail__": "v",
         "__MeaId__": "v",
@@ -537,7 +537,7 @@ exports[`pivotHistogram 1`] = `
         "__BinEnd__": 3,
         "__BinPercentage__": 0.25,
         "__BinStart__": 2,
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_Detail__": "v",
         "__MeaId__": "v",
@@ -551,7 +551,7 @@ exports[`pivotHistogram 1`] = `
         "__BinEnd__": 3,
         "__BinPercentage__": 0.25,
         "__BinStart__": 2,
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_Detail__": "v",
         "__MeaId__": "v",
@@ -565,7 +565,7 @@ exports[`pivotHistogram 1`] = `
         "__BinEnd__": 6,
         "__BinPercentage__": 0.25,
         "__BinStart__": 5,
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_Detail__": "v",
         "__MeaId__": "v",
@@ -583,10 +583,13 @@ exports[`pivotHistogram 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "v-v": "v",
+          "v": {
+            "alias": "v",
+            "id": "v",
+          },
         },
         "colorItems": [
-          "v-v",
+          "v",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -609,16 +612,16 @@ exports[`pivotHistogram 1`] = `
       "id": "shape",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "detail": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "tooltip": [
@@ -812,7 +815,7 @@ exports[`pivotHistogram 2`] = `
         },
         "color": {
           "domain": [
-            "v-v",
+            "v",
           ],
           "range": [
             "#8D72F6",
@@ -971,7 +974,7 @@ exports[`pivotHistogram 2`] = `
   "legends": {
     "data": [
       {
-        "label": "v-v",
+        "label": "v",
         "shape": {
           "fill": "#8D72F6",
           "outerBorder": {
@@ -1028,7 +1031,7 @@ exports[`pivotHistogram 2`] = `
         "__BinEnd__": 2,
         "__BinPercentage__": 0.25,
         "__BinStart__": 1,
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_Detail__": "v",
         "__MeaId__": "v",
@@ -1042,7 +1045,7 @@ exports[`pivotHistogram 2`] = `
         "__BinEnd__": 3,
         "__BinPercentage__": 0.25,
         "__BinStart__": 2,
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_Detail__": "v",
         "__MeaId__": "v",
@@ -1056,7 +1059,7 @@ exports[`pivotHistogram 2`] = `
         "__BinEnd__": 3,
         "__BinPercentage__": 0.25,
         "__BinStart__": 2,
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_Detail__": "v",
         "__MeaId__": "v",
@@ -1070,7 +1073,7 @@ exports[`pivotHistogram 2`] = `
         "__BinEnd__": 6,
         "__BinPercentage__": 0.25,
         "__BinStart__": 5,
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_Detail__": "v",
         "__MeaId__": "v",
@@ -1294,12 +1297,15 @@ exports[`pivotHistogram 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "v-v": "v",
+    "v": {
+      "alias": "v",
+      "id": "v",
+    },
   },
   "colorItems": [
     {
       "alias": "v",
-      "id": "v-v",
+      "id": "v",
     },
   ],
   "hasTheme": true,

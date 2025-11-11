@@ -544,7 +544,7 @@ exports[`columnPolynomial 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "category-category",
+      "__Dim_ColorId__": "category",
       "__Dim_Color__": "category",
       "__Dim_Detail__": "category",
       "__Dim_X__": "category",
@@ -558,7 +558,7 @@ exports[`columnPolynomial 1`] = `
       "category": "A",
     },
     {
-      "__Dim_ColorId__": "value-value",
+      "__Dim_ColorId__": "value",
       "__Dim_Color__": "value",
       "__Dim_Detail__": "value",
       "__Dim_X__": "value",
@@ -572,7 +572,7 @@ exports[`columnPolynomial 1`] = `
       "value": 10,
     },
     {
-      "__Dim_ColorId__": "category-category",
+      "__Dim_ColorId__": "category",
       "__Dim_Color__": "category",
       "__Dim_Detail__": "category",
       "__Dim_X__": "category",
@@ -586,7 +586,7 @@ exports[`columnPolynomial 1`] = `
       "category": "B",
     },
     {
-      "__Dim_ColorId__": "value-value",
+      "__Dim_ColorId__": "value",
       "__Dim_Color__": "value",
       "__Dim_Detail__": "value",
       "__Dim_X__": "value",
@@ -600,7 +600,7 @@ exports[`columnPolynomial 1`] = `
       "value": 15,
     },
     {
-      "__Dim_ColorId__": "category-category",
+      "__Dim_ColorId__": "category",
       "__Dim_Color__": "category",
       "__Dim_Detail__": "category",
       "__Dim_X__": "category",
@@ -614,7 +614,7 @@ exports[`columnPolynomial 1`] = `
       "category": "C",
     },
     {
-      "__Dim_ColorId__": "value-value",
+      "__Dim_ColorId__": "value",
       "__Dim_Color__": "value",
       "__Dim_Detail__": "value",
       "__Dim_X__": "value",
@@ -628,7 +628,7 @@ exports[`columnPolynomial 1`] = `
       "value": 8,
     },
     {
-      "__Dim_ColorId__": "category-category",
+      "__Dim_ColorId__": "category",
       "__Dim_Color__": "category",
       "__Dim_Detail__": "category",
       "__Dim_X__": "category",
@@ -642,7 +642,7 @@ exports[`columnPolynomial 1`] = `
       "category": "D",
     },
     {
-      "__Dim_ColorId__": "value-value",
+      "__Dim_ColorId__": "value",
       "__Dim_Color__": "value",
       "__Dim_Detail__": "value",
       "__Dim_X__": "value",
@@ -656,7 +656,7 @@ exports[`columnPolynomial 1`] = `
       "value": 20,
     },
     {
-      "__Dim_ColorId__": "category-category",
+      "__Dim_ColorId__": "category",
       "__Dim_Color__": "category",
       "__Dim_Detail__": "category",
       "__Dim_X__": "category",
@@ -670,7 +670,7 @@ exports[`columnPolynomial 1`] = `
       "category": "E",
     },
     {
-      "__Dim_ColorId__": "value-value",
+      "__Dim_ColorId__": "value",
       "__Dim_Color__": "value",
       "__Dim_Detail__": "value",
       "__Dim_X__": "value",
@@ -707,12 +707,18 @@ exports[`columnPolynomial 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "category-category": "category",
-          "value-value": "value",
+          "category": {
+            "alias": "category",
+            "id": "category",
+          },
+          "value": {
+            "alias": "value",
+            "id": "value",
+          },
         },
         "colorItems": [
-          "category-category",
-          "value-value",
+          "category",
+          "value",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -725,23 +731,23 @@ exports[`columnPolynomial 1`] = `
   ],
   "dimensions": [
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
     "tooltip": [],
     "x": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "y": [
       "value",
@@ -848,7 +854,7 @@ exports[`columnPolynomial 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "指标名称",
+        "text": "指标Id",
         "visible": false,
       },
       "type": "band",
@@ -929,8 +935,8 @@ exports[`columnPolynomial 2`] = `
   },
   "color": {
     "domain": [
-      "category-category",
-      "value-value",
+      "category",
+      "value",
     ],
     "range": [
       "#8D72F6",
@@ -1037,7 +1043,7 @@ exports[`columnPolynomial 2`] = `
     "id": "column",
     "values": [
       {
-        "__Dim_ColorId__": "category-category",
+        "__Dim_ColorId__": "category",
         "__Dim_Color__": "category",
         "__Dim_Detail__": "category",
         "__Dim_X__": "category",
@@ -1051,7 +1057,7 @@ exports[`columnPolynomial 2`] = `
         "category": "A",
       },
       {
-        "__Dim_ColorId__": "value-value",
+        "__Dim_ColorId__": "value",
         "__Dim_Color__": "value",
         "__Dim_Detail__": "value",
         "__Dim_X__": "value",
@@ -1065,7 +1071,7 @@ exports[`columnPolynomial 2`] = `
         "value": 10,
       },
       {
-        "__Dim_ColorId__": "category-category",
+        "__Dim_ColorId__": "category",
         "__Dim_Color__": "category",
         "__Dim_Detail__": "category",
         "__Dim_X__": "category",
@@ -1079,7 +1085,7 @@ exports[`columnPolynomial 2`] = `
         "category": "B",
       },
       {
-        "__Dim_ColorId__": "value-value",
+        "__Dim_ColorId__": "value",
         "__Dim_Color__": "value",
         "__Dim_Detail__": "value",
         "__Dim_X__": "value",
@@ -1093,7 +1099,7 @@ exports[`columnPolynomial 2`] = `
         "value": 15,
       },
       {
-        "__Dim_ColorId__": "category-category",
+        "__Dim_ColorId__": "category",
         "__Dim_Color__": "category",
         "__Dim_Detail__": "category",
         "__Dim_X__": "category",
@@ -1107,7 +1113,7 @@ exports[`columnPolynomial 2`] = `
         "category": "C",
       },
       {
-        "__Dim_ColorId__": "value-value",
+        "__Dim_ColorId__": "value",
         "__Dim_Color__": "value",
         "__Dim_Detail__": "value",
         "__Dim_X__": "value",
@@ -1121,7 +1127,7 @@ exports[`columnPolynomial 2`] = `
         "value": 8,
       },
       {
-        "__Dim_ColorId__": "category-category",
+        "__Dim_ColorId__": "category",
         "__Dim_Color__": "category",
         "__Dim_Detail__": "category",
         "__Dim_X__": "category",
@@ -1135,7 +1141,7 @@ exports[`columnPolynomial 2`] = `
         "category": "D",
       },
       {
-        "__Dim_ColorId__": "value-value",
+        "__Dim_ColorId__": "value",
         "__Dim_Color__": "value",
         "__Dim_Detail__": "value",
         "__Dim_X__": "value",
@@ -1149,7 +1155,7 @@ exports[`columnPolynomial 2`] = `
         "value": 20,
       },
       {
-        "__Dim_ColorId__": "category-category",
+        "__Dim_ColorId__": "category",
         "__Dim_Color__": "category",
         "__Dim_Detail__": "category",
         "__Dim_X__": "category",
@@ -1163,7 +1169,7 @@ exports[`columnPolynomial 2`] = `
         "category": "E",
       },
       {
-        "__Dim_ColorId__": "value-value",
+        "__Dim_ColorId__": "value",
         "__Dim_Color__": "value",
         "__Dim_Detail__": "value",
         "__Dim_X__": "value",
@@ -1319,17 +1325,23 @@ exports[`columnPolynomial 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "category-category": "category",
-    "value-value": "value",
+    "category": {
+      "alias": "category",
+      "id": "category",
+    },
+    "value": {
+      "alias": "value",
+      "id": "value",
+    },
   },
   "colorItems": [
     {
       "alias": "category",
-      "id": "category-category",
+      "id": "category",
     },
     {
       "alias": "value",
-      "id": "value-value",
+      "id": "value",
     },
   ],
   "hasTheme": true,

@@ -544,7 +544,7 @@ exports[`type 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "profit",
@@ -559,7 +559,7 @@ exports[`type 1`] = `
       "profit": 1234.4567,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_Detail__": "sales",
       "__Dim_X__": "sales",
@@ -574,7 +574,7 @@ exports[`type 1`] = `
       "sales": 1234.4567,
     },
     {
-      "__Dim_ColorId__": "count-count",
+      "__Dim_ColorId__": "count",
       "__Dim_Color__": "count",
       "__Dim_Detail__": "count",
       "__Dim_X__": "count",
@@ -613,14 +613,23 @@ exports[`type 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "count-count": "count",
-          "profit-profit": "profit",
-          "sales-sales": "sales",
+          "count": {
+            "alias": "count",
+            "id": "count",
+          },
+          "profit": {
+            "alias": "profit",
+            "id": "profit",
+          },
+          "sales": {
+            "alias": "sales",
+            "id": "sales",
+          },
         },
         "colorItems": [
-          "profit-profit",
-          "sales-sales",
-          "count-count",
+          "profit",
+          "sales",
+          "count",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -633,23 +642,23 @@ exports[`type 1`] = `
   ],
   "dimensions": [
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
     "tooltip": [],
     "x": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "y": [
       "profit",
@@ -758,7 +767,7 @@ exports[`type 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "指标名称",
+        "text": "指标Id",
         "visible": false,
       },
       "type": "band",
@@ -839,9 +848,9 @@ exports[`type 2`] = `
   },
   "color": {
     "domain": [
-      "profit-profit",
-      "sales-sales",
-      "count-count",
+      "profit",
+      "sales",
+      "count",
     ],
     "range": [
       "#8D72F6",
@@ -898,7 +907,7 @@ exports[`type 2`] = `
     "id": "column",
     "values": [
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "profit",
@@ -913,7 +922,7 @@ exports[`type 2`] = `
         "profit": 1234.4567,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "sales",
@@ -928,7 +937,7 @@ exports[`type 2`] = `
         "sales": 1234.4567,
       },
       {
-        "__Dim_ColorId__": "count-count",
+        "__Dim_ColorId__": "count",
         "__Dim_Color__": "count",
         "__Dim_Detail__": "count",
         "__Dim_X__": "count",
@@ -1085,22 +1094,31 @@ exports[`type 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "count-count": "count",
-    "profit-profit": "profit",
-    "sales-sales": "sales",
+    "count": {
+      "alias": "count",
+      "id": "count",
+    },
+    "profit": {
+      "alias": "profit",
+      "id": "profit",
+    },
+    "sales": {
+      "alias": "sales",
+      "id": "sales",
+    },
   },
   "colorItems": [
     {
       "alias": "profit",
-      "id": "profit-profit",
+      "id": "profit",
     },
     {
       "alias": "sales",
-      "id": "sales-sales",
+      "id": "sales",
     },
     {
       "alias": "count",
-      "id": "count-count",
+      "id": "count",
     },
   ],
   "hasTheme": true,

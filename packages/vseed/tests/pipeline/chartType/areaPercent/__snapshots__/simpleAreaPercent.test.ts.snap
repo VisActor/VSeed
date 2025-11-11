@@ -450,7 +450,7 @@ exports[`simpleAreaPercent 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "A-goalProfit-goalProfit",
+      "__Dim_ColorId__": "A-goalProfit",
       "__Dim_Color__": "A-goalProfit",
       "__Dim_X__": "2019",
       "__MeaId__": "goalProfit",
@@ -470,7 +470,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-profit-profit",
+      "__Dim_ColorId__": "A-profit",
       "__Dim_Color__": "A-profit",
       "__Dim_X__": "2019",
       "__MeaId__": "profit",
@@ -490,7 +490,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-sales-sales",
+      "__Dim_ColorId__": "A-sales",
       "__Dim_Color__": "A-sales",
       "__Dim_X__": "2019",
       "__MeaId__": "sales",
@@ -510,7 +510,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-leftCount-leftCount",
+      "__Dim_ColorId__": "A-leftCount",
       "__Dim_Color__": "A-leftCount",
       "__Dim_X__": "2019",
       "__MeaId__": "leftCount",
@@ -530,7 +530,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-salesCount-salesCount",
+      "__Dim_ColorId__": "A-salesCount",
       "__Dim_Color__": "A-salesCount",
       "__Dim_X__": "2019",
       "__MeaId__": "salesCount",
@@ -550,7 +550,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-goalProfit-goalProfit",
+      "__Dim_ColorId__": "A-goalProfit",
       "__Dim_Color__": "A-goalProfit",
       "__Dim_X__": "2020",
       "__MeaId__": "goalProfit",
@@ -570,7 +570,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-profit-profit",
+      "__Dim_ColorId__": "A-profit",
       "__Dim_Color__": "A-profit",
       "__Dim_X__": "2020",
       "__MeaId__": "profit",
@@ -590,7 +590,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-sales-sales",
+      "__Dim_ColorId__": "A-sales",
       "__Dim_Color__": "A-sales",
       "__Dim_X__": "2020",
       "__MeaId__": "sales",
@@ -610,7 +610,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-leftCount-leftCount",
+      "__Dim_ColorId__": "A-leftCount",
       "__Dim_Color__": "A-leftCount",
       "__Dim_X__": "2020",
       "__MeaId__": "leftCount",
@@ -630,7 +630,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-salesCount-salesCount",
+      "__Dim_ColorId__": "A-salesCount",
       "__Dim_Color__": "A-salesCount",
       "__Dim_X__": "2020",
       "__MeaId__": "salesCount",
@@ -650,7 +650,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-goalProfit-goalProfit",
+      "__Dim_ColorId__": "A-goalProfit",
       "__Dim_Color__": "A-goalProfit",
       "__Dim_X__": "2021",
       "__MeaId__": "goalProfit",
@@ -670,7 +670,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-profit-profit",
+      "__Dim_ColorId__": "A-profit",
       "__Dim_Color__": "A-profit",
       "__Dim_X__": "2021",
       "__MeaId__": "profit",
@@ -690,7 +690,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-sales-sales",
+      "__Dim_ColorId__": "A-sales",
       "__Dim_Color__": "A-sales",
       "__Dim_X__": "2021",
       "__MeaId__": "sales",
@@ -710,7 +710,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-leftCount-leftCount",
+      "__Dim_ColorId__": "A-leftCount",
       "__Dim_Color__": "A-leftCount",
       "__Dim_X__": "2021",
       "__MeaId__": "leftCount",
@@ -730,7 +730,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-salesCount-salesCount",
+      "__Dim_ColorId__": "A-salesCount",
       "__Dim_Color__": "A-salesCount",
       "__Dim_X__": "2021",
       "__MeaId__": "salesCount",
@@ -750,7 +750,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-goalProfit-goalProfit",
+      "__Dim_ColorId__": "A-goalProfit",
       "__Dim_Color__": "A-goalProfit",
       "__Dim_X__": "2022",
       "__MeaId__": "goalProfit",
@@ -770,7 +770,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-profit-profit",
+      "__Dim_ColorId__": "A-profit",
       "__Dim_Color__": "A-profit",
       "__Dim_X__": "2022",
       "__MeaId__": "profit",
@@ -790,7 +790,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-sales-sales",
+      "__Dim_ColorId__": "A-sales",
       "__Dim_Color__": "A-sales",
       "__Dim_X__": "2022",
       "__MeaId__": "sales",
@@ -810,7 +810,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-leftCount-leftCount",
+      "__Dim_ColorId__": "A-leftCount",
       "__Dim_Color__": "A-leftCount",
       "__Dim_X__": "2022",
       "__MeaId__": "leftCount",
@@ -830,7 +830,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-salesCount-salesCount",
+      "__Dim_ColorId__": "A-salesCount",
       "__Dim_Color__": "A-salesCount",
       "__Dim_X__": "2022",
       "__MeaId__": "salesCount",
@@ -850,7 +850,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-goalProfit-goalProfit",
+      "__Dim_ColorId__": "A-goalProfit",
       "__Dim_Color__": "A-goalProfit",
       "__Dim_X__": "2023",
       "__MeaId__": "goalProfit",
@@ -870,7 +870,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-profit-profit",
+      "__Dim_ColorId__": "A-profit",
       "__Dim_Color__": "A-profit",
       "__Dim_X__": "2023",
       "__MeaId__": "profit",
@@ -890,7 +890,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-sales-sales",
+      "__Dim_ColorId__": "A-sales",
       "__Dim_Color__": "A-sales",
       "__Dim_X__": "2023",
       "__MeaId__": "sales",
@@ -910,7 +910,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-leftCount-leftCount",
+      "__Dim_ColorId__": "A-leftCount",
       "__Dim_Color__": "A-leftCount",
       "__Dim_X__": "2023",
       "__MeaId__": "leftCount",
@@ -930,7 +930,7 @@ exports[`simpleAreaPercent 1`] = `
       "type": "A",
     },
     {
-      "__Dim_ColorId__": "A-salesCount-salesCount",
+      "__Dim_ColorId__": "A-salesCount",
       "__Dim_Color__": "A-salesCount",
       "__Dim_X__": "2023",
       "__MeaId__": "salesCount",
@@ -976,18 +976,33 @@ exports[`simpleAreaPercent 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "A-goalProfit-goalProfit": "A-goalProfit",
-          "A-leftCount-leftCount": "A-leftCount",
-          "A-profit-profit": "A-profit",
-          "A-sales-sales": "A-sales",
-          "A-salesCount-salesCount": "A-salesCount",
+          "A-goalProfit": {
+            "alias": "A-goalProfit",
+            "id": "A-goalProfit",
+          },
+          "A-leftCount": {
+            "alias": "A-leftCount",
+            "id": "A-leftCount",
+          },
+          "A-profit": {
+            "alias": "A-profit",
+            "id": "A-profit",
+          },
+          "A-sales": {
+            "alias": "A-sales",
+            "id": "A-sales",
+          },
+          "A-salesCount": {
+            "alias": "A-salesCount",
+            "id": "A-salesCount",
+          },
         },
         "colorItems": [
-          "A-goalProfit-goalProfit",
-          "A-profit-profit",
-          "A-sales-sales",
-          "A-leftCount-leftCount",
-          "A-salesCount-salesCount",
+          "A-goalProfit",
+          "A-profit",
+          "A-sales",
+          "A-leftCount",
+          "A-salesCount",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -1008,14 +1023,14 @@ exports[`simpleAreaPercent 1`] = `
       "id": "type",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
       "type",
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [],
@@ -1209,11 +1224,11 @@ exports[`simpleAreaPercent 2`] = `
   "background": "transparent",
   "color": {
     "domain": [
-      "A-goalProfit-goalProfit",
-      "A-profit-profit",
-      "A-sales-sales",
-      "A-leftCount-leftCount",
-      "A-salesCount-salesCount",
+      "A-goalProfit",
+      "A-profit",
+      "A-sales",
+      "A-leftCount",
+      "A-salesCount",
     ],
     "range": [
       "#8D72F6",
@@ -1274,7 +1289,7 @@ exports[`simpleAreaPercent 2`] = `
     "id": "areaPercent",
     "values": [
       {
-        "__Dim_ColorId__": "A-goalProfit-goalProfit",
+        "__Dim_ColorId__": "A-goalProfit",
         "__Dim_Color__": "A-goalProfit",
         "__Dim_X__": "2019",
         "__MeaId__": "goalProfit",
@@ -1294,7 +1309,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-profit-profit",
+        "__Dim_ColorId__": "A-profit",
         "__Dim_Color__": "A-profit",
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
@@ -1314,7 +1329,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-sales-sales",
+        "__Dim_ColorId__": "A-sales",
         "__Dim_Color__": "A-sales",
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
@@ -1334,7 +1349,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-leftCount-leftCount",
+        "__Dim_ColorId__": "A-leftCount",
         "__Dim_Color__": "A-leftCount",
         "__Dim_X__": "2019",
         "__MeaId__": "leftCount",
@@ -1354,7 +1369,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-salesCount-salesCount",
+        "__Dim_ColorId__": "A-salesCount",
         "__Dim_Color__": "A-salesCount",
         "__Dim_X__": "2019",
         "__MeaId__": "salesCount",
@@ -1374,7 +1389,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-goalProfit-goalProfit",
+        "__Dim_ColorId__": "A-goalProfit",
         "__Dim_Color__": "A-goalProfit",
         "__Dim_X__": "2020",
         "__MeaId__": "goalProfit",
@@ -1394,7 +1409,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-profit-profit",
+        "__Dim_ColorId__": "A-profit",
         "__Dim_Color__": "A-profit",
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
@@ -1414,7 +1429,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-sales-sales",
+        "__Dim_ColorId__": "A-sales",
         "__Dim_Color__": "A-sales",
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
@@ -1434,7 +1449,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-leftCount-leftCount",
+        "__Dim_ColorId__": "A-leftCount",
         "__Dim_Color__": "A-leftCount",
         "__Dim_X__": "2020",
         "__MeaId__": "leftCount",
@@ -1454,7 +1469,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-salesCount-salesCount",
+        "__Dim_ColorId__": "A-salesCount",
         "__Dim_Color__": "A-salesCount",
         "__Dim_X__": "2020",
         "__MeaId__": "salesCount",
@@ -1474,7 +1489,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-goalProfit-goalProfit",
+        "__Dim_ColorId__": "A-goalProfit",
         "__Dim_Color__": "A-goalProfit",
         "__Dim_X__": "2021",
         "__MeaId__": "goalProfit",
@@ -1494,7 +1509,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-profit-profit",
+        "__Dim_ColorId__": "A-profit",
         "__Dim_Color__": "A-profit",
         "__Dim_X__": "2021",
         "__MeaId__": "profit",
@@ -1514,7 +1529,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-sales-sales",
+        "__Dim_ColorId__": "A-sales",
         "__Dim_Color__": "A-sales",
         "__Dim_X__": "2021",
         "__MeaId__": "sales",
@@ -1534,7 +1549,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-leftCount-leftCount",
+        "__Dim_ColorId__": "A-leftCount",
         "__Dim_Color__": "A-leftCount",
         "__Dim_X__": "2021",
         "__MeaId__": "leftCount",
@@ -1554,7 +1569,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-salesCount-salesCount",
+        "__Dim_ColorId__": "A-salesCount",
         "__Dim_Color__": "A-salesCount",
         "__Dim_X__": "2021",
         "__MeaId__": "salesCount",
@@ -1574,7 +1589,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-goalProfit-goalProfit",
+        "__Dim_ColorId__": "A-goalProfit",
         "__Dim_Color__": "A-goalProfit",
         "__Dim_X__": "2022",
         "__MeaId__": "goalProfit",
@@ -1594,7 +1609,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-profit-profit",
+        "__Dim_ColorId__": "A-profit",
         "__Dim_Color__": "A-profit",
         "__Dim_X__": "2022",
         "__MeaId__": "profit",
@@ -1614,7 +1629,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-sales-sales",
+        "__Dim_ColorId__": "A-sales",
         "__Dim_Color__": "A-sales",
         "__Dim_X__": "2022",
         "__MeaId__": "sales",
@@ -1634,7 +1649,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-leftCount-leftCount",
+        "__Dim_ColorId__": "A-leftCount",
         "__Dim_Color__": "A-leftCount",
         "__Dim_X__": "2022",
         "__MeaId__": "leftCount",
@@ -1654,7 +1669,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-salesCount-salesCount",
+        "__Dim_ColorId__": "A-salesCount",
         "__Dim_Color__": "A-salesCount",
         "__Dim_X__": "2022",
         "__MeaId__": "salesCount",
@@ -1674,7 +1689,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-goalProfit-goalProfit",
+        "__Dim_ColorId__": "A-goalProfit",
         "__Dim_Color__": "A-goalProfit",
         "__Dim_X__": "2023",
         "__MeaId__": "goalProfit",
@@ -1694,7 +1709,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-profit-profit",
+        "__Dim_ColorId__": "A-profit",
         "__Dim_Color__": "A-profit",
         "__Dim_X__": "2023",
         "__MeaId__": "profit",
@@ -1714,7 +1729,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-sales-sales",
+        "__Dim_ColorId__": "A-sales",
         "__Dim_Color__": "A-sales",
         "__Dim_X__": "2023",
         "__MeaId__": "sales",
@@ -1734,7 +1749,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-leftCount-leftCount",
+        "__Dim_ColorId__": "A-leftCount",
         "__Dim_Color__": "A-leftCount",
         "__Dim_X__": "2023",
         "__MeaId__": "leftCount",
@@ -1754,7 +1769,7 @@ exports[`simpleAreaPercent 2`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-salesCount-salesCount",
+        "__Dim_ColorId__": "A-salesCount",
         "__Dim_Color__": "A-salesCount",
         "__Dim_X__": "2023",
         "__MeaId__": "salesCount",
@@ -1946,32 +1961,47 @@ exports[`simpleAreaPercent 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "A-goalProfit-goalProfit": "A-goalProfit",
-    "A-leftCount-leftCount": "A-leftCount",
-    "A-profit-profit": "A-profit",
-    "A-sales-sales": "A-sales",
-    "A-salesCount-salesCount": "A-salesCount",
+    "A-goalProfit": {
+      "alias": "A-goalProfit",
+      "id": "A-goalProfit",
+    },
+    "A-leftCount": {
+      "alias": "A-leftCount",
+      "id": "A-leftCount",
+    },
+    "A-profit": {
+      "alias": "A-profit",
+      "id": "A-profit",
+    },
+    "A-sales": {
+      "alias": "A-sales",
+      "id": "A-sales",
+    },
+    "A-salesCount": {
+      "alias": "A-salesCount",
+      "id": "A-salesCount",
+    },
   },
   "colorItems": [
     {
       "alias": "A-goalProfit",
-      "id": "A-goalProfit-goalProfit",
+      "id": "A-goalProfit",
     },
     {
       "alias": "A-profit",
-      "id": "A-profit-profit",
+      "id": "A-profit",
     },
     {
       "alias": "A-sales",
-      "id": "A-sales-sales",
+      "id": "A-sales",
     },
     {
       "alias": "A-leftCount",
-      "id": "A-leftCount-leftCount",
+      "id": "A-leftCount",
     },
     {
       "alias": "A-salesCount",
-      "id": "A-salesCount-salesCount",
+      "id": "A-salesCount",
     },
   ],
   "hasTheme": true,

@@ -472,7 +472,7 @@ exports[`emptyBarStyle 1`] = `
       {
         "__Dim_ColorId__": "co_20250914131915_8e38",
         "__Dim_Color__": "7642",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "yA_20250914131844_6718",
         "__Dim_X__": "技术",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
@@ -489,7 +489,7 @@ exports[`emptyBarStyle 1`] = `
       {
         "__Dim_ColorId__": "co_20250914131915_8e38",
         "__Dim_Color__": "21401",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "yA_20250914131844_6718",
         "__Dim_X__": "办公用品",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
@@ -506,7 +506,7 @@ exports[`emptyBarStyle 1`] = `
       {
         "__Dim_ColorId__": "co_20250914131915_8e38",
         "__Dim_Color__": "8491",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "yA_20250914131844_6718",
         "__Dim_X__": "家具",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
@@ -565,17 +565,22 @@ exports[`emptyBarStyle 1`] = `
       "alias": "指标名称",
       "id": "__MeaName__",
     },
+    {
+      "alias": "指标Id",
+      "id": "__MeaId__",
+    },
   ],
   "encoding": {
     "color": [
       "co_20250914131915_8e38",
     ],
     "detail": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "tooltip": [
       "xA_20250914131841_3aa1",
+      "__MeaName__",
     ],
     "x": [
       "xA_20250914131841_3aa1",
@@ -912,6 +917,13 @@ exports[`emptyBarStyle 2`] = `
                 "value": [Function],
                 "visible": true,
               },
+              {
+                "hasShape": true,
+                "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
             ],
             "title": {
               "visible": false,
@@ -966,7 +978,7 @@ exports[`emptyBarStyle 2`] = `
       {
         "__Dim_ColorId__": "co_20250914131915_8e38",
         "__Dim_Color__": "7642",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "yA_20250914131844_6718",
         "__Dim_X__": "技术",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
@@ -983,7 +995,7 @@ exports[`emptyBarStyle 2`] = `
       {
         "__Dim_ColorId__": "co_20250914131915_8e38",
         "__Dim_Color__": "21401",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "yA_20250914131844_6718",
         "__Dim_X__": "办公用品",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
@@ -1000,7 +1012,7 @@ exports[`emptyBarStyle 2`] = `
       {
         "__Dim_ColorId__": "co_20250914131915_8e38",
         "__Dim_Color__": "8491",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "yA_20250914131844_6718",
         "__Dim_X__": "家具",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",

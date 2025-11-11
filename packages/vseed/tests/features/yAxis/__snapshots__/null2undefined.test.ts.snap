@@ -482,8 +482,8 @@ exports[`null2undefined 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-01-02",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -496,8 +496,8 @@ exports[`null2undefined 1`] = `
       "price": 89,
     },
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-01-16",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -510,8 +510,8 @@ exports[`null2undefined 1`] = `
       "price": 84.79,
     },
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-02-01",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -524,8 +524,8 @@ exports[`null2undefined 1`] = `
       "price": 88.65,
     },
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-02-15",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -538,8 +538,8 @@ exports[`null2undefined 1`] = `
       "price": 94.5,
     },
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-02-29",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -552,8 +552,8 @@ exports[`null2undefined 1`] = `
       "price": 63.18,
     },
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-03-15",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -566,8 +566,8 @@ exports[`null2undefined 1`] = `
       "price": 63.99,
     },
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-04-01",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -580,8 +580,8 @@ exports[`null2undefined 1`] = `
       "price": 64.19,
     },
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-04-15",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -594,8 +594,8 @@ exports[`null2undefined 1`] = `
       "price": 58.94,
     },
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-05-01",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -608,8 +608,8 @@ exports[`null2undefined 1`] = `
       "price": 59.13,
     },
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-05-15",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -622,8 +622,8 @@ exports[`null2undefined 1`] = `
       "price": 62.27,
     },
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-06-03",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -636,8 +636,8 @@ exports[`null2undefined 1`] = `
       "price": 57.94,
     },
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-06-17",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -650,8 +650,8 @@ exports[`null2undefined 1`] = `
       "price": 53.97,
     },
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-07-01",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -664,8 +664,8 @@ exports[`null2undefined 1`] = `
       "price": 62.47,
     },
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-07-15",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -678,8 +678,8 @@ exports[`null2undefined 1`] = `
       "price": 62.44,
     },
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-08-01",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -692,8 +692,8 @@ exports[`null2undefined 1`] = `
       "price": 55.33,
     },
     {
-      "__Dim_ColorId__": "股价（美元）-price",
-      "__Dim_Color__": "股价（美元）",
+      "__Dim_ColorId__": "price",
+      "__Dim_Color__": "price",
       "__Dim_X__": "2024-08-11",
       "__MeaId__": "price",
       "__MeaName__": "股价（美元）",
@@ -728,10 +728,13 @@ exports[`null2undefined 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "股价（美元）-price": "股价（美元）",
+          "price": {
+            "alias": "股价（美元）",
+            "id": "price",
+          },
         },
         "colorItems": [
-          "股价（美元）-price",
+          "price",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -748,13 +751,13 @@ exports[`null2undefined 1`] = `
       "id": "date",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [],
@@ -932,13 +935,13 @@ exports[`null2undefined 2`] = `
   "background": "transparent",
   "color": {
     "domain": [
-      "股价（美元）-price",
+      "price",
     ],
     "range": [
       "#0000FF",
     ],
     "specified": {
-      "股价（美元）-price": "#FF5733",
+      "price": "#FF5733",
     },
     "type": "ordinal",
   },
@@ -986,8 +989,8 @@ exports[`null2undefined 2`] = `
     "id": "line",
     "values": [
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-01-02",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1000,8 +1003,8 @@ exports[`null2undefined 2`] = `
         "price": 89,
       },
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-01-16",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1014,8 +1017,8 @@ exports[`null2undefined 2`] = `
         "price": 84.79,
       },
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-02-01",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1028,8 +1031,8 @@ exports[`null2undefined 2`] = `
         "price": 88.65,
       },
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-02-15",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1042,8 +1045,8 @@ exports[`null2undefined 2`] = `
         "price": 94.5,
       },
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-02-29",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1056,8 +1059,8 @@ exports[`null2undefined 2`] = `
         "price": 63.18,
       },
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-03-15",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1070,8 +1073,8 @@ exports[`null2undefined 2`] = `
         "price": 63.99,
       },
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-04-01",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1084,8 +1087,8 @@ exports[`null2undefined 2`] = `
         "price": 64.19,
       },
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-04-15",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1098,8 +1101,8 @@ exports[`null2undefined 2`] = `
         "price": 58.94,
       },
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-05-01",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1112,8 +1115,8 @@ exports[`null2undefined 2`] = `
         "price": 59.13,
       },
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-05-15",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1126,8 +1129,8 @@ exports[`null2undefined 2`] = `
         "price": 62.27,
       },
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-06-03",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1140,8 +1143,8 @@ exports[`null2undefined 2`] = `
         "price": 57.94,
       },
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-06-17",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1154,8 +1157,8 @@ exports[`null2undefined 2`] = `
         "price": 53.97,
       },
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-07-01",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1168,8 +1171,8 @@ exports[`null2undefined 2`] = `
         "price": 62.47,
       },
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-07-15",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1182,8 +1185,8 @@ exports[`null2undefined 2`] = `
         "price": 62.44,
       },
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-08-01",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1196,8 +1199,8 @@ exports[`null2undefined 2`] = `
         "price": 55.33,
       },
       {
-        "__Dim_ColorId__": "股价（美元）-price",
-        "__Dim_Color__": "股价（美元）",
+        "__Dim_ColorId__": "price",
+        "__Dim_Color__": "price",
         "__Dim_X__": "2024-08-11",
         "__MeaId__": "price",
         "__MeaName__": "股价（美元）",
@@ -1522,12 +1525,15 @@ exports[`null2undefined 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "股价（美元）-price": "股价（美元）",
+    "price": {
+      "alias": "股价（美元）",
+      "id": "price",
+    },
   },
   "colorItems": [
     {
       "alias": "股价（美元）",
-      "id": "股价（美元）-price",
+      "id": "price",
     },
   ],
   "hasTheme": true,

@@ -523,9 +523,9 @@ exports[`5_onlyPrimaryYAxis 1`] = `
   "dataset": [
     [
       {
-        "__Dim_ColorId__": "利润-profit",
-        "__Dim_Color__": "利润",
-        "__Dim_Detail__": "利润",
+        "__Dim_ColorId__": "profit",
+        "__Dim_Color__": "profit",
+        "__Dim_Detail__": "profit",
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -541,7 +541,7 @@ exports[`5_onlyPrimaryYAxis 1`] = `
         "profit": 100,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "2019",
@@ -559,9 +559,9 @@ exports[`5_onlyPrimaryYAxis 1`] = `
         "sales": 200,
       },
       {
-        "__Dim_ColorId__": "利润-profit",
-        "__Dim_Color__": "利润",
-        "__Dim_Detail__": "利润",
+        "__Dim_ColorId__": "profit",
+        "__Dim_Color__": "profit",
+        "__Dim_Detail__": "profit",
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -577,7 +577,7 @@ exports[`5_onlyPrimaryYAxis 1`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "2020",
@@ -595,9 +595,9 @@ exports[`5_onlyPrimaryYAxis 1`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "利润-profit",
-        "__Dim_Color__": "利润",
-        "__Dim_Detail__": "利润",
+        "__Dim_ColorId__": "profit",
+        "__Dim_Color__": "profit",
+        "__Dim_Detail__": "profit",
         "__Dim_X__": "2021",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -613,7 +613,7 @@ exports[`5_onlyPrimaryYAxis 1`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "2021",
@@ -631,9 +631,9 @@ exports[`5_onlyPrimaryYAxis 1`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "利润-profit",
-        "__Dim_Color__": "利润",
-        "__Dim_Detail__": "利润",
+        "__Dim_ColorId__": "profit",
+        "__Dim_Color__": "profit",
+        "__Dim_Detail__": "profit",
         "__Dim_X__": "2022",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -649,7 +649,7 @@ exports[`5_onlyPrimaryYAxis 1`] = `
         "profit": 50,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "2022",
@@ -667,9 +667,9 @@ exports[`5_onlyPrimaryYAxis 1`] = `
         "sales": 100,
       },
       {
-        "__Dim_ColorId__": "利润-profit",
-        "__Dim_Color__": "利润",
-        "__Dim_Detail__": "利润",
+        "__Dim_ColorId__": "profit",
+        "__Dim_Color__": "profit",
+        "__Dim_Detail__": "profit",
         "__Dim_X__": "2023",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
@@ -685,7 +685,7 @@ exports[`5_onlyPrimaryYAxis 1`] = `
         "profit": 40,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "2023",
@@ -761,12 +761,18 @@ exports[`5_onlyPrimaryYAxis 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "sales-sales": "sales",
-          "利润-profit": "利润",
+          "profit": {
+            "alias": "利润",
+            "id": "profit",
+          },
+          "sales": {
+            "alias": "sales",
+            "id": "sales",
+          },
         },
         "colorItems": [
-          "利润-profit",
-          "sales-sales",
+          "profit",
+          "sales",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -783,17 +789,17 @@ exports[`5_onlyPrimaryYAxis 1`] = `
       "id": "date",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
@@ -1041,8 +1047,8 @@ exports[`5_onlyPrimaryYAxis 2`] = `
   "background": "transparent",
   "color": {
     "domain": [
-      "利润-profit",
-      "sales-sales",
+      "profit",
+      "sales",
     ],
     "range": [
       "#8D72F6",
@@ -1176,9 +1182,9 @@ exports[`5_onlyPrimaryYAxis 2`] = `
         "id": "dualAxis-primary-dataset",
         "values": [
           {
-            "__Dim_ColorId__": "利润-profit",
-            "__Dim_Color__": "利润",
-            "__Dim_Detail__": "利润",
+            "__Dim_ColorId__": "profit",
+            "__Dim_Color__": "profit",
+            "__Dim_Detail__": "profit",
             "__Dim_X__": "2019",
             "__MeaId__": "profit",
             "__MeaName__": "利润",
@@ -1194,7 +1200,7 @@ exports[`5_onlyPrimaryYAxis 2`] = `
             "profit": 100,
           },
           {
-            "__Dim_ColorId__": "sales-sales",
+            "__Dim_ColorId__": "sales",
             "__Dim_Color__": "sales",
             "__Dim_Detail__": "sales",
             "__Dim_X__": "2019",
@@ -1212,9 +1218,9 @@ exports[`5_onlyPrimaryYAxis 2`] = `
             "sales": 200,
           },
           {
-            "__Dim_ColorId__": "利润-profit",
-            "__Dim_Color__": "利润",
-            "__Dim_Detail__": "利润",
+            "__Dim_ColorId__": "profit",
+            "__Dim_Color__": "profit",
+            "__Dim_Detail__": "profit",
             "__Dim_X__": "2020",
             "__MeaId__": "profit",
             "__MeaName__": "利润",
@@ -1230,7 +1236,7 @@ exports[`5_onlyPrimaryYAxis 2`] = `
             "profit": 30,
           },
           {
-            "__Dim_ColorId__": "sales-sales",
+            "__Dim_ColorId__": "sales",
             "__Dim_Color__": "sales",
             "__Dim_Detail__": "sales",
             "__Dim_X__": "2020",
@@ -1248,9 +1254,9 @@ exports[`5_onlyPrimaryYAxis 2`] = `
             "sales": 60,
           },
           {
-            "__Dim_ColorId__": "利润-profit",
-            "__Dim_Color__": "利润",
-            "__Dim_Detail__": "利润",
+            "__Dim_ColorId__": "profit",
+            "__Dim_Color__": "profit",
+            "__Dim_Detail__": "profit",
             "__Dim_X__": "2021",
             "__MeaId__": "profit",
             "__MeaName__": "利润",
@@ -1266,7 +1272,7 @@ exports[`5_onlyPrimaryYAxis 2`] = `
             "profit": 30,
           },
           {
-            "__Dim_ColorId__": "sales-sales",
+            "__Dim_ColorId__": "sales",
             "__Dim_Color__": "sales",
             "__Dim_Detail__": "sales",
             "__Dim_X__": "2021",
@@ -1284,9 +1290,9 @@ exports[`5_onlyPrimaryYAxis 2`] = `
             "sales": 60,
           },
           {
-            "__Dim_ColorId__": "利润-profit",
-            "__Dim_Color__": "利润",
-            "__Dim_Detail__": "利润",
+            "__Dim_ColorId__": "profit",
+            "__Dim_Color__": "profit",
+            "__Dim_Detail__": "profit",
             "__Dim_X__": "2022",
             "__MeaId__": "profit",
             "__MeaName__": "利润",
@@ -1302,7 +1308,7 @@ exports[`5_onlyPrimaryYAxis 2`] = `
             "profit": 50,
           },
           {
-            "__Dim_ColorId__": "sales-sales",
+            "__Dim_ColorId__": "sales",
             "__Dim_Color__": "sales",
             "__Dim_Detail__": "sales",
             "__Dim_X__": "2022",
@@ -1320,9 +1326,9 @@ exports[`5_onlyPrimaryYAxis 2`] = `
             "sales": 100,
           },
           {
-            "__Dim_ColorId__": "利润-profit",
-            "__Dim_Color__": "利润",
-            "__Dim_Detail__": "利润",
+            "__Dim_ColorId__": "profit",
+            "__Dim_Color__": "profit",
+            "__Dim_Detail__": "profit",
             "__Dim_X__": "2023",
             "__MeaId__": "profit",
             "__MeaName__": "利润",
@@ -1338,7 +1344,7 @@ exports[`5_onlyPrimaryYAxis 2`] = `
             "profit": 40,
           },
           {
-            "__Dim_ColorId__": "sales-sales",
+            "__Dim_ColorId__": "sales",
             "__Dim_Color__": "sales",
             "__Dim_Detail__": "sales",
             "__Dim_X__": "2023",
@@ -1582,17 +1588,23 @@ exports[`5_onlyPrimaryYAxis 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "sales-sales": "sales",
-    "利润-profit": "利润",
+    "profit": {
+      "alias": "利润",
+      "id": "profit",
+    },
+    "sales": {
+      "alias": "sales",
+      "id": "sales",
+    },
   },
   "colorItems": [
     {
       "alias": "利润",
-      "id": "利润-profit",
+      "id": "profit",
     },
     {
       "alias": "sales",
-      "id": "sales-sales",
+      "id": "sales",
     },
   ],
   "hasTheme": true,

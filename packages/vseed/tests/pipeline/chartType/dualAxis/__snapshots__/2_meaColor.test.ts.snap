@@ -1028,6 +1028,10 @@ exports[`2_meaColor 1`] = `
       "encoding": "detail",
       "id": "__MeaName__",
     },
+    {
+      "alias": "指标Id",
+      "id": "__MeaId__",
+    },
   ],
   "encoding": {
     "color": [
@@ -1041,6 +1045,7 @@ exports[`2_meaColor 1`] = `
     "tooltip": [
       "date",
       "type",
+      "__MeaName__",
     ],
     "x": [
       "type",
@@ -1697,6 +1702,13 @@ exports[`2_meaColor 2`] = `
               "value": [Function],
               "visible": true,
             },
+            {
+              "hasShape": true,
+              "key": [Function],
+              "shapeType": "rectRound",
+              "value": [Function],
+              "visible": true,
+            },
           ],
           "title": {
             "visible": false,
@@ -2029,6 +2041,13 @@ exports[`2_meaColor 2`] = `
         },
         "mark": {
           "content": [
+            {
+              "hasShape": true,
+              "key": [Function],
+              "shapeType": "rectRound",
+              "value": [Function],
+              "visible": true,
+            },
             {
               "hasShape": true,
               "key": [Function],

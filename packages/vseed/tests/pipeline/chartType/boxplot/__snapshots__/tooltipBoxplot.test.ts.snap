@@ -435,7 +435,7 @@ exports[`tooltipBoxplot 1`] = `
   "dataset": [
     {
       "Sex": "male",
-      "__Dim_ColorId__": "Age-Age",
+      "__Dim_ColorId__": "Age",
       "__Dim_Color__": "Age",
       "__Dim_X__": "male",
       "__Max__": 20,
@@ -454,7 +454,7 @@ exports[`tooltipBoxplot 1`] = `
     },
     {
       "Sex": "female",
-      "__Dim_ColorId__": "Age-Age",
+      "__Dim_ColorId__": "Age",
       "__Dim_Color__": "Age",
       "__Dim_X__": "female",
       "__Max__": 40,
@@ -479,10 +479,13 @@ exports[`tooltipBoxplot 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "Age-Age": "Age",
+          "Age": {
+            "alias": "Age",
+            "id": "Age",
+          },
         },
         "colorItems": [
-          "Age-Age",
+          "Age",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -500,13 +503,13 @@ exports[`tooltipBoxplot 1`] = `
       "id": "Sex",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "max": [],
@@ -687,7 +690,7 @@ exports[`tooltipBoxplot 2`] = `
   },
   "color": {
     "domain": [
-      "Age-Age",
+      "Age",
     ],
     "range": [
       "#8D72F6",
@@ -735,7 +738,7 @@ exports[`tooltipBoxplot 2`] = `
     "values": [
       {
         "Sex": "male",
-        "__Dim_ColorId__": "Age-Age",
+        "__Dim_ColorId__": "Age",
         "__Dim_Color__": "Age",
         "__Dim_X__": "male",
         "__Max__": 20,
@@ -754,7 +757,7 @@ exports[`tooltipBoxplot 2`] = `
       },
       {
         "Sex": "female",
-        "__Dim_ColorId__": "Age-Age",
+        "__Dim_ColorId__": "Age",
         "__Dim_Color__": "Age",
         "__Dim_X__": "female",
         "__Max__": 40,
@@ -944,12 +947,15 @@ exports[`tooltipBoxplot 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "Age-Age": "Age",
+    "Age": {
+      "alias": "Age",
+      "id": "Age",
+    },
   },
   "colorItems": [
     {
       "alias": "Age",
-      "id": "Age-Age",
+      "id": "Age",
     },
   ],
   "hasTheme": true,

@@ -436,7 +436,7 @@ exports[`simpleBoxplot 1`] = `
     {
       "Sex": "male",
       "Survived": 0,
-      "__Dim_ColorId__": "male-Age",
+      "__Dim_ColorId__": "male",
       "__Dim_Color__": "male",
       "__Dim_X__": "0",
       "__Max__": 55,
@@ -458,7 +458,7 @@ exports[`simpleBoxplot 1`] = `
     {
       "Sex": "female",
       "Survived": 1,
-      "__Dim_ColorId__": "female-Age",
+      "__Dim_ColorId__": "female",
       "__Dim_Color__": "female",
       "__Dim_X__": "1",
       "__Max__": 55,
@@ -478,7 +478,7 @@ exports[`simpleBoxplot 1`] = `
     {
       "Sex": "female",
       "Survived": 0,
-      "__Dim_ColorId__": "female-Age",
+      "__Dim_ColorId__": "female",
       "__Dim_Color__": "female",
       "__Dim_X__": "0",
       "__Max__": 45,
@@ -498,7 +498,7 @@ exports[`simpleBoxplot 1`] = `
     {
       "Sex": "male",
       "Survived": 1,
-      "__Dim_ColorId__": "male-Age",
+      "__Dim_ColorId__": "male",
       "__Dim_Color__": "male",
       "__Dim_X__": "1",
       "__Max__": 6,
@@ -523,12 +523,18 @@ exports[`simpleBoxplot 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "female-Age": "female",
-          "male-Age": "male",
+          "female": {
+            "alias": "female",
+            "id": "female",
+          },
+          "male": {
+            "alias": "male",
+            "id": "male",
+          },
         },
         "colorItems": [
-          "male-Age",
-          "female-Age",
+          "male",
+          "female",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -551,8 +557,8 @@ exports[`simpleBoxplot 1`] = `
       "id": "Sex",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
@@ -739,8 +745,8 @@ exports[`simpleBoxplot 2`] = `
   },
   "color": {
     "domain": [
-      "male-Age",
-      "female-Age",
+      "male",
+      "female",
     ],
     "range": [
       "#8D72F6",
@@ -789,7 +795,7 @@ exports[`simpleBoxplot 2`] = `
       {
         "Sex": "male",
         "Survived": 0,
-        "__Dim_ColorId__": "male-Age",
+        "__Dim_ColorId__": "male",
         "__Dim_Color__": "male",
         "__Dim_X__": "0",
         "__Max__": 55,
@@ -811,7 +817,7 @@ exports[`simpleBoxplot 2`] = `
       {
         "Sex": "female",
         "Survived": 1,
-        "__Dim_ColorId__": "female-Age",
+        "__Dim_ColorId__": "female",
         "__Dim_Color__": "female",
         "__Dim_X__": "1",
         "__Max__": 55,
@@ -831,7 +837,7 @@ exports[`simpleBoxplot 2`] = `
       {
         "Sex": "female",
         "Survived": 0,
-        "__Dim_ColorId__": "female-Age",
+        "__Dim_ColorId__": "female",
         "__Dim_Color__": "female",
         "__Dim_X__": "0",
         "__Max__": 45,
@@ -851,7 +857,7 @@ exports[`simpleBoxplot 2`] = `
       {
         "Sex": "male",
         "Survived": 1,
-        "__Dim_ColorId__": "male-Age",
+        "__Dim_ColorId__": "male",
         "__Dim_Color__": "male",
         "__Dim_X__": "1",
         "__Max__": 6,
@@ -1049,17 +1055,23 @@ exports[`simpleBoxplot 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "female-Age": "female",
-    "male-Age": "male",
+    "female": {
+      "alias": "female",
+      "id": "female",
+    },
+    "male": {
+      "alias": "male",
+      "id": "male",
+    },
   },
   "colorItems": [
     {
       "alias": "male",
-      "id": "male-Age",
+      "id": "male",
     },
     {
       "alias": "female",
-      "id": "female-Age",
+      "id": "female",
     },
   ],
   "hasTheme": true,

@@ -553,7 +553,7 @@ exports[`basic 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "a-profit-profit",
+      "__Dim_ColorId__": "a-profit",
       "__Dim_Color__": "a-profit",
       "__Dim_Detail__": "a-profit",
       "__Dim_X__": "2023",
@@ -570,7 +570,7 @@ exports[`basic 1`] = `
       "type": "a",
     },
     {
-      "__Dim_ColorId__": "b-profit-profit",
+      "__Dim_ColorId__": "b-profit",
       "__Dim_Color__": "b-profit",
       "__Dim_Detail__": "b-profit",
       "__Dim_X__": "2022",
@@ -587,7 +587,7 @@ exports[`basic 1`] = `
       "type": "b",
     },
     {
-      "__Dim_ColorId__": "a-profit-profit",
+      "__Dim_ColorId__": "a-profit",
       "__Dim_Color__": "a-profit",
       "__Dim_Detail__": "a-profit",
       "__Dim_X__": "2021",
@@ -604,7 +604,7 @@ exports[`basic 1`] = `
       "type": "a",
     },
     {
-      "__Dim_ColorId__": "a-profit-profit",
+      "__Dim_ColorId__": "a-profit",
       "__Dim_Color__": "a-profit",
       "__Dim_Detail__": "a-profit",
       "__Dim_X__": "2020",
@@ -621,7 +621,7 @@ exports[`basic 1`] = `
       "type": "a",
     },
     {
-      "__Dim_ColorId__": "b-profit-profit",
+      "__Dim_ColorId__": "b-profit",
       "__Dim_Color__": "b-profit",
       "__Dim_Detail__": "b-profit",
       "__Dim_X__": "2019",
@@ -660,12 +660,18 @@ exports[`basic 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "a-profit-profit": "a-profit",
-          "b-profit-profit": "b-profit",
+          "a-profit": {
+            "alias": "a-profit",
+            "id": "a-profit",
+          },
+          "b-profit": {
+            "alias": "b-profit",
+            "id": "b-profit",
+          },
         },
         "colorItems": [
-          "a-profit-profit",
-          "b-profit-profit",
+          "a-profit",
+          "b-profit",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -686,19 +692,19 @@ exports[`basic 1`] = `
       "id": "type",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
       "type",
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
       "type",
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
@@ -878,8 +884,8 @@ exports[`basic 2`] = `
   },
   "color": {
     "domain": [
-      "a-profit-profit",
-      "b-profit-profit",
+      "a-profit",
+      "b-profit",
     ],
     "range": [
       "#8D72F6",
@@ -936,7 +942,7 @@ exports[`basic 2`] = `
     "id": "column",
     "values": [
       {
-        "__Dim_ColorId__": "a-profit-profit",
+        "__Dim_ColorId__": "a-profit",
         "__Dim_Color__": "a-profit",
         "__Dim_Detail__": "a-profit",
         "__Dim_X__": "2023",
@@ -953,7 +959,7 @@ exports[`basic 2`] = `
         "type": "a",
       },
       {
-        "__Dim_ColorId__": "b-profit-profit",
+        "__Dim_ColorId__": "b-profit",
         "__Dim_Color__": "b-profit",
         "__Dim_Detail__": "b-profit",
         "__Dim_X__": "2022",
@@ -970,7 +976,7 @@ exports[`basic 2`] = `
         "type": "b",
       },
       {
-        "__Dim_ColorId__": "a-profit-profit",
+        "__Dim_ColorId__": "a-profit",
         "__Dim_Color__": "a-profit",
         "__Dim_Detail__": "a-profit",
         "__Dim_X__": "2021",
@@ -987,7 +993,7 @@ exports[`basic 2`] = `
         "type": "a",
       },
       {
-        "__Dim_ColorId__": "a-profit-profit",
+        "__Dim_ColorId__": "a-profit",
         "__Dim_Color__": "a-profit",
         "__Dim_Detail__": "a-profit",
         "__Dim_X__": "2020",
@@ -1004,7 +1010,7 @@ exports[`basic 2`] = `
         "type": "a",
       },
       {
-        "__Dim_ColorId__": "b-profit-profit",
+        "__Dim_ColorId__": "b-profit",
         "__Dim_Color__": "b-profit",
         "__Dim_Detail__": "b-profit",
         "__Dim_X__": "2019",
@@ -1177,17 +1183,23 @@ exports[`basic 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "a-profit-profit": "a-profit",
-    "b-profit-profit": "b-profit",
+    "a-profit": {
+      "alias": "a-profit",
+      "id": "a-profit",
+    },
+    "b-profit": {
+      "alias": "b-profit",
+      "id": "b-profit",
+    },
   },
   "colorItems": [
     {
       "alias": "a-profit",
-      "id": "a-profit-profit",
+      "id": "a-profit",
     },
     {
       "alias": "b-profit",
-      "id": "b-profit-profit",
+      "id": "b-profit",
     },
   ],
   "hasTheme": true,

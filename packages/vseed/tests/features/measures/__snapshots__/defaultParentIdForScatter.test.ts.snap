@@ -735,8 +735,8 @@ exports[`defaultParentIdForScatter 1`] = `
       "id": "xA_20250914131841_3aa1",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {

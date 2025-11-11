@@ -465,9 +465,9 @@ exports[`defaultParentId 1`] = `
   "dataset": [
     [
       {
-        "__Dim_ColorId__": "sum(amount)-co_20250914131915_8e38",
-        "__Dim_Color__": "sum(amount)",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_ColorId__": "co_20250914131915_8e38",
+        "__Dim_Color__": "co_20250914131915_8e38",
+        "__Dim_Detail__": "co_20250914131915_8e38",
         "__Dim_X__": "技术",
         "__MeaId__": "co_20250914131915_8e38",
         "__MeaName__": "sum(amount)",
@@ -481,9 +481,9 @@ exports[`defaultParentId 1`] = `
         "xA_20250914131841_3aa1": "技术",
       },
       {
-        "__Dim_ColorId__": "sum(amount)-co_20250914131915_8e38",
-        "__Dim_Color__": "sum(amount)",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_ColorId__": "co_20250914131915_8e38",
+        "__Dim_Color__": "co_20250914131915_8e38",
+        "__Dim_Detail__": "co_20250914131915_8e38",
         "__Dim_X__": "办公用品",
         "__MeaId__": "co_20250914131915_8e38",
         "__MeaName__": "sum(amount)",
@@ -497,9 +497,9 @@ exports[`defaultParentId 1`] = `
         "xA_20250914131841_3aa1": "办公用品",
       },
       {
-        "__Dim_ColorId__": "sum(amount)-co_20250914131915_8e38",
-        "__Dim_Color__": "sum(amount)",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_ColorId__": "co_20250914131915_8e38",
+        "__Dim_Color__": "co_20250914131915_8e38",
+        "__Dim_Detail__": "co_20250914131915_8e38",
         "__Dim_X__": "家具",
         "__MeaId__": "co_20250914131915_8e38",
         "__MeaName__": "sum(amount)",
@@ -515,9 +515,9 @@ exports[`defaultParentId 1`] = `
     ],
     [
       {
-        "__Dim_ColorId__": "sum(amount)-yA_20250914131844_6718",
-        "__Dim_Color__": "sum(amount)",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_ColorId__": "yA_20250914131844_6718",
+        "__Dim_Color__": "yA_20250914131844_6718",
+        "__Dim_Detail__": "yA_20250914131844_6718",
         "__Dim_X__": "技术",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
@@ -531,9 +531,9 @@ exports[`defaultParentId 1`] = `
         "yA_20250914131844_6718": "7642",
       },
       {
-        "__Dim_ColorId__": "sum(amount)-yA_20250914131844_6718",
-        "__Dim_Color__": "sum(amount)",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_ColorId__": "yA_20250914131844_6718",
+        "__Dim_Color__": "yA_20250914131844_6718",
+        "__Dim_Detail__": "yA_20250914131844_6718",
         "__Dim_X__": "办公用品",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
@@ -547,9 +547,9 @@ exports[`defaultParentId 1`] = `
         "yA_20250914131844_6718": "21401",
       },
       {
-        "__Dim_ColorId__": "sum(amount)-yA_20250914131844_6718",
-        "__Dim_Color__": "sum(amount)",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_ColorId__": "yA_20250914131844_6718",
+        "__Dim_Color__": "yA_20250914131844_6718",
+        "__Dim_Detail__": "yA_20250914131844_6718",
         "__Dim_X__": "家具",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
@@ -586,10 +586,13 @@ exports[`defaultParentId 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "sum(amount)-co_20250914131915_8e38": "sum(amount)",
+          "co_20250914131915_8e38": {
+            "alias": "sum(amount)",
+            "id": "co_20250914131915_8e38",
+          },
         },
         "colorItems": [
-          "sum(amount)-co_20250914131915_8e38",
+          "co_20250914131915_8e38",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -620,10 +623,13 @@ exports[`defaultParentId 1`] = `
       "index": 1,
       "unfoldInfo": {
         "colorIdMap": {
-          "sum(amount)-yA_20250914131844_6718": "sum(amount)",
+          "yA_20250914131844_6718": {
+            "alias": "sum(amount)",
+            "id": "yA_20250914131844_6718",
+          },
         },
         "colorItems": [
-          "sum(amount)-yA_20250914131844_6718",
+          "yA_20250914131844_6718",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -645,17 +651,22 @@ exports[`defaultParentId 1`] = `
       "alias": "指标名称",
       "id": "__MeaName__",
     },
+    {
+      "alias": "指标Id",
+      "id": "__MeaId__",
+    },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "detail": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "tooltip": [
       "xA_20250914131841_3aa1",
+      "__MeaName__",
     ],
     "x": [
       "xA_20250914131841_3aa1",
@@ -875,8 +886,8 @@ exports[`defaultParentId 2`] = `
         },
         "color": {
           "domain": [
-            "sum(amount)-co_20250914131915_8e38",
-            "sum(amount)-yA_20250914131844_6718",
+            "co_20250914131915_8e38",
+            "yA_20250914131844_6718",
           ],
           "range": [
             "#8D72F6",
@@ -983,6 +994,13 @@ exports[`defaultParentId 2`] = `
           },
           "mark": {
             "content": [
+              {
+                "hasShape": true,
+                "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
               {
                 "hasShape": true,
                 "key": [Function],
@@ -1168,8 +1186,8 @@ exports[`defaultParentId 2`] = `
         },
         "color": {
           "domain": [
-            "sum(amount)-co_20250914131915_8e38",
-            "sum(amount)-yA_20250914131844_6718",
+            "co_20250914131915_8e38",
+            "yA_20250914131844_6718",
           ],
           "range": [
             "#8D72F6",
@@ -1290,6 +1308,13 @@ exports[`defaultParentId 2`] = `
                 "value": [Function],
                 "visible": true,
               },
+              {
+                "hasShape": true,
+                "key": [Function],
+                "shapeType": "rectRound",
+                "value": [Function],
+                "visible": true,
+              },
             ],
             "title": {
               "visible": false,
@@ -1317,7 +1342,7 @@ exports[`defaultParentId 2`] = `
   "legends": {
     "data": [
       {
-        "label": "sum(amount)-co_20250914131915_8e38",
+        "label": "co_20250914131915_8e38",
         "shape": {
           "fill": "#8D72F6",
           "outerBorder": {
@@ -1328,7 +1353,7 @@ exports[`defaultParentId 2`] = `
         },
       },
       {
-        "label": "sum(amount)-yA_20250914131844_6718",
+        "label": "yA_20250914131844_6718",
         "shape": {
           "fill": "#5766EC",
           "outerBorder": {
@@ -1381,9 +1406,9 @@ exports[`defaultParentId 2`] = `
   "records": {
     "0": [
       {
-        "__Dim_ColorId__": "sum(amount)-yA_20250914131844_6718",
-        "__Dim_Color__": "sum(amount)",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_ColorId__": "yA_20250914131844_6718",
+        "__Dim_Color__": "yA_20250914131844_6718",
+        "__Dim_Detail__": "yA_20250914131844_6718",
         "__Dim_X__": "技术",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
@@ -1397,9 +1422,9 @@ exports[`defaultParentId 2`] = `
         "yA_20250914131844_6718": "7642",
       },
       {
-        "__Dim_ColorId__": "sum(amount)-yA_20250914131844_6718",
-        "__Dim_Color__": "sum(amount)",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_ColorId__": "yA_20250914131844_6718",
+        "__Dim_Color__": "yA_20250914131844_6718",
+        "__Dim_Detail__": "yA_20250914131844_6718",
         "__Dim_X__": "办公用品",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
@@ -1413,9 +1438,9 @@ exports[`defaultParentId 2`] = `
         "yA_20250914131844_6718": "21401",
       },
       {
-        "__Dim_ColorId__": "sum(amount)-yA_20250914131844_6718",
-        "__Dim_Color__": "sum(amount)",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_ColorId__": "yA_20250914131844_6718",
+        "__Dim_Color__": "yA_20250914131844_6718",
+        "__Dim_Detail__": "yA_20250914131844_6718",
         "__Dim_X__": "家具",
         "__MeaId__": "yA_20250914131844_6718",
         "__MeaName__": "sum(amount)",
@@ -1431,9 +1456,9 @@ exports[`defaultParentId 2`] = `
     ],
     "__DefaultParentId__": [
       {
-        "__Dim_ColorId__": "sum(amount)-co_20250914131915_8e38",
-        "__Dim_Color__": "sum(amount)",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_ColorId__": "co_20250914131915_8e38",
+        "__Dim_Color__": "co_20250914131915_8e38",
+        "__Dim_Detail__": "co_20250914131915_8e38",
         "__Dim_X__": "技术",
         "__MeaId__": "co_20250914131915_8e38",
         "__MeaName__": "sum(amount)",
@@ -1447,9 +1472,9 @@ exports[`defaultParentId 2`] = `
         "xA_20250914131841_3aa1": "技术",
       },
       {
-        "__Dim_ColorId__": "sum(amount)-co_20250914131915_8e38",
-        "__Dim_Color__": "sum(amount)",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_ColorId__": "co_20250914131915_8e38",
+        "__Dim_Color__": "co_20250914131915_8e38",
+        "__Dim_Detail__": "co_20250914131915_8e38",
         "__Dim_X__": "办公用品",
         "__MeaId__": "co_20250914131915_8e38",
         "__MeaName__": "sum(amount)",
@@ -1463,9 +1488,9 @@ exports[`defaultParentId 2`] = `
         "xA_20250914131841_3aa1": "办公用品",
       },
       {
-        "__Dim_ColorId__": "sum(amount)-co_20250914131915_8e38",
-        "__Dim_Color__": "sum(amount)",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_ColorId__": "co_20250914131915_8e38",
+        "__Dim_Color__": "co_20250914131915_8e38",
+        "__Dim_Detail__": "co_20250914131915_8e38",
         "__Dim_X__": "家具",
         "__MeaId__": "co_20250914131915_8e38",
         "__MeaName__": "sum(amount)",
@@ -1672,17 +1697,23 @@ exports[`defaultParentId 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "sum(amount)-co_20250914131915_8e38": "sum(amount)",
-    "sum(amount)-yA_20250914131844_6718": "sum(amount)",
+    "co_20250914131915_8e38": {
+      "alias": "sum(amount)",
+      "id": "co_20250914131915_8e38",
+    },
+    "yA_20250914131844_6718": {
+      "alias": "sum(amount)",
+      "id": "yA_20250914131844_6718",
+    },
   },
   "colorItems": [
     {
       "alias": "sum(amount)",
-      "id": "sum(amount)-co_20250914131915_8e38",
+      "id": "co_20250914131915_8e38",
     },
     {
       "alias": "sum(amount)",
-      "id": "sum(amount)-yA_20250914131844_6718",
+      "id": "yA_20250914131844_6718",
     },
   ],
   "hasTheme": true,

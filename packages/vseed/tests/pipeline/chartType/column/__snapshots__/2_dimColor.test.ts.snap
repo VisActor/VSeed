@@ -545,7 +545,7 @@ exports[`2_dimColor 1`] = `
   "dataset": [
     {
       "__Dim_ColorId__": "利润-profit",
-      "__Dim_Color__": "利润",
+      "__Dim_Color__": "利润-profit",
       "__Dim_Detail__": "A",
       "__Dim_X__": "2019",
       "__MeaId__": "profit",
@@ -565,7 +565,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "销售额-sales",
-      "__Dim_Color__": "销售额",
+      "__Dim_Color__": "销售额-sales",
       "__Dim_Detail__": "A",
       "__Dim_X__": "2019",
       "__MeaId__": "sales",
@@ -585,7 +585,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "利润-profit",
-      "__Dim_Color__": "利润",
+      "__Dim_Color__": "利润-profit",
       "__Dim_Detail__": "B",
       "__Dim_X__": "2019",
       "__MeaId__": "profit",
@@ -605,7 +605,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "销售额-sales",
-      "__Dim_Color__": "销售额",
+      "__Dim_Color__": "销售额-sales",
       "__Dim_Detail__": "B",
       "__Dim_X__": "2019",
       "__MeaId__": "sales",
@@ -625,7 +625,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "利润-profit",
-      "__Dim_Color__": "利润",
+      "__Dim_Color__": "利润-profit",
       "__Dim_Detail__": "C",
       "__Dim_X__": "2019",
       "__MeaId__": "profit",
@@ -645,7 +645,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "销售额-sales",
-      "__Dim_Color__": "销售额",
+      "__Dim_Color__": "销售额-sales",
       "__Dim_Detail__": "C",
       "__Dim_X__": "2019",
       "__MeaId__": "sales",
@@ -665,7 +665,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "利润-profit",
-      "__Dim_Color__": "利润",
+      "__Dim_Color__": "利润-profit",
       "__Dim_Detail__": "D",
       "__Dim_X__": "2019",
       "__MeaId__": "profit",
@@ -685,7 +685,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "销售额-sales",
-      "__Dim_Color__": "销售额",
+      "__Dim_Color__": "销售额-sales",
       "__Dim_Detail__": "D",
       "__Dim_X__": "2019",
       "__MeaId__": "sales",
@@ -705,7 +705,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "利润-profit",
-      "__Dim_Color__": "利润",
+      "__Dim_Color__": "利润-profit",
       "__Dim_Detail__": "E",
       "__Dim_X__": "2019",
       "__MeaId__": "profit",
@@ -725,7 +725,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "销售额-sales",
-      "__Dim_Color__": "销售额",
+      "__Dim_Color__": "销售额-sales",
       "__Dim_Detail__": "E",
       "__Dim_X__": "2019",
       "__MeaId__": "sales",
@@ -745,7 +745,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "利润-profit",
-      "__Dim_Color__": "利润",
+      "__Dim_Color__": "利润-profit",
       "__Dim_Detail__": "A",
       "__Dim_X__": "2020",
       "__MeaId__": "profit",
@@ -765,7 +765,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "销售额-sales",
-      "__Dim_Color__": "销售额",
+      "__Dim_Color__": "销售额-sales",
       "__Dim_Detail__": "A",
       "__Dim_X__": "2020",
       "__MeaId__": "sales",
@@ -785,7 +785,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "利润-profit",
-      "__Dim_Color__": "利润",
+      "__Dim_Color__": "利润-profit",
       "__Dim_Detail__": "B",
       "__Dim_X__": "2020",
       "__MeaId__": "profit",
@@ -805,7 +805,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "销售额-sales",
-      "__Dim_Color__": "销售额",
+      "__Dim_Color__": "销售额-sales",
       "__Dim_Detail__": "B",
       "__Dim_X__": "2020",
       "__MeaId__": "sales",
@@ -825,7 +825,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "利润-profit",
-      "__Dim_Color__": "利润",
+      "__Dim_Color__": "利润-profit",
       "__Dim_Detail__": "C",
       "__Dim_X__": "2020",
       "__MeaId__": "profit",
@@ -845,7 +845,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "销售额-sales",
-      "__Dim_Color__": "销售额",
+      "__Dim_Color__": "销售额-sales",
       "__Dim_Detail__": "C",
       "__Dim_X__": "2020",
       "__MeaId__": "sales",
@@ -865,7 +865,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "利润-profit",
-      "__Dim_Color__": "利润",
+      "__Dim_Color__": "利润-profit",
       "__Dim_Detail__": "D",
       "__Dim_X__": "2020",
       "__MeaId__": "profit",
@@ -885,7 +885,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "销售额-sales",
-      "__Dim_Color__": "销售额",
+      "__Dim_Color__": "销售额-sales",
       "__Dim_Detail__": "D",
       "__Dim_X__": "2020",
       "__MeaId__": "sales",
@@ -905,7 +905,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "利润-profit",
-      "__Dim_Color__": "利润",
+      "__Dim_Color__": "利润-profit",
       "__Dim_Detail__": "E",
       "__Dim_X__": "2020",
       "__MeaId__": "profit",
@@ -925,7 +925,7 @@ exports[`2_dimColor 1`] = `
     },
     {
       "__Dim_ColorId__": "销售额-sales",
-      "__Dim_Color__": "销售额",
+      "__Dim_Color__": "销售额-sales",
       "__Dim_Detail__": "E",
       "__Dim_X__": "2020",
       "__MeaId__": "sales",
@@ -967,8 +967,14 @@ exports[`2_dimColor 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "利润-profit": "利润",
-          "销售额-sales": "销售额",
+          "利润-profit": {
+            "alias": "利润-利润",
+            "id": "利润-profit",
+          },
+          "销售额-sales": {
+            "alias": "销售额-销售额",
+            "id": "销售额-sales",
+          },
         },
         "colorItems": [
           "利润-profit",
@@ -999,10 +1005,15 @@ exports[`2_dimColor 1`] = `
       "encoding": "color",
       "id": "__MeaName__",
     },
+    {
+      "alias": "指标Id",
+      "id": "__MeaId__",
+    },
   ],
   "encoding": {
     "color": [
       "__MeaName__",
+      "__MeaId__",
     ],
     "detail": [
       "type",
@@ -1011,6 +1022,7 @@ exports[`2_dimColor 1`] = `
     "tooltip": [
       "date",
       "type",
+      "__MeaName__",
     ],
     "x": [
       "date",
@@ -1249,7 +1261,7 @@ exports[`2_dimColor 2`] = `
     "values": [
       {
         "__Dim_ColorId__": "利润-profit",
-        "__Dim_Color__": "利润",
+        "__Dim_Color__": "利润-profit",
         "__Dim_Detail__": "A",
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
@@ -1269,7 +1281,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "销售额-sales",
-        "__Dim_Color__": "销售额",
+        "__Dim_Color__": "销售额-sales",
         "__Dim_Detail__": "A",
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
@@ -1289,7 +1301,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "利润-profit",
-        "__Dim_Color__": "利润",
+        "__Dim_Color__": "利润-profit",
         "__Dim_Detail__": "B",
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
@@ -1309,7 +1321,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "销售额-sales",
-        "__Dim_Color__": "销售额",
+        "__Dim_Color__": "销售额-sales",
         "__Dim_Detail__": "B",
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
@@ -1329,7 +1341,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "利润-profit",
-        "__Dim_Color__": "利润",
+        "__Dim_Color__": "利润-profit",
         "__Dim_Detail__": "C",
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
@@ -1349,7 +1361,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "销售额-sales",
-        "__Dim_Color__": "销售额",
+        "__Dim_Color__": "销售额-sales",
         "__Dim_Detail__": "C",
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
@@ -1369,7 +1381,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "利润-profit",
-        "__Dim_Color__": "利润",
+        "__Dim_Color__": "利润-profit",
         "__Dim_Detail__": "D",
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
@@ -1389,7 +1401,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "销售额-sales",
-        "__Dim_Color__": "销售额",
+        "__Dim_Color__": "销售额-sales",
         "__Dim_Detail__": "D",
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
@@ -1409,7 +1421,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "利润-profit",
-        "__Dim_Color__": "利润",
+        "__Dim_Color__": "利润-profit",
         "__Dim_Detail__": "E",
         "__Dim_X__": "2019",
         "__MeaId__": "profit",
@@ -1429,7 +1441,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "销售额-sales",
-        "__Dim_Color__": "销售额",
+        "__Dim_Color__": "销售额-sales",
         "__Dim_Detail__": "E",
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
@@ -1449,7 +1461,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "利润-profit",
-        "__Dim_Color__": "利润",
+        "__Dim_Color__": "利润-profit",
         "__Dim_Detail__": "A",
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
@@ -1469,7 +1481,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "销售额-sales",
-        "__Dim_Color__": "销售额",
+        "__Dim_Color__": "销售额-sales",
         "__Dim_Detail__": "A",
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
@@ -1489,7 +1501,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "利润-profit",
-        "__Dim_Color__": "利润",
+        "__Dim_Color__": "利润-profit",
         "__Dim_Detail__": "B",
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
@@ -1509,7 +1521,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "销售额-sales",
-        "__Dim_Color__": "销售额",
+        "__Dim_Color__": "销售额-sales",
         "__Dim_Detail__": "B",
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
@@ -1529,7 +1541,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "利润-profit",
-        "__Dim_Color__": "利润",
+        "__Dim_Color__": "利润-profit",
         "__Dim_Detail__": "C",
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
@@ -1549,7 +1561,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "销售额-sales",
-        "__Dim_Color__": "销售额",
+        "__Dim_Color__": "销售额-sales",
         "__Dim_Detail__": "C",
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
@@ -1569,7 +1581,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "利润-profit",
-        "__Dim_Color__": "利润",
+        "__Dim_Color__": "利润-profit",
         "__Dim_Detail__": "D",
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
@@ -1589,7 +1601,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "销售额-sales",
-        "__Dim_Color__": "销售额",
+        "__Dim_Color__": "销售额-sales",
         "__Dim_Detail__": "D",
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
@@ -1609,7 +1621,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "利润-profit",
-        "__Dim_Color__": "利润",
+        "__Dim_Color__": "利润-profit",
         "__Dim_Detail__": "E",
         "__Dim_X__": "2020",
         "__MeaId__": "profit",
@@ -1629,7 +1641,7 @@ exports[`2_dimColor 2`] = `
       },
       {
         "__Dim_ColorId__": "销售额-sales",
-        "__Dim_Color__": "销售额",
+        "__Dim_Color__": "销售额-sales",
         "__Dim_Detail__": "E",
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
@@ -1773,6 +1785,13 @@ exports[`2_dimColor 2`] = `
           "value": [Function],
           "visible": true,
         },
+        {
+          "hasShape": true,
+          "key": [Function],
+          "shapeType": "rectRound",
+          "value": [Function],
+          "visible": true,
+        },
       ],
       "title": {
         "visible": false,
@@ -1804,16 +1823,22 @@ exports[`2_dimColor 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "利润-profit": "利润",
-    "销售额-sales": "销售额",
+    "利润-profit": {
+      "alias": "利润-利润",
+      "id": "利润-profit",
+    },
+    "销售额-sales": {
+      "alias": "销售额-销售额",
+      "id": "销售额-sales",
+    },
   },
   "colorItems": [
     {
-      "alias": "利润",
+      "alias": "利润-利润",
       "id": "利润-profit",
     },
     {
-      "alias": "销售额",
+      "alias": "销售额-销售额",
       "id": "销售额-sales",
     },
   ],

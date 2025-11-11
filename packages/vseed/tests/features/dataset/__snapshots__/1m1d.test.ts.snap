@@ -460,7 +460,7 @@ exports[`1m1d 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "2019",
@@ -475,7 +475,7 @@ exports[`1m1d 1`] = `
       "profit": 10,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "2020",
@@ -490,7 +490,7 @@ exports[`1m1d 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "2021",
@@ -505,7 +505,7 @@ exports[`1m1d 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "2022",
@@ -520,7 +520,7 @@ exports[`1m1d 1`] = `
       "profit": 50,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "2023",
@@ -557,10 +557,13 @@ exports[`1m1d 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "profit-profit": "profit",
+          "profit": {
+            "alias": "profit",
+            "id": "profit",
+          },
         },
         "colorItems": [
-          "profit-profit",
+          "profit",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -577,17 +580,17 @@ exports[`1m1d 1`] = `
       "id": "date",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
@@ -766,7 +769,7 @@ exports[`1m1d 2`] = `
   },
   "color": {
     "domain": [
-      "profit-profit",
+      "profit",
     ],
     "range": [
       "#8D72F6",
@@ -823,7 +826,7 @@ exports[`1m1d 2`] = `
     "id": "columnParallel",
     "values": [
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "2019",
@@ -838,7 +841,7 @@ exports[`1m1d 2`] = `
         "profit": 10,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "2020",
@@ -853,7 +856,7 @@ exports[`1m1d 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "2021",
@@ -868,7 +871,7 @@ exports[`1m1d 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "2022",
@@ -883,7 +886,7 @@ exports[`1m1d 2`] = `
         "profit": 50,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "2023",
@@ -1047,12 +1050,15 @@ exports[`1m1d 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "profit-profit": "profit",
+    "profit": {
+      "alias": "profit",
+      "id": "profit",
+    },
   },
   "colorItems": [
     {
       "alias": "profit",
-      "id": "profit-profit",
+      "id": "profit",
     },
   ],
   "hasTheme": true,

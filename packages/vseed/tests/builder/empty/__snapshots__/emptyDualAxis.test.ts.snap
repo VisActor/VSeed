@@ -586,23 +586,23 @@ exports[`emptyDualAxis 1`] = `
   ],
   "dimensions": [
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
     "tooltip": [],
     "x": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "y": [],
   },
@@ -695,7 +695,7 @@ exports[`emptyDualAxis 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "指标名称",
+        "text": "指标Id",
         "visible": false,
       },
       "type": "band",

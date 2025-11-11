@@ -460,7 +460,7 @@ exports[`3m0d 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "profit",
@@ -475,7 +475,7 @@ exports[`3m0d 1`] = `
       "profit": 1,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_Detail__": "sales",
       "__Dim_X__": "sales",
@@ -490,7 +490,7 @@ exports[`3m0d 1`] = `
       "sales": 2,
     },
     {
-      "__Dim_ColorId__": "discount-discount",
+      "__Dim_ColorId__": "discount",
       "__Dim_Color__": "discount",
       "__Dim_Detail__": "discount",
       "__Dim_X__": "discount",
@@ -529,14 +529,23 @@ exports[`3m0d 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "discount-discount": "discount",
-          "profit-profit": "profit",
-          "sales-sales": "sales",
+          "discount": {
+            "alias": "discount",
+            "id": "discount",
+          },
+          "profit": {
+            "alias": "profit",
+            "id": "profit",
+          },
+          "sales": {
+            "alias": "sales",
+            "id": "sales",
+          },
         },
         "colorItems": [
-          "profit-profit",
-          "sales-sales",
-          "discount-discount",
+          "profit",
+          "sales",
+          "discount",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -549,23 +558,23 @@ exports[`3m0d 1`] = `
   ],
   "dimensions": [
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
     "tooltip": [],
     "x": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "y": [
       "profit",
@@ -665,7 +674,7 @@ exports[`3m0d 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "指标名称",
+        "text": "指标Id",
         "visible": false,
       },
       "type": "band",
@@ -746,9 +755,9 @@ exports[`3m0d 2`] = `
   },
   "color": {
     "domain": [
-      "profit-profit",
-      "sales-sales",
-      "discount-discount",
+      "profit",
+      "sales",
+      "discount",
     ],
     "range": [
       "#8D72F6",
@@ -805,7 +814,7 @@ exports[`3m0d 2`] = `
     "id": "columnParallel",
     "values": [
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "profit",
@@ -820,7 +829,7 @@ exports[`3m0d 2`] = `
         "profit": 1,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "sales",
@@ -835,7 +844,7 @@ exports[`3m0d 2`] = `
         "sales": 2,
       },
       {
-        "__Dim_ColorId__": "discount-discount",
+        "__Dim_ColorId__": "discount",
         "__Dim_Color__": "discount",
         "__Dim_Detail__": "discount",
         "__Dim_X__": "discount",
@@ -992,22 +1001,31 @@ exports[`3m0d 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "discount-discount": "discount",
-    "profit-profit": "profit",
-    "sales-sales": "sales",
+    "discount": {
+      "alias": "discount",
+      "id": "discount",
+    },
+    "profit": {
+      "alias": "profit",
+      "id": "profit",
+    },
+    "sales": {
+      "alias": "sales",
+      "id": "sales",
+    },
   },
   "colorItems": [
     {
       "alias": "profit",
-      "id": "profit-profit",
+      "id": "profit",
     },
     {
       "alias": "sales",
-      "id": "sales-sales",
+      "id": "sales",
     },
     {
       "alias": "discount",
-      "id": "discount-discount",
+      "id": "discount",
     },
   ],
   "hasTheme": true,

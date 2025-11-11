@@ -573,8 +573,8 @@ exports[`binStepHistogram 1`] = `
   ],
   "dimensions": [
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
@@ -971,5 +971,12 @@ exports[`binStepHistogram 3`] = `
     "light",
     "dark",
   ],
+}
+`;
+
+exports[`binStepHistogram 4`] = `
+{
+  "expectError": true,
+  "message": "Cannot read properties of undefined (reading 'alias')",
 }
 `;

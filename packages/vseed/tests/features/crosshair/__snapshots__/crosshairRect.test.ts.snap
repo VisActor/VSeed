@@ -448,8 +448,8 @@ exports[`crosshairRect 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "销售额-sales",
-      "__Dim_Color__": "销售额",
+      "__Dim_ColorId__": "sales",
+      "__Dim_Color__": "sales",
       "__Dim_X__": "2019",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
@@ -462,8 +462,8 @@ exports[`crosshairRect 1`] = `
       "sales": 100,
     },
     {
-      "__Dim_ColorId__": "销售额-sales",
-      "__Dim_Color__": "销售额",
+      "__Dim_ColorId__": "sales",
+      "__Dim_Color__": "sales",
       "__Dim_X__": "2020",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
@@ -476,8 +476,8 @@ exports[`crosshairRect 1`] = `
       "sales": 3200,
     },
     {
-      "__Dim_ColorId__": "销售额-sales",
-      "__Dim_Color__": "销售额",
+      "__Dim_ColorId__": "sales",
+      "__Dim_Color__": "sales",
       "__Dim_X__": "2021",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
@@ -490,8 +490,8 @@ exports[`crosshairRect 1`] = `
       "sales": 300,
     },
     {
-      "__Dim_ColorId__": "销售额-sales",
-      "__Dim_Color__": "销售额",
+      "__Dim_ColorId__": "sales",
+      "__Dim_Color__": "sales",
       "__Dim_X__": "2022",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
@@ -504,8 +504,8 @@ exports[`crosshairRect 1`] = `
       "sales": 2400,
     },
     {
-      "__Dim_ColorId__": "销售额-sales",
-      "__Dim_Color__": "销售额",
+      "__Dim_ColorId__": "sales",
+      "__Dim_Color__": "sales",
       "__Dim_X__": "2023",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
@@ -540,10 +540,13 @@ exports[`crosshairRect 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "销售额-sales": "销售额",
+          "sales": {
+            "alias": "销售额",
+            "id": "sales",
+          },
         },
         "colorItems": [
-          "销售额-sales",
+          "sales",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -560,13 +563,13 @@ exports[`crosshairRect 1`] = `
       "id": "date",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [],
@@ -735,7 +738,7 @@ exports[`crosshairRect 2`] = `
   "background": "transparent",
   "color": {
     "domain": [
-      "销售额-sales",
+      "sales",
     ],
     "range": [
       "#8D72F6",
@@ -796,8 +799,8 @@ exports[`crosshairRect 2`] = `
     "id": "line",
     "values": [
       {
-        "__Dim_ColorId__": "销售额-sales",
-        "__Dim_Color__": "销售额",
+        "__Dim_ColorId__": "sales",
+        "__Dim_Color__": "sales",
         "__Dim_X__": "2019",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
@@ -810,8 +813,8 @@ exports[`crosshairRect 2`] = `
         "sales": 100,
       },
       {
-        "__Dim_ColorId__": "销售额-sales",
-        "__Dim_Color__": "销售额",
+        "__Dim_ColorId__": "sales",
+        "__Dim_Color__": "sales",
         "__Dim_X__": "2020",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
@@ -824,8 +827,8 @@ exports[`crosshairRect 2`] = `
         "sales": 3200,
       },
       {
-        "__Dim_ColorId__": "销售额-sales",
-        "__Dim_Color__": "销售额",
+        "__Dim_ColorId__": "sales",
+        "__Dim_Color__": "sales",
         "__Dim_X__": "2021",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
@@ -838,8 +841,8 @@ exports[`crosshairRect 2`] = `
         "sales": 300,
       },
       {
-        "__Dim_ColorId__": "销售额-sales",
-        "__Dim_Color__": "销售额",
+        "__Dim_ColorId__": "sales",
+        "__Dim_Color__": "sales",
         "__Dim_X__": "2022",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
@@ -852,8 +855,8 @@ exports[`crosshairRect 2`] = `
         "sales": 2400,
       },
       {
-        "__Dim_ColorId__": "销售额-sales",
-        "__Dim_Color__": "销售额",
+        "__Dim_ColorId__": "sales",
+        "__Dim_Color__": "sales",
         "__Dim_X__": "2023",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
@@ -1029,12 +1032,15 @@ exports[`crosshairRect 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "销售额-sales": "销售额",
+    "sales": {
+      "alias": "销售额",
+      "id": "sales",
+    },
   },
   "colorItems": [
     {
       "alias": "销售额",
-      "id": "销售额-sales",
+      "id": "sales",
     },
   ],
   "hasTheme": true,

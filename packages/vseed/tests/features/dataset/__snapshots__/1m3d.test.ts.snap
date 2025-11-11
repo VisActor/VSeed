@@ -460,7 +460,7 @@ exports[`1m3d 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "east-A-profit-profit",
+      "__Dim_ColorId__": "east-A-profit",
       "__Dim_Color__": "east-A-profit",
       "__Dim_Detail__": "east-A-profit",
       "__Dim_X__": "2019",
@@ -479,7 +479,7 @@ exports[`1m3d 1`] = `
       "region": "east",
     },
     {
-      "__Dim_ColorId__": "east-B-profit-profit",
+      "__Dim_ColorId__": "east-B-profit",
       "__Dim_Color__": "east-B-profit",
       "__Dim_Detail__": "east-B-profit",
       "__Dim_X__": "2019",
@@ -498,7 +498,7 @@ exports[`1m3d 1`] = `
       "region": "east",
     },
     {
-      "__Dim_ColorId__": "east-C-profit-profit",
+      "__Dim_ColorId__": "east-C-profit",
       "__Dim_Color__": "east-C-profit",
       "__Dim_Detail__": "east-C-profit",
       "__Dim_X__": "2019",
@@ -517,7 +517,7 @@ exports[`1m3d 1`] = `
       "region": "east",
     },
     {
-      "__Dim_ColorId__": "east-D-profit-profit",
+      "__Dim_ColorId__": "east-D-profit",
       "__Dim_Color__": "east-D-profit",
       "__Dim_Detail__": "east-D-profit",
       "__Dim_X__": "2019",
@@ -536,7 +536,7 @@ exports[`1m3d 1`] = `
       "region": "east",
     },
     {
-      "__Dim_ColorId__": "east-E-profit-profit",
+      "__Dim_ColorId__": "east-E-profit",
       "__Dim_Color__": "east-E-profit",
       "__Dim_Detail__": "east-E-profit",
       "__Dim_X__": "2019",
@@ -555,7 +555,7 @@ exports[`1m3d 1`] = `
       "region": "east",
     },
     {
-      "__Dim_ColorId__": "north of east-A-profit-profit",
+      "__Dim_ColorId__": "north of east-A-profit",
       "__Dim_Color__": "north of east-A-profit",
       "__Dim_Detail__": "north of east-A-profit",
       "__Dim_X__": "2020",
@@ -574,7 +574,7 @@ exports[`1m3d 1`] = `
       "region": "north of east",
     },
     {
-      "__Dim_ColorId__": "north of east-B-profit-profit",
+      "__Dim_ColorId__": "north of east-B-profit",
       "__Dim_Color__": "north of east-B-profit",
       "__Dim_Detail__": "north of east-B-profit",
       "__Dim_X__": "2020",
@@ -593,7 +593,7 @@ exports[`1m3d 1`] = `
       "region": "north of east",
     },
     {
-      "__Dim_ColorId__": "north of east-C-profit-profit",
+      "__Dim_ColorId__": "north of east-C-profit",
       "__Dim_Color__": "north of east-C-profit",
       "__Dim_Detail__": "north of east-C-profit",
       "__Dim_X__": "2020",
@@ -612,7 +612,7 @@ exports[`1m3d 1`] = `
       "region": "north of east",
     },
     {
-      "__Dim_ColorId__": "north of east-D-profit-profit",
+      "__Dim_ColorId__": "north of east-D-profit",
       "__Dim_Color__": "north of east-D-profit",
       "__Dim_Detail__": "north of east-D-profit",
       "__Dim_X__": "2020",
@@ -631,7 +631,7 @@ exports[`1m3d 1`] = `
       "region": "north of east",
     },
     {
-      "__Dim_ColorId__": "north of east-E-profit-profit",
+      "__Dim_ColorId__": "north of east-E-profit",
       "__Dim_Color__": "north of east-E-profit",
       "__Dim_Detail__": "north of east-E-profit",
       "__Dim_X__": "2020",
@@ -672,28 +672,58 @@ exports[`1m3d 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "east-A-profit-profit": "east-A-profit",
-          "east-B-profit-profit": "east-B-profit",
-          "east-C-profit-profit": "east-C-profit",
-          "east-D-profit-profit": "east-D-profit",
-          "east-E-profit-profit": "east-E-profit",
-          "north of east-A-profit-profit": "north of east-A-profit",
-          "north of east-B-profit-profit": "north of east-B-profit",
-          "north of east-C-profit-profit": "north of east-C-profit",
-          "north of east-D-profit-profit": "north of east-D-profit",
-          "north of east-E-profit-profit": "north of east-E-profit",
+          "east-A-profit": {
+            "alias": "east-A-profit",
+            "id": "east-A-profit",
+          },
+          "east-B-profit": {
+            "alias": "east-B-profit",
+            "id": "east-B-profit",
+          },
+          "east-C-profit": {
+            "alias": "east-C-profit",
+            "id": "east-C-profit",
+          },
+          "east-D-profit": {
+            "alias": "east-D-profit",
+            "id": "east-D-profit",
+          },
+          "east-E-profit": {
+            "alias": "east-E-profit",
+            "id": "east-E-profit",
+          },
+          "north of east-A-profit": {
+            "alias": "north of east-A-profit",
+            "id": "north of east-A-profit",
+          },
+          "north of east-B-profit": {
+            "alias": "north of east-B-profit",
+            "id": "north of east-B-profit",
+          },
+          "north of east-C-profit": {
+            "alias": "north of east-C-profit",
+            "id": "north of east-C-profit",
+          },
+          "north of east-D-profit": {
+            "alias": "north of east-D-profit",
+            "id": "north of east-D-profit",
+          },
+          "north of east-E-profit": {
+            "alias": "north of east-E-profit",
+            "id": "north of east-E-profit",
+          },
         },
         "colorItems": [
-          "east-A-profit-profit",
-          "east-B-profit-profit",
-          "east-C-profit-profit",
-          "east-D-profit-profit",
-          "east-E-profit-profit",
-          "north of east-A-profit-profit",
-          "north of east-B-profit-profit",
-          "north of east-C-profit-profit",
-          "north of east-D-profit-profit",
-          "north of east-E-profit-profit",
+          "east-A-profit",
+          "east-B-profit",
+          "east-C-profit",
+          "east-D-profit",
+          "east-E-profit",
+          "north of east-A-profit",
+          "north of east-B-profit",
+          "north of east-C-profit",
+          "north of east-D-profit",
+          "north of east-E-profit",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -718,21 +748,21 @@ exports[`1m3d 1`] = `
       "id": "city",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
       "region",
       "city",
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
       "region",
       "city",
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
@@ -913,16 +943,16 @@ exports[`1m3d 2`] = `
   },
   "color": {
     "domain": [
-      "east-A-profit-profit",
-      "east-B-profit-profit",
-      "east-C-profit-profit",
-      "east-D-profit-profit",
-      "east-E-profit-profit",
-      "north of east-A-profit-profit",
-      "north of east-B-profit-profit",
-      "north of east-C-profit-profit",
-      "north of east-D-profit-profit",
-      "north of east-E-profit-profit",
+      "east-A-profit",
+      "east-B-profit",
+      "east-C-profit",
+      "east-D-profit",
+      "east-E-profit",
+      "north of east-A-profit",
+      "north of east-B-profit",
+      "north of east-C-profit",
+      "north of east-D-profit",
+      "north of east-E-profit",
     ],
     "range": [
       "#8D72F6",
@@ -979,7 +1009,7 @@ exports[`1m3d 2`] = `
     "id": "columnParallel",
     "values": [
       {
-        "__Dim_ColorId__": "east-A-profit-profit",
+        "__Dim_ColorId__": "east-A-profit",
         "__Dim_Color__": "east-A-profit",
         "__Dim_Detail__": "east-A-profit",
         "__Dim_X__": "2019",
@@ -998,7 +1028,7 @@ exports[`1m3d 2`] = `
         "region": "east",
       },
       {
-        "__Dim_ColorId__": "east-B-profit-profit",
+        "__Dim_ColorId__": "east-B-profit",
         "__Dim_Color__": "east-B-profit",
         "__Dim_Detail__": "east-B-profit",
         "__Dim_X__": "2019",
@@ -1017,7 +1047,7 @@ exports[`1m3d 2`] = `
         "region": "east",
       },
       {
-        "__Dim_ColorId__": "east-C-profit-profit",
+        "__Dim_ColorId__": "east-C-profit",
         "__Dim_Color__": "east-C-profit",
         "__Dim_Detail__": "east-C-profit",
         "__Dim_X__": "2019",
@@ -1036,7 +1066,7 @@ exports[`1m3d 2`] = `
         "region": "east",
       },
       {
-        "__Dim_ColorId__": "east-D-profit-profit",
+        "__Dim_ColorId__": "east-D-profit",
         "__Dim_Color__": "east-D-profit",
         "__Dim_Detail__": "east-D-profit",
         "__Dim_X__": "2019",
@@ -1055,7 +1085,7 @@ exports[`1m3d 2`] = `
         "region": "east",
       },
       {
-        "__Dim_ColorId__": "east-E-profit-profit",
+        "__Dim_ColorId__": "east-E-profit",
         "__Dim_Color__": "east-E-profit",
         "__Dim_Detail__": "east-E-profit",
         "__Dim_X__": "2019",
@@ -1074,7 +1104,7 @@ exports[`1m3d 2`] = `
         "region": "east",
       },
       {
-        "__Dim_ColorId__": "north of east-A-profit-profit",
+        "__Dim_ColorId__": "north of east-A-profit",
         "__Dim_Color__": "north of east-A-profit",
         "__Dim_Detail__": "north of east-A-profit",
         "__Dim_X__": "2020",
@@ -1093,7 +1123,7 @@ exports[`1m3d 2`] = `
         "region": "north of east",
       },
       {
-        "__Dim_ColorId__": "north of east-B-profit-profit",
+        "__Dim_ColorId__": "north of east-B-profit",
         "__Dim_Color__": "north of east-B-profit",
         "__Dim_Detail__": "north of east-B-profit",
         "__Dim_X__": "2020",
@@ -1112,7 +1142,7 @@ exports[`1m3d 2`] = `
         "region": "north of east",
       },
       {
-        "__Dim_ColorId__": "north of east-C-profit-profit",
+        "__Dim_ColorId__": "north of east-C-profit",
         "__Dim_Color__": "north of east-C-profit",
         "__Dim_Detail__": "north of east-C-profit",
         "__Dim_X__": "2020",
@@ -1131,7 +1161,7 @@ exports[`1m3d 2`] = `
         "region": "north of east",
       },
       {
-        "__Dim_ColorId__": "north of east-D-profit-profit",
+        "__Dim_ColorId__": "north of east-D-profit",
         "__Dim_Color__": "north of east-D-profit",
         "__Dim_Detail__": "north of east-D-profit",
         "__Dim_X__": "2020",
@@ -1150,7 +1180,7 @@ exports[`1m3d 2`] = `
         "region": "north of east",
       },
       {
-        "__Dim_ColorId__": "north of east-E-profit-profit",
+        "__Dim_ColorId__": "north of east-E-profit",
         "__Dim_Color__": "north of east-E-profit",
         "__Dim_Detail__": "north of east-E-profit",
         "__Dim_X__": "2020",
@@ -1333,57 +1363,87 @@ exports[`1m3d 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "east-A-profit-profit": "east-A-profit",
-    "east-B-profit-profit": "east-B-profit",
-    "east-C-profit-profit": "east-C-profit",
-    "east-D-profit-profit": "east-D-profit",
-    "east-E-profit-profit": "east-E-profit",
-    "north of east-A-profit-profit": "north of east-A-profit",
-    "north of east-B-profit-profit": "north of east-B-profit",
-    "north of east-C-profit-profit": "north of east-C-profit",
-    "north of east-D-profit-profit": "north of east-D-profit",
-    "north of east-E-profit-profit": "north of east-E-profit",
+    "east-A-profit": {
+      "alias": "east-A-profit",
+      "id": "east-A-profit",
+    },
+    "east-B-profit": {
+      "alias": "east-B-profit",
+      "id": "east-B-profit",
+    },
+    "east-C-profit": {
+      "alias": "east-C-profit",
+      "id": "east-C-profit",
+    },
+    "east-D-profit": {
+      "alias": "east-D-profit",
+      "id": "east-D-profit",
+    },
+    "east-E-profit": {
+      "alias": "east-E-profit",
+      "id": "east-E-profit",
+    },
+    "north of east-A-profit": {
+      "alias": "north of east-A-profit",
+      "id": "north of east-A-profit",
+    },
+    "north of east-B-profit": {
+      "alias": "north of east-B-profit",
+      "id": "north of east-B-profit",
+    },
+    "north of east-C-profit": {
+      "alias": "north of east-C-profit",
+      "id": "north of east-C-profit",
+    },
+    "north of east-D-profit": {
+      "alias": "north of east-D-profit",
+      "id": "north of east-D-profit",
+    },
+    "north of east-E-profit": {
+      "alias": "north of east-E-profit",
+      "id": "north of east-E-profit",
+    },
   },
   "colorItems": [
     {
       "alias": "east-A-profit",
-      "id": "east-A-profit-profit",
+      "id": "east-A-profit",
     },
     {
       "alias": "east-B-profit",
-      "id": "east-B-profit-profit",
+      "id": "east-B-profit",
     },
     {
       "alias": "east-C-profit",
-      "id": "east-C-profit-profit",
+      "id": "east-C-profit",
     },
     {
       "alias": "east-D-profit",
-      "id": "east-D-profit-profit",
+      "id": "east-D-profit",
     },
     {
       "alias": "east-E-profit",
-      "id": "east-E-profit-profit",
+      "id": "east-E-profit",
     },
     {
       "alias": "north of east-A-profit",
-      "id": "north of east-A-profit-profit",
+      "id": "north of east-A-profit",
     },
     {
       "alias": "north of east-B-profit",
-      "id": "north of east-B-profit-profit",
+      "id": "north of east-B-profit",
     },
     {
       "alias": "north of east-C-profit",
-      "id": "north of east-C-profit-profit",
+      "id": "north of east-C-profit",
     },
     {
       "alias": "north of east-D-profit",
-      "id": "north of east-D-profit-profit",
+      "id": "north of east-D-profit",
     },
     {
       "alias": "north of east-E-profit",
-      "id": "north of east-E-profit-profit",
+      "id": "north of east-E-profit",
     },
   ],
   "hasTheme": true,

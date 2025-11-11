@@ -932,11 +932,26 @@ exports[`1_dimColor 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "A": "A",
-          "B": "B",
-          "C": "C",
-          "D": "D",
-          "E": "E",
+          "A": {
+            "alias": "A",
+            "id": "A",
+          },
+          "B": {
+            "alias": "B",
+            "id": "B",
+          },
+          "C": {
+            "alias": "C",
+            "id": "C",
+          },
+          "D": {
+            "alias": "D",
+            "id": "D",
+          },
+          "E": {
+            "alias": "E",
+            "id": "E",
+          },
         },
         "colorItems": [
           "A",
@@ -976,8 +991,8 @@ exports[`1_dimColor 1`] = `
       "id": "type",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
@@ -1752,11 +1767,26 @@ exports[`1_dimColor 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "A": "A",
-    "B": "B",
-    "C": "C",
-    "D": "D",
-    "E": "E",
+    "A": {
+      "alias": "A",
+      "id": "A",
+    },
+    "B": {
+      "alias": "B",
+      "id": "B",
+    },
+    "C": {
+      "alias": "C",
+      "id": "C",
+    },
+    "D": {
+      "alias": "D",
+      "id": "D",
+    },
+    "E": {
+      "alias": "E",
+      "id": "E",
+    },
   },
   "colorItems": [
     {

@@ -450,7 +450,7 @@ exports[`off 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-01",
       "__MeaId__": "profit",
@@ -465,7 +465,7 @@ exports[`off 1`] = `
       "profit": 10,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-01",
       "__MeaId__": "sales",
@@ -480,7 +480,7 @@ exports[`off 1`] = `
       "sales": 20,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-02",
       "__MeaId__": "profit",
@@ -495,7 +495,7 @@ exports[`off 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-02",
       "__MeaId__": "sales",
@@ -510,7 +510,7 @@ exports[`off 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-03",
       "__MeaId__": "profit",
@@ -525,7 +525,7 @@ exports[`off 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-03",
       "__MeaId__": "sales",
@@ -540,7 +540,7 @@ exports[`off 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-04",
       "__MeaId__": "profit",
@@ -555,7 +555,7 @@ exports[`off 1`] = `
       "profit": 50,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-04",
       "__MeaId__": "sales",
@@ -570,7 +570,7 @@ exports[`off 1`] = `
       "sales": 100,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-05",
       "__MeaId__": "profit",
@@ -585,7 +585,7 @@ exports[`off 1`] = `
       "profit": 40,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-05",
       "__MeaId__": "sales",
@@ -600,7 +600,7 @@ exports[`off 1`] = `
       "sales": 80,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-06",
       "__MeaId__": "profit",
@@ -615,7 +615,7 @@ exports[`off 1`] = `
       "profit": 10,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-06",
       "__MeaId__": "sales",
@@ -630,7 +630,7 @@ exports[`off 1`] = `
       "sales": 20,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-07",
       "__MeaId__": "profit",
@@ -645,7 +645,7 @@ exports[`off 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-07",
       "__MeaId__": "sales",
@@ -660,7 +660,7 @@ exports[`off 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-08",
       "__MeaId__": "profit",
@@ -675,7 +675,7 @@ exports[`off 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-08",
       "__MeaId__": "sales",
@@ -690,7 +690,7 @@ exports[`off 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-09",
       "__MeaId__": "profit",
@@ -705,7 +705,7 @@ exports[`off 1`] = `
       "profit": 50,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-09",
       "__MeaId__": "sales",
@@ -720,7 +720,7 @@ exports[`off 1`] = `
       "sales": 100,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-10",
       "__MeaId__": "profit",
@@ -735,7 +735,7 @@ exports[`off 1`] = `
       "profit": 40,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-10",
       "__MeaId__": "sales",
@@ -750,7 +750,7 @@ exports[`off 1`] = `
       "sales": 80,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-11",
       "__MeaId__": "profit",
@@ -765,7 +765,7 @@ exports[`off 1`] = `
       "profit": 10,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-11",
       "__MeaId__": "sales",
@@ -780,7 +780,7 @@ exports[`off 1`] = `
       "sales": 20,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-12",
       "__MeaId__": "profit",
@@ -795,7 +795,7 @@ exports[`off 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-12",
       "__MeaId__": "sales",
@@ -810,7 +810,7 @@ exports[`off 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-13",
       "__MeaId__": "profit",
@@ -825,7 +825,7 @@ exports[`off 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-13",
       "__MeaId__": "sales",
@@ -840,7 +840,7 @@ exports[`off 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-14",
       "__MeaId__": "profit",
@@ -855,7 +855,7 @@ exports[`off 1`] = `
       "profit": 50,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-14",
       "__MeaId__": "sales",
@@ -870,7 +870,7 @@ exports[`off 1`] = `
       "sales": 100,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-15",
       "__MeaId__": "profit",
@@ -885,7 +885,7 @@ exports[`off 1`] = `
       "profit": 40,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-15",
       "__MeaId__": "sales",
@@ -900,7 +900,7 @@ exports[`off 1`] = `
       "sales": 80,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-16",
       "__MeaId__": "profit",
@@ -915,7 +915,7 @@ exports[`off 1`] = `
       "profit": 10,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-16",
       "__MeaId__": "sales",
@@ -930,7 +930,7 @@ exports[`off 1`] = `
       "sales": 20,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-17",
       "__MeaId__": "profit",
@@ -945,7 +945,7 @@ exports[`off 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-17",
       "__MeaId__": "sales",
@@ -960,7 +960,7 @@ exports[`off 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-18",
       "__MeaId__": "profit",
@@ -975,7 +975,7 @@ exports[`off 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-18",
       "__MeaId__": "sales",
@@ -990,7 +990,7 @@ exports[`off 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-19",
       "__MeaId__": "profit",
@@ -1005,7 +1005,7 @@ exports[`off 1`] = `
       "profit": 50,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-19",
       "__MeaId__": "sales",
@@ -1020,7 +1020,7 @@ exports[`off 1`] = `
       "sales": 100,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-20",
       "__MeaId__": "profit",
@@ -1035,7 +1035,7 @@ exports[`off 1`] = `
       "profit": 40,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-20",
       "__MeaId__": "sales",
@@ -1050,7 +1050,7 @@ exports[`off 1`] = `
       "sales": 80,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-21",
       "__MeaId__": "profit",
@@ -1065,7 +1065,7 @@ exports[`off 1`] = `
       "profit": 10,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-21",
       "__MeaId__": "sales",
@@ -1080,7 +1080,7 @@ exports[`off 1`] = `
       "sales": 20,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-22",
       "__MeaId__": "profit",
@@ -1095,7 +1095,7 @@ exports[`off 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-22",
       "__MeaId__": "sales",
@@ -1110,7 +1110,7 @@ exports[`off 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-23",
       "__MeaId__": "profit",
@@ -1125,7 +1125,7 @@ exports[`off 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-23",
       "__MeaId__": "sales",
@@ -1140,7 +1140,7 @@ exports[`off 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-24",
       "__MeaId__": "profit",
@@ -1155,7 +1155,7 @@ exports[`off 1`] = `
       "profit": 50,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-24",
       "__MeaId__": "sales",
@@ -1170,7 +1170,7 @@ exports[`off 1`] = `
       "sales": 100,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-25",
       "__MeaId__": "profit",
@@ -1185,7 +1185,7 @@ exports[`off 1`] = `
       "profit": 40,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-25",
       "__MeaId__": "sales",
@@ -1200,7 +1200,7 @@ exports[`off 1`] = `
       "sales": 80,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-26",
       "__MeaId__": "profit",
@@ -1215,7 +1215,7 @@ exports[`off 1`] = `
       "profit": 10,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-26",
       "__MeaId__": "sales",
@@ -1230,7 +1230,7 @@ exports[`off 1`] = `
       "sales": 20,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-27",
       "__MeaId__": "profit",
@@ -1245,7 +1245,7 @@ exports[`off 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-27",
       "__MeaId__": "sales",
@@ -1260,7 +1260,7 @@ exports[`off 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-28",
       "__MeaId__": "profit",
@@ -1275,7 +1275,7 @@ exports[`off 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-28",
       "__MeaId__": "sales",
@@ -1290,7 +1290,7 @@ exports[`off 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-29",
       "__MeaId__": "profit",
@@ -1305,7 +1305,7 @@ exports[`off 1`] = `
       "profit": 50,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-29",
       "__MeaId__": "sales",
@@ -1320,7 +1320,7 @@ exports[`off 1`] = `
       "sales": 100,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-30",
       "__MeaId__": "profit",
@@ -1335,7 +1335,7 @@ exports[`off 1`] = `
       "profit": 40,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-30",
       "__MeaId__": "sales",
@@ -1350,7 +1350,7 @@ exports[`off 1`] = `
       "sales": 80,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_X__": "2019-01-31",
       "__MeaId__": "profit",
@@ -1365,7 +1365,7 @@ exports[`off 1`] = `
       "profit": 10,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_X__": "2019-01-31",
       "__MeaId__": "sales",
@@ -1403,12 +1403,18 @@ exports[`off 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "profit-profit": "profit",
-          "sales-sales": "sales",
+          "profit": {
+            "alias": "profit",
+            "id": "profit",
+          },
+          "sales": {
+            "alias": "sales",
+            "id": "sales",
+          },
         },
         "colorItems": [
-          "profit-profit",
-          "sales-sales",
+          "profit",
+          "sales",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -1425,13 +1431,13 @@ exports[`off 1`] = `
       "id": "date",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [],
@@ -1605,8 +1611,8 @@ exports[`off 2`] = `
   "background": "transparent",
   "color": {
     "domain": [
-      "profit-profit",
-      "sales-sales",
+      "profit",
+      "sales",
     ],
     "range": [
       "#8D72F6",
@@ -1667,7 +1673,7 @@ exports[`off 2`] = `
     "id": "line",
     "values": [
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-01",
         "__MeaId__": "profit",
@@ -1682,7 +1688,7 @@ exports[`off 2`] = `
         "profit": 10,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-01",
         "__MeaId__": "sales",
@@ -1697,7 +1703,7 @@ exports[`off 2`] = `
         "sales": 20,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-02",
         "__MeaId__": "profit",
@@ -1712,7 +1718,7 @@ exports[`off 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-02",
         "__MeaId__": "sales",
@@ -1727,7 +1733,7 @@ exports[`off 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-03",
         "__MeaId__": "profit",
@@ -1742,7 +1748,7 @@ exports[`off 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-03",
         "__MeaId__": "sales",
@@ -1757,7 +1763,7 @@ exports[`off 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-04",
         "__MeaId__": "profit",
@@ -1772,7 +1778,7 @@ exports[`off 2`] = `
         "profit": 50,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-04",
         "__MeaId__": "sales",
@@ -1787,7 +1793,7 @@ exports[`off 2`] = `
         "sales": 100,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-05",
         "__MeaId__": "profit",
@@ -1802,7 +1808,7 @@ exports[`off 2`] = `
         "profit": 40,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-05",
         "__MeaId__": "sales",
@@ -1817,7 +1823,7 @@ exports[`off 2`] = `
         "sales": 80,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-06",
         "__MeaId__": "profit",
@@ -1832,7 +1838,7 @@ exports[`off 2`] = `
         "profit": 10,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-06",
         "__MeaId__": "sales",
@@ -1847,7 +1853,7 @@ exports[`off 2`] = `
         "sales": 20,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-07",
         "__MeaId__": "profit",
@@ -1862,7 +1868,7 @@ exports[`off 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-07",
         "__MeaId__": "sales",
@@ -1877,7 +1883,7 @@ exports[`off 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-08",
         "__MeaId__": "profit",
@@ -1892,7 +1898,7 @@ exports[`off 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-08",
         "__MeaId__": "sales",
@@ -1907,7 +1913,7 @@ exports[`off 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-09",
         "__MeaId__": "profit",
@@ -1922,7 +1928,7 @@ exports[`off 2`] = `
         "profit": 50,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-09",
         "__MeaId__": "sales",
@@ -1937,7 +1943,7 @@ exports[`off 2`] = `
         "sales": 100,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-10",
         "__MeaId__": "profit",
@@ -1952,7 +1958,7 @@ exports[`off 2`] = `
         "profit": 40,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-10",
         "__MeaId__": "sales",
@@ -1967,7 +1973,7 @@ exports[`off 2`] = `
         "sales": 80,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-11",
         "__MeaId__": "profit",
@@ -1982,7 +1988,7 @@ exports[`off 2`] = `
         "profit": 10,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-11",
         "__MeaId__": "sales",
@@ -1997,7 +2003,7 @@ exports[`off 2`] = `
         "sales": 20,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-12",
         "__MeaId__": "profit",
@@ -2012,7 +2018,7 @@ exports[`off 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-12",
         "__MeaId__": "sales",
@@ -2027,7 +2033,7 @@ exports[`off 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-13",
         "__MeaId__": "profit",
@@ -2042,7 +2048,7 @@ exports[`off 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-13",
         "__MeaId__": "sales",
@@ -2057,7 +2063,7 @@ exports[`off 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-14",
         "__MeaId__": "profit",
@@ -2072,7 +2078,7 @@ exports[`off 2`] = `
         "profit": 50,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-14",
         "__MeaId__": "sales",
@@ -2087,7 +2093,7 @@ exports[`off 2`] = `
         "sales": 100,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-15",
         "__MeaId__": "profit",
@@ -2102,7 +2108,7 @@ exports[`off 2`] = `
         "profit": 40,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-15",
         "__MeaId__": "sales",
@@ -2117,7 +2123,7 @@ exports[`off 2`] = `
         "sales": 80,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-16",
         "__MeaId__": "profit",
@@ -2132,7 +2138,7 @@ exports[`off 2`] = `
         "profit": 10,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-16",
         "__MeaId__": "sales",
@@ -2147,7 +2153,7 @@ exports[`off 2`] = `
         "sales": 20,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-17",
         "__MeaId__": "profit",
@@ -2162,7 +2168,7 @@ exports[`off 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-17",
         "__MeaId__": "sales",
@@ -2177,7 +2183,7 @@ exports[`off 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-18",
         "__MeaId__": "profit",
@@ -2192,7 +2198,7 @@ exports[`off 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-18",
         "__MeaId__": "sales",
@@ -2207,7 +2213,7 @@ exports[`off 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-19",
         "__MeaId__": "profit",
@@ -2222,7 +2228,7 @@ exports[`off 2`] = `
         "profit": 50,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-19",
         "__MeaId__": "sales",
@@ -2237,7 +2243,7 @@ exports[`off 2`] = `
         "sales": 100,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-20",
         "__MeaId__": "profit",
@@ -2252,7 +2258,7 @@ exports[`off 2`] = `
         "profit": 40,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-20",
         "__MeaId__": "sales",
@@ -2267,7 +2273,7 @@ exports[`off 2`] = `
         "sales": 80,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-21",
         "__MeaId__": "profit",
@@ -2282,7 +2288,7 @@ exports[`off 2`] = `
         "profit": 10,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-21",
         "__MeaId__": "sales",
@@ -2297,7 +2303,7 @@ exports[`off 2`] = `
         "sales": 20,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-22",
         "__MeaId__": "profit",
@@ -2312,7 +2318,7 @@ exports[`off 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-22",
         "__MeaId__": "sales",
@@ -2327,7 +2333,7 @@ exports[`off 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-23",
         "__MeaId__": "profit",
@@ -2342,7 +2348,7 @@ exports[`off 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-23",
         "__MeaId__": "sales",
@@ -2357,7 +2363,7 @@ exports[`off 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-24",
         "__MeaId__": "profit",
@@ -2372,7 +2378,7 @@ exports[`off 2`] = `
         "profit": 50,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-24",
         "__MeaId__": "sales",
@@ -2387,7 +2393,7 @@ exports[`off 2`] = `
         "sales": 100,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-25",
         "__MeaId__": "profit",
@@ -2402,7 +2408,7 @@ exports[`off 2`] = `
         "profit": 40,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-25",
         "__MeaId__": "sales",
@@ -2417,7 +2423,7 @@ exports[`off 2`] = `
         "sales": 80,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-26",
         "__MeaId__": "profit",
@@ -2432,7 +2438,7 @@ exports[`off 2`] = `
         "profit": 10,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-26",
         "__MeaId__": "sales",
@@ -2447,7 +2453,7 @@ exports[`off 2`] = `
         "sales": 20,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-27",
         "__MeaId__": "profit",
@@ -2462,7 +2468,7 @@ exports[`off 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-27",
         "__MeaId__": "sales",
@@ -2477,7 +2483,7 @@ exports[`off 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-28",
         "__MeaId__": "profit",
@@ -2492,7 +2498,7 @@ exports[`off 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-28",
         "__MeaId__": "sales",
@@ -2507,7 +2513,7 @@ exports[`off 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-29",
         "__MeaId__": "profit",
@@ -2522,7 +2528,7 @@ exports[`off 2`] = `
         "profit": 50,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-29",
         "__MeaId__": "sales",
@@ -2537,7 +2543,7 @@ exports[`off 2`] = `
         "sales": 100,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-30",
         "__MeaId__": "profit",
@@ -2552,7 +2558,7 @@ exports[`off 2`] = `
         "profit": 40,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-30",
         "__MeaId__": "sales",
@@ -2567,7 +2573,7 @@ exports[`off 2`] = `
         "sales": 80,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_X__": "2019-01-31",
         "__MeaId__": "profit",
@@ -2582,7 +2588,7 @@ exports[`off 2`] = `
         "profit": 10,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_X__": "2019-01-31",
         "__MeaId__": "sales",
@@ -2760,17 +2766,23 @@ exports[`off 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "profit-profit": "profit",
-    "sales-sales": "sales",
+    "profit": {
+      "alias": "profit",
+      "id": "profit",
+    },
+    "sales": {
+      "alias": "sales",
+      "id": "sales",
+    },
   },
   "colorItems": [
     {
       "alias": "profit",
-      "id": "profit-profit",
+      "id": "profit",
     },
     {
       "alias": "sales",
-      "id": "sales-sales",
+      "id": "sales",
     },
   ],
   "hasTheme": true,

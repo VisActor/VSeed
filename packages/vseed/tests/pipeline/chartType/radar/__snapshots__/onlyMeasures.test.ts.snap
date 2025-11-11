@@ -128,7 +128,7 @@ exports[`onlyMeasures 1`] = `
   },
   "dataset": [
     {
-      "__Dim_Angle__": "销售额",
+      "__Dim_Angle__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 200000,
@@ -139,7 +139,7 @@ exports[`onlyMeasures 1`] = `
       "sales": 200000,
     },
     {
-      "__Dim_Angle__": "利润",
+      "__Dim_Angle__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 10000,
@@ -150,7 +150,7 @@ exports[`onlyMeasures 1`] = `
       "profit": 10000,
     },
     {
-      "__Dim_Angle__": "销售额",
+      "__Dim_Angle__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 400000,
@@ -161,7 +161,7 @@ exports[`onlyMeasures 1`] = `
       "sales": 400000,
     },
     {
-      "__Dim_Angle__": "利润",
+      "__Dim_Angle__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 20000,
@@ -172,7 +172,7 @@ exports[`onlyMeasures 1`] = `
       "profit": 20000,
     },
     {
-      "__Dim_Angle__": "销售额",
+      "__Dim_Angle__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 600000,
@@ -183,7 +183,7 @@ exports[`onlyMeasures 1`] = `
       "sales": 600000,
     },
     {
-      "__Dim_Angle__": "利润",
+      "__Dim_Angle__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 30000,
@@ -194,7 +194,7 @@ exports[`onlyMeasures 1`] = `
       "profit": 30000,
     },
     {
-      "__Dim_Angle__": "销售额",
+      "__Dim_Angle__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 800000,
@@ -205,7 +205,7 @@ exports[`onlyMeasures 1`] = `
       "sales": 800000,
     },
     {
-      "__Dim_Angle__": "利润",
+      "__Dim_Angle__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 40000,
@@ -216,7 +216,7 @@ exports[`onlyMeasures 1`] = `
       "profit": 40000,
     },
     {
-      "__Dim_Angle__": "销售额",
+      "__Dim_Angle__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 1000000,
@@ -227,7 +227,7 @@ exports[`onlyMeasures 1`] = `
       "sales": 1000000,
     },
     {
-      "__Dim_Angle__": "利润",
+      "__Dim_Angle__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 50000,
@@ -273,13 +273,13 @@ exports[`onlyMeasures 1`] = `
   ],
   "dimensions": [
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "angle": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "color": [],
     "column": [],
@@ -394,7 +394,7 @@ exports[`onlyMeasures 2`] = `
     "id": "radar",
     "values": [
       {
-        "__Dim_Angle__": "销售额",
+        "__Dim_Angle__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 200000,
@@ -405,7 +405,7 @@ exports[`onlyMeasures 2`] = `
         "sales": 200000,
       },
       {
-        "__Dim_Angle__": "利润",
+        "__Dim_Angle__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 10000,
@@ -416,7 +416,7 @@ exports[`onlyMeasures 2`] = `
         "profit": 10000,
       },
       {
-        "__Dim_Angle__": "销售额",
+        "__Dim_Angle__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 400000,
@@ -427,7 +427,7 @@ exports[`onlyMeasures 2`] = `
         "sales": 400000,
       },
       {
-        "__Dim_Angle__": "利润",
+        "__Dim_Angle__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 20000,
@@ -438,7 +438,7 @@ exports[`onlyMeasures 2`] = `
         "profit": 20000,
       },
       {
-        "__Dim_Angle__": "销售额",
+        "__Dim_Angle__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 600000,
@@ -449,7 +449,7 @@ exports[`onlyMeasures 2`] = `
         "sales": 600000,
       },
       {
-        "__Dim_Angle__": "利润",
+        "__Dim_Angle__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 30000,
@@ -460,7 +460,7 @@ exports[`onlyMeasures 2`] = `
         "profit": 30000,
       },
       {
-        "__Dim_Angle__": "销售额",
+        "__Dim_Angle__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 800000,
@@ -471,7 +471,7 @@ exports[`onlyMeasures 2`] = `
         "sales": 800000,
       },
       {
-        "__Dim_Angle__": "利润",
+        "__Dim_Angle__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 40000,
@@ -482,7 +482,7 @@ exports[`onlyMeasures 2`] = `
         "profit": 40000,
       },
       {
-        "__Dim_Angle__": "销售额",
+        "__Dim_Angle__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 1000000,
@@ -493,7 +493,7 @@ exports[`onlyMeasures 2`] = `
         "sales": 1000000,
       },
       {
-        "__Dim_Angle__": "利润",
+        "__Dim_Angle__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 50000,

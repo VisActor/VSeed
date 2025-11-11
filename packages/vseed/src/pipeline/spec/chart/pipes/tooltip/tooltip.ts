@@ -56,7 +56,8 @@ export const createDimensionContent = (
       key: dimensions.some((d) => d.encoding === 'color')
         ? (v: unknown) => {
             const datum = v as Datum
-            return (datum && (datum[encodingColor] as string)) || ''
+            const key = (datum && (datum[encodingColor] as string)) || ''
+            return unfoldInfo.colorIdMap[key].alias ?? key
           }
         : Object.values(foldMap)[0],
       value: (v: unknown) => {

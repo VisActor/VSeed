@@ -3,7 +3,7 @@ import type { SpecPipe } from 'src/types'
 import { isDeepEqual } from 'remeda'
 import {
   MaxMeasureId,
-  MeasureName,
+  MeasureId,
   MedianMeasureId,
   MinMeasureId,
   OutliersMeasureId,
@@ -32,7 +32,7 @@ export const initBoxplot: SpecPipe = (spec, context) => {
   if (!sameDimensionsMode) {
     result.xField.push(unfoldInfo.encodingColor)
 
-    if (encoding.color?.[0] === MeasureName && encoding.value?.length === 1) {
+    if (encoding.color?.[0] === MeasureId && encoding.value?.length === 1) {
       result.xField.pop()
     }
   }

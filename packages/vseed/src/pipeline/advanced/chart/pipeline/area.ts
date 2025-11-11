@@ -13,7 +13,7 @@ import {
   buildMeasures,
   encodingForLine,
   defaultMeasures,
-  defaultMeasureName,
+  defaultMeasureId,
   defaultDimensions,
   encodingAdapter,
   defaultEncodingForLine,
@@ -25,7 +25,7 @@ export const areaAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
 
   encodingAdapter(
     [defaultEncodingForLine, buildMeasures],

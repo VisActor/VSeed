@@ -544,7 +544,7 @@ exports[`light 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "2019",
@@ -560,7 +560,7 @@ exports[`light 1`] = `
       "profit": 10,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_Detail__": "sales",
       "__Dim_X__": "2019",
@@ -576,7 +576,7 @@ exports[`light 1`] = `
       "sales": 20,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "2020",
@@ -592,7 +592,7 @@ exports[`light 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_Detail__": "sales",
       "__Dim_X__": "2020",
@@ -608,7 +608,7 @@ exports[`light 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "2021",
@@ -624,7 +624,7 @@ exports[`light 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_Detail__": "sales",
       "__Dim_X__": "2021",
@@ -640,7 +640,7 @@ exports[`light 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "2022",
@@ -656,7 +656,7 @@ exports[`light 1`] = `
       "profit": 50,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_Detail__": "sales",
       "__Dim_X__": "2022",
@@ -672,7 +672,7 @@ exports[`light 1`] = `
       "sales": 100,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "2023",
@@ -688,7 +688,7 @@ exports[`light 1`] = `
       "profit": 40,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_Detail__": "sales",
       "__Dim_X__": "2023",
@@ -727,12 +727,18 @@ exports[`light 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "profit-profit": "profit",
-          "sales-sales": "sales",
+          "profit": {
+            "alias": "profit",
+            "id": "profit",
+          },
+          "sales": {
+            "alias": "sales",
+            "id": "sales",
+          },
         },
         "colorItems": [
-          "profit-profit",
-          "sales-sales",
+          "profit",
+          "sales",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -749,17 +755,17 @@ exports[`light 1`] = `
       "id": "date",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
@@ -943,8 +949,8 @@ exports[`light 2`] = `
   },
   "color": {
     "domain": [
-      "profit-profit",
-      "sales-sales",
+      "profit",
+      "sales",
     ],
     "range": [
       "#8D72F6",
@@ -1001,7 +1007,7 @@ exports[`light 2`] = `
     "id": "column",
     "values": [
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "2019",
@@ -1017,7 +1023,7 @@ exports[`light 2`] = `
         "profit": 10,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "2019",
@@ -1033,7 +1039,7 @@ exports[`light 2`] = `
         "sales": 20,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "2020",
@@ -1049,7 +1055,7 @@ exports[`light 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "2020",
@@ -1065,7 +1071,7 @@ exports[`light 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "2021",
@@ -1081,7 +1087,7 @@ exports[`light 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "2021",
@@ -1097,7 +1103,7 @@ exports[`light 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "2022",
@@ -1113,7 +1119,7 @@ exports[`light 2`] = `
         "profit": 50,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "2022",
@@ -1129,7 +1135,7 @@ exports[`light 2`] = `
         "sales": 100,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "2023",
@@ -1145,7 +1151,7 @@ exports[`light 2`] = `
         "profit": 40,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "2023",
@@ -1310,17 +1316,23 @@ exports[`light 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "profit-profit": "profit",
-    "sales-sales": "sales",
+    "profit": {
+      "alias": "profit",
+      "id": "profit",
+    },
+    "sales": {
+      "alias": "sales",
+      "id": "sales",
+    },
   },
   "colorItems": [
     {
       "alias": "profit",
-      "id": "profit-profit",
+      "id": "profit",
     },
     {
       "alias": "sales",
-      "id": "sales-sales",
+      "id": "sales",
     },
   ],
   "hasTheme": true,

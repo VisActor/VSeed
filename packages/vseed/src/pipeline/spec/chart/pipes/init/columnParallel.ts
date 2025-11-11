@@ -1,6 +1,6 @@
 import type { IBarChartSpec } from '@visactor/vchart'
 import { isDeepEqual } from 'remeda'
-import { MeasureName } from 'src/dataReshape'
+import { MeasureId } from 'src/dataReshape'
 import type { SpecPipe } from 'src/types'
 
 export const initColumnParallel: SpecPipe = (spec, context) => {
@@ -18,7 +18,7 @@ export const initColumnParallel: SpecPipe = (spec, context) => {
   if (!sameDimensionsMode) {
     result.xField.push(unfoldInfo.encodingDetail)
 
-    if (encoding.detail?.[0] === MeasureName && encoding.y?.length === 1) {
+    if (encoding.detail?.[0] === MeasureId && encoding.y?.length === 1) {
       result.xField.pop()
     }
   }

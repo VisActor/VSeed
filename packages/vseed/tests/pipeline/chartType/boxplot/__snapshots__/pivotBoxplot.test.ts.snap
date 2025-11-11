@@ -436,7 +436,7 @@ exports[`pivotBoxplot 1`] = `
     [
       {
         "Sex": "male",
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_X__": "male",
         "__Max__": 2,
@@ -457,7 +457,7 @@ exports[`pivotBoxplot 1`] = `
       },
       {
         "Sex": "female",
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_X__": "female",
         "__Max__": 5,
@@ -478,7 +478,7 @@ exports[`pivotBoxplot 1`] = `
       },
       {
         "Sex": "male",
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_X__": "male",
         "__Max__": 2,
@@ -499,7 +499,7 @@ exports[`pivotBoxplot 1`] = `
       },
       {
         "Sex": "female",
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_X__": "female",
         "__Max__": 7,
@@ -520,7 +520,7 @@ exports[`pivotBoxplot 1`] = `
       },
       {
         "Sex": "female",
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_X__": "female",
         "__Max__": 8,
@@ -548,10 +548,13 @@ exports[`pivotBoxplot 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "v-v": "v",
+          "v": {
+            "alias": "v",
+            "id": "v",
+          },
         },
         "colorItems": [
-          "v-v",
+          "v",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -579,13 +582,13 @@ exports[`pivotBoxplot 1`] = `
       "id": "Sex",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "max": [],
@@ -798,7 +801,7 @@ exports[`pivotBoxplot 2`] = `
         },
         "color": {
           "domain": [
-            "v-v",
+            "v",
           ],
           "range": [
             "#8D72F6",
@@ -974,7 +977,7 @@ exports[`pivotBoxplot 2`] = `
   "legends": {
     "data": [
       {
-        "label": "v-v",
+        "label": "v",
         "shape": {
           "fill": "#8D72F6",
           "outerBorder": {
@@ -1028,7 +1031,7 @@ exports[`pivotBoxplot 2`] = `
     "v": [
       {
         "Sex": "male",
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_X__": "male",
         "__Max__": 2,
@@ -1049,7 +1052,7 @@ exports[`pivotBoxplot 2`] = `
       },
       {
         "Sex": "female",
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_X__": "female",
         "__Max__": 5,
@@ -1070,7 +1073,7 @@ exports[`pivotBoxplot 2`] = `
       },
       {
         "Sex": "male",
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_X__": "male",
         "__Max__": 2,
@@ -1091,7 +1094,7 @@ exports[`pivotBoxplot 2`] = `
       },
       {
         "Sex": "female",
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_X__": "female",
         "__Max__": 7,
@@ -1112,7 +1115,7 @@ exports[`pivotBoxplot 2`] = `
       },
       {
         "Sex": "female",
-        "__Dim_ColorId__": "v-v",
+        "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
         "__Dim_X__": "female",
         "__Max__": 8,
@@ -1345,12 +1348,15 @@ exports[`pivotBoxplot 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "v-v": "v",
+    "v": {
+      "alias": "v",
+      "id": "v",
+    },
   },
   "colorItems": [
     {
       "alias": "v",
-      "id": "v-v",
+      "id": "v",
     },
   ],
   "hasTheme": true,

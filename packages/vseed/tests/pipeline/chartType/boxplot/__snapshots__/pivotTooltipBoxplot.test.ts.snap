@@ -436,7 +436,7 @@ exports[`pivotTooltipBoxplot 1`] = `
     [
       {
         "Sex": "male",
-        "__Dim_ColorId__": "Age-Age",
+        "__Dim_ColorId__": "Age",
         "__Dim_Color__": "Age",
         "__Dim_X__": "male",
         "__Max__": 20,
@@ -457,7 +457,7 @@ exports[`pivotTooltipBoxplot 1`] = `
       },
       {
         "Sex": "female",
-        "__Dim_ColorId__": "Age-Age",
+        "__Dim_ColorId__": "Age",
         "__Dim_Color__": "Age",
         "__Dim_X__": "female",
         "__Max__": 30,
@@ -478,7 +478,7 @@ exports[`pivotTooltipBoxplot 1`] = `
       },
       {
         "Sex": "female",
-        "__Dim_ColorId__": "Age-Age",
+        "__Dim_ColorId__": "Age",
         "__Dim_Color__": "Age",
         "__Dim_X__": "female",
         "__Max__": 40,
@@ -506,10 +506,13 @@ exports[`pivotTooltipBoxplot 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "Age-Age": "Age",
+          "Age": {
+            "alias": "Age",
+            "id": "Age",
+          },
         },
         "colorItems": [
-          "Age-Age",
+          "Age",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -537,13 +540,13 @@ exports[`pivotTooltipBoxplot 1`] = `
       "id": "Sex",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "max": [],
@@ -756,7 +759,7 @@ exports[`pivotTooltipBoxplot 2`] = `
         },
         "color": {
           "domain": [
-            "Age-Age",
+            "Age",
           ],
           "range": [
             "#8D72F6",
@@ -932,7 +935,7 @@ exports[`pivotTooltipBoxplot 2`] = `
   "legends": {
     "data": [
       {
-        "label": "Age-Age",
+        "label": "Age",
         "shape": {
           "fill": "#8D72F6",
           "outerBorder": {
@@ -986,7 +989,7 @@ exports[`pivotTooltipBoxplot 2`] = `
     "Age": [
       {
         "Sex": "male",
-        "__Dim_ColorId__": "Age-Age",
+        "__Dim_ColorId__": "Age",
         "__Dim_Color__": "Age",
         "__Dim_X__": "male",
         "__Max__": 20,
@@ -1007,7 +1010,7 @@ exports[`pivotTooltipBoxplot 2`] = `
       },
       {
         "Sex": "female",
-        "__Dim_ColorId__": "Age-Age",
+        "__Dim_ColorId__": "Age",
         "__Dim_Color__": "Age",
         "__Dim_X__": "female",
         "__Max__": 30,
@@ -1028,7 +1031,7 @@ exports[`pivotTooltipBoxplot 2`] = `
       },
       {
         "Sex": "female",
-        "__Dim_ColorId__": "Age-Age",
+        "__Dim_ColorId__": "Age",
         "__Dim_Color__": "Age",
         "__Dim_X__": "female",
         "__Max__": 40,
@@ -1261,12 +1264,15 @@ exports[`pivotTooltipBoxplot 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "Age-Age": "Age",
+    "Age": {
+      "alias": "Age",
+      "id": "Age",
+    },
   },
   "colorItems": [
     {
       "alias": "Age",
-      "id": "Age-Age",
+      "id": "Age",
     },
   ],
   "hasTheme": true,

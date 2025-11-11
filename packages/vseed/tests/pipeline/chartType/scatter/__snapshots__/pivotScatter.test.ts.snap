@@ -527,7 +527,7 @@ exports[`pivotScatter 1`] = `
   "dataset": [
     [
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 200000,
@@ -546,7 +546,7 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 400000,
@@ -565,7 +565,7 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 600000,
@@ -584,7 +584,7 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 800000,
@@ -603,7 +603,7 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 1000000,
@@ -622,7 +622,7 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 300000,
@@ -641,7 +641,7 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 200000,
@@ -660,7 +660,7 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 400000,
@@ -679,7 +679,7 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 600000,
@@ -698,7 +698,7 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 800000,
@@ -717,7 +717,7 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 1000000,
@@ -736,7 +736,7 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 300000,
@@ -755,7 +755,7 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 200000,
@@ -774,7 +774,7 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 400000,
@@ -793,7 +793,7 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 600000,
@@ -812,7 +812,7 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 800000,
@@ -831,7 +831,7 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 1000000,
@@ -850,7 +850,7 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 300000,
@@ -869,7 +869,7 @@ exports[`pivotScatter 1`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 200000,
@@ -888,7 +888,7 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 400000,
@@ -907,7 +907,7 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 600000,
@@ -926,7 +926,7 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 800000,
@@ -945,7 +945,7 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 1000000,
@@ -964,7 +964,7 @@ exports[`pivotScatter 1`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 300000,
@@ -1066,14 +1066,14 @@ exports[`pivotScatter 1`] = `
       "id": "type",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [],
     "detail": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "tooltip": [
@@ -1507,7 +1507,7 @@ exports[`pivotScatter 2`] = `
   "records": {
     "scatter-0": [
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 200000,
@@ -1526,7 +1526,7 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 400000,
@@ -1545,7 +1545,7 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 600000,
@@ -1564,7 +1564,7 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 800000,
@@ -1583,7 +1583,7 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 1000000,
@@ -1602,7 +1602,7 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 300000,
@@ -1621,7 +1621,7 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 200000,
@@ -1640,7 +1640,7 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 400000,
@@ -1659,7 +1659,7 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 600000,
@@ -1678,7 +1678,7 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 800000,
@@ -1697,7 +1697,7 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 1000000,
@@ -1716,7 +1716,7 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 300000,
@@ -1735,7 +1735,7 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 200000,
@@ -1754,7 +1754,7 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 400000,
@@ -1773,7 +1773,7 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 600000,
@@ -1792,7 +1792,7 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 800000,
@@ -1811,7 +1811,7 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 1000000,
@@ -1830,7 +1830,7 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 300000,
@@ -1849,7 +1849,7 @@ exports[`pivotScatter 2`] = `
         "type": "A",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 200000,
@@ -1868,7 +1868,7 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 400000,
@@ -1887,7 +1887,7 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 600000,
@@ -1906,7 +1906,7 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 800000,
@@ -1925,7 +1925,7 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 1000000,
@@ -1944,7 +1944,7 @@ exports[`pivotScatter 2`] = `
         "type": "B",
       },
       {
-        "__Dim_Detail__": "利润",
+        "__Dim_Detail__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaXValue__0": 300000,

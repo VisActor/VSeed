@@ -730,8 +730,8 @@ exports[`simpleHeatmap 1`] = `
       "id": "type",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
@@ -741,7 +741,7 @@ exports[`simpleHeatmap 1`] = `
     "column": [],
     "detail": [
       "type",
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
@@ -754,7 +754,7 @@ exports[`simpleHeatmap 1`] = `
     ],
     "y": [
       "type",
-      "__MeaName__",
+      "__MeaId__",
     ],
   },
   "locale": "zh-CN",

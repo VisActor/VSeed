@@ -80,7 +80,7 @@ export const discreteLegend: SpecPipe = (spec, context) => {
       },
       label: {
         formatMethod: (value) => {
-          return unfoldInfo.colorIdMap[String(value)] ?? value
+          return unfoldInfo.colorIdMap[String(value)].alias ?? value
         },
         style: {
           fontSize: labelFontSize,

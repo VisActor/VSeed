@@ -8,7 +8,7 @@ import {
   getDarkPivotChartGridConfig,
   getDarkLabel,
 } from '../common'
-import { getDefaultTooltip } from '../common/tooltip'
+import { getDarkTooltip } from '../common/tooltip'
 import { getDarkBandAxis, getDarkLinearAxis } from '../common/axes'
 import { getDarkAnnotation } from '../common/annotaion'
 import { getDarkFunnelTransformTheme } from '../common/funnelTransform'
@@ -35,7 +35,7 @@ export const darkTheme = (): CustomThemeConfig => {
     color: getDarkColor(),
     label: getDarkLabel(),
     legend: getDefaultLegend(),
-    tooltip: getDefaultTooltip(),
+    tooltip: getDarkTooltip(),
   }
 
   const tableConfig = getDarkTableConfig()

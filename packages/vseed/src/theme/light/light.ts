@@ -8,7 +8,7 @@ import {
   getLightPivotChartGridConfig,
   getLightTableConfig,
 } from '../common'
-import { getDefaultTooltip } from '../common/tooltip'
+import { getLightTooltip } from '../common/tooltip'
 import { getLightBandAxis, getLightLinearAxis } from '../common/axes'
 import { getLightAnnotation } from '../common/annotaion'
 import { getLightFunnelTransformTheme } from '../common/funnelTransform'
@@ -36,7 +36,7 @@ export const lightTheme = (): CustomThemeConfig => {
     color: getLightColor(),
     label: getLightLabel(),
     legend: getDefaultLegend(),
-    tooltip: getDefaultTooltip(),
+    tooltip: getLightTooltip(),
   }
   const tableConfig = getLightTableConfig()
 

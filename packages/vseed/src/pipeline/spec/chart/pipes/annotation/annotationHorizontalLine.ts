@@ -67,6 +67,7 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
           },
         },
         label: {
+          confine: true,
           text: text,
           position: positionMap[textPosition || 'insideEnd'],
           style: {

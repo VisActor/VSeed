@@ -14,7 +14,7 @@ import {
   buildMeasures,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
   encodingAdapter,
   defaultEncodingForColumn,
   deleteEncodingForMeasure,
@@ -25,7 +25,7 @@ export const columnParallelAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
 
   encodingAdapter(
     [defaultEncodingForColumn, buildMeasures],

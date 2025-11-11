@@ -22,7 +22,7 @@ export type UnfoldInfo = {
   encodingAngle: string
 
   colorItems: string[]
-  colorIdMap: Record<string, string>
+  colorIdMap: Record<string, { id: string; alias: string }>
 }
 
 export type DatasetReshapeInfo = Array<{

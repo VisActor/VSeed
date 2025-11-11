@@ -7,7 +7,7 @@ export const sortLegend: AdvancedPipe = (advancedVSeed, context) => {
   const { sortLegend } = vseed as Line
   const { datasetReshapeInfo, dataset } = advancedVSeed
   const colorId = datasetReshapeInfo?.[0]?.unfoldInfo?.encodingColorId
-  const colorIdMap = datasetReshapeInfo?.[0]?.unfoldInfo?.colorIdMap
+  const colorIdMap = datasetReshapeInfo?.[0]?.unfoldInfo?.colorIdMap ?? {}
   const colorItems = datasetReshapeInfo?.[0]?.unfoldInfo?.colorItems
   if (!sortLegend || !colorId || !colorIdMap || !colorItems) {
     return advancedVSeed
@@ -17,15 +17,13 @@ export const sortLegend: AdvancedPipe = (advancedVSeed, context) => {
   if (!result.analysis.orderMapping) result.analysis.orderMapping = {}
 
   if (sortLegend.customOrder) {
-    const nameMap = Object.keys(colorIdMap).reduce<Record<string, string>>((pre, cur) => {
-      pre[colorIdMap[cur]] = cur
-      return pre
-    }, {})
-
+    const colorIds = Object.keys(colorIdMap)
     // 先根据名称匹配, 若名称不存在, 则根据id匹配, 从而兼容名称和id的两种情况
-    const orderRes = sortLegend.customOrder.map((itemNameOrId) =>
-      nameMap[itemNameOrId] ? nameMap[itemNameOrId] : itemNameOrId,
-    )
+    const orderRes = sortLegend.customOrder.map((itemNameOrId) => {
+      return colorIds.find((id) => {
+        return colorIdMap[id]?.alias === itemNameOrId || colorIdMap[id]?.id === itemNameOrId || id === itemNameOrId
+      }) as string
+    })
     result.analysis.orderMapping[colorId] = orderRes
     return result
   }

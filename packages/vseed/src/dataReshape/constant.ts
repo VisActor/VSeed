@@ -6,6 +6,7 @@ export const Separator = '-'
 export const FoldMeasureName = '__MeaName__'
 export const FoldMeasureId = '__MeaId__'
 export const FoldMeasureValue = '__MeaValue__'
+export const MeasureId = FoldMeasureId
 export const MeasureName = FoldMeasureName
 
 // Measures For DualAxis

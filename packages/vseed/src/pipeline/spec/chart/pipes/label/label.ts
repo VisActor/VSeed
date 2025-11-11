@@ -14,7 +14,7 @@ import type {
   SpecPipe,
 } from 'src/types'
 import { isNumber, merge, uniqueBy } from 'remeda'
-import { MeasureName } from 'src/dataReshape/constant'
+import { MeasureId } from 'src/dataReshape/constant'
 
 export const label: SpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
@@ -94,7 +94,7 @@ export const buildLabel = (
     hasDimLabelEncoding
       ? vseedDimensions.filter((item) => encoding.label?.includes(item.id))
       : showDimension
-        ? advancedVSeedDimensions.filter((d) => d.id !== MeasureName)
+        ? advancedVSeedDimensions.filter((d) => d.id !== MeasureId)
         : [],
     (item: Dimension) => item.id,
   )

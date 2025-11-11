@@ -29,7 +29,7 @@ export const color: SpecPipe = (spec, context) => {
 
 export const createSpecifiedForColorMapping = (
   colorMapping?: Record<string, string>,
-  colorIdMap?: Record<string, string>,
+  colorIdMap?: Record<string, { id: string; alias: string }>,
   colorItems?: string[],
 ) => {
   if (!colorMapping || !colorIdMap || !colorItems) {
@@ -46,8 +46,8 @@ export const createSpecifiedForColorMapping = (
       const name = cur[0]
       const colorValue = cur[1]
 
-      const accurateMatchedList = Object.entries(colorIdMap).filter(([colorKey, colorAlias]) => {
-        return colorKey === name || colorAlias === name
+      const accurateMatchedList = Object.entries(colorIdMap).filter(([colorKey, colorObj]) => {
+        return colorKey === name || colorObj.alias === name || colorObj.id === name
       })
       accurateMatchedList.forEach((item) => {
         prev[item[0]] = colorValue
@@ -68,8 +68,8 @@ export const createSpecifiedForColorMapping = (
         return prev
       }
 
-      const fuzzyMatchedList = Object.entries(colorIdMap).filter(([colorKey, colorAlias]) => {
-        return colorKey.includes(name) || colorAlias.includes(name)
+      const fuzzyMatchedList = Object.entries(colorIdMap).filter(([colorKey, colorObj]) => {
+        return colorKey.includes(name) || colorObj.alias.includes(name) || colorObj.id.includes(name)
       })
       fuzzyMatchedList.forEach((item) => {
         // 已经匹配有值, 则不重复匹配

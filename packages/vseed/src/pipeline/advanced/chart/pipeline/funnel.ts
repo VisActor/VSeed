@@ -11,7 +11,7 @@ import {
   buildMeasures,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
   encodingAdapter,
   defaultEncodingForFunnel,
   deleteEncodingForMeasure,
@@ -22,7 +22,7 @@ export const funnelAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
 
   encodingAdapter(
     [defaultEncodingForFunnel, buildMeasures],

@@ -11,7 +11,7 @@ import {
   buildMeasures,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
   encodingAdapter,
   deleteEncodingForMeasure,
   deleteTooltipAndLabelDimension,
@@ -25,7 +25,7 @@ export const histogramAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
   histogramConfig,
 
   encodingAdapter(

@@ -1,6 +1,6 @@
 import type { IRoseChartSpec } from '@visactor/vchart'
 import { isDeepEqual } from 'remeda'
-import { MeasureName } from 'src/dataReshape'
+import { MeasureId } from 'src/dataReshape'
 import type { SpecPipe } from 'src/types'
 
 export const initRoseParallel: SpecPipe = (spec, context) => {
@@ -17,7 +17,7 @@ export const initRoseParallel: SpecPipe = (spec, context) => {
   if (!sameDimensionsMode) {
     result.angleField.push(unfoldInfo.encodingDetail)
 
-    if (encoding.detail?.[0] === MeasureName && encoding.radius?.length === 1) {
+    if (encoding.detail?.[0] === MeasureId && encoding.radius?.length === 1) {
       result.angleField.pop()
     }
   }

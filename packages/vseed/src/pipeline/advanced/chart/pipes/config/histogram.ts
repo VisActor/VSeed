@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { pick } from 'remeda'
+import { BinEndMeasureId, BinStartMeasureId } from 'src/dataReshape'
 import { replaceNullToUndefined } from 'src/pipeline/utils'
 import type { AdvancedPipe, AdvancedVSeed, Config } from 'src/types'
 
@@ -29,6 +31,32 @@ export const histogramConfig: AdvancedPipe = (advancedVSeed, context) => {
     ...(result.config || {}),
     [chartType]: {
       ...config,
+    },
+  }
+
+  return result as AdvancedVSeed
+}
+
+export const histogramXAxisConfig: AdvancedPipe = (advancedVSeed, context) => {
+  const { vseed } = context
+  const { chartType } = vseed
+  const result = {
+    ...advancedVSeed,
+  }
+  const { dataset = [] } = advancedVSeed
+  const minValue = Math.min(...dataset.map((v) => +v[BinStartMeasureId]))
+  const maxValue = Math.max(...dataset.map((v) => +v[BinEndMeasureId]))
+
+  const chartConfig = result.config?.[chartType] as any
+  result.config = {
+    ...(result.config || {}),
+    [chartType]: {
+      ...chartConfig,
+      xAxis: {
+        min: minValue,
+        max: maxValue,
+        ...(chartConfig?.xAxis || {}),
+      },
     },
   }
 

@@ -14,6 +14,7 @@ import type {
   SpecPipe,
 } from 'src/types'
 import { isNumber, merge, uniqueBy } from 'remeda'
+import { selector } from 'src/dataSelector'
 import { MeasureId } from 'src/dataReshape/constant'
 
 export const label: SpecPipe = (spec, context) => {
@@ -114,7 +115,7 @@ export const buildLabel = (
     visible: enable,
     dataFilter: (data: Datum[]) => {
       return data.filter((entry) => {
-        return entry.data?.[DATUM_HIDE_KEY] !== true
+        return entry.data?.[DATUM_HIDE_KEY] !== true && selector(entry.data as Datum, label.selector, 'Or')
       })
     },
     formatMethod: (_: unknown, datum: Datum) => {

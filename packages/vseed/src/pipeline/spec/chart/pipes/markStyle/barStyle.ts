@@ -39,6 +39,7 @@ export const barStyle: SpecPipe = (spec, context) => {
       barBorderWidth = 1,
       barColor,
       barColorOpacity,
+      barBorderOpacity,
       barRadius,
       barVisible = true,
     } = style
@@ -60,12 +61,10 @@ export const barStyle: SpecPipe = (spec, context) => {
           fill: barColor,
           fillOpacity: barColorOpacity,
           cornerRadius: barRadius,
-          innerBorder: {
-            stroke: barBorderColor,
-            lineWidth: barBorderWidth,
-            distance: (barBorderWidth || 0) / 2,
-            lineDash: lineDash,
-          },
+          lineWidth: barBorderWidth,
+          stroke: barBorderColor,
+          strokeOpacity: barBorderOpacity,
+          lineDash: lineDash,
         },
       },
     }

@@ -1,3 +1,4 @@
+import type { Selector, Selectors } from 'src/types/dataSelector'
 import type { NumFormat } from '../../format'
 
 export type Label = {
@@ -80,4 +81,8 @@ export type Label = {
    * @description 标签防重叠功能是否启用
    */
   labelOverlap?: boolean
+  /**
+   * @description 标签筛选，默认selectors之间条件关系为Or
+   */
+  selector?: Selector | Selectors
 }

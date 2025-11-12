@@ -17,6 +17,10 @@ export const initHistogram: SpecPipe = (spec) => {
       clip: true,
     },
   ]
+  result.legends = {
+    visible: false,
+  }
+  result.barGap = 2
   result.animation = true
   return result
 }

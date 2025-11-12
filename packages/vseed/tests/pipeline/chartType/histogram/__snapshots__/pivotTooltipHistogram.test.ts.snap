@@ -215,6 +215,8 @@ exports[`pivotTooltipHistogram 1`] = `
           "lineWidth": 1,
           "visible": false,
         },
+        "max": 5,
+        "min": 1,
         "nice": true,
         "tick": {
           "tickColor": "#3641594d",
@@ -554,6 +556,7 @@ exports[`pivotTooltipHistogram 1`] = `
       "__MeaId__": "v",
       "__MeaName__": "v",
       "__MeaValue__": 1,
+      "v": 1,
     },
     {
       "__BinCount__": 1,
@@ -566,6 +569,7 @@ exports[`pivotTooltipHistogram 1`] = `
       "__MeaId__": "v",
       "__MeaName__": "v",
       "__MeaValue__": 1,
+      "v": 1,
     },
     {
       "__BinCount__": 1,
@@ -578,6 +582,7 @@ exports[`pivotTooltipHistogram 1`] = `
       "__MeaId__": "v",
       "__MeaName__": "v",
       "__MeaValue__": 1,
+      "v": 1,
     },
     {
       "__BinCount__": 1,
@@ -590,6 +595,7 @@ exports[`pivotTooltipHistogram 1`] = `
       "__MeaId__": "v",
       "__MeaName__": "v",
       "__MeaValue__": 1,
+      "v": 1,
     },
   ],
   "datasetReshapeInfo": [
@@ -696,8 +702,8 @@ exports[`pivotTooltipHistogram 2`] = `
         },
         "visible": true,
       },
-      "max": undefined,
-      "min": undefined,
+      "max": 5,
+      "min": 1,
       "nice": true,
       "orient": "bottom",
       "tick": {
@@ -795,6 +801,7 @@ exports[`pivotTooltipHistogram 2`] = `
       "visible": true,
     },
   },
+  "barGap": 2,
   "color": {
     "domain": [
       "v",
@@ -854,6 +861,7 @@ exports[`pivotTooltipHistogram 2`] = `
         "__MeaId__": "v",
         "__MeaName__": "v",
         "__MeaValue__": 1,
+        "v": 1,
       },
       {
         "__BinCount__": 1,
@@ -866,6 +874,7 @@ exports[`pivotTooltipHistogram 2`] = `
         "__MeaId__": "v",
         "__MeaName__": "v",
         "__MeaValue__": 1,
+        "v": 1,
       },
       {
         "__BinCount__": 1,
@@ -878,6 +887,7 @@ exports[`pivotTooltipHistogram 2`] = `
         "__MeaId__": "v",
         "__MeaName__": "v",
         "__MeaValue__": 1,
+        "v": 1,
       },
       {
         "__BinCount__": 1,
@@ -890,6 +900,7 @@ exports[`pivotTooltipHistogram 2`] = `
         "__MeaId__": "v",
         "__MeaName__": "v",
         "__MeaValue__": 1,
+        "v": 1,
       },
     ],
   },
@@ -1062,6 +1073,7 @@ exports[`pivotTooltipHistogram 2`] = `
 exports[`pivotTooltipHistogram 3`] = `
 {
   "advancedPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

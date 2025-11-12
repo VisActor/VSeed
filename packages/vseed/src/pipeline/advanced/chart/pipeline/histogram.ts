@@ -20,6 +20,7 @@ import {
   reshapeWithHistogramEncoding,
   regressionLine,
 } from '../pipes'
+import { histogramXAxisConfig } from '../pipes/config/histogram'
 
 export const histogramAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
@@ -39,6 +40,7 @@ export const histogramAdvancedPipeline: AdvancedPipeline = [
   ),
   pivotAdapter([reshapeWithHistogramEncoding], [pivotReshapeWithHistogramEncoding]),
 
+  histogramXAxisConfig,
   sortLegend,
   theme,
   markStyle,

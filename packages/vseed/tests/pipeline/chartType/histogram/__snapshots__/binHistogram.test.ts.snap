@@ -215,6 +215,8 @@ exports[`binHistogram 1`] = `
           "lineWidth": 1,
           "visible": false,
         },
+        "max": 30,
+        "min": 0,
         "nice": true,
         "tick": {
           "tickColor": "#3641594d",
@@ -705,8 +707,8 @@ exports[`binHistogram 2`] = `
         },
         "visible": true,
       },
-      "max": undefined,
-      "min": undefined,
+      "max": 30,
+      "min": 0,
       "nice": true,
       "orient": "bottom",
       "tick": {
@@ -804,6 +806,7 @@ exports[`binHistogram 2`] = `
       "visible": true,
     },
   },
+  "barGap": 2,
   "color": {
     "domain": [],
     "range": [
@@ -1052,6 +1055,7 @@ exports[`binHistogram 2`] = `
 exports[`binHistogram 3`] = `
 {
   "advancedPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

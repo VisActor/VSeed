@@ -1,17 +1,9 @@
-# barStyle
+# bodyCellStyle
 
-**Type:** `BarStyle | BarStyle[] | undefined`
+**Type:** `BodyCellStyle | BodyCellStyle[] | undefined`
 
 :::note{title=描述}
-矩形图元样式, 条形图样式配置, 用于定义图表的条形图样式, 包括条形图的颜色, 边框, 圆角等.
-
-支持全局样式或条件样式配置
-
-数据筛选器
-
-若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
-
-若未配置selector, 则样式全局生效.
+设置表格正文部分单元格的特殊样式
 
 :::
 
@@ -115,90 +107,48 @@ same as operator
 
 :::
 
-## barVisible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-柱图元(矩形图元)是否可见
-
-:::
-
-## barColor
+## backgroundColor
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-柱图元(矩形图元)颜色
+单元格背景色
 
 :::
 
-## barColorOpacity
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-柱图元(矩形图元)颜色透明度
-
-:::
-
-## barBorderColor
+## textColor
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-柱图元(矩形图元)边框颜色
+单元格文字颜色
 
 :::
 
-## barBorderWidth
+## textFontSize
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-柱图元(矩形图元)边框宽度
+单元格文字大小
 
 :::
 
-## barBorderStyle
+## borderColor
 
-**Type:** `"solid" | "dashed" | "dotted" | undefined`
+**Type:** `string | undefined`
 
 :::note{title=描述}
-柱图元(矩形图元)边框样式
+单元格边框颜色
 
 :::
 
-**示例**
-solid
-
-dashed
-
-dotted
-
-
-
-## barBorderOpacity
+## borderLineWidth
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-柱图元(矩形图元)圆角
-
-
-
-柱图元(矩形图元)描边透明度
+单元格边框线宽
 
 :::
-
-**示例**
-4
-
-[0, 0, 10, 10]
-
-
-
-## barRadius
-
-**Type:** `number | number[] | undefined`
 

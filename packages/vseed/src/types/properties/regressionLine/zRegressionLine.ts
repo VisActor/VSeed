@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 export const zEcdfRegressionLine = z.object({
+  enable: z.boolean().nullish(),
   color: z.string().nullish(),
   lineWidth: z.number().nullish(),
   lineDash: z.array(z.number()).nullish(),

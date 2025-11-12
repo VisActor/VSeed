@@ -46,8 +46,8 @@ export const zHistogram = z.object({
   annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).nullish(),
   annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).nullish(),
   annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).nullish(),
-  ecdfRegressionLine: z.array(zEcdfRegressionLine).or(zEcdfRegressionLine).or(z.boolean()).nullish(),
-  kdeRegressionLine: z.array(zKdeRegressionLine).or(zKdeRegressionLine).or(z.boolean()).nullish(),
+  ecdfRegressionLine: z.array(zEcdfRegressionLine).or(zEcdfRegressionLine).nullish(),
+  kdeRegressionLine: z.array(zKdeRegressionLine).or(zKdeRegressionLine).nullish(),
   locale: zLocale.nullish(),
 })
 

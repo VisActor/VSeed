@@ -20,7 +20,11 @@ export const regressionLine: AdvancedPipe = (advancedVSeed, context) => {
       if ((vseed as any)[key]) {
         hasLine = true
         regressionLineConfig[key as keyof RegressionLineConfig] =
-          (vseed as any)[key] === true ? {} : (vseed as any)[key]
+          (vseed as any)[key] === true
+            ? {
+                enable: true,
+              }
+            : (vseed as any)[key]
       }
     })
 

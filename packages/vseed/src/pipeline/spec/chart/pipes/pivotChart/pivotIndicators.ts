@@ -11,7 +11,7 @@ export const pivotIndicators =
     const { measures, datasetReshapeInfo, dataset, encoding } = advancedVSeed
 
     const colorItems = unique(datasetReshapeInfo.flatMap((d) => d.unfoldInfo.colorItems))
-    const allMeasureIds = unique(datasetReshapeInfo.flatMap((d) => Object.keys(d.foldInfo.foldMap)))
+    const allMeasureIds = unique(datasetReshapeInfo.flatMap((d) => Object.keys(d.foldInfo.foldMap || {})))
 
     const indicators = datasetReshapeInfo.map((reshapeInfo, index) => {
       const measureGroup = measures?.find((d) => d.id === reshapeInfo.id) as MeasureGroup

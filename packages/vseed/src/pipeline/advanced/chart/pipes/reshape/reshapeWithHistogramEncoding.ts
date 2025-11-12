@@ -6,6 +6,7 @@ import {
   dataReshapeByEncoding,
   FoldMeasureId,
   FoldMeasureName,
+  foldMeasures,
   FoldMeasureValue,
   Separator,
   unfoldDimensions,
@@ -67,6 +68,13 @@ export const reshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, contex
       newDatasets.push(d)
     })
     unfoldInfo = res.unfoldInfo
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    foldInfo = foldMeasures(newDatasets, measures, {
+      measureId: FoldMeasureId,
+      measureName: FoldMeasureName,
+      measureValue: FoldMeasureValue,
+      colorMeasureId,
+    }).foldInfo
   } else if (encoding.x0?.length && encoding.x1?.length && encoding.y?.length) {
     const res = dataReshapeByEncoding(
       dataset,
@@ -84,7 +92,6 @@ export const reshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, contex
     res.dataset.forEach((datum) => {
       datum[BinStartMeasureId] = datum[encoding.x0![0]]
       datum[BinEndMeasureId] = datum[encoding.x1![0]]
-      datum[FoldMeasureId] = datum[encoding.y![0]]
     })
 
     newDatasets = res.dataset

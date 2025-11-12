@@ -20,7 +20,7 @@ export const ecdfRegressionLine: SpecPipe = (spec, context) => {
     (item: Dimension) => item.id,
   )
 
-  const lineList = array(regressionLine.ecdfRegressionLine)
+  const lineList = array(regressionLine.ecdfRegressionLine).filter((ecdfLine) => ecdfLine.enable !== false)
 
   if (!result.customMark) {
     result.customMark = []

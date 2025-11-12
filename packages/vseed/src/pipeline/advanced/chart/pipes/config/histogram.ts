@@ -54,8 +54,9 @@ export const histogramXAxisConfig: AdvancedPipe = (advancedVSeed, context) => {
     ...advancedVSeed,
   }
   const { dataset = [] } = advancedVSeed
-  const minValue = Math.min(...dataset.map((v) => +v[BinStartMeasureId]))
-  const maxValue = Math.max(...dataset.map((v) => +v[BinEndMeasureId]))
+  const flattenDatasert = dataset.flat()
+  const minValue = Math.min(...flattenDatasert.map((v) => +v[BinStartMeasureId]))
+  const maxValue = Math.max(...flattenDatasert.map((v) => +v[BinEndMeasureId]))
 
   const chartConfig = result.config?.[chartType] as any
   result.config = {
@@ -63,8 +64,8 @@ export const histogramXAxisConfig: AdvancedPipe = (advancedVSeed, context) => {
     [chartType]: {
       ...chartConfig,
       xAxis: {
-        min: minValue,
-        max: maxValue,
+        min: Number.isNaN(minValue) ? undefined : minValue,
+        max: Number.isNaN(maxValue) ? undefined : maxValue,
         ...(chartConfig?.xAxis || {}),
       },
     },

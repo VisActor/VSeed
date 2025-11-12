@@ -11,6 +11,11 @@
   },
   {
     "type": "file",
+    "name": "bodyCellStyle",
+    "label": "bodyCellStyle "
+  },
+  {
+    "type": "file",
     "name": "bodyFontColor",
     "label": "bodyFontColor "
   },

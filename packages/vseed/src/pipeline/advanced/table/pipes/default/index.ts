@@ -1,3 +1,3 @@
 export { defaultMeasures } from './defaultMeasures'
-export { defaultMeasureName } from './defaultMeasureName'
+export { defaultMeasureId } from './defaultMeasureId'
 export { defaultDimensions } from './defaultDimensions'

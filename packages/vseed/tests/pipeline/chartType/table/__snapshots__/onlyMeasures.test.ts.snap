@@ -2,6 +2,7 @@
 
 exports[`onlyMeasures 1`] = `
 {
+  "cellStyle": {},
   "chartType": "table",
   "config": {
     "table": {
@@ -226,11 +227,13 @@ exports[`onlyMeasures 3`] = `
     [Function],
     [Function],
     [Function],
+    [Function],
   ],
   "colorIdMap": {},
   "colorItems": [],
   "hasTheme": true,
   "specPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

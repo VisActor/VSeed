@@ -2,6 +2,7 @@
 
 exports[`basicTable 1`] = `
 {
+  "cellStyle": {},
   "chartType": "table",
   "config": {
     "table": {
@@ -246,11 +247,13 @@ exports[`basicTable 3`] = `
     [Function],
     [Function],
     [Function],
+    [Function],
   ],
   "colorIdMap": {},
   "colorItems": [],
   "hasTheme": true,
   "specPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

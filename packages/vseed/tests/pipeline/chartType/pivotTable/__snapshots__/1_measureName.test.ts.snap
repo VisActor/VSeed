@@ -2,6 +2,7 @@
 
 exports[`1_measureName 1`] = `
 {
+  "cellStyle": {},
   "chartType": "pivotTable",
   "config": {
     "pivotTable": {
@@ -1122,11 +1123,13 @@ exports[`1_measureName 3`] = `
     [Function],
     [Function],
     [Function],
+    [Function],
   ],
   "colorIdMap": {},
   "colorItems": [],
   "hasTheme": true,
   "specPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

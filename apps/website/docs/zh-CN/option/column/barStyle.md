@@ -178,12 +178,16 @@ dotted
 
 
 
-## barRadius
+## barBorderOpacity
 
-**Type:** `number | number[] | undefined`
+**Type:** `number | undefined`
 
 :::note{title=描述}
 柱图元(矩形图元)圆角
+
+
+
+柱图元(矩形图元)描边透明度
 
 :::
 
@@ -193,4 +197,8 @@ dotted
 [0, 0, 10, 10]
 
 
+
+## barRadius
+
+**Type:** `number | number[] | undefined`
 

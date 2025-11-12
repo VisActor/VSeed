@@ -290,3 +290,59 @@
 
 :::
 
+## selector
+
+**Type:** `Selector | Selectors | undefined`
+
+:::note{title=描述}
+标签筛选，默认selectors之间条件关系为Or
+
+:::
+
+
+### field
+
+**Type:** `string`
+
+:::note{title=描述}
+维度字段, dimensions 某一项的 id
+
+:::
+
+### operator
+
+**Type:** `"in" | "not in" | undefined`
+
+:::note{title=描述}
+操作符
+
+\- in: 选择数据项中维度字段的值在 value 中的数据项
+
+\- not in: 选择数据项中维度字段的值不在 value 中的数据项
+
+:::
+
+### op
+
+**Type:** `"in" | "not in" | undefined`
+
+:::note{title=描述}
+操作符
+
+\- in: 选择数据项中维度字段的值在 value 中的数据项
+
+\- not in: 选择数据项中维度字段的值不在 value 中的数据项
+
+same as operator
+
+:::
+
+### value
+
+**Type:** `string | number | (string | number)[]`
+
+:::note{title=描述}
+选择数据项中维度字段的值, 支持数组
+
+:::
+

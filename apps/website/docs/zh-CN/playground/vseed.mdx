@@ -9,58 +9,29 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'histogram',
+    chartType: 'pivotTable',
     dataset: [
-      { color: 'red', shape: 'circle', v: 1 },
-      { color: 'red', shape: 'circle', v: 1 },
-      { color: 'red', shape: 'circle', v: 1 },
-      { color: 'red', shape: 'circle', v: 2 },
-      { color: 'red', shape: 'circle', v: 5 },
-      { color: 'red', shape: 'circle', v: 7 },
-      { color: 'red', shape: 'circle', v: 8 },
-      { color: 'red', shape: 'circle', v: 9 },
-      { color: 'red', shape: 'circle', v: 10 },
-      { color: 'blue', shape: 'circle', v: 1 },
-      { color: 'blue', shape: 'circle', v: 1 },
-      { color: 'blue', shape: 'circle', v: 1 },
-      { color: 'blue', shape: 'circle', v: 2 },
-      { color: 'blue', shape: 'circle', v: 5 },
-      { color: 'blue', shape: 'circle', v: 7 },
-      { color: 'blue', shape: 'circle', v: 8 },
-      { color: 'blue', shape: 'circle', v: 9 },
-
-      { color: 'red', shape: 'triangle', v: 1 },
-      { color: 'red', shape: 'triangle', v: 1 },
-      { color: 'red', shape: 'triangle', v: 1 },
-      { color: 'red', shape: 'triangle', v: 2 },
-      { color: 'red', shape: 'triangle', v: 5 },
-      { color: 'red', shape: 'triangle', v: 7 },
-      { color: 'red', shape: 'triangle', v: 8 },
-      { color: 'red', shape: 'triangle', v: 9 },
-      { color: 'blue', shape: 'triangle', v: 1 },
-      { color: 'blue', shape: 'triangle', v: 1 },
-      { color: 'blue', shape: 'triangle', v: 1 },
-      { color: 'blue', shape: 'triangle', v: 2 },
-      { color: 'blue', shape: 'triangle', v: 5 },
-      { color: 'blue', shape: 'triangle', v: 7 },
-      { color: 'blue', shape: 'triangle', v: 8 },
-      { color: 'blue', shape: 'triangle', v: 9 },
+      { date: '2019', type: 'A', goalProfit: 10, profit: 10, sales: 100, leftCount: 1, salesCount: 100 },
+      { date: '2020', type: 'A', goalProfit: 30, profit: 30, sales: 320, leftCount: 2, salesCount: 200 },
+      { date: '2021', type: 'A', goalProfit: 30, profit: 30, sales: 300, leftCount: 3, salesCount: 300 },
+      { date: '2022', type: 'A', goalProfit: 50, profit: 50, sales: 240, leftCount: 4, salesCount: 400 },
+      { date: '2023', type: 'A', goalProfit: 40, profit: 40, sales: 500, leftCount: 5, salesCount: 500 },
     ],
+    bodyCellStyle: [
+      {
+        selector: { field: 'sales', operator: '>=', value: 300 },
+        backgroundColor: '#e3f2fd',
+        textColor: '#0d47a1',
+      },
+    ],
+    // typical pivot usage
     dimensions: [
-      {
-        id: 'color',
-        encoding: 'row',
-      },
-      {
-        id: 'shape',
-        encoding: 'column',
-      },
+      { id: 'date', alias: '日期', encoding: 'column' },
+      { id: 'type', alias: '类型', encoding: 'row' },
     ],
     measures: [
-      {
-        id: 'v',
-        encoding: 'value',
-      },
+      { id: 'profit', alias: '销售量' },
+      { id: 'sales', alias: '销售量' },
     ],
   }
 

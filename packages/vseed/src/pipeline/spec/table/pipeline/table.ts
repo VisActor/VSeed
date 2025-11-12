@@ -7,6 +7,7 @@ import {
   headerStyle,
   frameStyle,
   selectionStyle,
+  tableBodyCell,
 } from '../pipes'
 
 export const tableSpecPipeline: SpecPipeline = [
@@ -17,4 +18,5 @@ export const tableSpecPipeline: SpecPipeline = [
   headerStyle,
   frameStyle,
   selectionStyle,
+  tableBodyCell,
 ]

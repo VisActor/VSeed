@@ -2,6 +2,7 @@
 
 exports[`emptyPivotTable 1`] = `
 {
+  "cellStyle": {},
   "chartType": "pivotTable",
   "config": {
     "pivotTable": {
@@ -276,11 +277,13 @@ exports[`emptyPivotTable 3`] = `
     [Function],
     [Function],
     [Function],
+    [Function],
   ],
   "colorIdMap": {},
   "colorItems": [],
   "hasTheme": true,
   "specPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

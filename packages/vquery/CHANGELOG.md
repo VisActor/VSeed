@@ -1,5 +1,11 @@
 # @visactor/vquery
 
+## 0.1.44
+
+### Patch Changes
+
+- 0365643: Fix some bugs
+
 ## 0.1.43
 
 ## 0.1.42

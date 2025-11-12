@@ -1,5 +1,5 @@
 import type { ICartesianSeries, IChart, ILineChartSpec, IVChart } from '@visactor/vchart'
-import { array, Color as VUtilColor } from '@visactor/vutils'
+import { array, clamper, Color as VUtilColor } from '@visactor/vutils'
 import { isNullish, isNumber, isPlainObject } from 'remeda'
 import type { AnnotationHorizontalLine, SpecPipe, Color } from 'src/types'
 
@@ -113,7 +113,8 @@ export const splitLine: SpecPipe = (spec, context) => {
         if (!points || !points.length) {
           return
         }
-        const splitCoordinate = lineSeries.getYAxisHelper().getScale!(0).scale(splitValue)
+        const scale = lineSeries.getYAxisHelper().getScale!(0)
+        const splitCoordinate = scale.scale(splitValue)
         const minY = Math.min(...points.map((p) => p.y))
         const maxY = Math.max(...points.map((p) => p.y))
         const ratio = (splitCoordinate - minY) / (maxY - minY)
@@ -184,10 +185,11 @@ export const splitLine: SpecPipe = (spec, context) => {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         lineGraphics[0].setFinalAttributes?.(attrs)
         const start = lineSeries.getRegion().getLayoutStartPoint()
+        const range = scale.range() as number[]
 
         return {
           points: points.map((entry) => ({ x: entry.x + start.x, y: entry.y + start.y })),
-          splitCoordinate: splitCoordinate + start.y,
+          splitCoordinate: clamper(range[0], range[range.length - 1])(splitCoordinate as number) + start.y,
           areaFill,
           lineStroke,
         } as SplitConfig

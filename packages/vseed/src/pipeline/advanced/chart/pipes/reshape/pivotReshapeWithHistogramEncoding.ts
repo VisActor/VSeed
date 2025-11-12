@@ -8,7 +8,6 @@ import {
   dataReshapeByEncoding,
   FoldMeasureId,
   FoldMeasureName,
-  foldMeasures,
   FoldMeasureValue,
   Separator,
   unfoldDimensions,
@@ -23,6 +22,7 @@ import type {
   Datum,
   Dimension,
   Encoding,
+  FoldInfo,
   MeasureGroup,
 } from 'src/types'
 
@@ -62,7 +62,20 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
     const groupId = measureGroup.id
 
     let newDatasets: any[] = []
-    let foldInfo: any = {}
+    let foldInfo: FoldInfo = {
+      foldMap: {},
+      measureId: FoldMeasureId,
+      measureName: FoldMeasureName,
+      measureValue: FoldMeasureValue,
+      statistics: {
+        max: -Infinity,
+        min: Infinity,
+        sum: 0,
+        count: 0,
+        colorMin: Infinity,
+        colorMax: -Infinity,
+      },
+    }
     let unfoldInfo: any = {}
 
     if (encoding.value?.length) {
@@ -88,9 +101,17 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
       binData.forEach((datum: Datum) => {
         datum[FoldMeasureId] = valueField
         datum[FoldMeasureName] = m?.alias ?? valueField
-        datum[FoldMeasureValue] =
-          binValueType === 'percentage' ? datum[BinPercentageMeasureId] : datum[BinCountMeasureId]
+        const valueNumber = binValueType === 'percentage' ? +datum[BinPercentageMeasureId] : +datum[BinCountMeasureId]
+        datum[FoldMeasureValue] = valueNumber
+
+        foldInfo.statistics.min = Math.min(foldInfo.statistics.min, valueNumber)
+        foldInfo.statistics.max = Math.max(foldInfo.statistics.max, valueNumber)
+        foldInfo.statistics.sum += valueNumber
+        foldInfo.statistics.count++
       })
+      if (m?.id) {
+        foldInfo.foldMap[m?.id] = m?.alias
+      }
 
       const res = unfoldDimensions(binData, uniqDims, encoding as Encoding, {
         foldMeasureId: FoldMeasureId,
@@ -102,13 +123,6 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
         newDatasets.push(d)
       })
       unfoldInfo = res.unfoldInfo
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-      foldInfo = foldMeasures(newDatasets, measures, {
-        measureId: FoldMeasureId,
-        measureName: FoldMeasureName,
-        measureValue: FoldMeasureValue,
-        colorMeasureId,
-      }).foldInfo
     } else if (encoding.x0?.length && encoding.x1?.length && encoding.y?.length) {
       const res = dataReshapeByEncoding(
         dataset,

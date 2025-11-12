@@ -57,6 +57,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context): Partial<PivotChart
       : 'middle'
 
   const legends = {
+    padding: 0,
     visible: enable,
     type: 'discrete',
     orient,

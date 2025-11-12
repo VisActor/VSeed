@@ -1,3 +1,5 @@
+import type { PivotChartGridConfig } from 'src/types'
+
 export const getDefaultTableConfig = () => ({
   bodyFontSize: 12,
   bodyBackgroundColor: 'transparent',
@@ -60,9 +62,19 @@ const pickPivotChartGridConfig = (tableConfig: any) => {
 }
 
 export const getLightPivotChartGridConfig = () => {
-  return pickPivotChartGridConfig(getLightTableConfig())
+  const res = pickPivotChartGridConfig(getLightTableConfig()) as PivotChartGridConfig
+
+  res.chartGridColor = '#F0F1F6'
+  res.axisLabelColor = '#BCC1CB'
+
+  return res
 }
 
 export const getDarkPivotChartGridConfig = () => {
-  return pickPivotChartGridConfig(getDarkTableConfig())
+  const res = pickPivotChartGridConfig(getDarkTableConfig()) as PivotChartGridConfig
+
+  res.chartGridColor = '#303339'
+  res.axisLabelColor = '#E2E3E6'
+
+  return res
 }

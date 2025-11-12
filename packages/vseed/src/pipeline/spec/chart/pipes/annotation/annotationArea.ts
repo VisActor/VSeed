@@ -151,6 +151,7 @@ export const annotationArea: SpecPipe = (spec, context) => {
         visible: true,
         text: text,
         style: {
+          opacity: 0.95,
           dy: isBottom ? -(textFontSize || 12) * 2 : 0,
           textAlign: textAlign,
           textBaseline: textBaseline,
@@ -165,6 +166,7 @@ export const annotationArea: SpecPipe = (spec, context) => {
           visible: textBackgroundVisible,
           padding: textBackgroundPadding,
           style: {
+            opacity: 0.95,
             dy: isBottom ? -(textFontSize || 12) * 2 : 0,
             cornerRadius: textBackgroundBorderRadius ?? 4,
             fill: textBackgroundColor,

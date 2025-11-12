@@ -1,6 +1,6 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
 import { execPipeline } from '../../../../utils'
-import type { Dataset, SpecPipe, SpecPipeline, SpecPipelineContext } from 'src/types'
+import type { Dataset, Encoding, MeasureGroup, SpecPipe, SpecPipeline, SpecPipelineContext } from 'src/types'
 import { unique } from 'remeda'
 
 export const pivotIndicators =
@@ -8,12 +8,16 @@ export const pivotIndicators =
   (spec, context): Partial<PivotChartConstructorOptions> => {
     const result = { ...spec } as PivotChartConstructorOptions
     const { advancedVSeed } = context
-    const { measures, datasetReshapeInfo, dataset } = advancedVSeed
+    const { measures, datasetReshapeInfo, dataset, encoding } = advancedVSeed
 
     const colorItems = unique(datasetReshapeInfo.flatMap((d) => d.unfoldInfo.colorItems))
+    const allMeasureIds = unique(datasetReshapeInfo.flatMap((d) => Object.keys(d.foldInfo.foldMap)))
 
     const indicators = datasetReshapeInfo.map((reshapeInfo, index) => {
-      const measure = measures?.find((d) => d.id === reshapeInfo.id)
+      const measureGroup = measures?.find((d) => d.id === reshapeInfo.id) as MeasureGroup
+      const subMeasuresId = (measureGroup?.children || []).map((d) => d.id)
+      const invalideMeasuresIds = allMeasureIds.filter((id) => !subMeasuresId.includes(id))
+
       const newDataset = dataset[index] as Dataset
       const newDatasetReshapeInfo = [
         {
@@ -26,6 +30,13 @@ export const pivotIndicators =
         advancedVSeed: {
           ...advancedVSeed,
           datasetReshapeInfo: newDatasetReshapeInfo,
+          encoding: Object.keys(encoding).reduce((res, key) => {
+            res[key as keyof Encoding] = encoding[key as keyof Encoding]?.filter((e) => {
+              return !invalideMeasuresIds.includes(e)
+            }) as string[]
+
+            return res
+          }, {} as Encoding),
           dataset: newDataset,
         },
       }
@@ -33,7 +44,7 @@ export const pivotIndicators =
       const chartSpec = execPipeline(chartPipeline, newContext, {})
       return {
         indicatorKey: reshapeInfo.id,
-        title: measure?.alias,
+        title: measureGroup?.alias,
         cellType: 'chart',
         chartModule: 'vchart',
         chartSpec: chartSpec,

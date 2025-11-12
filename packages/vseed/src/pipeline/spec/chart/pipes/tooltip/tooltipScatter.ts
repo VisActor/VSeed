@@ -2,6 +2,7 @@ import { uniqueBy } from 'remeda'
 import { createFormatterByMeasure, findAllMeasures, findMeasureById } from '../../../../utils'
 import type { Datum, Dimensions, FoldInfo, Locale, Measures, SpecPipe, Tooltip, UnfoldInfo } from 'src/types'
 import { ORIGINAL_DATA } from 'src/dataReshape'
+import { getTooltipStyle } from './tooltipStyle'
 
 export const tooltipScatter: SpecPipe = (spec, context) => {
   const result = { ...spec }
@@ -16,6 +17,7 @@ export const tooltipScatter: SpecPipe = (spec, context) => {
   }
 
   result.tooltip = {
+    style: getTooltipStyle(tooltip),
     visible: enable,
 
     mark: {

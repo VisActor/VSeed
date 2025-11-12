@@ -9,134 +9,42 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    color: {
-      colorScheme: ['#ED4B6B', '#B08F78', '#F8BCBD', '#4793EB', '#F8BC3B', '#985348', '#5ECBC8', '#4D67A9'],
-      colorMapping: {},
-      linearColorScheme: ['#FCC3CE', '#F8A6B6', '#F47F96', '#ED4B6B', '#CB405C', '#912E42', '#66212E', '#491721'],
-      theme: 'energy',
-    },
-    legend: {
-      enable: true,
-      position: 'topRight',
-      maxSize: 1,
-      labelFontSize: 12,
-      labelFontColor: '#606773',
-    },
-    label: {
-      enable: false,
-      labelColor: '#80E1D9',
-      labelFontSize: 12,
-    },
-    stackCornerRadius: 0,
-    barMaxWidth: 72,
-    theme: 'energy',
-    barStyle: [
-      {
-        barColorOpacity: 0.2,
-        barColor: '#ccc',
-        barBorderWidth: 0,
-        barBorderColor: '#ccc',
-      },
-      {
-        selector: [
-          {
-            xA_20251110170508_a1e1: '1785',
-            yA_20251110170502_1b77: '西北',
-          },
-          {
-            op: '=',
-            field: 'xA_20251110170508_a1e1',
-            value: 1785,
-          },
-        ],
-        barBorderWidth: 0,
-        barColor: '#7E5DFF',
-        barColorOpacity: 1,
-      },
-      {
-        selector: {
-          xA_20251110170516_c40e: '4684506.442',
-          yA_20251110170502_1b77: '华东',
-        },
-        barBorderWidth: 0,
-        barColor: '#7E5DFF',
-        barColorOpacity: 1,
-      },
+    chartType: 'pie',
+    dimensions: [
+      { id: 'category', alias: '类别' },
+      { id: 'date', alias: '日期', encoding: 'column' },
+      { id: 'region', alias: '区域', encoding: 'row' },
     ],
-    annotationPoint: [],
-    annotationVerticalLine: [],
-    annotationArea: [],
-    lineStyle: [],
-    pointStyle: [],
-    areaStyle: [],
-    annotationHorizontalLine: [],
     measures: [
       {
-        id: 'xA_20251110170508_a1e1',
-        alias: 'sum(amount)',
-        encoding: 'xAxis',
-        format: {
-          auto: true,
-          thousandSeparator: true,
-          type: 'number',
-        },
-        autoFormat: true,
-        parentId: '0',
+        id: 'group-sales',
+        alias: '销售额分组',
+        children: [{ id: 'sales', alias: '销售额' }],
       },
-      {
-        id: 'xA_20251110170516_c40e',
-        alias: 'sum(sales)',
-        encoding: 'xAxis',
-        format: {
-          auto: true,
-          fractionDigits: 2,
-          thousandSeparator: true,
-          type: 'number',
-        },
-        autoFormat: true,
-        parentId: '1',
-      },
+      { id: 'profit', alias: '利润' },
     ],
-    dimensions: [
-      {
-        id: 'yA_20251110170502_1b77',
-        alias: 'area',
-        encoding: 'yAxis',
-        autoFormat: true,
-      },
-    ],
-    chartType: 'bar',
     dataset: [
-      {
-        xA_20251110170508_a1e1: '6463',
-        xA_20251110170516_c40e: '2681567.469000001',
-        yA_20251110170502_1b77: '东北',
-      },
-      {
-        xA_20251110170508_a1e1: '9700',
-        xA_20251110170516_c40e: '4137415.0929999948',
-        yA_20251110170502_1b77: '中南',
-      },
-      {
-        xA_20251110170508_a1e1: '11041',
-        xA_20251110170516_c40e: '4684506.442',
-        yA_20251110170502_1b77: '华东',
-      },
-      {
-        xA_20251110170508_a1e1: '5146',
-        xA_20251110170516_c40e: '2447301.017000004',
-        yA_20251110170502_1b77: '华北',
-      },
-      {
-        xA_20251110170508_a1e1: '1785',
-        xA_20251110170516_c40e: '815039.5959999998',
-        yA_20251110170502_1b77: '西北',
-      },
-      {
-        xA_20251110170508_a1e1: '3399',
-        xA_20251110170516_c40e: '1303124.508000002',
-        yA_20251110170502_1b77: '西南',
-      },
+      { date: '2019', region: 'east', category: 'Grocery', profit: 10, sales: 100 },
+      { date: '2019', region: 'east', category: 'Beverages', profit: 30, sales: 3200 },
+      { date: '2019', region: 'east', category: 'Dairy', profit: 30, sales: 300 },
+      { date: '2019', region: 'east', category: 'Household', profit: 50, sales: 2400 },
+      { date: '2019', region: 'east', category: 'Personal', profit: 40, sales: 500 },
+      { date: '2019', region: 'west', category: 'Grocery', profit: 10, sales: 100 },
+      { date: '2019', region: 'west', category: 'Beverages', profit: 30, sales: 3200 },
+      { date: '2019', region: 'west', category: 'Dairy', profit: 30, sales: 300 },
+      { date: '2019', region: 'west', category: 'Household', profit: 50, sales: 2400 },
+      { date: '2019', region: 'west', category: 'Personal', profit: 40, sales: 500 },
+
+      { date: '2020', region: 'east', category: 'Grocery', profit: 10, sales: 100 },
+      { date: '2020', region: 'east', category: 'Beverages', profit: 30, sales: 3200 },
+      { date: '2020', region: 'east', category: 'Dairy', profit: 30, sales: 300 },
+      { date: '2020', region: 'east', category: 'Household', profit: 50, sales: 2400 },
+      { date: '2020', region: 'east', category: 'Personal', profit: 40, sales: 500 },
+      { date: '2020', region: 'west', category: 'Grocery', profit: 10, sales: 100 },
+      { date: '2020', region: 'west', category: 'Beverages', profit: 30, sales: 3200 },
+      { date: '2020', region: 'west', category: 'Dairy', profit: 30, sales: 300 },
+      { date: '2020', region: 'west', category: 'Household', profit: 50, sales: 2400 },
+      { date: '2020', region: 'west', category: 'Personal', profit: 40, sales: 500 },
     ],
   }
 

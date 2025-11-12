@@ -178,6 +178,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
         visible: true,
         text: text,
         style: {
+          opacity: 0.95,
           dy: dy,
           textAlign: textAlign,
           textBaseline: textBaseline,
@@ -192,6 +193,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           visible: textBackgroundVisible,
           padding: textBackgroundPadding,
           style: {
+            opacity: 0.95,
             dy: dy,
             cornerRadius: textBackgroundBorderRadius ?? 4,
             fill: textBackgroundColor,

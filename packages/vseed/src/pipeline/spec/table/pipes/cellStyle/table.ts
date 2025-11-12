@@ -5,6 +5,7 @@ import { selector } from 'src/dataSelector/selector'
 import type { BodyCellStyle, SpecPipe } from 'src/types'
 import type { MeasureSelector, Selectors } from 'src/types/dataSelector'
 import { pickBodyCellStyle } from './common'
+import { preorderTraverse } from 'src/pipeline/utils/tree/traverse'
 
 export const tableBodyCell: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
@@ -32,7 +33,7 @@ export const tableBodyCell: SpecPipe = (spec, context) => {
     })
 
     if (!matchedStyles.length) {
-      return
+      return false
     }
 
     col.style = (datum: any) => {
@@ -53,21 +54,10 @@ export const tableBodyCell: SpecPipe = (spec, context) => {
 
       return mergedStyle
     }
-  }
-  const reverseColumn = (col: ColumnDefine, callback: (col: ColumnDefine) => void) => {
-    if (!col) {
-      return
-    }
-    if (col.columns) {
-      col.columns.forEach((c) => reverseColumn(c, callback))
-      return
-    }
-    return callback(col)
+    return false
   }
 
-  columns.forEach((col: ColumnDefine) => {
-    reverseColumn(col, setStyleOfColumn)
-  })
+  preorderTraverse<ColumnDefine, 'columns'>(columns, setStyleOfColumn, 'columns')
 
   return spec as ListTableConstructorOptions
 }

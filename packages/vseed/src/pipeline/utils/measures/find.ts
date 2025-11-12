@@ -1,13 +1,14 @@
-import type { Measure, MeasureGroup, MeasureTree } from 'src/types'
+import type { Measure, MeasureTree } from 'src/types'
 import { preorderTraverse } from '../tree'
 
 export const findMeasureById = (measures: MeasureTree = [], id: string): Measure | undefined => {
   if (!measures) return undefined
   let result: Measure | undefined
-  preorderTraverse<Measure, MeasureGroup>(measures, (node) => {
+
+  preorderTraverse<Measure, 'children'>(measures, (node) => {
     if (!('children' in node)) {
       if (node.id === id) {
-        result = node as Measure
+        result = node
         return true
       }
     }
@@ -19,9 +20,9 @@ export const findMeasureById = (measures: MeasureTree = [], id: string): Measure
 export const findFirstMeasure = (measures: MeasureTree = []): Measure | undefined => {
   if (!measures) return undefined
   let result: Measure | undefined
-  preorderTraverse<Measure, MeasureGroup>(measures, (node) => {
+  preorderTraverse<Measure, 'children'>(measures, (node) => {
     if (!('children' in node)) {
-      result = node as Measure
+      result = node
       return true
     }
     return false
@@ -32,9 +33,9 @@ export const findFirstMeasure = (measures: MeasureTree = []): Measure | undefine
 export const findAllMeasures = (measures: MeasureTree = []): Measure[] => {
   if (!measures) return []
   const result: Measure[] = []
-  preorderTraverse<Measure, MeasureGroup>(measures, (node) => {
+  preorderTraverse<Measure, 'children'>(measures, (node) => {
     if (!('children' in node)) {
-      result.push(node as Measure)
+      result.push(node)
     }
     return false
   })

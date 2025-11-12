@@ -69,6 +69,7 @@ export const annotationPoint: SpecPipe = (spec, context) => {
           text: {
             text: text,
             style: {
+              opacity: 0.95,
               visible: true,
               textAlign: textAlign,
               textBaseline: textBaseline,
@@ -84,6 +85,7 @@ export const annotationPoint: SpecPipe = (spec, context) => {
               visible: textBackgroundVisible,
               padding: textBackgroundPadding,
               style: {
+                opacity: 0.95,
                 cornerRadius: textBackgroundBorderRadius ?? 4,
                 fill: textBackgroundColor,
                 stroke: textBackgroundBorderColor,

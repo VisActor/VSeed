@@ -1,4 +1,4 @@
-import type { ILineChartSpec, IMarkLineSpec } from '@visactor/vchart'
+import type { Datum, ICartesianSeries, ILineChartSpec, IMarkLineSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { SpecPipe } from 'src/types'
 import { isArray, isNumber, isString } from 'remeda'
@@ -56,7 +56,21 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
 
     const generateOneMarkLine = (y: string | number) => {
       return {
-        y,
+        positions: (datum: Datum[], series: ICartesianSeries) => {
+          const regionStart = series.getRegion()?.getLayoutStartPoint()
+          const xAxisHelper = series.getXAxisHelper()
+          const yAxisHelper = series.getYAxisHelper()
+          const yPos = yAxisHelper.getScale!(0).scale(y)
+          const xRange = xAxisHelper.getScale!(0).range()
+
+          return [
+            { x: xRange ? xRange[0] + regionStart.x : 0, y: yPos },
+            {
+              x: xRange ? xRange[1] + regionStart.x : 0,
+              y: yPos,
+            },
+          ]
+        },
         zIndex: ANNOTATION_Z_INDEX,
         line: {
           style: {
@@ -71,6 +85,7 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
           text: text,
           position: positionMap[textPosition || 'insideEnd'],
           style: {
+            opacity: 0.95,
             visible: true,
             dy: 4,
             stroke: textBackgroundColor,
@@ -85,6 +100,7 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
             visible: textBackgroundVisible,
             padding: textBackgroundPadding,
             style: {
+              opacity: 0.95,
               dy: 4,
               cornerRadius: textBackgroundBorderRadius,
               fill: textBackgroundColor,
@@ -97,9 +113,9 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
         startSymbol: {
           visible: theme?.startSymbolVisible ?? true,
           symbolType: theme?.startSymbolType ?? 'triangleDown',
-          size: 5,
+          size: 5 + (lineWidth || 1),
           style: {
-            dx: 0,
+            dx: 3,
             fill: lineColor,
           },
         },

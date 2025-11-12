@@ -113,7 +113,7 @@ exports[`binHistogram 1`] = `
       },
       "legend": {
         "border": true,
-        "enable": true,
+        "enable": false,
         "labelColor": "#646A73",
         "labelFontSize": 12,
         "labelFontWeight": 400,
@@ -548,7 +548,7 @@ exports[`binHistogram 1`] = `
     {
       "__BinEnd__": 10,
       "__BinStart__": 0,
-      "__MeaId__": 5,
+      "__MeaId__": "frequency",
       "__MeaName__": "frequency",
       "__MeaValue__": 5,
       "__OriginalData__": {
@@ -563,7 +563,7 @@ exports[`binHistogram 1`] = `
     {
       "__BinEnd__": 20,
       "__BinStart__": 10,
-      "__MeaId__": 10,
+      "__MeaId__": "frequency",
       "__MeaName__": "frequency",
       "__MeaValue__": 10,
       "__OriginalData__": {
@@ -578,7 +578,7 @@ exports[`binHistogram 1`] = `
     {
       "__BinEnd__": 30,
       "__BinStart__": 20,
-      "__MeaId__": 2,
+      "__MeaId__": "frequency",
       "__MeaName__": "frequency",
       "__MeaValue__": 2,
       "__OriginalData__": {
@@ -856,7 +856,7 @@ exports[`binHistogram 2`] = `
       {
         "__BinEnd__": 10,
         "__BinStart__": 0,
-        "__MeaId__": 5,
+        "__MeaId__": "frequency",
         "__MeaName__": "frequency",
         "__MeaValue__": 5,
         "__OriginalData__": {
@@ -871,7 +871,7 @@ exports[`binHistogram 2`] = `
       {
         "__BinEnd__": 20,
         "__BinStart__": 10,
-        "__MeaId__": 10,
+        "__MeaId__": "frequency",
         "__MeaName__": "frequency",
         "__MeaValue__": 10,
         "__OriginalData__": {
@@ -886,7 +886,7 @@ exports[`binHistogram 2`] = `
       {
         "__BinEnd__": 30,
         "__BinStart__": 20,
-        "__MeaId__": 2,
+        "__MeaId__": "frequency",
         "__MeaName__": "frequency",
         "__MeaValue__": 2,
         "__OriginalData__": {
@@ -972,7 +972,7 @@ exports[`binHistogram 2`] = `
     "padding": 0,
     "position": "start",
     "type": "discrete",
-    "visible": true,
+    "visible": false,
   },
   "padding": 0,
   "progressiveStep": 400,
@@ -1079,12 +1079,5 @@ exports[`binHistogram 3`] = `
     "light",
     "dark",
   ],
-}
-`;
-
-exports[`binHistogram 4`] = `
-{
-  "expectError": true,
-  "message": "Cannot read properties of undefined (reading 'alias')",
 }
 `;

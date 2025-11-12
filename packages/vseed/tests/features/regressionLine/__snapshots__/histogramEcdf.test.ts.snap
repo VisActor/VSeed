@@ -113,7 +113,7 @@ exports[`histogramEcdf 1`] = `
       },
       "legend": {
         "border": true,
-        "enable": true,
+        "enable": false,
         "labelColor": "#646A73",
         "labelFontSize": 12,
         "labelFontWeight": 400,
@@ -598,7 +598,22 @@ exports[`histogramEcdf 1`] = `
   ],
   "datasetReshapeInfo": [
     {
-      "foldInfo": {},
+      "foldInfo": {
+        "foldMap": {
+          "v": "v",
+        },
+        "measureId": "__MeaId__",
+        "measureName": "__MeaName__",
+        "measureValue": "__MeaValue__",
+        "statistics": {
+          "colorMax": -Infinity,
+          "colorMin": Infinity,
+          "count": 5,
+          "max": 2,
+          "min": 1,
+          "sum": 6,
+        },
+      },
       "id": "histogram",
       "index": 0,
       "unfoldInfo": {
@@ -998,7 +1013,7 @@ exports[`histogramEcdf 2`] = `
     "padding": 0,
     "position": "start",
     "type": "discrete",
-    "visible": true,
+    "visible": false,
   },
   "padding": 0,
   "progressiveStep": 400,
@@ -1105,12 +1120,5 @@ exports[`histogramEcdf 3`] = `
     "light",
     "dark",
   ],
-}
-`;
-
-exports[`histogramEcdf 4`] = `
-{
-  "expectError": true,
-  "message": "Cannot read properties of undefined (reading 'alias')",
 }
 `;

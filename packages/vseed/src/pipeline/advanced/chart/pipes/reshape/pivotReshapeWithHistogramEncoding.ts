@@ -22,6 +22,7 @@ import type {
   Datum,
   Dimension,
   Encoding,
+  FoldInfo,
   MeasureGroup,
 } from 'src/types'
 
@@ -61,7 +62,20 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
     const groupId = measureGroup.id
 
     let newDatasets: any[] = []
-    let foldInfo: any = {}
+    let foldInfo: FoldInfo = {
+      foldMap: {},
+      measureId: FoldMeasureId,
+      measureName: FoldMeasureName,
+      measureValue: FoldMeasureValue,
+      statistics: {
+        max: -Infinity,
+        min: Infinity,
+        sum: 0,
+        count: 0,
+        colorMin: Infinity,
+        colorMax: -Infinity,
+      },
+    }
     let unfoldInfo: any = {}
 
     if (encoding.value?.length) {
@@ -87,9 +101,18 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
       binData.forEach((datum: Datum) => {
         datum[FoldMeasureId] = valueField
         datum[FoldMeasureName] = m?.alias ?? valueField
-        datum[FoldMeasureValue] =
-          binValueType === 'percentage' ? datum[BinPercentageMeasureId] : datum[BinCountMeasureId]
+        const valueNumber = binValueType === 'percentage' ? +datum[BinPercentageMeasureId] : +datum[BinCountMeasureId]
+        datum[FoldMeasureValue] = valueNumber
+        datum[valueField] = valueNumber
+
+        foldInfo.statistics.min = Math.min(foldInfo.statistics.min, valueNumber)
+        foldInfo.statistics.max = Math.max(foldInfo.statistics.max, valueNumber)
+        foldInfo.statistics.sum += valueNumber
+        foldInfo.statistics.count++
       })
+      if (m?.id) {
+        foldInfo.foldMap[m?.id] = m?.alias
+      }
 
       const res = unfoldDimensions(binData, uniqDims, encoding as Encoding, {
         foldMeasureId: FoldMeasureId,

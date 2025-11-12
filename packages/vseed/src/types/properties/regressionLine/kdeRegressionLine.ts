@@ -3,6 +3,10 @@
  */
 export interface KdeRegressionLine {
   /**
+   * @description 是否开启回归线功能
+   */
+  enable?: boolean
+  /**
    * @description 回归线颜色
    * 用于设置回归线的颜色，如果不设置，默认使用图表的主颜色
    */

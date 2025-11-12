@@ -1542,10 +1542,3 @@ exports[`sortLegendByColorItemIds 3`] = `
   ],
 }
 `;
-
-exports[`sortLegendByColorItemIds 4`] = `
-{
-  "expectError": true,
-  "message": "Cannot read properties of undefined (reading 'alias')",
-}
-`;

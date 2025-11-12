@@ -19,8 +19,7 @@ export const regressionLine: AdvancedPipe = (advancedVSeed, context) => {
     keys.forEach((key: string) => {
       if ((vseed as any)[key]) {
         hasLine = true
-        regressionLineConfig[key as keyof RegressionLineConfig] =
-          (vseed as any)[key] === true ? {} : (vseed as any)[key]
+        regressionLineConfig[key as keyof RegressionLineConfig] = (vseed as any)[key]
       }
     })
 

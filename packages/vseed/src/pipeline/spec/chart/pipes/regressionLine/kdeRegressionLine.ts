@@ -22,7 +22,7 @@ export const kdeRegressionLine: SpecPipe = (spec, context) => {
     (item: Dimension) => item.id,
   )
 
-  const lineList = array(regressionLine.kdeRegressionLine)
+  const lineList = array(regressionLine.kdeRegressionLine).filter((kdeLine) => kdeLine.enable !== false)
 
   if (!result.customMark) {
     result.customMark = []

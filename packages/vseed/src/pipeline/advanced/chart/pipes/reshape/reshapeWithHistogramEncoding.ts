@@ -11,7 +11,7 @@ import {
   unfoldDimensions,
 } from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils'
-import type { AdvancedPipe, AdvancedVSeed, ColumnParallel, Dataset, Dimension, Encoding } from 'src/types'
+import type { AdvancedPipe, AdvancedVSeed, ColumnParallel, Dataset, Dimension, Encoding, FoldInfo } from 'src/types'
 import { bin } from '@visactor/vdataset'
 import { uniqueBy } from 'remeda'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes/color/colorAdapter'
@@ -28,7 +28,20 @@ export const reshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, contex
   const binValueType = chartConfig?.binValueType
 
   let newDatasets: any[] = []
-  let foldInfo: any = {}
+  let foldInfo: FoldInfo = {
+    foldMap: {},
+    measureId: FoldMeasureId,
+    measureName: FoldMeasureName,
+    measureValue: FoldMeasureValue,
+    statistics: {
+      max: -Infinity,
+      min: Infinity,
+      sum: 0,
+      count: 0,
+      colorMin: Infinity,
+      colorMax: -Infinity,
+    },
+  }
   let unfoldInfo: any = {}
 
   const colorMeasureId = getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed)
@@ -53,9 +66,17 @@ export const reshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, contex
     binData.forEach((datum) => {
       datum[FoldMeasureId] = valueField
       datum[FoldMeasureName] = m?.alias ?? valueField
-      datum[FoldMeasureValue] = binValueType === 'percentage' ? datum[BinPercentageMeasureId] : datum[BinCountMeasureId]
-      datum[valueField] = datum[FoldMeasureValue]
+      const valueNumber = binValueType === 'percentage' ? +datum[BinPercentageMeasureId] : +datum[BinCountMeasureId]
+      datum[FoldMeasureValue] = valueNumber
+      datum[valueField] = valueNumber
+      foldInfo.statistics.min = Math.min(foldInfo.statistics.min, valueNumber)
+      foldInfo.statistics.max = Math.max(foldInfo.statistics.max, valueNumber)
+      foldInfo.statistics.sum += valueNumber
+      foldInfo.statistics.count++
     })
+    if (m?.id) {
+      foldInfo.foldMap[m?.id] = m?.alias
+    }
 
     const res = unfoldDimensions(binData, uniqDims, encoding as Encoding, {
       foldMeasureId: FoldMeasureId,
@@ -84,7 +105,6 @@ export const reshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, contex
     res.dataset.forEach((datum) => {
       datum[BinStartMeasureId] = datum[encoding.x0![0]]
       datum[BinEndMeasureId] = datum[encoding.x1![0]]
-      datum[FoldMeasureId] = datum[encoding.y![0]]
     })
 
     newDatasets = res.dataset

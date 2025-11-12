@@ -103,6 +103,7 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
         datum[FoldMeasureName] = m?.alias ?? valueField
         const valueNumber = binValueType === 'percentage' ? +datum[BinPercentageMeasureId] : +datum[BinCountMeasureId]
         datum[FoldMeasureValue] = valueNumber
+        datum[valueField] = valueNumber
 
         foldInfo.statistics.min = Math.min(foldInfo.statistics.min, valueNumber)
         foldInfo.statistics.max = Math.max(foldInfo.statistics.max, valueNumber)

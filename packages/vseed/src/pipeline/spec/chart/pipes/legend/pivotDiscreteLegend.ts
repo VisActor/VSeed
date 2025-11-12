@@ -21,7 +21,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context): Partial<PivotChart
     }),
   )
 
-  const colorIdMap = datasetReshapeInfo.reduce<Record<string, string>>((prev, cur) => {
+  const colorIdMap = datasetReshapeInfo.reduce<Record<string, { id: string; alias: string }>>((prev, cur) => {
     return { ...prev, ...cur.unfoldInfo.colorIdMap }
   }, {})
 
@@ -57,6 +57,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context): Partial<PivotChart
       : 'middle'
 
   const legends = {
+    padding: 0,
     visible: enable,
     type: 'discrete',
     orient,
@@ -97,7 +98,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context): Partial<PivotChart
       },
       label: {
         formatMethod: (value: string) => {
-          return colorIdMap[value] ?? value
+          return colorIdMap[value]?.alias ?? value
         },
         style: {
           fontSize: labelFontSize,

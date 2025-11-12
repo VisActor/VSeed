@@ -30,6 +30,25 @@ interface SplitConfig {
   }
 }
 
+const formatGradientStops = (stops: { color: string; offset: number }[]) => {
+  const firstInvalidateIndex = stops.findIndex((stop) => stop.offset < 0 || stop.offset > 1)
+
+  if (firstInvalidateIndex >= 0) {
+    if (stops[firstInvalidateIndex].offset > 1) {
+      const newStops = stops.slice(0, firstInvalidateIndex + 1)
+      newStops[newStops.length - 1].offset = 1
+
+      return newStops
+    }
+    const newStops = stops.slice(firstInvalidateIndex + 1)
+
+    newStops[0].offset = 0
+    return newStops
+  }
+
+  return stops
+}
+
 export const splitLine: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { annotation, chartType, datasetReshapeInfo } = advancedVSeed
@@ -98,13 +117,14 @@ export const splitLine: SpecPipe = (spec, context) => {
         const minY = Math.min(...points.map((p) => p.y))
         const maxY = Math.max(...points.map((p) => p.y))
         const ratio = (splitCoordinate - minY) / (maxY - minY)
+
         const lineStroke = {
           gradient: 'linear',
           x0: 0,
           x1: 0,
           y0: 0,
           y1: 1,
-          stops: [
+          stops: formatGradientStops([
             {
               color: colorConfig.positiveColor,
               offset: 0,
@@ -121,7 +141,7 @@ export const splitLine: SpecPipe = (spec, context) => {
               color: colorConfig.negativeColor,
               offset: 1,
             },
-          ],
+          ]),
         }
         const areaFill = {
           gradient: 'linear',
@@ -129,7 +149,7 @@ export const splitLine: SpecPipe = (spec, context) => {
           x1: 0,
           y0: 0,
           y1: 1,
-          stops: [
+          stops: formatGradientStops([
             {
               color: colorConfig.positiveColor,
               offset: 0,
@@ -146,7 +166,7 @@ export const splitLine: SpecPipe = (spec, context) => {
               color: colorConfig.negativeColor,
               offset: 1,
             },
-          ],
+          ]),
         }
         const attrs: any = {
           segments: null,
@@ -167,7 +187,7 @@ export const splitLine: SpecPipe = (spec, context) => {
 
         return {
           points: points.map((entry) => ({ x: entry.x + start.x, y: entry.y + start.y })),
-          splitCoordinate,
+          splitCoordinate: splitCoordinate + start.y,
           areaFill,
           lineStroke,
         } as SplitConfig
@@ -241,7 +261,6 @@ export const splitLine: SpecPipe = (spec, context) => {
     const measureValueKey = datasetReshapeInfo[0].foldInfo.measureValue
 
     seriesSpec.point.style.fill = (datum) => {
-      console.log(datum)
       return datum?.[measureValueKey] >= splitValue ? colorConfig.positiveColor : colorConfig.negativeColor
     }
     seriesSpec.line.style.stroke = (datum) => {

@@ -7,7 +7,7 @@ export const getLightLinearAxis = (): YLinearAxis => ({
   label: {
     visible: true,
     labelAngle: 0,
-    labelColor: '#797B85',
+    labelColor: '#8F959E',
     labelFontSize: 12,
     labelFontWeight: 400,
   },
@@ -47,7 +47,7 @@ export const getLightBandAxis = (): YBandAxis => ({
   label: {
     visible: true,
     labelAngle: 0,
-    labelColor: '#797B85',
+    labelColor: '#8F959E',
     labelFontSize: 12,
     labelFontWeight: 400,
   },

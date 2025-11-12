@@ -14,7 +14,7 @@ import {
   buildMeasuresForDualAxis,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
   encodingAdapter,
   defaultEncodingForDualAxis,
   deleteEncodingForMeasure,
@@ -25,7 +25,7 @@ export const dualAxisAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
 
   encodingAdapter(
     [defaultEncodingForDualAxis, buildMeasuresForDualAxis],

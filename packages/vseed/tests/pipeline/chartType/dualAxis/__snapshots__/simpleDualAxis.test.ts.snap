@@ -126,8 +126,10 @@ exports[`simpleDualAxis 1`] = `
         "shapeType": "rectRound",
       },
       "pivotGrid": {
+        "axisLabelColor": "#BCC1CB",
         "bodyFontColor": "#141414",
         "borderColor": "#e3e5eb",
+        "chartGridColor": "#F0F1F6",
         "frameCornerRadius": 0,
         "headerBackgroundColor": "transparent",
         "headerFontColor": "#21252c",
@@ -151,7 +153,7 @@ exports[`simpleDualAxis 1`] = `
         "inverse": false,
         "label": {
           "labelAngle": 0,
-          "labelColor": "#797B85",
+          "labelColor": "#8F959E",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "visible": true,
@@ -184,7 +186,7 @@ exports[`simpleDualAxis 1`] = `
         "inverse": false,
         "label": {
           "labelAngle": 0,
-          "labelColor": "#797B85",
+          "labelColor": "#8F959E",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "visible": true,
@@ -211,7 +213,18 @@ exports[`simpleDualAxis 1`] = `
         "zero": true,
       },
       "tooltip": {
+        "backgroundColor": "#fff",
+        "borderColor": "#e3e5e8",
+        "borderRadius": 12,
+        "borderWidth": 1,
         "enable": true,
+        "fontSize": 12,
+        "keyColor": "#606773",
+        "lineHeight": 12,
+        "lineSpace": 6,
+        "padding": 7,
+        "titleColor": "#21252c",
+        "valueColor": "#21252c",
       },
       "xAxis": {
         "grid": {
@@ -225,7 +238,7 @@ exports[`simpleDualAxis 1`] = `
         },
         "label": {
           "labelAngle": 0,
-          "labelColor": "#797B85",
+          "labelColor": "#8F959E",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "visible": true,
@@ -384,8 +397,10 @@ exports[`simpleDualAxis 1`] = `
           "shapeType": "rectRound",
         },
         "pivotGrid": {
+          "axisLabelColor": "#BCC1CB",
           "bodyFontColor": "#141414",
           "borderColor": "#e3e5eb",
+          "chartGridColor": "#F0F1F6",
           "frameCornerRadius": 0,
           "headerBackgroundColor": "transparent",
           "headerFontColor": "#21252c",
@@ -409,7 +424,7 @@ exports[`simpleDualAxis 1`] = `
           "inverse": false,
           "label": {
             "labelAngle": 0,
-            "labelColor": "#797B85",
+            "labelColor": "#8F959E",
             "labelFontSize": 12,
             "labelFontWeight": 400,
             "visible": true,
@@ -442,7 +457,7 @@ exports[`simpleDualAxis 1`] = `
           "inverse": false,
           "label": {
             "labelAngle": 0,
-            "labelColor": "#797B85",
+            "labelColor": "#8F959E",
             "labelFontSize": 12,
             "labelFontWeight": 400,
             "visible": true,
@@ -469,7 +484,18 @@ exports[`simpleDualAxis 1`] = `
           "zero": true,
         },
         "tooltip": {
+          "backgroundColor": "#fff",
+          "borderColor": "#e3e5e8",
+          "borderRadius": 12,
+          "borderWidth": 1,
           "enable": true,
+          "fontSize": 12,
+          "keyColor": "#606773",
+          "lineHeight": 12,
+          "lineSpace": 6,
+          "padding": 7,
+          "titleColor": "#21252c",
+          "valueColor": "#21252c",
         },
         "xAxis": {
           "grid": {
@@ -483,7 +509,7 @@ exports[`simpleDualAxis 1`] = `
           },
           "label": {
             "labelAngle": 0,
-            "labelColor": "#797B85",
+            "labelColor": "#8F959E",
             "labelFontSize": 12,
             "labelFontWeight": 400,
             "visible": true,
@@ -523,7 +549,7 @@ exports[`simpleDualAxis 1`] = `
   "dataset": [
     [
       {
-        "__Dim_ColorId__": "A-goalProfit-goalProfit",
+        "__Dim_ColorId__": "A-goalProfit",
         "__Dim_Color__": "A-goalProfit",
         "__Dim_Detail__": "A-goalProfit",
         "__Dim_X__": "2019",
@@ -548,7 +574,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-goalProfit-goalProfit",
+        "__Dim_ColorId__": "A-goalProfit",
         "__Dim_Color__": "A-goalProfit",
         "__Dim_Detail__": "A-goalProfit",
         "__Dim_X__": "2020",
@@ -573,7 +599,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-goalProfit-goalProfit",
+        "__Dim_ColorId__": "A-goalProfit",
         "__Dim_Color__": "A-goalProfit",
         "__Dim_Detail__": "A-goalProfit",
         "__Dim_X__": "2021",
@@ -598,7 +624,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-goalProfit-goalProfit",
+        "__Dim_ColorId__": "A-goalProfit",
         "__Dim_Color__": "A-goalProfit",
         "__Dim_Detail__": "A-goalProfit",
         "__Dim_X__": "2022",
@@ -623,7 +649,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-goalProfit-goalProfit",
+        "__Dim_ColorId__": "A-goalProfit",
         "__Dim_Color__": "A-goalProfit",
         "__Dim_Detail__": "A-goalProfit",
         "__Dim_X__": "2023",
@@ -650,7 +676,7 @@ exports[`simpleDualAxis 1`] = `
     ],
     [
       {
-        "__Dim_ColorId__": "A-profit-profit",
+        "__Dim_ColorId__": "A-profit",
         "__Dim_Color__": "A-profit",
         "__Dim_Detail__": "A-profit",
         "__Dim_X__": "2019",
@@ -672,7 +698,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-sales-sales",
+        "__Dim_ColorId__": "A-sales",
         "__Dim_Color__": "A-sales",
         "__Dim_Detail__": "A-sales",
         "__Dim_X__": "2019",
@@ -694,7 +720,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-leftCount-leftCount",
+        "__Dim_ColorId__": "A-leftCount",
         "__Dim_Color__": "A-leftCount",
         "__Dim_Detail__": "A-leftCount",
         "__Dim_X__": "2019",
@@ -716,7 +742,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-salesCount-salesCount",
+        "__Dim_ColorId__": "A-salesCount",
         "__Dim_Color__": "A-salesCount",
         "__Dim_Detail__": "A-salesCount",
         "__Dim_X__": "2019",
@@ -738,7 +764,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-profit-profit",
+        "__Dim_ColorId__": "A-profit",
         "__Dim_Color__": "A-profit",
         "__Dim_Detail__": "A-profit",
         "__Dim_X__": "2020",
@@ -760,7 +786,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-sales-sales",
+        "__Dim_ColorId__": "A-sales",
         "__Dim_Color__": "A-sales",
         "__Dim_Detail__": "A-sales",
         "__Dim_X__": "2020",
@@ -782,7 +808,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-leftCount-leftCount",
+        "__Dim_ColorId__": "A-leftCount",
         "__Dim_Color__": "A-leftCount",
         "__Dim_Detail__": "A-leftCount",
         "__Dim_X__": "2020",
@@ -804,7 +830,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-salesCount-salesCount",
+        "__Dim_ColorId__": "A-salesCount",
         "__Dim_Color__": "A-salesCount",
         "__Dim_Detail__": "A-salesCount",
         "__Dim_X__": "2020",
@@ -826,7 +852,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-profit-profit",
+        "__Dim_ColorId__": "A-profit",
         "__Dim_Color__": "A-profit",
         "__Dim_Detail__": "A-profit",
         "__Dim_X__": "2021",
@@ -848,7 +874,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-sales-sales",
+        "__Dim_ColorId__": "A-sales",
         "__Dim_Color__": "A-sales",
         "__Dim_Detail__": "A-sales",
         "__Dim_X__": "2021",
@@ -870,7 +896,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-leftCount-leftCount",
+        "__Dim_ColorId__": "A-leftCount",
         "__Dim_Color__": "A-leftCount",
         "__Dim_Detail__": "A-leftCount",
         "__Dim_X__": "2021",
@@ -892,7 +918,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-salesCount-salesCount",
+        "__Dim_ColorId__": "A-salesCount",
         "__Dim_Color__": "A-salesCount",
         "__Dim_Detail__": "A-salesCount",
         "__Dim_X__": "2021",
@@ -914,7 +940,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-profit-profit",
+        "__Dim_ColorId__": "A-profit",
         "__Dim_Color__": "A-profit",
         "__Dim_Detail__": "A-profit",
         "__Dim_X__": "2022",
@@ -936,7 +962,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-sales-sales",
+        "__Dim_ColorId__": "A-sales",
         "__Dim_Color__": "A-sales",
         "__Dim_Detail__": "A-sales",
         "__Dim_X__": "2022",
@@ -958,7 +984,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-leftCount-leftCount",
+        "__Dim_ColorId__": "A-leftCount",
         "__Dim_Color__": "A-leftCount",
         "__Dim_Detail__": "A-leftCount",
         "__Dim_X__": "2022",
@@ -980,7 +1006,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-salesCount-salesCount",
+        "__Dim_ColorId__": "A-salesCount",
         "__Dim_Color__": "A-salesCount",
         "__Dim_Detail__": "A-salesCount",
         "__Dim_X__": "2022",
@@ -1002,7 +1028,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-profit-profit",
+        "__Dim_ColorId__": "A-profit",
         "__Dim_Color__": "A-profit",
         "__Dim_Detail__": "A-profit",
         "__Dim_X__": "2023",
@@ -1024,7 +1050,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-sales-sales",
+        "__Dim_ColorId__": "A-sales",
         "__Dim_Color__": "A-sales",
         "__Dim_Detail__": "A-sales",
         "__Dim_X__": "2023",
@@ -1046,7 +1072,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-leftCount-leftCount",
+        "__Dim_ColorId__": "A-leftCount",
         "__Dim_Color__": "A-leftCount",
         "__Dim_Detail__": "A-leftCount",
         "__Dim_X__": "2023",
@@ -1068,7 +1094,7 @@ exports[`simpleDualAxis 1`] = `
         "type": "A",
       },
       {
-        "__Dim_ColorId__": "A-salesCount-salesCount",
+        "__Dim_ColorId__": "A-salesCount",
         "__Dim_Color__": "A-salesCount",
         "__Dim_Detail__": "A-salesCount",
         "__Dim_X__": "2023",
@@ -1150,18 +1176,33 @@ exports[`simpleDualAxis 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "A-goalProfit-goalProfit": "A-goalProfit",
-          "A-leftCount-leftCount": "A-leftCount",
-          "A-profit-profit": "A-profit",
-          "A-sales-sales": "A-sales",
-          "A-salesCount-salesCount": "A-salesCount",
+          "A-goalProfit": {
+            "alias": "A-goalProfit",
+            "id": "A-goalProfit",
+          },
+          "A-leftCount": {
+            "alias": "A-leftCount",
+            "id": "A-leftCount",
+          },
+          "A-profit": {
+            "alias": "A-profit",
+            "id": "A-profit",
+          },
+          "A-sales": {
+            "alias": "A-sales",
+            "id": "A-sales",
+          },
+          "A-salesCount": {
+            "alias": "A-salesCount",
+            "id": "A-salesCount",
+          },
         },
         "colorItems": [
-          "A-goalProfit-goalProfit",
-          "A-profit-profit",
-          "A-sales-sales",
-          "A-leftCount-leftCount",
-          "A-salesCount-salesCount",
+          "A-goalProfit",
+          "A-profit",
+          "A-sales",
+          "A-leftCount",
+          "A-salesCount",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -1182,19 +1223,19 @@ exports[`simpleDualAxis 1`] = `
       "id": "type",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
       "type",
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
       "type",
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
@@ -1292,7 +1333,7 @@ exports[`simpleDualAxis 2`] = `
         "space": 8,
         "style": {
           "angle": 0,
-          "fill": "#797B85",
+          "fill": "#8F959E",
           "fontSize": 12,
           "fontWeight": 400,
           "maxLineWidth": 80,
@@ -1352,14 +1393,15 @@ exports[`simpleDualAxis 2`] = `
       },
       "id": "dualAxis-primary-axis",
       "innerOffset": {
-        "top": 7,
+        "top": 12,
       },
       "inverse": false,
       "label": {
         "formatMethod": [Function],
+        "space": 8,
         "style": {
           "angle": 0,
-          "fill": "#797B85",
+          "fill": "#8F959E",
           "fontSize": 12,
           "fontWeight": 400,
         },
@@ -1410,14 +1452,15 @@ exports[`simpleDualAxis 2`] = `
       },
       "id": "dualAxis-secondary-axis",
       "innerOffset": {
-        "top": 7,
+        "top": 12,
       },
       "inverse": false,
       "label": {
         "formatMethod": [Function],
+        "space": 8,
         "style": {
           "angle": 0,
-          "fill": "#797B85",
+          "fill": "#8F959E",
           "fontSize": 12,
           "fontWeight": 400,
         },
@@ -1457,11 +1500,11 @@ exports[`simpleDualAxis 2`] = `
   "background": "transparent",
   "color": {
     "domain": [
-      "A-goalProfit-goalProfit",
-      "A-profit-profit",
-      "A-sales-sales",
-      "A-leftCount-leftCount",
-      "A-salesCount-salesCount",
+      "A-goalProfit",
+      "A-profit",
+      "A-sales",
+      "A-leftCount",
+      "A-salesCount",
     ],
     "range": [
       "#8D72F6",
@@ -1595,7 +1638,7 @@ exports[`simpleDualAxis 2`] = `
         "id": "dualAxis-primary-dataset",
         "values": [
           {
-            "__Dim_ColorId__": "A-goalProfit-goalProfit",
+            "__Dim_ColorId__": "A-goalProfit",
             "__Dim_Color__": "A-goalProfit",
             "__Dim_Detail__": "A-goalProfit",
             "__Dim_X__": "2019",
@@ -1620,7 +1663,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-goalProfit-goalProfit",
+            "__Dim_ColorId__": "A-goalProfit",
             "__Dim_Color__": "A-goalProfit",
             "__Dim_Detail__": "A-goalProfit",
             "__Dim_X__": "2020",
@@ -1645,7 +1688,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-goalProfit-goalProfit",
+            "__Dim_ColorId__": "A-goalProfit",
             "__Dim_Color__": "A-goalProfit",
             "__Dim_Detail__": "A-goalProfit",
             "__Dim_X__": "2021",
@@ -1670,7 +1713,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-goalProfit-goalProfit",
+            "__Dim_ColorId__": "A-goalProfit",
             "__Dim_Color__": "A-goalProfit",
             "__Dim_Detail__": "A-goalProfit",
             "__Dim_X__": "2022",
@@ -1695,7 +1738,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-goalProfit-goalProfit",
+            "__Dim_ColorId__": "A-goalProfit",
             "__Dim_Color__": "A-goalProfit",
             "__Dim_Detail__": "A-goalProfit",
             "__Dim_X__": "2023",
@@ -1808,6 +1851,34 @@ exports[`simpleDualAxis 2`] = `
             "visible": false,
           },
         },
+        "style": {
+          "keyLabel": {
+            "fontColor": "#606773",
+            "fontSize": 12,
+            "lineHeight": 12,
+          },
+          "panel": {
+            "backgroundColor": "#fff",
+            "border": {
+              "color": "#e3e5e8",
+              "radius": 12,
+              "width": 1,
+            },
+            "padding": 7,
+          },
+          "titleLabel": {
+            "fontColor": "#21252c",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "lineHeight": 12,
+          },
+          "valueLabel": {
+            "fontColor": "#21252c",
+            "fontSize": 12,
+            "fontWeight": "medium",
+            "lineHeight": 12,
+          },
+        },
         "visible": true,
       },
       "type": "bar",
@@ -1845,7 +1916,7 @@ exports[`simpleDualAxis 2`] = `
         "id": "dualAxis-secondary-dataset",
         "values": [
           {
-            "__Dim_ColorId__": "A-profit-profit",
+            "__Dim_ColorId__": "A-profit",
             "__Dim_Color__": "A-profit",
             "__Dim_Detail__": "A-profit",
             "__Dim_X__": "2019",
@@ -1867,7 +1938,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-sales-sales",
+            "__Dim_ColorId__": "A-sales",
             "__Dim_Color__": "A-sales",
             "__Dim_Detail__": "A-sales",
             "__Dim_X__": "2019",
@@ -1889,7 +1960,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-leftCount-leftCount",
+            "__Dim_ColorId__": "A-leftCount",
             "__Dim_Color__": "A-leftCount",
             "__Dim_Detail__": "A-leftCount",
             "__Dim_X__": "2019",
@@ -1911,7 +1982,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-salesCount-salesCount",
+            "__Dim_ColorId__": "A-salesCount",
             "__Dim_Color__": "A-salesCount",
             "__Dim_Detail__": "A-salesCount",
             "__Dim_X__": "2019",
@@ -1933,7 +2004,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-profit-profit",
+            "__Dim_ColorId__": "A-profit",
             "__Dim_Color__": "A-profit",
             "__Dim_Detail__": "A-profit",
             "__Dim_X__": "2020",
@@ -1955,7 +2026,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-sales-sales",
+            "__Dim_ColorId__": "A-sales",
             "__Dim_Color__": "A-sales",
             "__Dim_Detail__": "A-sales",
             "__Dim_X__": "2020",
@@ -1977,7 +2048,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-leftCount-leftCount",
+            "__Dim_ColorId__": "A-leftCount",
             "__Dim_Color__": "A-leftCount",
             "__Dim_Detail__": "A-leftCount",
             "__Dim_X__": "2020",
@@ -1999,7 +2070,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-salesCount-salesCount",
+            "__Dim_ColorId__": "A-salesCount",
             "__Dim_Color__": "A-salesCount",
             "__Dim_Detail__": "A-salesCount",
             "__Dim_X__": "2020",
@@ -2021,7 +2092,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-profit-profit",
+            "__Dim_ColorId__": "A-profit",
             "__Dim_Color__": "A-profit",
             "__Dim_Detail__": "A-profit",
             "__Dim_X__": "2021",
@@ -2043,7 +2114,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-sales-sales",
+            "__Dim_ColorId__": "A-sales",
             "__Dim_Color__": "A-sales",
             "__Dim_Detail__": "A-sales",
             "__Dim_X__": "2021",
@@ -2065,7 +2136,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-leftCount-leftCount",
+            "__Dim_ColorId__": "A-leftCount",
             "__Dim_Color__": "A-leftCount",
             "__Dim_Detail__": "A-leftCount",
             "__Dim_X__": "2021",
@@ -2087,7 +2158,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-salesCount-salesCount",
+            "__Dim_ColorId__": "A-salesCount",
             "__Dim_Color__": "A-salesCount",
             "__Dim_Detail__": "A-salesCount",
             "__Dim_X__": "2021",
@@ -2109,7 +2180,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-profit-profit",
+            "__Dim_ColorId__": "A-profit",
             "__Dim_Color__": "A-profit",
             "__Dim_Detail__": "A-profit",
             "__Dim_X__": "2022",
@@ -2131,7 +2202,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-sales-sales",
+            "__Dim_ColorId__": "A-sales",
             "__Dim_Color__": "A-sales",
             "__Dim_Detail__": "A-sales",
             "__Dim_X__": "2022",
@@ -2153,7 +2224,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-leftCount-leftCount",
+            "__Dim_ColorId__": "A-leftCount",
             "__Dim_Color__": "A-leftCount",
             "__Dim_Detail__": "A-leftCount",
             "__Dim_X__": "2022",
@@ -2175,7 +2246,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-salesCount-salesCount",
+            "__Dim_ColorId__": "A-salesCount",
             "__Dim_Color__": "A-salesCount",
             "__Dim_Detail__": "A-salesCount",
             "__Dim_X__": "2022",
@@ -2197,7 +2268,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-profit-profit",
+            "__Dim_ColorId__": "A-profit",
             "__Dim_Color__": "A-profit",
             "__Dim_Detail__": "A-profit",
             "__Dim_X__": "2023",
@@ -2219,7 +2290,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-sales-sales",
+            "__Dim_ColorId__": "A-sales",
             "__Dim_Color__": "A-sales",
             "__Dim_Detail__": "A-sales",
             "__Dim_X__": "2023",
@@ -2241,7 +2312,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-leftCount-leftCount",
+            "__Dim_ColorId__": "A-leftCount",
             "__Dim_Color__": "A-leftCount",
             "__Dim_Detail__": "A-leftCount",
             "__Dim_X__": "2023",
@@ -2263,7 +2334,7 @@ exports[`simpleDualAxis 2`] = `
             "type": "A",
           },
           {
-            "__Dim_ColorId__": "A-salesCount-salesCount",
+            "__Dim_ColorId__": "A-salesCount",
             "__Dim_Color__": "A-salesCount",
             "__Dim_Detail__": "A-salesCount",
             "__Dim_X__": "2023",
@@ -2401,32 +2472,47 @@ exports[`simpleDualAxis 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "A-goalProfit-goalProfit": "A-goalProfit",
-    "A-leftCount-leftCount": "A-leftCount",
-    "A-profit-profit": "A-profit",
-    "A-sales-sales": "A-sales",
-    "A-salesCount-salesCount": "A-salesCount",
+    "A-goalProfit": {
+      "alias": "A-goalProfit",
+      "id": "A-goalProfit",
+    },
+    "A-leftCount": {
+      "alias": "A-leftCount",
+      "id": "A-leftCount",
+    },
+    "A-profit": {
+      "alias": "A-profit",
+      "id": "A-profit",
+    },
+    "A-sales": {
+      "alias": "A-sales",
+      "id": "A-sales",
+    },
+    "A-salesCount": {
+      "alias": "A-salesCount",
+      "id": "A-salesCount",
+    },
   },
   "colorItems": [
     {
       "alias": "A-goalProfit",
-      "id": "A-goalProfit-goalProfit",
+      "id": "A-goalProfit",
     },
     {
       "alias": "A-profit",
-      "id": "A-profit-profit",
+      "id": "A-profit",
     },
     {
       "alias": "A-sales",
-      "id": "A-sales-sales",
+      "id": "A-sales",
     },
     {
       "alias": "A-leftCount",
-      "id": "A-leftCount-leftCount",
+      "id": "A-leftCount",
     },
     {
       "alias": "A-salesCount",
-      "id": "A-salesCount-salesCount",
+      "id": "A-salesCount",
     },
   ],
   "hasTheme": true,

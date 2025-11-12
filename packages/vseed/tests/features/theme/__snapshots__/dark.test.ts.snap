@@ -122,8 +122,10 @@ exports[`dark 1`] = `
         "shapeType": "rectRound",
       },
       "pivotGrid": {
+        "axisLabelColor": "#E2E3E6",
         "bodyFontColor": "#fdfdfd",
         "borderColor": "#4b4e53",
+        "chartGridColor": "#303339",
         "frameCornerRadius": 0,
         "headerBackgroundColor": "transparent",
         "headerFontColor": "#fdfdfd",
@@ -183,7 +185,18 @@ exports[`dark 1`] = `
         0,
       ],
       "tooltip": {
+        "backgroundColor": "#2b2d30",
+        "borderColor": "#3c3f44",
+        "borderRadius": 12,
+        "borderWidth": 1,
         "enable": true,
+        "fontSize": 12,
+        "keyColor": "#89909D",
+        "lineHeight": 12,
+        "lineSpace": 6,
+        "padding": 7,
+        "titleColor": "#E2E3E6",
+        "valueColor": "#E2E3E6",
       },
       "xAxis": {
         "grid": {
@@ -390,8 +403,10 @@ exports[`dark 1`] = `
           "shapeType": "rectRound",
         },
         "pivotGrid": {
+          "axisLabelColor": "#E2E3E6",
           "bodyFontColor": "#fdfdfd",
           "borderColor": "#4b4e53",
+          "chartGridColor": "#303339",
           "frameCornerRadius": 0,
           "headerBackgroundColor": "transparent",
           "headerFontColor": "#fdfdfd",
@@ -451,7 +466,18 @@ exports[`dark 1`] = `
           0,
         ],
         "tooltip": {
+          "backgroundColor": "#2b2d30",
+          "borderColor": "#3c3f44",
+          "borderRadius": 12,
+          "borderWidth": 1,
           "enable": true,
+          "fontSize": 12,
+          "keyColor": "#89909D",
+          "lineHeight": 12,
+          "lineSpace": 6,
+          "padding": 7,
+          "titleColor": "#E2E3E6",
+          "valueColor": "#E2E3E6",
         },
         "xAxis": {
           "grid": {
@@ -542,7 +568,7 @@ exports[`dark 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "2019",
@@ -558,7 +584,7 @@ exports[`dark 1`] = `
       "profit": 10,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_Detail__": "sales",
       "__Dim_X__": "2019",
@@ -574,7 +600,7 @@ exports[`dark 1`] = `
       "sales": 20,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "2020",
@@ -590,7 +616,7 @@ exports[`dark 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_Detail__": "sales",
       "__Dim_X__": "2020",
@@ -606,7 +632,7 @@ exports[`dark 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "2021",
@@ -622,7 +648,7 @@ exports[`dark 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_Detail__": "sales",
       "__Dim_X__": "2021",
@@ -638,7 +664,7 @@ exports[`dark 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "2022",
@@ -654,7 +680,7 @@ exports[`dark 1`] = `
       "profit": 50,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_Detail__": "sales",
       "__Dim_X__": "2022",
@@ -670,7 +696,7 @@ exports[`dark 1`] = `
       "sales": 100,
     },
     {
-      "__Dim_ColorId__": "profit-profit",
+      "__Dim_ColorId__": "profit",
       "__Dim_Color__": "profit",
       "__Dim_Detail__": "profit",
       "__Dim_X__": "2023",
@@ -686,7 +712,7 @@ exports[`dark 1`] = `
       "profit": 40,
     },
     {
-      "__Dim_ColorId__": "sales-sales",
+      "__Dim_ColorId__": "sales",
       "__Dim_Color__": "sales",
       "__Dim_Detail__": "sales",
       "__Dim_X__": "2023",
@@ -725,12 +751,18 @@ exports[`dark 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "profit-profit": "profit",
-          "sales-sales": "sales",
+          "profit": {
+            "alias": "profit",
+            "id": "profit",
+          },
+          "sales": {
+            "alias": "sales",
+            "id": "sales",
+          },
         },
         "colorItems": [
-          "profit-profit",
-          "sales-sales",
+          "profit",
+          "sales",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -747,17 +779,17 @@ exports[`dark 1`] = `
       "id": "date",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
@@ -887,11 +919,12 @@ exports[`dark 2`] = `
         "visible": true,
       },
       "innerOffset": {
-        "top": 7,
+        "top": 12,
       },
       "inverse": undefined,
       "label": {
         "formatMethod": [Function],
+        "space": 8,
         "style": {
           "angle": 0,
           "fill": "#E2E3E6",
@@ -941,8 +974,8 @@ exports[`dark 2`] = `
   },
   "color": {
     "domain": [
-      "profit-profit",
-      "sales-sales",
+      "profit",
+      "sales",
     ],
     "range": [
       "#2E62F1",
@@ -999,7 +1032,7 @@ exports[`dark 2`] = `
     "id": "column",
     "values": [
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "2019",
@@ -1015,7 +1048,7 @@ exports[`dark 2`] = `
         "profit": 10,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "2019",
@@ -1031,7 +1064,7 @@ exports[`dark 2`] = `
         "sales": 20,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "2020",
@@ -1047,7 +1080,7 @@ exports[`dark 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "2020",
@@ -1063,7 +1096,7 @@ exports[`dark 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "2021",
@@ -1079,7 +1112,7 @@ exports[`dark 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "2021",
@@ -1095,7 +1128,7 @@ exports[`dark 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "2022",
@@ -1111,7 +1144,7 @@ exports[`dark 2`] = `
         "profit": 50,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "2022",
@@ -1127,7 +1160,7 @@ exports[`dark 2`] = `
         "sales": 100,
       },
       {
-        "__Dim_ColorId__": "profit-profit",
+        "__Dim_ColorId__": "profit",
         "__Dim_Color__": "profit",
         "__Dim_Detail__": "profit",
         "__Dim_X__": "2023",
@@ -1143,7 +1176,7 @@ exports[`dark 2`] = `
         "profit": 40,
       },
       {
-        "__Dim_ColorId__": "sales-sales",
+        "__Dim_ColorId__": "sales",
         "__Dim_Color__": "sales",
         "__Dim_Detail__": "sales",
         "__Dim_X__": "2023",
@@ -1282,6 +1315,34 @@ exports[`dark 2`] = `
         "visible": false,
       },
     },
+    "style": {
+      "keyLabel": {
+        "fontColor": "#89909D",
+        "fontSize": 12,
+        "lineHeight": 12,
+      },
+      "panel": {
+        "backgroundColor": "#2b2d30",
+        "border": {
+          "color": "#3c3f44",
+          "radius": 12,
+          "width": 1,
+        },
+        "padding": 7,
+      },
+      "titleLabel": {
+        "fontColor": "#E2E3E6",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "lineHeight": 12,
+      },
+      "valueLabel": {
+        "fontColor": "#E2E3E6",
+        "fontSize": 12,
+        "fontWeight": "medium",
+        "lineHeight": 12,
+      },
+    },
     "visible": true,
   },
   "type": "bar",
@@ -1308,17 +1369,23 @@ exports[`dark 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "profit-profit": "profit",
-    "sales-sales": "sales",
+    "profit": {
+      "alias": "profit",
+      "id": "profit",
+    },
+    "sales": {
+      "alias": "sales",
+      "id": "sales",
+    },
   },
   "colorItems": [
     {
       "alias": "profit",
-      "id": "profit-profit",
+      "id": "profit",
     },
     {
       "alias": "sales",
-      "id": "sales-sales",
+      "id": "sales",
     },
   ],
   "hasTheme": true,

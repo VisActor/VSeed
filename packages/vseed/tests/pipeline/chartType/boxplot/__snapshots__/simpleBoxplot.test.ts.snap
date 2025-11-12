@@ -122,8 +122,10 @@ exports[`simpleBoxplot 1`] = `
         "shapeType": "rectRound",
       },
       "pivotGrid": {
+        "axisLabelColor": "#BCC1CB",
         "bodyFontColor": "#141414",
         "borderColor": "#e3e5eb",
+        "chartGridColor": "#F0F1F6",
         "frameCornerRadius": 0,
         "headerBackgroundColor": "transparent",
         "headerFontColor": "#21252c",
@@ -135,7 +137,18 @@ exports[`simpleBoxplot 1`] = `
         "titleFontWeight": "bold",
       },
       "tooltip": {
+        "backgroundColor": "#fff",
+        "borderColor": "#e3e5e8",
+        "borderRadius": 12,
+        "borderWidth": 1,
         "enable": true,
+        "fontSize": 12,
+        "keyColor": "#606773",
+        "lineHeight": 12,
+        "lineSpace": 6,
+        "padding": 7,
+        "titleColor": "#21252c",
+        "valueColor": "#21252c",
       },
       "xAxis": {
         "grid": {
@@ -150,7 +163,7 @@ exports[`simpleBoxplot 1`] = `
         "inverse": false,
         "label": {
           "labelAngle": 0,
-          "labelColor": "#797B85",
+          "labelColor": "#8F959E",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "visible": true,
@@ -189,7 +202,7 @@ exports[`simpleBoxplot 1`] = `
         "inverse": false,
         "label": {
           "labelAngle": 0,
-          "labelColor": "#797B85",
+          "labelColor": "#8F959E",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "visible": true,
@@ -336,8 +349,10 @@ exports[`simpleBoxplot 1`] = `
           "shapeType": "rectRound",
         },
         "pivotGrid": {
+          "axisLabelColor": "#BCC1CB",
           "bodyFontColor": "#141414",
           "borderColor": "#e3e5eb",
+          "chartGridColor": "#F0F1F6",
           "frameCornerRadius": 0,
           "headerBackgroundColor": "transparent",
           "headerFontColor": "#21252c",
@@ -349,7 +364,18 @@ exports[`simpleBoxplot 1`] = `
           "titleFontWeight": "bold",
         },
         "tooltip": {
+          "backgroundColor": "#fff",
+          "borderColor": "#e3e5e8",
+          "borderRadius": 12,
+          "borderWidth": 1,
           "enable": true,
+          "fontSize": 12,
+          "keyColor": "#606773",
+          "lineHeight": 12,
+          "lineSpace": 6,
+          "padding": 7,
+          "titleColor": "#21252c",
+          "valueColor": "#21252c",
         },
         "xAxis": {
           "grid": {
@@ -364,7 +390,7 @@ exports[`simpleBoxplot 1`] = `
           "inverse": false,
           "label": {
             "labelAngle": 0,
-            "labelColor": "#797B85",
+            "labelColor": "#8F959E",
             "labelFontSize": 12,
             "labelFontWeight": 400,
             "visible": true,
@@ -403,7 +429,7 @@ exports[`simpleBoxplot 1`] = `
           "inverse": false,
           "label": {
             "labelAngle": 0,
-            "labelColor": "#797B85",
+            "labelColor": "#8F959E",
             "labelFontSize": 12,
             "labelFontWeight": 400,
             "visible": true,
@@ -436,7 +462,7 @@ exports[`simpleBoxplot 1`] = `
     {
       "Sex": "male",
       "Survived": 0,
-      "__Dim_ColorId__": "male-Age",
+      "__Dim_ColorId__": "male",
       "__Dim_Color__": "male",
       "__Dim_X__": "0",
       "__Max__": 55,
@@ -458,7 +484,7 @@ exports[`simpleBoxplot 1`] = `
     {
       "Sex": "female",
       "Survived": 1,
-      "__Dim_ColorId__": "female-Age",
+      "__Dim_ColorId__": "female",
       "__Dim_Color__": "female",
       "__Dim_X__": "1",
       "__Max__": 55,
@@ -478,7 +504,7 @@ exports[`simpleBoxplot 1`] = `
     {
       "Sex": "female",
       "Survived": 0,
-      "__Dim_ColorId__": "female-Age",
+      "__Dim_ColorId__": "female",
       "__Dim_Color__": "female",
       "__Dim_X__": "0",
       "__Max__": 45,
@@ -498,7 +524,7 @@ exports[`simpleBoxplot 1`] = `
     {
       "Sex": "male",
       "Survived": 1,
-      "__Dim_ColorId__": "male-Age",
+      "__Dim_ColorId__": "male",
       "__Dim_Color__": "male",
       "__Dim_X__": "1",
       "__Max__": 6,
@@ -523,12 +549,18 @@ exports[`simpleBoxplot 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "female-Age": "female",
-          "male-Age": "male",
+          "female": {
+            "alias": "female",
+            "id": "female",
+          },
+          "male": {
+            "alias": "male",
+            "id": "male",
+          },
         },
         "colorItems": [
-          "male-Age",
-          "female-Age",
+          "male",
+          "female",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -551,8 +583,8 @@ exports[`simpleBoxplot 1`] = `
       "id": "Sex",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
@@ -626,7 +658,7 @@ exports[`simpleBoxplot 2`] = `
         "space": 8,
         "style": {
           "angle": 0,
-          "fill": "#797B85",
+          "fill": "#8F959E",
           "fontSize": 12,
           "fontWeight": 400,
           "maxLineWidth": 80,
@@ -685,14 +717,15 @@ exports[`simpleBoxplot 2`] = `
         "visible": true,
       },
       "innerOffset": {
-        "top": 7,
+        "top": 12,
       },
       "inverse": false,
       "label": {
         "formatMethod": [Function],
+        "space": 8,
         "style": {
           "angle": 0,
-          "fill": "#797B85",
+          "fill": "#8F959E",
           "fontSize": 12,
           "fontWeight": 400,
         },
@@ -739,8 +772,8 @@ exports[`simpleBoxplot 2`] = `
   },
   "color": {
     "domain": [
-      "male-Age",
-      "female-Age",
+      "male",
+      "female",
     ],
     "range": [
       "#8D72F6",
@@ -789,7 +822,7 @@ exports[`simpleBoxplot 2`] = `
       {
         "Sex": "male",
         "Survived": 0,
-        "__Dim_ColorId__": "male-Age",
+        "__Dim_ColorId__": "male",
         "__Dim_Color__": "male",
         "__Dim_X__": "0",
         "__Max__": 55,
@@ -811,7 +844,7 @@ exports[`simpleBoxplot 2`] = `
       {
         "Sex": "female",
         "Survived": 1,
-        "__Dim_ColorId__": "female-Age",
+        "__Dim_ColorId__": "female",
         "__Dim_Color__": "female",
         "__Dim_X__": "1",
         "__Max__": 55,
@@ -831,7 +864,7 @@ exports[`simpleBoxplot 2`] = `
       {
         "Sex": "female",
         "Survived": 0,
-        "__Dim_ColorId__": "female-Age",
+        "__Dim_ColorId__": "female",
         "__Dim_Color__": "female",
         "__Dim_X__": "0",
         "__Max__": 45,
@@ -851,7 +884,7 @@ exports[`simpleBoxplot 2`] = `
       {
         "Sex": "male",
         "Survived": 1,
-        "__Dim_ColorId__": "male-Age",
+        "__Dim_ColorId__": "male",
         "__Dim_Color__": "male",
         "__Dim_X__": "1",
         "__Max__": 6,
@@ -1023,6 +1056,34 @@ exports[`simpleBoxplot 2`] = `
       },
       "updateContent": [Function],
     },
+    "style": {
+      "keyLabel": {
+        "fontColor": "#606773",
+        "fontSize": 12,
+        "lineHeight": 12,
+      },
+      "panel": {
+        "backgroundColor": "#fff",
+        "border": {
+          "color": "#e3e5e8",
+          "radius": 12,
+          "width": 1,
+        },
+        "padding": 7,
+      },
+      "titleLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "lineHeight": 12,
+      },
+      "valueLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "medium",
+        "lineHeight": 12,
+      },
+    },
     "visible": true,
   },
   "type": "boxPlot",
@@ -1049,17 +1110,23 @@ exports[`simpleBoxplot 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "female-Age": "female",
-    "male-Age": "male",
+    "female": {
+      "alias": "female",
+      "id": "female",
+    },
+    "male": {
+      "alias": "male",
+      "id": "male",
+    },
   },
   "colorItems": [
     {
       "alias": "male",
-      "id": "male-Age",
+      "id": "male",
     },
     {
       "alias": "female",
-      "id": "female-Age",
+      "id": "female",
     },
   ],
   "hasTheme": true,

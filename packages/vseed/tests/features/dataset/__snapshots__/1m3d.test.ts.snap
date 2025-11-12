@@ -122,8 +122,10 @@ exports[`1m3d 1`] = `
         "shapeType": "rectRound",
       },
       "pivotGrid": {
+        "axisLabelColor": "#BCC1CB",
         "bodyFontColor": "#141414",
         "borderColor": "#e3e5eb",
+        "chartGridColor": "#F0F1F6",
         "frameCornerRadius": 0,
         "headerBackgroundColor": "transparent",
         "headerFontColor": "#21252c",
@@ -141,7 +143,18 @@ exports[`1m3d 1`] = `
         0,
       ],
       "tooltip": {
+        "backgroundColor": "#fff",
+        "borderColor": "#e3e5e8",
+        "borderRadius": 12,
+        "borderWidth": 1,
         "enable": true,
+        "fontSize": 12,
+        "keyColor": "#606773",
+        "lineHeight": 12,
+        "lineSpace": 6,
+        "padding": 7,
+        "titleColor": "#21252c",
+        "valueColor": "#21252c",
       },
       "xAxis": {
         "grid": {
@@ -155,7 +168,7 @@ exports[`1m3d 1`] = `
         },
         "label": {
           "labelAngle": 0,
-          "labelColor": "#797B85",
+          "labelColor": "#8F959E",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "visible": true,
@@ -202,7 +215,7 @@ exports[`1m3d 1`] = `
         "inverse": false,
         "label": {
           "labelAngle": 0,
-          "labelColor": "#797B85",
+          "labelColor": "#8F959E",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "visible": true,
@@ -349,8 +362,10 @@ exports[`1m3d 1`] = `
           "shapeType": "rectRound",
         },
         "pivotGrid": {
+          "axisLabelColor": "#BCC1CB",
           "bodyFontColor": "#141414",
           "borderColor": "#e3e5eb",
+          "chartGridColor": "#F0F1F6",
           "frameCornerRadius": 0,
           "headerBackgroundColor": "transparent",
           "headerFontColor": "#21252c",
@@ -368,7 +383,18 @@ exports[`1m3d 1`] = `
           0,
         ],
         "tooltip": {
+          "backgroundColor": "#fff",
+          "borderColor": "#e3e5e8",
+          "borderRadius": 12,
+          "borderWidth": 1,
           "enable": true,
+          "fontSize": 12,
+          "keyColor": "#606773",
+          "lineHeight": 12,
+          "lineSpace": 6,
+          "padding": 7,
+          "titleColor": "#21252c",
+          "valueColor": "#21252c",
         },
         "xAxis": {
           "grid": {
@@ -382,7 +408,7 @@ exports[`1m3d 1`] = `
           },
           "label": {
             "labelAngle": 0,
-            "labelColor": "#797B85",
+            "labelColor": "#8F959E",
             "labelFontSize": 12,
             "labelFontWeight": 400,
             "visible": true,
@@ -429,7 +455,7 @@ exports[`1m3d 1`] = `
           "inverse": false,
           "label": {
             "labelAngle": 0,
-            "labelColor": "#797B85",
+            "labelColor": "#8F959E",
             "labelFontSize": 12,
             "labelFontWeight": 400,
             "visible": true,
@@ -460,7 +486,7 @@ exports[`1m3d 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "east-A-profit-profit",
+      "__Dim_ColorId__": "east-A-profit",
       "__Dim_Color__": "east-A-profit",
       "__Dim_Detail__": "east-A-profit",
       "__Dim_X__": "2019",
@@ -479,7 +505,7 @@ exports[`1m3d 1`] = `
       "region": "east",
     },
     {
-      "__Dim_ColorId__": "east-B-profit-profit",
+      "__Dim_ColorId__": "east-B-profit",
       "__Dim_Color__": "east-B-profit",
       "__Dim_Detail__": "east-B-profit",
       "__Dim_X__": "2019",
@@ -498,7 +524,7 @@ exports[`1m3d 1`] = `
       "region": "east",
     },
     {
-      "__Dim_ColorId__": "east-C-profit-profit",
+      "__Dim_ColorId__": "east-C-profit",
       "__Dim_Color__": "east-C-profit",
       "__Dim_Detail__": "east-C-profit",
       "__Dim_X__": "2019",
@@ -517,7 +543,7 @@ exports[`1m3d 1`] = `
       "region": "east",
     },
     {
-      "__Dim_ColorId__": "east-D-profit-profit",
+      "__Dim_ColorId__": "east-D-profit",
       "__Dim_Color__": "east-D-profit",
       "__Dim_Detail__": "east-D-profit",
       "__Dim_X__": "2019",
@@ -536,7 +562,7 @@ exports[`1m3d 1`] = `
       "region": "east",
     },
     {
-      "__Dim_ColorId__": "east-E-profit-profit",
+      "__Dim_ColorId__": "east-E-profit",
       "__Dim_Color__": "east-E-profit",
       "__Dim_Detail__": "east-E-profit",
       "__Dim_X__": "2019",
@@ -555,7 +581,7 @@ exports[`1m3d 1`] = `
       "region": "east",
     },
     {
-      "__Dim_ColorId__": "north of east-A-profit-profit",
+      "__Dim_ColorId__": "north of east-A-profit",
       "__Dim_Color__": "north of east-A-profit",
       "__Dim_Detail__": "north of east-A-profit",
       "__Dim_X__": "2020",
@@ -574,7 +600,7 @@ exports[`1m3d 1`] = `
       "region": "north of east",
     },
     {
-      "__Dim_ColorId__": "north of east-B-profit-profit",
+      "__Dim_ColorId__": "north of east-B-profit",
       "__Dim_Color__": "north of east-B-profit",
       "__Dim_Detail__": "north of east-B-profit",
       "__Dim_X__": "2020",
@@ -593,7 +619,7 @@ exports[`1m3d 1`] = `
       "region": "north of east",
     },
     {
-      "__Dim_ColorId__": "north of east-C-profit-profit",
+      "__Dim_ColorId__": "north of east-C-profit",
       "__Dim_Color__": "north of east-C-profit",
       "__Dim_Detail__": "north of east-C-profit",
       "__Dim_X__": "2020",
@@ -612,7 +638,7 @@ exports[`1m3d 1`] = `
       "region": "north of east",
     },
     {
-      "__Dim_ColorId__": "north of east-D-profit-profit",
+      "__Dim_ColorId__": "north of east-D-profit",
       "__Dim_Color__": "north of east-D-profit",
       "__Dim_Detail__": "north of east-D-profit",
       "__Dim_X__": "2020",
@@ -631,7 +657,7 @@ exports[`1m3d 1`] = `
       "region": "north of east",
     },
     {
-      "__Dim_ColorId__": "north of east-E-profit-profit",
+      "__Dim_ColorId__": "north of east-E-profit",
       "__Dim_Color__": "north of east-E-profit",
       "__Dim_Detail__": "north of east-E-profit",
       "__Dim_X__": "2020",
@@ -672,28 +698,58 @@ exports[`1m3d 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "east-A-profit-profit": "east-A-profit",
-          "east-B-profit-profit": "east-B-profit",
-          "east-C-profit-profit": "east-C-profit",
-          "east-D-profit-profit": "east-D-profit",
-          "east-E-profit-profit": "east-E-profit",
-          "north of east-A-profit-profit": "north of east-A-profit",
-          "north of east-B-profit-profit": "north of east-B-profit",
-          "north of east-C-profit-profit": "north of east-C-profit",
-          "north of east-D-profit-profit": "north of east-D-profit",
-          "north of east-E-profit-profit": "north of east-E-profit",
+          "east-A-profit": {
+            "alias": "east-A-profit",
+            "id": "east-A-profit",
+          },
+          "east-B-profit": {
+            "alias": "east-B-profit",
+            "id": "east-B-profit",
+          },
+          "east-C-profit": {
+            "alias": "east-C-profit",
+            "id": "east-C-profit",
+          },
+          "east-D-profit": {
+            "alias": "east-D-profit",
+            "id": "east-D-profit",
+          },
+          "east-E-profit": {
+            "alias": "east-E-profit",
+            "id": "east-E-profit",
+          },
+          "north of east-A-profit": {
+            "alias": "north of east-A-profit",
+            "id": "north of east-A-profit",
+          },
+          "north of east-B-profit": {
+            "alias": "north of east-B-profit",
+            "id": "north of east-B-profit",
+          },
+          "north of east-C-profit": {
+            "alias": "north of east-C-profit",
+            "id": "north of east-C-profit",
+          },
+          "north of east-D-profit": {
+            "alias": "north of east-D-profit",
+            "id": "north of east-D-profit",
+          },
+          "north of east-E-profit": {
+            "alias": "north of east-E-profit",
+            "id": "north of east-E-profit",
+          },
         },
         "colorItems": [
-          "east-A-profit-profit",
-          "east-B-profit-profit",
-          "east-C-profit-profit",
-          "east-D-profit-profit",
-          "east-E-profit-profit",
-          "north of east-A-profit-profit",
-          "north of east-B-profit-profit",
-          "north of east-C-profit-profit",
-          "north of east-D-profit-profit",
-          "north of east-E-profit-profit",
+          "east-A-profit",
+          "east-B-profit",
+          "east-C-profit",
+          "east-D-profit",
+          "east-E-profit",
+          "north of east-A-profit",
+          "north of east-B-profit",
+          "north of east-C-profit",
+          "north of east-D-profit",
+          "north of east-E-profit",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -718,21 +774,21 @@ exports[`1m3d 1`] = `
       "id": "city",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
       "region",
       "city",
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
       "region",
       "city",
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
@@ -800,7 +856,7 @@ exports[`1m3d 2`] = `
         "space": 8,
         "style": {
           "angle": 0,
-          "fill": "#797B85",
+          "fill": "#8F959E",
           "fontSize": 12,
           "fontWeight": 400,
           "maxLineWidth": 80,
@@ -859,14 +915,15 @@ exports[`1m3d 2`] = `
         "visible": true,
       },
       "innerOffset": {
-        "top": 7,
+        "top": 12,
       },
       "inverse": false,
       "label": {
         "formatMethod": [Function],
+        "space": 8,
         "style": {
           "angle": 0,
-          "fill": "#797B85",
+          "fill": "#8F959E",
           "fontSize": 12,
           "fontWeight": 400,
         },
@@ -913,16 +970,16 @@ exports[`1m3d 2`] = `
   },
   "color": {
     "domain": [
-      "east-A-profit-profit",
-      "east-B-profit-profit",
-      "east-C-profit-profit",
-      "east-D-profit-profit",
-      "east-E-profit-profit",
-      "north of east-A-profit-profit",
-      "north of east-B-profit-profit",
-      "north of east-C-profit-profit",
-      "north of east-D-profit-profit",
-      "north of east-E-profit-profit",
+      "east-A-profit",
+      "east-B-profit",
+      "east-C-profit",
+      "east-D-profit",
+      "east-E-profit",
+      "north of east-A-profit",
+      "north of east-B-profit",
+      "north of east-C-profit",
+      "north of east-D-profit",
+      "north of east-E-profit",
     ],
     "range": [
       "#8D72F6",
@@ -979,7 +1036,7 @@ exports[`1m3d 2`] = `
     "id": "columnParallel",
     "values": [
       {
-        "__Dim_ColorId__": "east-A-profit-profit",
+        "__Dim_ColorId__": "east-A-profit",
         "__Dim_Color__": "east-A-profit",
         "__Dim_Detail__": "east-A-profit",
         "__Dim_X__": "2019",
@@ -998,7 +1055,7 @@ exports[`1m3d 2`] = `
         "region": "east",
       },
       {
-        "__Dim_ColorId__": "east-B-profit-profit",
+        "__Dim_ColorId__": "east-B-profit",
         "__Dim_Color__": "east-B-profit",
         "__Dim_Detail__": "east-B-profit",
         "__Dim_X__": "2019",
@@ -1017,7 +1074,7 @@ exports[`1m3d 2`] = `
         "region": "east",
       },
       {
-        "__Dim_ColorId__": "east-C-profit-profit",
+        "__Dim_ColorId__": "east-C-profit",
         "__Dim_Color__": "east-C-profit",
         "__Dim_Detail__": "east-C-profit",
         "__Dim_X__": "2019",
@@ -1036,7 +1093,7 @@ exports[`1m3d 2`] = `
         "region": "east",
       },
       {
-        "__Dim_ColorId__": "east-D-profit-profit",
+        "__Dim_ColorId__": "east-D-profit",
         "__Dim_Color__": "east-D-profit",
         "__Dim_Detail__": "east-D-profit",
         "__Dim_X__": "2019",
@@ -1055,7 +1112,7 @@ exports[`1m3d 2`] = `
         "region": "east",
       },
       {
-        "__Dim_ColorId__": "east-E-profit-profit",
+        "__Dim_ColorId__": "east-E-profit",
         "__Dim_Color__": "east-E-profit",
         "__Dim_Detail__": "east-E-profit",
         "__Dim_X__": "2019",
@@ -1074,7 +1131,7 @@ exports[`1m3d 2`] = `
         "region": "east",
       },
       {
-        "__Dim_ColorId__": "north of east-A-profit-profit",
+        "__Dim_ColorId__": "north of east-A-profit",
         "__Dim_Color__": "north of east-A-profit",
         "__Dim_Detail__": "north of east-A-profit",
         "__Dim_X__": "2020",
@@ -1093,7 +1150,7 @@ exports[`1m3d 2`] = `
         "region": "north of east",
       },
       {
-        "__Dim_ColorId__": "north of east-B-profit-profit",
+        "__Dim_ColorId__": "north of east-B-profit",
         "__Dim_Color__": "north of east-B-profit",
         "__Dim_Detail__": "north of east-B-profit",
         "__Dim_X__": "2020",
@@ -1112,7 +1169,7 @@ exports[`1m3d 2`] = `
         "region": "north of east",
       },
       {
-        "__Dim_ColorId__": "north of east-C-profit-profit",
+        "__Dim_ColorId__": "north of east-C-profit",
         "__Dim_Color__": "north of east-C-profit",
         "__Dim_Detail__": "north of east-C-profit",
         "__Dim_X__": "2020",
@@ -1131,7 +1188,7 @@ exports[`1m3d 2`] = `
         "region": "north of east",
       },
       {
-        "__Dim_ColorId__": "north of east-D-profit-profit",
+        "__Dim_ColorId__": "north of east-D-profit",
         "__Dim_Color__": "north of east-D-profit",
         "__Dim_Detail__": "north of east-D-profit",
         "__Dim_X__": "2020",
@@ -1150,7 +1207,7 @@ exports[`1m3d 2`] = `
         "region": "north of east",
       },
       {
-        "__Dim_ColorId__": "north of east-E-profit-profit",
+        "__Dim_ColorId__": "north of east-E-profit",
         "__Dim_Color__": "north of east-E-profit",
         "__Dim_Detail__": "north of east-E-profit",
         "__Dim_X__": "2020",
@@ -1305,6 +1362,34 @@ exports[`1m3d 2`] = `
         "visible": false,
       },
     },
+    "style": {
+      "keyLabel": {
+        "fontColor": "#606773",
+        "fontSize": 12,
+        "lineHeight": 12,
+      },
+      "panel": {
+        "backgroundColor": "#fff",
+        "border": {
+          "color": "#e3e5e8",
+          "radius": 12,
+          "width": 1,
+        },
+        "padding": 7,
+      },
+      "titleLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "lineHeight": 12,
+      },
+      "valueLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "medium",
+        "lineHeight": 12,
+      },
+    },
     "visible": true,
   },
   "type": "bar",
@@ -1333,57 +1418,87 @@ exports[`1m3d 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "east-A-profit-profit": "east-A-profit",
-    "east-B-profit-profit": "east-B-profit",
-    "east-C-profit-profit": "east-C-profit",
-    "east-D-profit-profit": "east-D-profit",
-    "east-E-profit-profit": "east-E-profit",
-    "north of east-A-profit-profit": "north of east-A-profit",
-    "north of east-B-profit-profit": "north of east-B-profit",
-    "north of east-C-profit-profit": "north of east-C-profit",
-    "north of east-D-profit-profit": "north of east-D-profit",
-    "north of east-E-profit-profit": "north of east-E-profit",
+    "east-A-profit": {
+      "alias": "east-A-profit",
+      "id": "east-A-profit",
+    },
+    "east-B-profit": {
+      "alias": "east-B-profit",
+      "id": "east-B-profit",
+    },
+    "east-C-profit": {
+      "alias": "east-C-profit",
+      "id": "east-C-profit",
+    },
+    "east-D-profit": {
+      "alias": "east-D-profit",
+      "id": "east-D-profit",
+    },
+    "east-E-profit": {
+      "alias": "east-E-profit",
+      "id": "east-E-profit",
+    },
+    "north of east-A-profit": {
+      "alias": "north of east-A-profit",
+      "id": "north of east-A-profit",
+    },
+    "north of east-B-profit": {
+      "alias": "north of east-B-profit",
+      "id": "north of east-B-profit",
+    },
+    "north of east-C-profit": {
+      "alias": "north of east-C-profit",
+      "id": "north of east-C-profit",
+    },
+    "north of east-D-profit": {
+      "alias": "north of east-D-profit",
+      "id": "north of east-D-profit",
+    },
+    "north of east-E-profit": {
+      "alias": "north of east-E-profit",
+      "id": "north of east-E-profit",
+    },
   },
   "colorItems": [
     {
       "alias": "east-A-profit",
-      "id": "east-A-profit-profit",
+      "id": "east-A-profit",
     },
     {
       "alias": "east-B-profit",
-      "id": "east-B-profit-profit",
+      "id": "east-B-profit",
     },
     {
       "alias": "east-C-profit",
-      "id": "east-C-profit-profit",
+      "id": "east-C-profit",
     },
     {
       "alias": "east-D-profit",
-      "id": "east-D-profit-profit",
+      "id": "east-D-profit",
     },
     {
       "alias": "east-E-profit",
-      "id": "east-E-profit-profit",
+      "id": "east-E-profit",
     },
     {
       "alias": "north of east-A-profit",
-      "id": "north of east-A-profit-profit",
+      "id": "north of east-A-profit",
     },
     {
       "alias": "north of east-B-profit",
-      "id": "north of east-B-profit-profit",
+      "id": "north of east-B-profit",
     },
     {
       "alias": "north of east-C-profit",
-      "id": "north of east-C-profit-profit",
+      "id": "north of east-C-profit",
     },
     {
       "alias": "north of east-D-profit",
-      "id": "north of east-D-profit-profit",
+      "id": "north of east-D-profit",
     },
     {
       "alias": "north of east-E-profit",
-      "id": "north of east-E-profit-profit",
+      "id": "north of east-E-profit",
     },
   ],
   "hasTheme": true,

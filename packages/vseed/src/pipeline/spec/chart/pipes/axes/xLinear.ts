@@ -1,6 +1,7 @@
 import type { ISpec } from '@visactor/vchart'
 import type { SpecPipe, XLinearAxis } from 'src/types'
 import {
+  AXIS_LABEL_SPACE,
   createNumFormatter,
   isAreaPercent,
   isBarPercent,
@@ -56,6 +57,7 @@ export const xLinear: SpecPipe = (spec, context) => {
     max,
     min,
     label: {
+      space: AXIS_LABEL_SPACE,
       visible: label?.visible,
       formatMethod: (value: string) => {
         if (isBarPercent(vseed) || isColumnPercent(vseed) || isAreaPercent(vseed)) {

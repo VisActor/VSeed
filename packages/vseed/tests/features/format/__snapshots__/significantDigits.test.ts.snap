@@ -122,8 +122,10 @@ exports[`significantDigits 1`] = `
         "shapeType": "rectRound",
       },
       "pivotGrid": {
+        "axisLabelColor": "#BCC1CB",
         "bodyFontColor": "#141414",
         "borderColor": "#e3e5eb",
+        "chartGridColor": "#F0F1F6",
         "frameCornerRadius": 0,
         "headerBackgroundColor": "transparent",
         "headerFontColor": "#21252c",
@@ -183,7 +185,18 @@ exports[`significantDigits 1`] = `
         0,
       ],
       "tooltip": {
+        "backgroundColor": "#fff",
+        "borderColor": "#e3e5e8",
+        "borderRadius": 12,
+        "borderWidth": 1,
         "enable": true,
+        "fontSize": 12,
+        "keyColor": "#606773",
+        "lineHeight": 12,
+        "lineSpace": 6,
+        "padding": 7,
+        "titleColor": "#21252c",
+        "valueColor": "#21252c",
       },
       "xAxis": {
         "grid": {
@@ -197,7 +210,7 @@ exports[`significantDigits 1`] = `
         },
         "label": {
           "labelAngle": 0,
-          "labelColor": "#797B85",
+          "labelColor": "#8F959E",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "visible": true,
@@ -244,7 +257,7 @@ exports[`significantDigits 1`] = `
         "inverse": false,
         "label": {
           "labelAngle": 0,
-          "labelColor": "#797B85",
+          "labelColor": "#8F959E",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "visible": true,
@@ -391,8 +404,10 @@ exports[`significantDigits 1`] = `
           "shapeType": "rectRound",
         },
         "pivotGrid": {
+          "axisLabelColor": "#BCC1CB",
           "bodyFontColor": "#141414",
           "borderColor": "#e3e5eb",
+          "chartGridColor": "#F0F1F6",
           "frameCornerRadius": 0,
           "headerBackgroundColor": "transparent",
           "headerFontColor": "#21252c",
@@ -452,7 +467,18 @@ exports[`significantDigits 1`] = `
           0,
         ],
         "tooltip": {
+          "backgroundColor": "#fff",
+          "borderColor": "#e3e5e8",
+          "borderRadius": 12,
+          "borderWidth": 1,
           "enable": true,
+          "fontSize": 12,
+          "keyColor": "#606773",
+          "lineHeight": 12,
+          "lineSpace": 6,
+          "padding": 7,
+          "titleColor": "#21252c",
+          "valueColor": "#21252c",
         },
         "xAxis": {
           "grid": {
@@ -466,7 +492,7 @@ exports[`significantDigits 1`] = `
           },
           "label": {
             "labelAngle": 0,
-            "labelColor": "#797B85",
+            "labelColor": "#8F959E",
             "labelFontSize": 12,
             "labelFontWeight": 400,
             "visible": true,
@@ -513,7 +539,7 @@ exports[`significantDigits 1`] = `
           "inverse": false,
           "label": {
             "labelAngle": 0,
-            "labelColor": "#797B85",
+            "labelColor": "#8F959E",
             "labelFontSize": 12,
             "labelFontWeight": 400,
             "visible": true,
@@ -544,7 +570,7 @@ exports[`significantDigits 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "num0-num0",
+      "__Dim_ColorId__": "num0",
       "__Dim_Color__": "num0",
       "__Dim_Detail__": "num0",
       "__Dim_X__": "num0",
@@ -567,7 +593,7 @@ exports[`significantDigits 1`] = `
       "num10": 1000,
     },
     {
-      "__Dim_ColorId__": "num1-num1",
+      "__Dim_ColorId__": "num1",
       "__Dim_Color__": "num1",
       "__Dim_Detail__": "num1",
       "__Dim_X__": "num1",
@@ -590,7 +616,7 @@ exports[`significantDigits 1`] = `
       "num10": 1000,
     },
     {
-      "__Dim_ColorId__": "num2-num2",
+      "__Dim_ColorId__": "num2",
       "__Dim_Color__": "num2",
       "__Dim_Detail__": "num2",
       "__Dim_X__": "num2",
@@ -613,7 +639,7 @@ exports[`significantDigits 1`] = `
       "num2": 123.456,
     },
     {
-      "__Dim_ColorId__": "num3-num3",
+      "__Dim_ColorId__": "num3",
       "__Dim_Color__": "num3",
       "__Dim_Detail__": "num3",
       "__Dim_X__": "num3",
@@ -636,7 +662,7 @@ exports[`significantDigits 1`] = `
       "num3": 123.456,
     },
     {
-      "__Dim_ColorId__": "num4-num4",
+      "__Dim_ColorId__": "num4",
       "__Dim_Color__": "num4",
       "__Dim_Detail__": "num4",
       "__Dim_X__": "num4",
@@ -659,7 +685,7 @@ exports[`significantDigits 1`] = `
       "num4": 123.456,
     },
     {
-      "__Dim_ColorId__": "num5-num5",
+      "__Dim_ColorId__": "num5",
       "__Dim_Color__": "num5",
       "__Dim_Detail__": "num5",
       "__Dim_X__": "num5",
@@ -682,7 +708,7 @@ exports[`significantDigits 1`] = `
       "num5": 234.567,
     },
     {
-      "__Dim_ColorId__": "num6-num6",
+      "__Dim_ColorId__": "num6",
       "__Dim_Color__": "num6",
       "__Dim_Detail__": "num6",
       "__Dim_X__": "num6",
@@ -705,7 +731,7 @@ exports[`significantDigits 1`] = `
       "num6": 234.567,
     },
     {
-      "__Dim_ColorId__": "num7-num7",
+      "__Dim_ColorId__": "num7",
       "__Dim_Color__": "num7",
       "__Dim_Detail__": "num7",
       "__Dim_X__": "num7",
@@ -728,7 +754,7 @@ exports[`significantDigits 1`] = `
       "num7": 234.567,
     },
     {
-      "__Dim_ColorId__": "num8-num8",
+      "__Dim_ColorId__": "num8",
       "__Dim_Color__": "num8",
       "__Dim_Detail__": "num8",
       "__Dim_X__": "num8",
@@ -751,7 +777,7 @@ exports[`significantDigits 1`] = `
       "num8": 345.678,
     },
     {
-      "__Dim_ColorId__": "num9-num9",
+      "__Dim_ColorId__": "num9",
       "__Dim_Color__": "num9",
       "__Dim_Detail__": "num9",
       "__Dim_X__": "num9",
@@ -805,28 +831,58 @@ exports[`significantDigits 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "num0-num0": "num0",
-          "num1-num1": "num1",
-          "num2-num2": "num2",
-          "num3-num3": "num3",
-          "num4-num4": "num4",
-          "num5-num5": "num5",
-          "num6-num6": "num6",
-          "num7-num7": "num7",
-          "num8-num8": "num8",
-          "num9-num9": "num9",
+          "num0": {
+            "alias": "num0",
+            "id": "num0",
+          },
+          "num1": {
+            "alias": "num1",
+            "id": "num1",
+          },
+          "num2": {
+            "alias": "num2",
+            "id": "num2",
+          },
+          "num3": {
+            "alias": "num3",
+            "id": "num3",
+          },
+          "num4": {
+            "alias": "num4",
+            "id": "num4",
+          },
+          "num5": {
+            "alias": "num5",
+            "id": "num5",
+          },
+          "num6": {
+            "alias": "num6",
+            "id": "num6",
+          },
+          "num7": {
+            "alias": "num7",
+            "id": "num7",
+          },
+          "num8": {
+            "alias": "num8",
+            "id": "num8",
+          },
+          "num9": {
+            "alias": "num9",
+            "id": "num9",
+          },
         },
         "colorItems": [
-          "num0-num0",
-          "num1-num1",
-          "num2-num2",
-          "num3-num3",
-          "num4-num4",
-          "num5-num5",
-          "num6-num6",
-          "num7-num7",
-          "num8-num8",
-          "num9-num9",
+          "num0",
+          "num1",
+          "num2",
+          "num3",
+          "num4",
+          "num5",
+          "num6",
+          "num7",
+          "num8",
+          "num9",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -839,23 +895,23 @@ exports[`significantDigits 1`] = `
   ],
   "dimensions": [
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
     "tooltip": [],
     "x": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "y": [
       "num0",
@@ -998,7 +1054,7 @@ exports[`significantDigits 2`] = `
         "space": 8,
         "style": {
           "angle": 0,
-          "fill": "#797B85",
+          "fill": "#8F959E",
           "fontSize": 12,
           "fontWeight": 400,
           "maxLineWidth": 80,
@@ -1030,7 +1086,7 @@ exports[`significantDigits 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "指标名称",
+        "text": "指标Id",
         "visible": false,
       },
       "type": "band",
@@ -1057,14 +1113,15 @@ exports[`significantDigits 2`] = `
         "visible": true,
       },
       "innerOffset": {
-        "top": 7,
+        "top": 12,
       },
       "inverse": false,
       "label": {
         "formatMethod": [Function],
+        "space": 8,
         "style": {
           "angle": 0,
-          "fill": "#797B85",
+          "fill": "#8F959E",
           "fontSize": 12,
           "fontWeight": 400,
         },
@@ -1111,16 +1168,16 @@ exports[`significantDigits 2`] = `
   },
   "color": {
     "domain": [
-      "num0-num0",
-      "num1-num1",
-      "num2-num2",
-      "num3-num3",
-      "num4-num4",
-      "num5-num5",
-      "num6-num6",
-      "num7-num7",
-      "num8-num8",
-      "num9-num9",
+      "num0",
+      "num1",
+      "num2",
+      "num3",
+      "num4",
+      "num5",
+      "num6",
+      "num7",
+      "num8",
+      "num9",
     ],
     "range": [
       "#8D72F6",
@@ -1177,7 +1234,7 @@ exports[`significantDigits 2`] = `
     "id": "column",
     "values": [
       {
-        "__Dim_ColorId__": "num0-num0",
+        "__Dim_ColorId__": "num0",
         "__Dim_Color__": "num0",
         "__Dim_Detail__": "num0",
         "__Dim_X__": "num0",
@@ -1200,7 +1257,7 @@ exports[`significantDigits 2`] = `
         "num10": 1000,
       },
       {
-        "__Dim_ColorId__": "num1-num1",
+        "__Dim_ColorId__": "num1",
         "__Dim_Color__": "num1",
         "__Dim_Detail__": "num1",
         "__Dim_X__": "num1",
@@ -1223,7 +1280,7 @@ exports[`significantDigits 2`] = `
         "num10": 1000,
       },
       {
-        "__Dim_ColorId__": "num2-num2",
+        "__Dim_ColorId__": "num2",
         "__Dim_Color__": "num2",
         "__Dim_Detail__": "num2",
         "__Dim_X__": "num2",
@@ -1246,7 +1303,7 @@ exports[`significantDigits 2`] = `
         "num2": 123.456,
       },
       {
-        "__Dim_ColorId__": "num3-num3",
+        "__Dim_ColorId__": "num3",
         "__Dim_Color__": "num3",
         "__Dim_Detail__": "num3",
         "__Dim_X__": "num3",
@@ -1269,7 +1326,7 @@ exports[`significantDigits 2`] = `
         "num3": 123.456,
       },
       {
-        "__Dim_ColorId__": "num4-num4",
+        "__Dim_ColorId__": "num4",
         "__Dim_Color__": "num4",
         "__Dim_Detail__": "num4",
         "__Dim_X__": "num4",
@@ -1292,7 +1349,7 @@ exports[`significantDigits 2`] = `
         "num4": 123.456,
       },
       {
-        "__Dim_ColorId__": "num5-num5",
+        "__Dim_ColorId__": "num5",
         "__Dim_Color__": "num5",
         "__Dim_Detail__": "num5",
         "__Dim_X__": "num5",
@@ -1315,7 +1372,7 @@ exports[`significantDigits 2`] = `
         "num5": 234.567,
       },
       {
-        "__Dim_ColorId__": "num6-num6",
+        "__Dim_ColorId__": "num6",
         "__Dim_Color__": "num6",
         "__Dim_Detail__": "num6",
         "__Dim_X__": "num6",
@@ -1338,7 +1395,7 @@ exports[`significantDigits 2`] = `
         "num6": 234.567,
       },
       {
-        "__Dim_ColorId__": "num7-num7",
+        "__Dim_ColorId__": "num7",
         "__Dim_Color__": "num7",
         "__Dim_Detail__": "num7",
         "__Dim_X__": "num7",
@@ -1361,7 +1418,7 @@ exports[`significantDigits 2`] = `
         "num7": 234.567,
       },
       {
-        "__Dim_ColorId__": "num8-num8",
+        "__Dim_ColorId__": "num8",
         "__Dim_Color__": "num8",
         "__Dim_Detail__": "num8",
         "__Dim_X__": "num8",
@@ -1384,7 +1441,7 @@ exports[`significantDigits 2`] = `
         "num8": 345.678,
       },
       {
-        "__Dim_ColorId__": "num9-num9",
+        "__Dim_ColorId__": "num9",
         "__Dim_Color__": "num9",
         "__Dim_Detail__": "num9",
         "__Dim_X__": "num9",
@@ -1523,6 +1580,34 @@ exports[`significantDigits 2`] = `
         "visible": false,
       },
     },
+    "style": {
+      "keyLabel": {
+        "fontColor": "#606773",
+        "fontSize": 12,
+        "lineHeight": 12,
+      },
+      "panel": {
+        "backgroundColor": "#fff",
+        "border": {
+          "color": "#e3e5e8",
+          "radius": 12,
+          "width": 1,
+        },
+        "padding": 7,
+      },
+      "titleLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "lineHeight": 12,
+      },
+      "valueLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "medium",
+        "lineHeight": 12,
+      },
+    },
     "visible": true,
   },
   "type": "bar",
@@ -1549,57 +1634,87 @@ exports[`significantDigits 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "num0-num0": "num0",
-    "num1-num1": "num1",
-    "num2-num2": "num2",
-    "num3-num3": "num3",
-    "num4-num4": "num4",
-    "num5-num5": "num5",
-    "num6-num6": "num6",
-    "num7-num7": "num7",
-    "num8-num8": "num8",
-    "num9-num9": "num9",
+    "num0": {
+      "alias": "num0",
+      "id": "num0",
+    },
+    "num1": {
+      "alias": "num1",
+      "id": "num1",
+    },
+    "num2": {
+      "alias": "num2",
+      "id": "num2",
+    },
+    "num3": {
+      "alias": "num3",
+      "id": "num3",
+    },
+    "num4": {
+      "alias": "num4",
+      "id": "num4",
+    },
+    "num5": {
+      "alias": "num5",
+      "id": "num5",
+    },
+    "num6": {
+      "alias": "num6",
+      "id": "num6",
+    },
+    "num7": {
+      "alias": "num7",
+      "id": "num7",
+    },
+    "num8": {
+      "alias": "num8",
+      "id": "num8",
+    },
+    "num9": {
+      "alias": "num9",
+      "id": "num9",
+    },
   },
   "colorItems": [
     {
       "alias": "num0",
-      "id": "num0-num0",
+      "id": "num0",
     },
     {
       "alias": "num1",
-      "id": "num1-num1",
+      "id": "num1",
     },
     {
       "alias": "num2",
-      "id": "num2-num2",
+      "id": "num2",
     },
     {
       "alias": "num3",
-      "id": "num3-num3",
+      "id": "num3",
     },
     {
       "alias": "num4",
-      "id": "num4-num4",
+      "id": "num4",
     },
     {
       "alias": "num5",
-      "id": "num5-num5",
+      "id": "num5",
     },
     {
       "alias": "num6",
-      "id": "num6-num6",
+      "id": "num6",
     },
     {
       "alias": "num7",
-      "id": "num7-num7",
+      "id": "num7",
     },
     {
       "alias": "num8",
-      "id": "num8-num8",
+      "id": "num8",
     },
     {
       "alias": "num9",
-      "id": "num9-num9",
+      "id": "num9",
     },
   ],
   "hasTheme": true,

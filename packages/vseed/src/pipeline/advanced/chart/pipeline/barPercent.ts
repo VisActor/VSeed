@@ -14,7 +14,7 @@ import {
   encodingForBar,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
   encodingAdapter,
   defaultEncodingForBar,
   deleteEncodingForMeasure,
@@ -25,7 +25,7 @@ export const barPercentAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
 
   encodingAdapter(
     [defaultEncodingForBar, buildMeasures],

@@ -1,4 +1,4 @@
-import type { ILineChartSpec, IMarkLineSpec } from '@visactor/vchart'
+import type { Datum, ICartesianSeries, ILineChartSpec, IMarkLineSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { SpecPipe } from 'src/types'
 import { isArray, isNumber, isString } from 'remeda'
@@ -56,7 +56,21 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
     const dataset = advancedVSeed.dataset.flat()
 
     const generateOneMarkLine = (x: number | string) => ({
-      x: x as string,
+      positions: (datum: Datum[], series: ICartesianSeries) => {
+        const regionStart = series.getRegion()?.getLayoutStartPoint()
+        const xAxisHelper = series.getXAxisHelper()
+        const yAxisHelper = series.getYAxisHelper()
+        const xPos = xAxisHelper.getScale!(0).scale(x) + regionStart.x
+        const yRange = yAxisHelper.getScale!(0).range()
+
+        return [
+          { x: xPos, y: yRange ? yRange[0] + regionStart.y : 0 },
+          {
+            x: xPos,
+            y: yRange ? yRange[1] + regionStart.y : 0,
+          },
+        ]
+      },
       zIndex: ANNOTATION_Z_INDEX,
       line: {
         style: {
@@ -68,9 +82,11 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
         },
       },
       label: {
+        confine: true,
         text: text,
         position: positionMap[textPosition || 'insideEnd'],
         style: {
+          opacity: 0.95,
           dx: 5,
           visible: true,
           stroke: textBackgroundColor,
@@ -85,6 +101,7 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
           visible: textBackgroundVisible,
           padding: textBackgroundPadding,
           style: {
+            opacity: 0.95,
             dx: 5,
             cornerRadius: textBackgroundBorderRadius,
             fill: textBackgroundColor,

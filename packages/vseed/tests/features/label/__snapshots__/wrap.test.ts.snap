@@ -131,8 +131,10 @@ exports[`wrap 1`] = `
         "shapeType": "rectRound",
       },
       "pivotGrid": {
+        "axisLabelColor": "#BCC1CB",
         "bodyFontColor": "#141414",
         "borderColor": "#e3e5eb",
+        "chartGridColor": "#F0F1F6",
         "frameCornerRadius": 0,
         "headerBackgroundColor": "transparent",
         "headerFontColor": "#21252c",
@@ -192,7 +194,18 @@ exports[`wrap 1`] = `
         0,
       ],
       "tooltip": {
+        "backgroundColor": "#fff",
+        "borderColor": "#e3e5e8",
+        "borderRadius": 12,
+        "borderWidth": 1,
         "enable": true,
+        "fontSize": 12,
+        "keyColor": "#606773",
+        "lineHeight": 12,
+        "lineSpace": 6,
+        "padding": 7,
+        "titleColor": "#21252c",
+        "valueColor": "#21252c",
       },
       "xAxis": {
         "grid": {
@@ -206,7 +219,7 @@ exports[`wrap 1`] = `
         },
         "label": {
           "labelAngle": 0,
-          "labelColor": "#797B85",
+          "labelColor": "#8F959E",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "visible": true,
@@ -253,7 +266,7 @@ exports[`wrap 1`] = `
         "inverse": false,
         "label": {
           "labelAngle": 0,
-          "labelColor": "#797B85",
+          "labelColor": "#8F959E",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "visible": true,
@@ -400,8 +413,10 @@ exports[`wrap 1`] = `
           "shapeType": "rectRound",
         },
         "pivotGrid": {
+          "axisLabelColor": "#BCC1CB",
           "bodyFontColor": "#141414",
           "borderColor": "#e3e5eb",
+          "chartGridColor": "#F0F1F6",
           "frameCornerRadius": 0,
           "headerBackgroundColor": "transparent",
           "headerFontColor": "#21252c",
@@ -461,7 +476,18 @@ exports[`wrap 1`] = `
           0,
         ],
         "tooltip": {
+          "backgroundColor": "#fff",
+          "borderColor": "#e3e5e8",
+          "borderRadius": 12,
+          "borderWidth": 1,
           "enable": true,
+          "fontSize": 12,
+          "keyColor": "#606773",
+          "lineHeight": 12,
+          "lineSpace": 6,
+          "padding": 7,
+          "titleColor": "#21252c",
+          "valueColor": "#21252c",
         },
         "xAxis": {
           "grid": {
@@ -475,7 +501,7 @@ exports[`wrap 1`] = `
           },
           "label": {
             "labelAngle": 0,
-            "labelColor": "#797B85",
+            "labelColor": "#8F959E",
             "labelFontSize": 12,
             "labelFontWeight": 400,
             "visible": true,
@@ -522,7 +548,7 @@ exports[`wrap 1`] = `
           "inverse": false,
           "label": {
             "labelAngle": 0,
-            "labelColor": "#797B85",
+            "labelColor": "#8F959E",
             "labelFontSize": 12,
             "labelFontWeight": 400,
             "visible": true,
@@ -553,7 +579,7 @@ exports[`wrap 1`] = `
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "a-profit-profit",
+      "__Dim_ColorId__": "a-profit",
       "__Dim_Color__": "a-profit",
       "__Dim_Detail__": "a-profit",
       "__Dim_X__": "2023",
@@ -570,7 +596,7 @@ exports[`wrap 1`] = `
       "type": "a",
     },
     {
-      "__Dim_ColorId__": "b-profit-profit",
+      "__Dim_ColorId__": "b-profit",
       "__Dim_Color__": "b-profit",
       "__Dim_Detail__": "b-profit",
       "__Dim_X__": "2022",
@@ -587,7 +613,7 @@ exports[`wrap 1`] = `
       "type": "b",
     },
     {
-      "__Dim_ColorId__": "a-profit-profit",
+      "__Dim_ColorId__": "a-profit",
       "__Dim_Color__": "a-profit",
       "__Dim_Detail__": "a-profit",
       "__Dim_X__": "2021",
@@ -604,7 +630,7 @@ exports[`wrap 1`] = `
       "type": "a",
     },
     {
-      "__Dim_ColorId__": "a-profit-profit",
+      "__Dim_ColorId__": "a-profit",
       "__Dim_Color__": "a-profit",
       "__Dim_Detail__": "a-profit",
       "__Dim_X__": "2020",
@@ -621,7 +647,7 @@ exports[`wrap 1`] = `
       "type": "a",
     },
     {
-      "__Dim_ColorId__": "b-profit-profit",
+      "__Dim_ColorId__": "b-profit",
       "__Dim_Color__": "b-profit",
       "__Dim_Detail__": "b-profit",
       "__Dim_X__": "2019",
@@ -660,12 +686,18 @@ exports[`wrap 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "a-profit-profit": "a-profit",
-          "b-profit-profit": "b-profit",
+          "a-profit": {
+            "alias": "a-profit",
+            "id": "a-profit",
+          },
+          "b-profit": {
+            "alias": "b-profit",
+            "id": "b-profit",
+          },
         },
         "colorItems": [
-          "a-profit-profit",
-          "b-profit-profit",
+          "a-profit",
+          "b-profit",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -686,19 +718,19 @@ exports[`wrap 1`] = `
       "id": "type",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
     "color": [
       "type",
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
       "type",
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
@@ -765,7 +797,7 @@ exports[`wrap 2`] = `
         "space": 8,
         "style": {
           "angle": 0,
-          "fill": "#797B85",
+          "fill": "#8F959E",
           "fontSize": 12,
           "fontWeight": 400,
           "maxLineWidth": 80,
@@ -824,14 +856,15 @@ exports[`wrap 2`] = `
         "visible": true,
       },
       "innerOffset": {
-        "top": 7,
+        "top": 12,
       },
       "inverse": false,
       "label": {
         "formatMethod": [Function],
+        "space": 8,
         "style": {
           "angle": 0,
-          "fill": "#797B85",
+          "fill": "#8F959E",
           "fontSize": 12,
           "fontWeight": 400,
         },
@@ -878,8 +911,8 @@ exports[`wrap 2`] = `
   },
   "color": {
     "domain": [
-      "a-profit-profit",
-      "b-profit-profit",
+      "a-profit",
+      "b-profit",
     ],
     "range": [
       "#8D72F6",
@@ -936,7 +969,7 @@ exports[`wrap 2`] = `
     "id": "column",
     "values": [
       {
-        "__Dim_ColorId__": "a-profit-profit",
+        "__Dim_ColorId__": "a-profit",
         "__Dim_Color__": "a-profit",
         "__Dim_Detail__": "a-profit",
         "__Dim_X__": "2023",
@@ -953,7 +986,7 @@ exports[`wrap 2`] = `
         "type": "a",
       },
       {
-        "__Dim_ColorId__": "b-profit-profit",
+        "__Dim_ColorId__": "b-profit",
         "__Dim_Color__": "b-profit",
         "__Dim_Detail__": "b-profit",
         "__Dim_X__": "2022",
@@ -970,7 +1003,7 @@ exports[`wrap 2`] = `
         "type": "b",
       },
       {
-        "__Dim_ColorId__": "a-profit-profit",
+        "__Dim_ColorId__": "a-profit",
         "__Dim_Color__": "a-profit",
         "__Dim_Detail__": "a-profit",
         "__Dim_X__": "2021",
@@ -987,7 +1020,7 @@ exports[`wrap 2`] = `
         "type": "a",
       },
       {
-        "__Dim_ColorId__": "a-profit-profit",
+        "__Dim_ColorId__": "a-profit",
         "__Dim_Color__": "a-profit",
         "__Dim_Detail__": "a-profit",
         "__Dim_X__": "2020",
@@ -1004,7 +1037,7 @@ exports[`wrap 2`] = `
         "type": "a",
       },
       {
-        "__Dim_ColorId__": "b-profit-profit",
+        "__Dim_ColorId__": "b-profit",
         "__Dim_Color__": "b-profit",
         "__Dim_Detail__": "b-profit",
         "__Dim_X__": "2019",
@@ -1151,6 +1184,34 @@ exports[`wrap 2`] = `
         "visible": false,
       },
     },
+    "style": {
+      "keyLabel": {
+        "fontColor": "#606773",
+        "fontSize": 12,
+        "lineHeight": 12,
+      },
+      "panel": {
+        "backgroundColor": "#fff",
+        "border": {
+          "color": "#e3e5e8",
+          "radius": 12,
+          "width": 1,
+        },
+        "padding": 7,
+      },
+      "titleLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "lineHeight": 12,
+      },
+      "valueLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "medium",
+        "lineHeight": 12,
+      },
+    },
     "visible": true,
   },
   "type": "bar",
@@ -1177,17 +1238,23 @@ exports[`wrap 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "a-profit-profit": "a-profit",
-    "b-profit-profit": "b-profit",
+    "a-profit": {
+      "alias": "a-profit",
+      "id": "a-profit",
+    },
+    "b-profit": {
+      "alias": "b-profit",
+      "id": "b-profit",
+    },
   },
   "colorItems": [
     {
       "alias": "a-profit",
-      "id": "a-profit-profit",
+      "id": "a-profit",
     },
     {
       "alias": "b-profit",
-      "id": "b-profit-profit",
+      "id": "b-profit",
     },
   ],
   "hasTheme": true,

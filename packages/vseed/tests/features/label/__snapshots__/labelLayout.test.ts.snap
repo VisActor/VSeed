@@ -49,8 +49,10 @@ exports[`labelLayout 1`] = `
         "shapeType": "rectRound",
       },
       "pivotGrid": {
+        "axisLabelColor": "#BCC1CB",
         "bodyFontColor": "#141414",
         "borderColor": "#e3e5eb",
+        "chartGridColor": "#F0F1F6",
         "frameCornerRadius": 0,
         "headerBackgroundColor": "transparent",
         "headerFontColor": "#21252c",
@@ -62,7 +64,18 @@ exports[`labelLayout 1`] = `
         "titleFontWeight": "bold",
       },
       "tooltip": {
+        "backgroundColor": "#fff",
+        "borderColor": "#e3e5e8",
+        "borderRadius": 12,
+        "borderWidth": 1,
         "enable": true,
+        "fontSize": 12,
+        "keyColor": "#606773",
+        "lineHeight": 12,
+        "lineSpace": 6,
+        "padding": 7,
+        "titleColor": "#21252c",
+        "valueColor": "#21252c",
       },
     },
   },
@@ -112,8 +125,10 @@ exports[`labelLayout 1`] = `
           "shapeType": "rectRound",
         },
         "pivotGrid": {
+          "axisLabelColor": "#BCC1CB",
           "bodyFontColor": "#141414",
           "borderColor": "#e3e5eb",
+          "chartGridColor": "#F0F1F6",
           "frameCornerRadius": 0,
           "headerBackgroundColor": "transparent",
           "headerFontColor": "#21252c",
@@ -125,14 +140,25 @@ exports[`labelLayout 1`] = `
           "titleFontWeight": "bold",
         },
         "tooltip": {
+          "backgroundColor": "#fff",
+          "borderColor": "#e3e5e8",
+          "borderRadius": 12,
+          "borderWidth": 1,
           "enable": true,
+          "fontSize": 12,
+          "keyColor": "#606773",
+          "lineHeight": 12,
+          "lineSpace": 6,
+          "padding": 7,
+          "titleColor": "#21252c",
+          "valueColor": "#21252c",
         },
       },
     },
   },
   "dataset": [
     {
-      "__Dim_ColorId__": "2019-profit-profit",
+      "__Dim_ColorId__": "2019-profit",
       "__Dim_Color__": "2019-profit",
       "__Dim_Detail__": "2019-profit",
       "__MeaId__": "profit",
@@ -147,7 +173,7 @@ exports[`labelLayout 1`] = `
       "profit": 10,
     },
     {
-      "__Dim_ColorId__": "2019-sales-sales",
+      "__Dim_ColorId__": "2019-sales",
       "__Dim_Color__": "2019-sales",
       "__Dim_Detail__": "2019-sales",
       "__MeaId__": "sales",
@@ -162,7 +188,7 @@ exports[`labelLayout 1`] = `
       "sales": 20,
     },
     {
-      "__Dim_ColorId__": "2020-profit-profit",
+      "__Dim_ColorId__": "2020-profit",
       "__Dim_Color__": "2020-profit",
       "__Dim_Detail__": "2020-profit",
       "__MeaId__": "profit",
@@ -177,7 +203,7 @@ exports[`labelLayout 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "2020-sales-sales",
+      "__Dim_ColorId__": "2020-sales",
       "__Dim_Color__": "2020-sales",
       "__Dim_Detail__": "2020-sales",
       "__MeaId__": "sales",
@@ -192,7 +218,7 @@ exports[`labelLayout 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "2021-profit-profit",
+      "__Dim_ColorId__": "2021-profit",
       "__Dim_Color__": "2021-profit",
       "__Dim_Detail__": "2021-profit",
       "__MeaId__": "profit",
@@ -207,7 +233,7 @@ exports[`labelLayout 1`] = `
       "profit": 30,
     },
     {
-      "__Dim_ColorId__": "2021-sales-sales",
+      "__Dim_ColorId__": "2021-sales",
       "__Dim_Color__": "2021-sales",
       "__Dim_Detail__": "2021-sales",
       "__MeaId__": "sales",
@@ -222,7 +248,7 @@ exports[`labelLayout 1`] = `
       "sales": 60,
     },
     {
-      "__Dim_ColorId__": "2022-profit-profit",
+      "__Dim_ColorId__": "2022-profit",
       "__Dim_Color__": "2022-profit",
       "__Dim_Detail__": "2022-profit",
       "__MeaId__": "profit",
@@ -237,7 +263,7 @@ exports[`labelLayout 1`] = `
       "profit": 50,
     },
     {
-      "__Dim_ColorId__": "2022-sales-sales",
+      "__Dim_ColorId__": "2022-sales",
       "__Dim_Color__": "2022-sales",
       "__Dim_Detail__": "2022-sales",
       "__MeaId__": "sales",
@@ -252,7 +278,7 @@ exports[`labelLayout 1`] = `
       "sales": 100,
     },
     {
-      "__Dim_ColorId__": "2023-profit-profit",
+      "__Dim_ColorId__": "2023-profit",
       "__Dim_Color__": "2023-profit",
       "__Dim_Detail__": "2023-profit",
       "__MeaId__": "profit",
@@ -267,7 +293,7 @@ exports[`labelLayout 1`] = `
       "profit": 40,
     },
     {
-      "__Dim_ColorId__": "2023-sales-sales",
+      "__Dim_ColorId__": "2023-sales",
       "__Dim_Color__": "2023-sales",
       "__Dim_Detail__": "2023-sales",
       "__MeaId__": "sales",
@@ -305,28 +331,58 @@ exports[`labelLayout 1`] = `
       "index": 0,
       "unfoldInfo": {
         "colorIdMap": {
-          "2019-profit-profit": "2019-profit",
-          "2019-sales-sales": "2019-sales",
-          "2020-profit-profit": "2020-profit",
-          "2020-sales-sales": "2020-sales",
-          "2021-profit-profit": "2021-profit",
-          "2021-sales-sales": "2021-sales",
-          "2022-profit-profit": "2022-profit",
-          "2022-sales-sales": "2022-sales",
-          "2023-profit-profit": "2023-profit",
-          "2023-sales-sales": "2023-sales",
+          "2019-profit": {
+            "alias": "2019-profit",
+            "id": "2019-profit",
+          },
+          "2019-sales": {
+            "alias": "2019-sales",
+            "id": "2019-sales",
+          },
+          "2020-profit": {
+            "alias": "2020-profit",
+            "id": "2020-profit",
+          },
+          "2020-sales": {
+            "alias": "2020-sales",
+            "id": "2020-sales",
+          },
+          "2021-profit": {
+            "alias": "2021-profit",
+            "id": "2021-profit",
+          },
+          "2021-sales": {
+            "alias": "2021-sales",
+            "id": "2021-sales",
+          },
+          "2022-profit": {
+            "alias": "2022-profit",
+            "id": "2022-profit",
+          },
+          "2022-sales": {
+            "alias": "2022-sales",
+            "id": "2022-sales",
+          },
+          "2023-profit": {
+            "alias": "2023-profit",
+            "id": "2023-profit",
+          },
+          "2023-sales": {
+            "alias": "2023-sales",
+            "id": "2023-sales",
+          },
         },
         "colorItems": [
-          "2019-profit-profit",
-          "2019-sales-sales",
-          "2020-profit-profit",
-          "2020-sales-sales",
-          "2021-profit-profit",
-          "2021-sales-sales",
-          "2022-profit-profit",
-          "2022-sales-sales",
-          "2023-profit-profit",
-          "2023-sales-sales",
+          "2019-profit",
+          "2019-sales",
+          "2020-profit",
+          "2020-sales",
+          "2021-profit",
+          "2021-sales",
+          "2022-profit",
+          "2022-sales",
+          "2023-profit",
+          "2023-sales",
         ],
         "encodingAngle": "__Dim_Angle__",
         "encodingColor": "__Dim_Color__",
@@ -343,8 +399,8 @@ exports[`labelLayout 1`] = `
       "id": "date",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
@@ -354,12 +410,12 @@ exports[`labelLayout 1`] = `
     ],
     "color": [
       "date",
-      "__MeaName__",
+      "__MeaId__",
     ],
     "column": [],
     "detail": [
       "date",
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "row": [],
@@ -388,16 +444,16 @@ exports[`labelLayout 2`] = `
   "categoryField": "__Dim_ColorId__",
   "color": {
     "domain": [
-      "2019-profit-profit",
-      "2019-sales-sales",
-      "2020-profit-profit",
-      "2020-sales-sales",
-      "2021-profit-profit",
-      "2021-sales-sales",
-      "2022-profit-profit",
-      "2022-sales-sales",
-      "2023-profit-profit",
-      "2023-sales-sales",
+      "2019-profit",
+      "2019-sales",
+      "2020-profit",
+      "2020-sales",
+      "2021-profit",
+      "2021-sales",
+      "2022-profit",
+      "2022-sales",
+      "2023-profit",
+      "2023-sales",
     ],
     "range": [
       "#8D72F6",
@@ -429,7 +485,7 @@ exports[`labelLayout 2`] = `
     "id": "pie",
     "values": [
       {
-        "__Dim_ColorId__": "2019-profit-profit",
+        "__Dim_ColorId__": "2019-profit",
         "__Dim_Color__": "2019-profit",
         "__Dim_Detail__": "2019-profit",
         "__MeaId__": "profit",
@@ -444,7 +500,7 @@ exports[`labelLayout 2`] = `
         "profit": 10,
       },
       {
-        "__Dim_ColorId__": "2019-sales-sales",
+        "__Dim_ColorId__": "2019-sales",
         "__Dim_Color__": "2019-sales",
         "__Dim_Detail__": "2019-sales",
         "__MeaId__": "sales",
@@ -459,7 +515,7 @@ exports[`labelLayout 2`] = `
         "sales": 20,
       },
       {
-        "__Dim_ColorId__": "2020-profit-profit",
+        "__Dim_ColorId__": "2020-profit",
         "__Dim_Color__": "2020-profit",
         "__Dim_Detail__": "2020-profit",
         "__MeaId__": "profit",
@@ -474,7 +530,7 @@ exports[`labelLayout 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "2020-sales-sales",
+        "__Dim_ColorId__": "2020-sales",
         "__Dim_Color__": "2020-sales",
         "__Dim_Detail__": "2020-sales",
         "__MeaId__": "sales",
@@ -489,7 +545,7 @@ exports[`labelLayout 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "2021-profit-profit",
+        "__Dim_ColorId__": "2021-profit",
         "__Dim_Color__": "2021-profit",
         "__Dim_Detail__": "2021-profit",
         "__MeaId__": "profit",
@@ -504,7 +560,7 @@ exports[`labelLayout 2`] = `
         "profit": 30,
       },
       {
-        "__Dim_ColorId__": "2021-sales-sales",
+        "__Dim_ColorId__": "2021-sales",
         "__Dim_Color__": "2021-sales",
         "__Dim_Detail__": "2021-sales",
         "__MeaId__": "sales",
@@ -519,7 +575,7 @@ exports[`labelLayout 2`] = `
         "sales": 60,
       },
       {
-        "__Dim_ColorId__": "2022-profit-profit",
+        "__Dim_ColorId__": "2022-profit",
         "__Dim_Color__": "2022-profit",
         "__Dim_Detail__": "2022-profit",
         "__MeaId__": "profit",
@@ -534,7 +590,7 @@ exports[`labelLayout 2`] = `
         "profit": 50,
       },
       {
-        "__Dim_ColorId__": "2022-sales-sales",
+        "__Dim_ColorId__": "2022-sales",
         "__Dim_Color__": "2022-sales",
         "__Dim_Detail__": "2022-sales",
         "__MeaId__": "sales",
@@ -549,7 +605,7 @@ exports[`labelLayout 2`] = `
         "sales": 100,
       },
       {
-        "__Dim_ColorId__": "2023-profit-profit",
+        "__Dim_ColorId__": "2023-profit",
         "__Dim_Color__": "2023-profit",
         "__Dim_Detail__": "2023-profit",
         "__MeaId__": "profit",
@@ -564,7 +620,7 @@ exports[`labelLayout 2`] = `
         "profit": 40,
       },
       {
-        "__Dim_ColorId__": "2023-sales-sales",
+        "__Dim_ColorId__": "2023-sales",
         "__Dim_Color__": "2023-sales",
         "__Dim_Detail__": "2023-sales",
         "__MeaId__": "sales",
@@ -714,6 +770,34 @@ exports[`labelLayout 2`] = `
         "visible": false,
       },
     },
+    "style": {
+      "keyLabel": {
+        "fontColor": "#606773",
+        "fontSize": 12,
+        "lineHeight": 12,
+      },
+      "panel": {
+        "backgroundColor": "#fff",
+        "border": {
+          "color": "#e3e5e8",
+          "radius": 12,
+          "width": 1,
+        },
+        "padding": 7,
+      },
+      "titleLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "lineHeight": 12,
+      },
+      "valueLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "medium",
+        "lineHeight": 12,
+      },
+    },
     "visible": true,
   },
   "type": "pie",
@@ -735,57 +819,87 @@ exports[`labelLayout 3`] = `
     [Function],
   ],
   "colorIdMap": {
-    "2019-profit-profit": "2019-profit",
-    "2019-sales-sales": "2019-sales",
-    "2020-profit-profit": "2020-profit",
-    "2020-sales-sales": "2020-sales",
-    "2021-profit-profit": "2021-profit",
-    "2021-sales-sales": "2021-sales",
-    "2022-profit-profit": "2022-profit",
-    "2022-sales-sales": "2022-sales",
-    "2023-profit-profit": "2023-profit",
-    "2023-sales-sales": "2023-sales",
+    "2019-profit": {
+      "alias": "2019-profit",
+      "id": "2019-profit",
+    },
+    "2019-sales": {
+      "alias": "2019-sales",
+      "id": "2019-sales",
+    },
+    "2020-profit": {
+      "alias": "2020-profit",
+      "id": "2020-profit",
+    },
+    "2020-sales": {
+      "alias": "2020-sales",
+      "id": "2020-sales",
+    },
+    "2021-profit": {
+      "alias": "2021-profit",
+      "id": "2021-profit",
+    },
+    "2021-sales": {
+      "alias": "2021-sales",
+      "id": "2021-sales",
+    },
+    "2022-profit": {
+      "alias": "2022-profit",
+      "id": "2022-profit",
+    },
+    "2022-sales": {
+      "alias": "2022-sales",
+      "id": "2022-sales",
+    },
+    "2023-profit": {
+      "alias": "2023-profit",
+      "id": "2023-profit",
+    },
+    "2023-sales": {
+      "alias": "2023-sales",
+      "id": "2023-sales",
+    },
   },
   "colorItems": [
     {
       "alias": "2019-profit",
-      "id": "2019-profit-profit",
+      "id": "2019-profit",
     },
     {
       "alias": "2019-sales",
-      "id": "2019-sales-sales",
+      "id": "2019-sales",
     },
     {
       "alias": "2020-profit",
-      "id": "2020-profit-profit",
+      "id": "2020-profit",
     },
     {
       "alias": "2020-sales",
-      "id": "2020-sales-sales",
+      "id": "2020-sales",
     },
     {
       "alias": "2021-profit",
-      "id": "2021-profit-profit",
+      "id": "2021-profit",
     },
     {
       "alias": "2021-sales",
-      "id": "2021-sales-sales",
+      "id": "2021-sales",
     },
     {
       "alias": "2022-profit",
-      "id": "2022-profit-profit",
+      "id": "2022-profit",
     },
     {
       "alias": "2022-sales",
-      "id": "2022-sales-sales",
+      "id": "2022-sales",
     },
     {
       "alias": "2023-profit",
-      "id": "2023-profit-profit",
+      "id": "2023-profit",
     },
     {
       "alias": "2023-sales",
-      "id": "2023-sales-sales",
+      "id": "2023-sales",
     },
   ],
   "hasTheme": true,

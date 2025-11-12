@@ -12,6 +12,7 @@ import {
   Q3MeasureValue,
   XEncoding,
 } from 'src/dataReshape'
+import { getTooltipStyle } from './tooltipStyle'
 
 const boxPlotMeasureKeys = [MaxMeasureId, Q3MeasureValue, MedianMeasureId, Q1MeasureValue, MinMeasureId]
 const VCHART_OUTLIER_KEY = '__VCHART_BOX_PLOT_OUTLIER_VALUE'
@@ -29,6 +30,7 @@ export const tooltipBoxplot: SpecPipe = (spec, context): Partial<Spec> => {
 
   result.tooltip = {
     visible: enable,
+    style: getTooltipStyle(tooltip),
     mark: {
       title: {
         visible: false,

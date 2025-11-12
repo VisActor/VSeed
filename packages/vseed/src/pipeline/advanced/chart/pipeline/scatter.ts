@@ -10,7 +10,7 @@ import {
   buildMeasuresForScatter,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
   encodingAdapter,
   defaultEncodingForScatter,
   deleteEncodingForMeasure,
@@ -24,7 +24,7 @@ export const scatterAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
 
   encodingAdapter(
     [defaultEncodingForScatter, buildMeasuresForScatter],

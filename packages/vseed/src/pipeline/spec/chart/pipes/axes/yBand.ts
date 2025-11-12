@@ -1,6 +1,7 @@
 import type { ICartesianBandAxisSpec, ISpec } from '@visactor/vchart'
 import type { SpecPipe, XBandAxis } from 'src/types'
 import { defaultTitleText } from './title/defaultTitleText'
+import { AXIS_LABEL_SPACE } from 'src/pipeline/utils'
 
 export const yBand: SpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
@@ -41,7 +42,7 @@ export const yBand: SpecPipe = (spec, context) => {
       visible: label?.visible,
       flush: true,
       containerAlign: 'right',
-      space: 8,
+      space: AXIS_LABEL_SPACE,
       style: {
         maxLineWidth: labelAutoLimitLength,
         fill: label?.labelColor,

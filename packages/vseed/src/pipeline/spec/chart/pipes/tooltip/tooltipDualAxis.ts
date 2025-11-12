@@ -2,6 +2,7 @@ import { isNullish } from 'remeda'
 import { createDimensionContent, createMarkContent } from './tooltip'
 import type { FoldInfo, SpecPipe, Tooltip, UnfoldInfo } from 'src/types'
 import { findAllMeasures } from 'src/pipeline/utils'
+import { getTooltipStyle } from './tooltipStyle'
 
 export const tooltipPrimary: SpecPipe = (spec, context) => {
   const result = { ...spec }
@@ -15,6 +16,7 @@ export const tooltipPrimary: SpecPipe = (spec, context) => {
   const unfoldInfo = datasetReshapeInfo[0].unfoldInfo
 
   result.tooltip = {
+    style: getTooltipStyle(tooltip),
     visible: enable,
     mark: {
       title: {

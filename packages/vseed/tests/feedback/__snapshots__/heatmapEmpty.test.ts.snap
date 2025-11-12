@@ -51,8 +51,10 @@ exports[`heatmapEmpty 1`] = `
         "shapeType": "rectRound",
       },
       "pivotGrid": {
+        "axisLabelColor": "#BCC1CB",
         "bodyFontColor": "#141414",
         "borderColor": "#e3e5eb",
+        "chartGridColor": "#F0F1F6",
         "frameCornerRadius": 0,
         "headerBackgroundColor": "transparent",
         "headerFontColor": "#21252c",
@@ -64,7 +66,18 @@ exports[`heatmapEmpty 1`] = `
         "titleFontWeight": "bold",
       },
       "tooltip": {
+        "backgroundColor": "#fff",
+        "borderColor": "#e3e5e8",
+        "borderRadius": 12,
+        "borderWidth": 1,
         "enable": true,
+        "fontSize": 12,
+        "keyColor": "#606773",
+        "lineHeight": 12,
+        "lineSpace": 6,
+        "padding": 7,
+        "titleColor": "#21252c",
+        "valueColor": "#21252c",
       },
     },
   },
@@ -115,8 +128,10 @@ exports[`heatmapEmpty 1`] = `
           "shapeType": "rectRound",
         },
         "pivotGrid": {
+          "axisLabelColor": "#BCC1CB",
           "bodyFontColor": "#141414",
           "borderColor": "#e3e5eb",
+          "chartGridColor": "#F0F1F6",
           "frameCornerRadius": 0,
           "headerBackgroundColor": "transparent",
           "headerFontColor": "#21252c",
@@ -128,7 +143,18 @@ exports[`heatmapEmpty 1`] = `
           "titleFontWeight": "bold",
         },
         "tooltip": {
+          "backgroundColor": "#fff",
+          "borderColor": "#e3e5e8",
+          "borderRadius": 12,
+          "borderWidth": 1,
           "enable": true,
+          "fontSize": 12,
+          "keyColor": "#606773",
+          "lineHeight": 12,
+          "lineSpace": 6,
+          "padding": 7,
+          "titleColor": "#21252c",
+          "valueColor": "#21252c",
         },
       },
     },
@@ -137,7 +163,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "2281",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "办公用品",
       "__Dim_Y__": "信封",
       "__MeaId__": "co_20250924170401_4523",
@@ -155,7 +181,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "2134",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "办公用品",
       "__Dim_Y__": "器具",
       "__MeaId__": "co_20250924170401_4523",
@@ -173,7 +199,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "2918",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "办公用品",
       "__Dim_Y__": "收纳具",
       "__MeaId__": "co_20250924170401_4523",
@@ -191,7 +217,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "2106",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "办公用品",
       "__Dim_Y__": "标签",
       "__MeaId__": "co_20250924170401_4523",
@@ -209,7 +235,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "2266",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "办公用品",
       "__Dim_Y__": "用品",
       "__MeaId__": "co_20250924170401_4523",
@@ -227,7 +253,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "2272",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "办公用品",
       "__Dim_Y__": "系固件",
       "__MeaId__": "co_20250924170401_4523",
@@ -245,7 +271,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "2063",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "办公用品",
       "__Dim_Y__": "纸张",
       "__MeaId__": "co_20250924170401_4523",
@@ -263,7 +289,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "2009",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "办公用品",
       "__Dim_Y__": "美术",
       "__MeaId__": "co_20250924170401_4523",
@@ -281,7 +307,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "3352",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "办公用品",
       "__Dim_Y__": "装订机",
       "__MeaId__": "co_20250924170401_4523",
@@ -299,7 +325,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "2401",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "家具",
       "__Dim_Y__": "书架",
       "__MeaId__": "co_20250924170401_4523",
@@ -317,7 +343,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "620",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "家具",
       "__Dim_Y__": "桌子",
       "__MeaId__": "co_20250924170401_4523",
@@ -335,7 +361,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "3172",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "家具",
       "__Dim_Y__": "椅子",
       "__MeaId__": "co_20250924170401_4523",
@@ -353,7 +379,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "2298",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "家具",
       "__Dim_Y__": "用具",
       "__MeaId__": "co_20250924170401_4523",
@@ -371,7 +397,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "2139",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "技术",
       "__Dim_Y__": "复印机",
       "__MeaId__": "co_20250924170401_4523",
@@ -389,7 +415,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "2177",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "技术",
       "__Dim_Y__": "电话",
       "__MeaId__": "co_20250924170401_4523",
@@ -407,7 +433,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "1241",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "技术",
       "__Dim_Y__": "设备",
       "__MeaId__": "co_20250924170401_4523",
@@ -425,7 +451,7 @@ exports[`heatmapEmpty 1`] = `
     {
       "__Dim_ColorId__": "co_20250924170401_4523",
       "__Dim_Color__": "2085",
-      "__Dim_Detail__": "sum(amount)",
+      "__Dim_Detail__": "co_20250924170401_4523",
       "__Dim_X__": "技术",
       "__Dim_Y__": "配件",
       "__MeaId__": "co_20250924170401_4523",
@@ -487,8 +513,8 @@ exports[`heatmapEmpty 1`] = `
       "id": "yA_20250924170409_db93",
     },
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
@@ -496,7 +522,7 @@ exports[`heatmapEmpty 1`] = `
       "co_20250924170401_4523",
     ],
     "detail": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "label": [],
     "tooltip": [
@@ -587,7 +613,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "2281",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "办公用品",
         "__Dim_Y__": "信封",
         "__MeaId__": "co_20250924170401_4523",
@@ -605,7 +631,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "2134",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "办公用品",
         "__Dim_Y__": "器具",
         "__MeaId__": "co_20250924170401_4523",
@@ -623,7 +649,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "2918",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "办公用品",
         "__Dim_Y__": "收纳具",
         "__MeaId__": "co_20250924170401_4523",
@@ -641,7 +667,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "2106",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "办公用品",
         "__Dim_Y__": "标签",
         "__MeaId__": "co_20250924170401_4523",
@@ -659,7 +685,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "2266",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "办公用品",
         "__Dim_Y__": "用品",
         "__MeaId__": "co_20250924170401_4523",
@@ -677,7 +703,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "2272",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "办公用品",
         "__Dim_Y__": "系固件",
         "__MeaId__": "co_20250924170401_4523",
@@ -695,7 +721,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "2063",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "办公用品",
         "__Dim_Y__": "纸张",
         "__MeaId__": "co_20250924170401_4523",
@@ -713,7 +739,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "2009",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "办公用品",
         "__Dim_Y__": "美术",
         "__MeaId__": "co_20250924170401_4523",
@@ -731,7 +757,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "3352",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "办公用品",
         "__Dim_Y__": "装订机",
         "__MeaId__": "co_20250924170401_4523",
@@ -749,7 +775,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "2401",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "家具",
         "__Dim_Y__": "书架",
         "__MeaId__": "co_20250924170401_4523",
@@ -767,7 +793,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "620",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "家具",
         "__Dim_Y__": "桌子",
         "__MeaId__": "co_20250924170401_4523",
@@ -785,7 +811,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "3172",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "家具",
         "__Dim_Y__": "椅子",
         "__MeaId__": "co_20250924170401_4523",
@@ -803,7 +829,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "2298",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "家具",
         "__Dim_Y__": "用具",
         "__MeaId__": "co_20250924170401_4523",
@@ -821,7 +847,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "2139",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "技术",
         "__Dim_Y__": "复印机",
         "__MeaId__": "co_20250924170401_4523",
@@ -839,7 +865,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "2177",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "技术",
         "__Dim_Y__": "电话",
         "__MeaId__": "co_20250924170401_4523",
@@ -857,7 +883,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "1241",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "技术",
         "__Dim_Y__": "设备",
         "__MeaId__": "co_20250924170401_4523",
@@ -875,7 +901,7 @@ exports[`heatmapEmpty 2`] = `
       {
         "__Dim_ColorId__": "co_20250924170401_4523",
         "__Dim_Color__": "2085",
-        "__Dim_Detail__": "sum(amount)",
+        "__Dim_Detail__": "co_20250924170401_4523",
         "__Dim_X__": "技术",
         "__Dim_Y__": "配件",
         "__MeaId__": "co_20250924170401_4523",
@@ -966,6 +992,34 @@ exports[`heatmapEmpty 2`] = `
       ],
       "title": {
         "visible": false,
+      },
+    },
+    "style": {
+      "keyLabel": {
+        "fontColor": "#606773",
+        "fontSize": 12,
+        "lineHeight": 12,
+      },
+      "panel": {
+        "backgroundColor": "#fff",
+        "border": {
+          "color": "#e3e5e8",
+          "radius": 12,
+          "width": 1,
+        },
+        "padding": 7,
+      },
+      "titleLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "lineHeight": 12,
+      },
+      "valueLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "medium",
+        "lineHeight": 12,
       },
     },
     "visible": true,

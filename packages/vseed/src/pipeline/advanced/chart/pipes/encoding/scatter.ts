@@ -1,5 +1,5 @@
 import { unique } from 'remeda'
-import { MeasureName } from 'src/dataReshape'
+import { MeasureId } from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
 
@@ -42,11 +42,11 @@ export const encodingForScatter: AdvancedPipe = (advancedVSeed) => {
  * --------------------维度--------------------
  */
 const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
-  const dimensionsWithoutMeasureName = dimensions.filter((item) => item.id !== MeasureName)
-  const uniqueDimIds = unique(dimensionsWithoutMeasureName.map((d) => d.id))
+  const dimensionsWithoutMeasureId = dimensions.filter((item) => item.id !== MeasureId)
+  const uniqueDimIds = unique(dimensionsWithoutMeasureId.map((d) => d.id))
 
   encoding.detail = encoding.color
-  encoding.tooltip = uniqueDimIds.filter((d) => d !== MeasureName) // 展示指标名称之外的所有维度
+  encoding.tooltip = uniqueDimIds.filter((d) => d !== MeasureId) // 展示指标名称之外的所有维度
   encoding.label = [] // 默认不展示标签
   encoding.row = [] // 默认不进行行透视
   encoding.column = [] // 默认不进行列透视
@@ -58,15 +58,15 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) =
   // detail
   encoding.detail = unique(dimensions.filter((item) => item.encoding === 'detail').map((item) => item.id))
   if (encoding.detail.length === 0) {
-    encoding.detail = [MeasureName]
+    encoding.detail = [MeasureId]
   }
   // tooltip
   encoding.tooltip = unique(dimensions.map((item) => item.id))
-  encoding.tooltip = encoding.tooltip.filter((d) => d !== MeasureName)
+  encoding.tooltip = encoding.tooltip.filter((d) => d !== MeasureId)
 
   // label
   encoding.label = unique(dimensions.filter((item) => item.encoding === 'label').map((item) => item.id))
-  encoding.label = encoding.label.filter((d) => d !== MeasureName)
+  encoding.label = encoding.label.filter((d) => d !== MeasureId)
 }
 
 /**

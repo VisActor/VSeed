@@ -122,8 +122,10 @@ exports[`onlyMeasures 1`] = `
         "shapeType": "rectRound",
       },
       "pivotGrid": {
+        "axisLabelColor": "#BCC1CB",
         "bodyFontColor": "#141414",
         "borderColor": "#e3e5eb",
+        "chartGridColor": "#F0F1F6",
         "frameCornerRadius": 0,
         "headerBackgroundColor": "transparent",
         "headerFontColor": "#21252c",
@@ -135,7 +137,18 @@ exports[`onlyMeasures 1`] = `
         "titleFontWeight": "bold",
       },
       "tooltip": {
+        "backgroundColor": "#fff",
+        "borderColor": "#e3e5e8",
+        "borderRadius": 12,
+        "borderWidth": 1,
         "enable": true,
+        "fontSize": 12,
+        "keyColor": "#606773",
+        "lineHeight": 12,
+        "lineSpace": 6,
+        "padding": 7,
+        "titleColor": "#21252c",
+        "valueColor": "#21252c",
       },
       "xAxis": {
         "grid": {
@@ -149,7 +162,7 @@ exports[`onlyMeasures 1`] = `
         },
         "label": {
           "labelAngle": 0,
-          "labelColor": "#797B85",
+          "labelColor": "#8F959E",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "visible": true,
@@ -196,7 +209,7 @@ exports[`onlyMeasures 1`] = `
         "inverse": false,
         "label": {
           "labelAngle": 0,
-          "labelColor": "#797B85",
+          "labelColor": "#8F959E",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "visible": true,
@@ -343,8 +356,10 @@ exports[`onlyMeasures 1`] = `
           "shapeType": "rectRound",
         },
         "pivotGrid": {
+          "axisLabelColor": "#BCC1CB",
           "bodyFontColor": "#141414",
           "borderColor": "#e3e5eb",
+          "chartGridColor": "#F0F1F6",
           "frameCornerRadius": 0,
           "headerBackgroundColor": "transparent",
           "headerFontColor": "#21252c",
@@ -356,7 +371,18 @@ exports[`onlyMeasures 1`] = `
           "titleFontWeight": "bold",
         },
         "tooltip": {
+          "backgroundColor": "#fff",
+          "borderColor": "#e3e5e8",
+          "borderRadius": 12,
+          "borderWidth": 1,
           "enable": true,
+          "fontSize": 12,
+          "keyColor": "#606773",
+          "lineHeight": 12,
+          "lineSpace": 6,
+          "padding": 7,
+          "titleColor": "#21252c",
+          "valueColor": "#21252c",
         },
         "xAxis": {
           "grid": {
@@ -370,7 +396,7 @@ exports[`onlyMeasures 1`] = `
           },
           "label": {
             "labelAngle": 0,
-            "labelColor": "#797B85",
+            "labelColor": "#8F959E",
             "labelFontSize": 12,
             "labelFontWeight": 400,
             "visible": true,
@@ -417,7 +443,7 @@ exports[`onlyMeasures 1`] = `
           "inverse": false,
           "label": {
             "labelAngle": 0,
-            "labelColor": "#797B85",
+            "labelColor": "#8F959E",
             "labelFontSize": 12,
             "labelFontWeight": 400,
             "visible": true,
@@ -448,7 +474,7 @@ exports[`onlyMeasures 1`] = `
   },
   "dataset": [
     {
-      "__Dim_X__": "销售额",
+      "__Dim_X__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 200000,
@@ -459,7 +485,7 @@ exports[`onlyMeasures 1`] = `
       "sales": 200000,
     },
     {
-      "__Dim_X__": "利润",
+      "__Dim_X__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 10000,
@@ -470,7 +496,7 @@ exports[`onlyMeasures 1`] = `
       "profit": 10000,
     },
     {
-      "__Dim_X__": "销售额",
+      "__Dim_X__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 400000,
@@ -481,7 +507,7 @@ exports[`onlyMeasures 1`] = `
       "sales": 400000,
     },
     {
-      "__Dim_X__": "利润",
+      "__Dim_X__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 20000,
@@ -492,7 +518,7 @@ exports[`onlyMeasures 1`] = `
       "profit": 20000,
     },
     {
-      "__Dim_X__": "销售额",
+      "__Dim_X__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 600000,
@@ -503,7 +529,7 @@ exports[`onlyMeasures 1`] = `
       "sales": 600000,
     },
     {
-      "__Dim_X__": "利润",
+      "__Dim_X__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 30000,
@@ -514,7 +540,7 @@ exports[`onlyMeasures 1`] = `
       "profit": 30000,
     },
     {
-      "__Dim_X__": "销售额",
+      "__Dim_X__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 800000,
@@ -525,7 +551,7 @@ exports[`onlyMeasures 1`] = `
       "sales": 800000,
     },
     {
-      "__Dim_X__": "利润",
+      "__Dim_X__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 40000,
@@ -536,7 +562,7 @@ exports[`onlyMeasures 1`] = `
       "profit": 40000,
     },
     {
-      "__Dim_X__": "销售额",
+      "__Dim_X__": "sales",
       "__MeaId__": "sales",
       "__MeaName__": "销售额",
       "__MeaValue__": 1000000,
@@ -547,7 +573,7 @@ exports[`onlyMeasures 1`] = `
       "sales": 1000000,
     },
     {
-      "__Dim_X__": "利润",
+      "__Dim_X__": "profit",
       "__MeaId__": "profit",
       "__MeaName__": "利润",
       "__MeaValue__": 50000,
@@ -593,8 +619,8 @@ exports[`onlyMeasures 1`] = `
   ],
   "dimensions": [
     {
-      "alias": "指标名称",
-      "id": "__MeaName__",
+      "alias": "指标Id",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
@@ -605,7 +631,7 @@ exports[`onlyMeasures 1`] = `
     "row": [],
     "tooltip": [],
     "x": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "y": [
       "sales",
@@ -679,7 +705,7 @@ exports[`onlyMeasures 2`] = `
         "space": 8,
         "style": {
           "angle": 0,
-          "fill": "#797B85",
+          "fill": "#8F959E",
           "fontSize": 12,
           "fontWeight": 400,
           "maxLineWidth": 80,
@@ -711,7 +737,7 @@ exports[`onlyMeasures 2`] = `
           "fontSize": 12,
           "fontWeight": 400,
         },
-        "text": "指标名称",
+        "text": "指标Id",
         "visible": false,
       },
       "type": "band",
@@ -738,14 +764,15 @@ exports[`onlyMeasures 2`] = `
         "visible": true,
       },
       "innerOffset": {
-        "top": 7,
+        "top": 12,
       },
       "inverse": false,
       "label": {
         "formatMethod": [Function],
+        "space": 8,
         "style": {
           "angle": 0,
-          "fill": "#797B85",
+          "fill": "#8F959E",
           "fontSize": 12,
           "fontWeight": 400,
         },
@@ -839,7 +866,7 @@ exports[`onlyMeasures 2`] = `
     "id": "line",
     "values": [
       {
-        "__Dim_X__": "销售额",
+        "__Dim_X__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 200000,
@@ -850,7 +877,7 @@ exports[`onlyMeasures 2`] = `
         "sales": 200000,
       },
       {
-        "__Dim_X__": "利润",
+        "__Dim_X__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 10000,
@@ -861,7 +888,7 @@ exports[`onlyMeasures 2`] = `
         "profit": 10000,
       },
       {
-        "__Dim_X__": "销售额",
+        "__Dim_X__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 400000,
@@ -872,7 +899,7 @@ exports[`onlyMeasures 2`] = `
         "sales": 400000,
       },
       {
-        "__Dim_X__": "利润",
+        "__Dim_X__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 20000,
@@ -883,7 +910,7 @@ exports[`onlyMeasures 2`] = `
         "profit": 20000,
       },
       {
-        "__Dim_X__": "销售额",
+        "__Dim_X__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 600000,
@@ -894,7 +921,7 @@ exports[`onlyMeasures 2`] = `
         "sales": 600000,
       },
       {
-        "__Dim_X__": "利润",
+        "__Dim_X__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 30000,
@@ -905,7 +932,7 @@ exports[`onlyMeasures 2`] = `
         "profit": 30000,
       },
       {
-        "__Dim_X__": "销售额",
+        "__Dim_X__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 800000,
@@ -916,7 +943,7 @@ exports[`onlyMeasures 2`] = `
         "sales": 800000,
       },
       {
-        "__Dim_X__": "利润",
+        "__Dim_X__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 40000,
@@ -927,7 +954,7 @@ exports[`onlyMeasures 2`] = `
         "profit": 40000,
       },
       {
-        "__Dim_X__": "销售额",
+        "__Dim_X__": "sales",
         "__MeaId__": "sales",
         "__MeaName__": "销售额",
         "__MeaValue__": 1000000,
@@ -938,7 +965,7 @@ exports[`onlyMeasures 2`] = `
         "sales": 1000000,
       },
       {
-        "__Dim_X__": "利润",
+        "__Dim_X__": "profit",
         "__MeaId__": "profit",
         "__MeaName__": "利润",
         "__MeaValue__": 50000,
@@ -1078,6 +1105,34 @@ exports[`onlyMeasures 2`] = `
       ],
       "title": {
         "visible": false,
+      },
+    },
+    "style": {
+      "keyLabel": {
+        "fontColor": "#606773",
+        "fontSize": 12,
+        "lineHeight": 12,
+      },
+      "panel": {
+        "backgroundColor": "#fff",
+        "border": {
+          "color": "#e3e5e8",
+          "radius": 12,
+          "width": 1,
+        },
+        "padding": 7,
+      },
+      "titleLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "lineHeight": 12,
+      },
+      "valueLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "medium",
+        "lineHeight": 12,
       },
     },
     "visible": true,

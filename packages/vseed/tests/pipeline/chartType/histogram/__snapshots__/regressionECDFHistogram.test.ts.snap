@@ -202,6 +202,8 @@ exports[`regressionECDFHistogram 1`] = `
           "lineWidth": 1,
           "visible": false,
         },
+        "max": 6,
+        "min": 1,
         "nice": true,
         "tick": {
           "tickColor": "#3641594d",
@@ -525,6 +527,7 @@ exports[`regressionECDFHistogram 1`] = `
       "__MeaId__": "v",
       "__MeaName__": "v",
       "__MeaValue__": 1,
+      "v": 1,
     },
     {
       "__BinCount__": 2,
@@ -534,6 +537,7 @@ exports[`regressionECDFHistogram 1`] = `
       "__MeaId__": "v",
       "__MeaName__": "v",
       "__MeaValue__": 2,
+      "v": 2,
     },
     {
       "__BinCount__": 1,
@@ -543,6 +547,7 @@ exports[`regressionECDFHistogram 1`] = `
       "__MeaId__": "v",
       "__MeaName__": "v",
       "__MeaValue__": 1,
+      "v": 1,
     },
     {
       "__BinCount__": 1,
@@ -552,6 +557,7 @@ exports[`regressionECDFHistogram 1`] = `
       "__MeaId__": "v",
       "__MeaName__": "v",
       "__MeaValue__": 1,
+      "v": 1,
     },
   ],
   "datasetReshapeInfo": [
@@ -649,8 +655,8 @@ exports[`regressionECDFHistogram 2`] = `
         },
         "visible": true,
       },
-      "max": undefined,
-      "min": undefined,
+      "max": 6,
+      "min": 1,
       "nice": true,
       "orient": "bottom",
       "tick": {
@@ -747,6 +753,7 @@ exports[`regressionECDFHistogram 2`] = `
       "visible": true,
     },
   },
+  "barGap": 2,
   "color": {
     "domain": [],
     "range": [
@@ -842,6 +849,7 @@ exports[`regressionECDFHistogram 2`] = `
         "__MeaId__": "v",
         "__MeaName__": "v",
         "__MeaValue__": 1,
+        "v": 1,
       },
       {
         "__BinCount__": 2,
@@ -851,6 +859,7 @@ exports[`regressionECDFHistogram 2`] = `
         "__MeaId__": "v",
         "__MeaName__": "v",
         "__MeaValue__": 2,
+        "v": 2,
       },
       {
         "__BinCount__": 1,
@@ -860,6 +869,7 @@ exports[`regressionECDFHistogram 2`] = `
         "__MeaId__": "v",
         "__MeaName__": "v",
         "__MeaValue__": 1,
+        "v": 1,
       },
       {
         "__BinCount__": 1,
@@ -869,6 +879,7 @@ exports[`regressionECDFHistogram 2`] = `
         "__MeaId__": "v",
         "__MeaName__": "v",
         "__MeaValue__": 1,
+        "v": 1,
       },
     ],
   },
@@ -999,6 +1010,7 @@ exports[`regressionECDFHistogram 2`] = `
 exports[`regressionECDFHistogram 3`] = `
 {
   "advancedPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

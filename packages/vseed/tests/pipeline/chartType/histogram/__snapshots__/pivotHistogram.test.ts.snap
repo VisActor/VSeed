@@ -202,6 +202,8 @@ exports[`pivotHistogram 1`] = `
           "lineWidth": 1,
           "visible": false,
         },
+        "max": NaN,
+        "min": NaN,
         "nice": true,
         "tick": {
           "tickColor": "#3641594d",
@@ -715,8 +717,8 @@ exports[`pivotHistogram 2`] = `
               },
               "visible": true,
             },
-            "max": undefined,
-            "min": undefined,
+            "max": NaN,
+            "min": NaN,
             "nice": true,
             "orient": "bottom",
             "tick": {
@@ -810,6 +812,7 @@ exports[`pivotHistogram 2`] = `
             "visible": true,
           },
         },
+        "barGap": 2,
         "color": {
           "domain": [
             "v-v",
@@ -879,6 +882,9 @@ exports[`pivotHistogram 2`] = `
         },
         "large": false,
         "largeThreshold": Infinity,
+        "legends": {
+          "visible": false,
+        },
         "padding": 0,
         "progressiveStep": 400,
         "progressiveThreshold": Infinity,
@@ -1280,6 +1286,7 @@ exports[`pivotHistogram 2`] = `
 exports[`pivotHistogram 3`] = `
 {
   "advancedPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

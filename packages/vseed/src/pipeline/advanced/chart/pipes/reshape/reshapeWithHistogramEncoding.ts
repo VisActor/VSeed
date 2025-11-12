@@ -54,6 +54,7 @@ export const reshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, contex
       datum[FoldMeasureId] = valueField
       datum[FoldMeasureName] = m?.alias ?? valueField
       datum[FoldMeasureValue] = binValueType === 'percentage' ? datum[BinPercentageMeasureId] : datum[BinCountMeasureId]
+      datum[valueField] = datum[FoldMeasureValue]
     })
 
     const res = unfoldDimensions(binData, uniqDims, encoding as Encoding, {

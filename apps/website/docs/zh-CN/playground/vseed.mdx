@@ -9,135 +9,46 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    color: {
-      colorScheme: ['#ED4B6B', '#B08F78', '#F8BCBD', '#4793EB', '#F8BC3B', '#985348', '#5ECBC8', '#4D67A9'],
-      colorMapping: {},
-      linearColorScheme: ['#FCC3CE', '#F8A6B6', '#F47F96', '#ED4B6B', '#CB405C', '#912E42', '#66212E', '#491721'],
-      theme: 'energy',
-    },
-    legend: {
-      enable: true,
-      position: 'topRight',
-      maxSize: 1,
-      labelFontSize: 12,
-      labelFontColor: '#606773',
-    },
-    label: {
-      enable: true,
-      labelColor: '#80E1D9',
-      labelFontSize: 12,
-      selector: [
-        {
-          xA_20251110170508_a1e1: '1785',
-          yA_20251110170502_1b77: '西北',
-        },
-        {
-          xA_20251110170516_c40e: '4684506.442',
-          yA_20251110170502_1b77: '华东',
-        },
-      ],
-    },
-    stackCornerRadius: 0,
-    barMaxWidth: 72,
-    barStyle: [
-      {
-        barColorOpacity: 0.2,
-        barColor: '#ccc',
-        barBorderWidth: 0,
-        barBorderColor: '#ccc',
+    chartType: 'histogram',
+    binValueType: 'percentage',
+    dataset: [{ v: 1 }, { v: 1 }, { v: 1 }, { v: 2 }, { v: 5 }, { v: 7 }, { v: 8 }, { v: 9 }, { v: 10 }],
+    yAxis: {
+      grid: {
+        visible: true,
+        gridColor: '#E3E5EB',
+        gridWidth: 1,
       },
-      {
-        selector: [
-          {
-            xA_20251110170508_a1e1: '1785',
-            yA_20251110170502_1b77: '西北',
-          },
-          {
-            op: '=',
-            field: 'xA_20251110170508_a1e1',
-            value: 1785,
-          },
-        ],
-        barBorderWidth: 0,
-        barColor: '#7E5DFF',
-        barColorOpacity: 1,
+      label: {
+        visible: true,
+        labelColor: '#8F959E',
+        labelFontSize: 12,
       },
-      {
-        selector: {
-          xA_20251110170516_c40e: '4684506.442',
-          yA_20251110170502_1b77: '华东',
-        },
-        barBorderWidth: 0,
-        barColor: '#7E5DFF',
-        barColorOpacity: 1,
+      title: {
+        visible: false,
+        titleColor: '#606773',
+        titleFontSize: 12,
       },
-    ],
+      line: {
+        lineColor: '#21252C0F',
+      },
+      visible: true,
+      numFormat: {
+        thousandSeparator: true,
+        type: 'percent',
+      },
+      autoFormat: false,
+    },
     measures: [
       {
-        id: 'xA_20251110170508_a1e1',
-        alias: 'sum(amount)',
-        encoding: 'xAxis',
+        id: 'v',
+        alias: 'amount',
+        encoding: 'value',
         format: {
-          auto: true,
+          auto: false,
           thousandSeparator: true,
-          type: 'number',
+          type: 'percent',
         },
-        autoFormat: true,
-        parentId: '0',
-      },
-      {
-        id: 'xA_20251110170516_c40e',
-        alias: 'sum(sales)',
-        encoding: 'xAxis',
-        format: {
-          auto: true,
-          fractionDigits: 2,
-          thousandSeparator: true,
-          type: 'number',
-        },
-        autoFormat: true,
-        parentId: '1',
-      },
-    ],
-    dimensions: [
-      {
-        id: 'yA_20251110170502_1b77',
-        alias: 'area',
-        encoding: 'yAxis',
-        autoFormat: true,
-      },
-    ],
-    chartType: 'bar',
-    dataset: [
-      {
-        xA_20251110170508_a1e1: '6463',
-        xA_20251110170516_c40e: '2681567.469000001',
-        yA_20251110170502_1b77: '东北',
-      },
-      {
-        xA_20251110170508_a1e1: '9700',
-        xA_20251110170516_c40e: '4137415.0929999948',
-        yA_20251110170502_1b77: '中南',
-      },
-      {
-        xA_20251110170508_a1e1: '11041',
-        xA_20251110170516_c40e: '4684506.442',
-        yA_20251110170502_1b77: '华东',
-      },
-      {
-        xA_20251110170508_a1e1: '5146',
-        xA_20251110170516_c40e: '2447301.017000004',
-        yA_20251110170502_1b77: '华北',
-      },
-      {
-        xA_20251110170508_a1e1: '1785',
-        xA_20251110170516_c40e: '815039.5959999998',
-        yA_20251110170502_1b77: '西北',
-      },
-      {
-        xA_20251110170508_a1e1: '3399',
-        xA_20251110170516_c40e: '1303124.508000002',
-        yA_20251110170502_1b77: '西南',
+        autoFormat: false,
       },
     ],
   }

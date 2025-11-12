@@ -202,6 +202,8 @@ exports[`binValueTypeHistogram 1`] = `
           "lineWidth": 1,
           "visible": false,
         },
+        "max": 9,
+        "min": 1,
         "nice": true,
         "tick": {
           "tickColor": "#3641594d",
@@ -525,6 +527,7 @@ exports[`binValueTypeHistogram 1`] = `
       "__MeaId__": "v",
       "__MeaName__": "v",
       "__MeaValue__": 2,
+      "v": 2,
     },
     {
       "__BinCount__": 1,
@@ -534,6 +537,7 @@ exports[`binValueTypeHistogram 1`] = `
       "__MeaId__": "v",
       "__MeaName__": "v",
       "__MeaValue__": 1,
+      "v": 1,
     },
     {
       "__BinCount__": 1,
@@ -543,6 +547,7 @@ exports[`binValueTypeHistogram 1`] = `
       "__MeaId__": "v",
       "__MeaName__": "v",
       "__MeaValue__": 1,
+      "v": 1,
     },
     {
       "__BinCount__": 1,
@@ -552,6 +557,7 @@ exports[`binValueTypeHistogram 1`] = `
       "__MeaId__": "v",
       "__MeaName__": "v",
       "__MeaValue__": 1,
+      "v": 1,
     },
     {
       "__BinCount__": 1,
@@ -561,6 +567,7 @@ exports[`binValueTypeHistogram 1`] = `
       "__MeaId__": "v",
       "__MeaName__": "v",
       "__MeaValue__": 1,
+      "v": 1,
     },
   ],
   "datasetReshapeInfo": [
@@ -648,8 +655,8 @@ exports[`binValueTypeHistogram 2`] = `
         },
         "visible": true,
       },
-      "max": undefined,
-      "min": undefined,
+      "max": 9,
+      "min": 1,
       "nice": true,
       "orient": "bottom",
       "tick": {
@@ -746,6 +753,7 @@ exports[`binValueTypeHistogram 2`] = `
       "visible": true,
     },
   },
+  "barGap": 2,
   "color": {
     "domain": [],
     "range": [
@@ -800,6 +808,7 @@ exports[`binValueTypeHistogram 2`] = `
         "__MeaId__": "v",
         "__MeaName__": "v",
         "__MeaValue__": 2,
+        "v": 2,
       },
       {
         "__BinCount__": 1,
@@ -809,6 +818,7 @@ exports[`binValueTypeHistogram 2`] = `
         "__MeaId__": "v",
         "__MeaName__": "v",
         "__MeaValue__": 1,
+        "v": 1,
       },
       {
         "__BinCount__": 1,
@@ -818,6 +828,7 @@ exports[`binValueTypeHistogram 2`] = `
         "__MeaId__": "v",
         "__MeaName__": "v",
         "__MeaValue__": 1,
+        "v": 1,
       },
       {
         "__BinCount__": 1,
@@ -827,6 +838,7 @@ exports[`binValueTypeHistogram 2`] = `
         "__MeaId__": "v",
         "__MeaName__": "v",
         "__MeaValue__": 1,
+        "v": 1,
       },
       {
         "__BinCount__": 1,
@@ -836,6 +848,7 @@ exports[`binValueTypeHistogram 2`] = `
         "__MeaId__": "v",
         "__MeaName__": "v",
         "__MeaValue__": 1,
+        "v": 1,
       },
     ],
   },
@@ -966,6 +979,7 @@ exports[`binValueTypeHistogram 2`] = `
 exports[`binValueTypeHistogram 3`] = `
 {
   "advancedPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

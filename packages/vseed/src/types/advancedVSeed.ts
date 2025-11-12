@@ -9,6 +9,7 @@ import { zTheme, zCustomThemeConfig } from './properties/theme'
 import { zConfig } from './properties/config'
 import { zAnalysis, zAnnotation, zRegressionLine, zMarkStyle } from './properties'
 import { zLocale } from './i18n'
+import { zCellStyle } from './properties/cellStyle/cellStyle'
 
 export const zAdvancedVSeed = z.object({
   chartType: zChartType,
@@ -21,6 +22,7 @@ export const zAdvancedVSeed = z.object({
   analysis: zAnalysis,
   theme: zTheme,
   markStyle: zMarkStyle,
+  cellStyle: zCellStyle,
   customTheme: zCustomThemeConfig,
   annotation: zAnnotation,
   locale: zLocale,

@@ -1,6 +1,7 @@
 import type { AdvancedPipeline } from 'src/types'
 import { theme } from '../../chart/pipes'
 import {
+  cellStyle,
   defaultDimensions,
   defaultMeasureName,
   defaultMeasures,
@@ -15,6 +16,7 @@ export const pivotTableAdvancedPipeline: AdvancedPipeline = [
   defaultMeasures,
   defaultDimensions,
   defaultMeasureName,
+  cellStyle,
 
   encodingForPivotTable,
   reshapePivotTable,

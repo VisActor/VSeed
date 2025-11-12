@@ -51,6 +51,10 @@
     "en-US": "Mark Style",
     "zh-CN": "图元样式"
   },
+  "cellStyle": {
+    "en-US": "Table Cell Style",
+    "zh-CN": "表格单元格样式"
+  },
   "annotation": {
     "en-US": "Annotation",
     "zh-CN": "标注"

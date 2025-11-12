@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { zLocale } from '../../i18n'
-import { zBackgroundColor, zDataset, zDimensions, zMeasureTree, zTheme } from '../../properties'
+import { zBackgroundColor, zBodyCellStyle, zDataset, zDimensions, zMeasureTree, zTheme } from '../../properties'
 
 export const zTable = z.object({
   chartType: z.literal('table'),
@@ -22,6 +22,7 @@ export const zTable = z.object({
   hoverHeaderInlineBackgroundColor: z.string().nullish(),
   selectedBorderColor: z.string().nullish(),
   selectedBackgroundColor: z.string().nullish(),
+  bodyCellStyle: zBodyCellStyle.nullish(),
 
   theme: zTheme.nullish(),
   locale: zLocale.nullish(),

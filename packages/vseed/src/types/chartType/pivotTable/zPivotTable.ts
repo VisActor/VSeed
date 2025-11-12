@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { zLocale } from '../../i18n'
-import { zBackgroundColor, zDataset, zDimensions, zTheme, zMeasures } from '../../properties'
+import { zBackgroundColor, zDataset, zDimensions, zTheme, zMeasures, zBodyCellStyle } from '../../properties'
 
 export const zPivotTable = z.object({
   chartType: z.literal('pivotTable'),
@@ -22,6 +22,7 @@ export const zPivotTable = z.object({
   hoverHeaderInlineBackgroundColor: z.string().nullish(),
   selectedBorderColor: z.string().nullish(),
   selectedBackgroundColor: z.string().nullish(),
+  bodyCellStyle: zBodyCellStyle.nullish(),
 
   theme: zTheme.nullish(),
   locale: zLocale.nullish(),

@@ -9,42 +9,29 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'pie',
+    chartType: 'pivotTable',
+    dataset: [
+      { date: '2019', type: 'A', goalProfit: 10, profit: 10, sales: 100, leftCount: 1, salesCount: 100 },
+      { date: '2020', type: 'A', goalProfit: 30, profit: 30, sales: 320, leftCount: 2, salesCount: 200 },
+      { date: '2021', type: 'A', goalProfit: 30, profit: 30, sales: 300, leftCount: 3, salesCount: 300 },
+      { date: '2022', type: 'A', goalProfit: 50, profit: 50, sales: 240, leftCount: 4, salesCount: 400 },
+      { date: '2023', type: 'A', goalProfit: 40, profit: 40, sales: 500, leftCount: 5, salesCount: 500 },
+    ],
+    bodyCellStyle: [
+      {
+        selector: { field: 'sales', operator: '>=', value: 300 },
+        backgroundColor: '#e3f2fd',
+        textColor: '#0d47a1',
+      },
+    ],
+    // typical pivot usage
     dimensions: [
-      { id: 'category', alias: '类别' },
       { id: 'date', alias: '日期', encoding: 'column' },
-      { id: 'region', alias: '区域', encoding: 'row' },
+      { id: 'type', alias: '类型', encoding: 'row' },
     ],
     measures: [
-      {
-        id: 'group-sales',
-        alias: '销售额分组',
-        children: [{ id: 'sales', alias: '销售额' }],
-      },
-      { id: 'profit', alias: '利润' },
-    ],
-    dataset: [
-      { date: '2019', region: 'east', category: 'Grocery', profit: 10, sales: 100 },
-      { date: '2019', region: 'east', category: 'Beverages', profit: 30, sales: 3200 },
-      { date: '2019', region: 'east', category: 'Dairy', profit: 30, sales: 300 },
-      { date: '2019', region: 'east', category: 'Household', profit: 50, sales: 2400 },
-      { date: '2019', region: 'east', category: 'Personal', profit: 40, sales: 500 },
-      { date: '2019', region: 'west', category: 'Grocery', profit: 10, sales: 100 },
-      { date: '2019', region: 'west', category: 'Beverages', profit: 30, sales: 3200 },
-      { date: '2019', region: 'west', category: 'Dairy', profit: 30, sales: 300 },
-      { date: '2019', region: 'west', category: 'Household', profit: 50, sales: 2400 },
-      { date: '2019', region: 'west', category: 'Personal', profit: 40, sales: 500 },
-
-      { date: '2020', region: 'east', category: 'Grocery', profit: 10, sales: 100 },
-      { date: '2020', region: 'east', category: 'Beverages', profit: 30, sales: 3200 },
-      { date: '2020', region: 'east', category: 'Dairy', profit: 30, sales: 300 },
-      { date: '2020', region: 'east', category: 'Household', profit: 50, sales: 2400 },
-      { date: '2020', region: 'east', category: 'Personal', profit: 40, sales: 500 },
-      { date: '2020', region: 'west', category: 'Grocery', profit: 10, sales: 100 },
-      { date: '2020', region: 'west', category: 'Beverages', profit: 30, sales: 3200 },
-      { date: '2020', region: 'west', category: 'Dairy', profit: 30, sales: 300 },
-      { date: '2020', region: 'west', category: 'Household', profit: 50, sales: 2400 },
-      { date: '2020', region: 'west', category: 'Personal', profit: 40, sales: 500 },
+      { id: 'profit', alias: '销售量' },
+      { id: 'sales', alias: '销售量' },
     ],
   }
 

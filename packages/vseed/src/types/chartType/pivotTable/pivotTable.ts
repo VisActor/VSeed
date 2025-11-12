@@ -1,5 +1,5 @@
 import { type Locale } from '../../i18n'
-import type { Measures } from '../../properties'
+import type { BodyCellStyle, Measures } from '../../properties'
 import { type BackgroundColor, type Dataset, type Dimensions, type Theme } from '../../properties'
 
 /**
@@ -102,6 +102,10 @@ export interface PivotTable {
    * @description 选中的单元格的背景颜色, 用于突出显示选中的单元格
    */
   selectedBackgroundColor?: string
+  /**
+   * 设置表格正文部分单元格的特殊样式
+   */
+  bodyCellStyle?: BodyCellStyle | BodyCellStyle[]
 
   /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置

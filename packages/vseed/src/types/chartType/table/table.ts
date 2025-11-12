@@ -1,5 +1,5 @@
 import { type Locale } from '../../i18n'
-import type { DimensionTree, MeasureTree } from '../../properties'
+import type { BodyCellStyle, DimensionTree, MeasureTree } from '../../properties'
 import { type BackgroundColor, type Dataset, type Theme } from '../../properties'
 
 /**
@@ -99,6 +99,10 @@ export interface Table {
    * @description 选中的单元格的背景颜色, 用于突出显示选中的单元格
    */
   selectedBackgroundColor?: string
+  /**
+   * 设置表格正文部分单元格的特殊样式
+   */
+  bodyCellStyle?: BodyCellStyle | BodyCellStyle[]
 
   /**
    * @default light 默认为亮色主题

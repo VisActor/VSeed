@@ -11,6 +11,7 @@ import {
   frameStyle,
   selectionStyle,
   titleOnDimension,
+  pivotTableBodyCell,
 } from '../pipes'
 import { dataConfig } from '../pipes/indicators/pivotDataConfig'
 
@@ -27,4 +28,5 @@ export const pivotTableSpecPipeline: SpecPipeline = [
   frameStyle,
   selectionStyle,
   dataConfig,
+  pivotTableBodyCell,
 ]

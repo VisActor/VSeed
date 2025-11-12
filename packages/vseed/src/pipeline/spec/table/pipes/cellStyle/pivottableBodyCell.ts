@@ -4,7 +4,7 @@ import { isNullish, isString } from 'remeda'
 import { selector } from 'src/dataSelector/selector'
 import type { BodyCellStyle, Datum, SpecPipe } from 'src/types'
 import { pickBodyCellStyle } from './common'
-import { FoldMeasureValue, MeasureName } from 'src/dataReshape'
+import { FoldMeasureValue, MeasureId } from 'src/dataReshape'
 
 export const pivotTableBodyCell: SpecPipe = (spec, context) => {
   const { advancedVSeed } = context
@@ -16,6 +16,7 @@ export const pivotTableBodyCell: SpecPipe = (spec, context) => {
   }
   const bodyCellStyleList = array(bodyCellStyle) as BodyCellStyle[]
   const indicators = (spec as PivotTableConstructorOptions).indicators || []
+
   const newIndicators = indicators.map((ind) => {
     const newInd = isString(ind)
       ? ({
@@ -39,8 +40,8 @@ export const pivotTableBodyCell: SpecPipe = (spec, context) => {
         }
       })
 
-      if (!isNullish(originalDatum[MeasureName]) && !isNullish(originalDatum[FoldMeasureValue])) {
-        originalDatum[originalDatum[MeasureName] as string] = originalDatum[FoldMeasureValue]
+      if (!isNullish(originalDatum[MeasureId]) && !isNullish(originalDatum[FoldMeasureValue])) {
+        originalDatum[originalDatum[MeasureId]] = originalDatum[FoldMeasureValue]
       }
 
       const mergedStyle = bodyCellStyleList.reduce<Record<string, any>>((result, style) => {

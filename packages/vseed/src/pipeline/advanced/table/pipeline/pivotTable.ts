@@ -3,7 +3,7 @@ import { theme } from '../../chart/pipes'
 import {
   cellStyle,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
   defaultMeasures,
   encodingForPivotTable,
   initAdvancedVSeed,
@@ -15,7 +15,7 @@ export const pivotTableAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
   cellStyle,
 
   encodingForPivotTable,

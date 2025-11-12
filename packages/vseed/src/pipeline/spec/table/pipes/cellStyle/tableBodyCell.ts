@@ -19,6 +19,9 @@ export const tableBodyCell: SpecPipe = (spec, context) => {
   const setStyleOfColumn = (col: ColumnDefine) => {
     const field = col.field as string
     const matchedStyles = bodyCellStyleList.filter((style) => {
+      if (isNullish(style.selector)) {
+        return true
+      }
       const selectors = array(style.selector) as Selectors
 
       return selectors.some((selector) => {

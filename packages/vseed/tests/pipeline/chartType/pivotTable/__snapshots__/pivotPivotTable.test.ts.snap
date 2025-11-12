@@ -2,6 +2,7 @@
 
 exports[`pivotPivotTable 1`] = `
 {
+  "cellStyle": {},
   "chartType": "pivotTable",
   "config": {
     "pivotTable": {
@@ -852,7 +853,7 @@ exports[`pivotPivotTable 1`] = `
     {
       "alias": "指标名称",
       "encoding": "row",
-      "id": "__MeaName__",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
@@ -866,7 +867,7 @@ exports[`pivotPivotTable 1`] = `
     ],
     "row": [
       "type",
-      "__MeaName__",
+      "__MeaId__",
     ],
     "tooltip": [
       "sales",
@@ -1750,7 +1751,8 @@ exports[`pivotPivotTable 2`] = `
       "width": "auto",
     },
     {
-      "dimensionKey": "__MeaName__",
+      "dimensionKey": "__MeaId__",
+      "headerFormat": [Function],
       "title": "指标名称",
       "width": "auto",
     },
@@ -1916,11 +1918,13 @@ exports[`pivotPivotTable 3`] = `
     [Function],
     [Function],
     [Function],
+    [Function],
   ],
   "colorIdMap": {},
   "colorItems": [],
   "hasTheme": true,
   "specPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

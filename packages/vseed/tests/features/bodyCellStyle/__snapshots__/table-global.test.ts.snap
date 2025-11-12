@@ -1,8 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`basicTable 1`] = `
+exports[`table-global 1`] = `
 {
-  "cellStyle": {},
+  "cellStyle": {
+    "bodyCellStyle": {
+      "backgroundColor": "#f8f9fa",
+      "textColor": "#333",
+    },
+  },
   "chartType": "table",
   "config": {
     "table": {
@@ -45,62 +50,87 @@ exports[`basicTable 1`] = `
   "dataset": [
     {
       "date": "2019",
-      "profit": 10000,
-      "sales": 200000,
+      "goalProfit": 10,
+      "leftCount": 1,
+      "profit": 10,
+      "sales": 100,
+      "salesCount": 100,
+      "type": "A",
     },
     {
       "date": "2020",
-      "profit": 20000,
-      "sales": 400000,
+      "goalProfit": 30,
+      "leftCount": 2,
+      "profit": 30,
+      "sales": 320,
+      "salesCount": 200,
+      "type": "A",
     },
     {
       "date": "2021",
-      "profit": 30000,
-      "sales": 600000,
+      "goalProfit": 30,
+      "leftCount": 3,
+      "profit": 30,
+      "sales": 300,
+      "salesCount": 300,
+      "type": "A",
     },
     {
       "date": "2022",
-      "profit": 40000,
-      "sales": 800000,
+      "goalProfit": 50,
+      "leftCount": 4,
+      "profit": 50,
+      "sales": 240,
+      "salesCount": 400,
+      "type": "A",
     },
     {
       "date": "2023",
-      "profit": 50000,
-      "sales": 1000000,
+      "goalProfit": 40,
+      "leftCount": 5,
+      "profit": 40,
+      "sales": 500,
+      "salesCount": 500,
+      "type": "A",
     },
   ],
   "dimensions": [
     {
-      "alias": "日期",
+      "alias": "date",
       "id": "date",
+    },
+    {
+      "alias": "type",
+      "id": "type",
     },
   ],
   "locale": "zh-CN",
   "measures": [
     {
-      "alias": "销售额",
-      "autoFormat": true,
+      "alias": "goalProfit",
+      "id": "goalProfit",
+    },
+    {
+      "alias": "profit",
+      "id": "profit",
+    },
+    {
+      "alias": "sales",
       "id": "sales",
     },
     {
-      "alias": "利润",
-      "autoFormat": false,
-      "format": {
-        "decimalPlaces": 0,
-        "prefix": "利润",
-        "ratio": 1000,
-        "suffix": "$",
-        "symbol": "千",
-        "thousandSeparator": true,
-        "type": "number",
-      },
-      "id": "profit",
+      "alias": "leftCount",
+      "id": "leftCount",
+    },
+    {
+      "alias": "salesCount",
+      "id": "salesCount",
     },
   ],
 }
 `;
 
-exports[`basicTable 2`] = `
+exports[`table-global 2`] = `
 {
   "animationAppear": {
     "delay": 250,
@@ -113,19 +143,49 @@ exports[`basicTable 2`] = `
   "columns": [
     {
       "field": "date",
-      "title": "日期",
+      "style": [Function],
+      "title": "date",
       "width": "auto",
     },
     {
-      "field": "sales",
+      "field": "type",
+      "style": [Function],
+      "title": "type",
+      "width": "auto",
+    },
+    {
+      "field": "goalProfit",
       "fieldFormat": [Function],
-      "title": "销售额",
+      "style": [Function],
+      "title": "goalProfit",
       "width": "auto",
     },
     {
       "field": "profit",
       "fieldFormat": [Function],
-      "title": "利润",
+      "style": [Function],
+      "title": "profit",
+      "width": "auto",
+    },
+    {
+      "field": "sales",
+      "fieldFormat": [Function],
+      "style": [Function],
+      "title": "sales",
+      "width": "auto",
+    },
+    {
+      "field": "leftCount",
+      "fieldFormat": [Function],
+      "style": [Function],
+      "title": "leftCount",
+      "width": "auto",
+    },
+    {
+      "field": "salesCount",
+      "fieldFormat": [Function],
+      "style": [Function],
+      "title": "salesCount",
       "width": "auto",
     },
   ],
@@ -137,28 +197,48 @@ exports[`basicTable 2`] = `
   "records": [
     {
       "date": "2019",
-      "profit": 10000,
-      "sales": 200000,
+      "goalProfit": 10,
+      "leftCount": 1,
+      "profit": 10,
+      "sales": 100,
+      "salesCount": 100,
+      "type": "A",
     },
     {
       "date": "2020",
-      "profit": 20000,
-      "sales": 400000,
+      "goalProfit": 30,
+      "leftCount": 2,
+      "profit": 30,
+      "sales": 320,
+      "salesCount": 200,
+      "type": "A",
     },
     {
       "date": "2021",
-      "profit": 30000,
-      "sales": 600000,
+      "goalProfit": 30,
+      "leftCount": 3,
+      "profit": 30,
+      "sales": 300,
+      "salesCount": 300,
+      "type": "A",
     },
     {
       "date": "2022",
-      "profit": 40000,
-      "sales": 800000,
+      "goalProfit": 50,
+      "leftCount": 4,
+      "profit": 50,
+      "sales": 240,
+      "salesCount": 400,
+      "type": "A",
     },
     {
       "date": "2023",
-      "profit": 50000,
-      "sales": 1000000,
+      "goalProfit": 40,
+      "leftCount": 5,
+      "profit": 40,
+      "sales": 500,
+      "salesCount": 500,
+      "type": "A",
     },
   ],
   "showHeader": true,
@@ -238,7 +318,7 @@ exports[`basicTable 2`] = `
 }
 `;
 
-exports[`basicTable 3`] = `
+exports[`table-global 3`] = `
 {
   "advancedPipeline": [
     [Function],

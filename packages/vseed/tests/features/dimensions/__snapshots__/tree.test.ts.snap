@@ -2,6 +2,7 @@
 
 exports[`tree 1`] = `
 {
+  "cellStyle": {},
   "chartType": "table",
   "config": {
     "table": {
@@ -362,11 +363,13 @@ exports[`tree 3`] = `
     [Function],
     [Function],
     [Function],
+    [Function],
   ],
   "colorIdMap": {},
   "colorItems": [],
   "hasTheme": true,
   "specPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

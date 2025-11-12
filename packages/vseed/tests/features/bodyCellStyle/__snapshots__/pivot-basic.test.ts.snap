@@ -1,8 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`simplePivotTable 1`] = `
+exports[`pivot-basic 1`] = `
 {
-  "cellStyle": {},
+  "cellStyle": {
+    "bodyCellStyle": {
+      "backgroundColor": "#faf0e6",
+      "textColor": "#4d342e",
+    },
+  },
   "chartType": "pivotTable",
   "config": {
     "pivotTable": {
@@ -559,7 +564,7 @@ exports[`simplePivotTable 1`] = `
 }
 `;
 
-exports[`simplePivotTable 2`] = `
+exports[`pivot-basic 2`] = `
 {
   "animationAppear": {
     "delay": 250,
@@ -621,6 +626,7 @@ exports[`simplePivotTable 2`] = `
       "cellType": "text",
       "format": [Function],
       "indicatorKey": "__MeaValue__",
+      "style": [Function],
       "title": "",
       "width": "auto",
     },
@@ -1216,7 +1222,7 @@ exports[`simplePivotTable 2`] = `
 }
 `;
 
-exports[`simplePivotTable 3`] = `
+exports[`pivot-basic 3`] = `
 {
   "advancedPipeline": [
     [Function],

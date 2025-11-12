@@ -2,6 +2,7 @@
 
 exports[`onlyDimensions 1`] = `
 {
+  "cellStyle": {},
   "chartType": "pivotTable",
   "config": {
     "pivotTable": {
@@ -339,11 +340,13 @@ exports[`onlyDimensions 3`] = `
     [Function],
     [Function],
     [Function],
+    [Function],
   ],
   "colorIdMap": {},
   "colorItems": [],
   "hasTheme": true,
   "specPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

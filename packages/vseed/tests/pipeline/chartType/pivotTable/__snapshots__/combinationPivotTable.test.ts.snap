@@ -2,6 +2,7 @@
 
 exports[`combinationPivotTable 1`] = `
 {
+  "cellStyle": {},
   "chartType": "pivotTable",
   "config": {
     "pivotTable": {
@@ -194,7 +195,7 @@ exports[`combinationPivotTable 1`] = `
     {
       "alias": "指标名称",
       "encoding": "row",
-      "id": "__MeaName__",
+      "id": "__MeaId__",
     },
   ],
   "encoding": {
@@ -206,7 +207,7 @@ exports[`combinationPivotTable 1`] = `
       "profit",
     ],
     "row": [
-      "__MeaName__",
+      "__MeaId__",
     ],
     "tooltip": [
       "sales",
@@ -432,7 +433,8 @@ exports[`combinationPivotTable 2`] = `
   ],
   "rows": [
     {
-      "dimensionKey": "__MeaName__",
+      "dimensionKey": "__MeaId__",
+      "headerFormat": [Function],
       "title": "指标名称",
       "width": "auto",
     },
@@ -598,11 +600,13 @@ exports[`combinationPivotTable 3`] = `
     [Function],
     [Function],
     [Function],
+    [Function],
   ],
   "colorIdMap": {},
   "colorItems": [],
   "hasTheme": true,
   "specPipeline": [
+    [Function],
     [Function],
     [Function],
     [Function],

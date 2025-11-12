@@ -1,2 +1,2 @@
-export * from './tableBodyCell'
+export * from './table'
 export * from './pivot'

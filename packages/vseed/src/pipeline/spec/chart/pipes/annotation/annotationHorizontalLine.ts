@@ -60,7 +60,7 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
           const regionStart = series.getRegion()?.getLayoutStartPoint()
           const xAxisHelper = series.getXAxisHelper()
           const yAxisHelper = series.getYAxisHelper()
-          const yPos = yAxisHelper.getScale!(0).scale(y)
+          const yPos = yAxisHelper.getScale!(0).scale(y) + regionStart.y
           const xRange = xAxisHelper.getScale!(0).range()
 
           return [

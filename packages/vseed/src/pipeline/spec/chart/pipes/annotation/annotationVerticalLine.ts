@@ -60,7 +60,7 @@ export const annotationVerticalLine: SpecPipe = (spec, context) => {
         const regionStart = series.getRegion()?.getLayoutStartPoint()
         const xAxisHelper = series.getXAxisHelper()
         const yAxisHelper = series.getYAxisHelper()
-        const xPos = xAxisHelper.getScale!(0).scale(x)
+        const xPos = xAxisHelper.getScale!(0).scale(x) + regionStart.x
         const yRange = yAxisHelper.getScale!(0).range()
 
         return [

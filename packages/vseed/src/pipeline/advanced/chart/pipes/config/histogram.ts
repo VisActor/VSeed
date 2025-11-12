@@ -2,7 +2,7 @@
 import { pick } from 'remeda'
 import { BinEndMeasureId, BinStartMeasureId } from 'src/dataReshape'
 import { replaceNullToUndefined } from 'src/pipeline/utils'
-import type { AdvancedPipe, AdvancedVSeed, Config } from 'src/types'
+import type { AdvancedPipe, AdvancedVSeed, Config, Dimension } from 'src/types'
 
 export const histogramConfig: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context
@@ -10,6 +10,7 @@ export const histogramConfig: AdvancedPipe = (advancedVSeed, context) => {
   const result = {
     ...advancedVSeed,
   }
+  const hasColorEncoding = (advancedVSeed?.dimensions || []).find((field: Dimension) => field?.encoding === 'color')
 
   const pickedConfig = pick(vseed, [
     'backgroundColor',
@@ -25,8 +26,17 @@ export const histogramConfig: AdvancedPipe = (advancedVSeed, context) => {
     'binValueType',
   ]) as Config['histogram']
 
-  const config = replaceNullToUndefined(pickedConfig)
+  let config = replaceNullToUndefined(pickedConfig)
 
+  if (!hasColorEncoding && !config?.legend?.enable) {
+    config = {
+      ...config,
+      legend: {
+        ...config?.legend,
+        enable: false,
+      },
+    }
+  }
   result.config = {
     ...(result.config || {}),
     [chartType]: {

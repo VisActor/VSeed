@@ -1,4 +1,4 @@
-import type { Measure, MeasureGroup, MeasureTree } from 'src/types'
+import type { Measure, MeasureTree } from 'src/types'
 import { preorderTraverse } from '../tree/traverse'
 
 /**
@@ -10,9 +10,9 @@ import { preorderTraverse } from '../tree/traverse'
 export const measureDepth = (measures: MeasureTree = []): number => {
   if (!measures) return 0
   let depth = 1
-  preorderTraverse<Measure, MeasureGroup>(measures, (node) => {
+  preorderTraverse<Measure, 'children'>(measures, (node) => {
     if ('children' in node) {
-      depth = Math.max(depth, 1 + measureDepth(node.children))
+      depth = Math.max(depth, 1 + measureDepth(node.children as MeasureTree))
     }
     return false
   })

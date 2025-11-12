@@ -122,8 +122,10 @@ exports[`dark 1`] = `
         "shapeType": "rectRound",
       },
       "pivotGrid": {
+        "axisLabelColor": "#E2E3E6",
         "bodyFontColor": "#fdfdfd",
         "borderColor": "#4b4e53",
+        "chartGridColor": "#303339",
         "frameCornerRadius": 0,
         "headerBackgroundColor": "transparent",
         "headerFontColor": "#fdfdfd",
@@ -183,7 +185,18 @@ exports[`dark 1`] = `
         0,
       ],
       "tooltip": {
+        "backgroundColor": "#2b2d30",
+        "borderColor": "#3c3f44",
+        "borderRadius": 12,
+        "borderWidth": 1,
         "enable": true,
+        "fontSize": 12,
+        "keyColor": "#89909D",
+        "lineHeight": 12,
+        "lineSpace": 6,
+        "padding": 7,
+        "titleColor": "#E2E3E6",
+        "valueColor": "#E2E3E6",
       },
       "xAxis": {
         "grid": {
@@ -390,8 +403,10 @@ exports[`dark 1`] = `
           "shapeType": "rectRound",
         },
         "pivotGrid": {
+          "axisLabelColor": "#E2E3E6",
           "bodyFontColor": "#fdfdfd",
           "borderColor": "#4b4e53",
+          "chartGridColor": "#303339",
           "frameCornerRadius": 0,
           "headerBackgroundColor": "transparent",
           "headerFontColor": "#fdfdfd",
@@ -451,7 +466,18 @@ exports[`dark 1`] = `
           0,
         ],
         "tooltip": {
+          "backgroundColor": "#2b2d30",
+          "borderColor": "#3c3f44",
+          "borderRadius": 12,
+          "borderWidth": 1,
           "enable": true,
+          "fontSize": 12,
+          "keyColor": "#89909D",
+          "lineHeight": 12,
+          "lineSpace": 6,
+          "padding": 7,
+          "titleColor": "#E2E3E6",
+          "valueColor": "#E2E3E6",
         },
         "xAxis": {
           "grid": {
@@ -893,11 +919,12 @@ exports[`dark 2`] = `
         "visible": true,
       },
       "innerOffset": {
-        "top": 7,
+        "top": 12,
       },
       "inverse": undefined,
       "label": {
         "formatMethod": [Function],
+        "space": 8,
         "style": {
           "angle": 0,
           "fill": "#E2E3E6",
@@ -1286,6 +1313,34 @@ exports[`dark 2`] = `
       ],
       "title": {
         "visible": false,
+      },
+    },
+    "style": {
+      "keyLabel": {
+        "fontColor": "#89909D",
+        "fontSize": 12,
+        "lineHeight": 12,
+      },
+      "panel": {
+        "backgroundColor": "#2b2d30",
+        "border": {
+          "color": "#3c3f44",
+          "radius": 12,
+          "width": 1,
+        },
+        "padding": 7,
+      },
+      "titleLabel": {
+        "fontColor": "#E2E3E6",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "lineHeight": 12,
+      },
+      "valueLabel": {
+        "fontColor": "#E2E3E6",
+        "fontSize": 12,
+        "fontWeight": "medium",
+        "lineHeight": 12,
       },
     },
     "visible": true,

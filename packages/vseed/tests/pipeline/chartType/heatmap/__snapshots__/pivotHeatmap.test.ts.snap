@@ -50,8 +50,10 @@ exports[`pivotHeatmap 1`] = `
         "shapeType": "rectRound",
       },
       "pivotGrid": {
+        "axisLabelColor": "#BCC1CB",
         "bodyFontColor": "#141414",
         "borderColor": "#e3e5eb",
+        "chartGridColor": "#F0F1F6",
         "frameCornerRadius": 0,
         "headerBackgroundColor": "transparent",
         "headerFontColor": "#21252c",
@@ -63,7 +65,18 @@ exports[`pivotHeatmap 1`] = `
         "titleFontWeight": "bold",
       },
       "tooltip": {
+        "backgroundColor": "#fff",
+        "borderColor": "#e3e5e8",
+        "borderRadius": 12,
+        "borderWidth": 1,
         "enable": true,
+        "fontSize": 12,
+        "keyColor": "#606773",
+        "lineHeight": 12,
+        "lineSpace": 6,
+        "padding": 7,
+        "titleColor": "#21252c",
+        "valueColor": "#21252c",
       },
     },
   },
@@ -114,8 +127,10 @@ exports[`pivotHeatmap 1`] = `
           "shapeType": "rectRound",
         },
         "pivotGrid": {
+          "axisLabelColor": "#BCC1CB",
           "bodyFontColor": "#141414",
           "borderColor": "#e3e5eb",
+          "chartGridColor": "#F0F1F6",
           "frameCornerRadius": 0,
           "headerBackgroundColor": "transparent",
           "headerFontColor": "#21252c",
@@ -127,7 +142,18 @@ exports[`pivotHeatmap 1`] = `
           "titleFontWeight": "bold",
         },
         "tooltip": {
+          "backgroundColor": "#fff",
+          "borderColor": "#e3e5e8",
+          "borderRadius": 12,
+          "borderWidth": 1,
           "enable": true,
+          "fontSize": 12,
+          "keyColor": "#606773",
+          "lineHeight": 12,
+          "lineSpace": 6,
+          "padding": 7,
+          "titleColor": "#21252c",
+          "valueColor": "#21252c",
         },
       },
     },
@@ -1279,6 +1305,10 @@ exports[`pivotHeatmap 2`] = `
             "domainLine": {
               "visible": false,
             },
+            "innerOffset": {
+              "bottom": 2,
+              "top": 2,
+            },
             "orient": "left",
             "type": "band",
           },
@@ -1286,6 +1316,10 @@ exports[`pivotHeatmap 2`] = `
             "bandPadding": 0,
             "domainLine": {
               "visible": false,
+            },
+            "innerOffset": {
+              "left": 2,
+              "right": 2,
             },
             "orient": "bottom",
             "type": "band",
@@ -1397,6 +1431,34 @@ exports[`pivotHeatmap 2`] = `
             ],
             "title": {
               "visible": false,
+            },
+          },
+          "style": {
+            "keyLabel": {
+              "fontColor": "#606773",
+              "fontSize": 12,
+              "lineHeight": 12,
+            },
+            "panel": {
+              "backgroundColor": "#fff",
+              "border": {
+                "color": "#e3e5e8",
+                "radius": 12,
+                "width": 1,
+              },
+              "padding": 7,
+            },
+            "titleLabel": {
+              "fontColor": "#21252c",
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "lineHeight": 12,
+            },
+            "valueLabel": {
+              "fontColor": "#21252c",
+              "fontSize": 12,
+              "fontWeight": "medium",
+              "lineHeight": 12,
             },
           },
           "visible": true,
@@ -2511,7 +2573,7 @@ exports[`pivotHeatmap 2`] = `
       },
       "padding": [
         0,
-        4,
+        12,
         0,
         4,
       ],
@@ -2564,15 +2626,15 @@ exports[`pivotHeatmap 2`] = `
     "cornerRightTopCellStyle": {
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
-      "borderLineWidth": 0,
+      "borderLineWidth": [
+        0,
+        0,
+        1,
+        1,
+      ],
       "frameStyle": {
         "borderColor": "#e3e5eb",
-        "borderLineWidth": [
-          0,
-          0,
-          1,
-          1,
-        ],
+        "borderLineWidth": 0,
       },
       "hover": {
         "cellBgColor": "#D9DDE4",
@@ -2600,6 +2662,9 @@ exports[`pivotHeatmap 2`] = `
       "bgColor": "transparent",
       "borderColor": "#e3e5eb",
       "borderLineWidth": [Function],
+      "frameStyle": {
+        "borderLineWidth": 0,
+      },
       "hover": {
         "borderLineWidth": 0,
         "cellBgColor": "#D9DDE4",
@@ -2618,7 +2683,7 @@ exports[`pivotHeatmap 2`] = `
       },
       "padding": [
         0,
-        4,
+        12,
         0,
         4,
       ],

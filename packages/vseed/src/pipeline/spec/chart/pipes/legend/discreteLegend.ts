@@ -17,6 +17,8 @@ export const discreteLegend: SpecPipe = (spec, context) => {
     labelFontColor,
     labelColor,
     labelFontSize = 12,
+    pagerIconColor,
+    pagerIconDisableColor,
     labelFontWeight,
     maxSize = 1,
     border,
@@ -36,6 +38,7 @@ export const discreteLegend: SpecPipe = (spec, context) => {
     : ['topRight', 'bottomRight', 'leftBottom', 'rightBottom', 'lb', 'rb', 'rt', 'br'].includes(position)
       ? 'end'
       : 'middle'
+  const labelTextColor = labelColor || labelFontColor
 
   result.legends = {
     type: 'discrete',
@@ -50,7 +53,7 @@ export const discreteLegend: SpecPipe = (spec, context) => {
       maxWidth: '30%',
       focusIconStyle: {
         size: labelFontSize + 2,
-        fill: labelColor || labelFontColor,
+        fill: labelTextColor,
         fontWeight: labelFontWeight,
       },
       shape: {
@@ -102,6 +105,21 @@ export const discreteLegend: SpecPipe = (spec, context) => {
           },
           unSelectedHover: {
             fill: null,
+          },
+        },
+      },
+    },
+    pager: {
+      textStyle: {
+        fill: labelTextColor,
+      },
+      handler: {
+        style: {
+          fill: pagerIconColor,
+        },
+        state: {
+          disable: {
+            fill: pagerIconDisableColor,
           },
         },
       },

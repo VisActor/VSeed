@@ -22,7 +22,7 @@ exports[`dark 1`] = `
           "textBackgroundBorderRadius": 0,
           "textBackgroundBorderWidth": 1,
           "textBackgroundColor": "#55595F",
-          "textBackgroundPadding": 4,
+          "textBackgroundPadding": 2,
           "textBackgroundVisible": true,
           "textColor": "#E2E3E6",
           "textFontSize": 12,
@@ -46,13 +46,13 @@ exports[`dark 1`] = `
           "textFontWeight": 400,
         },
         "annotationPoint": {
-          "textBackgroundBorderColor": "#ffffff",
-          "textBackgroundBorderRadius": 4,
+          "textBackgroundBorderColor": "#55595F",
+          "textBackgroundBorderRadius": 0,
           "textBackgroundBorderWidth": 1,
-          "textBackgroundColor": "#ffffff",
+          "textBackgroundColor": "#55595F",
           "textBackgroundPadding": 2,
           "textBackgroundVisible": true,
-          "textColor": "#4B4F54",
+          "textColor": "#E2E3E6",
           "textFontSize": 12,
           "textFontWeight": 400,
         },
@@ -114,18 +114,18 @@ exports[`dark 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelColor": "#646A73",
+        "labelColor": "#BBBDC3",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
+        "pagerIconColor": "#89909D",
+        "pagerIconDisableColor": "#2A2D33",
         "position": "rt",
         "shapeType": "rectRound",
       },
       "pivotGrid": {
-        "axisLabelColor": "#E2E3E6",
         "bodyFontColor": "#fdfdfd",
         "borderColor": "#4b4e53",
-        "chartGridColor": "#303339",
         "frameCornerRadius": 0,
         "headerBackgroundColor": "transparent",
         "headerFontColor": "#fdfdfd",
@@ -210,7 +210,7 @@ exports[`dark 1`] = `
         },
         "label": {
           "labelAngle": 0,
-          "labelColor": "#E2E3E6",
+          "labelColor": "#888C93",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "visible": true,
@@ -226,18 +226,18 @@ exports[`dark 1`] = `
           -90,
         ],
         "line": {
-          "lineColor": "#4B4F54",
+          "lineColor": "#303339",
           "lineWidth": 1,
           "visible": true,
         },
         "tick": {
-          "tickColor": "#4B4F54",
+          "tickColor": "#303339",
           "tickInside": false,
           "tickSize": 4,
           "visible": false,
         },
         "title": {
-          "titleColor": "#FDFDFD",
+          "titleColor": "#BBBDC3",
           "titleFontSize": 12,
           "titleFontWeight": 400,
           "titleText": "",
@@ -256,25 +256,25 @@ exports[`dark 1`] = `
         },
         "label": {
           "labelAngle": 0,
-          "labelColor": "#E2E3E6",
+          "labelColor": "#888C93",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "visible": true,
         },
         "line": {
-          "lineColor": "#4B4F54",
+          "lineColor": "#303339",
           "lineWidth": 1,
           "visible": false,
         },
         "nice": true,
         "tick": {
-          "tickColor": "#4B4F54",
+          "tickColor": "#303339",
           "tickInside": false,
           "tickSize": 4,
           "visible": false,
         },
         "title": {
-          "titleColor": "#FDFDFD",
+          "titleColor": "#BBBDC3",
           "titleFontSize": 12,
           "titleFontWeight": 400,
           "titleText": "",
@@ -303,7 +303,7 @@ exports[`dark 1`] = `
             "textBackgroundBorderRadius": 0,
             "textBackgroundBorderWidth": 1,
             "textBackgroundColor": "#55595F",
-            "textBackgroundPadding": 4,
+            "textBackgroundPadding": 2,
             "textBackgroundVisible": true,
             "textColor": "#E2E3E6",
             "textFontSize": 12,
@@ -327,13 +327,13 @@ exports[`dark 1`] = `
             "textFontWeight": 400,
           },
           "annotationPoint": {
-            "textBackgroundBorderColor": "#ffffff",
-            "textBackgroundBorderRadius": 4,
+            "textBackgroundBorderColor": "#55595F",
+            "textBackgroundBorderRadius": 0,
             "textBackgroundBorderWidth": 1,
-            "textBackgroundColor": "#ffffff",
+            "textBackgroundColor": "#55595F",
             "textBackgroundPadding": 2,
             "textBackgroundVisible": true,
-            "textColor": "#4B4F54",
+            "textColor": "#E2E3E6",
             "textFontSize": 12,
             "textFontWeight": 400,
           },
@@ -395,18 +395,18 @@ exports[`dark 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelColor": "#646A73",
+          "labelColor": "#BBBDC3",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
+          "pagerIconColor": "#89909D",
+          "pagerIconDisableColor": "#2A2D33",
           "position": "rt",
           "shapeType": "rectRound",
         },
         "pivotGrid": {
-          "axisLabelColor": "#E2E3E6",
           "bodyFontColor": "#fdfdfd",
           "borderColor": "#4b4e53",
-          "chartGridColor": "#303339",
           "frameCornerRadius": 0,
           "headerBackgroundColor": "transparent",
           "headerFontColor": "#fdfdfd",
@@ -491,7 +491,7 @@ exports[`dark 1`] = `
           },
           "label": {
             "labelAngle": 0,
-            "labelColor": "#E2E3E6",
+            "labelColor": "#888C93",
             "labelFontSize": 12,
             "labelFontWeight": 400,
             "visible": true,
@@ -507,18 +507,18 @@ exports[`dark 1`] = `
             -90,
           ],
           "line": {
-            "lineColor": "#4B4F54",
+            "lineColor": "#303339",
             "lineWidth": 1,
             "visible": true,
           },
           "tick": {
-            "tickColor": "#4B4F54",
+            "tickColor": "#303339",
             "tickInside": false,
             "tickSize": 4,
             "visible": false,
           },
           "title": {
-            "titleColor": "#FDFDFD",
+            "titleColor": "#BBBDC3",
             "titleFontSize": 12,
             "titleFontWeight": 400,
             "titleText": "",
@@ -537,25 +537,25 @@ exports[`dark 1`] = `
           },
           "label": {
             "labelAngle": 0,
-            "labelColor": "#E2E3E6",
+            "labelColor": "#888C93",
             "labelFontSize": 12,
             "labelFontWeight": 400,
             "visible": true,
           },
           "line": {
-            "lineColor": "#4B4F54",
+            "lineColor": "#303339",
             "lineWidth": 1,
             "visible": false,
           },
           "nice": true,
           "tick": {
-            "tickColor": "#4B4F54",
+            "tickColor": "#303339",
             "tickInside": false,
             "tickSize": 4,
             "visible": false,
           },
           "title": {
-            "titleColor": "#FDFDFD",
+            "titleColor": "#BBBDC3",
             "titleFontSize": 12,
             "titleFontWeight": 400,
             "titleText": "",
@@ -827,7 +827,7 @@ exports[`dark 2`] = `
       "domainLine": {
         "style": {
           "lineWidth": 1,
-          "stroke": "#4B4F54",
+          "stroke": "#303339",
         },
         "visible": true,
       },
@@ -860,7 +860,7 @@ exports[`dark 2`] = `
         "space": 8,
         "style": {
           "angle": 0,
-          "fill": "#E2E3E6",
+          "fill": "#888C93",
           "fontSize": 12,
           "fontWeight": 400,
           "maxLineWidth": 80,
@@ -881,14 +881,14 @@ exports[`dark 2`] = `
       "tick": {
         "inside": false,
         "style": {
-          "stroke": "#4B4F54",
+          "stroke": "#303339",
         },
         "tickSize": 4,
         "visible": false,
       },
       "title": {
         "style": {
-          "fill": "#FDFDFD",
+          "fill": "#BBBDC3",
           "fontSize": 12,
           "fontWeight": 400,
         },
@@ -903,7 +903,7 @@ exports[`dark 2`] = `
       "domainLine": {
         "style": {
           "lineWidth": 1,
-          "stroke": "#4B4F54",
+          "stroke": "#303339",
         },
         "visible": false,
       },
@@ -927,7 +927,7 @@ exports[`dark 2`] = `
         "space": 8,
         "style": {
           "angle": 0,
-          "fill": "#E2E3E6",
+          "fill": "#888C93",
           "fontSize": 12,
           "fontWeight": 400,
         },
@@ -940,14 +940,14 @@ exports[`dark 2`] = `
       "tick": {
         "inside": false,
         "style": {
-          "stroke": "#4B4F54",
+          "stroke": "#303339",
         },
         "tickSize": 4,
         "visible": false,
       },
       "title": {
         "style": {
-          "fill": "#FDFDFD",
+          "fill": "#BBBDC3",
           "fontSize": 12,
           "fontWeight": 400,
         },
@@ -1220,7 +1220,7 @@ exports[`dark 2`] = `
       "background": {
         "state": {
           "selectedHover": {
-            "fill": "#646A73",
+            "fill": "#BBBDC3",
             "fillOpacity": 0.05,
           },
           "unSelectedHover": {
@@ -1230,7 +1230,7 @@ exports[`dark 2`] = `
       },
       "focus": true,
       "focusIconStyle": {
-        "fill": "#646A73",
+        "fill": "#BBBDC3",
         "fontWeight": 400,
         "size": 14,
       },
@@ -1238,12 +1238,12 @@ exports[`dark 2`] = `
         "formatMethod": [Function],
         "state": {
           "unSelected": {
-            "fill": "#646A73",
+            "fill": "#BBBDC3",
             "fillOpacity": 0.8,
           },
         },
         "style": {
-          "fill": "#646A73",
+          "fill": "#BBBDC3",
           "fontSize": 12,
           "fontWeight": 400,
         },
@@ -1264,6 +1264,21 @@ exports[`dark 2`] = `
     "maxRow": 1,
     "orient": "right",
     "padding": 0,
+    "pager": {
+      "handler": {
+        "state": {
+          "disable": {
+            "fill": "#2A2D33",
+          },
+        },
+        "style": {
+          "fill": "#89909D",
+        },
+      },
+      "textStyle": {
+        "fill": "#BBBDC3",
+      },
+    },
     "position": "start",
     "type": "discrete",
     "visible": true,

@@ -1,3 +1,4 @@
+import { createFormatterByMeasure, findAllMeasures } from 'src/pipeline/utils'
 import type { Legend, SpecPipe } from 'src/types'
 
 export const colorLegend: SpecPipe = (spec, context) => {
@@ -43,6 +44,12 @@ export const colorLegend: SpecPipe = (spec, context) => {
         fontWeight: labelFontWeight,
       },
     },
+  }
+  const measures = findAllMeasures(advancedVSeed.measures)
+  const colorMeasure = measures.find((m) => m.encoding === 'color')
+  if (colorMeasure) {
+    const formatter = createFormatterByMeasure(colorMeasure)
+    result.legends.handlerText!.formatter = formatter
   }
   return result
 }

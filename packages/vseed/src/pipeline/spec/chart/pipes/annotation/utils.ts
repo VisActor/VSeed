@@ -11,3 +11,38 @@ export const isSubset = (sub: Datum, obj: Datum) => {
     return true
   })
 }
+
+export const ANNOTATION_AREA_TEXT_STYLE_BY_POSITION = {
+  top: {
+    textAlign: 'center',
+    textBaseline: 'top',
+  },
+  topRight: {
+    textAlign: 'right',
+    textBaseline: 'top',
+  },
+  topLeft: {
+    textAlign: 'left',
+    textBaseline: 'top',
+  },
+  bottom: {
+    textAlign: 'center',
+    textBaseline: 'bottom',
+  },
+  bottomLeft: {
+    textAlign: 'left',
+    textBaseline: 'bottom',
+  },
+  bottomRight: {
+    textAlign: 'right',
+    textBaseline: 'bottom',
+  },
+  left: {
+    textAlign: 'left',
+    textBaseline: 'middle',
+  },
+  right: {
+    textAlign: 'right',
+    textBaseline: 'middle',
+  },
+}

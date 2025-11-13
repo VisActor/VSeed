@@ -29,7 +29,7 @@ exports[`column 1`] = `
           "textBackgroundBorderRadius": 0,
           "textBackgroundBorderWidth": 1,
           "textBackgroundColor": "#BCC1CB",
-          "textBackgroundPadding": 4,
+          "textBackgroundPadding": 2,
           "textBackgroundVisible": true,
           "textColor": "#ffffff",
           "textFontSize": 12,
@@ -53,10 +53,10 @@ exports[`column 1`] = `
           "textFontWeight": 400,
         },
         "annotationPoint": {
-          "textBackgroundBorderColor": "#3641594d",
-          "textBackgroundBorderRadius": 4,
+          "textBackgroundBorderColor": "#BCC1CB",
+          "textBackgroundBorderRadius": 0,
           "textBackgroundBorderWidth": 1,
-          "textBackgroundColor": "#364159",
+          "textBackgroundColor": "#BCC1CB",
           "textBackgroundPadding": 2,
           "textBackgroundVisible": true,
           "textColor": "#ffffff",
@@ -121,10 +121,12 @@ exports[`column 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelColor": "#646A73",
+        "labelColor": "#606773",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
+        "pagerIconColor": "#89909D",
+        "pagerIconDisableColor": "#F1F2F5",
         "position": "rt",
         "shapeType": "rectRound",
       },
@@ -165,7 +167,7 @@ exports[`column 1`] = `
       },
       "xAxis": {
         "grid": {
-          "gridColor": "#36415926",
+          "gridColor": "#E3E5EB",
           "gridLineDash": [
             4,
             2,
@@ -191,18 +193,18 @@ exports[`column 1`] = `
           -90,
         ],
         "line": {
-          "lineColor": "#3641594d",
+          "lineColor": "#21252C",
           "lineWidth": 1,
           "visible": true,
         },
         "tick": {
-          "tickColor": "#3641594d",
+          "tickColor": "#21252C",
           "tickInside": false,
           "tickSize": 4,
           "visible": false,
         },
         "title": {
-          "titleColor": "#646A73",
+          "titleColor": "#606773",
           "titleFontSize": 12,
           "titleFontWeight": 400,
           "titleText": "",
@@ -211,7 +213,7 @@ exports[`column 1`] = `
       },
       "yAxis": {
         "grid": {
-          "gridColor": "#36415926",
+          "gridColor": "#E3E5EB",
           "gridLineDash": [
             4,
             2,
@@ -228,19 +230,19 @@ exports[`column 1`] = `
           "visible": true,
         },
         "line": {
-          "lineColor": "#3641594d",
+          "lineColor": "#21252C",
           "lineWidth": 1,
           "visible": false,
         },
         "nice": true,
         "tick": {
-          "tickColor": "#3641594d",
+          "tickColor": "#21252C",
           "tickInside": false,
           "tickSize": 4,
           "visible": false,
         },
         "title": {
-          "titleColor": "#646A73",
+          "titleColor": "#606773",
           "titleFontSize": 12,
           "titleFontWeight": 400,
           "titleText": "",
@@ -269,7 +271,7 @@ exports[`column 1`] = `
             "textBackgroundBorderRadius": 0,
             "textBackgroundBorderWidth": 1,
             "textBackgroundColor": "#BCC1CB",
-            "textBackgroundPadding": 4,
+            "textBackgroundPadding": 2,
             "textBackgroundVisible": true,
             "textColor": "#ffffff",
             "textFontSize": 12,
@@ -293,10 +295,10 @@ exports[`column 1`] = `
             "textFontWeight": 400,
           },
           "annotationPoint": {
-            "textBackgroundBorderColor": "#3641594d",
-            "textBackgroundBorderRadius": 4,
+            "textBackgroundBorderColor": "#BCC1CB",
+            "textBackgroundBorderRadius": 0,
             "textBackgroundBorderWidth": 1,
-            "textBackgroundColor": "#364159",
+            "textBackgroundColor": "#BCC1CB",
             "textBackgroundPadding": 2,
             "textBackgroundVisible": true,
             "textColor": "#ffffff",
@@ -361,10 +363,12 @@ exports[`column 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelColor": "#646A73",
+          "labelColor": "#606773",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
+          "pagerIconColor": "#89909D",
+          "pagerIconDisableColor": "#F1F2F5",
           "position": "rt",
           "shapeType": "rectRound",
         },
@@ -405,7 +409,7 @@ exports[`column 1`] = `
         },
         "xAxis": {
           "grid": {
-            "gridColor": "#36415926",
+            "gridColor": "#E3E5EB",
             "gridLineDash": [
               4,
               2,
@@ -431,18 +435,18 @@ exports[`column 1`] = `
             -90,
           ],
           "line": {
-            "lineColor": "#3641594d",
+            "lineColor": "#21252C",
             "lineWidth": 1,
             "visible": true,
           },
           "tick": {
-            "tickColor": "#3641594d",
+            "tickColor": "#21252C",
             "tickInside": false,
             "tickSize": 4,
             "visible": false,
           },
           "title": {
-            "titleColor": "#646A73",
+            "titleColor": "#606773",
             "titleFontSize": 12,
             "titleFontWeight": 400,
             "titleText": "",
@@ -451,7 +455,7 @@ exports[`column 1`] = `
         },
         "yAxis": {
           "grid": {
-            "gridColor": "#36415926",
+            "gridColor": "#E3E5EB",
             "gridLineDash": [
               4,
               2,
@@ -468,19 +472,19 @@ exports[`column 1`] = `
             "visible": true,
           },
           "line": {
-            "lineColor": "#3641594d",
+            "lineColor": "#21252C",
             "lineWidth": 1,
             "visible": false,
           },
           "nice": true,
           "tick": {
-            "tickColor": "#3641594d",
+            "tickColor": "#21252C",
             "tickInside": false,
             "tickSize": 4,
             "visible": false,
           },
           "title": {
-            "titleColor": "#646A73",
+            "titleColor": "#606773",
             "titleFontSize": 12,
             "titleFontWeight": 400,
             "titleText": "",
@@ -858,7 +862,7 @@ exports[`column 2`] = `
       "domainLine": {
         "style": {
           "lineWidth": 1,
-          "stroke": "#3641594d",
+          "stroke": "#21252C",
         },
         "visible": true,
       },
@@ -869,7 +873,7 @@ exports[`column 2`] = `
             2,
           ],
           "lineWidth": 0.5,
-          "stroke": "#36415926",
+          "stroke": "#E3E5EB",
         },
         "visible": false,
       },
@@ -912,14 +916,14 @@ exports[`column 2`] = `
       "tick": {
         "inside": false,
         "style": {
-          "stroke": "#3641594d",
+          "stroke": "#21252C",
         },
         "tickSize": 4,
         "visible": false,
       },
       "title": {
         "style": {
-          "fill": "#646A73",
+          "fill": "#606773",
           "fontSize": 12,
           "fontWeight": 400,
         },
@@ -934,7 +938,7 @@ exports[`column 2`] = `
       "domainLine": {
         "style": {
           "lineWidth": 1,
-          "stroke": "#3641594d",
+          "stroke": "#21252C",
         },
         "visible": false,
       },
@@ -945,7 +949,7 @@ exports[`column 2`] = `
             2,
           ],
           "lineWidth": 0.5,
-          "stroke": "#36415926",
+          "stroke": "#E3E5EB",
         },
         "visible": true,
       },
@@ -971,14 +975,14 @@ exports[`column 2`] = `
       "tick": {
         "inside": false,
         "style": {
-          "stroke": "#3641594d",
+          "stroke": "#21252C",
         },
         "tickSize": 4,
         "visible": false,
       },
       "title": {
         "style": {
-          "fill": "#646A73",
+          "fill": "#606773",
           "fontSize": 12,
           "fontWeight": 400,
         },
@@ -1347,7 +1351,7 @@ exports[`column 2`] = `
       "background": {
         "state": {
           "selectedHover": {
-            "fill": "#646A73",
+            "fill": "#606773",
             "fillOpacity": 0.05,
           },
           "unSelectedHover": {
@@ -1357,7 +1361,7 @@ exports[`column 2`] = `
       },
       "focus": true,
       "focusIconStyle": {
-        "fill": "#646A73",
+        "fill": "#606773",
         "fontWeight": 400,
         "size": 14,
       },
@@ -1365,12 +1369,12 @@ exports[`column 2`] = `
         "formatMethod": [Function],
         "state": {
           "unSelected": {
-            "fill": "#646A73",
+            "fill": "#606773",
             "fillOpacity": 0.8,
           },
         },
         "style": {
-          "fill": "#646A73",
+          "fill": "#606773",
           "fontSize": 12,
           "fontWeight": 400,
         },
@@ -1391,6 +1395,21 @@ exports[`column 2`] = `
     "maxRow": 1,
     "orient": "right",
     "padding": 0,
+    "pager": {
+      "handler": {
+        "state": {
+          "disable": {
+            "fill": "#F1F2F5",
+          },
+        },
+        "style": {
+          "fill": "#89909D",
+        },
+      },
+      "textStyle": {
+        "fill": "#606773",
+      },
+    },
     "position": "start",
     "type": "discrete",
     "visible": true,
@@ -1413,10 +1432,9 @@ exports[`column 2`] = `
       },
       "label": {
         "labelBackground": {
-          "padding": 4,
+          "padding": 2,
           "style": {
             "cornerRadius": 0,
-            "dy": 0,
             "fill": "#BCC1CB",
             "fillOpacity": 1,
             "lineWidth": 1,
@@ -1427,7 +1445,6 @@ exports[`column 2`] = `
         },
         "position": "insideTop",
         "style": {
-          "dy": 0,
           "fill": "#ffffff",
           "fontSize": 12,
           "fontWeight": 400,
@@ -1435,7 +1452,7 @@ exports[`column 2`] = `
           "opacity": 0.95,
           "stroke": "#BCC1CB",
           "textAlign": "center",
-          "textBaseline": "middle",
+          "textBaseline": "top",
         },
         "text": "区域",
         "visible": true,

@@ -14,13 +14,13 @@ export const getLightLinearAxis = (): YLinearAxis => ({
   title: {
     visible: false,
     titleText: '',
-    titleColor: '#646A73',
+    titleColor: '#606773',
     titleFontSize: 12,
     titleFontWeight: 400,
   },
   grid: {
     visible: true,
-    gridColor: '#36415926',
+    gridColor: '#E3E5EB',
     gridWidth: 0.5,
     gridLineDash: [4, 2],
   },
@@ -28,11 +28,11 @@ export const getLightLinearAxis = (): YLinearAxis => ({
     visible: false,
     tickInside: false,
     tickSize: 4,
-    tickColor: '#3641594d',
+    tickColor: '#21252C',
   },
   line: {
     visible: false,
-    lineColor: '#3641594d',
+    lineColor: '#21252C',
     lineWidth: 1,
   },
 })
@@ -54,13 +54,13 @@ export const getLightBandAxis = (): YBandAxis => ({
   title: {
     visible: false,
     titleText: '',
-    titleColor: '#646A73',
+    titleColor: '#606773',
     titleFontSize: 12,
     titleFontWeight: 400,
   },
   grid: {
     visible: false,
-    gridColor: '#36415926',
+    gridColor: '#E3E5EB',
     gridWidth: 0.5,
     gridLineDash: [4, 2],
   },
@@ -68,11 +68,11 @@ export const getLightBandAxis = (): YBandAxis => ({
     visible: false,
     tickInside: false,
     tickSize: 4,
-    tickColor: '#3641594d',
+    tickColor: '#21252C',
   },
   line: {
     visible: true,
-    lineColor: '#3641594d',
+    lineColor: '#21252C',
     lineWidth: 1,
   },
 })
@@ -83,14 +83,14 @@ export const getDarkLinearAxis = (): YLinearAxis => ({
   label: {
     visible: true,
     labelAngle: 0,
-    labelColor: '#E2E3E6',
+    labelColor: '#888C93',
     labelFontSize: 12,
     labelFontWeight: 400,
   },
   title: {
     visible: false,
     titleText: '',
-    titleColor: '#FDFDFD',
+    titleColor: '#BBBDC3',
     titleFontSize: 12,
     titleFontWeight: 400,
   },
@@ -104,11 +104,11 @@ export const getDarkLinearAxis = (): YLinearAxis => ({
     visible: false,
     tickInside: false,
     tickSize: 4,
-    tickColor: '#4B4F54',
+    tickColor: '#303339',
   },
   line: {
     visible: false,
-    lineColor: '#4B4F54',
+    lineColor: '#303339',
     lineWidth: 1,
   },
 })
@@ -123,14 +123,14 @@ export const getDarkBandAxis = (): YBandAxis => ({
   label: {
     visible: true,
     labelAngle: 0,
-    labelColor: '#E2E3E6',
+    labelColor: '#888C93',
     labelFontSize: 12,
     labelFontWeight: 400,
   },
   title: {
     visible: false,
     titleText: '',
-    titleColor: '#FDFDFD',
+    titleColor: '#BBBDC3',
     titleFontSize: 12,
     titleFontWeight: 400,
   },
@@ -144,11 +144,11 @@ export const getDarkBandAxis = (): YBandAxis => ({
     visible: false,
     tickInside: false,
     tickSize: 4,
-    tickColor: '#4B4F54',
+    tickColor: '#303339',
   },
   line: {
     visible: true,
-    lineColor: '#4B4F54',
+    lineColor: '#303339',
     lineWidth: 1,
   },
 })

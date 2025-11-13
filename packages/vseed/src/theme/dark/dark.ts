@@ -4,9 +4,9 @@ import {
   getDarkCrosshairLine,
   getDarkCrosshairRect,
   getDarkTableConfig,
-  getDefaultLegend,
   getDarkPivotChartGridConfig,
   getDarkLabel,
+  getDarkLegend,
 } from '../common'
 import { getDarkTooltip } from '../common/tooltip'
 import { getDarkBandAxis, getDarkLinearAxis } from '../common/axes'
@@ -34,7 +34,7 @@ export const darkTheme = (): CustomThemeConfig => {
     backgroundColor: 'transparent',
     color: getDarkColor(),
     label: getDarkLabel(),
-    legend: getDefaultLegend(),
+    legend: getDarkLegend(),
     tooltip: getDarkTooltip(),
   }
 

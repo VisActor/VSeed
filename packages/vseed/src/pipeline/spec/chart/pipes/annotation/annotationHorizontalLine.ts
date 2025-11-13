@@ -1,4 +1,4 @@
-import type { Datum, ICartesianSeries, ILineChartSpec, IMarkLineSpec } from '@visactor/vchart'
+import type { ILineChartSpec, IMarkLineSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { SpecPipe } from 'src/types'
 import { isArray, isNumber, isString } from 'remeda'
@@ -56,21 +56,8 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
 
     const generateOneMarkLine = (y: string | number) => {
       return {
-        positions: (datum: Datum[], series: ICartesianSeries) => {
-          const regionStart = series.getRegion()?.getLayoutStartPoint()
-          const xAxisHelper = series.getXAxisHelper()
-          const yAxisHelper = series.getYAxisHelper()
-          const yPos = yAxisHelper.getScale!(0).scale(y) + regionStart.y
-          const xRange = xAxisHelper.getScale!(0).range()
-
-          return [
-            { x: xRange ? xRange[0] + regionStart.x : 0, y: yPos },
-            {
-              x: xRange ? xRange[1] + regionStart.x : 0,
-              y: yPos,
-            },
-          ]
-        },
+        y,
+        autoRange: true,
         zIndex: ANNOTATION_Z_INDEX,
         line: {
           style: {
@@ -83,7 +70,7 @@ export const annotationHorizontalLine: SpecPipe = (spec, context) => {
         label: {
           confine: true,
           text: text,
-          position: positionMap[textPosition || 'insideEnd'],
+          position: (positionMap as any)[textPosition || 'insideEnd'],
           style: {
             opacity: 0.95,
             visible: true,

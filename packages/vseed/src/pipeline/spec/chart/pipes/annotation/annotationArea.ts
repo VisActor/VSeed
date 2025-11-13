@@ -1,8 +1,12 @@
+/**
+ * @description 适用于线图、面积图等的区块标注，计算标注区块的时候，只考虑点的大小
+ */
 import type { ICartesianSeries, ILineChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
-import type { Datum, SpecPipe } from 'src/types'
-import { isSubset } from './utils'
+import type { Datum, SpecPipe, VSeed } from 'src/types'
+import { ANNOTATION_AREA_TEXT_STYLE_BY_POSITION, isSubset } from './utils'
 import { ANNOTATION_Z_INDEX } from '../../../../utils/constant'
+import { isBarLikeChart } from 'src/pipeline/utils/chatType'
 
 export const annotationArea: SpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
@@ -26,17 +30,15 @@ export const annotationArea: SpecPipe = (spec, context) => {
     left: 'insideLeft',
     right: 'insideRight',
   }
+  const defaultTextPosition = isBarLikeChart(advancedVSeed as VSeed) ? 'right' : 'top'
 
   const markArea = annotationAreaList.flatMap((annotationArea) => {
     const {
       selector: selectorPoint,
       text = '',
-      textPosition = 'top',
       textColor = theme?.textColor ?? '#ffffff',
       textFontSize = theme?.textFontSize ?? 12,
       textFontWeight = theme?.textFontWeight ?? 400,
-      textAlign = 'center',
-      textBaseline = 'top',
 
       textBackgroundVisible = theme?.textBackgroundVisible ?? true,
       textBackgroundColor = theme?.textBackgroundColor ?? '#191d24',
@@ -57,9 +59,15 @@ export const annotationArea: SpecPipe = (spec, context) => {
 
     const dataset = advancedVSeed.dataset.flat()
     const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
-
-    const labelPosition = positionMap[textPosition || 'top']
-    const isBottom = labelPosition.toLocaleLowerCase().includes('bottom')
+    const textPosition: string = annotationArea.textPosition ?? defaultTextPosition
+    const textAlign =
+      annotationArea.textAlign ??
+      ANNOTATION_AREA_TEXT_STYLE_BY_POSITION[textPosition as keyof typeof ANNOTATION_AREA_TEXT_STYLE_BY_POSITION]
+        .textAlign
+    const textBaseline =
+      annotationArea.textBaseline ??
+      ANNOTATION_AREA_TEXT_STYLE_BY_POSITION[textPosition as keyof typeof ANNOTATION_AREA_TEXT_STYLE_BY_POSITION]
+        .textBaseline
 
     return {
       zIndex: ANNOTATION_Z_INDEX,
@@ -82,12 +90,12 @@ export const annotationArea: SpecPipe = (spec, context) => {
         }
 
         if (typeof xAxisHelper?.getBandwidth === 'function') {
-          const yScale = yAxisHelper.getScale()
+          const regionRect = context.getRegion().getLayoutRect()
 
           const minX = Math.min(...xyList.map((item) => item.x)) - (outerPadding || 4)
           const maxX = Math.max(...xyList.map((item) => item.x)) + (outerPadding || 4)
-          const minY = Math.min(...yScale.range())
-          const maxY = Math.max(...yScale.range())
+          const minY = 0
+          const maxY = regionRect.height
           return [
             // 左上
             {
@@ -113,12 +121,12 @@ export const annotationArea: SpecPipe = (spec, context) => {
         }
 
         if (typeof yAxisHelper?.getBandwidth === 'function') {
-          const xScale = xAxisHelper.getScale()
+          const regionRect = context.getRegion().getLayoutRect()
 
           const minY = Math.min(...xyList.map((item) => item.y)) - (outerPadding || 4)
           const maxY = Math.max(...xyList.map((item) => item.y)) + (outerPadding || 4)
-          const minX = Math.min(...xScale.range())
-          const maxX = Math.max(...xScale.range())
+          const minX = 0
+          const maxX = regionRect.width
 
           return [
             // 左上
@@ -147,12 +155,11 @@ export const annotationArea: SpecPipe = (spec, context) => {
         return []
       },
       label: {
-        position: labelPosition,
+        position: (positionMap as any)[textPosition],
         visible: true,
         text: text,
         style: {
           opacity: 0.95,
-          dy: isBottom ? -(textFontSize || 12) * 2 : 0,
           textAlign: textAlign,
           textBaseline: textBaseline,
           fill: textColor,
@@ -167,7 +174,6 @@ export const annotationArea: SpecPipe = (spec, context) => {
           padding: textBackgroundPadding,
           style: {
             opacity: 0.95,
-            dy: isBottom ? -(textFontSize || 12) * 2 : 0,
             cornerRadius: textBackgroundBorderRadius ?? 4,
             fill: textBackgroundColor,
             stroke: textBackgroundBorderColor,

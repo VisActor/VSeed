@@ -73,8 +73,5 @@ export const getLightPivotChartGridConfig = () => {
 export const getDarkPivotChartGridConfig = () => {
   const res = pickPivotChartGridConfig(getDarkTableConfig()) as PivotChartGridConfig
 
-  res.chartGridColor = '#303339'
-  res.axisLabelColor = '#E2E3E6'
-
   return res
 }

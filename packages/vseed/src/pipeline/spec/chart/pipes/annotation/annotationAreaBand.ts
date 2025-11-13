@@ -1,7 +1,7 @@
 import { type ICartesianSeries, type ILineChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { Datum, SpecPipe, VSeed } from 'src/types'
-import { isSubset } from './utils'
+import { ANNOTATION_AREA_TEXT_STYLE_BY_POSITION, isSubset } from './utils'
 import { ANNOTATION_Z_INDEX } from '../../../../utils/constant'
 import { isBarLikeChart } from 'src/pipeline/utils/chatType'
 
@@ -26,15 +26,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
     left: 'insideLeft',
     right: 'insideRight',
   }
-  const defaultOptions = isBarLikeChart(advancedVSeed as VSeed)
-    ? {
-        textPosition: 'right',
-        textAlign: 'right',
-      }
-    : {
-        textPosition: 'top',
-        textAlign: 'center',
-      }
+  const defaultTextPosition = isBarLikeChart(advancedVSeed as VSeed) ? 'right' : 'top'
 
   const markArea = annotationAreaList.flatMap((annotationArea) => {
     const {
@@ -43,8 +35,6 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
       textColor = theme?.textColor ?? '#ffffff',
       textFontSize = theme?.textFontSize ?? 12,
       textFontWeight = theme?.textFontWeight ?? 400,
-      textAlign = defaultOptions.textAlign,
-      textBaseline = 'middle',
 
       textBackgroundVisible = theme?.textBackgroundVisible ?? true,
       textBackgroundColor = theme?.textBackgroundColor ?? '#191d24',
@@ -62,9 +52,15 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
 
       outerPadding = theme?.outerPadding ?? 4,
     } = annotationArea
-    const textPosition: string = annotationArea.textPosition ?? defaultOptions.textPosition
-
-    const dy = textPosition.includes('bottom') ? -1 * textFontSize! : 0
+    const textPosition: string = annotationArea.textPosition ?? defaultTextPosition
+    const textAlign =
+      annotationArea.textAlign ??
+      ANNOTATION_AREA_TEXT_STYLE_BY_POSITION[textPosition as keyof typeof ANNOTATION_AREA_TEXT_STYLE_BY_POSITION]
+        .textAlign
+    const textBaseline =
+      annotationArea.textBaseline ??
+      ANNOTATION_AREA_TEXT_STYLE_BY_POSITION[textPosition as keyof typeof ANNOTATION_AREA_TEXT_STYLE_BY_POSITION]
+        .textBaseline
 
     const dataset = advancedVSeed.dataset.flat()
     const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
@@ -72,6 +68,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
     return {
       zIndex: ANNOTATION_Z_INDEX,
       regionRelative: true,
+      // coordinates: selectedData,
       positions: (data: Datum[], context: ICartesianSeries & { _scaleConfig?: { bandPosition?: number } }) => {
         const positionData = data.filter((item) => selectedData.some((datum) => isSubset(datum, item)))
         const xyList = positionData.map((datum) => context.dataToPosition(datum) as { x: number; y: number })
@@ -94,7 +91,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
         if (typeof xAxisHelper?.getBandwidth === 'function') {
           const depth = context.fieldX.length ?? 0
           const xBandWidth = xAxisHelper?.getBandwidth?.(depth - 1)
-          const yScale = yAxisHelper.getScale()
+          const regionRect = context.getRegion().getLayoutRect()
           const startX = Math.min(...xyList.map((item) => item.x)) - (outerPadding || 4)
           const endX = Math.max(...xyList.map((item) => item.x)) + (outerPadding || 4)
 
@@ -104,8 +101,8 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           const minX = middleX - width / 2
           const maxX = middleX + width / 2
 
-          const minY = Math.min(...yScale.range())
-          const maxY = Math.max(...yScale.range())
+          const minY = 0
+          const maxY = regionRect.height
 
           return [
             // 左上
@@ -134,7 +131,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
         if (typeof yAxisHelper?.getBandwidth === 'function') {
           const depth = context.fieldY.length ?? 0
           const yBandWidth = yAxisHelper?.getBandwidth?.(depth - 1)
-          const xScale = xAxisHelper.getScale()
+          const regionRect = context.getRegion().getLayoutRect()
 
           const startY = Math.min(...xyList.map((item) => item.y)) - (outerPadding || 4)
           const endY = Math.max(...xyList.map((item) => item.y)) + (outerPadding || 4)
@@ -143,9 +140,8 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
 
           const minY = middleY - width / 2
           const maxY = middleY + width / 2
-
-          const minX = Math.min(...xScale.range())
-          const maxX = Math.max(...xScale.range())
+          const minX = 0
+          const maxX = regionRect.width
 
           return [
             // 左上
@@ -179,7 +175,6 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
         text: text,
         style: {
           opacity: 0.95,
-          dy: dy,
           textAlign: textAlign,
           textBaseline: textBaseline,
           stroke: textBackgroundColor,
@@ -194,7 +189,6 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           padding: textBackgroundPadding,
           style: {
             opacity: 0.95,
-            dy: dy,
             cornerRadius: textBackgroundBorderRadius ?? 4,
             fill: textBackgroundColor,
             stroke: textBackgroundBorderColor,

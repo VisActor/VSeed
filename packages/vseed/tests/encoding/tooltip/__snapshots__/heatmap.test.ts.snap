@@ -42,10 +42,12 @@ exports[`heatmap 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelColor": "#646A73",
+        "labelColor": "#606773",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
+        "pagerIconColor": "#89909D",
+        "pagerIconDisableColor": "#F1F2F5",
         "position": "rt",
         "shapeType": "rectRound",
       },
@@ -119,10 +121,12 @@ exports[`heatmap 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelColor": "#646A73",
+          "labelColor": "#606773",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
+          "pagerIconColor": "#89909D",
+          "pagerIconDisableColor": "#F1F2F5",
           "position": "rt",
           "shapeType": "rectRound",
         },
@@ -703,8 +707,9 @@ exports[`heatmap 2`] = `
     "customFilter": [Function],
     "field": "__Dim_Color__",
     "handlerText": {
+      "formatter": [Function],
       "style": {
-        "fill": "#646A73",
+        "fill": "#606773",
         "fontSize": 12,
         "fontWeight": 400,
       },

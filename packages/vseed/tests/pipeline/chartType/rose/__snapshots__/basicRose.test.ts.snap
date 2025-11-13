@@ -40,10 +40,12 @@ exports[`basicRose 1`] = `
       "legend": {
         "border": true,
         "enable": true,
-        "labelColor": "#646A73",
+        "labelColor": "#606773",
         "labelFontSize": 12,
         "labelFontWeight": 400,
         "maxSize": 1,
+        "pagerIconColor": "#89909D",
+        "pagerIconDisableColor": "#F1F2F5",
         "position": "rt",
         "shapeType": "rectRound",
       },
@@ -115,10 +117,12 @@ exports[`basicRose 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelColor": "#646A73",
+          "labelColor": "#606773",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
+          "pagerIconColor": "#89909D",
+          "pagerIconDisableColor": "#F1F2F5",
           "position": "rt",
           "shapeType": "rectRound",
         },
@@ -655,7 +659,7 @@ exports[`basicRose 2`] = `
       "background": {
         "state": {
           "selectedHover": {
-            "fill": "#646A73",
+            "fill": "#606773",
             "fillOpacity": 0.05,
           },
           "unSelectedHover": {
@@ -665,7 +669,7 @@ exports[`basicRose 2`] = `
       },
       "focus": true,
       "focusIconStyle": {
-        "fill": "#646A73",
+        "fill": "#606773",
         "fontWeight": 400,
         "size": 14,
       },
@@ -673,12 +677,12 @@ exports[`basicRose 2`] = `
         "formatMethod": [Function],
         "state": {
           "unSelected": {
-            "fill": "#646A73",
+            "fill": "#606773",
             "fillOpacity": 0.8,
           },
         },
         "style": {
-          "fill": "#646A73",
+          "fill": "#606773",
           "fontSize": 12,
           "fontWeight": 400,
         },
@@ -699,6 +703,21 @@ exports[`basicRose 2`] = `
     "maxRow": 1,
     "orient": "right",
     "padding": 0,
+    "pager": {
+      "handler": {
+        "state": {
+          "disable": {
+            "fill": "#F1F2F5",
+          },
+        },
+        "style": {
+          "fill": "#89909D",
+        },
+      },
+      "textStyle": {
+        "fill": "#606773",
+      },
+    },
     "position": "start",
     "type": "discrete",
     "visible": true,

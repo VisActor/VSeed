@@ -118,6 +118,8 @@ exports[`labelFontColor 1`] = `
         "labelFontSize": 12,
         "labelFontWeight": "bold",
         "maxSize": 1,
+        "pagerIconColor": "#89909D",
+        "pagerIconDisableColor": "#F1F2F5",
         "position": "rt",
         "shapeType": "rectRound",
       },
@@ -354,10 +356,12 @@ exports[`labelFontColor 1`] = `
         "legend": {
           "border": true,
           "enable": true,
-          "labelColor": "#646A73",
+          "labelColor": "#606773",
           "labelFontSize": 12,
           "labelFontWeight": 400,
           "maxSize": 1,
+          "pagerIconColor": "#89909D",
+          "pagerIconDisableColor": "#F1F2F5",
           "position": "rt",
           "shapeType": "rectRound",
         },
@@ -1182,6 +1186,21 @@ exports[`labelFontColor 2`] = `
     "maxRow": 1,
     "orient": "right",
     "padding": 0,
+    "pager": {
+      "handler": {
+        "state": {
+          "disable": {
+            "fill": "#F1F2F5",
+          },
+        },
+        "style": {
+          "fill": "#89909D",
+        },
+      },
+      "textStyle": {
+        "fill": "#000",
+      },
+    },
     "position": "start",
     "type": "discrete",
     "visible": true,

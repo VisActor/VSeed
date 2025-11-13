@@ -65,7 +65,7 @@ export const kdeRegressionLine: SpecPipe = (spec, context) => {
                     })
                   : true
               })
-              .map((d: Datum) => (d as any)[encoding.value?.[0] as string]) as number[]
+              .map((d: Datum) => +(d as any)[encoding.value?.[0] as string])
             const res = kde(simpleData, {
               bandwidth: Math.abs(viewData[0][BinEndMeasureId] - viewData[0][BinStartMeasureId]),
             } as KDEOptions)

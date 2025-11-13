@@ -63,7 +63,7 @@ export const ecdfRegressionLine: SpecPipe = (spec, context) => {
                     })
                   : true
               })
-              .map((d: Datum) => (d as any)[encoding.value?.[0] as string]) as number[]
+              .map((d: Datum) => +(d as any)[encoding.value?.[0] as string])
             const res = ecdf(simpleData)
             const N = Math.max(3, Math.floor(simpleData.length / 4))
             const lineData = res.evaluateGrid(N)

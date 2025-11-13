@@ -14,14 +14,14 @@ describe('createFormatterByMeasure', () => {
   it('uses autoFormatter when autoFormat is true', () => {
     const measure: Measure = { id: 'm', autoFormat: true }
     const formatter = createFormatterByMeasure(measure)
-    // autoFormatter should do a reasonable default formatting; we just assert it changes numeric formatting
-    expect(fmt(formatter, 1000)).not.toBe('1000')
+    // Use a large number that compact notation will modify across locales (1000000 -> e.g. 1M / 100万 etc.)
+    expect(fmt(formatter, 1000000)).not.toBe('1000000')
   })
 
   it('uses autoFormatter when autoFormat is nullish and no format provided', () => {
     const measure: Measure = { id: 'm' }
     const formatter = createFormatterByMeasure(measure)
-    expect(fmt(formatter, 1000)).not.toBe('1000')
+    expect(fmt(formatter, 1000000)).not.toBe('1000000')
   })
 
   it('prefers numFormat over format when both provided', () => {

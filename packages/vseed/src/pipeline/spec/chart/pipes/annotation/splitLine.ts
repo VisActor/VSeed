@@ -263,17 +263,17 @@ export const splitLine: SpecPipe = (spec, context) => {
     const measureValueKey = datasetReshapeInfo[0].foldInfo.measureValue
 
     seriesSpec.point.style.fill = (datum) => {
-      return datum?.[measureValueKey] >= splitValue ? colorConfig.positiveColor : colorConfig.negativeColor
+      return datum?.[measureValueKey] < splitValue ? colorConfig.negativeColor : colorConfig.positiveColor
     }
     seriesSpec.line.style.stroke = (datum) => {
-      return datum?.[measureValueKey] >= splitValue ? colorConfig.positiveColor : colorConfig.negativeColor
+      return datum?.[measureValueKey] < splitValue ? colorConfig.negativeColor : colorConfig.positiveColor
     }
     if (seriesSpec.label && (seriesSpec.label as any).visible && isNullish((seriesSpec.label as any).style?.fill)) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       ;(seriesSpec.label as any).style = {
         ...(seriesSpec.label as any).style,
         fill: (datum: any) => {
-          return datum?.[measureValueKey] >= splitValue ? colorConfig.positiveColor : colorConfig.negativeColor
+          return datum?.[measureValueKey] < splitValue ? colorConfig.negativeColor : colorConfig.positiveColor
         },
       }
     }

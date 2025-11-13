@@ -1,3 +1,4 @@
+import type { IBarChartSpec } from '@visactor/vchart'
 import type { Datum, SpecPipe, StackCornerRadius } from 'src/types'
 
 export const stackCornerRadius: SpecPipe = (spec, context) => {
@@ -20,5 +21,5 @@ export const stackCornerRadius: SpecPipe = (spec, context) => {
 
       return 0
     },
-  }
+  } as IBarChartSpec
 }

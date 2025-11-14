@@ -2887,7 +2887,7 @@ exports[`horizontal 2`] = `
       "content": [
         {
           "hasShape": true,
-          "key": "profit",
+          "key": [Function],
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

@@ -1065,7 +1065,7 @@ exports[`combinationAreaPercent 2`] = `
             "content": [
               {
                 "hasShape": true,
-                "key": "销售额",
+                "key": [Function],
                 "shapeType": "rectRound",
                 "value": [Function],
                 "visible": true,
@@ -1402,7 +1402,7 @@ exports[`combinationAreaPercent 2`] = `
             "content": [
               {
                 "hasShape": true,
-                "key": "利润",
+                "key": [Function],
                 "shapeType": "rectRound",
                 "value": [Function],
                 "visible": true,

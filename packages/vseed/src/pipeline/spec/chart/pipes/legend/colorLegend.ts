@@ -3,7 +3,7 @@ import type { Legend, VChartSpecPipe } from 'src/types'
 
 export const colorLegend: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
-  const { advancedVSeed } = context
+  const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo, chartType } = advancedVSeed
   const { unfoldInfo } = datasetReshapeInfo[0]
   const baseConfig = advancedVSeed.config[chartType] as { legend: Legend }
@@ -45,7 +45,7 @@ export const colorLegend: VChartSpecPipe = (spec, context) => {
       },
     },
   }
-  const measures = findAllMeasures(advancedVSeed.measures)
+  const measures = findAllMeasures(vseed.measures)
   const colorMeasure = measures.find((m) => m.encoding === 'color')
   if (colorMeasure) {
     const formatter = createFormatterByMeasure(colorMeasure)

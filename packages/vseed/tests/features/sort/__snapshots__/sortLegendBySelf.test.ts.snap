@@ -1522,7 +1522,7 @@ exports[`sortLegendBySelf 2`] = `
       "content": [
         {
           "hasShape": true,
-          "key": "数量",
+          "key": [Function],
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

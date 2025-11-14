@@ -1405,7 +1405,7 @@ exports[`sortByCustom 2`] = `
       "content": [
         {
           "hasShape": true,
-          "key": "利润",
+          "key": [Function],
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

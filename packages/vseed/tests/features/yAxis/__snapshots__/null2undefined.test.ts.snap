@@ -1519,7 +1519,7 @@ exports[`null2undefined 2`] = `
       "content": [
         {
           "hasShape": true,
-          "key": "股价（美元）",
+          "key": [Function],
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

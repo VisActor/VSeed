@@ -1237,7 +1237,7 @@ exports[`defaultParentIdForDualAxis 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": "sum(amount)",
+                    "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
@@ -1381,7 +1381,7 @@ exports[`defaultParentIdForDualAxis 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": undefined,
+                    "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
@@ -1763,7 +1763,7 @@ exports[`defaultParentIdForDualAxis 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": "sum(amount)",
+                    "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
@@ -1907,7 +1907,7 @@ exports[`defaultParentIdForDualAxis 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": undefined,
+                    "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,

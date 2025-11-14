@@ -1518,7 +1518,7 @@ exports[`array 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": "利润",
+                    "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
@@ -1662,7 +1662,7 @@ exports[`array 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": "销售额",
+                    "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
@@ -2046,7 +2046,7 @@ exports[`array 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": "比率",
+                    "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
@@ -2190,7 +2190,7 @@ exports[`array 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": "回报率",
+                    "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,

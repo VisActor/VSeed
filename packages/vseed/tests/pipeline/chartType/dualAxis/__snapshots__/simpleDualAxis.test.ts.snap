@@ -1832,7 +1832,7 @@ exports[`simpleDualAxis 2`] = `
           "content": [
             {
               "hasShape": true,
-              "key": "goalProfit",
+              "key": [Function],
               "shapeType": "rectRound",
               "value": [Function],
               "visible": true,
@@ -2424,7 +2424,7 @@ exports[`simpleDualAxis 2`] = `
           "content": [
             {
               "hasShape": true,
-              "key": "profit",
+              "key": [Function],
               "shapeType": "rectRound",
               "value": [Function],
               "visible": true,

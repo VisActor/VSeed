@@ -1,9 +1,9 @@
 import type { IAreaChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
-import type { Datum, PointStyle, SpecPipe } from 'src/types'
+import type { Datum, PointStyle, VChartSpecPipe } from 'src/types'
 import { isEmpty, isNullish } from 'remeda'
 
-export const pointStyle: SpecPipe = (spec, context) => {
+export const pointStyle: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { markStyle } = advancedVSeed
   const { pointStyle } = markStyle

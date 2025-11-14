@@ -1,7 +1,7 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
-import type { Dimensions, SpecPipe } from 'src/types'
+import type { Dimensions, PivotChartSpecPipe } from 'src/types'
 
-export const pivotRowDimensions: SpecPipe = (spec, context): Partial<PivotChartConstructorOptions> => {
+export const pivotRowDimensions: PivotChartSpecPipe = (spec, context) => {
   const result = { ...spec } as PivotChartConstructorOptions
   const { advancedVSeed } = context
   const dimensions = advancedVSeed.dimensions as Dimensions

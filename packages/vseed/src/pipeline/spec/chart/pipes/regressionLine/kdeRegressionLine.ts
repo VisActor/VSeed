@@ -3,10 +3,10 @@ import type { KDEOptions } from '@visactor/vutils'
 import { isNullish, uniqueBy } from 'remeda'
 import { kde, array } from '@visactor/vutils'
 import { BinEndMeasureId, BinStartMeasureId } from 'src/dataReshape'
-import type { Datum, Dimension, SpecPipe, Encoding, RegressionLineConfig, KdeRegressionLine } from 'src/types'
+import type { Datum, Dimension, VChartSpecPipe, Encoding, RegressionLineConfig, KdeRegressionLine } from 'src/types'
 import { defaultRegressionLineColor, defaultRegressionLineLabelX, defaultRegressionLineLabelY } from './common'
 
-export const kdeRegressionLine: SpecPipe = (spec, context) => {
+export const kdeRegressionLine: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as IHistogramChartSpec
   const { advancedVSeed, vseed } = context
   const { chartType, encoding = {} as Encoding, dimensions, regressionLine } = advancedVSeed

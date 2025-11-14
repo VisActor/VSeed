@@ -1,8 +1,8 @@
 import type { IHistogramChartSpec } from '@visactor/vchart'
 import { BinEndMeasureId, BinStartMeasureId, FoldMeasureValue } from 'src/index'
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 
-export const initHistogram: SpecPipe = (spec) => {
+export const initHistogram: VChartSpecPipe = (spec) => {
   const result = { ...spec } as IHistogramChartSpec
 
   // 直方图默认支持明细数据

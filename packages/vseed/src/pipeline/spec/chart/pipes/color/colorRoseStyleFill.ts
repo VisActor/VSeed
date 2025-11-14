@@ -1,8 +1,8 @@
 import type { IRoseChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
 import { isLinearColor } from './colorAdapter'
+import type { VChartSpecPipe } from 'src/types/pipeline/spec/spec'
 
-export const colorRoseStyleFill = (stylePipe: SpecPipe): SpecPipe => {
+export const colorRoseStyleFill = (stylePipe: VChartSpecPipe): VChartSpecPipe => {
   return (spec, context) => {
     const result = stylePipe(spec, context) as IRoseChartSpec
 

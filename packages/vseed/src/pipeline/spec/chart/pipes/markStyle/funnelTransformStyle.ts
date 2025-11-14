@@ -1,6 +1,6 @@
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 
-export const funnelTransformStyle: SpecPipe = (spec, context) => {
+export const funnelTransformStyle: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const config = advancedVSeed.config?.[chartType as 'funnel']?.transform

@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   datasetXY,
   backgroundColor,
@@ -35,7 +35,7 @@ import {
   addRegionPadding,
 } from '../pipes'
 
-const roseParallel: SpecPipeline = [
+const roseParallel: VChartSpecPipeline = [
   initRoseParallel,
   stackCornerRadius,
   colorAdapter(color, linearColor),
@@ -54,7 +54,7 @@ const roseParallel: SpecPipeline = [
   annotationAreaBand,
 ]
 
-const pivotRoseParallel: SpecPipeline = [
+const pivotRoseParallel: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -84,4 +84,4 @@ const pivotRoseParallel: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const roseParallelSpecPipeline: SpecPipeline = [pivotAdapter(roseParallel, pivotRoseParallel)]
+export const roseParallelSpecPipeline = [pivotAdapter(roseParallel, pivotRoseParallel)]

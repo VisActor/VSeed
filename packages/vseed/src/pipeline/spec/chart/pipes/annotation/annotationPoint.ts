@@ -1,11 +1,11 @@
 import type { ILineChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
-import type { Datum, SpecPipe, VSeed } from 'src/types'
+import type { Datum, VChartSpecPipe, VSeed } from 'src/types'
 import { isSubset } from './utils'
 import { ANNOTATION_Z_INDEX } from '../../../../utils/constant'
 import { isBarLikeChart } from 'src/pipeline/utils/chatType'
 
-export const annotationPoint: SpecPipe = (spec, context) => {
+export const annotationPoint: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { annotation, config } = advancedVSeed
 

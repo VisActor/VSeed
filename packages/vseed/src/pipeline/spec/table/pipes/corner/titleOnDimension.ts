@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import type { SpecPipe } from 'src/types'
 
-export const titleOnDimension: SpecPipe = (spec) => {
-  const { rows = [], columns = [] } = spec as any
+import type { PivotTableSpecPipe } from 'src/types'
+
+export const titleOnDimension: PivotTableSpecPipe = (spec) => {
+  const { rows = [], columns = [] } = spec
 
   return {
     ...spec,

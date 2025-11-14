@@ -1,12 +1,12 @@
 import type { ISpec } from '@visactor/vchart'
 import { AXIS_LABEL_SPACE, LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
 import { createNumFormatter } from '../../../../utils'
-import type { SpecPipe, YLinearAxis } from 'src/types'
+import type { VChartSpecPipe, YLinearAxis } from 'src/types'
 import { isEmpty, isNullish } from 'remeda'
 import { createLinearFormat } from './format/linearFormat'
 import { defaultTitleText } from './title/defaultTitleText'
 
-export const yLinearSecondary: SpecPipe = (spec, context) => {
+export const yLinearSecondary: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed

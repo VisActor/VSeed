@@ -1,7 +1,7 @@
 import type { IBarChartSpec } from '@visactor/vchart'
-import type { Datum, SpecPipe, StackCornerRadius } from 'src/types'
+import type { Datum, VChartSpecPipe, StackCornerRadius } from 'src/types'
 
-export const stackCornerRadius: SpecPipe = (spec, context) => {
+export const stackCornerRadius: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const stackCornerRadius = advancedVSeed.config?.[chartType as 'column']?.stackCornerRadius as StackCornerRadius

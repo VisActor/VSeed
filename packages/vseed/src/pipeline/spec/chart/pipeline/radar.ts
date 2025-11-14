@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, SpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   datasetXY,
   backgroundColor,
@@ -36,7 +36,7 @@ import {
   addRegionPadding,
 } from '../pipes'
 
-const radar: SpecPipeline = [
+const radar: VChartSpecPipeline = [
   initRadar,
   colorAdapter(color, linearColor),
   backgroundColor,
@@ -58,7 +58,7 @@ const radar: SpecPipeline = [
   // annotationArea,
 ]
 
-const pivotRadar: SpecPipeline = [
+const pivotRadar: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,

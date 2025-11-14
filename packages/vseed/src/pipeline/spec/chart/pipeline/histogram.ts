@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   label,
   xLinear,
@@ -35,7 +35,7 @@ import {
   pivotAxisStyle,
 } from '../pipes'
 
-const histogram: SpecPipeline = [
+const histogram: VChartSpecPipeline = [
   initHistogram,
   colorAdapter(color, linearColor),
   backgroundColor,
@@ -56,7 +56,7 @@ const histogram: SpecPipeline = [
   ecdfRegressionLine,
 ]
 
-const pivotHistogram: SpecPipeline = [
+const pivotHistogram: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   datasetPivot,
@@ -85,4 +85,4 @@ const pivotHistogram: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const histogramSpecPipeline: SpecPipeline = [pivotAdapter(histogram, pivotHistogram)]
+export const histogramSpecPipeline = [pivotAdapter(histogram, pivotHistogram)]

@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   backgroundColor,
   color,
@@ -32,7 +32,7 @@ import {
   addRegionPadding,
 } from '../pipes'
 
-const donut: SpecPipeline = [
+const donut: VChartSpecPipeline = [
   initDonut,
   colorAdapter(color, linearColor),
   backgroundColor,
@@ -48,7 +48,7 @@ const donut: SpecPipeline = [
   annotationArea,
 ]
 
-const pivotDonut: SpecPipeline = [
+const pivotDonut: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -75,4 +75,4 @@ const pivotDonut: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const donutSpecPipeline: SpecPipeline = [pivotAdapter(donut, pivotDonut)]
+export const donutSpecPipeline = [pivotAdapter(donut, pivotDonut)]

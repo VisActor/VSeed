@@ -1,9 +1,9 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
 import { isCombination, isPivot } from 'src/pipeline/utils'
-import type { Config, SpecPipe } from 'src/types'
+import type { Config, PivotChartSpecPipe } from 'src/types'
 import { isNullish } from 'remeda'
 
-export const pivotGridStyle: SpecPipe = (spec, context) => {
+export const pivotGridStyle: PivotChartSpecPipe = (spec, context) => {
   const { vseed, advancedVSeed } = context
   const { config, chartType } = advancedVSeed
   const themConfig = (config?.[chartType] as Config['line'])?.pivotGrid ?? {}

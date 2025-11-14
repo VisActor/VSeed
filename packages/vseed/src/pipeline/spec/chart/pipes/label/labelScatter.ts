@@ -1,8 +1,8 @@
 import type { IScatterChartSpec } from '@visactor/vchart'
-import type { Encoding, FoldInfo, Label, SpecPipe } from 'src/types'
+import type { Encoding, FoldInfo, Label, VChartSpecPipe } from 'src/types'
 import { buildLabel } from './label'
 
-export const labelScatter: SpecPipe = (spec, context) => {
+export const labelScatter: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as IScatterChartSpec
   const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo } = advancedVSeed

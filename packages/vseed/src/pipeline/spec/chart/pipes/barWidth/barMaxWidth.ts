@@ -1,7 +1,7 @@
 import { isNullish } from 'remeda'
-import type { BarMaxWidth, SpecPipe } from 'src/types'
+import type { BarMaxWidth, VChartSpecPipe } from 'src/types'
 
-export const barMaxWidth: SpecPipe = (spec, context) => {
+export const barMaxWidth: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const barMaxWidth = advancedVSeed.config?.[chartType as 'column']?.barMaxWidth as BarMaxWidth

@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   yLinear,
   backgroundColor,
@@ -41,7 +41,7 @@ import {
   pivotTitle,
 } from '../pipes'
 
-const scatter: SpecPipeline = [
+const scatter: VChartSpecPipeline = [
   initScatter,
   colorAdapter(color, linearColor),
   backgroundColor,
@@ -67,7 +67,7 @@ const scatter: SpecPipeline = [
   logisticRegressionLine,
 ]
 
-const pivotScatter: SpecPipeline = [
+const pivotScatter: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -100,4 +100,4 @@ const pivotScatter: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const scatterSpecPipeline: SpecPipeline = [pivotAdapter(scatter, pivotScatter)]
+export const scatterSpecPipeline = [pivotAdapter(scatter, pivotScatter)]

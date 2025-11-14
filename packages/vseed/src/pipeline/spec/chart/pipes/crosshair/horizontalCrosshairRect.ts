@@ -1,7 +1,7 @@
 import type { ICartesianCrosshairSpec, ILineChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { SpecPipe, Spec } from 'src/types'
 
-export const horizontalCrosshairRect: SpecPipe = (spec, context) => {
+export const horizontalCrosshairRect: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed

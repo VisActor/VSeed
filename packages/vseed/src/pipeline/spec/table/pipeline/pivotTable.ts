@@ -14,19 +14,20 @@ import {
   pivotTableBodyCell,
 } from '../pipes'
 import { dataConfig } from '../pipes/indicators/pivotDataConfig'
+import type { PivotTableConstructorOptions } from '@visactor/vtable'
 
-export const pivotTableSpecPipeline: SpecPipeline = [
+export const pivotTableSpecPipeline: SpecPipeline<PivotTableConstructorOptions> = [
   initPivotTable,
   pivotColumns,
   pivotRows,
   titleOnDimension,
   pivotIndicators,
-  bodyStyle,
-  headerStyle,
+  bodyStyle<PivotTableConstructorOptions>,
+  headerStyle<PivotTableConstructorOptions>,
   rowHeaderStyle,
   cornerHeaderStyle,
-  frameStyle,
-  selectionStyle,
+  frameStyle<PivotTableConstructorOptions>,
+  selectionStyle<PivotTableConstructorOptions>,
   dataConfig,
   pivotTableBodyCell,
 ]

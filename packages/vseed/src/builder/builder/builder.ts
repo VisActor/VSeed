@@ -15,6 +15,12 @@ import { buildSpec } from './buildSpec'
 import { build } from './build'
 import { intl } from 'src/i18n'
 import { getColorIdMap, getColorItems } from './advanced'
+import type {
+  ListTableConstructorOptions,
+  PivotChartConstructorOptions,
+  PivotTableConstructorOptions,
+} from '@visactor/vtable'
+import type { ISpec } from '@visactor/vchart'
 
 export class Builder implements VSeedBuilder {
   private _vseed: VSeed
@@ -144,8 +150,8 @@ export class Builder implements VSeedBuilder {
    */
 
   static getSpecPipeline = (chartType: ChartType) => {
-    const customPipe = Builder._customSpecPipe[chartType] as SpecPipe
-    const pipeline = Builder._specPipelineMap[chartType] as SpecPipeline
+    const customPipe = Builder._customSpecPipe[chartType] as SpecPipe<Spec>
+    const pipeline = Builder._specPipelineMap[chartType] as SpecPipeline<Spec>
     if (customPipe) {
       pipeline.push(customPipe)
     }
@@ -175,8 +181,22 @@ export class Builder implements VSeedBuilder {
   static from = (vseed: VSeed) => new Builder(vseed)
 
   static _advancedPipelineMap: Partial<Record<ChartType, AdvancedPipeline>> = {}
-  static _specPipelineMap: Partial<Record<ChartType, SpecPipeline>> = {}
+  static _specPipelineMap: Partial<
+    Record<
+      ChartType,
+      | SpecPipeline<ISpec | PivotChartConstructorOptions>
+      | SpecPipeline<ISpec>
+      | SpecPipeline<PivotChartConstructorOptions>
+      | SpecPipeline<ListTableConstructorOptions>
+      | SpecPipeline<PivotTableConstructorOptions>
+    >
+  > = {}
   static _customAdvancedPipe: Partial<Record<ChartType, AdvancedPipe>> = {}
-  static _customSpecPipe: Partial<Record<ChartType, SpecPipe>> = {}
+  static _customSpecPipe: Partial<
+    Record<
+      ChartType,
+      SpecPipe<ISpec | PivotChartConstructorOptions | ListTableConstructorOptions | PivotTableConstructorOptions>
+    >
+  > = {}
   static _themeMap: Record<string, CustomThemeConfig> = {}
 }

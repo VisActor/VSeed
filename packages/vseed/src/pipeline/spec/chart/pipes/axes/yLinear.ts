@@ -7,11 +7,11 @@ import {
   isColumnPercent,
   LINEAR_AXIS_INNER_OFFSET_TOP,
 } from 'src/pipeline/utils'
-import type { SpecPipe, YLinearAxis } from 'src/types'
+import type { Spec, SpecPipe, YLinearAxis } from 'src/types'
 import { createLinearFormat, createLinearPercentFormat } from './format/linearFormat'
 import { defaultTitleText } from './title/defaultTitleText'
 
-export const yLinear: SpecPipe = (spec, context) => {
+export const yLinear: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed

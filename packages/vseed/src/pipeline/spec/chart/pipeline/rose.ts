@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { SpecPipeline, Spec } from 'src/types'
 import {
   datasetXY,
   backgroundColor,
@@ -31,8 +31,9 @@ import {
   pivotTitle,
   addRegionPadding,
 } from '../pipes'
+import type { PivotChartConstructorOptions } from '@visactor/vtable'
 
-const rose: SpecPipeline = [
+const rose: SpecPipeline<Spec> = [
   initRose,
   stackCornerRadius,
   stackInverse,
@@ -48,7 +49,7 @@ const rose: SpecPipeline = [
   tooltip,
 ]
 
-const pivotRose: SpecPipeline = [
+const pivotRose: SpecPipeline<PivotChartConstructorOptions> = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -75,4 +76,4 @@ const pivotRose: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const roseSpecPipeline = [pivotAdapter(rose, pivotRose)]
+export const roseSpecPipeline: SpecPipeline<Spec | PivotChartConstructorOptions> = [pivotAdapter(rose, pivotRose)]

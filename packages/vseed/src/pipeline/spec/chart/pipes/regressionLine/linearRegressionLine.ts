@@ -15,6 +15,7 @@ import type {
   LinearRegressionLine,
   SpecPipelineContext,
   PolynomialRegressionLine,
+  Spec,
 } from 'src/types'
 
 export const generateRegressionLinePipe = (
@@ -29,7 +30,7 @@ export const generateRegressionLinePipe = (
     evaluateGrid: (N: number) => { x: number; y: number }[]
   },
   getOptions?: (lineConfig: any) => any,
-): SpecPipe => {
+): SpecPipe<Spec> => {
   return ((spec: Partial<IScatterChartSpec>, context: SpecPipelineContext): Partial<IScatterChartSpec> => {
     const result = { ...spec }
     const { advancedVSeed } = context
@@ -241,16 +242,19 @@ export const generateRegressionLinePipe = (
     })
 
     return result
-  }) as SpecPipe
+  }) as SpecPipe<Spec>
 }
 
-export const linearRegressionLine: SpecPipe = generateRegressionLinePipe('linearRegressionLine', regressionLinear)
-export const lowessRegressionLine: SpecPipe = generateRegressionLinePipe('lowessRegressionLine', regressionLowess)
-export const polynomialRegressionLine: SpecPipe = generateRegressionLinePipe(
+export const linearRegressionLine: SpecPipe<Spec> = generateRegressionLinePipe('linearRegressionLine', regressionLinear)
+export const lowessRegressionLine: SpecPipe<Spec> = generateRegressionLinePipe('lowessRegressionLine', regressionLowess)
+export const polynomialRegressionLine: SpecPipe<Spec> = generateRegressionLinePipe(
   'polynomialRegressionLine',
   regressionPolynomial,
   (lineConfig: PolynomialRegressionLine) => {
     return { degree: lineConfig.degree ?? 2 }
   },
 )
-export const logisticRegressionLine: SpecPipe = generateRegressionLinePipe('logisticRegressionLine', regressionLogistic)
+export const logisticRegressionLine: SpecPipe<Spec> = generateRegressionLinePipe(
+  'logisticRegressionLine',
+  regressionLogistic,
+)

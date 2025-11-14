@@ -1,10 +1,10 @@
 import { uniqueBy } from 'remeda'
 import { createFormatterByMeasure, findAllMeasures, findMeasureById } from '../../../../utils'
-import type { Datum, Dimensions, FoldInfo, Locale, Measures, SpecPipe, Tooltip, UnfoldInfo } from 'src/types'
+import type { Datum, Dimensions, FoldInfo, Locale, Measures, Spec, SpecPipe, Tooltip, UnfoldInfo } from 'src/types'
 import { ORIGINAL_DATA } from 'src/dataReshape'
 import { getTooltipStyle } from './tooltipStyle'
 
-export const tooltipHeatmap: SpecPipe = (spec, context) => {
+export const tooltipHeatmap: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo, chartType, locale, dimensions, encoding } = advancedVSeed

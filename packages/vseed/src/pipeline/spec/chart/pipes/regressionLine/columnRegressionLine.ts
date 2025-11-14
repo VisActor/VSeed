@@ -1,10 +1,17 @@
 import type { IBarChartSpec, ICartesianSeries, IChart, IVChart } from '@visactor/vchart'
 import { isNullish } from 'remeda'
 import { array, clamper, regressionPolynomial } from '@visactor/vutils'
-import type { Datum, SpecPipe, RegressionLineConfig, LinearRegressionLine, PolynomialRegressionLine } from 'src/types'
+import type {
+  Datum,
+  SpecPipe,
+  RegressionLineConfig,
+  LinearRegressionLine,
+  PolynomialRegressionLine,
+  Spec,
+} from 'src/types'
 import { defaultRegressionLineColor } from './common'
 
-export const columnPolynomialRegressionLine: SpecPipe = (spec, context): Partial<IBarChartSpec> => {
+export const columnPolynomialRegressionLine: SpecPipe<Spec> = (spec, context): Partial<IBarChartSpec> => {
   const result = { ...spec } as Partial<IBarChartSpec>
   const { advancedVSeed } = context
   const { chartType, regressionLine } = advancedVSeed

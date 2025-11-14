@@ -1,11 +1,11 @@
 import { type ICartesianSeries, type ILineChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
-import type { Datum, SpecPipe, VSeed } from 'src/types'
+import type { Datum, Spec, SpecPipe, VSeed } from 'src/types'
 import { ANNOTATION_AREA_TEXT_STYLE_BY_POSITION, isSubset } from './utils'
 import { ANNOTATION_Z_INDEX } from '../../../../utils/constant'
 import { isBarLikeChart } from 'src/pipeline/utils/chatType'
 
-export const annotationAreaBand: SpecPipe = (spec, context) => {
+export const annotationAreaBand: SpecPipe<Spec> = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { annotation, config } = advancedVSeed
 

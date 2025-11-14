@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { SpecPipeline, Spec } from 'src/types'
 import {
   datasetXY,
   backgroundColor,
@@ -29,8 +29,9 @@ import {
   pivotAxisStyle,
 } from '../pipes'
 import { initHeatmap } from '../pipes/init/heatmap'
+import type { PivotChartConstructorOptions } from '@visactor/vtable'
 
-const heatmap: SpecPipeline = [
+const heatmap: SpecPipeline<Spec> = [
   initHeatmap,
   backgroundColor,
   datasetXY,
@@ -45,7 +46,7 @@ const heatmap: SpecPipeline = [
   annotationArea,
 ]
 
-const pivotHeatmap: SpecPipeline = [
+const pivotHeatmap: SpecPipeline<PivotChartConstructorOptions> = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -69,4 +70,6 @@ const pivotHeatmap: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const heatmapSpecPipeline: SpecPipeline = [pivotAdapter(heatmap, pivotHeatmap)]
+export const heatmapSpecPipeline: SpecPipeline<Spec | PivotChartConstructorOptions> = [
+  pivotAdapter(heatmap, pivotHeatmap),
+]

@@ -1,8 +1,8 @@
 import type { IBarSeriesSpec, ILineSeriesSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { SpecPipe, Spec } from 'src/types'
 import { isLinearColor } from '../color/colorAdapter'
 
-export const initDualAxisPrimary: SpecPipe = (spec, context) => {
+export const initDualAxisPrimary: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec } as IBarSeriesSpec
   const { advancedVSeed } = context
   const { datasetReshapeInfo } = advancedVSeed
@@ -20,7 +20,7 @@ export const initDualAxisPrimary: SpecPipe = (spec, context) => {
   return result
 }
 
-export const initDualAxisSecondary: SpecPipe = (spec, context) => {
+export const initDualAxisSecondary: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec } as ILineSeriesSpec
   const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo } = advancedVSeed

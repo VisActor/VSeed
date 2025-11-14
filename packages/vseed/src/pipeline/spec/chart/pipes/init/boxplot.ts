@@ -1,5 +1,5 @@
 import type { IBoxPlotChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { SpecPipe, Spec } from 'src/types'
 import { isDeepEqual } from 'remeda'
 import {
   MaxMeasureId,
@@ -11,7 +11,7 @@ import {
   Q3MeasureValue,
 } from 'src/dataReshape/constant'
 
-export const initBoxplot: SpecPipe = (spec, context) => {
+export const initBoxplot: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec } as IBoxPlotChartSpec
   const { advancedVSeed } = context
   const { datasetReshapeInfo, encoding } = advancedVSeed

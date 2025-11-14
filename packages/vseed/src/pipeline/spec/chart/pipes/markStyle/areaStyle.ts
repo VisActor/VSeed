@@ -1,10 +1,10 @@
 import type { IAreaChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
-import type { AreaStyle, Datum, LineStyle, SpecPipe } from 'src/types'
+import type { AreaStyle, Datum, LineStyle, SpecPipe, Spec } from 'src/types'
 import { groupBy, isEmpty, isNullish } from 'remeda'
 import { getCurveTension, getCurveType } from './curve'
 
-export const areaStyle: SpecPipe = (spec, context) => {
+export const areaStyle: SpecPipe<Spec> = (spec, context) => {
   const { advancedVSeed } = context
   const { markStyle, datasetReshapeInfo, dataset } = advancedVSeed
   const { areaStyle, lineStyle } = markStyle

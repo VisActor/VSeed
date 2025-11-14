@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { SpecPipeline, Spec } from 'src/types'
 import {
   backgroundColor,
   label,
@@ -33,8 +33,9 @@ import {
   pivotAxisStyle,
   pivotTitle,
 } from '../pipes'
+import type { PivotChartConstructorOptions } from '@visactor/vtable'
 
-const boxplot: SpecPipeline = [
+const boxplot: SpecPipeline<Spec> = [
   initBoxplot,
   stackCornerRadius,
   colorAdapter(color, linearColor),
@@ -54,7 +55,7 @@ const boxplot: SpecPipeline = [
   annotationAreaBand,
 ]
 
-const pivotBoxplot: SpecPipeline = [
+const pivotBoxplot: SpecPipeline<PivotChartConstructorOptions> = [
   initPivot,
   pivotGridStyle,
   datasetPivot,
@@ -82,4 +83,6 @@ const pivotBoxplot: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const boxplotSpecPipeline: SpecPipeline = [pivotAdapter(boxplot, pivotBoxplot)]
+export const boxplotSpecPipeline: SpecPipeline<Spec | PivotChartConstructorOptions> = [
+  pivotAdapter(boxplot, pivotBoxplot),
+]

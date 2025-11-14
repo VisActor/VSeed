@@ -1,7 +1,7 @@
 import type { IScatterChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { SpecPipe, Spec } from 'src/types'
 
-export const initScatter: SpecPipe = (spec, context) => {
+export const initScatter: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec } as IScatterChartSpec
   const { advancedVSeed } = context
   const { datasetReshapeInfo } = advancedVSeed

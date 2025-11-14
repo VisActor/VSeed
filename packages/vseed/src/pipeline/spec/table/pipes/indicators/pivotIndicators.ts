@@ -1,10 +1,10 @@
-import type { PivotChartConstructorOptions, BaseTableAPI } from '@visactor/vtable'
+import type { PivotChartConstructorOptions, BaseTableAPI, PivotTableConstructorOptions } from '@visactor/vtable'
 import { isNumber } from 'remeda'
 import { intl } from 'src/i18n'
 import { createFormatterByMeasure, findMeasureById } from 'src/pipeline/utils'
 import type { Datum, FoldInfo, MeasureTree, SpecPipe } from 'src/types'
 
-export const pivotIndicators: SpecPipe = (spec, context) => {
+export const pivotIndicators: SpecPipe<PivotTableConstructorOptions> = (spec, context) => {
   const { advancedVSeed } = context
   const { measures, datasetReshapeInfo } = advancedVSeed
   const { foldInfo } = datasetReshapeInfo[0]

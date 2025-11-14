@@ -1,8 +1,8 @@
 import type { IBarSeriesSpec, ISeriesSpec } from '@visactor/vchart'
 import { DUAL_AXIS_CHART_COLUMN_Z_INDEX, DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX } from 'src/pipeline/utils/constant'
-import type { DualChartType, SpecPipe } from 'src/types'
+import type { DualChartType, SpecPipe, Spec } from 'src/types'
 
-export const dualChartTypePrimary: SpecPipe = (spec, context) => {
+export const dualChartTypePrimary: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec, zIndex: DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX } as ISeriesSpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
@@ -69,7 +69,7 @@ export const dualChartTypePrimary: SpecPipe = (spec, context) => {
   return result
 }
 
-export const dualChartTypeSecondary: SpecPipe = (spec, context) => {
+export const dualChartTypeSecondary: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec, zIndex: DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX } as ISeriesSpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed

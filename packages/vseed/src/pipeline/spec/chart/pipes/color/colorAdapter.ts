@@ -1,7 +1,11 @@
+import type { PivotChartConstructorOptions } from '@visactor/vtable'
 import { findAllMeasures } from 'src/pipeline/utils'
-import type { AdvancedVSeed, SpecPipe, VSeed } from 'src/types'
+import type { AdvancedVSeed, Spec, SpecPipe, VSeed } from 'src/types'
 
-export const colorAdapter = (ordinalPipe: SpecPipe, linearPipe: SpecPipe): SpecPipe => {
+export const colorAdapter = <T extends PivotChartConstructorOptions | Spec>(
+  ordinalPipe: SpecPipe<T>,
+  linearPipe: SpecPipe<T>,
+): SpecPipe<T> => {
   return (spec, context) => {
     const { advancedVSeed, vseed } = context
     if (isLinearColor(advancedVSeed, vseed)) {

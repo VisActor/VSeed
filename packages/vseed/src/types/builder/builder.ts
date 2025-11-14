@@ -10,7 +10,7 @@ export abstract class VSeedBuilder {
   abstract buildSpec: (advancedVSeed: AdvancedVSeed) => Spec
 
   static getAdvancedPipeline: (chartType: ChartType) => AdvancedPipeline
-  static getSpecPipeline: (chartType: ChartType) => SpecPipeline
+  static getSpecPipeline: <T extends Spec>(chartType: ChartType) => SpecPipeline<T>
   static getTheme: (themeKey: string) => CustomThemeConfig
   static getThemeMap: () => Record<string, CustomThemeConfig>
 

@@ -9,14 +9,15 @@ import {
   selectionStyle,
   tableBodyCell,
 } from '../pipes'
+import type { ListTableConstructorOptions } from '@visactor/vtable'
 
-export const tableSpecPipeline: SpecPipeline = [
+export const tableSpecPipeline: SpecPipeline<ListTableConstructorOptions> = [
   initTable,
   dimensionTreeToColumns,
   measureTreeToColumns,
   bodyStyle,
   headerStyle,
-  frameStyle,
-  selectionStyle,
+  frameStyle<ListTableConstructorOptions>,
+  selectionStyle<ListTableConstructorOptions>,
   tableBodyCell,
 ]

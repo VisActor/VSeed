@@ -3,7 +3,7 @@ import { isCombination, isPivot } from 'src/pipeline/utils'
 import type { Config, SpecPipe } from 'src/types'
 import { isNullish } from 'remeda'
 
-export const pivotGridStyle: SpecPipe = (spec, context) => {
+export const pivotGridStyle: SpecPipe<PivotChartConstructorOptions> = (spec, context) => {
   const { vseed, advancedVSeed } = context
   const { config, chartType } = advancedVSeed
   const themConfig = (config?.[chartType] as Config['line'])?.pivotGrid ?? {}

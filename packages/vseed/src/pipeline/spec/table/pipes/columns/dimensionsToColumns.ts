@@ -2,7 +2,7 @@ import type { ColumnsDefine, ListTableConstructorOptions } from '@visactor/vtabl
 import { isMeasure } from 'src/pipeline/utils'
 import type { Dimension, DimensionGroup, DimensionTree, SpecPipe } from 'src/types'
 
-export const dimensionTreeToColumns: SpecPipe = (spec, context) => {
+export const dimensionTreeToColumns: SpecPipe<ListTableConstructorOptions> = (spec, context) => {
   const { advancedVSeed } = context
   const dimensions = (advancedVSeed as unknown as { dimensions: DimensionTree }).dimensions
   const result = { ...spec } as ListTableConstructorOptions

@@ -1,7 +1,7 @@
 import type { PivotTableConstructorOptions } from '@visactor/vtable'
 import type { SpecPipe } from 'src/types'
 
-export const initPivotTable: SpecPipe = (spec, context) => {
+export const initPivotTable: SpecPipe<PivotTableConstructorOptions> = (spec, context) => {
   const { advancedVSeed } = context
   const { dataset } = advancedVSeed
   const { config } = advancedVSeed

@@ -11,13 +11,14 @@ import type {
   Measure,
   Measures,
   NumFormat,
+  Spec,
   SpecPipe,
 } from 'src/types'
 import { isNumber, merge, uniqueBy } from 'remeda'
 import { selector } from 'src/dataSelector'
 import { MeasureId } from 'src/dataReshape/constant'
 
-export const label: SpecPipe = (spec, context) => {
+export const label: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
   const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo } = advancedVSeed

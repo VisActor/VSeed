@@ -1,8 +1,8 @@
 import type { IRadarChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { SpecPipe, Spec } from 'src/types'
 import { isLinearColor } from '../color/colorAdapter'
 
-export const initRadar: SpecPipe = (spec, context) => {
+export const initRadar: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec } as IRadarChartSpec
   const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo } = advancedVSeed

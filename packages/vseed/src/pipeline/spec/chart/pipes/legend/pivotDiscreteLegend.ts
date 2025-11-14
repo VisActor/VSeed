@@ -3,8 +3,11 @@ import { unique } from 'remeda'
 import type { Color, Legend, SpecPipe } from 'src/types'
 import { createSpecifiedForColorMapping } from '../color/color'
 
-export const pivotDiscreteLegend: SpecPipe = (spec, context): Partial<PivotChartConstructorOptions> => {
-  const result = { ...spec } as PivotChartConstructorOptions
+export const pivotDiscreteLegend: SpecPipe<PivotChartConstructorOptions> = (
+  spec,
+  context,
+): Partial<PivotChartConstructorOptions> => {
+  const result = { ...spec }
   const { advancedVSeed } = context
   const { chartType } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { legend: Legend; color: Color }

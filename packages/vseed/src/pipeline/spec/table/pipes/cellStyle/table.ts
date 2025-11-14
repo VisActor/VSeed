@@ -7,7 +7,7 @@ import type { MeasureSelector, Selectors } from 'src/types/dataSelector'
 import { pickBodyCellStyle } from './common'
 import { preorderTraverse } from 'src/pipeline/utils/tree/traverse'
 
-export const tableBodyCell: SpecPipe = (spec, context) => {
+export const tableBodyCell: SpecPipe<ListTableConstructorOptions> = (spec, context) => {
   const { advancedVSeed } = context
   const { cellStyle } = advancedVSeed
   const bodyCellStyle = cellStyle?.bodyCellStyle

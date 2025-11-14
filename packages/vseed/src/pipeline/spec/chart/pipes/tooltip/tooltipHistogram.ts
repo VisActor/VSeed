@@ -6,7 +6,7 @@ import { getTooltipStyle } from './tooltipStyle'
 
 const VCHART_OUTLIER_KEY = '__VCHART_BOX_PLOT_OUTLIER_VALUE'
 
-export const tooltipHistogram: SpecPipe = (spec, context): Partial<Spec> => {
+export const tooltipHistogram: SpecPipe<Spec> = (spec, context): Partial<Spec> => {
   const result = { ...spec }
   const { advancedVSeed } = context
   const { chartType, dimensions, encoding } = advancedVSeed

@@ -1,9 +1,9 @@
 import type { ILineChartSpec } from '@visactor/vchart'
-import type { Encoding, FoldInfo, Label, SpecPipe } from 'src/types'
+import type { Encoding, FoldInfo, Label, SpecPipe, Spec } from 'src/types'
 import { buildLabel } from './label'
 import { DUAL_AXIS_LABEL_Z_INDEX } from 'src/pipeline/utils/constant'
 
-export const labelPrimary: SpecPipe = (spec, context) => {
+export const labelPrimary: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
   const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo, encoding } = advancedVSeed
@@ -24,7 +24,7 @@ export const labelPrimary: SpecPipe = (spec, context) => {
   return result
 }
 
-export const labelSecondary: SpecPipe = (spec, context) => {
+export const labelSecondary: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
   const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo, encoding } = advancedVSeed

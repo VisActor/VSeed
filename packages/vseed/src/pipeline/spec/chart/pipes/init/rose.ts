@@ -1,7 +1,7 @@
 import type { IRoseChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { SpecPipe, Spec } from 'src/types'
 
-export const initRose: SpecPipe = (spec, context) => {
+export const initRose: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec } as IRoseChartSpec
   const { advancedVSeed } = context
   const { dataset, datasetReshapeInfo } = advancedVSeed

@@ -1,8 +1,8 @@
 import type { IPieChartSpec } from '@visactor/vchart'
-import type { Encoding, FoldInfo, PieLabel, SpecPipe } from 'src/types'
+import type { Encoding, FoldInfo, PieLabel, SpecPipe, Spec } from 'src/types'
 import { buildLabel } from './label'
 
-export const labelPie: SpecPipe = (spec, context) => {
+export const labelPie: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec } as IPieChartSpec
   const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo } = advancedVSeed

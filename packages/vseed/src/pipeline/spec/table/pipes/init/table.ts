@@ -1,7 +1,7 @@
 import type { ListTableConstructorOptions } from '@visactor/vtable'
 import type { SpecPipe } from 'src/types'
 
-export const initTable: SpecPipe = (spec, context) => {
+export const initTable: SpecPipe<ListTableConstructorOptions> = (spec, context) => {
   const { advancedVSeed } = context
   const { dataset } = advancedVSeed
   const { config } = advancedVSeed

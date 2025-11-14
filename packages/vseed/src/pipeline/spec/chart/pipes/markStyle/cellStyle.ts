@@ -1,8 +1,8 @@
 import type { IHeatmapChartSpec } from '@visactor/vchart'
 import { DATUM_HIDE_KEY } from 'src/pipeline/utils/constant'
-import type { SpecPipe } from 'src/types'
+import type { SpecPipe, Spec } from 'src/types'
 
-export const cellStyle: SpecPipe = (spec, context) => {
+export const cellStyle: SpecPipe<Spec> = (spec, context) => {
   const result = {
     ...spec,
     cell: {

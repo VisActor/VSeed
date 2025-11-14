@@ -6,7 +6,7 @@ import type { BodyCellStyle, Datum, SpecPipe } from 'src/types'
 import { pickBodyCellStyle } from './common'
 import { FoldMeasureValue, MeasureId } from 'src/dataReshape'
 
-export const pivotTableBodyCell: SpecPipe = (spec, context) => {
+export const pivotTableBodyCell: SpecPipe<PivotTableConstructorOptions> = (spec, context) => {
   const { advancedVSeed } = context
   const { cellStyle } = advancedVSeed
   const bodyCellStyle = cellStyle?.bodyCellStyle

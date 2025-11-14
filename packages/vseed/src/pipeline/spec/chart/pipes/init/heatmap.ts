@@ -1,7 +1,7 @@
 import type { IHeatmapChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { SpecPipe, Spec } from 'src/types'
 
-export const initHeatmap: SpecPipe = (spec, context) => {
+export const initHeatmap: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec } as IHeatmapChartSpec
   const { advancedVSeed } = context
   const { datasetReshapeInfo } = advancedVSeed

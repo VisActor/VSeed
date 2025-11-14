@@ -1,8 +1,9 @@
+import type { PivotTableConstructorOptions } from '@visactor/vtable'
 import { MeasureId } from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils/measures/find'
 import type { Dimensions, SpecPipe } from 'src/types'
 
-export const pivotRows: SpecPipe = (spec, context) => {
+export const pivotRows: SpecPipe<PivotTableConstructorOptions> = (spec, context) => {
   const { advancedVSeed } = context
   const dimensions = advancedVSeed.dimensions as Dimensions
   const { encoding, measures } = advancedVSeed

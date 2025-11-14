@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { SpecPipeline, Spec } from 'src/types'
 import {
   backgroundColor,
   color,
@@ -31,8 +31,9 @@ import {
   pivotTitle,
   addRegionPadding,
 } from '../pipes'
+import type { PivotChartConstructorOptions } from '@visactor/vtable'
 
-const donut: SpecPipeline = [
+const donut: SpecPipeline<Spec> = [
   initDonut,
   colorAdapter(color, linearColor),
   backgroundColor,
@@ -48,7 +49,7 @@ const donut: SpecPipeline = [
   annotationArea,
 ]
 
-const pivotDonut: SpecPipeline = [
+const pivotDonut: SpecPipeline<PivotChartConstructorOptions> = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -75,4 +76,4 @@ const pivotDonut: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const donutSpecPipeline: SpecPipeline = [pivotAdapter(donut, pivotDonut)]
+export const donutSpecPipeline: SpecPipeline<Spec | PivotChartConstructorOptions> = [pivotAdapter(donut, pivotDonut)]

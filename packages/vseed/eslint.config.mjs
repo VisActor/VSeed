@@ -37,4 +37,11 @@ export default [
       '@typescript-eslint/no-unsafe-return': 'warn',
     },
   },
+  {
+    // 针对测试文件的覆盖配置
+    files: ['**/*.test.ts', '**/*.spec.ts', '**/__tests__/**/*.ts'],
+    rules: {
+      '@typescript-eslint/no-unnecessary-type-assertion': 'off',
+    },
+  },
 ]

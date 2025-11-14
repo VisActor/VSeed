@@ -1,8 +1,8 @@
 import type { IAreaChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { SpecPipe, Spec } from 'src/types'
 import { isLinearColor } from '../color/colorAdapter'
 
-export const initArea: SpecPipe = (spec, context) => {
+export const initArea: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec } as IAreaChartSpec
   const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo } = advancedVSeed

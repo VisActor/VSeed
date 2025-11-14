@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { SpecPipeline, Spec } from 'src/types'
 import {
   initBar,
   datasetYX,
@@ -36,8 +36,9 @@ import {
   pivotAxisStyle,
   pivotTitle,
 } from '../pipes'
+import type { PivotChartConstructorOptions } from '@visactor/vtable'
 
-const barPercent: SpecPipeline = [
+const barPercent: SpecPipeline<Spec> = [
   initBar,
   stackCornerRadius,
   barMaxWidth,
@@ -59,7 +60,7 @@ const barPercent: SpecPipeline = [
   annotationAreaBand,
 ]
 
-const pivotBarPercent: SpecPipeline = [
+const pivotBarPercent: SpecPipeline<PivotChartConstructorOptions> = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsCol,
@@ -89,4 +90,6 @@ const pivotBarPercent: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const barPercentSpecPipeline: SpecPipeline = [pivotAdapter(barPercent, pivotBarPercent)]
+export const barPercentSpecPipeline: SpecPipeline<Spec | PivotChartConstructorOptions> = [
+  pivotAdapter(barPercent, pivotBarPercent),
+]

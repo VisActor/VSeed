@@ -1,8 +1,8 @@
 import { isPivotChart } from 'src/pipeline/utils'
-import type { SpecPipe } from 'src/types'
+import type { SpecPipe, Spec } from 'src/types'
 import type { ISpec } from '@visactor/vchart'
 
-export const datasetBoxplot: SpecPipe = (spec, context) => {
+export const datasetBoxplot: SpecPipe<Spec> = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo } = advancedVSeed
   const { id } = datasetReshapeInfo[0]

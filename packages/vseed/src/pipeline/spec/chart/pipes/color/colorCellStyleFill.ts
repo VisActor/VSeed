@@ -1,8 +1,8 @@
 import type { IHeatmapChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { SpecPipe, Spec } from 'src/types'
 import { isLinearColor } from './colorAdapter'
 
-export const colorCellStyleFill = (stylePipe: SpecPipe): SpecPipe => {
+export const colorCellStyleFill = (stylePipe: SpecPipe<Spec>): SpecPipe<Spec> => {
   return (spec, context) => {
     const result = stylePipe(spec, context) as IHeatmapChartSpec
 

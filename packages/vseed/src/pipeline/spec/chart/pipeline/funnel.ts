@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { SpecPipeline, Spec } from 'src/types'
 import {
   backgroundColor,
   datasetXY,
@@ -30,8 +30,9 @@ import {
   funnelTransformStyle,
   pivotTitle,
 } from '../pipes'
+import type { PivotChartConstructorOptions } from '@visactor/vtable'
 
-const funnel: SpecPipeline = [
+const funnel: SpecPipeline<Spec> = [
   initFunnel,
   backgroundColor,
   datasetXY,
@@ -47,7 +48,7 @@ const funnel: SpecPipeline = [
   annotationArea,
 ]
 
-const pivotFunnel: SpecPipeline = [
+const pivotFunnel: SpecPipeline<PivotChartConstructorOptions> = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -73,4 +74,4 @@ const pivotFunnel: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const funnelSpecPipeline: SpecPipeline = [pivotAdapter(funnel, pivotFunnel)]
+export const funnelSpecPipeline: SpecPipeline<Spec | PivotChartConstructorOptions> = [pivotAdapter(funnel, pivotFunnel)]

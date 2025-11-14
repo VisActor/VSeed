@@ -17,7 +17,7 @@ import { getTooltipStyle } from './tooltipStyle'
 const boxPlotMeasureKeys = [MaxMeasureId, Q3MeasureValue, MedianMeasureId, Q1MeasureValue, MinMeasureId]
 const VCHART_OUTLIER_KEY = '__VCHART_BOX_PLOT_OUTLIER_VALUE'
 
-export const tooltipBoxplot: SpecPipe = (spec, context): Partial<Spec> => {
+export const tooltipBoxplot: SpecPipe<Spec> = (spec, context): Partial<Spec> => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
   const { chartType, dimensions, encoding } = advancedVSeed

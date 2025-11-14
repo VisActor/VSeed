@@ -1,7 +1,7 @@
 import type { IPieChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { SpecPipe, Spec } from 'src/types'
 
-export const initDonut: SpecPipe = (spec, context) => {
+export const initDonut: SpecPipe<Spec> = (spec, context) => {
   const result = { ...spec } as IPieChartSpec
   const { advancedVSeed } = context
   const { datasetReshapeInfo } = advancedVSeed

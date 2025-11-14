@@ -1,7 +1,11 @@
-import type { SpecPipe, TableConfig } from 'src/types'
+import type { SpecPipelineContext, TableConfig } from 'src/types'
 import type { ThemeLike, WithTheme } from './type'
+import type { ListTableConstructorOptions, PivotTableConstructorOptions } from '@visactor/vtable'
 
-export const bodyStyle: SpecPipe = (spec, context) => {
+export const bodyStyle = <T extends ListTableConstructorOptions | PivotTableConstructorOptions>(
+  spec: T,
+  context: SpecPipelineContext,
+): Partial<T> => {
   const result = { ...spec } as Partial<typeof spec> & WithTheme
   const { advancedVSeed } = context
   const { chartType, config } = advancedVSeed

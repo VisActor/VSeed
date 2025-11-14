@@ -1,8 +1,8 @@
 import type { IFunnelChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { SpecPipe, Spec } from 'src/types'
 import { isLinearColor } from './colorAdapter'
 
-export const colorFunnelStyleFill = (stylePipe: SpecPipe): SpecPipe => {
+export const colorFunnelStyleFill = (stylePipe: SpecPipe<Spec>): SpecPipe<Spec> => {
   return (spec, context) => {
     const result = stylePipe(spec, context) as IFunnelChartSpec
 

@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { SpecPipeline, Spec } from 'src/types'
 import {
   datasetXY,
   xBand,
@@ -37,8 +37,9 @@ import {
   pivotAxisStyle,
   splitLine,
 } from '../pipes'
+import type { PivotChartConstructorOptions } from '@visactor/vtable'
 
-const line: SpecPipeline = [
+const line: SpecPipeline<Spec> = [
   initLine,
   colorAdapter(color, linearColor),
   backgroundColor,
@@ -60,7 +61,7 @@ const line: SpecPipeline = [
   splitLine,
 ]
 
-const pivotLine: SpecPipeline = [
+const pivotLine: SpecPipeline<PivotChartConstructorOptions> = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -91,4 +92,4 @@ const pivotLine: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const lineSpecPipeline: SpecPipeline = [pivotAdapter(line, pivotLine)]
+export const lineSpecPipeline: SpecPipeline<Spec | PivotChartConstructorOptions> = [pivotAdapter(line, pivotLine)]

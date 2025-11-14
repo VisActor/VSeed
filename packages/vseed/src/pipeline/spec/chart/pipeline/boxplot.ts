@@ -3,7 +3,6 @@ import {
   backgroundColor,
   label,
   tooltipBoxplot,
-  discreteLegend,
   color,
   pivotAdapter,
   initPivot,
@@ -33,6 +32,7 @@ import {
   pivotAxisStyle,
   pivotTitle,
 } from '../pipes'
+import { boxLegend } from '../pipes/legend/boxLegend'
 
 const boxplot: VChartSpecPipeline = [
   initBoxplot,
@@ -45,7 +45,7 @@ const boxplot: VChartSpecPipeline = [
   yLinear,
   label,
   tooltipBoxplot,
-  colorAdapter(discreteLegend, colorLegend),
+  colorAdapter(boxLegend, colorLegend),
   verticalCrosshairRect,
   colorBarStyleFill(barStyle),
   annotationPoint,

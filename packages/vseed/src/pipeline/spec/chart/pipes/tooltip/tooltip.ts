@@ -47,7 +47,7 @@ export const createDimensionContent = (
   foldInfo: FoldInfo,
   unfoldInfo: UnfoldInfo,
 ) => {
-  const { measureId, measureValue, foldMap } = foldInfo
+  const { measureId, measureValue } = foldInfo
   const { encodingColor } = unfoldInfo
 
   return [
@@ -55,13 +55,11 @@ export const createDimensionContent = (
       visible: true,
       shapeType: 'rectRound',
       hasShape: true,
-      key: dimensions.some((d) => d.encoding === 'color')
-        ? (v: unknown) => {
-            const datum = v as Datum
-            const key = (datum && (datum[encodingColor] as string)) || ''
-            return unfoldInfo.colorIdMap[key].alias ?? key
-          }
-        : Object.values(foldMap)[0],
+      key: (v: unknown) => {
+        const datum = v as Datum
+        const key = (datum && (datum[encodingColor] as string)) || ''
+        return unfoldInfo.colorIdMap[key].alias ?? key
+      },
       value: (v: unknown) => {
         const datum = v as Datum
         if (!datum) {

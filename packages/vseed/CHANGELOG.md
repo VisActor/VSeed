@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.45
+
+### Patch Changes
+
+- fix: fix style about annotaions
+
 ## 0.1.44
 
 ### Patch Changes

@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   initColumn,
   datasetXY,
@@ -38,7 +38,7 @@ import {
   pivotTitle,
 } from '../pipes'
 
-const column: SpecPipeline = [
+const column: VChartSpecPipeline = [
   initColumn,
   stackCornerRadius,
   barMaxWidth,
@@ -61,7 +61,7 @@ const column: SpecPipeline = [
   columnPolynomialRegressionLine,
 ]
 
-const pivotColumn: SpecPipeline = [
+const pivotColumn: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,

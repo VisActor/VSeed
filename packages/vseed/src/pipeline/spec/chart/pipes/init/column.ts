@@ -1,7 +1,7 @@
 import type { IBarChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 
-export const initColumn: SpecPipe = (spec, context) => {
+export const initColumn: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as IBarChartSpec
   const { advancedVSeed } = context
   const { datasetReshapeInfo } = advancedVSeed

@@ -1,7 +1,7 @@
 import type { IRoseChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 
-export const radarRadiusAxis: SpecPipe = (spec) => {
+export const radarRadiusAxis: VChartSpecPipe = (spec) => {
   const result = { ...spec } as IRoseChartSpec
 
   if (!result.axes) {

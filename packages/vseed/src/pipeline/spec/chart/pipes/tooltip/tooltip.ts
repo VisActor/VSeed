@@ -1,10 +1,10 @@
 import { pipe, uniqueBy } from 'remeda'
 import { createFormatterByMeasure, findAllMeasures, findMeasureById } from '../../../../utils'
-import type { Datum, Dimensions, FoldInfo, Measures, SpecPipe, TooltipConfig, UnfoldInfo } from 'src/types'
+import type { Datum, Dimensions, FoldInfo, Measures, VChartSpecPipe, TooltipConfig, UnfoldInfo } from 'src/types'
 import { ORIGINAL_DATA } from 'src/dataReshape'
 import { getTooltipStyle } from './tooltipStyle'
 
-export const tooltip: SpecPipe = (spec, context) => {
+export const tooltip: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
   const { measures, datasetReshapeInfo, chartType, dimensions, encoding } = advancedVSeed

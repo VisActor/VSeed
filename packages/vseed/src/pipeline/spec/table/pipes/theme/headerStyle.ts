@@ -1,7 +1,7 @@
-import type { SpecPipe, TableConfig } from 'src/types'
+import type { PivotTableSpecPipe, TableConfig } from 'src/types'
 import type { ThemeLike, WithTheme } from './type'
 
-export const headerStyle: SpecPipe = (spec, context) => {
+export const headerStyle: PivotTableSpecPipe = (spec, context) => {
   const result = { ...spec } as Partial<typeof spec> & WithTheme
   const { advancedVSeed } = context
   const { config, chartType } = advancedVSeed

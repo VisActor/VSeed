@@ -2,12 +2,12 @@ import type { ListTableConstructorOptions, ColumnDefine } from '@visactor/vtable
 import { array } from '@visactor/vutils'
 import { isNullish, isNumber, isPlainObject, isString } from 'remeda'
 import { selector } from 'src/dataSelector/selector'
-import type { BodyCellStyle, SpecPipe } from 'src/types'
+import type { BodyCellStyle, ListTableSpecPipe } from 'src/types'
 import type { MeasureSelector, Selectors } from 'src/types/dataSelector'
 import { pickBodyCellStyle } from './common'
 import { preorderTraverse } from 'src/pipeline/utils/tree/traverse'
 
-export const tableBodyCell: SpecPipe = (spec, context) => {
+export const tableBodyCell: ListTableSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { cellStyle } = advancedVSeed
   const bodyCellStyle = cellStyle?.bodyCellStyle

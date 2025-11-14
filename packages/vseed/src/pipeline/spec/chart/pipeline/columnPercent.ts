@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   initColumn,
   datasetXY,
@@ -38,7 +38,7 @@ import {
   pivotTitle,
 } from '../pipes'
 
-const columnPercent: SpecPipeline = [
+const columnPercent: VChartSpecPipeline = [
   initColumn,
   stackCornerRadius,
   stackInverse,
@@ -61,7 +61,7 @@ const columnPercent: SpecPipeline = [
   annotationAreaBand,
 ]
 
-const pivotColumnPercent: SpecPipeline = [
+const pivotColumnPercent: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -93,4 +93,4 @@ const pivotColumnPercent: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const columnPercentSpecPipeline: SpecPipeline = [pivotAdapter(columnPercent, pivotColumnPercent)]
+export const columnPercentSpecPipeline = [pivotAdapter(columnPercent, pivotColumnPercent)]

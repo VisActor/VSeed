@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   xBand,
   yLinear,
@@ -41,7 +41,7 @@ import {
   splitLine,
 } from '../pipes'
 
-const area: SpecPipeline = [
+const area: VChartSpecPipeline = [
   initArea,
   stackInverse,
   colorAdapter(color, linearColor),
@@ -65,7 +65,7 @@ const area: SpecPipeline = [
   splitLine,
 ]
 
-const pivotArea: SpecPipeline = [
+const pivotArea: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,

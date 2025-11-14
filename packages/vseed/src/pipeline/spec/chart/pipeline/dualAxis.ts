@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   xBand,
   backgroundColor,
@@ -54,7 +54,7 @@ import {
   pivotAxisStyle,
 } from '../pipes'
 
-const dualAxis: SpecPipeline = [
+const dualAxis: VChartSpecPipeline = [
   seriesDualAxis(
     [
       initDualAxisPrimary,
@@ -109,7 +109,7 @@ const dualAxis: SpecPipeline = [
   annotationAreaBand,
 ]
 
-const pivotDualAxis: SpecPipeline = [
+const pivotDualAxis: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -170,4 +170,4 @@ const pivotDualAxis: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const dualAxisSpecPipeline: SpecPipeline = [pivotAdapter(dualAxis, pivotDualAxis)]
+export const dualAxisSpecPipeline = [pivotAdapter(dualAxis, pivotDualAxis)]

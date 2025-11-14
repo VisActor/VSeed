@@ -1,9 +1,9 @@
 import type { IBarChartSpec } from '@visactor/vchart'
 import { isDeepEqual } from 'remeda'
 import { MeasureId } from 'src/dataReshape'
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 
-export const initBarParallel: SpecPipe = (spec, context) => {
+export const initBarParallel: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as IBarChartSpec
   const { advancedVSeed } = context
   const { datasetReshapeInfo, encoding } = advancedVSeed

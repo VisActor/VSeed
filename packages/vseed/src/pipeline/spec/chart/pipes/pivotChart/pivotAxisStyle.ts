@@ -1,8 +1,8 @@
 import type { ILineChartSpec } from '@visactor/vchart'
 import { BAND_AXIS_INNER_OFFSET_IN_PIVOT } from 'src/pipeline/utils/constant'
-import type { Config, SpecPipe } from 'src/types'
+import type { Config, VChartSpecPipe } from 'src/types'
 
-export const pivotAxisStyle = (axisStyle: SpecPipe): SpecPipe => {
+export const pivotAxisStyle = (axisStyle: VChartSpecPipe): VChartSpecPipe => {
   return (spec, context) => {
     const result = axisStyle(spec, context) as ILineChartSpec
 

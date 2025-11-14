@@ -1,9 +1,9 @@
 import type { ICartesianBandAxisSpec, ISpec } from '@visactor/vchart'
-import type { SpecPipe, XBandAxis } from 'src/types'
+import type { VChartSpecPipe, XBandAxis } from 'src/types'
 import { defaultTitleText } from './title/defaultTitleText'
 import { AXIS_LABEL_SPACE } from 'src/pipeline/utils'
 
-export const yBand: SpecPipe = (spec, context) => {
+export const yBand: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed

@@ -1,7 +1,7 @@
 import type { ICartesianSeries, IChart, ILineChartSpec, IVChart } from '@visactor/vchart'
 import { array, clamper, Color as VUtilColor } from '@visactor/vutils'
 import { isNullish, isNumber, isPlainObject } from 'remeda'
-import type { AnnotationHorizontalLine, SpecPipe, Color } from 'src/types'
+import type { AnnotationHorizontalLine, VChartSpecPipe, Color } from 'src/types'
 
 interface SplitConfig {
   points: { x: number; y: number }[]
@@ -49,7 +49,7 @@ const formatGradientStops = (stops: { color: string; offset: number }[]) => {
   return stops
 }
 
-export const splitLine: SpecPipe = (spec, context) => {
+export const splitLine: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { annotation, chartType, datasetReshapeInfo } = advancedVSeed
 

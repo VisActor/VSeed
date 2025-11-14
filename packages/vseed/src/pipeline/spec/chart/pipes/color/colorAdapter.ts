@@ -1,8 +1,13 @@
 import { findAllMeasures } from 'src/pipeline/utils'
-import type { AdvancedVSeed, SpecPipe, VSeed } from 'src/types'
+import type { AdvancedVSeed, PivotChartSpecPipe, VChartSpecPipe, VSeed, Pipe, SpecPipelineContext } from 'src/types'
 
-export const colorAdapter = (ordinalPipe: SpecPipe, linearPipe: SpecPipe): SpecPipe => {
-  return (spec, context) => {
+export function colorAdapter(ordinalPipe: PivotChartSpecPipe, linearPipe: PivotChartSpecPipe): PivotChartSpecPipe
+export function colorAdapter(ordinalPipe: VChartSpecPipe, linearPipe: VChartSpecPipe): VChartSpecPipe
+export function colorAdapter<TSpec>(
+  ordinalPipe: Pipe<TSpec, SpecPipelineContext>,
+  linearPipe: Pipe<TSpec, SpecPipelineContext>,
+) {
+  return (spec: Partial<TSpec>, context: SpecPipelineContext) => {
     const { advancedVSeed, vseed } = context
     if (isLinearColor(advancedVSeed, vseed)) {
       return linearPipe(spec, context)

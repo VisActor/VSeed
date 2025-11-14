@@ -1,6 +1,6 @@
-import type { Legend, SpecPipe } from 'src/types'
+import type { Legend, VChartSpecPipe } from 'src/types'
 
-export const discreteLegend: SpecPipe = (spec, context) => {
+export const discreteLegend: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed } = context
   const { datasetReshapeInfo, chartType } = advancedVSeed

@@ -1,9 +1,9 @@
 import type { IRoseChartSpec } from '@visactor/vchart'
 import { isDeepEqual } from 'remeda'
 import { MeasureId } from 'src/dataReshape'
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 
-export const initRoseParallel: SpecPipe = (spec, context) => {
+export const initRoseParallel: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as IRoseChartSpec
   const { advancedVSeed } = context
   const { datasetReshapeInfo, dataset, encoding } = advancedVSeed

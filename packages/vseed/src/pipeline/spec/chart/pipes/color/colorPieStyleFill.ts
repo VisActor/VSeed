@@ -1,8 +1,8 @@
 import type { IPieChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 import { isLinearColor } from './colorAdapter'
 
-export const colorPieStyleFill = (stylePipe: SpecPipe): SpecPipe => {
+export const colorPieStyleFill = (stylePipe: VChartSpecPipe): VChartSpecPipe => {
   return (spec, context) => {
     const result = stylePipe(spec, context) as IPieChartSpec
 

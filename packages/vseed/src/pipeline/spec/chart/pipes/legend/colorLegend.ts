@@ -1,7 +1,7 @@
 import { createFormatterByMeasure, findAllMeasures } from 'src/pipeline/utils'
-import type { Legend, SpecPipe } from 'src/types'
+import type { Legend, VChartSpecPipe } from 'src/types'
 
-export const colorLegend: SpecPipe = (spec, context) => {
+export const colorLegend: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed } = context
   const { datasetReshapeInfo, chartType } = advancedVSeed

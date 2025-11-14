@@ -1,5 +1,5 @@
 import type { ISpec } from '@visactor/vchart'
-import type { SpecPipe, XLinearAxis } from 'src/types'
+import type { VChartSpecPipe, XLinearAxis } from 'src/types'
 import {
   AXIS_LABEL_SPACE,
   createNumFormatter,
@@ -11,7 +11,7 @@ import {
 import { createLinearFormat, createLinearPercentFormat } from './format/linearFormat'
 import { defaultTitleText } from './title/defaultTitleText'
 
-export const xLinear: SpecPipe = (spec, context) => {
+export const xLinear: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { encoding, dimensions, measures } = advancedVSeed

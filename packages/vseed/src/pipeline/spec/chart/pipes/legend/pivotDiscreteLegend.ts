@@ -1,9 +1,9 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
 import { unique } from 'remeda'
-import type { Color, Legend, SpecPipe } from 'src/types'
+import type { Color, Legend, PivotChartSpecPipe } from 'src/types'
 import { createSpecifiedForColorMapping } from '../color/color'
 
-export const pivotDiscreteLegend: SpecPipe = (spec, context): Partial<PivotChartConstructorOptions> => {
+export const pivotDiscreteLegend: PivotChartSpecPipe = (spec, context): Partial<PivotChartConstructorOptions> => {
   const result = { ...spec } as PivotChartConstructorOptions
   const { advancedVSeed } = context
   const { chartType } = advancedVSeed

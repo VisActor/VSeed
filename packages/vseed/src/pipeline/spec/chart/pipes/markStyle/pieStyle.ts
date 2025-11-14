@@ -1,7 +1,7 @@
 import type { IPieChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 
-export const pieStyle: SpecPipe = (spec, context) => {
+export const pieStyle: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const { dataset } = advancedVSeed

@@ -1,9 +1,9 @@
 import type { IBarChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
-import type { BarStyle, Datum, SpecPipe } from 'src/types'
+import type { BarStyle, Datum, VChartSpecPipe } from 'src/types'
 import { isEmpty, isNullish } from 'remeda'
 
-export const barStyle: SpecPipe = (spec, context) => {
+export const barStyle: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { markStyle, dataset = [] } = advancedVSeed
   const { barStyle } = markStyle

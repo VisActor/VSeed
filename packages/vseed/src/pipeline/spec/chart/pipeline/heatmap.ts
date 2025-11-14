@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   datasetXY,
   backgroundColor,
@@ -30,7 +30,7 @@ import {
 } from '../pipes'
 import { initHeatmap } from '../pipes/init/heatmap'
 
-const heatmap: SpecPipeline = [
+const heatmap: VChartSpecPipeline = [
   initHeatmap,
   backgroundColor,
   datasetXY,
@@ -45,7 +45,7 @@ const heatmap: SpecPipeline = [
   annotationArea,
 ]
 
-const pivotHeatmap: SpecPipeline = [
+const pivotHeatmap: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -69,4 +69,4 @@ const pivotHeatmap: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const heatmapSpecPipeline: SpecPipeline = [pivotAdapter(heatmap, pivotHeatmap)]
+export const heatmapSpecPipeline = [pivotAdapter(heatmap, pivotHeatmap)]

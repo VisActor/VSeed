@@ -1,10 +1,10 @@
 import type { ICartesianSeries, IChart, IHistogramChartSpec, IVChart } from '@visactor/vchart'
 import { isNullish, uniqueBy } from 'remeda'
 import { ecdf, array } from '@visactor/vutils'
-import type { Datum, Dimension, SpecPipe, Encoding, RegressionLineConfig, EcdfRegressionLine } from 'src/types'
+import type { Datum, Dimension, VChartSpecPipe, Encoding, RegressionLineConfig, EcdfRegressionLine } from 'src/types'
 import { defaultRegressionLineColor, defaultRegressionLineLabelX, defaultRegressionLineLabelY } from './common'
 
-export const ecdfRegressionLine: SpecPipe = (spec, context) => {
+export const ecdfRegressionLine: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as IHistogramChartSpec
   const { advancedVSeed, vseed } = context
   const { chartType, encoding = {} as Encoding, dimensions, regressionLine } = advancedVSeed

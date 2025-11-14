@@ -10,11 +10,11 @@ import {
 } from '@visactor/vutils'
 import type {
   Datum,
-  SpecPipe,
+  VChartSpecPipe,
   RegressionLineConfig,
   LinearRegressionLine,
-  SpecPipelineContext,
   PolynomialRegressionLine,
+  SpecPipelineContext,
 } from 'src/types'
 
 export const generateRegressionLinePipe = (
@@ -29,7 +29,7 @@ export const generateRegressionLinePipe = (
     evaluateGrid: (N: number) => { x: number; y: number }[]
   },
   getOptions?: (lineConfig: any) => any,
-): SpecPipe => {
+): VChartSpecPipe => {
   return ((spec: Partial<IScatterChartSpec>, context: SpecPipelineContext): Partial<IScatterChartSpec> => {
     const result = { ...spec }
     const { advancedVSeed } = context
@@ -241,16 +241,19 @@ export const generateRegressionLinePipe = (
     })
 
     return result
-  }) as SpecPipe
+  }) as VChartSpecPipe
 }
 
-export const linearRegressionLine: SpecPipe = generateRegressionLinePipe('linearRegressionLine', regressionLinear)
-export const lowessRegressionLine: SpecPipe = generateRegressionLinePipe('lowessRegressionLine', regressionLowess)
-export const polynomialRegressionLine: SpecPipe = generateRegressionLinePipe(
+export const linearRegressionLine: VChartSpecPipe = generateRegressionLinePipe('linearRegressionLine', regressionLinear)
+export const lowessRegressionLine: VChartSpecPipe = generateRegressionLinePipe('lowessRegressionLine', regressionLowess)
+export const polynomialRegressionLine: VChartSpecPipe = generateRegressionLinePipe(
   'polynomialRegressionLine',
   regressionPolynomial,
   (lineConfig: PolynomialRegressionLine) => {
     return { degree: lineConfig.degree ?? 2 }
   },
 )
-export const logisticRegressionLine: SpecPipe = generateRegressionLinePipe('logisticRegressionLine', regressionLogistic)
+export const logisticRegressionLine: VChartSpecPipe = generateRegressionLinePipe(
+  'logisticRegressionLine',
+  regressionLogistic,
+)

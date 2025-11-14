@@ -1,6 +1,6 @@
-import type { SpecPipe } from 'src/types'
+import type { PivotChartSpecPipe } from 'src/types'
 
-export const pivotHideIndicatorName: SpecPipe = (spec) => {
+export const pivotHideIndicatorName: PivotChartSpecPipe = (spec) => {
   return {
     ...spec,
     hideIndicatorName: true,

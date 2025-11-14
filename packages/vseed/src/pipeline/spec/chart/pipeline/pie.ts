@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   backgroundColor,
   color,
@@ -32,7 +32,7 @@ import {
   addRegionPadding,
 } from '../pipes'
 
-const pie: SpecPipeline = [
+const pie: VChartSpecPipeline = [
   initPie,
   colorAdapter(color, linearColor),
   backgroundColor,
@@ -48,7 +48,7 @@ const pie: SpecPipeline = [
   annotationArea,
 ]
 
-const pivotPie: SpecPipeline = [
+const pivotPie: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -75,4 +75,4 @@ const pivotPie: SpecPipeline = [
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const pieSpecPipeline: SpecPipeline = [pivotAdapter(pie, pivotPie)]
+export const pieSpecPipeline = [pivotAdapter(pie, pivotPie)]

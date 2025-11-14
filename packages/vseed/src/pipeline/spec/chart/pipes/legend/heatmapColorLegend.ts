@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 import { colorLegend } from './colorLegend'
 import type { Datum, IHeatmapChartSpec } from '@visactor/vchart'
 import { DATUM_HIDE_KEY } from 'src/pipeline/utils/constant'
 
-export const heatmapColorLegend: SpecPipe = (spec, context) => {
+export const heatmapColorLegend: VChartSpecPipe = (spec, context) => {
   const result = colorLegend(spec, context) as IHeatmapChartSpec
 
   if (result.legends) {

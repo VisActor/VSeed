@@ -2,11 +2,11 @@ import type { IIndicator, PivotTableConstructorOptions } from '@visactor/vtable'
 import { array } from '@visactor/vutils'
 import { isNullish, isString } from 'remeda'
 import { selector } from 'src/dataSelector/selector'
-import type { BodyCellStyle, Datum, SpecPipe } from 'src/types'
+import type { BodyCellStyle, Datum, PivotTableSpecPipe } from 'src/types'
 import { pickBodyCellStyle } from './common'
 import { FoldMeasureValue, MeasureId } from 'src/dataReshape'
 
-export const pivotTableBodyCell: SpecPipe = (spec, context) => {
+export const pivotTableBodyCell: PivotTableSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { cellStyle } = advancedVSeed
   const bodyCellStyle = cellStyle?.bodyCellStyle

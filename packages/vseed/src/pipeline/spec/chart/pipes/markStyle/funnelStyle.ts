@@ -1,7 +1,7 @@
 import type { IFunnelChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 
-export const funnelStyle: SpecPipe = (spec) => {
+export const funnelStyle: VChartSpecPipe = (spec) => {
   const result = {
     ...spec,
     funnel: {

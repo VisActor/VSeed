@@ -1,12 +1,12 @@
 import { pipe, uniqueBy, isNullish } from 'remeda'
-import type { Dimension, Dimensions, Encoding, Spec, SpecPipe, Tooltip } from 'src/types'
+import type { Dimension, Dimensions, Encoding, VChartSpecPipe, Tooltip } from 'src/types'
 import type { Datum, ISpec, ITooltipLinePattern } from '@visactor/vchart'
 import { BinEndMeasureId, BinStartMeasureId, ColorEncoding, FoldMeasureValue, XEncoding } from 'src/dataReshape'
 import { getTooltipStyle } from './tooltipStyle'
 
 const VCHART_OUTLIER_KEY = '__VCHART_BOX_PLOT_OUTLIER_VALUE'
 
-export const tooltipHistogram: SpecPipe = (spec, context): Partial<Spec> => {
+export const tooltipHistogram: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed } = context
   const { chartType, dimensions, encoding } = advancedVSeed

@@ -2,13 +2,13 @@ import type { IBoxPlotChartSpec } from '@visactor/vchart'
 import type { VChartSpecPipe } from 'src/types'
 import { isDeepEqual } from 'remeda'
 import {
-  MaxMeasureId,
+  LowerWhisker,
   MeasureId,
   MedianMeasureId,
-  MinMeasureId,
   OutliersMeasureId,
   Q1MeasureValue,
   Q3MeasureValue,
+  UpperWhisker,
 } from 'src/dataReshape/constant'
 
 export const initBoxplot: VChartSpecPipe = (spec, context) => {
@@ -18,10 +18,11 @@ export const initBoxplot: VChartSpecPipe = (spec, context) => {
   const { unfoldInfo } = datasetReshapeInfo[0]
 
   result.type = 'boxPlot'
-  result.minField = MinMeasureId
+  // 默认应该是盒须的位置
+  result.minField = LowerWhisker
+  result.maxField = UpperWhisker
   result.q1Field = Q1MeasureValue
   result.medianField = MedianMeasureId
-  result.maxField = MaxMeasureId
   result.q3Field = Q3MeasureValue
   result.outliersField = OutliersMeasureId
   result.xField = [unfoldInfo.encodingX]

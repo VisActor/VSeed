@@ -1,6 +1,7 @@
 import {
   FoldMeasureId,
   FoldMeasureName,
+  LowerWhisker,
   MaxMeasureId,
   MedianMeasureId,
   MinMeasureId,
@@ -9,6 +10,7 @@ import {
   Q3MeasureValue,
   Separator,
   unfoldDimensions,
+  UpperWhisker,
 } from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, ColumnParallel, Dataset, Encoding } from 'src/types'
@@ -42,6 +44,8 @@ export const reshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, context)
           q3: Q3MeasureValue,
           min: MinMeasureId,
           max: MaxMeasureId,
+          lowerWhisker: LowerWhisker,
+          upperWhisker: UpperWhisker,
           median: MedianMeasureId,
           outliers: OutliersMeasureId,
         },

@@ -1,8 +1,25 @@
 import { Dataset } from './dataset'
 import { DuckDB } from './db/duckDb'
 import { IndexedDB } from './db/indexedDb'
-import { DatasetSchema, TidyDatum, DataSourceType } from './types'
+import { DatasetSchema, TidyDatum, DataSourceType, DataType } from './types'
 import { DataSourceBuilder } from 'src/dataSourceBuilder'
+
+function mapDataTypeToDuckDB(type: DataType): string {
+  switch (type) {
+    case 'number':
+      return 'DOUBLE'
+    case 'string':
+      return 'VARCHAR'
+    case 'date':
+      return 'DATE'
+    case 'datetime':
+      return 'TIMESTAMP'
+    case 'timestamp':
+      return 'TIMESTAMP'
+    default:
+      return 'VARCHAR'
+  }
+}
 
 export class VQuery {
   private duckDB: DuckDB
@@ -79,47 +96,28 @@ export class VQuery {
     const { dataSource, datasetSchema } = datasetInfo
 
     // 根据dataSource类型处理数据加载
-    switch (dataSource.type) {
-      case 'csv': {
-        // 注册文件到DuckDB - 只处理文件类型，不处理数组
-        await this.duckDB.writeFile(datasetId, dataSource.blob)
-        // 创建视图
-        const createViewSql = `CREATE OR REPLACE VIEW ${datasetId} AS SELECT * FROM read_csv_auto('${datasetId}')`
-        await this.duckDB.query(createViewSql)
-        break
-      }
-      case 'json': {
-        // 注册文件到DuckDB - 只处理文件类型，不处理数组
-        await this.duckDB.writeFile(datasetId, dataSource.blob)
-
-        // 创建视图
-        const createViewSql = `CREATE OR REPLACE VIEW ${datasetId} AS SELECT * FROM read_json_auto('${datasetId}')`
-        await this.duckDB.query(createViewSql)
-        console.log('debug schema', await this.duckDB.getSchema(datasetId))
-        break
-      }
-      case 'xlsx': {
-        // 注册文件到DuckDB - 只处理文件类型，不处理数组
-        await this.duckDB.writeFile(datasetId, dataSource.blob)
-
-        // 创建视图
-        const createViewSql = `CREATE OR REPLACE VIEW ${datasetId} AS SELECT * FROM read_excel('${datasetId}')`
-        await this.duckDB.query(createViewSql)
-        break
-      }
-      case 'parquet': {
-        // 注册文件到DuckDB - 只处理文件类型，不处理数组
-        await this.duckDB.writeFile(datasetId, dataSource.blob)
-
-        // 创建视图
-        const createViewSql = `CREATE OR REPLACE VIEW ${datasetId} AS SELECT * FROM read_parquet('${datasetId}')`
-        await this.duckDB.query(createViewSql)
-        break
-      }
-      default: {
-        throw new Error(`Unsupported dataSource type: ${(dataSource as { type: string }).type}`)
-      }
+    const readFunctionMap: Partial<Record<DataSourceType, string>> = {
+      csv: 'read_csv_auto',
+      json: 'read_json_auto',
+      xlsx: 'read_excel',
+      parquet: 'read_parquet',
     }
+    const readFunction = readFunctionMap[dataSource.type]
+    if (!readFunction) {
+      throw new Error(`Unsupported dataSource type: ${dataSource.type}`)
+    }
+
+    // 注册文件到DuckDB - 只处理文件类型，不处理数组
+    await this.duckDB.writeFile(datasetId, dataSource.blob)
+
+    const columnsStruct = `{${datasetSchema.columns
+      .map((c) => `'${c.name}': '${mapDataTypeToDuckDB(c.type)}'`)
+      .join(', ')}}`
+    const columnNames = datasetSchema.columns.map((c) => `"${c.name}"`).join(', ')
+
+    // 创建视图
+    const createViewSql = `CREATE OR REPLACE VIEW "${datasetId}" AS SELECT ${columnNames} FROM ${readFunction}('${datasetId}', columns=${columnsStruct})`
+    await this.duckDB.query(createViewSql)
 
     return new Dataset(this.duckDB, datasetId, datasetSchema.datasetAlias || datasetId)
   }

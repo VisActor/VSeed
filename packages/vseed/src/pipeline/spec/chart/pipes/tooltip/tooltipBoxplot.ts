@@ -47,7 +47,6 @@ export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
       content: createMarkContent(encoding.tooltip || [], dimensions, encoding as Encoding),
       updateContent: (prev: ITooltipLineActual[] | undefined, data: TooltipData | undefined) => {
         const datum = (data as any)?.[0]?.datum?.[0]
-        console.log('!!!!!', intl.i18n`异常点`)
 
         if (!isNullish(datum?.[VCHART_OUTLIER_KEY])) {
           const tooltipItems: ITooltipLineActual[] = (prev ?? []).filter(

@@ -8,18 +8,44 @@ pageType: custom
 const run = async (setVSeed) => {
   // 1. init vquery
   const vquery = new VQuery()
-  await vquery.init()
 
   // 2. write or read dataset from indexedDB
-  const files = await vquery.listFiles()
-  const fileName = 'supermarket'
-  if (files.includes(fileName)) {
-    await vquery.readFile(fileName)
-  } else {
-    await vquery.writeFile(fileName, 'https://visactor.github.io/VSeed/dataset/supermarket.csv')
+  const datasets = await vquery.listDatasets()
+  const datasetId = 'supermarket'
+
+  // id	order_id	order_date	delivery_date	delivery_method	customer_id	customer_name	customer_type	city	province	country_or_region	area	product_id	product_type	product_sub_type	product_name	sales	amount	discount	profit
+  const datasetSchema = {
+    datasetId: datasetId,
+    datasetAlias: '超市',
+    columns: [
+      { name: 'id', type: 'string' },
+      { name: 'order_id', type: 'string' },
+      { name: 'order_date', type: 'date' },
+      { name: 'delivery_date', type: 'date' },
+      { name: 'delivery_method', type: 'string' },
+      { name: 'customer_id', type: 'string' },
+      { name: 'customer_name', type: 'string' },
+      { name: 'customer_type', type: 'string' },
+      { name: 'city', type: 'string' },
+      { name: 'province', type: 'string' },
+      { name: 'country_or_region', type: 'string' },
+      { name: 'area', type: 'string' },
+      { name: 'product_id', type: 'string' },
+      { name: 'product_type', type: 'string' },
+      { name: 'product_sub_type', type: 'string' },
+      { name: 'product_name', type: 'string' },
+      { name: 'sales', type: 'number' },
+      { name: 'amount', type: 'number' },
+      { name: 'discount', type: 'number' },
+      { name: 'profit', type: 'number' },
+    ],
   }
 
-  const schema = await vquery.getSchema(fileName)
+  if (!datasets.includes(datasetId)) {
+    await vquery.createDataset(datasetId, 'https://visactor.github.io/VSeed/dataset/supermarket.csv', datasetSchema)
+  }
+
+  const dataset = await vquery.connectDataset(datasetId)
 
   // 3. query data using duckDb sql
   const sql = `
@@ -28,21 +54,20 @@ const run = async (setVSeed) => {
       "area" as Area,
       SUM("sales") as Sales,
       SUM("profit") as Profit
-    FROM read_csv_auto(${fileName})
+    FROM ${datasetId}
     GROUP BY Date, Area
     ORDER BY Date;
   `
 
   // 4. execute query
-  const { dataset, performance } = await vquery.query(sql)
-  console.log('debug schema', schema)
-  console.log('debug dataset', dataset)
+  const { dataset: queryDataset, performance } = await vquery.queryBySQL(sql)
+  console.log('debug queryDataset', queryDataset)
   console.log('debug query performance', performance)
 
   // 5.render chart using vseed
   const vseed = {
     chartType: 'pivotTable',
-    dataset: dataset,
+    dataset: queryDataset,
     locale: 'en-US',
 
     // chartType: 'table',

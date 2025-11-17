@@ -1,82 +1,19 @@
 import { DuckDB } from './db/duckDb'
 import { IndexedDB } from './db/indexedDb'
-import { QueryResult } from './types'
+import { DatasetSchema } from './types'
 
-export class VQuery {
+class Dataset {
   private duckDB: DuckDB
-  private indexedDB: IndexedDB
+  private datasetId: string
+  private tableName: string
 
-  constructor(dbName: string = 'vquery') {
-    this.duckDB = new DuckDB()
-    this.indexedDB = new IndexedDB(dbName)
+  constructor(duckDB: DuckDB, datasetId: string, tableName: string) {
+    this.duckDB = duckDB
+    this.datasetId = datasetId
+    this.tableName = tableName
   }
 
-  /**
-   * @description 初始化数据库
-   */
-  public init = async () => {
-    await this.duckDB.init()
-    await this.indexedDB.open()
-  }
-
-  /**
-   * @description 关闭数据库
-   */
-  public close = async () => {
-    await this.duckDB.close()
-    this.indexedDB.close()
-  }
-
-  /**
-   * @description 注册文件
-   * @param fileName 文件名
-   * @param source 文件内容
-   */
-  public writeFile = async (fileName: string, source: string | ArrayBuffer | Uint8Array | Blob) => {
-    let blob: Blob
-
-    if (typeof source === 'string') {
-      const response = await fetch(source)
-      blob = await response.blob()
-    } else if (source instanceof ArrayBuffer) {
-      blob = new Blob([source])
-    } else if (source instanceof Uint8Array) {
-      blob = new Blob([source.slice()])
-    } else if (source instanceof Blob) {
-      blob = source
-    } else {
-      throw new Error('Unsupported source type')
-    }
-
-    await this.indexedDB.writeFile(fileName, blob)
-    await this.duckDB.writeFile(fileName, blob)
-  }
-
-  /**
-   * @description 从 IndexedDB 读取文件并注册到 DuckDB
-   * @param fileName 文件名
-   */
-  public readFile = async (fileName: string) => {
-    const blob = await this.indexedDB.readFile(fileName)
-    if (blob) {
-      await this.duckDB.writeFile(fileName, blob)
-    } else {
-      throw new Error(`File ${fileName} not found in IndexedDB`)
-    }
-  }
-
-  /**
-   * @description 列出 IndexedDB 中的所有文件
-   */
-  public listFiles = (): Promise<string[]> => {
-    return this.indexedDB.listFiles()
-  }
-
-  /**
-   * @description 执行 SQL 查询
-   * @param sql SQL 语句
-   */
-  public query = async (sql: string) => {
+  public async queryBySQL(sql: string) {
     const start = performance?.now?.()?.toFixed(3) ?? Date.now().toFixed(3)
     const result = await this.duckDB.query(sql)
     const end = performance?.now?.()?.toFixed(3) ?? Date.now().toFixed(3)
@@ -90,12 +27,80 @@ export class VQuery {
     }
   }
 
+  public async disConnect() {
+    // 暂时没有需要释放的资源
+  }
+}
+
+export class VQuery {
+  private duckDB: DuckDB
+  private indexedDB: IndexedDB
+  private isInitialized: boolean = false
+
+  constructor(dbName: string = 'vquery') {
+    this.duckDB = new DuckDB()
+    this.indexedDB = new IndexedDB(dbName)
+  }
+
+  private async ensureInitialized() {
+    if (!this.isInitialized) {
+      await this.duckDB.init()
+      await this.indexedDB.open()
+      this.isInitialized = true
+    }
+  }
+
   /**
-   * @description 获取文件的 Schema
-   * @param fileName 文件名
-   * @returns 文件的 Schema
+   * 创建数据集，根据表结构和数据，存储信息到indexedDB
    */
-  public getSchema = async (fileName: string): Promise<QueryResult> => {
-    return this.duckDB.getSchema(fileName)
+  public async createDataset(datasetId: string, url: string, datasetSchema: DatasetSchema) {
+    await this.ensureInitialized()
+    await this.indexedDB.writeDataset(datasetId, url, datasetSchema)
+  }
+
+  /**
+   * 修改数据集，更新信息到indexedDB内
+   */
+  public async updateDataset(datasetId: string, url: string, datasetSchema: DatasetSchema) {
+    await this.ensureInitialized()
+    await this.indexedDB.writeDataset(datasetId, url, datasetSchema)
+  }
+
+  /**
+   * 删除数据集，从indexdb移除数据集
+   */
+  public async deleteDataset(datasetId: string) {
+    await this.ensureInitialized()
+    await this.indexedDB.deleteDataset(datasetId)
+  }
+
+  /**
+   * 获取所有可用数据集
+   */
+  public async listDatasets() {
+    await this.ensureInitialized()
+
+    return this.indexedDB.listDatasets()
+  }
+
+  /**
+   * 连接数据集，返回数据集信息，从indexedDB获取表结构，使用DuckDB在内存中创建表
+   */
+  public async connectDataset(datasetId: string) {
+    await this.ensureInitialized()
+    const datasetInfo = await this.indexedDB.readDataset(datasetId)
+    if (!datasetInfo) {
+      throw new Error(`Dataset ${datasetId} not found`)
+    }
+    const { url, datasetSchema } = datasetInfo
+    // 注册文件到DuckDB
+    await this.duckDB.writeFile(datasetId, url)
+
+    // 加载数据到DuckDB
+    // DuckDB会自动识别文件格式并创建表
+    const loadDataSql = `CREATE OR REPLACE TABLE ${datasetId} AS SELECT * FROM '${datasetId}'`
+    await this.duckDB.query(loadDataSql)
+
+    return new Dataset(this.duckDB, datasetId, datasetSchema.datasetAlias || datasetId)
   }
 }

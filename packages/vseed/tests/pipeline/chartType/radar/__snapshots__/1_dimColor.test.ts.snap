@@ -650,6 +650,7 @@ exports[`1_dimColor 1`] = `
       "date",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

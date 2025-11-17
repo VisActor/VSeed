@@ -747,6 +747,13 @@ exports[`bar 1`] = `
       "date",
     ],
   },
+  "extraMeasures": [
+    {
+      "alias": "数量",
+      "encoding": "tooltip",
+      "id": "count",
+    },
+  ],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

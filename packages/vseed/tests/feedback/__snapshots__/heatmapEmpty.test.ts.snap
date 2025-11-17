@@ -540,6 +540,7 @@ exports[`heatmapEmpty 1`] = `
       "yA_20250924170409_db93",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

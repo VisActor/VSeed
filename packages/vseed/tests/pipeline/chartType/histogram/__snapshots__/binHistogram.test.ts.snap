@@ -650,6 +650,7 @@ exports[`binHistogram 1`] = `
       "frequency",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

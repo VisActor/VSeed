@@ -1064,6 +1064,7 @@ exports[`same 1`] = `
       "yA_20250913221908_10a4",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {
     "areaStyle": [],

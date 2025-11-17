@@ -764,6 +764,13 @@ exports[`scatterSize 1`] = `
       "profit",
     ],
   },
+  "extraMeasures": [
+    {
+      "alias": "利润",
+      "encoding": "size",
+      "id": "profit",
+    },
+  ],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

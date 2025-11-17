@@ -706,6 +706,7 @@ exports[`defaultParentId 1`] = `
       "yA_20250914131844_6718",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

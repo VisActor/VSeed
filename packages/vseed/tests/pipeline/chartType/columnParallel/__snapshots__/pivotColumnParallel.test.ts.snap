@@ -1582,6 +1582,7 @@ exports[`pivotColumnParallel 1`] = `
       "profit",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

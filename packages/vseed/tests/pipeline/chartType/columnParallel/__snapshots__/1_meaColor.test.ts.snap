@@ -773,6 +773,13 @@ exports[`1_meaColor 1`] = `
       "profit",
     ],
   },
+  "extraMeasures": [
+    {
+      "alias": "销售额",
+      "encoding": "color",
+      "id": "sales",
+    },
+  ],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

@@ -418,6 +418,13 @@ exports[`heatmap 1`] = `
       "__MeaId__",
     ],
   },
+  "extraMeasures": [
+    {
+      "alias": "数量",
+      "encoding": "tooltip",
+      "id": "count",
+    },
+  ],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

@@ -613,6 +613,7 @@ exports[`simpleBoxplot 1`] = `
       "Survived",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

@@ -619,6 +619,18 @@ exports[`emptyBarStyle 1`] = `
       "yA_20250914131844_6718",
     ],
   },
+  "extraMeasures": [
+    {
+      "alias": "sum(amount)",
+      "autoFormat": false,
+      "encoding": "color",
+      "format": {
+        "auto": false,
+        "type": "number",
+      },
+      "id": "co_20250914131915_8e38",
+    },
+  ],
   "locale": "zh-CN",
   "markStyle": {
     "areaStyle": [],

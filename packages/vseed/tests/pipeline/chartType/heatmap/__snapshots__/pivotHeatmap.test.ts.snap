@@ -1249,6 +1249,7 @@ exports[`pivotHeatmap 1`] = `
       "__MeaId__",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

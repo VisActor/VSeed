@@ -437,6 +437,14 @@ exports[`2_meaColor 1`] = `
       "date",
     ],
   },
+  "extraMeasures": [
+    {
+      "alias": "利润",
+      "encoding": "color",
+      "id": "profit",
+      "parentId": "1",
+    },
+  ],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

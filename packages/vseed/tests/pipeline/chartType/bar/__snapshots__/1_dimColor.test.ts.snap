@@ -986,6 +986,7 @@ exports[`1_dimColor 1`] = `
       "__MeaName__",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

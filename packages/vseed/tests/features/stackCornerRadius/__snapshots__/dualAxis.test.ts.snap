@@ -1081,6 +1081,7 @@ exports[`dualAxis 1`] = `
       "returnRatio",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

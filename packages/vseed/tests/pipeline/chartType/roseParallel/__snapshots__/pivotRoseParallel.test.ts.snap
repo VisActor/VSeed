@@ -1241,6 +1241,7 @@ exports[`pivotRoseParallel 1`] = `
       "type",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

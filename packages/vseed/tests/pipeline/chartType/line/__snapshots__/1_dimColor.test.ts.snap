@@ -960,6 +960,7 @@ exports[`1_dimColor 1`] = `
       "sales",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

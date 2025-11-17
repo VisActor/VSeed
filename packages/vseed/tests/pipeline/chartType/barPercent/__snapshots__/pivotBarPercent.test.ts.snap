@@ -1582,6 +1582,7 @@ exports[`pivotBarPercent 1`] = `
       "month",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

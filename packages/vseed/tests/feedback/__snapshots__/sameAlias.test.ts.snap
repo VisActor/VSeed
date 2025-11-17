@@ -861,6 +861,7 @@ exports[`sameAlias 1`] = `
       "yA_20250916175707_8b25",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {
     "areaStyle": [],

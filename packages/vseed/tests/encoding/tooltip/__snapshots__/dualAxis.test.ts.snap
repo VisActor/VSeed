@@ -856,6 +856,13 @@ exports[`dualAxis 1`] = `
       "profit",
     ],
   },
+  "extraMeasures": [
+    {
+      "alias": "数量",
+      "encoding": "tooltip",
+      "id": "count",
+    },
+  ],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

@@ -951,6 +951,7 @@ exports[`detail 1`] = `
       "__MeaName__",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

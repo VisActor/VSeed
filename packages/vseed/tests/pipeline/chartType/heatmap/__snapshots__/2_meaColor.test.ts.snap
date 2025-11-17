@@ -654,6 +654,7 @@ exports[`2_meaColor 1`] = `
       "__MeaId__",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

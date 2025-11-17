@@ -1143,6 +1143,13 @@ exports[`column_parallel_multi_measure 1`] = `
       "sales",
     ],
   },
+  "extraMeasures": [
+    {
+      "alias": "数量",
+      "encoding": "label",
+      "id": "count",
+    },
+  ],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

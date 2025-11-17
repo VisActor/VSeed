@@ -639,6 +639,7 @@ exports[`pivotBoxplot 1`] = `
       "Sex",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

@@ -1415,6 +1415,7 @@ exports[`type_scatter_columnPercent 1`] = `
     ],
     "y": [],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

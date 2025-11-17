@@ -650,6 +650,7 @@ exports[`radar_multi_measure 1`] = `
       "date",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

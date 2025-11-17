@@ -783,6 +783,7 @@ exports[`columnPolynomial 1`] = `
       "value",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

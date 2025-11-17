@@ -670,6 +670,7 @@ exports[`pivotTooltipHistogram 1`] = `
     "x1": [],
     "y": [],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

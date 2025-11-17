@@ -427,6 +427,14 @@ exports[`2_meaColor 1`] = `
       "date",
     ],
   },
+  "extraMeasures": [
+    {
+      "alias": "销售额",
+      "encoding": "color",
+      "id": "sales",
+      "parentId": "1",
+    },
+  ],
   "locale": "zh-CN",
   "measures": [
     {

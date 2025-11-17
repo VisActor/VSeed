@@ -448,6 +448,13 @@ exports[`pie 1`] = `
       "count",
     ],
   },
+  "extraMeasures": [
+    {
+      "alias": "数量",
+      "encoding": "tooltip",
+      "id": "count",
+    },
+  ],
   "locale": "zh-CN",
   "measures": [
     {

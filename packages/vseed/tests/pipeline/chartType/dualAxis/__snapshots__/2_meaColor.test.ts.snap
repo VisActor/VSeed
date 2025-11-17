@@ -1085,6 +1085,7 @@ exports[`2_meaColor 1`] = `
       "sales",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [
@@ -1371,7 +1372,6 @@ exports[`2_meaColor 2`] = `
   "legends": {
     "field": "__Dim_Color__",
     "handlerText": {
-      "formatter": [Function],
       "style": {
         "fill": "#606773",
         "fontSize": 12,

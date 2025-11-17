@@ -749,6 +749,7 @@ exports[`aggression 1`] = `
       "x",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

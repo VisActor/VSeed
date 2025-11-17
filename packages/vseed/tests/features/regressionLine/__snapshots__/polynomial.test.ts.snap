@@ -740,6 +740,7 @@ exports[`polynomial 1`] = `
       "LifeExpectancy",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "markStyle": {},
   "measures": [

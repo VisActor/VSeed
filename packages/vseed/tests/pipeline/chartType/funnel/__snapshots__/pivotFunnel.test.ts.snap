@@ -1196,6 +1196,7 @@ exports[`pivotFunnel 1`] = `
       "type",
     ],
   },
+  "extraMeasures": [],
   "locale": "zh-CN",
   "measures": [
     {

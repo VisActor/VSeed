@@ -12,7 +12,7 @@ export const deleteMeasureTreeByCallback = <T extends MeasureTree>(
   callback?: (measure: Measure, index: number, measures: (Measure | MeasureGroup)[]) => boolean,
 ): Measure[] => {
   if (!measureTree) {
-    return null as unknown as Measure[]
+    return undefined as unknown as Measure[]
   }
   const stack: (Measure | MeasureGroup)[] = [...measureTree].reverse()
   const parents = new Map<Measure | MeasureGroup, (Measure | MeasureGroup)[]>()

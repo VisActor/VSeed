@@ -1056,7 +1056,7 @@ exports[`emptyDualAxis 2`] = `
           "content": [
             {
               "hasShape": true,
-              "key": undefined,
+              "key": [Function],
               "shapeType": "rectRound",
               "value": [Function],
               "visible": true,
@@ -1193,7 +1193,7 @@ exports[`emptyDualAxis 2`] = `
           "content": [
             {
               "hasShape": true,
-              "key": undefined,
+              "key": [Function],
               "shapeType": "rectRound",
               "value": [Function],
               "visible": true,

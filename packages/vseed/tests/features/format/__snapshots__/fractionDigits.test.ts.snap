@@ -1555,7 +1555,7 @@ exports[`fractionDigits 2`] = `
       "content": [
         {
           "hasShape": true,
-          "key": "num0",
+          "key": [Function],
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

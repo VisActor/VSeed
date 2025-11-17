@@ -1573,7 +1573,7 @@ exports[`simpleDonut 2`] = `
       "content": [
         {
           "hasShape": true,
-          "key": "goalProfit",
+          "key": [Function],
           "shapeType": "rectRound",
           "value": [Function],
           "visible": true,

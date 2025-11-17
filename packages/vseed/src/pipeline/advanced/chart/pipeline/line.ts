@@ -17,8 +17,8 @@ import {
   defaultMeasureId,
   encodingAdapter,
   defaultEncodingForLine,
-  deleteEncodingForMeasure,
-  deleteTooltipAndLabelDimension,
+  pickMeasuresForReshape,
+  pickDimensionsForReshape,
 } from '../pipes'
 
 export const lineAdvancedPipeline: AdvancedPipeline = [
@@ -29,12 +29,7 @@ export const lineAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForLine, buildMeasures],
-    [
-      encodingForLine,
-      buildMeasures,
-      deleteEncodingForMeasure(['tooltip', 'label', 'color']),
-      deleteTooltipAndLabelDimension,
-    ],
+    [encodingForLine, buildMeasures, pickMeasuresForReshape(['tooltip', 'label', 'color']), pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

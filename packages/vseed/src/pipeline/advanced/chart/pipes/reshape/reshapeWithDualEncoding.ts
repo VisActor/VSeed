@@ -16,7 +16,9 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
-  const { dimensions = [], measures = [], encoding, chartType } = advancedVSeed
+  const { encoding, chartType } = advancedVSeed
+  const measures = advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []
+  const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
 
   if (measures.length > 2) {
     throw new Error('measures can not be more than 2 groups in dualAxis')

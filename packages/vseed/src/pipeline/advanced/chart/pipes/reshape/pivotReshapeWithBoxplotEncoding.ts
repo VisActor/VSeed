@@ -26,7 +26,9 @@ export const pivotReshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, con
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset, chartType } = vseed as ColumnParallel
-  const { dimensions = [], measures = [], encoding = {}, config } = advancedVSeed
+  const { encoding = {}, config } = advancedVSeed
+  const measures = advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []
+  const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
   const uniqDims = uniqueBy(dimensions, (item: Dimension) => item.id)
   const chartConfig = config?.[chartType as 'boxPlot']
   const whiskers = chartConfig?.whiskers

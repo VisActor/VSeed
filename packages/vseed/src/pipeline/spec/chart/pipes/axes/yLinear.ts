@@ -5,6 +5,7 @@ import {
   isAreaPercent,
   isBarPercent,
   isColumnPercent,
+  isPivotChart,
   LINEAR_AXIS_INNER_OFFSET_TOP,
 } from 'src/pipeline/utils'
 import type { VChartSpecPipe, YLinearAxis } from 'src/types'
@@ -21,6 +22,7 @@ export const yLinear: VChartSpecPipe = (spec, context) => {
   if (!result.axes) {
     result.axes = []
   }
+  const isPivot = isPivotChart(vseed)
 
   const {
     visible = true,
@@ -47,6 +49,17 @@ export const yLinear: VChartSpecPipe = (spec, context) => {
   })
 
   const linearAxis = {
+    ...(isPivot
+      ? {
+          range: {
+            min,
+            max,
+          },
+        }
+      : {
+          min,
+          max,
+        }),
     visible,
     type: log ? 'log' : 'linear',
     base: logBase,
@@ -54,8 +67,6 @@ export const yLinear: VChartSpecPipe = (spec, context) => {
     nice,
     zero: log ? false : zero,
     inverse,
-    max,
-    min,
     label: {
       space: AXIS_LABEL_SPACE,
       visible: label?.visible,

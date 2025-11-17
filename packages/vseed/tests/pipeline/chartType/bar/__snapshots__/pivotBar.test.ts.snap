@@ -1739,10 +1739,12 @@ exports[`pivotBar 2`] = `
               },
               "visible": true,
             },
-            "max": undefined,
-            "min": undefined,
             "nice": true,
             "orient": "bottom",
+            "range": {
+              "max": undefined,
+              "min": undefined,
+            },
             "tick": {
               "inside": false,
               "style": {
@@ -2077,10 +2079,12 @@ exports[`pivotBar 2`] = `
               },
               "visible": true,
             },
-            "max": undefined,
-            "min": undefined,
             "nice": true,
             "orient": "bottom",
+            "range": {
+              "max": undefined,
+              "min": undefined,
+            },
             "tick": {
               "inside": false,
               "style": {

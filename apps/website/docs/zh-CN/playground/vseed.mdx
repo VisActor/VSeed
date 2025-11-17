@@ -9,105 +9,46 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    color: {
-      colorScheme: ['#7E5DFF', '#ACA2D5', '#5B5F89', '#80E1D9', '#F8BC3B', '#B2596E', '#3E91FF', '#9578BB'],
-      linearColorScheme: ['#D8CFFF', '#BEADFF', '#A28AFF', '#9174FF', '#7E5DFF', '#6249C6', '#4B3796', '#382A6F'],
-    },
-    legend: {
-      enable: true,
-      labelFontSize: 12,
-      labelFontColor: '#BBBDC3',
-      position: 'topRight',
-      maxSize: 1,
-    },
-    label: {
-      enable: true,
-    },
-    lineStyle: [],
-    barStyle: [],
-    pointStyle: [],
-    areaStyle: [],
-    annotationPoint: [],
-    annotationHorizontalLine: [],
-    annotationVerticalLine: [],
-    annotationArea: [],
+    chartType: 'boxPlot',
+    dataset: [
+      { color: 'red', shape: 'circle', Sex: 'male', v: 1 },
+      { color: 'red', shape: 'circle', Sex: 'male', v: 1 },
+      { color: 'red', shape: 'circle', Sex: 'male', v: 1 },
+      { color: 'red', shape: 'circle', Sex: 'male', v: 2 },
+      { color: 'red', shape: 'circle', Sex: 'female', v: 5 },
+      { color: 'red', shape: 'circle', Sex: 'female', v: 7 },
+      { color: 'red', shape: 'circle', Sex: 'female', v: 8 },
+      { color: 'red', shape: 'circle', Sex: 'female', v: 9 },
+      { color: 'red', shape: 'circle', Sex: 'female', v: 10 },
+      { color: 'blue', shape: 'circle', Sex: 'male', v1: 1 },
+      { color: 'blue', shape: 'circle', Sex: 'male', v1: 1 },
+      { color: 'blue', shape: 'circle', Sex: 'male', v1: 1 },
+      { color: 'blue', shape: 'circle', Sex: 'male', v1: 2 },
+      { color: 'blue', shape: 'circle', Sex: 'female', v1: 5 },
+      { color: 'blue', shape: 'circle', Sex: 'female', v1: 7 },
+      { color: 'blue', shape: 'circle', Sex: 'female', v1: 8 },
+      { color: 'blue', shape: 'circle', Sex: 'female', v1: 9 },
+    ].map((v) => ({ v: v.v, v1: v.v1 })),
     measures: [
       {
-        id: 'co_20251106145340_40a0',
-        alias: 'sum(amount)',
-        encoding: 'color',
-        format: {
-          auto: true,
-          thousandSeparator: true,
-          type: 'number',
-        },
-        autoFormat: true,
+        id: 'v',
+        encoding: 'value',
+        alias: '销量',
+        parentId: '0',
+      },
+      {
+        id: 'v1',
+        encoding: 'value',
+        alias: '销售额',
+        parentId: '0',
+      },
+      {
+        id: 'v1',
+        encoding: 'value',
+        alias: '销售额',
+        parentId: '1',
       },
     ],
-    dimensions: [
-      {
-        id: 'xA_20251106145330_2e6f',
-        alias: 'customer_type',
-        encoding: 'xAxis',
-        autoFormat: true,
-      },
-      {
-        id: 'yA_20251106145335_61f4',
-        alias: 'product_type',
-        encoding: 'yAxis',
-        autoFormat: true,
-      },
-    ],
-    chartType: 'heatmap',
-    dataset: [
-      {
-        co_20251106145340_40a0: '6514',
-        xA_20251106145330_2e6f: '公司',
-        yA_20251106145335_61f4: '办公用品',
-      },
-      {
-        co_20251106145340_40a0: '3824',
-        xA_20251106145330_2e6f: '小型企业',
-        yA_20251106145335_61f4: '办公用品',
-      },
-      {
-        co_20251106145340_40a0: '11063',
-        xA_20251106145330_2e6f: '消费者',
-        yA_20251106145335_61f4: '办公用品',
-      },
-      {
-        co_20251106145340_40a0: '2564',
-        xA_20251106145330_2e6f: '公司',
-        yA_20251106145335_61f4: '家具',
-      },
-      {
-        co_20251106145340_40a0: '1591',
-        xA_20251106145330_2e6f: '小型企业',
-        yA_20251106145335_61f4: '家具',
-      },
-      {
-        co_20251106145340_40a0: '4336',
-        xA_20251106145330_2e6f: '消费者',
-        yA_20251106145335_61f4: '家具',
-      },
-      {
-        co_20251106145340_40a0: '2503',
-        xA_20251106145330_2e6f: '公司',
-        yA_20251106145335_61f4: '技术',
-      },
-      {
-        co_20251106145340_40a0: '1365',
-        xA_20251106145330_2e6f: '小型企业',
-        yA_20251106145335_61f4: '技术',
-      },
-      {
-        co_20251106145340_40a0: '3774',
-        xA_20251106145330_2e6f: '消费者',
-        yA_20251106145335_61f4: '技术',
-      },
-    ],
-    theme: 'dark',
-    locale: 'zh-CN',
   }
 
   const parseRes = zVSeed.safeParse(vseed)

@@ -1898,10 +1898,12 @@ exports[`pivotColumn 2`] = `
               },
               "visible": true,
             },
-            "max": undefined,
-            "min": undefined,
             "nice": true,
             "orient": "left",
+            "range": {
+              "max": undefined,
+              "min": undefined,
+            },
             "tick": {
               "inside": false,
               "style": {
@@ -2236,10 +2238,12 @@ exports[`pivotColumn 2`] = `
               },
               "visible": true,
             },
-            "max": undefined,
-            "min": undefined,
             "nice": true,
             "orient": "left",
+            "range": {
+              "max": undefined,
+              "min": undefined,
+            },
             "tick": {
               "inside": false,
               "style": {

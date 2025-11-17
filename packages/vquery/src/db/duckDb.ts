@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { DuckDBBundles, AsyncDuckDBConnection } from '@duckdb/duckdb-wasm'
 import { AsyncDuckDB, selectBundle, ConsoleLogger } from '@duckdb/duckdb-wasm'
-import { QueryResult } from 'src/types'
+import { QueryResult } from 'src/types/DataSet'
 
 export class DuckDB {
   private db: AsyncDuckDB | null = null
@@ -57,26 +57,16 @@ export class DuckDB {
    * @param fileName 文件名
    * @param source 文件内容
    */
-  writeFile = async <T extends string | ArrayBuffer | Uint8Array | Blob>(fileName: string, source: T) => {
+  writeFile = async <T extends Blob>(fileName: string, source: T) => {
     if (!this.db) {
       throw new Error('db is null')
     }
     let uint8Array: Uint8Array
 
-    if (typeof source === 'string') {
-      // fetch url
-      const response = await fetch(source)
-      const buffer = await response.arrayBuffer()
-      uint8Array = new Uint8Array(buffer)
-    } else if (source instanceof Blob) {
+    if (source instanceof Blob) {
       // blob object
       const buffer = await source.arrayBuffer()
       uint8Array = new Uint8Array(buffer)
-    } else if (source instanceof ArrayBuffer) {
-      // array buffer
-      uint8Array = new Uint8Array(source)
-    } else if (source instanceof Uint8Array) {
-      uint8Array = source
     } else {
       throw new Error('Unsupported source type')
     }
@@ -102,19 +92,6 @@ export class DuckDB {
   }
 
   /**
-   * 确保一个文件存在，如果不存在，则根据同名文件创建临时表
-   * @param fileName 文件名
-   */
-  private ensureSchema = async (fileName: string) => {
-    if (!this.connection) {
-      throw new Error('connection is null')
-    }
-    await this.connection.query(
-      `CREATE TEMP TABLE IF NOT EXISTS "${fileName}" AS SELECT * FROM read_csv_auto('${fileName}')`,
-    )
-  }
-
-  /**
    * @description 获取文件的 Schema
    * @param fileName 文件名
    * @returns 文件的 Schema
@@ -123,8 +100,6 @@ export class DuckDB {
     if (!this.connection) {
       throw new Error('connection is null')
     }
-
-    await this.ensureSchema(fileName)
 
     const result = await this.connection.query(`PRAGMA table_info('${fileName}')`)
     return result.toArray().map((row) => row.toJSON())

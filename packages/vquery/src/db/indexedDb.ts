@@ -1,7 +1,10 @@
+import { DataSource } from 'src/types'
+import { DatasetSchema } from '../types/DataSet'
+
 export class IndexedDB {
   private db: IDBDatabase | null = null
   private dbName: string
-  private storeName = 'vqueryFiles'
+  private datasetStoreName = 'vqueryDatasets'
 
   constructor(dbName: string) {
     this.dbName = dbName
@@ -9,12 +12,13 @@ export class IndexedDB {
 
   public open = (): Promise<void> => {
     return new Promise((resolve, reject) => {
-      const request = indexedDB.open(this.dbName, 1)
+      const request = indexedDB.open(this.dbName, 2)
 
       request.onupgradeneeded = (event) => {
         const db = (event.target as IDBOpenDBRequest).result
-        if (!db.objectStoreNames.contains(this.storeName)) {
-          db.createObjectStore(this.storeName, { keyPath: 'name' })
+        // 创建数据集存储
+        if (!db.objectStoreNames.contains(this.datasetStoreName)) {
+          db.createObjectStore(this.datasetStoreName, { keyPath: 'datasetId' })
         }
       }
 
@@ -36,14 +40,14 @@ export class IndexedDB {
     }
   }
 
-  public writeFile = (fileName: string, data: Blob): Promise<void> => {
+  public writeDataset = (datasetId: string, dataSource: DataSource, datasetSchema: DatasetSchema): Promise<void> => {
     return new Promise((resolve, reject) => {
       if (!this.db) {
         return reject('DB is not open')
       }
-      const transaction = this.db.transaction([this.storeName], 'readwrite')
-      const store = transaction.objectStore(this.storeName)
-      const request = store.put({ name: fileName, data })
+      const transaction = this.db.transaction([this.datasetStoreName], 'readwrite')
+      const store = transaction.objectStore(this.datasetStoreName)
+      const request = store.put({ datasetId, dataSource, datasetSchema })
 
       request.onsuccess = () => {
         resolve()
@@ -55,22 +59,22 @@ export class IndexedDB {
     })
   }
 
-  public readFile = (fileName: string): Promise<Blob | null> => {
+  public readDataset = (
+    datasetId: string,
+  ): Promise<{ dataSource: DataSource; datasetSchema: DatasetSchema } | null> => {
     return new Promise((resolve, reject) => {
       if (!this.db) {
         return reject('DB is not open')
       }
-      const transaction = this.db.transaction([this.storeName], 'readonly')
-      const store = transaction.objectStore(this.storeName)
-      const request = store.get(fileName)
+      const transaction = this.db.transaction([this.datasetStoreName], 'readonly')
+      const store = transaction.objectStore(this.datasetStoreName)
+      const request = store.get(datasetId)
 
       request.onsuccess = (event) => {
-        const result = (event.target as IDBRequest).result
-        if (result) {
-          resolve(result.data)
-        } else {
-          resolve(null)
-        }
+        const result = (event.target as IDBRequest).result as
+          | { dataSource: DataSource; datasetSchema: DatasetSchema }
+          | undefined
+        resolve(result || null)
       }
 
       request.onerror = (event) => {
@@ -79,18 +83,41 @@ export class IndexedDB {
     })
   }
 
-  public listFiles = (): Promise<string[]> => {
+  public deleteDataset = (datasetId: string): Promise<void> => {
     return new Promise((resolve, reject) => {
       if (!this.db) {
         return reject('DB is not open')
       }
-      const transaction = this.db.transaction([this.storeName], 'readonly')
-      const store = transaction.objectStore(this.storeName)
-      const request = store.getAllKeys()
+      const transaction = this.db.transaction([this.datasetStoreName], 'readwrite')
+      const store = transaction.objectStore(this.datasetStoreName)
+      const request = store.delete(datasetId)
+
+      request.onsuccess = () => {
+        resolve()
+      }
+
+      request.onerror = (event) => {
+        reject((event.target as IDBRequest).error)
+      }
+    })
+  }
+
+  public listDatasets = (): Promise<{ datasetId: string; dataSource: DataSource; datasetSchema: DatasetSchema }[]> => {
+    return new Promise((resolve, reject) => {
+      if (!this.db) {
+        return reject('DB is not open')
+      }
+      const transaction = this.db.transaction([this.datasetStoreName], 'readonly')
+      const store = transaction.objectStore(this.datasetStoreName)
+      const request = store.getAll()
 
       request.onsuccess = (event) => {
-        const keys = (event.target as IDBRequest).result as string[]
-        resolve(keys)
+        const result = (event.target as IDBRequest).result as {
+          datasetId: string
+          dataSource: DataSource
+          datasetSchema: DatasetSchema
+        }[]
+        resolve(result)
       }
 
       request.onerror = (event) => {

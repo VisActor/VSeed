@@ -1,5 +1,11 @@
 # @visactor/vquery
 
+## 0.1.46
+
+### Patch Changes
+
+- ee79ee9: break: add dataset instead of file
+
 ## 0.1.45
 
 ## 0.1.44

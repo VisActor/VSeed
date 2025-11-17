@@ -553,7 +553,7 @@ exports[`pivotHistogram 1`] = `
       {
         "__BinCount__": 1,
         "__BinEnd__": 2,
-        "__BinPercentage__": 0.25,
+        "__BinPercentage__": 0.5,
         "__BinStart__": 1,
         "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
@@ -568,7 +568,7 @@ exports[`pivotHistogram 1`] = `
       {
         "__BinCount__": 1,
         "__BinEnd__": 3,
-        "__BinPercentage__": 0.25,
+        "__BinPercentage__": 0.5,
         "__BinStart__": 2,
         "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
@@ -583,7 +583,7 @@ exports[`pivotHistogram 1`] = `
       {
         "__BinCount__": 1,
         "__BinEnd__": 3,
-        "__BinPercentage__": 0.25,
+        "__BinPercentage__": 1,
         "__BinStart__": 2,
         "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
@@ -598,7 +598,7 @@ exports[`pivotHistogram 1`] = `
       {
         "__BinCount__": 1,
         "__BinEnd__": 6,
-        "__BinPercentage__": 0.25,
+        "__BinPercentage__": 1,
         "__BinStart__": 5,
         "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
@@ -1114,7 +1114,7 @@ exports[`pivotHistogram 2`] = `
       {
         "__BinCount__": 1,
         "__BinEnd__": 2,
-        "__BinPercentage__": 0.25,
+        "__BinPercentage__": 0.5,
         "__BinStart__": 1,
         "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
@@ -1129,7 +1129,7 @@ exports[`pivotHistogram 2`] = `
       {
         "__BinCount__": 1,
         "__BinEnd__": 3,
-        "__BinPercentage__": 0.25,
+        "__BinPercentage__": 0.5,
         "__BinStart__": 2,
         "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
@@ -1144,7 +1144,7 @@ exports[`pivotHistogram 2`] = `
       {
         "__BinCount__": 1,
         "__BinEnd__": 3,
-        "__BinPercentage__": 0.25,
+        "__BinPercentage__": 1,
         "__BinStart__": 2,
         "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",
@@ -1159,7 +1159,7 @@ exports[`pivotHistogram 2`] = `
       {
         "__BinCount__": 1,
         "__BinEnd__": 6,
-        "__BinPercentage__": 0.25,
+        "__BinPercentage__": 1,
         "__BinStart__": 5,
         "__Dim_ColorId__": "v",
         "__Dim_Color__": "v",

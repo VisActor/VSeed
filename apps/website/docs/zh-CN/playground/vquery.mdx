@@ -6,90 +6,44 @@ pageType: custom
 
 ```tsx
 const run = async (setVSeed) => {
-  // 1. init vquery
   const vquery = new VQuery()
 
-  // 2. write or read dataset from indexedDB
   const datasets = await vquery.listDatasets()
 
-  /**
-   * ------------------------ CSV URL Dataset ------------------------
-   */
-  const datasetSchema1 = {
-    datasetId: 'supermarket1',
-    datasetAlias: '超市',
-    columns: [
-      { name: 'id', type: 'string' },
-      { name: 'order_id', type: 'string' },
-      { name: 'order_date', type: 'date' },
-      { name: 'delivery_date', type: 'date' },
-      { name: 'delivery_method', type: 'string' },
-      { name: 'customer_id', type: 'string' },
-      { name: 'customer_name', type: 'string' },
-      { name: 'customer_type', type: 'string' },
-      { name: 'city', type: 'string' },
-      { name: 'province', type: 'string' },
-      { name: 'country_or_region', type: 'string' },
-      { name: 'area', type: 'string' },
-      { name: 'product_id', type: 'string' },
-      { name: 'product_type', type: 'string' },
-      { name: 'product_sub_type', type: 'string' },
-      { name: 'product_name', type: 'string' },
-      { name: 'sales', type: 'number' },
-      { name: 'amount', type: 'number' },
-      { name: 'discount', type: 'number' },
-      { name: 'profit', type: 'number' },
-    ],
-  }
-  const url = 'https://visactor.github.io/VSeed/dataset/supermarket.csv'
-  if (!datasets.find((d) => d.datasetId === datasetSchema1.datasetId)) {
-    await vquery.createDataset(datasetSchema1.datasetId, url, 'csv', datasetSchema1)
-  }
-  const dataset1 = await vquery.connectDataset(datasetSchema1.datasetId)
-
-  /**
-   * ------------------------ JSON Object Dataset ------------------------
-   */
-  const datasetSchema2 = {
-    datasetId: 'supermarket2',
-    datasetAlias: '超市',
-    columns: [
-      { name: 'area', type: 'string' },
-      { name: 'sales', type: 'number' },
-      { name: 'date', type: 'date' },
-    ],
+  const datasetSchema = {
+    datasetId: 'arrayObject',
+    datasetAlias: 'arrayObject',
   }
   const values = [
     { area: '北京', date: '2025-11-06', sales: 100 },
     { area: '上海', date: '2025-11-06', sales: 100 },
   ]
-  if (!datasets.find((d) => d.datasetId === datasetSchema2.datasetId)) {
-    await vquery.createDataset(datasetSchema2.datasetId, values, 'json', datasetSchema2)
-  }
-  const dataset2 = await vquery.connectDataset(datasetSchema2.datasetId)
 
-  const sql1 = `
-    SELECT
-        strftime('%Y-%m-%d', order_date) AS Date,
-        SUM(sales) AS Sales
-      FROM supermarket1
-      GROUP BY Date
-      ORDER BY Date
-  `
-  const sql2 = `
-    SELECT
-        strftime('%Y-%m-%d', date) AS Date,
-        SUM(sales) AS Sales
-      FROM supermarket2
-      GROUP BY Date
-      ORDER BY Date
-  `
-  const { dataset: queryDataset1, performance: performance1 } = await dataset1.queryBySQL(sql1)
-  const { dataset: queryDataset2, performance: performance2 } = await dataset2.queryBySQL(sql2)
+  if (!datasets.find((d) => d.datasetId === datasetSchema.datasetId)) {
+    await vquery.createDataset(datasetSchema.datasetId, values, 'json', datasetSchema)
+  }
+
+  const temporaryStructs = [
+    { name: 'area', type: 'string' },
+    { name: 'sales', type: 'number' },
+    { name: 'date', type: 'date' },
+  ]
+  const dataset = await vquery.connectTemporaryDataset(datasetSchema.datasetId, temporaryStructs)
+
+  const sql = `
+  SELECT
+    strftime('%Y-%m-%d', date) AS Date,
+    SUM(sales) AS Sales
+  FROM ${datasetSchema.datasetId}
+  GROUP BY Date
+  ORDER BY Date
+`
+
+  const queryResult = await dataset.queryBySQL(sql)
+  await dataset.disconnect()
 
   const vseed = {
-    dataset: queryDataset1,
-    dataset: queryDataset2,
+    dataset: queryResult.dataset,
     // chartType: 'pivotTable',
     // locale: 'en-US',
 

@@ -1,25 +1,8 @@
-import { Dataset } from './dataset'
+import { Dataset } from './dataset/dataset'
 import { DuckDB } from './db/duckDb'
 import { IndexedDB } from './db/indexedDb'
-import { DatasetSchema, TidyDatum, DataSourceType, DataType } from './types'
+import { DatasetSchema, TidyDatum, DataSourceType, DatasetColumn } from './types'
 import { DataSourceBuilder } from 'src/dataSourceBuilder'
-
-function mapDataTypeToDuckDB(type: DataType): string {
-  switch (type) {
-    case 'number':
-      return 'DOUBLE'
-    case 'string':
-      return 'VARCHAR'
-    case 'date':
-      return 'DATE'
-    case 'datetime':
-      return 'TIMESTAMP'
-    case 'timestamp':
-      return 'TIMESTAMP'
-    default:
-      return 'VARCHAR'
-  }
-}
 
 export class VQuery {
   private duckDB: DuckDB
@@ -89,36 +72,30 @@ export class VQuery {
    */
   public async connectDataset(datasetId: string) {
     await this.ensureInitialized()
-    const datasetInfo = await this.indexedDB.readDataset(datasetId)
-    if (!datasetInfo) {
-      throw new Error(`Dataset ${datasetId} not found`)
-    }
-    const { dataSource, datasetSchema } = datasetInfo
 
-    // 根据dataSource类型处理数据加载
-    const readFunctionMap: Partial<Record<DataSourceType, string>> = {
-      csv: 'read_csv_auto',
-      json: 'read_json_auto',
-      xlsx: 'read_excel',
-      parquet: 'read_parquet',
-    }
-    const readFunction = readFunctionMap[dataSource.type]
-    if (!readFunction) {
-      throw new Error(`Unsupported dataSource type: ${dataSource.type}`)
-    }
+    const dataset = new Dataset(this.duckDB, this.indexedDB, datasetId)
+    await dataset.init()
+    return dataset
+  }
 
-    // 注册文件到DuckDB - 只处理文件类型，不处理数组
-    await this.duckDB.writeFile(datasetId, dataSource.blob)
+  /**
+   * 连接临时数据集，返回数据集信息，从indexedDB获取表结构，使用DuckDB在内存中创建表
+   * @param datasetId
+   * @returns
+   */
+  public async connectTemporaryDataset(datasetId: string, temporaryDatasetSchema?: DatasetColumn[]) {
+    await this.ensureInitialized()
 
-    const columnsStruct = `{${datasetSchema.columns
-      .map((c) => `'${c.name}': '${mapDataTypeToDuckDB(c.type)}'`)
-      .join(', ')}}`
-    const columnNames = datasetSchema.columns.map((c) => `"${c.name}"`).join(', ')
+    const dataset = new Dataset(this.duckDB, this.indexedDB, datasetId)
+    await dataset.init(temporaryDatasetSchema)
+    return dataset
+  }
 
-    // 创建视图
-    const createViewSql = `CREATE OR REPLACE VIEW "${datasetId}" AS SELECT ${columnNames} FROM ${readFunction}('${datasetId}', columns=${columnsStruct})`
-    await this.duckDB.query(createViewSql)
-
-    return new Dataset(this.duckDB, datasetId, datasetSchema.datasetAlias || datasetId)
+  /**
+   * 关闭所有数据集连接，释放DuckDB资源
+   */
+  public async close() {
+    await this.ensureInitialized()
+    await this.duckDB.close()
   }
 }

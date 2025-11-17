@@ -85,11 +85,8 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
       const m = subMeasures.find((m) => m.id === valueField)
       const binData = bin(dataset, {
         field: valueField,
-        groupField: [
-          ...(encoding.x ?? []),
-          ...(encoding.color ?? []),
-          ...rowColumnFields.map((item: Dimension) => item.id),
-        ] as string[],
+        groupField: [...(encoding.x ?? []), ...(encoding.color ?? [])] as string[],
+        facetField: rowColumnFields.map((item: Dimension) => item.id),
         bins: binCount,
         step: binStep,
         outputNames: {

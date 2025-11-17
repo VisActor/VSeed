@@ -799,6 +799,52 @@ exports[`regressionECDFHistogram 2`] = `
       "visible": true,
       "zero": true,
     },
+    {
+      "base": 10,
+      "domainLine": {
+        "style": {
+          "lineWidth": 1,
+          "stroke": "#21252C",
+        },
+        "visible": false,
+      },
+      "grid": {
+        "visible": false,
+      },
+      "label": {
+        "formatMethod": [Function],
+        "space": 8,
+        "style": {
+          "angle": 0,
+          "fill": "#8F959E",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "visible": true,
+      },
+      "max": 1,
+      "min": 0,
+      "orient": "right",
+      "tick": {
+        "inside": false,
+        "style": {
+          "stroke": "#21252C",
+        },
+        "tickSize": 4,
+        "visible": false,
+      },
+      "title": {
+        "style": {
+          "fill": "#606773",
+          "fontSize": 12,
+          "fontWeight": 400,
+        },
+        "text": "",
+        "visible": false,
+      },
+      "type": "linear",
+      "visible": true,
+    },
   ],
   "background": "transparent",
   "bar": {
@@ -834,6 +880,7 @@ exports[`regressionECDFHistogram 2`] = `
   "crosshair": {
     "xField": {
       "label": {
+        "formatMethod": [Function],
         "labelBackground": {
           "style": {
             "fill": "#364159",

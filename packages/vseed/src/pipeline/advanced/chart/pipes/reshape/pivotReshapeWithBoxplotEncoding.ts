@@ -3,14 +3,14 @@ import { uniqueBy } from 'remeda'
 import {
   FoldMeasureId,
   FoldMeasureName,
-  MaxMeasureId,
+  LowerWhisker,
   MedianMeasureId,
-  MinMeasureId,
   OutliersMeasureId,
   Q1MeasureValue,
   Q3MeasureValue,
   Separator,
   unfoldDimensions,
+  UpperWhisker,
 } from 'src/dataReshape'
 import type {
   AdvancedPipe,
@@ -73,8 +73,8 @@ export const pivotReshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, con
           outputNames: {
             q1: Q1MeasureValue,
             q3: Q3MeasureValue,
-            min: MinMeasureId,
-            max: MaxMeasureId,
+            lowerWhisker: LowerWhisker,
+            upperWhisker: UpperWhisker,
             median: MedianMeasureId,
             outliers: OutliersMeasureId,
           },
@@ -110,8 +110,8 @@ export const pivotReshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, con
       })
 
       res.dataset.forEach((datum) => {
-        datum[MaxMeasureId] = datum[encoding.max![0]]
-        datum[MinMeasureId] = datum[encoding.min![0]]
+        datum[UpperWhisker] = datum[encoding.max![0]]
+        datum[LowerWhisker] = datum[encoding.min![0]]
         datum[Q1MeasureValue] = datum[encoding.q1![0]]
         datum[Q3MeasureValue] = datum[encoding.q3![0]]
         datum[MedianMeasureId] = datum[encoding.median![0]]

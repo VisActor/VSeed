@@ -15,6 +15,8 @@ import type {
   LinearRegressionLine,
   PolynomialRegressionLine,
   SpecPipelineContext,
+  LogisticRegressionLine,
+  LowessRegressionLine,
 } from 'src/types'
 
 export const generateRegressionLinePipe = (
@@ -28,7 +30,7 @@ export const generateRegressionLinePipe = (
     confidenceInterval: (N: number) => { lower: number; upper: number; x: number }[]
     evaluateGrid: (N: number) => { x: number; y: number }[]
   },
-  getOptions?: (lineConfig: any) => any,
+  getOptions: (lineConfig: any) => any = getDefaultRegressionOptions,
 ): VChartSpecPipe => {
   return ((spec: Partial<IScatterChartSpec>, context: SpecPipelineContext): Partial<IScatterChartSpec> => {
     const result = { ...spec }
@@ -244,13 +246,19 @@ export const generateRegressionLinePipe = (
   }) as VChartSpecPipe
 }
 
+const getDefaultRegressionOptions = (
+  lineConfig: PolynomialRegressionLine | LinearRegressionLine | LogisticRegressionLine | LowessRegressionLine,
+) => {
+  return { alpha: lineConfig?.confidenceLevel ?? 0.95 }
+}
+
 export const linearRegressionLine: VChartSpecPipe = generateRegressionLinePipe('linearRegressionLine', regressionLinear)
 export const lowessRegressionLine: VChartSpecPipe = generateRegressionLinePipe('lowessRegressionLine', regressionLowess)
 export const polynomialRegressionLine: VChartSpecPipe = generateRegressionLinePipe(
   'polynomialRegressionLine',
   regressionPolynomial,
   (lineConfig: PolynomialRegressionLine) => {
-    return { degree: lineConfig.degree ?? 2 }
+    return { ...getDefaultRegressionOptions(lineConfig), degree: lineConfig.degree ?? 2 }
   },
 )
 export const logisticRegressionLine: VChartSpecPipe = generateRegressionLinePipe(

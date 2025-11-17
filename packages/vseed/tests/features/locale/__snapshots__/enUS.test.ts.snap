@@ -981,7 +981,7 @@ exports[`enUS 1`] = `
       "id": "date",
     },
     {
-      "alias": "指标Id",
+      "alias": "MeasureId",
       "id": "__MeaId__",
     },
   ],

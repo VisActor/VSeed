@@ -1,11 +1,11 @@
 import { isNullish } from 'remeda'
-import * as translateMap from './i18nData.json'
+import { translateMap } from './i18nData'
 import type { Locale, TranslateRecordType } from '../types'
 
 class Intl {
   private static instance: Intl
 
-  private translateMap: TranslateRecordType = translateMap as unknown as TranslateRecordType
+  private translateMap: TranslateRecordType = translateMap
   private locale: Locale = 'zh-CN'
 
   canTranslate = (value: string) => !!this.translateMap[value]

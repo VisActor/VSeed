@@ -4,17 +4,26 @@ import type { Dimension, Dimensions, Encoding, VChartSpecPipe, Tooltip } from 's
 import type { Datum, ISpec, ITooltipLinePattern, ITooltipLineActual, TooltipData } from '@visactor/vchart'
 import {
   ColorEncoding,
-  MaxMeasureId,
+  LowerWhisker,
   MedianMeasureId,
-  MinMeasureId,
   OutliersMeasureId,
   Q1MeasureValue,
   Q3MeasureValue,
+  UpperWhisker,
   XEncoding,
 } from 'src/dataReshape'
 import { getTooltipStyle } from './tooltipStyle'
+import { intl } from 'src/i18n'
 
-const boxPlotMeasureKeys = [MaxMeasureId, Q3MeasureValue, MedianMeasureId, Q1MeasureValue, MinMeasureId]
+const boxPlotMeasureKeys = [UpperWhisker, Q3MeasureValue, MedianMeasureId, Q1MeasureValue, LowerWhisker]
+const measureAliasMapping: Record<string, string> = {
+  [OutliersMeasureId]: intl.i18n`异常点`,
+  [UpperWhisker]: intl.i18n`上边界`,
+  [Q3MeasureValue]: intl.i18n`上四分位数`,
+  [MedianMeasureId]: intl.i18n`中位数`,
+  [Q1MeasureValue]: intl.i18n`下四分位数`,
+  [LowerWhisker]: intl.i18n`下边界`,
+}
 const VCHART_OUTLIER_KEY = '__VCHART_BOX_PLOT_OUTLIER_VALUE'
 
 export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
@@ -38,6 +47,7 @@ export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
       content: createMarkContent(encoding.tooltip || [], dimensions, encoding as Encoding),
       updateContent: (prev: ITooltipLineActual[] | undefined, data: TooltipData | undefined) => {
         const datum = (data as any)?.[0]?.datum?.[0]
+        console.log('!!!!!', intl.i18n`异常点`)
 
         if (!isNullish(datum?.[VCHART_OUTLIER_KEY])) {
           const tooltipItems: ITooltipLineActual[] = (prev ?? []).filter(
@@ -48,7 +58,7 @@ export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
 
           tooltipItems.push({
             ...(tooltipItems[0] as any),
-            key: outerlierMeasure?.alias ?? OutliersMeasureId,
+            key: outerlierMeasure?.alias ?? measureAliasMapping[OutliersMeasureId],
             value: formatter(datum?.[VCHART_OUTLIER_KEY] as number) as string,
           } as ITooltipLineActual)
 
@@ -64,7 +74,7 @@ export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
             return {
               ...(entry as any),
               value: formatter(datum?.[(entry as any).key] as number) as string,
-              key: mea?.alias ?? (entry as any).key,
+              key: mea?.alias ?? measureAliasMapping[entry?.key as string] ?? (entry as any).key,
             }
           }
 

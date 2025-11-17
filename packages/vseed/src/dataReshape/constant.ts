@@ -31,8 +31,6 @@ export const Q1MeasureValue = '__Q1__'
 export const Q3MeasureValue = '__Q3__'
 export const LowerWhisker = '__Lower_Whisker__'
 export const UpperWhisker = '__Upper_Whisker__'
-export const MinMeasureId = '__Min__'
-export const MaxMeasureId = '__Max__'
 export const OutliersMeasureId = '__Outliers__'
 export const MedianMeasureId = '__Meadian__'
 

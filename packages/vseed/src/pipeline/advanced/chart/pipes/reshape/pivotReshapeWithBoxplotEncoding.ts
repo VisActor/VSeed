@@ -56,9 +56,10 @@ export const pivotReshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, con
     let newDatasets: any[] = []
     let foldInfo: any = {}
     let unfoldInfo: any = {}
+    const validEncodingIds = (encoding.value || []).filter((id) => subMeasures.find((field) => field.id === id))
 
-    if (encoding.value?.length) {
-      encoding.value.forEach((f) => {
+    if (validEncodingIds.length) {
+      validEncodingIds.forEach((f) => {
         const m = subMeasures.find((m) => m.id === f)
         const boxPlotData = boxplot(dataset, {
           field: f,

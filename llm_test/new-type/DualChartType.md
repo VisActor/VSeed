@@ -1,11 +1,10 @@
-
 ### DualChartType
+
 双轴图的主次轴的图表类型, 用于定义双轴图的类型, 包括折线图, 柱状图, 面积图等, 当measures有多组时, dualChartType可以配置为数组, 每项对应一个双轴图的子图表类型.
+
 ```typescript
 export interface DualChartType {
-  primary: "line" | "column" | "columnParallel" | "area" | "scatter";
-  secondary: "line" | "column" | "columnParallel" | "area" | "scatter";
+  primary: 'line' | 'column' | 'columnParallel' | 'area' | 'scatter'
+  secondary: 'line' | 'column' | 'columnParallel' | 'area' | 'scatter'
 }
-
 ```
-  

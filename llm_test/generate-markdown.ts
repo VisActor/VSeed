@@ -32,7 +32,7 @@ function generateChartTypeMarkdown() {
   }
 
   // 加载Locale.md
-  const localeMd = fs.readFileSync(path.resolve(__dirname, './new-type/Locale.md')).toString();
+  const localeMd = fs.readFileSync(path.resolve(__dirname, './new-type/Locale.md')).toString()
 
   chartTypes.forEach((chartType) => {
     const chartTypePath = path.resolve(__dirname, `../packages/vseed/src/types/chartType/${chartType}/${chartType}.ts`)
@@ -112,7 +112,7 @@ const skipTopKeys = [
   'DimensionTree',
   'ScatterMeasures',
   'DualMeasures',
-  'LinearColor'
+  'LinearColor',
 ]
 
 function generateComponentMarkdown() {
@@ -146,13 +146,13 @@ function generateComponentMarkdown() {
   const interfaceNumFormatSignature = `export interface NumFormat`
   const definitionStartIndex = numFormatFileContentStr.indexOf(interfaceNumFormatSignature)
   if (definitionStartIndex === -1) {
-  console.log(`Could not find interface definition export interface NumFormat in numFormat.ts`)
-  return
+    console.log(`Could not find interface definition export interface NumFormat in numFormat.ts`)
+    return
   }
   const definitionEndIndex = numFormatFileContentStr.indexOf('}', definitionStartIndex)
   if (definitionEndIndex === -1) {
-  console.log(`Could not find matching closing brace for NumFormat in numFormat.ts`)
-  return
+    console.log(`Could not find matching closing brace for NumFormat in numFormat.ts`)
+    return
   }
   const numFormatDefinition = numFormatFileContentStr.substring(definitionStartIndex, definitionEndIndex + 1)
 
@@ -160,7 +160,7 @@ function generateComponentMarkdown() {
   const files = fs.readdirSync(dir, { recursive: true })
 
   // 加载Selector.md
-  const selectorMd = fs.readFileSync(path.resolve(__dirname, './new-type/Selector.md')).toString();
+  const selectorMd = fs.readFileSync(path.resolve(__dirname, './new-type/Selector.md')).toString()
 
   topKeySet.forEach((topKey: string) => {
     if (skipTopKeys.includes(topKey)) {
@@ -220,7 +220,11 @@ function generateComponentMarkdown() {
         if (definitionEndIndex !== -1) {
           const typeDefinition = fileContentStr.substring(startIndex, definitionEndIndex + 1)
           const hasNumFormat = typeDefinition.includes(': NumFormat')
-          let mdContent = `### ${topKey}\n${topKeyDesc[topKey]}\n\`\`\`typescript\n` + (hasNumFormat ? numFormatDefinition + '\n' : '') + typeDefinition + '\n```'
+          let mdContent =
+            `### ${topKey}\n${topKeyDesc[topKey]}\n\`\`\`typescript\n` +
+            (hasNumFormat ? numFormatDefinition + '\n' : '') +
+            typeDefinition +
+            '\n```'
           if (mdContent.includes('Selector')) {
             // 补充selector的描述
             mdContent += `\n${selectorMd}`
@@ -247,13 +251,13 @@ function generateAxisMarkdown() {
   const interfaceNumFormatSignature = `export interface NumFormat`
   const definitionStartIndex = numFormatFileContentStr.indexOf(interfaceNumFormatSignature)
   if (definitionStartIndex === -1) {
-  console.log(`Could not find interface definition export interface NumFormat in numFormat.ts`)
-  return
+    console.log(`Could not find interface definition export interface NumFormat in numFormat.ts`)
+    return
   }
   const definitionEndIndex = numFormatFileContentStr.indexOf('}', definitionStartIndex)
   if (definitionEndIndex === -1) {
-  console.log(`Could not find matching closing brace for NumFormat in numFormat.ts`)
-  return
+    console.log(`Could not find matching closing brace for NumFormat in numFormat.ts`)
+    return
   }
   const numFormatDefinition = numFormatFileContentStr.substring(definitionStartIndex, definitionEndIndex + 1)
 
@@ -264,18 +268,52 @@ function generateAxisMarkdown() {
   const bandAxisFileContentStr = bandAxisFileContent.toString()
   const linearAxisFileContentStr = linearAxisFileContent.toString()
   const outputDir = path.resolve(__dirname, './new-type')
-  
-  const xBandAxisDefinition = bandAxisFileContentStr.replace('export type XBandAxis', 'export type XBandAxis').replace('export type YBandAxis = XBandAxis', '');
-  fs.writeFileSync(path.resolve(outputDir, 'XBandAxis.md'), '### XBandAxis\n类目轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.\n```typescript\n' + xBandAxisDefinition + '\n```');
 
-  const yBandAxisDefinition = bandAxisFileContentStr.replace('export type XBandAxis', 'export type YBandAxis').replace('export type YBandAxis = XBandAxis', '');
-  fs.writeFileSync(path.resolve(outputDir, 'YBandAxis.md'), '### YBandAxis\n类目轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.\n```typescript\n' + yBandAxisDefinition + '\n```');
+  const xBandAxisDefinition = bandAxisFileContentStr
+    .replace('export type XBandAxis', 'export type XBandAxis')
+    .replace('export type YBandAxis = XBandAxis', '')
+  fs.writeFileSync(
+    path.resolve(outputDir, 'XBandAxis.md'),
+    '### XBandAxis\n类目轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.\n```typescript\n' +
+      xBandAxisDefinition +
+      '\n```',
+  )
 
-  const xLinearAxisDefinition = linearAxisFileContentStr.replace('export type XLinearAxis', 'export type XLinearAxis').replace('export type YLinearAxis = XLinearAxis', '').replace('import type { NumFormat } from \'../../format\'', '');
-  fs.writeFileSync(path.resolve(outputDir, 'XLinearAxis.md'), '### XLinearAxis\n数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.\n```typescript\n' + numFormatDefinition + '\n' + xLinearAxisDefinition + '\n```');
+  const yBandAxisDefinition = bandAxisFileContentStr
+    .replace('export type XBandAxis', 'export type YBandAxis')
+    .replace('export type YBandAxis = XBandAxis', '')
+  fs.writeFileSync(
+    path.resolve(outputDir, 'YBandAxis.md'),
+    '### YBandAxis\n类目轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.\n```typescript\n' +
+      yBandAxisDefinition +
+      '\n```',
+  )
 
-  const yLinearAxisDefinition = linearAxisFileContentStr.replace('export type XLinearAxis', 'export type YLinearAxis').replace('export type YLinearAxis = XLinearAxis', '').replace('import type { NumFormat } from \'../../format\'', '');
-  fs.writeFileSync(path.resolve(outputDir, 'YLinearAxis.md'), '### YLinearAxis\n数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.\n```typescript\n' + numFormatDefinition + '\n' + yLinearAxisDefinition + '\n```');
+  const xLinearAxisDefinition = linearAxisFileContentStr
+    .replace('export type XLinearAxis', 'export type XLinearAxis')
+    .replace('export type YLinearAxis = XLinearAxis', '')
+    .replace("import type { NumFormat } from '../../format'", '')
+  fs.writeFileSync(
+    path.resolve(outputDir, 'XLinearAxis.md'),
+    '### XLinearAxis\n数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.\n```typescript\n' +
+      numFormatDefinition +
+      '\n' +
+      xLinearAxisDefinition +
+      '\n```',
+  )
+
+  const yLinearAxisDefinition = linearAxisFileContentStr
+    .replace('export type XLinearAxis', 'export type YLinearAxis')
+    .replace('export type YLinearAxis = XLinearAxis', '')
+    .replace("import type { NumFormat } from '../../format'", '')
+  fs.writeFileSync(
+    path.resolve(outputDir, 'YLinearAxis.md'),
+    '### YLinearAxis\n数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.\n```typescript\n' +
+      numFormatDefinition +
+      '\n' +
+      yLinearAxisDefinition +
+      '\n```',
+  )
 }
 
 function generateMeasureMarkdown() {
@@ -284,20 +322,23 @@ function generateMeasureMarkdown() {
   const numFormatFileContent = fs.readFileSync(numFormatDir)
   const numFormatFileContentStr = numFormatFileContent.toString()
   const interfaceNumFormatSignature = `export interface NumFormat`
-   const definitionStartIndex = numFormatFileContentStr.indexOf(interfaceNumFormatSignature)
-   if (definitionStartIndex === -1) {
+  const definitionStartIndex = numFormatFileContentStr.indexOf(interfaceNumFormatSignature)
+  if (definitionStartIndex === -1) {
     console.log(`Could not find interface definition export interface NumFormat in numFormat.ts`)
     return
-   }
-   const definitionEndIndex = numFormatFileContentStr.indexOf('}', definitionStartIndex)
-   if (definitionEndIndex === -1) {
+  }
+  const definitionEndIndex = numFormatFileContentStr.indexOf('}', definitionStartIndex)
+  if (definitionEndIndex === -1) {
     console.log(`Could not find matching closing brace for NumFormat in numFormat.ts`)
     return
-   }
-   const numFormatDefinition = numFormatFileContentStr.substring(definitionStartIndex, definitionEndIndex + 1)
+  }
+  const numFormatDefinition = numFormatFileContentStr.substring(definitionStartIndex, definitionEndIndex + 1)
 
   // MeasureEncoding
-  const measureEncodingDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/encoding/measureEncoding.ts')
+  const measureEncodingDir = path.resolve(
+    __dirname,
+    '../packages/vseed/src/types/properties/encoding/measureEncoding.ts',
+  )
   const measureEncodingFileContent = fs.readFileSync(measureEncodingDir)
   const measureEncodingContent = measureEncodingFileContent.toString()
 
@@ -317,11 +358,32 @@ function generateMeasureMarkdown() {
 
   const startIndex = interfaceIndex
   const measureContent = fileContentStr.substring(startIndex)
-  fs.writeFileSync(path.resolve(outputDir, 'MeasureTree.md'), '### Measure\n指标\n```typescript\n' + numFormatDefinition + '\n' + measureEncodingContent + '\n' + measureContent + '\n```');
-  fs.writeFileSync(path.resolve(outputDir, 'Measures.md'), '### Measure\n指标\n```typescript\n' + numFormatDefinition + '\n' + measureEncodingContent + '\n' + measureContent + '\n```');
+  fs.writeFileSync(
+    path.resolve(outputDir, 'MeasureTree.md'),
+    '### Measure\n指标\n```typescript\n' +
+      numFormatDefinition +
+      '\n' +
+      measureEncodingContent +
+      '\n' +
+      measureContent +
+      '\n```',
+  )
+  fs.writeFileSync(
+    path.resolve(outputDir, 'Measures.md'),
+    '### Measure\n指标\n```typescript\n' +
+      numFormatDefinition +
+      '\n' +
+      measureEncodingContent +
+      '\n' +
+      measureContent +
+      '\n```',
+  )
 
   // ScatterMeasures
-  const scatterMeasureDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/measures/scatterMeasures.ts')
+  const scatterMeasureDir = path.resolve(
+    __dirname,
+    '../packages/vseed/src/types/properties/measures/scatterMeasures.ts',
+  )
   const scatterFileContent = fs.readFileSync(scatterMeasureDir)
   const scatterFileContentStr = scatterFileContent.toString()
   const scatterInterfaceSignature = `export type ScatterMeasure`
@@ -334,7 +396,18 @@ function generateMeasureMarkdown() {
 
   const scatterStartIndex = scatterInterfaceIndex
   const scatterMeasureContent = scatterFileContentStr.substring(scatterStartIndex)
-  fs.writeFileSync(path.resolve(outputDir, 'ScatterMeasures.md'), '### ScatterMeasure\n```typescript\n' + numFormatDefinition + '\n' + measureEncodingContent + '\n' + measureContent + '\n' + scatterMeasureContent + '\n```');
+  fs.writeFileSync(
+    path.resolve(outputDir, 'ScatterMeasures.md'),
+    '### ScatterMeasure\n```typescript\n' +
+      numFormatDefinition +
+      '\n' +
+      measureEncodingContent +
+      '\n' +
+      measureContent +
+      '\n' +
+      scatterMeasureContent +
+      '\n```',
+  )
 
   // DualMeasure
   const dualMeasureDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/measures/dualMeasures.ts')
@@ -350,12 +423,26 @@ function generateMeasureMarkdown() {
 
   const dualStartIndex = dualInterfaceIndex
   const dualMeasureContent = dualFileContentStr.substring(dualStartIndex)
-  fs.writeFileSync(path.resolve(outputDir, 'DualMeasures.md'), '### DualMeasure\n```typescript\n' + numFormatDefinition + '\n' + measureEncodingContent + '\n' + measureContent + '\n' + dualMeasureContent + '\n```');
+  fs.writeFileSync(
+    path.resolve(outputDir, 'DualMeasures.md'),
+    '### DualMeasure\n```typescript\n' +
+      numFormatDefinition +
+      '\n' +
+      measureEncodingContent +
+      '\n' +
+      measureContent +
+      '\n' +
+      dualMeasureContent +
+      '\n```',
+  )
 }
 
 function generateDimensionMarkdown() {
   // DimensionEncoding
-  const dimensionEncodingDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/encoding/dimensionEncoding.ts')
+  const dimensionEncodingDir = path.resolve(
+    __dirname,
+    '../packages/vseed/src/types/properties/encoding/dimensionEncoding.ts',
+  )
   const dimensionEncodingFileContent = fs.readFileSync(dimensionEncodingDir)
   const dimensionEncodingContent = dimensionEncodingFileContent.toString()
 
@@ -367,8 +454,14 @@ function generateDimensionMarkdown() {
   const dimensionContent = dimensionContentStr.substring(startIndex)
   const outputDir = path.resolve(__dirname, './new-type')
 
-  fs.writeFileSync(path.resolve(outputDir, 'Dimensions.md'), '### Dimensions\n```typescript\n' + dimensionEncodingContent + '\n' + dimensionContent + '\n```');
-  fs.writeFileSync(path.resolve(outputDir, 'DimensionTree.md'), '### DimensionTree\n```typescript\n' + dimensionEncodingContent + '\n' + dimensionContent + '\n```');
+  fs.writeFileSync(
+    path.resolve(outputDir, 'Dimensions.md'),
+    '### Dimensions\n```typescript\n' + dimensionEncodingContent + '\n' + dimensionContent + '\n```',
+  )
+  fs.writeFileSync(
+    path.resolve(outputDir, 'DimensionTree.md'),
+    '### DimensionTree\n```typescript\n' + dimensionEncodingContent + '\n' + dimensionContent + '\n```',
+  )
 }
 
 function generateLinearColor() {
@@ -387,7 +480,10 @@ function generateLinearColor() {
 
   const linearColorStartIndex = linearColorInterfaceIndex
   const linearColorMeasureContent = linearColorFileContentStr.substring(linearColorStartIndex)
-  fs.writeFileSync(path.resolve(outputDir, 'LinearColor.md'), '### LinearColor\n```typescript\n' + linearColorMeasureContent + '\n```');
+  fs.writeFileSync(
+    path.resolve(outputDir, 'LinearColor.md'),
+    '### LinearColor\n```typescript\n' + linearColorMeasureContent + '\n```',
+  )
 }
 
 export async function generateMarkdown() {

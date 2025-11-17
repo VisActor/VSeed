@@ -1,9 +1,11 @@
 ### AreaStyle
+
 面积图元样式配置, 用于定义图表的面积图元样式, 包括面积图元的颜色, 透明度, 边框等.
 支持全局样式或条件样式配置
 数据筛选器
 若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
 若未配置selector, 则样式全局生效.
+
 ```typescript
 export type AreaStyle = {
   /**
@@ -65,43 +67,42 @@ export type AreaStyle = {
 ```
 
 ### Selector
+
 ```typescript
 export type Selector =
   | string
   | number
   | {
-      field: string;
-      operator?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
-      op?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
-      value: string | number | (string | number)[];
+      field: string
+      operator?: ('=' | '==' | '!=' | '>' | '<' | '>=' | '<=' | 'between') | null
+      op?: ('=' | '==' | '!=' | '>' | '<' | '>=' | '<=' | 'between') | null
+      value: string | number | (string | number)[]
     }
   | {
-      field: string;
-      operator?: ("in" | "not in") | null;
-      op?: ("in" | "not in") | null;
-      value: string | number | (string | number)[];
-    };
-
+      field: string
+      operator?: ('in' | 'not in') | null
+      op?: ('in' | 'not in') | null
+      value: string | number | (string | number)[]
+    }
 ```
 
 ### Selectors
+
 ```typescript
 export type Selectors = (
   | string
   | number
   | {
-      field: string;
-      operator?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
-      op?: ("=" | "==" | "!=" | ">" | "<" | ">=" | "<=" | "between") | null;
-      value: string | number | (string | number)[];
+      field: string
+      operator?: ('=' | '==' | '!=' | '>' | '<' | '>=' | '<=' | 'between') | null
+      op?: ('=' | '==' | '!=' | '>' | '<' | '>=' | '<=' | 'between') | null
+      value: string | number | (string | number)[]
     }
   | {
-      field: string;
-      operator?: ("in" | "not in") | null;
-      op?: ("in" | "not in") | null;
-      value: string | number | (string | number)[];
+      field: string
+      operator?: ('in' | 'not in') | null
+      op?: ('in' | 'not in') | null
+      value: string | number | (string | number)[]
     }
-)[];
-
+)[]
 ```
-  

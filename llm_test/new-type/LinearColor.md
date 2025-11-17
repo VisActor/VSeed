@@ -1,4 +1,5 @@
 ### LinearColor
+
 ```typescript
 export type LinearColor = {
   /**
@@ -8,5 +9,4 @@ export type LinearColor = {
    */
   colorScheme?: string[]
 }
-
 ```

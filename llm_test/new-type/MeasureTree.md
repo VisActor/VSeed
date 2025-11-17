@@ -1,5 +1,7 @@
 ### Measure
+
 指标
+
 ```typescript
 export interface NumFormat {
   /**
@@ -181,5 +183,4 @@ export type MeasureGroup = {
 }
 export type Measures = Measure[]
 export type MeasureTree = (Measure | MeasureGroup)[]
-
 ```

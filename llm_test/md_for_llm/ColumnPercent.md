@@ -1029,4 +1029,3 @@ export type Selectors = Array<Selector>
 ```typescript
 export type Locale = 'zh-CN' | 'en-US'
 ```
-        

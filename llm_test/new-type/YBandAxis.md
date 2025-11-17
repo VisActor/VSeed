@@ -1,5 +1,7 @@
 ### YBandAxis
+
 类目轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.
+
 ```typescript
 export type YBandAxis = {
   /**
@@ -154,6 +156,4 @@ export type YBandAxis = {
     gridWidth?: number
   }
 }
-
-
 ```

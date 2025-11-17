@@ -1,4 +1,5 @@
 ### DualMeasure
+
 ```typescript
 export interface NumFormat {
   /**
@@ -188,5 +189,4 @@ export type DualMeasure = {
 }
 
 export type DualMeasures = DualMeasure[]
-
 ```

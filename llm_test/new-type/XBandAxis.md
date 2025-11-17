@@ -1,5 +1,7 @@
 ### XBandAxis
+
 类目轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.
+
 ```typescript
 export type XBandAxis = {
   /**
@@ -154,6 +156,4 @@ export type XBandAxis = {
     gridWidth?: number
   }
 }
-
-
 ```

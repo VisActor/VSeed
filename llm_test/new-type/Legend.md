@@ -1,5 +1,7 @@
 ### Legend
+
 图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.
+
 ```typescript
 export type Legend = {
   /**

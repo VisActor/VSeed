@@ -1,5 +1,7 @@
 ### XLinearAxis
+
 数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.
+
 ```typescript
 export interface NumFormat {
   /**
@@ -96,7 +98,6 @@ export interface NumFormat {
     | 'halfTrunc'
     | 'halfEven'
 }
-
 
 export type XLinearAxis = {
   /**
@@ -259,7 +260,4 @@ export type XLinearAxis = {
     gridWidth?: number
   }
 }
-
-
-
 ```

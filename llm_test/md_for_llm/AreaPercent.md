@@ -120,8 +120,8 @@ export interface AreaPercent {
 `Dataset` 是一个对象数组，其中每个对象代表一个数据点。
 
 ```typescript
-export type Datum = Record<string | number, any>;
-export type Dataset = Datum[];
+export type Datum = Record<string | number, any>
+export type Dataset = Datum[]
 ```
 
 ---
@@ -135,23 +135,23 @@ export type Dimension = {
   /**
    * 维度ID
    */
-  id: string;
+  id: string
   /**
    * 维度别名
    */
-  alias?: string;
+  alias?: string
   /**
    * 是否可见
    * @default true
    */
-  visible?: boolean;
+  visible?: boolean
   /**
    * 维度位置
    */
-  location: 'dimension' | 'rowDimension' | 'columnDimension';
-};
+  location: 'dimension' | 'rowDimension' | 'columnDimension'
+}
 
-export type Dimensions = Dimension[] | undefined;
+export type Dimensions = Dimension[] | undefined
 ```
 
 ---
@@ -165,44 +165,44 @@ export type Measure = {
   /**
    * 度量ID
    */
-  id: string;
+  id: string
   /**
    * 度量别名
    */
-  alias?: string;
+  alias?: string
   /**
    * 是否可见
    * @default true
    */
-  visible?: boolean;
+  visible?: boolean
   /**
    * 是否自动格式化
    * @default true
    */
-  autoFormat?: boolean;
+  autoFormat?: boolean
   /**
    * 格式化选项
    */
   format?: {
-    type?: 'number' | 'percent' | 'permille';
-    ratio?: number;
-    symbol?: string;
-    thousandSeparator?: boolean;
-    decimalPlaces?: number;
-    round?: 'round' | 'floor' | 'ceil';
-    prefix?: string;
-    suffix?: string;
-  };
-};
+    type?: 'number' | 'percent' | 'permille'
+    ratio?: number
+    symbol?: string
+    thousandSeparator?: boolean
+    decimalPlaces?: number
+    round?: 'round' | 'floor' | 'ceil'
+    prefix?: string
+    suffix?: string
+  }
+}
 
 export type MeasureGroup = {
-  id: string;
-  alias?: string;
-  visible?: boolean;
-  children?: (MeasureGroup | Measure)[];
-};
+  id: string
+  alias?: string
+  visible?: boolean
+  children?: (MeasureGroup | Measure)[]
+}
 
-export type Measures = (MeasureGroup | Measure)[] | undefined;
+export type Measures = (MeasureGroup | Measure)[] | undefined
 ```
 
 ---
@@ -217,7 +217,7 @@ export type Measures = (MeasureGroup | Measure)[] | undefined;
  * @default transparent 默认为透明背景
  * @description 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
  */
-export type BackgroundColor = string | undefined;
+export type BackgroundColor = string | undefined
 ```
 
 ---
@@ -232,13 +232,13 @@ export type Color = {
    * 颜色配色方案
    * @description 定义图表中不同元素的颜色。
    */
-  colorScheme: string[];
+  colorScheme: string[]
   /**
    * 颜色映射
    * @description 将数据值映射到具体的颜色。
    */
-  colorMapping: Record<string, string>;
-};
+  colorMapping: Record<string, string>
+}
 ```
 
 ---
@@ -253,8 +253,8 @@ export type Label = {
    * 是否开启标签
    * @default true
    */
-  enable: boolean;
-};
+  enable: boolean
+}
 ```
 
 ---
@@ -269,43 +269,85 @@ export type Legend = {
    * 是否开启图例
    * @default true
    */
-  enable?: boolean;
+  enable?: boolean
   /**
    * 是否显示图例边框
    * @default true
    */
-  border?: boolean;
+  border?: boolean
   /**
    * 图例最大列数或行数
    * @default 1
    */
-  maxSize?: number;
+  maxSize?: number
   /**
    * 图例标签字体大小
    * @default 12
    */
-  labelFontSize?: number;
+  labelFontSize?: number
   /**
    * 图例标签字体颜色
    * @default '#fff'
    */
-  labelFontColor?: string;
+  labelFontColor?: string
   /**
    * 图例标签字体粗细
    * @default 400
    */
-  labelFontWeight?: number | string;
+  labelFontWeight?: number | string
   /**
    * 图例形状
    * @default 'rectRound'
    */
-  shapeType?: 'circle' | 'cross' | 'diamond' | 'square' | 'arrow' | 'arrow2Left' | 'arrow2Right' | 'wedge' | 'thinTriangle' | 'triangle' | 'triangleUp' | 'triangleDown' | 'triangleRight' | 'triangleLeft' | 'stroke' | 'star' | 'wye' | 'rect' | 'arrowLeft' | 'arrowRight' | 'rectRound' | 'roundLine';
+  shapeType?:
+    | 'circle'
+    | 'cross'
+    | 'diamond'
+    | 'square'
+    | 'arrow'
+    | 'arrow2Left'
+    | 'arrow2Right'
+    | 'wedge'
+    | 'thinTriangle'
+    | 'triangle'
+    | 'triangleUp'
+    | 'triangleDown'
+    | 'triangleRight'
+    | 'triangleLeft'
+    | 'stroke'
+    | 'star'
+    | 'wye'
+    | 'rect'
+    | 'arrowLeft'
+    | 'arrowRight'
+    | 'rectRound'
+    | 'roundLine'
   /**
    * 图例位置
    * @default 'top'
    */
-  position?: 'left' | 'leftTop' | 'leftBottom' | 'lt' | 'lb' | 'top' | 'topLeft' | 'topRight' | 'tl' | 'tr' | 'right' | 'rightTop' | 'rightBottom' | 'rt' | 'rb' | 'bottom' | 'bottomLeft' | 'bottomRight' | 'bl' | 'br';
-};
+  position?:
+    | 'left'
+    | 'leftTop'
+    | 'leftBottom'
+    | 'lt'
+    | 'lb'
+    | 'top'
+    | 'topLeft'
+    | 'topRight'
+    | 'tl'
+    | 'tr'
+    | 'right'
+    | 'rightTop'
+    | 'rightBottom'
+    | 'rt'
+    | 'rb'
+    | 'bottom'
+    | 'bottomLeft'
+    | 'bottomRight'
+    | 'bl'
+    | 'br'
+}
 ```
 
 ---
@@ -320,8 +362,8 @@ export type Tooltip = {
    * 是否开启提示信息
    * @default true
    */
-  enable: boolean;
-};
+  enable: boolean
+}
 ```
 
 ---
@@ -336,97 +378,97 @@ export type Axis = {
    * 轴是否可见
    * @default true
    */
-  visible?: boolean;
+  visible?: boolean
   /**
    * 轴的最小值
    */
-  min?: number;
+  min?: number
   /**
    * 轴的最大值
    */
-  max?: number;
+  max?: number
   /**
    * 是否自动调整轴的刻度间隔
    * @default true
    */
-  nice?: boolean;
+  nice?: boolean
   /**
    * 轴是否反向展示
    * @default false
    */
-  inverse?: boolean;
+  inverse?: boolean
   /**
    * 是否在坐标轴上显示 0 值
    * @default true
    */
-  zero?: boolean;
+  zero?: boolean
   /**
    * 轴标签是否自动隐藏
    * @default true
    */
-  labelAutoHide?: boolean;
+  labelAutoHide?: boolean
   /**
    * 轴标签自动隐藏的间隔
    * @default 4
    */
-  labelAutoHideGap?: number;
+  labelAutoHideGap?: number
   /**
    * 轴标签是否自动旋转
    * @default true
    */
-  labelAutoRotate?: boolean;
+  labelAutoRotate?: boolean
   /**
    * 轴标签自动旋转的角度范围
    * @default [0, -45, -90]
    */
-  labelAutoRotateAngleRange?: number[];
+  labelAutoRotateAngleRange?: number[]
   /**
    * 轴标签是否自动限制长度
    * @default true
    */
-  labelAutoLimit?: boolean;
+  labelAutoLimit?: boolean
   /**
    * 轴标签自动限制的最大长度
    * @default 100
    */
-  labelAutoLimitLength?: number;
+  labelAutoLimitLength?: number
   /**
    * 轴刻度标签
    */
   label?: {
-    visible?: boolean;
-    labelColor?: string;
-    labelFontSize?: number;
-    labelFontWeight?: number;
-    labelAngle?: number;
-  };
+    visible?: boolean
+    labelColor?: string
+    labelFontSize?: number
+    labelFontWeight?: number
+    labelAngle?: number
+  }
   /**
    * 轴线
    */
   line?: {
-    visible?: boolean;
-    lineColor?: string;
-    lineWidth?: number;
-  };
+    visible?: boolean
+    lineColor?: string
+    lineWidth?: number
+  }
   /**
    * 轴刻度
    */
   tick?: {
-    visible?: boolean;
-    tickInside?: boolean;
-    tickColor?: string;
-    tickSize?: number;
-  };
+    visible?: boolean
+    tickInside?: boolean
+    tickColor?: string
+    tickSize?: number
+  }
   /**
    * 轴标题
    */
   title?: {
-    visible?: boolean;
-    titleText?: string;
-    titleColor?: string;
-    titleFontSize?: number;
-  };
-};
+    visible?: boolean
+    titleText?: string
+    titleColor?: string
+    titleFontSize?: number
+  }
+}
 ```
 
 ---
@@ -436,8 +478,8 @@ export type Axis = {
 `XBandAxis` (类目轴) 和 `YLinearAxis` (数值轴) 继承自 `Axis`。
 
 ```typescript
-export type XBandAxis = Axis;
-export type YLinearAxis = Axis;
+export type XBandAxis = Axis
+export type YLinearAxis = Axis
 ```
 
 ---
@@ -451,24 +493,24 @@ export type CrosshairLine = {
   /**
    * 是否可见
    */
-  visible?: boolean;
+  visible?: boolean
   /**
    * 提示线颜色
    */
-  lineColor?: string;
+  lineColor?: string
   /**
    * 标签颜色
    */
-  labelColor?: string;
+  labelColor?: string
   /**
    * 标签是否可见
    */
-  labelVisible?: boolean;
+  labelVisible?: boolean
   /**
    * 标签背景颜色
    */
-  labelBackgroundColor?: string;
-};
+  labelBackgroundColor?: string
+}
 ```
 
 ---
@@ -483,7 +525,7 @@ export type CrosshairLine = {
  * @default light
  * @description 内置 light、dark 两种主题, 新的主题可以通过registerTheme自定义主题.
  */
-export type Theme = 'light' | 'dark' | string;
+export type Theme = 'light' | 'dark' | string
 ```
 
 ---
@@ -498,38 +540,38 @@ export type PointStyle = {
    * 数据选择器
    * @description 若配置, 则样式仅对匹配的数据生效; 否则全局生效。
    */
-  selector?: Selector | Selectors;
+  selector?: Selector | Selectors
   /**
    * 点大小
    * @default 10
    */
-  pointSize?: number;
+  pointSize?: number
   /**
    * 点颜色
    * @default '#000000'
    */
-  pointColor?: string;
+  pointColor?: string
   /**
    * 点颜色透明度
    * @default 1
    */
-  pointColorOpacity?: number;
+  pointColorOpacity?: number
   /**
    * 点边框颜色
    * @default '#000000'
    */
-  pointBorderColor?: string;
+  pointBorderColor?: string
   /**
    * 点边框宽度
    * @default 0
    */
-  pointBorderWidth?: number;
+  pointBorderWidth?: number
   /**
    * 点边框样式
    * @default 'solid'
    */
-  pointBorderStyle?: 'solid' | 'dashed' | 'dotted';
-};
+  pointBorderStyle?: 'solid' | 'dashed' | 'dotted'
+}
 ```
 
 ---
@@ -544,32 +586,32 @@ export type LineStyle = {
    * 数据选择器
    * @description 若配置, 则样式仅对匹配的数据生效; 否则全局生效。
    */
-  selector?: Selector | Selectors;
+  selector?: Selector | Selectors
   /**
    * 折线图是否平滑
    * @default true
    */
-  lineSmooth?: boolean;
+  lineSmooth?: boolean
   /**
    * 线条颜色
    */
-  lineColor?: string;
+  lineColor?: string
   /**
    * 线条颜色透明度
    * @default 1
    */
-  lineColorOpacity?: number;
+  lineColorOpacity?: number
   /**
    * 线条宽度
    * @default 1
    */
-  lineWidth?: number;
+  lineWidth?: number
   /**
    * 线条样式
    * @default 'solid'
    */
-  lineStyle?: 'solid' | 'dashed' | 'dotted';
-};
+  lineStyle?: 'solid' | 'dashed' | 'dotted'
+}
 ```
 
 ---
@@ -584,17 +626,17 @@ export type AreaStyle = {
    * 数据选择器
    * @description 若配置, 则样式仅对匹配的数据生效; 否则全局生效。
    */
-  selector?: Selector | Selectors;
+  selector?: Selector | Selectors
   /**
    * 面积图元的颜色
    */
-  areaColor?: string;
+  areaColor?: string
   /**
    * 面积图元的颜色透明度
    * @default 1
    */
-  areaColorOpacity?: number;
-};
+  areaColorOpacity?: number
+}
 ```
 
 ---
@@ -608,76 +650,76 @@ export type AnnotationPoint = {
   /**
    * 依赖选择的数据, 进行数据标记.
    */
-  selector: Selector | Selectors;
+  selector: Selector | Selectors
   /**
    * 标注的文本
    */
-  text?: string | string[];
+  text?: string | string[]
   /**
    * 文本颜色
    * @default '#ffffff'
    */
-  textColor?: string;
+  textColor?: string
   /**
    * 文本字体大小
    * @default 12
    */
-  textFontSize?: number;
+  textFontSize?: number
   /**
    * 文本字体重量
    * @default 400
    */
-  textFontWeight?: number;
+  textFontWeight?: number
   /**
    * 文本对齐方式
    * @default 'left'
    */
-  textAlign?: 'left' | 'right' | 'center';
+  textAlign?: 'left' | 'right' | 'center'
   /**
    * 文本垂直对齐方式
    * @default 'middle'
    */
-  textBaseline?: 'top' | 'middle' | 'bottom';
+  textBaseline?: 'top' | 'middle' | 'bottom'
   /**
    * 文本Y方向的偏移量
    * @default 0
    */
-  offsetY?: number;
+  offsetY?: number
   /**
    * 文本X方向的偏移量
    * @default 0
    */
-  offsetX?: number;
+  offsetX?: number
   /**
    * 背景是否可见
    * @default true
    */
-  backgroundVisible?: boolean;
+  backgroundVisible?: boolean
   /**
    * 背景颜色
    * @default '#212121'
    */
-  backgroundColor?: string;
+  backgroundColor?: string
   /**
    * 背景边框颜色
    */
-  backgroundBorderColor?: string;
+  backgroundBorderColor?: string
   /**
    * 背景边框宽度
    * @default 1
    */
-  backgroundBorderWidth?: number;
+  backgroundBorderWidth?: number
   /**
    * 背景边框圆角
    * @default 4
    */
-  backgroundBorderRadius?: number;
+  backgroundBorderRadius?: number
   /**
    * 背景内边距
    * @default 4
    */
-  backgroundPadding?: number;
-};
+  backgroundPadding?: number
+}
 ```
 
 ---
@@ -691,104 +733,104 @@ export type AnnotationVerticalLine = {
   /**
    * 依赖选择的数据, 进行数据标记.
    */
-  selector?: Selector | Selectors;
+  selector?: Selector | Selectors
   /**
    * 固定的x值, 用于标注垂直线
    */
-  xValue?: (number | string) | (number | string)[];
+  xValue?: (number | string) | (number | string)[]
   /**
    * 标注的文本
    */
-  text?: string | string[];
+  text?: string | string[]
   /**
    * 文本位置
    * @default 'insideEnd'
    */
-  textPosition?: 'outsideStart' | 'outsideEnd' | 'outsideMiddle' | 'insideStart' | 'insideMiddle' | 'insideEnd';
+  textPosition?: 'outsideStart' | 'outsideEnd' | 'outsideMiddle' | 'insideStart' | 'insideMiddle' | 'insideEnd'
   /**
    * 文本颜色
    * @default '#ffffff'
    */
-  textColor?: string;
+  textColor?: string
   /**
    * 文本字体大小
    * @default 12
    */
-  textFontSize?: number;
+  textFontSize?: number
   /**
    * 文本字体重量
    * @default 400
    */
-  textFontWeight?: number;
+  textFontWeight?: number
   /**
    * 文本对齐方式
    * @default 'right'
    */
-  textAlign?: 'left' | 'right' | 'center';
+  textAlign?: 'left' | 'right' | 'center'
   /**
    * 文本垂直对齐方式
    * @default 'top'
    */
-  textBaseline?: 'top' | 'middle' | 'bottom';
+  textBaseline?: 'top' | 'middle' | 'bottom'
   /**
    * 文本Y方向的偏移量
    * @default 0
    */
-  offsetY?: number;
+  offsetY?: number
   /**
    * 文本X方向的偏移量
    * @default 0
    */
-  offsetX?: number;
+  offsetX?: number
   /**
    * 线是否可见
    * @default true
    */
-  lineVisible?: boolean;
+  lineVisible?: boolean
   /**
    * 线颜色
    */
-  lineColor?: string;
+  lineColor?: string
   /**
    * 线宽度
    * @default 2
    */
-  lineWidth?: number;
+  lineWidth?: number
   /**
    * 线样式
    * @default 'solid'
    */
-  lineStyle?: 'solid' | 'dashed' | 'dotted';
+  lineStyle?: 'solid' | 'dashed' | 'dotted'
   /**
    * 背景是否可见
    * @default true
    */
-  backgroundVisible?: boolean;
+  backgroundVisible?: boolean
   /**
    * 背景颜色
    * @default '#212121'
    */
-  backgroundColor?: string;
+  backgroundColor?: string
   /**
    * 背景边框颜色
    */
-  backgroundBorderColor?: string;
+  backgroundBorderColor?: string
   /**
    * 背景边框宽度
    * @default 1
    */
-  backgroundBorderWidth?: number;
+  backgroundBorderWidth?: number
   /**
    * 背景边框圆角
    * @default 4
    */
-  backgroundBorderRadius?: number;
+  backgroundBorderRadius?: number
   /**
    * 背景内边距
    * @default 4
    */
-  backgroundPadding?: number;
-};
+  backgroundPadding?: number
+}
 ```
 
 ---
@@ -802,104 +844,104 @@ export type AnnotationHorizontalLine = {
   /**
    * 依赖选择的数据, 进行数据标记.
    */
-  selector?: Selector | Selectors;
+  selector?: Selector | Selectors
   /**
    * 固定的y值, 用于标注水平线
    */
-  yValue?: (number | string) | (number | string)[];
+  yValue?: (number | string) | (number | string)[]
   /**
    * 标注的文本
    */
-  text?: string | string[];
+  text?: string | string[]
   /**
    * 文本位置
    * @default 'insideEnd'
    */
-  textPosition?: 'outsideStart' | 'outsideEnd' | 'outsideMiddle' | 'insideStart' | 'insideMiddle' | 'insideEnd';
+  textPosition?: 'outsideStart' | 'outsideEnd' | 'outsideMiddle' | 'insideStart' | 'insideMiddle' | 'insideEnd'
   /**
    * 文本颜色
    * @default '#ffffff'
    */
-  textColor?: string;
+  textColor?: string
   /**
    * 文本字体大小
    * @default 12
    */
-  textFontSize?: number;
+  textFontSize?: number
   /**
    * 文本字体重量
    * @default 400
    */
-  textFontWeight?: number;
+  textFontWeight?: number
   /**
    * 文本对齐方式
    * @default 'left'
    */
-  textAlign?: 'left' | 'right' | 'center';
+  textAlign?: 'left' | 'right' | 'center'
   /**
    * 文本垂直对齐方式
    * @default 'bottom'
    */
-  textBaseline?: 'top' | 'middle' | 'bottom';
+  textBaseline?: 'top' | 'middle' | 'bottom'
   /**
    * 文本Y方向的偏移量
    * @default 0
    */
-  offsetY?: number;
+  offsetY?: number
   /**
    * 文本X方向的偏移量
    * @default 0
    */
-  offsetX?: number;
+  offsetX?: number
   /**
    * 线是否可见
    * @default true
    */
-  lineVisible?: boolean;
+  lineVisible?: boolean
   /**
    * 线颜色
    */
-  lineColor?: string;
+  lineColor?: string
   /**
    * 线宽度
    * @default 2
    */
-  lineWidth?: number;
+  lineWidth?: number
   /**
    * 线样式
    * @default 'solid'
    */
-  lineStyle?: 'solid' | 'dashed' | 'dotted';
+  lineStyle?: 'solid' | 'dashed' | 'dotted'
   /**
    * 背景是否可见
    * @default true
    */
-  backgroundVisible?: boolean;
+  backgroundVisible?: boolean
   /**
    * 背景颜色
    * @default '#212121'
    */
-  backgroundColor?: string;
+  backgroundColor?: string
   /**
    * 背景边框颜色
    */
-  backgroundBorderColor?: string;
+  backgroundBorderColor?: string
   /**
    * 背景边框宽度
    * @default 1
    */
-  backgroundBorderWidth?: number;
+  backgroundBorderWidth?: number
   /**
    * 背景边框圆角
    * @default 4
    */
-  backgroundBorderRadius?: number;
+  backgroundBorderRadius?: number
   /**
    * 背景内边距
    * @default 4
    */
-  backgroundPadding?: number;
-};
+  backgroundPadding?: number
+}
 ```
 
 ---
@@ -913,99 +955,99 @@ export type AnnotationArea = {
   /**
    * 依赖选择的数据, 进行数据标记.
    */
-  selector: Selector | Selectors;
+  selector: Selector | Selectors
   /**
    * 标注的文本
    */
-  text?: string | string[];
+  text?: string | string[]
   /**
    * 文本位置
    * @default 'top'
    */
-  textPosition?: 'top' | 'topRight' | 'topLeft' | 'bottom' | 'bottomLeft' | 'bottomRight' | 'left' | 'right';
+  textPosition?: 'top' | 'topRight' | 'topLeft' | 'bottom' | 'bottomLeft' | 'bottomRight' | 'left' | 'right'
   /**
    * 文本颜色
    * @default '#ffffff'
    */
-  textColor?: string;
+  textColor?: string
   /**
    * 文本字体大小
    * @default 12
    */
-  textFontSize?: number;
+  textFontSize?: number
   /**
    * 文本字体重量
    * @default 400
    */
-  textFontWeight?: number;
+  textFontWeight?: number
   /**
    * 文本对齐方式
    * @default 'left'
    */
-  textAlign?: 'left' | 'right' | 'center';
+  textAlign?: 'left' | 'right' | 'center'
   /**
    * 文本垂直对齐方式
    * @default 'middle'
    */
-  textBaseline?: 'top' | 'middle' | 'bottom';
+  textBaseline?: 'top' | 'middle' | 'bottom'
   /**
    * 背景是否可见
    * @default true
    */
-  backgroundVisible?: boolean;
+  backgroundVisible?: boolean
   /**
    * 背景颜色
    * @default '#212121'
    */
-  backgroundColor?: string;
+  backgroundColor?: string
   /**
    * 背景边框颜色
    */
-  backgroundBorderColor?: string;
+  backgroundBorderColor?: string
   /**
    * 背景边框宽度
    * @default 1
    */
-  backgroundBorderWidth?: number;
+  backgroundBorderWidth?: number
   /**
    * 背景边框圆角
    * @default 4
    */
-  backgroundBorderRadius?: number;
+  backgroundBorderRadius?: number
   /**
    * 背景内边距
    * @default 4
    */
-  backgroundPadding?: number;
+  backgroundPadding?: number
   /**
    * 面积区域颜色
    */
-  areaColor?: string;
+  areaColor?: string
   /**
    * 面积区域颜色透明度
    * @default 0.5
    */
-  areaColorOpacity?: number;
+  areaColorOpacity?: number
   /**
    * 面积区域边框颜色
    */
-  areaBorderColor?: number;
+  areaBorderColor?: number
   /**
    * 面积区域边框宽度
    * @default 2
    */
-  areaBorderWidth?: number;
+  areaBorderWidth?: number
   /**
    * 面积区域边框圆角
    * @default 4
    */
-  areaBorderRadius?: number;
+  areaBorderRadius?: number
   /**
    * 面积区域的边距
    * @default 8
    */
-  outerPadding?: number;
-};
+  outerPadding?: number
+}
 ```
 
 ---
@@ -1020,7 +1062,7 @@ export type AnnotationArea = {
  * @description 图表语言配置, 支持'zh-CN'与'en-US'两种语言
  * @default 'zh-CN'
  */
-export type Locale = 'zh-CN' | 'en-US';
+export type Locale = 'zh-CN' | 'en-US'
 ```
 
 ---
@@ -1031,27 +1073,26 @@ export type Locale = 'zh-CN' | 'en-US';
 
 ```typescript
 // 值选择器
-export type ValueSelector = string | number;
+export type ValueSelector = string | number
 
 // 部分数据选择器
-export type PartialDatumSelector = Datum;
+export type PartialDatumSelector = Datum
 
 // 度量选择器
 export type MeasureSelector = {
-  field: string;
-  operator?: '=' | '==' | '!=' | '>' | '<' | '>=' | '<=' | 'between';
-  value: string | number | Array<string | number>;
-};
+  field: string
+  operator?: '=' | '==' | '!=' | '>' | '<' | '>=' | '<=' | 'between'
+  value: string | number | Array<string | number>
+}
 
 // 维度选择器
 export type DimensionSelector = {
-  field: string;
-  operator?: 'in' | 'not in';
-  value: string | number | Array<string | number>;
-};
+  field: string
+  operator?: 'in' | 'not in'
+  value: string | number | Array<string | number>
+}
 
-export type Selector = ValueSelector | PartialDatumSelector | MeasureSelector | DimensionSelector;
+export type Selector = ValueSelector | PartialDatumSelector | MeasureSelector | DimensionSelector
 
-export type Selectors = Array<Selector>;
+export type Selectors = Array<Selector>
 ```
-        

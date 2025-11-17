@@ -1,4 +1,5 @@
 ### ScatterMeasure
+
 ```typescript
 export interface NumFormat {
   /**
@@ -188,5 +189,4 @@ export type ScatterMeasure = {
 }
 
 export type ScatterMeasures = ScatterMeasure[]
-
 ```

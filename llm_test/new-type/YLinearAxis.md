@@ -1,5 +1,7 @@
 ### YLinearAxis
+
 数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.
+
 ```typescript
 export interface NumFormat {
   /**
@@ -96,7 +98,6 @@ export interface NumFormat {
     | 'halfTrunc'
     | 'halfEven'
 }
-
 
 export type YLinearAxis = {
   /**
@@ -259,7 +260,4 @@ export type YLinearAxis = {
     gridWidth?: number
   }
 }
-
-
-
 ```

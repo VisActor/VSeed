@@ -1,5 +1,7 @@
 ### Color
+
 颜色配置, 用于定义图表的颜色方案, 包括颜色列表, 颜色映射, 颜色渐变等.
+
 ```typescript
 export type Color = {
   /**

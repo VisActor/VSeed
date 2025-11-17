@@ -1,5 +1,14 @@
 # website
 
+## 0.1.47
+
+### Patch Changes
+
+- b96b2dc: feat: add connectTemporaryDataset
+- Updated dependencies [b96b2dc]
+  - @visactor/vquery@0.1.47
+  - @visactor/vseed@0.1.47
+
 ## 0.1.46
 
 ### Patch Changes

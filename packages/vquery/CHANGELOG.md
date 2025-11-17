@@ -1,5 +1,11 @@
 # @visactor/vquery
 
+## 0.1.47
+
+### Patch Changes
+
+- b96b2dc: feat: add connectTemporaryDataset
+
 ## 0.1.46
 
 ### Patch Changes

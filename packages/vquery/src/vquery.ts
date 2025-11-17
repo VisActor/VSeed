@@ -1,6 +1,7 @@
 import { DuckDB } from './db/duckDb'
 import { IndexedDB } from './db/indexedDb'
-import { DatasetSchema, DataSource, DataType, TidyDatum } from './types'
+import { DatasetSchema, TidyDatum, DataSourceType } from './types'
+import { DataSourceBuilder } from 'src/dataSourceBuilder'
 
 class Dataset {
   private duckDB: DuckDB
@@ -53,16 +54,28 @@ export class VQuery {
   /**
    * 创建数据集，根据表结构和数据，存储信息到indexedDB
    */
-  public async createDataset(datasetId: string, dataSource: DataSource, datasetSchema: DatasetSchema) {
+  public async createDataset(
+    datasetId: string,
+    data: string | ArrayBuffer | Blob | TidyDatum[],
+    type: DataSourceType,
+    datasetSchema: DatasetSchema,
+  ) {
     await this.ensureInitialized()
+    const dataSource = await DataSourceBuilder.from(type, data).build()
     await this.indexedDB.writeDataset(datasetId, dataSource, datasetSchema)
   }
 
   /**
    * 修改数据集，更新信息到indexedDB内
    */
-  public async updateDataset(datasetId: string, dataSource: DataSource, datasetSchema: DatasetSchema) {
+  public async updateDataset(
+    datasetId: string,
+    data: string | ArrayBuffer | Blob | TidyDatum[],
+    type: DataSourceType,
+    datasetSchema: DatasetSchema,
+  ) {
     await this.ensureInitialized()
+    const dataSource = await DataSourceBuilder.from(type, data).build()
     await this.indexedDB.writeDataset(datasetId, dataSource, datasetSchema)
   }
 
@@ -96,27 +109,9 @@ export class VQuery {
 
     // 根据dataSource类型处理数据加载
     switch (dataSource.type) {
-      case 'array': {
-        // 为数组数据创建临时表
-        const tempTableName = `${datasetId}_temp`
-        await this.createTableFromSchema(tempTableName, datasetSchema)
-
-        // 插入数据
-        await this.insertTidyData(tempTableName, dataSource.value as TidyDatum[], datasetSchema)
-
-        // 创建视图
-        const createViewSql = `CREATE OR REPLACE VIEW ${datasetId} AS SELECT * FROM ${tempTableName}`
-        await this.duckDB.query(createViewSql)
-
-        // 删除临时表
-        await this.duckDB.query(`DROP TABLE ${tempTableName}`)
-        break
-      }
       case 'csv': {
         // 注册文件到DuckDB - 只处理文件类型，不处理数组
-        const fileValue = dataSource.value as string | ArrayBuffer | Uint8Array | Blob
-        await this.duckDB.writeFile(datasetId, fileValue)
-
+        await this.duckDB.writeFile(datasetId, dataSource.blob)
         // 创建视图
         const createViewSql = `CREATE OR REPLACE VIEW ${datasetId} AS SELECT * FROM read_csv_auto('${datasetId}')`
         await this.duckDB.query(createViewSql)
@@ -124,8 +119,7 @@ export class VQuery {
       }
       case 'json': {
         // 注册文件到DuckDB - 只处理文件类型，不处理数组
-        const fileValue = dataSource.value as string | ArrayBuffer | Uint8Array | Blob
-        await this.duckDB.writeFile(datasetId, fileValue)
+        await this.duckDB.writeFile(datasetId, dataSource.blob)
 
         // 创建视图
         const createViewSql = `CREATE OR REPLACE VIEW ${datasetId} AS SELECT * FROM read_json_auto('${datasetId}')`
@@ -134,8 +128,7 @@ export class VQuery {
       }
       case 'xlsx': {
         // 注册文件到DuckDB - 只处理文件类型，不处理数组
-        const fileValue = dataSource.value as string | ArrayBuffer | Uint8Array | Blob
-        await this.duckDB.writeFile(datasetId, fileValue)
+        await this.duckDB.writeFile(datasetId, dataSource.blob)
 
         // 创建视图
         const createViewSql = `CREATE OR REPLACE VIEW ${datasetId} AS SELECT * FROM read_excel('${datasetId}')`
@@ -144,8 +137,7 @@ export class VQuery {
       }
       case 'parquet': {
         // 注册文件到DuckDB - 只处理文件类型，不处理数组
-        const fileValue = dataSource.value as string | ArrayBuffer | Uint8Array | Blob
-        await this.duckDB.writeFile(datasetId, fileValue)
+        await this.duckDB.writeFile(datasetId, dataSource.blob)
 
         // 创建视图
         const createViewSql = `CREATE OR REPLACE VIEW ${datasetId} AS SELECT * FROM read_parquet('${datasetId}')`
@@ -158,69 +150,5 @@ export class VQuery {
     }
 
     return new Dataset(this.duckDB, datasetId, datasetSchema.datasetAlias || datasetId)
-  }
-
-  /**
-   * 根据Schema创建DuckDB表
-   */
-  private async createTableFromSchema(datasetId: string, schema: DatasetSchema) {
-    const columnDefinitions = schema.columns
-      .map((col) => `${col.name} ${this.mapDataTypeToDuckDBType(col.type)}`)
-      .join(', ')
-    const createTableSql = `CREATE OR REPLACE TABLE ${datasetId} (${columnDefinitions})`
-    await this.duckDB.query(createTableSql)
-  }
-
-  /**
-   * 映射DataType到DuckDB类型
-   */
-  private mapDataTypeToDuckDBType(type: DataType): string {
-    switch (type) {
-      case 'number':
-        return 'DOUBLE'
-      case 'string':
-        return 'VARCHAR'
-      case 'date':
-        return 'DATE'
-      case 'datetime':
-        return 'TIMESTAMP'
-      case 'timestamp':
-        return 'TIMESTAMP'
-      default:
-        return 'VARCHAR'
-    }
-  }
-
-  /**
-   * 插入tidyData到DuckDB表
-   */
-  private async insertTidyData(datasetId: string, data: TidyDatum[], schema: DatasetSchema) {
-    if (data.length === 0) return
-
-    const columnNames = schema.columns.map((col) => col.name).join(', ')
-
-    for (const row of data) {
-      // 处理每个值，根据类型转换为合适的SQL表示
-      const values = schema.columns.map((col) => {
-        const value = row[col.name]
-        if (value === null || value === undefined) {
-          return 'NULL'
-        } else if (typeof value === 'string') {
-          // 转义字符串中的单引号
-          return `'${value.replace(/'/g, "''")}'`
-        } else if (typeof value === 'number' || typeof value === 'bigint') {
-          return value.toString()
-        } else if (typeof value === 'boolean') {
-          return value ? 'true' : 'false'
-        } else {
-          // 默认处理为字符串
-          return `'${String(value).replace(/'/g, "''")}'`
-        }
-      })
-
-      const valuesString = values.join(', ')
-      const insertSql = `INSERT INTO ${datasetId} (${columnNames}) VALUES (${valuesString})`
-      await this.duckDB.query(insertSql)
-    }
   }
 }

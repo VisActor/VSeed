@@ -41,13 +41,13 @@ const run = async (setVSeed) => {
     ],
   }
 
-  const dataSource = {
-    type: 'csv',
-    value: 'https://visactor.github.io/VSeed/dataset/supermarket.csv',
-  }
-
   if (!datasets.includes(datasetId)) {
-    await vquery.createDataset(datasetId, dataSource, datasetSchema)
+    await vquery.createDataset(
+      datasetId,
+      'https://visactor.github.io/VSeed/dataset/supermarket.csv',
+      'csv',
+      datasetSchema,
+    )
   }
 
   const dataset = await vquery.connectDataset(datasetId)

@@ -1,4 +1,5 @@
-import { DatasetSchema, DataSource } from '../types'
+import { DataSource } from 'src/types'
+import { DatasetSchema } from '../types/DataSet'
 
 export class IndexedDB {
   private db: IDBDatabase | null = null

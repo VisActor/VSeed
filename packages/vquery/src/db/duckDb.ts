@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { DuckDBBundles, AsyncDuckDBConnection } from '@duckdb/duckdb-wasm'
 import { AsyncDuckDB, selectBundle, ConsoleLogger } from '@duckdb/duckdb-wasm'
-import { QueryResult } from 'src/types'
+import { QueryResult } from 'src/types/DataSet'
 
 export class DuckDB {
   private db: AsyncDuckDB | null = null
@@ -57,7 +57,7 @@ export class DuckDB {
    * @param fileName 文件名
    * @param source 文件内容
    */
-  writeFile = async <T extends string | ArrayBuffer | Uint8Array | Blob>(fileName: string, source: T) => {
+  writeFile = async <T extends Blob>(fileName: string, source: T) => {
     if (!this.db) {
       throw new Error('db is null')
     }
@@ -72,11 +72,6 @@ export class DuckDB {
       // blob object
       const buffer = await source.arrayBuffer()
       uint8Array = new Uint8Array(buffer)
-    } else if (source instanceof ArrayBuffer) {
-      // array buffer
-      uint8Array = new Uint8Array(source)
-    } else if (source instanceof Uint8Array) {
-      uint8Array = source
     } else {
       throw new Error('Unsupported source type')
     }

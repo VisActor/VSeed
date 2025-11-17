@@ -1,4 +1,4 @@
-import { DatasetSchema } from '../types'
+import { DatasetSchema, DataSource } from '../types'
 
 export class IndexedDB {
   private db: IDBDatabase | null = null
@@ -39,14 +39,14 @@ export class IndexedDB {
     }
   }
 
-  public writeDataset = (datasetId: string, url: string, datasetSchema: DatasetSchema): Promise<void> => {
+  public writeDataset = (datasetId: string, dataSource: DataSource, datasetSchema: DatasetSchema): Promise<void> => {
     return new Promise((resolve, reject) => {
       if (!this.db) {
         return reject('DB is not open')
       }
       const transaction = this.db.transaction([this.datasetStoreName], 'readwrite')
       const store = transaction.objectStore(this.datasetStoreName)
-      const request = store.put({ datasetId, url, datasetSchema })
+      const request = store.put({ datasetId, dataSource, datasetSchema })
 
       request.onsuccess = () => {
         resolve()
@@ -58,7 +58,9 @@ export class IndexedDB {
     })
   }
 
-  public readDataset = (datasetId: string): Promise<{ url: string; datasetSchema: DatasetSchema } | null> => {
+  public readDataset = (
+    datasetId: string,
+  ): Promise<{ dataSource: DataSource; datasetSchema: DatasetSchema } | null> => {
     return new Promise((resolve, reject) => {
       if (!this.db) {
         return reject('DB is not open')
@@ -68,7 +70,9 @@ export class IndexedDB {
       const request = store.get(datasetId)
 
       request.onsuccess = (event) => {
-        const result = (event.target as IDBRequest).result as { url: string; datasetSchema: DatasetSchema } | undefined
+        const result = (event.target as IDBRequest).result as
+          | { dataSource: DataSource; datasetSchema: DatasetSchema }
+          | undefined
         resolve(result || null)
       }
 
@@ -97,7 +101,7 @@ export class IndexedDB {
     })
   }
 
-  public listDatasets = (): Promise<{ datasetId: string; url: string; datasetSchema: DatasetSchema }[]> => {
+  public listDatasets = (): Promise<{ datasetId: string; dataSource: DataSource; datasetSchema: DatasetSchema }[]> => {
     return new Promise((resolve, reject) => {
       if (!this.db) {
         return reject('DB is not open')
@@ -109,7 +113,7 @@ export class IndexedDB {
       request.onsuccess = (event) => {
         const result = (event.target as IDBRequest).result as {
           datasetId: string
-          url: string
+          dataSource: DataSource
           datasetSchema: DatasetSchema
         }[]
         resolve(result)

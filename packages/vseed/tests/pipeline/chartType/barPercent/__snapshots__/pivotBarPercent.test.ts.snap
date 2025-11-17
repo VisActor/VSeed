@@ -1691,10 +1691,12 @@ exports[`pivotBarPercent 2`] = `
               },
               "visible": true,
             },
-            "max": undefined,
-            "min": undefined,
             "nice": true,
             "orient": "bottom",
+            "range": {
+              "max": undefined,
+              "min": undefined,
+            },
             "tick": {
               "inside": true,
               "style": {
@@ -2026,10 +2028,12 @@ exports[`pivotBarPercent 2`] = `
               },
               "visible": true,
             },
-            "max": undefined,
-            "min": undefined,
             "nice": true,
             "orient": "bottom",
+            "range": {
+              "max": undefined,
+              "min": undefined,
+            },
             "tick": {
               "inside": true,
               "style": {

@@ -1766,10 +1766,12 @@ exports[`pivotColumnParallel 2`] = `
               },
               "visible": true,
             },
-            "max": undefined,
-            "min": undefined,
             "nice": true,
             "orient": "left",
+            "range": {
+              "max": undefined,
+              "min": undefined,
+            },
             "tick": {
               "inside": true,
               "style": {
@@ -2105,10 +2107,12 @@ exports[`pivotColumnParallel 2`] = `
               },
               "visible": true,
             },
-            "max": undefined,
-            "min": undefined,
             "nice": true,
             "orient": "left",
+            "range": {
+              "max": undefined,
+              "min": undefined,
+            },
             "tick": {
               "inside": true,
               "style": {

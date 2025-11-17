@@ -31,6 +31,7 @@ export const reshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, context)
   const allMeasures = findAllMeasures(measures)
 
   if (encoding.value?.length) {
+    const boxPlotDataList: Dataset = []
     encoding.value.forEach((f) => {
       const m = allMeasures.find((m) => m.id === f)
       const boxPlotData = boxplot(dataset, {
@@ -51,18 +52,18 @@ export const reshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, context)
         datum[FoldMeasureId] = f
         datum[FoldMeasureName] = m?.alias ?? f
       })
-
-      const res = unfoldDimensions(boxPlotData, uniqDims, encoding as Encoding, {
-        foldMeasureId: FoldMeasureId,
-        separator: Separator,
-        colorItemAsId: false,
-      })
-
-      res.dataset.forEach((d) => {
-        newDatasets.push(d)
-      })
-      unfoldInfo = res.unfoldInfo
+      boxPlotDataList.push(...boxPlotData)
     })
+    const res = unfoldDimensions(boxPlotDataList, uniqDims, encoding as Encoding, {
+      foldMeasureId: FoldMeasureId,
+      separator: Separator,
+      colorItemAsId: false,
+    })
+
+    res.dataset.forEach((d) => {
+      newDatasets.push(d)
+    })
+    unfoldInfo = res.unfoldInfo
   } else if (
     encoding.q1?.length &&
     encoding.q3?.length &&

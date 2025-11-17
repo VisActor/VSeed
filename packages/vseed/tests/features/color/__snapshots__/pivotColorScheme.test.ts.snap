@@ -1083,10 +1083,12 @@ exports[`pivotColorScheme 2`] = `
               },
               "visible": true,
             },
-            "max": undefined,
-            "min": undefined,
             "nice": true,
             "orient": "left",
+            "range": {
+              "max": undefined,
+              "min": undefined,
+            },
             "tick": {
               "inside": false,
               "style": {

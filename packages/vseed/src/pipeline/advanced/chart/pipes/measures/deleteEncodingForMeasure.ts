@@ -5,11 +5,12 @@ export const deleteEncodingForMeasure = (encodingKeys: string[]): AdvancedPipe =
   return (advancedVSeed) => {
     const deleteBy = (measure: Measure) => encodingKeys.includes(measure.encoding as string)
 
-    const measureTree = deleteMeasureTreeByCallback(advancedVSeed.measures, deleteBy)
+    const deleted = deleteMeasureTreeByCallback(advancedVSeed.measures, deleteBy)
 
     return {
       ...advancedVSeed,
-      measures: measureTree,
+      measures: advancedVSeed.measures,
+      extraMeasures: deleted,
     }
   }
 }

@@ -1371,6 +1371,7 @@ exports[`2_meaColor 2`] = `
   "legends": {
     "field": "__Dim_Color__",
     "handlerText": {
+      "formatter": [Function],
       "style": {
         "fill": "#606773",
         "fontSize": 12,
@@ -1701,7 +1702,7 @@ exports[`2_meaColor 2`] = `
           "content": [
             {
               "hasShape": true,
-              "key": "利润",
+              "key": [Function],
               "shapeType": "rectRound",
               "value": [Function],
               "visible": true,
@@ -2089,7 +2090,7 @@ exports[`2_meaColor 2`] = `
           "content": [
             {
               "hasShape": true,
-              "key": "销售额",
+              "key": [Function],
               "shapeType": "rectRound",
               "value": [Function],
               "visible": true,

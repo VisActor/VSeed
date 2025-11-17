@@ -1513,7 +1513,7 @@ exports[`array 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": undefined,
+                    "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
@@ -1657,7 +1657,7 @@ exports[`array 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": undefined,
+                    "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
@@ -2041,7 +2041,7 @@ exports[`array 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": undefined,
+                    "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,
@@ -2185,7 +2185,7 @@ exports[`array 2`] = `
                 "content": [
                   {
                     "hasShape": true,
-                    "key": undefined,
+                    "key": [Function],
                     "shapeType": "rectRound",
                     "value": [Function],
                     "visible": true,

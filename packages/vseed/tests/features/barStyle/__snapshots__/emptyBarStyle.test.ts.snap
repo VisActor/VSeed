@@ -925,7 +925,7 @@ exports[`emptyBarStyle 2`] = `
             "content": [
               {
                 "hasShape": true,
-                "key": "sum(amount)",
+                "key": [Function],
                 "shapeType": "rectRound",
                 "value": [Function],
                 "visible": true,

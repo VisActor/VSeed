@@ -1352,7 +1352,7 @@ exports[`basic 2`] = `
           "content": [
             {
               "hasShape": true,
-              "key": undefined,
+              "key": [Function],
               "shapeType": "rectRound",
               "value": [Function],
               "visible": true,
@@ -1582,7 +1582,7 @@ exports[`basic 2`] = `
           "content": [
             {
               "hasShape": true,
-              "key": undefined,
+              "key": [Function],
               "shapeType": "rectRound",
               "value": [Function],
               "visible": true,

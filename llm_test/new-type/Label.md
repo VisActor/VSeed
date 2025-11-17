@@ -1,5 +1,7 @@
 ### Label
+
 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
+
 ```typescript
 export interface NumFormat {
   /**
@@ -163,5 +165,13 @@ export type Label = {
    * @description 标签防重叠功能是否启用
    */
   labelOverlap?: boolean
+
+  /**
+   * @description 标签布局方式, 仅对饼图、环形图生效且`labelPosition`为`outside`时生效
+   * - arc: 按弧形为标签布局
+   * - labelLine: 标签两端对齐, 通过引导线连接扇形图元与标签
+   * - edge: 标签两端对齐, 通过引导线连接扇形图元与标签, 并且贴近图表两端边缘
+   */
+  labelLayout?: 'arc' | 'labelLine' | 'edge'
 }
 ```

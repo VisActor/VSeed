@@ -1,4 +1,5 @@
 ### DimensionTree
+
 ```typescript
 /**
  * @description 维度映射的通道
@@ -22,7 +23,6 @@ export type DimensionEncoding =
   | 'label'
   | 'row'
   | 'column'
-
 
 export type Dimension = {
   id: string
@@ -55,5 +55,4 @@ export type DimensionGroup = {
 export type Dimensions = Dimension[]
 
 export type DimensionTree = (Dimension | DimensionGroup)[]
-
 ```

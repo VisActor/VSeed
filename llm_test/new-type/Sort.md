@@ -1,5 +1,7 @@
 ### Sort
+
 X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+
 ```typescript
 export type Sort = {
   /**
@@ -11,7 +13,7 @@ export type Sort = {
 
   /**
    * @description 排序依赖的字段, 可以是维度id或指标id
-   * @example 
+   * @example
    * - orderBy:'date'
    * - orderBy:'profit'
    */

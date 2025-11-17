@@ -1,4 +1,4 @@
-```typescript
+````typescript
 /**
  * @recommend
  * - 推荐字段配置: `1`个指标, `2`个维度
@@ -80,7 +80,7 @@ export interface Area {
    * 标签
    * @description 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
    */
-  label?: Label
+  label?: Omit<Label, 'labelLayout'>
 
   /**
    * 图例
@@ -202,12 +202,12 @@ export interface Area {
    */
   locale?: Locale
 }
-```
+````
 
 ### Locale
-图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言
-```typescript
-export type Locale = "zh-CN" | "en-US";
 
+图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言
+
+```typescript
+export type Locale = 'zh-CN' | 'en-US'
 ```
-  

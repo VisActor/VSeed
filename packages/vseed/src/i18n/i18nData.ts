@@ -23,7 +23,7 @@ export const translateMap: TranslateRecordType = {
   },
   上四分位数: {
     'en-US': 'Q3',
-    'zh-CN': '上四分位数',
+    'zh-CN': '75分位数',
   },
   中位数: {
     'en-US': 'Q2',
@@ -31,7 +31,7 @@ export const translateMap: TranslateRecordType = {
   },
   下四分位数: {
     'en-US': 'Q1',
-    'zh-CN': '下四分位数',
+    'zh-CN': '25分位数',
   },
   下边界: {
     'en-US': 'Lower Whisker',

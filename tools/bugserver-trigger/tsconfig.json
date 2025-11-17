@@ -1,23 +1,42 @@
 {
   "compilerOptions": {
-    "lib": ["ES2021"],
-    "module": "ESNext",
-    "noEmit": false,
-    "emitDeclarationOnly": true,
+    /* Basic Options */
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "module": "NodeNext",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowJs": true,
     "strict": true,
     "skipLibCheck": true,
-    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Module Resolution Options */
     "resolveJsonModule": true,
-    "moduleResolution": "bundler",
-    "useDefineForClassFields": true,
-    "allowImportingTsExtensions": true,
-    "composite": true,
-    "outDir": "dist",
-    "rootDir": "./src",
+    "isolatedModules": true,
+    "noEmit": true,
+
+    /* Advanced Options */
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "removeComments": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+
+    /* Path Mapping */
     "baseUrl": ".",
     "paths": {
-      "src/*": ["./src/*"]
+      "@/*": ["src/*"]
     }
   },
-  "include": ["src", "src/**/*.json"]
+  "include": ["src/**/*", "scripts/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

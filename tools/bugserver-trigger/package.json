@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "cross-env DEBUG='Bundler*' rslib build",
-    "ci": "ts-node --transpileOnly --skipProject ./scripts/trigger-test.ts"
+    "ci": "ts-node --transpileOnly ./scripts/trigger-test.ts"
   },
   "dependencies": {
     "@visactor/vseed": "workspace:*",

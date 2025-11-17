@@ -42,6 +42,11 @@ export interface LinearRegressionLine {
    */
   confidenceIntervalVisible?: boolean
   /**
+   * @description 置信区间数值设定，默认95%置信度
+   * @default 0.95
+   */
+  confidenceLevel?: number
+  /**
    * @description 置信区间颜色
    */
   confidenceIntervalColor?: string

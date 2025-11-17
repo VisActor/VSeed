@@ -153,7 +153,7 @@ export const ecdfRegressionLine: VChartSpecPipe = (spec, context) => {
       },
       title: {
         ...leftAxis.title,
-        text: 'ECDF',
+        visible: false,
       },
       label: {
         ...leftAxis.label,

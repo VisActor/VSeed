@@ -1,37 +1,8 @@
+import { Dataset } from './dataset'
 import { DuckDB } from './db/duckDb'
 import { IndexedDB } from './db/indexedDb'
 import { DatasetSchema, TidyDatum, DataSourceType } from './types'
 import { DataSourceBuilder } from 'src/dataSourceBuilder'
-
-class Dataset {
-  private duckDB: DuckDB
-  private datasetId: string
-  private tableName: string
-
-  constructor(duckDB: DuckDB, datasetId: string, tableName: string) {
-    this.duckDB = duckDB
-    this.datasetId = datasetId
-    this.tableName = tableName
-  }
-
-  public async queryBySQL(sql: string) {
-    const start = performance?.now?.()?.toFixed(3) ?? Date.now().toFixed(3)
-    const result = await this.duckDB.query(sql)
-    const end = performance?.now?.()?.toFixed(3) ?? Date.now().toFixed(3)
-    return {
-      ...result,
-      performance: {
-        startAt: start,
-        endAt: end,
-        duration: Number(end) - Number(start),
-      },
-    }
-  }
-
-  public async disConnect() {
-    // 暂时没有需要释放的资源
-  }
-}
 
 export class VQuery {
   private duckDB: DuckDB
@@ -124,6 +95,7 @@ export class VQuery {
         // 创建视图
         const createViewSql = `CREATE OR REPLACE VIEW ${datasetId} AS SELECT * FROM read_json_auto('${datasetId}')`
         await this.duckDB.query(createViewSql)
+        console.log('debug schema', await this.duckDB.getSchema(datasetId))
         break
       }
       case 'xlsx': {

@@ -63,12 +63,7 @@ export class DuckDB {
     }
     let uint8Array: Uint8Array
 
-    if (typeof source === 'string') {
-      // fetch url
-      const response = await fetch(source)
-      const buffer = await response.arrayBuffer()
-      uint8Array = new Uint8Array(buffer)
-    } else if (source instanceof Blob) {
+    if (source instanceof Blob) {
       // blob object
       const buffer = await source.arrayBuffer()
       uint8Array = new Uint8Array(buffer)
@@ -97,19 +92,6 @@ export class DuckDB {
   }
 
   /**
-   * 确保一个文件存在，如果不存在，则根据同名文件创建临时表
-   * @param fileName 文件名
-   */
-  private ensureSchema = async (fileName: string) => {
-    if (!this.connection) {
-      throw new Error('connection is null')
-    }
-    await this.connection.query(
-      `CREATE TEMP TABLE IF NOT EXISTS "${fileName}" AS SELECT * FROM read_csv_auto('${fileName}')`,
-    )
-  }
-
-  /**
    * @description 获取文件的 Schema
    * @param fileName 文件名
    * @returns 文件的 Schema
@@ -118,8 +100,6 @@ export class DuckDB {
     if (!this.connection) {
       throw new Error('connection is null')
     }
-
-    await this.ensureSchema(fileName)
 
     const result = await this.connection.query(`PRAGMA table_info('${fileName}')`)
     return result.toArray().map((row) => row.toJSON())

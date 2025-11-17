@@ -11,43 +11,31 @@ const run = async (setVSeed) => {
 
   // 2. write or read dataset from indexedDB
   const datasets = await vquery.listDatasets()
-  const datasetId = 'supermarket'
+  const datasetId = 'supermarket3'
 
   // id	order_id	order_date	delivery_date	delivery_method	customer_id	customer_name	customer_type	city	province	country_or_region	area	product_id	product_type	product_sub_type	product_name	sales	amount	discount	profit
   const datasetSchema = {
     datasetId: datasetId,
     datasetAlias: '超市',
     columns: [
-      { name: 'id', type: 'string' },
-      { name: 'order_id', type: 'string' },
-      { name: 'order_date', type: 'date' },
-      { name: 'delivery_date', type: 'date' },
-      { name: 'delivery_method', type: 'string' },
-      { name: 'customer_id', type: 'string' },
-      { name: 'customer_name', type: 'string' },
-      { name: 'customer_type', type: 'string' },
-      { name: 'city', type: 'string' },
-      { name: 'province', type: 'string' },
-      { name: 'country_or_region', type: 'string' },
       { name: 'area', type: 'string' },
-      { name: 'product_id', type: 'string' },
-      { name: 'product_type', type: 'string' },
-      { name: 'product_sub_type', type: 'string' },
-      { name: 'product_name', type: 'string' },
       { name: 'sales', type: 'number' },
-      { name: 'amount', type: 'number' },
-      { name: 'discount', type: 'number' },
-      { name: 'profit', type: 'number' },
     ],
   }
 
+  const dataArray = [
+    {
+      area: '北京',
+      sales: 100,
+    },
+    {
+      area: '上海',
+      sales: 100,
+    },
+  ]
+
   if (!datasets.includes(datasetId)) {
-    await vquery.createDataset(
-      datasetId,
-      'https://visactor.github.io/VSeed/dataset/supermarket.csv',
-      'csv',
-      datasetSchema,
-    )
+    await vquery.createDataset(datasetId, dataArray, 'json', datasetSchema)
   }
 
   const dataset = await vquery.connectDataset(datasetId)
@@ -55,13 +43,11 @@ const run = async (setVSeed) => {
   // 3. query data using duckDb sql
   const sql = `
     SELECT
-      STRFTIME('%Y', "order_date") as Date,
       "area" as Area,
       SUM("sales") as Sales,
-      SUM("profit") as Profit
-    FROM ${datasetId}
-    GROUP BY Date, Area
-    ORDER BY Date;
+    FROM ${dataset.datasetId}
+    GROUP BY Area
+    ORDER BY Area;
   `
 
   // 4. execute query
@@ -71,12 +57,12 @@ const run = async (setVSeed) => {
 
   // 5.render chart using vseed
   const vseed = {
-    chartType: 'pivotTable',
     dataset: queryDataset,
-    locale: 'en-US',
+    // chartType: 'pivotTable',
+    // locale: 'en-US',
 
-    // chartType: 'table',
-    // locale: 'zh-CN',
+    chartType: 'table',
+    locale: 'zh-CN',
   }
 
   setVSeed(() => vseed)

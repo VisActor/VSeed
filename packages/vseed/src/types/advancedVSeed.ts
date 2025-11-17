@@ -2,7 +2,7 @@ import { z } from 'zod'
 import { zChartType } from './properties/chartType'
 import { zDataset } from './properties/dataset'
 import { zDimensionTree } from './properties/dimensions'
-import { zMeasures, zMeasureTree } from './properties/measures'
+import { zMeasureTree } from './properties/measures'
 import { zEncoding } from './properties/encoding'
 import { zDatasetReshapeInfo } from './properties/datasetReshapeInfo'
 import { zTheme, zCustomThemeConfig } from './properties/theme'
@@ -17,7 +17,8 @@ export const zAdvancedVSeed = z.object({
   datasetReshapeInfo: zDatasetReshapeInfo,
   dimensions: zDimensionTree,
   measures: zMeasureTree,
-  extraMeasures: zMeasures.optional(),
+  reshapeMeasures: zMeasureTree.optional(),
+  reshapeDimensions: zDimensionTree.optional(),
   encoding: zEncoding,
   config: zConfig,
   analysis: zAnalysis,

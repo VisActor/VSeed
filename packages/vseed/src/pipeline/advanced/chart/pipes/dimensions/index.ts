@@ -1,1 +1,1 @@
-export * from './deleteTooltipAndLabelDimensions'
+export * from './pickDimensionsForReshape'

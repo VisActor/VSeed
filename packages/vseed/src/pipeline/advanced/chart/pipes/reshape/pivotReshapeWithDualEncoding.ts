@@ -18,7 +18,9 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
-  const { dimensions = [], measures = [], encoding, chartType } = advancedVSeed
+  const { encoding, chartType } = advancedVSeed
+  const measures = advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []
+  const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
 
   const allMeasures = findAllMeasures(measures)
   const datasetList: Dataset[] = []

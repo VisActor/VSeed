@@ -15,8 +15,8 @@ import {
   encodingAdapter,
   encodingForRose,
   defaultEncodingForRose,
-  deleteEncodingForMeasure,
-  deleteTooltipAndLabelDimension,
+  pickMeasuresForReshape,
+  pickDimensionsForReshape,
 } from '../pipes'
 
 export const roseAdvancedPipeline: AdvancedPipeline = [
@@ -27,12 +27,7 @@ export const roseAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForRose, buildMeasures],
-    [
-      encodingForRose,
-      buildMeasures,
-      deleteEncodingForMeasure(['tooltip', 'label', 'color']),
-      deleteTooltipAndLabelDimension,
-    ],
+    [encodingForRose, buildMeasures, pickMeasuresForReshape(['tooltip', 'label', 'color']), pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

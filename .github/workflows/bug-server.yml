@@ -32,7 +32,7 @@ jobs:
       - name: Build
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
-        run:  pnpm run build --filter @internal/bugserver-trigger
+        run: pnpm --filter @internal/bugserver-trigger run build
 
       - name: Run CI
         working-directory: ./tools/bugserver-trigger

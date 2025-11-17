@@ -1,6 +1,6 @@
 import type { ICartesianSeries, IChart, IHistogramChartSpec, IVChart } from '@visactor/vchart'
 import { isNullish, uniqueBy } from 'remeda'
-import { ecdf, array } from '@visactor/vutils'
+import { ecdf, array, isArray } from '@visactor/vutils'
 import type { Datum, Dimension, VChartSpecPipe, Encoding, RegressionLineConfig, EcdfRegressionLine } from 'src/types'
 import { defaultRegressionLineColor, defaultRegressionLineLabelX, defaultRegressionLineLabelY } from './common'
 
@@ -131,6 +131,40 @@ export const ecdfRegressionLine: VChartSpecPipe = (spec, context) => {
       })
     }
   })
+
+  // add percent axis of ecdf
+  const leftAxis = result.axes?.find((v) => v.orient === 'left')
+  if (leftAxis && lineList.length) {
+    result.axes?.push({
+      visible: true,
+      orient: 'right',
+      type: 'linear',
+      base: 10,
+      min: 0,
+      max: 1,
+      domainLine: {
+        ...leftAxis.domainLine,
+      },
+      grid: {
+        visible: false,
+      },
+      tick: {
+        ...leftAxis.tick,
+      },
+      title: {
+        ...leftAxis.title,
+        text: 'ECDF',
+      },
+      label: {
+        ...leftAxis.label,
+        visible: true,
+        formatMethod: (v) => {
+          const text = isArray(v) ? v[0] : v
+          return `${(+text * 100).toFixed(1)}%`
+        },
+      },
+    })
+  }
 
   return result
 }

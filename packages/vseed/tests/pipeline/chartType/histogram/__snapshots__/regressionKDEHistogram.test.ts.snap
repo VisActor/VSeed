@@ -829,6 +829,7 @@ exports[`regressionKDEHistogram 2`] = `
   "crosshair": {
     "xField": {
       "label": {
+        "formatMethod": [Function],
         "labelBackground": {
           "style": {
             "fill": "#364159",

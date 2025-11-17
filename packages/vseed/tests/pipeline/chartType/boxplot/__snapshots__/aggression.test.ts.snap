@@ -1216,6 +1216,7 @@ exports[`aggression 2`] = `
   "largeThreshold": Infinity,
   "legends": {
     "autoPage": true,
+    "data": [Function],
     "item": {
       "background": {
         "state": {
@@ -1283,9 +1284,9 @@ exports[`aggression 2`] = `
     "type": "discrete",
     "visible": true,
   },
-  "maxField": "__Max__",
+  "maxField": "__Upper_Whisker__",
   "medianField": "__Meadian__",
-  "minField": "__Min__",
+  "minField": "__Lower_Whisker__",
   "outliersField": "__Outliers__",
   "padding": 0,
   "progressiveStep": 400,

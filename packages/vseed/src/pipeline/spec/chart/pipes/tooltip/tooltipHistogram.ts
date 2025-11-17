@@ -3,6 +3,7 @@ import type { Dimension, Dimensions, Encoding, VChartSpecPipe, Tooltip } from 's
 import type { Datum, ISpec, ITooltipLinePattern } from '@visactor/vchart'
 import { BinEndMeasureId, BinStartMeasureId, ColorEncoding, FoldMeasureValue, XEncoding } from 'src/dataReshape'
 import { getTooltipStyle } from './tooltipStyle'
+import { getDefaultXFormatterOfHistogram } from '../../utils/histogram'
 
 const VCHART_OUTLIER_KEY = '__VCHART_BOX_PLOT_OUTLIER_VALUE'
 
@@ -13,6 +14,7 @@ export const tooltipHistogram: VChartSpecPipe = (spec, context) => {
   const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
+  const defaultXFormatter = getDefaultXFormatterOfHistogram(advancedVSeed)
 
   result.tooltip = {
     style: getTooltipStyle(tooltip),
@@ -21,19 +23,24 @@ export const tooltipHistogram: VChartSpecPipe = (spec, context) => {
       title: {
         visible: false,
       },
-      content: createMarkContent(encoding.tooltip || [], dimensions, encoding as Encoding),
+      content: createMarkContent(encoding.tooltip || [], dimensions, encoding as Encoding, defaultXFormatter),
     },
     dimension: {
       title: {
         visible: false,
       },
-      content: createMarkContent(encoding.tooltip || [], dimensions, encoding as Encoding),
+      content: createMarkContent(encoding.tooltip || [], dimensions, encoding as Encoding, defaultXFormatter),
     },
   }
   return result as unknown as ISpec
 }
 
-const createMarkContent = (tooltip: string[], dimensions: Dimensions, encoding: Encoding) => {
+const createMarkContent = (
+  tooltip: string[],
+  dimensions: Dimensions,
+  encoding: Encoding,
+  dimFormatter: (value: number) => string,
+) => {
   const dims = pipe(
     dimensions.filter((item) => tooltip.includes(item.id)),
     uniqueBy((item: Dimension) => item.id),
@@ -68,7 +75,7 @@ const createMarkContent = (tooltip: string[], dimensions: Dimensions, encoding: 
         if (!datum) {
           return ''
         }
-        return `${datum[BinStartMeasureId]} ~ ${datum[BinEndMeasureId]}`
+        return `[${dimFormatter(+datum[BinStartMeasureId])}, ${dimFormatter(+datum[BinEndMeasureId])})`
       },
       value: (datum: Datum | undefined) => {
         if (!datum) {

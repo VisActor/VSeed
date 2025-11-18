@@ -15,6 +15,7 @@ export const zAdvancedVSeed = z.object({
   chartType: zChartType,
   dataset: zDataset,
   datasetReshapeInfo: zDatasetReshapeInfo,
+  pivotAllDatasetReshapeInfo: zDatasetReshapeInfo,
   dimensions: zDimensionTree,
   measures: zMeasureTree,
   encoding: zEncoding,

@@ -1,5 +1,14 @@
 # website
 
+## 0.1.48
+
+### Patch Changes
+
+- feat: add query dsl for dataset query
+- Updated dependencies
+  - @visactor/vquery@0.1.48
+  - @visactor/vseed@0.1.48
+
 ## 0.1.47
 
 ### Patch Changes

@@ -31,9 +31,7 @@ export const convertDSLToSQL = <T>(dsl: QueryDSL<T>, tableName: string): string 
   // where
   if (dsl.where) {
     const whereClause = applyWhere(dsl.where)
-    if (whereClause) {
-      sql += ` WHERE ${whereClause}`
-    }
+    sql += ` WHERE ${whereClause}`
   }
 
   // groupBy

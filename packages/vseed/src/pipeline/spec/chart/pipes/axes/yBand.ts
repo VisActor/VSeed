@@ -32,7 +32,7 @@ export const yBand: VChartSpecPipe = (spec, context) => {
   } = config
 
   const sampling = !(labelAutoHide || labelAutoRotate || labelAutoLimit)
-  const onlyMeasureId = (encoding.y || []).filter(v => v !== MeasureId).length === 0
+  const onlyMeasureId = (encoding.y || []).filter((v) => v !== MeasureId).length === 0
 
   const bandAxis = {
     visible,

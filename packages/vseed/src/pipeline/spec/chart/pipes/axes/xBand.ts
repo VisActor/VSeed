@@ -32,7 +32,7 @@ export const xBand: VChartSpecPipe = (spec, context) => {
   } = config
 
   const sampling = !(labelAutoHide || labelAutoRotate || labelAutoLimit)
-  const onlyMeasureId = (encoding.x || []).filter(v => v !== MeasureId).length === 0
+  const onlyMeasureId = (encoding.x || []).filter((v) => v !== MeasureId).length === 0
 
   const bandAxis = {
     visible,
@@ -99,13 +99,13 @@ export const xBand: VChartSpecPipe = (spec, context) => {
     paddingOuter: [0.075, 0.1],
   } as ICartesianBandAxisSpec
   if (onlyMeasureId && bandAxis.label) {
-    const allDatasetReshapeInfo = pivotAllDatasetReshapeInfo || datasetReshapeInfo;
+    const allDatasetReshapeInfo = pivotAllDatasetReshapeInfo || datasetReshapeInfo
     const colorIdMap = allDatasetReshapeInfo.reduce<Record<string, { id: string; alias: string }>>((prev, cur) => {
       return { ...prev, ...cur.unfoldInfo.colorIdMap }
     }, {})
-    
+
     bandAxis.label.formatMethod = (text: string | string[]) => {
-      return isArray(text) ? text : colorIdMap[String(text)]?.alias ?? text
+      return isArray(text) ? text : (colorIdMap[String(text)]?.alias ?? text)
     }
   }
 

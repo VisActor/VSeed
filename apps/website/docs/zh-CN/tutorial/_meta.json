@@ -6,9 +6,15 @@
     "collapsed": false
   },
   {
+    "type": "divider"
+  },
+  {
     "type": "dir",
     "name": "vquery",
     "label": "VQuery",
     "collapsed": true
+  },
+  {
+    "type": "divider"
   }
 ]

@@ -17,7 +17,7 @@ export const xLinear: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { encoding, dimensions, measures } = advancedVSeed
   const { chartType } = vseed
-  const config = advancedVSeed.config?.[chartType as 'bar']?.xAxis as XLinearAxis
+  const config = (advancedVSeed.config?.[chartType as 'bar']?.xAxis ?? {}) as XLinearAxis
 
   if (!result.axes) {
     result.axes = []

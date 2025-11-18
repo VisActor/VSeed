@@ -11,12 +11,21 @@ const run = async (setVSeed) => {
   const datasets = await vquery.listDatasets()
 
   const datasetSchema = {
-    datasetId: 'arrayObject',
-    datasetAlias: 'arrayObject',
+    datasetId: 'demoDataset',
+    datasetAlias: 'Demo',
   }
   const values = [
-    { area: '北京', date: '2025-11-06', sales: 100 },
-    { area: '上海', date: '2025-11-06', sales: 100 },
+    { area: 'BEI JING', date: '2025-01-01', sales: 100 },
+    { area: 'BEI JING', date: '2025-01-02', sales: 200 },
+    { area: 'BEI JING', date: '2025-01-03', sales: 300 },
+
+    { area: 'HANG ZHOU', date: '2025-01-01', sales: 100 },
+    { area: 'HANG ZHOU', date: '2025-01-02', sales: 200 },
+    { area: 'HANG ZHOU', date: '2025-01-03', sales: 500 },
+
+    { area: 'SHANG HAI', date: '2025-11-01', sales: 600 },
+    { area: 'SHANG HAI', date: '2025-11-02', sales: 400 },
+    { area: 'SHANG HAI', date: '2025-11-03', sales: 300 },
   ]
 
   if (!datasets.find((d) => d.datasetId === datasetSchema.datasetId)) {
@@ -25,21 +34,57 @@ const run = async (setVSeed) => {
 
   const temporaryStructs = [
     { name: 'area', type: 'string' },
+    { name: 'date', type: 'string' },
     { name: 'sales', type: 'number' },
-    { name: 'date', type: 'date' },
   ]
   const dataset = await vquery.connectTemporaryDataset(datasetSchema.datasetId, temporaryStructs)
 
-  const sql = `
-  SELECT
-    strftime('%Y-%m-%d', date) AS Date,
-    SUM(sales) AS Sales
-  FROM ${datasetSchema.datasetId}
-  GROUP BY Date
-  ORDER BY Date
-`
+  interface T {
+    area: string
+    date: string
+    sales: number
+  }
 
-  const queryResult = await dataset.queryBySQL(sql)
+  const queryDSL: QueryDSL<T> = {
+    select: [
+      'area',
+      {
+        field: 'sales',
+        alias: 'Sum(sales)',
+        func: 'sum',
+      },
+    ],
+    groupBy: ['area'],
+    orderBy: [
+      {
+        field: 'Sum(sales)',
+        order: 'desc',
+      },
+    ],
+    where: {
+      op: 'and',
+      conditions: [
+        {
+          op: 'or',
+          conditions: [
+            {
+              field: 'area',
+              op: 'in',
+              value: ['BEI JING'],
+            },
+            {
+              field: 'sales',
+              op: '>=',
+              value: '400',
+            },
+          ],
+        },
+      ],
+    },
+    limit: 100,
+  }
+
+  const queryResult = await dataset.query(queryDSL)
   await dataset.disconnect()
 
   const vseed = {
@@ -72,7 +117,7 @@ const Demo = () => {
   return vseed && <SimpleVSeedRender vseed={vseed} />
 }
 
-import { VQuery } from '@visactor/vquery'
+import { VQuery, QueryDSL } from '@visactor/vquery'
 import { useRef, useEffect, useState } from 'react'
 import { useDark } from 'rspress/runtime'
 import VChart from '@visactor/vchart'

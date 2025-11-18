@@ -1,6 +1,6 @@
 {
   "name": "@visactor/vquery",
-  "version": "0.1.47",
+  "version": "0.1.48",
   "type": "module",
   "exports": {
     ".": {
@@ -22,13 +22,16 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@duckdb/duckdb-wasm": "latest"
+    "@duckdb/duckdb-wasm": "1.30.0",
+    "kysely": "0.28.8",
+    "better-sqlite3": "^11.1.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",
     "@rslib/core": "^0.15.1",
     "@rstest/core": "^0.5.1",
     "@types/node": "^22.18.10",
+    "@types/better-sqlite3": "^7.6.11",
     "@rstest/coverage-istanbul": "^0.0.2",
     "eslint": "^9.35.0",
     "globals": "^16.3.0",

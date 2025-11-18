@@ -1,5 +1,11 @@
 # @visactor/vquery
 
+## 0.1.48
+
+### Patch Changes
+
+- feat: add query dsl for dataset query
+
 ## 0.1.47
 
 ### Patch Changes

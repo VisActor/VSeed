@@ -1,6 +1,7 @@
-import { DatasetColumn, DataSourceType, DataType } from 'src/types'
+import { DatasetColumn, DataSourceType, DataType, QueryDSL } from 'src/types'
 import { DuckDB } from '../db/duckDb'
 import { IndexedDB } from '../db/indexedDb'
+import { convertDSLToSQL } from './convert/dslToSQL'
 
 export class Dataset {
   private duckDB: DuckDB
@@ -66,6 +67,16 @@ export class Dataset {
         duration: Number(end) - Number(start),
       },
     }
+  }
+
+  public convertDSLToSQL<T extends Record<string, number | string>>(queryDSL: QueryDSL<T>) {
+    return convertDSLToSQL(queryDSL, this.datasetId)
+  }
+
+  public async query<T extends Record<string, number | string>>(queryDSL: QueryDSL<T>) {
+    const sql = this.convertDSLToSQL(queryDSL)
+    console.log(sql)
+    return this.queryBySQL(sql)
   }
 
   public async disconnect() {

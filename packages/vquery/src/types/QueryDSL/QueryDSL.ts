@@ -3,8 +3,7 @@ import { OrderBy } from './OrderBy'
 import { Select } from './Select'
 import { Where } from './Where'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export interface QueryDSL<Table extends Record<string, any>> {
+export interface QueryDSL<Table> {
   select: Select<Table>
   where?: Where<Table>
   groupBy?: GroupBy<Table>

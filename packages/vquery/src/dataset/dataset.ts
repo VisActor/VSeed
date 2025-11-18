@@ -1,6 +1,7 @@
-import { DatasetColumn, DataSourceType, DataType } from 'src/types'
+import { DatasetColumn, DataSourceType, DataType, QueryDSL } from 'src/types'
 import { DuckDB } from '../db/duckDb'
 import { IndexedDB } from '../db/indexedDb'
+import { convertDSLToSQL } from './dslToSQL'
 
 export class Dataset {
   private duckDB: DuckDB
@@ -68,12 +69,8 @@ export class Dataset {
     }
   }
 
-  public async query(queryDSL: object) {
-    const convertToSQL = (dsl: object) => {
-      // 简单的DSL转换为SQL，实际应用中需要更复杂的逻辑
-      return JSON.stringify(dsl).replace(/"/g, '')
-    }
-    return this.queryBySQL(convertToSQL(queryDSL))
+  public async query<T extends Record<string, number | string>>(queryDSL: QueryDSL<T>) {
+    return this.queryBySQL(convertDSLToSQL(queryDSL, this.datasetId))
   }
 
   public async disconnect() {

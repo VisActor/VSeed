@@ -5,23 +5,6 @@
     "activeMatch": "/guide/"
   },
   {
-    "text": "教程",
-    "link": "/tutorial/vseed/quickStart",
-    "activeMatch": "/tutorial/",
-    "items": [
-      {
-        "link": "/tutorial/vseed/quickStart",
-        "text": "VSeed",
-        "activeMatch": "/tutorial/vseed"
-      },
-      {
-        "link": "/tutorial/vquery/quickStart",
-        "text": "VQuery",
-        "activeMatch": "/tutorial/vquery"
-      }
-    ]
-  },
-  {
     "text": "配置项",
     "link": "/option/index",
     "activeMatch": "/option/"

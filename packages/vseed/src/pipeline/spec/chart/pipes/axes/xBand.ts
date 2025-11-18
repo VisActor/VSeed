@@ -8,7 +8,7 @@ export const xBand: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const { measures, dimensions, encoding } = advancedVSeed
-  const config = advancedVSeed.config?.[chartType as 'column']?.xAxis as XBandAxis
+  const config = (advancedVSeed.config?.[chartType as 'column']?.xAxis ?? {}) as XBandAxis
 
   if (!result.axes) {
     result.axes = []

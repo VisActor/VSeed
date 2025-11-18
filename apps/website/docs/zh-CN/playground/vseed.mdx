@@ -9,46 +9,69 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'boxPlot',
+    chartType: 'line',
     dataset: [
-      { color: 'red', shape: 'circle', Sex: 'male', v: 1 },
-      { color: 'red', shape: 'circle', Sex: 'male', v: 1 },
-      { color: 'red', shape: 'circle', Sex: 'male', v: 1 },
-      { color: 'red', shape: 'circle', Sex: 'male', v: 2 },
-      { color: 'red', shape: 'circle', Sex: 'female', v: 5 },
-      { color: 'red', shape: 'circle', Sex: 'female', v: 7 },
-      { color: 'red', shape: 'circle', Sex: 'female', v: 8 },
-      { color: 'red', shape: 'circle', Sex: 'female', v: 9 },
-      { color: 'red', shape: 'circle', Sex: 'female', v: 10 },
-      { color: 'blue', shape: 'circle', Sex: 'male', v1: 1 },
-      { color: 'blue', shape: 'circle', Sex: 'male', v1: 1 },
-      { color: 'blue', shape: 'circle', Sex: 'male', v1: 1 },
-      { color: 'blue', shape: 'circle', Sex: 'male', v1: 2 },
-      { color: 'blue', shape: 'circle', Sex: 'female', v1: 5 },
-      { color: 'blue', shape: 'circle', Sex: 'female', v1: 7 },
-      { color: 'blue', shape: 'circle', Sex: 'female', v1: 8 },
-      { color: 'blue', shape: 'circle', Sex: 'female', v1: 9 },
-    ].map((v) => ({ v: v.v, v1: v.v1 })),
-    measures: [
       {
-        id: 'v',
-        encoding: 'value',
-        alias: '销量',
-        parentId: '0',
+        乐观情景: 44000,
+        基准情景: 42500,
+        悲观情景: 39500,
+        时间: '2025年下半年',
       },
       {
-        id: 'v1',
-        encoding: 'value',
-        alias: '销售额',
-        parentId: '0',
+        乐观情景: 46000,
+        基准情景: 43500,
+        悲观情景: 38000,
+        时间: '2026年上半年',
       },
       {
-        id: 'v1',
-        encoding: 'value',
-        alias: '销售额',
-        parentId: '1',
+        乐观情景: 47500,
+        基准情景: 44500,
+        悲观情景: 37000,
+        时间: '2026年下半年',
+      },
+      {
+        乐观情景: 49000,
+        基准情景: 45500,
+        悲观情景: 36000,
+        时间: '2027年上半年',
       },
     ],
+    dimensions: [
+      {
+        id: '时间',
+        alias: '预测时间点',
+        encoding: 'xAxis',
+      },
+      {
+        id: '__MeaName__',
+        alias: '指标名称',
+      },
+    ],
+    measures: [
+      {
+        id: '基准情景',
+        alias: '基准情景下的武汉小学学区房均价预测',
+        encoding: 'yAxis',
+      },
+      {
+        id: '乐观情景',
+        alias: '乐观情景下的武汉小学学区房均价预测',
+        encoding: 'yAxis',
+      },
+      {
+        id: '悲观情景',
+        alias: '悲观情景下的武汉小学学区房均价预测',
+        encoding: 'yAxis',
+      },
+    ],
+    legend: {
+      enable: true,
+    },
+    label: {
+      enable: true,
+    },
+    theme: 'chinese',
+    locale: 'zh-CN',
   }
 
   const parseRes = zVSeed.safeParse(vseed)
@@ -90,7 +113,7 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
       return
     }
     const theme = dark ? 'dark' : 'light'
-    const builder = Builder.from({ ...vseed, theme })
+    const builder = Builder.from({ ...vseed })
     const spec = builder.build()
     console.log('builder', builder)
     console.log('builder performance', builder.performance)

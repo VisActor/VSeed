@@ -68,6 +68,14 @@ export class Dataset {
     }
   }
 
+  public async query(queryDSL: object) {
+    const convertToSQL = (dsl: object) => {
+      // 简单的DSL转换为SQL，实际应用中需要更复杂的逻辑
+      return JSON.stringify(dsl).replace(/"/g, '')
+    }
+    return this.queryBySQL(convertToSQL(queryDSL))
+  }
+
   public async disconnect() {
     await this.duckDB.query(`DROP VIEW IF EXISTS "${this._datasetId}"`)
   }

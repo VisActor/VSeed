@@ -22,7 +22,8 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@duckdb/duckdb-wasm": "latest"
+    "@duckdb/duckdb-wasm": "1.30.0",
+    "kysely": "0.28.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",

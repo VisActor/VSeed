@@ -1,13 +1,13 @@
 [
   {
     "type": "dir",
-    "name": "VSeed",
+    "name": "vseed",
     "label": "VSeed",
     "collapsed": false
   },
   {
     "type": "dir",
-    "name": "VQuery",
+    "name": "vquery",
     "label": "VQuery",
     "collapsed": true
   }

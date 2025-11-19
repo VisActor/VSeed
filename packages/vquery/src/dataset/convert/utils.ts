@@ -16,3 +16,18 @@ export const isWhereGroup = <T>(where: Where<T> | WhereClause<T>): where is Wher
 export const isStringOrNumber = (value: unknown): value is string | number => {
   return typeof value === 'string' || typeof value === 'number'
 }
+
+export const escapeLiteral = <T>(value: T[keyof T]): T[keyof T] => {
+  if (typeof value === 'string') {
+    return `'${value.replace(/'/g, "''")}'` as unknown as T[keyof T]
+  }
+  return value
+}
+
+export const escapeValue = (value: unknown): string => {
+  if (value === null) return 'null'
+  if (typeof value === 'string') return `'${value.replace(/'/g, "''")}'`
+  if (typeof value === 'number') return `${value}`
+  if (typeof value === 'boolean') return value ? 'TRUE' : 'FALSE'
+  return `'${String(value).replace(/'/g, "''")}'`
+}

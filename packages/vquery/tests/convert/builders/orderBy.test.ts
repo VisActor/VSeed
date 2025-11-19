@@ -10,7 +10,7 @@ describe('orderBy', () => {
       active: number
     }
 
-    const sql = convertDSLToSQL<USER>(
+    const sql = convertDSLToSQL<USER, 'orders'>(
       {
         select: ['id'],
         orderBy: [
@@ -23,7 +23,7 @@ describe('orderBy', () => {
       },
       'orders',
     )
-    expect(sql).toMatchInlineSnapshot(`"SELECT id FROM orders ORDER BY id DESC LIMIT 100"`)
+    expect(sql).toMatchInlineSnapshot(`"select "id" from "orders" order by "id" desc limit 100"`)
   })
 
   it('asc', () => {
@@ -35,7 +35,7 @@ describe('orderBy', () => {
       active: number
     }
 
-    const sql = convertDSLToSQL<USER>(
+    const sql = convertDSLToSQL<USER, 'orders'>(
       {
         select: ['id'],
         orderBy: [
@@ -48,6 +48,14 @@ describe('orderBy', () => {
       },
       'orders',
     )
-    expect(sql).toMatchInlineSnapshot(`"SELECT id FROM orders ORDER BY id ASC LIMIT 100"`)
+    expect(sql).toMatchInlineSnapshot(`"select "id" from "orders" order by "id" asc limit 100"`)
+  })
+
+  it('order defaults to asc when omitted', () => {
+    interface USER {
+      id: number
+    }
+    const sql = convertDSLToSQL<USER, 'orders'>({ select: ['id'], orderBy: [{ field: 'id' }] }, 'orders')
+    expect(sql).toBe('select "id" from "orders" order by "id" asc')
   })
 })

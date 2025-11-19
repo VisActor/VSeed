@@ -1,6 +1,6 @@
 import { convertDSLToSQL } from '@visactor/vquery'
 
-describe('groupBy', () => {
+describe('limit', () => {
   it('simple', () => {
     interface USER {
       id: number
@@ -10,14 +10,13 @@ describe('groupBy', () => {
       active: number
     }
 
-    const sql = convertDSLToSQL<USER>(
+    const sql = convertDSLToSQL<USER, 'orders'>(
       {
-        select: ['id', 'department'],
+        select: ['id'],
         limit: 100,
-        groupBy: ['id', 'department'],
       },
       'orders',
     )
-    expect(sql).toMatchInlineSnapshot(`"SELECT id, department FROM orders GROUP BY id, department LIMIT 100"`)
+    expect(sql).toMatchInlineSnapshot(`"select "id" from "orders" limit 100"`)
   })
 })

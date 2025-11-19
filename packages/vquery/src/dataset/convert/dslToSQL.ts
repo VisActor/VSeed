@@ -1,56 +1,64 @@
 import { QueryDSL } from 'src/types'
 import { isSelectItem } from './utils'
-import { applyWhere } from './applyWhere'
+import { Kysely } from 'kysely'
+import { PostgresDialect } from './postgresDialect'
+import { buildWhere } from './builders/where'
+import { inlineParameters } from './compile/inlineParameters'
+import { applyGroupBy } from './builders/groupBy'
+import { applyLimit } from './builders/limit'
 
-export const convertDSLToSQL = <T>(dsl: QueryDSL<T>, tableName: string): string => {
-  let sql = 'SELECT'
+type TableDB<TableName extends string, Row> = {
+  [K in TableName]: Row
+}
 
-  // select
+export const convertDSLToSQL = <T, TableName extends string>(dsl: QueryDSL<T>, tableName: TableName): string => {
+  const db = new Kysely<TableDB<TableName, T>>({ dialect: new PostgresDialect() })
+
+  let qb = db.selectFrom(tableName)
+
   if (dsl.select && dsl.select.length > 0) {
-    const selectFields = dsl.select.map((item) => {
-      if (typeof item === 'string') {
-        return item
-      }
-      if (isSelectItem(item)) {
-        if (item.func) {
-          return `${item.func}(${item.field as string})` + (item.alias ? ` AS "${item.alias}"` : '')
+    qb = qb.select((eb) =>
+      dsl.select.map((item) => {
+        if (isSelectItem(item)) {
+          const field = item.field as Extract<keyof T, string>
+          if (item.func) {
+            const alias = item.alias ?? (field as string)
+            switch (item.func) {
+              case 'avg':
+                return eb.fn.avg(field).as(alias)
+              case 'sum':
+                return eb.fn.sum(field).as(alias)
+              case 'min':
+                return eb.fn.min(field).as(alias)
+              case 'max':
+                return eb.fn.max(field).as(alias)
+              case 'count':
+                return eb.fn.count(field).as(alias)
+            }
+          }
+          return item.alias ? eb.ref(field).as(item.alias) : field
         }
-        if (item.alias) {
-          return `${item.field as string} AS "${item.alias}"`
-        }
-        return item.field as string
-      }
-    })
-    sql += ` ${selectFields.join(', ')}`
+        return item as Extract<keyof T, string>
+      }),
+    )
   } else {
-    sql += ' *'
+    qb = qb.selectAll()
   }
 
-  sql += ` FROM ${tableName}`
-
-  // where
   if (dsl.where) {
-    const whereClause = applyWhere(dsl.where)
-    sql += ` WHERE ${whereClause}`
+    qb = qb.where(buildWhere<T>(dsl.where))
   }
 
-  // groupBy
-  if (dsl.groupBy && dsl.groupBy.length > 0) {
-    sql += ` GROUP BY ${dsl.groupBy.join(', ')}`
-  }
+  qb = applyGroupBy(qb, dsl.groupBy as Array<Extract<keyof T, string>> | undefined)
 
-  // orderBy
   if (dsl.orderBy && dsl.orderBy.length > 0) {
-    const orderByFields = dsl.orderBy.map((item) => {
-      return `${item.field as string}${item.order ? ` ${item.order.toUpperCase()}` : ''}`
-    })
-    sql += ` ORDER BY ${orderByFields.join(', ')}`
+    for (const o of dsl.orderBy) {
+      qb = qb.orderBy(o.field as Extract<keyof T, string>, (o.order ?? 'asc') as 'asc' | 'desc')
+    }
   }
 
-  // limit
-  if (dsl.limit) {
-    sql += ` LIMIT ${dsl.limit}`
-  }
+  qb = applyLimit(qb, dsl.limit)
 
-  return sql
+  const compiled = qb.compile()
+  return inlineParameters(compiled.sql, compiled.parameters)
 }

@@ -1,5 +1,11 @@
 # @visactor/vquery
 
+## 0.1.50
+
+### Patch Changes
+
+- b0b8cda: feat: optimize the createDataset interface
+
 ## 0.1.49
 
 ### Patch Changes

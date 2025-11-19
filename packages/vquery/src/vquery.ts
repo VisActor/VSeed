@@ -29,10 +29,16 @@ export class VQuery {
     datasetId: string,
     data: string | ArrayBuffer | Blob | TidyDatum[],
     type: DataSourceType,
-    datasetSchema: DatasetSchema,
+    columns: DatasetColumn[] = [],
   ) {
     await this.ensureInitialized()
     const dataSource = await DataSourceBuilder.from(type, data).build()
+
+    const datasetSchema = {
+      datasetId,
+      datasetAlias: datasetId,
+      columns: columns,
+    }
     await this.indexedDB.writeDataset(datasetId, dataSource, datasetSchema)
   }
 
@@ -53,9 +59,18 @@ export class VQuery {
   /**
    * 删除数据集，从indexdb移除数据集
    */
-  public async deleteDataset(datasetId: string) {
+  public async dropDataset(datasetId: string) {
     await this.ensureInitialized()
     await this.indexedDB.deleteDataset(datasetId)
+  }
+
+  /**
+   * 检查数据集是否存在
+   */
+  public async hasDataset(datasetId: string) {
+    await this.ensureInitialized()
+    const datasets = await this.indexedDB.listDatasets()
+    return datasets.some((item) => item.datasetId === datasetId)
   }
 
   /**
@@ -70,24 +85,11 @@ export class VQuery {
   /**
    * 连接数据集，返回数据集信息，从indexedDB获取表结构，使用DuckDB在内存中创建表
    */
-  public async connectDataset(datasetId: string) {
+  public async connectDataset(datasetId: string, temporaryColumns: DatasetColumn[] = []) {
     await this.ensureInitialized()
 
     const dataset = new Dataset(this.duckDB, this.indexedDB, datasetId)
-    await dataset.init()
-    return dataset
-  }
-
-  /**
-   * 连接临时数据集，返回数据集信息，从indexedDB获取表结构，使用DuckDB在内存中创建表
-   * @param datasetId
-   * @returns
-   */
-  public async connectTemporaryDataset(datasetId: string, temporaryDatasetSchema?: DatasetColumn[]) {
-    await this.ensureInitialized()
-
-    const dataset = new Dataset(this.duckDB, this.indexedDB, datasetId)
-    await dataset.init(temporaryDatasetSchema)
+    await dataset.init(temporaryColumns)
     return dataset
   }
 

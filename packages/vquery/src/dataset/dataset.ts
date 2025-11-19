@@ -14,7 +14,7 @@ export class Dataset {
     this._datasetId = datasetId
   }
 
-  public async init(temporaryStructs?: DatasetColumn[]) {
+  public async init(temporaryColumns: DatasetColumn[] = []) {
     const readFunctionMap: Record<DataSourceType, string> = {
       csv: 'read_csv_auto',
       json: 'read_json_auto',
@@ -37,7 +37,7 @@ export class Dataset {
 
     const { dataSource } = datasetInfo
     const datasetSchema = datasetInfo.datasetSchema
-    const columns = temporaryStructs || datasetSchema.columns
+    const columns = temporaryColumns.length > 0 ? temporaryColumns : datasetSchema.columns
 
     const readFunction = readFunctionMap[dataSource.type]
     if (!readFunction) {
@@ -75,7 +75,6 @@ export class Dataset {
 
   public async query<T extends Record<string, number | string>>(queryDSL: QueryDSL<T>) {
     const sql = this.convertDSLToSQL(queryDSL)
-    console.log(sql)
     return this.queryBySQL(sql)
   }
 

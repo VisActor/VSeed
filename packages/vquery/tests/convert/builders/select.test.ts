@@ -181,4 +181,13 @@ describe('select', () => {
     )
     expect(sql).toMatchInlineSnapshot(`"select * from "orders" group by "department", "name" order by "age" desc"`)
   })
+
+  it('aggregate without alias falls back to field name', () => {
+    interface USER {
+      id: number
+      age: number
+    }
+    const sql = convertDSLToSQL<USER, 'orders'>({ select: [{ field: 'age', func: 'avg' }] }, 'orders')
+    expect(sql).toBe('select avg("age") as "age" from "orders"')
+  })
 })

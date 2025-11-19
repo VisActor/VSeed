@@ -17,7 +17,7 @@ export type WhereLeaf<T> = {
     } & (O extends 'is null' | 'is not null' // 根据 O 和 T[K] 的类型，精确地定义 value
       ? { value?: never }
       : O extends 'in' | 'not in'
-        ? { value: T[K][] }
+        ? { value: T[K] | T[K][] }
         : O extends 'between' | 'not between'
           ? { value: [T[K], T[K]] }
           : { value: T[K] })

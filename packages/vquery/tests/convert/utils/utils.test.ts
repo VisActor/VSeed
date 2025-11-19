@@ -30,4 +30,7 @@ describe('utils', () => {
   it('escapeLiteral', () => {
     expect(escapeLiteral<{ a: string }>("O'Reilly")).toBe("'O''Reilly'")
   })
+  it('escapeLiteral non-string', () => {
+    expect(escapeLiteral<{ a: number }>(123 as unknown as number)).toBe(123 as unknown as number)
+  })
 })

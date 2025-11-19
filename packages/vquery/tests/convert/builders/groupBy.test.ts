@@ -10,7 +10,7 @@ describe('groupBy', () => {
       active: number
     }
 
-    const sql = convertDSLToSQL<USER>(
+    const sql = convertDSLToSQL<USER, 'orders'>(
       {
         select: ['id', 'department'],
         limit: 100,

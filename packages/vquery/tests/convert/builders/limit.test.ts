@@ -10,7 +10,7 @@ describe('limit', () => {
       active: number
     }
 
-    const sql = convertDSLToSQL<USER>(
+    const sql = convertDSLToSQL<USER, 'orders'>(
       {
         select: ['id'],
         limit: 100,

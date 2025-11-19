@@ -10,7 +10,10 @@ export default defineConfig({
     include: ['src/dataset/convert/**/*.{js,jsx,ts,tsx}'],
     reporters: ['html', ['text', { skipFull: true }], ['json', { file: 'coverage-final.json' }]],
     thresholds: {
-      statements: 92,
+      statements: 100,
+      branches: 100,
+      functions: 100,
+      lines: 100,
     },
   },
   resolve: {

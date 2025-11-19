@@ -1,4 +1,4 @@
-import { isSelectItem, isWhereLeaf, isWhereGroup, isStringOrNumber, escapeLiteral } from 'src/dataset/convert/utils'
+import { isSelectItem, isWhereLeaf, isWhereGroup, isStringOrNumber, escapeLiteral } from 'src/sql-builder/utils'
 import { Where } from 'src/types/QueryDSL/Where'
 
 describe('utils', () => {

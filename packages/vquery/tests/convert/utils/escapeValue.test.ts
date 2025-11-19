@@ -1,4 +1,4 @@
-import { escapeValue } from 'src/dataset/convert/utils'
+import { escapeValue } from 'src/sql-builder/utils'
 
 describe('escapeValue branches', () => {
   it('null', () => {

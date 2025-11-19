@@ -1,4 +1,4 @@
-import { inlineParameters } from 'src/dataset/convert/compile/inlineParameters'
+import { inlineParameters } from 'src/sql-builder/compile/inlineParameters'
 
 describe('inlineParameters', () => {
   it('replaces question marks sequentially', () => {

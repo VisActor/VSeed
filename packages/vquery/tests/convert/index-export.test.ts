@@ -1,4 +1,4 @@
-import * as convert from 'src/dataset/convert'
+import * as convert from 'src/sql-builder'
 
 describe('convert index export', () => {
   it('has convertDSLToSQL function', () => {

@@ -1,7 +1,7 @@
 import { DatasetColumn, DataSourceType, DataType, QueryDSL } from 'src/types'
-import { DuckDB } from '../db/duckDb'
-import { IndexedDB } from '../db/indexedDb'
-import { convertDSLToSQL } from './convert/dslToSQL'
+import { DuckDB } from 'src/db/duckDb'
+import { IndexedDB } from 'src/db/indexedDb'
+import { convertDSLToSQL } from 'src/sql-builder'
 
 export class Dataset {
   private duckDB: DuckDB

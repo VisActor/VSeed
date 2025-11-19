@@ -7,7 +7,7 @@ export default defineConfig({
   coverage: {
     enabled: true,
     exclude: ['**/node_modules/**', '**/dist/**'],
-    include: ['src/dataset/convert/**/*.{js,jsx,ts,tsx}'],
+    include: ['src/sql-builder/**/*.{js,jsx,ts,tsx}'],
     reporters: ['html', ['text', { skipFull: true }], ['json', { file: 'coverage-final.json' }]],
     thresholds: {
       statements: 100,

@@ -2,7 +2,7 @@ import { Dataset } from './dataset/dataset'
 import { DuckDB } from './db/duckDb'
 import { IndexedDB } from './db/indexedDb'
 import { DatasetSchema, TidyDatum, DataSourceType, DatasetColumn } from './types'
-import { DataSourceBuilder } from 'src/dataSourceBuilder'
+import { DataSourceBuilder } from 'src/data-source-builder'
 
 export class VQuery {
   private duckDB: DuckDB

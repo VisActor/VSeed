@@ -56,6 +56,6 @@ describe('orderBy', () => {
       id: number
     }
     const sql = convertDSLToSQL<USER, 'orders'>({ select: ['id'], orderBy: [{ field: 'id' }] }, 'orders')
-    expect(sql).toBe('select "id" from "orders" order by "id" asc')
+    expect(sql).toMatchInlineSnapshot(`"select "id" from "orders" order by "id" asc"`)
   })
 })

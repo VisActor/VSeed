@@ -188,6 +188,6 @@ describe('select', () => {
       age: number
     }
     const sql = convertDSLToSQL<USER, 'orders'>({ select: [{ field: 'age', func: 'avg' }] }, 'orders')
-    expect(sql).toBe('select avg("age") as "age" from "orders"')
+    expect(sql).toMatchInlineSnapshot(`"select avg("age") as "age" from "orders""`)
   })
 })

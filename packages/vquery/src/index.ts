@@ -1,4 +1,4 @@
 export { VQuery } from './vquery'
 export { convertDSLToSQL } from './dataset'
-export { DataSourceBuilder } from './dataSourceBuilder/dataSourceBuilder'
+export { DataSourceBuilder } from './data-source-builder/dataSourceBuilder'
 export * from './utils'

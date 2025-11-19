@@ -251,7 +251,7 @@ describe('where', () => {
       { select: ['id'], where: { op: 'and', conditions: [{ field: 'gender', op: 'in', value: 'male' }] } },
       'orders',
     )
-    expect(sql).toBe('select "id" from "orders" where ("gender" in (\'male\'))')
+    expect(sql).toMatchInlineSnapshot(`"select "id" from "orders" where ("gender" in ('male'))"`)
   })
 
   it('not in with single value', () => {
@@ -263,6 +263,6 @@ describe('where', () => {
       { select: ['id'], where: { op: 'and', conditions: [{ field: 'gender', op: 'not in', value: 'female' }] } },
       'orders',
     )
-    expect(sql).toBe('select "id" from "orders" where (not "gender" in (\'female\'))')
+    expect(sql).toMatchInlineSnapshot(`"select "id" from "orders" where (not "gender" in ('female'))"`)
   })
 })

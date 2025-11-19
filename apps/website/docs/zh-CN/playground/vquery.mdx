@@ -8,13 +8,9 @@ pageType: custom
 const run = async (setVSeed) => {
   const vquery = new VQuery()
 
-  const datasets = await vquery.listDatasets()
+  const datasetId = 'demoDataset'
 
-  const datasetSchema = {
-    datasetId: 'demoDataset',
-    datasetAlias: 'Demo',
-  }
-  const values = [
+  const rawDataset = [
     { area: 'BEI JING', date: '2025-01-01', sales: 100 },
     { area: 'BEI JING', date: '2025-01-02', sales: 200 },
     { area: 'BEI JING', date: '2025-01-03', sales: 300 },
@@ -28,24 +24,33 @@ const run = async (setVSeed) => {
     { area: 'SHANG HAI', date: '2025-11-03', sales: 300 },
   ]
 
-  if (!datasets.find((d) => d.datasetId === datasetSchema.datasetId)) {
-    await vquery.createDataset(datasetSchema.datasetId, values, 'json', datasetSchema)
+  if (await vquery.hasDataset(datasetId)) {
+    await vquery.dropDataset(datasetId)
   }
 
-  const temporaryStructs = [
+  if (!(await vquery.hasDataset(datasetId))) {
+    await vquery.createDataset(datasetId, rawDataset, 'json', [
+      { name: 'area', type: 'string' },
+      { name: 'date', type: 'string' },
+      { name: 'sales', type: 'number' },
+    ])
+  }
+
+  // support temporary columns for each temporary connect
+  const dataset = await vquery.connectDataset(datasetId, [
     { name: 'area', type: 'string' },
     { name: 'date', type: 'string' },
     { name: 'sales', type: 'number' },
-  ]
-  const dataset = await vquery.connectTemporaryDataset(datasetSchema.datasetId, temporaryStructs)
+  ])
 
-  interface T {
-    area: string
-    date: string
-    sales: number
-  }
-
-  const queryDSL: QueryDSL<T> = {
+  const queryDSL: QueryDSL<
+    {
+      area: string
+      date: string
+      sales: number
+    },
+    datasetId
+  > = {
     select: [
       'area',
       {
@@ -75,7 +80,7 @@ const run = async (setVSeed) => {
             {
               field: 'sales',
               op: '>=',
-              value: '400',
+              value: 400,
             },
           ],
         },
@@ -86,20 +91,15 @@ const run = async (setVSeed) => {
 
   const queryResult = await dataset.query(queryDSL)
   await dataset.disconnect()
+  await vquery.close()
 
   const vseed = {
     dataset: queryResult.dataset,
-    // chartType: 'pivotTable',
-    // locale: 'en-US',
-
     chartType: 'table',
     locale: 'zh-CN',
   }
 
   setVSeed(() => vseed)
-
-  // 6. close
-  await vquery.close()
 
   return () => {
     vquery = null

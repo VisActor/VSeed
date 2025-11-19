@@ -1,4 +1,4 @@
-import { PostgresDialect } from 'src/dataset/convert/postgresDialect'
+import { PostgresDialect } from 'src/sql-builder/dialect/postgresDialect'
 import { Kysely } from 'kysely'
 
 describe('kysely dialect coverage', () => {

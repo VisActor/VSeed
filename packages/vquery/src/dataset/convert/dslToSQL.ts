@@ -1,17 +1,9 @@
 import { QueryDSL, Where, WhereClause } from 'src/types'
-import { isSelectItem, isWhereGroup } from './utils'
+import { escapeValue, isSelectItem, isWhereGroup } from './utils'
 import { Kysely } from 'kysely'
 import { sql } from 'kysely'
 import type { RawBuilder } from 'kysely'
 import { LiteSqliteDialect } from './kyselyDialect'
-
-const escapeValue = (value: unknown): string => {
-  if (value === null) return 'null'
-  if (typeof value === 'string') return `'${value.replace(/'/g, "''")}'`
-  if (typeof value === 'number') return `${value}`
-  if (typeof value === 'boolean') return value ? 'TRUE' : 'FALSE'
-  return `'${String(value).replace(/'/g, "''")}'`
-}
 
 type TableDB<TableName extends string, Row> = {
   [K in TableName]: Row

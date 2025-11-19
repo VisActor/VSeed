@@ -1,5 +1,6 @@
-import { Dialect, DummyDriver, SqliteAdapter } from 'kysely'
-import { SqliteQueryCompiler } from 'kysely'
+import { Dialect, DummyDriver } from 'kysely'
+import { PostgresQueryCompiler } from 'kysely'
+import { PostgresAdapter } from 'kysely'
 import { Kysely } from 'kysely'
 import type {
   DatabaseIntrospector,
@@ -9,15 +10,15 @@ import type {
   DatabaseMetadataOptions,
 } from 'kysely'
 
-export class LiteSqliteDialect implements Dialect {
+export class PostgresDialect implements Dialect {
   createDriver() {
     return new DummyDriver()
   }
   createQueryCompiler() {
-    return new SqliteQueryCompiler()
+    return new PostgresQueryCompiler()
   }
   createAdapter() {
-    return new SqliteAdapter()
+    return new PostgresAdapter()
   }
   createIntrospector<DB = unknown>(db: Kysely<DB>): DatabaseIntrospector {
     void db

@@ -1,4 +1,4 @@
-import { DatasetColumn, DataSourceType, DataType, QueryDSL } from 'src/types'
+import { DatasetColumn, DatasetSourceType, DataType, QueryDSL } from 'src/types'
 import { DuckDB } from 'src/db/duckDb'
 import { IndexedDB } from 'src/db/indexedDb'
 import { convertDSLToSQL } from 'src/sql-builder'
@@ -15,7 +15,19 @@ export class Dataset {
   }
 
   public async init(temporaryColumns: DatasetColumn[] = []) {
-    const readFunctionMap: Record<DataSourceType, string> = {
+    const datasetInfo = await this.indexedDB.readDataset(this._datasetId)
+    if (!datasetInfo) {
+      throw new Error(`Dataset ${this._datasetId} not found`)
+    }
+
+    const columns = temporaryColumns.length > 0 ? temporaryColumns : datasetInfo.datasetSchema.columns
+    if (columns.length > 0) {
+      await this.createOrReplaceView(columns)
+    }
+  }
+
+  public async createOrReplaceView(columns: DatasetColumn[] = []) {
+    const readFunctionMap: Record<DatasetSourceType, string> = {
       csv: 'read_csv_auto',
       json: 'read_json_auto',
       xlsx: 'read_excel',
@@ -35,24 +47,28 @@ export class Dataset {
       throw new Error(`Dataset ${this._datasetId} not found`)
     }
 
-    const { dataSource } = datasetInfo
-    const datasetSchema = datasetInfo.datasetSchema
-    const columns = temporaryColumns.length > 0 ? temporaryColumns : datasetSchema.columns
+    const { datasetSource: dataSource } = datasetInfo
+    if (dataSource) {
+      const readFunction = readFunctionMap[dataSource.type]
+      if (!readFunction) {
+        throw new Error(`Unsupported dataSource type: ${dataSource.type}`)
+      }
 
-    const readFunction = readFunctionMap[dataSource.type]
-    if (!readFunction) {
-      throw new Error(`Unsupported dataSource type: ${dataSource.type}`)
+      // 注册文件到DuckDB - 只处理文件类型，不处理数组
+      await this.duckDB.writeFile(this._datasetId, dataSource.blob)
+
+      const columnsStruct = `{${columns.map((c) => `'${c.name}': '${dataTypeMap[c.type] || 'VARCHAR'}'`).join(', ')}}`
+      const columnNames = columns.map((c) => `"${c.name}"`).join(', ')
+
+      // 创建视图
+      const createViewSql = `CREATE OR REPLACE VIEW "${this._datasetId}" AS SELECT ${columnNames} FROM ${readFunction}('${this._datasetId}', columns=${columnsStruct})`
+      await this.duckDB.query(createViewSql)
     }
+  }
 
-    // 注册文件到DuckDB - 只处理文件类型，不处理数组
-    await this.duckDB.writeFile(this._datasetId, dataSource.blob)
-
-    const columnsStruct = `{${columns.map((c) => `'${c.name}': '${dataTypeMap[c.type] || 'VARCHAR'}'`).join(', ')}}`
-    const columnNames = columns.map((c) => `"${c.name}"`).join(', ')
-
-    // 创建视图
-    const createViewSql = `CREATE OR REPLACE VIEW "${this._datasetId}" AS SELECT ${columnNames} FROM ${readFunction}('${this._datasetId}', columns=${columnsStruct})`
-    await this.duckDB.query(createViewSql)
+  public async query<T extends Record<string, number | string>>(queryDSL: QueryDSL<T>) {
+    const sql = convertDSLToSQL(queryDSL, this.datasetId)
+    return this.queryBySQL(sql)
   }
 
   public async queryBySQL(sql: string) {
@@ -67,15 +83,6 @@ export class Dataset {
         duration: Number(end) - Number(start),
       },
     }
-  }
-
-  public convertDSLToSQL<T extends Record<string, number | string>>(queryDSL: QueryDSL<T>) {
-    return convertDSLToSQL(queryDSL, this.datasetId)
-  }
-
-  public async query<T extends Record<string, number | string>>(queryDSL: QueryDSL<T>) {
-    const sql = this.convertDSLToSQL(queryDSL)
-    return this.queryBySQL(sql)
   }
 
   public async disconnect() {

@@ -1,21 +1,21 @@
 import { isUrl } from 'src/utils'
-import { DataSourceType, DataSourceValue, TidyDatum } from '../types'
+import { DatasetSourceType, DatasetSourceValue, RawDatasetSource, TidyDatum } from '../types'
 
-export class DataSourceBuilder {
-  private type: DataSourceType
-  private value: DataSourceValue
+export class DatasetSourceBuilder {
+  private type: DatasetSourceType
+  private value: DatasetSourceValue
 
-  constructor(type: DataSourceType, value: DataSourceValue) {
-    this.type = type
-    this.value = value
+  constructor(raw: RawDatasetSource) {
+    this.type = raw.type
+    this.value = raw.rawDataset
   }
 
-  public static from(type: DataSourceType, value: DataSourceValue) {
-    return new DataSourceBuilder(type, value)
+  public static from(raw: RawDatasetSource): DatasetSourceBuilder {
+    return new DatasetSourceBuilder(raw)
   }
 
   public async build() {
-    const blob = await DataSourceBuilder.convertToBlob(this.type, this.value)
+    const blob = await DatasetSourceBuilder.convertToBlob(this.type, this.value)
 
     return {
       type: this.type,
@@ -26,7 +26,7 @@ export class DataSourceBuilder {
   /**
    * 将不同类型的数据转换为Blob
    */
-  private static async convertToBlob(type: DataSourceType, value: DataSourceValue): Promise<Blob> {
+  private static async convertToBlob(type: DatasetSourceType, value: DatasetSourceValue): Promise<Blob> {
     if (value instanceof Blob) {
       return value
     }
@@ -36,7 +36,7 @@ export class DataSourceBuilder {
         return new Blob([csvSource], { type: 'text/csv' })
       }
       if (typeof csvSource === 'string' && isUrl(csvSource)) {
-        return DataSourceBuilder.fetchBlob(csvSource)
+        return DatasetSourceBuilder.fetchBlob(csvSource)
       }
       return new Blob([JSON.stringify(csvSource)], { type: 'text/csv' })
     }
@@ -45,7 +45,7 @@ export class DataSourceBuilder {
         return new Blob([jsonSource], { type: 'application/json' })
       }
       if (typeof jsonSource === 'string' && isUrl(jsonSource)) {
-        return DataSourceBuilder.fetchBlob(jsonSource)
+        return DatasetSourceBuilder.fetchBlob(jsonSource)
       }
       return new Blob([JSON.stringify(jsonSource)], { type: 'application/json' })
     }
@@ -54,7 +54,7 @@ export class DataSourceBuilder {
         return new Blob([parquetSource], { type: 'application/parquet' })
       }
       if (typeof parquetSource === 'string' && isUrl(parquetSource)) {
-        return DataSourceBuilder.fetchBlob(parquetSource)
+        return DatasetSourceBuilder.fetchBlob(parquetSource)
       }
       return new Blob([parquetSource], { type: 'application/parquet' })
     }
@@ -63,7 +63,7 @@ export class DataSourceBuilder {
         return new Blob([xlsxSource], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' })
       }
       if (typeof xlsxSource === 'string' && isUrl(xlsxSource)) {
-        return DataSourceBuilder.fetchBlob(xlsxSource)
+        return DatasetSourceBuilder.fetchBlob(xlsxSource)
       }
       return new Blob([xlsxSource], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' })
     }

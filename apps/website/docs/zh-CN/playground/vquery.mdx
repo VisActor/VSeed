@@ -8,8 +8,6 @@ pageType: custom
 const run = async (setVSeed) => {
   const vquery = new VQuery()
 
-  const datasetId = 'demoDataset'
-
   const rawDataset = [
     { area: 'BEI JING', date: '2025-01-01', sales: 100 },
     { area: 'BEI JING', date: '2025-01-02', sales: 200 },
@@ -24,19 +22,23 @@ const run = async (setVSeed) => {
     { area: 'SHANG HAI', date: '2025-11-03', sales: 300 },
   ]
 
+  const datasetId = 'demoDataset'
+
   if (await vquery.hasDataset(datasetId)) {
     await vquery.dropDataset(datasetId)
   }
 
   if (!(await vquery.hasDataset(datasetId))) {
-    await vquery.createDataset(datasetId, rawDataset, 'json', [
+    const schema = [
       { name: 'area', type: 'string' },
       { name: 'date', type: 'string' },
       { name: 'sales', type: 'number' },
-    ])
+    ]
+    const datasetSource = { type: 'json', rawDataset }
+    await vquery.createDataset(datasetId, schema, datasetSource)
   }
 
-  // support temporary columns for each temporary connect
+  // support temporary schema for each temporary connect
   const dataset = await vquery.connectDataset(datasetId, [
     { name: 'area', type: 'string' },
     { name: 'date', type: 'string' },

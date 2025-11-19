@@ -40,14 +40,18 @@ export class IndexedDB {
     }
   }
 
-  public writeDataset = (datasetId: string, dataSource: DatasetSource, datasetSchema: DatasetSchema): Promise<void> => {
+  public writeDataset = (
+    datasetId: string,
+    datasetSchema: DatasetSchema,
+    datasetSource?: DatasetSource,
+  ): Promise<void> => {
     return new Promise((resolve, reject) => {
       if (!this.db) {
         return reject('DB is not open')
       }
       const transaction = this.db.transaction([this.datasetStoreName], 'readwrite')
       const store = transaction.objectStore(this.datasetStoreName)
-      const request = store.put({ datasetId, dataSource, datasetSchema })
+      const request = store.put({ datasetId, datasetSchema, datasetSource })
 
       request.onsuccess = () => {
         resolve()
@@ -61,7 +65,7 @@ export class IndexedDB {
 
   public readDataset = (
     datasetId: string,
-  ): Promise<{ dataSource: DatasetSource; datasetSchema: DatasetSchema } | null> => {
+  ): Promise<{ datasetSource?: DatasetSource; datasetSchema: DatasetSchema } | null> => {
     return new Promise((resolve, reject) => {
       if (!this.db) {
         return reject('DB is not open')
@@ -72,7 +76,7 @@ export class IndexedDB {
 
       request.onsuccess = (event) => {
         const result = (event.target as IDBRequest).result as
-          | { dataSource: DatasetSource; datasetSchema: DatasetSchema }
+          | { dataSource?: DatasetSource; datasetSchema: DatasetSchema }
           | undefined
         resolve(result || null)
       }
@@ -103,7 +107,7 @@ export class IndexedDB {
   }
 
   public listDatasets = (): Promise<
-    { datasetId: string; dataSource: DatasetSource; datasetSchema: DatasetSchema }[]
+    { datasetId: string; dataSource?: DatasetSource; datasetSchema: DatasetSchema }[]
   > => {
     return new Promise((resolve, reject) => {
       if (!this.db) {
@@ -116,7 +120,7 @@ export class IndexedDB {
       request.onsuccess = (event) => {
         const result = (event.target as IDBRequest).result as {
           datasetId: string
-          dataSource: DatasetSource
+          dataSource?: DatasetSource
           datasetSchema: DatasetSchema
         }[]
         resolve(result)

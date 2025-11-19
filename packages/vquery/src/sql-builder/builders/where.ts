@@ -2,7 +2,7 @@ import { Where, WhereClause } from 'src/types'
 import { sql } from 'kysely'
 import type { RawBuilder } from 'kysely'
 
-export const buildWhere = <T>(where: Where<T> | WhereClause<T>): RawBuilder<boolean> => {
+export const applyWhere = <T>(where: Where<T> | WhereClause<T>): RawBuilder<boolean> => {
   const toRaw = (w: Where<T> | WhereClause<T>): RawBuilder<boolean> => {
     if ('op' in w && 'conditions' in w) {
       const parts: RawBuilder<boolean>[] = (w.conditions as Array<WhereClause<T>>).map((c) => toRaw(c))

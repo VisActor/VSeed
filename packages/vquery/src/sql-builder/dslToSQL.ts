@@ -1,11 +1,9 @@
 import { QueryDSL } from 'src/types'
-import { isSelectItem } from './utils'
 import { Kysely } from 'kysely'
-import { PostgresDialect } from './postgresDialect'
-import { buildWhere } from './builders/where'
-import { inlineParameters } from './compile/inlineParameters'
-import { applyGroupBy } from './builders/groupBy'
-import { applyLimit } from './builders/limit'
+import { PostgresDialect } from './dialect'
+import { inlineParameters } from './compile'
+import { applyWhere, applyGroupBy, applyLimit } from './builders'
+import { isSelectItem } from './utils'
 
 type TableDB<TableName extends string, Row> = {
   [K in TableName]: Row
@@ -46,7 +44,7 @@ export const convertDSLToSQL = <T, TableName extends string>(dsl: QueryDSL<T>, t
   }
 
   if (dsl.where) {
-    qb = qb.where(buildWhere<T>(dsl.where))
+    qb = qb.where(applyWhere<T>(dsl.where))
   }
 
   qb = applyGroupBy(qb, dsl.groupBy as Array<Extract<keyof T, string>> | undefined)

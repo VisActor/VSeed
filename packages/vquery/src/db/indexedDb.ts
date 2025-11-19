@@ -1,4 +1,4 @@
-import { DataSource } from 'src/types'
+import { DatasetSource } from 'src/types'
 import { DatasetSchema } from '../types/DataSet'
 
 export class IndexedDB {
@@ -40,7 +40,7 @@ export class IndexedDB {
     }
   }
 
-  public writeDataset = (datasetId: string, dataSource: DataSource, datasetSchema: DatasetSchema): Promise<void> => {
+  public writeDataset = (datasetId: string, dataSource: DatasetSource, datasetSchema: DatasetSchema): Promise<void> => {
     return new Promise((resolve, reject) => {
       if (!this.db) {
         return reject('DB is not open')
@@ -61,7 +61,7 @@ export class IndexedDB {
 
   public readDataset = (
     datasetId: string,
-  ): Promise<{ dataSource: DataSource; datasetSchema: DatasetSchema } | null> => {
+  ): Promise<{ dataSource: DatasetSource; datasetSchema: DatasetSchema } | null> => {
     return new Promise((resolve, reject) => {
       if (!this.db) {
         return reject('DB is not open')
@@ -72,7 +72,7 @@ export class IndexedDB {
 
       request.onsuccess = (event) => {
         const result = (event.target as IDBRequest).result as
-          | { dataSource: DataSource; datasetSchema: DatasetSchema }
+          | { dataSource: DatasetSource; datasetSchema: DatasetSchema }
           | undefined
         resolve(result || null)
       }
@@ -102,7 +102,9 @@ export class IndexedDB {
     })
   }
 
-  public listDatasets = (): Promise<{ datasetId: string; dataSource: DataSource; datasetSchema: DatasetSchema }[]> => {
+  public listDatasets = (): Promise<
+    { datasetId: string; dataSource: DatasetSource; datasetSchema: DatasetSchema }[]
+  > => {
     return new Promise((resolve, reject) => {
       if (!this.db) {
         return reject('DB is not open')
@@ -114,7 +116,7 @@ export class IndexedDB {
       request.onsuccess = (event) => {
         const result = (event.target as IDBRequest).result as {
           datasetId: string
-          dataSource: DataSource
+          dataSource: DatasetSource
           datasetSchema: DatasetSchema
         }[]
         resolve(result)

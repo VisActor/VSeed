@@ -1,16 +1,16 @@
 import { isUrl } from 'src/utils'
-import { DataSourceType, DataSourceValue, TidyDatum } from '../types'
+import { DatasetSourceType, DatasetSourceValue, TidyDatum } from '../types'
 
 export class DataSourceBuilder {
-  private type: DataSourceType
-  private value: DataSourceValue
+  private type: DatasetSourceType
+  private value: DatasetSourceValue
 
-  constructor(type: DataSourceType, value: DataSourceValue) {
+  constructor(type: DatasetSourceType, value: DatasetSourceValue) {
     this.type = type
     this.value = value
   }
 
-  public static from(type: DataSourceType, value: DataSourceValue) {
+  public static from(type: DatasetSourceType, value: DatasetSourceValue) {
     return new DataSourceBuilder(type, value)
   }
 
@@ -26,7 +26,7 @@ export class DataSourceBuilder {
   /**
    * 将不同类型的数据转换为Blob
    */
-  private static async convertToBlob(type: DataSourceType, value: DataSourceValue): Promise<Blob> {
+  private static async convertToBlob(type: DatasetSourceType, value: DatasetSourceValue): Promise<Blob> {
     if (value instanceof Blob) {
       return value
     }

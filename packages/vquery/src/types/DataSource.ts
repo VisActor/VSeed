@@ -1,15 +1,15 @@
 export type TidyDatum = Record<string, number | string | null | boolean | undefined>
 
-export type DataSourceType = 'csv' | 'json' | 'xlsx' | 'parquet'
+export type DatasetSourceType = 'csv' | 'json' | 'xlsx' | 'parquet'
 
-export type DataSourceValue = string | ArrayBuffer | Blob | TidyDatum[]
+export type DatasetSourceValue = string | ArrayBuffer | Blob | TidyDatum[]
 
-export interface DataSource {
-  type: DataSourceType
+export interface DatasetSource {
+  type: DatasetSourceType
   blob: Blob
 }
 
-export interface RawDataSource {
-  type: DataSourceType
-  rawDataset: DataSourceValue
+export interface RawDatasetSource {
+  type: DatasetSourceType
+  rawDataset: DatasetSourceValue
 }

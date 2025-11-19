@@ -1,4 +1,4 @@
-import { DatasetColumn, DataSourceType, DataType, QueryDSL } from 'src/types'
+import { DatasetColumn, DatasetSourceType, DataType, QueryDSL } from 'src/types'
 import { DuckDB } from 'src/db/duckDb'
 import { IndexedDB } from 'src/db/indexedDb'
 import { convertDSLToSQL } from 'src/sql-builder'
@@ -15,7 +15,7 @@ export class Dataset {
   }
 
   public async init(temporaryColumns: DatasetColumn[] = []) {
-    const readFunctionMap: Record<DataSourceType, string> = {
+    const readFunctionMap: Record<DatasetSourceType, string> = {
       csv: 'read_csv_auto',
       json: 'read_json_auto',
       xlsx: 'read_excel',

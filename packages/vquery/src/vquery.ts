@@ -1,7 +1,7 @@
 import { Dataset } from './dataset/dataset'
 import { DuckDB } from './db/duckDb'
 import { IndexedDB } from './db/indexedDb'
-import { DatasetSchema, TidyDatum, DataSourceType, DatasetColumn } from './types'
+import { DatasetSchema, TidyDatum, DatasetSourceType, DatasetColumn } from './types'
 import { DataSourceBuilder } from 'src/data-source-builder'
 
 export class VQuery {
@@ -28,7 +28,7 @@ export class VQuery {
   public async createDataset(
     datasetId: string,
     data: string | ArrayBuffer | Blob | TidyDatum[],
-    type: DataSourceType,
+    type: DatasetSourceType,
     columns: DatasetColumn[] = [],
   ) {
     await this.ensureInitialized()
@@ -52,7 +52,7 @@ export class VQuery {
   public async updateDataset(
     datasetId: string,
     data: string | ArrayBuffer | Blob | TidyDatum[],
-    type: DataSourceType,
+    type: DatasetSourceType,
     datasetSchema: DatasetSchema,
   ) {
     await this.ensureInitialized()

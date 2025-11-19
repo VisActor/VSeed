@@ -8,3 +8,8 @@ export interface DataSource {
   type: DataSourceType
   blob: Blob
 }
+
+export interface RawDataSource {
+  type: DataSourceType
+  rawDataset: DataSourceValue
+}

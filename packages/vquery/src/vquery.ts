@@ -34,6 +34,10 @@ export class VQuery {
     await this.ensureInitialized()
     const dataSource = await DataSourceBuilder.from(type, data).build()
 
+    if (await this.hasDataset(datasetId)) {
+      throw new Error(`dataset ${datasetId} already exists`)
+    }
+
     const datasetSchema = {
       datasetId,
       datasetAlias: datasetId,
@@ -52,6 +56,10 @@ export class VQuery {
     datasetSchema: DatasetSchema,
   ) {
     await this.ensureInitialized()
+    if (!(await this.hasDataset(datasetId))) {
+      throw new Error(`dataset ${datasetId} not exists, please create it first`)
+    }
+
     const dataSource = await DataSourceBuilder.from(type, data).build()
     await this.indexedDB.writeDataset(datasetId, dataSource, datasetSchema)
   }
@@ -61,6 +69,10 @@ export class VQuery {
    */
   public async dropDataset(datasetId: string) {
     await this.ensureInitialized()
+    if (!(await this.hasDataset(datasetId))) {
+      throw new Error(`dataset ${datasetId} not exists, please create it first`)
+    }
+
     await this.indexedDB.deleteDataset(datasetId)
   }
 
@@ -87,6 +99,10 @@ export class VQuery {
    */
   public async connectDataset(datasetId: string, temporaryColumns: DatasetColumn[] = []) {
     await this.ensureInitialized()
+
+    if (!(await this.hasDataset(datasetId))) {
+      throw new Error(`dataset ${datasetId} not exists, please create it first`)
+    }
 
     const dataset = new Dataset(this.duckDB, this.indexedDB, datasetId)
     await dataset.init(temporaryColumns)

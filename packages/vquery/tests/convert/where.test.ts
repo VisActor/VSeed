@@ -53,7 +53,7 @@ describe('where', () => {
       'orders',
     )
     expect(sql).toMatchInlineSnapshot(
-      `"SELECT id FROM orders WHERE ((age >= 18 AND gender = 'male') OR (age < 18 AND gender = 'female'))"`,
+      `"select "id" from "orders" where (("age" >= 18 and "gender" = 'male') or ("age" < 18 and "gender" = 'female'))"`,
     )
   })
 
@@ -73,7 +73,7 @@ describe('where', () => {
       },
       'orders',
     )
-    expect(sql).toMatchInlineSnapshot(`"SELECT id FROM orders"`)
+    expect(sql).toMatchInlineSnapshot(`"select "id" from "orders""`)
   })
 
   it('is null & is not null', () => {
@@ -126,7 +126,7 @@ describe('where', () => {
       'orders',
     )
     expect(sql).toMatchInlineSnapshot(
-      `"SELECT id FROM orders WHERE ((age >= 18 AND gender is null) OR (age < 18 AND gender is not null))"`,
+      `"select "id" from "orders" where (("age" >= 18 and "gender" is null) or ("age" < 18 and "gender" is not null))"`,
     )
   })
 
@@ -182,7 +182,7 @@ describe('where', () => {
       'orders',
     )
     expect(sql).toMatchInlineSnapshot(
-      `"SELECT id FROM orders WHERE ((age >= 18 AND gender in ('male', 'female')) OR (age < 18 AND gender not in ('male', 'female')))"`,
+      `"select "id" from "orders" where (("age" >= 18 and "gender" in ('male', 'female')) or ("age" < 18 and not "gender" in ('male', 'female')))"`,
     )
   })
 
@@ -238,7 +238,7 @@ describe('where', () => {
       'orders',
     )
     expect(sql).toMatchInlineSnapshot(
-      `"SELECT id FROM orders WHERE ((age between 18 and 30 AND gender in ('male', 'female')) OR (age not between 18 and 30 AND gender not in ('male', 'female')))"`,
+      `"select "id" from "orders" where (("age" between (18, 30) and "gender" in ('male', 'female')) or (not "age" between (18, 30) and not "gender" in ('male', 'female')))"`,
     )
   })
 })

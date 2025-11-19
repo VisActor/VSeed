@@ -18,6 +18,6 @@ describe('groupBy', () => {
       },
       'orders',
     )
-    expect(sql).toMatchInlineSnapshot(`"SELECT id, department FROM orders GROUP BY id, department LIMIT 100"`)
+    expect(sql).toMatchInlineSnapshot(`"select "id", "department" from "orders" group by "id", "department" limit 100"`)
   })
 })

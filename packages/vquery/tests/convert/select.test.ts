@@ -10,13 +10,13 @@ describe('select', () => {
       active: number
     }
 
-    const sql = convertDSLToSQL<USER>(
+    const sql = convertDSLToSQL<USER, 'orders'>(
       {
         select: ['id'],
       },
       'orders',
     )
-    expect(sql).toMatchInlineSnapshot(`"SELECT id FROM orders"`)
+    expect(sql).toMatchInlineSnapshot(`"select "id" from "orders""`)
   })
 
   it('func', () => {
@@ -28,7 +28,7 @@ describe('select', () => {
       active: number
     }
 
-    const sql = convertDSLToSQL<USER>(
+    const sql = convertDSLToSQL<USER, 'orders'>(
       {
         select: [
           'department',
@@ -50,7 +50,7 @@ describe('select', () => {
       'orders',
     )
     expect(sql).toMatchInlineSnapshot(
-      `"SELECT department, name, avg(age) AS "AGE" FROM orders GROUP BY department, name ORDER BY age DESC"`,
+      `"select "department", "name", avg("age") as "AGE" from "orders" group by "department", "name" order by "age" desc"`,
     )
   })
 
@@ -63,7 +63,7 @@ describe('select', () => {
       active: number
     }
 
-    const sql = convertDSLToSQL<USER>(
+    const sql = convertDSLToSQL<USER, 'orders'>(
       {
         select: [
           'department',
@@ -88,7 +88,7 @@ describe('select', () => {
       'orders',
     )
     expect(sql).toMatchInlineSnapshot(
-      `"SELECT department, name AS "NAME", avg(age) AS "AGE" FROM orders GROUP BY department, name ORDER BY age DESC"`,
+      `"select "department", "name" as "NAME", avg("age") as "AGE" from "orders" group by "department", "name" order by "age" desc"`,
     )
   })
 
@@ -101,7 +101,7 @@ describe('select', () => {
       active: number
     }
 
-    const sql = convertDSLToSQL<USER>(
+    const sql = convertDSLToSQL<USER, 'orders'>(
       {
         select: [
           {
@@ -128,7 +128,32 @@ describe('select', () => {
       'orders',
     )
     expect(sql).toMatchInlineSnapshot(
-      `"SELECT department, name AS "NAME", avg(age) AS "AGE" FROM orders GROUP BY department, name ORDER BY age DESC"`,
+      `"select "department", "name" as "NAME", avg("age") as "AGE" from "orders" group by "department", "name" order by "age" desc"`,
+    )
+  })
+
+  it('aggregates without alias', () => {
+    interface USER {
+      id: number
+      name: string
+      age: number
+      department: string
+      active: number
+    }
+
+    const sql = convertDSLToSQL<USER, 'orders'>(
+      {
+        select: [
+          { field: 'age', func: 'sum', alias: 'SUM' },
+          { field: 'age', func: 'min', alias: 'MIN' },
+          { field: 'age', func: 'max', alias: 'MAX' },
+          { field: 'id', func: 'count', alias: 'CNT' },
+        ],
+      },
+      'orders',
+    )
+    expect(sql).toMatchInlineSnapshot(
+      `"select sum("age") as "SUM", min("age") as "MIN", max("age") as "MAX", count("id") as "CNT" from "orders""`,
     )
   })
 
@@ -141,7 +166,7 @@ describe('select', () => {
       active: number
     }
 
-    const sql = convertDSLToSQL<USER>(
+    const sql = convertDSLToSQL<USER, 'orders'>(
       {
         select: [],
         groupBy: ['department', 'name'],
@@ -154,6 +179,6 @@ describe('select', () => {
       },
       'orders',
     )
-    expect(sql).toMatchInlineSnapshot(`"SELECT * FROM orders GROUP BY department, name ORDER BY age DESC"`)
+    expect(sql).toMatchInlineSnapshot(`"select * from "orders" group by "department", "name" order by "age" desc"`)
   })
 })

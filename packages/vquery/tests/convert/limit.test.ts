@@ -17,6 +17,6 @@ describe('limit', () => {
       },
       'orders',
     )
-    expect(sql).toMatchInlineSnapshot(`"SELECT id FROM orders LIMIT 100"`)
+    expect(sql).toMatchInlineSnapshot(`"select "id" from "orders" limit 100"`)
   })
 })

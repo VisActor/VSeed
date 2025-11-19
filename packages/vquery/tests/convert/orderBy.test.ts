@@ -23,7 +23,7 @@ describe('orderBy', () => {
       },
       'orders',
     )
-    expect(sql).toMatchInlineSnapshot(`"SELECT id FROM orders ORDER BY id DESC LIMIT 100"`)
+    expect(sql).toMatchInlineSnapshot(`"select "id" from "orders" order by "id" desc limit 100"`)
   })
 
   it('asc', () => {
@@ -48,6 +48,6 @@ describe('orderBy', () => {
       },
       'orders',
     )
-    expect(sql).toMatchInlineSnapshot(`"SELECT id FROM orders ORDER BY id ASC LIMIT 100"`)
+    expect(sql).toMatchInlineSnapshot(`"select "id" from "orders" order by "id" asc limit 100"`)
   })
 })

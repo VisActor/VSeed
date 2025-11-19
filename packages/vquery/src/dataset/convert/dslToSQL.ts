@@ -1,56 +1,115 @@
-import { QueryDSL } from 'src/types'
-import { isSelectItem } from './utils'
-import { applyWhere } from './applyWhere'
+import { QueryDSL, Where, WhereClause } from 'src/types'
+import { isSelectItem, isWhereGroup } from './utils'
+import { Kysely } from 'kysely'
+import { sql } from 'kysely'
+import type { RawBuilder } from 'kysely'
+import { LiteSqliteDialect } from './kyselyDialect'
 
-export const convertDSLToSQL = <T>(dsl: QueryDSL<T>, tableName: string): string => {
-  let sql = 'SELECT'
+const escapeValue = (value: unknown): string => {
+  if (value === null) return 'null'
+  if (typeof value === 'string') return `'${value.replace(/'/g, "''")}'`
+  if (typeof value === 'number') return `${value}`
+  if (typeof value === 'boolean') return value ? 'TRUE' : 'FALSE'
+  return `'${String(value).replace(/'/g, "''")}'`
+}
 
-  // select
+type TableDB<TableName extends string, Row> = {
+  [K in TableName]: Row
+}
+
+export const convertDSLToSQL = <T, TableName extends string>(dsl: QueryDSL<T>, tableName: TableName): string => {
+  const db = new Kysely<TableDB<TableName, T>>({ dialect: new LiteSqliteDialect() })
+
+  let qb = db.selectFrom(tableName)
+
   if (dsl.select && dsl.select.length > 0) {
-    const selectFields = dsl.select.map((item) => {
-      if (typeof item === 'string') {
-        return item
-      }
-      if (isSelectItem(item)) {
-        if (item.func) {
-          return `${item.func}(${item.field as string})` + (item.alias ? ` AS "${item.alias}"` : '')
+    qb = qb.select((eb) =>
+      dsl.select.map((item) => {
+        if (typeof item === 'string') {
+          return item as Extract<keyof T, string>
         }
-        if (item.alias) {
-          return `${item.field as string} AS "${item.alias}"`
+        if (isSelectItem(item)) {
+          const field = item.field as Extract<keyof T, string>
+          if (item.func) {
+            const alias = item.alias ?? (field as string)
+            switch (item.func) {
+              case 'avg':
+                return eb.fn.avg(field).as(alias)
+              case 'sum':
+                return eb.fn.sum(field).as(alias)
+              case 'min':
+                return eb.fn.min(field).as(alias)
+              case 'max':
+                return eb.fn.max(field).as(alias)
+              case 'count':
+                return eb.fn.count(field).as(alias)
+            }
+          }
+          return item.alias ? eb.ref(field).as(item.alias) : field
         }
-        return item.field as string
-      }
-    })
-    sql += ` ${selectFields.join(', ')}`
+        return item as unknown as Extract<keyof T, string>
+      }),
+    )
   } else {
-    sql += ' *'
+    qb = qb.selectAll()
   }
 
-  sql += ` FROM ${tableName}`
-
-  // where
   if (dsl.where) {
-    const whereClause = applyWhere(dsl.where)
-    sql += ` WHERE ${whereClause}`
+    const toRawWhere = (where: Where<T> | WhereClause<T>): RawBuilder<boolean> => {
+      if (isWhereGroup(where)) {
+        const parts: RawBuilder<boolean>[] = where.conditions.map((c) => toRawWhere(c as WhereClause<T>))
+        const sep: RawBuilder<unknown> = sql` ${sql.raw(where.op)} `
+        return sql<boolean>`(${sql.join(parts, sep)})`
+      }
+      const leaf = where as unknown as { field: Extract<keyof T, string>; op: string; value?: unknown }
+      const field = leaf.field
+      const value = leaf.value
+      switch (leaf.op) {
+        case 'is null':
+          return sql<boolean>`${sql.ref(field)} is null`
+        case 'is not null':
+          return sql<boolean>`${sql.ref(field)} is not null`
+        case 'in': {
+          const items = Array.isArray(value) ? (value as unknown[]) : [value]
+          return sql<boolean>`${sql.ref(field)} in (${sql.join(items.map((v) => sql.val(v)))})`
+        }
+        case 'not in': {
+          const items = Array.isArray(value) ? (value as unknown[]) : [value]
+          return sql<boolean>`not ${sql.ref(field)} in (${sql.join(items.map((v) => sql.val(v)))})`
+        }
+        case 'between': {
+          const [a, b] = value as [unknown, unknown]
+          return sql<boolean>`${sql.ref(field)} between (${sql.val(a)}, ${sql.val(b)})`
+        }
+        case 'not between': {
+          const [a, b] = value as [unknown, unknown]
+          return sql<boolean>`not ${sql.ref(field)} between (${sql.val(a)}, ${sql.val(b)})`
+        }
+        default:
+          return sql<boolean>`${sql.ref(field)} ${sql.raw(leaf.op)} ${sql.val(value)}`
+      }
+    }
+    qb = qb.where(toRawWhere(dsl.where as Where<T>))
   }
 
-  // groupBy
   if (dsl.groupBy && dsl.groupBy.length > 0) {
-    sql += ` GROUP BY ${dsl.groupBy.join(', ')}`
+    qb = qb.groupBy(dsl.groupBy as Array<Extract<keyof T, string>>)
   }
 
-  // orderBy
   if (dsl.orderBy && dsl.orderBy.length > 0) {
-    const orderByFields = dsl.orderBy.map((item) => {
-      return `${item.field as string}${item.order ? ` ${item.order.toUpperCase()}` : ''}`
-    })
-    sql += ` ORDER BY ${orderByFields.join(', ')}`
+    for (const o of dsl.orderBy) {
+      qb = qb.orderBy(o.field as Extract<keyof T, string>, (o.order ?? 'asc') as 'asc' | 'desc')
+    }
   }
 
-  // limit
   if (dsl.limit) {
-    sql += ` LIMIT ${dsl.limit}`
+    qb = qb.limit(dsl.limit)
   }
 
-  return sql
+  const compiled = qb.compile()
+  let out = compiled.sql
+  for (const p of compiled.parameters) {
+    out = out.replace(/\?/, escapeValue(p))
+  }
+  return out
 }

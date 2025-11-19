@@ -89,7 +89,7 @@ importers:
         specifier: 0.6.5
         version: 0.6.5(jsdom@26.1.0)
       '@rstest/coverage-istanbul':
-        specifier: latest
+        specifier: 0.0.5
         version: 0.0.5(@rstest/core@0.6.5(jsdom@26.1.0))
       '@types/node':
         specifier: ^22.18.10

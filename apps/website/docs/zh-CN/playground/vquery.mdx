@@ -29,9 +29,14 @@ const run = async (setVSeed) => {
   }
 
   if (!(await vquery.hasDataset(datasetId))) {
-    await vquery.createDataset(datasetId, rawDataset, 'json', [])
+    await vquery.createDataset(datasetId, rawDataset, 'json', [
+      { name: 'area', type: 'string' },
+      { name: 'date', type: 'string' },
+      { name: 'sales', type: 'number' },
+    ])
   }
 
+  // support temporary columns for each temporary connect
   const dataset = await vquery.connectDataset(datasetId, [
     { name: 'area', type: 'string' },
     { name: 'date', type: 'string' },

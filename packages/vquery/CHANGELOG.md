@@ -1,5 +1,35 @@
 # @visactor/vquery
 
+## 0.1.50
+
+### Patch Changes
+
+- b0b8cda: feat: optimize the createDataset interface
+
+## 0.1.49
+
+### Patch Changes
+
+- feat: add query dsl and dataset
+
+## 0.1.48
+
+### Patch Changes
+
+- feat: add query dsl for dataset query
+
+## 0.1.47
+
+### Patch Changes
+
+- b96b2dc: feat: add connectTemporaryDataset
+
+## 0.1.46
+
+### Patch Changes
+
+- ee79ee9: break: add dataset instead of file
+
 ## 0.1.45
 
 ## 0.1.44

@@ -10,7 +10,7 @@ export const yBand: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const { measures, dimensions, encoding, datasetReshapeInfo, pivotAllDatasetReshapeInfo } = advancedVSeed
-  const config = advancedVSeed.config?.[chartType as 'bar']?.yAxis as XBandAxis
+  const config = (advancedVSeed.config?.[chartType as 'bar']?.yAxis ?? {}) as XBandAxis
 
   if (!result.axes) {
     result.axes = []

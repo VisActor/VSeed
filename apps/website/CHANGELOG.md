@@ -1,5 +1,32 @@
 # website
 
+## 0.1.48
+
+### Patch Changes
+
+- feat: add query dsl for dataset query
+- Updated dependencies
+  - @visactor/vquery@0.1.48
+  - @visactor/vseed@0.1.48
+
+## 0.1.47
+
+### Patch Changes
+
+- b96b2dc: feat: add connectTemporaryDataset
+- Updated dependencies [b96b2dc]
+  - @visactor/vquery@0.1.47
+  - @visactor/vseed@0.1.47
+
+## 0.1.46
+
+### Patch Changes
+
+- ee79ee9: break: add dataset instead of file
+- Updated dependencies [ee79ee9]
+  - @visactor/vquery@0.1.46
+  - @visactor/vseed@0.1.46
+
 ## 0.1.45
 
 ### Patch Changes

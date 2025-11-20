@@ -50,7 +50,7 @@ export const yLinearPrimary: VChartSpecPipe = (spec, context) => {
 
     autoFormat,
     numFormat = {},
-  } = yAxisConfig
+  } = yAxisConfig ?? {}
 
   const formatter = createNumFormatter(numFormat)
 

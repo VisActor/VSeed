@@ -3,6 +3,5 @@
 exports[`errorChartType 1`] = `
 {
   "expectError": true,
-  "message": "please invoke registerAll or register test_chart_type before build, no advanced pipeline for chartType test_chart_type",
 }
 `;

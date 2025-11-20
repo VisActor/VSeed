@@ -18,6 +18,8 @@ export const zAdvancedVSeed = z.object({
   pivotAllDatasetReshapeInfo: zDatasetReshapeInfo,
   dimensions: zDimensionTree,
   measures: zMeasureTree,
+  reshapeMeasures: zMeasureTree.optional(),
+  reshapeDimensions: zDimensionTree.optional(),
   encoding: zEncoding,
   config: zConfig,
   analysis: zAnalysis,

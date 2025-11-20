@@ -29,7 +29,8 @@
     "test:update": "pnpm --filter=@visactor/vseed test:update",
     "test:coverage": "pnpm --filter=@visactor/vseed test:coverage && node scripts/build-coverage-badge.mjs",
     "publish:ci": "pnpm run build:vseed && pnpm run build:vquery && pnpm changeset publish --filter=@visactor/vseed,@visactor/vquery --access=public",
-    "prepare": "husky"
+    "prepare": "husky",
+    "sync-bugserver-cases": "node ./scripts/sync-bugserver-cases.js"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,md,mdx}": [
@@ -39,7 +40,8 @@
   },
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "tools/*"
   ],
   "engines": {
     "node": ">=18.0.0",
@@ -50,7 +52,8 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.1.6",
     "prettier": "^3.6.2",
-    "ts-morph": "26.0.0"
+    "ts-morph": "26.0.0",
+    "node-fetch": "2.6.7"
   },
   "packageManager": "pnpm@10.13.1",
   "license": "MIT"

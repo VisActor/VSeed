@@ -54,7 +54,7 @@ export const yLinearSecondary: VChartSpecPipe = (spec, context) => {
     logBase = 10,
     numFormat = {},
     autoFormat,
-  } = yAxisConfig
+  } = yAxisConfig ?? {}
 
   const formatter = createNumFormatter(numFormat)
 

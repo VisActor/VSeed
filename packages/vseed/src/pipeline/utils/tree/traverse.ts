@@ -31,3 +31,21 @@ export const preorderTraverse = <Node, K extends string = 'children'>(
     }
   }
 }
+
+export const findTreeNodesBy = <Node, K extends string = 'children'>(
+  nodes: Node[] = [],
+  callback: (node: Node) => boolean,
+  childrenKey: K = 'children' as K,
+): Node[] => {
+  if (!nodes) return []
+  const result: Node[] = []
+  preorderTraverse<Node, K>(nodes, (node) => {
+    if (!(childrenKey in (node as WithChildren<Node, K>))) {
+      if (callback(node)) {
+        result.push(node)
+      }
+    }
+    return false
+  })
+  return result
+}

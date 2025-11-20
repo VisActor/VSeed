@@ -14,8 +14,8 @@ import {
   defaultMeasureId,
   encodingAdapter,
   defaultEncodingForPie,
-  deleteEncodingForMeasure,
-  deleteTooltipAndLabelDimension,
+  pickMeasuresForReshape,
+  pickDimensionsForReshape,
 } from '../pipes'
 
 export const pieAdvancedPipeline: AdvancedPipeline = [
@@ -26,12 +26,7 @@ export const pieAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [defaultEncodingForPie, buildMeasures],
-    [
-      encodingForPie,
-      buildMeasures,
-      deleteEncodingForMeasure(['tooltip', 'label', 'color']),
-      deleteTooltipAndLabelDimension,
-    ],
+    [encodingForPie, buildMeasures, pickMeasuresForReshape(['tooltip', 'label', 'color']), pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

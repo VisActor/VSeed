@@ -5,14 +5,14 @@ import { isMeasure, isMeasureGroup } from './typeGuard'
  * @description 删除 measureTree 中符合 callback 条件的节点
  * @param measureTree 待删除的 measureTree
  * @param callback 回调函数，用于判断是否删除当前节点
- * @returns 删除后的 measureTree
+ * @returns 删除的度量
  */
 export const deleteMeasureTreeByCallback = <T extends MeasureTree>(
   measureTree?: T,
   callback?: (measure: Measure, index: number, measures: (Measure | MeasureGroup)[]) => boolean,
-) => {
+): Measure[] => {
   if (!measureTree) {
-    return measureTree
+    return undefined as unknown as Measure[]
   }
   const stack: (Measure | MeasureGroup)[] = [...measureTree].reverse()
   const parents = new Map<Measure | MeasureGroup, (Measure | MeasureGroup)[]>()
@@ -21,7 +21,7 @@ export const deleteMeasureTreeByCallback = <T extends MeasureTree>(
     parents.set(node, measureTree)
   })
 
-  const nodesToProcess: (Measure | MeasureGroup)[] = []
+  const nodesToProcess: Measure[] = []
   const visited = new Set<Measure | MeasureGroup>()
 
   while (stack.length > 0) {
@@ -36,9 +36,10 @@ export const deleteMeasureTreeByCallback = <T extends MeasureTree>(
       }
     } else {
       stack.pop()
-      nodesToProcess.push(node)
+      nodesToProcess.push(node as Measure)
     }
   }
+  const deleted: Measure[] = []
 
   for (const node of nodesToProcess) {
     const parentList = parents.get(node)
@@ -48,10 +49,11 @@ export const deleteMeasureTreeByCallback = <T extends MeasureTree>(
       if (isMeasure(node)) {
         if (callback?.(node, index, parentList)) {
           parentList.splice(index, 1)
+          deleted.push(node)
         }
       }
     }
   }
 
-  return measureTree
+  return deleted
 }

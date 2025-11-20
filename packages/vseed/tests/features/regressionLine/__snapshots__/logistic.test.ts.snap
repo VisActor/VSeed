@@ -951,6 +951,7 @@ exports[`logistic 2`] = `
   "crosshair": {
     "xField": {
       "label": {
+        "formatMethod": [Function],
         "labelBackground": {
           "style": {
             "fill": "#21252C",
@@ -978,6 +979,7 @@ exports[`logistic 2`] = `
     },
     "yField": {
       "label": {
+        "formatMethod": [Function],
         "labelBackground": {
           "style": {
             "fill": "#21252C",

@@ -1384,6 +1384,7 @@ exports[`scatter_multi_measure 2`] = `
   "crosshair": {
     "xField": {
       "label": {
+        "formatMethod": [Function],
         "labelBackground": {
           "style": {
             "fill": "#21252C",
@@ -1411,6 +1412,7 @@ exports[`scatter_multi_measure 2`] = `
     },
     "yField": {
       "label": {
+        "formatMethod": [Function],
         "labelBackground": {
           "style": {
             "fill": "#21252C",

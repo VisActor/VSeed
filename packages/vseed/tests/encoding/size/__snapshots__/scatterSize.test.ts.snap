@@ -978,6 +978,7 @@ exports[`scatterSize 2`] = `
   "crosshair": {
     "xField": {
       "label": {
+        "formatMethod": [Function],
         "labelBackground": {
           "style": {
             "fill": "#21252C",
@@ -1005,6 +1006,7 @@ exports[`scatterSize 2`] = `
     },
     "yField": {
       "label": {
+        "formatMethod": [Function],
         "labelBackground": {
           "style": {
             "fill": "#21252C",

@@ -1223,6 +1223,7 @@ exports[`2_meaColor 2`] = `
   "crosshair": {
     "xField": {
       "label": {
+        "formatMethod": [Function],
         "labelBackground": {
           "style": {
             "fill": "#21252C",
@@ -1250,6 +1251,7 @@ exports[`2_meaColor 2`] = `
     },
     "yField": {
       "label": {
+        "formatMethod": [Function],
         "labelBackground": {
           "style": {
             "fill": "#21252C",

@@ -4,6 +4,7 @@ import type {
   AdvancedVSeed,
   ChartType,
   CustomThemeConfig,
+  Locale,
   Spec,
   SpecPipe,
   SpecPipeline,
@@ -22,9 +23,15 @@ export class Builder implements VSeedBuilder {
   private _spec: Spec | null = null
   private _performance: Record<string, string | number> = {}
 
+  private _locale: Locale
+
   constructor(vseed: VSeed) {
     this._vseed = vseed
-    this._vseed.locale = vseed.locale || intl.getLocale()
+    this._locale = vseed.locale || intl.getLocale()
+  }
+
+  get locale() {
+    return this._locale
   }
 
   /**

@@ -21,8 +21,8 @@ export const buildAdvanced = (builder: Builder): AdvancedVSeed | null => {
     vseed: builder.vseed,
     customTheme: Builder.getThemeMap(),
   }
-  if (builder.vseed.locale) {
-    intl.setLocale(builder.vseed.locale)
+  if (builder.locale) {
+    intl.setLocale(builder.locale)
   }
 
   try {

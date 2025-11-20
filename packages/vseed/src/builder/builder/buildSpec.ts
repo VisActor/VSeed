@@ -21,8 +21,8 @@ export const buildSpec = (builder: Builder, advancedVSeed: AdvancedVSeed): Spec 
     vseed: builder.vseed,
     advancedVSeed,
   }
-  if (builder.vseed.locale) {
-    intl.setLocale(builder.vseed.locale)
+  if (builder.locale) {
+    intl.setLocale(builder.locale)
   }
 
   try {

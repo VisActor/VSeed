@@ -16,14 +16,6 @@ import { getTooltipStyle } from './tooltipStyle'
 import { intl } from 'src/i18n'
 
 const boxPlotMeasureKeys = [UpperWhisker, Q3MeasureValue, MedianMeasureId, Q1MeasureValue, LowerWhisker]
-const measureAliasMapping: Record<string, string> = {
-  [OutliersMeasureId]: intl.i18n`异常点`,
-  [UpperWhisker]: intl.i18n`上边界`,
-  [Q3MeasureValue]: intl.i18n`上四分位数`,
-  [MedianMeasureId]: intl.i18n`中位数`,
-  [Q1MeasureValue]: intl.i18n`下四分位数`,
-  [LowerWhisker]: intl.i18n`下边界`,
-}
 const VCHART_OUTLIER_KEY = '__VCHART_BOX_PLOT_OUTLIER_VALUE'
 
 export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
@@ -36,6 +28,14 @@ export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
   const meas = findAllMeasures(vseed.measures)
   const valueMeasure = meas.find((item) => item.encoding === 'value' || isNullish(item.encoding))
   const defaultFormatter = valueMeasure ? createFormatterByMeasure(valueMeasure) : (v: unknown) => v
+  const measureAliasMapping: Record<string, string> = {
+    [OutliersMeasureId]: intl.i18n`异常点`,
+    [UpperWhisker]: intl.i18n`上边界`,
+    [Q3MeasureValue]: intl.i18n`上四分位数`,
+    [MedianMeasureId]: intl.i18n`中位数`,
+    [Q1MeasureValue]: intl.i18n`下四分位数`,
+    [LowerWhisker]: intl.i18n`下边界`,
+  }
 
   result.tooltip = {
     visible: enable,

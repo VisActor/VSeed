@@ -113,8 +113,8 @@ importers:
         specifier: 1.0.17
         version: 1.0.17
       '@visactor/vutils':
-        specifier: 1.0.16
-        version: 1.0.16
+        specifier: 1.0.17
+        version: 1.0.17
       remeda:
         specifier: 2.28.0
         version: 2.28.0
@@ -2283,9 +2283,6 @@ packages:
 
   '@visactor/vutils@1.0.15':
     resolution: {integrity: sha512-9C1HUhG0D/t4xSCOuF5YfdaCwgBZI9KYHq3NVyQQTUIcKY+iumZ197KLAPbcm42D7PYeeYXrdSTsqQkRyDVCwQ==}
-
-  '@visactor/vutils@1.0.16':
-    resolution: {integrity: sha512-imqX+4FSLK9L6GDPA4OQRqevZLUpHHbND1uZRWoWVcIByj2OgqlXciu1HZV3gKNe91yytOmhAun9+b6R9ugZow==}
 
   '@visactor/vutils@1.0.17':
     resolution: {integrity: sha512-suop4vTK+dyW5TZNErcmZbzOE2pm+h68KxEkhUcsKchSXfLLPstNH2gNUk+dlGdD865tLdJPnKno9CIkPgPwLg==}
@@ -8296,12 +8293,12 @@ snapshots:
   '@visactor/vrender-animate@1.0.21':
     dependencies:
       '@visactor/vrender-core': 1.0.21
-      '@visactor/vutils': 1.0.16
+      '@visactor/vutils': 1.0.17
 
   '@visactor/vrender-animate@1.0.24':
     dependencies:
       '@visactor/vrender-core': 1.0.24
-      '@visactor/vutils': 1.0.16
+      '@visactor/vutils': 1.0.17
 
   '@visactor/vrender-components@1.0.21':
     dependencies:
@@ -8309,7 +8306,7 @@ snapshots:
       '@visactor/vrender-core': 1.0.21
       '@visactor/vrender-kits': 1.0.21
       '@visactor/vscale': 1.0.12
-      '@visactor/vutils': 1.0.16
+      '@visactor/vutils': 1.0.17
 
   '@visactor/vrender-components@1.0.24':
     dependencies:
@@ -8317,23 +8314,23 @@ snapshots:
       '@visactor/vrender-core': 1.0.24
       '@visactor/vrender-kits': 1.0.24
       '@visactor/vscale': 1.0.12
-      '@visactor/vutils': 1.0.16
+      '@visactor/vutils': 1.0.17
 
   '@visactor/vrender-core@1.0.21':
     dependencies:
-      '@visactor/vutils': 1.0.16
+      '@visactor/vutils': 1.0.17
       color-convert: 2.0.1
 
   '@visactor/vrender-core@1.0.24':
     dependencies:
-      '@visactor/vutils': 1.0.16
+      '@visactor/vutils': 1.0.17
       color-convert: 2.0.1
 
   '@visactor/vrender-kits@1.0.21':
     dependencies:
       '@resvg/resvg-js': 2.4.1
       '@visactor/vrender-core': 1.0.21
-      '@visactor/vutils': 1.0.16
+      '@visactor/vutils': 1.0.17
       gifuct-js: 2.1.2
       lottie-web: 5.13.0
       roughjs: 4.5.2
@@ -8342,7 +8339,7 @@ snapshots:
     dependencies:
       '@resvg/resvg-js': 2.4.1
       '@visactor/vrender-core': 1.0.24
-      '@visactor/vutils': 1.0.16
+      '@visactor/vutils': 1.0.17
       gifuct-js: 2.1.2
       lottie-web: 5.13.0
       roughjs: 4.5.2
@@ -8380,7 +8377,7 @@ snapshots:
   '@visactor/vutils-extension@2.0.8':
     dependencies:
       '@visactor/vdataset': 1.0.17
-      '@visactor/vutils': 1.0.16
+      '@visactor/vutils': 1.0.17
 
   '@visactor/vutils@0.18.18':
     dependencies:
@@ -8401,12 +8398,6 @@ snapshots:
       eventemitter3: 4.0.7
 
   '@visactor/vutils@1.0.15':
-    dependencies:
-      '@turf/helpers': 6.5.0
-      '@turf/invariant': 6.5.0
-      eventemitter3: 4.0.7
-
-  '@visactor/vutils@1.0.16':
     dependencies:
       '@turf/helpers': 6.5.0
       '@turf/invariant': 6.5.0

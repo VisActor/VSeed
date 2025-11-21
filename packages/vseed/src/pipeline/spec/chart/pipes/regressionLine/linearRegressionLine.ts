@@ -18,6 +18,7 @@ import type {
   LogisticRegressionLine,
   LowessRegressionLine,
 } from 'src/types'
+import { getAlphaByConfidenceLevel } from './common'
 
 export const generateRegressionLinePipe = (
   type: 'linearRegressionLine' | 'lowessRegressionLine' | 'polynomialRegressionLine' | 'logisticRegressionLine',
@@ -249,7 +250,8 @@ export const generateRegressionLinePipe = (
 const getDefaultRegressionOptions = (
   lineConfig: PolynomialRegressionLine | LinearRegressionLine | LogisticRegressionLine | LowessRegressionLine,
 ) => {
-  return { alpha: lineConfig?.confidenceLevel ?? 0.95 }
+  const alpha = getAlphaByConfidenceLevel(lineConfig?.confidenceLevel)
+  return { alpha }
 }
 
 export const linearRegressionLine: VChartSpecPipe = generateRegressionLinePipe('linearRegressionLine', regressionLinear)

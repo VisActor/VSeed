@@ -29,3 +29,7 @@ export const defaultRegressionLineLabelY = (datum: any, ctx: any, opt: any) => {
 
   return undefined
 }
+
+export const getAlphaByConfidenceLevel = (confidenceLevel: number = 0.95) => {
+  return 1 - Math.max(Math.min(1, confidenceLevel), 0)
+}

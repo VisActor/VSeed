@@ -46,6 +46,11 @@ export const horizontalCrosshairLine: VChartSpecPipe = (spec, context) => {
       },
     },
   }
+  const yAxisConfig = result.axes?.find((v) => v.orient === 'left')
+  const yAxisFormatter = yAxisConfig?.label?.formatMethod
+  if (yAxisFormatter) {
+    ;(crosshair.yField.label!.formatMethod as any) = (text: string | string[]) => yAxisFormatter(text)
+  }
 
   return result
 }

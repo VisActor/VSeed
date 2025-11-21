@@ -2,12 +2,14 @@ import type { ICartesianBandAxisSpec, ISpec } from '@visactor/vchart'
 import type { VChartSpecPipe, XBandAxis } from 'src/types'
 import { defaultTitleText } from './title/defaultTitleText'
 import { AXIS_LABEL_SPACE } from 'src/pipeline/utils'
+import { MeasureId } from 'src/dataReshape'
+import { isArray } from '@visactor/vutils'
 
 export const yBand: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
-  const { measures, dimensions, encoding } = advancedVSeed
+  const { measures, dimensions, encoding, datasetReshapeInfo, pivotAllDatasetReshapeInfo } = advancedVSeed
   const config = (advancedVSeed.config?.[chartType as 'bar']?.yAxis ?? {}) as XBandAxis
 
   if (!result.axes) {
@@ -30,6 +32,7 @@ export const yBand: VChartSpecPipe = (spec, context) => {
   } = config
 
   const sampling = !(labelAutoHide || labelAutoRotate || labelAutoLimit)
+  const onlyMeasureId = (encoding.y || []).filter((v) => v !== MeasureId).length === 0
 
   const bandAxis = {
     visible,
@@ -95,6 +98,16 @@ export const yBand: VChartSpecPipe = (spec, context) => {
     paddingInner: [0.15, 0.1],
     paddingOuter: [0.075, 0.1],
   } as ICartesianBandAxisSpec
+  if (onlyMeasureId && bandAxis.label) {
+    const allDatasetReshapeInfo = pivotAllDatasetReshapeInfo || datasetReshapeInfo
+    const colorIdMap = allDatasetReshapeInfo.reduce<Record<string, { id: string; alias: string }>>((prev, cur) => {
+      return { ...prev, ...cur.unfoldInfo.colorIdMap }
+    }, {})
+
+    bandAxis.label.formatMethod = (text: string | string[]) => {
+      return isArray(text) ? text : (colorIdMap[String(text)]?.alias ?? text)
+    }
+  }
 
   result.axes = [...result.axes, bandAxis] as ISpec['axes']
   return result

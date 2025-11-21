@@ -846,6 +846,7 @@ exports[`onlyMeasures 2`] = `
           -90,
         ],
         "flush": true,
+        "formatMethod": [Function],
         "lastVisible": true,
         "minGap": 4,
         "space": 8,
@@ -986,6 +987,7 @@ exports[`onlyMeasures 2`] = `
   "crosshair": {
     "xField": {
       "label": {
+        "formatMethod": [Function],
         "labelBackground": {
           "style": {
             "fill": "#364159",

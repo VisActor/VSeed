@@ -823,6 +823,7 @@ exports[`onlyMeasures 2`] = `
         ],
         "containerAlign": "right",
         "flush": true,
+        "formatMethod": [Function],
         "lastVisible": true,
         "minGap": 1,
         "space": 8,
@@ -903,6 +904,7 @@ exports[`onlyMeasures 2`] = `
   "crosshair": {
     "yField": {
       "label": {
+        "formatMethod": [Function],
         "labelBackground": {
           "style": {
             "fill": "#364159",

@@ -36,6 +36,7 @@ export const pivotIndicators =
         ...context,
         advancedVSeed: {
           ...advancedVSeed,
+          pivotAllDatasetReshapeInfo: datasetReshapeInfo,
           datasetReshapeInfo: newDatasetReshapeInfo,
           encoding: Object.keys(encoding).reduce((res, key) => {
             res[key as keyof Encoding] = encoding[key as keyof Encoding]?.filter((e) => {

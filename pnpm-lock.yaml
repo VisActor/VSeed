@@ -110,8 +110,8 @@ importers:
   packages/vseed:
     dependencies:
       '@visactor/vdataset':
-        specifier: 1.0.16
-        version: 1.0.16
+        specifier: 1.0.17
+        version: 1.0.17
       '@visactor/vutils':
         specifier: 1.0.16
         version: 1.0.16
@@ -2224,8 +2224,8 @@ packages:
   '@visactor/vdataset@1.0.15':
     resolution: {integrity: sha512-vHo8z1yyQVn18NOgBkaEwo74cehcLMiF+i6UORKCtPwwyRCOUFqrDdnVjBWRTgzrHBiz0wJS3y6LWlyZAH5d5A==}
 
-  '@visactor/vdataset@1.0.16':
-    resolution: {integrity: sha512-YfD74IyhZuMQrXvgFGFHPC1YaALK/TTtvn6vojZno+NDlTuZBTlJWU52ykaZTHcAFyHeEKp9WjxgJcp0XaqHjg==}
+  '@visactor/vdataset@1.0.17':
+    resolution: {integrity: sha512-3IpPiAntImXnXR6X3t82LkcJPkQQ8BkpLrkt8lbkBy9t0+krRcuJrqH0nC/mnYMBh3U/Hia5vqxki4uQiDMxOw==}
 
   '@visactor/vlayouts@1.0.12':
     resolution: {integrity: sha512-yoQywYICsNtLdiGIU6Ds99QTcZ8k+2qq7Kmqrjep9mhCBu0egjRhSVFALXYwbuO4rkSpLJLXdgtiMxh2n1PfOA==}
@@ -2286,6 +2286,9 @@ packages:
 
   '@visactor/vutils@1.0.16':
     resolution: {integrity: sha512-imqX+4FSLK9L6GDPA4OQRqevZLUpHHbND1uZRWoWVcIByj2OgqlXciu1HZV3gKNe91yytOmhAun9+b6R9ugZow==}
+
+  '@visactor/vutils@1.0.17':
+    resolution: {integrity: sha512-suop4vTK+dyW5TZNErcmZbzOE2pm+h68KxEkhUcsKchSXfLLPstNH2gNUk+dlGdD865tLdJPnKno9CIkPgPwLg==}
 
   '@vitest/coverage-istanbul@3.2.4':
     resolution: {integrity: sha512-IDlpuFJiWU9rhcKLkpzj8mFu/lpe64gVgnV15ZOrYx1iFzxxrxCzbExiUEKtwwXRvEiEMUS6iZeYgnMxgbqbxQ==}
@@ -8262,12 +8265,12 @@ snapshots:
       simplify-geojson: 1.0.5
       topojson-client: 3.1.0
 
-  '@visactor/vdataset@1.0.16':
+  '@visactor/vdataset@1.0.17':
     dependencies:
       '@turf/flatten': 6.5.0
       '@turf/helpers': 6.5.0
       '@turf/rewind': 6.5.0
-      '@visactor/vutils': 1.0.16
+      '@visactor/vutils': 1.0.17
       d3-dsv: 2.0.0
       d3-geo: 1.12.1
       d3-hexbin: 0.2.2
@@ -8376,7 +8379,7 @@ snapshots:
 
   '@visactor/vutils-extension@2.0.8':
     dependencies:
-      '@visactor/vdataset': 1.0.16
+      '@visactor/vdataset': 1.0.17
       '@visactor/vutils': 1.0.16
 
   '@visactor/vutils@0.18.18':
@@ -8404,6 +8407,12 @@ snapshots:
       eventemitter3: 4.0.7
 
   '@visactor/vutils@1.0.16':
+    dependencies:
+      '@turf/helpers': 6.5.0
+      '@turf/invariant': 6.5.0
+      eventemitter3: 4.0.7
+
+  '@visactor/vutils@1.0.17':
     dependencies:
       '@turf/helpers': 6.5.0
       '@turf/invariant': 6.5.0

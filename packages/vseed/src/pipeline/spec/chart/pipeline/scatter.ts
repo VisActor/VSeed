@@ -39,6 +39,7 @@ import {
   logisticRegressionLine,
   pivotAxisStyle,
   pivotTitle,
+  dimensionLinkage,
 } from '../pipes'
 
 const scatter: VChartSpecPipeline = [
@@ -98,6 +99,7 @@ const pivotScatter: PivotChartSpecPipeline = [
   pivotColumnDimensions,
   pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
 export const scatterSpecPipeline = [pivotAdapter(scatter, pivotScatter)]

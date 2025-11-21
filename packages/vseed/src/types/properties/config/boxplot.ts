@@ -9,6 +9,7 @@ import { zTooltip } from './tooltip/tooltip'
 import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
 import { zWhiskersConfig } from './whiskers'
+import { zDimensionLinkage } from './dimensionLinkage/dimensionLinkage'
 
 export const zBoxplotConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -24,6 +25,8 @@ export const zBoxplotConfig = z.object({
   annotation: zAnnotationConfig.nullish(),
 
   whiskers: zWhiskersConfig.nullish(),
+
+  dimensionLinkage: zDimensionLinkage.nullish(),
 })
 
 export type BoxplotConfig = z.infer<typeof zBoxplotConfig>

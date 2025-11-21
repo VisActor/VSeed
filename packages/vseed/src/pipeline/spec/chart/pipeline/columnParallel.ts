@@ -35,6 +35,7 @@ import {
   barGapInGroup,
   pivotAxisStyle,
   pivotTitle,
+  dimensionLinkage,
 } from '../pipes'
 
 const columnParallel: VChartSpecPipeline = [
@@ -87,6 +88,7 @@ const pivotColumnParallel: PivotChartSpecPipeline = [
   pivotColumnDimensions,
   pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
 export const columnParallelSpecPipeline = [pivotAdapter(columnParallel, pivotColumnParallel)]

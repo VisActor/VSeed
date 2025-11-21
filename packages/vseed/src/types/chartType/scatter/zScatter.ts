@@ -9,6 +9,7 @@ import {
   zColor,
   zCrosshairLine,
   zDataset,
+  zDimensionLinkage,
   zDimensions,
   zEncoding,
   zLabel,
@@ -53,5 +54,6 @@ export const zScatter = z.object({
   lowessRegressionLine: z.array(zLowessRegressionLine).or(zLowessRegressionLine).or(z.boolean()).nullish(),
   polynomialRegressionLine: z.array(zPolynomialRegressionLine).or(zPolynomialRegressionLine).or(z.boolean()).nullish(),
   logisticRegressionLine: z.array(zLogisticRegressionLine).or(zLogisticRegressionLine).or(z.boolean()).nullish(),
+  dimensionLinkage: zDimensionLinkage.nullish(),
   locale: zLocale.nullish(),
 })

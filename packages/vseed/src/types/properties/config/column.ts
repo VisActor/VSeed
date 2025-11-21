@@ -11,6 +11,7 @@ import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
 import { zBarGapInGroup, zBarMaxWidth } from './barWidth'
 import { zRegressionLine } from '../regressionLine'
+import { zDimensionLinkage } from './dimensionLinkage/dimensionLinkage'
 
 export const zColumnParallelConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -27,6 +28,8 @@ export const zColumnParallelConfig = z.object({
   barGapInGroup: zBarGapInGroup.nullish(),
   pivotGrid: zPivotChartGridConfig.nullish(),
   annotation: zAnnotationConfig.nullish(),
+
+  dimensionLinkage: zDimensionLinkage.nullish(),
 })
 export const zColumnConfig = zColumnParallelConfig.extend({
   regressionLine: zRegressionLine.nullish(),

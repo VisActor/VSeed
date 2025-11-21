@@ -9,6 +9,7 @@ import { zTooltip } from './tooltip/tooltip'
 import { zDualChartType } from '../chartType'
 import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
+import { zDimensionLinkage } from './dimensionLinkage/dimensionLinkage'
 
 export const zDualAxisConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -26,6 +27,8 @@ export const zDualAxisConfig = z.object({
   crosshairRect: zCrosshairRect.nullish(),
   pivotGrid: zPivotChartGridConfig.nullish(),
   annotation: zAnnotationConfig.nullish(),
+
+  dimensionLinkage: zDimensionLinkage.nullish(),
 })
 
 export type DualAxisConfig = z.infer<typeof zDualAxisConfig>

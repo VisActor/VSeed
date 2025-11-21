@@ -11,6 +11,7 @@ import {
   zColor,
   zCrosshairRect,
   zDataset,
+  zDimensionLinkage,
   zDimensions,
   zEncoding,
   zLabel,
@@ -51,5 +52,6 @@ export const zColumn = z.object({
   annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).nullish(),
   annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).nullish(),
   polynomialRegressionLine: z.array(zPolynomialRegressionLine).or(zPolynomialRegressionLine).or(z.boolean()).nullish(),
+  dimensionLinkage: zDimensionLinkage.nullish(),
   locale: zLocale.nullish(),
 })

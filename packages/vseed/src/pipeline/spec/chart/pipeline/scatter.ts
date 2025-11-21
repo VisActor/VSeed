@@ -93,6 +93,8 @@ const pivotScatter: PivotChartSpecPipeline = [
     annotationArea,
     linearRegressionLine,
     lowessRegressionLine,
+    polynomialRegressionLine,
+    logisticRegressionLine,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

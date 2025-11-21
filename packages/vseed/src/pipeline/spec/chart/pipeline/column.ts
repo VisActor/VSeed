@@ -36,6 +36,7 @@ import {
   columnPolynomialRegressionLine,
   pivotAxisStyle,
   pivotTitle,
+  dimensionLinkage,
 } from '../pipes'
 
 const column: VChartSpecPipeline = [
@@ -91,6 +92,7 @@ const pivotColumn: PivotChartSpecPipeline = [
   pivotColumnDimensions,
   pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
 export const columnSpecPipeline = [pivotAdapter(column, pivotColumn)]

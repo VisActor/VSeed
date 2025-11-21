@@ -36,6 +36,7 @@ import {
   pivotTitle,
   pivotAxisStyle,
   splitLine,
+  dimensionLinkage,
 } from '../pipes'
 
 const line: VChartSpecPipeline = [
@@ -89,6 +90,7 @@ const pivotLine: PivotChartSpecPipeline = [
   pivotColumnDimensions,
   pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
 export const lineSpecPipeline = [pivotAdapter(line, pivotLine)]

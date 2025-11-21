@@ -33,6 +33,7 @@ import {
   ecdfRegressionLine,
   pivotTitle,
   pivotAxisStyle,
+  dimensionLinkage,
 } from '../pipes'
 
 const histogram: VChartSpecPipeline = [
@@ -83,6 +84,7 @@ const pivotHistogram: PivotChartSpecPipeline = [
   pivotColumnDimensions,
   pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
 export const histogramSpecPipeline = [pivotAdapter(histogram, pivotHistogram)]

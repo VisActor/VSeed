@@ -23,6 +23,7 @@ import type {
   LowessRegressionLine,
   PolynomialRegressionLine,
   LogisticRegressionLine,
+  DimensionLinkage,
 } from '../../properties'
 
 /**
@@ -283,6 +284,11 @@ export interface Scatter {
    * @description 逻辑回归线配置, 包括逻辑回归线的样式等.
    */
   logisticRegressionLine?: boolean | LogisticRegressionLine | LogisticRegressionLine[]
+  /**
+   * 当图表开启透视功能或者指标组合的是否，是否开启维度联动功能
+   * 当hover 到某个维度值时，联动高亮其他图表中相同维度值的数据
+   */
+  dimensionLinkage?: DimensionLinkage
   /**
    * 语言
    * @description 图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言

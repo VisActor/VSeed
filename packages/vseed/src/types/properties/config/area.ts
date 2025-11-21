@@ -8,6 +8,7 @@ import { zLegend } from './legend/legend'
 import { zTooltip } from './tooltip/tooltip'
 import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
+import { zDimensionLinkage } from './dimensionLinkage/dimensionLinkage'
 
 export const zAreaConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -21,6 +22,8 @@ export const zAreaConfig = z.object({
   crosshairLine: zCrosshairLine.nullish(),
   pivotGrid: zPivotChartGridConfig.nullish(),
   annotation: zAnnotationConfig.nullish(),
+
+  dimensionLinkage: zDimensionLinkage.nullish(),
 })
 export const zAreaPercentConfig = zAreaConfig
 

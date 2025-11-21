@@ -19,6 +19,8 @@ export const boxplotConfig: AdvancedPipe = (advancedVSeed, context) => {
     'yAxis',
     'crosshairRect',
     'whiskers',
+
+    'dimensionLinkage',
   ]) as Config['boxPlot']
 
   const config = replaceNullToUndefined(pickedConfig)

@@ -24,6 +24,8 @@ export const histogramConfig: AdvancedPipe = (advancedVSeed, context) => {
     'binCount',
     'binStep',
     'binValueType',
+
+    'dimensionLinkage',
   ]) as Config['histogram']
 
   let config = replaceNullToUndefined(pickedConfig)

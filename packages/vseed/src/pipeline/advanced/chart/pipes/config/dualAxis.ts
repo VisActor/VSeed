@@ -29,6 +29,8 @@ export const dualAxisConfig: AdvancedPipe = (advancedVSeed, context) => {
     'barGapInGroup',
     'barMaxWidth',
     'stackCornerRadius',
+
+    'dimensionLinkage',
   ]) as Config['dualAxis']
 
   const config = replaceNullToUndefined(pickedConfig)

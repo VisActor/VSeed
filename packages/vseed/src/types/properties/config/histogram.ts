@@ -10,6 +10,7 @@ import { zTooltip } from './tooltip/tooltip'
 import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
 import { zRegressionLine } from '../regressionLine'
+import { zDimensionLinkage } from './dimensionLinkage/dimensionLinkage'
 
 export const zHistogramConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -28,6 +29,8 @@ export const zHistogramConfig = z.object({
   binStep: z.number().positive().nullish(),
   binValueType: z.literal('count').or(z.literal('percentage')).nullish(),
   regressionLine: zRegressionLine.nullish(),
+
+  dimensionLinkage: zDimensionLinkage.nullish(),
 })
 
 export type HistogramConfig = z.infer<typeof zHistogramConfig>

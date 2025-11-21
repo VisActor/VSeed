@@ -13,6 +13,7 @@ import {
   zColor,
   zCrosshairRect,
   zDataset,
+  zDimensionLinkage,
   zDimensions,
   zDualChartType,
   zDualMeasures,
@@ -66,6 +67,7 @@ export const zDualAxis = z.object({
   annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).nullish(),
   annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).nullish(),
   annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).nullish(),
+  dimensionLinkage: zDimensionLinkage.nullish(),
 
   locale: zLocale.nullish(),
 })

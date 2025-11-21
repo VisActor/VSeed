@@ -9,6 +9,7 @@ import { zLegend } from './legend/legend'
 import { zTooltip } from './tooltip/tooltip'
 import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
+import { zDimensionLinkage } from './dimensionLinkage/dimensionLinkage'
 
 export const zBarConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -23,6 +24,8 @@ export const zBarConfig = z.object({
   stackCornerRadius: zStackCornerRadius.nullish(),
   pivotGrid: zPivotChartGridConfig.nullish(),
   annotation: zAnnotationConfig.nullish(),
+
+  dimensionLinkage: zDimensionLinkage.nullish(),
 })
 export const zBarParallelConfig = zBarConfig
 export const zBarPercentConfig = zBarConfig

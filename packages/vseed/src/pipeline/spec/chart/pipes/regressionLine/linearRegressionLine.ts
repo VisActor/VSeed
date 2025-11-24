@@ -44,11 +44,15 @@ export const generateRegressionLinePipe = (
 
     const lineList = array(regressionLine[type])
 
-    if (!result.customMark) {
-      result.customMark = []
+    if (!result.extensionMark) {
+      result.extensionMark = []
     }
 
     lineList.forEach((line, lineIndex) => {
+      if (line.enable === false) {
+        return
+      }
+
       const theme = (lineTheme.linearRegressionLine ?? {}) as LinearRegressionLine
       const {
         color,
@@ -64,16 +68,21 @@ export const generateRegressionLinePipe = (
 
       const childrenMarks: any[] = []
 
-      ;(result.customMark as any[]).push({
+      ;(result.extensionMark as any[]).push({
         type: 'group',
         interactive: false,
         zIndex: 500,
         name: `${type}-${lineIndex}`,
+        layoutType: 'region-relative',
+        dataId: (spec.data as any)?.id,
+        animation: false,
         style: {
           data: (datum: any, ctx: any) => {
             const vchart = ctx.vchart as IVChart
             const chart = vchart.getChart() as IChart
             const s = chart.getAllSeries()[0] as ICartesianSeries
+
+            console.log(`[group mark]`)
 
             if (s) {
               const rect = s.getRegion().getLayoutRect()
@@ -87,8 +96,7 @@ export const generateRegressionLinePipe = (
                 return segments
               }
 
-              const start = s.getRegion().getLayoutStartPoint()
-              const yClamper = clamper(start.y, start.y + rect.height)
+              const yClamper = clamper(0, rect.height)
               const colorAttrOptions = s.getColorAttribute()
               const groups: (string | undefined)[] = s.getSeriesKeys()
               const data = s.getViewData()?.latestData as Datum[]
@@ -102,7 +110,7 @@ export const generateRegressionLinePipe = (
               groups.forEach((group) => {
                 const groupData = data.filter((d: Datum) => d[colorAttrOptions?.field] === group)
 
-                if (!groupData.length) {
+                if (groupData.length <= 2) {
                   return
                 }
                 const { confidenceInterval, evaluateGrid } = regressionFunction(
@@ -115,33 +123,55 @@ export const generateRegressionLinePipe = (
                 const mainColor = color ?? colorAttrOptions?.scale?.scale(group)
 
                 const lineData = evaluateGrid(N)
-                const linePoints = lineData.map((ld: Datum) => {
+                const linePoints: { x: number; y: number }[] = []
+
+                lineData.forEach((ld: Datum, index: number) => {
                   const d = { [fieldX]: ld.x, [fieldY]: ld.y }
-                  return {
-                    x: s.dataToPositionX(d)! + start.x,
-                    y: yClamper(s.dataToPositionY(d)! + start.y),
+                  const x = s.dataToPositionX(d)!
+                  const y = yClamper(s.dataToPositionY(d)!)
+
+                  if (segments.length && index === 0) {
+                    segments[segments.length - 1].linePoints.push({ x, y: NaN }) // 断开线段用的
                   }
+
+                  linePoints.push({
+                    x,
+                    y,
+                  })
                 })
 
-                segments.push({
+                const segment: {
+                  color: string
+                  linePoints: { x: number; y: number }[]
+                  areaPoints?: { x: number; y: number; y1: number }[]
+                } = {
                   color: mainColor,
                   linePoints,
-                })
+                }
 
                 if (confidenceIntervalVisible) {
                   const intervalData = confidenceInterval(N)
-                  const areaPoints = intervalData.map((datum: Datum) => {
+                  const areaPoints: { x: number; y: number; y1: number }[] = []
+
+                  intervalData.map((datum: Datum, index: number) => {
                     const d = { [fieldX]: datum.x, [fieldY]: datum.lower }
-                    return {
-                      x: s.dataToPositionX(d)! + start.x,
-                      y: yClamper(s.dataToPositionY(d)! + start.y),
-                      y1: yClamper(s.dataToPositionY({ [fieldY]: datum.upper })! + start.y),
+                    const x = s.dataToPositionX(d)!
+                    const y = yClamper(s.dataToPositionY(d)!)
+                    const y1 = yClamper(s.dataToPositionY({ [fieldY]: datum.upper })!)
+
+                    if (segments.length && index === 0) {
+                      segments[segments.length - 1].areaPoints!.push({ x, y: NaN, y1: NaN }) // 断开线段用的
                     }
+
+                    areaPoints.push({ x, y, y1 })
                   })
 
-                  segments[segments.length - 1].areaPoints = areaPoints
+                  segment.areaPoints = areaPoints
                 }
+
+                segments.push(segment)
               })
+              console.log('segments', segments)
 
               return segments
             }
@@ -156,7 +186,9 @@ export const generateRegressionLinePipe = (
           type: 'area',
           interactive: false,
           zIndex: 500,
+          dataId: (spec.data as any)?.id,
           style: {
+            stroke: false,
             lineWidth: lineWidth ?? theme.lineWidth,
             lineDash: lineDash ?? theme.lineDash,
             fillOpacity: confidenceIntervalOpacity ?? theme.confidenceIntervalOpacity,
@@ -164,14 +196,18 @@ export const generateRegressionLinePipe = (
             segments: (datum: any, ctx: any, opt: any) => {
               const parentNode = opt.mark?._product?.parent
 
-              if (parentNode?.attribute?.data?.length) {
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
-                return parentNode.attribute.data.map((d: any) => {
-                  return {
-                    points: d.areaPoints ?? [],
-                    fill: d.color,
-                  }
-                })
+              if (parentNode) {
+                const data = parentNode.finalAttribute?.data ?? parentNode.attribute?.data
+
+                if (data?.length) {
+                  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
+                  return data.map((d: any) => {
+                    return {
+                      points: d.areaPoints ?? [],
+                      fill: d.color,
+                    }
+                  })
+                }
               }
 
               return []
@@ -184,6 +220,8 @@ export const generateRegressionLinePipe = (
         type: 'line',
         interactive: false,
         zIndex: 500,
+        animation: false,
+        dataId: (spec.data as any)?.id,
         style: {
           lineWidth: lineWidth ?? theme.lineWidth,
           lineDash: lineDash ?? theme.lineDash,
@@ -191,14 +229,17 @@ export const generateRegressionLinePipe = (
           segments: (datum: any, ctx: any, opt: any) => {
             const parentNode = opt.mark?._product?.parent
 
-            if (parentNode?.attribute?.data?.length) {
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
-              return parentNode.attribute.data.map((d: any) => {
-                return {
-                  points: d.linePoints,
-                  stroke: d.color,
-                }
-              })
+            if (parentNode) {
+              const data = parentNode.finalAttribute?.data ?? parentNode.attribute?.data
+              if (data?.length) {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
+                return data.map((d: any) => {
+                  return {
+                    points: d.linePoints,
+                    stroke: d.color,
+                  }
+                })
+              }
             }
 
             return []
@@ -211,6 +252,8 @@ export const generateRegressionLinePipe = (
           type: 'text',
           interactive: false,
           zIndex: 500,
+          animation: false,
+          dataId: (spec.data as any)?.id,
           style: {
             textAlign: 'end',
             fill: textColor ?? theme.textColor,

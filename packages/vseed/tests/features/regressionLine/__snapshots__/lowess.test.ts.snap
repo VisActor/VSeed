@@ -1006,30 +1006,6 @@ exports[`lowess 2`] = `
       "visible": true,
     },
   },
-  "customMark": [
-    {
-      "children": [
-        {
-          "interactive": false,
-          "style": {
-            "lineDash": undefined,
-            "lineWidth": 2,
-            "segments": [Function],
-            "stroke": "red",
-          },
-          "type": "line",
-          "zIndex": 500,
-        },
-      ],
-      "interactive": false,
-      "name": "lowessRegressionLine-0",
-      "style": {
-        "data": [Function],
-      },
-      "type": "group",
-      "zIndex": 500,
-    },
-  ],
   "data": {
     "fields": {},
     "id": "scatter",
@@ -1137,6 +1113,35 @@ exports[`lowess 2`] = `
     ],
   },
   "direction": "vertical",
+  "extensionMark": [
+    {
+      "animation": false,
+      "children": [
+        {
+          "animation": false,
+          "dataId": "scatter",
+          "interactive": false,
+          "style": {
+            "lineDash": undefined,
+            "lineWidth": 2,
+            "segments": [Function],
+            "stroke": "red",
+          },
+          "type": "line",
+          "zIndex": 500,
+        },
+      ],
+      "dataId": "scatter",
+      "interactive": false,
+      "layoutType": "region-relative",
+      "name": "lowessRegressionLine-0",
+      "style": {
+        "data": [Function],
+      },
+      "type": "group",
+      "zIndex": 500,
+    },
+  ],
   "label": {
     "dataFilter": [Function],
     "formatMethod": [Function],

@@ -24,21 +24,25 @@ export const kdeRegressionLine: VChartSpecPipe = (spec, context) => {
 
   const lineList = array(regressionLine.kdeRegressionLine).filter((kdeLine) => kdeLine.enable !== false)
 
-  if (!result.customMark) {
-    result.customMark = []
+  if (!result.extensionMark) {
+    result.extensionMark = []
   }
 
   lineList.forEach((line, lineIndex) => {
+    if (line.enable === false) {
+      return
+    }
     const theme = (lineTheme.kdeRegressionLine ?? {}) as KdeRegressionLine
     const { color, lineWidth, lineDash, text, textColor, textFontSize, textFontWeight } = line as KdeRegressionLine
 
     const childrenMarks: any[] = []
 
-    ;(result.customMark as any[]).push({
+    ;(result.extensionMark as any[]).push({
       type: 'group',
       interactive: false,
       zIndex: 500,
       name: `kdeRegressionLine-${lineIndex}`,
+      dataId: (spec.data as any)?.id,
       style: {
         data: (datum: any, ctx: any) => {
           const vchart = ctx.vchart as IVChart
@@ -48,7 +52,6 @@ export const kdeRegressionLine: VChartSpecPipe = (spec, context) => {
           // 直方图使用的是bar系列
           if (series && series.length) {
             const s = series[0] as ICartesianSeries
-            const region = s.getRegion().getLayoutStartPoint()
 
             const fieldX = s.fieldX?.[0]
             const scaleY = s.getYAxisHelper().getScale?.(0)
@@ -78,8 +81,8 @@ export const kdeRegressionLine: VChartSpecPipe = (spec, context) => {
             const linePoints = lineData.map((ld: Datum) => {
               const d = { [fieldX]: ld.x }
               return {
-                x: s.dataToPositionX(d)! + region.x,
-                y: scaleR(ld.y as number) + region.y,
+                x: s.dataToPositionX(d)!,
+                y: scaleR(ld.y as number),
               }
             })
 
@@ -98,6 +101,7 @@ export const kdeRegressionLine: VChartSpecPipe = (spec, context) => {
       type: 'line',
       interactive: false,
       zIndex: 500,
+      dataId: (spec.data as any)?.id,
       style: {
         lineWidth: lineWidth ?? theme.lineWidth,
         lineDash: lineDash ?? theme.lineDash,
@@ -120,6 +124,7 @@ export const kdeRegressionLine: VChartSpecPipe = (spec, context) => {
         type: 'text',
         interactive: false,
         zIndex: 500,
+        dataId: (spec.data as any)?.id,
         style: {
           textAlign: 'end',
           fill: textColor ?? theme.textColor,

@@ -911,44 +911,6 @@ exports[`histogramEcdf 2`] = `
       "visible": true,
     },
   },
-  "customMark": [
-    {
-      "children": [
-        {
-          "interactive": false,
-          "style": {
-            "lineDash": undefined,
-            "lineWidth": 2,
-            "points": [Function],
-            "stroke": [Function],
-          },
-          "type": "line",
-          "zIndex": 500,
-        },
-        {
-          "interactive": false,
-          "style": {
-            "fill": "#364159",
-            "fontSize": 12,
-            "fontWeight": 400,
-            "text": "ECDF Regression",
-            "textAlign": "end",
-            "x": [Function],
-            "y": [Function],
-          },
-          "type": "text",
-          "zIndex": 500,
-        },
-      ],
-      "interactive": false,
-      "name": "ecdfRegressionLine-0",
-      "style": {
-        "data": [Function],
-      },
-      "type": "group",
-      "zIndex": 500,
-    },
-  ],
   "data": {
     "fields": {},
     "id": "histogram",
@@ -1005,6 +967,47 @@ exports[`histogramEcdf 2`] = `
       },
     ],
   },
+  "extensionMark": [
+    {
+      "children": [
+        {
+          "dataId": "histogram",
+          "interactive": false,
+          "style": {
+            "lineDash": undefined,
+            "lineWidth": 2,
+            "points": [Function],
+            "stroke": [Function],
+          },
+          "type": "line",
+          "zIndex": 500,
+        },
+        {
+          "dataId": "histogram",
+          "interactive": false,
+          "style": {
+            "fill": "#364159",
+            "fontSize": 12,
+            "fontWeight": 400,
+            "text": "ECDF Regression",
+            "textAlign": "end",
+            "x": [Function],
+            "y": [Function],
+          },
+          "type": "text",
+          "zIndex": 500,
+        },
+      ],
+      "dataId": "histogram",
+      "interactive": false,
+      "name": "ecdfRegressionLine-0",
+      "style": {
+        "data": [Function],
+      },
+      "type": "group",
+      "zIndex": 500,
+    },
+  ],
   "label": {
     "dataFilter": [Function],
     "formatMethod": [Function],

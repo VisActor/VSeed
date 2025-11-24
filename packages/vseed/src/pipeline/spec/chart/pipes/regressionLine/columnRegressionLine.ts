@@ -22,11 +22,14 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
 
   const lineList = array(regressionLine.polynomialRegressionLine)
 
-  if (!result.customMark) {
-    result.customMark = []
+  if (!result.extensionMark) {
+    result.extensionMark = []
   }
 
   lineList.forEach((line, lineIndex) => {
+    if (line.enable === false) {
+      return
+    }
     const theme = (lineTheme.linearRegressionLine ?? {}) as LinearRegressionLine
     const {
       color,
@@ -42,11 +45,12 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
 
     const childrenMarks: any[] = []
 
-    ;(result.customMark as any[]).push({
+    ;(result.extensionMark as any[]).push({
       type: 'group',
       interactive: false,
       zIndex: 500,
       name: `polynomialRegressionLine-${lineIndex}`,
+      dataId: (spec.data as any)?.id,
       style: {
         data: (datum: any, ctx: any) => {
           const vchart = ctx.vchart as IVChart
@@ -60,8 +64,7 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
               return null
             }
 
-            const start = s.getRegion().getLayoutStartPoint()
-            const yClamper = clamper(start.y, start.y + rect.height)
+            const yClamper = clamper(0, 0 + rect.height)
             const data = s.getViewData()?.latestData as Datum[]
             const fieldX = s.fieldX?.[0]
             const fieldY = s.fieldY?.[0]
@@ -94,8 +97,8 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
             const linePoints = lineData.map((datum: Datum, index: number) => {
               const d = { [fieldX]: xValues[index], [fieldY]: datum.y }
               return {
-                x: s.dataToPositionX(d)! + start.x + halfBandWidth,
-                y: yClamper(s.dataToPositionY(d)! + start.y),
+                x: s.dataToPositionX(d)! + halfBandWidth,
+                y: yClamper(s.dataToPositionY(d)!),
               }
             })
             const result: {
@@ -113,9 +116,9 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
               result.areaPoints = intervalData.map((datum: Datum, index: number) => {
                 const d = { [fieldX]: xValues[index], [fieldY]: datum.lower }
                 return {
-                  x: s.dataToPositionX(d)! + start.x + halfBandWidth,
-                  y: yClamper(s.dataToPositionY(d)! + start.y),
-                  y1: yClamper(s.dataToPositionY({ [fieldY]: datum.upper })! + start.y),
+                  x: s.dataToPositionX(d)! + halfBandWidth,
+                  y: yClamper(s.dataToPositionY(d)!),
+                  y1: yClamper(s.dataToPositionY({ [fieldY]: datum.upper })!),
                 }
               })
             }
@@ -133,6 +136,7 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
         type: 'area',
         interactive: false,
         zIndex: 500,
+        dataId: (spec.data as any)?.id,
         style: {
           lineWidth: lineWidth ?? theme.lineWidth,
           lineDash: lineDash ?? theme.lineDash,
@@ -156,6 +160,7 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
       type: 'line',
       interactive: false,
       zIndex: 500,
+      dataId: (spec.data as any)?.id,
       style: {
         lineWidth: lineWidth ?? theme.lineWidth,
         lineDash: lineDash ?? theme.lineDash,
@@ -178,6 +183,7 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
         type: 'text',
         interactive: false,
         zIndex: 500,
+        dataId: (spec.data as any)?.id,
         style: {
           textAlign: 'end',
           fill: textColor ?? theme.textColor,

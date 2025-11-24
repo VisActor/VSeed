@@ -67,12 +67,20 @@ export class VQuery {
     await this.indexedDB.deleteDataset(datasetId)
   }
 
-  public async connectDataset(datasetId: string, temporaryColumns: DatasetColumn[] = []) {
+  public async connectDataset(
+    datasetId: string,
+    temporaryColumns?: DatasetColumn[],
+    temporaryRawDatasetSource?: RawDatasetSource,
+  ): Promise<Dataset> {
     await this.checkInitialized()
     await this.checkDatasetExists(datasetId)
 
     const dataset = new Dataset(this.duckDB, this.indexedDB, datasetId)
-    await dataset.init(temporaryColumns)
+    const temporaryDatasetSource = temporaryRawDatasetSource
+      ? await DatasetSourceBuilder.from(temporaryRawDatasetSource).build()
+      : undefined
+
+    await dataset.init(temporaryColumns, temporaryDatasetSource)
     return dataset
   }
 

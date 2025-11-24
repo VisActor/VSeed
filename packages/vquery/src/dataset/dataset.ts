@@ -1,4 +1,4 @@
-import { DatasetColumn, DatasetSourceType, DataType, QueryDSL } from 'src/types'
+import { DatasetColumn, DatasetSource, DatasetSourceType, DataType, QueryDSL } from 'src/types'
 import { DuckDB } from 'src/db/duckDb'
 import { IndexedDB } from 'src/db/indexedDb'
 import { convertDSLToSQL } from 'src/sql-builder'
@@ -14,19 +14,20 @@ export class Dataset {
     this._datasetId = datasetId
   }
 
-  public async init(temporaryColumns: DatasetColumn[] = []) {
+  public async init(temporaryColumns?: DatasetColumn[], temporaryDatasetSource?: DatasetSource) {
     const datasetInfo = await this.indexedDB.readDataset(this._datasetId)
     if (!datasetInfo) {
       throw new Error(`Dataset ${this._datasetId} not found`)
     }
 
-    const columns = temporaryColumns.length > 0 ? temporaryColumns : datasetInfo.datasetSchema.columns
-    if (columns.length > 0) {
-      await this.createOrReplaceView(columns)
+    const columns = temporaryColumns ? temporaryColumns : datasetInfo.datasetSchema.columns
+    const datasetSource = temporaryDatasetSource || datasetInfo.datasetSource
+    if (columns.length > 0 && datasetSource) {
+      await this.createOrReplaceView(columns, datasetSource)
     }
   }
 
-  public async createOrReplaceView(columns: DatasetColumn[] = []) {
+  public async createOrReplaceView(columns: DatasetColumn[], datasetSource: DatasetSource) {
     const readFunctionMap: Record<DatasetSourceType, string> = {
       csv: 'read_csv_auto',
       json: 'read_json_auto',
@@ -42,20 +43,14 @@ export class Dataset {
       timestamp: 'TIMESTAMP',
     }
 
-    const datasetInfo = await this.indexedDB.readDataset(this._datasetId)
-    if (!datasetInfo) {
-      throw new Error(`Dataset ${this._datasetId} not found`)
-    }
-
-    const { datasetSource: dataSource } = datasetInfo
-    if (dataSource) {
-      const readFunction = readFunctionMap[dataSource.type]
+    if (datasetSource) {
+      const readFunction = readFunctionMap[datasetSource.type]
       if (!readFunction) {
-        throw new Error(`Unsupported dataSource type: ${dataSource.type}`)
+        throw new Error(`Unsupported dataSource type: ${datasetSource.type}`)
       }
 
       // 注册文件到DuckDB - 只处理文件类型，不处理数组
-      await this.duckDB.writeFile(this._datasetId, dataSource.blob)
+      await this.duckDB.writeFile(this._datasetId, datasetSource.blob)
 
       const columnsStruct = `{${columns.map((c) => `'${c.name}': '${dataTypeMap[c.type] || 'VARCHAR'}'`).join(', ')}}`
       const columnNames = columns.map((c) => `"${c.name}"`).join(', ')

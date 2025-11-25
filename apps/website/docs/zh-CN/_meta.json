@@ -42,6 +42,28 @@
     ]
   },
   {
+    "text": "Practices",
+    "link": "/practices/index",
+    "activeMatch": "/practices/",
+    "items": [
+      {
+        "link": "/practices/index",
+        "text": "实践一",
+        "activeMatch": "/practices/index"
+      },
+      {
+        "link": "/practices/index",
+        "text": "实践二",
+        "activeMatch": "/practices/index"
+      },
+      {
+        "link": "/practices/index",
+        "text": "实践三",
+        "activeMatch": "/practices/index"
+      }
+    ]
+  },
+  {
     "text": "了解VChart",
     "link": "https://visactor.com/vchart"
   },

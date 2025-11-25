@@ -1,4 +1,4 @@
-export type { QueryDSL } from './QueryDSL'
+export type { QueryDSL, VQueryDSL } from './QueryDSL'
 export type { GroupBy } from './GroupBy'
 export type { OrderBy } from './OrderBy'
 export type { Select } from './Select'

@@ -71,6 +71,13 @@ importers:
         version: 8.35.1(eslint@9.30.0(jiti@2.6.1))(typescript@5.9.3)
 
   packages/vbi:
+    dependencies:
+      '@visactor/vquery':
+        specifier: workspace:*
+        version: link:../vquery
+      '@visactor/vseed':
+        specifier: workspace:*
+        version: link:../vseed
     devDependencies:
       '@eslint/js':
         specifier: ^9.39.0

@@ -53,3 +53,5 @@ export type VSeed =
   | Heatmap
   | Boxplot
   | Histogram
+
+export type VSeedDSL = VSeed

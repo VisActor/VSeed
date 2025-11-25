@@ -179,6 +179,22 @@ export const pivotGridStyle: PivotChartSpecPipe = (spec, context) => {
         cornerRadius: frameCornerRadius,
         borderLineWidth: outlineBorderLineWidth,
       },
+
+      axisStyle: {
+        leftAxisStyle: {
+          cellPaddingLeft: 10,
+        },
+        bottomAxisStyle: {
+          cellPaddingBottom: 4,
+        },
+        rightAxisStyle: {
+          cellPaddingRight: 4,
+        },
+      },
+      scrollStyle: {
+        visible: 'scrolling',
+        hoverOn: false,
+      },
     },
   }
 }

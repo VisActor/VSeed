@@ -52,6 +52,7 @@ import {
   stackCornerRadius,
   pivotTitle,
   pivotAxisStyle,
+  dimensionLinkage,
 } from '../pipes'
 
 const dualAxis: VChartSpecPipeline = [
@@ -168,6 +169,7 @@ const pivotDualAxis: PivotChartSpecPipeline = [
   pivotColumnDimensions,
   pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
 export const dualAxisSpecPipeline = [pivotAdapter(dualAxis, pivotDualAxis)]

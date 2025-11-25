@@ -10,6 +10,7 @@ import {
   zColor,
   zCrosshairRect,
   zDataset,
+  zDimensionLinkage,
   zDimensions,
   zEcdfRegressionLine,
   zEncoding,
@@ -48,6 +49,7 @@ export const zHistogram = z.object({
   annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).nullish(),
   ecdfRegressionLine: z.array(zEcdfRegressionLine).or(zEcdfRegressionLine).nullish(),
   kdeRegressionLine: z.array(zKdeRegressionLine).or(zKdeRegressionLine).nullish(),
+  dimensionLinkage: zDimensionLinkage.nullish(),
   locale: zLocale.nullish(),
 })
 

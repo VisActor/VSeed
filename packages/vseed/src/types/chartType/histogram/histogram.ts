@@ -20,6 +20,7 @@ import type {
   XLinearAxis,
   KdeRegressionLine,
   EcdfRegressionLine,
+  DimensionLinkage,
 } from '../../properties'
 
 /**
@@ -164,6 +165,11 @@ export interface Histogram {
    * @description 经验累积分布函数回归线配置, 用于展示数据的累积分布情况
    */
   ecdfRegressionLine?: EcdfRegressionLine | EcdfRegressionLine[]
+  /**
+   * 当图表开启透视功能或者指标组合的是否，是否开启维度联动功能
+   * 当hover 到某个维度值时，联动高亮其他图表中相同维度值的数据
+   */
+  dimensionLinkage?: DimensionLinkage
   /**
    * @description 图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言
    * @default 'zh-CN'

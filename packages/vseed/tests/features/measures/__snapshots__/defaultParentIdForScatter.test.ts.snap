@@ -852,6 +852,39 @@ exports[`defaultParentIdForScatter 2`] = `
   },
   "autoFillHeight": true,
   "autoFillWidth": true,
+  "chartDimensionLinkage": {
+    "heightLimitToShowTooltipForLastRow": 60,
+    "labelHoverOnAxis": {
+      "bottom": {
+        "background": {
+          "style": {
+            "fill": "#21252C",
+          },
+          "visible": true,
+        },
+        "formatMethod": [Function],
+        "textStyle": {
+          "fill": "#ffffff",
+        },
+        "visible": true,
+      },
+      "left": {
+        "background": {
+          "style": {
+            "fill": "#21252C",
+          },
+          "visible": true,
+        },
+        "formatMethod": [Function],
+        "textStyle": {
+          "fill": "#ffffff",
+        },
+        "visible": true,
+      },
+    },
+    "showTooltip": false,
+    "widthLimitToShowTooltipForLastColumn": 90,
+  },
   "columns": [],
   "corner": {
     "titleOnDimension": "row",
@@ -1009,17 +1042,7 @@ exports[`defaultParentIdForScatter 2`] = `
         "crosshair": {
           "xField": {
             "label": {
-              "formatMethod": [Function],
-              "labelBackground": {
-                "style": {
-                  "fill": "#21252C",
-                },
-                "visible": true,
-              },
-              "style": {
-                "fill": "#ffffff",
-              },
-              "visible": true,
+              "visible": false,
             },
             "line": {
               "style": {
@@ -1037,17 +1060,7 @@ exports[`defaultParentIdForScatter 2`] = `
           },
           "yField": {
             "label": {
-              "formatMethod": [Function],
-              "labelBackground": {
-                "style": {
-                  "fill": "#21252C",
-                },
-                "visible": true,
-              },
-              "style": {
-                "fill": "#ffffff",
-              },
-              "visible": true,
+              "visible": false,
             },
             "line": {
               "style": {
@@ -1332,17 +1345,7 @@ exports[`defaultParentIdForScatter 2`] = `
         "crosshair": {
           "xField": {
             "label": {
-              "formatMethod": [Function],
-              "labelBackground": {
-                "style": {
-                  "fill": "#21252C",
-                },
-                "visible": true,
-              },
-              "style": {
-                "fill": "#ffffff",
-              },
-              "visible": true,
+              "visible": false,
             },
             "line": {
               "style": {
@@ -1360,17 +1363,7 @@ exports[`defaultParentIdForScatter 2`] = `
           },
           "yField": {
             "label": {
-              "formatMethod": [Function],
-              "labelBackground": {
-                "style": {
-                  "fill": "#21252C",
-                },
-                "visible": true,
-              },
-              "style": {
-                "fill": "#ffffff",
-              },
-              "visible": true,
+              "visible": false,
             },
             "line": {
               "style": {
@@ -1639,6 +1632,17 @@ exports[`defaultParentIdForScatter 2`] = `
     "highlightMode": "cell",
   },
   "theme": {
+    "axisStyle": {
+      "bottomAxisStyle": {
+        "cellPaddingBottom": 4,
+      },
+      "leftAxisStyle": {
+        "cellPaddingLeft": 10,
+      },
+      "rightAxisStyle": {
+        "cellPaddingRight": 4,
+      },
+    },
     "bodyStyle": {
       "bgColor": "rgba(0,0,0,0)",
       "borderColor": "#e3e5eb",
@@ -1797,6 +1801,10 @@ exports[`defaultParentIdForScatter 2`] = `
         0,
         4,
       ],
+    },
+    "scrollStyle": {
+      "hoverOn": false,
+      "visible": "scrolling",
     },
     "selectionStyle": {
       "cellBgColor": "",

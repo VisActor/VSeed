@@ -31,6 +31,7 @@ import {
   datasetBoxplot,
   pivotAxisStyle,
   pivotTitle,
+  dimensionLinkage,
 } from '../pipes'
 import { boxLegend } from '../pipes/legend/boxLegend'
 
@@ -80,6 +81,7 @@ const pivotBoxplot: PivotChartSpecPipeline = [
   pivotColumnDimensions,
   pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
 export const boxplotSpecPipeline = [pivotAdapter(boxplot, pivotBoxplot)]

@@ -34,6 +34,7 @@ import {
   barMaxWidth,
   pivotAxisStyle,
   pivotTitle,
+  dimensionLinkage,
 } from '../pipes'
 
 const bar: VChartSpecPipeline = [
@@ -85,6 +86,7 @@ const pivotBar: PivotChartSpecPipeline = [
   pivotColumnDimensions,
   pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
 export const barSpecPipeline = [pivotAdapter(bar, pivotBar)]

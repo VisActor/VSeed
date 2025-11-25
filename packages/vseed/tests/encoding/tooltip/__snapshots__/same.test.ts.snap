@@ -1247,6 +1247,26 @@ exports[`same 2`] = `
   },
   "autoFillHeight": true,
   "autoFillWidth": true,
+  "chartDimensionLinkage": {
+    "heightLimitToShowTooltipForLastRow": 60,
+    "labelHoverOnAxis": {
+      "bottom": {
+        "background": {
+          "style": {
+            "fill": "#364159",
+          },
+          "visible": true,
+        },
+        "formatMethod": undefined,
+        "textStyle": {
+          "fill": "#ffffff",
+        },
+        "visible": true,
+      },
+    },
+    "showTooltip": true,
+    "widthLimitToShowTooltipForLastColumn": 90,
+  },
   "columns": [],
   "corner": {
     "titleOnDimension": "row",
@@ -1446,16 +1466,7 @@ exports[`same 2`] = `
         "crosshair": {
           "xField": {
             "label": {
-              "labelBackground": {
-                "style": {
-                  "fill": "#364159",
-                },
-                "visible": true,
-              },
-              "style": {
-                "fill": "#ffffff",
-              },
-              "visible": true,
+              "visible": false,
             },
             "line": {
               "style": {
@@ -1792,16 +1803,7 @@ exports[`same 2`] = `
         "crosshair": {
           "xField": {
             "label": {
-              "labelBackground": {
-                "style": {
-                  "fill": "#364159",
-                },
-                "visible": true,
-              },
-              "style": {
-                "fill": "#ffffff",
-              },
-              "visible": true,
+              "visible": false,
             },
             "line": {
               "style": {
@@ -2138,16 +2140,7 @@ exports[`same 2`] = `
         "crosshair": {
           "xField": {
             "label": {
-              "labelBackground": {
-                "style": {
-                  "fill": "#364159",
-                },
-                "visible": true,
-              },
-              "style": {
-                "fill": "#ffffff",
-              },
-              "visible": true,
+              "visible": false,
             },
             "line": {
               "style": {
@@ -2484,16 +2477,7 @@ exports[`same 2`] = `
         "crosshair": {
           "xField": {
             "label": {
-              "labelBackground": {
-                "style": {
-                  "fill": "#364159",
-                },
-                "visible": true,
-              },
-              "style": {
-                "fill": "#ffffff",
-              },
-              "visible": true,
+              "visible": false,
             },
             "line": {
               "style": {
@@ -3077,6 +3061,17 @@ exports[`same 2`] = `
     "highlightMode": "cell",
   },
   "theme": {
+    "axisStyle": {
+      "bottomAxisStyle": {
+        "cellPaddingBottom": 4,
+      },
+      "leftAxisStyle": {
+        "cellPaddingLeft": 10,
+      },
+      "rightAxisStyle": {
+        "cellPaddingRight": 4,
+      },
+    },
     "bodyStyle": {
       "bgColor": "rgba(0,0,0,0)",
       "borderColor": "#e3e5eb",
@@ -3235,6 +3230,10 @@ exports[`same 2`] = `
         0,
         4,
       ],
+    },
+    "scrollStyle": {
+      "hoverOn": false,
+      "visible": "scrolling",
     },
     "selectionStyle": {
       "cellBgColor": "",

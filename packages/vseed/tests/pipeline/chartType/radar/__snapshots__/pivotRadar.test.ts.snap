@@ -2859,6 +2859,17 @@ exports[`pivotRadar 2`] = `
     "highlightMode": "cell",
   },
   "theme": {
+    "axisStyle": {
+      "bottomAxisStyle": {
+        "cellPaddingBottom": 4,
+      },
+      "leftAxisStyle": {
+        "cellPaddingLeft": 10,
+      },
+      "rightAxisStyle": {
+        "cellPaddingRight": 4,
+      },
+    },
     "bodyStyle": {
       "bgColor": "rgba(0,0,0,0)",
       "borderColor": "#e3e5eb",
@@ -3017,6 +3028,10 @@ exports[`pivotRadar 2`] = `
         0,
         4,
       ],
+    },
+    "scrollStyle": {
+      "hoverOn": false,
+      "visible": "scrolling",
     },
     "selectionStyle": {
       "cellBgColor": "",

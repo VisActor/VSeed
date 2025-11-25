@@ -33,6 +33,11 @@
         "link": "/playground/vquery",
         "text": "VQuery",
         "activeMatch": "/playground/vquery"
+      },
+      {
+        "link": "/playground/vbi",
+        "text": "VBI",
+        "activeMatch": "/playground/vbi"
       }
     ]
   },

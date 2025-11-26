@@ -53,7 +53,7 @@ export const annotationPoint: VChartSpecPipe = (spec, context) => {
     const dataset = advancedVSeed.dataset.flat()
     const selectedData = selectorPoint
       ? uniqueWith(
-          dataset.flatMap((d) => selectorDatum(d, selectorPoint)),
+          dataset.flatMap((d: Datum) => selectorDatum(d, selectorPoint)),
           isDeepEqual,
         )
       : []
@@ -107,10 +107,11 @@ export const annotationPoint: VChartSpecPipe = (spec, context) => {
               ...baseConfig,
               relativeSeriesIndex: index,
               coordinate: (data: Datum[]) => {
-                const firstItem = data[0]
-                const excludeMeasuresIds = allMeasureIds.filter((id) => id !== firstItem?.[FoldMeasureId])
+                return data.find((item) => {
+                  const excludeMeasuresIds = allMeasureIds.filter((id) => id !== item?.[FoldMeasureId])
 
-                return data.find((item) => isSubset(datum, item, excludeMeasuresIds))
+                  return isSubset(datum, item, excludeMeasuresIds)
+                })
               },
             })
           })
@@ -121,10 +122,11 @@ export const annotationPoint: VChartSpecPipe = (spec, context) => {
           return {
             ...baseConfig,
             coordinate: (data: Datum[]) => {
-              const firstItem = data[0]
-              const excludeMeasuresIds = allMeasureIds.filter((id) => id !== firstItem?.[FoldMeasureId])
+              return data.find((item) => {
+                const excludeMeasuresIds = allMeasureIds.filter((id) => id !== item?.[FoldMeasureId])
 
-              return data.find((item) => isSubset(datum, item, excludeMeasuresIds))
+                return isSubset(datum, item, excludeMeasuresIds)
+              })
             },
           }
         })

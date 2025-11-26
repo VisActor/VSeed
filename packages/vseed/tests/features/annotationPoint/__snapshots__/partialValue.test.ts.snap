@@ -1429,7 +1429,6 @@ exports[`partialValue 2`] = `
       "itemLine": {
         "visible": false,
       },
-      "regionRelative": true,
       "zIndex": 1000,
     },
     {
@@ -1474,7 +1473,50 @@ exports[`partialValue 2`] = `
       "itemLine": {
         "visible": false,
       },
-      "regionRelative": true,
+      "zIndex": 1000,
+    },
+    {
+      "coordinate": [Function],
+      "itemContent": {
+        "confine": true,
+        "offsetX": -20,
+        "offsetY": 15,
+        "text": {
+          "labelBackground": {
+            "padding": 2,
+            "style": {
+              "cornerRadius": 0,
+              "dx": -10,
+              "dy": 12,
+              "fill": "#BCC1CB",
+              "lineWidth": 1,
+              "opacity": 0.95,
+              "stroke": "#BCC1CB",
+            },
+            "visible": true,
+          },
+          "style": {
+            "dx": -10,
+            "dy": 12,
+            "fill": "#ffffff",
+            "fontSize": 12,
+            "fontWeight": 400,
+            "lineWidth": 1,
+            "opacity": 0.95,
+            "stroke": "#BCC1CB",
+            "textAlign": "right",
+            "textBaseline": "top",
+            "visible": true,
+          },
+          "text": [
+            "销售额",
+            "最大值 100",
+          ],
+        },
+      },
+      "itemLine": {
+        "visible": false,
+      },
       "zIndex": 1000,
     },
   ],

@@ -37,7 +37,10 @@ function generateChartTypeMarkdown() {
   const localeMd = fs.readFileSync(path.resolve(__dirname, './new-type/Locale.md')).toString()
 
   chartTypes.forEach((chartType) => {
-    const chartTypePath = path.resolve(__dirname, `../packages/vseed/src/types/chartType/${chartType}/${chartType}.ts`)
+    const chartTypePath = path.resolve(
+      __dirname,
+      `../../packages/vseed/src/types/chartType/${chartType}/${chartType}.ts`,
+    )
     let fileContentStr
     try {
       fileContentStr = fs.readFileSync(chartTypePath, 'utf-8')
@@ -122,7 +125,7 @@ const skipTopKeys = [
 ]
 
 function generateComponentMarkdown() {
-  const dir = path.resolve(__dirname, '../packages/vseed/src/types/properties/')
+  const dir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/')
   const topKeyDir = path.resolve(__dirname, './top-key')
   const outputDir = path.resolve(__dirname, './new-type')
 
@@ -146,7 +149,7 @@ function generateComponentMarkdown() {
   })
 
   // NumFormat
-  const numFormatDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/format/numFormat.ts')
+  const numFormatDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/format/numFormat.ts')
   const numFormatFileContent = fs.readFileSync(numFormatDir)
   const numFormatFileContentStr = numFormatFileContent.toString()
   const interfaceNumFormatSignature = `export interface NumFormat`
@@ -256,7 +259,7 @@ function generateComponentMarkdown() {
 
 function generateAxisMarkdown() {
   // NumFormat
-  const numFormatDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/format/numFormat.ts')
+  const numFormatDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/format/numFormat.ts')
   const numFormatFileContent = fs.readFileSync(numFormatDir)
   const numFormatFileContentStr = numFormatFileContent.toString()
   const interfaceNumFormatSignature = `export interface NumFormat`
@@ -272,8 +275,8 @@ function generateAxisMarkdown() {
   }
   const numFormatDefinition = numFormatFileContentStr.substring(definitionStartIndex, definitionEndIndex + 1)
 
-  const bandAxisDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/config/axes/bandAxis.ts')
-  const linearAxisDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/config/axes/linearAxis.ts')
+  const bandAxisDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/config/axes/bandAxis.ts')
+  const linearAxisDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/config/axes/linearAxis.ts')
   const bandAxisFileContent = fs.readFileSync(bandAxisDir)
   const linearAxisFileContent = fs.readFileSync(linearAxisDir)
   const bandAxisFileContentStr = bandAxisFileContent.toString()
@@ -460,7 +463,7 @@ function generateAxisMarkdown() {
 
 function generateMeasureMarkdown() {
   // NumFormat
-  const numFormatDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/format/numFormat.ts')
+  const numFormatDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/format/numFormat.ts')
   const numFormatFileContent = fs.readFileSync(numFormatDir)
   const numFormatFileContentStr = numFormatFileContent.toString()
   const interfaceNumFormatSignature = `export interface NumFormat`
@@ -479,13 +482,13 @@ function generateMeasureMarkdown() {
   // MeasureEncoding
   const measureEncodingDir = path.resolve(
     __dirname,
-    '../packages/vseed/src/types/properties/encoding/measureEncoding.ts',
+    '../../packages/vseed/src/types/properties/encoding/measureEncoding.ts',
   )
   const measureEncodingFileContent = fs.readFileSync(measureEncodingDir)
   const measureEncodingContent = measureEncodingFileContent.toString()
 
   // MeasureTree & Measures
-  const measureDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/measures/measures.ts')
+  const measureDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/measures/measures.ts')
   const fileContent = fs.readFileSync(measureDir)
   const fileContentStr = fileContent.toString()
   const outputDir = path.resolve(__dirname, './new-type')
@@ -524,7 +527,7 @@ function generateMeasureMarkdown() {
   // ScatterMeasures
   const scatterMeasureDir = path.resolve(
     __dirname,
-    '../packages/vseed/src/types/properties/measures/scatterMeasures.ts',
+    '../../packages/vseed/src/types/properties/measures/scatterMeasures.ts',
   )
   const scatterFileContent = fs.readFileSync(scatterMeasureDir)
   const scatterFileContentStr = scatterFileContent.toString()
@@ -552,7 +555,7 @@ function generateMeasureMarkdown() {
   )
 
   // DualMeasure
-  const dualMeasureDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/measures/dualMeasures.ts')
+  const dualMeasureDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/measures/dualMeasures.ts')
   const dualFileContent = fs.readFileSync(dualMeasureDir)
   const dualFileContentStr = dualFileContent.toString()
   const dualInterfaceSignature = `export type DualMeasure`
@@ -583,13 +586,13 @@ function generateDimensionMarkdown() {
   // DimensionEncoding
   const dimensionEncodingDir = path.resolve(
     __dirname,
-    '../packages/vseed/src/types/properties/encoding/dimensionEncoding.ts',
+    '../../packages/vseed/src/types/properties/encoding/dimensionEncoding.ts',
   )
   const dimensionEncodingFileContent = fs.readFileSync(dimensionEncodingDir)
   const dimensionEncodingContent = dimensionEncodingFileContent.toString()
 
   // Dimensions & DimensionTree
-  const dimensionDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/dimensions/dimensions.ts')
+  const dimensionDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/dimensions/dimensions.ts')
   const dimensionFileContent = fs.readFileSync(dimensionDir)
   const dimensionContentStr = dimensionFileContent.toString()
   const startIndex = dimensionContentStr.indexOf('export type Dimension')
@@ -608,7 +611,7 @@ function generateDimensionMarkdown() {
 
 function generateLinearColor() {
   // LinearColor
-  const linearColorDir = path.resolve(__dirname, '../packages/vseed/src/types/properties/config/color/color.ts')
+  const linearColorDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/config/color/color.ts')
   const linearColorFileContent = fs.readFileSync(linearColorDir)
   const linearColorFileContentStr = linearColorFileContent.toString()
   const linearColorInterfaceSignature = `export type LinearColor`

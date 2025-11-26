@@ -1,7 +1,6 @@
 packages:
   - apps/*
   - packages/*
-  - llm_test
   - tools/*
 
 ignoredBuiltDependencies:

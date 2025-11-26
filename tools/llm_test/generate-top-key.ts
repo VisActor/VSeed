@@ -3,7 +3,7 @@ import { Project } from 'ts-morph'
 import fs from 'fs'
 
 const project = new Project()
-const dir = path.resolve(__dirname, '../packages/vseed/src/types/chartType/')
+const dir = path.resolve(__dirname, '../../packages/vseed/src/types/chartType/')
 const outDir = path.resolve(__dirname, './top-key')
 if (!fs.existsSync(outDir)) {
   fs.mkdirSync(outDir)

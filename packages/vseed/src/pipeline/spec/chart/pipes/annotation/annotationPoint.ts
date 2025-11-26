@@ -6,7 +6,7 @@ import { ANNOTATION_Z_INDEX } from '../../../../utils/constant'
 import { isBarLikeChart } from 'src/pipeline/utils/chatType'
 import { uniqueWith, isDeepEqual } from 'remeda'
 import { findAllMeasures } from 'src/pipeline/utils'
-import { FoldMeasureId } from 'src/dataReshape/constant'
+import { FoldMeasureId, FoldXMeasureId, FoldYMeasureId, MeasureId } from 'src/dataReshape/constant'
 
 export const annotationPoint: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
@@ -30,6 +30,7 @@ export const annotationPoint: VChartSpecPipe = (spec, context) => {
         textBaseline: 'top',
       }
   const allMeasureIds = findAllMeasures(advancedVSeed.reshapeMeasures ?? advancedVSeed.measures).map((m) => m.id)
+  const measuresIdKeys = vseed.chartType === 'scatter' ? [FoldXMeasureId, FoldYMeasureId] : [MeasureId]
 
   const markPoint = annotationPointList.flatMap((annotationPoint) => {
     const {
@@ -123,7 +124,9 @@ export const annotationPoint: VChartSpecPipe = (spec, context) => {
             ...baseConfig,
             coordinate: (data: Datum[]) => {
               return data.find((item) => {
-                const excludeMeasuresIds = allMeasureIds.filter((id) => id !== item?.[FoldMeasureId])
+                const excludeMeasuresIds = allMeasureIds.filter((id) =>
+                  measuresIdKeys.every((mId) => id !== item?.[mId]),
+                )
 
                 return isSubset(datum, item, excludeMeasuresIds)
               })

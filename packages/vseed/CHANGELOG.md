@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.1.51
+
+### Patch Changes
+
+- fix: fix bug of annotationPoint
+
 ## 0.1.50
 
 ## 0.1.49

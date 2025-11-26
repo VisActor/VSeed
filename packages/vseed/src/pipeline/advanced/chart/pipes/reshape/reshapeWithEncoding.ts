@@ -18,7 +18,7 @@ export const reshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
   } = dataReshapeByEncoding(
     dataset,
     uniqueBy(advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? [], (item) => item.id),
-    uniqueBy(advancedVSeed.reshapeMeasures ?? findAllMeasures(advancedVSeed.measures), (item) => item.id),
+    uniqueBy(findAllMeasures(advancedVSeed.reshapeMeasures ?? advancedVSeed.measures), (item) => item.id),
     encoding as Encoding,
     {
       colorItemAsId: false,

@@ -1,3 +1,4 @@
+export { annotationPointOfDualAxis } from './annotationPointOfDualAxis'
 export { annotationPoint } from './annotationPoint'
 export { annotationVerticalLine } from './annotationVerticalLine'
 export { annotationHorizontalLine } from './annotationHorizontalLine'

@@ -82,8 +82,6 @@ export const generateRegressionLinePipe = (
             const chart = vchart.getChart() as IChart
             const s = chart.getAllSeries()[0] as ICartesianSeries
 
-            console.log(`[group mark]`)
-
             if (s) {
               const rect = s.getRegion().getLayoutRect()
               const segments: {
@@ -171,7 +169,6 @@ export const generateRegressionLinePipe = (
 
                 segments.push(segment)
               })
-              console.log('segments', segments)
 
               return segments
             }

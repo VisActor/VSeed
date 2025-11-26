@@ -16,3 +16,6 @@ coverage/
 !.vscode/settings.json
 !.vscode/extensions.json
 .idea
+
+llm_test/top-key
+llm_test/new-type

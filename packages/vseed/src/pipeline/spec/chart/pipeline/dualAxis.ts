@@ -13,7 +13,6 @@ import {
   pivotGridStyle,
   pivotColumnDimensions,
   pivotRowDimensions,
-  annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
   pointStyle,
@@ -53,6 +52,7 @@ import {
   pivotTitle,
   pivotAxisStyle,
   dimensionLinkage,
+  annotationPointOfDualAxis,
 } from '../pipes'
 
 const dualAxis: VChartSpecPipeline = [
@@ -104,7 +104,7 @@ const dualAxis: VChartSpecPipeline = [
   backgroundColor,
 
   verticalCrosshairRect,
-  annotationPoint,
+  annotationPointOfDualAxis,
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationAreaBand,
@@ -160,7 +160,7 @@ const pivotDualAxis: PivotChartSpecPipeline = [
     colorAdapter(color, linearColor),
     backgroundColor,
     verticalCrosshairRect,
-    annotationPoint,
+    annotationPointOfDualAxis,
     annotationVerticalLine,
     annotationHorizontalLine,
     annotationAreaBand,

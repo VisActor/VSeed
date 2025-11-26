@@ -1,9 +1,10 @@
 import { uniqueBy } from 'remeda'
 import { createFormatterByMeasure, findAllMeasures, findMeasureById } from '../../../../utils'
-import type { Datum, Dimensions, FoldInfo, Locale, Measures, SpecPipe, Tooltip, UnfoldInfo } from 'src/types'
+import type { Datum, Dimensions, FoldInfo, Locale, Measures, VChartSpecPipe, Tooltip, UnfoldInfo } from 'src/types'
 import { ORIGINAL_DATA } from 'src/dataReshape'
+import { getTooltipStyle } from './tooltipStyle'
 
-export const tooltipScatter: SpecPipe = (spec, context) => {
+export const tooltipScatter: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo, chartType, locale, dimensions, encoding } = advancedVSeed
@@ -16,6 +17,7 @@ export const tooltipScatter: SpecPipe = (spec, context) => {
   }
 
   result.tooltip = {
+    style: getTooltipStyle(tooltip),
     visible: enable,
 
     mark: {
@@ -97,12 +99,7 @@ export const createMarkContent = (
       visible: true,
       hasShape: true,
       shapeType: 'rectRound',
-      key: (v: unknown) => {
-        const { measureId, foldMap } = foldInfo
-        const datum = v as Datum
-        const id = datum[measureId] as string
-        return foldMap[id] || id
-      },
+      key: Object.values(foldInfo.foldMap)[0],
       value: (v: unknown) => {
         const { measureId, measureValue } = foldInfo
 

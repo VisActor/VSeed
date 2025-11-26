@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   backgroundColor,
   datasetXY,
@@ -26,9 +26,12 @@ import {
   colorFunnelStyleFill,
   pivotDiscreteLegend,
   pivotColorLegend,
+  pivotHideIndicatorName,
+  funnelTransformStyle,
+  pivotTitle,
 } from '../pipes'
 
-const funnel: SpecPipeline = [
+const funnel: VChartSpecPipeline = [
   initFunnel,
   backgroundColor,
   datasetXY,
@@ -36,6 +39,7 @@ const funnel: SpecPipeline = [
   label,
   colorAdapter(discreteLegend, colorLegend),
   colorFunnelStyleFill(funnelStyle),
+  funnelTransformStyle,
   tooltip,
   annotationPoint,
   annotationVerticalLine,
@@ -43,10 +47,11 @@ const funnel: SpecPipeline = [
   annotationArea,
 ]
 
-const pivotFunnel: SpecPipeline = [
+const pivotFunnel: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
+  pivotHideIndicatorName,
   datasetPivot,
   pivotIndicators([
     initFunnel,
@@ -56,6 +61,7 @@ const pivotFunnel: SpecPipeline = [
     label,
     tooltip,
     colorFunnelStyleFill(funnelStyle),
+    funnelTransformStyle,
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,
@@ -63,7 +69,8 @@ const pivotFunnel: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const funnelSpecPipeline: SpecPipeline = [pivotAdapter(funnel, pivotFunnel)]
+export const funnelSpecPipeline = [pivotAdapter(funnel, pivotFunnel)]

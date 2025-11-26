@@ -21,3 +21,5 @@ export * from './roseParallel'
 
 export * from './heatmap'
 export * from './funnel'
+export * from './histogram'
+export * from './boxplot'

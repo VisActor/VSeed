@@ -1,12 +1,12 @@
 import type { ISpec } from '@visactor/vchart'
-import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
+import { AXIS_LABEL_SPACE, LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
 import { createNumFormatter } from '../../../../utils'
-import type { SpecPipe, YLinearAxis } from 'src/types'
+import type { VChartSpecPipe, YLinearAxis } from 'src/types'
 import { isEmpty, isNullish } from 'remeda'
 import { createLinearFormat } from './format/linearFormat'
 import { defaultTitleText } from './title/defaultTitleText'
 
-export const yLinearPrimary: SpecPipe = (spec, context) => {
+export const yLinearPrimary: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
@@ -32,20 +32,6 @@ export const yLinearPrimary: SpecPipe = (spec, context) => {
     result.axes = []
   }
 
-  if (!yAxisConfig) {
-    result.axes = [
-      ...result.axes,
-      {
-        visible: true,
-        id,
-        seriesId,
-        type: 'linear',
-        orient: 'left',
-      },
-    ] as ISpec['axes']
-    return result
-  }
-
   const {
     visible = true,
     label,
@@ -64,7 +50,7 @@ export const yLinearPrimary: SpecPipe = (spec, context) => {
 
     autoFormat,
     numFormat = {},
-  } = yAxisConfig
+  } = yAxisConfig ?? {}
 
   const formatter = createNumFormatter(numFormat)
 
@@ -82,6 +68,7 @@ export const yLinearPrimary: SpecPipe = (spec, context) => {
     max,
     min,
     label: {
+      space: AXIS_LABEL_SPACE,
       visible: label?.visible,
       formatMethod: (value: string) => {
         return createLinearFormat(value, autoFormat, numFormat, formatter)
@@ -115,6 +102,7 @@ export const yLinearPrimary: SpecPipe = (spec, context) => {
       style: {
         lineWidth: grid?.gridWidth,
         stroke: grid?.gridColor,
+        lineDash: grid?.gridLineDash,
       },
     },
     domainLine: {

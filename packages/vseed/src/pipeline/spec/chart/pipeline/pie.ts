@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   backgroundColor,
   color,
@@ -6,7 +6,6 @@ import {
   datasetPivot,
   initPie,
   initPivot,
-  label,
   discreteLegend,
   pivotAdapter,
   pivotColumnDimensions,
@@ -27,9 +26,13 @@ import {
   colorAdapter,
   colorLegend,
   pivotColorLegend,
+  labelPie,
+  pivotHideIndicatorName,
+  pivotTitle,
+  addRegionPadding,
 } from '../pipes'
 
-const pie: SpecPipeline = [
+const pie: VChartSpecPipeline = [
   initPie,
   colorAdapter(color, linearColor),
   backgroundColor,
@@ -37,7 +40,7 @@ const pie: SpecPipeline = [
   progressive,
   colorPieStyleFill(pieStyle),
   colorAdapter(discreteLegend, colorLegend),
-  label,
+  labelPie,
   tooltip,
   annotationPoint,
   annotationVerticalLine,
@@ -45,10 +48,11 @@ const pie: SpecPipeline = [
   annotationArea,
 ]
 
-const pivotPie: SpecPipeline = [
+const pivotPie: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
+  pivotHideIndicatorName,
   datasetPivot,
   pivotIndicators([
     initPie,
@@ -57,16 +61,18 @@ const pivotPie: SpecPipeline = [
     datasetXY,
     progressive,
     colorPieStyleFill(pieStyle),
-    label,
+    labelPie,
     tooltip,
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,
     annotationArea,
+    addRegionPadding,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const pieSpecPipeline: SpecPipeline = [pivotAdapter(pie, pivotPie)]
+export const pieSpecPipeline = [pivotAdapter(pie, pivotPie)]

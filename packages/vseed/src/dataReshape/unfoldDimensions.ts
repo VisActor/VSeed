@@ -1,5 +1,14 @@
 import type { Dataset, Datum, Dimension, Encoding, UnfoldInfo } from 'src/types'
-import { AngleEncoding, XEncoding, YEncoding, ColorEncoding, DetailEncoding, ColorIdEncoding } from './constant'
+import {
+  AngleEncoding,
+  XEncoding,
+  YEncoding,
+  ColorEncoding,
+  DetailEncoding,
+  ColorIdEncoding,
+  MeasureId,
+  MeasureName,
+} from './constant'
 
 /**
  * @description 展开并合并视觉通道的维度, 在foldMeasures后合并维度, 所以不需要进行笛卡尔积
@@ -22,7 +31,7 @@ export const unfoldDimensions = (
   dataset: Dataset
   unfoldInfo: UnfoldInfo
 } => {
-  const { foldMeasureId, separator, colorItemAsId } = options
+  const { separator } = options
 
   const unfoldInfo: UnfoldInfo = {
     encodingAngle: AngleEncoding,
@@ -46,7 +55,7 @@ export const unfoldDimensions = (
 
   // 离散图例项
   const colorItems = new Set<string>()
-  const colorIdMap: Record<string, string> = {}
+  const colorIdMap: Record<string, { id: string; alias: string }> = {}
 
   // 遍历数据集, 按通道合并维度
   for (let i = 0; i < dataset.length; i++) {
@@ -72,11 +81,14 @@ export const unfoldDimensions = (
       // 无颜色通道, 则跳过
       continue
     }
-    const measureId = String(datum[foldMeasureId])
-    const colorItem = String(datum[ColorEncoding])
-    const colorId = colorItemAsId ? colorItem : measureId ? [colorItem, measureId].join(separator) : colorItem
+    const colorId = String(datum[ColorEncoding] ?? '')
+
     datum[ColorIdEncoding] = colorId
-    colorIdMap[colorId] = colorItem
+
+    colorIdMap[colorId] = {
+      id: colorId,
+      alias: getColorAliasItem(ColorEncoding, colorDimensions, datum, separator),
+    }
     colorItems.add(colorId)
   }
 
@@ -101,4 +113,19 @@ const applyEncoding = (encoding: string, dimensions: Dimension[], datum: Datum, 
   if (encoding && dimensions.length) {
     datum[encoding] = dimensions.map((dim) => String(datum[dim.id])).join(separator)
   }
+}
+
+const getColorAliasItem = (encoding: string, dimensions: Dimension[], datum: Datum, separator: string) => {
+  if (encoding && dimensions.length) {
+    return dimensions
+      .map((dim) => {
+        if (dim.id === MeasureId) {
+          return String(datum[MeasureName])
+        }
+
+        return String(datum[dim.id])
+      })
+      .join(separator)
+  }
+  return ''
 }

@@ -7,10 +7,13 @@ import {
   zAnnotationVerticalLine,
   zAreaStyle,
   zBackgroundColor,
+  zBarGapInGroup,
+  zBarMaxWidth,
   zBarStyle,
   zColor,
   zCrosshairRect,
   zDataset,
+  zDimensionLinkage,
   zDimensions,
   zDualChartType,
   zDualMeasures,
@@ -44,7 +47,7 @@ export const zDualAxis = z.object({
 
   backgroundColor: zBackgroundColor.nullish(),
   color: zColor.nullish(),
-  label: zLabel.omit({ labelLayout: true }).nullish(),
+  label: zLabel.nullish(),
   legend: zLegend.nullish(),
   tooltip: zTooltip.nullish(),
 
@@ -52,6 +55,8 @@ export const zDualAxis = z.object({
   sort: zSort.nullish(),
   sortLegend: zSortLegend.nullish(),
   theme: zTheme.nullish(),
+  barMaxWidth: zBarMaxWidth.nullish(),
+  barGapInGroup: zBarGapInGroup.nullish(),
 
   barStyle: z.array(zBarStyle).or(zBarStyle).nullish(),
   pointStyle: z.array(zPointStyle).or(zPointStyle).nullish(),
@@ -62,6 +67,7 @@ export const zDualAxis = z.object({
   annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).nullish(),
   annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).nullish(),
   annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).nullish(),
+  dimensionLinkage: zDimensionLinkage.nullish(),
 
   locale: zLocale.nullish(),
 })

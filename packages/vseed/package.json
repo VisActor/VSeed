@@ -1,6 +1,6 @@
 {
   "name": "@visactor/vseed",
-  "version": "0.1.20",
+  "version": "0.1.50",
   "type": "module",
   "exports": {
     ".": {
@@ -21,35 +21,41 @@
     "dev:rsdoctor": "RSDOCTOR=true rslib dev",
     "build:rsdoctor": "RSDOCTOR=true rslib build",
     "format": "prettier --write .",
-    "lint": "eslint .",
+    "lint": "eslint . --cache",
+    "type-check": "tsc --noEmit",
     "rstest": "rstest",
+    "rstest:update": "rstest --update",
+    "rstest:coverage": "rstest --update --coverage && open coverage/index.html",
     "test": "vitest run",
     "test:update": "vitest run --update",
     "test:coverage": "vitest run  --update --coverage && open coverage/index.html"
   },
   "dependencies": {
     "remeda": "2.28.0",
-    "zod": "4.0.14"
+    "zod": "4.0.14",
+    "@visactor/vdataset": "~1.0.19",
+    "@visactor/vutils": "~1.0.19"
   },
   "devDependencies": {
     "@eslint/js": "9.30.0",
     "@rsdoctor/rspack-plugin": "1.2.3",
     "@rslib/core": "0.13.2",
-    "@rstest/core": "0.3.2",
+    "@rstest/core": "0.5.2",
+    "@rstest/coverage-istanbul": "0.0.3",
     "@types/node": "22.16.5",
     "@typescript-eslint/eslint-plugin": "8.38.0",
-    "@visactor/vchart": "2.0.4",
-    "@visactor/vtable": "1.19.10-alpha.1",
+    "@visactor/vchart": "2.0.9",
+    "@visactor/vtable": "1.22.5-alpha.2",
     "@vitest/coverage-istanbul": "3.2.4",
     "@vitest/coverage-v8": "3.2.4",
     "eslint": "9.30.0",
     "globals": "16.2.0",
     "jsdom": "26.1.0",
-    "rstest-canvas-mock": "0.0.1",
+    "rstest-canvas-mock": "0.0.5",
     "typescript": "5.8.3",
     "typescript-eslint": "8.35.1",
-    "vitest": "3.2.4",
-    "vitest-canvas-mock": "0.3.3"
+    "vi-canvas-mock": "^1.0.0",
+    "vitest": "3.2.4"
   },
   "sideEffects": false
 }

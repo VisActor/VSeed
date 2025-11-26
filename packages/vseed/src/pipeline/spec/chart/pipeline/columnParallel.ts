@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   datasetXY,
   xBand,
@@ -31,11 +31,18 @@ import {
   colorLegend,
   colorBarStyleFill,
   pivotColorLegend,
+  barMaxWidth,
+  barGapInGroup,
+  pivotAxisStyle,
+  pivotTitle,
+  dimensionLinkage,
 } from '../pipes'
 
-const columnParallel: SpecPipeline = [
+const columnParallel: VChartSpecPipeline = [
   initColumnParallel,
   stackCornerRadius,
+  barMaxWidth,
+  barGapInGroup,
   colorAdapter(color, linearColor),
   backgroundColor,
   datasetXY,
@@ -53,7 +60,7 @@ const columnParallel: SpecPipeline = [
   annotationAreaBand,
 ]
 
-const pivotColumnParallel: SpecPipeline = [
+const pivotColumnParallel: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -61,12 +68,13 @@ const pivotColumnParallel: SpecPipeline = [
   pivotIndicators([
     initColumnParallel,
     stackCornerRadius,
+    barMaxWidth,
     colorAdapter(color, linearColor),
     backgroundColor,
     datasetXY,
     progressive,
     xBand,
-    yLinear,
+    pivotAxisStyle(yLinear),
     label,
     tooltip,
     verticalCrosshairRect,
@@ -78,7 +86,9 @@ const pivotColumnParallel: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
-export const columnParallelSpecPipeline: SpecPipeline = [pivotAdapter(columnParallel, pivotColumnParallel)]
+export const columnParallelSpecPipeline = [pivotAdapter(columnParallel, pivotColumnParallel)]

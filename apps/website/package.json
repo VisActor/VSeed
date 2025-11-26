@@ -1,19 +1,20 @@
 {
   "name": "website",
   "private": true,
-  "version": "0.1.20",
+  "version": "0.1.48",
   "scripts": {
     "build": "rspress build",
     "dev": "rspress dev",
     "format": "prettier --write .",
-    "lint": "eslint .",
+    "lint": "eslint . --cache",
     "preview": "rspress preview"
   },
   "dependencies": {
     "rspress": "1.45.3",
     "@visactor/vseed": "workspace:*",
-    "@visactor/vchart": "2.0.3",
-    "@visactor/vtable": "1.19.10-alpha.1",
+    "@visactor/vquery": "workspace:*",
+    "@visactor/vchart": "2.0.9",
+    "@visactor/vtable": "1.22.5-alpha.2",
     "zustand": "5.0.6"
   },
   "devDependencies": {

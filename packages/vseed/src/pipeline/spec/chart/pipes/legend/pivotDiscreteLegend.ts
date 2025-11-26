@@ -1,10 +1,9 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
-import type { IDiscreteTableLegendOption } from '@visactor/vtable/es/ts-types/component/legend'
 import { unique } from 'remeda'
-import type { Color, Legend, SpecPipe } from 'src/types'
+import type { Color, Legend, PivotChartSpecPipe } from 'src/types'
 import { createSpecifiedForColorMapping } from '../color/color'
 
-export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
+export const pivotDiscreteLegend: PivotChartSpecPipe = (spec, context): Partial<PivotChartConstructorOptions> => {
   const result = { ...spec } as PivotChartConstructorOptions
   const { advancedVSeed } = context
   const { chartType } = advancedVSeed
@@ -22,7 +21,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
     }),
   )
 
-  const colorIdMap = datasetReshapeInfo.reduce<Record<string, string>>((prev, cur) => {
+  const colorIdMap = datasetReshapeInfo.reduce<Record<string, { id: string; alias: string }>>((prev, cur) => {
     return { ...prev, ...cur.unfoldInfo.colorIdMap }
   }, {})
 
@@ -57,14 +56,15 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
       ? 'end'
       : 'middle'
 
-  const legends: IDiscreteTableLegendOption = {
+  const legends = {
+    padding: 0,
     visible: enable,
     type: 'discrete',
     orient,
     position: legendPosition,
     maxCol: Math.max(1, maxSize),
     maxRow: Math.max(1, maxSize),
-    data: colorItems.map((d, index) => {
+    data: colorItems.map((d: string, index: number) => {
       const color = colorSpecified?.[d] ?? colorScheme?.[index % colorScheme.length]
       return {
         label: d,
@@ -98,7 +98,7 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
       },
       label: {
         formatMethod: (value: string) => {
-          return colorIdMap[value] ?? value
+          return colorIdMap[value]?.alias ?? value
         },
         style: {
           fontSize: labelFontSize,
@@ -115,6 +115,6 @@ export const pivotDiscreteLegend: SpecPipe = (spec, context) => {
         },
       },
     },
-  } as unknown as IDiscreteTableLegendOption
-  return { ...result, legends }
+  }
+  return { ...result, legends } as Partial<PivotChartConstructorOptions>
 }

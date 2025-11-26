@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   backgroundColor,
   color,
@@ -6,7 +6,6 @@ import {
   datasetPivot,
   initDonut,
   initPivot,
-  label,
   discreteLegend,
   pivotAdapter,
   pivotColumnDimensions,
@@ -27,15 +26,19 @@ import {
   pivotColorLegend,
   pieStyle,
   colorPieStyleFill,
+  labelPie,
+  pivotHideIndicatorName,
+  pivotTitle,
+  addRegionPadding,
 } from '../pipes'
 
-const donut: SpecPipeline = [
+const donut: VChartSpecPipeline = [
   initDonut,
   colorAdapter(color, linearColor),
   backgroundColor,
   datasetXY,
   progressive,
-  label,
+  labelPie,
   colorPieStyleFill(pieStyle),
   colorAdapter(discreteLegend, colorLegend),
   tooltip,
@@ -45,18 +48,20 @@ const donut: SpecPipeline = [
   annotationArea,
 ]
 
-const pivotDonut: SpecPipeline = [
+const pivotDonut: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
+  pivotHideIndicatorName,
   datasetPivot,
   pivotIndicators([
     initDonut,
+    addRegionPadding,
     colorAdapter(color, linearColor),
     backgroundColor,
     datasetXY,
     progressive,
-    label,
+    labelPie,
     colorPieStyleFill(pieStyle),
     tooltip,
     annotationPoint,
@@ -66,7 +71,8 @@ const pivotDonut: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const donutSpecPipeline: SpecPipeline = [pivotAdapter(donut, pivotDonut)]
+export const donutSpecPipeline = [pivotAdapter(donut, pivotDonut)]

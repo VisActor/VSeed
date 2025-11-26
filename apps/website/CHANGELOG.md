@@ -1,5 +1,239 @@
 # website
 
+## 0.1.48
+
+### Patch Changes
+
+- feat: add query dsl for dataset query
+- Updated dependencies
+  - @visactor/vquery@0.1.48
+  - @visactor/vseed@0.1.48
+
+## 0.1.47
+
+### Patch Changes
+
+- b96b2dc: feat: add connectTemporaryDataset
+- Updated dependencies [b96b2dc]
+  - @visactor/vquery@0.1.47
+  - @visactor/vseed@0.1.47
+
+## 0.1.46
+
+### Patch Changes
+
+- ee79ee9: break: add dataset instead of file
+- Updated dependencies [ee79ee9]
+  - @visactor/vquery@0.1.46
+  - @visactor/vseed@0.1.46
+
+## 0.1.45
+
+### Patch Changes
+
+- Updated dependencies
+  - @visactor/vseed@0.1.45
+  - @visactor/vquery@0.1.45
+
+## 0.1.44
+
+### Patch Changes
+
+- 0365643: Fix some bugs
+- Updated dependencies [0365643]
+  - @visactor/vquery@0.1.44
+  - @visactor/vseed@0.1.44
+
+## 0.1.43
+
+### Patch Changes
+
+- 8c29ce5: fix: ommit unless measure ids
+- Updated dependencies [8c29ce5]
+  - @visactor/vseed@0.1.43
+  - @visactor/vquery@0.1.43
+
+## 0.1.42
+
+### Patch Changes
+
+- Updated dependencies
+  - @visactor/vseed@0.1.42
+  - @visactor/vquery@0.1.42
+
+## 0.1.41
+
+### Patch Changes
+
+- Updated dependencies
+  - @visactor/vseed@0.1.41
+  - @visactor/vquery@0.1.41
+
+## 0.1.40
+
+### Patch Changes
+
+- Updated dependencies
+  - @visactor/vseed@0.1.40
+  - @visactor/vquery@0.1.40
+
+## 0.1.39
+
+### Patch Changes
+
+- Updated dependencies
+  - @visactor/vseed@0.1.39
+  - @visactor/vquery@0.1.39
+
+## 0.1.38
+
+### Patch Changes
+
+- Updated dependencies
+  - @visactor/vseed@0.1.38
+  - @visactor/vquery@0.1.38
+
+## 0.1.37
+
+### Patch Changes
+
+- Updated dependencies
+  - @visactor/vseed@0.1.37
+  - @visactor/vquery@0.1.37
+
+## 0.1.36
+
+### Patch Changes
+
+- Updated dependencies [e8027fb]
+  - @visactor/vseed@0.1.36
+  - @visactor/vquery@0.1.36
+
+## 0.1.35
+
+### Patch Changes
+
+- Updated dependencies [67316e6]
+  - @visactor/vseed@0.1.35
+  - @visactor/vquery@0.1.35
+
+## 0.1.34
+
+### Patch Changes
+
+- Updated dependencies [c646163]
+  - @visactor/vquery@0.1.34
+  - @visactor/vseed@0.1.34
+
+## 0.1.33
+
+### Patch Changes
+
+- Updated dependencies [7f62f8b]
+  - @visactor/vseed@0.1.33
+  - @visactor/vquery@0.1.33
+
+## 0.1.32
+
+### Patch Changes
+
+- Updated dependencies [4193252]
+  - @visactor/vseed@0.1.32
+  - @visactor/vquery@0.1.32
+
+## 0.1.31
+
+### Patch Changes
+
+- Updated dependencies [264c43b]
+  - @visactor/vseed@0.1.31
+  - @visactor/vquery@0.1.31
+
+## 0.1.30
+
+### Patch Changes
+
+- Updated dependencies
+  - @visactor/vseed@0.1.30
+  - @visactor/vquery@0.1.30
+
+## 0.1.29
+
+### Patch Changes
+
+- Updated dependencies
+  - @visactor/vquery@0.1.29
+  - @visactor/vseed@0.1.29
+
+## 0.1.28
+
+### Patch Changes
+
+- Updated dependencies
+  - @visactor/vquery@0.1.28
+  - @visactor/vseed@0.1.28
+
+## 0.1.27
+
+### Patch Changes
+
+- Updated dependencies [be843e0]
+- Updated dependencies [a41f30b]
+- Updated dependencies [1d77977]
+- Updated dependencies [2ddda7f]
+- Updated dependencies [40971c8]
+- Updated dependencies [2e01a77]
+  - @visactor/vseed@0.1.27
+
+## 0.1.26
+
+### Patch Changes
+
+- Updated dependencies [a05daa3]
+  - @visactor/vseed@0.1.26
+
+## 0.1.25
+
+### Patch Changes
+
+- Updated dependencies [ac2b2e7]
+  - @visactor/vseed@0.1.25
+
+## 0.1.24
+
+### Patch Changes
+
+- Updated dependencies [56cab1e]
+- Updated dependencies [e683f39]
+  - @visactor/vseed@0.1.24
+
+## 0.1.23
+
+### Patch Changes
+
+- Updated dependencies [c07eea4]
+- Updated dependencies [c9da8cf]
+  - @visactor/vseed@0.1.23
+
+## 0.1.22
+
+### Patch Changes
+
+- Updated dependencies [fc513d1]
+- Updated dependencies [23b9d1c]
+- Updated dependencies [23b9d1c]
+- Updated dependencies [ff4b333]
+- Updated dependencies [23b9d1c]
+  - @visactor/vseed@0.1.22
+
+## 0.1.21
+
+### Patch Changes
+
+- fix: annotation text and band error in dual axis
+- Updated dependencies
+  - @visactor/vseed@0.1.21
+
 ## 0.1.20
 
 ### Patch Changes

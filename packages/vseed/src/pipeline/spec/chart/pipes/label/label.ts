@@ -1,8 +1,8 @@
 import type { ILineChartSpec } from '@visactor/vchart'
-import type { ILineLikeLabelSpec } from '@visactor/vchart/esm/series/mixin/interface'
-import { createFormatter, createFormatterByMeasure, findMeasureById } from '../../../../utils'
+import { createFormatter, createFormatterByMeasure, DATUM_HIDE_KEY, findMeasureById } from '../../../../utils'
 import type {
   Datum,
+  Dimension,
   Dimensions,
   Encoding,
   FoldInfo,
@@ -11,40 +11,41 @@ import type {
   Measure,
   Measures,
   NumFormat,
-  SpecPipe,
+  VChartSpecPipe,
 } from 'src/types'
-import { isEmpty, merge, uniqueBy } from 'remeda'
+import { isNumber, merge, uniqueBy } from 'remeda'
+import { selector } from 'src/dataSelector'
+import { MeasureId } from 'src/dataReshape/constant'
 
-export const label: SpecPipe = (spec, context) => {
+export const label: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
   const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo } = advancedVSeed
   const { chartType, encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { label: Label }
   const foldInfo = datasetReshapeInfo[0].foldInfo as FoldInfo
-  if (!baseConfig || isEmpty(baseConfig.label)) {
-    return result
-  }
 
   const { label } = baseConfig
 
-  result.label = buildLabel(label, vseed.measures, vseed.dimensions, advancedVSeed.measures, encoding as Encoding, [
-    foldInfo,
-  ])
+  result.label = buildLabel(
+    label,
+    vseed.measures,
+    vseed.dimensions,
+    advancedVSeed.dimensions,
+    advancedVSeed.measures,
+    encoding as Encoding,
+    [foldInfo],
+  ) as unknown as ILineChartSpec['label']
 
   return result
 }
 
 export const generateMeasureValue = (
   value: number | string,
-  measure?: Measure,
+  measure: Measure,
   labelAutoFormat?: boolean,
   numFormat: NumFormat = {},
 ) => {
-  if (!measure) {
-    return value
-  }
-
   const format = merge(numFormat, measure.numFormat || measure.format)
   const mergedMeasure = { ...measure, numFormat: format, autoFormat: labelAutoFormat || measure.autoFormat }
 
@@ -65,6 +66,7 @@ export const buildLabel = (
   label: Label,
   vseedMeasures: Measures = [],
   vseedDimensions: Dimensions = [],
+  advancedVSeedDimensions: Dimensions,
   advancedVSeedMeasures: Measures,
   encoding: Encoding,
   foldInfoList: FoldInfo[],
@@ -74,8 +76,10 @@ export const buildLabel = (
     wrap,
     showValue,
     showValuePercent,
+    showDimension,
     labelOverlap,
     labelColorSmartInvert,
+    labelStroke,
     labelColor,
     labelFontSize,
     labelFontWeight,
@@ -83,16 +87,22 @@ export const buildLabel = (
     labelPosition,
     autoFormat,
     numFormat = {},
-    labelLayout,
   } = label
 
+  const hasDimLabelEncoding = vseedDimensions.some((item) => encoding.label?.includes(item.id))
+
   const labelDims = uniqueBy(
-    (vseedDimensions || []).filter((item) => encoding.label?.includes(item.id)),
-    (item) => item.id,
+    hasDimLabelEncoding
+      ? vseedDimensions.filter((item) => encoding.label?.includes(item.id))
+      : showDimension
+        ? advancedVSeedDimensions.filter((d) => d.id !== MeasureId)
+        : [],
+    (item: Dimension) => item.id,
   )
+
   const labelMeas = uniqueBy(
-    (vseedMeasures || []).filter((item) => encoding.label?.includes(item.id)),
-    (item) => item.id,
+    vseedMeasures.filter((item) => encoding.label?.includes(item.id)),
+    (item: Measure) => item.id,
   )
 
   const percentFormat: NumFormat = merge(numFormat, {
@@ -103,11 +113,20 @@ export const buildLabel = (
 
   const result = {
     visible: enable,
-    formatMethod: (_, datum: Datum) => {
+    dataFilter: (data: Datum[]) => {
+      return data.filter((entry) => {
+        return entry.data?.[DATUM_HIDE_KEY] !== true && selector(entry.data as Datum, label.selector, 'Or')
+      })
+    },
+    formatMethod: (_: unknown, datum: Datum) => {
       const result = []
 
-      const dimLabels = labelDims.map((item) => item.alias || item.id)
-      const meaLabels = labelMeas.map((item) =>
+      const dimLabels = labelDims.map((item: Dimension) => {
+        const id = item.id
+        return datum[id] as number | string
+      })
+
+      const meaLabels = labelMeas.map((item: Measure) =>
         generateMeasureValue(datum[item.id] as number | string, item, autoFormat, numFormat),
       )
 
@@ -116,22 +135,23 @@ export const buildLabel = (
       foldInfoList.forEach((foldInfo) => {
         const { measureId, measureValue, statistics } = foldInfo
         const measure = findMeasureById(advancedVSeedMeasures, datum[measureId] as string)
-        const measureValueLabel = generateMeasureValue(
-          datum[measureValue] as number | string,
-          measure,
-          autoFormat,
-          numFormat,
-        )
-        const measurePercentLabel = generateMeasurePercent(
-          datum[measureValue] as number | string,
-          statistics.sum,
-          percentFormatter,
-        )
-        if (showValue) {
-          result.push(measureValueLabel)
-        }
-        if (showValuePercent) {
-          result.push(measurePercentLabel)
+        if (measure) {
+          const measureValueLabel = generateMeasureValue(
+            datum[measureValue] as number | string,
+            measure,
+            autoFormat,
+            numFormat,
+          )
+          // 饼图/环图需要使用实际占比数据
+          const measurePercentLabel = isNumber(datum['__VCHART_ARC_RATIO'])
+            ? generateMeasurePercent(datum['__VCHART_ARC_RATIO'], 1, percentFormatter)
+            : generateMeasurePercent(datum[measureValue] as number | string, statistics.sum, percentFormatter)
+          if (showValue) {
+            result.push(measureValueLabel)
+          }
+          if (showValuePercent) {
+            result.push(measurePercentLabel)
+          }
         }
       })
 
@@ -143,20 +163,18 @@ export const buildLabel = (
       return result.join(' ')
     },
     position: labelPosition,
-    layout: {
-      align: labelLayout,
-    },
     style: {
+      stroke: labelStroke,
       fill: labelColor,
       fontSize: labelFontSize,
       fontWeight: labelFontWeight,
       background: labelBackgroundColor,
     },
     smartInvert: labelColorSmartInvert,
-  } as ILineLikeLabelSpec
+  }
 
   if (labelOverlap) {
-    result.overlap = {
+    ;(result as any).overlap = {
       hideOnHit: true,
       clampForce: true,
     }

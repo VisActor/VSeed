@@ -1,5 +1,169 @@
 # @visactor/vseed
 
+## 0.1.50
+
+## 0.1.49
+
+## 0.1.48
+
+## 0.1.47
+
+## 0.1.46
+
+## 0.1.45
+
+### Patch Changes
+
+- fix: fix style about annotaions
+
+## 0.1.44
+
+### Patch Changes
+
+- 0365643: Fix some bugs
+
+## 0.1.43
+
+### Patch Changes
+
+- 8c29ce5: fix: ommit unless measure ids
+
+## 0.1.42
+
+### Patch Changes
+
+- feat: support `splitLine` of line/area chart
+
+## 0.1.41
+
+### Patch Changes
+
+- feat: add `regressionLine` to vseed
+
+## 0.1.40
+
+### Patch Changes
+
+- fix: fix minSize of PivotChart
+
+## 0.1.39
+
+### Patch Changes
+
+- fix: fix width of columnHeader in pivotChart and pivotTable
+
+## 0.1.38
+
+### Patch Changes
+
+- fix: fix `stackCornerRadius` of dualAxis chart and add config of pivotchart
+
+## 0.1.37
+
+### Patch Changes
+
+- feat: add `barMaxWidth` and `barGapInGroup`, and `labelStroke`
+
+## 0.1.36
+
+### Patch Changes
+
+- e8027fb: fix: fix error of `barStyle`
+
+## 0.1.35
+
+### Patch Changes
+
+- 67316e6: fix: fix bug about legends in pie/funnel
+
+## 0.1.34
+
+## 0.1.33
+
+### Patch Changes
+
+- 7f62f8b: fix: fix theme of annotaion and crosshair
+
+## 0.1.32
+
+### Patch Changes
+
+- 4193252: feat: update theme about annotation
+
+## 0.1.31
+
+### Patch Changes
+
+- 264c43b: fix: fix header of pivot table
+
+## 0.1.30
+
+### Patch Changes
+
+- feat: pivot chart theme and one measure name
+
+## 0.1.29
+
+## 0.1.28
+
+### Patch Changes
+
+- feat: add package vquery
+
+## 0.1.27
+
+### Patch Changes
+
+- be843e0: feat: add default dimension encoding for label
+- a41f30b: feat: add showDimension in label
+- 1d77977: feat: optimize the group paralell only has one measure name
+- 2ddda7f: feat: add string equal for =, accurate equak for == in selector
+- 40971c8: fix: dim label display error
+- 2e01a77: feat: hide scatter measure value label in default
+
+## 0.1.26
+
+### Patch Changes
+
+- a05daa3: break change: getColorItems return object array, each has id and alias.
+
+## 0.1.25
+
+### Patch Changes
+
+- ac2b2e7: fix: line style error in pivot line
+
+## 0.1.24
+
+### Patch Changes
+
+- 56cab1e: fix: heatmap render error
+- e683f39: fix: percent auto formatter error
+
+## 0.1.23
+
+### Patch Changes
+
+- c07eea4: fix: linear color encoding should not fold measures
+- c9da8cf: fix: percent linear axis label format not working with autoFormat
+
+## 0.1.22
+
+### Patch Changes
+
+- fc513d1: feat: remove pivot indicator name in pie\donut\rose\roseParallel\funnel\radar
+- 23b9d1c: fix: lineSmooth error in radar chart
+- 23b9d1c: feat: add default sizeRange for scatter
+- ff4b333: fix: bottom line missing in combination pie
+- 23b9d1c: fix: remove useless color type in heatmap and funnel
+
+## 0.1.21
+
+### Patch Changes
+
+- fix: band error in dualAxis
+- fix: annotation text missing in bottom
+
 ## 0.1.20
 
 ### Patch Changes

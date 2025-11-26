@@ -4,7 +4,7 @@ export type AnnotationArea = {
   /**
    * @description 依赖选择的数据, 进行数据标记.
    */
-  selector: Selector | Selectors
+  selector?: Selector | Selectors
   /**
    * @description 标注的文本
    * @default ''
@@ -82,7 +82,6 @@ export type AnnotationArea = {
    * @example 4
    */
   textBackgroundPadding?: number
-
   /**
    * @description 标注区域区域颜色
    * @example 'red'
@@ -97,7 +96,7 @@ export type AnnotationArea = {
    * @description 标注区域区域边框颜色
    * @example 'red'
    */
-  areaBorderColor?: number
+  areaBorderColor?: string
   /**
    * @description 标注区域区域边框宽度
    * @example 2
@@ -108,6 +107,11 @@ export type AnnotationArea = {
    * @example 4
    */
   areaBorderRadius?: number
+  /**
+   * @description 标注区域区域边框的线型
+   * @example [2, 2]
+   */
+  areaLineDash?: number[]
   /**
    * @description 标注区域区域的边距
    * @example 0

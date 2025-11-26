@@ -3,6 +3,7 @@
 *.local
 *.log*
 tsconfig.tsbuildinfo
+.eslintcache
 
 # Dist
 

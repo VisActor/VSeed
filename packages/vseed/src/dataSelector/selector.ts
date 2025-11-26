@@ -9,13 +9,15 @@ import type {
 } from '../types/dataSelector'
 import { omit } from 'remeda'
 
-export const selector = (vchartDatum: Datum, selector: Selector | Selectors | undefined | null) => {
+export const selector = (
+  vchartDatum: Datum,
+  selector: Selector | Selectors | undefined | null,
+  selectorMode: 'And' | 'Or' = 'And',
+) => {
   // 无有效选择器, 则认为全部匹配成功
   if (!selector) {
     return true
   }
-
-  const selectorMode = 'And'
 
   // 过滤掉 vchart 相关字段
   const vchartKeys = Object.keys(vchartDatum).filter((k) => k.toLocaleLowerCase().startsWith('__vchart'))
@@ -39,6 +41,10 @@ export const selector = (vchartDatum: Datum, selector: Selector | Selectors | un
 
       switch (op) {
         case '=':
+          if (String(datum[selector.field]) === String(selectorValueArr[0])) {
+            return true
+          }
+          break
         case '==':
           if (datum[selector.field] === selectorValueArr[0]) {
             return true
@@ -78,8 +84,6 @@ export const selector = (vchartDatum: Datum, selector: Selector | Selectors | un
             return true
           }
           break
-        default:
-          break
       }
     }
     // 3. 维度选择器
@@ -96,8 +100,6 @@ export const selector = (vchartDatum: Datum, selector: Selector | Selectors | un
           if (!selectorValueArr.includes(datum[selector.field] as string | number)) {
             return true
           }
-          break
-        default:
           break
       }
     }

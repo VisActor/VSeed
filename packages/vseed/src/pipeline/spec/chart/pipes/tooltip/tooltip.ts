@@ -1,22 +1,24 @@
 import { pipe, uniqueBy } from 'remeda'
 import { createFormatterByMeasure, findAllMeasures, findMeasureById } from '../../../../utils'
-import type { Datum, Dimensions, FoldInfo, Measures, SpecPipe, Tooltip, UnfoldInfo } from 'src/types'
+import type { Datum, Dimensions, FoldInfo, Measures, VChartSpecPipe, TooltipConfig, UnfoldInfo } from 'src/types'
 import { ORIGINAL_DATA } from 'src/dataReshape'
+import { getTooltipStyle } from './tooltipStyle'
 
-export const tooltip: SpecPipe = (spec, context) => {
+export const tooltip: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
   const { measures, datasetReshapeInfo, chartType, dimensions, encoding } = advancedVSeed
-  const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
+  const baseConfig = advancedVSeed.config[chartType] as { tooltip: TooltipConfig }
   const { tooltip = { enable: true } } = baseConfig
-  const { enable } = tooltip
+  const { enable = true } = tooltip
   const { foldInfo, unfoldInfo } = datasetReshapeInfo[0] as unknown as {
     foldInfo: FoldInfo
     unfoldInfo: UnfoldInfo
   }
 
   result.tooltip = {
-    visible: enable,
+    style: getTooltipStyle(tooltip),
+    visible: !!enable,
     mark: {
       title: {
         visible: false,
@@ -33,14 +35,19 @@ export const tooltip: SpecPipe = (spec, context) => {
       title: {
         visible: true,
       },
-      content: createDimensionContent(measures, foldInfo, unfoldInfo),
+      content: createDimensionContent(dimensions, measures, foldInfo, unfoldInfo),
     },
   }
   return result
 }
 
-export const createDimensionContent = (measures: Measures, foldInfo: FoldInfo, unfoldInfo: UnfoldInfo) => {
-  const { measureId, measureValue } = foldInfo
+export const createDimensionContent = (
+  dimensions: Dimensions,
+  measures: Measures,
+  foldInfo: FoldInfo,
+  unfoldInfo: UnfoldInfo,
+) => {
+  const { measureId, measureValue, foldMap } = foldInfo
   const { encodingColor } = unfoldInfo
 
   return [
@@ -48,10 +55,17 @@ export const createDimensionContent = (measures: Measures, foldInfo: FoldInfo, u
       visible: true,
       shapeType: 'rectRound',
       hasShape: true,
-      key: (v: unknown) => {
-        const datum = v as Datum
-        return (datum && (datum[encodingColor] as string)) || ''
-      },
+      key: dimensions.some((d) => d.encoding === 'color')
+        ? (v: unknown) => {
+            const datum = v as Datum
+            const key = (datum && (datum[encodingColor] as string)) || ''
+            return unfoldInfo.colorIdMap[key].alias ?? key
+          }
+        : (v: unknown) => {
+            const datum = v as Datum
+            const key = (datum && (datum[measureId] as string)) || ''
+            return foldMap[key] ?? key
+          },
       value: (v: unknown) => {
         const datum = v as Datum
         if (!datum) {

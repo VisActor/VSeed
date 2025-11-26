@@ -1,0 +1,14 @@
+{
+  "chartType": "histogram",
+  "dataset": [
+    { "color": "red", "shape": "circle", "v": 1 },
+    { "color": "red", "shape": "circle", "v": 2 },
+    { "color": "blue", "shape": "circle", "v": 2 },
+    { "color": "blue", "shape": "triangle", "v": 5 }
+  ],
+  "dimensions": [
+    { "id": "color", "encoding": "row" },
+    { "id": "shape", "encoding": "column" }
+  ],
+  "measures": [{ "id": "v", "encoding": "value" }]
+}

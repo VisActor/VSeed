@@ -1,30 +1,34 @@
 import type { IPieChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 
-export const pieStyle: SpecPipe = (spec, context) => {
-  const { advancedVSeed } = context
+export const pieStyle: VChartSpecPipe = (spec, context) => {
+  const { advancedVSeed, vseed } = context
+  const { chartType } = vseed
   const { dataset } = advancedVSeed
   const showStroke = dataset.length <= 30
+  const config = advancedVSeed.config?.[chartType as 'pie']
 
   const result = {
     ...spec,
     pie: {
-      style: {},
+      style: {
+        stroke: config?.backgroundColor ?? '#ffffff',
+        lineWidth: showStroke ? 1 : 0,
+      },
     },
   } as Required<IPieChartSpec>
 
-  return {
-    ...result,
-    pie: {
-      style: {
-        stroke: '#ffffff',
-        lineWidth: showStroke ? 1 : 0,
+  if ((spec as IPieChartSpec).outerRadius) {
+    result.pie.state = {
+      hover: {
+        outerRadius: ((spec as IPieChartSpec).outerRadius as number) * 1.1,
       },
-      state: {
-        hover: {
-          outerRadius: result.outerRadius * 1.1,
-        },
-      },
-    },
+    }
   }
+
+  if (config?.cornerRadius) {
+    result.pie.style!.cornerRadius = config.cornerRadius
+  }
+
+  return result
 }

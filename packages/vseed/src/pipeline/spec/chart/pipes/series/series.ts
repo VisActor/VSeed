@@ -1,8 +1,8 @@
-import type { Spec, SpecPipe, SpecPipeline, SpecPipelineContext } from 'src/types'
+import type { SpecPipelineContext, VChartSpecPipe, VChartSpecPipeline } from 'src/types'
 import { execPipeline } from '../../../../utils'
-import type { ICommonChartSpec, ILineSeriesSpec } from '@visactor/vchart'
+import type { ICommonChartSpec, ILineSeriesSpec, ISpec } from '@visactor/vchart'
 
-export const series = (...args: SpecPipeline[]): SpecPipe => {
+export const series = (...args: VChartSpecPipeline[]): VChartSpecPipe => {
   const result = {
     type: 'common',
     padding: 0,
@@ -13,12 +13,12 @@ export const series = (...args: SpecPipeline[]): SpecPipe => {
     ],
   } as ICommonChartSpec
 
-  return (_, context) => {
+  return (_: Partial<ISpec>, context: SpecPipelineContext) => {
     result.series = args.map((pipeline) => {
-      return execPipeline<Spec, SpecPipelineContext>(pipeline, context, {})
+      return execPipeline<Partial<ISpec>, SpecPipelineContext>(pipeline, context, {})
     }) as ILineSeriesSpec[]
 
-    return result
+    return result as Partial<ISpec>
   }
 }
 
@@ -26,7 +26,7 @@ export const series = (...args: SpecPipeline[]): SpecPipe => {
  * @description 双轴图的透视场景, 不能使用此pipe, 请使用series
  * 因为VTable.PivotVChart会自行解析数据, 而非VChart解析.
  */
-export const seriesDualAxis = (...args: SpecPipeline[]): SpecPipe => {
+export const seriesDualAxis = (...args: VChartSpecPipeline[]): VChartSpecPipe => {
   const result = {
     type: 'common',
     padding: 0,
@@ -50,10 +50,10 @@ export const seriesDualAxis = (...args: SpecPipeline[]): SpecPipe => {
     }
   }
 
-  return (_, context) => {
+  return (_: Partial<ISpec>, context: SpecPipelineContext) => {
     result.series = args.map((pipeline, index) => {
       const seriesContext = createDualContext(context, index)
-      return execPipeline<Spec, SpecPipelineContext>(pipeline, seriesContext, {})
+      return execPipeline<ISpec, SpecPipelineContext>(pipeline, seriesContext, {})
     }) as ILineSeriesSpec[]
 
     return result

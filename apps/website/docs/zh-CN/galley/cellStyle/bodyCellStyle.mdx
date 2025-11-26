@@ -1,0 +1,245 @@
+---
+pageType: doc
+---
+
+import {
+  TableBodyCellStyle,
+  TableBodyCellStyleGlobal,
+  TableBodyCellStyleByValue,
+  TableBodyCellStyleMulti,
+  PivotTableBodyCellStyleBasic,
+  PivotTableBodyCellStyleByValue,
+  PivotTableBodyCellStyleMulti,
+} from '@components'
+
+# bodyCellStyle
+
+:::info{title=body单元格条件样式配置}
+
+全局样式或条件样式配置
+
+支持图表类型: `table`, `pivotTable`
+:::
+
+## selector
+
+:::tip {title=数据筛选器}
+
+若配置`selector`, 提供`数值 selector`, `局部数据 selector`, `条件维度 selector`, `条件指标 selector` 共四类数据匹配能力
+
+若未配置`selector`, 则样式全局生效.
+
+:::
+
+## 表格条件样式
+
+<TableBodyCellStyle />
+
+```tsx pure {11-20}
+const TableBodyCellStyle = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'table',
+    dataset: [
+      { date: '2019', type: 'A', goalProfit: 10, profit: 10, sales: 100, leftCount: 1, salesCount: 100 },
+      { date: '2020', type: 'A', goalProfit: 30, profit: 30, sales: 320, leftCount: 2, salesCount: 200 },
+      { date: '2021', type: 'A', goalProfit: 30, profit: 30, sales: 300, leftCount: 3, salesCount: 300 },
+      { date: '2022', type: 'A', goalProfit: 50, profit: 50, sales: 240, leftCount: 4, salesCount: 400 },
+      { date: '2023', type: 'A', goalProfit: 40, profit: 40, sales: 500, leftCount: 5, salesCount: 500 },
+    ],
+    bodyCellStyle: [
+      {
+        selector: { type: 'A' },
+        backgroundColor: 'pink',
+      },
+      {
+        selector: { field: 'sales', operator: '>=', value: 150 },
+        textColor: 'red',
+      },
+    ],
+  }
+  return <VTableTable vseed={vseed} />
+})
+```
+
+## 表格条件样式 - 全局样式
+
+<TableBodyCellStyleGlobal />
+
+```tsx pure {11-14}
+const TableBodyCellStyleGlobal = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'table',
+    dataset: [
+      { date: '2019', type: 'A', goalProfit: 10, profit: 10, sales: 100, leftCount: 1, salesCount: 100 },
+      { date: '2020', type: 'A', goalProfit: 30, profit: 30, sales: 320, leftCount: 2, salesCount: 200 },
+      { date: '2021', type: 'A', goalProfit: 30, profit: 30, sales: 300, leftCount: 3, salesCount: 300 },
+      { date: '2022', type: 'A', goalProfit: 50, profit: 50, sales: 240, leftCount: 4, salesCount: 400 },
+      { date: '2023', type: 'A', goalProfit: 40, profit: 40, sales: 500, leftCount: 5, salesCount: 500 },
+    ],
+    bodyCellStyle: {
+      backgroundColor: '#f8f9fa',
+      textColor: '#333',
+    },
+  }
+  return <VTableTable vseed={vseed} />
+})
+```
+
+## 表格条件样式 - 根据度量值设置
+
+<TableBodyCellStyleByValue />
+
+```tsx pure {11-17}
+const TableBodyCellStyleByValue = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'table',
+    dataset: [
+      { date: '2019', type: 'A', goalProfit: 10, profit: 10, sales: 100, leftCount: 1, salesCount: 100 },
+      { date: '2020', type: 'A', goalProfit: 30, profit: 30, sales: 320, leftCount: 2, salesCount: 200 },
+      { date: '2021', type: 'A', goalProfit: 30, profit: 30, sales: 300, leftCount: 3, salesCount: 300 },
+      { date: '2022', type: 'A', goalProfit: 50, profit: 50, sales: 240, leftCount: 4, salesCount: 400 },
+      { date: '2023', type: 'A', goalProfit: 40, profit: 40, sales: 500, leftCount: 5, salesCount: 500 },
+    ],
+    bodyCellStyle: [
+      {
+        selector: { field: 'sales', operator: '>=', value: 300 },
+        backgroundColor: '#fff3cd',
+        textColor: '#a15c00',
+      },
+    ],
+  }
+  return <VTableTable vseed={vseed} />
+})
+```
+
+## 表格条件样式 - 多个条件
+
+<TableBodyCellStyleMulti />
+
+```tsx pure {11-24}
+const TableBodyCellStyleMulti = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'table',
+    dataset: [
+      { date: '2019', type: 'A', goalProfit: 10, profit: 10, sales: 100, leftCount: 1, salesCount: 100 },
+      { date: '2020', type: 'A', goalProfit: 30, profit: 30, sales: 320, leftCount: 2, salesCount: 200 },
+      { date: '2021', type: 'A', goalProfit: 30, profit: 30, sales: 300, leftCount: 3, salesCount: 300 },
+      { date: '2022', type: 'A', goalProfit: 50, profit: 50, sales: 240, leftCount: 4, salesCount: 400 },
+      { date: '2023', type: 'A', goalProfit: 40, profit: 40, sales: 500, leftCount: 5, salesCount: 500 },
+    ],
+    bodyCellStyle: [
+      {
+        // fallback/global style when no selector matched
+        backgroundColor: 'pink',
+      },
+      {
+        selector: { type: 'A' },
+        backgroundColor: 'red',
+      },
+      {
+        selector: { field: 'sales', operator: 'between', value: [200, 400] },
+        backgroundColor: '#e6fcf5',
+        textColor: '#0b7285',
+      },
+    ],
+  }
+  return <VTableTable vseed={vseed} />
+})
+```
+
+## 透视表条件样式 - 根据度量值设置
+
+<PivotTableBodyCellStyleByValue />
+
+```tsx pure {11-16}
+const PivotTableBodyCellStyleByValue = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'pivotTable',
+    dataset: [
+      { date: '2019', type: 'A', goalProfit: 10, profit: 10, sales: 100, leftCount: 1, salesCount: 100 },
+      { date: '2020', type: 'A', goalProfit: 30, profit: 30, sales: 320, leftCount: 2, salesCount: 200 },
+      { date: '2021', type: 'A', goalProfit: 30, profit: 30, sales: 300, leftCount: 3, salesCount: 300 },
+      { date: '2022', type: 'A', goalProfit: 50, profit: 50, sales: 240, leftCount: 4, salesCount: 400 },
+      { date: '2023', type: 'A', goalProfit: 40, profit: 40, sales: 500, leftCount: 5, salesCount: 500 },
+    ],
+    bodyCellStyle: [
+      {
+        selector: { field: 'sales', operator: '>=', value: 300 },
+        backgroundColor: '#e3f2fd',
+        textColor: '#0d47a1',
+      },
+    ],
+    dimensions: [
+      { id: 'date', alias: '日期', encoding: 'column' },
+      { id: 'type', alias: '类型', encoding: 'row' },
+    ],
+    measures: [
+      { id: 'profit', alias: '利润' },
+      { id: 'sales', alias: '销售量' },
+    ],
+  }
+  return <VTablePivotTable vseed={vseed} />
+})
+```
+
+## 透视表条件样式 - 全局样式
+
+<PivotTableBodyCellStyleBasic />
+
+```tsx pure {11-14}
+const PivotTableBodyCellStyleBasic = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'pivotTable',
+    dataset: [
+      { date: '2019', type: 'A', goalProfit: 10, profit: 10, sales: 100, leftCount: 1, salesCount: 100 },
+      { date: '2020', type: 'A', goalProfit: 30, profit: 30, sales: 320, leftCount: 2, salesCount: 200 },
+      { date: '2021', type: 'A', goalProfit: 30, profit: 30, sales: 300, leftCount: 3, salesCount: 300 },
+      { date: '2022', type: 'A', goalProfit: 50, profit: 50, sales: 240, leftCount: 4, salesCount: 400 },
+      { date: '2023', type: 'A', goalProfit: 40, profit: 40, sales: 500, leftCount: 5, salesCount: 500 },
+    ],
+    bodyCellStyle: {
+      backgroundColor: '#faf0e6',
+      textColor: '#4d342e',
+    },
+  }
+  return <VTablePivotTable vseed={vseed} />
+})
+```
+
+## 透视表条件样式 - 符合条件
+
+<PivotTableBodyCellStyleMulti />
+
+```tsx pure {11-20}
+const PivotTableBodyCellStyleMulti = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'pivotTable',
+    dataset: [
+      { date: '2019', type: 'A', goalProfit: 10, profit: 10, sales: 100, leftCount: 1, salesCount: 100 },
+      { date: '2020', type: 'A', goalProfit: 30, profit: 30, sales: 320, leftCount: 2, salesCount: 200 },
+      { date: '2021', type: 'A', goalProfit: 30, profit: 30, sales: 300, leftCount: 3, salesCount: 300 },
+      { date: '2022', type: 'A', goalProfit: 50, profit: 50, sales: 240, leftCount: 4, salesCount: 400 },
+      { date: '2023', type: 'A', goalProfit: 40, profit: 40, sales: 500, leftCount: 5, salesCount: 500 },
+    ],
+    bodyCellStyle: [
+      {
+        selector: { type: 'A' },
+        backgroundColor: 'pink',
+      },
+      {
+        selector: { field: 'date', operator: 'in', value: ['2019', '2023'] },
+        textColor: 'green',
+      },
+    ],
+    dimensions: [
+      { id: 'date', alias: '日期', encoding: 'column' },
+      { id: 'type', alias: '类型', encoding: 'row' },
+    ],
+    measures: [
+      { id: 'profit', alias: '利润' },
+      { id: 'sales', alias: '销售量' },
+    ],
+  }
+  return <VTablePivotTable vseed={vseed} />
+})
+```

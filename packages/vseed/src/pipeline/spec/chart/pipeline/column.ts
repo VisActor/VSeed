@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   initColumn,
   datasetXY,
@@ -32,11 +32,17 @@ import {
   colorLegend,
   colorBarStyleFill,
   pivotColorLegend,
+  barMaxWidth,
+  columnPolynomialRegressionLine,
+  pivotAxisStyle,
+  pivotTitle,
+  dimensionLinkage,
 } from '../pipes'
 
-const column: SpecPipeline = [
+const column: VChartSpecPipeline = [
   initColumn,
   stackCornerRadius,
+  barMaxWidth,
   stackInverse,
   colorAdapter(color, linearColor),
   backgroundColor,
@@ -53,9 +59,10 @@ const column: SpecPipeline = [
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationAreaBand,
+  columnPolynomialRegressionLine,
 ]
 
-const pivotColumn: SpecPipeline = [
+const pivotColumn: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -63,13 +70,14 @@ const pivotColumn: SpecPipeline = [
   pivotIndicators([
     initColumn,
     stackCornerRadius,
+    barMaxWidth,
     stackInverse,
     colorAdapter(color, linearColor),
     backgroundColor,
     datasetXY,
     progressive,
     xBand,
-    yLinear,
+    pivotAxisStyle(yLinear),
     label,
     tooltip,
     verticalCrosshairRect,
@@ -78,10 +86,13 @@ const pivotColumn: SpecPipeline = [
     annotationVerticalLine,
     annotationHorizontalLine,
     annotationAreaBand,
+    columnPolynomialRegressionLine,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
 export const columnSpecPipeline = [pivotAdapter(column, pivotColumn)]

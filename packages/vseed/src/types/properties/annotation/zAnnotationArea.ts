@@ -2,7 +2,7 @@ import { zSelector, zSelectors } from '../../dataSelector'
 import { z } from 'zod'
 
 export const zAnnotationArea = z.object({
-  selector: z.union([zSelector, zSelectors]),
+  selector: z.union([zSelector, zSelectors]).nullish(),
   textPosition: z
     .enum(['top', 'topRight', 'topLeft', 'bottom', 'bottomLeft', 'bottomRight', 'left', 'right'])
     .default('top')
@@ -26,6 +26,7 @@ export const zAnnotationArea = z.object({
   areaBorderColor: z.string().default('#888888').nullish(),
   areaBorderWidth: z.number().default(1).nullish(),
   areaBorderRadius: z.number().default(4).nullish(),
+  areaLineDash: z.array(z.number()).nullish(),
 
   outerPadding: z.number().default(4).nullish(),
 })

@@ -1,9 +1,10 @@
 import { isNullish } from 'remeda'
 import { createDimensionContent, createMarkContent } from './tooltip'
-import type { FoldInfo, SpecPipe, Tooltip, UnfoldInfo } from 'src/types'
+import type { FoldInfo, VChartSpecPipe, Tooltip, UnfoldInfo } from 'src/types'
 import { findAllMeasures } from 'src/pipeline/utils'
+import { getTooltipStyle } from './tooltipStyle'
 
-export const tooltipPrimary: SpecPipe = (spec, context) => {
+export const tooltipPrimary: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
   const { measures, datasetReshapeInfo, chartType, dimensions, encoding } = advancedVSeed
@@ -15,6 +16,7 @@ export const tooltipPrimary: SpecPipe = (spec, context) => {
   const unfoldInfo = datasetReshapeInfo[0].unfoldInfo
 
   result.tooltip = {
+    style: getTooltipStyle(tooltip),
     visible: enable,
     mark: {
       title: {
@@ -32,13 +34,13 @@ export const tooltipPrimary: SpecPipe = (spec, context) => {
       title: {
         visible: true,
       },
-      content: createDimensionContent(measures, foldInfoList[0], unfoldInfo),
+      content: createDimensionContent(dimensions, measures, foldInfoList[0], unfoldInfo),
     },
   }
   return result
 }
 
-export const tooltipSecondary: SpecPipe = (spec, context) => {
+export const tooltipSecondary: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
   const { measures, datasetReshapeInfo, chartType, dimensions, encoding } = advancedVSeed
@@ -70,7 +72,7 @@ export const tooltipSecondary: SpecPipe = (spec, context) => {
       title: {
         visible: true,
       },
-      content: createDimensionContent(measures, foldInfoList[1], unfoldInfo),
+      content: createDimensionContent(dimensions, measures, foldInfoList[1], unfoldInfo),
     },
   }
   return result

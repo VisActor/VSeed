@@ -1,55 +1,62 @@
-import type { ICartesianSeries, ILineChartSpec } from '@visactor/vchart'
+import type { ILineChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
-import type { Datum, SpecPipe } from 'src/types'
+import type { Datum, VChartSpecPipe, VSeed } from 'src/types'
 import { isSubset } from './utils'
 import { ANNOTATION_Z_INDEX } from '../../../../utils/constant'
+import { isBarLikeChart } from 'src/pipeline/utils/chatType'
 
-export const annotationPoint: SpecPipe = (spec, context) => {
-  const { advancedVSeed } = context
-  const { annotation } = advancedVSeed
+export const annotationPoint: VChartSpecPipe = (spec, context) => {
+  const { advancedVSeed, vseed } = context
+  const { annotation, config } = advancedVSeed
 
   if (!annotation || !annotation.annotationPoint) {
     return spec
   }
 
+  const theme = config?.[vseed.chartType as 'column']?.annotation?.annotationPoint
   const { annotationPoint } = annotation
   const annotationPointList = Array.isArray(annotationPoint) ? annotationPoint : [annotationPoint]
+  const isHorizontalBar = isBarLikeChart(advancedVSeed as VSeed)
+  const defaultStyle = isHorizontalBar
+    ? {
+        textAlign: 'right',
+        textBaseline: 'middle',
+      }
+    : {
+        textAlign: 'center',
+        textBaseline: 'top',
+      }
 
   const markPoint = annotationPointList.flatMap((annotationPoint) => {
     const {
       selector: selectorPoint,
       text = '',
-      textColor = '#ffffff',
-      textFontSize = 12,
-      textFontWeight = 400,
-      textAlign = 'center',
-      textBaseline = 'top',
-      textBackgroundBorderColor,
-      textBackgroundBorderRadius = 4,
-      textBackgroundBorderWidth = 1,
-      textBackgroundColor = '#212121',
-      textBackgroundPadding = 2,
-      textBackgroundVisible = true,
-      offsetX = 0,
-      offsetY = 0,
+      textColor = theme?.textColor ?? '#ffffff',
+      textFontSize = theme?.textFontSize ?? 12,
+      textFontWeight = theme?.textFontWeight ?? 400,
+      textAlign = defaultStyle.textAlign,
+      textBaseline = defaultStyle.textBaseline,
+      textBackgroundBorderColor = theme?.textBackgroundBorderColor,
+      textBackgroundBorderRadius = theme?.textBackgroundBorderRadius ?? 4,
+      textBackgroundBorderWidth = theme?.textBackgroundBorderWidth ?? 1,
+      textBackgroundColor = theme?.textBackgroundColor ?? '#212121',
+      textBackgroundPadding = theme?.textBackgroundPadding ?? 2,
+      textBackgroundVisible = theme?.textBackgroundVisible ?? true,
+      offsetX = theme?.offsetX ?? 0,
+      offsetY = theme?.offsetY ?? 0,
     } = annotationPoint
 
     const dataset = advancedVSeed.dataset.flat()
     const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
+    const dx = -10 - (isHorizontalBar ? (textFontSize as number) : 0) // 由于vchart tag实现问题，需要设置这个强制偏移量
+    const dy = isHorizontalBar ? 0 : (textFontSize as number)
 
     return selectedData.map((datum) => {
       return {
         zIndex: ANNOTATION_Z_INDEX,
         regionRelative: true,
-        position: (data: Datum[], context: ICartesianSeries) => {
-          const targetDatum = data.find((item) => isSubset(datum, item))
-          if (targetDatum) {
-            const { x, y } = context.dataToPosition(targetDatum) as { x: number; y: number }
-            return {
-              x,
-              y,
-            }
-          }
+        coordinate: (data: Datum[]) => {
+          return data.find((item) => isSubset(datum, item))
         },
 
         itemLine: {
@@ -58,9 +65,11 @@ export const annotationPoint: SpecPipe = (spec, context) => {
         itemContent: {
           offsetY,
           offsetX,
+          confine: true,
           text: {
             text: text,
             style: {
+              opacity: 0.95,
               visible: true,
               textAlign: textAlign,
               textBaseline: textBaseline,
@@ -69,17 +78,20 @@ export const annotationPoint: SpecPipe = (spec, context) => {
               lineWidth: 1,
               fontSize: textFontSize,
               fontWeight: textFontWeight,
-              dy: textFontSize,
+              dx,
+              dy,
             },
             labelBackground: {
               visible: textBackgroundVisible,
               padding: textBackgroundPadding,
               style: {
+                opacity: 0.95,
                 cornerRadius: textBackgroundBorderRadius ?? 4,
                 fill: textBackgroundColor,
                 stroke: textBackgroundBorderColor,
                 lineWidth: textBackgroundBorderWidth,
-                dy: textFontSize,
+                dx,
+                dy,
               },
             },
           },

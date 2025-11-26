@@ -1,6 +1,6 @@
 import { dataReshapeByEncoding, FoldXMeasureValue, FoldYMeasureValue } from 'src/dataReshape'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
-import { measureDepth } from 'src/pipeline/utils'
+import { findAllMeasures, measureDepth } from 'src/pipeline/utils'
 import type {
   AdvancedPipe,
   AdvancedVSeed,
@@ -17,7 +17,10 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
-  const { dimensions = [], measures = [], encoding, chartType } = advancedVSeed
+  const { encoding, chartType } = advancedVSeed
+  const measures = advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []
+  const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
+  const allMeasures = findAllMeasures(measures)
 
   const measureGroups: Array<MeasureGroup[]> = []
 
@@ -53,7 +56,8 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
       } = dataReshapeByEncoding(dataset, dimensions, xMeasures.children, encoding as Encoding, {
         foldMeasureValue: `${FoldXMeasureValue}${index}`,
         colorItemAsId: true,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+        omitIds: allMeasures.map((item) => item.id),
       })
 
       datasets.push(newDataset)
@@ -69,7 +73,8 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
       } = dataReshapeByEncoding(dataset, dimensions, yMeasures.children, encoding as Encoding, {
         foldMeasureValue: `${FoldYMeasureValue}${index}`,
         colorItemAsId: true,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+        omitIds: allMeasures.map((item) => item.id),
       })
 
       datasets.push(newDataset)

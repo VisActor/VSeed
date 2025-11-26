@@ -1,8 +1,8 @@
 import type { ISpec } from '@visactor/vchart'
 import { isPivotChart } from 'src/pipeline/utils'
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 
-export const datasetPrimary: SpecPipe = (spec, context) => {
+export const datasetPrimary: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { analysis, datasetReshapeInfo } = advancedVSeed
   const orderMapping = analysis?.orderMapping || {}
@@ -55,7 +55,7 @@ export const datasetPrimary: SpecPipe = (spec, context) => {
   } as ISpec
 }
 
-export const datasetSecondary: SpecPipe = (spec, context) => {
+export const datasetSecondary: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { analysis, datasetReshapeInfo } = advancedVSeed
   const orderMapping = analysis?.orderMapping || {}

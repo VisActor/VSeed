@@ -1,0 +1,9 @@
+{
+  "chartType": "histogram",
+  "dataset": [{ "v": 1 }, { "v": 2 }, { "v": 3 }, { "v": 8 }, { "v": 13 }],
+  "config": {
+    "histogram": {
+      "binStep": 5
+    }
+  }
+}

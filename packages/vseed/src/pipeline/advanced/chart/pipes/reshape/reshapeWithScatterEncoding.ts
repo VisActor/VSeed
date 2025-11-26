@@ -22,7 +22,9 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
-  const { dimensions = [], measures = [], encoding, chartType } = advancedVSeed
+  const { encoding, chartType } = advancedVSeed
+  const measures = advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []
+  const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
 
   if (measures.length > 2) {
     throw new Error('measures can not be more than 2 groups in scatter')
@@ -48,7 +50,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
         foldMeasureValue: FoldXMeasureValue,
         foldMeasureId: FoldXMeasureId,
         colorItemAsId: true,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
       },
     )
 
@@ -71,7 +73,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
         foldMeasureValue: FoldYMeasureValue,
         foldMeasureId: FoldYMeasureId,
         colorItemAsId: true,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
       },
     )
 

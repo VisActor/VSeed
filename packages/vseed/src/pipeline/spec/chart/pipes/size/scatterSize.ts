@@ -1,7 +1,7 @@
 import type { IScatterChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 
-export const scatterSize: SpecPipe = (spec, context) => {
+export const scatterSize: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as IScatterChartSpec
   const { advancedVSeed } = context
   const { chartType, encoding } = advancedVSeed
@@ -9,8 +9,8 @@ export const scatterSize: SpecPipe = (spec, context) => {
     sizeRange: number | number[]
     size?: number | number[]
   }
-
-  if (!baseConfig || (!baseConfig.sizeRange && !baseConfig.size)) {
+  const hasSizeEncoding = encoding?.size?.[0]
+  if (!hasSizeEncoding) {
     return result
   }
 

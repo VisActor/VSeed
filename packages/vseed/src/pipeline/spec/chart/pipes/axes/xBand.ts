@@ -1,28 +1,19 @@
 import type { ICartesianBandAxisSpec, ISpec } from '@visactor/vchart'
-import type { SpecPipe, XBandAxis } from 'src/types'
+import type { VChartSpecPipe, XBandAxis } from 'src/types'
 import { defaultTitleText } from './title/defaultTitleText'
+import { AXIS_LABEL_SPACE } from 'src/pipeline/utils'
+import { MeasureId } from 'src/dataReshape'
+import { isArray } from '@visactor/vutils'
 
-export const xBand: SpecPipe = (spec, context) => {
+export const xBand: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
-  const { measures, dimensions, encoding } = advancedVSeed
-  const config = advancedVSeed.config?.[chartType as 'column']?.xAxis as XBandAxis
+  const { measures, dimensions, encoding, datasetReshapeInfo, pivotAllDatasetReshapeInfo } = advancedVSeed
+  const config = (advancedVSeed.config?.[chartType as 'column']?.xAxis ?? {}) as XBandAxis
 
   if (!result.axes) {
     result.axes = []
-  }
-
-  if (!config) {
-    result.axes = [
-      ...result.axes,
-      {
-        visible: true,
-        type: 'band',
-        orient: 'bottom',
-      },
-    ] as ISpec['axes']
-    return result
   }
 
   const {
@@ -41,6 +32,7 @@ export const xBand: SpecPipe = (spec, context) => {
   } = config
 
   const sampling = !(labelAutoHide || labelAutoRotate || labelAutoLimit)
+  const onlyMeasureId = (encoding.x || []).filter((v) => v !== MeasureId).length === 0
 
   const bandAxis = {
     visible,
@@ -52,7 +44,7 @@ export const xBand: SpecPipe = (spec, context) => {
     label: {
       visible: label?.visible,
       flush: true,
-      space: 8,
+      space: AXIS_LABEL_SPACE,
       style: {
         maxLineWidth: labelAutoLimitLength,
         fill: label?.labelColor,
@@ -93,6 +85,7 @@ export const xBand: SpecPipe = (spec, context) => {
       style: {
         lineWidth: grid?.gridWidth,
         stroke: grid?.gridColor,
+        lineDash: grid?.gridLineDash,
       },
     },
     domainLine: {
@@ -105,6 +98,16 @@ export const xBand: SpecPipe = (spec, context) => {
     paddingInner: [0.15, 0.1],
     paddingOuter: [0.075, 0.1],
   } as ICartesianBandAxisSpec
+  if (onlyMeasureId && bandAxis.label) {
+    const allDatasetReshapeInfo = pivotAllDatasetReshapeInfo || datasetReshapeInfo
+    const colorIdMap = allDatasetReshapeInfo.reduce<Record<string, { id: string; alias: string }>>((prev, cur) => {
+      return { ...prev, ...cur.unfoldInfo.colorIdMap }
+    }, {})
+
+    bandAxis.label.formatMethod = (text: string | string[]) => {
+      return isArray(text) ? text : (colorIdMap[String(text)]?.alias ?? text)
+    }
+  }
 
   result.axes = [...result.axes, bandAxis] as ISpec['axes']
   return result

@@ -1,12 +1,13 @@
 import type { IAreaChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
-import type { AreaStyle, Datum, SpecPipe } from 'src/types'
+import type { AreaStyle, Datum, LineStyle, VChartSpecPipe } from 'src/types'
 import { groupBy, isEmpty, isNullish } from 'remeda'
+import { getCurveTension, getCurveType } from './curve'
 
-export const areaStyle: SpecPipe = (spec, context) => {
+export const areaStyle: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { markStyle, datasetReshapeInfo, dataset } = advancedVSeed
-  const { areaStyle } = markStyle
+  const { areaStyle, lineStyle } = markStyle
   const { unfoldInfo } = datasetReshapeInfo[0]
   const result = {
     ...spec,
@@ -21,6 +22,7 @@ export const areaStyle: SpecPipe = (spec, context) => {
   }
 
   const areaStyles = (Array.isArray(areaStyle) ? areaStyle : [areaStyle]) as AreaStyle[]
+  const lineStyles = (Array.isArray(lineStyle) ? lineStyle : [lineStyle]) as LineStyle[]
 
   const group = unfoldInfo.encodingColorId
 
@@ -28,6 +30,9 @@ export const areaStyle: SpecPipe = (spec, context) => {
 
   const customMap = areaStyles.reduce<object>((result, style, index) => {
     const { areaColor, areaColorOpacity, areaVisible = true } = style
+
+    const curveType = getCurveType(context.vseed, lineStyles[index]?.lineSmooth)
+    const curveTension = getCurveTension(context.vseed, lineStyles[index]?.lineSmooth)
 
     return {
       ...result,
@@ -44,6 +49,8 @@ export const areaStyle: SpecPipe = (spec, context) => {
           return false
         },
         style: {
+          curveType,
+          curveTension,
           visible: areaVisible,
           fill: areaColor,
           fillOpacity: areaColorOpacity,

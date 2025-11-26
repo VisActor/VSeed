@@ -1,7 +1,7 @@
 import type { PivotTableConstructorOptions } from '@visactor/vtable'
-import type { SpecPipe } from 'src/types'
+import type { PivotTableSpecPipe } from 'src/types'
 
-export const initPivotTable: SpecPipe = (spec, context) => {
+export const initPivotTable: PivotTableSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { dataset } = advancedVSeed
   const { config } = advancedVSeed
@@ -10,6 +10,7 @@ export const initPivotTable: SpecPipe = (spec, context) => {
     ...spec,
     records: dataset,
     widthMode: 'standard',
+    defaultHeaderColWidth: 'auto',
     heightMode: 'autoHeight',
     autoWrapText: true,
     columnResizeMode: 'all',

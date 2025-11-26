@@ -26,6 +26,11 @@
   },
   {
     "type": "file",
+    "name": "barMaxWidth",
+    "label": "barMaxWidth "
+  },
+  {
+    "type": "file",
     "name": "barStyle",
     "label": "barStyle "
   },
@@ -73,6 +78,11 @@
     "type": "file",
     "name": "measures",
     "label": "measures "
+  },
+  {
+    "type": "file",
+    "name": "polynomialRegressionLine",
+    "label": "polynomialRegressionLine "
   },
   {
     "type": "file",

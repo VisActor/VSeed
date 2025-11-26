@@ -22,7 +22,7 @@ export const zRadar = z.object({
   measures: zMeasureTree.nullish(),
   backgroundColor: zBackgroundColor.nullish(),
   color: zColor.nullish(),
-  label: zLabel.omit({ labelLayout: true }).nullish(),
+  label: zLabel.nullish(),
   legend: zLegend.nullish(),
   tooltip: zTooltip.nullish(),
   theme: zTheme.nullish(),

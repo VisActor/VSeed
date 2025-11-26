@@ -5,9 +5,9 @@ import type { MeasureGroup } from './measures'
 export const zMeasure = z.object({
   id: z.string(),
   alias: z.string().optional(),
-  autoFormat: z.boolean().default(true),
-  numFormat: zNumFormat.default({}),
-  format: zNumFormat.default({}),
+  autoFormat: z.boolean().optional(),
+  numFormat: zNumFormat.optional(),
+  format: zNumFormat.optional(),
   encoding: z
     .enum([
       'primaryYAxis',
@@ -22,6 +22,15 @@ export const zMeasure = z.object({
       'tooltip',
       'detail',
       'column',
+      'value',
+      'q1',
+      'q3',
+      'min',
+      'max',
+      'median',
+      'outliers',
+      'x0',
+      'x1',
     ])
     .optional(),
   parentId: z.string().optional(),

@@ -1,32 +1,28 @@
 import type { ISpec } from '@visactor/vchart'
-import { LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
-import type { SpecPipe, XLinearAxis } from 'src/types'
-import { createNumFormatter } from '../../../../utils'
-import { createLinearFormat } from './format/linearFormat'
+import type { VChartSpecPipe, XLinearAxis } from 'src/types'
+import {
+  AXIS_LABEL_SPACE,
+  createNumFormatter,
+  isAreaPercent,
+  isBarPercent,
+  isColumnPercent,
+  isPivotChart,
+  LINEAR_AXIS_INNER_OFFSET_TOP,
+} from 'src/pipeline/utils'
+import { createLinearFormat, createLinearPercentFormat } from './format/linearFormat'
 import { defaultTitleText } from './title/defaultTitleText'
 
-export const xLinear: SpecPipe = (spec, context) => {
+export const xLinear: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { encoding, dimensions, measures } = advancedVSeed
   const { chartType } = vseed
-  const config = advancedVSeed.config?.[chartType as 'bar']?.xAxis as XLinearAxis
+  const config = (advancedVSeed.config?.[chartType as 'bar']?.xAxis ?? {}) as XLinearAxis
 
   if (!result.axes) {
     result.axes = []
   }
-
-  if (!config) {
-    result.axes = [
-      ...result.axes,
-      {
-        visible: true,
-        type: 'linear',
-        orient: 'bottom',
-      },
-    ] as ISpec['axes']
-    return result
-  }
+  const isPivot = isPivotChart(vseed)
 
   const {
     visible = true,
@@ -48,8 +44,22 @@ export const xLinear: SpecPipe = (spec, context) => {
   } = config
 
   const formatter = createNumFormatter(numFormat)
+  const percentFormatter = createNumFormatter({
+    type: 'percent',
+  })
 
   const linearAxis = {
+    ...(isPivot
+      ? {
+          range: {
+            min,
+            max,
+          },
+        }
+      : {
+          min,
+          max,
+        }),
     visible,
     type: log ? 'log' : 'linear',
     base: logBase,
@@ -57,11 +67,13 @@ export const xLinear: SpecPipe = (spec, context) => {
     nice,
     zero: log ? false : zero,
     inverse,
-    max,
-    min,
     label: {
+      space: AXIS_LABEL_SPACE,
       visible: label?.visible,
       formatMethod: (value: string) => {
+        if (isBarPercent(vseed) || isColumnPercent(vseed) || isAreaPercent(vseed)) {
+          return createLinearPercentFormat(value, autoFormat, numFormat, formatter, percentFormatter)
+        }
         return createLinearFormat(value, autoFormat, numFormat, formatter)
       },
       style: {
@@ -93,6 +105,7 @@ export const xLinear: SpecPipe = (spec, context) => {
       style: {
         lineWidth: grid?.gridWidth,
         stroke: grid?.gridColor,
+        lineDash: grid?.gridLineDash,
       },
     },
     domainLine: {

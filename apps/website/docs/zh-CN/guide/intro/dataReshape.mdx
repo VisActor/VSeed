@@ -14,6 +14,8 @@ import VChart from '@visactor/vchart'
 import { ListTable, PivotTable } from '@visactor/vtable'
 import { registerAll, VSeed, Builder, isTable, isPivotTable } from '@visactor/vseed'
 
+registerAll()
+
 const Demo = () => {
   const ref = useRef<HTMLDivElement>(null)
   const datasetList = [

@@ -6,11 +6,10 @@ export const createNumFormatter = (format?: Partial<NumFormat>, locale: Locale =
   const {
     type = 'number',
     ratio = 1,
-    symbol = '',
     thousandSeparator = true,
     prefix = '',
     suffix = '',
-
+    symbol = '',
     fractionDigits = 2,
     significantDigits,
     roundingMode = 'halfExpand',
@@ -68,8 +67,10 @@ export const createNumFormatter = (format?: Partial<NumFormat>, locale: Locale =
       numStr = parts.join('.')
     }
 
+    const validSymbol = symbol ?? ''
+
     // add symbol, typeSymbol, prefix and suffix
-    return `${prefix}${numStr}${typeSymbol}${symbol}${suffix}`
+    return `${prefix}${numStr}${typeSymbol}${validSymbol}${suffix}`
   }
 }
 
@@ -81,6 +82,7 @@ export const autoNumFormatter = (value?: number | string, locale: Locale = intl.
   const numFormatterOptions: Intl.NumberFormatOptions = {
     style: 'decimal',
     notation: 'compact',
+    useGrouping: true,
   }
   numFormatterOptions.minimumFractionDigits = 0
   numFormatterOptions.maximumFractionDigits = 2

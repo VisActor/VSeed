@@ -1,0 +1,186 @@
+---
+title: 标题
+playgroundDirection: horizontal
+pageType: custom
+---
+
+```tsx
+const Demo = () => {
+  const MeasureNames = '__MeaName__'
+
+  const vseed: VSeed = {
+    chartType: 'line',
+    dataset: [
+      {
+        乐观情景: 44000,
+        基准情景: 42500,
+        悲观情景: 39500,
+        时间: '2025年下半年',
+      },
+      {
+        乐观情景: 46000,
+        基准情景: 43500,
+        悲观情景: 38000,
+        时间: '2026年上半年',
+      },
+      {
+        乐观情景: 47500,
+        基准情景: 44500,
+        悲观情景: 37000,
+        时间: '2026年下半年',
+      },
+      {
+        乐观情景: 49000,
+        基准情景: 45500,
+        悲观情景: 36000,
+        时间: '2027年上半年',
+      },
+    ],
+    dimensions: [
+      {
+        id: '时间',
+        alias: '预测时间点',
+        encoding: 'xAxis',
+      },
+      {
+        id: '__MeaName__',
+        alias: '指标名称',
+      },
+    ],
+    measures: [
+      {
+        id: '基准情景',
+        alias: '基准情景下的武汉小学学区房均价预测',
+        encoding: 'yAxis',
+      },
+      {
+        id: '乐观情景',
+        alias: '乐观情景下的武汉小学学区房均价预测',
+        encoding: 'yAxis',
+      },
+      {
+        id: '悲观情景',
+        alias: '悲观情景下的武汉小学学区房均价预测',
+        encoding: 'yAxis',
+      },
+    ],
+    legend: {
+      enable: true,
+    },
+    label: {
+      enable: true,
+    },
+    theme: 'chinese',
+    locale: 'zh-CN',
+  }
+
+  const parseRes = zVSeed.safeParse(vseed)
+  if (parseRes.success) {
+    console.log('zVSeed parse success!!!')
+  } else {
+    console.error('zVSeed parse error!!!', parseRes)
+  }
+
+  return <SimpleVSeedRender vseed={vseed} />
+}
+
+import { useRef, useEffect } from 'react'
+import { useDark } from 'rspress/runtime'
+import VChart from '@visactor/vchart'
+import { ListTable, PivotTable, PivotChart, register } from '@visactor/vtable'
+import {
+  registerAll,
+  VSeed,
+  Builder,
+  isPivotChart,
+  isVChart,
+  isPivotTable,
+  isTable,
+  zVSeed,
+  ColorIdEncoding,
+} from '@visactor/vseed'
+
+registerAll()
+register.chartModule('vchart', VChart)
+
+const SimpleVSeedRender = (props: { vseed: VSeed }) => {
+  const { vseed } = props
+  const ref = useRef<HTMLDivElement>(null)
+  const builderRef = useRef<Builder>()
+  const dark = useDark()
+  useEffect(() => {
+    if (!ref.current) {
+      return
+    }
+    const theme = dark ? 'dark' : 'light'
+    const builder = Builder.from({ ...vseed })
+    const spec = builder.build()
+    console.log('builder', builder)
+    console.log('builder performance', builder.performance)
+
+    builderRef.current = builder
+    if (isPivotChart(vseed)) {
+      const tableInstance = new PivotChart(ref.current, spec)
+
+      tableInstance.on('legend_item_click', (args) => {
+        console.log('LEGEND_ITEM_CLICK', args)
+        tableInstance.updateFilterRules([
+          {
+            filterKey: ColorIdEncoding,
+            filteredValues: args.value,
+          },
+        ])
+      })
+
+      tableInstance.on('legend_change', (args) => {
+        const maxValue = args.value[1]
+        const minValue = args.value[0]
+        tableInstance.updateFilterRules([
+          {
+            filterFunc: (record) => {
+              const value = record[record[ColorIdEncoding]]
+              if (value >= minValue && value <= maxValue) {
+                return true
+              }
+              return false
+            },
+          },
+        ])
+      })
+
+      return () => tableInstance.release()
+    } else if (isVChart(vseed)) {
+      const vchart = new VChart(spec, { dom: ref.current })
+      vchart.renderSync()
+
+      window.vchart = vchart
+      return () => vchart.release()
+    } else if (isTable(vseed)) {
+      const tableInstance = new ListTable(ref.current, spec)
+      return () => tableInstance.release()
+    } else if (isPivotTable(vseed)) {
+      const tableInstance = new PivotTable(ref.current, spec)
+      return () => tableInstance.release()
+    }
+  }, [vseed, dark])
+
+  return (
+    <div
+      ref={ref}
+      style={{ height: 300, width: '100%' }}
+      onClick={() => {
+        console.group(`selected ${vseed.chartType}`)
+        console.log('builder', builderRef.current)
+        console.log('spec', builderRef.current.spec)
+        console.log('vseed', builderRef.current.vseed)
+        console.log('advancedVSeed', builderRef.current.advancedVSeed)
+        console.groupEnd()
+      }}
+    >
+      {' '}
+    </div>
+  )
+}
+
+export default Demo
+```

@@ -1,9 +1,9 @@
 import type { IBarChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
-import type { BarStyle, Datum, SpecPipe } from 'src/types'
+import type { BarStyle, Datum, VChartSpecPipe } from 'src/types'
 import { isEmpty, isNullish } from 'remeda'
 
-export const barStyle: SpecPipe = (spec, context) => {
+export const barStyle: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { markStyle, dataset = [] } = advancedVSeed
   const { barStyle } = markStyle
@@ -14,6 +14,8 @@ export const barStyle: SpecPipe = (spec, context) => {
     ...spec,
     bar: {
       style: {
+        visible: true,
+        fillOpacity: 1,
         lineWidth: showStroke ? 1 : 0,
       },
       state: {
@@ -37,6 +39,7 @@ export const barStyle: SpecPipe = (spec, context) => {
       barBorderWidth = 1,
       barColor,
       barColorOpacity,
+      barBorderOpacity,
       barRadius,
       barVisible = true,
     } = style
@@ -58,23 +61,19 @@ export const barStyle: SpecPipe = (spec, context) => {
           fill: barColor,
           fillOpacity: barColorOpacity,
           cornerRadius: barRadius,
-          innerBorder: {
-            stroke: barBorderColor,
-            lineWidth: barBorderWidth,
-            distance: (barBorderWidth || 0) / 2,
-            lineDash: lineDash,
-          },
+          lineWidth: barBorderWidth,
+          stroke: barBorderColor,
+          strokeOpacity: barBorderOpacity,
+          lineDash: lineDash,
         },
       },
     }
   }, {})
 
-  return {
-    ...result,
-    bar: {
-      state: {
-        ...customMap,
-      },
-    },
+  result.bar!.state = {
+    ...result.bar!.state,
+    ...customMap,
   }
+
+  return result
 }

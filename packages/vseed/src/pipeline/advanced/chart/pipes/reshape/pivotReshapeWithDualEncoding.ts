@@ -1,7 +1,7 @@
 import { uniqueBy } from 'remeda'
 import { dataReshapeByEncoding, FoldPrimaryMeasureValue, FoldSecondaryMeasureValue } from 'src/dataReshape'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
-import { measureDepth } from 'src/pipeline/utils'
+import { findAllMeasures, measureDepth } from 'src/pipeline/utils'
 import type {
   AdvancedPipe,
   AdvancedVSeed,
@@ -18,8 +18,11 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
-  const { dimensions = [], measures = [], encoding, chartType } = advancedVSeed
+  const { encoding, chartType } = advancedVSeed
+  const measures = advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []
+  const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
 
+  const allMeasures = findAllMeasures(measures)
   const datasetList: Dataset[] = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
@@ -59,7 +62,8 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
         {
           colorItemAsId: false,
           foldMeasureValue: `${FoldPrimaryMeasureValue}${index}`,
-          colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+          colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+          omitIds: allMeasures.map((item) => item.id),
         },
       )
 
@@ -81,7 +85,8 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
         {
           colorItemAsId: false,
           foldMeasureValue: `${FoldSecondaryMeasureValue}${index}`,
-          colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+          colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+          omitIds: allMeasures.map((item) => item.id),
         },
       )
 

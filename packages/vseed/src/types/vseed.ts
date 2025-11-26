@@ -4,6 +4,7 @@ import type {
   Bar,
   BarParallel,
   BarPercent,
+  Boxplot,
   Column,
   ColumnParallel,
   ColumnPercent,
@@ -11,6 +12,7 @@ import type {
   DualAxis,
   Funnel,
   Heatmap,
+  Histogram,
   Line,
   Pie,
   PivotTable,
@@ -49,3 +51,5 @@ export type VSeed =
   // other
   | Funnel
   | Heatmap
+  | Boxplot
+  | Histogram

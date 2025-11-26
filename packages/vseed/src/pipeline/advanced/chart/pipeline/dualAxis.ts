@@ -14,26 +14,26 @@ import {
   buildMeasuresForDualAxis,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
   encodingAdapter,
   defaultEncodingForDualAxis,
-  deleteEncodingForMeasure,
-  deleteTooltipAndLabelDimension,
+  pickMeasuresForReshape,
+  pickDimensionsForReshape,
 } from '../pipes'
 
 export const dualAxisAdvancedPipeline: AdvancedPipeline = [
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,
-  defaultMeasureName,
+  defaultMeasureId,
 
   encodingAdapter(
     [defaultEncodingForDualAxis, buildMeasuresForDualAxis],
     [
       encodingForDualAxis,
       buildMeasuresForDualAxis,
-      deleteEncodingForMeasure(['tooltip', 'label']),
-      deleteTooltipAndLabelDimension,
+      pickMeasuresForReshape(['tooltip', 'label', 'color']),
+      pickDimensionsForReshape,
     ],
   ),
   pivotAdapter([reshapeWithDualEncoding], [pivotReshapeWithDualEncoding]),

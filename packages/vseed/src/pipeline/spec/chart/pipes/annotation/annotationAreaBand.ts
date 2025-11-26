@@ -1,17 +1,18 @@
-import type { ICartesianSeries, ILineChartSpec } from '@visactor/vchart'
+import { type ICartesianSeries, type ILineChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
-import type { Datum, SpecPipe } from 'src/types'
-import { isSubset } from './utils'
+import type { Datum, VChartSpecPipe, VSeed } from 'src/types'
+import { ANNOTATION_AREA_TEXT_STYLE_BY_POSITION, isSubset } from './utils'
 import { ANNOTATION_Z_INDEX } from '../../../../utils/constant'
+import { isBarLikeChart } from 'src/pipeline/utils/chatType'
 
-export const annotationAreaBand: SpecPipe = (spec, context) => {
-  const { advancedVSeed } = context
-  const { annotation } = advancedVSeed
+export const annotationAreaBand: VChartSpecPipe = (spec, context) => {
+  const { advancedVSeed, vseed } = context
+  const { annotation, config } = advancedVSeed
 
   if (!annotation || !annotation.annotationArea) {
     return spec
   }
-
+  const theme = config?.[vseed.chartType as 'column']?.annotation?.annotationArea
   const { annotationArea } = annotation
   const annotationAreaList = Array.isArray(annotationArea) ? annotationArea : [annotationArea]
 
@@ -25,33 +26,41 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
     left: 'insideLeft',
     right: 'insideRight',
   }
+  const defaultTextPosition = isBarLikeChart(advancedVSeed as VSeed) ? 'right' : 'top'
 
   const markArea = annotationAreaList.flatMap((annotationArea) => {
     const {
       selector: selectorPoint,
       text = '',
-      textPosition = 'top',
-      textColor = '#ffffff',
-      textFontSize = 12,
-      textFontWeight = 400,
-      textAlign = 'center',
-      textBaseline = 'top',
+      textColor = theme?.textColor ?? '#ffffff',
+      textFontSize = theme?.textFontSize ?? 12,
+      textFontWeight = theme?.textFontWeight ?? 400,
 
-      textBackgroundVisible = true,
-      textBackgroundColor = '#191d24',
-      textBackgroundBorderColor = '#191d24',
-      textBackgroundBorderWidth = 1,
-      textBackgroundBorderRadius = 4,
-      textBackgroundPadding = 4,
+      textBackgroundVisible = theme?.textBackgroundVisible ?? true,
+      textBackgroundColor = theme?.textBackgroundColor ?? '#191d24',
+      textBackgroundBorderColor = theme?.textBackgroundBorderColor ?? '#191d24',
+      textBackgroundBorderWidth = theme?.textBackgroundBorderWidth ?? 1,
+      textBackgroundBorderRadius = theme?.textBackgroundBorderRadius ?? 4,
+      textBackgroundPadding = theme?.textBackgroundPadding ?? 4,
 
-      areaColor = '#888888',
-      areaColorOpacity = 0.15,
-      areaBorderColor = '#888888',
-      areaBorderRadius = 4,
-      areaBorderWidth = 1,
+      areaColor = theme?.areaColor ?? '#888888',
+      areaColorOpacity = theme?.areaColorOpacity ?? 0.15,
+      areaBorderColor = theme?.areaBorderColor ?? '#888888',
+      areaBorderRadius = theme?.areaBorderRadius ?? 4,
+      areaBorderWidth = theme?.areaBorderWidth ?? 1,
+      areaLineDash = theme?.areaLineDash,
 
-      outerPadding = 4,
+      outerPadding = theme?.outerPadding ?? 4,
     } = annotationArea
+    const textPosition: string = annotationArea.textPosition ?? defaultTextPosition
+    const textAlign =
+      annotationArea.textAlign ??
+      ANNOTATION_AREA_TEXT_STYLE_BY_POSITION[textPosition as keyof typeof ANNOTATION_AREA_TEXT_STYLE_BY_POSITION]
+        .textAlign
+    const textBaseline =
+      annotationArea.textBaseline ??
+      ANNOTATION_AREA_TEXT_STYLE_BY_POSITION[textPosition as keyof typeof ANNOTATION_AREA_TEXT_STYLE_BY_POSITION]
+        .textBaseline
 
     const dataset = advancedVSeed.dataset.flat()
     const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
@@ -59,9 +68,12 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
     return {
       zIndex: ANNOTATION_Z_INDEX,
       regionRelative: true,
-      positions: (data: Datum[], context: ICartesianSeries) => {
+      // coordinates: selectedData,
+      positions: (data: Datum[], context: ICartesianSeries & { _scaleConfig?: { bandPosition?: number } }) => {
         const positionData = data.filter((item) => selectedData.some((datum) => isSubset(datum, item)))
         const xyList = positionData.map((datum) => context.dataToPosition(datum) as { x: number; y: number })
+
+        const bandPosition = context?._scaleConfig?.bandPosition || 0
 
         const yAxisHelper = context.getYAxisHelper() as unknown as {
           getBandwidth: (depth?: number) => number
@@ -79,12 +91,18 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
         if (typeof xAxisHelper?.getBandwidth === 'function') {
           const depth = context.fieldX.length ?? 0
           const xBandWidth = xAxisHelper?.getBandwidth?.(depth - 1)
-          const yScale = yAxisHelper.getScale()
+          const regionRect = context.getRegion().getLayoutRect()
+          const startX = Math.min(...xyList.map((item) => item.x)) - (outerPadding || 4)
+          const endX = Math.max(...xyList.map((item) => item.x)) + (outerPadding || 4)
 
-          const minX = Math.min(...xyList.map((item) => item.x)) - (outerPadding || 4)
-          const maxX = Math.max(...xyList.map((item) => item.x)) + xBandWidth + (outerPadding || 4)
-          const minY = Math.min(...yScale.range())
-          const maxY = Math.max(...yScale.range())
+          const width = endX - startX + xBandWidth
+          const middleX = (endX + startX) / 2 + xBandWidth * (0.5 - bandPosition)
+
+          const minX = middleX - width / 2
+          const maxX = middleX + width / 2
+
+          const minY = 0
+          const maxY = regionRect.height
 
           return [
             // 左上
@@ -113,12 +131,17 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
         if (typeof yAxisHelper?.getBandwidth === 'function') {
           const depth = context.fieldY.length ?? 0
           const yBandWidth = yAxisHelper?.getBandwidth?.(depth - 1)
-          const xScale = xAxisHelper.getScale()
+          const regionRect = context.getRegion().getLayoutRect()
 
-          const minY = Math.min(...xyList.map((item) => item.y)) - (outerPadding || 4)
-          const maxY = Math.max(...xyList.map((item) => item.y)) + yBandWidth + (outerPadding || 4)
-          const minX = Math.min(...xScale.range())
-          const maxX = Math.max(...xScale.range())
+          const startY = Math.min(...xyList.map((item) => item.y)) - (outerPadding || 4)
+          const endY = Math.max(...xyList.map((item) => item.y)) + (outerPadding || 4)
+          const width = endY - startY + yBandWidth
+          const middleY = (endY + startY) / 2 + yBandWidth * (0.5 - bandPosition)
+
+          const minY = middleY - width / 2
+          const maxY = middleY + width / 2
+          const minX = 0
+          const maxX = regionRect.width
 
           return [
             // 左上
@@ -147,11 +170,11 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
         return []
       },
       label: {
-        position: positionMap[textPosition || 'top'],
+        position: positionMap[textPosition as 'bottom'],
         visible: true,
         text: text,
         style: {
-          dy: textFontSize,
+          opacity: 0.95,
           textAlign: textAlign,
           textBaseline: textBaseline,
           stroke: textBackgroundColor,
@@ -165,11 +188,12 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           visible: textBackgroundVisible,
           padding: textBackgroundPadding,
           style: {
-            dy: textFontSize,
+            opacity: 0.95,
             cornerRadius: textBackgroundBorderRadius ?? 4,
             fill: textBackgroundColor,
             stroke: textBackgroundBorderColor,
             lineWidth: textBackgroundBorderWidth,
+            fillOpacity: 1,
           },
         },
       },
@@ -181,6 +205,7 @@ export const annotationAreaBand: SpecPipe = (spec, context) => {
           stroke: areaBorderColor,
           lineWidth: areaBorderWidth,
           cornerRadius: areaBorderRadius,
+          lineDash: areaLineDash,
         },
       },
     }

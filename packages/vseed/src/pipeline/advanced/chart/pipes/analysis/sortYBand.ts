@@ -1,5 +1,5 @@
 import type { AdvancedPipe, Dataset, DatasetReshapeInfo, Line } from 'src/types'
-import { calcOrder } from './sortXBand'
+import { calcOrder } from './common'
 
 export const sortYBandAxis: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }

@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   xBand,
   yLinear,
@@ -36,9 +36,13 @@ import {
   colorLineStyleFill,
   colorAreaStyleFill,
   pivotColorLegend,
+  pivotAxisStyle,
+  pivotTitle,
+  splitLine,
+  dimensionLinkage,
 } from '../pipes'
 
-const area: SpecPipeline = [
+const area: VChartSpecPipeline = [
   initArea,
   stackInverse,
   colorAdapter(color, linearColor),
@@ -59,9 +63,10 @@ const area: SpecPipeline = [
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationArea,
+  splitLine,
 ]
 
-const pivotArea: SpecPipeline = [
+const pivotArea: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -74,7 +79,7 @@ const pivotArea: SpecPipeline = [
     datasetXY,
     progressive,
     xBand,
-    yLinear,
+    pivotAxisStyle(yLinear),
     label,
     tooltip,
     verticalCrosshairLine,
@@ -86,10 +91,13 @@ const pivotArea: SpecPipeline = [
     annotationVerticalLine,
     annotationHorizontalLine,
     annotationArea,
+    splitLine,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
 export const areaSpecPipeline = [pivotAdapter(area, pivotArea)]

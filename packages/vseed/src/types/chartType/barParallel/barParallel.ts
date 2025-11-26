@@ -21,6 +21,9 @@ import type {
   MeasureTree,
   Sort,
   SortLegend,
+  BarMaxWidth,
+  BarGapInGroup,
+  DimensionLinkage,
 } from '../../properties'
 
 /**
@@ -89,7 +92,7 @@ export interface BarParallel {
   /**
    * @description 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
    */
-  label?: Omit<Label, 'labelLayout'>
+  label?: Label
 
   /**
    * @description 图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.
@@ -121,7 +124,14 @@ export interface BarParallel {
    * @default 8
    */
   stackCornerRadius?: StackCornerRadius
-
+  /**
+   * @description 矩形的最大高度，可以是像素值或者百分比字符串
+   */
+  barMaxWidth?: BarMaxWidth
+  /**
+   * @description 同一分类下，矩形之间的距离，可以是像素值或者百分比字符串
+   */
+  barGapInGroup?: BarGapInGroup
   /**
    * @description Y轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
    * @example
@@ -184,6 +194,11 @@ export interface BarParallel {
    * @description 标注区域配置, 根据选择的数据, 定义图表的标注区域, 包括标注区域的位置, 样式等.
    */
   annotationArea?: AnnotationArea | AnnotationArea[]
+  /**
+   * 当图表开启透视功能或者指标组合的是否，是否开启维度联动功能
+   * 当hover 到某个维度值时，联动高亮其他图表中相同维度值的数据
+   */
+  dimensionLinkage?: DimensionLinkage
 
   /**
    * @description 图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言

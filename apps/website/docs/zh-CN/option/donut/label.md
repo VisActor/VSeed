@@ -1,6 +1,6 @@
 # label
 
-**Type:** `Label | undefined`
+**Type:** `PieLabel | undefined`
 
 :::note{title=描述}
 标签
@@ -11,6 +11,21 @@
 
 :::
 
+
+## labelLayout
+
+**Type:** `"arc" | "labelLine" | "edge" | undefined`
+
+:::note{title=描述}
+标签布局方式, 仅对饼图、环形图生效且`labelPosition`为`outside`时生效
+
+\- arc: 按弧形为标签布局
+
+\- labelLine: 标签两端对齐, 通过引导线连接扇形图元与标签
+
+\- edge: 标签两端对齐, 通过引导线连接扇形图元与标签, 并且贴近图表两端边缘
+
+:::
 
 ## enable
 
@@ -39,6 +54,8 @@
 
 多指标的场景, 无需担心多个指标的值会矛盾, 因为所有的绘图相关的指标, 都会经过`foldMeasures`处理, 合并为一个指标, 代表一个数据点, 所以不会矛盾
 
+注意: encoding的label优先级更高, 此配置不影响encoding的label
+
 :::
 
 ## showValuePercent
@@ -49,6 +66,21 @@
 标签是否显示指标值的百分比
 
 多指标的场景, 无需担心多个指标的值会矛盾, 因为所有的绘图相关的指标, 都会经过`foldMeasures`处理, 合并为一个指标, 代表一个数据点, 所以不会矛盾
+
+注意: encoding的label优先级更高, 此配置不影响encoding的label
+
+:::
+
+## showDimension
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+标签是否显示维度标签
+
+展示所有维度标签
+
+注意: encoding的label优先级更高, 此配置不影响encoding的label
 
 :::
 
@@ -228,6 +260,15 @@
 
 :::
 
+## labelStroke
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+标签描边颜色
+
+:::
+
 ## labelColor
 
 **Type:** `string | undefined`
@@ -264,18 +305,59 @@
 
 :::
 
-## labelLayout
+## selector
 
-**Type:** `"arc" | "labelLine" | "edge" | undefined`
+**Type:** `Selector | Selectors | undefined`
 
 :::note{title=描述}
-标签布局方式, 仅对饼图、环形图生效且`labelPosition`为`outside`时生效
+标签筛选，默认selectors之间条件关系为Or
 
-\- arc: 按弧形为标签布局
+:::
 
-\- labelLine: 标签两端对齐, 通过引导线连接扇形图元与标签
 
-\- edge: 标签两端对齐, 通过引导线连接扇形图元与标签, 并且贴近图表两端边缘
+### field
+
+**Type:** `string`
+
+:::note{title=描述}
+维度字段, dimensions 某一项的 id
+
+:::
+
+### operator
+
+**Type:** `"in" | "not in" | undefined`
+
+:::note{title=描述}
+操作符
+
+\- in: 选择数据项中维度字段的值在 value 中的数据项
+
+\- not in: 选择数据项中维度字段的值不在 value 中的数据项
+
+:::
+
+### op
+
+**Type:** `"in" | "not in" | undefined`
+
+:::note{title=描述}
+操作符
+
+\- in: 选择数据项中维度字段的值在 value 中的数据项
+
+\- not in: 选择数据项中维度字段的值不在 value 中的数据项
+
+same as operator
+
+:::
+
+### value
+
+**Type:** `string | number | (string | number)[]`
+
+:::note{title=描述}
+选择数据项中维度字段的值, 支持数组
 
 :::
 

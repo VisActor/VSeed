@@ -10,7 +10,7 @@
 
 ## selector
 
-**Type:** `Selector | Selectors`
+**Type:** `Selector | Selectors | undefined`
 
 :::note{title=描述}
 标注点的选择器, 用于选择数据点.

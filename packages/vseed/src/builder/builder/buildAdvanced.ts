@@ -12,15 +12,17 @@ export const buildAdvanced = (builder: Builder): AdvancedVSeed | null => {
 
   const pipeline = Builder.getAdvancedPipeline(chartType)
   if (!pipeline) {
-    throw new Error(`no advanced pipeline for chartType ${chartType}`)
+    throw new Error(
+      `please invoke registerAll or register ${chartType} before build, no advanced pipeline for chartType ${chartType}`,
+    )
   }
 
   const context: AdvancedPipelineContext = {
     vseed: builder.vseed,
     customTheme: Builder.getThemeMap(),
   }
-  if (builder.vseed.locale) {
-    intl.setLocale(builder.vseed.locale)
+  if (builder.locale) {
+    intl.setLocale(builder.locale)
   }
 
   try {

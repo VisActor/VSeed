@@ -1,8 +1,7 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
-import type { IColorTableLegendOption } from '@visactor/vtable/es/ts-types/component/legend'
-import type { Color, Legend, SpecPipe } from 'src/types'
+import type { Color, Legend, PivotChartSpecPipe } from 'src/types'
 
-export const pivotColorLegend: SpecPipe = (spec, context) => {
+export const pivotColorLegend: PivotChartSpecPipe = (spec, context) => {
   const result = { ...spec } as PivotChartConstructorOptions
   const { advancedVSeed } = context
   const { chartType } = advancedVSeed
@@ -41,7 +40,7 @@ export const pivotColorLegend: SpecPipe = (spec, context) => {
       ? 'end'
       : 'middle'
 
-  const legends: IColorTableLegendOption = {
+  const legends = {
     visible: enable,
     type: 'color',
     orient,
@@ -61,6 +60,6 @@ export const pivotColorLegend: SpecPipe = (spec, context) => {
         fontWeight: labelFontWeight,
       },
     },
-  }
-  return { ...result, legends }
+  } as unknown
+  return { ...result, legends } as Partial<PivotChartConstructorOptions>
 }

@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   xBand,
   backgroundColor,
@@ -16,7 +16,6 @@ import {
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
-  annotationArea,
   pointStyle,
   lineStyle,
   pointStateDimensionHover,
@@ -47,9 +46,16 @@ import {
   colorLegend,
   pivotColorLegend,
   linearColorForDualAxis,
+  annotationAreaBand,
+  barMaxWidth,
+  barGapInGroup,
+  stackCornerRadius,
+  pivotTitle,
+  pivotAxisStyle,
+  dimensionLinkage,
 } from '../pipes'
 
-const dualAxis: SpecPipeline = [
+const dualAxis: VChartSpecPipeline = [
   seriesDualAxis(
     [
       initDualAxisPrimary,
@@ -58,6 +64,10 @@ const dualAxis: SpecPipeline = [
       labelPrimary,
       tooltipPrimary,
       progressive,
+
+      barMaxWidth,
+      barGapInGroup,
+      stackCornerRadius,
 
       colorBarStyleFill(barStyle),
       colorPointStyleFill(pointStyle),
@@ -72,6 +82,10 @@ const dualAxis: SpecPipeline = [
       labelSecondary,
       tooltipSecondary,
       progressive,
+
+      barMaxWidth,
+      barGapInGroup,
+      stackCornerRadius,
 
       colorBarStyleFill(barStyle),
       colorPointStyleFill(pointStyle),
@@ -93,10 +107,10 @@ const dualAxis: SpecPipeline = [
   annotationPoint,
   annotationVerticalLine,
   annotationHorizontalLine,
-  annotationArea,
+  annotationAreaBand,
 ]
 
-const pivotDualAxis: SpecPipeline = [
+const pivotDualAxis: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
@@ -110,6 +124,10 @@ const pivotDualAxis: SpecPipeline = [
         labelPrimary,
         tooltipPrimary,
         progressive,
+
+        stackCornerRadius,
+        barMaxWidth,
+        barGapInGroup,
 
         colorBarStyleFill(barStyle),
         colorPointStyleFill(pointStyle),
@@ -125,6 +143,10 @@ const pivotDualAxis: SpecPipeline = [
         tooltipSecondary,
         progressive,
 
+        stackCornerRadius,
+        barMaxWidth,
+        barGapInGroup,
+
         colorBarStyleFill(barStyle),
         colorPointStyleFill(pointStyle),
         pointStateDimensionHover,
@@ -134,18 +156,20 @@ const pivotDualAxis: SpecPipeline = [
     ),
     xBand,
     yLinearPrimary,
-    yLinearSecondary,
+    pivotAxisStyle(yLinearSecondary),
     colorAdapter(color, linearColor),
     backgroundColor,
     verticalCrosshairRect,
     annotationPoint,
     annotationVerticalLine,
     annotationHorizontalLine,
-    annotationArea,
+    annotationAreaBand,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
-export const dualAxisSpecPipeline: SpecPipeline = [pivotAdapter(dualAxis, pivotDualAxis)]
+export const dualAxisSpecPipeline = [pivotAdapter(dualAxis, pivotDualAxis)]

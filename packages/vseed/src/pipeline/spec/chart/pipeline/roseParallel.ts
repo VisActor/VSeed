@@ -1,8 +1,7 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   datasetXY,
   backgroundColor,
-  label,
   tooltip,
   discreteLegend,
   color,
@@ -30,9 +29,13 @@ import {
   colorLegend,
   roseStyle,
   colorRoseStyleFill,
+  labelPie,
+  pivotHideIndicatorName,
+  pivotTitle,
+  addRegionPadding,
 } from '../pipes'
 
-const roseParallel: SpecPipeline = [
+const roseParallel: VChartSpecPipeline = [
   initRoseParallel,
   stackCornerRadius,
   colorAdapter(color, linearColor),
@@ -42,7 +45,7 @@ const roseParallel: SpecPipeline = [
   radiusAxis,
   colorRoseStyleFill(roseStyle),
   colorAdapter(discreteLegend, colorLegend),
-  label,
+  labelPie,
   tooltip,
   verticalCrosshairRect,
   annotationPoint,
@@ -51,13 +54,15 @@ const roseParallel: SpecPipeline = [
   annotationAreaBand,
 ]
 
-const pivotRoseParallel: SpecPipeline = [
+const pivotRoseParallel: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsRow,
+  pivotHideIndicatorName,
   datasetPivot,
   pivotIndicators([
     initRoseParallel,
+    addRegionPadding,
     stackCornerRadius,
     colorAdapter(color, linearColor),
     backgroundColor,
@@ -66,7 +71,7 @@ const pivotRoseParallel: SpecPipeline = [
     radiusAxis,
     verticalCrosshairRect,
     colorRoseStyleFill(roseStyle),
-    label,
+    labelPie,
     tooltip,
     annotationPoint,
     annotationVerticalLine,
@@ -75,7 +80,8 @@ const pivotRoseParallel: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
 ]
 
-export const roseParallelSpecPipeline: SpecPipeline = [pivotAdapter(roseParallel, pivotRoseParallel)]
+export const roseParallelSpecPipeline = [pivotAdapter(roseParallel, pivotRoseParallel)]

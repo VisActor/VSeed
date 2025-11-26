@@ -1,16 +1,16 @@
 import type { IPieChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 import { isLinearColor } from './colorAdapter'
 
-export const colorPieStyleFill = (stylePipe: SpecPipe): SpecPipe => {
+export const colorPieStyleFill = (stylePipe: VChartSpecPipe): VChartSpecPipe => {
   return (spec, context) => {
     const result = stylePipe(spec, context) as IPieChartSpec
 
-    const { advancedVSeed } = context
+    const { advancedVSeed, vseed } = context
     const { datasetReshapeInfo } = advancedVSeed
     const { unfoldInfo } = datasetReshapeInfo[0]
 
-    if (isLinearColor(advancedVSeed)) {
+    if (isLinearColor(advancedVSeed, vseed)) {
       if (result?.pie?.style) {
         result.pie.style.fill = {
           field: unfoldInfo.encodingColor,

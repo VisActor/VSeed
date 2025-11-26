@@ -43,6 +43,18 @@
   },
   {
     "type": "dir",
+    "name": "regressionLine",
+    "label": "regressionLine",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "cellStyle",
+    "label": "cellStyle",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
     "name": "i18n",
     "label": "i18n",
     "collapsed": true

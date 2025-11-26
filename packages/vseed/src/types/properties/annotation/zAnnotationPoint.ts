@@ -2,7 +2,7 @@ import { zSelector, zSelectors } from '../../dataSelector'
 import { z } from 'zod'
 
 export const zAnnotationPoint = z.object({
-  selector: z.union([zSelector, zSelectors]),
+  selector: z.union([zSelector, zSelectors]).nullish(),
   text: z.string().or(z.array(z.string())).nullish(),
   textColor: z.string().default('#ffffff').nullish(),
   textFontSize: z.number().default(12).nullish(),

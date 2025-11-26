@@ -10,7 +10,7 @@
 
 ## selector
 
-**Type:** `Selector | Selectors`
+**Type:** `Selector | Selectors | undefined`
 
 :::note{title=描述}
 依赖选择的数据, 进行数据标记.
@@ -300,7 +300,7 @@ true
 
 ## areaBorderColor
 
-**Type:** `number | undefined`
+**Type:** `string | undefined`
 
 :::note{title=描述}
 标注区域区域边框颜色
@@ -337,6 +337,20 @@ true
 
 **示例**
 4
+
+
+
+## areaLineDash
+
+**Type:** `number[] | undefined`
+
+:::note{title=描述}
+标注区域区域边框的线型
+
+:::
+
+**示例**
+[2, 2]
 
 
 

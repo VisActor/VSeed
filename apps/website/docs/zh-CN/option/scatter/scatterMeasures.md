@@ -187,6 +187,24 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 
 :::
 
+### id
+
+**Type:** `string`
+
+:::note{title=描述}
+指标id, 不能重复
+
+:::
+
+### alias
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+指标别名, 允许重复, 未填写时, alias 为 id
+
+:::
+
 ### autoFormat
 
 **Type:** `boolean | undefined`
@@ -343,24 +361,6 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 
 :::note{title=描述}
 数值格式化舍入模式, 使用浏览器提供的 Intl.NumberFormat 进行格式化, 规则同 Intl.NumberFormat 中的 roundingMode
-
-:::
-
-### id
-
-**Type:** `string`
-
-:::note{title=描述}
-指标id, 不能重复
-
-:::
-
-### alias
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-指标别名, 允许重复, 未填写时, alias 为 id
 
 :::
 
@@ -509,6 +509,24 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 
 :::
 
+### id
+
+**Type:** `string`
+
+:::note{title=描述}
+指标id, 不能重复
+
+:::
+
+### alias
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+指标别名, 允许重复, 未填写时, alias 为 id
+
+:::
+
 ### autoFormat
 
 **Type:** `boolean | undefined`
@@ -665,24 +683,6 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 
 :::note{title=描述}
 数值格式化舍入模式, 使用浏览器提供的 Intl.NumberFormat 进行格式化, 规则同 Intl.NumberFormat 中的 roundingMode
-
-:::
-
-### id
-
-**Type:** `string`
-
-:::note{title=描述}
-指标id, 不能重复
-
-:::
-
-### alias
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-指标别名, 允许重复, 未填写时, alias 为 id
 
 :::
 

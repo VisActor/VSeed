@@ -1,4 +1,4 @@
-import type { SpecPipeline } from 'src/types'
+import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   initBar,
   datasetYX,
@@ -31,11 +31,16 @@ import {
   colorLegend,
   colorBarStyleFill,
   pivotColorLegend,
+  barMaxWidth,
+  pivotAxisStyle,
+  pivotTitle,
+  dimensionLinkage,
 } from '../pipes'
 
-const bar: SpecPipeline = [
+const bar: VChartSpecPipeline = [
   initBar,
   stackCornerRadius,
+  barMaxWidth,
   colorAdapter(color, linearColor),
   backgroundColor,
   datasetYX,
@@ -53,7 +58,7 @@ const bar: SpecPipeline = [
   annotationAreaBand,
 ]
 
-const pivotBar: SpecPipeline = [
+const pivotBar: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
   pivotIndicatorsAsCol,
@@ -61,13 +66,13 @@ const pivotBar: SpecPipeline = [
   pivotIndicators([
     initBar,
     stackCornerRadius,
+    barMaxWidth,
     colorAdapter(color, linearColor),
     backgroundColor,
     datasetYX,
     progressive,
     xLinear,
-    yBand,
-    label,
+    pivotAxisStyle(yBand),
     label,
     tooltip,
     colorBarStyleFill(barStyle),
@@ -79,7 +84,9 @@ const pivotBar: SpecPipeline = [
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,
+  pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
-export const barSpecPipeline: SpecPipeline = [pivotAdapter(bar, pivotBar)]
+export const barSpecPipeline = [pivotAdapter(bar, pivotBar)]

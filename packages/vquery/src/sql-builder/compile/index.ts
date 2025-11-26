@@ -1,0 +1,1 @@
+export { inlineParameters } from './inlineParameters'

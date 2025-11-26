@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import type { IScatterChartSpec } from '@visactor/vchart'
-import type { ISeriesMarkAttributeContext } from '@visactor/vchart/esm/compile/mark'
-import type { SpecPipe } from 'src/types'
+import type { Datum, VChartSpecPipe } from 'src/types'
 
-export const pointStateDimensionHover: SpecPipe = (spec) => {
+export const pointStateDimensionHover: VChartSpecPipe = (spec) => {
   const point = (spec as IScatterChartSpec).point || {}
   const result = {
     ...spec,
@@ -25,7 +25,7 @@ export const pointStateDimensionHover: SpecPipe = (spec) => {
   return result
 }
 
-export const pointStateHover: SpecPipe = (spec, context) => {
+export const pointStateHover: VChartSpecPipe = (spec, context) => {
   const point = (spec as IScatterChartSpec).point || {}
   const { advancedVSeed } = context
   const { datasetReshapeInfo } = advancedVSeed
@@ -39,9 +39,9 @@ export const pointStateHover: SpecPipe = (spec, context) => {
         hover: {
           scaleX: 1.4,
           scaleY: 1.4,
-          stroke: (datum, context: ISeriesMarkAttributeContext) => {
+          stroke: (datum: Datum, context: unknown) => {
             const field = unfoldInfo.encodingColorId
-            const color = context.seriesColor(datum[field] as string)
+            const color = (context as any).seriesColor(datum[field] as string)
             return color
           },
           fillOpacity: 0.6,

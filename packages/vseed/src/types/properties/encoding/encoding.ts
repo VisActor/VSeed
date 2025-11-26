@@ -51,4 +51,40 @@ export type Encoding = {
    * @description 列映射通道, 支持放入多个维度字段, 不支持放入指标字段, 在图表中进行列透视
    */
   column?: string[]
+  /**
+   * @description 明细数据通道，用于直方图/boxplot等图表设置明细数据
+   */
+  value?: string[]
+  /**
+   * @description 四分之一数据通道，用于boxplot图表设置四分之一数据
+   */
+  q1?: string[]
+  /**
+   * @description 中位数数据通道，用于boxplot图表设置中位数数据
+   */
+  median?: string[]
+  /**
+   * @description 四分之三数据通道，用于boxplot图表设置四分之三数据
+   */
+  q3?: string[]
+  /**
+   * @description 最小值数据通道，用于boxplot图表设置最小值数据
+   */
+  min?: string[]
+  /**
+   * @description 最大值数据通道，用于boxplot图表设置最大值数据
+   */
+  max?: string[]
+  /**
+   * @description 异常值数据通道，用于boxplot图表设置异常值数据
+   */
+  outliers?: string[]
+  /**
+   * @description 连续x轴起始数据通道，用于直方图图表设置连续x轴起始数据
+   */
+  x0?: string[]
+  /**
+   * @description 连续x轴结束数据通道，用于直方图图表设置连续x轴结束数据
+   */
+  x1?: string[]
 }

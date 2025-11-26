@@ -1,25 +1,27 @@
-import type { PivotChartConstructorOptions } from '@visactor/vtable'
-import type { BaseTableAPI, FieldFormat } from '@visactor/vtable/es/ts-types'
+import type { PivotChartConstructorOptions, BaseTableAPI } from '@visactor/vtable'
 import { isNumber } from 'remeda'
 import { intl } from 'src/i18n'
 import { createFormatterByMeasure, findMeasureById } from 'src/pipeline/utils'
-import type { Datum, FoldInfo, MeasureTree, SpecPipe } from 'src/types'
+import type { Datum, FoldInfo, MeasureTree, PivotTableSpecPipe } from 'src/types'
 
-export const pivotIndicators: SpecPipe = (spec, context) => {
+export const pivotIndicators: PivotTableSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { measures, datasetReshapeInfo } = advancedVSeed
   const { foldInfo } = datasetReshapeInfo[0]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
+  const hasRow = ((spec as any)?.rows as any[])?.length > 0
+  const foldMapValues = Object.values(foldInfo.foldMap)
 
   return {
     ...spec,
-    indicatorsAsCol: true,
     indicatorTitle: intl.i18n`指标名称`,
-    hideIndicatorName: true,
+    indicatorsAsCol: hasRow,
+    hideIndicatorName: hasRow,
     indicators: [
       {
         cellType: 'text',
         indicatorKey: foldInfo.measureValue,
-        title: 'indicator',
+        title: foldMapValues.length > 1 ? '' : foldMapValues[0],
         width: 'auto',
         format: fieldFormat(measures, foldInfo as FoldInfo),
       },
@@ -27,7 +29,7 @@ export const pivotIndicators: SpecPipe = (spec, context) => {
   }
 }
 
-const fieldFormat = (measures: MeasureTree, foldInfo: FoldInfo): FieldFormat => {
+const fieldFormat = (measures: MeasureTree, foldInfo: FoldInfo) => {
   return (value: number | string, col?: number, row?: number, table?: BaseTableAPI) => {
     if (!isNumber(col) || !isNumber(row) || !table) {
       return value

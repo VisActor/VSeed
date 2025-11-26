@@ -15,14 +15,26 @@
     "activeMatch": "/galley"
   },
   {
-    "text": "开发指南",
-    "link": "/development/",
+    "text": "贡献指南",
+    "link": "/development/quickStart",
     "activeMatch": "/development/"
   },
   {
     "text": "Playground",
-    "link": "/playground/",
-    "activeMatch": "/playground/"
+    "link": "/playground/vseed",
+    "activeMatch": "/playground",
+    "items": [
+      {
+        "link": "/playground/vseed",
+        "text": "VSeed",
+        "activeMatch": "/playground/vseed"
+      },
+      {
+        "link": "/playground/vquery",
+        "text": "VQuery",
+        "activeMatch": "/playground/vquery"
+      }
+    ]
   },
   {
     "text": "了解VChart",

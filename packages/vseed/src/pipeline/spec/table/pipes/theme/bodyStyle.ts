@@ -1,8 +1,8 @@
-import type { BaseTableConstructorOptions } from '@visactor/vtable/es/ts-types'
-import type { SpecPipe, TableConfig } from 'src/types'
+import type { PivotTableSpecPipe, TableConfig } from 'src/types'
+import type { ThemeLike, WithTheme } from './type'
 
-export const bodyStyle: SpecPipe = (spec, context) => {
-  const result = { ...spec } as BaseTableConstructorOptions
+export const bodyStyle: PivotTableSpecPipe = (spec, context) => {
+  const result = { ...spec } as Partial<typeof spec> & WithTheme
   const { advancedVSeed } = context
   const { chartType, config } = advancedVSeed
   const themeConfig = config?.[chartType] as TableConfig
@@ -18,7 +18,8 @@ export const bodyStyle: SpecPipe = (spec, context) => {
   const hoverCellBgColor = themeConfig.hoverBodyBackgroundColor || '#bedaff'
   const hoverInlineColor = themeConfig.hoverBodyInlineBackgroundColor || '#bedaff'
 
-  result.theme.bodyStyle = {
+  if (!result.theme) result.theme = {}
+  ;(result.theme as ThemeLike).bodyStyle = {
     borderColor: borderColor,
     borderLineWidth: 1,
     padding: [8, 12, 8, 12],

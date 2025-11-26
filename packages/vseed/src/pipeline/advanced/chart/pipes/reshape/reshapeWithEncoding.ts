@@ -8,20 +8,21 @@ export const reshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset, chartType } = vseed as ColumnParallel
-  const { dimensions = [], measures = [], encoding } = advancedVSeed
+  const { encoding } = advancedVSeed
 
+  const colorMeasureId = getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed)
   const {
     dataset: newDatasets,
     foldInfo,
     unfoldInfo,
   } = dataReshapeByEncoding(
     dataset,
-    uniqueBy(dimensions, (item) => item.id),
-    uniqueBy(findAllMeasures(measures), (item) => item.id),
+    uniqueBy(advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? [], (item) => item.id),
+    uniqueBy(advancedVSeed.reshapeMeasures ?? findAllMeasures(advancedVSeed.measures), (item) => item.id),
     encoding as Encoding,
     {
       colorItemAsId: false,
-      colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed),
+      colorMeasureId,
     },
   )
 
@@ -36,7 +37,5 @@ export const reshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
         unfoldInfo,
       },
     ],
-    dimensions,
-    measures,
   }
 }

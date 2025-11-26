@@ -27,6 +27,7 @@ export const PivotChart = memo((props: { vseed: VSeed }) => {
     builderRef.current = builder
 
     const spec = builder.build() as PivotChartConstructorOptions
+    console.log('spec', spec)
     const tableInstance = new VTablePivotChart(ref.current, spec)
 
     tableInstance.on('legend_item_click', (args) => {

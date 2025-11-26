@@ -1,0 +1,1 @@
+export { titleOnDimension } from './titleOnDimension'

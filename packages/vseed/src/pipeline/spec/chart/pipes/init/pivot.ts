@@ -1,7 +1,7 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
-import type { SpecPipe } from 'src/types'
+import type { PivotChartSpecPipe } from 'src/types'
 
-export const initPivot: SpecPipe = (spec) => {
+export const initPivot: PivotChartSpecPipe = (spec) => {
   const result = { ...spec } as PivotChartConstructorOptions
 
   return {
@@ -11,8 +11,16 @@ export const initPivot: SpecPipe = (spec) => {
     columns: [],
     indicators: [],
     records: [],
-    widthMode: 'adaptive',
-    heightMode: 'adaptive',
+    widthMode: 'standard',
+    autoFillWidth: true,
+    defaultHeaderColWidth: 'auto',
+    defaultColWidth: 200,
+
+    heightMode: 'standard',
+    autoFillHeight: true,
+    defaultRowHeight: 100,
+    defaultHeaderRowHeight: 'auto',
+
     indicatorsAsCol: false,
     select: {
       highlightMode: 'cell',
@@ -25,30 +33,12 @@ export const initPivot: SpecPipe = (spec) => {
       isShowOverflowTextTooltip: true,
     },
     corner: {
-      titleOnDimension: 'all',
+      titleOnDimension: 'row',
     },
     animationAppear: {
       duration: 600,
       type: 'all',
       direction: 'row',
     },
-  }
-}
-
-export const pivotIndicatorsAsRow: SpecPipe = (spec) => {
-  const result = { ...spec } as PivotChartConstructorOptions
-
-  return {
-    ...result,
-    indicatorsAsCol: false,
-  }
-}
-
-export const pivotIndicatorsAsCol: SpecPipe = (spec) => {
-  const result = { ...spec } as PivotChartConstructorOptions
-
-  return {
-    ...result,
-    indicatorsAsCol: true,
   }
 }

@@ -1,8 +1,9 @@
-import type { Spec } from 'src/types'
+import type { Spec, VChartSpecPipeline } from 'src/types'
 import { Builder } from './builder'
 import type { AdvancedVSeed, SpecPipelineContext } from 'src/types'
 import { execPipeline } from '../../pipeline'
 import { intl } from 'src/i18n'
+import type { ISpec } from '@visactor/vchart'
 
 export const buildSpec = (builder: Builder, advancedVSeed: AdvancedVSeed): Spec => {
   const start = typeof performance !== 'undefined' ? performance.now() : Date.now()
@@ -20,12 +21,12 @@ export const buildSpec = (builder: Builder, advancedVSeed: AdvancedVSeed): Spec 
     vseed: builder.vseed,
     advancedVSeed,
   }
-  if (builder.vseed.locale) {
-    intl.setLocale(builder.vseed.locale)
+  if (builder.locale) {
+    intl.setLocale(builder.locale)
   }
 
   try {
-    const spec = execPipeline<Spec, SpecPipelineContext>(pipeline, context)
+    const spec = execPipeline<ISpec, SpecPipelineContext>(pipeline as VChartSpecPipeline, context)
     builder.spec = spec
     return spec
   } catch (e) {

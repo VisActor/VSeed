@@ -1,0 +1,9 @@
+{
+  "chartType": "histogram",
+  "dataset": [{ "v": 1 }, { "v": 2 }, { "v": 2 }, { "v": 3 }, { "v": 5 }],
+  "measures": [{ "id": "v", "encoding": "value" }],
+  "ecdfRegressionLine": {
+    "text": "ECDF Regression",
+    "lineDash": [4, 2]
+  }
+}

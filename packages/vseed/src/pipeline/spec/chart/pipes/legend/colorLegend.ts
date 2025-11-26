@@ -1,9 +1,10 @@
-import type { Legend, SpecPipe } from 'src/types'
+import { createFormatterByMeasure, findTreeNodesBy } from 'src/pipeline/utils'
+import type { Legend, Measure, VChartSpecPipe } from 'src/types'
 
-export const colorLegend: SpecPipe = (spec, context) => {
+export const colorLegend: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed } = context
-  const { datasetReshapeInfo, chartType } = advancedVSeed
+  const { datasetReshapeInfo, chartType, measures = [] } = advancedVSeed
   const { unfoldInfo } = datasetReshapeInfo[0]
   const baseConfig = advancedVSeed.config[chartType] as { legend: Legend }
   if (!baseConfig || !baseConfig.legend) {
@@ -43,6 +44,11 @@ export const colorLegend: SpecPipe = (spec, context) => {
         fontWeight: labelFontWeight,
       },
     },
+  }
+  const colorMeasure = findTreeNodesBy<Measure>(measures, (m) => m.encoding === 'color')?.[0]
+  if (colorMeasure) {
+    const formatter = createFormatterByMeasure(colorMeasure)
+    result.legends.handlerText!.formatter = formatter
   }
   return result
 }

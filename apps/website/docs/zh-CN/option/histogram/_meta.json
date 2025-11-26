@@ -1,0 +1,127 @@
+[
+  {
+    "type": "file",
+    "name": "annotationArea",
+    "label": "annotationArea "
+  },
+  {
+    "type": "file",
+    "name": "annotationHorizontalLine",
+    "label": "annotationHorizontalLine "
+  },
+  {
+    "type": "file",
+    "name": "annotationPoint",
+    "label": "annotationPoint "
+  },
+  {
+    "type": "file",
+    "name": "annotationVerticalLine",
+    "label": "annotationVerticalLine "
+  },
+  {
+    "type": "file",
+    "name": "backgroundColor",
+    "label": "backgroundColor "
+  },
+  {
+    "type": "file",
+    "name": "barStyle",
+    "label": "barStyle "
+  },
+  {
+    "type": "file",
+    "name": "binCount",
+    "label": "binCount "
+  },
+  {
+    "type": "file",
+    "name": "binStep",
+    "label": "binStep "
+  },
+  {
+    "type": "file",
+    "name": "binValueType",
+    "label": "binValueType "
+  },
+  {
+    "type": "file",
+    "name": "chartType",
+    "label": "chartType "
+  },
+  {
+    "type": "file",
+    "name": "color",
+    "label": "color "
+  },
+  {
+    "type": "file",
+    "name": "crosshairRect",
+    "label": "crosshairRect "
+  },
+  {
+    "type": "file",
+    "name": "dataset",
+    "label": "dataset "
+  },
+  {
+    "type": "file",
+    "name": "dimensions",
+    "label": "dimensions "
+  },
+  {
+    "type": "file",
+    "name": "ecdfRegressionLine",
+    "label": "ecdfRegressionLine "
+  },
+  {
+    "type": "file",
+    "name": "kdeRegressionLine",
+    "label": "kdeRegressionLine "
+  },
+  {
+    "type": "file",
+    "name": "label",
+    "label": "label "
+  },
+  {
+    "type": "file",
+    "name": "legend",
+    "label": "legend "
+  },
+  {
+    "type": "file",
+    "name": "locale",
+    "label": "locale "
+  },
+  {
+    "type": "file",
+    "name": "measures",
+    "label": "measures "
+  },
+  {
+    "type": "file",
+    "name": "stackCornerRadius",
+    "label": "stackCornerRadius "
+  },
+  {
+    "type": "file",
+    "name": "theme",
+    "label": "theme "
+  },
+  {
+    "type": "file",
+    "name": "tooltip",
+    "label": "tooltip "
+  },
+  {
+    "type": "file",
+    "name": "xAxis",
+    "label": "xAxis "
+  },
+  {
+    "type": "file",
+    "name": "yAxis",
+    "label": "yAxis "
+  }
+]

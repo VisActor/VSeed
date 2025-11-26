@@ -1,7 +1,7 @@
 import type { IFunnelChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 
-export const initFunnel: SpecPipe = (spec, context) => {
+export const initFunnel: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as IFunnelChartSpec
   const { advancedVSeed } = context
   const { datasetReshapeInfo } = advancedVSeed
@@ -21,10 +21,6 @@ export const initFunnel: SpecPipe = (spec, context) => {
       clip: true,
     },
   ]
-
-  result.transformLabel = {
-    visible: true,
-  }
 
   result.animation = true
 

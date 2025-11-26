@@ -51,9 +51,17 @@
     "en-US": "Mark Style",
     "zh-CN": "图元样式"
   },
+  "cellStyle": {
+    "en-US": "Table Cell Style",
+    "zh-CN": "表格单元格样式"
+  },
   "annotation": {
     "en-US": "Annotation",
     "zh-CN": "标注"
+  },
+  "regressionLine": {
+    "en-US": "Regression Line",
+    "zh-CN": "回归线"
   },
   "theme": {
     "en-US": "Theme",
@@ -70,5 +78,9 @@
   "analysis": {
     "en-US": "analysis",
     "zh-CN": "分析"
+  },
+  "designPhilosophy": {
+    "en-US": "designPhilosophy",
+    "zh-CN": "设计哲学"
   }
 }

@@ -1,6 +1,6 @@
-import type { Legend, SpecPipe } from 'src/types'
+import type { Legend, VChartSpecPipe } from 'src/types'
 
-export const discreteLegend: SpecPipe = (spec, context) => {
+export const discreteLegend: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed } = context
   const { datasetReshapeInfo, chartType } = advancedVSeed
@@ -17,6 +17,8 @@ export const discreteLegend: SpecPipe = (spec, context) => {
     labelFontColor,
     labelColor,
     labelFontSize = 12,
+    pagerIconColor,
+    pagerIconDisableColor,
     labelFontWeight,
     maxSize = 1,
     border,
@@ -36,6 +38,7 @@ export const discreteLegend: SpecPipe = (spec, context) => {
     : ['topRight', 'bottomRight', 'leftBottom', 'rightBottom', 'lb', 'rb', 'rt', 'br'].includes(position)
       ? 'end'
       : 'middle'
+  const labelTextColor = labelColor || labelFontColor
 
   result.legends = {
     type: 'discrete',
@@ -45,43 +48,53 @@ export const discreteLegend: SpecPipe = (spec, context) => {
     autoPage: true,
     orient,
     position: legendPosition,
-    data: border
-      ? (items) => {
-          return items.map((item) => {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            item.shape.outerBorder = {
-              stroke: item.shape.fill,
-              distance: 3,
-              lineWidth: 1,
-            }
-            return item
-          })
-        }
-      : undefined,
     item: {
       focus: true,
       maxWidth: '30%',
       focusIconStyle: {
         size: labelFontSize + 2,
-        fill: labelColor || labelFontColor,
+        fill: labelTextColor,
         fontWeight: labelFontWeight,
       },
       shape: {
         space: border ? 6 : 4,
-        style: {
-          symbolType: shapeType,
-          size: border ? 8 : 10,
+        style: (item) => {
+          return {
+            symbolType: shapeType,
+            size: border ? 8 : 10,
+            fillOpacity: 1,
+            opacity: 1,
+            stroke: false,
+            outerBorder: border
+              ? {
+                  stroke: item.shape.fill,
+                  distance: 3,
+                  lineWidth: 1,
+                }
+              : null,
+          }
+        },
+        state: {
+          unSelected: {
+            opacity: 0.2,
+            fillOpacity: 1, // 覆盖 vchart 里的默认值
+          },
         },
       },
       label: {
         formatMethod: (value) => {
-          return unfoldInfo.colorIdMap[String(value)] ?? value
+          return unfoldInfo.colorIdMap[String(value)]?.alias ?? value
         },
         style: {
           fontSize: labelFontSize,
           fill: labelColor || labelFontColor,
           fontWeight: labelFontWeight,
+        },
+        state: {
+          unSelected: {
+            fill: labelColor || labelFontColor, // 覆盖vchart里面的默认值
+            fillOpacity: 0.8, // 覆盖 vchart 里的默认值
+          },
         },
       },
       background: {
@@ -89,6 +102,24 @@ export const discreteLegend: SpecPipe = (spec, context) => {
           selectedHover: {
             fill: labelColor || labelFontColor,
             fillOpacity: 0.05,
+          },
+          unSelectedHover: {
+            fill: null,
+          },
+        },
+      },
+    },
+    pager: {
+      textStyle: {
+        fill: labelTextColor,
+      },
+      handler: {
+        style: {
+          fill: pagerIconColor,
+        },
+        state: {
+          disable: {
+            fill: pagerIconDisableColor,
           },
         },
       },

@@ -1,6 +1,6 @@
 # yAxis
 
-**Type:** `import("/Users/bytedance/Projects/VSeed/packages/vseed/src/index").XLinearAxis | undefined`
+**Type:** `YLinearAxis | undefined`
 
 :::note{title=描述}
 y轴, 数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.
@@ -424,7 +424,7 @@ X轴标题
 
 ## grid
 
-**Type:** `{ visible?: boolean; gridColor?: string; gridWidth?: number; } | undefined`
+**Type:** `{ visible?: boolean; gridColor?: string; gridWidth?: number; gridLineDash?: number[]; } | undefined`
 
 :::note{title=描述}
 X轴网格线
@@ -451,6 +451,15 @@ X轴网格线
 
 :::note{title=描述}
 网格线宽度
+
+:::
+
+### gridLineDash
+
+**Type:** `number[] | undefined`
+
+:::note{title=描述}
+网格线类型
 
 :::
 

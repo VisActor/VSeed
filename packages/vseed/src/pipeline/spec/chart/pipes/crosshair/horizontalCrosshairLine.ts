@@ -1,7 +1,7 @@
 import type { ICartesianCrosshairSpec, ILineChartSpec } from '@visactor/vchart'
-import type { SpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 
-export const horizontalCrosshairLine: SpecPipe = (spec, context) => {
+export const horizontalCrosshairLine: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ILineChartSpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
@@ -30,7 +30,7 @@ export const horizontalCrosshairLine: SpecPipe = (spec, context) => {
         lineWidth: 1,
         opacity: 1,
         stroke: lineColor,
-        lineDash: [4, 2],
+        lineDash: config.lineDash ?? [4, 2],
       },
     },
     label: {
@@ -45,6 +45,11 @@ export const horizontalCrosshairLine: SpecPipe = (spec, context) => {
         fill: labelColor,
       },
     },
+  }
+  const yAxisConfig = result.axes?.find((v) => v.orient === 'left')
+  const yAxisFormatter = yAxisConfig?.label?.formatMethod
+  if (yAxisFormatter) {
+    ;(crosshair.yField.label!.formatMethod as any) = (text: string | string[]) => yAxisFormatter(text)
   }
 
   return result

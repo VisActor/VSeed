@@ -19,7 +19,14 @@ export type Legend = {
    * @description 图例字体颜色
    */
   labelColor?: string
-
+  /**
+   * @description 分页器icon颜色
+   */
+  pagerIconColor?: string
+  /**
+   * @description 分页器icon置灰颜色
+   */
+  pagerIconDisableColor?: string
   /**
    * @description 图例字体大小
    * @example labelFontSize: 10
@@ -161,6 +168,8 @@ export const zLegend = z.object({
     .default('bottom')
     .nullish(),
   labelColor: z.string().default('#fff').nullish(),
+  pagerIconColor: z.string().nullish(),
+  pagerIconDisableColor: z.string().nullish(),
   labelFontSize: z.number().default(12).nullish(),
   labelFontWeight: z.number().or(z.string()).default(400).nullish(),
 })

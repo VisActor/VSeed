@@ -1,7 +1,7 @@
 /**
  * @description 核密度估计回归线配置项
  */
-export interface KdeRegressionLine {
+export type KdeRegressionLine = {
   /**
    * @description 是否开启回归线功能
    */

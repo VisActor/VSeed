@@ -1,0 +1,18 @@
+{
+  "name": "vseed-llm-test",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "dotenv": "17.2.1",
+    "openai": "5.12.2",
+    "puppeteer": "^24.16.1",
+    "ts-morph": "^26.0.0",
+    "ts-node": "10.9.2",
+    "zod": "4.0.17",
+    "@visactor/vseed": "workspace:*",
+    "json-schema-to-typescript": "15.0.4"
+  },
+  "scripts": {
+    "generate": "rm -rf ./new-type/* && rm -rf ./top-key/* && ts-node ./generate-top-key.ts && ts-node ./generate-doc.ts"
+  }
+}

@@ -9,6 +9,18 @@ import type {
 } from '../types/dataSelector'
 import { omit } from 'remeda'
 
+/**
+ * 判断两个数字是否“近似相等”
+ */
+function nearlyEqual(a: number, b: number, epsilon = 1e-8) {
+  // NaN 直接不相等
+  if (Number.isNaN(a) || Number.isNaN(b)) return false
+  // 引用同一个数 或 完全相等
+  if (a === b) return true
+  const diff = Math.abs(a - b)
+  return diff <= epsilon
+}
+
 export const selector = (
   vchartDatum: Datum,
   selector: Selector | Selectors | undefined | null,
@@ -41,7 +53,10 @@ export const selector = (
 
       switch (op) {
         case '=':
-          if (String(datum[selector.field]) === String(selectorValueArr[0])) {
+          if (
+            String(datum[selector.field]) === String(selectorValueArr[0]) ||
+            nearlyEqual(Number(datum[selector.field]), Number(selectorValueArr[0]))
+          ) {
             return true
           }
           break
@@ -56,30 +71,44 @@ export const selector = (
           }
           break
         case '>':
-          if (datum[selector.field] > selectorValueArr[0]) {
+          if (
+            datum[selector.field] > selectorValueArr[0] &&
+            !nearlyEqual(Number(datum[selector.field]), Number(selectorValueArr[0]))
+          ) {
             return true
           }
           break
         case '<':
-          if (datum[selector.field] < selectorValueArr[0]) {
+          if (
+            datum[selector.field] < selectorValueArr[0] &&
+            !nearlyEqual(Number(datum[selector.field]), Number(selectorValueArr[0]))
+          ) {
             return true
           }
           break
         case '>=':
-          if (datum[selector.field] >= selectorValueArr[0]) {
+          if (
+            datum[selector.field] >= selectorValueArr[0] ||
+            nearlyEqual(Number(datum[selector.field]), Number(selectorValueArr[0]))
+          ) {
             return true
           }
           break
         case '<=':
-          if (datum[selector.field] <= selectorValueArr[0]) {
+          if (
+            datum[selector.field] <= selectorValueArr[0] ||
+            nearlyEqual(Number(datum[selector.field]), Number(selectorValueArr[0]))
+          ) {
             return true
           }
           break
         case 'between':
           if (
             Array.isArray(selector.value) &&
-            datum[selector.field] >= selectorValueArr[0] &&
-            datum[selector.field] <= selectorValueArr[1]
+            (datum[selector.field] >= selectorValueArr[0] ||
+              nearlyEqual(Number(datum[selector.field]), Number(selectorValueArr[0]))) &&
+            (datum[selector.field] <= selectorValueArr[1] ||
+              nearlyEqual(Number(datum[selector.field]), Number(selectorValueArr[1])))
           ) {
             return true
           }

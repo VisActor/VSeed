@@ -17,6 +17,9 @@ import {
   zColorLegend,
   // zDualMeasures,
   zDualChartType,
+  zBarMaxWidth,
+  zBarGapInGroup,
+  zWhiskersConfig,
 } from '@visactor/vseed'
 import fs from 'fs'
 import path from 'path'
@@ -240,6 +243,51 @@ ${colorLegendSchema}
 ${topKeyDesc['DualChartType']}
 \`\`\`typescript
 ${dualChartTypeSchema}
+\`\`\`
+  `,
+  )
+
+  // BarMaxWidth
+  const barMaxWidthSchema = await compile(z.toJSONSchema(zBarMaxWidth) as any, 'BarMaxWidth', {
+    bannerComment: '',
+  })
+  fs.writeFileSync(
+    path.join(__dirname, './new-type/BarMaxWidth.md'),
+    `
+### BarMaxWidth
+${topKeyDesc['BarMaxWidth']}
+\`\`\`typescript
+${barMaxWidthSchema}
+\`\`\`
+  `,
+  )
+
+  // BarGapInGroup
+  const barGapInGroupSchema = await compile(z.toJSONSchema(zBarGapInGroup) as any, 'BarGapInGroup', {
+    bannerComment: '',
+  })
+  fs.writeFileSync(
+    path.join(__dirname, './new-type/BarGapInGroup.md'),
+    `
+### BarGapInGroup
+${topKeyDesc['BarGapInGroup']}
+\`\`\`typescript
+${barGapInGroupSchema}
+\`\`\`
+  `,
+  )
+
+  // WhiskersConfig
+  const whiskersConfigSchema = await compile(z.toJSONSchema(zWhiskersConfig) as any, 'WhiskersConfig', {
+    bannerComment: '',
+  })
+  fs.writeFileSync(
+    path.join(__dirname, './new-type/WhiskersConfig.md'),
+    `
+### WhiskersConfig
+${topKeyDesc['WhiskersConfig']}
+\`\`\`typescript
+${whiskersConfigSchema}
 \`\`\`
   `,
   )

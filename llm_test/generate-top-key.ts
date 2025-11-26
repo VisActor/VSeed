@@ -27,7 +27,12 @@ files.forEach((file: any) => {
         return
       }
       keyPath.name = name
-      const datasetType = property.getTypeNode()?.getText().split(' | ')[0]
+      const datasetTypes = property.getTypeNode()?.getText().split(' | ') as string[]
+      // 取第一个不是基础类型的
+      const datasetType =
+        datasetTypes.find(
+          (type) => !type.includes('number') && !type.includes('string') && !type.includes('boolean'),
+        ) || datasetTypes[0]
       // console.log(`datasetType: ${datasetType}`);
       keyPath.componentName = datasetType
       const jsDoc = property.getJsDocs()

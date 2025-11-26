@@ -9,6 +9,7 @@ function generateChartTypeMarkdown() {
     'bar',
     'barParallel',
     'barPercent',
+    'boxplot',
     'column',
     'columnParallel',
     'columnPercent',
@@ -16,6 +17,7 @@ function generateChartTypeMarkdown() {
     'dualAxis',
     'funnel',
     'heatmap',
+    'histogram',
     'line',
     'pie',
     'pivotTable',
@@ -113,6 +115,10 @@ const skipTopKeys = [
   'ScatterMeasures',
   'DualMeasures',
   'LinearColor',
+
+  'BarMaxWidth',
+  'BarGapInGroup',
+  'WhiskersConfig',
 ]
 
 function generateComponentMarkdown() {
@@ -179,7 +185,12 @@ function generateComponentMarkdown() {
       }
     })
     // 基础类型跳过
-    if (topKeyLower === 'boolean' || topKeyLower === 'string' || topKeyLower === 'number') {
+    if (
+      topKeyLower === 'boolean' ||
+      topKeyLower === 'string' ||
+      topKeyLower === 'number' ||
+      topKeyLower.startsWith("'")
+    ) {
       return
     }
     if (topKeyLower.startsWith('crosshair')) {
@@ -269,9 +280,43 @@ function generateAxisMarkdown() {
   const linearAxisFileContentStr = linearAxisFileContent.toString()
   const outputDir = path.resolve(__dirname, './new-type')
 
-  const xBandAxisDefinition = bandAxisFileContentStr
-    .replace('export type XBandAxis', 'export type XBandAxis')
-    .replace('export type YBandAxis = XBandAxis', '')
+  // 提取bandAxisFileContent中的export type XBandAxis = {...} 部分
+  const xBandAxisSignature = 'export type XBandAxis'
+  let xStartIndex = bandAxisFileContentStr.indexOf(xBandAxisSignature)
+  if (xStartIndex === -1) {
+    xStartIndex = bandAxisFileContentStr.indexOf('type XBandAxis')
+  }
+  let xBandAxisDefinition = ''
+  if (xStartIndex !== -1) {
+    const xDefStartIndex = bandAxisFileContentStr.indexOf('{', xStartIndex)
+    if (xDefStartIndex !== -1) {
+      let braceCount = 1
+      let xDefEndIndex = -1
+      for (let i = xDefStartIndex + 1; i < bandAxisFileContentStr.length; i++) {
+        const ch = bandAxisFileContentStr[i]
+        if (ch === '{') {
+          braceCount++
+        } else if (ch === '}') {
+          braceCount--
+          if (braceCount === 0) {
+            xDefEndIndex = i
+            break
+          }
+        }
+      }
+      if (xDefEndIndex !== -1) {
+        xBandAxisDefinition = bandAxisFileContentStr.substring(xStartIndex, xDefEndIndex + 1)
+      } else {
+        console.log('Could not find matching closing brace for XBandAxis in bandAxis.ts')
+        xBandAxisDefinition = bandAxisFileContentStr.substring(xStartIndex)
+      }
+    } else {
+      console.log('Could not find opening brace for XBandAxis in bandAxis.ts')
+      xBandAxisDefinition = bandAxisFileContentStr.substring(xStartIndex)
+    }
+  } else {
+    console.log('Could not find type definition for XBandAxis in bandAxis.ts')
+  }
   fs.writeFileSync(
     path.resolve(outputDir, 'XBandAxis.md'),
     '### XBandAxis\n类目轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.\n```typescript\n' +
@@ -279,9 +324,42 @@ function generateAxisMarkdown() {
       '\n```',
   )
 
-  const yBandAxisDefinition = bandAxisFileContentStr
-    .replace('export type XBandAxis', 'export type YBandAxis')
-    .replace('export type YBandAxis = XBandAxis', '')
+  const yBandAxisSignature = 'export type YBandAxis'
+  let yStartIndex = bandAxisFileContentStr.indexOf(yBandAxisSignature)
+  if (yStartIndex === -1) {
+    yStartIndex = bandAxisFileContentStr.indexOf('type YBandAxis')
+  }
+  let yBandAxisDefinition = ''
+  if (yStartIndex !== -1) {
+    const yDefStartIndex = bandAxisFileContentStr.indexOf('{', yStartIndex)
+    if (yDefStartIndex !== -1) {
+      let braceCount = 1
+      let yDefEndIndex = -1
+      for (let i = yDefStartIndex + 1; i < bandAxisFileContentStr.length; i++) {
+        const ch = bandAxisFileContentStr[i]
+        if (ch === '{') {
+          braceCount++
+        } else if (ch === '}') {
+          braceCount--
+          if (braceCount === 0) {
+            yDefEndIndex = i
+            break
+          }
+        }
+      }
+      if (yDefEndIndex !== -1) {
+        yBandAxisDefinition = bandAxisFileContentStr.substring(yStartIndex, yDefEndIndex + 1)
+      } else {
+        console.log('Could not find matching closing brace for YBandAxis in bandAxis.ts')
+        yBandAxisDefinition = bandAxisFileContentStr.substring(yStartIndex)
+      }
+    } else {
+      console.log('Could not find opening brace for YBandAxis in bandAxis.ts')
+      yBandAxisDefinition = bandAxisFileContentStr.substring(yStartIndex)
+    }
+  } else {
+    console.log('Could not find type definition for YBandAxis in bandAxis.ts')
+  }
   fs.writeFileSync(
     path.resolve(outputDir, 'YBandAxis.md'),
     '### YBandAxis\n类目轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.\n```typescript\n' +
@@ -289,10 +367,42 @@ function generateAxisMarkdown() {
       '\n```',
   )
 
-  const xLinearAxisDefinition = linearAxisFileContentStr
-    .replace('export type XLinearAxis', 'export type XLinearAxis')
-    .replace('export type YLinearAxis = XLinearAxis', '')
-    .replace("import type { NumFormat } from '../../format'", '')
+  const xLinearAxisSignature = 'export type XLinearAxis'
+  let xLinearStartIndex = linearAxisFileContentStr.indexOf(xLinearAxisSignature)
+  if (xLinearStartIndex === -1) {
+    xLinearStartIndex = linearAxisFileContentStr.indexOf('type XLinearAxis')
+  }
+  let xLinearAxisDefinition = ''
+  if (xLinearStartIndex !== -1) {
+    const xLinearDefStartIndex = linearAxisFileContentStr.indexOf('{', xLinearStartIndex)
+    if (xLinearDefStartIndex !== -1) {
+      let braceCount = 1
+      let xLinearDefEndIndex = -1
+      for (let i = xLinearDefStartIndex + 1; i < linearAxisFileContentStr.length; i++) {
+        const ch = linearAxisFileContentStr[i]
+        if (ch === '{') {
+          braceCount++
+        } else if (ch === '}') {
+          braceCount--
+          if (braceCount === 0) {
+            xLinearDefEndIndex = i
+            break
+          }
+        }
+      }
+      if (xLinearDefEndIndex !== -1) {
+        xLinearAxisDefinition = linearAxisFileContentStr.substring(xLinearStartIndex, xLinearDefEndIndex + 1)
+      } else {
+        console.log('Could not find matching closing brace for XLinearAxis in linearAxis.ts')
+        xLinearAxisDefinition = linearAxisFileContentStr.substring(xLinearStartIndex)
+      }
+    } else {
+      console.log('Could not find opening brace for XLinearAxis in linearAxis.ts')
+      xLinearAxisDefinition = linearAxisFileContentStr.substring(xLinearStartIndex)
+    }
+  } else {
+    console.log('Could not find type definition for XLinearAxis in linearAxis.ts')
+  }
   fs.writeFileSync(
     path.resolve(outputDir, 'XLinearAxis.md'),
     '### XLinearAxis\n数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.\n```typescript\n' +
@@ -302,10 +412,42 @@ function generateAxisMarkdown() {
       '\n```',
   )
 
-  const yLinearAxisDefinition = linearAxisFileContentStr
-    .replace('export type XLinearAxis', 'export type YLinearAxis')
-    .replace('export type YLinearAxis = XLinearAxis', '')
-    .replace("import type { NumFormat } from '../../format'", '')
+  const yLinearAxisSignature = 'export type YLinearAxis'
+  let yLinearStartIndex = linearAxisFileContentStr.indexOf(yLinearAxisSignature)
+  if (yLinearStartIndex === -1) {
+    yLinearStartIndex = linearAxisFileContentStr.indexOf('type YLinearAxis')
+  }
+  let yLinearAxisDefinition = ''
+  if (yLinearStartIndex !== -1) {
+    const yLinearDefStartIndex = linearAxisFileContentStr.indexOf('{', yLinearStartIndex)
+    if (yLinearDefStartIndex !== -1) {
+      let braceCount = 1
+      let yLinearDefEndIndex = -1
+      for (let i = yLinearDefStartIndex + 1; i < linearAxisFileContentStr.length; i++) {
+        const ch = linearAxisFileContentStr[i]
+        if (ch === '{') {
+          braceCount++
+        } else if (ch === '}') {
+          braceCount--
+          if (braceCount === 0) {
+            yLinearDefEndIndex = i
+            break
+          }
+        }
+      }
+      if (yLinearDefEndIndex !== -1) {
+        yLinearAxisDefinition = linearAxisFileContentStr.substring(yLinearStartIndex, yLinearDefEndIndex + 1)
+      } else {
+        console.log('Could not find matching closing brace for YLinearAxis in linearAxis.ts')
+        yLinearAxisDefinition = linearAxisFileContentStr.substring(yLinearStartIndex)
+      }
+    } else {
+      console.log('Could not find opening brace for YLinearAxis in linearAxis.ts')
+      yLinearAxisDefinition = linearAxisFileContentStr.substring(yLinearStartIndex)
+    }
+  } else {
+    console.log('Could not find type definition for YLinearAxis in linearAxis.ts')
+  }
   fs.writeFileSync(
     path.resolve(outputDir, 'YLinearAxis.md'),
     '### YLinearAxis\n数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.\n```typescript\n' +
@@ -491,7 +633,7 @@ export async function generateMarkdown() {
   generateComponentMarkdown()
   generateAxisMarkdown()
   generateMeasureMarkdown()
-  generateLinearColor()
+  // generateLinearColor()
   generateDimensionMarkdown()
 }
 

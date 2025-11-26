@@ -1,7 +1,7 @@
 /**
  * @description 经验累积分布函数回归线配置项
  */
-export interface EcdfRegressionLine {
+export type EcdfRegressionLine = {
   /**
    * 是否开启
    */

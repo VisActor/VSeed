@@ -1,6 +1,6 @@
 import type { Label } from './label'
 
-export interface PieLabel extends Label {
+export type PieLabel = Label & {
   /**
    * @description 标签布局方式, 仅对饼图、环形图生效且`labelPosition`为`outside`时生效
    * - arc: 按弧形为标签布局

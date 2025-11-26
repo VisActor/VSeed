@@ -23,7 +23,12 @@ async function checkFiles() {
         const componentName = item.componentName
         const expectedNewTypeFile = componentName.charAt(0).toUpperCase() + componentName.slice(1) + '.md'
         // componentName 为基础类型，跳过
-        if (componentName === 'string' || componentName === 'number' || componentName === 'boolean') {
+        if (
+          componentName === 'string' ||
+          componentName === 'number' ||
+          componentName === 'boolean' ||
+          componentName.startsWith("'")
+        ) {
           return
         }
         if (!newTypeFileNames.has(expectedNewTypeFile)) {

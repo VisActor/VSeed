@@ -1426,6 +1426,7 @@ exports[`null2undefined 2`] = `
       "itemLine": {
         "visible": false,
       },
+      "regionRelative": true,
       "zIndex": 1000,
     },
     {
@@ -1467,6 +1468,7 @@ exports[`null2undefined 2`] = `
       "itemLine": {
         "visible": false,
       },
+      "regionRelative": true,
       "zIndex": 1000,
     },
   ],

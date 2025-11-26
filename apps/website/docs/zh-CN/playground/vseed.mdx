@@ -9,68 +9,226 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'line',
-    dataset: [
+    color: {
+      colorScheme: ['#7E5DFF', '#ACA2D5', '#5B5F89', '#80E1D9', '#F8BC3B', '#B2596E', '#3E91FF', '#9578BB'],
+    },
+    legend: {
+      enable: true,
+      labelFontSize: 12,
+      labelFontColor: '#BBBDC3',
+      position: 'topRight',
+      maxSize: 1,
+    },
+    label: {
+      enable: false,
+      labelColor: '#FDFDFD',
+      labelFontSize: 12,
+    },
+    stackCornerRadius: 6,
+    barMaxWidth: 72,
+    xAxis: {
+      grid: {
+        visible: false,
+        gridColor: '#303339',
+        gridWidth: 1,
+      },
+      label: {
+        visible: true,
+        labelColor: '#888C93',
+        labelFontSize: 12,
+      },
+      title: {
+        visible: false,
+        titleColor: '#BBBDC3',
+        titleFontSize: 12,
+      },
+      line: {
+        lineColor: '#FDFDFD0F',
+      },
+      visible: true,
+    },
+    primaryYAxis: {
+      grid: {
+        visible: true,
+        gridColor: '#303339',
+        gridWidth: 1,
+      },
+      label: {
+        visible: true,
+        labelColor: '#888C93',
+        labelFontSize: 12,
+      },
+      title: {
+        visible: true,
+        titleColor: '#BBBDC3',
+        titleText: '销售额',
+        titleFontSize: 12,
+      },
+      line: {
+        lineColor: '#FDFDFD0F',
+      },
+      visible: true,
+    },
+    secondaryYAxis: {
+      grid: {
+        visible: false,
+        gridColor: '#303339',
+        gridWidth: 1,
+      },
+      label: {
+        visible: true,
+        labelColor: '#888C93',
+        labelFontSize: 12,
+      },
+      title: {
+        visible: true,
+        titleColor: '#BBBDC3',
+        titleText: '利润率',
+        titleFontSize: 12,
+      },
+      line: {
+        lineColor: '#FDFDFD0F',
+      },
+      visible: true,
+    },
+    lineStyle: [
       {
-        乐观情景: 44000,
-        基准情景: 42500,
-        悲观情景: 39500,
-        时间: '2025年下半年',
+        lineStyle: 'solid',
+        lineWidth: 2,
+      },
+    ],
+    pointStyle: [
+      {
+        pointSize: 8,
+      },
+    ],
+    annotationPoint: [
+      {
+        text: '最大销售数量',
+        textColor: '#FFFFFF',
+        textFontSize: 12,
+        textBackgroundColor: '#BCC1CB',
+        textBackgroundBorderRadius: 3,
+        textBackgroundBorderWidth: 0,
+        selector: [
+          {
+            field: 'xA_20251113103307_b668',
+            operator: 'in',
+            value: ['华东'],
+          },
+          {
+            field: 'pr_20251113103311_60cb',
+            operator: '>',
+            value: 9000,
+          },
+        ],
       },
       {
-        乐观情景: 46000,
-        基准情景: 43500,
-        悲观情景: 38000,
-        时间: '2026年上半年',
+        text: '最大利润',
+        textColor: '#FFFFFF',
+        textFontSize: 12,
+        textBackgroundColor: '#BCC1CB',
+        textBackgroundBorderRadius: 3,
+        textBackgroundBorderWidth: 0,
+        selector: [
+          {
+            field: 'se_20251113103303_9f29',
+            operator: '>',
+            value: 60000,
+          },
+        ],
+      },
+    ],
+    barStyle: [],
+    areaStyle: [],
+    annotationHorizontalLine: [],
+    annotationVerticalLine: [],
+    annotationArea: [],
+    measures: [
+      {
+        id: 'se_20251113103303_9f29',
+        alias: 'sum(profit)',
+        encoding: 'secondaryYAxis',
+        format: {
+          auto: true,
+          fractionDigits: 2,
+          thousandSeparator: true,
+          type: 'number',
+        },
+        autoFormat: true,
+        parentId: '0',
       },
       {
-        乐观情景: 47500,
-        基准情景: 44500,
-        悲观情景: 37000,
-        时间: '2026年下半年',
-      },
-      {
-        乐观情景: 49000,
-        基准情景: 45500,
-        悲观情景: 36000,
-        时间: '2027年上半年',
+        id: 'pr_20251113103311_60cb',
+        alias: 'sum(amount)',
+        encoding: 'primaryYAxis',
+        format: {
+          auto: true,
+          thousandSeparator: true,
+          type: 'number',
+        },
+        autoFormat: true,
+        parentId: '0',
       },
     ],
     dimensions: [
       {
-        id: '时间',
-        alias: '预测时间点',
+        id: 'xA_20251113103307_b668',
+        alias: 'area',
         encoding: 'xAxis',
-      },
-      {
-        id: '__MeaName__',
-        alias: '指标名称',
+        autoFormat: true,
       },
     ],
-    measures: [
+    dualChartType: [
       {
-        id: '基准情景',
-        alias: '基准情景下的武汉小学学区房均价预测',
-        encoding: 'yAxis',
+        primary: 'column',
+        secondary: 'line',
       },
       {
-        id: '乐观情景',
-        alias: '乐观情景下的武汉小学学区房均价预测',
-        encoding: 'yAxis',
-      },
-      {
-        id: '悲观情景',
-        alias: '悲观情景下的武汉小学学区房均价预测',
-        encoding: 'yAxis',
+        primary: 'line',
+        secondary: 'line',
       },
     ],
-    legend: {
-      enable: true,
-    },
-    label: {
-      enable: true,
-    },
-    theme: 'chinese',
+    chartType: 'dualAxis',
+    dataset: [
+      {
+        pr_20251113103311_60cb: '11041',
+        pr_20251125192938_f698: '331.09999999999883',
+        se_20251113103303_9f29: '607218.6819999996',
+        xA_20251113103307_b668: '华东',
+      },
+      {
+        pr_20251113103311_60cb: '9700',
+        pr_20251125192938_f698: '232.15000000000038',
+        se_20251113103303_9f29: '670885.313',
+        xA_20251113103307_b668: '中南',
+      },
+      {
+        pr_20251113103311_60cb: '6463',
+        pr_20251125192938_f698: '234.7500000000018',
+        se_20251113103303_9f29: '242191.50899999973',
+        xA_20251113103307_b668: '东北',
+      },
+      {
+        pr_20251113103311_60cb: '5146',
+        pr_20251125192938_f698: '74.10000000000001',
+        se_20251113103303_9f29: '431053.2169999998',
+        xA_20251113103307_b668: '华北',
+      },
+      {
+        pr_20251113103311_60cb: '3399',
+        pr_20251125192938_f698: '134.20000000000067',
+        se_20251113103303_9f29: '97636.72800000008',
+        xA_20251113103307_b668: '西南',
+      },
+      {
+        pr_20251113103311_60cb: '1785',
+        pr_20251125192938_f698: '53.39999999999989',
+        se_20251113103303_9f29: '98553.47600000004',
+        xA_20251113103307_b668: '西北',
+      },
+    ],
+    theme: 'dark',
     locale: 'zh-CN',
   }
 

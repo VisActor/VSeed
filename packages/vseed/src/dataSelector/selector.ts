@@ -71,30 +71,44 @@ export const selector = (
           }
           break
         case '>':
-          if (datum[selector.field] > selectorValueArr[0]) {
+          if (
+            datum[selector.field] > selectorValueArr[0] &&
+            !nearlyEqual(Number(datum[selector.field]), Number(selectorValueArr[0]))
+          ) {
             return true
           }
           break
         case '<':
-          if (datum[selector.field] < selectorValueArr[0]) {
+          if (
+            datum[selector.field] < selectorValueArr[0] &&
+            !nearlyEqual(Number(datum[selector.field]), Number(selectorValueArr[0]))
+          ) {
             return true
           }
           break
         case '>=':
-          if (datum[selector.field] >= selectorValueArr[0]) {
+          if (
+            datum[selector.field] >= selectorValueArr[0] ||
+            nearlyEqual(Number(datum[selector.field]), Number(selectorValueArr[0]))
+          ) {
             return true
           }
           break
         case '<=':
-          if (datum[selector.field] <= selectorValueArr[0]) {
+          if (
+            datum[selector.field] <= selectorValueArr[0] ||
+            nearlyEqual(Number(datum[selector.field]), Number(selectorValueArr[0]))
+          ) {
             return true
           }
           break
         case 'between':
           if (
             Array.isArray(selector.value) &&
-            datum[selector.field] >= selectorValueArr[0] &&
-            datum[selector.field] <= selectorValueArr[1]
+            (datum[selector.field] >= selectorValueArr[0] ||
+              nearlyEqual(Number(datum[selector.field]), Number(selectorValueArr[0]))) &&
+            (datum[selector.field] <= selectorValueArr[1] ||
+              nearlyEqual(Number(datum[selector.field]), Number(selectorValueArr[1])))
           ) {
             return true
           }

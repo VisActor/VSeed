@@ -99,7 +99,7 @@ exports[`type_column_scatter 1`] = `
         "labelBackgroundColor": "#364159",
         "labelColor": "#ffffff",
         "labelVisible": true,
-        "rectColor": "#3641594d",
+        "rectColor": "#D9DDE4",
         "visible": true,
       },
       "dualChartType": [
@@ -374,7 +374,7 @@ exports[`type_column_scatter 1`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "dualChartType": {
@@ -1778,9 +1778,9 @@ exports[`type_column_scatter 2`] = `
       },
       "line": {
         "style": {
-          "fill": "#3641594d",
+          "fill": "#D9DDE4",
           "lineWidth": 0,
-          "opacity": 0.2,
+          "opacity": 0.26,
         },
         "type": "rect",
       },
@@ -2310,34 +2310,6 @@ exports[`type_column_scatter 2`] = `
             "visible": false,
           },
         },
-        "style": {
-          "keyLabel": {
-            "fontColor": "#606773",
-            "fontSize": 12,
-            "lineHeight": 12,
-          },
-          "panel": {
-            "backgroundColor": "#fff",
-            "border": {
-              "color": "#e3e5e8",
-              "radius": 12,
-              "width": 1,
-            },
-            "padding": 7,
-          },
-          "titleLabel": {
-            "fontColor": "#21252c",
-            "fontSize": 12,
-            "fontWeight": "bold",
-            "lineHeight": 12,
-          },
-          "valueLabel": {
-            "fontColor": "#21252c",
-            "fontSize": 12,
-            "fontWeight": "medium",
-            "lineHeight": 12,
-          },
-        },
         "visible": true,
       },
       "type": "bar",
@@ -2786,6 +2758,36 @@ exports[`type_column_scatter 2`] = `
       "zIndex": 1001,
     },
   ],
+  "tooltip": {
+    "style": {
+      "keyLabel": {
+        "fontColor": "#606773",
+        "fontSize": 12,
+        "lineHeight": 12,
+      },
+      "panel": {
+        "backgroundColor": "#fff",
+        "border": {
+          "color": "#e3e5e8",
+          "radius": 12,
+          "width": 1,
+        },
+        "padding": 7,
+      },
+      "titleLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "lineHeight": 12,
+      },
+      "valueLabel": {
+        "fontColor": "#21252c",
+        "fontSize": 12,
+        "fontWeight": "medium",
+        "lineHeight": 12,
+      },
+    },
+  },
   "type": "common",
 }
 `;
@@ -3471,7 +3473,7 @@ exports[`type_column_scatter 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -3710,7 +3712,7 @@ exports[`type_column_scatter 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -3949,7 +3951,7 @@ exports[`type_column_scatter 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -4188,7 +4190,7 @@ exports[`type_column_scatter 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -4414,7 +4416,7 @@ exports[`type_column_scatter 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -4695,7 +4697,7 @@ exports[`type_column_scatter 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -4934,7 +4936,7 @@ exports[`type_column_scatter 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -5248,7 +5250,7 @@ exports[`type_column_scatter 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "dualChartType": {
@@ -5671,7 +5673,7 @@ exports[`type_column_scatter 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -7234,10 +7236,10 @@ exports[`type_column_scatter 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -7470,10 +7472,10 @@ exports[`type_column_scatter 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -7706,10 +7708,10 @@ exports[`type_column_scatter 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -7942,10 +7944,10 @@ exports[`type_column_scatter 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -8172,10 +8174,10 @@ exports[`type_column_scatter 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -8450,10 +8452,10 @@ exports[`type_column_scatter 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -8686,10 +8688,10 @@ exports[`type_column_scatter 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -8995,10 +8997,10 @@ exports[`type_column_scatter 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "dualChartType": {
@@ -9410,10 +9412,10 @@ exports[`type_column_scatter 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -10963,7 +10965,7 @@ exports[`type_column_scatter 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {
@@ -11202,7 +11204,7 @@ exports[`type_column_scatter 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {
@@ -11441,7 +11443,7 @@ exports[`type_column_scatter 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {
@@ -11680,7 +11682,7 @@ exports[`type_column_scatter 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {
@@ -11906,7 +11908,7 @@ exports[`type_column_scatter 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {
@@ -12187,7 +12189,7 @@ exports[`type_column_scatter 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {
@@ -12426,7 +12428,7 @@ exports[`type_column_scatter 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {
@@ -12740,7 +12742,7 @@ exports[`type_column_scatter 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "dualChartType": {
@@ -13163,7 +13165,7 @@ exports[`type_column_scatter 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {

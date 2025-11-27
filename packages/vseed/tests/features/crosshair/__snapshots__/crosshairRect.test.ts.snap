@@ -1682,7 +1682,7 @@ exports[`crosshairRect 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -1921,7 +1921,7 @@ exports[`crosshairRect 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -2160,7 +2160,7 @@ exports[`crosshairRect 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -2399,7 +2399,7 @@ exports[`crosshairRect 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -2625,7 +2625,7 @@ exports[`crosshairRect 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -2906,7 +2906,7 @@ exports[`crosshairRect 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -3145,7 +3145,7 @@ exports[`crosshairRect 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -3459,7 +3459,7 @@ exports[`crosshairRect 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "dualChartType": {
@@ -3882,7 +3882,7 @@ exports[`crosshairRect 3`] = `
           "labelBackgroundColor": "#364159",
           "labelColor": "#ffffff",
           "labelVisible": true,
-          "rectColor": "#3641594d",
+          "rectColor": "#D9DDE4",
           "visible": true,
         },
         "label": {
@@ -5445,10 +5445,10 @@ exports[`crosshairRect 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -5681,10 +5681,10 @@ exports[`crosshairRect 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -5917,10 +5917,10 @@ exports[`crosshairRect 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -6153,10 +6153,10 @@ exports[`crosshairRect 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -6383,10 +6383,10 @@ exports[`crosshairRect 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -6661,10 +6661,10 @@ exports[`crosshairRect 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -6897,10 +6897,10 @@ exports[`crosshairRect 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -7206,10 +7206,10 @@ exports[`crosshairRect 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "dualChartType": {
@@ -7621,10 +7621,10 @@ exports[`crosshairRect 3`] = `
             "positiveColor": "#7E5DFF",
           },
           "crosshairRect": {
-            "labelBackgroundColor": "#ffffff",
-            "labelColor": "#4B4F54",
+            "labelBackgroundColor": "#404349",
+            "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#E2E3E6",
+            "rectColor": "#4B4F54",
             "visible": true,
           },
           "label": {
@@ -9174,7 +9174,7 @@ exports[`crosshairRect 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {
@@ -9413,7 +9413,7 @@ exports[`crosshairRect 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {
@@ -9652,7 +9652,7 @@ exports[`crosshairRect 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {
@@ -9891,7 +9891,7 @@ exports[`crosshairRect 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {
@@ -10117,7 +10117,7 @@ exports[`crosshairRect 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {
@@ -10398,7 +10398,7 @@ exports[`crosshairRect 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {
@@ -10637,7 +10637,7 @@ exports[`crosshairRect 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {
@@ -10951,7 +10951,7 @@ exports[`crosshairRect 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "dualChartType": {
@@ -11374,7 +11374,7 @@ exports[`crosshairRect 3`] = `
             "labelBackgroundColor": "#364159",
             "labelColor": "#ffffff",
             "labelVisible": true,
-            "rectColor": "#3641594d",
+            "rectColor": "#D9DDE4",
             "visible": true,
           },
           "label": {

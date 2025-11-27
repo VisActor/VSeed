@@ -1870,18 +1870,6 @@ exports[`tpye_area_area 2`] = `
         "style": {},
         "visible": true,
       },
-      "bar": {
-        "state": {
-          "hover": {
-            "fillOpacity": 0.6,
-          },
-        },
-        "style": {
-          "fillOpacity": 1,
-          "lineWidth": 1,
-          "visible": true,
-        },
-      },
       "data": {
         "fields": {
           "__Dim_ColorId__": {
@@ -2260,9 +2248,6 @@ exports[`tpye_area_area 2`] = `
       },
       "large": false,
       "largeThreshold": Infinity,
-      "line": {
-        "style": {},
-      },
       "point": {
         "state": {
           "dimension_hover": {
@@ -2370,18 +2355,6 @@ exports[`tpye_area_area 2`] = `
       "area": {
         "style": {},
         "visible": true,
-      },
-      "bar": {
-        "state": {
-          "hover": {
-            "fillOpacity": 0.6,
-          },
-        },
-        "style": {
-          "fillOpacity": 1,
-          "lineWidth": 1,
-          "visible": true,
-        },
       },
       "data": {
         "fields": {
@@ -2761,9 +2734,6 @@ exports[`tpye_area_area 2`] = `
       },
       "large": false,
       "largeThreshold": Infinity,
-      "line": {
-        "style": {},
-      },
       "point": {
         "state": {
           "dimension_hover": {

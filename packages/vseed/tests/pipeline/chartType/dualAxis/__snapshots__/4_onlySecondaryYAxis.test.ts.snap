@@ -1231,10 +1231,6 @@ exports[`4_onlySecondaryYAxis 2`] = `
   "series": [
     {
       "animation": true,
-      "area": {
-        "style": {},
-        "visible": true,
-      },
       "bar": {
         "state": {
           "hover": {
@@ -1282,23 +1278,6 @@ exports[`4_onlySecondaryYAxis 2`] = `
       },
       "large": false,
       "largeThreshold": Infinity,
-      "line": {
-        "style": {},
-      },
-      "point": {
-        "state": {
-          "dimension_hover": {
-            "outerBorder": {
-              "distance": 2,
-              "lineWidth": 4,
-              "strokeOpacity": 0.25,
-            },
-            "scaleX": 1.4,
-            "scaleY": 1.4,
-          },
-        },
-        "style": {},
-      },
       "progressiveStep": 400,
       "progressiveThreshold": Infinity,
       "seriesField": "__Dim_ColorId__",
@@ -1376,22 +1355,6 @@ exports[`4_onlySecondaryYAxis 2`] = `
     },
     {
       "animation": true,
-      "area": {
-        "style": {},
-        "visible": true,
-      },
-      "bar": {
-        "state": {
-          "hover": {
-            "fillOpacity": 0.6,
-          },
-        },
-        "style": {
-          "fillOpacity": 1,
-          "lineWidth": 1,
-          "visible": true,
-        },
-      },
       "data": {
         "fields": {
           "__Dim_ColorId__": {

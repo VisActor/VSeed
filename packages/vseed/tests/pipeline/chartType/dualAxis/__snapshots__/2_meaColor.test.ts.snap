@@ -1441,15 +1441,6 @@ exports[`2_meaColor 2`] = `
   "series": [
     {
       "animation": true,
-      "area": {
-        "style": {
-          "fill": {
-            "field": "__Dim_Color__",
-            "scale": "color",
-          },
-        },
-        "visible": true,
-      },
       "bar": {
         "state": {
           "hover": {
@@ -1712,33 +1703,6 @@ exports[`2_meaColor 2`] = `
       },
       "large": false,
       "largeThreshold": Infinity,
-      "line": {
-        "style": {
-          "stroke": {
-            "field": "__Dim_Color__",
-            "scale": "color",
-          },
-        },
-      },
-      "point": {
-        "state": {
-          "dimension_hover": {
-            "outerBorder": {
-              "distance": 2,
-              "lineWidth": 4,
-              "strokeOpacity": 0.25,
-            },
-            "scaleX": 1.4,
-            "scaleY": 1.4,
-          },
-        },
-        "style": {
-          "fill": {
-            "field": "__Dim_Color__",
-            "scale": "color",
-          },
-        },
-      },
       "progressiveStep": 400,
       "progressiveThreshold": Infinity,
       "seriesField": "__Dim_ColorId__",
@@ -1830,31 +1794,6 @@ exports[`2_meaColor 2`] = `
     },
     {
       "animation": true,
-      "area": {
-        "style": {
-          "fill": {
-            "field": "__Dim_Color__",
-            "scale": "color",
-          },
-        },
-        "visible": true,
-      },
-      "bar": {
-        "state": {
-          "hover": {
-            "fillOpacity": 0.6,
-          },
-        },
-        "style": {
-          "fill": {
-            "field": "__Dim_Color__",
-            "scale": "color",
-          },
-          "fillOpacity": 1,
-          "lineWidth": 1,
-          "visible": true,
-        },
-      },
       "data": {
         "fields": {
           "__Dim_ColorId__": {

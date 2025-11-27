@@ -1866,22 +1866,6 @@ exports[`type_line_line 2`] = `
   "series": [
     {
       "animation": true,
-      "area": {
-        "style": {},
-        "visible": true,
-      },
-      "bar": {
-        "state": {
-          "hover": {
-            "fillOpacity": 0.6,
-          },
-        },
-        "style": {
-          "fillOpacity": 1,
-          "lineWidth": 1,
-          "visible": true,
-        },
-      },
       "data": {
         "fields": {
           "__Dim_ColorId__": {
@@ -2367,22 +2351,6 @@ exports[`type_line_line 2`] = `
     },
     {
       "animation": true,
-      "area": {
-        "style": {},
-        "visible": true,
-      },
-      "bar": {
-        "state": {
-          "hover": {
-            "fillOpacity": 0.6,
-          },
-        },
-        "style": {
-          "fillOpacity": 1,
-          "lineWidth": 1,
-          "visible": true,
-        },
-      },
       "data": {
         "fields": {
           "__Dim_ColorId__": {

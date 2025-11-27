@@ -16,7 +16,6 @@ export const tooltipPrimary: VChartSpecPipe = (spec, context) => {
   const unfoldInfo = datasetReshapeInfo[0].unfoldInfo
 
   result.tooltip = {
-    style: getTooltipStyle(tooltip),
     visible: enable,
     mark: {
       title: {
@@ -74,6 +73,19 @@ export const tooltipSecondary: VChartSpecPipe = (spec, context) => {
       },
       content: createDimensionContent(dimensions, measures, foldInfoList[1], unfoldInfo),
     },
+  }
+  return result
+}
+
+export const tooltipDualAxis: VChartSpecPipe = (spec, context) => {
+  const result = { ...spec }
+  const { advancedVSeed } = context
+  const { chartType } = advancedVSeed
+  const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
+  const { tooltip = { enable: true } } = baseConfig
+
+  result.tooltip = {
+    style: getTooltipStyle(tooltip),
   }
   return result
 }

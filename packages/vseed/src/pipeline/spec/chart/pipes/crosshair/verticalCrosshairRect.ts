@@ -28,7 +28,7 @@ export const verticalCrosshairRect: VChartSpecPipe = (spec, context) => {
       type: 'rect',
       style: {
         lineWidth: 0,
-        opacity: 0.2,
+        opacity: 0.26,
         fill: rectColor,
       },
     },

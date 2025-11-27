@@ -1,7 +1,7 @@
 import { unique } from 'remeda'
 import { MeasureId } from 'src/dataReshape'
 import { findAllMeasures } from 'src/pipeline/utils'
-import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
+import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, MeasureGroup, Measures } from 'src/types'
 import { addColorToEncoding } from './color'
 
 export const defaultEncodingForPie: AdvancedPipe = (advancedVSeed) => {
@@ -22,7 +22,12 @@ export const encodingForPie: AdvancedPipe = (advancedVSeed) => {
   const encoding: Encoding = {}
 
   if (hasDimensionEncoding) {
-    generateDimensionEncoding(dimensions, encoding, measures.length > 1)
+    const hasMultiMeaureInSingleView =
+      (measures.length > 1 && vseedMeasures.every((m) => !(m as MeasureGroup).children)) ||
+      vseedMeasures.some((m) => {
+        return m && (m as MeasureGroup).children && (m as MeasureGroup).children!.length > 1
+      })
+    generateDimensionEncoding(dimensions, encoding, hasMultiMeaureInSingleView)
   } else {
     generateDefaultDimensionEncoding(dimensions, encoding)
   }

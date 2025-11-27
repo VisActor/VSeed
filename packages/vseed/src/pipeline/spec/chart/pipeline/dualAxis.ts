@@ -57,6 +57,7 @@ import {
   pointStyleFilter,
   lineStyleFilter,
   areaStyleFilter,
+  tooltipDualAxis,
 } from '../pipes'
 
 const dualAxis: VChartSpecPipeline = [
@@ -112,6 +113,8 @@ const dualAxis: VChartSpecPipeline = [
   annotationVerticalLine,
   annotationHorizontalLine,
   annotationAreaBand,
+
+  tooltipDualAxis,
 ]
 
 const pivotDualAxis: PivotChartSpecPipeline = [
@@ -168,6 +171,8 @@ const pivotDualAxis: PivotChartSpecPipeline = [
     annotationVerticalLine,
     annotationHorizontalLine,
     annotationAreaBand,
+
+    tooltipDualAxis,
   ]),
   pivotRowDimensions,
   pivotColumnDimensions,

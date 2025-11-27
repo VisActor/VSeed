@@ -11,7 +11,7 @@ export const getDarkCrosshairRect = () => ({
   labelVisible: true,
   labelColor: '#ffffff',
   labelBackgroundColor: '#404349',
-  rectColor: '#55595F',
+  rectColor: '#4B4F54',
 })
 
 export const getLightCrosshairLine = () => ({
@@ -26,5 +26,5 @@ export const getLightCrosshairRect = () => ({
   labelVisible: true,
   labelColor: '#ffffff',
   labelBackgroundColor: '#364159',
-  rectColor: '#3641594d',
+  rectColor: '#D9DDE4',
 })

@@ -53,6 +53,10 @@ import {
   pivotAxisStyle,
   dimensionLinkage,
   annotationPointOfDualAxis,
+  barStyleFilter,
+  pointStyleFilter,
+  lineStyleFilter,
+  areaStyleFilter,
 } from '../pipes'
 
 const dualAxis: VChartSpecPipeline = [
@@ -69,11 +73,11 @@ const dualAxis: VChartSpecPipeline = [
       barGapInGroup,
       stackCornerRadius,
 
-      colorBarStyleFill(barStyle),
-      colorPointStyleFill(pointStyle),
-      pointStateDimensionHover,
-      colorLineStyleFill(lineStyle),
-      colorAreaStyleFill(areaStyle),
+      barStyleFilter(colorBarStyleFill(barStyle)),
+      pointStyleFilter(colorPointStyleFill(pointStyle)),
+      pointStyleFilter(pointStateDimensionHover),
+      lineStyleFilter(colorLineStyleFill(lineStyle)),
+      areaStyleFilter(colorAreaStyleFill(areaStyle)),
     ],
     [
       initDualAxisSecondary,
@@ -87,11 +91,11 @@ const dualAxis: VChartSpecPipeline = [
       barGapInGroup,
       stackCornerRadius,
 
-      colorBarStyleFill(barStyle),
-      colorPointStyleFill(pointStyle),
-      pointStateDimensionHover,
-      colorLineStyleFill(lineStyle),
-      colorAreaStyleFill(areaStyle),
+      barStyleFilter(colorBarStyleFill(barStyle)),
+      pointStyleFilter(colorPointStyleFill(pointStyle)),
+      pointStyleFilter(pointStateDimensionHover),
+      lineStyleFilter(colorLineStyleFill(lineStyle)),
+      areaStyleFilter(colorAreaStyleFill(areaStyle)),
     ],
   ),
   xBand,

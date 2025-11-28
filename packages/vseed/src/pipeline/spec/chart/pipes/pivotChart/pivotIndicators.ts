@@ -51,7 +51,7 @@ export const pivotIndicators =
 
       const chartSpec = execPipeline(chartPipeline, newContext, {})
       return {
-        indicatorKey: reshapeInfo.id,
+        indicatorKey: `${reshapeInfo.id}`,
         title: measureGroup?.alias,
         cellType: 'chart',
         chartModule: 'vchart',

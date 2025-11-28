@@ -2,6 +2,7 @@ import type { AdvancedPipe, MeasureGroup, Measures, MeasureTree, VSeed } from 's
 import { isMeasureTreeWithChildren, isMeasureTreeWithParentId, normalizeMeasureTree } from './utils'
 import { isPivotChart } from 'src/pipeline/utils'
 import { DEFAULT_PARENT_ID } from 'src/pipeline/utils/constant'
+import { isValid } from '@visactor/vutils'
 
 export const buildMeasures: AdvancedPipe = (advancedVSeed) => {
   // 带Children的指标树, 不进行任何处理
@@ -33,7 +34,7 @@ const generateMeasuresByParentId = (measures: Measures): MeasureTree => {
     if (parent && 'children' in parent) {
       parent.children = parent.children || []
       parent.children.push(measure)
-    } else if (measure.parentId) {
+    } else if (isValid(measure.parentId)) {
       measureTree.push({
         id: measure.parentId,
         children: [measure],

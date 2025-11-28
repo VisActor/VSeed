@@ -9,227 +9,46 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    color: {
-      colorScheme: ['#7E5DFF', '#ACA2D5', '#5B5F89', '#80E1D9', '#F8BC3B', '#B2596E', '#3E91FF', '#9578BB'],
-    },
-    legend: {
-      enable: true,
-      labelFontSize: 12,
-      labelFontColor: '#BBBDC3',
-      position: 'topRight',
-      maxSize: 1,
-    },
-    label: {
-      enable: false,
-      labelColor: '#FDFDFD',
-      labelFontSize: 12,
-    },
-    stackCornerRadius: 6,
-    barMaxWidth: 72,
-    xAxis: {
-      grid: {
-        visible: false,
-        gridColor: '#303339',
-        gridWidth: 1,
-      },
-      label: {
-        visible: true,
-        labelColor: '#888C93',
-        labelFontSize: 12,
-      },
-      title: {
-        visible: false,
-        titleColor: '#BBBDC3',
-        titleFontSize: 12,
-      },
-      line: {
-        lineColor: '#FDFDFD0F',
-      },
-      visible: true,
-    },
-    primaryYAxis: {
-      grid: {
-        visible: true,
-        gridColor: '#303339',
-        gridWidth: 1,
-      },
-      label: {
-        visible: true,
-        labelColor: '#888C93',
-        labelFontSize: 12,
-      },
-      title: {
-        visible: true,
-        titleColor: '#BBBDC3',
-        titleText: '销售额',
-        titleFontSize: 12,
-      },
-      line: {
-        lineColor: '#FDFDFD0F',
-      },
-      visible: true,
-    },
-    secondaryYAxis: {
-      grid: {
-        visible: false,
-        gridColor: '#303339',
-        gridWidth: 1,
-      },
-      label: {
-        visible: true,
-        labelColor: '#888C93',
-        labelFontSize: 12,
-      },
-      title: {
-        visible: true,
-        titleColor: '#BBBDC3',
-        titleText: '利润率',
-        titleFontSize: 12,
-      },
-      line: {
-        lineColor: '#FDFDFD0F',
-      },
-      visible: true,
-    },
-    lineStyle: [
-      {
-        lineStyle: 'solid',
-        lineWidth: 2,
-      },
-    ],
-    pointStyle: [
-      {
-        pointSize: 8,
-      },
-    ],
-    annotationPoint: [
-      {
-        text: '最大销售数量',
-        textColor: '#FFFFFF',
-        textFontSize: 12,
-        textBackgroundColor: '#BCC1CB',
-        textBackgroundBorderRadius: 3,
-        textBackgroundBorderWidth: 0,
-        selector: [
-          {
-            field: 'xA_20251113103307_b668',
-            operator: 'in',
-            value: ['华东'],
-          },
-          {
-            field: 'pr_20251113103311_60cb',
-            operator: '>',
-            value: 9000,
-          },
-        ],
-      },
-      {
-        text: '最大利润',
-        textColor: '#FFFFFF',
-        textFontSize: 12,
-        textBackgroundColor: '#BCC1CB',
-        textBackgroundBorderRadius: 3,
-        textBackgroundBorderWidth: 0,
-        selector: [
-          {
-            field: 'se_20251113103303_9f29',
-            operator: '>',
-            value: 60000,
-          },
-        ],
-      },
-    ],
-    barStyle: [],
-    areaStyle: [],
-    annotationHorizontalLine: [],
-    annotationVerticalLine: [],
-    annotationArea: [],
+    chartType: 'pie',
     measures: [
       {
-        id: 'se_20251113103303_9f29',
-        alias: 'sum(profit)',
-        encoding: 'secondaryYAxis',
+        id: 'sales',
+        alias: '销售额',
         format: {
-          auto: true,
-          fractionDigits: 2,
-          thousandSeparator: true,
           type: 'number',
+          ratio: 1000,
+          thousandSeparator: true,
+          decimalPlaces: 0,
+          symbol: '千',
+          prefix: '利润',
+          suffix: '$',
         },
-        autoFormat: true,
-        parentId: '0',
+        parentId: 0,
       },
       {
-        id: 'pr_20251113103311_60cb',
-        alias: 'sum(amount)',
-        encoding: 'primaryYAxis',
+        id: 'profit',
+        alias: '利润',
+        autoFormat: true,
         format: {
-          auto: true,
-          thousandSeparator: true,
           type: 'number',
+          ratio: 1000,
+          thousandSeparator: true,
+          decimalPlaces: 0,
+          symbol: '千',
+          prefix: '利润',
+          suffix: '$',
         },
-        autoFormat: true,
-        parentId: '0',
+        parentId: 1,
       },
     ],
-    dimensions: [
-      {
-        id: 'xA_20251113103307_b668',
-        alias: 'area',
-        encoding: 'xAxis',
-        autoFormat: true,
-      },
-    ],
-    dualChartType: [
-      {
-        primary: 'column',
-        secondary: 'line',
-      },
-      {
-        primary: 'line',
-        secondary: 'line',
-      },
-    ],
-    chartType: 'dualAxis',
+    dimensions: [{ id: 'date', alias: '日期' }],
     dataset: [
-      {
-        pr_20251113103311_60cb: '11041',
-        pr_20251125192938_f698: '331.09999999999883',
-        se_20251113103303_9f29: '607218.6819999996',
-        xA_20251113103307_b668: '华东',
-      },
-      {
-        pr_20251113103311_60cb: '9700',
-        pr_20251125192938_f698: '232.15000000000038',
-        se_20251113103303_9f29: '670885.313',
-        xA_20251113103307_b668: '中南',
-      },
-      {
-        pr_20251113103311_60cb: '6463',
-        pr_20251125192938_f698: '234.7500000000018',
-        se_20251113103303_9f29: '242191.50899999973',
-        xA_20251113103307_b668: '东北',
-      },
-      {
-        pr_20251113103311_60cb: '5146',
-        pr_20251125192938_f698: '74.10000000000001',
-        se_20251113103303_9f29: '431053.2169999998',
-        xA_20251113103307_b668: '华北',
-      },
-      {
-        pr_20251113103311_60cb: '3399',
-        pr_20251125192938_f698: '134.20000000000067',
-        se_20251113103303_9f29: '97636.72800000008',
-        xA_20251113103307_b668: '西南',
-      },
-      {
-        pr_20251113103311_60cb: '1785',
-        pr_20251125192938_f698: '53.39999999999989',
-        se_20251113103303_9f29: '98553.47600000004',
-        xA_20251113103307_b668: '西北',
-      },
+      { date: '2019', profit: 10000, sales: 200000 },
+      { date: '2020', profit: 20000, sales: 400000 },
+      { date: '2021', profit: 30000, sales: 600000 },
+      { date: '2022', profit: 40000, sales: 800000 },
+      { date: '2023', profit: 50000, sales: 1000000 },
     ],
-    theme: 'dark',
-    locale: 'zh-CN',
   }
 
   const parseRes = zVSeed.safeParse(vseed)
@@ -271,7 +90,7 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
       return
     }
     const theme = dark ? 'dark' : 'light'
-    const builder = Builder.from({ ...vseed })
+    const builder = Builder.from(vseed.theme ? vseed : { ...vseed, theme })
     const spec = builder.build()
     console.log('builder', builder)
     console.log('builder performance', builder.performance)

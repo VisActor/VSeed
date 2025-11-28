@@ -1,14 +1,14 @@
 import { unique } from 'remeda'
 import { MeasureId } from 'src/dataReshape'
-import { findAllMeasures } from 'src/pipeline/utils'
-import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, MeasureGroup, Measures } from 'src/types'
+import { findAllMeasures, hasMultipleMeasureInSingleView } from 'src/pipeline/utils'
+import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
 import { addColorToEncoding } from './color'
 
 export const defaultEncodingForPie: AdvancedPipe = (advancedVSeed) => {
   const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
   const measures = findAllMeasures(vseedMeasures)
   const encoding: Encoding = {}
-  generateDefaultDimensionEncoding(dimensions, encoding)
+  generateDefaultDimensionEncoding(dimensions, encoding, hasMultipleMeasureInSingleView(vseedMeasures))
   generateDefaultMeasureEncoding(measures, encoding)
   return { ...advancedVSeed, encoding }
 }
@@ -20,16 +20,12 @@ export const encodingForPie: AdvancedPipe = (advancedVSeed) => {
   const hasDimensionEncoding = dimensions.some((item: Dimension) => item.encoding)
   const hasMeasureEncoding = measures.some((item: Measure) => item.encoding)
   const encoding: Encoding = {}
+  const hasMulti = hasMultipleMeasureInSingleView(vseedMeasures)
 
   if (hasDimensionEncoding) {
-    const hasMultiMeaureInSingleView =
-      (measures.length > 1 && vseedMeasures.every((m) => !(m as MeasureGroup).children)) ||
-      vseedMeasures.some((m) => {
-        return m && (m as MeasureGroup).children && (m as MeasureGroup).children!.length > 1
-      })
-    generateDimensionEncoding(dimensions, encoding, hasMultiMeaureInSingleView)
+    generateDimensionEncoding(dimensions, encoding, hasMulti)
   } else {
-    generateDefaultDimensionEncoding(dimensions, encoding)
+    generateDefaultDimensionEncoding(dimensions, encoding, hasMulti)
   }
 
   if (hasMeasureEncoding) {
@@ -44,9 +40,15 @@ export const encodingForPie: AdvancedPipe = (advancedVSeed) => {
 /**
  * --------------------维度--------------------
  */
-const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
+const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Encoding, isMultiMeasure: boolean) => {
   const uniqueDimIds = unique(dimensions.map((d) => d.id))
-  encoding.color = uniqueDimIds.slice(0) // 第1个之后的维度用于颜色
+
+  if (isMultiMeasure) {
+    encoding.color = uniqueDimIds.slice(0) // 所有维度都用于color映射，包括MeasureId
+  } else {
+    encoding.color = uniqueDimIds.filter((d: string) => d !== MeasureId) // 除了MeasureId之外的所有维度用于color映射
+  }
+
   encoding.detail = encoding.color
   encoding.tooltip = uniqueDimIds.filter((d) => d !== MeasureId) // 展示指标名称之外的所有维度
   encoding.label = [] // 默认不展示标签

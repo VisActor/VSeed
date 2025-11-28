@@ -21,7 +21,7 @@ export const pivotIndicators =
     const allMeasureIds = unique(datasetReshapeInfo.flatMap((d) => Object.keys(d.foldInfo.foldMap || {})))
 
     const indicators = datasetReshapeInfo.map((reshapeInfo, index) => {
-      const measureGroup = measures?.find((d) => d.id === reshapeInfo.id) as MeasureGroup
+      const measureGroup = measures?.find((d) => `${d.id}` === reshapeInfo.id) as MeasureGroup
       const subMeasuresId = (measureGroup?.children || []).map((d) => d.id)
       const invalideMeasuresIds = allMeasureIds.filter((id) => !subMeasuresId.includes(id))
 

@@ -57,7 +57,7 @@ export const pivotReshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) =
     )
 
     const reshapeInfo = {
-      id: groupId,
+      id: `${groupId}`,
       index,
       foldInfo,
       unfoldInfo,

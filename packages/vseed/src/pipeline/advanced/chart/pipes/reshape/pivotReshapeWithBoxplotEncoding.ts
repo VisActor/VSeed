@@ -126,7 +126,7 @@ export const pivotReshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, con
     }
 
     const reshapeInfo = {
-      id: groupId,
+      id: `${groupId}`,
       index,
       foldInfo,
       unfoldInfo,

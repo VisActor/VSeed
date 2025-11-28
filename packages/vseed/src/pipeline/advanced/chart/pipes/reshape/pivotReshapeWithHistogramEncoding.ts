@@ -147,7 +147,7 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
     }
 
     const reshapeInfo = {
-      id: groupId,
+      id: `${groupId}`,
       index,
       foldInfo,
       unfoldInfo,

@@ -1143,7 +1143,7 @@ exports[`pivotHistogram 2`] = `
           },
           "visible": true,
         },
-        "formatMethod": undefined,
+        "formatMethod": [Function],
         "textStyle": {
           "fill": "#ffffff",
         },

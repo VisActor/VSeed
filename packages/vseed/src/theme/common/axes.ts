@@ -28,11 +28,11 @@ export const getLightLinearAxis = (): YLinearAxis => ({
     visible: false,
     tickInside: false,
     tickSize: 4,
-    tickColor: '#21252C',
+    tickColor: '#E3E5EB',
   },
   line: {
     visible: false,
-    lineColor: '#21252C',
+    lineColor: '#E3E5EB',
     lineWidth: 1,
   },
 })
@@ -68,11 +68,11 @@ export const getLightBandAxis = (): YBandAxis => ({
     visible: false,
     tickInside: false,
     tickSize: 4,
-    tickColor: '#21252C',
+    tickColor: '#E3E5EB',
   },
   line: {
     visible: true,
-    lineColor: '#21252C',
+    lineColor: '#E3E5EB',
     lineWidth: 1,
   },
 })

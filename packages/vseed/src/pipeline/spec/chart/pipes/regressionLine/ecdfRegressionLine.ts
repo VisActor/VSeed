@@ -124,6 +124,9 @@ export const ecdfRegressionLine: VChartSpecPipe = (spec, context) => {
         interactive: false,
         zIndex: 500,
         dataId: (spec.data as any)?.id,
+        dataKey: () => {
+          return `ecdfRegressionLine-label-${lineIndex}`
+        },
         style: {
           textAlign: 'end',
           fill: textColor ?? theme.textColor,

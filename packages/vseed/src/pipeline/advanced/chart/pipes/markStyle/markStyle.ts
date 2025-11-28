@@ -10,6 +10,8 @@ export const markStyle: AdvancedPipe = (advancedVSeed, context) => {
     'pointStyle',
     'lineStyle',
     'areaStyle',
+    'boxPlotStyle',
+    'outlierStyle',
   ]) as AdvancedVSeed['markStyle']
 
   const markStyle = replaceNullToUndefined(pickedMarkStyle)

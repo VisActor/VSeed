@@ -14,6 +14,7 @@ import { getLightAnnotation } from '../common/annotaion'
 import { getLightFunnelTransformTheme } from '../common/funnelTransform'
 import { getLightHeatmapCellTheme } from '../common/heatmapCell'
 import { getLightRegressionLine } from '../common/regressionLine'
+import { getLightBoxPlotStyle, getLightOutlierStyle } from '../common/boxPlot'
 
 export const lightTheme = (): CustomThemeConfig => {
   const linearAxis = getLightLinearAxis()
@@ -251,6 +252,9 @@ export const lightTheme = (): CustomThemeConfig => {
         crosshairRect,
         pivotGrid: getLightPivotChartGridConfig(),
         annotation: getLightAnnotation(),
+
+        boxPlotStyle: getLightBoxPlotStyle(),
+        outlierStyle: getLightOutlierStyle(),
       },
     },
   }

@@ -14,11 +14,11 @@ export const initPivot: PivotChartSpecPipe = (spec) => {
     widthMode: 'standard',
     autoFillWidth: true,
     defaultHeaderColWidth: 'auto',
-    defaultColWidth: 200,
+    defaultColWidth: 240,
 
     heightMode: 'standard',
     autoFillHeight: true,
-    defaultRowHeight: 100,
+    defaultRowHeight: 180,
     defaultHeaderRowHeight: 'auto',
 
     indicatorsAsCol: false,

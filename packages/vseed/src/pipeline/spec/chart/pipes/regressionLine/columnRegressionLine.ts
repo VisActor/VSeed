@@ -186,6 +186,9 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
         interactive: false,
         zIndex: 500,
         dataId: (spec.data as any)?.id,
+        dataKey: () => {
+          return `polynomialRegressionLine-label-${lineIndex}`
+        },
         style: {
           textAlign: 'end',
           fill: textColor ?? theme.textColor,

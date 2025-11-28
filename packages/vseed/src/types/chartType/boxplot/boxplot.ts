@@ -5,21 +5,23 @@ import type {
   AnnotationPoint,
   AnnotationVerticalLine,
   BackgroundColor,
+  BoxPlotStyle,
   Color,
   CrosshairRect,
   Dataset,
+  DimensionLinkage,
   Dimensions,
   Label,
   Legend,
-  Theme,
-  Tooltip,
-  XBandAxis,
-  YLinearAxis,
   MeasureTree,
+  OutlierStyle,
   Sort,
   SortLegend,
+  Theme,
+  Tooltip,
   WhiskersConfig,
-  DimensionLinkage,
+  XBandAxis,
+  YLinearAxis,
 } from '../../properties'
 
 /**
@@ -148,6 +150,16 @@ export interface Boxplot {
    * @description 垂直提示框配置, 用于定义图表的垂直提示框, 包括垂直提示框的颜色、标签样式等.
    */
   crosshairRect?: CrosshairRect
+
+  /**
+   * @description 箱线图箱体的样式配置，支持全局或选择器粒度生效
+   */
+  boxPlotStyle?: BoxPlotStyle | BoxPlotStyle[]
+
+  /**
+   * @description 异常点的样式配置，支持全局或选择器粒度生效
+   */
+  outlierStyle?: OutlierStyle | OutlierStyle[]
   /**
    * @description 直方图的须长配置，支持标量值和长度为2 的数组
    * 当值为标量的时候，使用 whiskers * IQR 来计算上界值和下界值

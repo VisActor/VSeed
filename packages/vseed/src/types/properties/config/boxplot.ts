@@ -10,6 +10,7 @@ import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
 import { zWhiskersConfig } from './whiskers'
 import { zDimensionLinkage } from './dimensionLinkage/dimensionLinkage'
+import { zBoxPlotStyle, zOutlierStyle } from '../markStyle'
 
 export const zBoxplotConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -27,6 +28,9 @@ export const zBoxplotConfig = z.object({
   whiskers: zWhiskersConfig.nullish(),
 
   dimensionLinkage: zDimensionLinkage.nullish(),
+
+  boxPlotStyle: zBoxPlotStyle.omit({ selector: true }).nullish(),
+  outlierStyle: zOutlierStyle.omit({ selector: true }).nullish(),
 })
 
 export type BoxplotConfig = z.infer<typeof zBoxplotConfig>

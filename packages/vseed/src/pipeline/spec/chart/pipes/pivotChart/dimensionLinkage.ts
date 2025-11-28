@@ -17,19 +17,25 @@ export const dimensionLinkage: PivotChartSpecPipe = (spec, context) => {
   const crosshair = chartSpec?.crosshair as ICartesianCrosshairSpec
 
   if (crosshair?.xField) {
+    const labelFormat = crosshair.xField.label?.formatMethod
     ;(labelHoverOnAxis as any).bottom = {
       visible: config.showLabel ?? crosshair.xField.label?.visible ?? true,
       background: crosshair.xField.label?.labelBackground,
       textStyle: crosshair.xField.label?.style,
-      formatMethod: crosshair.xField.label?.formatMethod || undefined,
+      formatMethod: labelFormat
+        ? (text: string | string[] | number) => (text || text === 0 ? labelFormat(text) : null)
+        : undefined,
     }
   }
   if (crosshair?.yField) {
+    const labelFormat = crosshair.yField.label?.formatMethod
     ;(labelHoverOnAxis as any).left = {
       visible: config.showLabel ?? crosshair.yField.label?.visible ?? true,
       background: crosshair.yField.label?.labelBackground,
       textStyle: crosshair.yField.label?.style,
-      formatMethod: crosshair.yField.label?.formatMethod || undefined,
+      formatMethod: labelFormat
+        ? (text: string | string[] | number) => (text || text === 0 ? labelFormat(text) : null)
+        : undefined,
     }
   }
 

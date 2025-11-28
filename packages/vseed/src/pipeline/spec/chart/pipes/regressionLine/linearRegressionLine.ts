@@ -252,6 +252,9 @@ export const generateRegressionLinePipe = (
           zIndex: 500,
           animation: false,
           dataId: (spec.data as any)?.id,
+          dataKey: () => {
+            return `regressionLine-label-${lineIndex}`
+          },
           style: {
             textAlign: 'end',
             fill: textColor ?? theme.textColor,

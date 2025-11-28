@@ -136,6 +136,9 @@ export const kdeRegressionLine: VChartSpecPipe = (spec, context) => {
         interactive: false,
         zIndex: 500,
         dataId: (spec.data as any)?.id,
+        dataKey: () => {
+          return `kdeRegressionLine-label-${lineIndex}`
+        },
         style: {
           textAlign: 'end',
           fill: textColor ?? theme.textColor,

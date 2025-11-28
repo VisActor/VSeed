@@ -64,6 +64,8 @@ const pickPivotChartGridConfig = (tableConfig: any) => {
 export const getLightPivotChartGridConfig = () => {
   const res = pickPivotChartGridConfig(getLightTableConfig()) as PivotChartGridConfig
 
+  res.hoverHeaderInlineBackgroundColor = '#D9DDE446'
+
   res.chartGridColor = '#F0F1F6'
   res.axisLabelColor = '#BCC1CB'
 
@@ -72,6 +74,8 @@ export const getLightPivotChartGridConfig = () => {
 
 export const getDarkPivotChartGridConfig = () => {
   const res = pickPivotChartGridConfig(getDarkTableConfig()) as PivotChartGridConfig
+
+  res.hoverHeaderInlineBackgroundColor = '#4b4f5446'
 
   return res
 }

@@ -1,24 +1,5 @@
 import type { ICartesianCrosshairSpec, ILineChartSpec } from '@visactor/vchart'
-import { isNullish } from 'remeda'
 import type { DimensionLinkage, PivotChartSpecPipe } from 'src/types'
-
-const defaultScatterFormatter = (val: number | string) => {
-  if (isNullish(val)) {
-    return ''
-  }
-  if (typeof val === 'string') {
-    return val
-  }
-
-  if (val === 0) {
-    return '0'
-  }
-  if (Math.abs(val) < 1) {
-    return val.toFixed(2)
-  }
-
-  return val === Math.floor(val) ? `${val}` : val.toFixed(1)
-}
 
 export const dimensionLinkage: PivotChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
@@ -40,7 +21,7 @@ export const dimensionLinkage: PivotChartSpecPipe = (spec, context) => {
       visible: config.showLabel ?? crosshair.xField.label?.visible ?? true,
       background: crosshair.xField.label?.labelBackground,
       textStyle: crosshair.xField.label?.style,
-      formatMethod: chartType === 'scatter' ? defaultScatterFormatter : undefined,
+      formatMethod: crosshair.xField.label?.formatMethod || undefined,
     }
   }
   if (crosshair?.yField) {
@@ -48,7 +29,7 @@ export const dimensionLinkage: PivotChartSpecPipe = (spec, context) => {
       visible: config.showLabel ?? crosshair.yField.label?.visible ?? true,
       background: crosshair.yField.label?.labelBackground,
       textStyle: crosshair.yField.label?.style,
-      formatMethod: chartType === 'scatter' ? defaultScatterFormatter : undefined,
+      formatMethod: crosshair.yField.label?.formatMethod || undefined,
     }
   }
 

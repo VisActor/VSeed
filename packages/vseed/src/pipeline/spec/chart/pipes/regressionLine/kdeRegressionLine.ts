@@ -12,6 +12,7 @@ export const kdeRegressionLine: VChartSpecPipe = (spec, context) => {
   const { chartType, encoding = {} as Encoding, dimensions, regressionLine } = advancedVSeed
   const { dataset } = vseed
   const lineTheme = advancedVSeed.config[chartType as 'histogram']?.regressionLine as RegressionLineConfig
+  const binValueType = advancedVSeed.config[chartType as 'histogram']?.binValueType
 
   if (!regressionLine || !regressionLine.kdeRegressionLine) {
     return result
@@ -74,8 +75,18 @@ export const kdeRegressionLine: VChartSpecPipe = (spec, context) => {
             } as KDEOptions)
             const N = Math.max(3, Math.floor(simpleData.length / 4))
             const lineData = res.evaluateGrid(N)
+
+            // 根据 binValueType 决定如何转换 KDE 密度值
+            // - 频次模式 (count): 频次 = 密度 × 样本数 × 带宽
+            // - 百分比模式 (percentage): 百分比 = 密度 × 带宽
             const scaleR = (k: number) => {
-              return scaleY.scale(k * simpleData.length * res.bandwidth)
+              if (binValueType === 'percentage') {
+                // 百分比模式：y轴是0-1的百分比，KDE密度值乘以带宽即可
+                return scaleY.scale(k * res.bandwidth)
+              } else {
+                // 频次模式：y轴是实际计数，需要乘以样本数量
+                return scaleY.scale(k * simpleData.length * res.bandwidth)
+              }
             }
 
             const linePoints = lineData.map((ld: Datum) => {

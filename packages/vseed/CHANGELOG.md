@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.2.0
+
+### Minor Changes
+
+- da56b25: Bugfix of boxplot / historgram / pivot dimesnionLinkage + update default theme config
+
 ## 0.1.51
 
 ### Patch Changes

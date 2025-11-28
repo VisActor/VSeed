@@ -36,6 +36,10 @@ export const pivotAxisStyle = (axisStyle: VChartSpecPipe): VChartSpecPipe => {
               right: BAND_AXIS_INNER_OFFSET_IN_PIVOT,
             }
           }
+        } else if (axis.type === 'linear') {
+          if (axis.orient === 'top' || axis.orient === 'bottom') {
+            axis.label.flush = true
+          }
         }
       })
     }

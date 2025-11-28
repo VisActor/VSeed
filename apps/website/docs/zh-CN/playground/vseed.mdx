@@ -9,46 +9,220 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'pie',
+    color: {
+      colorScheme: ['#7E5DFF', '#ACA2D5', '#5B5F89', '#80E1D9', '#F8BC3B', '#B2596E', '#3E91FF', '#9578BB'],
+    },
+    legend: {
+      enable: true,
+      labelFontSize: 12,
+      labelFontColor: '#BBBDC3',
+      position: 'topRight',
+      maxSize: 1,
+    },
+    label: {
+      enable: false,
+      labelColor: '#FDFDFD',
+      labelFontSize: 12,
+      showDimension: true,
+      showValue: false,
+      showValuePercent: false,
+    },
+    xAxis: {
+      grid: {
+        visible: false,
+        gridColor: '#303339',
+        gridWidth: 1,
+      },
+      label: {
+        visible: true,
+        labelColor: '#888C93',
+      },
+      title: {
+        visible: false,
+        titleColor: '#BBBDC3',
+      },
+      line: {
+        lineColor: '#FDFDFD0F',
+      },
+    },
+    yAxis: {
+      grid: {
+        visible: true,
+        gridColor: '#303339',
+        gridWidth: 1,
+      },
+      label: {
+        visible: true,
+        labelColor: '#888C93',
+      },
+      title: {
+        visible: false,
+        titleColor: '#BBBDC3',
+      },
+      line: {
+        lineColor: '#FDFDFD0F',
+      },
+    },
+    lineStyle: [],
+    barStyle: [],
+    pointStyle: [],
+    areaStyle: [],
+    annotationPoint: [],
+    annotationHorizontalLine: [],
+    annotationVerticalLine: [],
+    annotationArea: [],
     measures: [
       {
-        id: 'sales',
-        alias: '销售额',
+        id: 'yA_20251127100405_5f4f',
+        alias: 'sum(amount)',
+        encoding: 'yAxis',
         format: {
-          type: 'number',
-          ratio: 1000,
+          auto: true,
           thousandSeparator: true,
-          decimalPlaces: 0,
-          symbol: '千',
-          prefix: '利润',
-          suffix: '$',
+          type: 'number',
         },
-        parentId: 0,
+        autoFormat: true,
       },
       {
-        id: 'profit',
-        alias: '利润',
-        autoFormat: true,
+        id: 'xA_20251127100407_cfb1',
+        alias: 'sum(discount)',
+        encoding: 'xAxis',
         format: {
-          type: 'number',
-          ratio: 1000,
+          auto: true,
+          fractionDigits: 2,
           thousandSeparator: true,
-          decimalPlaces: 0,
-          symbol: '千',
-          prefix: '利润',
-          suffix: '$',
+          type: 'number',
         },
-        parentId: 1,
+        autoFormat: true,
       },
     ],
-    dimensions: [{ id: 'date', alias: '日期' }],
-    dataset: [
-      { date: '2019', profit: 10000, sales: 200000 },
-      { date: '2020', profit: 20000, sales: 400000 },
-      { date: '2021', profit: 30000, sales: 600000 },
-      { date: '2022', profit: 40000, sales: 800000 },
-      { date: '2023', profit: 50000, sales: 1000000 },
+    dimensions: [
+      {
+        id: 'co_20251127100414_5b71',
+        alias: 'area',
+        encoding: 'color',
+        autoFormat: true,
+      },
+      {
+        id: 'ro_20251127100425_ddde',
+        alias: 'product_type',
+        encoding: 'row',
+        autoFormat: true,
+      },
     ],
+    chartType: 'scatter',
+    dataset: [
+      {
+        co_20251127100414_5b71: '东北',
+        ro_20251127100425_ddde: '办公用品',
+        xA_20251127100407_cfb1: '107.40000000000035',
+        yA_20251127100405_5f4f: '3622',
+      },
+      {
+        co_20251127100414_5b71: '中南',
+        ro_20251127100425_ddde: '办公用品',
+        xA_20251127100407_cfb1: '108.60000000000043',
+        yA_20251127100405_5f4f: '5590',
+      },
+      {
+        co_20251127100414_5b71: '华东',
+        ro_20251127100425_ddde: '办公用品',
+        xA_20251127100407_cfb1: '159.6000000000008',
+        yA_20251127100405_5f4f: '6341',
+      },
+      {
+        co_20251127100414_5b71: '华北',
+        ro_20251127100425_ddde: '办公用品',
+        xA_20251127100407_cfb1: '35.19999999999996',
+        yA_20251127100405_5f4f: '3020',
+      },
+      {
+        co_20251127100414_5b71: '西北',
+        ro_20251127100425_ddde: '办公用品',
+        xA_20251127100407_cfb1: '21.199999999999996',
+        yA_20251127100405_5f4f: '970',
+      },
+      {
+        co_20251127100414_5b71: '西南',
+        ro_20251127100425_ddde: '办公用品',
+        xA_20251127100407_cfb1: '51.9999999999999',
+        yA_20251127100405_5f4f: '1858',
+      },
+      {
+        co_20251127100414_5b71: '东北',
+        ro_20251127100425_ddde: '家具',
+        xA_20251127100407_cfb1: '69.34999999999994',
+        yA_20251127100405_5f4f: '1470',
+      },
+      {
+        co_20251127100414_5b71: '中南',
+        ro_20251127100425_ddde: '家具',
+        xA_20251127100407_cfb1: '71.55000000000008',
+        yA_20251127100405_5f4f: '2023',
+      },
+      {
+        co_20251127100414_5b71: '华东',
+        ro_20251127100425_ddde: '家具',
+        xA_20251127100407_cfb1: '96.30000000000021',
+        yA_20251127100405_5f4f: '2517',
+      },
+      {
+        co_20251127100414_5b71: '华北',
+        ro_20251127100425_ddde: '家具',
+        xA_20251127100407_cfb1: '25.29999999999999',
+        yA_20251127100405_5f4f: '1199',
+      },
+      {
+        co_20251127100414_5b71: '西北',
+        ro_20251127100425_ddde: '家具',
+        xA_20251127100407_cfb1: '19.399999999999995',
+        yA_20251127100405_5f4f: '468',
+      },
+      {
+        co_20251127100414_5b71: '西南',
+        ro_20251127100425_ddde: '家具',
+        xA_20251127100407_cfb1: '43.199999999999925',
+        yA_20251127100405_5f4f: '814',
+      },
+      {
+        co_20251127100414_5b71: '东北',
+        ro_20251127100425_ddde: '技术',
+        xA_20251127100407_cfb1: '57.99999999999986',
+        yA_20251127100405_5f4f: '1371',
+      },
+      {
+        co_20251127100414_5b71: '中南',
+        ro_20251127100425_ddde: '技术',
+        xA_20251127100407_cfb1: '51.99999999999988',
+        yA_20251127100405_5f4f: '2087',
+      },
+      {
+        co_20251127100414_5b71: '华东',
+        ro_20251127100425_ddde: '技术',
+        xA_20251127100407_cfb1: '75.19999999999999',
+        yA_20251127100405_5f4f: '2183',
+      },
+      {
+        co_20251127100414_5b71: '华北',
+        ro_20251127100425_ddde: '技术',
+        xA_20251127100407_cfb1: '13.600000000000007',
+        yA_20251127100405_5f4f: '927',
+      },
+      {
+        co_20251127100414_5b71: '西北',
+        ro_20251127100425_ddde: '技术',
+        xA_20251127100407_cfb1: '12.800000000000006',
+        yA_20251127100405_5f4f: '347',
+      },
+      {
+        co_20251127100414_5b71: '西南',
+        ro_20251127100425_ddde: '技术',
+        xA_20251127100407_cfb1: '38.99999999999995',
+        yA_20251127100405_5f4f: '727',
+      },
+    ],
+    theme: 'dark',
+    locale: 'zh-CN',
   }
 
   const parseRes = zVSeed.safeParse(vseed)
@@ -124,7 +298,7 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
           },
         ])
       })
-
+      window.pivotChart = tableInstance
       return () => tableInstance.release()
     } else if (isVChart(vseed)) {
       const vchart = new VChart(spec, { dom: ref.current })
@@ -134,9 +308,12 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
       return () => vchart.release()
     } else if (isTable(vseed)) {
       const tableInstance = new ListTable(ref.current, spec)
+      window.table = tableInstance
       return () => tableInstance.release()
     } else if (isPivotTable(vseed)) {
       const tableInstance = new PivotTable(ref.current, spec)
+
+      window.table = tableInstance
       return () => tableInstance.release()
     }
   }, [vseed, dark])

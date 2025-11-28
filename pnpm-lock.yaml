@@ -70,36 +70,6 @@ importers:
         specifier: 8.35.1
         version: 8.35.1(eslint@9.30.0(jiti@2.6.1))(typescript@5.9.3)
 
-  llm_test:
-    devDependencies:
-      '@types/node':
-        specifier: ^24.2.1
-        version: 24.10.1
-      '@visactor/vseed':
-        specifier: workspace:*
-        version: link:../packages/vseed
-      dotenv:
-        specifier: 17.2.1
-        version: 17.2.1
-      json-schema-to-typescript:
-        specifier: 15.0.4
-        version: 15.0.4
-      openai:
-        specifier: 5.12.2
-        version: 5.12.2(ws@8.18.3)(zod@4.0.17)
-      puppeteer:
-        specifier: ^24.16.1
-        version: 24.31.0(typescript@5.9.3)
-      ts-morph:
-        specifier: ^26.0.0
-        version: 26.0.0
-      ts-node:
-        specifier: 10.9.2
-        version: 10.9.2(@types/node@24.10.1)(typescript@5.9.3)
-      zod:
-        specifier: 4.0.17
-        version: 4.0.17
-
   packages/vquery:
     dependencies:
       '@duckdb/duckdb-wasm':
@@ -246,6 +216,36 @@ importers:
       typescript:
         specifier: 5.8.3
         version: 5.8.3
+
+  tools/llm_test:
+    devDependencies:
+      '@types/node':
+        specifier: ^24.2.1
+        version: 24.10.1
+      '@visactor/vseed':
+        specifier: workspace:*
+        version: link:../../packages/vseed
+      dotenv:
+        specifier: 17.2.1
+        version: 17.2.1
+      json-schema-to-typescript:
+        specifier: 15.0.4
+        version: 15.0.4
+      openai:
+        specifier: 5.12.2
+        version: 5.12.2(ws@8.18.3)(zod@4.0.17)
+      puppeteer:
+        specifier: ^24.16.1
+        version: 24.31.0(typescript@5.9.3)
+      ts-morph:
+        specifier: ^26.0.0
+        version: 26.0.0
+      ts-node:
+        specifier: 10.9.2
+        version: 10.9.2(@types/node@24.10.1)(typescript@5.9.3)
+      zod:
+        specifier: 4.0.17
+        version: 4.0.17
 
 packages:
 
@@ -8092,11 +8092,11 @@ snapshots:
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 22.18.10
+      '@types/node': 24.10.1
 
   '@types/cors@2.8.19':
     dependencies:
-      '@types/node': 22.18.10
+      '@types/node': 24.10.1
 
   '@types/debug@4.1.12':
     dependencies:
@@ -8125,7 +8125,7 @@ snapshots:
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 22.18.10
+      '@types/node': 24.10.1
 
   '@types/hast@2.3.10':
     dependencies:
@@ -8139,7 +8139,7 @@ snapshots:
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 22.18.10
+      '@types/node': 24.10.1
 
   '@types/lodash@4.17.21': {}
 
@@ -9559,7 +9559,7 @@ snapshots:
   engine.io@6.6.4:
     dependencies:
       '@types/cors': 2.8.19
-      '@types/node': 22.18.10
+      '@types/node': 24.10.1
       accepts: 1.3.8
       base64id: 2.0.0
       cookie: 0.7.2
@@ -10576,7 +10576,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.18.10
+      '@types/node': 24.10.1
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -11643,7 +11643,7 @@ snapshots:
   micromark@4.0.2:
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.4.1
+      debug: 4.4.3
       decode-named-character-reference: 1.2.0
       devlop: 1.1.0
       micromark-core-commonmark: 2.0.3

@@ -14,7 +14,7 @@
     "dev:rsdoctor": "pnpm --filter=@visactor/vseed run dev:rsdoctor",
     "format": "pnpm prettier --write .",
     "lint": "pnpm -r --color --parallel lint",
-    "type-check": "pnpm -r --color --parallel type-check",
+    "type-check": "pnpm -r --color --parallel type-check && pnpm --filter=vseed-llm-test run generate",
     "build": "pnpm -r build",
     "build:vseed": "pnpm --filter=@visactor/vseed run build",
     "build:vquery": "pnpm --filter=@visactor/vquery run build",
@@ -41,7 +41,6 @@
   "workspaces": [
     "apps/*",
     "packages/*",
-    "llm_test",
     "tools/*"
   ],
   "engines": {

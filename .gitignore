@@ -17,5 +17,5 @@ coverage/
 !.vscode/extensions.json
 .idea
 
-llm_test/top-key
-llm_test/new-type
+tools/llm_test/top-key
+tools/llm_test/new-type

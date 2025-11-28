@@ -8,7 +8,7 @@ import type {
   LinearRegressionLine,
   PolynomialRegressionLine,
 } from 'src/types'
-import { defaultRegressionLineColor } from './common'
+import { defaultRegressionLineColor, getAlphaByConfidenceLevel } from './common'
 
 export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): Partial<IBarChartSpec> => {
   const result = { ...spec } as Partial<IBarChartSpec>
@@ -40,6 +40,7 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
       textFontSize,
       textFontWeight,
       confidenceIntervalOpacity,
+      confidenceLevel = 0.95,
       confidenceIntervalVisible = theme.confidenceIntervalVisible,
     } = line as LinearRegressionLine
 
@@ -88,6 +89,7 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
               undefined,
               {
                 degree: (line as PolynomialRegressionLine).degree ?? 2,
+                alpha: getAlphaByConfidenceLevel(confidenceLevel),
               },
             )
             const N = xValues.length

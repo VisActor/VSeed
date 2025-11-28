@@ -682,12 +682,7 @@ exports[`regressionECDFHistogram 1`] = `
       },
     },
   ],
-  "dimensions": [
-    {
-      "alias": "指标Id",
-      "id": "__MeaId__",
-    },
-  ],
+  "dimensions": [],
   "encoding": {
     "column": [],
     "detail": undefined,
@@ -719,12 +714,7 @@ exports[`regressionECDFHistogram 1`] = `
       "text": "ECDF Regression",
     },
   },
-  "reshapeDimensions": [
-    {
-      "alias": "指标Id",
-      "id": "__MeaId__",
-    },
-  ],
+  "reshapeDimensions": [],
   "reshapeMeasures": [
     {
       "alias": "v",
@@ -1284,7 +1274,6 @@ exports[`regressionECDFHistogram 2`] = `
 exports[`regressionECDFHistogram 3`] = `
 {
   "advancedPipeline": [
-    [Function],
     [Function],
     [Function],
     [Function],

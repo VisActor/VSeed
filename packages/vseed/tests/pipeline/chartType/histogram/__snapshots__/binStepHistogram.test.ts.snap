@@ -682,12 +682,7 @@ exports[`binStepHistogram 1`] = `
       },
     },
   ],
-  "dimensions": [
-    {
-      "alias": "指标Id",
-      "id": "__MeaId__",
-    },
-  ],
+  "dimensions": [],
   "encoding": {
     "column": [],
     "detail": undefined,
@@ -1170,7 +1165,6 @@ exports[`binStepHistogram 2`] = `
 exports[`binStepHistogram 3`] = `
 {
   "advancedPipeline": [
-    [Function],
     [Function],
     [Function],
     [Function],

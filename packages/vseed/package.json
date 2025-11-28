@@ -1,6 +1,6 @@
 {
   "name": "@visactor/vseed",
-  "version": "0.1.51",
+  "version": "0.2.0",
   "type": "module",
   "exports": {
     ".": {

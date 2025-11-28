@@ -41,7 +41,7 @@ export const pivotGridStyle: PivotChartSpecPipe = (spec, context) => {
       bodyStyle: {
         borderColor,
         color: bodyFontColor,
-        borderLineWidth: (arg: { row: number; col: number }) => {
+        borderLineWidth: (arg: { row: number; col: number; table: any }) => {
           const noYAxis =
             chartType === 'pie' ||
             chartType === 'rose' ||
@@ -54,7 +54,7 @@ export const pivotGridStyle: PivotChartSpecPipe = (spec, context) => {
             arg.row === 0 ? outlineBorderLineWidth : 1,
             outlineBorderLineWidth,
             0,
-            arg.col === 0 || (noYAxis && arg.col === 1) ? outlineBorderLineWidth : 1,
+            arg.col === 0 || (noYAxis && arg.col === 1 && arg.table.colCount <= 2) ? outlineBorderLineWidth : 1,
           ]
         },
         bgColor: transparent,

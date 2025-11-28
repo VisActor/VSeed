@@ -682,12 +682,7 @@ exports[`histogramKde 1`] = `
       },
     },
   ],
-  "dimensions": [
-    {
-      "alias": "指标Id",
-      "id": "__MeaId__",
-    },
-  ],
+  "dimensions": [],
   "encoding": {
     "column": [],
     "detail": undefined,
@@ -717,12 +712,7 @@ exports[`histogramKde 1`] = `
       "type": "kde",
     },
   },
-  "reshapeDimensions": [
-    {
-      "alias": "指标Id",
-      "id": "__MeaId__",
-    },
-  ],
+  "reshapeDimensions": [],
   "reshapeMeasures": [
     {
       "alias": "v",
@@ -1232,7 +1222,6 @@ exports[`histogramKde 2`] = `
 exports[`histogramKde 3`] = `
 {
   "advancedPipeline": [
-    [Function],
     [Function],
     [Function],
     [Function],

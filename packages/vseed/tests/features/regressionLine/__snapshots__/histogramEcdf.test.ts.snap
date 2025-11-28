@@ -682,12 +682,7 @@ exports[`histogramEcdf 1`] = `
       },
     },
   ],
-  "dimensions": [
-    {
-      "alias": "指标Id",
-      "id": "__MeaId__",
-    },
-  ],
+  "dimensions": [],
   "encoding": {
     "column": [],
     "detail": undefined,
@@ -717,12 +712,7 @@ exports[`histogramEcdf 1`] = `
       "type": "ecdf",
     },
   },
-  "reshapeDimensions": [
-    {
-      "alias": "指标Id",
-      "id": "__MeaId__",
-    },
-  ],
+  "reshapeDimensions": [],
   "reshapeMeasures": [
     {
       "alias": "v",
@@ -1278,7 +1268,6 @@ exports[`histogramEcdf 2`] = `
 exports[`histogramEcdf 3`] = `
 {
   "advancedPipeline": [
-    [Function],
     [Function],
     [Function],
     [Function],

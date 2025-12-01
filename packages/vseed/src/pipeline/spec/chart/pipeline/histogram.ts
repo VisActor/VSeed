@@ -34,10 +34,12 @@ import {
   pivotTitle,
   pivotAxisStyle,
   dimensionLinkage,
+  stackCornerRadius,
 } from '../pipes'
 
 const histogram: VChartSpecPipeline = [
   initHistogram,
+  stackCornerRadius,
   colorAdapter(color, linearColor),
   backgroundColor,
   datasetHistogram,
@@ -63,6 +65,7 @@ const pivotHistogram: PivotChartSpecPipeline = [
   datasetPivot,
   pivotIndicators([
     initHistogram,
+    stackCornerRadius,
     colorAdapter(color, linearColor),
     backgroundColor,
     datasetHistogram,

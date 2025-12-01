@@ -19,6 +19,8 @@ export const boxplotConfig: AdvancedPipe = (advancedVSeed, context) => {
     'yAxis',
     'crosshairRect',
     'whiskers',
+    'boxMaxWidth',
+    'boxGapInGroup',
 
     'dimensionLinkage',
   ]) as Config['boxPlot']

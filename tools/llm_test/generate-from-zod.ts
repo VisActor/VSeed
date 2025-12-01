@@ -19,6 +19,8 @@ import {
   zDualChartType,
   zBarMaxWidth,
   zBarGapInGroup,
+  zBoxMaxWidth,
+  zBoxGapInGroup,
   zWhiskersConfig,
 } from '@visactor/vseed'
 import fs from 'fs'
@@ -273,6 +275,36 @@ ${barMaxWidthSchema}
 ${topKeyDesc['BarGapInGroup']}
 \`\`\`typescript
 ${barGapInGroupSchema}
+\`\`\`
+  `,
+  )
+
+  // BoxMaxWidth
+  const boxMaxWidthSchema = await compile(z.toJSONSchema(zBoxMaxWidth) as any, 'BoxMaxWidth', {
+    bannerComment: '',
+  })
+  fs.writeFileSync(
+    path.join(__dirname, './new-type/BoxMaxWidth.md'),
+    `
+### BoxMaxWidth
+${topKeyDesc['BoxMaxWidth']}
+\`\`\`typescript
+${boxMaxWidthSchema}
+\`\`\`
+  `,
+  )
+
+  // BoxGapInGroup
+  const boxGapInGroupSchema = await compile(z.toJSONSchema(zBoxGapInGroup) as any, 'BoxGapInGroup', {
+    bannerComment: '',
+  })
+  fs.writeFileSync(
+    path.join(__dirname, './new-type/BoxGapInGroup.md'),
+    `
+### BoxGapInGroup
+${topKeyDesc['BoxGapInGroup']}
+\`\`\`typescript
+${boxGapInGroupSchema}
 \`\`\`
   `,
   )

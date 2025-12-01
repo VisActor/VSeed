@@ -47,6 +47,9 @@ importers:
       rspress:
         specifier: 1.45.3
         version: 1.45.3(webpack@5.101.0)
+      zustand:
+        specifier: 5.0.6
+        version: 5.0.6(@types/react@18.0.0)(react@18.3.1)
     devDependencies:
       '@eslint/js':
         specifier: 9.30.0
@@ -6307,7 +6310,6 @@ packages:
   zod@4.0.14:
     resolution: {integrity: sha512-nGFJTnJN6cM2v9kXL+SOBq3AtjQby3Mv5ySGFof5UGRHrRioSJ5iG680cYNjE/yWk671nROcpPj4hAS8nyLhSw==}
 
-<<<<<<< HEAD
   zod@4.0.17:
     resolution: {integrity: sha512-1PHjlYRevNxxdy2JZ8JcNAw7rX8V9P1AKkP+x/xZfxB0K5FYfuV+Ug6P/6NVSR2jHQ+FzDDoDHS04nYUsOIyLQ==}
 
@@ -6329,8 +6331,6 @@ packages:
       use-sync-external-store:
         optional: true
 
-=======
->>>>>>> d4af48f97 (feat: init commit for vbi)
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
@@ -13936,7 +13936,6 @@ snapshots:
 
   zod@4.0.14: {}
 
-<<<<<<< HEAD
   zod@4.0.17: {}
 
   zustand@5.0.6(@types/react@18.0.0)(react@18.3.1):
@@ -13944,6 +13943,4 @@ snapshots:
       '@types/react': 18.0.0
       react: 18.3.1
 
-=======
->>>>>>> d4af48f97 (feat: init commit for vbi)
   zwitch@2.0.4: {}

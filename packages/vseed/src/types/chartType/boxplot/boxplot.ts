@@ -5,8 +5,6 @@ import type {
   AnnotationPoint,
   AnnotationVerticalLine,
   BackgroundColor,
-  BoxGapInGroup,
-  BoxMaxWidth,
   BoxPlotStyle,
   Color,
   CrosshairRect,
@@ -202,9 +200,9 @@ export interface Boxplot {
   /**
    * 箱线图的最大宽度，可以设置绝对的像素值，也可以使用百分比（如 '10%'）
    */
-  boxMaxWidth?: BoxMaxWidth
+  boxMaxWidth?: string | number
   /**
    * 分组箱线图中各个分组内的间距，可以设置绝对的像素值，也可以使用百分比（如 '10%'）。
    */
-  boxGapInGroup?: BoxGapInGroup
+  boxGapInGroup?: string | number
 }

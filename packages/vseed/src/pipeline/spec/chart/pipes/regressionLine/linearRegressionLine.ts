@@ -32,6 +32,7 @@ export const generateRegressionLinePipe = (
     evaluateGrid: (N: number) => { x: number; y: number }[]
   },
   getOptions: (lineConfig: any) => any = getDefaultRegressionOptions,
+  getMinPoints: (lineConfig: any) => number = () => 2,
 ): VChartSpecPipe => {
   return ((spec: Partial<IScatterChartSpec>, context: SpecPipelineContext): Partial<IScatterChartSpec> => {
     const result = { ...spec }
@@ -109,7 +110,9 @@ export const generateRegressionLinePipe = (
               groups.forEach((group) => {
                 const groupData = data.filter((d: Datum) => d[colorAttrOptions?.field] === group)
 
-                if (groupData.length <= 2) {
+                const minPoints = getMinPoints(line)
+
+                if (groupData.length < minPoints) {
                   return
                 }
                 const { confidenceInterval, evaluateGrid } = regressionFunction(
@@ -297,16 +300,26 @@ const getDefaultRegressionOptions = (
   return { alpha }
 }
 
-export const linearRegressionLine: VChartSpecPipe = generateRegressionLinePipe('linearRegressionLine', regressionLinear)
-export const lowessRegressionLine: VChartSpecPipe = generateRegressionLinePipe('lowessRegressionLine', regressionLowess)
+export const linearRegressionLine: VChartSpecPipe = generateRegressionLinePipe(
+  'linearRegressionLine',
+  regressionLinear,
+  getDefaultRegressionOptions,
+)
+export const lowessRegressionLine: VChartSpecPipe = generateRegressionLinePipe(
+  'lowessRegressionLine',
+  regressionLowess,
+  getDefaultRegressionOptions,
+)
 export const polynomialRegressionLine: VChartSpecPipe = generateRegressionLinePipe(
   'polynomialRegressionLine',
   regressionPolynomial,
   (lineConfig: PolynomialRegressionLine) => {
     return { ...getDefaultRegressionOptions(lineConfig), degree: lineConfig.degree ?? 2 }
   },
+  (lineConfig: PolynomialRegressionLine) => (lineConfig.degree ?? 2) + 1,
 )
 export const logisticRegressionLine: VChartSpecPipe = generateRegressionLinePipe(
   'logisticRegressionLine',
   regressionLogistic,
+  getDefaultRegressionOptions,
 )

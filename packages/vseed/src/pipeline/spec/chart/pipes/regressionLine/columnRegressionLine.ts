@@ -70,8 +70,11 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
             const fieldX = s.fieldX?.[0]
             const fieldY = s.fieldY?.[0]
             const xValues = s.getRawDataStatisticsByField(fieldX).values as string[]
+            const degree = (line as PolynomialRegressionLine).degree ?? 2
+            // 多项式拟合需要至少 degree + 1 个点
+            const minPoints = degree + 1
 
-            if (!fieldX || !fieldY || !data || data.length <= 2 || xValues.length <= 2) {
+            if (!fieldX || !fieldY || !data || data.length < minPoints || xValues.length < minPoints) {
               return null
             }
 

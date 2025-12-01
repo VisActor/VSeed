@@ -710,6 +710,7 @@ exports[`defaultParentId 1`] = `
   "markStyle": {},
   "measures": [
     {
+      "alias": "sum(amount)",
       "children": [
         {
           "alias": "sum(amount)",
@@ -725,6 +726,7 @@ exports[`defaultParentId 1`] = `
       "id": "__DefaultParentId__",
     },
     {
+      "alias": "sum(amount)",
       "children": [
         {
           "alias": "sum(amount)",
@@ -759,6 +761,7 @@ exports[`defaultParentId 1`] = `
   ],
   "reshapeMeasures": [
     {
+      "alias": "sum(amount)",
       "children": [
         {
           "alias": "sum(amount)",
@@ -774,6 +777,7 @@ exports[`defaultParentId 1`] = `
       "id": "__DefaultParentId__",
     },
     {
+      "alias": "sum(amount)",
       "children": [
         {
           "alias": "sum(amount)",
@@ -1159,7 +1163,7 @@ exports[`defaultParentId 2`] = `
           1,
         ],
       },
-      "title": undefined,
+      "title": "sum(amount)",
     },
     {
       "cellType": "chart",
@@ -1484,7 +1488,7 @@ exports[`defaultParentId 2`] = `
           1,
         ],
       },
-      "title": undefined,
+      "title": "sum(amount)",
     },
   ],
   "indicatorsAsCol": false,

@@ -628,6 +628,7 @@ exports[`emptyBarStyle 1`] = `
   },
   "measures": [
     {
+      "alias": "sum(amount)",
       "children": [
         {
           "alias": "sum(amount)",
@@ -643,6 +644,7 @@ exports[`emptyBarStyle 1`] = `
       "id": "__DefaultParentId__",
     },
     {
+      "alias": "sum(amount)",
       "children": [
         {
           "alias": "sum(amount)",
@@ -677,10 +679,12 @@ exports[`emptyBarStyle 1`] = `
   ],
   "reshapeMeasures": [
     {
+      "alias": "sum(amount)",
       "children": [],
       "id": "__DefaultParentId__",
     },
     {
+      "alias": "sum(amount)",
       "children": [
         {
           "alias": "sum(amount)",
@@ -1068,7 +1072,7 @@ exports[`emptyBarStyle 2`] = `
           1,
         ],
       },
-      "title": undefined,
+      "title": "sum(amount)",
     },
   ],
   "indicatorsAsCol": false,

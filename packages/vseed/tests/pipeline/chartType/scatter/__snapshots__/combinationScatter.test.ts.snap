@@ -764,6 +764,7 @@ exports[`combinationScatter 1`] = `
   "markStyle": {},
   "measures": [
     {
+      "alias": "line1",
       "children": [
         {
           "alias": "销售额",
@@ -782,6 +783,7 @@ exports[`combinationScatter 1`] = `
       "id": "line1",
     },
     {
+      "alias": "line2",
       "children": [
         {
           "alias": "利润",

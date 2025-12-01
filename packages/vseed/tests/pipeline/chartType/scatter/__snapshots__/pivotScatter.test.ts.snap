@@ -1120,6 +1120,7 @@ exports[`pivotScatter 1`] = `
   "markStyle": {},
   "measures": [
     {
+      "alias": "line1",
       "children": [
         {
           "alias": "销售额",
@@ -1138,6 +1139,7 @@ exports[`pivotScatter 1`] = `
       "id": "line1",
     },
     {
+      "alias": "line2",
       "children": [
         {
           "alias": "利润",
@@ -1179,6 +1181,7 @@ exports[`pivotScatter 1`] = `
   ],
   "reshapeMeasures": [
     {
+      "alias": "line1",
       "children": [
         {
           "alias": "销售额",
@@ -1197,6 +1200,7 @@ exports[`pivotScatter 1`] = `
       "id": "line1",
     },
     {
+      "alias": "line2",
       "children": [
         {
           "alias": "利润",

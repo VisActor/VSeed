@@ -1245,6 +1245,7 @@ exports[`pivotRose 1`] = `
   "markStyle": {},
   "measures": [
     {
+      "alias": "line1",
       "children": [
         {
           "alias": "销售额",
@@ -1263,6 +1264,7 @@ exports[`pivotRose 1`] = `
       "id": "line1",
     },
     {
+      "alias": "line2",
       "children": [
         {
           "alias": "利润",
@@ -1304,6 +1306,7 @@ exports[`pivotRose 1`] = `
   ],
   "reshapeMeasures": [
     {
+      "alias": "line1",
       "children": [
         {
           "alias": "销售额",
@@ -1322,6 +1325,7 @@ exports[`pivotRose 1`] = `
       "id": "line1",
     },
     {
+      "alias": "line2",
       "children": [
         {
           "alias": "利润",
@@ -1562,7 +1566,7 @@ exports[`pivotRose 2`] = `
           1,
         ],
       },
-      "title": undefined,
+      "title": "line1",
     },
     {
       "cellType": "chart",
@@ -1753,7 +1757,7 @@ exports[`pivotRose 2`] = `
           1,
         ],
       },
-      "title": undefined,
+      "title": "line2",
     },
   ],
   "indicatorsAsCol": false,

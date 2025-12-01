@@ -839,6 +839,7 @@ exports[`second 1`] = `
   "markStyle": {},
   "measures": [
     {
+      "alias": "primary",
       "children": [
         {
           "alias": "销售额",
@@ -848,6 +849,7 @@ exports[`second 1`] = `
       "id": "primary",
     },
     {
+      "alias": "secondary",
       "children": [
         {
           "alias": "利润",

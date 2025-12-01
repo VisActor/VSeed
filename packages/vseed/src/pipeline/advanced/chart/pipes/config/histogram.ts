@@ -24,7 +24,6 @@ export const histogramConfig: AdvancedPipe = (advancedVSeed, context) => {
     'binCount',
     'binStep',
     'binValueType',
-    'stackCornerRadius',
 
     'dimensionLinkage',
   ]) as Config['histogram']

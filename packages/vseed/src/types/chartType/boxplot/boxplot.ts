@@ -5,8 +5,6 @@ import type {
   AnnotationPoint,
   AnnotationVerticalLine,
   BackgroundColor,
-  BoxGapInGroup,
-  BoxMaxWidth,
   BoxPlotStyle,
   Color,
   CrosshairRect,
@@ -152,14 +150,7 @@ export interface Boxplot {
    * @description 垂直提示框配置, 用于定义图表的垂直提示框, 包括垂直提示框的颜色、标签样式等.
    */
   crosshairRect?: CrosshairRect
-  /**
-   * @description 箱体的最大高度，可以是像素值或者百分比字符串
-   */
-  boxMaxWidth?: BoxMaxWidth
-  /**
-   * @description 箱体在分组中的间距，可以是像素值或者百分比字符串
-   */
-  boxGapInGroup?: BoxGapInGroup
+
   /**
    * @description 箱线图箱体的样式配置，支持全局或选择器粒度生效
    */

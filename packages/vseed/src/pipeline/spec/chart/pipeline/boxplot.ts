@@ -35,14 +35,10 @@ import {
   outlierStyle,
   discreteLegend,
 } from '../pipes'
-import { boxMaxWidth } from '../pipes/barWidth/boxMaxWidth'
-import { boxGapInGroup } from '../pipes/barWidth/boxGapInGroup'
 
 const boxplot: VChartSpecPipeline = [
   initBoxplot,
   stackCornerRadius,
-  boxMaxWidth,
-  boxGapInGroup,
   colorAdapter(color, linearColor),
   backgroundColor,
   datasetBoxplot,
@@ -68,8 +64,6 @@ const pivotBoxplot: PivotChartSpecPipeline = [
   pivotIndicators([
     initBoxplot,
     stackCornerRadius,
-    boxMaxWidth,
-    boxGapInGroup,
     colorAdapter(color, linearColor),
     backgroundColor,
     datasetBoxplot,

@@ -10,3 +10,5 @@ export interface QueryDSL<Table> {
   orderBy?: OrderBy<Table>
   limit?: number
 }
+
+export type VQueryDSL<Table = Record<string, unknown>> = QueryDSL<Table>

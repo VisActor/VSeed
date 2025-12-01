@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "rslib build --watch",
+    "dev": "rslib build --watch --no-clean",
     "build": "rslib build",
     "dev:rsdoctor": "RSDOCTOR=true rslib dev",
     "build:rsdoctor": "RSDOCTOR=true rslib build",
@@ -39,7 +39,7 @@
   "devDependencies": {
     "@eslint/js": "9.30.0",
     "@rsdoctor/rspack-plugin": "1.2.3",
-    "@rslib/core": "0.13.2",
+    "@rslib/core": "0.18.1",
     "@rstest/core": "0.5.2",
     "@rstest/coverage-istanbul": "0.0.3",
     "@types/node": "22.16.5",

@@ -1,6 +1,5 @@
 {
   "name": "@internal/bugserver-trigger",
-  "version": "0.0.3",
   "description": "trigger bugserver for all VSeed packages",
   "private": true,
   "scripts": {
@@ -12,6 +11,7 @@
     "@visactor/vquery": "workspace:*"
   },
   "devDependencies": {
+    "@rslib/core": "0.18.1",
     "@rushstack/eslint-patch": "~1.1.4",
     "typescript": "5.8.3",
     "@types/node-fetch": "2.6.4",
@@ -19,7 +19,6 @@
     "form-data": "~4.0.0",
     "ts-node": "10.9.0",
     "@types/node": "*",
-    "cross-env": "^7.0.3",
-    "@rslib/core": "0.13.2"
+    "cross-env": "^7.0.3"
   }
 }

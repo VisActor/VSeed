@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "rspress": "1.45.3",
+    "@visactor/vbi": "workspace:*",
     "@visactor/vseed": "workspace:*",
     "@visactor/vquery": "workspace:*",
     "@visactor/vchart": "2.0.10",

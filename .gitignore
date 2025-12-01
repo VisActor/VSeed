@@ -5,11 +5,14 @@
 tsconfig.tsbuildinfo
 .eslintcache
 
-# Dist
+# Turbo
+.turbo
 
+# Dist
 dist/
 node_modules/
 coverage/
+
 
 # IDE
 .vscode/*

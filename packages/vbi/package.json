@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.0",
-    "@rslib/core": "^0.18.1",
+    "@rslib/core": "0.18.1",
     "@rstest/core": "^0.6.6",
     "@types/node": "^24.10.1",
     "eslint": "^9.39.0",

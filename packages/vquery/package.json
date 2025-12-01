@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",
-    "@rslib/core": "^0.15.1",
+    "@rslib/core": "0.18.1",
     "@rstest/core": "0.6.5",
     "@types/node": "^22.18.10",
     "@rstest/coverage-istanbul": "0.0.5",

@@ -33,15 +33,22 @@ const generateMeasuresByParentId = (measures: Measures): MeasureTree => {
     const parent = measureTree.find((item) => item.id === measure.parentId)
     if (parent && 'children' in parent) {
       parent.children = parent.children || []
+
+      if (parent.children.length > 0) {
+        parent.alias += ` & ${measure.alias ?? measure.id}`
+      }
+
       parent.children.push(measure)
     } else if (isValid(measure.parentId)) {
       measureTree.push({
         id: measure.parentId,
+        alias: measure.alias ?? measure.id,
         children: [measure],
       })
     } else {
       measureTree.push({
         id: DEFAULT_PARENT_ID,
+        alias: measure.alias ?? measure.id, // 当分组只有单个指标的时候，分组alias 设置为该指标的别名或者id
         children: [measure],
       })
     }

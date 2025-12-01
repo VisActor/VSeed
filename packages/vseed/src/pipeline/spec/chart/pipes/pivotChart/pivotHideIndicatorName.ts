@@ -1,8 +1,11 @@
 import type { PivotChartSpecPipe } from 'src/types'
 
-export const pivotHideIndicatorName: PivotChartSpecPipe = (spec) => {
+export const pivotHideIndicatorName: PivotChartSpecPipe = (spec, context) => {
+  const { advancedVSeed } = context
+  const { datasetReshapeInfo } = advancedVSeed
+
   return {
     ...spec,
-    hideIndicatorName: true,
+    hideIndicatorName: datasetReshapeInfo.length <= 1,
   }
 }

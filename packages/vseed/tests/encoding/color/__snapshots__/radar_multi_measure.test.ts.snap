@@ -654,6 +654,7 @@ exports[`radar_multi_measure 1`] = `
   "markStyle": {},
   "measures": [
     {
+      "alias": "利润 & 销售额",
       "children": [
         {
           "alias": "利润",
@@ -689,6 +690,7 @@ exports[`radar_multi_measure 1`] = `
   ],
   "reshapeMeasures": [
     {
+      "alias": "利润 & 销售额",
       "children": [
         {
           "alias": "利润",

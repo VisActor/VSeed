@@ -528,7 +528,7 @@ exports[`combinationFunnel 2`] = `
   "defaultHeaderRowHeight": "auto",
   "defaultRowHeight": 180,
   "heightMode": "standard",
-  "hideIndicatorName": true,
+  "hideIndicatorName": false,
   "hover": {
     "highlightMode": "cross",
   },

@@ -1078,6 +1078,7 @@ exports[`same 1`] = `
   },
   "measures": [
     {
+      "alias": "min(amount)",
       "children": [
         {
           "alias": "min(amount)",
@@ -1094,6 +1095,7 @@ exports[`same 1`] = `
       "id": "0",
     },
     {
+      "alias": "sum(amount)",
       "children": [
         {
           "alias": "sum(amount)",
@@ -1110,6 +1112,7 @@ exports[`same 1`] = `
       "id": "1",
     },
     {
+      "alias": "sum(discount)",
       "children": [
         {
           "alias": "sum(discount)",
@@ -1128,6 +1131,7 @@ exports[`same 1`] = `
       "id": "2",
     },
     {
+      "alias": "sum(profit)",
       "children": [
         {
           "alias": "sum(profit)",
@@ -1166,6 +1170,7 @@ exports[`same 1`] = `
   ],
   "reshapeMeasures": [
     {
+      "alias": "min(amount)",
       "children": [
         {
           "alias": "min(amount)",
@@ -1182,6 +1187,7 @@ exports[`same 1`] = `
       "id": "0",
     },
     {
+      "alias": "sum(amount)",
       "children": [
         {
           "alias": "sum(amount)",
@@ -1198,6 +1204,7 @@ exports[`same 1`] = `
       "id": "1",
     },
     {
+      "alias": "sum(discount)",
       "children": [
         {
           "alias": "sum(discount)",
@@ -1216,6 +1223,7 @@ exports[`same 1`] = `
       "id": "2",
     },
     {
+      "alias": "sum(profit)",
       "children": [
         {
           "alias": "sum(profit)",
@@ -1615,7 +1623,7 @@ exports[`same 2`] = `
           1,
         ],
       },
-      "title": undefined,
+      "title": "min(amount)",
     },
     {
       "cellType": "chart",
@@ -1952,7 +1960,7 @@ exports[`same 2`] = `
           1,
         ],
       },
-      "title": undefined,
+      "title": "sum(amount)",
     },
     {
       "cellType": "chart",
@@ -2289,7 +2297,7 @@ exports[`same 2`] = `
           1,
         ],
       },
-      "title": undefined,
+      "title": "sum(discount)",
     },
     {
       "cellType": "chart",
@@ -2626,7 +2634,7 @@ exports[`same 2`] = `
           1,
         ],
       },
-      "title": undefined,
+      "title": "sum(profit)",
     },
   ],
   "indicatorsAsCol": false,

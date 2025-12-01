@@ -10,14 +10,17 @@
   "author": "visactor",
   "description": "VSeed, an elegant data composer, transforming complexity into simplicity.",
   "scripts": {
-    "dev": "pnpm -r --color --parallel dev",
-    "dev:rsdoctor": "pnpm --filter=@visactor/vseed run dev:rsdoctor",
+    "dev": "pnpm run dev:docs",
+    "build": "pnpm run build:all",
     "format": "pnpm prettier --write .",
     "lint": "pnpm -r --color --parallel lint",
     "type-check": "pnpm -r --color --parallel type-check && pnpm --filter=vseed-llm-test run generate",
-    "build": "pnpm -r build",
+    "dev:docs": "turbo dev --filter=!/tools/*",
+    "dev:rsdoctor": "pnpm --filter=@visactor/vseed run dev:rsdoctor",
+    "build:all": "turbo build --filter=!/tools/*",
     "build:vseed": "pnpm --filter=@visactor/vseed run build",
     "build:vquery": "pnpm --filter=@visactor/vquery run build",
+    "build:vbi": "pnpm --filter=@visactor/vbi run build",
     "build:rsdoctor": "pnpm --filter=@visactor/vseed run build:rsdoctor",
     "build:docs": "node ./scripts/build-docs.js",
     "build:test": "node ./scripts/build-tests.mjs",
@@ -51,9 +54,10 @@
     "@changesets/cli": "^2.29.5",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.6",
+    "node-fetch": "2.6.7",
     "prettier": "^3.6.2",
     "ts-morph": "26.0.0",
-    "node-fetch": "2.6.7"
+    "turbo": "^2.6.1"
   },
   "packageManager": "pnpm@10.13.1",
   "license": "MIT"

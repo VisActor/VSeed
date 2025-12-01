@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@internal/bugserver-trigger", "website", "@visactor/vbi"]
+  "ignore": ["@internal/bugserver-trigger", "vseed-llm-test", "website", "@visactor/vbi"]
 }

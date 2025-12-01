@@ -65,6 +65,9 @@ export default defineConfig({
     exclude: ['components/**/*'],
   },
   builderConfig: {
+    server: {
+      open: true,
+    },
     output: {
       sourceMap: true,
       assetPrefix: 'https://visactor.github.io/VSeed/',

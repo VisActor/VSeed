@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "rslib build --watch",
+    "dev": "rslib build --watch --no-clean",
     "build": "rslib build",
     "dev:rsdoctor": "RSDOCTOR=true rslib dev",
     "build:rsdoctor": "RSDOCTOR=true rslib build",

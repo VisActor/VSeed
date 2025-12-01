@@ -1,6 +1,5 @@
 {
   "name": "@internal/bugserver-trigger",
-  "version": "0.0.3",
   "description": "trigger bugserver for all VSeed packages",
   "private": true,
   "scripts": {

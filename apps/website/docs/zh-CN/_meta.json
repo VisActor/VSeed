@@ -33,33 +33,6 @@
         "link": "/playground/vquery",
         "text": "VQuery",
         "activeMatch": "/playground/vquery"
-      },
-      {
-        "link": "/playground/vbi",
-        "text": "VBI",
-        "activeMatch": "/playground/vbi"
-      }
-    ]
-  },
-  {
-    "text": "Practices",
-    "link": "/practices/index",
-    "activeMatch": "/practices/",
-    "items": [
-      {
-        "link": "/practices/index",
-        "text": "实践一",
-        "activeMatch": "/practices/index"
-      },
-      {
-        "link": "/practices/index",
-        "text": "实践二",
-        "activeMatch": "/practices/index"
-      },
-      {
-        "link": "/practices/index",
-        "text": "实践三",
-        "activeMatch": "/practices/index"
       }
     ]
   },

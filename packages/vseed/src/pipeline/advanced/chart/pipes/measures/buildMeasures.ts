@@ -35,7 +35,7 @@ const generateMeasuresByParentId = (measures: Measures): MeasureTree => {
       parent.children = parent.children || []
 
       if (parent.children.length > 0) {
-        parent.alias += ` & ${measure.alias ?? measure.id}`
+        parent.alias += `-${measure.alias ?? measure.id}`
       }
 
       parent.children.push(measure)

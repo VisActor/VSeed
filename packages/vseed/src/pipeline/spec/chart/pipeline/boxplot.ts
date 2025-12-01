@@ -17,6 +17,8 @@ import {
   annotationHorizontalLine,
   annotationAreaBand,
   stackCornerRadius,
+  boxMaxWidth,
+  boxGapInGroup,
   progressive,
   colorAdapter,
   linearColor,
@@ -39,6 +41,8 @@ import {
 const boxplot: VChartSpecPipeline = [
   initBoxplot,
   stackCornerRadius,
+  boxMaxWidth,
+  boxGapInGroup,
   colorAdapter(color, linearColor),
   backgroundColor,
   datasetBoxplot,
@@ -64,6 +68,8 @@ const pivotBoxplot: PivotChartSpecPipeline = [
   pivotIndicators([
     initBoxplot,
     stackCornerRadius,
+    boxMaxWidth,
+    boxGapInGroup,
     colorAdapter(color, linearColor),
     backgroundColor,
     datasetBoxplot,

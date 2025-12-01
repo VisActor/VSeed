@@ -11,6 +11,7 @@ import { zPivotChartGridConfig } from './pivotGrid'
 import { zWhiskersConfig } from './whiskers'
 import { zDimensionLinkage } from './dimensionLinkage/dimensionLinkage'
 import { zBoxPlotStyle, zOutlierStyle } from '../markStyle'
+import { zBoxGapInGroup, zBoxMaxWidth } from './boxWidth'
 
 export const zBoxplotConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -31,6 +32,8 @@ export const zBoxplotConfig = z.object({
 
   boxPlotStyle: zBoxPlotStyle.omit({ selector: true }).nullish(),
   outlierStyle: zOutlierStyle.omit({ selector: true }).nullish(),
+  boxMaxWidth: zBoxMaxWidth.nullish(),
+  boxGapInGroup: zBoxGapInGroup.nullish(),
 })
 
 export type BoxplotConfig = z.infer<typeof zBoxplotConfig>

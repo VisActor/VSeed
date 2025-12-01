@@ -6,6 +6,8 @@ import {
   zAnnotationPoint,
   zAnnotationVerticalLine,
   zBackgroundColor,
+  zBoxGapInGroup,
+  zBoxMaxWidth,
   zBoxPlotStyle,
   zColor,
   zCrosshairRect,
@@ -52,4 +54,6 @@ export const zBoxplot = z.object({
   annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).nullish(),
   dimensionLinkage: zDimensionLinkage.nullish(),
   locale: zLocale.nullish(),
+  boxMaxWidth: zBoxMaxWidth.nullish(),
+  boxGapInGroup: zBoxGapInGroup.nullish(),
 })

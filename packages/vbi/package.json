@@ -28,6 +28,10 @@
     "@visactor/vseed": "workspace:*",
     "@visactor/vquery": "workspace:*"
   },
+  "peerDependencies": {
+    "@visactor/vseed": "workspace:*",
+    "@visactor/vquery": "workspace:*"
+  },
   "devDependencies": {
     "@eslint/js": "^9.39.0",
     "@rslib/core": "0.18.1",

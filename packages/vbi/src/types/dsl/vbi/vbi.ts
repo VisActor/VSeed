@@ -12,6 +12,7 @@ export const zVBI = z.object({
   measures: zVBIMeasureTree,
   theme: zVBIDSLTheme,
   locale: zVBIDSLLocale,
+  version: z.number().int().min(0),
 })
 
 export type VBI = z.infer<typeof zVBI>

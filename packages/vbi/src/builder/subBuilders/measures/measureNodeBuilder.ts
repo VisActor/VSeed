@@ -22,6 +22,10 @@ export class MeasureNodeBuilder {
     return this
   }
 
+  build(): VBIMeasure {
+    return { ...this.measureNode }
+  }
+
   static from(measureNode: VBIMeasure): MeasureNodeBuilder {
     return new MeasureNodeBuilder(measureNode)
   }

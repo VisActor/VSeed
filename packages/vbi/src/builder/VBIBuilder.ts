@@ -4,12 +4,17 @@ import { VBIConnector } from '../types/connector'
 import { VBIConnectorId } from '../types/connector/connector'
 import { VBIDSL } from '../types/dsl'
 import { VBIBuilderInterface } from '../types/builder/VBIInterface'
+import { MeasuresBuilder } from './subBuilders'
 
 export class VBIBuilder implements VBIBuilderInterface {
   private vbiDSL: VBIDSL
 
   constructor(private vbi: VBIDSL) {
     this.vbiDSL = vbi
+  }
+
+  get measures(): MeasuresBuilder {
+    return MeasuresBuilder.from(this.vbiDSL.measures || [])
   }
 
   static from: (vbi: VBIDSL) => VBIBuilderInterface = (vbi: VBIDSL) => {

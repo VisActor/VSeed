@@ -1,5 +1,8 @@
-import { ChartType } from '@visactor/vseed'
+import { z } from 'zod'
+import type { ChartType } from '@visactor/vseed'
 
-export interface ChartTypeBuilder {
-  setChartType: (chartType: ChartType) => void
-}
+export const ChartTypeBuilderSchema = z.object({
+  setChartType: z.custom<(chartType: ChartType) => void>(),
+})
+
+export type ChartTypeBuilder = z.infer<typeof ChartTypeBuilderSchema>

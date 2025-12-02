@@ -20,7 +20,8 @@
     "dev": "rslib build --watch --no-clean",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "test": "rstest"
+    "test": "rstest",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "zod": "4.0.14",

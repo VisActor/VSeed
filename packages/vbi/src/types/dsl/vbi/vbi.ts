@@ -1,14 +1,17 @@
-import { ChartType } from '@visactor/vseed'
-import { VBIDimensionTree } from '../dimensions/dimensions'
-import { VBIMeasureTree } from '../measures/measures'
-import { VBIDSLTheme } from '../theme/theme'
-import { VBIDSLLocale } from '../locale/locale'
+import { z } from 'zod'
+import type { ChartType } from '@visactor/vseed'
+import { VBIDimensionTreeSchema } from '../dimensions/dimensions'
+import { VBIMeasureTreeSchema } from '../measures/measures'
+import { VBIDSLThemeSchema } from '../theme/theme'
+import { VBIDSLLocaleSchema } from '../locale/locale'
 
-export interface VBI {
-  connectorId: string
-  chartType: ChartType
-  dimensions: VBIDimensionTree
-  measures: VBIMeasureTree
-  theme: VBIDSLTheme
-  locale: VBIDSLLocale
-}
+export const VBISchema = z.object({
+  connectorId: z.string(),
+  chartType: z.custom<ChartType>(),
+  dimensions: VBIDimensionTreeSchema,
+  measures: VBIMeasureTreeSchema,
+  theme: VBIDSLThemeSchema,
+  locale: VBIDSLLocaleSchema,
+})
+
+export type VBI = z.infer<typeof VBISchema>

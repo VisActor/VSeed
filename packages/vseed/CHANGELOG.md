@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.2.1
+
+### Patch Changes
+
+- Access boxplot new feature with vchart new version, fix some boxplot/regressionLine bug
+
 ## 0.2.0
 
 ### Minor Changes

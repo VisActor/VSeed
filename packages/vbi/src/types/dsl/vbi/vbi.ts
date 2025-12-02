@@ -5,7 +5,7 @@ import { zVBIMeasureTree } from '../measures/measures'
 import { zVBIDSLTheme } from '../theme/theme'
 import { zVBIDSLLocale } from '../locale/locale'
 
-export const zVBI = z.object({
+export const zVBIDSL = z.object({
   connectorId: z.string(),
   chartType: z.custom<ChartType>(),
   dimensions: zVBIDimensionTree,
@@ -15,4 +15,4 @@ export const zVBI = z.object({
   version: z.number().int().min(0),
 })
 
-export type VBI = z.infer<typeof zVBI>
+export type VBIDSL = z.infer<typeof zVBIDSL>

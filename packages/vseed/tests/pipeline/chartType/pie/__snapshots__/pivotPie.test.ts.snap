@@ -1195,6 +1195,7 @@ exports[`pivotPie 1`] = `
   "locale": "zh-CN",
   "measures": [
     {
+      "alias": "line1",
       "children": [
         {
           "alias": "销售额",
@@ -1213,6 +1214,7 @@ exports[`pivotPie 1`] = `
       "id": "line1",
     },
     {
+      "alias": "line2",
       "children": [
         {
           "alias": "利润",
@@ -1254,6 +1256,7 @@ exports[`pivotPie 1`] = `
   ],
   "reshapeMeasures": [
     {
+      "alias": "line1",
       "children": [
         {
           "alias": "销售额",
@@ -1272,6 +1275,7 @@ exports[`pivotPie 1`] = `
       "id": "line1",
     },
     {
+      "alias": "line2",
       "children": [
         {
           "alias": "利润",
@@ -1502,7 +1506,7 @@ exports[`pivotPie 2`] = `
           1,
         ],
       },
-      "title": undefined,
+      "title": "line1",
     },
     {
       "cellType": "chart",
@@ -1683,7 +1687,7 @@ exports[`pivotPie 2`] = `
           1,
         ],
       },
-      "title": undefined,
+      "title": "line2",
     },
   ],
   "indicatorsAsCol": false,

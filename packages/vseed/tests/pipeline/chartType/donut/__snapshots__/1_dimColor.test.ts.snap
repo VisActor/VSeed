@@ -620,7 +620,7 @@ exports[`1_dimColor 1`] = `
   "locale": "zh-CN",
   "measures": [
     {
-      "alias": "利润 & 销售额",
+      "alias": "利润-销售额",
       "children": [
         {
           "alias": "利润",
@@ -656,7 +656,7 @@ exports[`1_dimColor 1`] = `
   ],
   "reshapeMeasures": [
     {
-      "alias": "利润 & 销售额",
+      "alias": "利润-销售额",
       "children": [
         {
           "alias": "利润",

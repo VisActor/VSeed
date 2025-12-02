@@ -1243,6 +1243,7 @@ exports[`pivotRadar 1`] = `
   "markStyle": {},
   "measures": [
     {
+      "alias": "line1",
       "children": [
         {
           "alias": "销售额",
@@ -1261,6 +1262,7 @@ exports[`pivotRadar 1`] = `
       "id": "line1",
     },
     {
+      "alias": "line2",
       "children": [
         {
           "alias": "利润",
@@ -1302,6 +1304,7 @@ exports[`pivotRadar 1`] = `
   ],
   "reshapeMeasures": [
     {
+      "alias": "line1",
       "children": [
         {
           "alias": "销售额",
@@ -1320,6 +1323,7 @@ exports[`pivotRadar 1`] = `
       "id": "line1",
     },
     {
+      "alias": "line2",
       "children": [
         {
           "alias": "利润",
@@ -1591,7 +1595,7 @@ exports[`pivotRadar 2`] = `
           1,
         ],
       },
-      "title": undefined,
+      "title": "line1",
     },
     {
       "cellType": "chart",
@@ -1813,7 +1817,7 @@ exports[`pivotRadar 2`] = `
           1,
         ],
       },
-      "title": undefined,
+      "title": "line2",
     },
   ],
   "indicatorsAsCol": false,

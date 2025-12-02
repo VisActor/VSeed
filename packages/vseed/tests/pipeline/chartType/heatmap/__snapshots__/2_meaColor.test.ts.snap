@@ -658,7 +658,7 @@ exports[`2_meaColor 1`] = `
   "markStyle": {},
   "measures": [
     {
-      "alias": "利润 & 销售额",
+      "alias": "利润-销售额",
       "children": [
         {
           "alias": "利润",
@@ -694,7 +694,7 @@ exports[`2_meaColor 1`] = `
   ],
   "reshapeMeasures": [
     {
-      "alias": "利润 & 销售额",
+      "alias": "利润-销售额",
       "children": [
         {
           "alias": "利润",

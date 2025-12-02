@@ -1110,6 +1110,7 @@ exports[`third 1`] = `
       "alias": "第一个双轴图",
       "children": [
         {
+          "alias": "secondary-profit",
           "children": [
             {
               "alias": "利润",
@@ -1119,6 +1120,7 @@ exports[`third 1`] = `
           "id": "secondary-profit",
         },
         {
+          "alias": "primary-sales",
           "children": [
             {
               "alias": "销售额",
@@ -1134,6 +1136,7 @@ exports[`third 1`] = `
       "alias": "第一个双轴图",
       "children": [
         {
+          "alias": "primary-ratio",
           "children": [
             {
               "alias": "比率",
@@ -1143,6 +1146,7 @@ exports[`third 1`] = `
           "id": "primary-ratio",
         },
         {
+          "alias": "returnRatio",
           "children": [
             {
               "alias": "回报率",

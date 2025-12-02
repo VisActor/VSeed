@@ -51,7 +51,7 @@ export const zColumn = z.object({
   annotationVerticalLine: z.array(zAnnotationVerticalLine).or(zAnnotationVerticalLine).nullish(),
   annotationHorizontalLine: z.array(zAnnotationHorizontalLine).or(zAnnotationHorizontalLine).nullish(),
   annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).nullish(),
-  polynomialRegressionLine: z.array(zPolynomialRegressionLine).or(zPolynomialRegressionLine).or(z.boolean()).nullish(),
+  polynomialRegressionLine: z.array(zPolynomialRegressionLine).or(zPolynomialRegressionLine).nullish(),
   dimensionLinkage: zDimensionLinkage.nullish(),
   locale: zLocale.nullish(),
 })

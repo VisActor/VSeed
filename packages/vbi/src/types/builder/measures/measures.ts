@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
-export const MeasuresBuilderSchema = z.object({
+export const zMeasuresBuilder = z.object({
   add: z.custom<(measure: string) => void>(),
 })
 
-export type MeasuresBuilder = z.infer<typeof MeasuresBuilderSchema>
+export type MeasuresBuilder = z.infer<typeof zMeasuresBuilder>

@@ -5,7 +5,7 @@ import type { VBIBuilder } from './builder'
 import type { Spec, VSeedDSL } from '@visactor/vseed'
 import type { VBIConnector, VBIConnectorId } from './connector/connector'
 
-export const VBIInterfaceSchema = z.object({
+export const zVBIInterface = z.object({
   from: z.custom<(vbi: VBI) => VBIBuilder>(),
   buildSpec: z.custom<() => Spec>(),
   buildVSeed: z.custom<() => VSeedDSL>(),
@@ -13,4 +13,4 @@ export const VBIInterfaceSchema = z.object({
   registerConnector: z.custom<(id: VBIConnectorId, connector: VBIConnector | (() => Promise<VBIConnector>)) => void>(),
 })
 
-export type VBIInterface = z.infer<typeof VBIInterfaceSchema>
+export type VBIInterface = z.infer<typeof zVBIInterface>

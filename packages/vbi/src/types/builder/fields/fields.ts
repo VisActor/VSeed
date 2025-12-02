@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
-export const FieldsBuilderSchema = z.object({
+export const zFieldsBuilder = z.object({
   setFields: z.custom<(fields: string[]) => void>(),
 })
 
-export type FieldsBuilder = z.infer<typeof FieldsBuilderSchema>
+export type FieldsBuilder = z.infer<typeof zFieldsBuilder>

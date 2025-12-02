@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
-export const WhereFiltersBuilderSchema = z.object({
+export const zWhereFiltersBuilder = z.object({
   add: z.custom<(filter: string) => void>(),
 })
 
-export type WhereFiltersBuilder = z.infer<typeof WhereFiltersBuilderSchema>
+export type WhereFiltersBuilder = z.infer<typeof zWhereFiltersBuilder>

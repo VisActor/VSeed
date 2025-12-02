@@ -1,16 +1,16 @@
 import { z } from 'zod'
-import { ChartTypeBuilderSchema } from './chartType/chartType'
-import { DimensionsBuilderSchema } from './dimensions/dimensions'
-import { FieldsBuilderSchema } from './fields/fields'
-import { MeasuresBuilderSchema } from './measures/measures'
-import { WhereFiltersBuilderSchema } from './whereFilters/whereFilters'
+import { zChartTypeBuilder } from './chartType/chartType'
+import { zDimensionsBuilder } from './dimensions/dimensions'
+import { zFieldsBuilder } from './fields/fields'
+import { zMeasuresBuilder } from './measures/measures'
+import { zWhereFiltersBuilder } from './whereFilters/whereFilters'
 
-export const VBIBuilderSchema = z.object({
-  chartType: ChartTypeBuilderSchema,
-  measures: MeasuresBuilderSchema,
-  dimensions: DimensionsBuilderSchema,
-  fields: FieldsBuilderSchema,
-  whereFilters: WhereFiltersBuilderSchema,
+export const zVBIBuilder = z.object({
+  chartType: zChartTypeBuilder,
+  measures: zMeasuresBuilder,
+  dimensions: zDimensionsBuilder,
+  fields: zFieldsBuilder,
+  whereFilters: zWhereFiltersBuilder,
 })
 
-export type VBIBuilder = z.infer<typeof VBIBuilderSchema>
+export type VBIBuilder = z.infer<typeof zVBIBuilder>

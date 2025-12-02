@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
-export const DimensionsBuilderSchema = z.object({
+export const zDimensionsBuilder = z.object({
   add: z.custom<(dimension: string) => void>(),
 })
 
-export type DimensionsBuilder = z.infer<typeof DimensionsBuilderSchema>
+export type DimensionsBuilder = z.infer<typeof zDimensionsBuilder>

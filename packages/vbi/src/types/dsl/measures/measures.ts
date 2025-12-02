@@ -1,20 +1,19 @@
 import { z } from 'zod'
 
-export const VBIMeasureSchema = z.object({
+export const zVBIMeasure = z.object({
   alias: z.string(),
 })
-export type VBIMeasure = z.infer<typeof VBIMeasureSchema>
 
+export const zVBIMeasureGroup: z.ZodType<VBIMeasureGroup> = z.object({
+  alias: z.string(),
+  children: z.lazy(() => z.array(z.union([zVBIMeasure, zVBIMeasureGroup]))),
+})
+
+export const zVBIMeasureTree = z.array(z.union([zVBIMeasure, zVBIMeasureGroup]))
+
+export type VBIMeasure = z.infer<typeof zVBIMeasure>
 export type VBIMeasureGroup = {
   alias: string
   children: (VBIMeasure | VBIMeasureGroup)[]
 }
-
-export const VBIMeasureGroupSchema: z.ZodType<VBIMeasureGroup> = z.object({
-  alias: z.string(),
-  children: z.lazy(() => z.array(z.union([VBIMeasureSchema, VBIMeasureGroupSchema]))),
-})
-
-export const VBIMeasureTreeSchema = z.array(z.union([VBIMeasureSchema, VBIMeasureGroupSchema]))
-
-export type VBIMeasureTree = z.infer<typeof VBIMeasureTreeSchema>
+export type VBIMeasureTree = z.infer<typeof zVBIMeasureTree>

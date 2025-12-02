@@ -268,22 +268,22 @@ export interface Scatter {
    * 线性回归线
    * @description 线性回归线配置, 包括线性回归线的样式等.
    */
-  linearRegressionLine?: boolean | LinearRegressionLine | LinearRegressionLine[]
+  linearRegressionLine?: LinearRegressionLine | LinearRegressionLine[]
   /**
    * 局部加权回归线配置项
    * @description 局部加权回归线配置项, 包括局部加权回归线的样式等.
    */
-  lowessRegressionLine?: boolean | LowessRegressionLine | LowessRegressionLine[]
+  lowessRegressionLine?: LowessRegressionLine | LowessRegressionLine[]
   /**
    * 多项式回归线
    * @description 多项式回归线配置, 包括多项式的阶数、回归线的样式等.
    */
-  polynomialRegressionLine?: boolean | PolynomialRegressionLine | PolynomialRegressionLine[]
+  polynomialRegressionLine?: PolynomialRegressionLine | PolynomialRegressionLine[]
   /**
    * 逻辑回归线
    * @description 逻辑回归线配置, 包括逻辑回归线的样式等.
    */
-  logisticRegressionLine?: boolean | LogisticRegressionLine | LogisticRegressionLine[]
+  logisticRegressionLine?: LogisticRegressionLine | LogisticRegressionLine[]
   /**
    * 当图表开启透视功能或者指标组合的是否，是否开启维度联动功能
    * 当hover 到某个维度值时，联动高亮其他图表中相同维度值的数据

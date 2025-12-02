@@ -194,7 +194,7 @@ export interface Column {
    * 多项式回归线
    * @description 多项式回归线配置, 包括多项式的阶数、回归线的样式等.
    */
-  polynomialRegressionLine?: boolean | PolynomialRegressionLine | PolynomialRegressionLine[]
+  polynomialRegressionLine?: PolynomialRegressionLine | PolynomialRegressionLine[]
   /**
    * 当图表开启透视功能或者指标组合的是否，是否开启维度联动功能
    * 当hover 到某个维度值时，联动高亮其他图表中相同维度值的数据

@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.2.2
+
+### Patch Changes
+
+- Fix some bugs
+
 ## 0.2.1
 
 ### Patch Changes

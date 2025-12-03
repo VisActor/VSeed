@@ -103,7 +103,7 @@ export interface PivotTable {
    */
   selectedBackgroundColor?: string
   /**
-   * 设置表格正文部分单元格的特殊样式
+   * @description 设置表格正文部分单元格的特殊样式
    */
   bodyCellStyle?: BodyCellStyle | BodyCellStyle[]
 

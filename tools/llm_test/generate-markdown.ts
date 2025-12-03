@@ -141,6 +141,9 @@ function generateComponentMarkdown() {
     const keyPaths = fs.readFileSync(path.resolve(topKeyDir, file))
     const keyPathList = JSON.parse(keyPaths.toString())
     keyPathList.forEach((keyPath: any) => {
+      if (!keyPath.componentName) {
+        return
+      }
       topKeySet.add(keyPath.componentName)
       if (keyPath.description) {
         topKeyDesc[keyPath.componentName] = keyPath.description

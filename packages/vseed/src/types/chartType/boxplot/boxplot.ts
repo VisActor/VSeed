@@ -188,7 +188,7 @@ export interface Boxplot {
    */
   annotationArea?: AnnotationArea | AnnotationArea[]
   /**
-   * 当图表开启透视功能或者指标组合的是否，是否开启维度联动功能
+   * @description 当图表开启透视功能或者指标组合的是否，是否开启维度联动功能
    * 当hover 到某个维度值时，联动高亮其他图表中相同维度值的数据
    */
   dimensionLinkage?: DimensionLinkage
@@ -198,11 +198,11 @@ export interface Boxplot {
    */
   locale?: Locale
   /**
-   * 箱线图的最大宽度，可以设置绝对的像素值，也可以使用百分比（如 '10%'）
+   * @description 箱线图的最大宽度，可以设置绝对的像素值，也可以使用百分比（如 '10%'）
    */
   boxMaxWidth?: string | number
   /**
-   * 分组箱线图中各个分组内的间距，可以设置绝对的像素值，也可以使用百分比（如 '10%'）。
+   * @description 分组箱线图中各个分组内的间距，可以设置绝对的像素值，也可以使用百分比（如 '10%'）。
    */
   boxGapInGroup?: string | number
 }

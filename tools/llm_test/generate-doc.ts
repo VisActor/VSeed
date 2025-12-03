@@ -20,17 +20,14 @@ async function checkFiles() {
       const topKeyFileContent = await fs.readFile(topKeyFilePath, 'utf8')
       const topKeyData = JSON.parse(topKeyFileContent)
       topKeyData.forEach((item: any) => {
-        const componentName = item.componentName
-        const expectedNewTypeFile = componentName.charAt(0).toUpperCase() + componentName.slice(1) + '.md'
-        // componentName 为基础类型，跳过
-        if (
-          componentName === 'string' ||
-          componentName === 'number' ||
-          componentName === 'boolean' ||
-          componentName.startsWith("'")
-        ) {
+        if (!item.description) {
+          console.warn(`top-key ${item.name} 没有描述(${topKeyFile})`)
+        }
+        if (!item.componentName) {
           return
         }
+        const componentName = item.componentName
+        const expectedNewTypeFile = componentName.charAt(0).toUpperCase() + componentName.slice(1) + '.md'
         if (!newTypeFileNames.has(expectedNewTypeFile)) {
           missingComponents.push(componentName)
         }

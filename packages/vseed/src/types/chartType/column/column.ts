@@ -196,7 +196,7 @@ export interface Column {
    */
   polynomialRegressionLine?: PolynomialRegressionLine | PolynomialRegressionLine[]
   /**
-   * 当图表开启透视功能或者指标组合的是否，是否开启维度联动功能
+   * @description 当图表开启透视功能或者指标组合的是否，是否开启维度联动功能
    * 当hover 到某个维度值时，联动高亮其他图表中相同维度值的数据
    */
   dimensionLinkage?: DimensionLinkage

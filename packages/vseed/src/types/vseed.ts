@@ -4,7 +4,7 @@ import type {
   Bar,
   BarParallel,
   BarPercent,
-  Boxplot,
+  BoxPlot,
   Column,
   ColumnParallel,
   ColumnPercent,
@@ -51,7 +51,7 @@ export type VSeed =
   // other
   | Funnel
   | Heatmap
-  | Boxplot
+  | BoxPlot
   | Histogram
 
 export type VSeedDSL = VSeed

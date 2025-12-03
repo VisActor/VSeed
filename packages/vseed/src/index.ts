@@ -22,7 +22,7 @@ export {
   registerPivotTable,
   registerHeatmap,
   registerRadar,
-  registerBoxplot,
+  registerBoxPlot,
   registerHistogram,
   registerDualAxis,
 } from './builder/register/chartType'

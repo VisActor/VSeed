@@ -9,7 +9,7 @@ function generateChartTypeMarkdown() {
     'bar',
     'barParallel',
     'barPercent',
-    'boxplot',
+    'boxPlot',
     'column',
     'columnParallel',
     'columnPercent',
@@ -141,10 +141,16 @@ function generateComponentMarkdown() {
     const keyPaths = fs.readFileSync(path.resolve(topKeyDir, file))
     const keyPathList = JSON.parse(keyPaths.toString())
     keyPathList.forEach((keyPath: any) => {
-      topKeySet.add(keyPath.componentName)
-      if (keyPath.description) {
-        topKeyDesc[keyPath.componentName] = keyPath.description
+      if (!keyPath.description) {
+        throw new Error(
+          `Property ${keyPath.name} without description, please check (packages/vseed/src/types/chartType/${file.replace('.json', '')})`,
+        )
       }
+      topKeyDesc[keyPath.componentName] = keyPath.description
+      if (!keyPath.componentName) {
+        return
+      }
+      topKeySet.add(keyPath.componentName)
     })
   })
 

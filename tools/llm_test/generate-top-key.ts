@@ -30,14 +30,23 @@ files.forEach((file: any) => {
         return
       }
       keyPath.name = name
-      const datasetTypes = property.getTypeNode()?.getText().split(' | ') as string[]
+      const type = property.getTypeNode()?.getText()
+      const datasetTypes = type?.split(' | ') as string[]
       // 取第一个不是基础类型的
       const datasetType =
         datasetTypes.find(
           (type) => !type.includes('number') && !type.includes('string') && !type.includes('boolean'),
         ) || datasetTypes[0]
       // console.log(`datasetType: ${datasetType}`);
-      keyPath.componentName = datasetType
+      if (
+        datasetType !== 'number' &&
+        datasetType !== 'string' &&
+        datasetType !== 'boolean' &&
+        !datasetType?.startsWith("'")
+      ) {
+        keyPath.componentName = datasetType
+      }
+      keyPath.type = type
       const jsDoc = property.getJsDocs()
       if (jsDoc.length > 0) {
         // all tag

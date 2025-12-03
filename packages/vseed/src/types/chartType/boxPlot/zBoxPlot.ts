@@ -28,7 +28,7 @@ import {
   zYLinearAxis,
 } from '../../properties'
 
-export const zBoxplot = z.object({
+export const zBoxPlot = z.object({
   chartType: z.literal('boxPlot'),
   dataset: zDataset.nullish(),
   encoding: zEncoding.nullish(),

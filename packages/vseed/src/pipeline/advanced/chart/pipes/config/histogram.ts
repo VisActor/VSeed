@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { merge } from '@visactor/vutils'
 import { pick } from 'remeda'
 import { BinEndMeasureId, BinStartMeasureId } from 'src/dataReshape'
 import { replaceNullToUndefined } from 'src/pipeline/utils'
@@ -30,6 +31,28 @@ export const histogramConfig: AdvancedPipe = (advancedVSeed, context) => {
 
   let config = replaceNullToUndefined(pickedConfig)
 
+  if (pickedConfig?.binValueType === 'percentage') {
+    config = merge(
+      {},
+      {
+        yAxis: {
+          autoFomat: false,
+          numFormat: {
+            type: 'percent',
+            fractionDigits: 1,
+          },
+        },
+        label: {
+          autoFormat: false,
+          numFormat: {
+            type: 'percent',
+            fractionDigits: 1,
+          },
+        },
+      },
+      config,
+    )
+  }
   if (!hasColorEncoding && !config?.legend?.enable) {
     config = {
       ...config,

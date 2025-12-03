@@ -3,9 +3,12 @@ import { VBIDSL } from 'src/types/dsl'
 
 describe('VBIBuilder', () => {
   test('build', () => {
-    const vbiDSL = {} as VBIDSL
-    const vbiBuilder = VBI.from(vbiDSL)
-    const newVBIDSL = vbiBuilder.build()
-    expect(newVBIDSL).toEqual(vbiDSL)
+    const dsl = {} as VBIDSL
+    const builder = VBI.from(dsl)
+    expect(builder.build()).toMatchInlineSnapshot(`
+      {
+        "measures": [],
+      }
+    `)
   })
 })

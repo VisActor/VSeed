@@ -9,12 +9,10 @@ import { MeasuresBuilder } from './subBuilders'
 export class VBIBuilder implements VBIBuilderInterface {
   private vbiDSL: VBIDSL
 
+  measures: MeasuresBuilder
   constructor(private vbi: VBIDSL) {
     this.vbiDSL = vbi
-  }
-
-  get measures(): MeasuresBuilder {
-    return MeasuresBuilder.from(this.vbiDSL.measures || [])
+    this.measures = MeasuresBuilder.from(vbi.measures || [])
   }
 
   static from: (vbi: VBIDSL) => VBIBuilderInterface = (vbi: VBIDSL) => {
@@ -30,7 +28,11 @@ export class VBIBuilder implements VBIBuilderInterface {
   }
 
   build(): VBIDSL {
-    return this.vbiDSL
+    const result = {
+      ...this.vbiDSL,
+      measures: this.measures.build(),
+    }
+    return result
   }
 
   static connectorMap: Map<VBIConnectorId, VBIConnector | (() => Promise<VBIConnector>)> = new Map()

@@ -8,8 +8,12 @@ export class MeasuresBuilder {
   addMeasure(fieldOrMeasure: VBIMeasure['field'] | VBIMeasure): MeasureNodeBuilder
   addMeasure(
     fieldOrMeasure: VBIMeasure['field'] | VBIMeasure,
+    callback: (measureNode: MeasureNodeBuilder) => void,
+  ): MeasuresBuilder
+  addMeasure(
+    fieldOrMeasure: VBIMeasure['field'] | VBIMeasure,
     callback?: (measureNode: MeasureNodeBuilder) => void,
-  ): MeasureNodeBuilder {
+  ): MeasureNodeBuilder | MeasuresBuilder {
     const defaultMeasure: VBIMeasure = {} as VBIMeasure
     if (typeof fieldOrMeasure === 'string') {
       defaultMeasure.alias = fieldOrMeasure
@@ -27,8 +31,10 @@ export class MeasuresBuilder {
     this.measures.push(measureNode)
     if (callback) {
       callback(measureNode)
+      return this
+    } else {
+      return measureNode
     }
-    return measureNode
   }
 
   build(): VBIMeasure[] {

@@ -106,16 +106,16 @@ export interface Histogram {
   stackCornerRadius?: StackCornerRadius
 
   /**
-   * @description 直方图分箱数量, 用于定义直方图的分箱数量
+   * @description 直方图分箱数量, 用于定义直方图的分箱矩形（柱子）的数量
    */
   binCount?: number
 
   /**
-   * @description 直方图分箱步长, 用于定义直方图的分箱步长
+   * @description 分箱步长，用于计算分箱的宽度，也会影响最终直方图中矩形（柱子）的宽度。如果同时设置了 binCount 和 binStep，则以 binStep 为准
    */
   binStep?: number
   /**
-   * @description 直方图分箱值类型, 用于定义直方图的分箱值类型, 默认为'count'
+   * @description 直方图分箱值类型, 用于定义直方图的分箱矩形（柱子）值类型, 默认为'count'
    * @default 'count'
    */
   binValueType?: 'count' | 'percentage'
@@ -144,12 +144,12 @@ export interface Histogram {
   annotationPoint?: AnnotationPoint | AnnotationPoint[]
 
   /**
-   * @description 标注垂直线配置, 根据选择的数据, 定义图表的标注垂直线, 包括标注垂直线的位置, 样式等.
+   * @description 数值标注线(分箱值)，竖直方向展示，能够设置标注线的位置, 样式等，如需分箱值对应的标注线，可以使用该配置
    */
   annotationVerticalLine?: AnnotationVerticalLine | AnnotationVerticalLine[]
 
   /**
-   * @description 标注水平线配置, 根据选择的数据, 定义图表的标注水平线, 包括标注水平线的位置, 样式等.
+   * @description 数值标注线(包括均值线、最大值线、最小值线等)，水平方向展示，能够设置标注线的位置, 样式等，如需绘制分箱值对应的标注线请使用该配置；注意分箱值受`binValueType` 影响
    */
   annotationHorizontalLine?: AnnotationHorizontalLine | AnnotationHorizontalLine[]
 

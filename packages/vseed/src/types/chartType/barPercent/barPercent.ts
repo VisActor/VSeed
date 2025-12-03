@@ -181,13 +181,13 @@ export interface BarPercent {
 
   /**
    * 标注垂直线
-   * @description 标注垂直线配置, 根据选择的数据, 定义图表的标注垂直线, 包括标注垂直线的位置, 样式等.
+   * @description 数值标注线(包括均值线、最大值线、最小值线等)，竖直方向展示，能够设置标注线的位置, 样式等，如需绘制均值线等数值对应的标注线请使用该配置
    */
   annotationVerticalLine?: AnnotationVerticalLine | AnnotationVerticalLine[]
 
   /**
    * 标注水平线
-   * @description 标注水平线配置, 根据选择的数据, 定义图表的标注水平线, 包括标注水平线的位置, 样式等.
+   * @description 维度值标注线，水平展示，能够设置标注线的位置, 样式等
    */
   annotationHorizontalLine?: AnnotationHorizontalLine | AnnotationHorizontalLine[]
 

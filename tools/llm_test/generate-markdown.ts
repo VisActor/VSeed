@@ -9,7 +9,7 @@ function generateChartTypeMarkdown() {
     'bar',
     'barParallel',
     'barPercent',
-    'boxplot',
+    'boxPlot',
     'column',
     'columnParallel',
     'columnPercent',

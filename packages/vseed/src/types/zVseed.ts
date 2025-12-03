@@ -13,7 +13,7 @@ import { zDonut } from './chartType/donut'
 import { zArea } from './chartType/area'
 import { zAreaPercent } from './chartType/areaPercent'
 import {
-  zBoxplot,
+  zBoxPlot,
   zDualAxis,
   zFunnel,
   zHeatmap,
@@ -49,6 +49,6 @@ export const zVSeed = z.discriminatedUnion('chartType', [
   // other
   zFunnel,
   zHeatmap,
-  zBoxplot,
+  zBoxPlot,
   zHistogram,
 ])

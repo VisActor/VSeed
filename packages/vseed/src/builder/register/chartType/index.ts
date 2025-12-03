@@ -22,5 +22,5 @@ export { registerRadar } from './radar'
 // other
 export { registerHeatmap } from './heatmap'
 export { registerFunnel } from './funnel'
-export { registerBoxplot } from './boxplot'
+export { registerBoxPlot } from './boxplot'
 export { registerHistogram } from './histogram'

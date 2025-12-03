@@ -3,7 +3,7 @@ import type { Dimension, Dimensions, Encoding, VChartSpecPipe, Tooltip } from 's
 import type { Datum, ISpec, ITooltipLinePattern } from '@visactor/vchart'
 import { BinEndMeasureId, BinStartMeasureId, ColorEncoding, FoldMeasureValue, XEncoding } from 'src/dataReshape'
 import { getTooltipStyle } from './tooltipStyle'
-import { getDefaultXFormatterOfHistogram } from '../../utils/histogram'
+import { getDefaultValueFormatterOfHistogram, getDefaultXFormatterOfHistogram } from '../../utils/histogram'
 
 const VCHART_OUTLIER_KEY = '__VCHART_BOX_PLOT_OUTLIER_VALUE'
 
@@ -11,10 +11,11 @@ export const tooltipHistogram: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed } = context
   const { chartType, dimensions, encoding } = advancedVSeed
-  const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
-  const { tooltip = { enable: true } } = baseConfig
+  const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip; binValueType: 'count' | 'percentage' }
+  const { binValueType, tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
   const defaultXFormatter = getDefaultXFormatterOfHistogram(advancedVSeed)
+  const defaultValueFormatter = getDefaultValueFormatterOfHistogram(binValueType)
 
   result.tooltip = {
     style: getTooltipStyle(tooltip),
@@ -23,13 +24,25 @@ export const tooltipHistogram: VChartSpecPipe = (spec, context) => {
       title: {
         visible: false,
       },
-      content: createMarkContent(encoding.tooltip || [], dimensions, encoding as Encoding, defaultXFormatter),
+      content: createMarkContent(
+        encoding.tooltip || [],
+        dimensions,
+        encoding as Encoding,
+        defaultXFormatter,
+        defaultValueFormatter,
+      ),
     },
     dimension: {
       title: {
         visible: false,
       },
-      content: createMarkContent(encoding.tooltip || [], dimensions, encoding as Encoding, defaultXFormatter),
+      content: createMarkContent(
+        encoding.tooltip || [],
+        dimensions,
+        encoding as Encoding,
+        defaultXFormatter,
+        defaultValueFormatter,
+      ),
     },
   }
   return result as unknown as ISpec
@@ -40,6 +53,7 @@ const createMarkContent = (
   dimensions: Dimensions,
   encoding: Encoding,
   dimFormatter: (value: number) => string,
+  defaultValueFormatter: (value: number | string) => string,
 ) => {
   const dims = pipe(
     dimensions.filter((item) => tooltip.includes(item.id)),
@@ -62,7 +76,7 @@ const createMarkContent = (
         }
       }
 
-      return datum?.[item.id] as string
+      return defaultValueFormatter(datum?.[item.id] as string)
     },
   }))
 
@@ -81,7 +95,7 @@ const createMarkContent = (
         if (!datum) {
           return ''
         }
-        return datum[FoldMeasureValue] as string | number
+        return defaultValueFormatter(datum[FoldMeasureValue] as string | number)
       },
     },
   ]

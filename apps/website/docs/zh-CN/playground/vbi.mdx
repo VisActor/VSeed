@@ -8,99 +8,63 @@ pageType: custom
 const run = async (setVSeed) => {
   const vquery = new VQuery()
 
-  const rawDataset = [
-    { area: 'BEI JING', date: '2025-01-01', sales: 100 },
-    { area: 'BEI JING', date: '2025-01-02', sales: 200 },
-    { area: 'BEI JING', date: '2025-01-03', sales: 300 },
+  const connectorId = 'demoDataset'
 
-    { area: 'HANG ZHOU', date: '2025-01-01', sales: 100 },
-    { area: 'HANG ZHOU', date: '2025-01-02', sales: 200 },
-    { area: 'HANG ZHOU', date: '2025-01-03', sales: 500 },
+  VBI.registerConnector('demoDataset', async () => {
+    return {
+      discoverSchema: async () => {
+        return [
+          { name: 'id', type: 'string' },
+          { name: 'order_id', type: 'string' },
+          { name: 'order_date', type: 'date' },
+          { name: 'delivery_date', type: 'date' },
+          { name: 'delivery_method', type: 'string' },
+          { name: 'customer_id', type: 'string' },
+          { name: 'customer_name', type: 'string' },
+          { name: 'customer_type', type: 'string' },
+          { name: 'city', type: 'string' },
+          { name: 'province', type: 'string' },
+          { name: 'country_or_region', type: 'string' },
+          { name: 'area', type: 'string' },
+          { name: 'product_id', type: 'string' },
+          { name: 'product_type', type: 'string' },
+          { name: 'product_sub_type', type: 'string' },
+          { name: 'product_name', type: 'string' },
 
-    { area: 'SHANG HAI', date: '2025-11-01', sales: 600 },
-    { area: 'SHANG HAI', date: '2025-11-02', sales: 400 },
-    { area: 'SHANG HAI', date: '2025-11-03', sales: 300 },
-  ]
-
-  const datasetId = 'demoDataset'
-
-  if (await vquery.hasDataset(datasetId)) {
-    await vquery.dropDataset(datasetId)
-  }
-
-  if (!(await vquery.hasDataset(datasetId))) {
-    const schema = [
-      { name: 'area', type: 'string' },
-      { name: 'date', type: 'string' },
-      { name: 'sales', type: 'number' },
-    ]
-    const datasetSource = { type: 'json', rawDataset }
-    await vquery.createDataset(datasetId, schema, datasetSource)
-  }
-
-  // support temporary schema for each temporary connect
-  const dataset = await vquery.connectDataset(datasetId, [
-    { name: 'area', type: 'string' },
-    { name: 'date', type: 'string' },
-    { name: 'sales', type: 'number' },
-  ])
-
-  const queryDSL: QueryDSL<
-    {
-      area: string
-      date: string
-      sales: number
-    },
-    datasetId
-  > = {
-    select: [
-      'area',
-      {
-        field: 'sales',
-        alias: 'Sum(sales)',
-        func: 'sum',
+          { name: 'sales', type: 'number' },
+          { name: 'amount', type: 'number' },
+          { name: 'discount', type: 'number' },
+          { name: 'profit', type: 'number' },
+        ]
       },
-    ],
-    groupBy: ['area'],
-    orderBy: [
-      {
-        field: 'Sum(sales)',
-        order: 'desc',
+      query: async ({ queryDSL, schema }) => {
+        if (!(await vquery.hasDataset(connectorId))) {
+          const url = 'https://visactor.github.io/VSeed/dataset/supermarket.csv'
+          const datasetSource = { type: 'csv', rawDataset: url }
+          await vquery.createDataset(connectorId, schema, datasetSource)
+        }
+        const dataset = await vquery.connectDataset(connectorId)
+        const queryResult = await dataset.query(queryDSL)
+
+        await dataset.disconnect()
+        await vquery.close()
+
+        return {
+          dataset: queryResult.dataset,
+        }
       },
-    ],
-    where: {
-      op: 'and',
-      conditions: [
-        {
-          op: 'or',
-          conditions: [
-            {
-              field: 'area',
-              op: 'in',
-              value: ['BEI JING'],
-            },
-            {
-              field: 'sales',
-              op: '>=',
-              value: 400,
-            },
-          ],
-        },
-      ],
-    },
-    limit: 100,
-  }
-
-  const queryResult = await dataset.query(queryDSL)
-  await dataset.disconnect()
-  await vquery.close()
-
-  const vseed = {
-    dataset: queryResult.dataset,
-    chartType: 'table',
-    locale: 'zh-CN',
-  }
-
+    }
+  })
+  const builder = VBI.from(VBI.generateEmptyDSL(connectorId))
+  builder.measures
+    .addMeasure('sales', (node) => {
+      node.setAlias('Sum(sales)').setAggregate({ func: 'sum' })
+    })
+    .addMeasure('profit', (node) => {
+      node.setAlias('Sum(profit)').setAggregate({ func: 'sum' })
+    })
+  console.log('debug vbidsl', builder.build())
+  const vseed = await builder.buildVSeed()
   setVSeed(() => vseed)
 
   return () => {
@@ -120,6 +84,7 @@ const Demo = () => {
 }
 
 import { VQuery, QueryDSL } from '@visactor/vquery'
+import { VBI } from '@visactor/vbi'
 import { useRef, useEffect, useState } from 'react'
 import { useDark } from 'rspress/runtime'
 import VChart from '@visactor/vchart'

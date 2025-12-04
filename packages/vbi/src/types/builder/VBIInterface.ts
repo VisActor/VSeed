@@ -5,7 +5,9 @@ import { MeasuresBuilder } from 'src'
 
 export interface VBIBuilderInterface {
   measures: MeasuresBuilder
-  buildVSeed: () => VSeedDSL
+  buildVSeed: () => Promise<VSeedDSL>
   buildVQuery: () => VQueryDSL
   build: () => VBIDSL
+
+  get vbiDSL(): VBIDSL
 }

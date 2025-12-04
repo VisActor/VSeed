@@ -1,46 +1,85 @@
-import { VQueryDSL } from '@visactor/vquery'
 import { VSeedDSL } from '@visactor/vseed'
 import { VBIConnector } from '../types/connector'
 import { VBIConnectorId } from '../types/connector/connector'
 import { VBIDSL } from '../types/dsl'
 import { VBIBuilderInterface } from '../types/builder/VBIInterface'
 import { MeasuresBuilder } from './subBuilders'
+import { BuilderContext } from './context'
+import { buildVQuery } from 'src/pipeline'
 
 export class VBIBuilder implements VBIBuilderInterface {
-  private vbiDSL: VBIDSL
+  private _vbiDSL: VBIDSL
 
   measures: MeasuresBuilder
   constructor(private vbi: VBIDSL) {
-    this.vbiDSL = vbi
-    this.measures = MeasuresBuilder.from(vbi.measures || [])
+    this._vbiDSL = vbi
+    const context = BuilderContext.from(this)
+    this.measures = MeasuresBuilder.from(vbi.measures || [], context)
   }
 
-  static from: (vbi: VBIDSL) => VBIBuilderInterface = (vbi: VBIDSL) => {
-    return new VBIBuilder(vbi)
+  public buildVSeed = async () => {
+    const connectorId = this._vbiDSL.connectorId
+    const connector = await VBIBuilder.getConnector(this._vbiDSL.connectorId)
+
+    const queryDSL = this.buildVQuery()
+    const schema = await connector.discoverSchema()
+    const queryResult = await connector.query({ queryDSL, schema, connectorId })
+
+    console.log('debug queryDSL', queryDSL)
+    return {
+      chartType: 'table',
+      dataset: queryResult.dataset,
+    } as VSeedDSL
   }
 
-  buildVSeed: () => VSeedDSL = () => {
-    return {} as VSeedDSL
+  public buildVQuery = () => {
+    return buildVQuery(this.build(), this)
   }
 
-  buildVQuery: () => VQueryDSL = () => {
-    return {} as VQueryDSL
-  }
-
-  build(): VBIDSL {
+  public build(): VBIDSL {
     const result = {
-      ...this.vbiDSL,
+      ...this._vbiDSL,
       measures: this.measures.build(),
     }
     return result
   }
 
-  static connectorMap: Map<VBIConnectorId, VBIConnector | (() => Promise<VBIConnector>)> = new Map()
+  public get vbiDSL(): VBIDSL {
+    return this._vbiDSL
+  }
 
-  static registerConnector: (id: VBIConnectorId, connector: VBIConnector | (() => Promise<VBIConnector>)) => void = (
+  private static connectorMap: Map<VBIConnectorId, VBIConnector | (() => Promise<VBIConnector>)> = new Map()
+  public static registerConnector: (
     id: VBIConnectorId,
     connector: VBIConnector | (() => Promise<VBIConnector>),
-  ) => {
+  ) => void = (id: VBIConnectorId, connector: VBIConnector | (() => Promise<VBIConnector>)) => {
     this.connectorMap.set(id, connector)
+  }
+
+  public static getConnector = async (id: VBIConnectorId) => {
+    const connector = this.connectorMap.get(id)
+    if (!connector) {
+      throw new Error(`connector ${id} not registered`)
+    }
+    if (typeof connector === 'function') {
+      return connector()
+    }
+    return connector
+  }
+
+  public static from: (vbi: VBIDSL) => VBIBuilderInterface = (vbi: VBIDSL) => {
+    return new VBIBuilder(vbi)
+  }
+
+  public static generateEmptyDSL = (connectorId: VBIConnectorId): VBIDSL => {
+    return {
+      connectorId: connectorId,
+      chartType: 'table',
+      measures: [],
+      dimensions: [],
+      theme: 'light',
+      locale: 'zh-CN',
+      version: 0,
+    }
   }
 }

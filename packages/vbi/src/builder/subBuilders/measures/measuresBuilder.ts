@@ -1,10 +1,11 @@
 import { preorderTraverse } from 'src/utils/tree/traverse'
 import { VBIMeasure, VBIMeasureGroup, VBIMeasureTree } from '../../../types'
 import { MeasureNodeBuilder } from './measureNodeBuilder'
+import { BuilderContext } from 'src/builder'
 
 export class MeasuresBuilder {
   private readonly measures: MeasureNodeBuilder[] = []
-
+  private readonly context: BuilderContext
   addMeasure(fieldOrMeasure: VBIMeasure['field'] | VBIMeasure): MeasureNodeBuilder
   addMeasure(
     fieldOrMeasure: VBIMeasure['field'] | VBIMeasure,
@@ -41,8 +42,12 @@ export class MeasuresBuilder {
     return this.measures.map((measureNode) => measureNode.build())
   }
 
-  static from(measures: VBIMeasureTree): MeasuresBuilder {
-    const builder = new MeasuresBuilder()
+  constructor(context: BuilderContext) {
+    this.context = context
+  }
+
+  static from(measures: VBIMeasureTree, context: BuilderContext): MeasuresBuilder {
+    const builder = new MeasuresBuilder(context)
     preorderTraverse(measures, (measure) => {
       if (this.isMeasureNode(measure)) {
         builder.addMeasure(measure)

@@ -1,6 +1,7 @@
 import type { CustomThemeConfig, YBandAxis } from 'src/types'
 import {
   getLightColor,
+  getLightColorLegend,
   getLightCrosshairLine,
   getLightCrosshairRect,
   getLightLabel,
@@ -229,6 +230,9 @@ export const lightTheme = (): CustomThemeConfig => {
       },
       heatmap: {
         ...baseConfig,
+        legend: getLightColorLegend(),
+        xAxis: bandAxis,
+        yAxis: bandAxis,
         label: {
           ...baseConfig.label,
           labelColorSmartInvert: true,

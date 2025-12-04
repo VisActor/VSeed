@@ -1,9 +1,9 @@
-import type { ICartesianBandAxisSpec, ISpec } from '@visactor/vchart'
+import type { ISpec } from '@visactor/vchart'
 import type { VChartSpecPipe, XBandAxis } from 'src/types'
 import { defaultTitleText } from './title/defaultTitleText'
-import { AXIS_LABEL_SPACE } from 'src/pipeline/utils'
 import { MeasureId } from 'src/dataReshape'
-import { isArray } from '@visactor/vutils'
+import { isArray, isNull } from '@visactor/vutils'
+import { bandAxisStyle } from './axisStyle'
 
 export const xBand: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
@@ -16,88 +16,20 @@ export const xBand: VChartSpecPipe = (spec, context) => {
     result.axes = []
   }
 
-  const {
-    visible = true,
-    label,
-    tick,
-    title,
-    grid,
-    line,
-    labelAutoHide,
-    labelAutoHideGap,
-    labelAutoLimit,
-    labelAutoLimitLength = 80,
-    labelAutoRotate,
-    labelAutoRotateAngleRange,
-  } = config
+  const { labelAutoLimitLength = 80 } = config
 
-  const sampling = !(labelAutoHide || labelAutoRotate || labelAutoLimit)
   const onlyMeasureId = (encoding.x || []).filter((v) => v !== MeasureId).length === 0
+  const bandAxis = bandAxisStyle(config)
 
-  const bandAxis = {
-    visible,
-    type: 'band',
-    orient: 'bottom',
-    maxHeight: labelAutoLimitLength + 60,
-    sampling,
-    hover: true,
-    label: {
-      visible: label?.visible,
-      flush: true,
-      space: AXIS_LABEL_SPACE,
-      style: {
-        maxLineWidth: labelAutoLimitLength,
-        fill: label?.labelColor,
-        angle: label?.labelAngle,
-        fontSize: label?.labelFontSize,
-        fontWeight: label?.labelFontWeight,
-      },
+  bandAxis.orient = 'bottom'
+  bandAxis.maxHeight = labelAutoLimitLength + 60
+  bandAxis.paddingInner = [0.15, 0.1]
+  bandAxis.paddingOuter = [0.075, 0.1]
 
-      // 防重叠相关
-      minGap: labelAutoHideGap,
-      autoHide: labelAutoHide,
-      autoHideMethod: 'greedy',
-      autoHideSeparation: labelAutoHideGap,
-      autoLimit: labelAutoLimit,
-      autoRotate: labelAutoRotate,
-      autoRotateAngle: labelAutoRotateAngleRange,
-      lastVisible: true,
-    },
-    title: {
-      visible: title?.visible,
-      text: title?.titleText || defaultTitleText(measures, dimensions, encoding.x as string[]),
-      style: {
-        fill: title?.titleColor,
-        fontSize: title?.titleFontSize,
-        fontWeight: title?.titleFontWeight,
-      },
-    },
-    tick: {
-      visible: tick?.visible,
-      tickSize: tick?.tickSize,
-      inside: tick?.tickInside,
-      style: {
-        stroke: tick?.tickColor,
-      },
-    },
-    grid: {
-      visible: grid?.visible,
-      style: {
-        lineWidth: grid?.gridWidth,
-        stroke: grid?.gridColor,
-        lineDash: grid?.gridLineDash,
-      },
-    },
-    domainLine: {
-      visible: line?.visible,
-      style: {
-        lineWidth: line?.lineWidth,
-        stroke: line?.lineColor,
-      },
-    },
-    paddingInner: [0.15, 0.1],
-    paddingOuter: [0.075, 0.1],
-  } as ICartesianBandAxisSpec
+  if (isNull(bandAxis.title?.text)) {
+    bandAxis.title.text = defaultTitleText(measures, dimensions, encoding.x as string[])
+  }
+
   if (onlyMeasureId && bandAxis.label) {
     const allDatasetReshapeInfo = pivotAllDatasetReshapeInfo || datasetReshapeInfo
     const colorIdMap = allDatasetReshapeInfo.reduce<Record<string, { id: string; alias: string }>>((prev, cur) => {

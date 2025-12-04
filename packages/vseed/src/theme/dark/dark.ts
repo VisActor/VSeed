@@ -7,6 +7,7 @@ import {
   getDarkPivotChartGridConfig,
   getDarkLabel,
   getDarkLegend,
+  getDarkColorLegend,
 } from '../common'
 import { getDarkTooltip } from '../common/tooltip'
 import { getDarkBandAxis, getDarkLinearAxis } from '../common/axes'
@@ -228,6 +229,9 @@ export const darkTheme = (): CustomThemeConfig => {
       },
       heatmap: {
         ...baseConfig,
+        legend: getDarkColorLegend(),
+        xAxis: bandAxis,
+        yAxis: bandAxis,
         label: {
           ...baseConfig.label,
           labelColorSmartInvert: true,

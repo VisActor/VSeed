@@ -3,6 +3,7 @@ import { createFormatterByMeasure, findAllMeasures, findMeasureById } from '../.
 import type { Datum, Dimensions, FoldInfo, Locale, Measures, VChartSpecPipe, Tooltip, UnfoldInfo } from 'src/types'
 import { ORIGINAL_DATA } from 'src/dataReshape'
 import { getTooltipStyle } from './tooltipStyle'
+import { updateTooltipElement } from './tooltipElement'
 
 export const tooltipScatter: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
@@ -35,6 +36,7 @@ export const tooltipScatter: VChartSpecPipe = (spec, context) => {
     dimension: {
       visible: false,
     },
+    updateElement: updateTooltipElement,
   }
   return result
 }

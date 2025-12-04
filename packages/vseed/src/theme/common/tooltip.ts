@@ -4,7 +4,7 @@ const getDefaultTooltip = (): TooltipConfig => ({
   enable: true,
   borderRadius: 12,
   borderWidth: 1,
-  padding: 7,
+  padding: 9,
   lineHeight: 12,
   fontSize: 12,
   lineSpace: 6,

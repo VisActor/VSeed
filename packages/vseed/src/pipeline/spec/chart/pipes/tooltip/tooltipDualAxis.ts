@@ -3,6 +3,7 @@ import { createDimensionContent, createMarkContent } from './tooltip'
 import type { FoldInfo, VChartSpecPipe, Tooltip, UnfoldInfo } from 'src/types'
 import { findAllMeasures } from 'src/pipeline/utils'
 import { getTooltipStyle } from './tooltipStyle'
+import { updateTooltipElement } from './tooltipElement'
 
 export const tooltipPrimary: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
@@ -86,6 +87,7 @@ export const tooltipDualAxis: VChartSpecPipe = (spec, context) => {
 
   result.tooltip = {
     style: getTooltipStyle(tooltip),
+    updateElement: updateTooltipElement,
   }
   return result
 }

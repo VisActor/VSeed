@@ -14,6 +14,7 @@ import {
 } from 'src/dataReshape'
 import { getTooltipStyle } from './tooltipStyle'
 import { intl } from 'src/i18n'
+import { updateTooltipElement } from './tooltipElement'
 
 const boxPlotMeasureKeys = [UpperWhisker, Q3MeasureValue, MedianMeasureId, Q1MeasureValue, LowerWhisker]
 const VCHART_OUTLIER_KEY = '__VCHART_BOX_PLOT_OUTLIER_VALUE'
@@ -22,7 +23,7 @@ export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
   const { chartType, dimensions, encoding } = advancedVSeed
-  const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
+  const baseConfig = advancedVSeed.config[chartType as 'boxPlot'] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
   const meas = findAllMeasures(vseed.measures)
@@ -84,6 +85,7 @@ export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
     dimension: {
       visible: false,
     },
+    updateElement: updateTooltipElement,
   }
   return result as unknown as ISpec
 }

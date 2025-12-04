@@ -4,6 +4,7 @@ import type { Datum, ISpec, ITooltipLinePattern } from '@visactor/vchart'
 import { BinEndMeasureId, BinStartMeasureId, ColorEncoding, FoldMeasureValue, XEncoding } from 'src/dataReshape'
 import { getTooltipStyle } from './tooltipStyle'
 import { getDefaultValueFormatterOfHistogram, getDefaultXFormatterOfHistogram } from '../../utils/histogram'
+import { updateMarkTooltipElement } from './tooltipElement'
 
 const VCHART_OUTLIER_KEY = '__VCHART_BOX_PLOT_OUTLIER_VALUE'
 
@@ -44,6 +45,8 @@ export const tooltipHistogram: VChartSpecPipe = (spec, context) => {
         defaultValueFormatter,
       ),
     },
+
+    updateElement: updateMarkTooltipElement,
   }
   return result as unknown as ISpec
 }

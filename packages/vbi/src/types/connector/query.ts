@@ -1,13 +1,18 @@
+import { z } from 'zod'
 import type { VQueryDSL } from '@visactor/vquery'
-import { VBIConnectorId } from './connector'
-import { Schema } from './schema'
+import { zVBIConnectorId } from './connector'
+import { zSchema } from './schema'
 
-export type VBIQueryResult = {
-  dataset: Record<string, number | string | null | undefined | boolean>[]
-}
+export const zVBIQueryResult = z.object({
+  dataset: z.array(z.record(z.string(), z.union([z.number(), z.string(), z.null(), z.undefined(), z.boolean()]))),
+})
 
-export type VBIQueryProps = {
-  queryDSL: VQueryDSL
-  schema: Schema
-  connectorId: VBIConnectorId
-}
+export type VBIQueryResult = z.infer<typeof zVBIQueryResult>
+
+export const zVBIQueryProps = z.object({
+  queryDSL: z.custom<VQueryDSL>(),
+  schema: zSchema,
+  connectorId: zVBIConnectorId,
+})
+
+export type VBIQueryProps = z.infer<typeof zVBIQueryProps>

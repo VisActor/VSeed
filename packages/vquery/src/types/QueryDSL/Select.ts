@@ -1,4 +1,4 @@
-export type AggregateFunction = 'count' | 'sum' | 'avg' | 'min' | 'max'
+export type AggregateFunction = 'count' | 'sum' | 'avg' | 'min' | 'max' | 'quantile'
 export type SelectItem<T> = {
   field: keyof T
   alias?: string

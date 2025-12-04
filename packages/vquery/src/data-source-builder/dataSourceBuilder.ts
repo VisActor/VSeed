@@ -30,7 +30,6 @@ export class DatasetSourceBuilder {
     if (value instanceof Blob) {
       return value
     }
-
     const convertCsvToBlob = (csvSource: string | ArrayBuffer | TidyDatum[]) => {
       if (csvSource instanceof ArrayBuffer) {
         return new Blob([csvSource], { type: 'text/csv' })

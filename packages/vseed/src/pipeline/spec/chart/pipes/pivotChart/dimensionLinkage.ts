@@ -55,8 +55,8 @@ export const dimensionLinkage: PivotChartSpecPipe = (spec, context) => {
 
   spec.chartDimensionLinkage = {
     showTooltip: config.showTooltip ?? (chartSpec?.tooltip?.dimension?.visible as boolean) ?? true,
-    heightLimitToShowTooltipForLastRow: 60,
-    widthLimitToShowTooltipForLastColumn: 90,
+    heightLimitToShowTooltipForEdgeRow: 60,
+    widthLimitToShowTooltipForEdgeColumn: 90,
     labelHoverOnAxis,
   }
 

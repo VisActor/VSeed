@@ -1,7 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`errorDimensions 1`] = `
-{
-  "expectError": true,
-}
-`;

@@ -2,6 +2,11 @@ import type { IBarSeriesSpec, ISeriesSpec } from '@visactor/vchart'
 import { DUAL_AXIS_CHART_COLUMN_Z_INDEX, DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX } from 'src/pipeline/utils/constant'
 import type { DualChartType, VChartSpecPipe } from 'src/types'
 
+const DEFAULT_DUAL_CHART_TYPE: DualChartType = {
+  primary: 'column',
+  secondary: 'line',
+}
+
 export const dualChartTypePrimary: VChartSpecPipe = (spec, context) => {
   const result = { ...spec, zIndex: DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX } as ISeriesSpec
   const { advancedVSeed, vseed } = context
@@ -9,15 +14,14 @@ export const dualChartTypePrimary: VChartSpecPipe = (spec, context) => {
   const { datasetReshapeInfo } = advancedVSeed
   const index = datasetReshapeInfo[0].index
 
-  const config =
-    advancedVSeed.config?.[chartType as 'dualAxis']?.dualChartType ||
-    ({
-      primary: 'column',
-      secondary: 'line',
-    } as DualChartType)
+  const config = advancedVSeed.config?.[chartType as 'dualAxis']?.dualChartType || DEFAULT_DUAL_CHART_TYPE
 
-  const primary = Array.isArray(config) ? config[index].primary || config[0].primary : config.primary
-  const secondary = Array.isArray(config) ? config[index].secondary || config[0].secondary : config.secondary
+  const primary =
+    (Array.isArray(config) ? config[index]?.primary || config[0]?.primary : config.primary) ??
+    DEFAULT_DUAL_CHART_TYPE.primary
+  const secondary =
+    (Array.isArray(config) ? config[index]?.secondary || config[0]?.secondary : config.secondary) ??
+    DEFAULT_DUAL_CHART_TYPE.secondary
   const bothColumn = primary === 'column' && secondary === 'column'
   const type = bothColumn ? 'columnParallel' : primary
   switch (type) {
@@ -74,16 +78,15 @@ export const dualChartTypeSecondary: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
   const { datasetReshapeInfo } = advancedVSeed
-  const config =
-    advancedVSeed.config?.[chartType as 'dualAxis']?.dualChartType ||
-    ({
-      primary: 'column',
-      secondary: 'line',
-    } as DualChartType)
+  const config = advancedVSeed.config?.[chartType as 'dualAxis']?.dualChartType || DEFAULT_DUAL_CHART_TYPE
 
   const index = datasetReshapeInfo[0].index
-  const primary = Array.isArray(config) ? config[index].primary || config[0].primary : config.primary
-  const secondary = Array.isArray(config) ? config[index].secondary || config[0].secondary : config.secondary
+  const primary =
+    (Array.isArray(config) ? config[index]?.primary || config[0]?.primary : config.primary) ??
+    DEFAULT_DUAL_CHART_TYPE.primary
+  const secondary =
+    (Array.isArray(config) ? config[index]?.secondary || config[0]?.secondary : config.secondary) ??
+    DEFAULT_DUAL_CHART_TYPE.secondary
   const bothColumn = primary === 'column' && secondary === 'column'
   const type = bothColumn ? 'columnParallel' : secondary
 
@@ -130,7 +133,7 @@ export const dualChartTypeSecondary: VChartSpecPipe = (spec, context) => {
       break
     }
     default:
-      result.type = secondary
+      result.type = secondary ?? DEFAULT_DUAL_CHART_TYPE.secondary
   }
 
   return result

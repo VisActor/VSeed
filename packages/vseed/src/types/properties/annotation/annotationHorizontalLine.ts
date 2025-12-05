@@ -1,13 +1,7 @@
-import { type Selector, type Selectors } from '../../dataSelector'
-
 /**
- * @description 水平标注线, 根据用户设置的selector 或 yValue, 从左向右绘制一条末尾有箭头的线, 标签默认在标注线的终点正下方
+ * @description 水平标注线, 根据用户设置的 yValue, 从左向右绘制一条末尾有箭头的线, 标签默认在标注线的终点正下方
  */
 export type AnnotationHorizontalLine = {
-  /**
-   * @description 依赖选择的数据, 进行数据标记.
-   */
-  selector?: Selector | Selectors
   /**
    * @description  固定的y值, 用于标注水平线, 类目轴在y方向, 则可输入维值, 数值轴在y方向, 则可输入具体的数值
    */

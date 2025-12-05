@@ -1,8 +1,8 @@
-import { zSelector, zSelectors } from '../../dataSelector'
+import { zAreaSelector, zAreaSelectors } from '../../dataSelector'
 import { z } from 'zod'
 
 export const zAnnotationArea = z.object({
-  selector: z.union([zSelector, zSelectors]).nullish(),
+  selector: z.union([zAreaSelector, zAreaSelectors]).nullish(),
   textPosition: z
     .enum(['top', 'topRight', 'topLeft', 'bottom', 'bottomLeft', 'bottomRight', 'left', 'right'])
     .default('top')

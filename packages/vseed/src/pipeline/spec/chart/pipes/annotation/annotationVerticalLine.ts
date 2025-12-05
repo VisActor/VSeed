@@ -1,14 +1,11 @@
 import type { ILineChartSpec, IMarkLineSpec } from '@visactor/vchart'
-import { selector } from '../../../../../dataSelector'
 import type { VChartSpecPipe } from 'src/types'
 import { isArray, isNumber, isString } from 'remeda'
 import { ANNOTATION_Z_INDEX } from '../../../../utils/constant'
 
 export const annotationVerticalLine: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
-  const { annotation, datasetReshapeInfo, config } = advancedVSeed
-
-  const { unfoldInfo, foldInfo } = datasetReshapeInfo[0]
+  const { annotation, config } = advancedVSeed
 
   if (!annotation || !annotation.annotationVerticalLine) {
     return spec
@@ -30,7 +27,6 @@ export const annotationVerticalLine: VChartSpecPipe = (spec, context) => {
   }
   const markLine = annotationVerticalLineList.flatMap((annotationVerticalLine) => {
     const {
-      selector: selectorPoint,
       xValue,
       text = '',
       textPosition = 'insideEnd',
@@ -52,8 +48,6 @@ export const annotationVerticalLine: VChartSpecPipe = (spec, context) => {
       textBackgroundBorderWidth = theme?.textBackgroundBorderWidth ?? 1,
       textBackgroundPadding = theme?.textBackgroundPadding ?? 2,
     } = annotationVerticalLine
-
-    const dataset = advancedVSeed.dataset.flat()
 
     const generateOneMarkLine = (x: number | string) => ({
       x,
@@ -118,22 +112,12 @@ export const annotationVerticalLine: VChartSpecPipe = (spec, context) => {
       },
     })
 
-    if ((!selectorPoint && isArray(xValue)) || isString(xValue) || isNumber(xValue)) {
+    if (isArray(xValue) || isString(xValue) || isNumber(xValue)) {
       const xValueArr = Array.isArray(xValue) ? xValue : [xValue]
       return xValueArr.map(generateOneMarkLine)
     }
 
-    const selectedData = selectorPoint ? dataset.filter((datum) => selector(datum, selectorPoint)) : []
-
-    return selectedData.map((datum) => {
-      if (datum[unfoldInfo.encodingX]) {
-        return generateOneMarkLine(datum[unfoldInfo.encodingX] as string)
-      }
-      if (datum[foldInfo.measureValue]) {
-        return generateOneMarkLine(datum[foldInfo.measureValue] as string)
-      }
-      return {}
-    })
+    return []
   }) as IMarkLineSpec[]
 
   const specMarkLine = ((spec as ILineChartSpec).markLine as IMarkLineSpec[]) || []

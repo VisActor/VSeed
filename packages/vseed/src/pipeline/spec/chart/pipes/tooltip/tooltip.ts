@@ -3,12 +3,13 @@ import { createFormatterByMeasure, findAllMeasures, findMeasureById } from '../.
 import type { Datum, Dimensions, FoldInfo, Measures, VChartSpecPipe, TooltipConfig, UnfoldInfo } from 'src/types'
 import { ORIGINAL_DATA } from 'src/dataReshape'
 import { getTooltipStyle } from './tooltipStyle'
+import { updateTooltipElement } from './tooltipElement'
 
 export const tooltip: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
   const { measures, datasetReshapeInfo, chartType, dimensions, encoding } = advancedVSeed
-  const baseConfig = advancedVSeed.config[chartType] as { tooltip: TooltipConfig }
+  const baseConfig = advancedVSeed.config[chartType as 'line'] as { tooltip: TooltipConfig }
   const { tooltip = { enable: true } } = baseConfig
   const { enable = true } = tooltip
   const { foldInfo, unfoldInfo } = datasetReshapeInfo[0] as unknown as {
@@ -37,6 +38,8 @@ export const tooltip: VChartSpecPipe = (spec, context) => {
       },
       content: createDimensionContent(dimensions, measures, foldInfo, unfoldInfo),
     },
+
+    updateElement: updateTooltipElement,
   }
   return result
 }

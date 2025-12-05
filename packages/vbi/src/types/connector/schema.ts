@@ -1,6 +1,14 @@
-export type Schema = Array<{
-  name: string
-  type: string
-}>
+import { z } from 'zod'
 
-export type DiscoverSchema = () => Promise<Schema>
+export const zSchema = z.array(
+  z.object({
+    name: z.string(),
+    type: z.string(),
+  }),
+)
+
+export type Schema = z.infer<typeof zSchema>
+
+export const zDiscoverSchema = z.custom<() => Promise<Schema>>()
+
+export type DiscoverSchema = z.infer<typeof zDiscoverSchema>

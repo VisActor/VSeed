@@ -1,18 +1,27 @@
 import { createFormatterByMeasure, findTreeNodesBy } from 'src/pipeline/utils'
-import type { Legend, Measure, VChartSpecPipe } from 'src/types'
+import type { ColorLegend, Measure, VChartSpecPipe } from 'src/types'
 
 export const colorLegend: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed } = context
   const { datasetReshapeInfo, chartType, measures = [] } = advancedVSeed
   const { unfoldInfo } = datasetReshapeInfo[0]
-  const baseConfig = advancedVSeed.config[chartType] as { legend: Legend }
+  const baseConfig = advancedVSeed.config[chartType] as { legend: ColorLegend }
   if (!baseConfig || !baseConfig.legend) {
     return result
   }
 
   const { legend } = baseConfig
-  const { enable, position = 'bottom', labelFontColor, labelColor, labelFontSize = 12, labelFontWeight } = legend || {}
+  const {
+    enable,
+    position = 'bottom',
+    labelFontColor,
+    labelColor,
+    labelFontSize = 12,
+    labelFontWeight,
+    railBackgroundColor,
+    handlerBorderColor,
+  } = legend || {}
 
   const orient = ['bottom', 'bottomLeft', 'bottomRight', 'bl', 'br'].includes(position)
     ? 'bottom'
@@ -42,6 +51,18 @@ export const colorLegend: VChartSpecPipe = (spec, context) => {
         fill: labelColor || labelFontColor,
         fontSize: labelFontSize,
         fontWeight: labelFontWeight,
+      },
+    },
+    rail: {
+      style: {
+        fill: railBackgroundColor,
+      },
+    },
+    handler: {
+      style: {
+        outerBorder: {
+          stroke: handlerBorderColor,
+        },
       },
     },
   }

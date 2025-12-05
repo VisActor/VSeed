@@ -15,18 +15,7 @@ export const initHeatmap: VChartSpecPipe = (spec, context) => {
   result.seriesField = unfoldInfo.encodingColorId
   result.valueField = foldInfo.measureValue
   result.padding = 0
-  result.axes = [
-    {
-      type: 'band',
-      orient: 'left',
-      bandPadding: 0,
-    },
-    {
-      type: 'band',
-      orient: 'bottom',
-      bandPadding: 0,
-    },
-  ]
+
   result.region = [
     {
       clip: true,

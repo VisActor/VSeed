@@ -1,9 +1,13 @@
-import { DiscoverSchema } from './schema'
-import { VBIQueryProps, VBIQueryResult } from './query'
+import { z } from 'zod'
+import { zDiscoverSchema } from './schema'
+import type { VBIQueryProps, VBIQueryResult } from './query'
 
-export type VBIConnectorId = string
+export const zVBIConnectorId = z.string()
+export type VBIConnectorId = z.infer<typeof zVBIConnectorId>
 
-export interface VBIConnector {
-  discoverSchema: DiscoverSchema
-  query: (queryProps: VBIQueryProps) => Promise<VBIQueryResult>
-}
+export const zVBIConnector = z.object({
+  discoverSchema: zDiscoverSchema,
+  query: z.custom<(queryProps: VBIQueryProps) => Promise<VBIQueryResult>>(),
+})
+
+export type VBIConnector = z.infer<typeof zVBIConnector>

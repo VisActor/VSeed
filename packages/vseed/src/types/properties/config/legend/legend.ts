@@ -167,14 +167,20 @@ export const zLegend = z.object({
     ])
     .default('bottom')
     .nullish(),
-  labelColor: z.string().default('#fff').nullish(),
   pagerIconColor: z.string().nullish(),
   pagerIconDisableColor: z.string().nullish(),
+  labelColor: z.string().default('#fff').nullish(),
   labelFontSize: z.number().default(12).nullish(),
   labelFontWeight: z.number().or(z.string()).default(400).nullish(),
 })
 
-export type ColorLegend = Pick<Legend, 'position' | 'enable'>
+export type ColorLegend = Pick<
+  Legend,
+  'position' | 'enable' | 'labelColor' | 'labelFontColor' | 'labelFontSize' | 'labelFontWeight'
+> & {
+  railBackgroundColor?: string
+  handlerBorderColor?: string
+}
 export const zColorLegend = z.object({
   position: z
     .enum([
@@ -202,4 +208,9 @@ export const zColorLegend = z.object({
     .default('bottom')
     .nullish(),
   enable: z.boolean().default(true).nullish(),
+  railBackgroundColor: z.string().nullish(),
+  handlerBorderColor: z.string().nullish(),
+  labelColor: z.string().default('#fff').nullish(),
+  labelFontSize: z.number().default(12).nullish(),
+  labelFontWeight: z.number().or(z.string()).default(400).nullish(),
 })

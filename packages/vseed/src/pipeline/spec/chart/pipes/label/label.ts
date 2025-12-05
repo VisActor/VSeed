@@ -95,10 +95,11 @@ export const buildLabel = (
     hasDimLabelEncoding
       ? vseedDimensions.filter((item) => encoding.label?.includes(item.id))
       : showDimension
-        ? advancedVSeedDimensions.filter((d) => d.id !== MeasureId)
+        ? advancedVSeedDimensions.filter((d) => d.id !== MeasureId && d.encoding !== 'row' && d.encoding !== 'column')
         : [],
     (item: Dimension) => item.id,
   )
+  console.log(labelDims)
 
   const labelMeas = uniqueBy(
     vseedMeasures.filter((item) => encoding.label?.includes(item.id)),

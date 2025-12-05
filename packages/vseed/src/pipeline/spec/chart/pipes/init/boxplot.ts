@@ -1,4 +1,4 @@
-import type { IBoxPlotChartSpec } from '@visactor/vchart'
+import { type IBoxPlotChartSpec } from '@visactor/vchart'
 import type { VChartSpecPipe } from 'src/types'
 import { isDeepEqual } from 'remeda'
 import {
@@ -10,21 +10,23 @@ import {
   Q3MeasureValue,
   UpperWhisker,
 } from 'src/dataReshape/constant'
+import { isPivotChart, revisedBoxPlotFieldKey } from 'src/pipeline/utils'
 
 export const initBoxplot: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as IBoxPlotChartSpec
-  const { advancedVSeed } = context
+  const { advancedVSeed, vseed } = context
   const { datasetReshapeInfo, encoding } = advancedVSeed
-  const { unfoldInfo } = datasetReshapeInfo[0]
+  const { unfoldInfo, id } = datasetReshapeInfo[0]
 
+  const usePivotChart = isPivotChart(vseed)
   result.type = 'boxPlot'
   // 默认应该是盒须的位置
-  result.minField = LowerWhisker
-  result.maxField = UpperWhisker
-  result.q1Field = Q1MeasureValue
-  result.medianField = MedianMeasureId
-  result.q3Field = Q3MeasureValue
-  result.outliersField = OutliersMeasureId
+  result.minField = revisedBoxPlotFieldKey(LowerWhisker, id, usePivotChart)
+  result.maxField = revisedBoxPlotFieldKey(UpperWhisker, id, usePivotChart)
+  result.q1Field = revisedBoxPlotFieldKey(Q1MeasureValue, id, usePivotChart)
+  result.medianField = revisedBoxPlotFieldKey(MedianMeasureId, id, usePivotChart)
+  result.q3Field = revisedBoxPlotFieldKey(Q3MeasureValue, id, usePivotChart)
+  result.outliersField = revisedBoxPlotFieldKey(OutliersMeasureId, id, usePivotChart)
   result.xField = [unfoldInfo.encodingX]
   result.seriesField = unfoldInfo.encodingColorId
 

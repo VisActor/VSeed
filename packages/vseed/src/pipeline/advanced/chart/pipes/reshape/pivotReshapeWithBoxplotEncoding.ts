@@ -12,6 +12,7 @@ import {
   unfoldDimensions,
   UpperWhisker,
 } from 'src/dataReshape'
+import { revisedBoxPlotFieldKey } from 'src/pipeline/utils'
 import type {
   AdvancedPipe,
   ColumnParallel,
@@ -85,6 +86,12 @@ export const pivotReshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, con
         boxPlotData.forEach((datum) => {
           datum[FoldMeasureId] = f
           datum[FoldMeasureName] = m?.alias ?? f
+          datum[revisedBoxPlotFieldKey(Q1MeasureValue, groupId)] = datum[Q1MeasureValue]
+          datum[revisedBoxPlotFieldKey(Q3MeasureValue, groupId)] = datum[Q3MeasureValue]
+          datum[revisedBoxPlotFieldKey(LowerWhisker, groupId)] = datum[LowerWhisker]
+          datum[revisedBoxPlotFieldKey(UpperWhisker, groupId)] = datum[UpperWhisker]
+          datum[revisedBoxPlotFieldKey(MedianMeasureId, groupId)] = datum[MedianMeasureId]
+          datum[revisedBoxPlotFieldKey(OutliersMeasureId, groupId)] = datum[OutliersMeasureId]
         })
 
         boxPlotDataList.push(...boxPlotData)
@@ -114,10 +121,15 @@ export const pivotReshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, con
 
       res.dataset.forEach((datum) => {
         datum[UpperWhisker] = datum[encoding.max![0]]
+        datum[revisedBoxPlotFieldKey(Q1MeasureValue, groupId)] = datum[encoding.max![0]]
         datum[LowerWhisker] = datum[encoding.min![0]]
+        datum[revisedBoxPlotFieldKey(LowerWhisker, groupId)] = datum[encoding.min![0]]
         datum[Q1MeasureValue] = datum[encoding.q1![0]]
+        datum[revisedBoxPlotFieldKey(Q1MeasureValue, groupId)] = datum[encoding.q1![0]]
         datum[Q3MeasureValue] = datum[encoding.q3![0]]
+        datum[revisedBoxPlotFieldKey(Q3MeasureValue, groupId)] = datum[encoding.q3![0]]
         datum[MedianMeasureId] = datum[encoding.median![0]]
+        datum[revisedBoxPlotFieldKey(MedianMeasureId, groupId)] = datum[encoding.median![0]]
       })
 
       newDatasets = res.dataset

@@ -6,7 +6,7 @@ const rootDir = path.resolve(__dirname, '../packages/vseed')
 
 async function generateTests() {
   try {
-    const testsDir = path.join(rootDir, './tests')
+    const testsDir = path.join(rootDir, './tests/integration')
 
     // 递归查找所有JSON文件的函数
     async function findAllJsonFiles(dir) {

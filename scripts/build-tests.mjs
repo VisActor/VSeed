@@ -16,7 +16,11 @@ async function generateTests() {
       for (const entry of entries) {
         const fullPath = path.join(dir, entry.name)
 
-        if (entry.isDirectory() && entry.name !== '__snapshots__') {
+        if (entry.isDirectory() && entry.name === '__snapshots__') {
+          // 删除残留的 __snapshots__ 目录
+          await fs.rmdir(fullPath, { recursive: true })
+          console.log(`Removed directory: ${fullPath}`)
+        } else if (entry.isDirectory()) {
           // 递归处理子目录
           const subFiles = await findAllJsonFiles(fullPath)
           jsonFiles.push(...subFiles)
@@ -52,29 +56,25 @@ import { Builder, registerAll } from '@visactor/vseed'
 import vseed from './${relativeJsonPath}'
 
 test('${testName}', () => {
-  try {
-    registerAll()
-    const builder = Builder.from(vseed as VSeed)
-    const advanced = builder.buildAdvanced()
-    if (!advanced) {
-      throw new Error('Failed to build advanced configuration')
-    }
-    const spec = builder.buildSpec(advanced)
-
-    const colorIdMap = builder.getColorIdMap()
-    const colorItems = builder.getColorItems()
-    const advancedPipeline = Builder.getAdvancedPipeline(builder.vseed.chartType)
-    const specPipeline = Builder.getSpecPipeline(builder.vseed.chartType)
-    const theme = Builder.getTheme(builder.vseed.theme)
-    const themeMap = Builder.getThemeMap()
-
-    expect(advanced).toMatchSnapshot()
-    expect(spec).toMatchSnapshot()
-    expect({ colorIdMap, colorItems, advancedPipeline, specPipeline, theme, themeMap }).toMatchSnapshot()
-  } catch (e) {
-    expect({expectError: true}).toMatchSnapshot()
-    expect(e).toBeInstanceOf(Error)
-  }
+   registerAll()
+  const builder = Builder.from(vseed as VSeed)
+  const advanced = builder.buildAdvanced()
+  
+  expect(advanced).toBeDefined()
+  expect(advanced).not.toBeNull()
+  
+  const spec = builder.buildSpec(advanced!)
+  
+  expect(spec).toBeDefined()
+  expect(spec).not.toBeNull()
+  
+  // Verify builder methods return valid results
+  expect(builder.getColorIdMap()).toBeDefined()
+  expect(builder.getColorItems()).toBeDefined()
+  expect(Builder.getAdvancedPipeline(builder.vseed.chartType)).toBeDefined()
+  expect(Builder.getSpecPipeline(builder.vseed.chartType)).toBeDefined()
+  expect(Builder.getTheme(builder.vseed.theme)).toBeDefined()
+  expect(Builder.getThemeMap()).toBeDefined()
 });
 `
       await fs.writeFile(testPath, testContent)

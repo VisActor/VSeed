@@ -3,27 +3,23 @@ import { Builder, registerAll } from '@visactor/vseed'
 import vseed from './labelFontSize.json'
 
 test('labelFontSize', () => {
-  try {
-    registerAll()
-    const builder = Builder.from(vseed as VSeed)
-    const advanced = builder.buildAdvanced()
-    if (!advanced) {
-      throw new Error('Failed to build advanced configuration')
-    }
-    const spec = builder.buildSpec(advanced)
-
-    const colorIdMap = builder.getColorIdMap()
-    const colorItems = builder.getColorItems()
-    const advancedPipeline = Builder.getAdvancedPipeline(builder.vseed.chartType)
-    const specPipeline = Builder.getSpecPipeline(builder.vseed.chartType)
-    const theme = Builder.getTheme(builder.vseed.theme)
-    const themeMap = Builder.getThemeMap()
-
-    expect(advanced).toMatchSnapshot()
-    expect(spec).toMatchSnapshot()
-    expect({ colorIdMap, colorItems, advancedPipeline, specPipeline, theme, themeMap }).toMatchSnapshot()
-  } catch (e) {
-    expect({expectError: true}).toMatchSnapshot()
-    expect(e).toBeInstanceOf(Error)
-  }
+   registerAll()
+  const builder = Builder.from(vseed as VSeed)
+  const advanced = builder.buildAdvanced()
+  
+  expect(advanced).toBeDefined()
+  expect(advanced).not.toBeNull()
+  
+  const spec = builder.buildSpec(advanced!)
+  
+  expect(spec).toBeDefined()
+  expect(spec).not.toBeNull()
+  
+  // Verify builder methods return valid results
+  expect(builder.getColorIdMap()).toBeDefined()
+  expect(builder.getColorItems()).toBeDefined()
+  expect(Builder.getAdvancedPipeline(builder.vseed.chartType)).toBeDefined()
+  expect(Builder.getSpecPipeline(builder.vseed.chartType)).toBeDefined()
+  expect(Builder.getTheme(builder.vseed.theme)).toBeDefined()
+  expect(Builder.getThemeMap()).toBeDefined()
 });

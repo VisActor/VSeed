@@ -101,23 +101,30 @@ export type DimensionSelector = {
 
 export type Selector = ValueSelector | PartialDatumSelector | MeasureSelector | DimensionSelector
 
+export type AreaSelector = MeasureSelector | DimensionSelector
+
+export type AreaSelectors = Array<AreaSelector>
+
 export type Selectors = Array<Selector>
 
-export const zSelector = z.union([
-  z.string(),
-  z.number(),
-  z.object({
-    field: z.string(),
-    operator: z.enum(['=', '==', '!=', '>', '<', '>=', '<=', 'between']).nullish(),
-    op: z.enum(['=', '==', '!=', '>', '<', '>=', '<=', 'between']).nullish(),
-    value: z.union([z.string(), z.number(), z.array(z.union([z.string(), z.number()]))]),
-  }),
-  z.object({
-    field: z.string(),
-    operator: z.enum(['in', 'not in']).nullish(),
-    op: z.enum(['in', 'not in']).nullish(),
-    value: z.union([z.string(), z.number(), z.array(z.union([z.string(), z.number()]))]),
-  }),
-])
+export const zMeasureSelector = z.object({
+  field: z.string(),
+  operator: z.enum(['=', '==', '!=', '>', '<', '>=', '<=', 'between']).nullish(),
+  op: z.enum(['=', '==', '!=', '>', '<', '>=', '<=', 'between']).nullish(),
+  value: z.union([z.string(), z.number(), z.array(z.union([z.string(), z.number()]))]),
+})
+
+export const zDimensionSelector = z.object({
+  field: z.string(),
+  operator: z.enum(['in', 'not in']).nullish(),
+  op: z.enum(['in', 'not in']).nullish(),
+  value: z.union([z.string(), z.number(), z.array(z.union([z.string(), z.number()]))]),
+})
+
+export const zSelector = z.union([z.string(), z.number(), zMeasureSelector, zDimensionSelector])
 
 export const zSelectors = z.array(zSelector)
+
+export const zAreaSelector = z.union([zMeasureSelector, zDimensionSelector])
+
+export const zAreaSelectors = z.array(zAreaSelector)

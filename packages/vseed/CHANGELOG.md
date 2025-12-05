@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.2.3
+
+### Patch Changes
+
+- Update vchart&vtable&vutils version, fix bugs
+
 ## 0.2.2
 
 ### Patch Changes

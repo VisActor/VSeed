@@ -27,6 +27,11 @@
     "rstest:update": "rstest --update",
     "rstest:coverage": "rstest --update --coverage && open coverage/index.html",
     "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:unit:coverage": "vitest run tests/unit --coverage && open coverage/index.html",
+    "test:integration": "vitest run tests/integration",
+    "test:integration:update": "vitest run tests/integration--update",
+    "test:integration:coverage": "vitest run tests/integration --coverage && open coverage/index.html",
     "test:update": "vitest run --update",
     "test:coverage": "vitest run  --update --coverage && open coverage/index.html"
   },

@@ -30,7 +30,6 @@ export const buildSpec = (builder: Builder, advancedVSeed: AdvancedVSeed): Spec 
     builder.spec = spec
     return spec
   } catch (e) {
-    console.error(e)
     throw new Error(`buildSpec error: ${(e as Error).message}.\ndetails info in console`)
   } finally {
     const end = typeof performance !== 'undefined' ? performance.now() : Date.now()

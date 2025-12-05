@@ -30,7 +30,6 @@ export const buildAdvanced = (builder: Builder): AdvancedVSeed | null => {
     builder.advancedVSeed = advancedVSeed
     return advancedVSeed
   } catch (e) {
-    console.error(e)
     throw new Error(`buildAdvanced error: ${(e as Error).message}.\ndetails info in console`)
   } finally {
     const end = typeof performance !== 'undefined' ? performance.now() : Date.now()

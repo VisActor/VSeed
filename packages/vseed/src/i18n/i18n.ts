@@ -17,7 +17,6 @@ class Intl {
     const text = segments.map((segment, index) => segment + (values[index] || '')).join('')
     const translatedText = this.translateMap?.[text]?.[this.locale]
     if (isNullish(translatedText)) {
-      console.warn(`i18n ${this.locale} no translate: ${text}`)
       return text
     }
     return translatedText

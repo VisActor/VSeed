@@ -99,7 +99,6 @@ export const buildLabel = (
         : [],
     (item: Dimension) => item.id,
   )
-  console.log(labelDims)
 
   const labelMeas = uniqueBy(
     vseedMeasures.filter((item) => encoding.label?.includes(item.id)),

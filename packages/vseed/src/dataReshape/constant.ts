@@ -27,6 +27,7 @@ export const ColorEncoding = '__Dim_Color__'
 export const ColorIdEncoding = '__Dim_ColorId__'
 
 // Measures For boxPlot
+export const BoxPlotPivotIndicator = '__BoxPlot_Pivot_Indicator__'
 export const Q1MeasureValue = '__Q1__'
 export const Q3MeasureValue = '__Q3__'
 export const LowerWhisker = '__Lower_Whisker__'

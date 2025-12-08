@@ -57,7 +57,7 @@ describe('VQuery', () => {
       groupBy: ['area'],
       orderBy: [
         {
-          field: 'sales',
+          field: 'Sum(sales)',
           order: 'desc',
         },
       ],
@@ -89,6 +89,21 @@ describe('VQuery', () => {
     await dataset.disconnect()
     await vquery.close()
 
-    expect(queryResult).toMatchInlineSnapshot()
+    expect(queryResult.dataset).toMatchInlineSnapshot(`
+      [
+        {
+          "Sum(sales)": 1000,
+          "area": "SHANG HAI",
+        },
+        {
+          "Sum(sales)": 600,
+          "area": "BEI JING",
+        },
+        {
+          "Sum(sales)": 500,
+          "area": "HANG ZHOU",
+        },
+      ]
+    `)
   })
 })

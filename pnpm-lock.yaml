@@ -78,9 +78,6 @@ importers:
 
   packages/vbi:
     dependencies:
-      '@visactor/vquery':
-        specifier: workspace:*
-        version: link:../vquery
       '@visactor/vseed':
         specifier: workspace:*
         version: link:../vseed
@@ -103,6 +100,9 @@ importers:
       '@types/node':
         specifier: 24.10.1
         version: 24.10.1
+      '@visactor/vquery':
+        specifier: workspace:*
+        version: link:../vquery
       eslint:
         specifier: 9.39.0
         version: 9.39.0(jiti@2.6.1)

@@ -1,55 +1,58 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { DuckDBBundles, AsyncDuckDBConnection } from '@duckdb/duckdb-wasm'
-import { AsyncDuckDB, selectBundle, ConsoleLogger } from '@duckdb/duckdb-wasm'
+// @ts-ignore
+import type { DuckDBBundles } from '@duckdb/duckdb-wasm/dist/duckdb-node-blocking'
+import {
+  createDuckDB,
+  ConsoleLogger,
+  NODE_RUNTIME,
+  DuckDBConnection,
+  // @ts-ignore
+} from '@duckdb/duckdb-wasm/dist/duckdb-node-blocking'
+import { createRequire } from 'node:module'
 import { QueryAdapter } from 'src/types'
 import { QueryResult } from 'src/types/DataSet'
 
 export class DuckDBNodeQueryAdapter implements QueryAdapter {
-  private db: AsyncDuckDB | null = null
-  private connection: AsyncDuckDBConnection | null = null
+  private bindings: any | null = null
+  private connection: DuckDBConnection | null = null
 
   constructor() {}
 
   open = async () => {
+    const require = createRequire(import.meta.url)
     const MANUAL_BUNDLES: DuckDBBundles = {
       mvp: {
-        mainModule: new URL('@duckdb/duckdb-wasm/dist/duckdb-mvp.wasm', import.meta.url).href,
-        mainWorker: new URL('@duckdb/duckdb-wasm/dist/duckdb-browser-mvp.worker.js', import.meta.url).toString(),
+        mainModule: require.resolve('@duckdb/duckdb-wasm/dist/duckdb-mvp.wasm'),
+        mainWorker: '',
       },
       eh: {
-        mainModule: new URL('@duckdb/duckdb-wasm/dist/duckdb-eh.wasm', import.meta.url).href,
-        mainWorker: new URL('@duckdb/duckdb-wasm/dist/duckdb-browser-eh.worker.js', import.meta.url).toString(),
+        mainModule: require.resolve('@duckdb/duckdb-wasm/dist/duckdb-eh.wasm'),
+        mainWorker: '',
       },
     }
 
-    const bundle = await selectBundle(MANUAL_BUNDLES)
-    const worker_url = URL.createObjectURL(
-      new Blob([`importScripts("${bundle.mainWorker!}");`], { type: 'text/javascript' }),
-    )
-    const worker = new Worker(worker_url)
     const logger = new ConsoleLogger()
-
-    this.db = new AsyncDuckDB(logger, worker)
-    await this.db.instantiate(bundle.mainModule, bundle.pthreadWorker)
-    URL.revokeObjectURL(worker_url)
-
-    this.connection = await this.db.connect()
+    this.bindings = await createDuckDB(MANUAL_BUNDLES, logger, NODE_RUNTIME)
+    await this.bindings.instantiate(() => {})
+    this.bindings.open({})
+    this.connection = this.bindings.connect()
   }
 
   close = async () => {
     if (this.connection) {
-      await this.connection.close()
+      this.connection.close()
       this.connection = null
     }
-    if (this.db) {
-      await this.db.terminate()
-      this.db = null
+    if (this.bindings) {
+      this.bindings.reset()
+      this.bindings = null
     }
   }
 
   writeFile = async <T extends Blob>(fileName: string, source: T) => {
-    if (!this.db) {
-      throw new Error('db is null')
+    if (!this.bindings) {
+      throw new Error('bindings is null')
     }
     let uint8Array: Uint8Array
 
@@ -61,7 +64,7 @@ export class DuckDBNodeQueryAdapter implements QueryAdapter {
       throw new Error('Unsupported source type')
     }
 
-    await this.db.registerFileBuffer(fileName, uint8Array)
+    await this.bindings.registerFileBuffer(fileName, uint8Array)
   }
 
   query = async (sql: string) => {
@@ -69,7 +72,7 @@ export class DuckDBNodeQueryAdapter implements QueryAdapter {
       throw new Error('connection is null')
     }
     const table = await this.connection.query(sql)
-    const dataset = table.toArray().map((row) => row.toJSON())
+    const dataset = table.toArray().map((row: any) => row.toJSON())
     return {
       dataset,
       table,
@@ -82,6 +85,6 @@ export class DuckDBNodeQueryAdapter implements QueryAdapter {
     }
 
     const result = await this.connection.query(`PRAGMA table_info('${fileName}')`)
-    return result.toArray().map((row) => row.toJSON()) as QueryResult
+    return result.toArray().map((row: any) => row.toJSON()) as QueryResult
   }
 }

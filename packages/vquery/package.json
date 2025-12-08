@@ -4,13 +4,18 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/esm/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.cjs"
+      "require": {
+        "types": "./dist/cjs/node.d.ts",
+        "default": "./dist/cjs/node.cjs"
+      },
+      "import": {
+        "types": "./dist/esm/browser.d.js",
+        "default": "./dist/esm/browser.js"
+      }
     }
   },
   "main": "./dist/cjs/index.cjs",
-  "types": "./dist/esm/index.d.ts",
+  "types": "./dist/esm/web.d.ts",
   "files": [
     "dist"
   ],
@@ -25,7 +30,8 @@
   },
   "dependencies": {
     "@duckdb/duckdb-wasm": "1.30.0",
-    "kysely": "^0.27.2"
+    "kysely": "0.27.6",
+    "web-worker": "1.5.0"
   },
   "devDependencies": {
     "@eslint/js": "9.39.0",

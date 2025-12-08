@@ -4,18 +4,29 @@ export default defineConfig({
   lib: [
     {
       format: 'esm',
+      source: {
+        entry: {
+          browser: './src/browser.ts',
+        },
+      },
       output: {
         distPath: './dist/esm',
       },
-      syntax: ['node 18'],
       dts: true,
+      bundle: true,
     },
     {
       format: 'cjs',
+      source: {
+        entry: {
+          node: './src/node.ts',
+        },
+      },
       output: {
         distPath: './dist/cjs',
       },
-      syntax: ['node 18'],
+      dts: true,
+      bundle: true,
     },
   ],
 })

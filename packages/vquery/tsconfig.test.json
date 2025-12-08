@@ -8,7 +8,7 @@
     "noEmit": true,
     "lib": ["ESNext", "DOM"],
     "paths": {
-      "@visactor/vquery": ["./src"]
+      "@visactor/vquery": ["./src/node"]
     }
   }
 }

@@ -1,8 +1,8 @@
-import { DuckDBWebQueryAdapter, IndexedDBAdapter, DuckDBNodeQueryAdapter, InMemoryAdapter } from './adapters'
+import { IndexedDBAdapter } from './adapters'
+import { DuckDBWebQueryAdapter } from './adapters/query-adapter/duckdbWebAdapter'
 import { Dataset } from './dataset/dataset'
 import { RawDatasetSource, DatasetColumn, QueryAdapter, StorageAdapter } from './types'
 import { DatasetSourceBuilder } from 'src/data-source-builder'
-import { isNode } from '@duckdb/duckdb-wasm'
 
 export class VQuery {
   private queryAdapter: QueryAdapter
@@ -10,13 +10,8 @@ export class VQuery {
   private isInitialized: boolean = false
 
   constructor() {
-    if (isNode()) {
-      this.queryAdapter = new DuckDBNodeQueryAdapter()
-      this.storageAdapter = new InMemoryAdapter()
-    } else {
-      this.queryAdapter = new DuckDBWebQueryAdapter()
-      this.storageAdapter = new IndexedDBAdapter()
-    }
+    this.queryAdapter = new DuckDBWebQueryAdapter()
+    this.storageAdapter = new IndexedDBAdapter()
   }
 
   private async checkInitialized() {

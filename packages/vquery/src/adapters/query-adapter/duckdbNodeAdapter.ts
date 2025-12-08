@@ -1,14 +1,6 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// @ts-ignore
-import type { DuckDBBundles } from '@duckdb/duckdb-wasm/dist/duckdb-node-blocking'
-import {
-  createDuckDB,
-  ConsoleLogger,
-  NODE_RUNTIME,
-  DuckDBConnection,
-  // @ts-ignore
-} from '@duckdb/duckdb-wasm/dist/duckdb-node-blocking'
+import type { DuckDBBundles } from '@duckdb/duckdb-wasm/blocking'
+import { createDuckDB, ConsoleLogger, NODE_RUNTIME, DuckDBConnection } from '@duckdb/duckdb-wasm/blocking'
 import { createRequire } from 'node:module'
 import { QueryAdapter } from 'src/types'
 import { QueryResult } from 'src/types/DataSet'

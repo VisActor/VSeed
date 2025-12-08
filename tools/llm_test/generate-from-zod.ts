@@ -12,6 +12,8 @@ import {
   zStackCornerRadius,
   zSelector,
   zSelectors,
+  zAreaSelector,
+  zAreaSelectors,
   // zDimensionTree,
   // zMeasureTree,
   zColorLegend,
@@ -179,6 +181,31 @@ ${selectorSchema}
 ### Selectors
 \`\`\`typescript
 ${selectorsSchema}
+\`\`\`
+  `,
+  )
+
+  // AreaSelector
+  const areaSelectorSchema = await compile(z.toJSONSchema(zAreaSelector) as any, 'AreaSelector', {
+    bannerComment: '',
+  })
+  // AreaSelectors
+  const areaSelectorsSchema = await compile(z.toJSONSchema(zAreaSelectors) as any, 'AreaSelectors', {
+    bannerComment: '',
+  })
+  fs.writeFileSync(
+    path.join(__dirname, './new-type/AreaSelector.md'),
+    `
+### AreaSelector
+${topKeyDesc['AreaSelector'] || ''}
+\`\`\`typescript
+${areaSelectorSchema}
+\`\`\`
+
+### AreaSelectors
+${topKeyDesc['AreaSelectors'] || ''}
+\`\`\`typescript
+${areaSelectorsSchema}
 \`\`\`
   `,
   )

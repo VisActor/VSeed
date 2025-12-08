@@ -25,7 +25,7 @@
     "lint": "eslint .",
     "test": "rstest",
     "test:update": "rstest --update",
-    "test:coverage": "rstest --coverage && open ./coverage/index.html",
+    "test:coverage": "rstest --coverage; open ./coverage/index.html",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {

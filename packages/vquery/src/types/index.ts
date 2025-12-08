@@ -1,4 +1,5 @@
 export * from './DataSet'
 export * from './DataSource'
 export * from './QueryResult'
-export * from './QueryDSL'
+export * from './dsl'
+export * from './adapters'

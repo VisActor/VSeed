@@ -1,0 +1,1 @@
+export { IndexedDBAdapter } from './indexedDb'

@@ -1,21 +1,20 @@
 import { DatasetColumn, DatasetSource, DatasetSourceType, DataType, QueryDSL } from 'src/types'
-import { DuckDB } from 'src/db/duckDb'
-import { IndexedDB } from 'src/db/indexedDb'
+import { QueryAdapter, StorageAdapter } from 'src/types'
 import { convertDSLToSQL } from 'src/sql-builder'
 
 export class Dataset {
-  private duckDB: DuckDB
-  private indexedDB: IndexedDB
+  private queryAdapter: QueryAdapter
+  private storageAdapter: StorageAdapter
   private _datasetId: string
 
-  constructor(duckDB: DuckDB, indexedDB: IndexedDB, datasetId: string) {
-    this.duckDB = duckDB
-    this.indexedDB = indexedDB
+  constructor(duckDB: QueryAdapter, indexedDB: StorageAdapter, datasetId: string) {
+    this.queryAdapter = duckDB
+    this.storageAdapter = indexedDB
     this._datasetId = datasetId
   }
 
   public async init(temporaryColumns?: DatasetColumn[], temporaryDatasetSource?: DatasetSource) {
-    const datasetInfo = await this.indexedDB.readDataset(this._datasetId)
+    const datasetInfo = await this.storageAdapter.readDataset(this._datasetId)
     if (!datasetInfo) {
       throw new Error(`Dataset ${this._datasetId} not found`)
     }
@@ -50,14 +49,14 @@ export class Dataset {
       }
 
       // 注册文件到DuckDB - 只处理文件类型，不处理数组
-      await this.duckDB.writeFile(this._datasetId, datasetSource.blob)
+      await this.queryAdapter.writeFile(this._datasetId, datasetSource.blob)
 
       const columnsStruct = `{${columns.map((c) => `'${c.name}': '${dataTypeMap[c.type] || 'VARCHAR'}'`).join(', ')}}`
       const columnNames = columns.map((c) => `"${c.name}"`).join(', ')
 
       // 创建视图
       const createViewSql = `CREATE OR REPLACE VIEW "${this._datasetId}" AS SELECT ${columnNames} FROM ${readFunction}('${this._datasetId}', columns=${columnsStruct})`
-      await this.duckDB.query(createViewSql)
+      await this.queryAdapter.query(createViewSql)
     }
   }
 
@@ -68,7 +67,7 @@ export class Dataset {
 
   public async queryBySQL(sql: string) {
     const start = performance?.now?.()?.toFixed(3) ?? Date.now().toFixed(3)
-    const result = await this.duckDB.query(sql)
+    const result = await this.queryAdapter.query(sql)
     const end = performance?.now?.()?.toFixed(3) ?? Date.now().toFixed(3)
     return {
       ...result,
@@ -81,7 +80,7 @@ export class Dataset {
   }
 
   public async disconnect() {
-    await this.duckDB.query(`DROP VIEW IF EXISTS "${this._datasetId}"`)
+    await this.queryAdapter.query(`DROP VIEW IF EXISTS "${this._datasetId}"`)
   }
 
   get datasetId() {

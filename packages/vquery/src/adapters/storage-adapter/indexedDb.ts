@@ -1,7 +1,7 @@
-import { DatasetSource } from 'src/types'
-import { DatasetSchema } from '../types/DataSet'
+import { DatasetSource, StorageAdapter } from 'src/types'
+import { DatasetSchema } from '../../types/DataSet'
 
-export class IndexedDB {
+export class IndexedDBAdapter implements StorageAdapter {
   private db: IDBDatabase | null = null
   private dbName: string
   private datasetStoreName = 'vqueryDatasets'
@@ -33,7 +33,7 @@ export class IndexedDB {
     })
   }
 
-  public close = () => {
+  public close = async (): Promise<void> => {
     if (this.db) {
       this.db.close()
       this.db = null

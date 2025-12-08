@@ -1,21 +1,26 @@
 {
   "name": "@visactor/vquery",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "type": "module",
   "exports": {
     ".": {
-      "require": {
-        "types": "./dist/cjs/node.d.ts",
-        "default": "./dist/cjs/node.cjs"
+      "node": {
+        "types": "./dist/node/esm/node.d.ts",
+        "import": "./dist/node/esm/node.js",
+        "require": "./dist/node/cjs/node.cjs"
       },
-      "import": {
-        "types": "./dist/esm/browser.d.js",
-        "default": "./dist/esm/browser.js"
+      "browser": {
+        "types": "./dist/browser/esm/browser.d.ts",
+        "import": "./dist/browser/esm/browser.js"
+      },
+      "default": {
+        "types": "./dist/browser/esm/browser.d.ts",
+        "import": "./dist/browser/esm/browser.js"
       }
     }
   },
-  "main": "./dist/cjs/node.cjs",
-  "types": "./dist/cjs/node.d.ts",
+  "main": "./dist/node/cjs/node.cjs",
+  "types": "./dist/node/esm/node.d.ts",
   "files": [
     "dist"
   ],

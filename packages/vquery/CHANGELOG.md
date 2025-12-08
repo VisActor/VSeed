@@ -1,5 +1,11 @@
 # @visactor/vquery
 
+## 0.2.6
+
+### Patch Changes
+
+- feat: optimize the exports in vquery package.json
+
 ## 0.2.5
 
 ### Patch Changes

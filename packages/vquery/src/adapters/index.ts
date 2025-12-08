@@ -1,2 +1,2 @@
 export { DuckDBQueryAdapter } from './query-adapter'
-export { IndexedDBAdapter } from './storage-adapter'
+export { IndexedDBAdapter, InMemoryAdapter } from './storage-adapter'

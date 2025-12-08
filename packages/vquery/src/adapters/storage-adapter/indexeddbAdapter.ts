@@ -6,7 +6,7 @@ export class IndexedDBAdapter implements StorageAdapter {
   private dbName: string
   private datasetStoreName = 'vqueryDatasets'
 
-  constructor(dbName: string) {
+  constructor(dbName: string = 'vquery') {
     this.dbName = dbName
   }
 

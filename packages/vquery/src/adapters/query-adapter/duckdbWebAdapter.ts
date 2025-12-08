@@ -1,18 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { DuckDBBundles, AsyncDuckDBConnection } from '@duckdb/duckdb-wasm'
 import { AsyncDuckDB, selectBundle, ConsoleLogger } from '@duckdb/duckdb-wasm'
+import { QueryAdapter } from 'src/types'
 import { QueryResult } from 'src/types/DataSet'
 
-export class DuckDB {
+export class DuckDBWebQueryAdapter implements QueryAdapter {
   private db: AsyncDuckDB | null = null
   private connection: AsyncDuckDBConnection | null = null
 
   constructor() {}
 
-  /**
-   * @description 初始化 DuckDB 实例
-   */
-  init = async () => {
+  open = async () => {
     const MANUAL_BUNDLES: DuckDBBundles = {
       mvp: {
         mainModule: new URL('@duckdb/duckdb-wasm/dist/duckdb-mvp.wasm', import.meta.url).href,
@@ -38,9 +36,6 @@ export class DuckDB {
     this.connection = await this.db.connect()
   }
 
-  /**
-   * @description 释放 DuckDB 实例
-   */
   close = async () => {
     if (this.connection) {
       await this.connection.close()
@@ -52,11 +47,6 @@ export class DuckDB {
     }
   }
 
-  /**
-   * 注册文件到 DuckDB 实例
-   * @param fileName 文件名
-   * @param source 文件内容
-   */
   writeFile = async <T extends Blob>(fileName: string, source: T) => {
     if (!this.db) {
       throw new Error('db is null')
@@ -74,12 +64,7 @@ export class DuckDB {
     await this.db.registerFileBuffer(fileName, uint8Array)
   }
 
-  /**
-   * @description 执行 SQL 查询
-   * @param sql SQL 语句
-   * @returns 查询结果
-   */
-  query = async (sql: string): Promise<{ dataset: any[]; table: any }> => {
+  query = async (sql: string) => {
     if (!this.connection) {
       throw new Error('connection is null')
     }
@@ -88,20 +73,15 @@ export class DuckDB {
     return {
       dataset,
       table,
-    }
+    } as { dataset: any[]; table: any }
   }
 
-  /**
-   * @description 获取文件的 Schema
-   * @param fileName 文件名
-   * @returns 文件的 Schema
-   */
-  getSchema = async (fileName: string): Promise<QueryResult> => {
+  getSchema = async (fileName: string) => {
     if (!this.connection) {
       throw new Error('connection is null')
     }
 
     const result = await this.connection.query(`PRAGMA table_info('${fileName}')`)
-    return result.toArray().map((row) => row.toJSON())
+    return result.toArray().map((row) => row.toJSON()) as QueryResult
   }
 }

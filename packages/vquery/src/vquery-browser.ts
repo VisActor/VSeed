@@ -1,23 +1,23 @@
+import { IndexedDBAdapter } from './adapters'
+import { DuckDBWebQueryAdapter } from './adapters/query-adapter/duckdbWebAdapter'
 import { Dataset } from './dataset/dataset'
-import { DuckDB } from './db/duckDb'
-import { IndexedDB } from './db/indexedDb'
-import { RawDatasetSource, DatasetColumn } from './types'
+import { RawDatasetSource, DatasetColumn, QueryAdapter, StorageAdapter } from './types'
 import { DatasetSourceBuilder } from 'src/data-source-builder'
 
 export class VQuery {
-  private duckDB: DuckDB
-  private indexedDB: IndexedDB
+  private queryAdapter: QueryAdapter
+  private storageAdapter: StorageAdapter
   private isInitialized: boolean = false
 
-  constructor(dbName: string = 'vquery') {
-    this.duckDB = new DuckDB()
-    this.indexedDB = new IndexedDB(dbName)
+  constructor() {
+    this.queryAdapter = new DuckDBWebQueryAdapter()
+    this.storageAdapter = new IndexedDBAdapter()
   }
 
   private async checkInitialized() {
     if (!this.isInitialized) {
-      await this.duckDB.init()
-      await this.indexedDB.open()
+      await this.queryAdapter.open()
+      await this.storageAdapter.open()
       this.isInitialized = true
     }
   }
@@ -40,7 +40,7 @@ export class VQuery {
       datasetAlias: datasetId,
       columns: columns,
     }
-    await this.indexedDB.writeDataset(datasetId, datasetSchema, datasetSource)
+    await this.storageAdapter.writeDataset(datasetId, datasetSchema, datasetSource)
   }
 
   public async updateDatasetSource(
@@ -57,14 +57,14 @@ export class VQuery {
       datasetAlias: datasetId,
       columns: columns,
     }
-    await this.indexedDB.writeDataset(datasetId, datasetSchema, datasetSource)
+    await this.storageAdapter.writeDataset(datasetId, datasetSchema, datasetSource)
   }
 
   public async dropDataset(datasetId: string) {
     await this.checkInitialized()
     await this.checkDatasetExists(datasetId)
 
-    await this.indexedDB.deleteDataset(datasetId)
+    await this.storageAdapter.deleteDataset(datasetId)
   }
 
   public async connectDataset(
@@ -75,7 +75,7 @@ export class VQuery {
     await this.checkInitialized()
     await this.checkDatasetExists(datasetId)
 
-    const dataset = new Dataset(this.duckDB, this.indexedDB, datasetId)
+    const dataset = new Dataset(this.queryAdapter, this.storageAdapter, datasetId)
     const temporaryDatasetSource = temporaryRawDatasetSource
       ? await DatasetSourceBuilder.from(temporaryRawDatasetSource).build()
       : undefined
@@ -87,18 +87,19 @@ export class VQuery {
   public async hasDataset(datasetId: string) {
     await this.checkInitialized()
 
-    const datasets = await this.indexedDB.listDatasets()
+    const datasets = await this.storageAdapter.listDatasets()
     return datasets.some((item) => item.datasetId === datasetId)
   }
 
   public async listDatasets() {
     await this.checkInitialized()
 
-    return this.indexedDB.listDatasets()
+    return this.storageAdapter.listDatasets()
   }
 
   public async close() {
     await this.checkInitialized()
-    await this.duckDB.close()
+    await this.queryAdapter.close()
+    await this.storageAdapter.close()
   }
 }

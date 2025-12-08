@@ -1,16 +1,21 @@
 {
   "name": "@visactor/vquery",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "require": {
+        "types": "./dist/cjs/node.d.ts",
+        "default": "./dist/cjs/node.cjs"
+      },
+      "import": {
+        "types": "./dist/esm/browser.d.js",
+        "default": "./dist/esm/browser.js"
+      }
     }
   },
-  "main": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/cjs/node.cjs",
+  "types": "./dist/cjs/node.d.ts",
   "files": [
     "dist"
   ],
@@ -20,12 +25,13 @@
     "lint": "eslint .",
     "test": "rstest",
     "test:update": "rstest --update",
-    "test:coverage": "rstest --coverage && open ./coverage/index.html",
+    "test:coverage": "rstest --coverage; open ./coverage/index.html",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@duckdb/duckdb-wasm": "1.30.0",
-    "kysely": "^0.27.2"
+    "kysely": "0.27.6",
+    "web-worker": "1.5.0"
   },
   "devDependencies": {
     "@eslint/js": "9.39.0",

@@ -1,5 +1,17 @@
 # @visactor/vquery
 
+## 0.2.5
+
+### Patch Changes
+
+- fix: main field error in package.json
+
+## 0.2.4
+
+### Patch Changes
+
+- feat: build vquery for both node and browser env
+
 ## 0.2.3
 
 ## 0.2.2

@@ -1,4 +1,4 @@
 export type OrderBy<T> = Array<{
-  field: keyof T
+  field: string | keyof T
   order?: 'asc' | 'desc'
 }>

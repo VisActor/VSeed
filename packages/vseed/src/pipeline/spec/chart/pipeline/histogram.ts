@@ -1,7 +1,6 @@
 import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   label,
-  xLinear,
   backgroundColor,
   discreteLegend,
   color,
@@ -34,6 +33,7 @@ import {
   pivotTitle,
   pivotAxisStyle,
   dimensionLinkage,
+  histogramXLinear,
 } from '../pipes'
 
 const histogram: VChartSpecPipeline = [
@@ -42,7 +42,7 @@ const histogram: VChartSpecPipeline = [
   backgroundColor,
   datasetHistogram,
   progressive,
-  xLinear,
+  histogramXLinear,
   yLinear,
   label,
   tooltipHistogram,
@@ -67,7 +67,7 @@ const pivotHistogram: PivotChartSpecPipeline = [
     backgroundColor,
     datasetHistogram,
     progressive,
-    xLinear,
+    histogramXLinear,
     pivotAxisStyle(yLinear),
     label,
     tooltipHistogram,

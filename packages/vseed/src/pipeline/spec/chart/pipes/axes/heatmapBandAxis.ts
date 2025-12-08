@@ -1,6 +1,6 @@
 import type { ISpec } from '@visactor/vchart'
 import type { VChartSpecPipe, XBandAxis, YBandAxis } from 'src/types'
-import { bandAxisStyle } from './axisStyle'
+import { bandAxisStyle } from './bandAxisStyle'
 
 export const heatmapBandAxis: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec

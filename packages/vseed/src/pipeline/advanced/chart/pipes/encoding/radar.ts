@@ -1,6 +1,6 @@
 import { unique } from 'remeda'
 import { MeasureId } from 'src/dataReshape'
-import { findAllMeasures } from 'src/pipeline/utils'
+import { findAllMeasures, hasMultipleMeasureInSingleView } from 'src/pipeline/utils'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
 import { addColorToEncoding } from './color'
 
@@ -8,7 +8,7 @@ export const defaultEncodingForRadar: AdvancedPipe = (advancedVSeed) => {
   const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
   const measures = findAllMeasures(vseedMeasures)
   const encoding: Encoding = {}
-  generateDefaultDimensionEncoding(dimensions, encoding)
+  generateDefaultDimensionEncoding(dimensions, encoding, hasMultipleMeasureInSingleView(vseedMeasures))
   generateDefaultMeasureEncoding(measures, encoding)
   return { ...advancedVSeed, encoding }
 }
@@ -20,11 +20,12 @@ export const encodingForRadar: AdvancedPipe = (advancedVSeed) => {
   const hasDimensionEncoding = dimensions.some((item: Dimension) => item.encoding)
   const hasMeasureEncoding = measures.some((item: Measure) => item.encoding)
   const encoding: Encoding = {}
+  const hasMulti = hasMultipleMeasureInSingleView(vseedMeasures)
 
   if (hasDimensionEncoding) {
-    generateDimensionEncoding(dimensions, encoding, measures.length > 1)
+    generateDimensionEncoding(dimensions, encoding, hasMulti)
   } else {
-    generateDefaultDimensionEncoding(dimensions, encoding)
+    generateDefaultDimensionEncoding(dimensions, encoding, hasMulti)
   }
 
   if (hasMeasureEncoding) {
@@ -39,10 +40,10 @@ export const encodingForRadar: AdvancedPipe = (advancedVSeed) => {
 /**
  * --------------------维度--------------------
  */
-const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
+const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Encoding, isMultiMeasure: boolean) => {
   const uniqueDimIds = unique(dimensions.map((d) => d.id))
   encoding.angle = uniqueDimIds.slice(0, 1)
-  encoding.color = uniqueDimIds.slice(1)
+  encoding.color = isMultiMeasure ? uniqueDimIds.slice(0) : uniqueDimIds.filter((d: string) => d !== MeasureId) // 多度量场景包含所有维度，否则除了MeasureId之外的所有维度用于color映射
   encoding.tooltip = uniqueDimIds.filter((d) => d !== MeasureId) // 展示指标名称之外的所有维度
   encoding.detail = [] // 雷达图暂不支持细分
   encoding.label = []

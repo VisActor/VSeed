@@ -36,8 +36,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/vbi
       '@visactor/vchart':
-        specifier: 2.0.11-alpha.4
-        version: 2.0.11-alpha.4
+        specifier: 2.0.11-alpha.5
+        version: 2.0.11-alpha.5
       '@visactor/vquery':
         specifier: workspace:*
         version: link:../../packages/vquery
@@ -193,8 +193,8 @@ importers:
         specifier: 8.38.0
         version: 8.38.0(@typescript-eslint/parser@8.48.0(eslint@9.30.0(jiti@2.6.1))(typescript@5.8.3))(eslint@9.30.0(jiti@2.6.1))(typescript@5.8.3)
       '@visactor/vchart':
-        specifier: 2.0.11-alpha.4
-        version: 2.0.11-alpha.4
+        specifier: 2.0.11-alpha.5
+        version: 2.0.11-alpha.5
       '@visactor/vtable':
         specifier: 1.22.7-alpha.5
         version: 1.22.7-alpha.5
@@ -2341,8 +2341,8 @@ packages:
     peerDependencies:
       react: '>=18.3.1'
 
-  '@visactor/vchart@2.0.11-alpha.4':
-    resolution: {integrity: sha512-EyxfAD2SstfSlRfxhgrl0albe5+d5fDJb2kFPaFWPzWkmn3wBQo2ksoLkqMskvQounGBub2Zsiuxvkv2Lv/HyA==}
+  '@visactor/vchart@2.0.11-alpha.5':
+    resolution: {integrity: sha512-b3AOuBJb/CMANOQi2lmRdg7cZum7wmxyJWvMDQ90tpvAVPXypj3ow/xVXz2jO7e85dl8yQm/N1A2orFPmYr8BQ==}
 
   '@visactor/vdataset@0.18.18':
     resolution: {integrity: sha512-lye23zpineMKV42JmuJaOY3fgl7aWhyDIwK9dWooqZzP14AFukPoK7ZvUeuKZihLrHxqtCg2VWEjovnh9O1RUg==}
@@ -2380,8 +2380,8 @@ packages:
   '@visactor/vutils-extension@1.11.14':
     resolution: {integrity: sha512-vfViZphXJBH0NwCHIoe8S1/+tDtykEKIfsLMIHprh7Azv7fVSB1eotG00SAegK75E18ARQGNXF1DxixUFiXSIQ==}
 
-  '@visactor/vutils-extension@2.0.11-alpha.4':
-    resolution: {integrity: sha512-QpUQNvHdmi5HXsRXYNKWietgkOyvbcpspYgfE97+4e6LSpSdh/J8vpmCwkxT+YZBBL8QuUZb0aXXND876qbeDA==}
+  '@visactor/vutils-extension@2.0.11-alpha.5':
+    resolution: {integrity: sha512-iq39leqlN0vxv5Tpo8f8uIU7CAhSWqPaiEvsZmJecDb4czuNx9nVNg6vlTTC332/2/48xZC8/R+rqNjy0LX0TA==}
 
   '@visactor/vutils@0.18.18':
     resolution: {integrity: sha512-byEJefqxiCz3UWe+YedEVjsdPtnJOAtKdRYi4qT9ojgACdd6QqlWs53Eb7PlMZgWDxVxqkxJP2bZnRKw+ME0Xg==}
@@ -8750,7 +8750,7 @@ snapshots:
       react: 19.1.1
       unhead: 2.0.14
 
-  '@visactor/vchart@2.0.11-alpha.4':
+  '@visactor/vchart@2.0.11-alpha.5':
     dependencies:
       '@visactor/vdataset': 1.0.21
       '@visactor/vlayouts': 1.0.12
@@ -8760,7 +8760,7 @@ snapshots:
       '@visactor/vrender-kits': 1.0.31
       '@visactor/vscale': 1.0.12
       '@visactor/vutils': 1.0.21
-      '@visactor/vutils-extension': 2.0.11-alpha.4
+      '@visactor/vutils-extension': 2.0.11-alpha.5
 
   '@visactor/vdataset@0.18.18':
     dependencies:
@@ -8867,7 +8867,7 @@ snapshots:
       '@visactor/vdataset': 0.18.18
       '@visactor/vutils': 0.18.18
 
-  '@visactor/vutils-extension@2.0.11-alpha.4':
+  '@visactor/vutils-extension@2.0.11-alpha.5':
     dependencies:
       '@visactor/vdataset': 1.0.21
       '@visactor/vutils': 1.0.21

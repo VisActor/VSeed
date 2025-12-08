@@ -3,7 +3,7 @@ import type { VChartSpecPipe, XBandAxis } from 'src/types'
 import { defaultTitleText } from './title/defaultTitleText'
 import { MeasureId } from 'src/dataReshape'
 import { isArray, isNull } from '@visactor/vutils'
-import { bandAxisStyle } from './axisStyle'
+import { bandAxisStyle } from './bandAxisStyle'
 
 export const yBand: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec

@@ -1,10 +1,10 @@
 import type { ISpec } from '@visactor/vchart'
-import { AXIS_LABEL_SPACE, LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
 import { createNumFormatter } from '../../../../utils'
 import type { VChartSpecPipe, YLinearAxis } from 'src/types'
 import { isEmpty, isNullish } from 'remeda'
 import { createLinearFormat } from './format/linearFormat'
 import { defaultTitleText } from './title/defaultTitleText'
+import { linearAxisStyle } from './linearAxisStyle'
 
 export const yLinearSecondary: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
@@ -37,88 +37,36 @@ export const yLinearSecondary: VChartSpecPipe = (spec, context) => {
     result.axes = []
   }
 
-  const {
-    visible = true,
-    label,
-    tick,
-    title,
-    grid,
-    line,
-
-    zero,
-    nice,
-    inverse,
-    max,
-    min,
-    log,
-    logBase = 10,
-    numFormat = {},
-    autoFormat,
-  } = yAxisConfig ?? {}
+  const { autoFormat, numFormat = {} } = yAxisConfig ?? {}
 
   const formatter = createNumFormatter(numFormat)
 
-  const linearAxis = {
-    visible: isEmptySecondary ? false : visible,
+  const formatMethod = (value: string) => {
+    return createLinearFormat(value, autoFormat, numFormat, formatter)
+  }
+
+  const titleText = yAxisConfig?.title?.titleText || defaultTitleText(measures, dimensions, encoding.y as string[])
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const baseStyle = linearAxisStyle({
+    ...yAxisConfig,
+    orient: 'right',
+    formatMethod,
+    titleText,
     id,
     seriesId,
     sync,
-    type: log ? 'log' : 'linear',
-    base: logBase,
-    orient: 'right',
-    nice,
-    zero: log ? false : zero,
-    inverse,
-    max,
-    min,
-    label: {
-      space: AXIS_LABEL_SPACE,
-      visible: label?.visible,
-      formatMethod: (value: string) => {
-        return createLinearFormat(value, autoFormat, numFormat, formatter)
-      },
-      style: {
-        fill: label?.labelColor,
-        angle: label?.labelAngle,
-        fontSize: label?.labelFontSize,
-        fontWeight: label?.labelFontWeight,
-      },
-    },
-    title: {
-      visible: title?.visible,
-      text: title?.titleText || defaultTitleText(measures, dimensions, encoding.y as string[]),
-      style: {
-        fill: title?.titleColor,
-        fontSize: title?.titleFontSize,
-        fontWeight: title?.titleFontWeight,
-      },
-    },
-    tick: {
-      visible: tick?.visible,
-      tickSize: tick?.tickSize,
-      inside: tick?.tickInside,
-      style: {
-        stroke: tick?.tickColor,
-      },
-    },
+  })
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const linearAxis = {
+    ...baseStyle,
+    visible: isEmptySecondary ? false : (yAxisConfig?.visible ?? true),
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     grid: {
-      visible: onlySecondary ? true : grid?.visible,
-      style: {
-        lineWidth: grid?.gridWidth,
-        stroke: grid?.gridColor,
-        lineDash: grid?.gridLineDash,
-      },
-    },
-    domainLine: {
-      visible: line?.visible,
-      style: {
-        lineWidth: line?.lineWidth,
-        stroke: line?.lineColor,
-      },
-    },
-    innerOffset: {
-      top: LINEAR_AXIS_INNER_OFFSET_TOP,
-      // bottom: LINEAR_AXIS_INNER_OFFSET_TOP,
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      ...baseStyle.grid,
+      visible: onlySecondary ? true : yAxisConfig?.grid?.visible,
     },
   }
 

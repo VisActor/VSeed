@@ -1,10 +1,10 @@
 import type { ISpec } from '@visactor/vchart'
-import { AXIS_LABEL_SPACE, LINEAR_AXIS_INNER_OFFSET_TOP } from '../../../../utils/constant'
 import { createNumFormatter } from '../../../../utils'
 import type { VChartSpecPipe, YLinearAxis } from 'src/types'
 import { isEmpty, isNullish } from 'remeda'
 import { createLinearFormat } from './format/linearFormat'
 import { defaultTitleText } from './title/defaultTitleText'
+import { linearAxisStyle } from './linearAxisStyle'
 
 export const yLinearPrimary: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
@@ -32,90 +32,26 @@ export const yLinearPrimary: VChartSpecPipe = (spec, context) => {
     result.axes = []
   }
 
-  const {
-    visible = true,
-    label,
-    tick,
-    title,
-    grid,
-    line,
-
-    zero,
-    nice,
-    inverse,
-    max,
-    min,
-    log,
-    logBase = 10,
-
-    autoFormat,
-    numFormat = {},
-  } = yAxisConfig ?? {}
+  const { autoFormat, numFormat = {} } = yAxisConfig ?? {}
 
   const formatter = createNumFormatter(numFormat)
 
-  const linearAxis = {
-    visible: isEmptySecondary ? false : visible,
-    id,
-    seriesId,
+  const formatMethod = (value: string) => {
+    return createLinearFormat(value, autoFormat, numFormat, formatter)
+  }
 
-    type: log ? 'log' : 'linear',
-    base: logBase,
-    orient: 'left',
-    nice,
-    zero: log ? false : zero,
-    inverse,
-    max,
-    min,
-    label: {
-      space: AXIS_LABEL_SPACE,
-      visible: label?.visible,
-      formatMethod: (value: string) => {
-        return createLinearFormat(value, autoFormat, numFormat, formatter)
-      },
-      style: {
-        fill: label?.labelColor,
-        angle: label?.labelAngle,
-        fontSize: label?.labelFontSize,
-        fontWeight: label?.labelFontWeight,
-      },
-    },
-    title: {
-      visible: title?.visible,
-      text: title?.titleText || defaultTitleText(measures, dimensions, encoding.y as string[]),
-      style: {
-        fill: title?.titleColor,
-        fontSize: title?.titleFontSize,
-        fontWeight: title?.titleFontWeight,
-      },
-    },
-    tick: {
-      visible: tick?.visible,
-      tickSize: tick?.tickSize,
-      inside: tick?.tickInside,
-      style: {
-        stroke: tick?.tickColor,
-      },
-    },
-    grid: {
-      visible: grid?.visible,
-      style: {
-        lineWidth: grid?.gridWidth,
-        stroke: grid?.gridColor,
-        lineDash: grid?.gridLineDash,
-      },
-    },
-    domainLine: {
-      visible: line?.visible,
-      style: {
-        lineWidth: line?.lineWidth,
-        stroke: line?.lineColor,
-      },
-    },
-    innerOffset: {
-      top: LINEAR_AXIS_INNER_OFFSET_TOP,
-      // bottom: LINEAR_AXIS_INNER_OFFSET_TOP,
-    },
+  const titleText = yAxisConfig?.title?.titleText || defaultTitleText(measures, dimensions, encoding.y as string[])
+
+  const linearAxis = {
+    ...linearAxisStyle({
+      ...yAxisConfig,
+      orient: 'left',
+      formatMethod,
+      titleText,
+      id,
+      seriesId,
+    }),
+    visible: isEmptySecondary ? false : (yAxisConfig?.visible ?? true),
   }
 
   result.axes = [...result.axes, linearAxis] as ISpec['axes']

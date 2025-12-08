@@ -1,4 +1,4 @@
-import { VQueryDSL } from '@visactor/vquery'
+import type { VQueryDSL } from '@visactor/vquery'
 import { VBIDSL } from 'src/types'
 import { MeasuresBuilder, VBIBuilder } from 'src/builder'
 import { pipe } from 'remeda'

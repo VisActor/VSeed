@@ -45,14 +45,11 @@ const run = async (setVSeed) => {
     { name: 'sales', type: 'number' },
   ])
 
-  const queryDSL: QueryDSL<
-    {
-      area: string
-      date: string
-      sales: number
-    },
-    datasetId
-  > = {
+  const queryDSL: QueryDSL<{
+    area: string
+    date: string
+    sales: number
+  }> = {
     select: [
       'area',
       {

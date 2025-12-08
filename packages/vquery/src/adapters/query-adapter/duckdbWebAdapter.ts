@@ -4,7 +4,7 @@ import { AsyncDuckDB, selectBundle, ConsoleLogger } from '@duckdb/duckdb-wasm'
 import { QueryAdapter } from 'src/types'
 import { QueryResult } from 'src/types/DataSet'
 
-export class DuckDBQueryAdapter implements QueryAdapter {
+export class DuckDBWebQueryAdapter implements QueryAdapter {
   private db: AsyncDuckDB | null = null
   private connection: AsyncDuckDBConnection | null = null
 

@@ -1,1 +1,2 @@
-export { DuckDBQueryAdapter } from './duckDb'
+export { DuckDBWebQueryAdapter } from './duckdbWebAdapter'
+export { DuckDBNodeQueryAdapter } from './duckdbNodeAdapter'

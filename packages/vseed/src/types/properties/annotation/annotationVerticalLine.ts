@@ -1,13 +1,7 @@
-import { type Selector, type Selectors } from '../../dataSelector'
-
 /**
  * @description 垂直标注线, 根据用户设置的selector 或 xValue, 从下向上绘制一条末尾有箭头的线, 标签默认在标注线终点的正左侧
  */
 export type AnnotationVerticalLine = {
-  /**
-   * @description 依赖选择的数据, 进行数据标记.
-   */
-  selector?: Selector | Selectors
   /**
    * @description 固定的x值, 用于标注垂直线, 类目轴在x方向, 则可输入维值, 数值轴在x方向, 则可输入具体的数值
    */

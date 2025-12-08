@@ -1,8 +1,6 @@
-import { zSelector, zSelectors } from '../../dataSelector'
 import { z } from 'zod'
 
 export const zAnnotationHorizontalLine = z.object({
-  selector: z.union([zSelector, zSelectors]).nullish(),
   yValue: z.union([z.number(), z.string(), z.array(z.union([z.number(), z.string()]))]).nullish(),
   text: z.string().or(z.array(z.string())).nullish(),
   textPosition: z

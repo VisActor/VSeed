@@ -27,10 +27,10 @@ export const scatterAdvancedPipeline: AdvancedPipeline = [
   defaultMeasureId,
 
   encodingAdapter(
-    [defaultEncodingForScatter, buildMeasuresForScatter],
+    [buildMeasuresForScatter, defaultEncodingForScatter],
     [
-      encodingForScatter,
       buildMeasuresForScatter,
+      encodingForScatter,
       pickMeasuresForReshape(['tooltip', 'label', 'size']),
       pickDimensionsForReshape,
     ],

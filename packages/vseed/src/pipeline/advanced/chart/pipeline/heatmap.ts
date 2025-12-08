@@ -27,8 +27,8 @@ export const heatmapAdvancedPipeline: AdvancedPipeline = [
   defaultMeasureId,
 
   encodingAdapter(
-    [defaultEncodingForHeatmap, buildMeasures],
-    [encodingForHeatmap, buildMeasures, pickMeasuresForReshape(['tooltip', 'label']), pickDimensionsForReshape],
+    [buildMeasures, defaultEncodingForHeatmap],
+    [buildMeasures, encodingForHeatmap, pickMeasuresForReshape(['tooltip', 'label']), pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

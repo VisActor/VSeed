@@ -1,6 +1,6 @@
 {
   "name": "@visactor/vquery",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "type": "module",
   "exports": {
     ".": {
@@ -14,8 +14,8 @@
       }
     }
   },
-  "main": "./dist/cjs/index.cjs",
-  "types": "./dist/esm/web.d.ts",
+  "main": "./dist/cjs/node.cjs",
+  "types": "./dist/cjs/node.d.ts",
   "files": [
     "dist"
   ],

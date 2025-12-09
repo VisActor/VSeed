@@ -28,10 +28,10 @@ export const boxplotAdvancedPipeline: AdvancedPipeline = [
   boxplotConfig,
 
   encodingAdapter(
-    [defaultEncodingForBoxplot, buildMeasures],
+    [buildMeasures, defaultEncodingForBoxplot],
     [
-      encodingForBoxplot,
       buildMeasures,
+      encodingForBoxplot,
       pickMeasuresForReshape(['tooltip', 'label', 'color']),
       pickDimensionsForReshape,
     ],

@@ -10,6 +10,7 @@ import type {
   DatasetReshapeInfo,
   Encoding,
   FoldInfo,
+  Measure,
   MeasureGroup,
   UnfoldInfo,
 } from 'src/types'
@@ -31,10 +32,14 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
   const depth = measureDepth(measures)
   if (depth === 3) {
     measures.forEach((measure: MeasureGroup) => {
-      measureGroups.push(measure.children as unknown as MeasureGroup[])
+      if (measure.children) {
+        measureGroups.push(measure.children as unknown as MeasureGroup[])
+      }
     })
   } else if (depth === 2) {
-    measureGroups.push(measures as unknown as MeasureGroup[])
+    measureGroups.push(
+      measures.filter((m: Measure | MeasureGroup) => m && (m as MeasureGroup).children) as unknown as MeasureGroup[],
+    )
   }
 
   measureGroups.forEach((measures: MeasureGroup[], index) => {

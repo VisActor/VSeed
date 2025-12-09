@@ -22,34 +22,48 @@ export const buildMeasuresForScatter: AdvancedPipe = (advancedVSeed, context) =>
    * 既不是带Children的指标树, 也不是带parentId的指标树, 则自动生成指标
    */
 
-  const scatterMeasures = vseed.scatterMeasures
-    ? clone(vseed.scatterMeasures)
-    : basicMeasuresToScatterMeasures(advancedVSeed.measures || [])
+  if (vseed.scatterMeasures) {
+    advancedVSeed.measures = scatterMeasuresToMeasureTree(clone(vseed.scatterMeasures))
+
+    return advancedVSeed
+  }
+
+  const { scatterMeasures, encodedMeasures } = basicMeasuresToScatterMeasures(advancedVSeed.measures || [])
   advancedVSeed.measures = scatterMeasuresToMeasureTree(scatterMeasures)
+
+  if (encodedMeasures.length) {
+    encodedMeasures.forEach((m) => {
+      advancedVSeed.measures!.push(m)
+    })
+  }
 
   return advancedVSeed
 }
 
-const basicMeasuresToScatterMeasures = (basicMeasures: Measures): ScatterMeasures => {
+const basicMeasuresToScatterMeasures = (basicMeasures: Measures) => {
   const yMeasures: Measures = []
   const xMeasures: Measures = []
+  const encodedMeasures: Measures = []
 
   for (let index = 0; index < basicMeasures.length; index++) {
     const item = basicMeasures[index]
-    const encoding = Array.isArray(item.encoding) ? item.encoding : [item.encoding]
-    const isYAxis = encoding.includes('yAxis')
-    const isXAxis = encoding.includes('xAxis')
+    const encoding = item.encoding
+    const isYAxis = encoding === 'yAxis'
+    const isXAxis = encoding === 'xAxis'
+    const isOther = encoding && ['color', 'label', 'tooltip', 'detail'].includes(encoding)
 
     if (isYAxis) {
       yMeasures.push(item)
     } else if (isXAxis) {
       xMeasures.push(item)
-    } else {
+    } else if (!isOther) {
       if (index !== 0) {
         yMeasures.push(item)
       } else {
         xMeasures.push(item)
       }
+    } else {
+      encodedMeasures.push(item)
     }
   }
 
@@ -57,7 +71,10 @@ const basicMeasuresToScatterMeasures = (basicMeasures: Measures): ScatterMeasure
     yMeasures.push(xMeasures[0])
   }
 
-  return [{ id: 'scatterMeasures', xMeasures, yMeasures }]
+  return {
+    scatterMeasures: [{ id: 'scatterMeasures', xMeasures, yMeasures }],
+    encodedMeasures,
+  }
 }
 
 const scatterMeasuresToMeasureTree = (scatterMeasures: ScatterMeasures): MeasureTree => {
@@ -105,6 +122,7 @@ const scatterMeasuresToMeasureTree = (scatterMeasures: ScatterMeasures): Measure
 
 const generateMeasuresByParentId = (measures: Measures) => {
   const scatterMeasures: ScatterMeasures = []
+  const encodedMeasures: Measures = []
 
   measures.forEach((item) => {
     const id = item.parentId || DEFAULT_PARENT_ID
@@ -121,22 +139,32 @@ const generateMeasuresByParentId = (measures: Measures) => {
       return
     }
 
-    const encoding = Array.isArray(item.encoding) ? item.encoding : [item.encoding].filter(Boolean)
-    const isX = encoding.includes('xAxis')
-    const isY = encoding.includes('yAxis')
-    const isEmpty = !encoding.length
-    if (isY) {
+    const isYAxis = item.encoding === 'yAxis'
+    const isXAxis = item.encoding === 'xAxis'
+    const isOther = item.encoding && ['color', 'label', 'tooltip', 'detail'].includes(item.encoding)
+
+    if (isYAxis) {
       scatterChart.yMeasures.push(item)
-    } else if (isX) {
+    } else if (isXAxis) {
       scatterChart.xMeasures.push(item)
-    } else if (isEmpty) {
+    } else if (!isOther) {
       if (scatterChart.yMeasures.length !== 0) {
         scatterChart.yMeasures.push(item)
       } else {
         scatterChart.xMeasures.push(item)
       }
+    } else {
+      encodedMeasures.push(item)
     }
   })
 
-  return scatterMeasuresToMeasureTree(scatterMeasures)
+  const res = scatterMeasuresToMeasureTree(scatterMeasures)
+
+  if (encodedMeasures.length) {
+    encodedMeasures.forEach((m) => {
+      res.push(m)
+    })
+  }
+
+  return res
 }

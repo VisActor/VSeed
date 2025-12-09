@@ -28,8 +28,8 @@ export const areaPercentAdvancedPipeline: AdvancedPipeline = [
   defaultMeasureId,
 
   encodingAdapter(
-    [defaultEncodingForLine, buildMeasures],
-    [encodingForLine, buildMeasures, pickMeasuresForReshape(['tooltip', 'label', 'color']), pickDimensionsForReshape],
+    [buildMeasures, defaultEncodingForLine],
+    [buildMeasures, encodingForLine, pickMeasuresForReshape(['tooltip', 'label', 'color']), pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

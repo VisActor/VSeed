@@ -29,8 +29,8 @@ export const columnAdvancedPipeline: AdvancedPipeline = [
   defaultMeasureId,
 
   encodingAdapter(
-    [defaultEncodingForColumn, buildMeasures],
-    [encodingForColumn, buildMeasures, pickMeasuresForReshape(['tooltip', 'label', 'color']), pickDimensionsForReshape],
+    [buildMeasures, defaultEncodingForColumn],
+    [buildMeasures, encodingForColumn, pickMeasuresForReshape(['tooltip', 'label', 'color']), pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

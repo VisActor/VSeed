@@ -28,10 +28,10 @@ export const dualAxisAdvancedPipeline: AdvancedPipeline = [
   defaultMeasureId,
 
   encodingAdapter(
-    [defaultEncodingForDualAxis, buildMeasuresForDualAxis],
+    [buildMeasuresForDualAxis, defaultEncodingForDualAxis],
     [
-      encodingForDualAxis,
       buildMeasuresForDualAxis,
+      encodingForDualAxis,
       pickMeasuresForReshape(['tooltip', 'label', 'color']),
       pickDimensionsForReshape,
     ],

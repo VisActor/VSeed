@@ -28,10 +28,10 @@ export const histogramAdvancedPipeline: AdvancedPipeline = [
   histogramConfig,
 
   encodingAdapter(
-    [defaultEncodingForHistogram, buildMeasures],
+    [buildMeasures, defaultEncodingForHistogram],
     [
-      encodingForHistogram,
       buildMeasures,
+      encodingForHistogram,
       pickMeasuresForReshape(['tooltip', 'label', 'color']),
       pickDimensionsForReshape,
     ],

@@ -41,7 +41,7 @@ export const encodingForHeatmap: AdvancedPipe = (advancedVSeed) => {
  */
 const generateDefaultDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) => {
   const onlyMeasureId = dimensions.length === 1 && dimensions.find((item) => item.id === MeasureId)
-  const uniqueDimIds = unique(dimensions.map((d) => d.id))
+  const uniqueDimIds: string[] = unique(dimensions.map((d) => d.id))
   encoding.x = uniqueDimIds.slice(0, 1) // 第一个维度放置于X轴
   encoding.y = uniqueDimIds.slice(onlyMeasureId ? 0 : 1) // 第2个维度放置于Y轴
   encoding.color = uniqueDimIds.slice(onlyMeasureId ? 0 : 1) // 第二个之后的维度用于颜色

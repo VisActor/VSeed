@@ -1,10 +1,10 @@
 import js from '@eslint/js'
 import globals from 'globals'
-import ts from 'typescript-eslint'
+import { defineConfig } from 'eslint/config'
+import tseslint from 'typescript-eslint'
 
 export default [
   { ignores: ['dist/', 'scripts', 'doc_build', 'eslint.config.mjs'] },
   { languageOptions: { globals: globals.browser } },
-  js.configs.recommended,
-  ...ts.configs.recommended,
+  ...defineConfig(js.configs.recommended, tseslint.configs.recommended),
 ]

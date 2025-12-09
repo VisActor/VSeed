@@ -58,7 +58,7 @@
     "jsdom": "26.1.0",
     "rstest-canvas-mock": "0.0.5",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.46.2",
+    "typescript-eslint": "8.48.0",
     "vi-canvas-mock": "^1.0.0",
     "vitest": "3.2.4"
   },

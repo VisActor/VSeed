@@ -1,4 +1,9 @@
 {
+  "eslint.workingDirectories": [
+    { "pattern": "./packages/*/" },
+    { "pattern": "./tools/*/" },
+    { "pattern": "./apps/*/" }
+  ],
   "files.exclude": {
     "**/.git": false
   },

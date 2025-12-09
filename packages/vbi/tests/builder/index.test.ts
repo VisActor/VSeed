@@ -7,6 +7,7 @@ describe('VBIBuilder', () => {
     const builder = VBI.from(dsl)
     expect(builder.build()).toMatchInlineSnapshot(`
       {
+        "dimensions": [],
         "measures": [],
       }
     `)

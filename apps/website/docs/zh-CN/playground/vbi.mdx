@@ -63,6 +63,10 @@ const run = async (setVSeed) => {
     .addMeasure('profit', (node) => {
       node.setAlias('Sum(profit)').setAggregate({ func: 'sum' })
     })
+
+  builder.dimensions.addDimension('area', (node) => {
+    node.setAlias('区域')
+  })
   console.log('debug vbidsl', builder.build())
   const vseed = await builder.buildVSeed()
   setVSeed(() => vseed)

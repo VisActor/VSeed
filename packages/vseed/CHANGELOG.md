@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.2.7
+
+### Patch Changes
+
+- Fix multi measure encoding bug && output runningConfig in spec && other common bugFix
+
 ## 0.2.6
 
 ## 0.2.5

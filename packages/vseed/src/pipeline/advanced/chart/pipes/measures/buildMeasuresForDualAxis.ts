@@ -18,41 +18,55 @@ export const buildMeasuresForDualAxis: AdvancedPipe = (advancedVSeed, context) =
     return advancedVSeed
   }
 
-  /**
-   * 既不是带Children的指标树, 也不是带parentId的指标树, 则自动生成指标
-   */
-  const dualMeasures = vseed.dualMeasures
-    ? clone(vseed.dualMeasures)
-    : basicMeasuresToDualMeasures(advancedVSeed.measures || [])
+  if (vseed.dualMeasures) {
+    advancedVSeed.measures = dualMeasuresToMeasureTree(clone(vseed.dualMeasures))
+
+    return advancedVSeed
+  }
+
+  const { dualMeasures, encodedMeasures } = basicMeasuresToDualMeasures(advancedVSeed.measures || [])
   advancedVSeed.measures = dualMeasuresToMeasureTree(dualMeasures)
+
+  if (encodedMeasures.length) {
+    encodedMeasures.forEach((m) => {
+      advancedVSeed.measures!.push(m)
+    })
+  }
 
   return advancedVSeed
 }
 
-const basicMeasuresToDualMeasures = (basicMeasures: Measures): DualMeasures => {
+const basicMeasuresToDualMeasures = (basicMeasures: Measures) => {
   const primaryMeasures: Measures = []
   const secondaryMeasures: Measures = []
+  const encodedMeasures: Measures = []
 
   for (let index = 0; index < basicMeasures.length; index++) {
     const item = basicMeasures[index]
     const encoding = Array.isArray(item.encoding) ? item.encoding : [item.encoding]
     const isPrimaryYAxis = encoding.includes('primaryYAxis')
     const isSecondaryYAxis = encoding.includes('secondaryYAxis')
+    const isEmpty = !item.encoding
 
     if (isPrimaryYAxis) {
       primaryMeasures.push(item)
     } else if (isSecondaryYAxis) {
       secondaryMeasures.push(item)
-    } else {
+    } else if (isEmpty) {
       if (index === 0) {
         primaryMeasures.push(item)
       } else {
         secondaryMeasures.push(item)
       }
+    } else {
+      encodedMeasures.push(item)
     }
   }
 
-  return [{ id: 'dualMeasures', primaryMeasures, secondaryMeasures }]
+  return {
+    dualMeasures: [{ id: 'dualMeasures', primaryMeasures, secondaryMeasures }],
+    encodedMeasures,
+  }
 }
 
 const dualMeasuresToMeasureTree = (dualMeasures: DualMeasures): MeasureTree => {
@@ -100,6 +114,7 @@ const dualMeasuresToMeasureTree = (dualMeasures: DualMeasures): MeasureTree => {
 
 const generateMeasuresByParentId = (measures: Measures) => {
   const dualMeasures: DualMeasures = []
+  const encodedMeasures: Measures = []
 
   measures.forEach((item) => {
     const id = item.parentId || DEFAULT_PARENT_ID
@@ -131,8 +146,18 @@ const generateMeasuresByParentId = (measures: Measures) => {
       } else {
         dualChart.secondaryMeasures.push(item)
       }
+    } else {
+      encodedMeasures.push(item)
     }
   })
 
-  return dualMeasuresToMeasureTree(dualMeasures)
+  const res = dualMeasuresToMeasureTree(dualMeasures)
+
+  if (encodedMeasures.length) {
+    encodedMeasures.forEach((m) => {
+      res.push(m)
+    })
+  }
+
+  return res
 }

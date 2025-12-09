@@ -1,9 +1,42 @@
 import { unique } from 'remeda'
 import { MeasureId } from 'src/dataReshape'
-import { findAllMeasures, hasMultipleMeasureInSingleView } from 'src/pipeline/utils'
-import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
+import { findAllMeasures, measureDepth } from 'src/pipeline/utils'
+import type {
+  AdvancedPipe,
+  Dimension,
+  Dimensions,
+  Encoding,
+  Measure,
+  MeasureGroup,
+  Measures,
+  MeasureTree,
+} from 'src/types'
 import { addColorToEncoding } from './color'
 import { addDefaultColorEncoding } from './color/addColorToEncoding'
+
+const checkSingleViewMultiMeasures = (measures: MeasureTree = []): boolean => {
+  return measures.length <= 1 && ((measures[0] as MeasureGroup).children ?? []).length <= 1
+}
+
+const hasMultipleMeasureInSingleView = (measures: MeasureTree = []): boolean => {
+  const depth = measureDepth(measures)
+
+  if (depth >= 3) {
+    return measures.some(
+      (m) => m && (m as MeasureGroup).children && !checkSingleViewMultiMeasures((m as MeasureGroup).children),
+    )
+  }
+
+  if (depth === 2) {
+    return !checkSingleViewMultiMeasures(measures)
+  }
+
+  if (depth === 1) {
+    return measures.length >= 1
+  }
+
+  return false
+}
 
 export const defaultEncodingForDualAxis: AdvancedPipe = (advancedVSeed) => {
   const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed

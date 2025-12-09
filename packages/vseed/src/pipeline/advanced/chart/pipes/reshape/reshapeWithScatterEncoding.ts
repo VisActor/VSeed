@@ -14,6 +14,7 @@ import type {
   Dataset,
   Encoding,
   FoldInfo,
+  Measure,
   MeasureGroup,
   UnfoldInfo,
 } from 'src/types'
@@ -23,7 +24,9 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
   const { encoding, chartType } = advancedVSeed
-  const measures = advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []
+  const measures = (advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []).filter(
+    (m: Measure | MeasureGroup) => m && (m as MeasureGroup).children,
+  )
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
 
   if (measures.length > 2) {

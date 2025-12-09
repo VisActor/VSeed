@@ -22,34 +22,48 @@ export const buildMeasuresForScatter: AdvancedPipe = (advancedVSeed, context) =>
    * 既不是带Children的指标树, 也不是带parentId的指标树, 则自动生成指标
    */
 
-  const scatterMeasures = vseed.scatterMeasures
-    ? clone(vseed.scatterMeasures)
-    : basicMeasuresToScatterMeasures(advancedVSeed.measures || [])
+  if (vseed.scatterMeasures) {
+    advancedVSeed.measures = scatterMeasuresToMeasureTree(clone(vseed.scatterMeasures))
+
+    return advancedVSeed
+  }
+
+  const { scatterMeasures, encodedMeasures } = basicMeasuresToScatterMeasures(advancedVSeed.measures || [])
   advancedVSeed.measures = scatterMeasuresToMeasureTree(scatterMeasures)
+
+  if (encodedMeasures.length) {
+    encodedMeasures.forEach((m) => {
+      advancedVSeed.measures!.push(m)
+    })
+  }
 
   return advancedVSeed
 }
 
-const basicMeasuresToScatterMeasures = (basicMeasures: Measures): ScatterMeasures => {
+const basicMeasuresToScatterMeasures = (basicMeasures: Measures) => {
   const yMeasures: Measures = []
   const xMeasures: Measures = []
+  const encodedMeasures: Measures = []
 
   for (let index = 0; index < basicMeasures.length; index++) {
     const item = basicMeasures[index]
     const encoding = Array.isArray(item.encoding) ? item.encoding : [item.encoding]
     const isYAxis = encoding.includes('yAxis')
     const isXAxis = encoding.includes('xAxis')
+    const isEmpty = !encoding.length
 
     if (isYAxis) {
       yMeasures.push(item)
     } else if (isXAxis) {
       xMeasures.push(item)
-    } else {
+    } else if (isEmpty) {
       if (index !== 0) {
         yMeasures.push(item)
       } else {
         xMeasures.push(item)
       }
+    } else {
+      encodedMeasures.push(item)
     }
   }
 
@@ -57,7 +71,10 @@ const basicMeasuresToScatterMeasures = (basicMeasures: Measures): ScatterMeasure
     yMeasures.push(xMeasures[0])
   }
 
-  return [{ id: 'scatterMeasures', xMeasures, yMeasures }]
+  return {
+    scatterMeasures: [{ id: 'scatterMeasures', xMeasures, yMeasures }],
+    encodedMeasures,
+  }
 }
 
 const scatterMeasuresToMeasureTree = (scatterMeasures: ScatterMeasures): MeasureTree => {
@@ -105,6 +122,7 @@ const scatterMeasuresToMeasureTree = (scatterMeasures: ScatterMeasures): Measure
 
 const generateMeasuresByParentId = (measures: Measures) => {
   const scatterMeasures: ScatterMeasures = []
+  const encodedMeasures: Measures = []
 
   measures.forEach((item) => {
     const id = item.parentId || DEFAULT_PARENT_ID
@@ -135,8 +153,18 @@ const generateMeasuresByParentId = (measures: Measures) => {
       } else {
         scatterChart.xMeasures.push(item)
       }
+    } else {
+      encodedMeasures.push(item)
     }
   })
 
-  return scatterMeasuresToMeasureTree(scatterMeasures)
+  const res = scatterMeasuresToMeasureTree(scatterMeasures)
+
+  if (encodedMeasures.length) {
+    encodedMeasures.forEach((m) => {
+      res.push(m)
+    })
+  }
+
+  return res
 }

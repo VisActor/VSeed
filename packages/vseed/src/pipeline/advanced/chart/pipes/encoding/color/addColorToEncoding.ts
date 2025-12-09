@@ -10,7 +10,9 @@ import type { Dimensions, Encoding } from 'src/types'
  */
 export const addColorToEncoding = (dimensions: Dimensions, encoding: Encoding, isMultiMeasure: boolean) => {
   encoding.color = unique(dimensions.filter((item) => item.encoding === 'color').map((item) => item.id))
+
   const measureId = dimensions.find((item) => item.id === MeasureId)
+
   if (isMultiMeasure && measureId && !measureId.encoding) {
     encoding.color.push(MeasureId)
   }

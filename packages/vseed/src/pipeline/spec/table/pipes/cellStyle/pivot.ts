@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import type { IIndicator, PivotTableConstructorOptions } from '@visactor/vtable'
 import { array } from '@visactor/vutils'
 import { isNullish, isString } from 'remeda'
@@ -16,6 +17,7 @@ export const pivotTableBodyCell: PivotTableSpecPipe = (spec, context) => {
   }
   const bodyCellStyleList = array(bodyCellStyle) as BodyCellStyle[]
   const indicators = (spec as PivotTableConstructorOptions).indicators || []
+  const selectedPos: { col: number; row: number }[] = []
 
   const newIndicators = indicators.map((ind) => {
     const newInd = isString(ind)
@@ -46,6 +48,10 @@ export const pivotTableBodyCell: PivotTableSpecPipe = (spec, context) => {
 
       const mergedStyle = bodyCellStyleList.reduce<Record<string, any>>((result, style) => {
         if (selector(originalDatum, style.selector)) {
+          selectedPos.push({
+            col: datum?.col,
+            row: datum?.row,
+          })
           return {
             ...result,
             ...pickBodyCellStyle(style),
@@ -61,6 +67,10 @@ export const pivotTableBodyCell: PivotTableSpecPipe = (spec, context) => {
   })
   return {
     ...spec,
+    runningConfig: {
+      ...((spec as any)?.runningConfig || {}),
+      selectedPos,
+    },
     indicators: newIndicators,
   } as PivotTableConstructorOptions
 }

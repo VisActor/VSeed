@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import type { ListTableConstructorOptions, ColumnDefine } from '@visactor/vtable'
 import { array } from '@visactor/vutils'
 import { isNullish, isNumber, isPlainObject, isString } from 'remeda'
@@ -17,6 +18,7 @@ export const tableBodyCell: ListTableSpecPipe = (spec, context) => {
   }
   const bodyCellStyleList = array(bodyCellStyle) as BodyCellStyle[]
   const columns = (spec as ListTableConstructorOptions).columns || []
+  const selectedPos: { col: number; row: number }[] = []
   const setStyleOfColumn = (col: ColumnDefine) => {
     const field = col.field as string
     const matchedStyles = bodyCellStyleList.filter((style) => {
@@ -43,6 +45,10 @@ export const tableBodyCell: ListTableSpecPipe = (spec, context) => {
 
       const mergedStyle = matchedStyles.reduce<Record<string, any>>((result, style) => {
         if (selector(originalDatum, style.selector)) {
+          selectedPos.push({
+            col: datum?.col,
+            row: datum?.row,
+          })
           return {
             ...result,
             ...pickBodyCellStyle(style),
@@ -58,6 +64,10 @@ export const tableBodyCell: ListTableSpecPipe = (spec, context) => {
   }
 
   preorderTraverse<ColumnDefine, 'columns'>(columns, setStyleOfColumn, 'columns')
+  ;(spec as any).runningConfig = {
+    ...((spec as any).runningConfig || {}),
+    selectedPos,
+  }
 
   return spec as ListTableConstructorOptions
 }

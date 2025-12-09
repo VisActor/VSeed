@@ -5,7 +5,7 @@ import {
   measureTreeToColumns,
   bodyStyle,
   headerStyle,
-  frameStyle,
+  tableThemeStyle,
   selectionStyle,
   tableBodyCell,
 } from '../pipes'
@@ -16,7 +16,7 @@ export const tableSpecPipeline: SpecPipeline = [
   measureTreeToColumns,
   bodyStyle,
   headerStyle,
-  frameStyle,
+  tableThemeStyle,
   selectionStyle,
   tableBodyCell,
 ]

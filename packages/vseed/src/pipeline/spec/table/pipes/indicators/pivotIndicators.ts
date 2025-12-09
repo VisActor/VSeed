@@ -8,7 +8,6 @@ export const pivotIndicators: PivotTableSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { measures, datasetReshapeInfo } = advancedVSeed
   const { foldInfo } = datasetReshapeInfo[0]
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
   const hasRow = ((spec as any)?.rows as any[])?.length > 0
   const foldMapValues = Object.values(foldInfo.foldMap)
 

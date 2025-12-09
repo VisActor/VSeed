@@ -26,7 +26,7 @@ export const updateTooltipElement = (tooltipElement: any, actualTooltip: any) =>
   if (!tooltipElement || !tooltipElement.querySelector || !actualTooltip) {
     return
   }
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const shapeContainer = tooltipElement.querySelector('.vchart-tooltip-shape-column')
 
   if (!shapeContainer) {
@@ -64,7 +64,7 @@ export const updateTooltipElement = (tooltipElement: any, actualTooltip: any) =>
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const title = tooltipElement.querySelector('.vchart-tooltip-title')
 
   if (title) {
@@ -76,7 +76,7 @@ export const updateMarkTooltipElement = (tooltipElement: any, actualTooltip: any
   if (!tooltipElement || !tooltipElement.querySelector || !actualTooltip) {
     return
   }
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const shapeContainer = tooltipElement.querySelector('.vchart-tooltip-shape-column')
 
   if (!shapeContainer) {

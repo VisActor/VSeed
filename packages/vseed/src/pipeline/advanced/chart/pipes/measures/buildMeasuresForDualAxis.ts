@@ -43,16 +43,16 @@ const basicMeasuresToDualMeasures = (basicMeasures: Measures) => {
 
   for (let index = 0; index < basicMeasures.length; index++) {
     const item = basicMeasures[index]
-    const encoding = Array.isArray(item.encoding) ? item.encoding : [item.encoding]
-    const isPrimaryYAxis = encoding.includes('primaryYAxis')
-    const isSecondaryYAxis = encoding.includes('secondaryYAxis')
-    const isEmpty = !item.encoding
+    const encoding = item.encoding
+    const isPrimaryYAxis = encoding === 'primaryYAxis'
+    const isSecondaryYAxis = encoding === 'secondaryYAxis'
+    const isOtherEncoding = item.encoding && ['color', 'label', 'tooltip', 'detail'].includes(item.encoding)
 
     if (isPrimaryYAxis) {
       primaryMeasures.push(item)
     } else if (isSecondaryYAxis) {
       secondaryMeasures.push(item)
-    } else if (isEmpty) {
+    } else if (!isOtherEncoding) {
       if (index === 0) {
         primaryMeasures.push(item)
       } else {

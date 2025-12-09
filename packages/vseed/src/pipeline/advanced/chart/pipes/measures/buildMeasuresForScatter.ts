@@ -47,16 +47,16 @@ const basicMeasuresToScatterMeasures = (basicMeasures: Measures) => {
 
   for (let index = 0; index < basicMeasures.length; index++) {
     const item = basicMeasures[index]
-    const encoding = Array.isArray(item.encoding) ? item.encoding : [item.encoding]
-    const isYAxis = encoding.includes('yAxis')
-    const isXAxis = encoding.includes('xAxis')
-    const isEmpty = !encoding.length
+    const encoding = item.encoding
+    const isYAxis = encoding === 'yAxis'
+    const isXAxis = encoding === 'xAxis'
+    const isOther = encoding && ['color', 'label', 'tooltip', 'detail'].includes(encoding)
 
     if (isYAxis) {
       yMeasures.push(item)
     } else if (isXAxis) {
       xMeasures.push(item)
-    } else if (isEmpty) {
+    } else if (!isOther) {
       if (index !== 0) {
         yMeasures.push(item)
       } else {

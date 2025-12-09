@@ -1,7 +1,7 @@
 import type { PivotTableSpecPipe, TableConfig } from 'src/types'
 import type { ThemeLike, WithTheme } from './type'
 
-export const frameStyle: PivotTableSpecPipe = (spec, context) => {
+export const tableThemeStyle: PivotTableSpecPipe = (spec, context) => {
   const result = { ...spec } as Partial<typeof spec> & WithTheme
   const { advancedVSeed } = context
   const { config, chartType } = advancedVSeed
@@ -15,6 +15,10 @@ export const frameStyle: PivotTableSpecPipe = (spec, context) => {
     borderColor,
     borderLineWidth: 1,
     cornerRadius: 4,
+  }
+  result.theme.scrollStyle = {
+    visible: 'scrolling',
+    hoverOn: true,
   }
 
   return result

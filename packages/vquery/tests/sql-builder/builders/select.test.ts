@@ -19,6 +19,35 @@ describe('select', () => {
     expect(sql).toMatchInlineSnapshot(`"select "id" from "orders""`)
   })
 
+  it('only select', () => {
+    interface USER {
+      sales: number
+      profit: number
+    }
+
+    const sql = convertDSLToSQL<USER, 'demoDataset'>(
+      {
+        select: [
+          {
+            field: 'sales',
+            alias: 'Sum(sales)',
+            func: 'sum',
+          },
+          {
+            field: 'profit',
+            alias: 'Sum(profit)',
+            func: 'sum',
+          },
+        ],
+        limit: 1000,
+      },
+      'demoDataset',
+    )
+    expect(sql).toMatchInlineSnapshot(
+      `"select sum("sales") as "Sum(sales)", sum("profit") as "Sum(profit)" from "demoDataset" limit 1000"`,
+    )
+  })
+
   it('func', () => {
     interface USER {
       id: number

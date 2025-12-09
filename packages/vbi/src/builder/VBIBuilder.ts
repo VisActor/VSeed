@@ -3,7 +3,7 @@ import { VBIConnector } from '../types/connector'
 import { VBIConnectorId } from '../types/connector/connector'
 import { VBIDSL } from '../types/dsl'
 import { VBIBuilderInterface } from '../types/builder/VBIInterface'
-import { MeasuresBuilder } from './subBuilders'
+import { MeasuresBuilder, DimensionsBuilder } from './subBuilders'
 import { BuilderContext } from './context'
 import { buildVQuery } from 'src/pipeline'
 
@@ -11,10 +11,12 @@ export class VBIBuilder implements VBIBuilderInterface {
   private _vbiDSL: VBIDSL
 
   measures: MeasuresBuilder
+  dimensions: DimensionsBuilder
   constructor(private vbi: VBIDSL) {
     this._vbiDSL = vbi
     const context = BuilderContext.from(this)
     this.measures = MeasuresBuilder.from(vbi.measures || [], context)
+    this.dimensions = DimensionsBuilder.from(vbi.dimensions || [], context)
   }
 
   public buildVSeed = async () => {
@@ -40,6 +42,7 @@ export class VBIBuilder implements VBIBuilderInterface {
     const result = {
       ...this._vbiDSL,
       measures: this.measures.build(),
+      dimensions: this.dimensions.build(),
     }
     return result
   }

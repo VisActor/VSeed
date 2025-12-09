@@ -9,6 +9,7 @@ describe('MeasuresBuilder', () => {
 
     expect(builder.build()).toMatchInlineSnapshot(`
       {
+        "dimensions": [],
         "measures": [
           {
             "aggregate": {
@@ -36,6 +37,7 @@ describe('MeasuresBuilder', () => {
 
     expect(builder.build()).toMatchInlineSnapshot(`
       {
+        "dimensions": [],
         "measures": [
           {
             "aggregate": {

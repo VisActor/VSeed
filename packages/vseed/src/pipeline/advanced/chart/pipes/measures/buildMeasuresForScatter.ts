@@ -139,15 +139,15 @@ const generateMeasuresByParentId = (measures: Measures) => {
       return
     }
 
-    const encoding = Array.isArray(item.encoding) ? item.encoding : [item.encoding].filter(Boolean)
-    const isX = encoding.includes('xAxis')
-    const isY = encoding.includes('yAxis')
-    const isEmpty = !encoding.length
-    if (isY) {
+    const isYAxis = item.encoding === 'yAxis'
+    const isXAxis = item.encoding === 'xAxis'
+    const isOther = item.encoding && ['color', 'label', 'tooltip', 'detail'].includes(item.encoding)
+
+    if (isYAxis) {
       scatterChart.yMeasures.push(item)
-    } else if (isX) {
+    } else if (isXAxis) {
       scatterChart.xMeasures.push(item)
-    } else if (isEmpty) {
+    } else if (!isOther) {
       if (scatterChart.yMeasures.length !== 0) {
         scatterChart.yMeasures.push(item)
       } else {

@@ -131,16 +131,16 @@ const generateMeasuresByParentId = (measures: Measures) => {
       return
     }
 
-    const encoding = Array.isArray(item.encoding) ? item.encoding : [item.encoding].filter(Boolean)
-    const isPrimary = encoding.includes('primaryYAxis')
-    const isSecondary = encoding.includes('secondaryYAxis')
-    const isEmpty = !item.encoding
+    const encoding = item.encoding
+    const isPrimaryYAxis = encoding === 'primaryYAxis'
+    const isSecondaryYAxis = encoding === 'secondaryYAxis'
+    const isOtherEncoding = item.encoding && ['color', 'label', 'tooltip', 'detail'].includes(item.encoding)
 
-    if (isPrimary) {
+    if (isPrimaryYAxis) {
       dualChart.primaryMeasures.push(item)
-    } else if (isSecondary) {
+    } else if (isSecondaryYAxis) {
       dualChart.secondaryMeasures.push(item)
-    } else if (isEmpty) {
+    } else if (!isOtherEncoding) {
       if (dualChart.primaryMeasures.length === 0) {
         dualChart.primaryMeasures.push(item)
       } else {

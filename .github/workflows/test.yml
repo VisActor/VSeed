@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [22.x]
 
     steps:
       - name: Checkout code
@@ -41,11 +41,11 @@ jobs:
 
   integration-test:
     name: Integration Tests
-    runs-on: macos-13
+    runs-on: macOS-15
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [22.x]
 
     steps:
       - name: Checkout code

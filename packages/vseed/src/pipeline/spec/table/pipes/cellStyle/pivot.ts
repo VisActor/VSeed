@@ -48,6 +48,10 @@ export const pivotTableBodyCell: PivotTableSpecPipe = (spec, context) => {
 
       const mergedStyle = bodyCellStyleList.reduce<Record<string, any>>((result, style) => {
         if (selector(originalDatum, style.selector)) {
+          if (selectedPos.length && selectedPos[0].col === datum?.col && selectedPos[0].row === datum?.row) {
+            // 说明重复进入了，清空历史
+            selectedPos.length = 0
+          }
           selectedPos.push({
             col: datum?.col,
             row: datum?.row,

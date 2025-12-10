@@ -42,7 +42,7 @@ export const pivotAxisStyle = (axisStyle: VChartSpecPipe): VChartSpecPipe => {
             axis.label.flush = true
           }
 
-          if (encoding.color && encoding.color.length && !encoding.color.includes(MeasureId)) {
+          if (axis.title.text && encoding.color && encoding.color.length && !encoding.color.includes(MeasureId)) {
             axis.title.visible = true
           }
         }

@@ -45,8 +45,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/vseed
       '@visactor/vtable':
-        specifier: 1.22.7-alpha.5
-        version: 1.22.7-alpha.5
+        specifier: 1.22.7
+        version: 1.22.7
       rspress:
         specifier: 1.45.3
         version: 1.45.3(webpack@5.101.0)
@@ -199,8 +199,8 @@ importers:
         specifier: 2.0.11-alpha.5
         version: 2.0.11-alpha.5
       '@visactor/vtable':
-        specifier: 1.22.7-alpha.5
-        version: 1.22.7-alpha.5
+        specifier: 1.22.7
+        version: 1.22.7
       '@vitest/coverage-istanbul':
         specifier: 3.2.4
         version: 3.2.4(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.10.1)(jiti@2.6.1)(jsdom@26.1.0)(sass-embedded@1.91.0)(sass@1.91.0)(terser@5.43.1)(yaml@2.8.1))
@@ -2015,11 +2015,11 @@ packages:
   '@visactor/vscale@1.0.12':
     resolution: {integrity: sha512-Mx81QatZKAWWcfX2BfX25jZRLwXVdWNt92PtA7hwVs8HplXA+ZcEvSQbZkma/ssZ66ijgSlWUQOlxJ87ZY0FBw==}
 
-  '@visactor/vtable-editors@1.22.7-alpha.5':
-    resolution: {integrity: sha512-wQXFk8KccxvQAYb4Q67lg2nX+0nYBPBeF9HXOK9ET1BPrrf1RpKLUhLqouP5nNq48UkZaJ+8cx/ICcXrbVEJWQ==}
+  '@visactor/vtable-editors@1.22.7':
+    resolution: {integrity: sha512-kyXH+4TeJXpRt/6Y/i8056j6nUP3NGF0EU8Zo1ngL31+478mfsgNhu3FIg5duTZYdxLwYoRYTAW2yz3EfPK+OQ==}
 
-  '@visactor/vtable@1.22.7-alpha.5':
-    resolution: {integrity: sha512-lHkDimua7B8Bp2aHbsLSRjMNWK/stnTvFE6RSbzHUlVO5rltg30EZO9EK8vW9/cNmNMDgWpZAjCc1KcGKzR+cQ==}
+  '@visactor/vtable@1.22.7':
+    resolution: {integrity: sha512-vwObILlGtKLCu9WT7TpbXuEhUTR3dJXZiBT2Q/T4/F8PGgUqOr172hYwBTwTnQDKYSq6+4j33Ry/vQ29kAg3NQ==}
 
   '@visactor/vutils-extension@1.11.14':
     resolution: {integrity: sha512-vfViZphXJBH0NwCHIoe8S1/+tDtykEKIfsLMIHprh7Azv7fVSB1eotG00SAegK75E18ARQGNXF1DxixUFiXSIQ==}
@@ -7823,9 +7823,9 @@ snapshots:
     dependencies:
       '@visactor/vutils': 1.0.12
 
-  '@visactor/vtable-editors@1.22.7-alpha.5': {}
+  '@visactor/vtable-editors@1.22.7': {}
 
-  '@visactor/vtable@1.22.7-alpha.5':
+  '@visactor/vtable@1.22.7':
     dependencies:
       '@visactor/vdataset': 0.18.18
       '@visactor/vrender-animate': 1.0.31
@@ -7833,7 +7833,7 @@ snapshots:
       '@visactor/vrender-core': 1.0.31
       '@visactor/vrender-kits': 1.0.31
       '@visactor/vscale': 0.18.18
-      '@visactor/vtable-editors': 1.22.7-alpha.5
+      '@visactor/vtable-editors': 1.22.7
       '@visactor/vutils': 0.19.7
       '@visactor/vutils-extension': 1.11.14
       cssfontparser: 1.2.1

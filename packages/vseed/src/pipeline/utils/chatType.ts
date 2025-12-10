@@ -1,5 +1,5 @@
 import { type Dimensions, type DimensionGroup, type DimensionTree, type VSeed, type Measure } from 'src/types'
-import { measureDepth } from './measures'
+import { isPositionMeasure, measureDepth } from './measures'
 import { isMeasureTreeWithChildren, isMeasureTreeWithParentId } from '../advanced/chart/pipes/measures/utils'
 import { unique } from 'remeda'
 import { ChartTypeEnum, DEFAULT_PARENT_ID } from './constant'
@@ -67,12 +67,15 @@ export const isPivot = (vseed: VSeed) => {
 
   return dimensions && dimensions.some((dimension) => dimension.encoding === 'row' || dimension.encoding === 'column')
 }
+
 /**
  * @description 不存在column 或 row的encoding, 但是有多组指标的情况
  */
 export const isCombination = (vseed: VSeed) => {
   if (isMeasureTreeWithParentId(vseed.measures)) {
-    const parentIds = vseed.measures?.map((measure: Measure) => measure.parentId || DEFAULT_PARENT_ID)
+    const parentIds = vseed.measures
+      ?.filter(isPositionMeasure)
+      .map((measure: Measure) => measure.parentId || DEFAULT_PARENT_ID)
     return parentIds && unique(parentIds).length > 1
   }
 

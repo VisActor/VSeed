@@ -9,7 +9,7 @@ export const pivotAxisStyle = (axisStyle: VChartSpecPipe): VChartSpecPipe => {
 
     if (result.axes) {
       const { advancedVSeed } = context
-      const { config, chartType, encoding } = advancedVSeed
+      const { config, chartType, encoding, reshapeMeasures } = advancedVSeed
       const themConfig = (config?.[chartType] as Config['line'])?.pivotGrid ?? {}
 
       result.axes.forEach((axis: any) => {
@@ -42,7 +42,14 @@ export const pivotAxisStyle = (axisStyle: VChartSpecPipe): VChartSpecPipe => {
             axis.label.flush = true
           }
 
-          if (axis.title.text && encoding.color && encoding.color.length && !encoding.color.includes(MeasureId)) {
+          if (
+            reshapeMeasures &&
+            reshapeMeasures.length > 1 &&
+            axis.title.text &&
+            encoding.color &&
+            encoding.color.length &&
+            !encoding.color.includes(MeasureId)
+          ) {
             axis.title.visible = true
           }
         }

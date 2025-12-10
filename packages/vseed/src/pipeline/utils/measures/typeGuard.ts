@@ -11,3 +11,7 @@ export const isMeasureGroup = (measure: Measure | MeasureGroup): measure is Meas
 export const isMeasures = (measures: Measure[] | MeasureGroup[]): measures is Measure[] => {
   return measures.every(isMeasure)
 }
+
+export const isPositionMeasure = (measure: Measure): boolean => {
+  return !measure.encoding || !['color', 'size', 'label', 'tooltip', 'detail'].includes(measure.encoding)
+}

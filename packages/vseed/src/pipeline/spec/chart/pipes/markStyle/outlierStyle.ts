@@ -12,6 +12,7 @@ export const outlierStyle: VChartSpecPipe = (spec, context) => {
     ...spec,
     outlier: {
       style: {
+        stroke: theme?.pointColor,
         fill: theme?.pointColor,
       },
     },

@@ -1,10 +1,21 @@
 import { pipe, uniqueBy, isNullish } from 'remeda'
-import { createFormatterByMeasure, findAllMeasures } from '../../../../utils'
-import type { Dimension, Dimensions, Encoding, VChartSpecPipe, Tooltip } from 'src/types'
+import { createFormatterByMeasure, findAllMeasures, findMeasureById } from '../../../../utils'
+import type {
+  Dimension,
+  Dimensions,
+  Encoding,
+  VChartSpecPipe,
+  Tooltip,
+  Measures,
+  FoldInfo,
+  UnfoldInfo,
+} from 'src/types'
 import type { Datum, ISpec, ITooltipLinePattern, ITooltipLineActual, TooltipData } from '@visactor/vchart'
 import {
   ColorEncoding,
   LowerWhisker,
+  MeasureId,
+  MeasureName,
   MedianMeasureId,
   OutliersMeasureId,
   Q1MeasureValue,
@@ -22,7 +33,7 @@ const VCHART_OUTLIER_KEY = '__VCHART_BOX_PLOT_OUTLIER_VALUE'
 export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
-  const { chartType, dimensions, encoding } = advancedVSeed
+  const { chartType, dimensions, encoding, datasetReshapeInfo } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType as 'boxPlot'] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
@@ -36,6 +47,10 @@ export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
     [MedianMeasureId]: intl.i18n`中位数`,
     [Q1MeasureValue]: intl.i18n`下四分位数`,
     [LowerWhisker]: intl.i18n`下边界`,
+  }
+  const { unfoldInfo } = datasetReshapeInfo[0] as unknown as {
+    foldInfo: FoldInfo
+    unfoldInfo: UnfoldInfo
   }
 
   result.tooltip = {
@@ -62,6 +77,10 @@ export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
             value: formatter(datum?.[VCHART_OUTLIER_KEY] as number) as string,
           } as ITooltipLineActual)
 
+          tooltipItems.forEach((item) => {
+            item.shapeFill = item.shapeStroke
+          })
+
           return tooltipItems
         }
 
@@ -70,7 +89,6 @@ export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
             const mea = meas.find((item) => item.id === (entry as any).key)
             const formatter = mea ? createFormatterByMeasure(mea) : defaultFormatter
 
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
             return {
               ...(entry as any),
               value: formatter(datum?.[(entry as any).key] as number) as string,
@@ -83,7 +101,10 @@ export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
       },
     },
     dimension: {
-      visible: false,
+      title: {
+        visible: true,
+      },
+      content: createDimensionContent(dimensions, meas, unfoldInfo, measureAliasMapping[MedianMeasureId]),
     },
     updateElement: updateTooltipElement,
   }
@@ -132,4 +153,42 @@ const createMarkContent = (tooltip: string[], dimensions: Dimensions, encoding: 
   })
 
   return [...dimContent, defaultContent] as ITooltipLinePattern[]
+}
+
+const createDimensionContent = (
+  dimensions: Dimensions,
+  measures: Measures,
+  unfoldInfo: UnfoldInfo,
+  medianAlias: string,
+) => {
+  const { encodingColor } = unfoldInfo
+
+  return [
+    {
+      visible: true,
+      shapeType: 'rectRound',
+      hasShape: true,
+      key: dimensions.some((d) => d.encoding === 'color')
+        ? (v: unknown) => {
+            const datum = v as Datum
+            const key = (datum && (datum[encodingColor] as string)) || ''
+            return `${unfoldInfo.colorIdMap[key].alias ?? key}(${medianAlias})`
+          }
+        : (v: unknown) => {
+            const datum = v as Datum
+            return `${datum[MeasureName] ?? datum[MeasureId]}(${medianAlias})`
+          },
+      value: (v: unknown) => {
+        const datum = v as Datum
+        if (!datum) {
+          return ''
+        }
+        const value = datum[MedianMeasureId] as string | number // dimension tooltip 中默认显示中位数
+        const id = datum[MeasureId] as string
+        const measure = findMeasureById(measures, id)
+        const formatter = createFormatterByMeasure(measure)
+        return formatter(value)
+      },
+    },
+  ]
 }

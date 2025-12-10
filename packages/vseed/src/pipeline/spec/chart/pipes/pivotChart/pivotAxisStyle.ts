@@ -1,4 +1,5 @@
 import type { ILineChartSpec } from '@visactor/vchart'
+import { MeasureId } from 'src/dataReshape'
 import { BAND_AXIS_INNER_OFFSET_IN_PIVOT } from 'src/pipeline/utils/constant'
 import type { Config, VChartSpecPipe } from 'src/types'
 
@@ -8,7 +9,7 @@ export const pivotAxisStyle = (axisStyle: VChartSpecPipe): VChartSpecPipe => {
 
     if (result.axes) {
       const { advancedVSeed } = context
-      const { config, chartType } = advancedVSeed
+      const { config, chartType, encoding } = advancedVSeed
       const themConfig = (config?.[chartType] as Config['line'])?.pivotGrid ?? {}
 
       result.axes.forEach((axis: any) => {
@@ -39,6 +40,10 @@ export const pivotAxisStyle = (axisStyle: VChartSpecPipe): VChartSpecPipe => {
         } else if (axis.type === 'linear') {
           if (axis.orient === 'top' || axis.orient === 'bottom') {
             axis.label.flush = true
+          }
+
+          if (encoding.color && encoding.color.length && !encoding.color.includes(MeasureId)) {
+            axis.title.visible = true
           }
         }
       })

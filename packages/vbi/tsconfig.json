@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "lib": ["ES2022"],
+    "lib": ["ES2021", "DOM"],
     "module": "ESNext",
-    "noEmit": true,
+    "noEmit": false,
+    "emitDeclarationOnly": true,
     "strict": true,
     "skipLibCheck": true,
     "isolatedModules": true,
@@ -10,10 +11,13 @@
     "moduleResolution": "bundler",
     "useDefineForClassFields": true,
     "allowImportingTsExtensions": true,
+    "composite": true,
+    "outDir": "dist",
+    "rootDir": "./src",
     "baseUrl": ".",
     "paths": {
-      "src/*": ["src/*"]
+      "src/*": ["./src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "src/**/*.json"]
 }

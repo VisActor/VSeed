@@ -5,15 +5,18 @@
   "exports": {
     ".": {
       "node": {
+        "source": "./src/node.ts",
         "types": "./dist/node/esm/node.d.ts",
         "import": "./dist/node/esm/node.js",
         "require": "./dist/node/cjs/node.cjs"
       },
       "browser": {
+        "source": "./src/browser.ts",
         "types": "./dist/browser/esm/browser.d.ts",
         "import": "./dist/browser/esm/browser.js"
       },
       "default": {
+        "source": "./src/browser.ts",
         "types": "./dist/browser/esm/browser.d.ts",
         "import": "./dist/browser/esm/browser.js"
       }

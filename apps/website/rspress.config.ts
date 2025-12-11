@@ -65,6 +65,13 @@ export default defineConfig({
     exclude: ['components/**/*'],
   },
   builderConfig: {
+    tools: {
+      rspack: {
+        resolve: {
+          conditionNames: ['source', '...'],
+        },
+      },
+    },
     server: {
       open: true,
     },

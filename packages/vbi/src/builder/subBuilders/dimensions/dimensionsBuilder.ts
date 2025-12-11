@@ -1,4 +1,4 @@
-import { preorderTraverse } from 'src/utils/tree/traverse'
+import { preorderTraverse } from '../../../utils'
 import { VBIDimension, VBIDimensionGroup, VBIDimensionTree } from 'src/types/dsl'
 import { DimensionNodeBuilder } from './dimensionNodeBuilder'
 import { BuilderContext } from 'src/builder'

@@ -1,4 +1,4 @@
-import { preorderTraverse } from 'src/utils/tree/traverse'
+import { preorderTraverse } from '../../../utils'
 import { VBIMeasure, VBIMeasureGroup, VBIMeasureTree } from '../../../types'
 import { MeasureNodeBuilder } from './measureNodeBuilder'
 import { BuilderContext } from 'src/builder'

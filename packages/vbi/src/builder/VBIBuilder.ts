@@ -5,7 +5,7 @@ import { VBIDSL } from '../types/dsl'
 import { VBIBuilderInterface } from '../types/builder/VBIInterface'
 import { MeasuresBuilder, DimensionsBuilder } from './subBuilders'
 import { BuilderContext } from './context'
-import { buildVQuery } from 'src/pipeline'
+import { buildVQuery } from '../pipeline'
 
 export class VBIBuilder implements VBIBuilderInterface {
   private _vbiDSL: VBIDSL

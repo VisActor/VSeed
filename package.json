@@ -10,12 +10,11 @@
   "author": "visactor",
   "description": "VSeed, an elegant data composer, transforming complexity into simplicity.",
   "scripts": {
-    "dev": "pnpm run dev:docs",
+    "dev": "pnpm --filter=website run dev",
     "build": "pnpm run build:all",
     "format": "pnpm prettier --write .",
     "lint": "pnpm -r --color --parallel lint",
     "type-check": "pnpm -r --color --parallel type-check && pnpm --filter=vseed-llm-test run generate",
-    "dev:docs": "turbo dev --filter=!/tools/*",
     "dev:rsdoctor": "pnpm --filter=@visactor/vseed run dev:rsdoctor",
     "build:all": "turbo build --filter=!/tools/*",
     "build:vseed": "pnpm --filter=@visactor/vseed run build",

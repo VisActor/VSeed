@@ -59,4 +59,24 @@ export type LinearRegressionLine = {
    * @example 0.5
    */
   confidenceIntervalOpacity?: number
+  /**
+   * @description 图形模糊效果程度
+   * @example 0
+   */
+  shadowBlur?: number
+  /**
+   * @description 图形的阴影颜色
+   * @example '#FFFFFF4D'
+   */
+  shadowColor?: string
+  /**
+   * @description 阴影水平偏移距离
+   * @example 0
+   */
+  shadowOffsetX?: number
+  /**
+   * @description 阴影垂直偏移距离
+   * @example 1
+   */
+  shadowOffsetY?: number
 }

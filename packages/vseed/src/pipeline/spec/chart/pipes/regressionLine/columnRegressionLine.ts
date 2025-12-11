@@ -41,6 +41,10 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
       textFontWeight,
       confidenceIntervalOpacity,
       confidenceLevel = 0.95,
+      shadowBlur,
+      shadowColor,
+      shadowOffsetX,
+      shadowOffsetY,
       confidenceIntervalVisible = theme.confidenceIntervalVisible,
     } = line as LinearRegressionLine
 
@@ -78,7 +82,6 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
               return null
             }
 
-            // eslint-disable-next-line @typescript-eslint/unbound-method
             const { confidenceInterval, evaluateGrid } = regressionPolynomial(
               xValues.map((xVal, index: number) => {
                 const filteredData = data.filter((d) => d[fieldX] === xVal)
@@ -143,6 +146,7 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
         zIndex: 500,
         dataId: (spec.data as any)?.id,
         style: {
+          stroke: false,
           lineWidth: lineWidth ?? theme.lineWidth,
           lineDash: lineDash ?? theme.lineDash,
           fillOpacity: confidenceIntervalOpacity ?? theme.confidenceIntervalOpacity,
@@ -151,7 +155,6 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
             const parentNode = opt.mark?._product?.parent
 
             if (parentNode?.attribute?.data) {
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-return
               return parentNode.attribute.data.areaPoints
             }
 
@@ -170,11 +173,14 @@ export const columnPolynomialRegressionLine: VChartSpecPipe = (spec, context): P
         lineWidth: lineWidth ?? theme.lineWidth,
         lineDash: lineDash ?? theme.lineDash,
         stroke: color ?? defaultRegressionLineColor,
+        shadowBlur: shadowBlur ?? theme.shadowBlur,
+        shadowColor: shadowColor ?? theme.shadowColor,
+        shadowOffsetX: shadowOffsetX ?? theme.shadowOffsetX,
+        shadowOffsetY: shadowOffsetY ?? theme.shadowOffsetY,
         points: (datum: any, ctx: any, opt: any) => {
           const parentNode = opt.mark?._product?.parent
 
           if (parentNode?.attribute?.data) {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
             return parentNode.attribute.data.linePoints
           }
 

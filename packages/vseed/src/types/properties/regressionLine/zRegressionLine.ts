@@ -17,6 +17,10 @@ export const zLinearRegressionLine = zEcdfRegressionLine.extend({
   confidenceIntervalVisible: z.boolean().nullish(),
   confidenceIntervalColor: z.string().nullish(),
   confidenceIntervalOpacity: z.number().nullish(),
+  shadowBlur: z.number().nullish(),
+  shadowColor: z.string().nullish(),
+  shadowOffsetX: z.number().nullish(),
+  shadowOffsetY: z.number().nullish(),
 })
 
 export const zLogisticRegressionLine = zLinearRegressionLine.extend({})

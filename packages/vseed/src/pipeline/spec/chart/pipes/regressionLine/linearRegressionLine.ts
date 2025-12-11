@@ -65,6 +65,10 @@ export const generateRegressionLinePipe = (
         textFontSize,
         textFontWeight,
         confidenceIntervalOpacity,
+        shadowBlur,
+        shadowColor,
+        shadowOffsetX,
+        shadowOffsetY,
         confidenceIntervalVisible = theme.confidenceIntervalVisible,
       } = line as LinearRegressionLine
 
@@ -201,7 +205,6 @@ export const generateRegressionLinePipe = (
                 const data = parentNode.finalAttribute?.data ?? parentNode.attribute?.data
 
                 if (data?.length) {
-                  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
                   return data.map((d: any) => {
                     return {
                       points: d.areaPoints ?? [],
@@ -227,13 +230,16 @@ export const generateRegressionLinePipe = (
           lineWidth: lineWidth ?? theme.lineWidth,
           lineDash: lineDash ?? theme.lineDash,
           stroke: 'red', // vrender bug，必须要设置一个全局的stroke，才会绘制
+          shadowBlur: shadowBlur ?? theme.shadowBlur,
+          shadowColor: shadowColor ?? theme.shadowColor,
+          shadowOffsetX: shadowOffsetX ?? theme.shadowOffsetX,
+          shadowOffsetY: shadowOffsetY ?? theme.shadowOffsetY,
           segments: (datum: any, ctx: any, opt: any) => {
             const parentNode = opt.mark?._product?.parent
 
             if (parentNode) {
               const data = parentNode.finalAttribute?.data ?? parentNode.attribute?.data
               if (data?.length) {
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
                 return data.map((d: any) => {
                   return {
                     points: d.linePoints,

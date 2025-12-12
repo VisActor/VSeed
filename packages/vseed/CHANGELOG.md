@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.2.8
+
+### Patch Changes
+
+- Update vchart version by boxplot fix and style update
+
 ## 0.2.7
 
 ### Patch Changes

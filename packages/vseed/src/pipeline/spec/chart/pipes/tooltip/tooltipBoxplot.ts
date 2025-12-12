@@ -77,10 +77,6 @@ export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
             value: formatter(datum?.[VCHART_OUTLIER_KEY] as number) as string,
           } as ITooltipLineActual)
 
-          tooltipItems.forEach((item) => {
-            item.shapeFill = item.shapeStroke
-          })
-
           return tooltipItems
         }
 

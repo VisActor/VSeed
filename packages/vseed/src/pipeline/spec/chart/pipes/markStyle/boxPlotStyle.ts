@@ -17,6 +17,10 @@ export const boxPlotStyle: VChartSpecPipe = (spec, context) => {
         visible: true,
         shaftWidth: '50%',
         stroke: theme?.boxBorderColor,
+        boxStroke: theme?.boxBorderColor,
+        whiskerStroke: theme?.whiskerBorderColor,
+        boxCornerRadius: theme?.boxCornerRadius,
+        medianStroke: theme?.medianBorderColor ?? theme?.boxBorderColor,
       },
     },
   } as IBoxPlotChartSpec

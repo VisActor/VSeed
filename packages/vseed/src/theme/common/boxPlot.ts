@@ -1,25 +1,41 @@
 import type { BoxPlotStyle, OutlierStyle } from 'src/types'
 
+const getCommonBoxPlotStyle = (): BoxPlotStyle => {
+  return {
+    boxCornerRadius: 6,
+  }
+}
+
 export const getLightBoxPlotStyle = (): BoxPlotStyle => {
   return {
-    boxBorderColor: '#e3e5eb',
+    ...getCommonBoxPlotStyle(),
+    boxBorderColor: '#00000042',
+    whiskerBorderColor: '#606773',
   }
 }
 
 export const getDarkBoxPlotStyle = (): BoxPlotStyle => {
   return {
-    boxBorderColor: '#4b4e53',
+    ...getCommonBoxPlotStyle(),
+    boxBorderColor: '#ffffff42',
+    whiskerBorderColor: '#E2E3E6',
+  }
+}
+const getCommonOutlierStyle = (): OutlierStyle => {
+  return {
+    pointBorderWidth: 2,
+    pointColor: 'transparent',
   }
 }
 
 export const getLightOutlierStyle = (): OutlierStyle => {
   return {
-    pointColor: '#8F959E',
+    ...getCommonOutlierStyle(),
   }
 }
 
 export const getDarkOutlierStyle = (): OutlierStyle => {
   return {
-    pointColor: '#36393e',
+    ...getCommonOutlierStyle(),
   }
 }

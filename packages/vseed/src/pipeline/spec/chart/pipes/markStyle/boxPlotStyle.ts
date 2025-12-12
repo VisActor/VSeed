@@ -18,7 +18,6 @@ export const boxPlotStyle: VChartSpecPipe = (spec, context) => {
         shaftWidth: '50%',
         stroke: theme?.boxBorderColor,
         boxStroke: theme?.boxBorderColor,
-        whiskerStroke: theme?.whiskerBorderColor,
         boxCornerRadius: theme?.boxCornerRadius,
         medianStroke: theme?.medianBorderColor ?? theme?.boxBorderColor,
       },
@@ -32,7 +31,15 @@ export const boxPlotStyle: VChartSpecPipe = (spec, context) => {
   const boxPlotStyles = (Array.isArray(boxPlotStyle) ? boxPlotStyle : [boxPlotStyle]) as BoxPlotStyle[]
 
   const customMap = boxPlotStyles.reduce<object>((result, style, index) => {
-    const { boxColor, boxColorOpacity, boxBorderColor, boxBorderWidth = 1, boxVisible = true, boxBorderOpacity } = style
+    const {
+      boxColor,
+      boxColorOpacity,
+      boxBorderColor,
+      boxBorderWidth = 1,
+      boxVisible = true,
+      boxBorderOpacity,
+      medianBorderColor,
+    } = style
 
     return {
       ...result,
@@ -50,8 +57,10 @@ export const boxPlotStyle: VChartSpecPipe = (spec, context) => {
           fill: boxColor,
           fillOpacity: boxColorOpacity,
           lineWidth: boxBorderWidth,
+          boxStroke: boxBorderColor,
           stroke: boxBorderColor,
           strokeOpacity: boxBorderOpacity,
+          medianStroke: medianBorderColor ?? boxBorderColor,
         },
       },
     }

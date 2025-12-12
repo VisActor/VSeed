@@ -10,7 +10,6 @@ export const getLightBoxPlotStyle = (): BoxPlotStyle => {
   return {
     ...getCommonBoxPlotStyle(),
     boxBorderColor: '#00000042',
-    whiskerBorderColor: '#606773',
   }
 }
 
@@ -18,7 +17,6 @@ export const getDarkBoxPlotStyle = (): BoxPlotStyle => {
   return {
     ...getCommonBoxPlotStyle(),
     boxBorderColor: '#ffffff42',
-    whiskerBorderColor: '#E2E3E6',
   }
 }
 const getCommonOutlierStyle = (): OutlierStyle => {

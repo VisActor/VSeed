@@ -54,12 +54,9 @@ export const outlierStyle: VChartSpecPipe = (spec, context) => {
           size: pointSize,
           fill: pointColor,
           fillOpacity: pointColorOpacity,
-          innerBorder: {
-            stroke: pointBorderColor,
-            lineWidth: pointBorderWidth,
-            distance: (pointBorderWidth || 0) / 2,
-            lineDash: lineDash,
-          },
+          stroke: pointBorderColor,
+          lineWidth: pointBorderWidth,
+          lineDash: lineDash,
         },
       },
     }

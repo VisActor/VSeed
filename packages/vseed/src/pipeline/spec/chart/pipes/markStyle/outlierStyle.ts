@@ -12,8 +12,10 @@ export const outlierStyle: VChartSpecPipe = (spec, context) => {
     ...spec,
     outlier: {
       style: {
-        stroke: theme?.pointColor,
+        // stroke: theme?.pointColor,
         fill: theme?.pointColor,
+        lineWidth: theme?.pointBorderWidth,
+        stroke: theme?.pointBorderColor,
       },
     },
   } as IBoxPlotChartSpec

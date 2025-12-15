@@ -78,6 +78,10 @@ export type BoxPlotStyle = {
    * @description 中位数线的颜色
    */
   medianBorderColor?: string
+  /**
+   * @description 盒须线的颜色
+   */
+  whiskerBorderColor?: string
 }
 
 export const zBoxPlotStyle = z.object({
@@ -90,4 +94,5 @@ export const zBoxPlotStyle = z.object({
   boxBorderOpacity: z.number().min(0).max(1).nullish(),
   boxCornerRadius: z.number().nullish(),
   medianBorderColor: z.string().nullish(),
+  whiskerBorderColor: z.string().nullish(),
 })

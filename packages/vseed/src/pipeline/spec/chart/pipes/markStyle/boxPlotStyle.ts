@@ -16,7 +16,7 @@ export const boxPlotStyle: VChartSpecPipe = (spec, context) => {
         shaftShape: 'filled-line',
         visible: true,
         shaftWidth: '50%',
-        stroke: theme?.boxBorderColor,
+        stroke: theme?.whiskerBorderColor,
         boxStroke: theme?.boxBorderColor,
         boxCornerRadius: theme?.boxCornerRadius,
         medianStroke: theme?.medianBorderColor ?? theme?.boxBorderColor,
@@ -39,6 +39,7 @@ export const boxPlotStyle: VChartSpecPipe = (spec, context) => {
       boxVisible = true,
       boxBorderOpacity,
       medianBorderColor,
+      whiskerBorderColor,
     } = style
 
     return {
@@ -57,8 +58,8 @@ export const boxPlotStyle: VChartSpecPipe = (spec, context) => {
           fill: boxColor,
           fillOpacity: boxColorOpacity,
           lineWidth: boxBorderWidth,
+          stroke: whiskerBorderColor,
           boxStroke: boxBorderColor,
-          stroke: boxBorderColor,
           strokeOpacity: boxBorderOpacity,
           medianStroke: medianBorderColor ?? boxBorderColor,
         },

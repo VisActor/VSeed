@@ -1,0 +1,11 @@
+{
+  "mode": "pre",
+  "tag": "alpha",
+  "initialVersions": {
+    "website": "0.1.48",
+    "@visactor/vbi": "0.0.0",
+    "@visactor/vquery": "0.2.8",
+    "@visactor/vseed": "0.2.8"
+  },
+  "changesets": []
+}

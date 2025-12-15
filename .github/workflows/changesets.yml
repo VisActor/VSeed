@@ -18,7 +18,7 @@ jobs:
   version:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, 'chore: update versions')
     steps:
       - name: Checkout code repository
         uses: actions/checkout@v4
@@ -49,7 +49,7 @@ jobs:
   pre-release:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/alpha'
+    if: github.ref == 'refs/heads/alpha' && !contains(github.event.head_commit.message, 'chore: update alpha versions')
     steps:
       - name: Checkout code repository
         uses: actions/checkout@v4
@@ -76,7 +76,7 @@ jobs:
         with:
           commit: 'chore: update alpha versions'
           title: 'chore: update alpha versions'
-          publish: pnpm publish:ci --tag alpha
+          publish: pnpm publish:ci:alpha
           createGithubReleases: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

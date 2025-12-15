@@ -24,7 +24,7 @@ export const getDarkBoxPlotStyle = (): BoxPlotStyle => {
 const getCommonOutlierStyle = (): OutlierStyle => {
   return {
     pointSize: 10,
-    pointBorderWidth: 1.4,
+    pointBorderWidth: 1.5,
     pointColor: 'transparent',
   }
 }

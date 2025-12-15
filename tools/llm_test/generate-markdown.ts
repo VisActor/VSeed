@@ -240,10 +240,53 @@ function generateComponentMarkdown() {
         if (definitionEndIndex !== -1) {
           const typeDefinition = fileContentStr.substring(startIndex, definitionEndIndex + 1)
           const hasNumFormat = typeDefinition.includes(': NumFormat')
+
+          // Generic dependency resolution: check if type extends another type in same folder
+          let dependencyTypes = ''
+          const extendsMatch = typeDefinition.match(/^export type \w+ = (\w+) &/)
+          if (extendsMatch && extendsMatch[1]) {
+            const baseTypeName = extendsMatch[1]
+            const baseTypeFile = path.resolve(
+              dir,
+              path.dirname(fileName),
+              `${baseTypeName.charAt(0).toLowerCase() + baseTypeName.slice(1)}.ts`,
+            )
+            if (fs.existsSync(baseTypeFile)) {
+              const baseContent = fs.readFileSync(baseTypeFile).toString()
+              const baseTypeSignature = `type ${baseTypeName}`
+              let baseStartIndex = baseContent.indexOf(`export ${baseTypeSignature}`)
+              if (baseStartIndex === -1) {
+                baseStartIndex = baseContent.indexOf(baseTypeSignature)
+              }
+              if (baseStartIndex !== -1) {
+                const baseDefStartIndex = baseContent.indexOf('{', baseStartIndex)
+                if (baseDefStartIndex !== -1) {
+                  let baseBraceCount = 1
+                  let baseDefEndIndex = -1
+                  for (let i = baseDefStartIndex + 1; i < baseContent.length; i++) {
+                    if (baseContent[i] === '{') {
+                      baseBraceCount++
+                    } else if (baseContent[i] === '}') {
+                      baseBraceCount--
+                      if (baseBraceCount === 0) {
+                        baseDefEndIndex = i
+                        break
+                      }
+                    }
+                  }
+                  if (baseDefEndIndex !== -1) {
+                    dependencyTypes = baseContent.substring(baseStartIndex, baseDefEndIndex + 1) + '\n\n'
+                  }
+                }
+              }
+            }
+          }
+
           let mdContent =
             `### ${topKey}\n${topKeyDesc[topKey]}\n\`\`\`typescript\n` +
             (hasNumFormat ? numFormatDefinition + '\n' : '') +
             typeDefinition +
+            (dependencyTypes ? '\n\n' + dependencyTypes : '') +
             '\n```'
           if (mdContent.includes('Selector')) {
             // 补充selector的描述

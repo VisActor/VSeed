@@ -1,0 +1,5 @@
+---
+'@visactor/vseed': patch
+---
+
+test

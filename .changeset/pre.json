@@ -7,5 +7,5 @@
     "@visactor/vquery": "0.2.8",
     "@visactor/vseed": "0.2.8"
   },
-  "changesets": []
+  "changesets": ["shaggy-ads-heal"]
 }

@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.2.9-alpha.0
+
+### Patch Changes
+
+- 75c2095: test
+
 ## 0.2.8
 
 ### Patch Changes

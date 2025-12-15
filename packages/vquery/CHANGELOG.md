@@ -1,5 +1,7 @@
 # @visactor/vquery
 
+## 0.2.9-alpha.0
+
 ## 0.2.8
 
 ## 0.2.7

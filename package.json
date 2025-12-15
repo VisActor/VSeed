@@ -30,7 +30,7 @@
     "test": "pnpm --filter=@visactor/vseed test",
     "test:update": "pnpm --filter=@visactor/vseed test:update",
     "test:coverage": "pnpm --filter=@visactor/vseed test:coverage && node scripts/build-coverage-badge.mjs",
-    "publish:ci": "pnpm run build:vseed && pnpm run build:vquery && pnpm changeset publish --filter=@visactor/vseed,@visactor/vquery --access=public",
+    "publish:ci": "pnpm run build:vseed && pnpm run build:vquery && pnpm changeset publish",
     "prepare": "husky",
     "sync-bugserver-cases": "node ./scripts/sync-bugserver-cases.js"
   },

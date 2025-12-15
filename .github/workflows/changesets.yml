@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - alpha
 
 permissions:
   id-token: write # Required for OIDC
@@ -16,6 +17,7 @@ jobs:
   version:
     timeout-minutes: 15
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout code repository
         uses: actions/checkout@v4
@@ -39,6 +41,39 @@ jobs:
           title: 'chore: update versions'
           publish: pnpm publish:ci
           createGithubReleases: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  pre-release:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/alpha'
+    steps:
+      - name: Checkout code repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup pnpm
+        run: corepack enable pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Create and publish alpha versions
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          commit: 'chore: update alpha versions'
+          title: 'chore: update alpha versions'
+          publish: pnpm publish:ci --tag alpha
+          createGithubReleases: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

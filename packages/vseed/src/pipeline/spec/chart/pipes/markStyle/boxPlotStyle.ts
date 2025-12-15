@@ -40,6 +40,7 @@ export const boxPlotStyle: VChartSpecPipe = (spec, context) => {
       boxBorderOpacity,
       medianBorderColor,
       whiskerBorderColor,
+      boxCornerRadius,
     } = style
 
     return {
@@ -60,6 +61,7 @@ export const boxPlotStyle: VChartSpecPipe = (spec, context) => {
           lineWidth: boxBorderWidth,
           stroke: whiskerBorderColor,
           boxStroke: boxBorderColor,
+          boxCornerRadius: boxCornerRadius,
           strokeOpacity: boxBorderOpacity,
           medianStroke: medianBorderColor ?? boxBorderColor,
         },

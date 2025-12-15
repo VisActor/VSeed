@@ -1,7 +1,7 @@
 import type { PivotChartSpecPipeline, VChartSpecPipeline } from 'src/types'
 import {
   backgroundColor,
-  label,
+  labelBoxPlot,
   tooltipBoxplot,
   color,
   pivotAdapter,
@@ -49,7 +49,7 @@ const boxplot: VChartSpecPipeline = [
   progressive,
   xBand,
   yLinear,
-  label,
+  labelBoxPlot,
   tooltipBoxplot,
   colorAdapter(discreteLegend, colorLegend),
   verticalCrosshairRect,
@@ -76,7 +76,7 @@ const pivotBoxplot: PivotChartSpecPipeline = [
     progressive,
     xBand,
     pivotAxisStyle(yLinear),
-    label,
+    labelBoxPlot,
     tooltipBoxplot,
     colorBoxPlotStyleFill(boxPlotStyle),
     outlierStyle,

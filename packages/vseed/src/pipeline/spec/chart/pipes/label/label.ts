@@ -69,7 +69,7 @@ export const buildLabel = (
   advancedVSeedDimensions: Dimensions,
   advancedVSeedMeasures: Measures,
   encoding: Encoding,
-  foldInfoList: FoldInfo[],
+  foldInfoList: (Pick<FoldInfo, 'measureId' | 'measureValue'> & Partial<Pick<FoldInfo, 'statistics'>>)[],
 ) => {
   const {
     enable,
@@ -142,15 +142,19 @@ export const buildLabel = (
             autoFormat,
             numFormat,
           )
-          // 饼图/环图需要使用实际占比数据
-          const measurePercentLabel = isNumber(datum['__VCHART_ARC_RATIO'])
-            ? generateMeasurePercent(datum['__VCHART_ARC_RATIO'], 1, percentFormatter)
-            : generateMeasurePercent(datum[measureValue] as number | string, statistics.sum, percentFormatter)
+
           if (showValue) {
             result.push(measureValueLabel)
           }
           if (showValuePercent) {
-            result.push(measurePercentLabel)
+            if (isNumber(datum['__VCHART_ARC_RATIO'])) {
+              // 饼图/环图需要使用实际占比数据
+              result.push(generateMeasurePercent(datum['__VCHART_ARC_RATIO'], 1, percentFormatter))
+            } else if (statistics && isNumber(statistics.sum)) {
+              result.push(
+                generateMeasurePercent(datum[measureValue] as number | string, statistics.sum, percentFormatter),
+              )
+            }
           }
         }
       })

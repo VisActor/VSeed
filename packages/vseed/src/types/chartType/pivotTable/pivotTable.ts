@@ -1,6 +1,6 @@
 import { type Locale } from '../../i18n'
-import type { BodyCellStyle, Measures } from '../../properties'
-import { type BackgroundColor, type Dataset, type Dimensions, type Theme } from '../../properties'
+import type { BodyCellStyle, TableDimension, TableMeasure } from '../../properties'
+import { type BackgroundColor, type Dataset, type Theme } from '../../properties'
 
 /**
  * @description 透视表格，适用于多维度数据交叉分析场景，可灵活配置行、列维度和指标计算方式
@@ -43,14 +43,14 @@ export interface PivotTable {
    * @type {Dimensions}
    * @example [{id: 'region', alias: '地区', isRow: true}, {id: 'product', alias: '产品', isColumn: true}]
    */
-  dimensions?: Dimensions
+  dimensions?: TableDimension[]
 
   /**
    * @description 透视表支持多个维度指标
    * @type {Measures}
    * @example [{id: 'sales', alias: '销售额', aggregation: 'sum'}]
    */
-  measures?: Measures
+  measures?: TableMeasure[]
 
   /**
    * @default transparent 默认为透明背景

@@ -8,7 +8,7 @@ import {
   zEncoding,
   zLabel,
   zLegend,
-  zMeasureTree,
+  zMeasures,
   zTheme,
   zTooltip,
 } from '../../properties'
@@ -18,7 +18,7 @@ export const zRoseParallel = z.object({
   dataset: zDataset.nullish(),
   encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
-  measures: zMeasureTree.nullish(),
+  measures: zMeasures.nullish(),
   backgroundColor: zBackgroundColor.nullish(),
   color: zColor.nullish(),
   label: zLabel.nullish(),

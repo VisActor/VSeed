@@ -8,7 +8,7 @@ import {
   zDimensions,
   zEncoding,
   zLabel,
-  zMeasureTree,
+  zMeasures,
   zTheme,
   zTooltip,
 } from '../../properties'
@@ -18,7 +18,7 @@ export const zFunnel = z.object({
   dataset: zDataset.nullish(),
   encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
-  measures: zMeasureTree.nullish(),
+  measures: zMeasures.nullish(),
   backgroundColor: zBackgroundColor.nullish(),
   color: zColor.nullish(),
   label: zLabel.nullish(),

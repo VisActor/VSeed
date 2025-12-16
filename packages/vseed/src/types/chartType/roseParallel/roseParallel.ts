@@ -1,14 +1,6 @@
 import { type Locale } from '../../i18n'
-import type { MeasureTree, PieLabel } from '../../properties'
-import {
-  type BackgroundColor,
-  type Color,
-  type Dataset,
-  type Dimensions,
-  type Legend,
-  type Theme,
-  type Tooltip,
-} from '../../properties'
+import type { RoseParallelDimension, RoseParallelMeasure, PieLabel } from '../../properties'
+import { type BackgroundColor, type Color, type Dataset, type Legend, type Theme, type Tooltip } from '../../properties'
 
 /**
  * @description 分组玫瑰图，适用于多维度数据对比场景，通过极坐标系下的扇形弧度和半径展示数据大小
@@ -54,18 +46,16 @@ export interface RoseParallel {
   /**
    * 维度
    * @description 玫瑰图的第一个维度被映射到角度轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
-   * @type {Dimensions}
    * @example [{id: 'category', alias: '类别'}]
    */
-  dimensions?: Dimensions
+  dimensions?: RoseParallelDimension[]
 
   /**
    * 指标
    * @description 玫瑰图的指标会自动合并为一个指标, 映射到半径轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {MeasureTree}
    * @example [{id: 'value', alias: '数值'}]
    */
-  measures?: MeasureTree
+  measures?: RoseParallelMeasure[]
 
   /**
    * 图表的背景颜色

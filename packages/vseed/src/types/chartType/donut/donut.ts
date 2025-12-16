@@ -3,9 +3,9 @@ import type {
   BackgroundColor,
   Color,
   Dataset,
-  Dimensions,
+  DonutDimension,
   Legend,
-  MeasureTree,
+  DonutMeasure,
   PieLabel,
   Theme,
   Tooltip,
@@ -55,18 +55,16 @@ export interface Donut {
   /**
    * 维度
    * @description 环形图的所有维度会与指标名称(存在多个指标时)合并成1个维度, 映射到饼图的角度, 并作为图例项展示.
-   * @type {Dimensions}
    * @example [{id: 'category', alias: '类别'}]
    */
-  dimensions?: Dimensions
+  dimensions?: DonutDimension[]
 
   /**
    * 指标
    * @description 环形图的所有指标会自动合并为一个指标, 映射到饼图的半径, 存在多个指标时, 指标名称会与其余维度合并, 并作为图例项展示.
-   * @type {MeasureTree}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures?: MeasureTree
+  measures?: DonutMeasure[]
 
   /**
    * 图表的背景颜色

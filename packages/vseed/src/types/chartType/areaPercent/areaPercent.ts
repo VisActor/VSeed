@@ -9,7 +9,6 @@ import type {
   BackgroundColor,
   Color,
   Dataset,
-  Dimensions,
   Label,
   Legend,
   LineStyle,
@@ -19,10 +18,11 @@ import type {
   XBandAxis,
   YLinearAxis,
   CrosshairLine,
-  MeasureTree,
   Sort,
   SortLegend,
   DimensionLinkage,
+  ColumnDimension,
+  ColumnMeasure,
 } from '../../properties'
 
 /**
@@ -68,18 +68,16 @@ export interface AreaPercent {
   /**
    * 维度
    * @description 第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
-   * @type {Dimensions}
    * @example [{ id: 'month', alias: '月份' }, { id: 'year', alias: '年份' }]
    */
-  dimensions?: Dimensions
+  dimensions?: ColumnDimension[]
 
   /**
    * 指标
    * @description 百分比面积图的指标会自动合并为一个指标, 映射到Y轴, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {MeasureTree}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures?: MeasureTree
+  measures?: ColumnMeasure[]
 
   /**
    * 图表的背景颜色

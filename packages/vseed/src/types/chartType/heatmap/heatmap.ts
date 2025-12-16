@@ -1,13 +1,6 @@
 import { type Locale } from '../../i18n'
-import type { Color, ColorLegend, MeasureTree } from '../../properties'
-import {
-  type BackgroundColor,
-  type Dataset,
-  type Dimensions,
-  type Label,
-  type Theme,
-  type Tooltip,
-} from '../../properties'
+import type { Color, ColorLegend, HeatmapDimension, HeatmapMeasure } from '../../properties'
+import { type BackgroundColor, type Dataset, type Label, type Theme, type Tooltip } from '../../properties'
 
 /**
  * @description 热力图，通过二维矩阵的颜色深浅展示数据的分布和强弱关系
@@ -53,18 +46,16 @@ export interface Heatmap {
   /**
    * 维度
    * @description 热力图的第一个维度被映射到角度轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
-   * @type {Dimensions}
    * @example [{id: 'category', alias: '类别'}]
    */
-  dimensions?: Dimensions
+  dimensions?: HeatmapDimension[]
 
   /**
    * 指标
    * @description 热力图的指标会自动合并为一个指标, 映射到半径轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {MeasureTree}
    * @example [{id: 'value', alias: '数值'}]
    */
-  measures?: MeasureTree
+  measures?: HeatmapMeasure[]
 
   /**
    * 图表的背景颜色

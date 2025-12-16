@@ -44,7 +44,8 @@ files.forEach((file: any) => {
         datasetType !== 'boolean' &&
         !datasetType?.startsWith("'")
       ) {
-        keyPath.componentName = datasetType
+        // 移除数组标记 []
+        keyPath.componentName = datasetType?.replace(/\[\]$/, '')
       }
       keyPath.type = type
       const jsDoc = property.getJsDocs()

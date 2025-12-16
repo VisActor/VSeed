@@ -4,9 +4,9 @@ import type {
   BackgroundColor,
   Color,
   Dataset,
-  Dimensions,
+  PieDimension,
   Legend,
-  MeasureTree,
+  PieMeasure,
   PieLabel,
   Theme,
   Tooltip,
@@ -55,18 +55,16 @@ export interface Pie {
   /**
    * 维度
    * @description 饼图的所有维度会与指标名称(存在多个指标时)合并成一个维度, 映射到角度, 并作为图例项展示
-   * @type {Dimensions}
    * @example [{id: 'category', alias: '类别'}]
    */
-  dimensions?: Dimensions
+  dimensions?: PieDimension[]
 
   /**
    * 指标
    * @description 饼图的所有指标会自动合并为一个指标, 映射到半径轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {MeasureTree}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures?: MeasureTree
+  measures?: PieMeasure[]
 
   /**
    * 图表的背景颜色

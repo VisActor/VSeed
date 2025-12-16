@@ -8,16 +8,16 @@ import type {
   BackgroundColor,
   Color,
   Dataset,
-  Dimensions,
   Label,
   Legend,
+  ScatterDimension,
+  ScatterMeasure,
   PointStyle,
   Theme,
   Tooltip,
   CrosshairLine,
   YLinearAxis,
   XLinearAxis,
-  ScatterMeasures,
   LinearRegressionLine,
   LowessRegressionLine,
   PolynomialRegressionLine,
@@ -66,10 +66,9 @@ export interface Scatter {
   /**
    * 维度
    * @description 散点图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
-   * @type {Dimensions}
    * @example [{id: "month", alias: "月份"}]
    */
-  dimensions?: Dimensions
+  dimensions?: ScatterDimension[]
   /**
    * @description 散点图指标
    * @example
@@ -82,7 +81,7 @@ export interface Scatter {
    *   }
    * ]
    */
-  measures?: ScatterMeasures
+  measures?: ScatterMeasure[]
 
   /**
    * @description 散点图指标的大小, 用于定义散点图中数据点的大小 或 大小范围

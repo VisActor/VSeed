@@ -1,10 +1,9 @@
 import { type Locale } from '../../i18n'
-import type { AreaStyle, LineStyle, MeasureTree, PointStyle } from '../../properties'
+import type { AreaStyle, LineStyle, PointStyle, RadarDimension, RadarMeasure } from '../../properties'
 import {
   type BackgroundColor,
   type Color,
   type Dataset,
-  type Dimensions,
   type Label,
   type Legend,
   type Theme,
@@ -54,18 +53,16 @@ export interface Radar {
   /**
    * 维度
    * @description 雷达图的第一个维度被映射到角度轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
-   * @type {Dimensions}
    * @example [{id: 'category', alias: '类别'}]
    */
-  dimensions?: Dimensions
+  dimensions?: RadarDimension[]
 
   /**
    * 指标
    * @description 雷达图的指标会自动合并为一个指标, 映射到半径轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {MeasureTree}
    * @example [{id: 'value', alias: '数值'}]
    */
-  measures?: MeasureTree
+  measures?: RadarMeasure[]
 
   /**
    * 图表的背景颜色

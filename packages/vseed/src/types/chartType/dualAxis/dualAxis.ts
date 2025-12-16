@@ -13,9 +13,9 @@ import type {
   CrosshairRect,
   Dataset,
   DimensionLinkage,
-  Dimensions,
+  DualAxisDimension,
+  DualAxisMeasure,
   DualChartType,
-  DualMeasure,
   Label,
   Legend,
   LineStyle,
@@ -73,7 +73,7 @@ export interface DualAxis {
    * @description 维度, 第一个维度会放至X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
    * @example [{id: 'month', alias: '月份'}]
    */
-  dimensions?: Dimensions
+  dimensions?: DualAxisDimension[]
 
   /**
    * @description 双轴图指标
@@ -82,7 +82,7 @@ export interface DualAxis {
    * 也可以设置`chartType`属性，来指定不同指标组的图表类型。
    * @example [{ id: 'value', encoding: 'primaryYAxis' }, { id: 'growth', encoding: 'secondaryYAxis' }]
    */
-  measures?: DualMeasure[]
+  measures?: DualAxisMeasure[]
 
   /**
    * @description 双轴图的主次轴的图表类型, 用于定义双轴图的类型, 包括折线图, 柱状图, 面积图等, 当measures有多组时, dualChartType可以配置为数组, 每项对应一个双轴图的子图表类型.

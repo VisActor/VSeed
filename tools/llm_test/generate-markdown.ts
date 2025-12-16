@@ -122,6 +122,48 @@ const skipTopKeys = [
   'BarMaxWidth',
   'BarGapInGroup',
   'WhiskersConfig',
+
+  // 图表特定类型（在 generateChartSpecificTypes 中处理）
+  'ColumnDimension',
+  'ColumnMeasure',
+  'BarDimension',
+  'BarMeasure',
+  'LineDimension',
+  'LineMeasure',
+  'AreaDimension',
+  'AreaMeasure',
+  'PieDimension',
+  'PieMeasure',
+  'DonutDimension',
+  'DonutMeasure',
+  'FunnelDimension',
+  'FunnelMeasure',
+  'RadarDimension',
+  'RadarMeasure',
+  'RoseDimension',
+  'RoseMeasure',
+  'RoseParallelDimension',
+  'RoseParallelMeasure',
+  'HeatmapDimension',
+  'HeatmapMeasure',
+  'ScatterDimension',
+  'ScatterMeasure',
+  'HistogramDimension',
+  'HistogramMeasure',
+  'BoxPlotDimension',
+  'BoxPlotMeasure',
+  'DualAxisDimension',
+  'DualAxisMeasure',
+  'TableDimension',
+  'TableMeasure',
+  'ColumnParallelDimension',
+  'ColumnParallelMeasure',
+  'ColumnPercentDimension',
+  'ColumnPercentMeasure',
+  'BarParallelDimension',
+  'BarParallelMeasure',
+  'BarPercentDimension',
+  'BarPercentMeasure',
 ]
 
 function generateComponentMarkdown() {
@@ -529,63 +571,6 @@ function generateMeasureMarkdown() {
       measureContent +
       '\n```',
   )
-
-  // ScatterMeasures
-  const scatterMeasureDir = path.resolve(
-    __dirname,
-    '../../packages/vseed/src/types/properties/measures/scatterMeasures.ts',
-  )
-  const scatterFileContent = fs.readFileSync(scatterMeasureDir)
-  const scatterFileContentStr = scatterFileContent.toString()
-  const scatterInterfaceSignature = `export type ScatterMeasure`
-  const scatterInterfaceIndex = scatterFileContentStr.indexOf(scatterInterfaceSignature)
-
-  if (scatterInterfaceIndex === -1) {
-    console.log(`Could not find interface definition export type ScatterMeasure in scatterMeasures.ts`)
-    return
-  }
-
-  const scatterStartIndex = scatterInterfaceIndex
-  const scatterMeasureContent = scatterFileContentStr.substring(scatterStartIndex)
-  fs.writeFileSync(
-    path.resolve(outputDir, 'ScatterMeasures.md'),
-    '### ScatterMeasure\n```typescript\n' +
-      numFormatDefinition +
-      '\n' +
-      measureEncodingContent +
-      '\n' +
-      measureContent +
-      '\n' +
-      scatterMeasureContent +
-      '\n```',
-  )
-
-  // DualMeasure
-  const dualMeasureDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/measures/dualMeasures.ts')
-  const dualFileContent = fs.readFileSync(dualMeasureDir)
-  const dualFileContentStr = dualFileContent.toString()
-  const dualInterfaceSignature = `export type DualMeasure`
-  const dualInterfaceIndex = dualFileContentStr.indexOf(dualInterfaceSignature)
-
-  if (dualInterfaceIndex === -1) {
-    console.log(`Could not find interface definition export type DualMeasure in dualMeasure.ts`)
-    return
-  }
-
-  const dualStartIndex = dualInterfaceIndex
-  const dualMeasureContent = dualFileContentStr.substring(dualStartIndex)
-  fs.writeFileSync(
-    path.resolve(outputDir, 'DualMeasures.md'),
-    '### DualMeasure\n```typescript\n' +
-      numFormatDefinition +
-      '\n' +
-      measureEncodingContent +
-      '\n' +
-      measureContent +
-      '\n' +
-      dualMeasureContent +
-      '\n```',
-  )
 }
 
 function generateDimensionMarkdown() {
@@ -637,6 +622,129 @@ function generateLinearColor() {
   )
 }
 
+function generateChartSpecificTypes() {
+  const outputDir = path.resolve(__dirname, './new-type')
+
+  // 读取 dimensions.ts 文件
+  const dimensionsPath = path.resolve(__dirname, '../../packages/vseed/src/types/properties/dimensions/dimensions.ts')
+  const dimensionsContent = fs.readFileSync(dimensionsPath, 'utf-8')
+
+  // 读取 measures.ts 文件
+  const measuresPath = path.resolve(__dirname, '../../packages/vseed/src/types/properties/measures/measures.ts')
+  const measuresContent = fs.readFileSync(measuresPath, 'utf-8')
+
+  // 提取 BaseDimension 定义
+  const baseDimensionRegex = /export type BaseDimension[\s\S]*?(?=\n\n\/\*\*|\nexport)/
+  const baseDimensionMatch = dimensionsContent.match(baseDimensionRegex)
+  const baseDimensionContent = baseDimensionMatch ? baseDimensionMatch[0] : ''
+
+  // 提取 BaseMeasure 定义
+  const baseMeasureRegex = /export type BaseMeasure[\s\S]*?(?=\n\n\/\*\*|\nexport)/
+  const baseMeasureMatch = measuresContent.match(baseMeasureRegex)
+  const baseMeasureContent = baseMeasureMatch ? baseMeasureMatch[0] : ''
+
+  // 定义需要提取的图表特定类型
+  const chartTypes = [
+    'Column',
+    'Bar',
+    'Line',
+    'Area',
+    'Pie',
+    'Donut',
+    'Funnel',
+    'Radar',
+    'Rose',
+    'RoseParallel',
+    'Heatmap',
+    'Scatter',
+    'Histogram',
+    'BoxPlot',
+    'DualAxis',
+    'Table',
+    'ColumnParallel',
+    'ColumnPercent',
+    'BarParallel',
+    'BarPercent',
+  ]
+
+  chartTypes.forEach((chartType) => {
+    // 提取 Dimension 类型定义
+    const dimensionTypeName = `${chartType}Dimension`
+    // 精确匹配单行类型定义（只匹配到行尾）
+    const dimensionRegex = new RegExp(`export type ${dimensionTypeName}\\s*=\\s*[^\\n]+`, 'g')
+    const dimensionMatch = dimensionsContent.match(dimensionRegex)
+
+    if (dimensionMatch && dimensionMatch[0]) {
+      const dimensionDef = dimensionMatch[0]
+
+      // 检查是否是类型别名（简单赋值，如 LineDimension = ColumnDimension）
+      const simpleAliasMatch = dimensionDef.match(/export type \w+\s*=\s*(\w+)\s*$/)
+
+      if (simpleAliasMatch && simpleAliasMatch[1]) {
+        // 这是一个简单类型别名，查找它引用的类型
+        const baseTypeName = simpleAliasMatch[1]
+        const baseTypeRegex = new RegExp(
+          `export type ${baseTypeName}\\s*=\\s*BaseDimension\\s*&\\s*\\{[\\s\\S]*?\\n\\}`,
+          'g',
+        )
+        const baseTypeMatch = dimensionsContent.match(baseTypeRegex)
+        if (baseTypeMatch && baseTypeMatch[0]) {
+          const content = `### ${dimensionTypeName}\n\`\`\`typescript\n${baseDimensionContent}\n\n${dimensionDef}\n\n${baseTypeMatch[0]}\n\`\`\``
+          fs.writeFileSync(path.resolve(outputDir, `${dimensionTypeName}.md`), content)
+        }
+      } else {
+        // 这是一个完整的类型定义，提取整个类型体
+        const fullTypeRegex = new RegExp(
+          `export type ${dimensionTypeName}\\s*=\\s*BaseDimension\\s*&\\s*\\{[\\s\\S]*?\\n\\}`,
+          'g',
+        )
+        const fullTypeMatch = dimensionsContent.match(fullTypeRegex)
+        if (fullTypeMatch && fullTypeMatch[0]) {
+          const content = `### ${dimensionTypeName}\n\`\`\`typescript\n${baseDimensionContent}\n\n${fullTypeMatch[0]}\n\`\`\``
+          fs.writeFileSync(path.resolve(outputDir, `${dimensionTypeName}.md`), content)
+        }
+      }
+    }
+
+    // 提取 Measure 类型定义
+    const measureTypeName = `${chartType}Measure`
+    const measureRegex = new RegExp(`export type ${measureTypeName}\\s*=\\s*[^\\n]+`, 'g')
+    const measureMatch = measuresContent.match(measureRegex)
+
+    if (measureMatch && measureMatch[0]) {
+      const measureDef = measureMatch[0]
+
+      // 检查是否是简单类型别名
+      const simpleAliasMatch = measureDef.match(/export type \w+\s*=\s*(\w+)\s*$/)
+
+      if (simpleAliasMatch && simpleAliasMatch[1]) {
+        // 这是一个简单类型别名，查找它引用的类型
+        const baseTypeName = simpleAliasMatch[1]
+        const baseTypeRegex = new RegExp(
+          `export type ${baseTypeName}\\s*=\\s*BaseMeasure\\s*&\\s*\\{[\\s\\S]*?\\n\\}`,
+          'g',
+        )
+        const baseTypeMatch = measuresContent.match(baseTypeRegex)
+        if (baseTypeMatch && baseTypeMatch[0]) {
+          const content = `### ${measureTypeName}\n\`\`\`typescript\n${baseMeasureContent}\n\n${measureDef}\n\n${baseTypeMatch[0]}\n\`\`\``
+          fs.writeFileSync(path.resolve(outputDir, `${measureTypeName}.md`), content)
+        }
+      } else {
+        // 这是一个完整的类型定义
+        const fullTypeRegex = new RegExp(
+          `export type ${measureTypeName}\\s*=\\s*BaseMeasure\\s*&\\s*\\{[\\s\\S]*?\\n\\}`,
+          'g',
+        )
+        const fullTypeMatch = measuresContent.match(fullTypeRegex)
+        if (fullTypeMatch && fullTypeMatch[0]) {
+          const content = `### ${measureTypeName}\n\`\`\`typescript\n${baseMeasureContent}\n\n${fullTypeMatch[0]}\n\`\`\``
+          fs.writeFileSync(path.resolve(outputDir, `${measureTypeName}.md`), content)
+        }
+      }
+    }
+  })
+}
+
 export async function generateMarkdown() {
   generateChartTypeMarkdown()
   generateComponentMarkdown()
@@ -644,6 +752,7 @@ export async function generateMarkdown() {
   generateMeasureMarkdown()
   // generateLinearColor()
   generateDimensionMarkdown()
+  generateChartSpecificTypes()
 }
 
 // generateMarkdown()

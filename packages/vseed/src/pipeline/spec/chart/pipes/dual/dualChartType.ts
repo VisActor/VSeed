@@ -3,6 +3,9 @@ import { DUAL_AXIS_CHART_COLUMN_Z_INDEX, DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX } fr
 import type { DualAxisMeasure, DualChartType, VChartSpecPipe } from 'src/types'
 import type { Measure } from 'src/types/properties'
 
+/**
+ * 默认的双轴图图表类型配置
+ */
 const DEFAULT_DUAL_CHART_TYPE: DualChartType = {
   primary: 'column',
   secondary: 'line',

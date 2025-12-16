@@ -4,6 +4,11 @@ name: Bug Server CI
 on:
   pull_request:
     branches: ['main']
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'packages/vseed/**'
+  push:
+    branches: ['main']
     paths:
       - 'packages/vseed/**'
 

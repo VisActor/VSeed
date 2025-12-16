@@ -1,4 +1,4 @@
-# Boxplot
+# BoxPlot
 
 :::info{title=推荐}
 \- 推荐字段配置: `1`个指标, `1`个维度

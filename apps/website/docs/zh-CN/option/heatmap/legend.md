@@ -11,32 +11,3 @@
 
 :::
 
-
-## position
-
-**Type:** `"left" | "leftTop" | "leftBottom" | "lt" | "lb" | "top" | "topLeft" | "topRight" | "tl" | "tr" | "right" | "rightTop" | "rightBottom" | "rt" | "rb" | "bottom" | "bottomLeft" | "bottomRight" | "bl" | "br" | undefined`
-
-:::note{title=描述}
-图例位置
-
-:::
-
-**示例**
-position: 'rightTop'
-
-
-
-## enable
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-图例功能是否开启
-
-:::
-
-**示例**
-enable: true
-
-
-

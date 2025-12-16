@@ -46,6 +46,11 @@
   },
   {
     "type": "file",
+    "name": "dimensionLinkage",
+    "label": "dimensionLinkage "
+  },
+  {
+    "type": "file",
     "name": "dimensions",
     "label": "dimensions "
   },
@@ -93,11 +98,6 @@
     "type": "file",
     "name": "polynomialRegressionLine",
     "label": "polynomialRegressionLine "
-  },
-  {
-    "type": "file",
-    "name": "scatterMeasures",
-    "label": "scatterMeasures "
   },
   {
     "type": "file",

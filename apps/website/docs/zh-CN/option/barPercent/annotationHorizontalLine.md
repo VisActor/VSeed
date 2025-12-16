@@ -7,66 +7,10 @@
 
 
 
-标注水平线配置, 根据选择的数据, 定义图表的标注水平线, 包括标注水平线的位置, 样式等.
+维度值标注线，水平展示，能够设置标注线的位置, 样式等
 
 :::
 
-
-## selector
-
-**Type:** `Selector | Selectors | undefined`
-
-:::note{title=描述}
-依赖选择的数据, 进行数据标记.
-
-:::
-
-
-### field
-
-**Type:** `string`
-
-:::note{title=描述}
-维度字段, dimensions 某一项的 id
-
-:::
-
-### operator
-
-**Type:** `"in" | "not in" | undefined`
-
-:::note{title=描述}
-操作符
-
-\- in: 选择数据项中维度字段的值在 value 中的数据项
-
-\- not in: 选择数据项中维度字段的值不在 value 中的数据项
-
-:::
-
-### op
-
-**Type:** `"in" | "not in" | undefined`
-
-:::note{title=描述}
-操作符
-
-\- in: 选择数据项中维度字段的值在 value 中的数据项
-
-\- not in: 选择数据项中维度字段的值不在 value 中的数据项
-
-same as operator
-
-:::
-
-### value
-
-**Type:** `string | number | (string | number)[]`
-
-:::note{title=描述}
-选择数据项中维度字段的值, 支持数组
-
-:::
 
 ## yValue
 

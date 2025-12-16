@@ -26,6 +26,21 @@
   },
   {
     "type": "file",
+    "name": "boxGapInGroup",
+    "label": "boxGapInGroup "
+  },
+  {
+    "type": "file",
+    "name": "boxMaxWidth",
+    "label": "boxMaxWidth "
+  },
+  {
+    "type": "file",
+    "name": "boxPlotStyle",
+    "label": "boxPlotStyle "
+  },
+  {
+    "type": "file",
     "name": "chartType",
     "label": "chartType "
   },
@@ -43,6 +58,11 @@
     "type": "file",
     "name": "dataset",
     "label": "dataset "
+  },
+  {
+    "type": "file",
+    "name": "dimensionLinkage",
+    "label": "dimensionLinkage "
   },
   {
     "type": "file",
@@ -68,6 +88,11 @@
     "type": "file",
     "name": "measures",
     "label": "measures "
+  },
+  {
+    "type": "file",
+    "name": "outlierStyle",
+    "label": "outlierStyle "
   },
   {
     "type": "file",

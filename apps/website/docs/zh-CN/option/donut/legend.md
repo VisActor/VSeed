@@ -54,6 +54,24 @@ border: true
 
 :::
 
+## pagerIconColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+分页器icon颜色
+
+:::
+
+## pagerIconDisableColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+分页器icon置灰颜色
+
+:::
+
 ## labelFontSize
 
 **Type:** `number | undefined`

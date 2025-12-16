@@ -1,12 +1,21 @@
 # kdeRegressionLine
 
-**Type:** `boolean | KdeRegressionLine | KdeRegressionLine[] | undefined`
+**Type:** `KdeRegressionLine | KdeRegressionLine[] | undefined`
 
 :::note{title=描述}
 核密度回归线配置, 用于展示数据的趋势和分布情况
 
 :::
 
+
+## enable
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否开启回归线功能
+
+:::
 
 ## color
 

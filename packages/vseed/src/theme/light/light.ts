@@ -168,10 +168,6 @@ export const lightTheme = (): CustomThemeConfig => {
         xAxis: bandAxis,
         primaryYAxis: linearAxis,
         secondaryYAxis: { ...linearAxis, grid: { visible: false } },
-        dualChartType: {
-          primary: 'column',
-          secondary: 'line',
-        },
         crosshairRect,
         pivotGrid: getLightPivotChartGridConfig(),
         annotation: getLightAnnotation(),

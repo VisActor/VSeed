@@ -9,63 +9,18 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'histogram',
-    dataset: [
-      { color: 'red', shape: 'circle', v: 1 },
-      { color: 'red', shape: 'circle', v: 3 },
-      { color: 'red', shape: 'circle', v: 4 },
-      { color: 'red', shape: 'circle', v: 5 },
-      { color: 'red', shape: 'circle', v: 5 },
-      { color: 'red', shape: 'circle', v: 6 },
-      { color: 'red', shape: 'circle', v: 7 },
-      { color: 'red', shape: 'circle', v: 7 },
-      { color: 'red', shape: 'circle', v: 10 },
-      { color: 'blue', shape: 'circle', v: 2 },
-      { color: 'blue', shape: 'circle', v: 3 },
-      { color: 'blue', shape: 'circle', v: 3 },
-      { color: 'blue', shape: 'circle', v: 4 },
-      { color: 'blue', shape: 'circle', v: 5 },
-      { color: 'blue', shape: 'circle', v: 7 },
-      { color: 'blue', shape: 'circle', v: 9 },
-      { color: 'blue', shape: 'circle', v: 9 },
-
-      { color: 'red', shape: 'triangle', v: 1 },
-      { color: 'red', shape: 'triangle', v: 2 },
-      { color: 'red', shape: 'triangle', v: 3 },
-      { color: 'red', shape: 'triangle', v: 4 },
-      { color: 'red', shape: 'triangle', v: 5 },
-      { color: 'red', shape: 'triangle', v: 7 },
-      { color: 'red', shape: 'triangle', v: 8 },
-      { color: 'red', shape: 'triangle', v: 9 },
-      { color: 'blue', shape: 'triangle', v: 2 },
-      { color: 'blue', shape: 'triangle', v: 3 },
-      { color: 'blue', shape: 'triangle', v: 4 },
-      { color: 'blue', shape: 'triangle', v: 4 },
-      { color: 'blue', shape: 'triangle', v: 5 },
-      { color: 'blue', shape: 'triangle', v: 7 },
-      { color: 'blue', shape: 'triangle', v: 8 },
-      { color: 'blue', shape: 'triangle', v: 9 },
-    ],
-    dimensions: [
-      {
-        id: 'color',
-        encoding: 'row',
-      },
-      {
-        id: 'shape',
-        encoding: 'column',
-      },
-    ],
+    chartType: 'dualAxis',
     measures: [
-      {
-        id: 'v',
-        encoding: 'value',
-      },
+      { id: 'sales', alias: '销售额', chartType: 'line' },
+      { id: 'profit', alias: '利润', chartType: 'scatter' },
     ],
-    ecdfRegressionLine: {
-      type: 'ecdf',
-      color: 'red',
-    },
+    dataset: [
+      { date: '2019', profit: 10, sales: 200 },
+      { date: '2020', profit: 30, sales: 600 },
+      { date: '2021', profit: 30, sales: 600 },
+      { date: '2022', profit: 50, sales: 1000 },
+      { date: '2023', profit: 40, sales: 800 },
+    ],
   }
 
   const parseRes = zVSeed.safeParse(vseed)

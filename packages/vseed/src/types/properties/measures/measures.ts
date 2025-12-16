@@ -215,7 +215,7 @@ export type DualAxisMeasure = BaseMeasure & {
    */
   encoding?: 'primaryYAxis' | 'secondaryYAxis' | 'color' | 'label' | 'tooltip'
   /**
-   * @deprecated 设置该指标在双轴图中的图表类型, 仅适用于双轴图
+   * @description 设置该指标在双轴图中的图表类型, 仅适用于双轴图
    * - line: 折线图
    * - column: 柱状图
    * - columnParallel: 平行柱状图

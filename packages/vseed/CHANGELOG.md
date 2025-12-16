@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.2.9
+
+### Patch Changes
+
+- Fix boxplot bugs
+
 ## 0.2.8
 
 ### Patch Changes

@@ -4,7 +4,7 @@ import type { Dimension, DimensionGroup, DimensionTree, ListTableSpecPipe } from
 
 export const dimensionTreeToColumns: ListTableSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const dimensions = (advancedVSeed as unknown as { dimensions: DimensionTree }).dimensions
+  const dimensionTree = (advancedVSeed as unknown as { dimensionTree: DimensionTree }).dimensionTree
   const result = { ...spec } as ListTableConstructorOptions
   const eachNode = (node: Dimension | DimensionGroup) => {
     if (isMeasure(node)) {
@@ -15,7 +15,7 @@ export const dimensionTreeToColumns: ListTableSpecPipe = (spec, context) => {
 
     return {}
   }
-  const columns = treeTreeToColumns<Dimension, DimensionGroup>(dimensions, eachNode)
+  const columns = treeTreeToColumns<Dimension, DimensionGroup>(dimensionTree, eachNode)
 
   return {
     ...result,

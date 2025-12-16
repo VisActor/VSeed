@@ -3,17 +3,17 @@ import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
 
 export const encodingForPivotTable: AdvancedPipe = (advancedVSeed) => {
-  const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
-  const measures = findAllMeasures(vseedMeasures)
+  const { measureTree = [], dimensionTree = [] } = advancedVSeed
+  const measures = findAllMeasures(measureTree)
 
-  const hasDimensionEncoding = dimensions.some((item: Dimension) => item.encoding)
+  const hasDimensionEncoding = dimensionTree.some((item: Dimension) => item.encoding)
   const hasMeasureEncoding = measures.some((item: Measure) => item.encoding)
   const encoding: Encoding = {}
 
   if (hasDimensionEncoding) {
-    generateDimensionEncoding(dimensions, encoding)
+    generateDimensionEncoding(dimensionTree, encoding)
   } else {
-    generateDefaultDimensionEncoding(dimensions, encoding)
+    generateDefaultDimensionEncoding(dimensionTree, encoding)
   }
 
   if (hasMeasureEncoding) {

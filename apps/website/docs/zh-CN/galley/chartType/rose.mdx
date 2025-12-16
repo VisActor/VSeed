@@ -83,31 +83,22 @@ export const CombinationRoseChart = memo(() => {
     ],
     measures: [
       {
-        id: 'salesAndProfit',
-        alias: '销售额与利润',
-        children: [
-          {
-            id: 'sales',
-            alias: '销售额',
-            location: 'measure',
-          },
-          {
-            id: 'profit',
-            alias: '利润',
-            location: 'measure',
-          },
-        ],
+        id: 'sales',
+        alias: '销售额',
+        parentId: 'salesAndProfit',
+        location: 'measure',
       },
       {
-        id: 'ratio',
-        alias: '比率',
-        children: [
-          {
-            id: 'rateOfReturn',
-            alias: '回报率',
-            location: 'measure',
-          },
-        ],
+        id: 'profit',
+        alias: '利润',
+        parentId: 'salesAndProfit',
+        location: 'measure',
+      },
+      {
+        id: 'rateOfReturn',
+        alias: '回报率',
+        parentId: 'ratio',
+        location: 'measure',
       },
     ],
   }
@@ -129,11 +120,7 @@ export const PivotRoseChart = memo(() => {
       { id: 'region', alias: '区域', encoding: 'row' },
     ],
     measures: [
-      {
-        id: 'group-sales',
-        alias: '销售额分组',
-        children: [{ id: 'sales', alias: '销售额' }],
-      },
+      { id: 'sales', alias: '销售额', parentId: 'group-sales' },
       { id: 'profit', alias: '利润' },
     ],
     dataset: [

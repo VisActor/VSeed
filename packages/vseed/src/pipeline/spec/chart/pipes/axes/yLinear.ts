@@ -9,7 +9,7 @@ export const yLinear: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
-  const { measures, dimensions, encoding } = advancedVSeed
+  const { measures = [], dimensions = [], encoding } = advancedVSeed
   const config = (advancedVSeed.config?.[chartType as 'column']?.yAxis ?? {}) as YLinearAxis
 
   if (!result.axes) {

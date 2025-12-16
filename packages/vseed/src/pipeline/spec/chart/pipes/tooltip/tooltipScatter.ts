@@ -1,5 +1,5 @@
 import { uniqueBy } from 'remeda'
-import { createFormatterByMeasure, findAllMeasures, findMeasureById } from '../../../../utils'
+import { createFormatterByMeasure, findMeasureById } from '../../../../utils'
 import type { Datum, Dimensions, FoldInfo, Locale, Measures, VChartSpecPipe, Tooltip, UnfoldInfo } from 'src/types'
 import { ORIGINAL_DATA } from 'src/dataReshape'
 import { getTooltipStyle } from './tooltipStyle'
@@ -8,7 +8,7 @@ import { updateTooltipElement } from './tooltipElement'
 export const tooltipScatter: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
-  const { datasetReshapeInfo, chartType, locale, dimensions, encoding } = advancedVSeed
+  const { datasetReshapeInfo, chartType, locale, dimensions = [], encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
@@ -25,13 +25,7 @@ export const tooltipScatter: VChartSpecPipe = (spec, context) => {
       title: {
         visible: false,
       },
-      content: createMarkContent(
-        encoding.tooltip || [],
-        dimensions,
-        findAllMeasures(vseed.measures),
-        locale,
-        foldInfoList,
-      ),
+      content: createMarkContent(encoding.tooltip || [], dimensions, vseed.measures as Measures, locale, foldInfoList),
     },
     dimension: {
       visible: false,
@@ -44,7 +38,7 @@ export const tooltipScatter: VChartSpecPipe = (spec, context) => {
 export const createMarkContent = (
   tooltip: string[],
   dimensions: Dimensions,
-  measures: Measures,
+  measures: Measures = [],
   locale: Locale,
   foldInfoList: FoldInfo[],
 ) => {

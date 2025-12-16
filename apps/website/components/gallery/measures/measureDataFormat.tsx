@@ -7,52 +7,43 @@ export const MeasureDataFormat = memo(() => {
     chartType: 'columnParallel',
     measures: [
       {
-        id: 'group1',
-        alias: 'group1',
-        children: [
-          {
-            id: 'profit',
-            alias: '利润',
-            format: {
-              type: 'number',
-              ratio: 1000,
-              symbol: 'K',
-              thousandSeparator: true,
-              decimalPlaces: 2,
-              round: 'round',
-              prefix: '¥',
-              suffix: '',
-            },
-          },
-          {
-            id: 'sales',
-            alias: '销售额',
-            format: {
-              type: 'number',
-              ratio: 10000,
-              symbol: '万',
-              thousandSeparator: true,
-              decimalPlaces: 2,
-              round: 'round',
-              prefix: '¥',
-            },
-          },
-        ],
+        id: 'profit',
+        alias: '利润',
+        parentId: 'group1',
+        format: {
+          type: 'number',
+          ratio: 1000,
+          symbol: 'K',
+          thousandSeparator: true,
+          decimalPlaces: 2,
+          round: 'round',
+          prefix: '¥',
+          suffix: '',
+        },
       },
       {
-        id: 'group2',
-        alias: 'group2',
-        children: [
-          {
-            id: 'discount',
-            alias: '折扣',
-            format: {
-              type: 'percent',
-              decimalPlaces: 2,
-              round: 'round',
-            },
-          },
-        ],
+        id: 'sales',
+        alias: '销售额',
+        parentId: 'group1',
+        format: {
+          type: 'number',
+          ratio: 10000,
+          symbol: '万',
+          thousandSeparator: true,
+          decimalPlaces: 2,
+          round: 'round',
+          prefix: '¥',
+        },
+      },
+      {
+        id: 'discount',
+        alias: '折扣',
+        parentId: 'group2',
+        format: {
+          type: 'percent',
+          decimalPlaces: 2,
+          round: 'round',
+        },
       },
       {
         id: 'rateOfReturn',

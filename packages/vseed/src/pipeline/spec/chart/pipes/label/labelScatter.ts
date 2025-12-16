@@ -17,8 +17,8 @@ export const labelScatter: VChartSpecPipe = (spec, context) => {
     label,
     vseed.measures,
     vseed.dimensions,
-    advancedVSeed.dimensions,
-    advancedVSeed.measures,
+    advancedVSeed.dimensions!,
+    advancedVSeed.measures!,
     encoding as Encoding,
     foldInfoList,
   ) as unknown as IScatterChartSpec['label']

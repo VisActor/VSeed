@@ -3,7 +3,7 @@ import type { PivotTableSpecPipe } from 'src/types'
 
 export const dataConfig: PivotTableSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const measures = findAllMeasures(advancedVSeed.measures)
+  const measures = findAllMeasures(advancedVSeed.measureTree)
 
   const aggregationRules = measures.map((measure) => ({
     field: measure.id,

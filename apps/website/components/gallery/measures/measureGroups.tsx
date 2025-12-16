@@ -6,19 +6,9 @@ export const MeasureGroups = memo(() => {
   const vseed: VSeed = {
     chartType: 'column',
     measures: [
-      {
-        id: 'group1',
-        alias: '分组1',
-        children: [
-          { id: 'profit', alias: '利润' },
-          { id: 'sales', alias: '销售额' },
-        ],
-      },
-      {
-        id: 'group2',
-        alias: '分组2',
-        children: [{ id: 'discount', alias: '折扣' }],
-      },
+      { id: 'profit', alias: '利润', parentId: 'group1' },
+      { id: 'sales', alias: '销售额', parentId: 'group1' },
+      { id: 'discount', alias: '折扣', parentId: 'group2' },
       { id: 'rateOfReturn', alias: '回报率' },
     ],
     dimensions: [{ id: 'date', alias: '日期' }],

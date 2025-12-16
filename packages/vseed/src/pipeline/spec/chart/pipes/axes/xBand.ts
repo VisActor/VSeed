@@ -9,7 +9,7 @@ export const xBand: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
-  const { measures, dimensions, encoding, datasetReshapeInfo, pivotAllDatasetReshapeInfo } = advancedVSeed
+  const { measures = [], dimensions = [], encoding, datasetReshapeInfo, pivotAllDatasetReshapeInfo } = advancedVSeed
   const config = (advancedVSeed.config?.[chartType as 'column']?.xAxis ?? {}) as XBandAxis
 
   if (!result.axes) {
@@ -27,7 +27,7 @@ export const xBand: VChartSpecPipe = (spec, context) => {
   bandAxis.paddingOuter = [0.075, 0.1]
 
   if (isNull(bandAxis.title?.text)) {
-    bandAxis.title.text = defaultTitleText(measures, dimensions, encoding.x as string[])
+    bandAxis.title!.text = defaultTitleText(measures, dimensions, encoding.x as string[])
   }
 
   if (onlyMeasureId && bandAxis.label) {

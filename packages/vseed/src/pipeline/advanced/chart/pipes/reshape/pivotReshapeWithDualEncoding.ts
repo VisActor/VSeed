@@ -1,17 +1,17 @@
 import { uniqueBy } from 'remeda'
 import { dataReshapeByEncoding, FoldPrimaryMeasureValue, FoldSecondaryMeasureValue } from 'src/dataReshape'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
-import { findAllMeasures, measureDepth } from 'src/pipeline/utils'
 import type {
   AdvancedPipe,
   AdvancedVSeed,
   ColumnParallel,
   Dataset,
   DatasetReshapeInfo,
+  Dimension,
   Encoding,
   FoldInfo,
   Measure,
-  MeasureGroup,
+  Measures,
   UnfoldInfo,
 } from 'src/types'
 
@@ -20,55 +20,36 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
   const { encoding, chartType } = advancedVSeed
-  const measures = advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []
+  const reshapeMeasures = advancedVSeed.reshapeMeasures ?? []
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
+  const allMeasuresIds = reshapeMeasures.flatMap((measureGroup) => measureGroup.map((m) => m.id))
 
-  const allMeasures = findAllMeasures(measures)
   const datasetList: Dataset[] = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
-  const measureGroups: Array<MeasureGroup[]> = []
-
-  const depth = measureDepth(measures)
-  if (depth === 3) {
-    measures.forEach((measure: MeasureGroup) => {
-      if (measure.children) {
-        measureGroups.push(measure.children as unknown as MeasureGroup[])
-      }
-    })
-  } else if (depth === 2) {
-    measureGroups.push(
-      measures.filter((m: Measure | MeasureGroup) => m && (m as MeasureGroup).children) as unknown as MeasureGroup[],
-    )
-  }
-
-  measureGroups.forEach((measures: MeasureGroup[], index) => {
-    if (measures.length > 2) {
-      throw new Error('measures can not be more than 2 groups in dualAxis')
-    }
-
+  reshapeMeasures.forEach((measures: Measures, index) => {
     const foldInfoList: FoldInfo[] = []
     const unfoldInfoList: UnfoldInfo[] = []
 
     const datasets: Dataset[] = []
-    const primaryMeasures = measures[0]
-    const secondaryMeasures = measures[1] || []
+    const primaryMeasures = measures.filter((m) => m.encoding === 'primaryYAxis')
+    const secondaryMeasures = measures.filter((m) => m.encoding === 'secondaryYAxis')
 
-    if (primaryMeasures && primaryMeasures.children) {
+    if (primaryMeasures.length) {
       const {
         dataset: newDataset,
         foldInfo,
         unfoldInfo,
       } = dataReshapeByEncoding(
         dataset,
-        uniqueBy(dimensions, (item) => item.id),
-        uniqueBy(primaryMeasures.children, (item) => item.id),
+        uniqueBy(dimensions, (item: Dimension) => item.id),
+        uniqueBy(primaryMeasures, (item: Measure) => item.id),
         encoding as Encoding,
         {
           colorItemAsId: false,
           foldMeasureValue: `${FoldPrimaryMeasureValue}${index}`,
           colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-          omitIds: allMeasures.map((item) => item.id),
+          omitIds: allMeasuresIds,
         },
       )
 
@@ -77,21 +58,21 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
       unfoldInfoList.push(unfoldInfo)
     }
 
-    if (secondaryMeasures && secondaryMeasures.children) {
+    if (secondaryMeasures.length) {
       const {
         dataset: newDataset,
         foldInfo,
         unfoldInfo,
       } = dataReshapeByEncoding(
         dataset,
-        uniqueBy(dimensions, (item) => item.id),
-        uniqueBy(secondaryMeasures.children, (item) => item.id),
+        uniqueBy(dimensions, (item: Dimension) => item.id),
+        uniqueBy(secondaryMeasures, (item: Measure) => item.id),
         encoding as Encoding,
         {
           colorItemAsId: false,
           foldMeasureValue: `${FoldSecondaryMeasureValue}${index}`,
           colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-          omitIds: allMeasures.map((item) => item.id),
+          omitIds: allMeasuresIds,
         },
       )
 

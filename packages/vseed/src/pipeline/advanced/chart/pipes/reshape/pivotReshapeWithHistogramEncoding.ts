@@ -13,6 +13,7 @@ import {
   unfoldDimensions,
 } from 'src/dataReshape'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
+import { DEFAULT_PARENT_ID } from 'src/pipeline/utils'
 import type {
   AdvancedPipe,
   AdvancedVSeed,
@@ -23,7 +24,6 @@ import type {
   Dimension,
   Encoding,
   FoldInfo,
-  MeasureGroup,
 } from 'src/types'
 
 export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, context) => {
@@ -31,7 +31,7 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
   const { vseed } = context
   const { dataset, chartType } = vseed as ColumnParallel
   const { encoding = {}, config } = advancedVSeed
-  const measures = advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []
+  const reshapeMeasures = advancedVSeed.reshapeMeasures ?? []
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
   const colorMeasureId = getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed)
   const uniqDims = uniqueBy(dimensions, (item: Dimension) => item.id)
@@ -40,14 +40,6 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
   const binStep = chartConfig?.binStep
   const binValueType = chartConfig?.binValueType
 
-  const measureGroups: MeasureGroup[] = []
-  if (measures) {
-    measures.forEach((measure: MeasureGroup) => {
-      if (measure.children && measure.children.length > 0) {
-        measureGroups.push(measure)
-      }
-    })
-  }
   const rowColumnFields = uniqueBy(
     dimensions.filter((dim: Dimension) => dim.encoding === 'row' || dim.encoding === 'column'),
     (item: Dimension) => item.id,
@@ -56,12 +48,11 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
   const datasets: Dataset = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
-  measureGroups.forEach((measureGroup, index) => {
-    const subMeasures = measureGroup.children
+  reshapeMeasures.forEach((subMeasures, index) => {
     if (!subMeasures) {
       return
     }
-    const groupId = measureGroup.id
+    const groupId = subMeasures[0].id ?? DEFAULT_PARENT_ID
 
     let newDatasets: any[] = []
     let foldInfo: FoldInfo = {

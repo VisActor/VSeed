@@ -1,4 +1,4 @@
-import type { Measure, MeasureGroup, MeasureTree } from 'src/types'
+import type { Measure, MeasureTree } from 'src/types'
 import { preorderTraverse } from '../tree'
 
 export const findMeasureById = (measures: MeasureTree = [], id: string): Measure | undefined => {
@@ -42,17 +42,10 @@ export const findAllMeasures = (measures: MeasureTree = []): Measure[] => {
   return result
 }
 
-export const hasMultipleMeasureInSingleView = (measures: MeasureTree = []): boolean => {
-  if (measures.every((m) => !('children' in m))) {
-    return measures.length > 1
-  }
-  let found = false
-  preorderTraverse<Measure, 'children'>(measures, (node) => {
-    if ((node as MeasureGroup).children && (node as MeasureGroup).children!.length > 1) {
-      found = true
-      return true
-    }
-    return false
-  })
-  return found
+export const hasMultipleMeasureInSingleView = (reshapeMeasures: Measure[][]): boolean => {
+  return reshapeMeasures.some((m) => m.length > 1)
+}
+
+export const flatReshapeMeasures = (reshapeMeasures: Measure[][]) => {
+  return reshapeMeasures.flat()
 }

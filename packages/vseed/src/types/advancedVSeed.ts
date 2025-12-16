@@ -1,8 +1,8 @@
 import { z } from 'zod'
 import { zChartType } from './properties/chartType'
 import { zDataset } from './properties/dataset'
-import { zDimensionTree } from './properties/dimensions'
-import { zMeasureTree } from './properties/measures'
+import { zDimensions, zDimensionTree } from './properties/dimensions'
+import { zMeasures, zMeasureTree } from './properties/measures'
 import { zEncoding } from './properties/encoding'
 import { zDatasetReshapeInfo } from './properties/datasetReshapeInfo'
 import { zTheme, zCustomThemeConfig } from './properties/theme'
@@ -16,10 +16,12 @@ export const zAdvancedVSeed = z.object({
   dataset: zDataset,
   datasetReshapeInfo: zDatasetReshapeInfo,
   pivotAllDatasetReshapeInfo: zDatasetReshapeInfo,
-  dimensions: zDimensionTree,
-  measures: zMeasureTree,
-  reshapeMeasures: zMeasureTree.optional(),
-  reshapeDimensions: zDimensionTree.optional(),
+  dimensions: zDimensions.optional(),
+  measures: zMeasures.optional(),
+  reshapeMeasures: z.array(zMeasures).optional(),
+  reshapeDimensions: zDimensions.optional(),
+  measureTree: zMeasureTree.optional(), // 现在只有表格中可能会配置这种树状结构
+  dimensionTree: zDimensionTree.optional(), // 现在只有表格中可能会配置这种树状结构
   encoding: zEncoding,
   config: zConfig,
   analysis: zAnalysis,

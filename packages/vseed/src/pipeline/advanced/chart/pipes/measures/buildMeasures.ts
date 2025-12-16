@@ -1,70 +1,35 @@
-import type { AdvancedPipe, MeasureGroup, Measures, MeasureTree, VSeed } from 'src/types'
-import { isMeasureTreeWithChildren, isMeasureTreeWithParentId, normalizeMeasureTree } from './utils'
-import { isPivotChart } from 'src/pipeline/utils'
+import type { AdvancedPipe, MeasureEncoding, Measures } from 'src/types'
+
 import { DEFAULT_PARENT_ID } from 'src/pipeline/utils/constant'
-import { isValid } from '@visactor/vutils'
+import { isCommonMeasureEncoding } from './utils'
 
-export const buildMeasures: AdvancedPipe = (advancedVSeed) => {
-  // 带Children的指标树, 不进行任何处理
-  if (isMeasureTreeWithChildren(advancedVSeed.measures)) {
-    advancedVSeed.measures = normalizeMeasureTree(advancedVSeed.measures as MeasureTree)
-    return advancedVSeed
-  }
-  // 带parentId的指标树, 转换为带children的指标树
-  if (isMeasureTreeWithParentId(advancedVSeed.measures)) {
-    advancedVSeed.measures = generateMeasuresByParentId(advancedVSeed.measures as Measures)
-    return advancedVSeed
-  }
+export const buildMeasures = (encodingKeys: string[]): AdvancedPipe => {
+  return (advancedVSeed) => {
+    const { measures = [] } = advancedVSeed
+    const measuresByView = {} as { [key: string]: Measures }
+    const parentIds: string[] = []
 
-  /**
-   * 透视图表, 自动生成指标树
-   */
-  if (isPivotChart(advancedVSeed as VSeed)) {
-    advancedVSeed.measures = basicMeasuresToMeasureTree(advancedVSeed.measures as Measures)
-  }
+    for (let index = 0; index < measures.length; index++) {
+      const item = measures[index]
+      const encoding = item.encoding
+      const parentId = item.parentId || DEFAULT_PARENT_ID
 
-  return advancedVSeed
-}
+      const isOtherEncoding = item.encoding && isCommonMeasureEncoding(encoding as MeasureEncoding)
 
-const generateMeasuresByParentId = (measures: Measures): MeasureTree => {
-  const measureTree: MeasureGroup[] = []
-
-  measures.forEach((measure) => {
-    const parent = measureTree.find((item) => item.id === measure.parentId)
-    if (parent && 'children' in parent) {
-      parent.children = parent.children || []
-
-      if (parent.children.length > 0) {
-        parent.alias += `-${measure.alias ?? measure.id}`
+      if (!measuresByView[parentId]) {
+        measuresByView[parentId] = []
+        parentIds.push(parentId)
       }
-
-      parent.children.push(measure)
-    } else if (isValid(measure.parentId)) {
-      measureTree.push({
-        id: measure.parentId,
-        alias: measure.alias ?? measure.id,
-        children: [measure],
-      })
-    } else {
-      measureTree.push({
-        id: DEFAULT_PARENT_ID,
-        alias: measure.alias ?? measure.id, // 当分组只有单个指标的时候，分组alias 设置为该指标的别名或者id
-        children: [measure],
-      })
+      if (encodingKeys.includes(encoding as string)) {
+        measuresByView[parentId].push(item)
+      } else if (!isOtherEncoding) {
+        item.encoding = encodingKeys[0] as MeasureEncoding
+        measuresByView[parentId].push(item)
+      }
     }
-  })
 
-  return measureTree
-}
+    advancedVSeed.reshapeMeasures = parentIds.map((pid) => measuresByView[pid])
 
-const basicMeasuresToMeasureTree = (measures: Measures): MeasureTree => {
-  const id = measures.map((item) => item.id).join('-')
-  const alias = measures.map((item) => item.alias || item.id).join('-')
-  return [
-    {
-      id,
-      alias,
-      children: measures,
-    },
-  ]
+    return advancedVSeed
+  }
 }

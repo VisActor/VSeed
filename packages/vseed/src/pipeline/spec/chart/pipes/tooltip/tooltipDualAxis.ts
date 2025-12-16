@@ -1,14 +1,13 @@
 import { isNullish } from 'remeda'
 import { createDimensionContent, createMarkContent } from './tooltip'
-import type { FoldInfo, VChartSpecPipe, Tooltip, UnfoldInfo } from 'src/types'
-import { findAllMeasures } from 'src/pipeline/utils'
+import type { FoldInfo, VChartSpecPipe, Tooltip, UnfoldInfo, Measures } from 'src/types'
 import { getTooltipStyle } from './tooltipStyle'
 import { updateTooltipElement } from './tooltipElement'
 
 export const tooltipPrimary: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
-  const { measures, datasetReshapeInfo, chartType, dimensions, encoding } = advancedVSeed
+  const { measures = [], datasetReshapeInfo, chartType, dimensions = [], encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
@@ -25,7 +24,7 @@ export const tooltipPrimary: VChartSpecPipe = (spec, context) => {
       content: createMarkContent(
         encoding.tooltip || [],
         dimensions,
-        findAllMeasures(vseed.measures),
+        vseed.measures as Measures,
         foldInfoList[0],
         unfoldInfo,
       ),
@@ -63,7 +62,7 @@ export const tooltipSecondary: VChartSpecPipe = (spec, context) => {
       content: createMarkContent(
         encoding.tooltip || [],
         dimensions,
-        findAllMeasures(vseed.measures),
+        vseed.measures as Measures,
         foldInfoList[1],
         unfoldInfo,
       ),

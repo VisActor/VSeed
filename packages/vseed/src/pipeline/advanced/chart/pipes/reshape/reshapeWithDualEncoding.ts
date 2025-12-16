@@ -6,10 +6,10 @@ import type {
   AdvancedVSeed,
   ColumnParallel,
   Dataset,
+  Dimension,
   Encoding,
   FoldInfo,
   Measure,
-  MeasureGroup,
   UnfoldInfo,
 } from 'src/types'
 
@@ -18,9 +18,7 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
   const { encoding, chartType } = advancedVSeed
-  const measures = (advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []).filter(
-    (m: Measure | MeasureGroup) => m && (m as MeasureGroup).children,
-  )
+  const measures = (advancedVSeed.reshapeMeasures?.[0] ?? []) as Measure[]
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
 
   if (measures.length > 2) {
@@ -30,18 +28,18 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
   const unfoldInfoList: UnfoldInfo[] = []
 
   const datasets: Dataset[] = []
-  const primaryMeasures = measures[0] as MeasureGroup
-  const secondaryMeasures = (measures[1] || []) as MeasureGroup
+  const primaryMeasures = measures.filter((m) => m.encoding === 'primaryYAxis')
+  const secondaryMeasures = measures.filter((m) => m.encoding === 'secondaryYAxis')
 
-  if (primaryMeasures && primaryMeasures.children) {
+  if (primaryMeasures.length) {
     const {
       dataset: newDataset,
       foldInfo,
       unfoldInfo,
     } = dataReshapeByEncoding(
       dataset,
-      uniqueBy(dimensions, (item) => item.id),
-      uniqueBy(primaryMeasures.children, (item) => item.id),
+      uniqueBy(dimensions, (item: Dimension) => item.id),
+      uniqueBy(primaryMeasures, (item: Measure) => item.id),
       encoding as Encoding,
       {
         colorItemAsId: false,
@@ -55,15 +53,15 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
     unfoldInfoList.push(unfoldInfo)
   }
 
-  if (secondaryMeasures && secondaryMeasures.children) {
+  if (secondaryMeasures.length) {
     const {
       dataset: newDataset,
       foldInfo,
       unfoldInfo,
     } = dataReshapeByEncoding(
       dataset,
-      uniqueBy(dimensions, (item) => item.id),
-      uniqueBy(secondaryMeasures.children, (item) => item.id),
+      uniqueBy(dimensions, (item: Dimension) => item.id),
+      uniqueBy(secondaryMeasures, (item: Measure) => item.id),
       encoding as Encoding,
       {
         colorItemAsId: false,

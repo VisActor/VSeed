@@ -1,6 +1,6 @@
 import { clone } from 'remeda'
 import { findAllMeasures, isDimension, preorderTraverse } from 'src/pipeline/utils'
-import type { AdvancedPipe, Datum, Dimensions, DimensionTree } from 'src/types'
+import type { AdvancedPipe, Datum, Dimensions, MeasureTree } from 'src/types'
 
 export const defaultDimensions: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
@@ -17,11 +17,11 @@ export const defaultDimensions: AdvancedPipe = (advancedVSeed, context) => {
     })
     return {
       ...advancedVSeed,
-      dimensions: clonedDimensions,
+      dimensionTree: clonedDimensions,
     }
   }
 
-  const measures = findAllMeasures(advancedVSeed.measures as DimensionTree)
+  const measures = findAllMeasures(advancedVSeed.measureTree as MeasureTree)
 
   const top100dataset = dataset.slice(0, 100)
 
@@ -43,6 +43,6 @@ export const defaultDimensions: AdvancedPipe = (advancedVSeed, context) => {
 
   return {
     ...result,
-    dimensions: newDimensions,
+    dimensionTree: newDimensions,
   }
 }

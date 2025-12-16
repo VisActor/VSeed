@@ -11,7 +11,7 @@ const VCHART_OUTLIER_KEY = '__VCHART_BOX_PLOT_OUTLIER_VALUE'
 export const tooltipHistogram: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed } = context
-  const { chartType, dimensions, encoding } = advancedVSeed
+  const { chartType, dimensions = [], encoding } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip; binValueType: 'count' | 'percentage' }
   const { binValueType, tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip

@@ -27,31 +27,22 @@ const Demo = () => {
     locale: 'zh-CN',
     measures: [
       {
-        id: 'group1',
-        alias: 'group1',
-        children: [
-          {
-            id: 'profit',
-            alias: '利润',
-            autoFormat: true,
-          },
-          {
-            id: 'sales',
-            alias: '销售额',
-            autoFormat: true,
-          },
-        ],
+        id: 'profit',
+        alias: '利润',
+        parentId: 'group1',
+        autoFormat: true,
       },
       {
-        id: 'group2',
-        alias: 'group2',
-        children: [
-          {
-            id: 'discount',
-            alias: '折扣',
-            autoFormat: true,
-          },
-        ],
+        id: 'sales',
+        alias: '销售额',
+        parentId: 'group1',
+        autoFormat: true,
+      },
+      {
+        id: 'discount',
+        alias: '折扣',
+        parentId: 'group2',
+        autoFormat: true,
       },
       {
         id: 'rateOfReturn',
@@ -121,31 +112,22 @@ const Demo = () => {
     locale: 'en-US',
     measures: [
       {
-        id: 'group1',
-        alias: 'group1',
-        children: [
-          {
-            id: 'profit',
-            alias: '利润',
-            autoFormat: true,
-          },
-          {
-            id: 'sales',
-            alias: '销售额',
-            autoFormat: true,
-          },
-        ],
+        id: 'profit',
+        alias: '利润',
+        parentId: 'group1',
+        autoFormat: true,
       },
       {
-        id: 'group2',
-        alias: 'group2',
-        children: [
-          {
-            id: 'discount',
-            alias: '折扣',
-            autoFormat: true,
-          },
-        ],
+        id: 'sales',
+        alias: '销售额',
+        parentId: 'group1',
+        autoFormat: true,
+      },
+      {
+        id: 'discount',
+        alias: '折扣',
+        parentId: 'group2',
+        autoFormat: true,
       },
       {
         id: 'rateOfReturn',

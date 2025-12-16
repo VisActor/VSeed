@@ -58,6 +58,7 @@ export type Measure = {
    */
   parentId?: string
 }
+
 export type MeasureGroup = {
   /**
    * @description 指标组id, 不能重复

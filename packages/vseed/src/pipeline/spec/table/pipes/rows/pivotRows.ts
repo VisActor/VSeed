@@ -4,10 +4,10 @@ import type { Dimensions, PivotTableSpecPipe } from 'src/types'
 
 export const pivotRows: PivotTableSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const dimensions = advancedVSeed.dimensions as Dimensions
-  const { encoding, measures } = advancedVSeed
+  const dimensions = advancedVSeed.dimensionTree as Dimensions
+  const { encoding } = advancedVSeed
   const rows = dimensions.filter((item) => encoding.row?.includes(item.id))
-  const allMeasures = findAllMeasures(measures)
+  const allMeasures = findAllMeasures(advancedVSeed.measureTree)
 
   return {
     ...spec,

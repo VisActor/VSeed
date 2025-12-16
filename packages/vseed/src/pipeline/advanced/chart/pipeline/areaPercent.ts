@@ -17,7 +17,6 @@ import {
   defaultMeasureId,
   encodingAdapter,
   defaultEncodingForLine,
-  pickMeasuresForReshape,
   pickDimensionsForReshape,
 } from '../pipes'
 
@@ -28,8 +27,8 @@ export const areaPercentAdvancedPipeline: AdvancedPipeline = [
   defaultMeasureId,
 
   encodingAdapter(
-    [buildMeasures, defaultEncodingForLine],
-    [buildMeasures, encodingForLine, pickMeasuresForReshape(['tooltip', 'label', 'color']), pickDimensionsForReshape],
+    [buildMeasures(['yAxis']), defaultEncodingForLine],
+    [buildMeasures(['yAxis']), encodingForLine, pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

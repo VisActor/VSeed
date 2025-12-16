@@ -1,6 +1,7 @@
-import { type Dimensions, type DimensionGroup, type DimensionTree, type VSeed, type Measure } from 'src/types'
-import { isPositionMeasure, measureDepth } from './measures'
-import { isMeasureTreeWithChildren, isMeasureTreeWithParentId } from '../advanced/chart/pipes/measures/utils'
+import type { Measures } from 'src/types'
+import { type Dimensions, type DimensionGroup, type VSeed, type Measure } from 'src/types'
+import { isPositionMeasure } from './measures'
+import { isMeasureTreeWithParentId } from '../advanced/chart/pipes/measures/utils'
 import { unique } from 'remeda'
 import { ChartTypeEnum, DEFAULT_PARENT_ID } from './constant'
 
@@ -79,34 +80,8 @@ export const isCombination = (vseed: VSeed) => {
     return parentIds && unique(parentIds).length > 1
   }
 
-  if (vseed.chartType === 'dualAxis' || vseed.chartType === 'scatter') {
-    if (vseed.chartType === 'scatter') {
-      if (isMeasureTreeWithChildren(vseed.measures)) {
-        const depth = measureDepth(vseed.measures)
-        return depth === 3
-      }
-
-      if (vseed.scatterMeasures && vseed.scatterMeasures.length > 1) {
-        return true
-      }
-      return false
-    }
-    if (vseed.chartType === 'dualAxis') {
-      if (isMeasureTreeWithChildren(vseed.measures)) {
-        const depth = measureDepth(vseed.measures)
-        return depth === 3
-      }
-
-      if (vseed.dualMeasures && vseed.dualMeasures.length > 1) {
-        return true
-      }
-    }
-
-    return false
-  }
-
   const { measures = [] } = vseed as {
-    measures: DimensionTree
+    measures: Measures
     dimensions: Dimensions
   }
 

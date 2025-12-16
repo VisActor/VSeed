@@ -9,7 +9,7 @@ import { defaultRegressionLineColor, defaultRegressionLineLabelX, defaultRegress
 export const kdeRegressionLine: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as IHistogramChartSpec
   const { advancedVSeed, vseed } = context
-  const { chartType, encoding = {} as Encoding, dimensions, regressionLine } = advancedVSeed
+  const { chartType, encoding = {} as Encoding, dimensions = [], regressionLine } = advancedVSeed
   const { dataset } = vseed
   const lineTheme = advancedVSeed.config[chartType as 'histogram']?.regressionLine as RegressionLineConfig
   const binValueType = advancedVSeed.config[chartType as 'histogram']?.binValueType
@@ -121,7 +121,6 @@ export const kdeRegressionLine: VChartSpecPipe = (spec, context) => {
           const parentNode = opt.mark?._product?.parent
 
           if (parentNode?.attribute?.data) {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
             return parentNode.attribute.data.linePoints
           }
 

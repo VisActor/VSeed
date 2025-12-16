@@ -12,36 +12,19 @@ import {
   unfoldDimensions,
   UpperWhisker,
 } from 'src/dataReshape'
-import { revisedBoxPlotFieldKey } from 'src/pipeline/utils'
-import type {
-  AdvancedPipe,
-  ColumnParallel,
-  Dataset,
-  DatasetReshapeInfo,
-  Dimension,
-  Encoding,
-  MeasureGroup,
-} from 'src/types'
+import { DEFAULT_PARENT_ID, revisedBoxPlotFieldKey } from 'src/pipeline/utils'
+import type { AdvancedPipe, ColumnParallel, Dataset, DatasetReshapeInfo, Dimension, Encoding } from 'src/types'
 
 export const pivotReshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset, chartType } = vseed as ColumnParallel
   const { encoding = {}, config } = advancedVSeed
-  const measures = advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []
+  const reshapeMeasures = advancedVSeed.reshapeMeasures ?? []
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
   const uniqDims = uniqueBy(dimensions, (item: Dimension) => item.id)
   const chartConfig = config?.[chartType as 'boxPlot']
   const whiskers = chartConfig?.whiskers
-
-  const measureGroups: MeasureGroup[] = []
-  if (measures) {
-    measures.forEach((measure: MeasureGroup) => {
-      if (measure.children && measure.children.length > 0) {
-        measureGroups.push(measure)
-      }
-    })
-  }
 
   const rowColumnFields = uniqueBy(
     dimensions.filter((dim: Dimension) => dim.encoding === 'row' || dim.encoding === 'column'),
@@ -50,21 +33,17 @@ export const pivotReshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, con
   const datasets: Dataset = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
-  measureGroups.forEach((measureGroup, index) => {
-    const subMeasures = measureGroup.children
-    if (!subMeasures) {
-      return
-    }
-    const groupId = measureGroup.id
+  reshapeMeasures.forEach((measureGroup, index) => {
+    const groupId = measureGroup[0].parentId ?? DEFAULT_PARENT_ID
     let newDatasets: any[] = []
     let foldInfo: any = {}
     let unfoldInfo: any = {}
-    const validEncodingIds = (encoding.value || []).filter((id) => subMeasures.find((field) => field.id === id))
+    const validEncodingIds = (encoding.value || []).filter((id) => measureGroup.find((field) => field.id === id))
 
     if (validEncodingIds.length) {
       const boxPlotDataList: Dataset = []
       validEncodingIds.forEach((f) => {
-        const m = subMeasures.find((m) => m.id === f)
+        const m = measureGroup.find((m) => m.id === f)
         const boxPlotData = boxplot(dataset, {
           field: f,
           groupField: [

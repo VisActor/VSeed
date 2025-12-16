@@ -13,7 +13,6 @@ import {
   defaultMeasureId,
   encodingAdapter,
   defaultEncodingForScatter,
-  pickMeasuresForReshape,
   pickDimensionsForReshape,
   regressionLine,
 } from '../pipes'
@@ -28,12 +27,7 @@ export const scatterAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [buildMeasuresForScatter, defaultEncodingForScatter],
-    [
-      buildMeasuresForScatter,
-      encodingForScatter,
-      pickMeasuresForReshape(['tooltip', 'label', 'size']),
-      pickDimensionsForReshape,
-    ],
+    [buildMeasuresForScatter, encodingForScatter, pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithScatterEncoding], [pivotReshapeWithScatterEncoding]),
 

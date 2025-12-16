@@ -1,27 +1,25 @@
 import { unique } from 'remeda'
 import { MeasureId } from 'src/dataReshape'
-import { findAllMeasures, hasMultipleMeasureInSingleView } from 'src/pipeline/utils'
+import { hasMultipleMeasureInSingleView } from 'src/pipeline/utils'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
 import { addColorToEncoding } from './color'
 import { addDefaultColorEncoding } from './color/addColorToEncoding'
 
 export const defaultEncodingForRadar: AdvancedPipe = (advancedVSeed) => {
-  const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
-  const measures = findAllMeasures(vseedMeasures)
+  const { measures = [], reshapeMeasures = [], dimensions = [] } = advancedVSeed
   const encoding: Encoding = {}
-  generateDefaultDimensionEncoding(dimensions, encoding, hasMultipleMeasureInSingleView(vseedMeasures))
+  generateDefaultDimensionEncoding(dimensions, encoding, hasMultipleMeasureInSingleView(reshapeMeasures))
   generateDefaultMeasureEncoding(measures, encoding)
   return { ...advancedVSeed, encoding }
 }
 
 export const encodingForRadar: AdvancedPipe = (advancedVSeed) => {
-  const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
-  const measures = findAllMeasures(vseedMeasures)
+  const { measures = [], reshapeMeasures = [], dimensions = [] } = advancedVSeed
 
   const hasDimensionEncoding = dimensions.some((item: Dimension) => item.encoding)
   const hasMeasureEncoding = measures.some((item: Measure) => item.encoding)
   const encoding: Encoding = {}
-  const hasMulti = hasMultipleMeasureInSingleView(vseedMeasures)
+  const hasMulti = hasMultipleMeasureInSingleView(reshapeMeasures)
 
   if (hasDimensionEncoding) {
     generateDimensionEncoding(dimensions, encoding, hasMulti)

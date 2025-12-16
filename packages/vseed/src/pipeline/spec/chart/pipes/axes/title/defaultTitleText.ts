@@ -1,11 +1,9 @@
-import { findAllMeasures } from 'src/pipeline/utils'
-import type { Dimensions, MeasureTree } from 'src/types'
+import type { Dimensions, Measure } from 'src/types'
 
-export const defaultTitleText = (measures: MeasureTree, dimensions: Dimensions, idList: string[] = []) => {
-  const allMeasures = findAllMeasures(measures)
+export const defaultTitleText = (measures: Measure[], dimensions: Dimensions, idList: string[] = []) => {
   return idList
     .map((id) => {
-      const alias = [...allMeasures, ...dimensions].find((f) => f.id === id)?.alias || ''
+      const alias = [...measures, ...dimensions].find((f) => f.id === id)?.alias || ''
       return alias
     })
     .join(' & ')

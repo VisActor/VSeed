@@ -1,15 +1,16 @@
 import { uniqueBy } from 'remeda'
 import { dataReshapeByEncoding, FoldMeasureValue } from 'src/dataReshape'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
-import { findAllMeasures } from 'src/pipeline/utils'
+import { DEFAULT_PARENT_ID } from 'src/pipeline/utils/constant'
 import type {
   AdvancedPipe,
   AdvancedVSeed,
   ColumnParallel,
   Dataset,
   DatasetReshapeInfo,
+  Dimension,
   Encoding,
-  MeasureGroup,
+  Measure,
 } from 'src/types'
 
 export const pivotReshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
@@ -17,42 +18,33 @@ export const pivotReshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) =
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
   const { encoding } = advancedVSeed
-  const measures = advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []
+  const reshapeMeasures = advancedVSeed.reshapeMeasures ?? []
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
 
-  const allMeasures = findAllMeasures(measures)
-  const measureGroups: MeasureGroup[] = []
-  if (measures) {
-    measures.forEach((measure: MeasureGroup) => {
-      if (measure.children && measure.children.length > 0) {
-        measureGroups.push(measure)
-      }
-    })
-  }
+  const allMeasuresIds = reshapeMeasures.flatMap((measureGroup) => measureGroup.map((m) => m.id))
 
   const datasets: Dataset = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
-  measureGroups.forEach((measureGroup, index) => {
-    const measures = measureGroup.children
+  reshapeMeasures.forEach((measures, index) => {
     if (!measures) {
       return
     }
-    const groupId = measureGroup.id
+    const groupId = measures[0].parentId ?? DEFAULT_PARENT_ID
     const {
       dataset: newSubDataset,
       foldInfo,
       unfoldInfo,
     } = dataReshapeByEncoding(
       dataset,
-      uniqueBy(dimensions, (item) => item.id),
-      uniqueBy(measures, (item) => item.id),
+      uniqueBy(dimensions, (item: Dimension) => item.id),
+      uniqueBy(measures, (item: Measure) => item.id),
       encoding as Encoding,
       {
         colorItemAsId: false,
         foldMeasureValue: `${FoldMeasureValue}${groupId}`,
         colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-        omitIds: allMeasures.map((item) => item.id),
+        omitIds: allMeasuresIds,
       },
     )
 

@@ -12,10 +12,11 @@ import type {
   AdvancedVSeed,
   ColumnParallel,
   Dataset,
+  Dimension,
   Encoding,
   FoldInfo,
   Measure,
-  MeasureGroup,
+  Measures,
   UnfoldInfo,
 } from 'src/types'
 
@@ -23,31 +24,26 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
-  const { encoding, chartType } = advancedVSeed
-  const measures = (advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []).filter(
-    (m: Measure | MeasureGroup) => m && (m as MeasureGroup).children,
-  )
+  const { encoding, chartType, reshapeMeasures } = advancedVSeed
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
 
-  if (measures.length > 2) {
-    throw new Error('measures can not be more than 2 groups in scatter')
-  }
+  const measures = reshapeMeasures?.[0] ?? []
   const foldInfoList: FoldInfo[] = []
   const unfoldInfoList: UnfoldInfo[] = []
 
   const datasets: Dataset[] = []
-  const xMeasures = measures[0] as MeasureGroup
-  const yMeasures = (measures[1] || xMeasures) as MeasureGroup
+  const xMeasures = measures.filter((m) => m.encoding === 'xAxis') as Measures
+  const yMeasures = measures.filter((m) => m.encoding === 'yAxis') as Measures
 
-  if (xMeasures && xMeasures.children) {
+  if (xMeasures.length) {
     const {
       dataset: newDataset,
       foldInfo,
       unfoldInfo,
     } = dataReshapeByEncoding(
       dataset,
-      uniqueBy(dimensions, (d) => d.id),
-      uniqueBy(xMeasures.children, (d) => d.id),
+      uniqueBy(dimensions, (d: Dimension) => d.id),
+      uniqueBy(xMeasures, (d: Measure) => d.id),
       encoding as Encoding,
       {
         foldMeasureValue: FoldXMeasureValue,
@@ -62,15 +58,15 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
     unfoldInfoList.push(unfoldInfo)
   }
 
-  if (yMeasures && yMeasures.children) {
+  if (yMeasures.length) {
     const {
       dataset: newDataset,
       foldInfo,
       unfoldInfo,
     } = dataReshapeByEncoding(
       datasets[0],
-      uniqueBy(dimensions, (d) => d.id),
-      uniqueBy(yMeasures.children, (d) => d.id),
+      uniqueBy(dimensions, (d: Dimension) => d.id),
+      uniqueBy(yMeasures, (d: Measure) => d.id),
       encoding as Encoding,
       {
         foldMeasureValue: FoldYMeasureValue,

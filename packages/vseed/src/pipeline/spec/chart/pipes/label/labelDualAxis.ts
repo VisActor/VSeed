@@ -15,8 +15,8 @@ export const labelPrimary: VChartSpecPipe = (spec, context) => {
     baseConfig.label,
     vseed.measures,
     vseed.dimensions,
-    advancedVSeed.dimensions,
-    advancedVSeed.measures,
+    advancedVSeed.dimensions!,
+    advancedVSeed.measures!,
     encoding as Encoding,
     [foldInfoList[0]],
   ) as unknown as ILineChartSpec['label']
@@ -37,8 +37,8 @@ export const labelSecondary: VChartSpecPipe = (spec, context) => {
     baseConfig.label,
     vseed.measures,
     vseed.dimensions,
-    advancedVSeed.dimensions,
-    advancedVSeed.measures,
+    advancedVSeed.dimensions!,
+    advancedVSeed.measures!,
     encoding as Encoding,
     [foldInfoList[1]],
   ) as unknown as ILineChartSpec['label']

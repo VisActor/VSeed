@@ -28,8 +28,8 @@ export const columnAdvancedPipeline: AdvancedPipeline = [
   defaultMeasureId,
 
   encodingAdapter(
-    [buildMeasures(['yAxis']), defaultEncodingForColumn],
-    [buildMeasures(['yAxis']), encodingForColumn, pickDimensionsForReshape],
+    [buildMeasures(['yAxis', 'detail']), defaultEncodingForColumn],
+    [buildMeasures(['yAxis', 'detail']), encodingForColumn, pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

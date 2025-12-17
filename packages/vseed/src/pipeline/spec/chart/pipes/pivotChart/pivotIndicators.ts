@@ -1,13 +1,6 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
 import { execPipeline } from '../../../../utils'
-import type {
-  Dataset,
-  Encoding,
-  MeasureGroup,
-  PivotChartSpecPipe,
-  SpecPipelineContext,
-  VChartSpecPipe,
-} from 'src/types'
+import type { Dataset, Encoding, Measures, PivotChartSpecPipe, SpecPipelineContext, VChartSpecPipe } from 'src/types'
 import { unique } from 'remeda'
 
 export const pivotIndicators =
@@ -15,15 +8,15 @@ export const pivotIndicators =
   (spec, context): Partial<PivotChartConstructorOptions> => {
     const result = { ...spec } as PivotChartConstructorOptions
     const { advancedVSeed } = context
-    const { measures, datasetReshapeInfo, dataset, encoding } = advancedVSeed
+    const { datasetReshapeInfo, dataset, encoding, reshapeMeasures = [] } = advancedVSeed
 
     const colorItems = unique(datasetReshapeInfo.flatMap((d) => d.unfoldInfo.colorItems))
     const allMeasureIds = unique(datasetReshapeInfo.flatMap((d) => Object.keys(d.foldInfo.foldMap || {})))
 
     const indicators = datasetReshapeInfo.map((reshapeInfo, index) => {
-      const measureGroup = measures?.find((d) => `${d.id}` === reshapeInfo.id) as MeasureGroup
-      const subMeasuresId = (measureGroup?.children || []).map((d) => d.id)
-      const invalideMeasuresIds = allMeasureIds.filter((id) => !subMeasuresId.includes(id))
+      const subMeasures = (reshapeMeasures[index] || []) as Measures
+      const subMeasuresId = (reshapeMeasures[index] || []).map((d) => d.id)
+      const invalideMeasuresIds = allMeasureIds.filter((id: string) => !subMeasuresId.includes(id))
 
       const newDataset = dataset[index] as Dataset
       const newDatasetReshapeInfo = [
@@ -52,7 +45,7 @@ export const pivotIndicators =
       const chartSpec = execPipeline(chartPipeline, newContext, {})
       return {
         indicatorKey: `${reshapeInfo.id}`,
-        title: measureGroup?.alias,
+        title: subMeasures.map((m) => m.alias ?? m.id).join('-'),
         cellType: 'chart',
         chartModule: 'vchart',
         chartSpec: chartSpec,

@@ -21,9 +21,6 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
   const measures = (advancedVSeed.reshapeMeasures?.[0] ?? []) as Measure[]
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
 
-  if (measures.length > 2) {
-    throw new Error('measures can not be more than 2 groups in dualAxis')
-  }
   const foldInfoList: FoldInfo[] = []
   const unfoldInfoList: UnfoldInfo[] = []
 
@@ -31,49 +28,37 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
   const primaryMeasures = measures.filter((m) => m.encoding === 'primaryYAxis')
   const secondaryMeasures = measures.filter((m) => m.encoding === 'secondaryYAxis')
 
-  if (primaryMeasures.length) {
-    const {
-      dataset: newDataset,
-      foldInfo,
-      unfoldInfo,
-    } = dataReshapeByEncoding(
-      dataset,
-      uniqueBy(dimensions, (item: Dimension) => item.id),
-      uniqueBy(primaryMeasures, (item: Measure) => item.id),
-      encoding as Encoding,
-      {
-        colorItemAsId: false,
-        foldMeasureValue: FoldPrimaryMeasureValue,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-      },
-    )
+  const primaryResult = dataReshapeByEncoding(
+    dataset,
+    uniqueBy(dimensions, (item: Dimension) => item.id),
+    uniqueBy(primaryMeasures, (item: Measure) => item.id),
+    encoding as Encoding,
+    {
+      colorItemAsId: false,
+      foldMeasureValue: FoldPrimaryMeasureValue,
+      colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+    },
+  )
 
-    datasets.push(newDataset)
-    foldInfoList.push(foldInfo)
-    unfoldInfoList.push(unfoldInfo)
-  }
+  datasets.push(primaryResult.dataset)
+  foldInfoList.push(primaryResult.foldInfo)
+  unfoldInfoList.push(primaryResult.unfoldInfo)
 
-  if (secondaryMeasures.length) {
-    const {
-      dataset: newDataset,
-      foldInfo,
-      unfoldInfo,
-    } = dataReshapeByEncoding(
-      dataset,
-      uniqueBy(dimensions, (item: Dimension) => item.id),
-      uniqueBy(secondaryMeasures, (item: Measure) => item.id),
-      encoding as Encoding,
-      {
-        colorItemAsId: false,
-        foldMeasureValue: FoldSecondaryMeasureValue,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-      },
-    )
+  const secondaryResult = dataReshapeByEncoding(
+    dataset,
+    uniqueBy(dimensions, (item: Dimension) => item.id),
+    uniqueBy(secondaryMeasures, (item: Measure) => item.id),
+    encoding as Encoding,
+    {
+      colorItemAsId: false,
+      foldMeasureValue: FoldSecondaryMeasureValue,
+      colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+    },
+  )
 
-    datasets.push(newDataset)
-    foldInfoList.push(foldInfo)
-    unfoldInfoList.push(unfoldInfo)
-  }
+  datasets.push(secondaryResult.dataset)
+  foldInfoList.push(secondaryResult.foldInfo)
+  unfoldInfoList.push(secondaryResult.unfoldInfo)
 
   const unfoldInfo: UnfoldInfo = {
     ...unfoldInfoList[0],

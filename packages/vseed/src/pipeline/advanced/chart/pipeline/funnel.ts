@@ -24,8 +24,8 @@ export const funnelAdvancedPipeline: AdvancedPipeline = [
   defaultMeasureId,
 
   encodingAdapter(
-    [buildMeasures(['size']), defaultEncodingForFunnel],
-    [buildMeasures(['size']), encodingForFunnel, pickDimensionsForReshape],
+    [buildMeasures(['size', 'detail']), defaultEncodingForFunnel],
+    [buildMeasures(['size', 'detail']), encodingForFunnel, pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

@@ -35,51 +35,39 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
     const primaryMeasures = measures.filter((m) => m.encoding === 'primaryYAxis')
     const secondaryMeasures = measures.filter((m) => m.encoding === 'secondaryYAxis')
 
-    if (primaryMeasures.length) {
-      const {
-        dataset: newDataset,
-        foldInfo,
-        unfoldInfo,
-      } = dataReshapeByEncoding(
-        dataset,
-        uniqueBy(dimensions, (item: Dimension) => item.id),
-        uniqueBy(primaryMeasures, (item: Measure) => item.id),
-        encoding as Encoding,
-        {
-          colorItemAsId: false,
-          foldMeasureValue: `${FoldPrimaryMeasureValue}${index}`,
-          colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-          omitIds: allMeasuresIds,
-        },
-      )
+    const primaryResult = dataReshapeByEncoding(
+      dataset,
+      uniqueBy(dimensions, (item: Dimension) => item.id),
+      uniqueBy(primaryMeasures, (item: Measure) => item.id),
+      encoding as Encoding,
+      {
+        colorItemAsId: false,
+        foldMeasureValue: `${FoldPrimaryMeasureValue}${index}`,
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+        omitIds: allMeasuresIds,
+      },
+    )
 
-      datasets.push(newDataset)
-      foldInfoList.push(foldInfo)
-      unfoldInfoList.push(unfoldInfo)
-    }
+    datasets.push(primaryResult.dataset)
+    foldInfoList.push(primaryResult.foldInfo)
+    unfoldInfoList.push(primaryResult.unfoldInfo)
 
-    if (secondaryMeasures.length) {
-      const {
-        dataset: newDataset,
-        foldInfo,
-        unfoldInfo,
-      } = dataReshapeByEncoding(
-        dataset,
-        uniqueBy(dimensions, (item: Dimension) => item.id),
-        uniqueBy(secondaryMeasures, (item: Measure) => item.id),
-        encoding as Encoding,
-        {
-          colorItemAsId: false,
-          foldMeasureValue: `${FoldSecondaryMeasureValue}${index}`,
-          colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-          omitIds: allMeasuresIds,
-        },
-      )
+    const secondaryResult = dataReshapeByEncoding(
+      dataset,
+      uniqueBy(dimensions, (item: Dimension) => item.id),
+      uniqueBy(secondaryMeasures, (item: Measure) => item.id),
+      encoding as Encoding,
+      {
+        colorItemAsId: false,
+        foldMeasureValue: `${FoldSecondaryMeasureValue}${index}`,
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+        omitIds: allMeasuresIds,
+      },
+    )
 
-      datasets.push(newDataset)
-      foldInfoList.push(foldInfo)
-      unfoldInfoList.push(unfoldInfo)
-    }
+    datasets.push(secondaryResult.dataset)
+    foldInfoList.push(secondaryResult.foldInfo)
+    unfoldInfoList.push(secondaryResult.unfoldInfo)
 
     const unfoldInfo: UnfoldInfo = {
       ...unfoldInfoList[0],

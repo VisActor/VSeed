@@ -27,8 +27,8 @@ export const lineAdvancedPipeline: AdvancedPipeline = [
   defaultMeasureId,
 
   encodingAdapter(
-    [buildMeasures(['yAxis']), defaultEncodingForLine],
-    [buildMeasures(['yAxis']), encodingForLine, pickDimensionsForReshape],
+    [buildMeasures(['yAxis', 'detail']), defaultEncodingForLine],
+    [buildMeasures(['yAxis', 'detail']), encodingForLine, pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

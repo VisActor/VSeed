@@ -26,8 +26,8 @@ export const radarAdvancedPipeline: AdvancedPipeline = [
   defaultMeasureId,
 
   encodingAdapter(
-    [buildMeasures(['radius']), defaultEncodingForRadar],
-    [buildMeasures(['radius']), encodingForRadar, pickDimensionsForReshape],
+    [buildMeasures(['radius', 'detail']), defaultEncodingForRadar],
+    [buildMeasures(['radius', 'detail']), encodingForRadar, pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

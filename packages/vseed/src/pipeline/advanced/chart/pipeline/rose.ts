@@ -25,8 +25,8 @@ export const roseAdvancedPipeline: AdvancedPipeline = [
   defaultMeasureId,
 
   encodingAdapter(
-    [buildMeasures(['angle']), defaultEncodingForRose],
-    [buildMeasures(['angle']), encodingForRose, pickDimensionsForReshape],
+    [buildMeasures(['angle', 'detail']), defaultEncodingForRose],
+    [buildMeasures(['angle', 'detail']), encodingForRose, pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

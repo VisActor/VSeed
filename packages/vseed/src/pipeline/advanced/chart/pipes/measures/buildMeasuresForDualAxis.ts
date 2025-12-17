@@ -31,7 +31,7 @@ export const buildMeasuresForDualAxis: AdvancedPipe = (advancedVSeed) => {
     }
   }
 
-  advancedVSeed.reshapeMeasures = parentIds.map((pid) => measuresByView[pid])
+  advancedVSeed.reshapeMeasures = parentIds.map((pid) => measuresByView[pid]).filter((m) => m.length > 0)
 
   return advancedVSeed
 }

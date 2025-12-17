@@ -32,20 +32,22 @@ export const buildMeasuresForScatter: AdvancedPipe = (advancedVSeed) => {
     }
   }
 
-  advancedVSeed.reshapeMeasures = parentIds.map((pid) => {
-    const basicMeasures = measuresByView[pid]
-    const xCount = basicMeasures.filter((m) => m.encoding === 'xAxis').length
-    const yCount = basicMeasures.filter((m) => m.encoding === 'yAxis').length
+  advancedVSeed.reshapeMeasures = parentIds
+    .map((pid) => {
+      const basicMeasures = measuresByView[pid]
+      const xCount = basicMeasures.filter((m) => m.encoding === 'xAxis').length
+      const yCount = basicMeasures.filter((m) => m.encoding === 'yAxis').length
 
-    if (yCount === 0 && xCount > 0) {
-      const cloneMeasure = clone(basicMeasures[0])
-      cloneMeasure.encoding = 'yAxis'
+      if (yCount === 0 && xCount > 0) {
+        const cloneMeasure = clone(basicMeasures[0])
+        cloneMeasure.encoding = 'yAxis'
 
-      return [...basicMeasures, cloneMeasure]
-    }
+        return [...basicMeasures, cloneMeasure]
+      }
 
-    return basicMeasures
-  })
+      return basicMeasures
+    })
+    .filter((m) => m.length > 0)
 
   return advancedVSeed
 }

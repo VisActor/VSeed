@@ -24,8 +24,8 @@ export const donutAdvancedPipeline: AdvancedPipeline = [
   defaultMeasureId,
 
   encodingAdapter(
-    [buildMeasures(['angle']), defaultEncodingForPie],
-    [buildMeasures(['angle']), encodingForPie, pickDimensionsForReshape],
+    [buildMeasures(['angle', 'detail']), defaultEncodingForPie],
+    [buildMeasures(['angle', 'detail']), encodingForPie, pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

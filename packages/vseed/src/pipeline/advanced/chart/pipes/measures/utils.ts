@@ -70,5 +70,5 @@ export const normalizeMeasureTree = (measures: MeasureTree) => {
 }
 
 export const isCommonMeasureEncoding = (encoding: MeasureEncoding) => {
-  return ['color', 'label', 'tooltip', 'detail'].includes(encoding)
+  return ['color', 'label', 'tooltip'].includes(encoding)
 }

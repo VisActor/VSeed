@@ -27,8 +27,8 @@ export const histogramAdvancedPipeline: AdvancedPipeline = [
   histogramConfig,
 
   encodingAdapter(
-    [buildMeasures(['value', 'x0', 'x1']), defaultEncodingForHistogram],
-    [buildMeasures(['value', 'x0', 'x1']), encodingForHistogram, pickDimensionsForReshape],
+    [buildMeasures(['value', 'x0', 'x1', 'yAxis', 'detail']), defaultEncodingForHistogram],
+    [buildMeasures(['value', 'x0', 'x1', 'yAxis', 'detail']), encodingForHistogram, pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithHistogramEncoding], [pivotReshapeWithHistogramEncoding]),
 

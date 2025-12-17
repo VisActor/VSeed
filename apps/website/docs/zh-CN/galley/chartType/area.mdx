@@ -27,33 +27,24 @@ import { AreaChart, CombinationAreaChart, PivotAreaChart } from '@components'
 
 <CombinationAreaChart />
 
-```json title="组合堆叠面积图" {2,4-30}
+```json title="组合堆叠面积图" {2,4-14}
 {
   "chartType": "area",
   "measures": [
     {
-      "id": "sales-and-profit",
-      "alias": "销售额与利润",
-      "children": [
-        {
-          "id": "sales",
-          "alias": "sales"
-        },
-        {
-          "id": "profit",
-          "alias": "利润"
-        }
-      ]
+      "id": "sales",
+      "alias": "sales",
+      "parentId": "sales-and-profit"
     },
     {
-      "id": "ratio",
-      "alias": "比率",
-      "children": [
-        {
-          "id": "rateOfReturn",
-          "alias": "回报率"
-        }
-      ]
+      "id": "profit",
+      "alias": "利润",
+      "parentId": "sales-and-profit"
+    },
+    {
+      "id": "rateOfReturn",
+      "alias": "回报率",
+      "parentId": "ratio"
     }
   ],
   "dataset": [

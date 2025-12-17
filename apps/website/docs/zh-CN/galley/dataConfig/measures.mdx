@@ -6,7 +6,7 @@ import { MeasureGroups, Measures, MeasureDataFormat, MeasureAutoDataFormat } fro
 
 # 指标
 
-:::info {title="指标"} 支持树形指标组, 指标分组后, 图表会组合在一起, 其中双轴图更为特殊:::
+:::info {title="指标"} 采用扁平的结构配置指标，如果想要实现指标分组的效果，可以通过设置不同的`paretnId`来实现；对于表格而言，也支持树形结构的指标:::
 
 ## 普通指标
 
@@ -35,23 +35,13 @@ import { MeasureGroups, Measures, MeasureDataFormat, MeasureAutoDataFormat } fro
 
 <MeasureGroups />
 
-```json {4-17}
+```json {4-9}
 {
   "chartType": "column",
   "measures": [
-    {
-      "id": "group1",
-      "alias": "分组1",
-      "children": [
-        { "id": "profit", "alias": "利润" },
-        { "id": "sales", "alias": "销售额" }
-      ]
-    },
-    {
-      "id": "group2",
-      "alias": "分组2",
-      "children": [{ "id": "discount", "alias": "折扣" }]
-    },
+    { "id": "profit", "alias": "利润", "parentId": "group1" },
+    { "id": "sales", "alias": "销售额", "parentId": "group1" },
+    { "id": "discount", "alias": "折扣", "parentId": "group2" },
     { "id": "rateOfReturn", "alias": "回报率" }
   ],
   "dimensions": [{ "id": "date", "alias": "日期" }],

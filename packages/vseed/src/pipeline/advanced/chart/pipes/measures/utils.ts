@@ -80,9 +80,9 @@ export const isCommonMeasureEncoding = (encoding: MeasureEncoding) => {
  * @param measuresByView The object mapping parent IDs to measures arrays
  * @param parentIds The array tracking all parent IDs that have been initialized
  */
-export const ensureParentIdInitialized = (
+export const ensureParentIdInitialized = <T>(
   parentId: string,
-  measuresByView: { [key: string]: any[] },
+  measuresByView: { [key: string]: T[] },
   parentIds: string[],
 ) => {
   if (!measuresByView[parentId]) {

@@ -1,5 +1,5 @@
 import type { PivotChartConstructorOptions } from '@visactor/vtable'
-import { execPipeline } from '../../../../utils'
+import { execPipeline, isRectungularCoordinate } from '../../../../utils'
 import type { Dataset, Encoding, Measures, PivotChartSpecPipe, SpecPipelineContext, VChartSpecPipe } from 'src/types'
 import { unique } from 'remeda'
 
@@ -45,7 +45,9 @@ export const pivotIndicators =
       const chartSpec = execPipeline(chartPipeline, newContext, {})
       return {
         indicatorKey: `${reshapeInfo.id}`,
-        title: subMeasures.map((m) => m.alias ?? m.id).join('-'),
+        title: isRectungularCoordinate(advancedVSeed.chartType)
+          ? ''
+          : subMeasures.map((m) => m.alias ?? m.id).join('-'),
         cellType: 'chart',
         chartModule: 'vchart',
         chartSpec: chartSpec,

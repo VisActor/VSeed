@@ -89,3 +89,25 @@ export const isCombination = (vseed: VSeed) => {
 
   return hasMeasureGroup
 }
+
+export const isRectungularCoordinate = (chartType: string) => {
+  return (
+    [
+      ChartTypeEnum.Bar,
+      ChartTypeEnum.BarPercent,
+      ChartTypeEnum.BarParallel,
+      ChartTypeEnum.Column,
+      ChartTypeEnum.ColumnPercent,
+      ChartTypeEnum.ColumnParallel,
+      ChartTypeEnum.Line,
+      ChartTypeEnum.Area,
+      ChartTypeEnum.AreaPercent,
+      ChartTypeEnum.DualAxis,
+      ChartTypeEnum.Boxplot,
+      ChartTypeEnum.DualAxis,
+      ChartTypeEnum.Scatter,
+      ChartTypeEnum.Heatmap,
+      ChartTypeEnum.Boxplot,
+    ] as string[]
+  ).includes(chartType)
+}

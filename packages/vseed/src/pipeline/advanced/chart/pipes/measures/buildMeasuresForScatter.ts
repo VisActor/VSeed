@@ -26,8 +26,7 @@ export const buildMeasuresForScatter: AdvancedPipe = (advancedVSeed) => {
       measuresByView[parentId].push(item)
     } else if (!isOtherEncoding) {
       const xCount = measuresByView[parentId].filter((m) => m.encoding === 'xAxis').length
-      const yCount = measuresByView[parentId].filter((m) => m.encoding === 'yAxis').length
-      item.encoding = xCount <= yCount ? 'xAxis' : 'yAxis'
+      item.encoding = xCount === 0 ? 'xAxis' : 'yAxis'
       measuresByView[parentId].push(item)
     }
   }

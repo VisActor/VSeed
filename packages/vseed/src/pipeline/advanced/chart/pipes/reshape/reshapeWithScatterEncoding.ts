@@ -65,7 +65,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
     },
   )
 
-  datasets.push(yResult.dataset)
+  datasets[0] = yResult.dataset
   foldInfoList.push(yResult.foldInfo)
   unfoldInfoList.push(yResult.unfoldInfo)
 

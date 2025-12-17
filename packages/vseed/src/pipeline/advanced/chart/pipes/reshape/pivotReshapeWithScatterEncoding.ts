@@ -1,6 +1,5 @@
 import { dataReshapeByEncoding, FoldXMeasureValue, FoldYMeasureValue } from 'src/dataReshape'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
-import { findAllMeasures, measureDepth } from 'src/pipeline/utils'
 import type {
   AdvancedPipe,
   AdvancedVSeed,
@@ -9,7 +8,7 @@ import type {
   DatasetReshapeInfo,
   Encoding,
   FoldInfo,
-  MeasureGroup,
+  Measure,
   UnfoldInfo,
 } from 'src/types'
 
@@ -18,69 +17,42 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
   const { vseed } = context
   const { dataset } = vseed as ColumnParallel
   const { encoding, chartType } = advancedVSeed
-  const measures = advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []
+  const reshapeMeasures = advancedVSeed.reshapeMeasures ?? []
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
-  const allMeasures = findAllMeasures(measures)
-
-  const measureGroups: Array<MeasureGroup[]> = []
-
-  const depth = measureDepth(measures)
-  if (depth === 3) {
-    measures.forEach((measure: MeasureGroup) => {
-      measureGroups.push(measure.children as unknown as MeasureGroup[])
-    })
-  } else if (depth === 2) {
-    measureGroups.push(measures)
-  }
+  const allMeasuresIds = reshapeMeasures.flatMap((measureGroup) => measureGroup.map((m) => m.id))
 
   const datasetList: Dataset[] = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
-  measureGroups.forEach((measures: MeasureGroup[], index) => {
-    if (measures.length > 2) {
-      throw new Error('measures can not be more than 2 groups in scatter')
-    }
-
+  reshapeMeasures.forEach((measures: Measure[], index) => {
     const foldInfoList: FoldInfo[] = []
     const unfoldInfoList: UnfoldInfo[] = []
 
     const datasets: Dataset[] = []
-    const xMeasures = measures[0]
-    const yMeasures = measures[1] || xMeasures
+    const xMeasures = measures.filter((m) => m.encoding === 'xAxis')
+    const yMeasures = measures.filter((m) => m.encoding === 'yAxis')
 
-    if (xMeasures && xMeasures.children) {
-      const {
-        dataset: newDataset,
-        foldInfo,
-        unfoldInfo,
-      } = dataReshapeByEncoding(dataset, dimensions, xMeasures.children, encoding as Encoding, {
-        foldMeasureValue: `${FoldXMeasureValue}${index}`,
-        colorItemAsId: true,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-        omitIds: allMeasures.map((item) => item.id),
-      })
+    const xResult = dataReshapeByEncoding(dataset, dimensions, xMeasures, encoding as Encoding, {
+      foldMeasureValue: `${FoldXMeasureValue}${index}`,
+      colorItemAsId: true,
+      colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+      omitIds: allMeasuresIds,
+    })
 
-      datasets.push(newDataset)
-      foldInfoList.push(foldInfo)
-      unfoldInfoList.push(unfoldInfo)
-    }
+    datasets.push(xResult.dataset)
+    foldInfoList.push(xResult.foldInfo)
+    unfoldInfoList.push(xResult.unfoldInfo)
 
-    if (yMeasures && yMeasures.children) {
-      const {
-        dataset: newDataset,
-        foldInfo,
-        unfoldInfo,
-      } = dataReshapeByEncoding(dataset, dimensions, yMeasures.children, encoding as Encoding, {
-        foldMeasureValue: `${FoldYMeasureValue}${index}`,
-        colorItemAsId: true,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-        omitIds: allMeasures.map((item) => item.id),
-      })
+    const yResult = dataReshapeByEncoding(dataset, dimensions, yMeasures, encoding as Encoding, {
+      foldMeasureValue: `${FoldYMeasureValue}${index}`,
+      colorItemAsId: true,
+      colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+      omitIds: allMeasuresIds,
+    })
 
-      datasets.push(newDataset)
-      foldInfoList.push(foldInfo)
-      unfoldInfoList.push(unfoldInfo)
-    }
+    datasets.push(yResult.dataset)
+    foldInfoList.push(yResult.foldInfo)
+    unfoldInfoList.push(yResult.unfoldInfo)
 
     const unfoldInfo: UnfoldInfo = {
       ...unfoldInfoList[0],

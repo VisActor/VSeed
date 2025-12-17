@@ -8,17 +8,16 @@ import type {
   BackgroundColor,
   Color,
   Dataset,
-  Dimensions,
   Label,
   Legend,
+  ScatterDimension,
+  ScatterMeasure,
   PointStyle,
   Theme,
   Tooltip,
   CrosshairLine,
   YLinearAxis,
   XLinearAxis,
-  MeasureTree,
-  ScatterMeasures,
   LinearRegressionLine,
   LowessRegressionLine,
   PolynomialRegressionLine,
@@ -67,94 +66,22 @@ export interface Scatter {
   /**
    * 维度
    * @description 散点图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
-   * @type {Dimensions}
    * @example [{id: "month", alias: "月份"}]
    */
-  dimensions?: Dimensions
-
+  dimensions?: ScatterDimension[]
   /**
    * @description 散点图指标
-   * measures可以使用2个指标组, 代表普通散点图的X轴和Y轴指标, 每个指标组内的指标会自动合并为一个指标.
-   * measures可以使用1个指标组, 再嵌套2个指标组, 绘制组合散点图. 最外层的每一个组, 代表一个散点图, 它们会纵向排列.
    * @example
-   * 普通散点图
    * [
    *   {
-   *     id: "xAxis",
-   *     alias: '主轴',
-   *     children: [{id: 'profit', alias: '利润'}, {id: 'sales', alias: '销售额'}]
+   *     id: 'profit', alias: '利润', encoding: 'xAxis'
    *   },
    *   {
-   *     id: "y",
-   *     alias: '次轴',
-   *     children: [{id: 'growth', alias: '增长率'}, {id: 'returnRatio', alias: '回报率'}]
-   *   }
-   * ]
-   * 组合散点图
-   * [
-   *   {
-   *     id: "first",
-   *     alias: "第一个散点图",
-   *     children: [
-   *      {
-   *        id: "xAxis",
-   *        alias: '主轴',
-   *        children: [{id: 'profit', alias: '利润'}, {id: 'sales', alias: '销售额'}]
-   *      },
-   *      {
-   *        id: "y",
-   *        alias: '次轴',
-   *        children: [{id: 'growth', alias: '增长率'}, {id: 'returnRatio', alias: '回报率'}]
-   *      },
-   *     ]
-   *   },
-   *   {
-   *     id: "second",
-   *     alias: "第二个散点图",
-   *     children: [
-   *      {
-   *        id: "xAxis2",
-   *        alias: '主轴',
-   *        children: [{id: 'profit2', alias: '利润'}, {id: 'sales2', alias: '销售额'}]
-   *      },
-   *      {
-   *        id: "y2",
-   *        alias: '次轴',
-   *        children: [{id: 'growth2', alias: '增长率'}, {id: 'returnRatio2', alias: '回报率'}]
-   *      },
-   *     ]
-   *   },
-   * ]
-   */
-  measures?: MeasureTree
-
-  /**
-   * @description 散点图指标, 是measures的简化形式
-   * 组合的散点图指标配置, 每个对象都代表一个散点图, 散点图之间纵向排列, 必须是数组.
-   * 每个配置对象内, xMeasures代表所有的X轴指标, yMeasures代表所有的Y轴指标, xMeasures和yMeasures可配置为数组或一个对象
-   * xMeasures 如果是多个指标, 则会自动合并, 映射至X轴
-   * yMeasures 如果是多个指标, 则会自动合并, 映射至Y轴
-   * @example
-   * 如下示例配置了一个双轴图, 主轴有1个value指标, 次轴有1个growth指标
-   * [
-   *   {
-   *     xMeasures:   {id: 'value', alias: '数值'}
-   *     yMeasures: {id: 'growth', alias: '增长率'}
-   *   }
-   * ]
-   * 如下示例配置了2个纵向排列的双轴图, 第一个双轴图, 主轴有1个value指标, 次轴有一个growth指标, 第二个双轴图, 主轴有2个指标: profit与sales, 次轴有一个returnRatio指标
-   * [
-   *   {
-   *     xMeasures:  {id: 'value', alias: '数值'}
-   *     yMeasures: {id: 'growth', alias: '增长率'}
-   *   },
-   *   {
-   *     xMeasures:   [{id: 'profit', alias: '利润'}, {id: 'sales', alias: '销售额'}],
-   *     yMeasures: [{id: 'returnRatio', alias: '回报率'}]
+   *     id: 'sales', alias: '销售额', encoding: 'yAxis'
    *   }
    * ]
    */
-  scatterMeasures?: ScatterMeasures
+  measures?: ScatterMeasure[]
 
   /**
    * @description 散点图指标的大小, 用于定义散点图中数据点的大小 或 大小范围

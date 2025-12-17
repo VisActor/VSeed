@@ -12,7 +12,6 @@ import {
   defaultDimensions,
   defaultMeasureId,
   encodingAdapter,
-  pickMeasuresForReshape,
   pickDimensionsForReshape,
   defaultEncodingForBoxplot,
   encodingForBoxplot,
@@ -28,11 +27,10 @@ export const boxplotAdvancedPipeline: AdvancedPipeline = [
   boxplotConfig,
 
   encodingAdapter(
-    [buildMeasures, defaultEncodingForBoxplot],
+    [buildMeasures(['value', 'q1', 'q3', 'min', 'max', 'median', 'outliers']), defaultEncodingForBoxplot],
     [
-      buildMeasures,
+      buildMeasures(['value', 'q1', 'q3', 'min', 'max', 'median', 'outliers']),
       encodingForBoxplot,
-      pickMeasuresForReshape(['tooltip', 'label', 'color']),
       pickDimensionsForReshape,
     ],
   ),

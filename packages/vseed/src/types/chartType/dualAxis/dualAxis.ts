@@ -13,13 +13,12 @@ import type {
   CrosshairRect,
   Dataset,
   DimensionLinkage,
-  Dimensions,
+  DualAxisDimension,
+  DualAxisMeasure,
   DualChartType,
-  DualMeasures,
   Label,
   Legend,
   LineStyle,
-  MeasureTree,
   PointStyle,
   Sort,
   SortLegend,
@@ -74,90 +73,16 @@ export interface DualAxis {
    * @description 维度, 第一个维度会放至X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
    * @example [{id: 'month', alias: '月份'}]
    */
-  dimensions?: Dimensions
+  dimensions?: DualAxisDimension[]
 
   /**
    * @description 双轴图指标
-   * measures可以使用2个指标组, 代表普通双轴图的主轴和次轴指标, 每个指标组内的指标会自动合并为一个指标.
-   * measures可以使用1个指标组, 再嵌套2个指标组, 绘制组合双轴图. 最外层的每一个组, 代表一个双轴图, 它们会纵向排列.
-   * @example
-   * 普通双轴图
-   * [
-   *   {
-   *     id: "primaryAxis",
-   *     alias: '主轴',
-   *     children: [{id: 'profit', alias: '利润'}, {id: 'sales', alias: '销售额'}]
-   *   },
-   *   {
-   *     id: "secondaryAxis",
-   *     alias: '次轴',
-   *     children: [{id: 'growth', alias: '增长率'}, {id: 'returnRatio', alias: '回报率'}]
-   *   }
-   * ]
-   * 组合双轴图
-   * [
-   *   {
-   *     id: "first",
-   *     alias: "第一个双轴图",
-   *     children: [
-   *      {
-   *        id: "primaryAxis",
-   *        alias: '主轴',
-   *        children: [{id: 'profit', alias: '利润'}, {id: 'sales', alias: '销售额'}]
-   *      },
-   *      {
-   *        id: "secondaryAxis",
-   *        alias: '次轴',
-   *        children: [{id: 'growth', alias: '增长率'}, {id: 'returnRatio', alias: '回报率'}]
-   *      },
-   *     ]
-   *   },
-   *   {
-   *     id: "second",
-   *     alias: "第二个双轴图",
-   *     children: [
-   *      {
-   *        id: "primaryAxis2",
-   *        alias: '主轴',
-   *        children: [{id: 'profit2', alias: '利润'}, {id: 'sales2', alias: '销售额'}]
-   *      },
-   *      {
-   *        id: "secondaryAxis2",
-   *        alias: '次轴',
-   *        children: [{id: 'growth2', alias: '增长率'}, {id: 'returnRatio2', alias: '回报率'}]
-   *      },
-   *     ]
-   *   },
-   * ]
+   * 对于encoding中映射到primaryYAxis和secondaryYAxis的指标,
+   * 可以通过设置`parentId`属性, 将指标进行分组，不同分组的指标会显示到不同子图中，
+   * 也可以设置`chartType`属性，来指定不同指标组的图表类型。
+   * @example [{ id: 'value', encoding: 'primaryYAxis' }, { id: 'growth', encoding: 'secondaryYAxis' }]
    */
-  measures?: MeasureTree
-  /**
-   * @description 双轴图指标, 是measures的简化形式
-   * 组合的双轴图指标配置, 每个对象都代表一个双轴图, 双轴图之间纵向排列, 必须是数组.
-   * 每个配置对象内, primaryMeasures代表所有的主轴指标, secondaryMeasures代表所有的次轴指标, primaryMeasures和secondaryMeasures可配置为数组或一个对象
-   * primaryMeasures 如果是多个指标, 则会自动合并
-   * secondaryMeasures 如果是多个指标, 则会自动合并
-   * @example
-   * 如下示例配置了一个双轴图, 主轴有1个value指标, 次轴有1个growth指标
-   * [
-   *   {
-   *     primaryMeasures:   {id: 'value', alias: '数值'}
-   *     secondaryMeasures: {id: 'growth', alias: '增长率'}
-   *   }
-   * ]
-   * 如下示例配置了2个纵向排列的双轴图, 第一个双轴图, 主轴有1个value指标, 次轴有一个growth指标, 第二个双轴图, 主轴有2个指标: profit与sales, 次轴有一个returnRatio指标
-   * [
-   *   {
-   *     primaryMeasures:  {id: 'value', alias: '数值'}
-   *     secondaryMeasures: {id: 'growth', alias: '增长率'}
-   *   },
-   *   {
-   *     primaryMeasures:   [{id: 'profit', alias: '利润'}, {id: 'sales', alias: '销售额'}],
-   *     secondaryMeasures: [{id: 'returnRatio', alias: '回报率'}]
-   *   }
-   * ]
-   */
-  dualMeasures?: DualMeasures
+  measures?: DualAxisMeasure[]
 
   /**
    * @description 双轴图的主次轴的图表类型, 用于定义双轴图的类型, 包括折线图, 柱状图, 面积图等, 当measures有多组时, dualChartType可以配置为数组, 每项对应一个双轴图的子图表类型.

@@ -1,6 +1,6 @@
 # linearRegressionLine
 
-**Type:** `boolean | LinearRegressionLine | LinearRegressionLine[] | undefined`
+**Type:** `LinearRegressionLine | LinearRegressionLine[] | undefined`
 
 :::note{title=描述}
 线性回归线
@@ -11,6 +11,15 @@
 
 :::
 
+
+## enable
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否开启
+
+:::
 
 ## color
 
@@ -107,6 +116,15 @@
 
 :::
 
+## confidenceLevel
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+置信区间数值设定，默认95%置信度
+
+:::
+
 ## confidenceIntervalColor
 
 **Type:** `string | undefined`
@@ -127,6 +145,62 @@
 
 **示例**
 0.5
+
+
+
+## shadowBlur
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+图形模糊效果程度
+
+:::
+
+**示例**
+0
+
+
+
+## shadowColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+图形的阴影颜色
+
+:::
+
+**示例**
+'#FFFFFF4D'
+
+
+
+## shadowOffsetX
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+阴影水平偏移距离
+
+:::
+
+**示例**
+0
+
+
+
+## shadowOffsetY
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+阴影垂直偏移距离
+
+:::
+
+**示例**
+1
 
 
 

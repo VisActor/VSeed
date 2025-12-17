@@ -1,5 +1,5 @@
 import { pipe, uniqueBy, isNullish } from 'remeda'
-import { createFormatterByMeasure, findAllMeasures, findMeasureById } from '../../../../utils'
+import { createFormatterByMeasure, findMeasureById } from '../../../../utils'
 import type {
   Dimension,
   Dimensions,
@@ -33,11 +33,11 @@ const VCHART_OUTLIER_KEY = '__VCHART_BOX_PLOT_OUTLIER_VALUE'
 export const tooltipBoxplot: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
-  const { chartType, dimensions, encoding, datasetReshapeInfo } = advancedVSeed
+  const { chartType, dimensions = [], encoding, datasetReshapeInfo } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType as 'boxPlot'] as { tooltip: Tooltip }
   const { tooltip = { enable: true } } = baseConfig
   const { enable } = tooltip
-  const meas = findAllMeasures(vseed.measures)
+  const meas = (vseed.measures ?? []) as Measures
   const valueMeasure = meas.find((item) => item.encoding === 'value' || isNullish(item.encoding))
   const defaultFormatter = valueMeasure ? createFormatterByMeasure(valueMeasure) : (v: unknown) => v
   const measureAliasMapping: Record<string, string> = {

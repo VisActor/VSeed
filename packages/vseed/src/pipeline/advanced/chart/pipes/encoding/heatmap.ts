@@ -1,12 +1,12 @@
 import { unique } from 'remeda'
 import { MeasureId } from 'src/dataReshape'
-import { findAllMeasures } from 'src/pipeline/utils'
+import { hasMultipleMeasureInSingleView } from 'src/pipeline/utils'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
 import { addColorToEncoding } from './color'
 
 export const defaultEncodingForHeatmap: AdvancedPipe = (advancedVSeed) => {
-  const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
-  const measures = findAllMeasures(vseedMeasures)
+  const { measures = [], dimensions = [] } = advancedVSeed
+
   const encoding: Encoding = {}
   generateDefaultDimensionEncoding(dimensions, encoding)
   generateDefaultMeasureEncoding(measures, encoding)
@@ -14,15 +14,14 @@ export const defaultEncodingForHeatmap: AdvancedPipe = (advancedVSeed) => {
 }
 
 export const encodingForHeatmap: AdvancedPipe = (advancedVSeed) => {
-  const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
-  const measures = findAllMeasures(vseedMeasures)
+  const { measures = [], reshapeMeasures = [], dimensions = [] } = advancedVSeed
 
   const hasDimensionEncoding = dimensions.some((item: Dimension) => item.encoding)
   const hasMeasureEncoding = measures.some((item: Measure) => item.encoding)
   const encoding: Encoding = {}
 
   if (hasDimensionEncoding) {
-    generateDimensionEncoding(dimensions, encoding, measures.length > 1)
+    generateDimensionEncoding(dimensions, encoding, hasMultipleMeasureInSingleView(reshapeMeasures))
   } else {
     generateDefaultDimensionEncoding(dimensions, encoding)
   }

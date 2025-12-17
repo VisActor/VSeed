@@ -1,6 +1,6 @@
 import { clone } from 'remeda'
 import { isMeasure, preorderTraverse } from 'src/pipeline/utils'
-import type { AdvancedPipe, Datum } from 'src/types'
+import type { AdvancedPipe, Datum, Measure, MeasureGroup } from 'src/types'
 
 /**
  * @description 如果用户没有配置 measures, 则基于 dataset 构建默认的 measures
@@ -12,14 +12,14 @@ export const defaultMeasures: AdvancedPipe = (advancedVSeed, context) => {
   if (measures && measures.length > 0) {
     const clonedMeasures = clone(measures)
     preorderTraverse(clonedMeasures, (node) => {
-      if (isMeasure(node)) {
-        node.alias = node.alias || node.id
+      if (isMeasure(node as Measure | MeasureGroup)) {
+        ;(node as Measure).alias = (node as Measure).alias || (node as Measure).id
       }
       return false
     })
     return {
       ...advancedVSeed,
-      measures: clonedMeasures,
+      measureTree: clonedMeasures,
     }
   }
 
@@ -38,6 +38,6 @@ export const defaultMeasures: AdvancedPipe = (advancedVSeed, context) => {
 
   return {
     ...advancedVSeed,
-    measures: defaultMeasures,
+    measureTree: defaultMeasures,
   }
 }

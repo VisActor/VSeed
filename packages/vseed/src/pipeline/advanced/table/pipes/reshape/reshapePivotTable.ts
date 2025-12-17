@@ -7,8 +7,8 @@ export const reshapePivotTable: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset, chartType } = vseed as PivotTable
-  const { dimensions, measures } = advancedVSeed
-  const { dataset: newDatasets, foldInfo } = foldMeasures(dataset, findAllMeasures(measures), {
+  const { measureTree } = advancedVSeed
+  const { dataset: newDatasets, foldInfo } = foldMeasures(dataset, findAllMeasures(measureTree), {
     measureId: FoldMeasureId,
     measureName: FoldMeasureName,
     measureValue: FoldMeasureValue,
@@ -27,7 +27,5 @@ export const reshapePivotTable: AdvancedPipe = (advancedVSeed, context) => {
     ...result,
     dataset: newDatasets,
     datasetReshapeInfo: datasetReshapeInfo,
-    dimensions,
-    measures,
   }
 }

@@ -9,14 +9,14 @@ import type {
   Color,
   CrosshairRect,
   Dataset,
-  Dimensions,
+  HistogramDimension,
   Label,
   Legend,
   StackCornerRadius,
   Theme,
   Tooltip,
   YLinearAxis,
-  MeasureTree,
+  HistogramMeasure,
   XLinearAxis,
   KdeRegressionLine,
   EcdfRegressionLine,
@@ -47,17 +47,15 @@ export interface Histogram {
 
   /**
    * @description 直方图通常不需要维度
-   * @type {Dimensions}
    * @example [{id: "category", alias: "类别"}]
    */
-  dimensions?: Dimensions
+  dimensions?: HistogramDimension[]
 
   /**
    * @description 直方图仅支持一个维度，并且数据为离散数据
-   * @type {MeasureTree}
    * @example [{id: "value", alias: "数值"}]
    */
-  measures?: MeasureTree
+  measures?: HistogramMeasure[]
 
   /**
    * @description 图表的背景颜色, 背景颜色可以是颜色字符串, 默认为透明背景, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'

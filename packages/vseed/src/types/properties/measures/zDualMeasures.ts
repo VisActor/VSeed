@@ -1,25 +1,9 @@
 import { z } from 'zod'
 import { zMeasure } from './zMeasures'
 
-export const zDualMeasure = z.object({
-  id: z.string(),
-
-  primaryMeasures: z
-    .array(
-      zMeasure.omit({
-        encoding: true,
-        parentId: true,
-      }),
-    )
-    .or(
-      zMeasure.omit({
-        parentId: true,
-        encoding: true,
-      }),
-    )
-    .optional(),
-
-  secondaryMeasures: z.array(zMeasure).or(zMeasure).optional(),
+export const zDualMeasure = zMeasure.extend({
+  chartType: z.enum(['line', 'column', 'columnParallel', 'area', 'scatter']).optional(),
+  encoding: z.enum(['primaryYAxis', 'secondaryYAxis', 'color', 'label', 'tooltip']).optional(),
 })
 
 export const zDualMeasures = z.array(zDualMeasure)

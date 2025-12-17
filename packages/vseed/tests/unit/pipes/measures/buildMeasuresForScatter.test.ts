@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest'
 import { buildMeasuresForScatter } from 'src/pipeline/advanced/chart/pipes/measures/buildMeasuresForScatter'
-import type { AdvancedVSeed, MeasureGroup, VSeed } from 'src/types'
+import type { AdvancedVSeed, VSeed } from 'src/types'
 
 describe('buildMeasuresForScatter', () => {
-  it('returns early when measures already have children', () => {
+  it('keeps measures unchanged when no transformation needed', () => {
     const vseed: VSeed = {
       chartType: 'scatter',
       dataset: [],
@@ -15,16 +15,14 @@ describe('buildMeasuresForScatter', () => {
     expect(res.measures).toEqual(advancedVSeed.measures)
   })
 
-  it('converts parentId measures into grouped measure tree', () => {
+  it('converts parentId measures into reshapeMeasures array', () => {
     const vseed: VSeed = {
       chartType: 'scatter',
       dataset: [{ m1: 0, m2: 0, m3: 0 }],
       measures: [
         { id: 'm1', encoding: 'xAxis', parentId: '1' },
         { id: 'm2', encoding: 'yAxis', parentId: '1' },
-        {
-          id: 'm3', encoding: 'color', parentId: '1'
-        }
+        { id: 'm3', encoding: 'color', parentId: '1' }
       ]
     }
     const advancedVSeed: Partial<AdvancedVSeed> = {
@@ -32,29 +30,26 @@ describe('buildMeasuresForScatter', () => {
     }
 
     const res = buildMeasuresForScatter(advancedVSeed, { vseed })
-    // should produce groups / children containing m1 and m2
-    expect(Array.isArray(res.measures)).toBe(true)
-    expect(res.measures?.length).toBe(3)
-
-    expect(res.measures![0]).toEqual({ id: '0-x', alias: 'm1', children: [
-      vseed.measures![0]
-    ]})
-    expect(res.measures![1]).toEqual({ id: '0-y', alias: 'm2', children: [
-      vseed.measures![1]
-    ]})
-    expect(res.measures![2]).toMatchObject(vseed.measures![2])
+    
+    // should produce reshapeMeasures as Measure[][]
+    expect(Array.isArray(res.reshapeMeasures)).toBe(true)
+    expect(res.reshapeMeasures?.length).toBe(1)
+    
+    // first group contains xAxis and yAxis measures
+    const firstGroup = res.reshapeMeasures![0]
+    expect(firstGroup.length).toBe(2)
+    expect(firstGroup[0]).toMatchObject({ id: 'm1', encoding: 'xAxis', parentId: '1' })
+    expect(firstGroup[1]).toMatchObject({ id: 'm2', encoding: 'yAxis', parentId: '1' })
   })
 
-    it('converts simple measures into grouped measure tree', () => {
+  it('converts simple measures into reshapeMeasures array', () => {
     const vseed: VSeed = {
       chartType: 'scatter',
       dataset: [{ m1: 0, m2: 0, m3: 0 }],
       measures: [
         { id: 'm1', encoding: 'xAxis' },
         { id: 'm2', encoding: 'yAxis' },
-        {
-          id: 'm3', encoding: 'color'
-        }
+        { id: 'm3', encoding: 'color' }
       ]
     }
     const advancedVSeed: Partial<AdvancedVSeed> = {
@@ -62,36 +57,15 @@ describe('buildMeasuresForScatter', () => {
     }
 
     const res = buildMeasuresForScatter(advancedVSeed, { vseed })
-    // should produce groups / children containing m1 and m2
-    expect(Array.isArray(res.measures)).toBe(true)
-    expect(res.measures?.length).toBe(3)
-
-    expect(res.measures![0]).toEqual({ id: '0-x', alias: 'm1', children: [
-      vseed.measures![0]
-    ]})
-    expect(res.measures![1]).toEqual({ id: '0-y', alias: 'm2', children: [
-      vseed.measures![1]
-    ]})
-    expect(res.measures![2]).toMatchObject(vseed.measures![2])
-  })
-
-  it('uses vseed.scatterMeasures when provided', () => {
-     const advancedVSeed: Partial<AdvancedVSeed> = {}
-    const context = {
-      vseed: {
-        chartType: 'scatter',
-        dataset: [],
-        scatterMeasures: [{ id: 's1', xMeasures: [{ id: 'xm' }], yMeasures: [{ id: 'ym' }] }]
-      } as VSeed
-    }
-
-    const res = buildMeasuresForScatter(advancedVSeed, context)
-    // for single scatterMeasures, buildMeasuresForScatter returns the children (two groups)
-    expect(Array.isArray(res.measures)).toBe(true)
-    expect(res.measures!.length).toBe(2)
-    expect(res.measures![0].id).toBe('0-x')
-    expect(res.measures![1].id).toBe('0-y')
-    expect((res.measures![0] as MeasureGroup).children![0].id).toBe('xm')
-    expect((res.measures![1] as MeasureGroup).children![0].id).toBe('ym')
+    
+    // should produce reshapeMeasures as Measure[][]
+    expect(Array.isArray(res.reshapeMeasures)).toBe(true)
+    expect(res.reshapeMeasures?.length).toBe(1)
+    
+    // first group contains xAxis and yAxis measures
+    const firstGroup = res.reshapeMeasures![0]
+    expect(firstGroup.length).toBe(2)
+    expect(firstGroup[0]).toMatchObject({ id: 'm1', encoding: 'xAxis' })
+    expect(firstGroup[1]).toMatchObject({ id: 'm2', encoding: 'yAxis' })
   })
 })

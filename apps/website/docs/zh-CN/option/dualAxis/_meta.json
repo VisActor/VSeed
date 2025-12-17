@@ -71,6 +71,11 @@
   },
   {
     "type": "file",
+    "name": "dimensionLinkage",
+    "label": "dimensionLinkage "
+  },
+  {
+    "type": "file",
     "name": "dimensions",
     "label": "dimensions "
   },
@@ -78,11 +83,6 @@
     "type": "file",
     "name": "dualChartType",
     "label": "dualChartType "
-  },
-  {
-    "type": "file",
-    "name": "dualMeasures",
-    "label": "dualMeasures "
   },
   {
     "type": "file",

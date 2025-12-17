@@ -17,7 +17,6 @@ import {
   defaultMeasureId,
   encodingAdapter,
   defaultEncodingForBar,
-  pickMeasuresForReshape,
   pickDimensionsForReshape,
 } from '../pipes'
 
@@ -28,8 +27,8 @@ export const barAdvancedPipeline: AdvancedPipeline = [
   defaultMeasureId,
 
   encodingAdapter(
-    [buildMeasures, defaultEncodingForBar],
-    [buildMeasures, encodingForBar, pickMeasuresForReshape(['tooltip', 'label', 'color']), pickDimensionsForReshape],
+    [buildMeasures(['xAxis', 'detail']), defaultEncodingForBar],
+    [buildMeasures(['xAxis', 'detail']), encodingForBar, pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

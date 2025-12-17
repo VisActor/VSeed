@@ -15,8 +15,8 @@ export const labelBoxPlot: VChartSpecPipe = (spec, context) => {
     label,
     vseed.measures,
     vseed.dimensions,
-    advancedVSeed.dimensions,
-    advancedVSeed.measures,
+    advancedVSeed.dimensions!,
+    advancedVSeed.measures!,
     encoding as Encoding,
     [
       {

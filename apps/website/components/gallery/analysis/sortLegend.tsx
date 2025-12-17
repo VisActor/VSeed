@@ -39,14 +39,8 @@ export const SortLegendByMeasure = memo(() => {
     dimensions: [{ id: 'date', alias: '日期' }],
     measures: [
       { id: 'count', alias: '数量' },
-      {
-        id: 'group',
-        alias: '分组',
-        children: [
-          { id: 'sales', alias: '销售额' },
-          { id: 'profit', alias: '利润' },
-        ],
-      },
+      { id: 'sales', alias: '销售额', parentId: 'group' },
+      { id: 'profit', alias: '利润', parentId: 'group' },
     ],
     sortLegend: {
       order: 'desc',

@@ -155,28 +155,19 @@ export const CombinationHeatmapChart = memo(() => {
     ],
     measures: [
       {
-        id: 'sales-and-profit',
-        alias: '销售额与利润',
-        children: [
-          {
-            id: 'sales',
-            alias: 'sales',
-          },
-          {
-            id: 'profit',
-            alias: '利润',
-          },
-        ],
+        id: 'sales',
+        alias: 'sales',
+        parentId: 'sales-and-profit',
       },
       {
-        id: 'ratio',
-        alias: '比率',
-        children: [
-          {
-            id: 'rateOfReturn',
-            alias: '回报率',
-          },
-        ],
+        id: 'profit',
+        alias: '利润',
+        parentId: 'sales-and-profit',
+      },
+      {
+        id: 'rateOfReturn',
+        alias: '回报率',
+        parentId: 'ratio',
       },
     ],
   }
@@ -192,11 +183,7 @@ export const PivotHeatmapChart = memo(() => {
       { id: 'region', alias: '区域', encoding: 'row' },
     ],
     measures: [
-      {
-        id: 'group-sales',
-        alias: '销售额分组',
-        children: [{ id: 'sales', alias: '销售额' }],
-      },
+      { id: 'sales', alias: '销售额', parentId: 'group-sales' },
       { id: 'profit', alias: '利润' },
     ],
     dataset: [

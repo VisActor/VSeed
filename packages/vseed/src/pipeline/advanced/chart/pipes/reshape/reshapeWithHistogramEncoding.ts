@@ -10,7 +10,6 @@ import {
   Separator,
   unfoldDimensions,
 } from 'src/dataReshape'
-import { findAllMeasures } from 'src/pipeline/utils'
 import type { AdvancedPipe, AdvancedVSeed, ColumnParallel, Dataset, Dimension, Encoding, FoldInfo } from 'src/types'
 import { bin } from '@visactor/vdataset'
 import { uniqueBy } from 'remeda'
@@ -20,10 +19,9 @@ export const reshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, contex
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset, chartType } = vseed as ColumnParallel
-  const { encoding = {}, config } = advancedVSeed
-  const measures = advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []
+  const { encoding = {}, config, measures = [] } = advancedVSeed
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
-  const uniqDims = uniqueBy(dimensions, (item) => item.id)
+  const uniqDims = uniqueBy(dimensions, (item: Dimension) => item.id)
   const chartConfig = config?.[chartType as 'histogram']
   const binCount = chartConfig?.binCount
   const binStep = chartConfig?.binStep
@@ -47,11 +45,10 @@ export const reshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, contex
   let unfoldInfo: any = {}
 
   const colorMeasureId = getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed)
-  const allMeasures = findAllMeasures(measures)
 
   if (encoding.value?.length) {
     const valueField = encoding.value[0]
-    const m = allMeasures.find((m) => m.id === valueField)
+    const m = measures.find((m) => m.id === valueField)
     const binData = bin(dataset, {
       field: valueField,
       groupField: [...(encoding.x ?? []), ...(encoding.color ?? [])] as string[],
@@ -94,9 +91,7 @@ export const reshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, contex
     const res = dataReshapeByEncoding(
       dataset,
       uniqueBy(dimensions, (item: Dimension) => item.id),
-      findAllMeasures(measures)
-        .filter((item) => encoding.y?.includes(item.id))
-        .slice(0, 1),
+      measures.filter((item) => encoding.y?.includes(item.id)).slice(0, 1),
       encoding as Encoding,
       {
         colorItemAsId: false,
@@ -125,7 +120,5 @@ export const reshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, contex
         unfoldInfo,
       },
     ],
-    dimensions,
-    measures,
   }
 }

@@ -1,12 +1,21 @@
 # ecdfRegressionLine
 
-**Type:** `boolean | EcdfRegressionLine | EcdfRegressionLine[] | undefined`
+**Type:** `EcdfRegressionLine | EcdfRegressionLine[] | undefined`
 
 :::note{title=描述}
 经验累积分布函数回归线配置, 用于展示数据的累积分布情况
 
 :::
 
+
+## enable
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否开启
+
+:::
 
 ## color
 

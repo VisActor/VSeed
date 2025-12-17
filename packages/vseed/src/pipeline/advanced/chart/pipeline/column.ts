@@ -17,7 +17,6 @@ import {
   defaultMeasureId,
   encodingAdapter,
   defaultEncodingForColumn,
-  pickMeasuresForReshape,
   pickDimensionsForReshape,
   regressionLine,
 } from '../pipes'
@@ -29,8 +28,8 @@ export const columnAdvancedPipeline: AdvancedPipeline = [
   defaultMeasureId,
 
   encodingAdapter(
-    [buildMeasures, defaultEncodingForColumn],
-    [buildMeasures, encodingForColumn, pickMeasuresForReshape(['tooltip', 'label', 'color']), pickDimensionsForReshape],
+    [buildMeasures(['yAxis', 'detail']), defaultEncodingForColumn],
+    [buildMeasures(['yAxis', 'detail']), encodingForColumn, pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithEncoding], [pivotReshapeWithEncoding]),
 

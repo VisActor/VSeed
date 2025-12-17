@@ -10,8 +10,7 @@ import {
   unfoldDimensions,
   UpperWhisker,
 } from 'src/dataReshape'
-import { findAllMeasures } from 'src/pipeline/utils'
-import type { AdvancedPipe, ColumnParallel, Dataset, Encoding } from 'src/types'
+import type { AdvancedPipe, ColumnParallel, Dataset, Dimension, Encoding } from 'src/types'
 import { boxplot } from '@visactor/vdataset'
 import { uniqueBy } from 'remeda'
 
@@ -19,10 +18,9 @@ export const reshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, context)
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset, chartType } = vseed as ColumnParallel
-  const { encoding = {}, config } = advancedVSeed
-  const measures = advancedVSeed.reshapeMeasures ?? advancedVSeed.measures ?? []
+  const { encoding = {}, config, measures = [] } = advancedVSeed
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
-  const uniqDims = uniqueBy(dimensions, (item) => item.id)
+  const uniqDims = uniqueBy(dimensions, (item: Dimension) => item.id)
 
   const whiskers = config?.[chartType as 'boxPlot']?.whiskers
 
@@ -30,12 +28,10 @@ export const reshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, context)
   let foldInfo: any = {}
   let unfoldInfo: any = {}
 
-  const allMeasures = findAllMeasures(measures)
-
   if (encoding.value?.length) {
     const boxPlotDataList: Dataset = []
     encoding.value.forEach((f) => {
-      const m = allMeasures.find((m) => m.id === f)
+      const m = measures.find((m) => m.id === f)
       const boxPlotData = boxplot(dataset, {
         field: f,
         groupField: [...(encoding.x ?? []), ...(encoding.color ?? [])] as string[],
@@ -103,7 +99,5 @@ export const reshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, context)
         unfoldInfo,
       },
     ],
-    dimensions,
-    measures,
   }
 }

@@ -1,6 +1,6 @@
 # lowessRegressionLine
 
-**Type:** `boolean | LowessRegressionLine | LowessRegressionLine[] | undefined`
+**Type:** `LowessRegressionLine | LowessRegressionLine[] | undefined`
 
 :::note{title=描述}
 局部加权回归线配置项
@@ -11,6 +11,15 @@
 
 :::
 
+
+## enable
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否开启
+
+:::
 
 ## color
 
@@ -104,6 +113,15 @@
 
 :::note{title=描述}
 是否显示置信区间
+
+:::
+
+## confidenceLevel
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+置信区间数值设定，默认95%置信度
 
 :::
 

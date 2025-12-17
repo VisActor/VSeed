@@ -1,4 +1,4 @@
-import type { MeasureGroup, MeasureTree } from 'src/types'
+import type { MeasureEncoding, MeasureGroup, MeasureTree } from 'src/types'
 
 /**
  * @description 检查是否为指标树, 指标树深度大于1. 如果存在一个指标为组, 即有children配置, 则认为是指标树.
@@ -67,4 +67,26 @@ export const normalizeMeasureTree = (measures: MeasureTree) => {
   }
 
   return measureGroups
+}
+
+export const isCommonMeasureEncoding = (encoding: MeasureEncoding) => {
+  return ['color', 'label', 'tooltip'].includes(encoding)
+}
+
+/**
+ * @description Ensures that the measuresByView object has an initialized array for the given parentId.
+ * If the parentId doesn't exist in measuresByView, it initializes an empty array and tracks the parentId.
+ * @param parentId The parent ID to ensure initialization for
+ * @param measuresByView The object mapping parent IDs to measures arrays
+ * @param parentIds The array tracking all parent IDs that have been initialized
+ */
+export const ensureParentIdInitialized = <T>(
+  parentId: string,
+  measuresByView: { [key: string]: T[] },
+  parentIds: string[],
+) => {
+  if (!measuresByView[parentId]) {
+    measuresByView[parentId] = []
+    parentIds.push(parentId)
+  }
 }

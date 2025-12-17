@@ -12,7 +12,6 @@ import {
   defaultMeasures,
   defaultDimensions,
   encodingAdapter,
-  pickMeasuresForReshape,
   pickDimensionsForReshape,
   defaultEncodingForHistogram,
   encodingForHistogram,
@@ -28,13 +27,8 @@ export const histogramAdvancedPipeline: AdvancedPipeline = [
   histogramConfig,
 
   encodingAdapter(
-    [buildMeasures, defaultEncodingForHistogram],
-    [
-      buildMeasures,
-      encodingForHistogram,
-      pickMeasuresForReshape(['tooltip', 'label', 'color']),
-      pickDimensionsForReshape,
-    ],
+    [buildMeasures(['value', 'x0', 'x1', 'yAxis', 'detail']), defaultEncodingForHistogram],
+    [buildMeasures(['value', 'x0', 'x1', 'yAxis', 'detail']), encodingForHistogram, pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithHistogramEncoding], [pivotReshapeWithHistogramEncoding]),
 

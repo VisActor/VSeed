@@ -8,7 +8,7 @@ import { linearAxisStyle } from './linearAxisStyle'
 export const xLinear: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
-  const { encoding, dimensions, measures } = advancedVSeed
+  const { encoding, dimensions = [], measures = [] } = advancedVSeed
   const { chartType } = vseed
   const config = (advancedVSeed.config?.[chartType as 'bar']?.xAxis ?? {}) as XLinearAxis
 

@@ -5,9 +5,9 @@ import type {
   Color,
   ColorLegend,
   Dataset,
-  Dimensions,
   Label,
-  MeasureTree,
+  FunnelDimension,
+  FunnelMeasure,
   Theme,
   Tooltip,
 } from '../../properties'
@@ -54,18 +54,16 @@ export interface Funnel {
   /**
    * 维度
    * @description 漏斗图的所有维度会与指标名称(存在多个指标时)合并成一个维度,并作为图例项展示
-   * @type {Dimensions}
    * @example [{id: 'category', alias: '类别'}]
    */
-  dimensions?: Dimensions
+  dimensions?: FunnelDimension[]
 
   /**
    * 指标
    * @description 漏斗图的所有指标会自动合并为一个指标, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
-   * @type {MeasureTree}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures?: MeasureTree
+  measures?: FunnelMeasure[]
 
   /**
    * 图表的背景颜色

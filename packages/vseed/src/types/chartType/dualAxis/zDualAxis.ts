@@ -20,7 +20,6 @@ import {
   zLabel,
   zLegend,
   zLineStyle,
-  zMeasureTree,
   zPointStyle,
   zSort,
   zSortLegend,
@@ -35,8 +34,7 @@ export const zDualAxis = z.object({
 
   dataset: zDataset.nullish(),
   dimensions: zDimensions.nullish(),
-  measures: zMeasureTree.nullish(),
-  dualMeasures: zDualMeasures.nullish(),
+  measures: zDualMeasures.nullish(),
 
   dualChartType: z.array(zDualChartType).or(zDualChartType).nullish(),
   alignTicks: z.array(z.boolean()).or(z.boolean()).nullish(),

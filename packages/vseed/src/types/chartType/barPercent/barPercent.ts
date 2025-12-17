@@ -10,7 +10,6 @@ import type {
   Color,
   CrosshairRect,
   Dataset,
-  Dimensions,
   Label,
   Legend,
   StackCornerRadius,
@@ -18,11 +17,12 @@ import type {
   Tooltip,
   XLinearAxis,
   YBandAxis,
-  MeasureTree,
   Sort,
   SortLegend,
   BarMaxWidth,
   DimensionLinkage,
+  BarDimension,
+  BarMeasure,
 } from '../../properties'
 
 /**
@@ -69,14 +69,14 @@ export interface BarPercent {
    * @type {Dimensions}
    * @example [{id: 'category', alias: '类别'}]
    */
-  dimensions?: Dimensions
+  dimensions?: BarDimension[]
 
   /**
    * @description 指标, 指标会自动合并为一个指标, 映射到X轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
    * @type {MeasureTree}
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
-  measures?: MeasureTree
+  measures?: BarMeasure[]
 
   /**
    * @description 图表的背景颜色, 默认为透明背景, 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'

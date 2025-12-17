@@ -34,14 +34,8 @@ const Demo = () => {
       ],
       dimensions: [{ id: 'date', alias: '日期' }],
       measures: [
-        {
-          id: 'profit-group',
-          children: [{ id: 'profit', alias: '利润' }],
-        },
-        {
-          id: 'sales-group',
-          children: [{ id: 'sales', alias: '销售额' }],
-        },
+        { id: 'profit', alias: '利润', parentId: 'profit-group' },
+        { id: 'sales', alias: '销售额', parentId: 'sales-group' },
       ],
     }
 
@@ -108,14 +102,8 @@ const Demo = () => {
         { id: 'category', alias: '类型', encoding: 'column' },
       ],
       measures: [
-        {
-          id: 'profit-group',
-          children: [{ id: 'profit', alias: '利润' }],
-        },
-        {
-          id: 'sales-group',
-          children: [{ id: 'sales', alias: '销售额' }],
-        },
+        { id: 'profit', alias: '利润', parentId: 'profit-group' },
+        { id: 'sales', alias: '销售额', parentId: 'sales-group' },
       ],
     }
 

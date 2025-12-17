@@ -8,7 +8,7 @@ import {
   zDataset,
   zDimensions,
   zLabel,
-  zMeasureTree,
+  zMeasures,
   zTheme,
   zTooltip,
 } from '../../properties'
@@ -17,7 +17,7 @@ export const zHeatmap = z.object({
   chartType: z.literal('heatmap'),
   dataset: zDataset.nullish(),
   dimensions: zDimensions.nullish(),
-  measures: zMeasureTree.nullish(),
+  measures: zMeasures.nullish(),
   backgroundColor: zBackgroundColor.nullish(),
   color: zColor.nullish(),
   label: zLabel.nullish(),

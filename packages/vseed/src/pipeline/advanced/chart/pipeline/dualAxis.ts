@@ -17,7 +17,6 @@ import {
   defaultMeasureId,
   encodingAdapter,
   defaultEncodingForDualAxis,
-  pickMeasuresForReshape,
   pickDimensionsForReshape,
 } from '../pipes'
 
@@ -29,12 +28,7 @@ export const dualAxisAdvancedPipeline: AdvancedPipeline = [
 
   encodingAdapter(
     [buildMeasuresForDualAxis, defaultEncodingForDualAxis],
-    [
-      buildMeasuresForDualAxis,
-      encodingForDualAxis,
-      pickMeasuresForReshape(['tooltip', 'label', 'color']),
-      pickDimensionsForReshape,
-    ],
+    [buildMeasuresForDualAxis, encodingForDualAxis, pickDimensionsForReshape],
   ),
   pivotAdapter([reshapeWithDualEncoding], [pivotReshapeWithDualEncoding]),
 

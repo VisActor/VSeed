@@ -4,7 +4,7 @@ import type { MeasureGroup, Measure, MeasureTree, ListTableSpecPipe, Datum } fro
 
 export const measureTreeToColumns: ListTableSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const measures = (advancedVSeed as unknown as { measures: MeasureTree }).measures
+  const measureTree = (advancedVSeed as unknown as { measureTree: MeasureTree }).measureTree
   const result = { ...spec } as ListTableConstructorOptions
 
   const eachNode = (node: Measure | MeasureGroup) => {
@@ -17,7 +17,7 @@ export const measureTreeToColumns: ListTableSpecPipe = (spec, context) => {
 
     return {}
   }
-  const columns = treeTreeToColumns<Measure, MeasureGroup>(measures, eachNode)
+  const columns = treeTreeToColumns<Measure, MeasureGroup>(measureTree, eachNode)
   return {
     ...result,
     columns: [...(result.columns || []), ...columns] as ListTableConstructorOptions['columns'],

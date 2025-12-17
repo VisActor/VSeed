@@ -51,6 +51,11 @@
   },
   {
     "type": "file",
+    "name": "dimensionLinkage",
+    "label": "dimensionLinkage "
+  },
+  {
+    "type": "file",
     "name": "dimensions",
     "label": "dimensions "
   },

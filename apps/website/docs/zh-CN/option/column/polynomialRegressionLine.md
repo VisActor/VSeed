@@ -1,6 +1,6 @@
 # polynomialRegressionLine
 
-**Type:** `boolean | PolynomialRegressionLine | PolynomialRegressionLine[] | undefined`
+**Type:** `PolynomialRegressionLine | PolynomialRegressionLine[] | undefined`
 
 :::note{title=描述}
 多项式回归线
@@ -11,6 +11,15 @@
 
 :::
 
+
+## enable
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否开启
+
+:::
 
 ## color
 
@@ -113,6 +122,15 @@
 
 :::note{title=描述}
 是否显示置信区间
+
+:::
+
+## confidenceLevel
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+置信区间数值设定，默认95%置信度
 
 :::
 

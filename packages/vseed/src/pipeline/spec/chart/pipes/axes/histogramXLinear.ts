@@ -10,7 +10,7 @@ import { unique } from 'remeda'
 export const histogramXLinear: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
-  const { encoding, dimensions, measures, dataset } = advancedVSeed
+  const { encoding, dimensions = [], measures = [], dataset } = advancedVSeed
   const { chartType } = vseed
   const config = (advancedVSeed.config?.[chartType as 'bar']?.xAxis ?? {}) as XLinearAxis
 

@@ -168,10 +168,6 @@ export const darkTheme = (): CustomThemeConfig => {
         xAxis: bandAxis,
         primaryYAxis: linearAxis,
         secondaryYAxis: { ...linearAxis, grid: { visible: false } },
-        dualChartType: {
-          primary: 'column',
-          secondary: 'line',
-        },
         crosshairRect,
         pivotGrid: getDarkPivotChartGridConfig(),
         annotation: getDarkAnnotation(),

@@ -7,7 +7,6 @@ import type {
   BackgroundColor,
   Color,
   Dataset,
-  Dimensions,
   Label,
   Legend,
   LineStyle,
@@ -17,10 +16,11 @@ import type {
   CrosshairLine,
   XBandAxis,
   YLinearAxis,
-  MeasureTree,
   Sort,
   SortLegend,
   DimensionLinkage,
+  LineMeasure,
+  LineDimension,
 } from '../../properties'
 
 /**
@@ -64,16 +64,15 @@ export interface Line {
 
   /**
    * @description 维度, 折线图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
-   * @type {Dimensions}
    * @example [{id: "month", alias: "月份"}]
    */
-  dimensions?: Dimensions
+  dimensions?: LineDimension[]
 
   /**
    * @description 指标, 折线图的所有指标会自动合并为一个指标, 映射到Y轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
    * @example [{id: "value", alias: "数值"}]
    */
-  measures?: MeasureTree
+  measures?: LineMeasure[]
 
   /**
    * 图表的背景颜色

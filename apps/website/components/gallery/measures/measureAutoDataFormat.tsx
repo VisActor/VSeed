@@ -7,31 +7,22 @@ export const MeasureAutoDataFormat = memo(() => {
     chartType: 'columnParallel',
     measures: [
       {
-        id: 'group1',
-        alias: 'group1',
-        children: [
-          {
-            id: 'profit',
-            alias: '利润',
-            autoFormat: false,
-          },
-          {
-            id: 'sales',
-            alias: '销售额',
-            autoFormat: true,
-          },
-        ],
+        id: 'profit',
+        alias: '利润',
+        parentId: 'group1',
+        autoFormat: false,
       },
       {
-        id: 'group2',
-        alias: 'group2',
-        children: [
-          {
-            id: 'discount',
-            alias: '折扣',
-            autoFormat: true,
-          },
-        ],
+        id: 'sales',
+        alias: '销售额',
+        parentId: 'group1',
+        autoFormat: true,
+      },
+      {
+        id: 'discount',
+        alias: '折扣',
+        parentId: 'group2',
+        autoFormat: true,
       },
       {
         id: 'rateOfReturn',

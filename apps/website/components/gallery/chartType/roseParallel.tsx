@@ -35,28 +35,19 @@ export const CombinationRoseParallelChart = memo(() => {
     ],
     measures: [
       {
-        id: 'salesAndProfit',
-        alias: '销售额与利润',
-        children: [
-          {
-            id: 'sales',
-            alias: '销售额',
-          },
-          {
-            id: 'profit',
-            alias: '利润',
-          },
-        ],
+        id: 'sales',
+        alias: '销售额',
+        parentId: 'salesAndProfit',
       },
       {
-        id: 'ratio',
-        alias: '比率',
-        children: [
-          {
-            id: 'rateOfReturn',
-            alias: '回报率',
-          },
-        ],
+        id: 'profit',
+        alias: '利润',
+        parentId: 'salesAndProfit',
+      },
+      {
+        id: 'rateOfReturn',
+        alias: '回报率',
+        parentId: 'ratio',
       },
     ],
   }
@@ -72,11 +63,7 @@ export const PivotRoseParallelChart = memo(() => {
       { id: 'region', alias: '区域', encoding: 'row' },
     ],
     measures: [
-      {
-        id: 'group-sales',
-        alias: '销售额分组',
-        children: [{ id: 'sales', alias: '销售额' }],
-      },
+      { id: 'sales', alias: '销售额', parentId: 'group-sales' },
       { id: 'profit', alias: '利润' },
     ],
     dataset: [

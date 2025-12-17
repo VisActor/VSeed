@@ -6,7 +6,7 @@ import type { Datum, FoldInfo, MeasureTree, PivotTableSpecPipe } from 'src/types
 
 export const pivotIndicators: PivotTableSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
-  const { measures, datasetReshapeInfo } = advancedVSeed
+  const { measureTree, datasetReshapeInfo } = advancedVSeed
   const { foldInfo } = datasetReshapeInfo[0]
   const hasRow = ((spec as any)?.rows as any[])?.length > 0
   const foldMapValues = Object.values(foldInfo.foldMap)
@@ -22,13 +22,13 @@ export const pivotIndicators: PivotTableSpecPipe = (spec, context) => {
         indicatorKey: foldInfo.measureValue,
         title: foldMapValues.length > 1 ? '' : foldMapValues[0],
         width: 'auto',
-        format: fieldFormat(measures, foldInfo as FoldInfo),
+        format: fieldFormat(measureTree as MeasureTree, foldInfo as FoldInfo),
       },
     ] as unknown as PivotChartConstructorOptions['indicators'],
   }
 }
 
-const fieldFormat = (measures: MeasureTree, foldInfo: FoldInfo) => {
+const fieldFormat = (measureTree: MeasureTree, foldInfo: FoldInfo) => {
   return (value: number | string, col?: number, row?: number, table?: BaseTableAPI) => {
     if (!isNumber(col) || !isNumber(row) || !table) {
       return value
@@ -40,7 +40,7 @@ const fieldFormat = (measures: MeasureTree, foldInfo: FoldInfo) => {
     }
     const { measureId: foldMeasureId } = foldInfo
     const measureId = datum[0][foldMeasureId] as string
-    const measure = findMeasureById(measures, measureId)
+    const measure = findMeasureById(measureTree, measureId)
     const formatter = createFormatterByMeasure(measure)
     return formatter(value)
   }

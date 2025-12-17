@@ -1,27 +1,23 @@
 import { unique } from 'remeda'
 import { MeasureId } from 'src/dataReshape'
-import { findAllMeasures, hasMultipleMeasureInSingleView } from 'src/pipeline/utils'
-import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
+import { hasMultipleMeasureInSingleView } from 'src/pipeline/utils'
+import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measures } from 'src/types'
 import { addColorToEncoding } from './color'
 import { addDefaultColorEncoding } from './color/addColorToEncoding'
 
 export const defaultEncodingForLine: AdvancedPipe = (advancedVSeed) => {
-  const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
-  const measures = findAllMeasures(vseedMeasures)
+  const { reshapeMeasures = [], measures = [], dimensions = [] } = advancedVSeed
   const encoding: Encoding = {}
-  generateDefaultDimensionEncoding(dimensions, encoding, hasMultipleMeasureInSingleView(vseedMeasures))
-  generateDefaultMeasureEncoding(measures, encoding)
+  generateDefaultDimensionEncoding(dimensions, encoding, hasMultipleMeasureInSingleView(reshapeMeasures))
+  generateMeasureEncoding(measures, encoding)
   return { ...advancedVSeed, encoding }
 }
 
 export const encodingForLine: AdvancedPipe = (advancedVSeed) => {
-  const { measures: vseedMeasures = [], dimensions = [] } = advancedVSeed
-  const measures = findAllMeasures(vseedMeasures)
-
+  const { reshapeMeasures = [], measures = [], dimensions = [] } = advancedVSeed
   const hasDimensionEncoding = dimensions.some((item: Dimension) => item.encoding)
-  const hasMeasureEncoding = measures.some((item: Measure) => item.encoding)
   const encoding: Encoding = {}
-  const hasMulti = hasMultipleMeasureInSingleView(vseedMeasures)
+  const hasMulti = hasMultipleMeasureInSingleView(reshapeMeasures)
 
   if (hasDimensionEncoding) {
     generateDimensionEncoding(dimensions, encoding, hasMulti)
@@ -29,11 +25,7 @@ export const encodingForLine: AdvancedPipe = (advancedVSeed) => {
     generateDefaultDimensionEncoding(dimensions, encoding, hasMulti)
   }
 
-  if (hasMeasureEncoding) {
-    generateMeasureEncoding(measures, encoding)
-  } else {
-    generateDefaultMeasureEncoding(measures, encoding)
-  }
+  generateMeasureEncoding(measures, encoding)
 
   return { ...advancedVSeed, encoding }
 }
@@ -79,9 +71,6 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding, i
 /**
  * --------------------指标--------------------
  */
-const generateDefaultMeasureEncoding = (measures: Measures, encoding: Encoding) => {
-  encoding.y = unique(measures.filter((item) => item.encoding === 'yAxis' || !item.encoding).map((item) => item.id))
-}
 const generateMeasureEncoding = (measures: Measures, encoding: Encoding) => {
   // y
   encoding.y = unique(measures.filter((item) => item.encoding === 'yAxis' || !item.encoding).map((item) => item.id))

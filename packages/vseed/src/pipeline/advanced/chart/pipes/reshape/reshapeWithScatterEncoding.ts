@@ -35,51 +35,39 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
   const xMeasures = measures.filter((m) => m.encoding === 'xAxis') as Measures
   const yMeasures = measures.filter((m) => m.encoding === 'yAxis') as Measures
 
-  if (xMeasures.length) {
-    const {
-      dataset: newDataset,
-      foldInfo,
-      unfoldInfo,
-    } = dataReshapeByEncoding(
-      dataset,
-      uniqueBy(dimensions, (d: Dimension) => d.id),
-      uniqueBy(xMeasures, (d: Measure) => d.id),
-      encoding as Encoding,
-      {
-        foldMeasureValue: FoldXMeasureValue,
-        foldMeasureId: FoldXMeasureId,
-        colorItemAsId: true,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-      },
-    )
+  const xResult = dataReshapeByEncoding(
+    dataset,
+    uniqueBy(dimensions, (d: Dimension) => d.id),
+    uniqueBy(xMeasures, (d: Measure) => d.id),
+    encoding as Encoding,
+    {
+      foldMeasureValue: FoldXMeasureValue,
+      foldMeasureId: FoldXMeasureId,
+      colorItemAsId: true,
+      colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+    },
+  )
 
-    datasets.push(newDataset)
-    foldInfoList.push(foldInfo)
-    unfoldInfoList.push(unfoldInfo)
-  }
+  datasets.push(xResult.dataset)
+  foldInfoList.push(xResult.foldInfo)
+  unfoldInfoList.push(xResult.unfoldInfo)
 
-  if (yMeasures.length) {
-    const {
-      dataset: newDataset,
-      foldInfo,
-      unfoldInfo,
-    } = dataReshapeByEncoding(
-      datasets[0],
-      uniqueBy(dimensions, (d: Dimension) => d.id),
-      uniqueBy(yMeasures, (d: Measure) => d.id),
-      encoding as Encoding,
-      {
-        foldMeasureValue: FoldYMeasureValue,
-        foldMeasureId: FoldYMeasureId,
-        colorItemAsId: true,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-      },
-    )
+  const yResult = dataReshapeByEncoding(
+    datasets[0],
+    uniqueBy(dimensions, (d: Dimension) => d.id),
+    uniqueBy(yMeasures, (d: Measure) => d.id),
+    encoding as Encoding,
+    {
+      foldMeasureValue: FoldYMeasureValue,
+      foldMeasureId: FoldYMeasureId,
+      colorItemAsId: true,
+      colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+    },
+  )
 
-    datasets[0] = newDataset
-    foldInfoList.push(foldInfo)
-    unfoldInfoList.push(unfoldInfo)
-  }
+  datasets.push(yResult.dataset)
+  foldInfoList.push(yResult.foldInfo)
+  unfoldInfoList.push(yResult.unfoldInfo)
 
   const unfoldInfo: UnfoldInfo = {
     ...unfoldInfoList[0],

@@ -32,39 +32,27 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
     const xMeasures = measures.filter((m) => m.encoding === 'xAxis')
     const yMeasures = measures.filter((m) => m.encoding === 'yAxis')
 
-    if (xMeasures.length) {
-      const {
-        dataset: newDataset,
-        foldInfo,
-        unfoldInfo,
-      } = dataReshapeByEncoding(dataset, dimensions, xMeasures, encoding as Encoding, {
-        foldMeasureValue: `${FoldXMeasureValue}${index}`,
-        colorItemAsId: true,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-        omitIds: allMeasuresIds,
-      })
+    const xResult = dataReshapeByEncoding(dataset, dimensions, xMeasures, encoding as Encoding, {
+      foldMeasureValue: `${FoldXMeasureValue}${index}`,
+      colorItemAsId: true,
+      colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+      omitIds: allMeasuresIds,
+    })
 
-      datasets.push(newDataset)
-      foldInfoList.push(foldInfo)
-      unfoldInfoList.push(unfoldInfo)
-    }
+    datasets.push(xResult.dataset)
+    foldInfoList.push(xResult.foldInfo)
+    unfoldInfoList.push(xResult.unfoldInfo)
 
-    if (yMeasures.length) {
-      const {
-        dataset: newDataset,
-        foldInfo,
-        unfoldInfo,
-      } = dataReshapeByEncoding(dataset, dimensions, yMeasures, encoding as Encoding, {
-        foldMeasureValue: `${FoldYMeasureValue}${index}`,
-        colorItemAsId: true,
-        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-        omitIds: allMeasuresIds,
-      })
+    const yResult = dataReshapeByEncoding(dataset, dimensions, yMeasures, encoding as Encoding, {
+      foldMeasureValue: `${FoldYMeasureValue}${index}`,
+      colorItemAsId: true,
+      colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+      omitIds: allMeasuresIds,
+    })
 
-      datasets.push(newDataset)
-      foldInfoList.push(foldInfo)
-      unfoldInfoList.push(unfoldInfo)
-    }
+    datasets.push(yResult.dataset)
+    foldInfoList.push(yResult.foldInfo)
+    unfoldInfoList.push(yResult.unfoldInfo)
 
     const unfoldInfo: UnfoldInfo = {
       ...unfoldInfoList[0],

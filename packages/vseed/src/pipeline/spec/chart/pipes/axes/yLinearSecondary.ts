@@ -1,16 +1,15 @@
 import type { ISpec } from '@visactor/vchart'
-import { createNumFormatter } from '../../../../utils'
+import { createNumFormatter, flatReshapeMeasures } from '../../../../utils'
 import type { VChartSpecPipe, YLinearAxis } from 'src/types'
 import { isEmpty, isNullish } from 'remeda'
 import { createLinearFormat } from './format/linearFormat'
-import { defaultTitleText } from './title/defaultTitleText'
 import { linearAxisStyle } from './linearAxisStyle'
 
 export const yLinearSecondary: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
   const { advancedVSeed, vseed } = context
   const { chartType } = vseed
-  const { datasetReshapeInfo, measures = [], dimensions = [], encoding } = advancedVSeed
+  const { datasetReshapeInfo, reshapeMeasures = [] } = advancedVSeed
   const { index, id: reshapeInfoId, foldInfoList } = datasetReshapeInfo[0]
   // TODO: default config missing
   const secondaryYAxis = advancedVSeed.config?.[chartType as 'dualAxis']?.secondaryYAxis as YLinearAxis | YLinearAxis[]
@@ -44,8 +43,13 @@ export const yLinearSecondary: VChartSpecPipe = (spec, context) => {
   const formatMethod = (value: string) => {
     return createLinearFormat(value, autoFormat, numFormat, formatter)
   }
-
-  const titleText = yAxisConfig?.title?.titleText || defaultTitleText(measures, dimensions, encoding.y as string[])
+  const measures = flatReshapeMeasures(reshapeMeasures)
+  const titleText =
+    yAxisConfig?.title?.titleText ||
+    measures
+      .filter((m) => m.encoding === 'secondaryYAxis')
+      .map((m) => m.alias ?? m.id)
+      .join(' & ')
 
   const baseStyle = linearAxisStyle({
     ...yAxisConfig,

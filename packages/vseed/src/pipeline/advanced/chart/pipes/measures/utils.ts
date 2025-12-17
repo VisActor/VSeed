@@ -72,3 +72,21 @@ export const normalizeMeasureTree = (measures: MeasureTree) => {
 export const isCommonMeasureEncoding = (encoding: MeasureEncoding) => {
   return ['color', 'label', 'tooltip'].includes(encoding)
 }
+
+/**
+ * @description Ensures that the measuresByView object has an initialized array for the given parentId.
+ * If the parentId doesn't exist in measuresByView, it initializes an empty array and tracks the parentId.
+ * @param parentId The parent ID to ensure initialization for
+ * @param measuresByView The object mapping parent IDs to measures arrays
+ * @param parentIds The array tracking all parent IDs that have been initialized
+ */
+export const ensureParentIdInitialized = <T>(
+  parentId: string,
+  measuresByView: { [key: string]: T[] },
+  parentIds: string[],
+) => {
+  if (!measuresByView[parentId]) {
+    measuresByView[parentId] = []
+    parentIds.push(parentId)
+  }
+}

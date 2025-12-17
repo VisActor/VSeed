@@ -1,7 +1,7 @@
 import type { AdvancedPipe, MeasureEncoding, Measures } from 'src/types'
 import { clone } from 'remeda'
 import { DEFAULT_PARENT_ID } from 'src/pipeline/utils/constant'
-import { isCommonMeasureEncoding } from './utils'
+import { ensureParentIdInitialized, isCommonMeasureEncoding } from './utils'
 
 export const buildMeasuresForScatter: AdvancedPipe = (advancedVSeed) => {
   const { measures = [] } = advancedVSeed
@@ -16,10 +16,8 @@ export const buildMeasuresForScatter: AdvancedPipe = (advancedVSeed) => {
     const isXAxis = encoding === 'xAxis'
     const isOtherEncoding = item.encoding && isCommonMeasureEncoding(encoding as MeasureEncoding)
 
-    if (!measuresByView[parentId]) {
-      measuresByView[parentId] = []
-      parentIds.push(parentId)
-    }
+    ensureParentIdInitialized(parentId, measuresByView, parentIds)
+
     if (isYAxis) {
       measuresByView[parentId].push(item)
     } else if (isXAxis) {

@@ -1,6 +1,6 @@
 import type { AdvancedPipe, MeasureEncoding, Measures } from 'src/types'
 import { DEFAULT_PARENT_ID } from 'src/pipeline/utils/constant'
-import { isCommonMeasureEncoding } from './utils'
+import { ensureParentIdInitialized, isCommonMeasureEncoding } from './utils'
 
 export const buildMeasuresForDualAxis: AdvancedPipe = (advancedVSeed) => {
   const { measures = [] } = advancedVSeed
@@ -15,10 +15,8 @@ export const buildMeasuresForDualAxis: AdvancedPipe = (advancedVSeed) => {
     const isSecondaryYAxis = encoding === 'secondaryYAxis'
     const isOtherEncoding = item.encoding && isCommonMeasureEncoding(encoding as MeasureEncoding)
 
-    if (!measuresByView[parentId]) {
-      measuresByView[parentId] = []
-      parentIds.push(parentId)
-    }
+    ensureParentIdInitialized(parentId, measuresByView, parentIds)
+
     if (isPrimaryYAxis) {
       measuresByView[parentId].push(item)
     } else if (isSecondaryYAxis) {

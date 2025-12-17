@@ -1,7 +1,7 @@
 import type { AdvancedPipe, MeasureEncoding, Measures } from 'src/types'
 
 import { DEFAULT_PARENT_ID } from 'src/pipeline/utils/constant'
-import { isCommonMeasureEncoding } from './utils'
+import { ensureParentIdInitialized, isCommonMeasureEncoding } from './utils'
 
 export const buildMeasures = (encodingKeys: string[]): AdvancedPipe => {
   return (advancedVSeed) => {
@@ -16,10 +16,8 @@ export const buildMeasures = (encodingKeys: string[]): AdvancedPipe => {
 
       const isOtherEncoding = item.encoding && isCommonMeasureEncoding(encoding as MeasureEncoding)
 
-      if (!measuresByView[parentId]) {
-        measuresByView[parentId] = []
-        parentIds.push(parentId)
-      }
+      ensureParentIdInitialized(parentId, measuresByView, parentIds)
+
       if (encodingKeys.includes(encoding as string)) {
         measuresByView[parentId].push(item)
       } else if (!isOtherEncoding) {

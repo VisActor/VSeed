@@ -25,8 +25,7 @@ export const buildMeasuresForDualAxis: AdvancedPipe = (advancedVSeed) => {
       measuresByView[parentId].push(item)
     } else if (!isOtherEncoding) {
       const primaryCount = measuresByView[parentId].filter((m) => m.encoding === 'primaryYAxis').length
-      const secondaryCount = measuresByView[parentId].filter((m) => m.encoding === 'secondaryYAxis').length
-      item.encoding = primaryCount <= secondaryCount ? 'primaryYAxis' : 'secondaryYAxis'
+      item.encoding = primaryCount === 0 ? 'primaryYAxis' : 'secondaryYAxis'
       measuresByView[parentId].push(item)
     }
   }

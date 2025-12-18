@@ -22,11 +22,8 @@ export const yLinearPrimary: VChartSpecPipe = (spec, context) => {
   }
   const primaryFoldInfoList = foldInfoList!.filter((f) => f.measureValue.startsWith(FoldPrimaryMeasureValue))
 
-  if (!primaryFoldInfoList.length) {
-    return result
-  }
-
-  const isEmptySecondary = false
+  const isEmpty =
+    !primaryFoldInfoList.length || primaryFoldInfoList.every((foldInfo) => !Object.keys(foldInfo.foldMap).length)
 
   const id = `${reshapeInfoId}-primary-axis`
 
@@ -73,7 +70,7 @@ export const yLinearPrimary: VChartSpecPipe = (spec, context) => {
       id,
       seriesId,
     }),
-    visible: isEmptySecondary ? false : (yAxisConfig?.visible ?? true),
+    visible: isEmpty ? false : (yAxisConfig?.visible ?? true),
   }
 
   result.axes = [...result.axes, linearAxis] as ISpec['axes']

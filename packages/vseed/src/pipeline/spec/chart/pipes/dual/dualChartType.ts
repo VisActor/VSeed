@@ -65,7 +65,10 @@ export const dualChartType = (options: DualAxisOptions): VChartSpecPipe => {
     const chartTypes = reshapeMeasures[index].map((m) => (m as DualAxisMeasure).chartType) as string[]
 
     const type =
-      chartTypes.every((ct) => ct === 'column') && reshapeMeasures[index].length > 1
+      chartTypes.every((ct) => ct === 'column') &&
+      reshapeMeasures[index].length > 1 &&
+      reshapeMeasures[index].some((m) => m.encoding === 'primaryYAxis') &&
+      reshapeMeasures[index].some((m) => m.encoding === 'secondaryYAxis')
         ? 'columnParallel'
         : options.chartType
 

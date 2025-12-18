@@ -32,7 +32,7 @@ export const series = (
     result.series = foldInfoList!.map((foldInfo) => {
       const measureId = Object.keys(foldInfo.foldMap)[0]
       const axisType = foldInfo.measureValue === `${FoldPrimaryMeasureValue}${index}` ? 'primary' : 'secondary'
-      const measure = (reshapeMeasures[0] ?? []).find((m) => m.id === measureId)!
+      const measure = (reshapeMeasures[index] ?? []).find((m) => m.id === measureId)!
 
       const options: DualAxisOptions = {
         axisType,

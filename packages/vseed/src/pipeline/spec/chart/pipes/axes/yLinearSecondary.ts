@@ -17,13 +17,20 @@ export const yLinearSecondary: VChartSpecPipe = (spec, context) => {
   const alignTicks = advancedVSeed.config?.[chartType as 'dualAxis']?.alignTicks as boolean | boolean[]
   const alignTicksConfig = Array.isArray(alignTicks) ? alignTicks[index] || alignTicks[0] : alignTicks
 
-  if (!foldInfoList || foldInfoList!.every((f) => !f.measureValue.startsWith(FoldSecondaryMeasureValue))) {
+  if (!foldInfoList) {
     return result
   }
 
-  const isEmptySecondary = false
+  const secondaryFoldInfoList = foldInfoList!.filter((f) => f.measureValue.startsWith(FoldSecondaryMeasureValue))
+
+  const isEmptySecondary =
+    !secondaryFoldInfoList.length || secondaryFoldInfoList.every((foldInfo) => !Object.keys(foldInfo.foldMap).length)
   const onlySecondary =
-    foldInfoList.length && foldInfoList!.every((f) => f.measureValue.startsWith(FoldSecondaryMeasureValue))
+    !isEmptySecondary &&
+    foldInfoList.length &&
+    foldInfoList!.every(
+      (f) => f.measureValue.startsWith(FoldSecondaryMeasureValue) || Object.keys(f.foldMap).length === 0,
+    )
 
   const sync = {
     axisId: `${reshapeInfoId}-primary-axis`,

@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { zNumFormat } from '../format/numFormat'
-import type { MeasureGroup } from './measures'
+import type { MeasureGroup } from './measureTree'
 
 export const zMeasure = z.object({
   id: z.string(),

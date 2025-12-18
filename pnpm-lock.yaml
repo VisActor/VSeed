@@ -45,8 +45,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/vseed
       '@visactor/vtable':
-        specifier: 1.22.7
-        version: 1.22.7
+        specifier: 1.22.8
+        version: 1.22.8
       rspress:
         specifier: 1.45.3
         version: 1.45.3(webpack@5.101.0)
@@ -199,8 +199,8 @@ importers:
         specifier: 2.0.11
         version: 2.0.11
       '@visactor/vtable':
-        specifier: 1.22.7
-        version: 1.22.7
+        specifier: 1.22.8
+        version: 1.22.8
       '@vitest/coverage-istanbul':
         specifier: 3.2.4
         version: 3.2.4(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.10.1)(jiti@2.6.1)(jsdom@26.1.0)(sass-embedded@1.91.0)(sass@1.91.0)(terser@5.43.1)(yaml@2.8.1))
@@ -2081,26 +2081,14 @@ packages:
   '@visactor/vlayouts@1.0.12':
     resolution: {integrity: sha512-yoQywYICsNtLdiGIU6Ds99QTcZ8k+2qq7Kmqrjep9mhCBu0egjRhSVFALXYwbuO4rkSpLJLXdgtiMxh2n1PfOA==}
 
-  '@visactor/vrender-animate@1.0.31':
-    resolution: {integrity: sha512-9xA9B8JihlsEfBziFUHdUGUizh6xRk07lejUk4f0+qGmGwMPvz32btszs2gw1eF9J6FVmBhxJdZILzcXz4ha0Q==}
-
   '@visactor/vrender-animate@1.0.32':
     resolution: {integrity: sha512-zRHJgT2V0OdyPcjPl2Ix6mktIM9AAMyyXaeCwbtoZqMkmYgjRZDpfPwpLy+nQqOI+L/rOvOv6NLepQbwKirP1w==}
-
-  '@visactor/vrender-components@1.0.31':
-    resolution: {integrity: sha512-kB+ZdqCnfcmoLHleGPml/NmqgXViC0Vqk/64XzQzXd5fvFqCrgS1G6mpq+VrZjZhJx3gxCTQoct6q2qXN1aYIw==}
 
   '@visactor/vrender-components@1.0.32':
     resolution: {integrity: sha512-nH2criP27xdUIGYK6YjE1vQ6dXZUQ63or3ssDXJpiuNteQw4x9RfiUT8YYSmDAm8zLplTH7eUdGOolk0+8qLXg==}
 
-  '@visactor/vrender-core@1.0.31':
-    resolution: {integrity: sha512-4tzN2M5GfI7612IHRiDqUetAjd3J3Ns5gHQxQvmMxismdw7UTrlB8PgnWx9djTYwoxZnhNX0MpPGz9CKgbb7RA==}
-
   '@visactor/vrender-core@1.0.32':
     resolution: {integrity: sha512-Z7gliAn/YNFMgByow9xJCZjvrsC4wgYI+kqSrz26eGP2X9eGqo4J5FaDppc8gUlwm7sXv+73bXhY8L35Umow0w==}
-
-  '@visactor/vrender-kits@1.0.31':
-    resolution: {integrity: sha512-ZS1vslveNfK6MrkL0tMIzQWT9G/q+P7201nNA55YM89N1Tzpzm0X55YHQiIx9TnWTWQijMlqkz1PR5n3Xh+Hjg==}
 
   '@visactor/vrender-kits@1.0.32':
     resolution: {integrity: sha512-58PHHHBRCy+q5YYAmkFi6FMrqBHURPkYBaTkF3V1+IyUVElo/xHQ076DyiHylIq+pQCnx1L5M+iL2pQG5PSLYg==}
@@ -2111,11 +2099,11 @@ packages:
   '@visactor/vscale@1.0.12':
     resolution: {integrity: sha512-Mx81QatZKAWWcfX2BfX25jZRLwXVdWNt92PtA7hwVs8HplXA+ZcEvSQbZkma/ssZ66ijgSlWUQOlxJ87ZY0FBw==}
 
-  '@visactor/vtable-editors@1.22.7':
-    resolution: {integrity: sha512-kyXH+4TeJXpRt/6Y/i8056j6nUP3NGF0EU8Zo1ngL31+478mfsgNhu3FIg5duTZYdxLwYoRYTAW2yz3EfPK+OQ==}
+  '@visactor/vtable-editors@1.22.8':
+    resolution: {integrity: sha512-4zCYG5pRBjbAuqoMJLPMY5cUjJZtkKUkjQ+chMEDx64ZmZvpUnqxftLg9IRdRSxUmmBFZX68GTDF3p5qO5XQbA==}
 
-  '@visactor/vtable@1.22.7':
-    resolution: {integrity: sha512-vwObILlGtKLCu9WT7TpbXuEhUTR3dJXZiBT2Q/T4/F8PGgUqOr172hYwBTwTnQDKYSq6+4j33Ry/vQ29kAg3NQ==}
+  '@visactor/vtable@1.22.8':
+    resolution: {integrity: sha512-c+NDJbcEF+N7mdO+vt2jhzetO/LXhFCBBOSpwloHzUJu5dJKXSj3OhzjNwcg4A0EBgdPfXD7qr/Ch7hzmNHTIg==}
 
   '@visactor/vutils-extension@1.11.14':
     resolution: {integrity: sha512-vfViZphXJBH0NwCHIoe8S1/+tDtykEKIfsLMIHprh7Azv7fVSB1eotG00SAegK75E18ARQGNXF1DxixUFiXSIQ==}
@@ -7976,22 +7964,9 @@ snapshots:
       '@visactor/vutils': 1.0.12
       eventemitter3: 4.0.7
 
-  '@visactor/vrender-animate@1.0.31':
-    dependencies:
-      '@visactor/vrender-core': 1.0.31
-      '@visactor/vutils': 1.0.21
-
   '@visactor/vrender-animate@1.0.32':
     dependencies:
       '@visactor/vrender-core': 1.0.32
-      '@visactor/vutils': 1.0.21
-
-  '@visactor/vrender-components@1.0.31':
-    dependencies:
-      '@visactor/vrender-animate': 1.0.31
-      '@visactor/vrender-core': 1.0.31
-      '@visactor/vrender-kits': 1.0.31
-      '@visactor/vscale': 1.0.12
       '@visactor/vutils': 1.0.21
 
   '@visactor/vrender-components@1.0.32':
@@ -8002,24 +7977,10 @@ snapshots:
       '@visactor/vscale': 1.0.12
       '@visactor/vutils': 1.0.21
 
-  '@visactor/vrender-core@1.0.31':
-    dependencies:
-      '@visactor/vutils': 1.0.21
-      color-convert: 2.0.1
-
   '@visactor/vrender-core@1.0.32':
     dependencies:
       '@visactor/vutils': 1.0.21
       color-convert: 2.0.1
-
-  '@visactor/vrender-kits@1.0.31':
-    dependencies:
-      '@resvg/resvg-js': 2.4.1
-      '@visactor/vrender-core': 1.0.31
-      '@visactor/vutils': 1.0.21
-      gifuct-js: 2.1.2
-      lottie-web: 5.13.0
-      roughjs: 4.6.6
 
   '@visactor/vrender-kits@1.0.32':
     dependencies:
@@ -8038,17 +7999,17 @@ snapshots:
     dependencies:
       '@visactor/vutils': 1.0.12
 
-  '@visactor/vtable-editors@1.22.7': {}
+  '@visactor/vtable-editors@1.22.8': {}
 
-  '@visactor/vtable@1.22.7':
+  '@visactor/vtable@1.22.8':
     dependencies:
       '@visactor/vdataset': 0.18.18
-      '@visactor/vrender-animate': 1.0.31
-      '@visactor/vrender-components': 1.0.31
-      '@visactor/vrender-core': 1.0.31
-      '@visactor/vrender-kits': 1.0.31
+      '@visactor/vrender-animate': 1.0.32
+      '@visactor/vrender-components': 1.0.32
+      '@visactor/vrender-core': 1.0.32
+      '@visactor/vrender-kits': 1.0.32
       '@visactor/vscale': 0.18.18
-      '@visactor/vtable-editors': 1.22.7
+      '@visactor/vtable-editors': 1.22.8
       '@visactor/vutils': 0.19.7
       '@visactor/vutils-extension': 1.11.14
       cssfontparser: 1.2.1

@@ -79,6 +79,15 @@ export type Measure = BaseMeasure & {
    * - tooltip: 指标映射的提示, 适用于所有图表
    */
   encoding?: MeasureEncoding
+  /**
+   * @description 设置该指标在双轴图中的图表类型, 仅适用于双轴图
+   * - line: 折线图
+   * - column: 柱状图
+   * - columnParallel: 平行柱状图
+   * - area: 面积图
+   * - scatter: 散点图
+   */
+  chartType?: 'line' | 'column' | 'columnParallel' | 'area' | 'scatter'
 }
 
 export type Measures = Measure[]

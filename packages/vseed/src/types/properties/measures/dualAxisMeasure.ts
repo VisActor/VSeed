@@ -15,8 +15,10 @@ export type DualAxisMeasure = BaseMeasure & {
    * - line: 折线图
    * - column: 柱状图
    * - columnParallel: 平行柱状图
+   * - columnPercent: 百分比柱状图
    * - area: 面积图
+   * - areaPercent: 百分比面积图
    * - scatter: 散点图
    */
-  chartType?: 'line' | 'column' | 'columnParallel' | 'area' | 'scatter'
+  chartType?: 'line' | 'column' | 'columnParallel' | 'columnPercent' | 'area' | 'areaPercent' | 'scatter'
 }

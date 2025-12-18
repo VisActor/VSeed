@@ -34,6 +34,7 @@ export const zMeasure = z.object({
     ])
     .optional(),
   parentId: z.string().optional(),
+  chartType: z.enum(['line', 'column', 'columnParallel', 'columnPercent', 'area', 'areaPercent', 'scatter']).optional(),
 })
 
 export const zMeasureGroup: z.ZodType<MeasureGroup> = z.object({

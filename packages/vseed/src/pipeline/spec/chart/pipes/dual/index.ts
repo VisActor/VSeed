@@ -1,1 +1,1 @@
-export { dualChartTypePrimary, dualChartTypeSecondary } from './dualChartType'
+export { dualChartType } from './dualChartType'

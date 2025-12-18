@@ -15,7 +15,6 @@ import type {
   DimensionLinkage,
   DualAxisDimension,
   DualAxisMeasure,
-  DualChartType,
   Label,
   Legend,
   LineStyle,
@@ -83,14 +82,6 @@ export interface DualAxis {
    * @example [{ id: 'value', encoding: 'primaryYAxis' }, { id: 'growth', encoding: 'secondaryYAxis' }]
    */
   measures?: DualAxisMeasure[]
-
-  /**
-   * @description 双轴图的主次轴的图表类型, 用于定义双轴图的类型, 包括折线图, 柱状图, 面积图等, 当measures有多组时, dualChartType可以配置为数组, 每项对应一个双轴图的子图表类型.
-   * @example
-   * {primary: 'line', secondary: 'bar'}
-   * [{primary: 'line', secondary: 'bar'}, {primary: 'column', secondary: 'area'}]
-   */
-  dualChartType?: DualChartType | DualChartType[]
 
   /**
    * @description 用于定义双轴图的两根轴的刻度是否对齐, 当measures有多组时, alignTicks可以配置为数组, 每项对应一个双轴图的刻度是否对齐.

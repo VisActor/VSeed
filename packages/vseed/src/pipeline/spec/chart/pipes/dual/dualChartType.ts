@@ -1,61 +1,7 @@
 import type { IBarSeriesSpec, ISeriesSpec } from '@visactor/vchart'
 import { DUAL_AXIS_CHART_COLUMN_Z_INDEX, DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX } from 'src/pipeline/utils/constant'
-import type { DualAxisMeasure, DualChartType, VChartSpecPipe } from 'src/types'
-import type { Measure } from 'src/types/properties'
-
-/**
- * 默认的双轴图图表类型配置
- */
-const DEFAULT_DUAL_CHART_TYPE: DualChartType = {
-  primary: 'column',
-  secondary: 'line',
-}
-
-/**
- * 获取双轴图的图表类型配置
- * @param userConfig 用户配置的图表类型
- * @param index 当前数据集索引
- * @param reshapeMeasures 重塑后的度量数据
- * @returns 主轴和次轴的图表类型
- */
-function getDualChartTypes(
-  userConfig: DualChartType | DualChartType[] | null | undefined,
-  index: number,
-  reshapeMeasures: Measure[][] = [],
-): { primary: string; secondary: string } {
-  let primary = DEFAULT_DUAL_CHART_TYPE.primary
-  let secondary = DEFAULT_DUAL_CHART_TYPE.secondary
-
-  const config = Array.isArray(userConfig) ? (userConfig[index] ?? userConfig[0]) : userConfig
-
-  // 获取主轴图表类型
-  if (config?.primary) {
-    primary = config.primary
-  } else if (reshapeMeasures[index]) {
-    const primaryMeasures = reshapeMeasures[index].filter(
-      (m) => m.encoding === 'primaryYAxis' && (m as DualAxisMeasure).chartType,
-    )
-
-    if (primaryMeasures.length) {
-      primary = (primaryMeasures[primaryMeasures.length - 1] as DualAxisMeasure).chartType!
-    }
-  }
-
-  // 获取次轴图表类型
-  if (config?.secondary) {
-    secondary = config.secondary
-  } else if (reshapeMeasures[index]) {
-    const secondaryMeasures = reshapeMeasures[index].filter(
-      (m) => m.encoding === 'secondaryYAxis' && (m as DualAxisMeasure).chartType,
-    )
-
-    if (secondaryMeasures.length) {
-      secondary = (secondaryMeasures[secondaryMeasures.length - 1] as DualAxisMeasure).chartType!
-    }
-  }
-
-  return { primary, secondary }
-}
+import type { DualAxisMeasure, VChartSpecPipe } from 'src/types'
+import type { DualAxisOptions } from 'src/types/properties'
 
 /**
  * 应用图表类型到 spec
@@ -109,37 +55,22 @@ function applyChartType(result: ISeriesSpec, type: string, datasetReshapeInfo: a
   }
 }
 
-export const dualChartTypePrimary: VChartSpecPipe = (spec, context) => {
-  const result = { ...spec, zIndex: DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX } as ISeriesSpec
-  const { advancedVSeed, vseed } = context
-  const { chartType } = vseed
-  const { datasetReshapeInfo, reshapeMeasures = [] } = advancedVSeed
-  const index = datasetReshapeInfo[0].index
+export const dualChartType = (options: DualAxisOptions): VChartSpecPipe => {
+  return (spec, context) => {
+    const result = { ...spec, zIndex: DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX } as ISeriesSpec
+    const { advancedVSeed } = context
+    const { datasetReshapeInfo, reshapeMeasures = [] } = advancedVSeed
+    const index = datasetReshapeInfo[0].index
 
-  const userConfig = advancedVSeed.config?.[chartType as 'dualAxis']?.dualChartType
-  const { primary, secondary } = getDualChartTypes(userConfig, index, reshapeMeasures)
-  const bothColumn = primary === 'column' && secondary === 'column'
-  const type = bothColumn ? 'columnParallel' : primary
+    const chartTypes = reshapeMeasures[index].map((m) => (m as DualAxisMeasure).chartType) as string[]
 
-  applyChartType(result, type, datasetReshapeInfo)
+    const type =
+      chartTypes.every((ct) => ct === 'column') && reshapeMeasures[index].length > 1
+        ? 'columnParallel'
+        : options.chartType
 
-  return result
-}
+    applyChartType(result, type, datasetReshapeInfo)
 
-export const dualChartTypeSecondary: VChartSpecPipe = (spec, context) => {
-  const result = { ...spec, zIndex: DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX } as ISeriesSpec
-  const { advancedVSeed, vseed } = context
-  const { chartType } = vseed
-  const { datasetReshapeInfo, reshapeMeasures = [] } = advancedVSeed
-  const index = datasetReshapeInfo[0].index
-
-  const userConfig = advancedVSeed.config?.[chartType as 'dualAxis']?.dualChartType
-  const { primary, secondary } = getDualChartTypes(userConfig, index, reshapeMeasures)
-
-  const bothColumn = primary === 'column' && secondary === 'column'
-  const type = bothColumn ? 'columnParallel' : secondary
-
-  applyChartType(result, type, datasetReshapeInfo)
-
-  return result
+    return result
+  }
 }

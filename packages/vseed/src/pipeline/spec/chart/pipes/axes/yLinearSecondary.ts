@@ -1,9 +1,9 @@
-import type { ISpec } from '@visactor/vchart'
+import type { ILineSeriesSpec, ISpec } from '@visactor/vchart'
 import { createNumFormatter, flatReshapeMeasures } from '../../../../utils'
 import type { VChartSpecPipe, YLinearAxis } from 'src/types'
-import { isEmpty, isNullish } from 'remeda'
 import { createLinearFormat } from './format/linearFormat'
 import { linearAxisStyle } from './linearAxisStyle'
+import { FoldSecondaryMeasureValue } from 'src/dataReshape'
 
 export const yLinearSecondary: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
@@ -17,12 +17,13 @@ export const yLinearSecondary: VChartSpecPipe = (spec, context) => {
   const alignTicks = advancedVSeed.config?.[chartType as 'dualAxis']?.alignTicks as boolean | boolean[]
   const alignTicksConfig = Array.isArray(alignTicks) ? alignTicks[index] || alignTicks[0] : alignTicks
 
-  if (isNullish(foldInfoList?.[1])) {
+  if (!foldInfoList || foldInfoList!.every((f) => !f.measureValue.startsWith(FoldSecondaryMeasureValue))) {
     return result
   }
 
-  const isEmptySecondary = isEmpty(foldInfoList?.[1].foldMap)
-  const onlySecondary = isEmpty(foldInfoList?.[0].foldMap) && !isEmptySecondary
+  const isEmptySecondary = false
+  const onlySecondary =
+    foldInfoList.length && foldInfoList!.every((f) => f.measureValue.startsWith(FoldSecondaryMeasureValue))
 
   const sync = {
     axisId: `${reshapeInfoId}-primary-axis`,
@@ -30,8 +31,11 @@ export const yLinearSecondary: VChartSpecPipe = (spec, context) => {
   }
 
   const id = `${reshapeInfoId}-secondary-axis`
-  const seriesIds = [`${reshapeInfoId}-primary-series`, `${reshapeInfoId}-secondary-series`]
-  const seriesId = alignTicksConfig ? seriesIds : seriesIds[1]
+  const seriesId = alignTicksConfig
+    ? spec.series!.map((s) => (s as any).id)
+    : spec
+        .series!.filter((s) => ((s as ILineSeriesSpec).yField as string).startsWith(FoldSecondaryMeasureValue))
+        .map((s) => (s as any).id)
   if (!result.axes) {
     result.axes = []
   }

@@ -1,6 +1,6 @@
 import { clone } from 'remeda'
 import { findAllMeasures, isDimension, preorderTraverse } from 'src/pipeline/utils'
-import type { AdvancedPipe, Datum, Dimensions, MeasureTree, TableDimension } from 'src/types'
+import type { AdvancedPipe, Datum, Dimension, Dimensions, MeasureTree } from 'src/types'
 
 export const defaultDimensions: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
@@ -10,8 +10,8 @@ export const defaultDimensions: AdvancedPipe = (advancedVSeed, context) => {
   if (dimensions && dimensions.length > 0) {
     const clonedDimensions = clone(dimensions)
     preorderTraverse(clonedDimensions, (node) => {
-      if (isDimension(node as TableDimension)) {
-        ;(node as TableDimension).alias = (node as TableDimension).alias || (node as TableDimension).id
+      if (isDimension(node as Dimension)) {
+        ;(node as Dimension).alias = (node as Dimension).alias || (node as Dimension).id
       }
       return false
     })

@@ -2,12 +2,14 @@
   "chartType": "dualAxis",
   "measures": [
     {
-      "id": "primary",
-      "children": [{ "id": "sales", "alias": "销售额" }]
+      "id": "sales",
+      "alias": "销售额",
+      "encoding": "primaryYAxis"
     },
     {
-      "id": "secondary",
-      "children": [{ "id": "profit", "alias": "利润" }]
+      "id": "profit",
+      "alias": "利润",
+      "encoding": "secondaryYAxis"
     }
   ],
   "dataset": [

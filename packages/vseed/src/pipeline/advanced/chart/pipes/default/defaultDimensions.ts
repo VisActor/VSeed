@@ -1,5 +1,5 @@
 import { clone } from 'remeda'
-import type { AdvancedPipe, Datum, Dimensions, Measure } from 'src/types'
+import type { AdvancedPipe, Datum, Dimension, Dimensions, Measure } from 'src/types'
 
 export const defaultDimensions: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
@@ -9,7 +9,7 @@ export const defaultDimensions: AdvancedPipe = (advancedVSeed, context) => {
   if (dimensions && dimensions.length > 0) {
     return {
       ...result,
-      dimensions: clone(dimensions.map((dim) => ({ ...dim, alias: dim.alias || dim.id }))),
+      dimensions: clone(dimensions.map((dim: Dimension) => ({ ...dim, alias: dim.alias || dim.id }))),
     }
   }
 

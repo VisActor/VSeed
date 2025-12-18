@@ -81,11 +81,6 @@
   },
   {
     "type": "file",
-    "name": "dualChartType",
-    "label": "dualChartType "
-  },
-  {
-    "type": "file",
     "name": "label",
     "label": "label "
   },

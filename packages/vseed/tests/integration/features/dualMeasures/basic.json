@@ -1,9 +1,13 @@
 {
   "chartType": "dualAxis",
-  "dualMeasures": [
+  "measures": [
     {
-      "primaryMeasures": [{ "id": "profit" }],
-      "secondaryMeasures": [{ "id": "sales" }]
+      "id": "profit",
+      "encoding": "primaryYAxis"
+    },
+    {
+      "id": "sales",
+      "encoding": "secondaryYAxis"
     }
   ],
   "dataset": [

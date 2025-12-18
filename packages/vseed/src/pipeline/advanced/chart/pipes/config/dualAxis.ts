@@ -19,7 +19,6 @@ export const dualAxisConfig: AdvancedPipe = (advancedVSeed, context) => {
     'xAxis',
 
     // only for dualAxis
-    'dualChartType',
     'alignTicks',
     'primaryYAxis',
     'secondaryYAxis',

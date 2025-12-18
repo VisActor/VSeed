@@ -1,12 +1,14 @@
-import { uniqueBy } from 'remeda'
+import { uniqueBy, unique } from 'remeda'
 import { dataReshapeByEncoding, FoldPrimaryMeasureValue, FoldSecondaryMeasureValue } from 'src/dataReshape'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
+import { DEFAULT_DUAL_CHART_TYPE } from 'src/pipeline/utils/chatType'
 import type {
   AdvancedPipe,
   AdvancedVSeed,
   ColumnParallel,
   Dataset,
   Dimension,
+  DualAxisMeasure,
   Encoding,
   FoldInfo,
   Measure,
@@ -27,38 +29,58 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
   const datasets: Dataset[] = []
   const primaryMeasures = measures.filter((m) => m.encoding === 'primaryYAxis')
   const secondaryMeasures = measures.filter((m) => m.encoding === 'secondaryYAxis')
+  const primaryChartTypes: string[] = unique(primaryMeasures.map((m) => (m as DualAxisMeasure).chartType!))
+  const secondaryChartTypes: string[] = unique(secondaryMeasures.map((m) => (m as DualAxisMeasure).chartType!))
 
-  const primaryResult = dataReshapeByEncoding(
-    dataset,
-    uniqueBy(dimensions, (item: Dimension) => item.id),
-    uniqueBy(primaryMeasures, (item: Measure) => item.id),
-    encoding as Encoding,
-    {
-      colorItemAsId: false,
-      foldMeasureValue: FoldPrimaryMeasureValue,
-      colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-    },
-  )
+  if (!primaryChartTypes.length) {
+    primaryChartTypes.push(DEFAULT_DUAL_CHART_TYPE.primary)
+  }
 
-  datasets.push(primaryResult.dataset)
-  foldInfoList.push(primaryResult.foldInfo)
-  unfoldInfoList.push(primaryResult.unfoldInfo)
+  if (!secondaryChartTypes.length) {
+    secondaryChartTypes.push(DEFAULT_DUAL_CHART_TYPE.secondary)
+  }
 
-  const secondaryResult = dataReshapeByEncoding(
-    dataset,
-    uniqueBy(dimensions, (item: Dimension) => item.id),
-    uniqueBy(secondaryMeasures, (item: Measure) => item.id),
-    encoding as Encoding,
-    {
-      colorItemAsId: false,
-      foldMeasureValue: FoldSecondaryMeasureValue,
-      colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-    },
-  )
+  primaryChartTypes.forEach((chartType) => {
+    const primaryResult = dataReshapeByEncoding(
+      dataset,
+      uniqueBy(dimensions, (item: Dimension) => item.id),
+      uniqueBy(
+        primaryMeasures.filter((m) => (m as DualAxisMeasure).chartType! === chartType),
+        (item: Measure) => item.id,
+      ),
+      encoding as Encoding,
+      {
+        colorItemAsId: false,
+        foldMeasureValue: FoldPrimaryMeasureValue,
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+      },
+    )
 
-  datasets.push(secondaryResult.dataset)
-  foldInfoList.push(secondaryResult.foldInfo)
-  unfoldInfoList.push(secondaryResult.unfoldInfo)
+    datasets.push(primaryResult.dataset)
+    foldInfoList.push(primaryResult.foldInfo)
+    unfoldInfoList.push(primaryResult.unfoldInfo)
+  })
+
+  secondaryChartTypes.forEach((chartType) => {
+    const secondaryResult = dataReshapeByEncoding(
+      dataset,
+      uniqueBy(dimensions, (item: Dimension) => item.id),
+      uniqueBy(
+        secondaryMeasures.filter((m) => (m as DualAxisMeasure).chartType! === chartType),
+        (item: Measure) => item.id,
+      ),
+      encoding as Encoding,
+      {
+        colorItemAsId: false,
+        foldMeasureValue: FoldSecondaryMeasureValue,
+        colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+      },
+    )
+
+    datasets.push(secondaryResult.dataset)
+    foldInfoList.push(secondaryResult.foldInfo)
+    unfoldInfoList.push(secondaryResult.unfoldInfo)
+  })
 
   const unfoldInfo: UnfoldInfo = {
     ...unfoldInfoList[0],

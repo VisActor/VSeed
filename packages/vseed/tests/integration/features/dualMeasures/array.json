@@ -1,13 +1,25 @@
 {
   "chartType": "dualAxis",
-  "dualMeasures": [
+  "measures": [
     {
-      "primaryMeasures": [{ "id": "profit" }],
-      "secondaryMeasures": [{ "id": "sales" }]
+      "id": "profit",
+      "encoding": "primaryYAxis",
+      "parentId": "first"
     },
     {
-      "primaryMeasures": [{ "id": "ratio" }],
-      "secondaryMeasures": [{ "id": "returnRatio" }]
+      "id": "sales",
+      "encoding": "secondaryYAxis",
+      "parentId": "first"
+    },
+    {
+      "id": "ratio",
+      "encoding": "primaryYAxis",
+      "parentId": "second"
+    },
+    {
+      "id": "returnRatio",
+      "encoding": "secondaryYAxis",
+      "parentId": "second"
     }
   ],
   "dataset": [

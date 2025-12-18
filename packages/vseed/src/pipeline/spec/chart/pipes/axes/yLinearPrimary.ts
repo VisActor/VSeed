@@ -1,9 +1,9 @@
-import type { ISpec } from '@visactor/vchart'
+import type { ILineSeriesSpec, ISpec } from '@visactor/vchart'
 import { createNumFormatter, flatReshapeMeasures } from '../../../../utils'
 import type { VChartSpecPipe, YLinearAxis } from 'src/types'
-import { isEmpty, isNullish } from 'remeda'
 import { createLinearFormat } from './format/linearFormat'
 import { linearAxisStyle } from './linearAxisStyle'
+import { FoldPrimaryMeasureValue } from 'src/dataReshape'
 
 export const yLinearPrimary: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as ISpec
@@ -17,15 +17,21 @@ export const yLinearPrimary: VChartSpecPipe = (spec, context) => {
   const alignTicks = advancedVSeed.config?.[chartType as 'dualAxis']?.alignTicks as boolean | boolean[]
   const alignTicksConfig = Array.isArray(alignTicks) ? alignTicks[index] || alignTicks[0] : alignTicks
 
-  if (isNullish(foldInfoList?.[0])) {
+  if (!foldInfoList) {
     return result
   }
+  const primaryFoldInfoList = foldInfoList!.filter((f) => f.measureValue.startsWith(FoldPrimaryMeasureValue))
 
-  const isEmptySecondary = isEmpty(foldInfoList?.[0].foldMap)
+  const isEmpty =
+    !primaryFoldInfoList.length || primaryFoldInfoList.every((foldInfo) => !Object.keys(foldInfo.foldMap).length)
 
   const id = `${reshapeInfoId}-primary-axis`
-  const seriesIds = [`${reshapeInfoId}-primary-series`, `${reshapeInfoId}-secondary-series`]
-  const seriesId = alignTicksConfig ? seriesIds : seriesIds[0]
+
+  const seriesId = alignTicksConfig
+    ? spec.series!.map((s) => (s as any).id)
+    : spec
+        .series!.filter((s) => ((s as ILineSeriesSpec).yField as string).startsWith(FoldPrimaryMeasureValue))
+        .map((s) => (s as any).id)
 
   if (!result.axes) {
     result.axes = []
@@ -40,10 +46,18 @@ export const yLinearPrimary: VChartSpecPipe = (spec, context) => {
   }
 
   const measures = flatReshapeMeasures(reshapeMeasures)
+  const measureIds = primaryFoldInfoList.reduce((res: string[], foldInfo) => {
+    Object.keys(foldInfo.foldMap).forEach((k) => {
+      if (!res.includes(k)) {
+        res.push(k)
+      }
+    })
+    return res
+  }, [])
   const titleText =
     yAxisConfig?.title?.titleText ||
     measures
-      .filter((m) => m.encoding === 'primaryYAxis')
+      .filter((m) => m.encoding === 'primaryYAxis' && measureIds.includes(m.id))
       .map((m) => m.alias ?? m.id)
       .join(' & ')
 
@@ -56,7 +70,7 @@ export const yLinearPrimary: VChartSpecPipe = (spec, context) => {
       id,
       seriesId,
     }),
-    visible: isEmptySecondary ? false : (yAxisConfig?.visible ?? true),
+    visible: isEmpty ? false : (yAxisConfig?.visible ?? true),
   }
 
   result.axes = [...result.axes, linearAxis] as ISpec['axes']

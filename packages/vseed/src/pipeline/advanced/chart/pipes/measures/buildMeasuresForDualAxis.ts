@@ -1,6 +1,7 @@
-import type { AdvancedPipe, MeasureEncoding, Measures } from 'src/types'
+import type { AdvancedPipe, DualAxisMeasure, MeasureEncoding, Measures } from 'src/types'
 import { DEFAULT_PARENT_ID } from 'src/pipeline/utils/constant'
 import { ensureParentIdInitialized, isCommonMeasureEncoding } from './utils'
+import { DEFAULT_DUAL_CHART_TYPE, isDualAxisChartType } from 'src/pipeline/utils/chatType'
 
 export const buildMeasuresForDualAxis: AdvancedPipe = (advancedVSeed) => {
   const { measures = [] } = advancedVSeed
@@ -19,11 +20,25 @@ export const buildMeasuresForDualAxis: AdvancedPipe = (advancedVSeed) => {
 
     if (isPrimaryYAxis) {
       measuresByView[parentId].push(item)
+
+      if (!isDualAxisChartType((item as DualAxisMeasure).chartType)) {
+        ;(item as any).chartType = DEFAULT_DUAL_CHART_TYPE.primary
+      }
     } else if (isSecondaryYAxis) {
       measuresByView[parentId].push(item)
+
+      if (!isDualAxisChartType((item as DualAxisMeasure).chartType)) {
+        ;(item as any).chartType = DEFAULT_DUAL_CHART_TYPE.secondary
+      }
     } else if (!isOtherEncoding) {
       const primaryCount = measuresByView[parentId].filter((m) => m.encoding === 'primaryYAxis').length
       item.encoding = primaryCount === 0 ? 'primaryYAxis' : 'secondaryYAxis'
+
+      if (!isDualAxisChartType((item as DualAxisMeasure).chartType)) {
+        ;(item as any).chartType =
+          item.encoding === 'primaryYAxis' ? DEFAULT_DUAL_CHART_TYPE.primary : DEFAULT_DUAL_CHART_TYPE.secondary
+      }
+
       measuresByView[parentId].push(item)
     }
   }

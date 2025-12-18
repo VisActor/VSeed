@@ -6,10 +6,11 @@ import { zColor } from './color/color'
 import { zLabel } from './label'
 import { zLegend } from './legend/legend'
 import { zTooltip } from './tooltip/tooltip'
-import { zDualChartType } from '../chartType'
 import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
 import { zDimensionLinkage } from './dimensionLinkage/dimensionLinkage'
+import type { ChartType } from '../chartType'
+import type { FoldInfo } from '../datasetReshapeInfo/datasetReshapeInfo'
 
 export const zDualAxisConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
@@ -18,7 +19,6 @@ export const zDualAxisConfig = z.object({
   tooltip: zTooltip.nullish(),
   legend: zLegend.nullish(),
 
-  dualChartType: z.array(zDualChartType).or(zDualChartType).nullish(),
   alignTicks: z.array(z.boolean()).or(z.boolean()).nullish(),
   primaryYAxis: z.array(zYLinearAxis).or(zYLinearAxis).nullish(),
   secondaryYAxis: z.array(zYLinearAxis).or(zYLinearAxis).nullish(),
@@ -32,3 +32,9 @@ export const zDualAxisConfig = z.object({
 })
 
 export type DualAxisConfig = z.infer<typeof zDualAxisConfig>
+
+export type DualAxisOptions = {
+  axisType: 'primary' | 'secondary'
+  chartType: ChartType
+  foldInfo: FoldInfo
+}

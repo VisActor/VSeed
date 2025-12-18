@@ -5,7 +5,7 @@ export const linearColorForDualAxis: VChartSpecPipe = (spec, context) => {
   const result = { ...spec } as IBarChartSpec
   const { advancedVSeed } = context
   const { datasetReshapeInfo, chartType } = advancedVSeed
-  const { unfoldInfo, id } = datasetReshapeInfo[0]
+  const { unfoldInfo } = datasetReshapeInfo[0]
   const baseConfig = advancedVSeed.config[chartType] as { color: Color }
 
   if (!baseConfig || !baseConfig.color) {
@@ -18,16 +18,12 @@ export const linearColorForDualAxis: VChartSpecPipe = (spec, context) => {
   result.color = {
     type: 'linear',
     range: linearColorScheme || colorScheme || [],
-    domain: [
-      {
-        dataId: `${id}-primary-dataset`,
+    domain: spec.series!.map((s) => {
+      return {
+        dataId: (s as any).data.id,
         fields: [unfoldInfo.encodingColor],
-      },
-      {
-        dataId: `${id}-secondary-dataset`,
-        fields: [unfoldInfo.encodingColor],
-      },
-    ],
+      }
+    }),
   }
 
   return result

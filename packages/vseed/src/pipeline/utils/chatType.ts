@@ -111,3 +111,18 @@ export const isRectungularCoordinate = (chartType: string) => {
     ] as string[]
   ).includes(chartType)
 }
+
+/**
+ * 默认的双轴图图表类型配置
+ */
+export const DEFAULT_DUAL_CHART_TYPE = {
+  primary: 'column',
+  secondary: 'line',
+}
+
+export const isDualAxisChartType = (chartType: string | undefined) => {
+  return (
+    chartType &&
+    ['column', 'columnParallel', 'columnPercent', 'line', 'area', 'areaPercent', 'scatter'].includes(chartType)
+  )
+}

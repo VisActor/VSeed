@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import type { DimensionGroup } from './dimensions'
+import type { DimensionGroup } from './tableDimension'
 
 export const zDimension = z.object({
   id: z.string(),

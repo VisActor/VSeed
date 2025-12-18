@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.3.0
+
+### Minor Changes
+
+- cef60f2: refactor: remove children in measures and remove dualChartType
+
 ## 0.2.9
 
 ### Patch Changes

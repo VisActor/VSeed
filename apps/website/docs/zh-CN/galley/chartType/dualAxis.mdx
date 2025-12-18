@@ -164,20 +164,16 @@ export const PivotDualAxisChart = memo(() => {
 })
 ```
 
-## dualChartType
+## 设置子图类型
 
 ### 双轴图
 
 <DualChartType />
 
-```tsx pure {4-7}
+```tsx pure {11-14}
 export const DualChartType = memo(() => {
   const vseed: VSeed = {
     chartType: 'dualAxis',
-    dualChartType: {
-      primary: 'area',
-      secondary: 'scatter',
-    },
     dataset: [
       { date: '2019', profit: 20, sales: 100 },
       { date: '2020', profit: 30, sales: 600 },
@@ -186,8 +182,8 @@ export const DualChartType = memo(() => {
       { date: '2023', profit: 10, sales: 800 },
     ],
     measures: [
-      { id: 'sales', alias: '销售额', encoding: 'primaryYAxis' },
-      { id: 'profit', alias: '利润', encoding: 'secondaryYAxis' },
+      { id: 'sales', alias: '销售额', encoding: 'primaryYAxis', chartType: 'area' },
+      { id: 'profit', alias: '利润', encoding: 'secondaryYAxis', chartType: 'column' },
     ],
   }
   return <VChartRender vseed={vseed} />

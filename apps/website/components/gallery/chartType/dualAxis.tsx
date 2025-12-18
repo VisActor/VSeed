@@ -128,13 +128,9 @@ export const DualChartType = memo(() => {
       { date: '2023', profit: 10, sales: 800 },
     ],
     measures: [
-      { id: 'sales', alias: '销售额', encoding: 'primaryYAxis' },
-      { id: 'profit', alias: '利润', encoding: 'secondaryYAxis' },
+      { id: 'sales', alias: '销售额', encoding: 'primaryYAxis', chartType: 'area' },
+      { id: 'profit', alias: '利润', encoding: 'secondaryYAxis', chartType: 'scatter' },
     ],
-    dualChartType: {
-      primary: 'area',
-      secondary: 'scatter',
-    },
   }
   return <VChartRender vseed={vseed} />
 })
@@ -142,21 +138,11 @@ export const DualChartType = memo(() => {
 export const DualChartTypeArray = memo(() => {
   const vseed: VSeed = {
     chartType: 'dualAxis',
-    dualChartType: [
-      {
-        primary: 'area',
-        secondary: 'scatter',
-      },
-      {
-        primary: 'column',
-        secondary: 'line',
-      },
-    ],
     measures: [
-      { id: 'profit', alias: '利润', encoding: 'primaryYAxis', parentId: 'first' },
-      { id: 'sales', alias: '销售额', encoding: 'secondaryYAxis', parentId: 'first' },
-      { id: 'ratio', alias: '比率', encoding: 'primaryYAxis', parentId: 'second' },
-      { id: 'returnRatio', alias: '回报率', encoding: 'secondaryYAxis', parentId: 'second' },
+      { id: 'profit', alias: '利润', encoding: 'primaryYAxis', parentId: 'first', chartType: 'area' },
+      { id: 'sales', alias: '销售额', encoding: 'secondaryYAxis', parentId: 'first', chartType: 'scatter' },
+      { id: 'ratio', alias: '比率', encoding: 'primaryYAxis', parentId: 'second', chartType: 'column' },
+      { id: 'returnRatio', alias: '回报率', encoding: 'secondaryYAxis', parentId: 'second', chartType: 'line' },
     ],
     dataset: [
       { date: '2019', profit: 10, sales: 100, ratio: 301, returnRatio: 301 },

@@ -18,7 +18,6 @@ import {
   // zMeasureTree,
   zColorLegend,
   // zDualMeasures,
-  zDualChartType,
   zBarMaxWidth,
   zBarGapInGroup,
   zWhiskersConfig,
@@ -258,21 +257,6 @@ ${colorLegendSchema}
   // ${dualMeasuresSchema}
   // \`\`\`
   //   `);
-
-  // DualChartType
-  const dualChartTypeSchema = await compile(z.toJSONSchema(zDualChartType) as any, 'DualChartType', {
-    bannerComment: '',
-  })
-  fs.writeFileSync(
-    path.join(__dirname, './new-type/DualChartType.md'),
-    `
-### DualChartType
-${topKeyDesc['DualChartType']}
-\`\`\`typescript
-${dualChartTypeSchema}
-\`\`\`
-  `,
-  )
 
   // BarMaxWidth
   const barMaxWidthSchema = await compile(z.toJSONSchema(zBarMaxWidth) as any, 'BarMaxWidth', {

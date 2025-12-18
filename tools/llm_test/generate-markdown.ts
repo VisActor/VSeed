@@ -578,22 +578,37 @@ function generateMeasureMarkdown() {
   const measureEncodingFileContent = fs.readFileSync(measureEncodingDir)
   const measureEncodingContent = measureEncodingFileContent.toString()
 
-  // MeasureTree & Measures
-  const measureDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/measures/measures.ts')
-  const fileContent = fs.readFileSync(measureDir)
-  const fileContentStr = fileContent.toString()
+  // Read baseMeasure.ts for BaseMeasure and Measure
+  const baseMeasureDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/measures/baseMeasure.ts')
+  const baseMeasureFileContent = fs.readFileSync(baseMeasureDir)
+  const baseMeasureContentStr = baseMeasureFileContent.toString()
+
+  // Extract BaseMeasure and Measure definitions
+  const baseMeasureStart = baseMeasureContentStr.indexOf('export type BaseMeasure')
+  const baseMeasureContent = baseMeasureStart !== -1 ? baseMeasureContentStr.substring(baseMeasureStart) : ''
+
+  // Read tableMeasure.ts for TableMeasure
+  const tableMeasureDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/measures/tableMeasure.ts')
+  const tableMeasureFileContent = fs.readFileSync(tableMeasureDir)
+  const tableMeasureContentStr = tableMeasureFileContent.toString()
+
+  // Extract TableMeasure definition (skip the import line)
+  const tableMeasureStart = tableMeasureContentStr.indexOf('export type TableMeasure')
+  const tableMeasureContent = tableMeasureStart !== -1 ? tableMeasureContentStr.substring(tableMeasureStart).trim() : ''
+
+  // Read measureTree.ts for MeasureGroup and MeasureTree
+  const measureTreeDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/measures/measureTree.ts')
+  const measureTreeFileContent = fs.readFileSync(measureTreeDir)
+  const measureTreeContentStr = measureTreeFileContent.toString()
+
+  // Extract MeasureGroup and MeasureTree (skip the import line)
+  const measureGroupStart = measureTreeContentStr.indexOf('export type MeasureGroup')
+  const measureTreeContent = measureGroupStart !== -1 ? measureTreeContentStr.substring(measureGroupStart) : ''
+
   const outputDir = path.resolve(__dirname, './new-type')
 
-  const interfaceSignature = `export type Measure`
-  const interfaceIndex = fileContentStr.indexOf(interfaceSignature)
+  const measureTreeFullContent = baseMeasureContent + '\n\n' + tableMeasureContent + '\n\n' + measureTreeContent
 
-  if (interfaceIndex === -1) {
-    console.log(`Could not find interface definition export type Measure in measures.ts`)
-    return
-  }
-
-  const startIndex = interfaceIndex
-  const measureContent = fileContentStr.substring(startIndex)
   fs.writeFileSync(
     path.resolve(outputDir, 'MeasureTree.md'),
     '### Measure\n指标\n```typescript\n' +
@@ -601,7 +616,7 @@ function generateMeasureMarkdown() {
       '\n' +
       measureEncodingContent +
       '\n' +
-      measureContent +
+      measureTreeFullContent +
       '\n```',
   )
   fs.writeFileSync(
@@ -611,7 +626,7 @@ function generateMeasureMarkdown() {
       '\n' +
       measureEncodingContent +
       '\n' +
-      measureContent +
+      baseMeasureContent +
       '\n```',
   )
 }
@@ -625,21 +640,44 @@ function generateDimensionMarkdown() {
   const dimensionEncodingFileContent = fs.readFileSync(dimensionEncodingDir)
   const dimensionEncodingContent = dimensionEncodingFileContent.toString()
 
-  // Dimensions & DimensionTree
-  const dimensionDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/dimensions/dimensions.ts')
-  const dimensionFileContent = fs.readFileSync(dimensionDir)
-  const dimensionContentStr = dimensionFileContent.toString()
-  const startIndex = dimensionContentStr.indexOf('export type Dimension')
-  const dimensionContent = dimensionContentStr.substring(startIndex)
+  // Read baseDimension.ts for BaseDimension, Dimension, and Dimensions
+  const baseDimensionDir = path.resolve(
+    __dirname,
+    '../../packages/vseed/src/types/properties/dimensions/baseDimension.ts',
+  )
+  const baseDimensionFileContent = fs.readFileSync(baseDimensionDir)
+  const baseDimensionContentStr = baseDimensionFileContent.toString()
+  const startIndex = baseDimensionContentStr.indexOf('export type BaseDimension')
+  const baseDimensionContent = baseDimensionContentStr.substring(startIndex)
+
+  // Read tableDimension.ts for TableDimension, DimensionGroup and DimensionTree
+  const tableDimensionDir = path.resolve(
+    __dirname,
+    '../../packages/vseed/src/types/properties/dimensions/tableDimension.ts',
+  )
+  const tableDimensionFileContent = fs.readFileSync(tableDimensionDir)
+  const tableDimensionContentStr = tableDimensionFileContent.toString()
+
+  // Extract TableDimension definition
+  const tableDimensionStart = tableDimensionContentStr.indexOf('export type TableDimension')
+  const tableDimensionContent =
+    tableDimensionStart !== -1 ? tableDimensionContentStr.substring(tableDimensionStart) : ''
+
   const outputDir = path.resolve(__dirname, './new-type')
 
   fs.writeFileSync(
     path.resolve(outputDir, 'Dimensions.md'),
-    '### Dimensions\n```typescript\n' + dimensionEncodingContent + '\n' + dimensionContent + '\n```',
+    '### Dimensions\n```typescript\n' + dimensionEncodingContent + '\n' + baseDimensionContent + '\n```',
   )
   fs.writeFileSync(
     path.resolve(outputDir, 'DimensionTree.md'),
-    '### DimensionTree\n```typescript\n' + dimensionEncodingContent + '\n' + dimensionContent + '\n```',
+    '### DimensionTree\n```typescript\n' +
+      dimensionEncodingContent +
+      '\n' +
+      baseDimensionContent +
+      '\n\n' +
+      tableDimensionContent +
+      '\n```',
   )
 }
 
@@ -667,121 +705,178 @@ function generateLinearColor() {
 
 function generateChartSpecificTypes() {
   const outputDir = path.resolve(__dirname, './new-type')
+  const dimensionsDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/dimensions')
+  const measuresDir = path.resolve(__dirname, '../../packages/vseed/src/types/properties/measures')
 
-  // 读取 dimensions.ts 文件
-  const dimensionsPath = path.resolve(__dirname, '../../packages/vseed/src/types/properties/dimensions/dimensions.ts')
-  const dimensionsContent = fs.readFileSync(dimensionsPath, 'utf-8')
+  // 读取 baseDimension.ts 文件
+  const baseDimensionPath = path.resolve(dimensionsDir, 'baseDimension.ts')
+  const baseDimensionContent = fs.readFileSync(baseDimensionPath, 'utf-8')
 
-  // 读取 measures.ts 文件
-  const measuresPath = path.resolve(__dirname, '../../packages/vseed/src/types/properties/measures/measures.ts')
-  const measuresContent = fs.readFileSync(measuresPath, 'utf-8')
+  // 读取 baseMeasure.ts 文件
+  const baseMeasurePath = path.resolve(measuresDir, 'baseMeasure.ts')
+  const baseMeasureContent = fs.readFileSync(baseMeasurePath, 'utf-8')
 
   // 提取 BaseDimension 定义
-  const baseDimensionRegex = /export type BaseDimension[\s\S]*?(?=\n\n\/\*\*|\nexport)/
-  const baseDimensionMatch = dimensionsContent.match(baseDimensionRegex)
-  const baseDimensionContent = baseDimensionMatch ? baseDimensionMatch[0] : ''
+  const baseDimensionRegex = /export type BaseDimension[\s\S]*?(?=\n\n\/\*\*|\nexport|$)/
+  const baseDimensionMatch = baseDimensionContent.match(baseDimensionRegex)
+  const baseDimensionDef = baseDimensionMatch ? baseDimensionMatch[0] : ''
 
   // 提取 BaseMeasure 定义
-  const baseMeasureRegex = /export type BaseMeasure[\s\S]*?(?=\n\n\/\*\*|\nexport)/
-  const baseMeasureMatch = measuresContent.match(baseMeasureRegex)
-  const baseMeasureContent = baseMeasureMatch ? baseMeasureMatch[0] : ''
+  const baseMeasureRegex = /export type BaseMeasure[\s\S]*?(?=\n\n\/\*\*|\nexport|$)/
+  const baseMeasureMatch = baseMeasureContent.match(baseMeasureRegex)
+  const baseMeasureDef = baseMeasureMatch ? baseMeasureMatch[0] : ''
 
-  // 定义需要提取的图表特定类型
-  const chartTypes = [
-    'Column',
-    'Bar',
-    'Line',
-    'Area',
-    'Pie',
-    'Donut',
-    'Funnel',
-    'Radar',
-    'Rose',
-    'RoseParallel',
-    'Heatmap',
-    'Scatter',
-    'Histogram',
-    'BoxPlot',
-    'DualAxis',
-    'Table',
-    'ColumnParallel',
-    'ColumnPercent',
-    'BarParallel',
-    'BarPercent',
-  ]
+  // 定义图表类型到文件的映射
+  const dimensionFileMap: Record<string, string> = {
+    Column: 'columnDimension.ts',
+    ColumnParallel: 'columnDimension.ts',
+    ColumnPercent: 'columnDimension.ts',
+    Bar: 'barDimension.ts',
+    BarParallel: 'barDimension.ts',
+    BarPercent: 'barDimension.ts',
+    Line: 'lineDimension.ts',
+    Area: 'areaDimension.ts',
+    AreaPercent: 'areaDimension.ts',
+    Pie: 'pieDimension.ts',
+    Donut: 'donutDimension.ts',
+    Funnel: 'funnelDimension.ts',
+    Radar: 'radarDimension.ts',
+    Rose: 'roseDimension.ts',
+    RoseParallel: 'roseDimension.ts',
+    Heatmap: 'heatmapDimension.ts',
+    Scatter: 'scatterDimension.ts',
+    Histogram: 'histogramDimension.ts',
+    BoxPlot: 'boxPlotDimension.ts',
+    DualAxis: 'dualAxisDimension.ts',
+    Table: 'tableDimension.ts',
+  }
+
+  const measureFileMap: Record<string, string> = {
+    Column: 'columnMeasure.ts',
+    ColumnParallel: 'columnMeasure.ts',
+    ColumnPercent: 'columnMeasure.ts',
+    Bar: 'barMeasure.ts',
+    BarParallel: 'barMeasure.ts',
+    BarPercent: 'barMeasure.ts',
+    Line: 'lineMeasure.ts',
+    Area: 'areaMeasure.ts',
+    AreaPercent: 'areaMeasure.ts',
+    Pie: 'pieMeasure.ts',
+    Donut: 'pieMeasure.ts',
+    Funnel: 'funnelMeasure.ts',
+    Radar: 'radarMeasure.ts',
+    Rose: 'radarMeasure.ts',
+    RoseParallel: 'radarMeasure.ts',
+    Heatmap: 'heatmapMeasure.ts',
+    Scatter: 'scatterMeasure.ts',
+    Histogram: 'histogramMeasure.ts',
+    BoxPlot: 'boxPlotMeasure.ts',
+    DualAxis: 'dualAxisMeasure.ts',
+    Table: 'tableMeasure.ts',
+  }
+
+  const chartTypes = Object.keys(dimensionFileMap)
 
   chartTypes.forEach((chartType) => {
-    // 提取 Dimension 类型定义
     const dimensionTypeName = `${chartType}Dimension`
-    // 精确匹配单行类型定义（只匹配到行尾）
-    const dimensionRegex = new RegExp(`export type ${dimensionTypeName}\\s*=\\s*[^\\n]+`, 'g')
-    const dimensionMatch = dimensionsContent.match(dimensionRegex)
+    const measureTypeName = `${chartType}Measure`
 
-    if (dimensionMatch && dimensionMatch[0]) {
-      const dimensionDef = dimensionMatch[0]
+    // 处理 Dimension 类型
+    const dimensionFile = dimensionFileMap[chartType]
+    if (dimensionFile) {
+      const dimensionPath = path.resolve(dimensionsDir, dimensionFile)
+      if (fs.existsSync(dimensionPath)) {
+        const dimensionContent = fs.readFileSync(dimensionPath, 'utf-8')
 
-      // 检查是否是类型别名（简单赋值，如 LineDimension = ColumnDimension）
-      const simpleAliasMatch = dimensionDef.match(/export type \w+\s*=\s*(\w+)\s*$/)
+        // 查找当前类型的定义
+        const typeRegex = new RegExp(`export type ${dimensionTypeName}[\\s\\S]*?(?=\\n\\nexport|\\n$|$)`, 'g')
+        const typeMatch = dimensionContent.match(typeRegex)
 
-      if (simpleAliasMatch && simpleAliasMatch[1]) {
-        // 这是一个简单类型别名，查找它引用的类型
-        const baseTypeName = simpleAliasMatch[1]
-        const baseTypeRegex = new RegExp(
-          `export type ${baseTypeName}\\s*=\\s*BaseDimension\\s*&\\s*\\{[\\s\\S]*?\\n\\}`,
-          'g',
-        )
-        const baseTypeMatch = dimensionsContent.match(baseTypeRegex)
-        if (baseTypeMatch && baseTypeMatch[0]) {
-          const content = `### ${dimensionTypeName}\n\`\`\`typescript\n${baseDimensionContent}\n\n${dimensionDef}\n\n${baseTypeMatch[0]}\n\`\`\``
-          fs.writeFileSync(path.resolve(outputDir, `${dimensionTypeName}.md`), content)
-        }
-      } else {
-        // 这是一个完整的类型定义，提取整个类型体
-        const fullTypeRegex = new RegExp(
-          `export type ${dimensionTypeName}\\s*=\\s*BaseDimension\\s*&\\s*\\{[\\s\\S]*?\\n\\}`,
-          'g',
-        )
-        const fullTypeMatch = dimensionsContent.match(fullTypeRegex)
-        if (fullTypeMatch && fullTypeMatch[0]) {
-          const content = `### ${dimensionTypeName}\n\`\`\`typescript\n${baseDimensionContent}\n\n${fullTypeMatch[0]}\n\`\`\``
-          fs.writeFileSync(path.resolve(outputDir, `${dimensionTypeName}.md`), content)
+        if (typeMatch && typeMatch[0]) {
+          let typeDef = typeMatch[0].trim()
+
+          // 如果是类型别名，需要查找引用的类型
+          const aliasMatch = typeDef.match(/export type \w+\s*=\s*(\w+)\s*$/)
+          if (aliasMatch && aliasMatch[1]) {
+            // 这是一个别名，查找引用的类型
+            const baseTypeName = aliasMatch[1]
+
+            // 首先在当前文件中查找
+            let baseTypeRegex = new RegExp(`export type ${baseTypeName}[\\s\\S]*?(?=\\n\\nexport|\\n$|$)`, 'g')
+            let baseTypeMatch = dimensionContent.match(baseTypeRegex)
+
+            // 如果当前文件中找不到，尝试从映射中找到对应的文件
+            if (!baseTypeMatch || !baseTypeMatch[0]) {
+              // 尝试找到引用类型所在的文件
+              const baseTypeFileName = dimensionFileMap[baseTypeName.replace('Dimension', '')]
+              if (baseTypeFileName && baseTypeFileName !== dimensionFile) {
+                const baseTypePath = path.resolve(dimensionsDir, baseTypeFileName)
+                if (fs.existsSync(baseTypePath)) {
+                  const baseTypeContent = fs.readFileSync(baseTypePath, 'utf-8')
+                  baseTypeRegex = new RegExp(`export type ${baseTypeName}[\\s\\S]*?(?=\\n\\nexport|\\n$|$)`, 'g')
+                  baseTypeMatch = baseTypeContent.match(baseTypeRegex)
+                }
+              }
+            }
+            if (baseTypeMatch && baseTypeMatch[0]) {
+              const content = `### ${dimensionTypeName}\n\`\`\`typescript\n${baseDimensionDef}\n\n${typeDef}\n\n${baseTypeMatch[0].trim()}\n\`\`\``
+              fs.writeFileSync(path.resolve(outputDir, `${dimensionTypeName}.md`), content)
+            }
+          } else {
+            // 这是完整的类型定义
+            const content = `### ${dimensionTypeName}\n\`\`\`typescript\n${baseDimensionDef}\n\n${typeDef}\n\`\`\``
+            fs.writeFileSync(path.resolve(outputDir, `${dimensionTypeName}.md`), content)
+          }
         }
       }
     }
 
-    // 提取 Measure 类型定义
-    const measureTypeName = `${chartType}Measure`
-    const measureRegex = new RegExp(`export type ${measureTypeName}\\s*=\\s*[^\\n]+`, 'g')
-    const measureMatch = measuresContent.match(measureRegex)
+    // 处理 Measure 类型
+    const measureFile = measureFileMap[chartType]
+    if (measureFile) {
+      const measurePath = path.resolve(measuresDir, measureFile)
+      if (fs.existsSync(measurePath)) {
+        const measureContent = fs.readFileSync(measurePath, 'utf-8')
 
-    if (measureMatch && measureMatch[0]) {
-      const measureDef = measureMatch[0]
+        // 查找当前类型的定义
+        const typeRegex = new RegExp(`export type ${measureTypeName}[\\s\\S]*?(?=\\n\\nexport|\\n$|$)`, 'g')
+        const typeMatch = measureContent.match(typeRegex)
 
-      // 检查是否是简单类型别名
-      const simpleAliasMatch = measureDef.match(/export type \w+\s*=\s*(\w+)\s*$/)
+        if (typeMatch && typeMatch[0]) {
+          let typeDef = typeMatch[0].trim()
 
-      if (simpleAliasMatch && simpleAliasMatch[1]) {
-        // 这是一个简单类型别名，查找它引用的类型
-        const baseTypeName = simpleAliasMatch[1]
-        const baseTypeRegex = new RegExp(
-          `export type ${baseTypeName}\\s*=\\s*BaseMeasure\\s*&\\s*\\{[\\s\\S]*?\\n\\}`,
-          'g',
-        )
-        const baseTypeMatch = measuresContent.match(baseTypeRegex)
-        if (baseTypeMatch && baseTypeMatch[0]) {
-          const content = `### ${measureTypeName}\n\`\`\`typescript\n${baseMeasureContent}\n\n${measureDef}\n\n${baseTypeMatch[0]}\n\`\`\``
-          fs.writeFileSync(path.resolve(outputDir, `${measureTypeName}.md`), content)
-        }
-      } else {
-        // 这是一个完整的类型定义
-        const fullTypeRegex = new RegExp(
-          `export type ${measureTypeName}\\s*=\\s*BaseMeasure\\s*&\\s*\\{[\\s\\S]*?\\n\\}`,
-          'g',
-        )
-        const fullTypeMatch = measuresContent.match(fullTypeRegex)
-        if (fullTypeMatch && fullTypeMatch[0]) {
-          const content = `### ${measureTypeName}\n\`\`\`typescript\n${baseMeasureContent}\n\n${fullTypeMatch[0]}\n\`\`\``
-          fs.writeFileSync(path.resolve(outputDir, `${measureTypeName}.md`), content)
+          // 如果是类型别名，需要查找引用的类型
+          const aliasMatch = typeDef.match(/export type \w+\s*=\s*(\w+)\s*$/)
+          if (aliasMatch && aliasMatch[1]) {
+            // 这是一个别名，查找引用的类型
+            const baseTypeName = aliasMatch[1]
+
+            // 首先在当前文件中查找
+            let baseTypeRegex = new RegExp(`export type ${baseTypeName}[\\s\\S]*?(?=\\n\\nexport|\\n$|$)`, 'g')
+            let baseTypeMatch = measureContent.match(baseTypeRegex)
+
+            // 如果当前文件中找不到，尝试从映射中找到对应的文件
+            if (!baseTypeMatch || !baseTypeMatch[0]) {
+              // 尝试找到引用类型所在的文件
+              const baseTypeFileName = measureFileMap[baseTypeName.replace('Measure', '')]
+              if (baseTypeFileName && baseTypeFileName !== measureFile) {
+                const baseTypePath = path.resolve(measuresDir, baseTypeFileName)
+                if (fs.existsSync(baseTypePath)) {
+                  const baseTypeContent = fs.readFileSync(baseTypePath, 'utf-8')
+                  baseTypeRegex = new RegExp(`export type ${baseTypeName}[\\s\\S]*?(?=\\n\\nexport|\\n$|$)`, 'g')
+                  baseTypeMatch = baseTypeContent.match(baseTypeRegex)
+                }
+              }
+            }
+            if (baseTypeMatch && baseTypeMatch[0]) {
+              const content = `### ${measureTypeName}\n\`\`\`typescript\n${baseMeasureDef}\n\n${typeDef}\n\n${baseTypeMatch[0].trim()}\n\`\`\``
+              fs.writeFileSync(path.resolve(outputDir, `${measureTypeName}.md`), content)
+            }
+          } else {
+            // 这是完整的类型定义
+            const content = `### ${measureTypeName}\n\`\`\`typescript\n${baseMeasureDef}\n\n${typeDef}\n\`\`\``
+            fs.writeFileSync(path.resolve(outputDir, `${measureTypeName}.md`), content)
+          }
         }
       }
     }

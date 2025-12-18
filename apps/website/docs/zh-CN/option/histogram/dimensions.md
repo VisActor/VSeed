@@ -1,6 +1,6 @@
 # dimensions
 
-**Type:** `import("/Users/bytedance/Documents/opensource/vseed-2/packages/vseed/src/index").ScatterDimension[] | undefined`
+**Type:** `HistogramDimension[] | undefined`
 
 :::note{title=描述}
 直方图通常不需要维度

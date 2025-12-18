@@ -2,32 +2,28 @@
   "chartType": "dualAxis",
   "measures": [
     {
-      "id": "first",
-      "alias": "第一个双轴图",
-      "children": [
-        {
-          "id": "secondary-profit",
-          "children": [{ "id": "profit", "alias": "利润" }]
-        },
-        {
-          "id": "primary-sales",
-          "children": [{ "id": "sales", "alias": "销售额" }]
-        }
-      ]
+      "id": "profit",
+      "alias": "利润",
+      "encoding": "primaryYAxis",
+      "parentId": "first"
     },
     {
-      "id": "second",
-      "alias": "第一个双轴图",
-      "children": [
-        {
-          "id": "primary-ratio",
-          "children": [{ "id": "ratio", "alias": "比率" }]
-        },
-        {
-          "id": "returnRatio",
-          "children": [{ "id": "returnRatio", "alias": "回报率" }]
-        }
-      ]
+      "id": "sales",
+      "alias": "销售额",
+      "encoding": "secondaryYAxis",
+      "parentId": "first"
+    },
+    {
+      "id": "ratio",
+      "alias": "比率",
+      "encoding": "primaryYAxis",
+      "parentId": "second"
+    },
+    {
+      "id": "returnRatio",
+      "alias": "回报率",
+      "encoding": "secondaryYAxis",
+      "parentId": "second"
     }
   ],
   "dataset": [

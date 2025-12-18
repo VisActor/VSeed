@@ -2,41 +2,33 @@
   "chartType": "scatter",
   "measures": [
     {
-      "id": "line1",
-      "children": [
-        {
-          "id": "sales",
-          "alias": "销售额",
-          "format": {
-            "type": "number",
-            "ratio": 1000,
-            "thousandSeparator": true,
-            "decimalPlaces": 0,
-            "symbol": "千",
-            "prefix": "利润",
-            "suffix": "$"
-          }
-        }
-      ]
+      "id": "sales",
+      "alias": "销售额",
+      "encoding": "xAxis",
+      "format": {
+        "type": "number",
+        "ratio": 1000,
+        "thousandSeparator": true,
+        "decimalPlaces": 0,
+        "symbol": "千",
+        "prefix": "利润",
+        "suffix": "$"
+      }
     },
     {
-      "id": "line2",
-      "children": [
-        {
-          "id": "profit",
-          "alias": "利润",
-          "autoFormat": true,
-          "format": {
-            "type": "number",
-            "ratio": 1000,
-            "thousandSeparator": true,
-            "decimalPlaces": 0,
-            "symbol": "千",
-            "prefix": "利润",
-            "suffix": "$"
-          }
-        }
-      ]
+      "id": "profit",
+      "alias": "利润",
+      "encoding": "yAxis",
+      "autoFormat": true,
+      "format": {
+        "type": "number",
+        "ratio": 1000,
+        "thousandSeparator": true,
+        "decimalPlaces": 0,
+        "symbol": "千",
+        "prefix": "利润",
+        "suffix": "$"
+      }
     }
   ],
   "dimensions": [

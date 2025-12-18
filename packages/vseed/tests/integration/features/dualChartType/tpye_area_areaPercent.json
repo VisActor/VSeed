@@ -20,12 +20,6 @@
     "labelFontSize": 12,
     "labelColor": "#6F6F6F"
   },
-  "dualChartType": [
-    {
-      "primary": "area",
-      "secondary": "areaPercent"
-    }
-  ],
   "chartType": "dualAxis",
   "dataset": [
     {
@@ -150,7 +144,8 @@
         "type": "digit",
         "unit": null
       },
-      "autoFormat": false
+      "autoFormat": false,
+      "chartType": "area"
     },
     {
       "id": "me_20250914101727_1111",
@@ -164,7 +159,8 @@
         "type": "none",
         "unit": null
       },
-      "autoFormat": false
+      "autoFormat": false,
+      "chartType": "areaPercent"
     }
   ],
   "label": {

@@ -44,5 +44,6 @@ jobs:
           publish: pnpm publish:ci
           createGithubReleases: true
         env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_READ_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

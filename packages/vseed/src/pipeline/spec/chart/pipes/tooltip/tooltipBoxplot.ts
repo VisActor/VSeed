@@ -156,6 +156,7 @@ const createDimensionContent = (
   measures: Measures,
   unfoldInfo: UnfoldInfo,
   medianAlias: string,
+  hasMultiMeasureGroup?: boolean,
 ) => {
   const { encodingColor } = unfoldInfo
 
@@ -168,7 +169,16 @@ const createDimensionContent = (
         ? (v: unknown) => {
             const datum = v as Datum
             const key = (datum && (datum[encodingColor] as string)) || ''
-            return `${unfoldInfo.colorIdMap[key].alias ?? key}(${medianAlias})`
+            const colorKey = `${unfoldInfo.colorIdMap[key].alias ?? key}(${medianAlias})`
+
+            if (hasMultiMeasureGroup) {
+              const id = datum[MeasureId] as string
+              const measure = findMeasureById(measures, id)
+
+              return measure ? `${colorKey}-${measure.alias ?? id}` : colorKey
+            }
+
+            return colorKey
           }
         : (v: unknown) => {
             const datum = v as Datum

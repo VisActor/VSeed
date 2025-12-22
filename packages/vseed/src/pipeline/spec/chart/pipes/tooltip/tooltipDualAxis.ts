@@ -7,7 +7,14 @@ export const tooltipOfDualAxisSeries = (options: DualAxisOptions): VChartSpecPip
   return (spec, context) => {
     const result = { ...spec }
     const { advancedVSeed, vseed } = context
-    const { measures = [], datasetReshapeInfo, chartType, dimensions = [], encoding } = advancedVSeed
+    const {
+      measures = [],
+      datasetReshapeInfo,
+      chartType,
+      dimensions = [],
+      encoding,
+      reshapeMeasures = [],
+    } = advancedVSeed
     const baseConfig = advancedVSeed.config[chartType] as { tooltip: Tooltip }
     const { tooltip = { enable: true } } = baseConfig
     const { enable } = tooltip
@@ -32,7 +39,7 @@ export const tooltipOfDualAxisSeries = (options: DualAxisOptions): VChartSpecPip
         title: {
           visible: true,
         },
-        content: createDimensionContent(dimensions, measures, options.foldInfo, unfoldInfo),
+        content: createDimensionContent(dimensions, measures, options.foldInfo, unfoldInfo, reshapeMeasures.length > 1),
       },
     }
     return result

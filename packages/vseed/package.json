@@ -1,6 +1,6 @@
 {
   "name": "@visactor/vseed",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "exports": {
     ".": {
@@ -63,5 +63,17 @@
     "vi-canvas-mock": "^1.0.0",
     "vitest": "3.2.4"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "license": "MIT",
+  "homepage": "https://visactor.github.io/VSeed",
+  "bugs": "https://github.com/VisActor/VSeed/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VisActor/VSeed",
+    "directory": "packages/vseed"
+  },
+  "author": {
+    "name": "VisActor",
+    "url": "https://www.visactor.io/"
+  }
 }

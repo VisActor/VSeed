@@ -1,6 +1,6 @@
 {
   "name": "@visactor/vquery",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "exports": {
     ".": {
@@ -51,5 +51,17 @@
     "globals": "16.4.0",
     "typescript": "5.9.3",
     "typescript-eslint": "8.48.0"
+  },
+  "license": "MIT",
+  "homepage": "https://visactor.github.io/VSeed",
+  "bugs": "https://github.com/VisActor/VSeed/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VisActor/VSeed",
+    "directory": "packages/vquery"
+  },
+  "author": {
+    "name": "VisActor",
+    "url": "https://www.visactor.io/"
   }
 }

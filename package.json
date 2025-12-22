@@ -7,7 +7,6 @@
     "vtable",
     "visactor"
   ],
-  "author": "visactor",
   "description": "VSeed, an elegant data composer, transforming complexity into simplicity.",
   "scripts": {
     "dev": "pnpm --filter=website run dev",
@@ -46,8 +45,8 @@
     "tools/*"
   ],
   "engines": {
-    "node": ">=18.0.0",
-    "pnpm": ">=10.13.1"
+    "node": ">=24.12.0",
+    "pnpm": ">=10.26.1"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.5",
@@ -58,6 +57,17 @@
     "ts-morph": "26.0.0",
     "turbo": "^2.6.1"
   },
-  "packageManager": "pnpm@10.13.1",
-  "license": "MIT"
+  "packageManager": "pnpm@10.26.1",
+  "license": "MIT",
+  "homepage": "https://visactor.github.io/VSeed",
+  "bugs": "https://github.com/VisActor/VSeed/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VisActor/VSeed",
+    "directory": "packages/vseed"
+  },
+  "author": {
+    "name": "VisActor",
+    "url": "https://www.visactor.io/"
+  }
 }

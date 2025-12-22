@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.3.1
+
+### Patch Changes
+
+- chore: upgrade the latest node,pnpm,npm version
+
 ## 0.3.0
 
 ### Minor Changes

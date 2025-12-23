@@ -2,7 +2,7 @@ import * as Y from 'yjs'
 
 export class ChartTypeBuilder {
   private dsl: Y.Map<any>
-  constructor(dsl: Y.Map<any>) {
+  constructor(doc: Y.Doc, dsl: Y.Map<any>) {
     this.dsl = dsl
   }
 

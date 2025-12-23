@@ -1,5 +1,6 @@
 import type { CustomThemeConfig, YBandAxis } from 'src/types'
 import {
+  getFunnelLightLabel,
   getLightColor,
   getLightColorLegend,
   getLightCrosshairLine,
@@ -219,7 +220,7 @@ export const lightTheme = (): CustomThemeConfig => {
       // other
       funnel: {
         ...baseConfig,
-
+        label: getFunnelLightLabel(),
         transform: getLightFunnelTransformTheme(),
 
         pivotGrid: getLightPivotChartGridConfig(),

@@ -17,6 +17,7 @@ function applyChartType(result: ISeriesSpec, type: string, datasetReshapeInfo: a
     }
     case 'column': {
       result.type = 'bar'
+      result.stack = true
       result.zIndex = DUAL_AXIS_CHART_COLUMN_Z_INDEX
       break
     }

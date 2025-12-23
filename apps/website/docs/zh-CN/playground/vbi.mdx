@@ -61,19 +61,21 @@ const run = async (setVSeed) => {
     setVSeed(() => vseed)
   })
 
-  builder.measures
-    .addMeasure('sales', (node) => {
-      node.setAlias('Sum(sales)').setAggregate({ func: 'sum' })
-    })
-    .addMeasure('profit', (node) => {
-      node.setAlias('Sum(profit)').setAggregate({ func: 'sum' })
-    })
+  builder.doc.transact(() => {
+    builder.measures
+      .addMeasure('sales', (node) => {
+        node.setAlias('Sum(sales)').setAggregate({ func: 'sum' })
+      })
+      .addMeasure('profit', (node) => {
+        node.setAlias('Sum(profit)').setAggregate({ func: 'sum' })
+      })
 
-  builder.dimensions.addDimension('area', (node) => {
-    node.setAlias('区域')
+    builder.dimensions.addDimension('area', (node) => {
+      node.setAlias('区域')
+    })
   })
 
-  window.VBI = builder
+  window.builder = builder
 
   return () => {
     vquery = null
@@ -91,6 +93,7 @@ const Demo = () => {
   return vseed && <SimpleVSeedRender vseed={vseed} />
 }
 
+import * as Y from 'yjs'
 import { VQuery, QueryDSL } from '@visactor/vquery'
 import { VBI } from '@visactor/vbi'
 import { useRef, useEffect, useState } from 'react'

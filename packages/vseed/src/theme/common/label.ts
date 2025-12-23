@@ -16,3 +16,13 @@ export const getLightLabel = () => ({
   ...getDefaultLabel(),
   labelStroke: '#fff',
 })
+
+export const getFunnelDarkLabel = () => ({
+  ...getDefaultLabel(),
+  labelColor: '#fff',
+})
+
+export const getFunnelLightLabel = () => ({
+  ...getDefaultLabel(),
+  labelColor: '#fff',
+})

@@ -8,6 +8,7 @@ import {
   getDarkLabel,
   getDarkLegend,
   getDarkColorLegend,
+  getFunnelDarkLabel,
 } from '../common'
 import { getDarkTooltip } from '../common/tooltip'
 import { getDarkBandAxis, getDarkLinearAxis } from '../common/axes'
@@ -219,6 +220,7 @@ export const darkTheme = (): CustomThemeConfig => {
       // other
       funnel: {
         ...baseConfig,
+        label: getFunnelDarkLabel(),
         transform: getDarkFunnelTransformTheme(),
 
         pivotGrid: getDarkPivotChartGridConfig(),

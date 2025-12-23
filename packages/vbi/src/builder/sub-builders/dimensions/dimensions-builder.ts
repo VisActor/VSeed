@@ -3,7 +3,10 @@ import { VBIDimension, VBIDimensionGroup, VBIDimensionTree } from '../../../type
 import { DimensionNodeBuilder } from './dimension-node-builder'
 
 export class DimensionsBuilder {
-  constructor(private yArray: Y.Array<any>) {}
+  private dimensions: Y.Array<any>
+  constructor(dsl: Y.Map<any>) {
+    this.dimensions = dsl.get('dimensions') || new Y.Array<any>()
+  }
 
   addDimension(fieldOrDimension: VBIDimension['field'] | VBIDimension): DimensionNodeBuilder
   addDimension(
@@ -28,7 +31,7 @@ export class DimensionsBuilder {
       yMap.set(key, value)
     }
 
-    this.yArray.push([yMap])
+    this.dimensions.push([yMap])
     const dimensionNode = new DimensionNodeBuilder(yMap)
 
     if (callback) {
@@ -40,7 +43,7 @@ export class DimensionsBuilder {
   }
 
   build(): VBIDimension[] {
-    return this.yArray.toJSON()
+    return this.dimensions.toJSON()
   }
 
   static isDimensionNode(node: VBIDimensionTree[0]): node is VBIDimension {

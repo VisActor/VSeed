@@ -12,6 +12,7 @@ export const MeasureName = FoldMeasureName
 // Measures For DualAxis
 export const FoldPrimaryMeasureValue = '__MeaPrimaryValue__'
 export const FoldSecondaryMeasureValue = '__MeaSecondaryValue__'
+export const DimAxisType = '__Dim_AxisType__'
 
 // Measures For Scatter
 export const FoldXMeasureValue = '__MeaXValue__'

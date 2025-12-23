@@ -1,5 +1,5 @@
 import { uniqueBy, unique } from 'remeda'
-import { dataReshapeByEncoding, FoldPrimaryMeasureValue, FoldSecondaryMeasureValue } from 'src/dataReshape'
+import { dataReshapeByEncoding, DimAxisType, FoldPrimaryMeasureValue, FoldSecondaryMeasureValue } from 'src/dataReshape'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
 import { DEFAULT_DUAL_CHART_TYPE } from 'src/pipeline/utils/chatType'
 import type {
@@ -7,6 +7,7 @@ import type {
   AdvancedVSeed,
   ColumnParallel,
   Dataset,
+  Datum,
   Dimension,
   DualAxisMeasure,
   Encoding,
@@ -56,6 +57,10 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
       },
     )
 
+    primaryResult.dataset.forEach((row: Datum) => {
+      row[DimAxisType] = 'primaryYAxis'
+    })
+
     datasets.push(primaryResult.dataset)
     foldInfoList.push(primaryResult.foldInfo)
     unfoldInfoList.push(primaryResult.unfoldInfo)
@@ -76,6 +81,10 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
         colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
       },
     )
+
+    secondaryResult.dataset.forEach((row: Datum) => {
+      row[DimAxisType] = 'secondaryYAxis'
+    })
 
     datasets.push(secondaryResult.dataset)
     foldInfoList.push(secondaryResult.foldInfo)

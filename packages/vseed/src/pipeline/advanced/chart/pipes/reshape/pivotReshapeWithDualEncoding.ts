@@ -1,5 +1,5 @@
 import { uniqueBy, unique } from 'remeda'
-import { dataReshapeByEncoding, FoldPrimaryMeasureValue, FoldSecondaryMeasureValue } from 'src/dataReshape'
+import { dataReshapeByEncoding, DimAxisType, FoldPrimaryMeasureValue, FoldSecondaryMeasureValue } from 'src/dataReshape'
 import { DEFAULT_DUAL_CHART_TYPE } from 'src/index'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
 import type {
@@ -8,6 +8,7 @@ import type {
   ColumnParallel,
   Dataset,
   DatasetReshapeInfo,
+  Datum,
   Dimension,
   DualAxisMeasure,
   Encoding,
@@ -24,12 +25,12 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
   const { encoding, chartType } = advancedVSeed
   const reshapeMeasures = advancedVSeed.reshapeMeasures ?? []
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
-  const allMeasuresIds = reshapeMeasures.flatMap((measureGroup) => measureGroup.map((m) => m.id))
+  const allMeasuresIds = reshapeMeasures.flatMap((measureGroup: Measures) => measureGroup.map((m) => m.id))
 
   const datasetList: Dataset[] = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
-  reshapeMeasures.forEach((measures: Measures, index) => {
+  reshapeMeasures.forEach((measures: Measures, index: number) => {
     const foldInfoList: FoldInfo[] = []
     const unfoldInfoList: UnfoldInfo[] = []
 
@@ -64,6 +65,10 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
         },
       )
 
+      primaryResult.dataset.forEach((row: Datum) => {
+        row[DimAxisType] = 'primaryYAxis'
+      })
+
       datasets.push(primaryResult.dataset)
       foldInfoList.push(primaryResult.foldInfo)
       unfoldInfoList.push(primaryResult.unfoldInfo)
@@ -85,6 +90,10 @@ export const pivotReshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, contex
           omitIds: allMeasuresIds,
         },
       )
+
+      secondaryResult.dataset.forEach((row: Datum) => {
+        row[DimAxisType] = 'secondaryYAxis'
+      })
 
       datasets.push(secondaryResult.dataset)
       foldInfoList.push(secondaryResult.foldInfo)

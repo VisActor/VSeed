@@ -53,6 +53,7 @@ import {
   datasetDualAxis,
   labelDualAxis,
   tooltipOfDualAxisSeries,
+  adjustXField,
 } from '../pipes'
 
 const dualAxis: VChartSpecPipeline = [
@@ -73,6 +74,7 @@ const dualAxis: VChartSpecPipeline = [
       areaStyleFilter(colorAreaStyleFill(areaStyle)),
     ],
   ),
+  adjustXField,
   xBand,
   yLinearPrimary,
   yLinearSecondary,
@@ -114,6 +116,7 @@ const pivotDualAxis: PivotChartSpecPipeline = [
         areaStyleFilter(colorAreaStyleFill(areaStyle)),
       ],
     ),
+    adjustXField,
     xBand,
     yLinearPrimary,
     pivotAxisStyle(yLinearSecondary),

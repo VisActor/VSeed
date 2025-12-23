@@ -1,6 +1,6 @@
 import type { IBarSeriesSpec, ISeriesSpec } from '@visactor/vchart'
 import { DUAL_AXIS_CHART_COLUMN_Z_INDEX, DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX } from 'src/pipeline/utils/constant'
-import type { DualAxisMeasure, VChartSpecPipe } from 'src/types'
+import type { VChartSpecPipe } from 'src/types'
 import type { DualAxisOptions } from 'src/types/properties'
 
 /**
@@ -59,20 +59,9 @@ export const dualChartType = (options: DualAxisOptions): VChartSpecPipe => {
   return (spec, context) => {
     const result = { ...spec, zIndex: DUAL_AXIS_CHART_NON_COLUMN_Z_INDEX } as ISeriesSpec
     const { advancedVSeed } = context
-    const { datasetReshapeInfo, reshapeMeasures = [] } = advancedVSeed
-    const index = datasetReshapeInfo[0].index
+    const { datasetReshapeInfo } = advancedVSeed
 
-    const chartTypes = reshapeMeasures[index].map((m) => (m as DualAxisMeasure).chartType) as string[]
-
-    const type =
-      chartTypes.every((ct) => ct === 'column') &&
-      reshapeMeasures[index].length > 1 &&
-      reshapeMeasures[index].some((m) => m.encoding === 'primaryYAxis') &&
-      reshapeMeasures[index].some((m) => m.encoding === 'secondaryYAxis')
-        ? 'columnParallel'
-        : options.chartType
-
-    applyChartType(result, type, datasetReshapeInfo)
+    applyChartType(result, options.chartType, datasetReshapeInfo)
 
     return result
   }

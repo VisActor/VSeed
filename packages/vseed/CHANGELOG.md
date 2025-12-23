@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.3.2
+
+### Patch Changes
+
+- fix: fix both bar in dualAxis chart
+
 ## 0.3.1
 
 ### Patch Changes

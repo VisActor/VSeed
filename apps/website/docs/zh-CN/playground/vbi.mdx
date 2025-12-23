@@ -8,9 +8,9 @@ pageType: custom
 const run = async (setVSeed) => {
   const vquery = new VQuery()
 
-  const connectorId = 'demoDataset'
+  const connectorId = 'vbi-demo'
 
-  VBI.registerConnector('demoDataset', async () => {
+  VBI.registerConnector(connectorId, async () => {
     return {
       discoverSchema: async () => {
         return [
@@ -46,16 +46,21 @@ const run = async (setVSeed) => {
         const dataset = await vquery.connectDataset(connectorId)
         const queryResult = await dataset.query(queryDSL)
 
-        await dataset.disconnect()
-        await vquery.close()
-
         return {
           dataset: queryResult.dataset,
         }
       },
     }
   })
+
   const builder = VBI.from(VBI.generateEmptyDSL(connectorId))
+
+  builder.on('update', async () => {
+    const vseed = await builder.buildVSeed()
+    console.log('debug update', vseed)
+    setVSeed(() => vseed)
+  })
+
   builder.measures
     .addMeasure('sales', (node) => {
       node.setAlias('Sum(sales)').setAggregate({ func: 'sum' })
@@ -67,9 +72,8 @@ const run = async (setVSeed) => {
   builder.dimensions.addDimension('area', (node) => {
     node.setAlias('区域')
   })
-  console.log('debug VBI Builder', builder)
-  const vseed = await builder.buildVSeed()
-  setVSeed(() => vseed)
+
+  window.VBI = builder
 
   return () => {
     vquery = null

@@ -11,4 +11,9 @@ export interface VBIBuilderInterface {
   build: () => VBIDSL
 
   get vbiDSL(): VBIDSL
+
+  applyUpdate: (update: Uint8Array, origin?: any) => void
+  encodeStateAsUpdate: (targetStateVector?: Uint8Array) => Uint8Array
+  on: (event: string, listener: (...args: any[]) => void) => void
+  off: (event: string, listener: (...args: any[]) => void) => void
 }

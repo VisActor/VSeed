@@ -11,7 +11,7 @@ import { ChartTypeBuilder } from './sub-builders/chart-type'
 export class VBIBuilder implements VBIBuilderInterface {
   private doc: Y.Doc
   private dsl: Y.Map<any>
-
+  public undoManager: Y.UndoManager
   public chartType: ChartTypeBuilder
   public measures: MeasuresBuilder
   public dimensions: DimensionsBuilder
@@ -19,9 +19,35 @@ export class VBIBuilder implements VBIBuilderInterface {
   constructor(doc: Y.Doc, dsl: Y.Map<any>) {
     this.doc = doc
     this.dsl = dsl
-    this.chartType = new ChartTypeBuilder(dsl)
-    this.measures = new MeasuresBuilder(dsl)
-    this.dimensions = new DimensionsBuilder(dsl)
+    this.undoManager = new Y.UndoManager(this.dsl)
+
+    this.chartType = new ChartTypeBuilder(doc, dsl)
+    this.measures = new MeasuresBuilder(doc, dsl)
+    this.dimensions = new DimensionsBuilder(doc, dsl)
+  }
+
+  public applyUpdate(update: Uint8Array) {
+    Y.applyUpdate(this.doc, update)
+  }
+
+  public encodeStateAsUpdate(targetStateVector?: Uint8Array) {
+    return Y.encodeStateAsUpdate(this.doc, targetStateVector)
+  }
+
+  public on(event: string, listener: (...args: any[]) => void) {
+    this.doc.on(event as any, listener)
+  }
+
+  public off(event: string, listener: (...args: any[]) => void) {
+    this.doc.off(event as any, listener)
+  }
+
+  undo() {
+    this.undoManager.undo()
+  }
+
+  redo() {
+    this.undoManager.redo()
   }
 
   public buildVSeed = async () => {

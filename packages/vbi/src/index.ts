@@ -1,5 +1,5 @@
 export * from './types'
 export * from './utils'
 export * from './pipeline'
-export { VBIBuilder, VBIBuilder as VBI, MeasuresBuilder, DimensionsBuilder } from './builder'
+export { VBIBuilder, VBIBuilder as VBI, MeasuresBuilder, DimensionsBuilder } from './builder-yjs'
 export * from './insight'

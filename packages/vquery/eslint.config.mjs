@@ -6,5 +6,5 @@ import tseslint from 'typescript-eslint'
 export default [
   { languageOptions: { globals: globals.browser } },
   ...defineConfig(js.configs.recommended, tseslint.configs.recommended),
-  { ignores: ['dist/', 'coverage/'], parserOptions: { tsconfigRootDir: import.meta.dirname } },
+  { ignores: ['dist/', 'coverage/'] },
 ]

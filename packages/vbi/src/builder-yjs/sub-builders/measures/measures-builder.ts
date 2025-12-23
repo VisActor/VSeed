@@ -1,11 +1,13 @@
-import { preorderTraverse } from '../../../utils'
+import * as Y from 'yjs'
 import { VBIMeasure, VBIMeasureGroup, VBIMeasureTree } from '../../../types'
-import { MeasureNodeBuilder } from './measureNodeBuilder'
-import { BuilderContext } from 'src/builder'
+import { MeasureNodeBuilder } from './measure-node-builder'
 
 export class MeasuresBuilder {
-  private readonly measures: MeasureNodeBuilder[] = []
-  private readonly context: BuilderContext
+  private measures: Y.Array<any>
+  constructor(private yArray: Y.Array<any>) {
+    this.measures = this.yArray
+  }
+
   addMeasure(fieldOrMeasure: VBIMeasure['field'] | VBIMeasure): MeasureNodeBuilder
   addMeasure(
     fieldOrMeasure: VBIMeasure['field'] | VBIMeasure,
@@ -28,8 +30,14 @@ export class MeasuresBuilder {
       defaultMeasure.aggregate = fieldOrMeasure.aggregate
     }
 
-    const measureNode = MeasureNodeBuilder.from({ ...defaultMeasure })
-    this.measures.push(measureNode)
+    const yMap = new Y.Map<any>()
+    for (const [key, value] of Object.entries(defaultMeasure)) {
+      yMap.set(key, value)
+    }
+
+    this.yArray.push([yMap])
+    const measureNode = new MeasureNodeBuilder(yMap)
+
     if (callback) {
       callback(measureNode)
       return this
@@ -39,24 +47,7 @@ export class MeasuresBuilder {
   }
 
   build(): VBIMeasure[] {
-    return this.measures.map((measureNode) => measureNode.build())
-  }
-
-  constructor(context: BuilderContext) {
-    this.context = context
-  }
-
-  static from(measures: VBIMeasureTree, context: BuilderContext): MeasuresBuilder {
-    const builder = new MeasuresBuilder(context)
-    preorderTraverse(measures, (measure) => {
-      if (this.isMeasureNode(measure)) {
-        builder.addMeasure(measure)
-      } else if (this.isMeasureGroup(measure)) {
-        // builder.addMeasureGroup(measure)
-      }
-      return false
-    })
-    return builder
+    return this.yArray.toJSON()
   }
 
   static isMeasureNode(node: VBIMeasureTree[0]): node is VBIMeasure {

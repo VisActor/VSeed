@@ -18,7 +18,14 @@ import { updateTooltipElement } from './tooltipElement'
 export const tooltip: VChartSpecPipe = (spec, context) => {
   const result = { ...spec }
   const { advancedVSeed, vseed } = context
-  const { measures = [], datasetReshapeInfo, chartType, dimensions = [], encoding } = advancedVSeed
+  const {
+    measures = [],
+    datasetReshapeInfo,
+    chartType,
+    dimensions = [],
+    encoding,
+    reshapeMeasures = [],
+  } = advancedVSeed
   const baseConfig = advancedVSeed.config[chartType as 'line'] as { tooltip: TooltipConfig }
   const { tooltip = { enable: true } } = baseConfig
   const { enable = true } = tooltip
@@ -40,7 +47,7 @@ export const tooltip: VChartSpecPipe = (spec, context) => {
       title: {
         visible: true,
       },
-      content: createDimensionContent(dimensions, measures, foldInfo, unfoldInfo),
+      content: createDimensionContent(dimensions, measures, foldInfo, unfoldInfo, reshapeMeasures.length > 1),
     },
 
     updateElement: updateTooltipElement,
@@ -53,6 +60,7 @@ export const createDimensionContent = (
   measures: Measures = [],
   foldInfo: FoldInfo,
   unfoldInfo: UnfoldInfo,
+  hasMultiMeasureGroup: boolean,
 ) => {
   const { measureId, measureValue, foldMap } = foldInfo
   const { encodingColor } = unfoldInfo
@@ -67,7 +75,15 @@ export const createDimensionContent = (
             const datum = v as Datum
             const key = (datum && (datum[encodingColor] as string)) || ''
 
-            return unfoldInfo.colorIdMap[key].alias ?? key
+            const colorKey = `${unfoldInfo.colorIdMap[key].alias ?? key}`
+
+            if (hasMultiMeasureGroup) {
+              const mId = (datum && (datum[measureId] as string)) || ''
+
+              return `${colorKey}-${foldMap[mId] ?? mId}`
+            }
+
+            return colorKey
           }
         : (v: unknown) => {
             const datum = v as Datum

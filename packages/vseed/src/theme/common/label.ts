@@ -19,7 +19,7 @@ export const getLightLabel = () => ({
 
 export const getFunnelDarkLabel = () => ({
   ...getDefaultLabel(),
-  labelColor: '#21252C',
+  labelColor: '#fff',
 })
 
 export const getFunnelLightLabel = () => ({

@@ -13,7 +13,6 @@ export const getLightLinearAxis = (): YLinearAxis => ({
   },
   title: {
     visible: false,
-    titleText: '',
     titleColor: '#606773',
     titleFontSize: 12,
     titleFontWeight: 400,
@@ -53,7 +52,6 @@ export const getLightBandAxis = (): YBandAxis => ({
   },
   title: {
     visible: false,
-    titleText: '',
     titleColor: '#606773',
     titleFontSize: 12,
     titleFontWeight: 400,
@@ -89,7 +87,6 @@ export const getDarkLinearAxis = (): YLinearAxis => ({
   },
   title: {
     visible: false,
-    titleText: '',
     titleColor: '#BBBDC3',
     titleFontSize: 12,
     titleFontWeight: 400,
@@ -129,7 +126,6 @@ export const getDarkBandAxis = (): YBandAxis => ({
   },
   title: {
     visible: false,
-    titleText: '',
     titleColor: '#BBBDC3',
     titleFontSize: 12,
     titleFontWeight: 400,

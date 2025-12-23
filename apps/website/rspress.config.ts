@@ -16,6 +16,7 @@ export default defineConfig({
         '@visactor/vquery',
         '@visactor/vbi',
         'rspress/runtime',
+        'yjs',
       ],
     }),
   ],

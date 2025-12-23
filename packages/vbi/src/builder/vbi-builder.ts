@@ -9,8 +9,8 @@ import { buildVQuery } from 'src/pipeline'
 import { ChartTypeBuilder } from './sub-builders/chart-type'
 
 export class VBIBuilder implements VBIBuilderInterface {
-  private doc: Y.Doc
-  private dsl: Y.Map<any>
+  public doc: Y.Doc
+  public dsl: Y.Map<any>
   public undoManager: Y.UndoManager
   public chartType: ChartTypeBuilder
   public measures: MeasuresBuilder

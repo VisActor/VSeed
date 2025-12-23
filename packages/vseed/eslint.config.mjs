@@ -5,6 +5,12 @@ import { defineConfig } from 'eslint/config'
 
 export default [
   {
+    languageOptions: {
+      globals: globals.browser,
+      parserOptions: { projectService: true, tsconfigRootDir: import.meta.dirname },
+    },
+  },
+  {
     ignores: [
       'dist/',
       'coverage/',
@@ -18,15 +24,8 @@ export default [
       'vite.setup.ts',
     ],
   },
-  { languageOptions: { globals: globals.browser } },
   ...defineConfig(js.configs.recommended, tseslint.configs.recommended),
   {
-    languageOptions: {
-      parserOptions: {
-        projectService: true,
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
     rules: {
       'no-console': 'error',
       '@typescript-eslint/no-unsafe-assignment': 'off',

@@ -34,19 +34,15 @@ export class MeasuresBuilder {
 
     const yMap = new Y.Map<any>()
 
-    this.doc.transact(() => {
-      for (const [key, value] of Object.entries(defaultMeasure)) {
-        yMap.set(key, value)
-      }
-      this.dsl.get('measures').push([yMap])
-    })
+    for (const [key, value] of Object.entries(defaultMeasure)) {
+      yMap.set(key, value)
+    }
+    this.dsl.get('measures').push([yMap])
 
     const measureNode = new MeasureNodeBuilder(yMap)
 
     if (callback) {
-      this.doc.transact(() => {
-        callback(measureNode)
-      })
+      callback(measureNode)
       return this
     } else {
       return measureNode

@@ -4,7 +4,9 @@ import { DimensionNodeBuilder } from './dimension-node-builder'
 
 export class DimensionsBuilder {
   private dsl: Y.Map<any>
+  private doc: Y.Doc
   constructor(doc: Y.Doc, dsl: Y.Map<any>) {
+    this.doc = doc
     this.dsl = dsl
   }
 

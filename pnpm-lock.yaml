@@ -48,8 +48,16 @@ importers:
         specifier: 1.22.9-alpha.2
         version: 1.22.9-alpha.2
       rspress:
+<<<<<<< HEAD
         specifier: 1.47.0
         version: 1.47.0(webpack@5.101.0)
+=======
+        specifier: 1.45.3
+        version: 1.45.3(webpack@5.101.0)
+      yjs:
+        specifier: 13.6.28
+        version: 13.6.28
+>>>>>>> 989d52055 (feat: add transact)
       zustand:
         specifier: 5.0.6
         version: 5.0.6(@types/react@18.0.0)(react@19.1.1)

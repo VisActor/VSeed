@@ -2,7 +2,7 @@ import type { ISpec } from '@visactor/vchart'
 import type { VChartSpecPipe, XBandAxis } from 'src/types'
 import { defaultTitleText } from './title/defaultTitleText'
 import { MeasureId } from 'src/dataReshape'
-import { isArray, isNull } from '@visactor/vutils'
+import { isArray, isNil } from '@visactor/vutils'
 import { bandAxisStyle } from './bandAxisStyle'
 
 export const xBand: VChartSpecPipe = (spec, context) => {
@@ -26,7 +26,7 @@ export const xBand: VChartSpecPipe = (spec, context) => {
   bandAxis.paddingInner = [0.15, 0.1]
   bandAxis.paddingOuter = [0.075, 0.1]
 
-  if (isNull(bandAxis.title?.text)) {
+  if (isNil(bandAxis.title?.text)) {
     bandAxis.title!.text = defaultTitleText(measures, dimensions, encoding.x as string[])
   }
 

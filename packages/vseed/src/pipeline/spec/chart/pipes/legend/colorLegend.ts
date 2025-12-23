@@ -70,6 +70,18 @@ export const colorLegend: VChartSpecPipe = (spec, context) => {
   if (colorMeasure) {
     const formatter = createFormatterByMeasure(colorMeasure)
     result.legends.handlerText!.formatter = formatter
+
+    // TODO: 先注释掉图例标题，后续看需求是否需要恢复
+    // result.legends.startText = {
+    //   visible: true,
+    //   text: colorMeasure.alias || colorMeasure.id,
+    //   space: 12,
+    //   textStyle: {
+    //     fill: labelColor || labelFontColor,
+    //     fontSize: labelFontSize,
+    //     fontWeight: labelFontWeight,
+    //   },
+    // }
   }
   return result
 }

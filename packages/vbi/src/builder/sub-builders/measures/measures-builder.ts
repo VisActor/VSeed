@@ -4,8 +4,8 @@ import { MeasureNodeBuilder } from './measure-node-builder'
 
 export class MeasuresBuilder {
   private measures: Y.Array<any>
-  constructor(private yArray: Y.Array<any>) {
-    this.measures = this.yArray
+  constructor(dsl: Y.Map<any>) {
+    this.measures = dsl.get('measures') || new Y.Array<any>()
   }
 
   addMeasure(fieldOrMeasure: VBIMeasure['field'] | VBIMeasure): MeasureNodeBuilder
@@ -35,7 +35,7 @@ export class MeasuresBuilder {
       yMap.set(key, value)
     }
 
-    this.yArray.push([yMap])
+    this.measures.push([yMap])
     const measureNode = new MeasureNodeBuilder(yMap)
 
     if (callback) {
@@ -47,7 +47,7 @@ export class MeasuresBuilder {
   }
 
   build(): VBIMeasure[] {
-    return this.yArray.toJSON()
+    return this.measures.toJSON()
   }
 
   static isMeasureNode(node: VBIMeasureTree[0]): node is VBIMeasure {

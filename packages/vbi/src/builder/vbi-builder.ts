@@ -6,19 +6,22 @@ import { MeasuresBuilder } from './sub-builders/measures'
 import { VBIBuilderInterface, VBIDSL } from 'src/types'
 import { VBIConnector, VBIConnectorId } from 'src/types/connector/connector'
 import { buildVQuery } from 'src/pipeline'
+import { ChartTypeBuilder } from './sub-builders/chart-type'
 
 export class VBIBuilder implements VBIBuilderInterface {
   private doc: Y.Doc
   private dsl: Y.Map<any>
 
+  public chartType: ChartTypeBuilder
   public measures: MeasuresBuilder
   public dimensions: DimensionsBuilder
 
   constructor(doc: Y.Doc, dsl: Y.Map<any>) {
     this.doc = doc
     this.dsl = dsl
-    this.measures = new MeasuresBuilder(this.dsl.get('measures'))
-    this.dimensions = new DimensionsBuilder(this.dsl.get('dimensions'))
+    this.chartType = new ChartTypeBuilder(dsl)
+    this.measures = new MeasuresBuilder(dsl)
+    this.dimensions = new DimensionsBuilder(dsl)
   }
 
   public buildVSeed = async () => {
@@ -32,7 +35,7 @@ export class VBIBuilder implements VBIBuilderInterface {
 
     console.log('debug queryDSL', queryDSL)
     return {
-      chartType: 'table',
+      chartType: vbiDSL.chartType,
       dataset: queryResult.dataset,
     } as VSeedDSL
   }

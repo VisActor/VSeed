@@ -1,7 +1,7 @@
 import type { VQueryDSL } from '@visactor/vquery'
 import type { VBIDSL } from '../dsl'
 import type { VSeedDSL } from '@visactor/vseed'
-import { MeasuresBuilder, DimensionsBuilder } from 'src/builder-yjs/sub-builders'
+import { MeasuresBuilder, DimensionsBuilder } from 'src/builder/sub-builders'
 
 export interface VBIBuilderInterface {
   measures: MeasuresBuilder

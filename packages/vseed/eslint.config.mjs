@@ -17,6 +17,7 @@ export default [
       'vite.config.ts',
       'vite.setup.ts',
     ],
+    parserOptions: { tsconfigRootDir: import.meta.dirname },
   },
   { languageOptions: { globals: globals.browser } },
   ...defineConfig(js.configs.recommended, tseslint.configs.recommended),

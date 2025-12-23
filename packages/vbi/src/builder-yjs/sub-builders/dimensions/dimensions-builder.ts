@@ -1,11 +1,9 @@
-import { preorderTraverse } from '../../../utils'
-import { VBIDimension, VBIDimensionGroup, VBIDimensionTree } from 'src/types/dsl'
-import { DimensionNodeBuilder } from './dimensionNodeBuilder'
-import { BuilderContext } from 'src/builder'
+import * as Y from 'yjs'
+import { VBIDimension, VBIDimensionGroup, VBIDimensionTree } from '../../../types'
+import { DimensionNodeBuilder } from './dimension-node-builder'
 
 export class DimensionsBuilder {
-  private readonly dimensions: DimensionNodeBuilder[] = []
-  private readonly context: BuilderContext
+  constructor(private yArray: Y.Array<any>) {}
 
   addDimension(fieldOrDimension: VBIDimension['field'] | VBIDimension): DimensionNodeBuilder
   addDimension(
@@ -25,8 +23,14 @@ export class DimensionsBuilder {
       defaultDimension.field = fieldOrDimension.field || fieldOrDimension.alias
     }
 
-    const dimensionNode = DimensionNodeBuilder.from({ ...defaultDimension })
-    this.dimensions.push(dimensionNode)
+    const yMap = new Y.Map<any>()
+    for (const [key, value] of Object.entries(defaultDimension)) {
+      yMap.set(key, value)
+    }
+
+    this.yArray.push([yMap])
+    const dimensionNode = new DimensionNodeBuilder(yMap)
+
     if (callback) {
       callback(dimensionNode)
       return this
@@ -36,24 +40,7 @@ export class DimensionsBuilder {
   }
 
   build(): VBIDimension[] {
-    return this.dimensions.map((dimensionNode) => dimensionNode.build())
-  }
-
-  constructor(context: BuilderContext) {
-    this.context = context
-  }
-
-  static from(dimensions: VBIDimensionTree, context: BuilderContext): DimensionsBuilder {
-    const builder = new DimensionsBuilder(context)
-    preorderTraverse(dimensions, (dimension) => {
-      if (this.isDimensionNode(dimension)) {
-        builder.addDimension(dimension)
-      } else if (this.isDimensionGroup(dimension)) {
-        // builder.addDimensionGroup(dimension)
-      }
-      return false
-    })
-    return builder
+    return this.yArray.toJSON()
   }
 
   static isDimensionNode(node: VBIDimensionTree[0]): node is VBIDimension {

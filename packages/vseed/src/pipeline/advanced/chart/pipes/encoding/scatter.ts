@@ -95,5 +95,5 @@ const generateMeasureEncoding = (measures: Measures, encoding: Encoding) => {
 
   // tooltip
   const tooltip = unique(measures.filter((item) => item.encoding === 'tooltip').map((item) => item.id))
-  encoding.tooltip = unique([...(encoding.tooltip || []), ...label, ...tooltip, ...color])
+  encoding.tooltip = unique([...(encoding.tooltip || []), ...label, ...tooltip, ...color, ...encoding.size])
 }

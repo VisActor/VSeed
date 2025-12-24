@@ -7,7 +7,8 @@ export const reshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
   const { vseed } = context
   const { dataset, chartType } = vseed as ColumnParallel
-  const { encoding } = advancedVSeed
+  const { encoding, reshapeMeasures = [] } = advancedVSeed
+  const allMeasuresIds = (reshapeMeasures[0] ?? []).map((m: Measure) => m.id)
 
   const colorMeasureId = getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed)
   const {
@@ -22,6 +23,7 @@ export const reshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) => {
     {
       colorItemAsId: false,
       colorMeasureId,
+      omitIds: allMeasuresIds,
     },
   )
 

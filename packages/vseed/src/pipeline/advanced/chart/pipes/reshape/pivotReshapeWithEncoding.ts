@@ -21,12 +21,12 @@ export const pivotReshapeWithEncoding: AdvancedPipe = (advancedVSeed, context) =
   const reshapeMeasures = advancedVSeed.reshapeMeasures ?? []
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
 
-  const allMeasuresIds = reshapeMeasures.flatMap((measureGroup) => measureGroup.map((m) => m.id))
+  const allMeasuresIds = reshapeMeasures.flatMap((measureGroup: Measure[]) => measureGroup.map((m) => m.id))
 
   const datasets: Dataset = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
-  reshapeMeasures.forEach((measures, index) => {
+  reshapeMeasures.forEach((measures: Measure[], index: number) => {
     if (!measures) {
       return
     }

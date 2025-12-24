@@ -1,4 +1,4 @@
-import { uniqueBy } from 'remeda'
+import { uniqueBy, unique } from 'remeda'
 import {
   dataReshapeByEncoding,
   FoldXMeasureId,
@@ -26,10 +26,14 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
   const { dataset } = vseed as ColumnParallel
   const { encoding, chartType, reshapeMeasures } = advancedVSeed
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
-
   const measures = reshapeMeasures?.[0] ?? []
   const foldInfoList: FoldInfo[] = []
   const unfoldInfoList: UnfoldInfo[] = []
+  let allMeasuresIds = unique(measures.map((m: Measure) => m.id))
+
+  if (encoding?.size?.length) {
+    allMeasuresIds = allMeasuresIds.filter((mId: string) => !encoding.size!.includes(mId))
+  }
 
   const datasets: Dataset[] = []
   const xMeasures = measures.filter((m) => m.encoding === 'xAxis') as Measures
@@ -45,6 +49,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
       foldMeasureId: FoldXMeasureId,
       colorItemAsId: true,
       colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+      omitIds: allMeasuresIds,
     },
   )
 
@@ -62,6 +67,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
       foldMeasureId: FoldYMeasureId,
       colorItemAsId: true,
       colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+      omitIds: allMeasuresIds,
     },
   )
 

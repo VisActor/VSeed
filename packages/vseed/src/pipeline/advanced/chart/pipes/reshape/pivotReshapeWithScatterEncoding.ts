@@ -14,6 +14,7 @@ import type {
   ColumnParallel,
   Dataset,
   DatasetReshapeInfo,
+  Datum,
   Encoding,
   FoldInfo,
   Measure,
@@ -27,16 +28,16 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
   const { encoding, chartType } = advancedVSeed
   const reshapeMeasures = advancedVSeed.reshapeMeasures ?? []
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
-  let allMeasuresIds = unique(reshapeMeasures.flatMap((measureGroup) => measureGroup.map((m) => m.id)))
+  let allMeasuresIds = unique(reshapeMeasures.flatMap((measureGroup: Measure[]) => measureGroup.map((m) => m.id)))
 
   if (encoding?.size?.length) {
-    allMeasuresIds = allMeasuresIds.filter((mId) => !encoding.size!.includes(mId))
+    allMeasuresIds = allMeasuresIds.filter((mId: string) => !encoding.size!.includes(mId))
   }
 
   const datasetList: Dataset[] = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
-  reshapeMeasures.forEach((measures: Measure[], index) => {
+  reshapeMeasures.forEach((measures: Measure[], index: number) => {
     const foldInfoList: FoldInfo[] = []
     const unfoldInfoList: UnfoldInfo[] = []
 
@@ -84,12 +85,12 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
 
     datasetReshapeInfo.push(reshapeInfo)
     datasetList.push(
-      datasets[0].flatMap((d) => {
+      datasets[0].flatMap((d: Datum) => {
         return datasets[1]
-          .filter((yDatum) => {
+          .filter((yDatum: Datum) => {
             return yDatum[ORIGINAL_DATA] === d[ORIGINAL_DATA]
           })
-          .map((yDatum) => {
+          .map((yDatum: Datum) => {
             return {
               ...d,
               ...yDatum,

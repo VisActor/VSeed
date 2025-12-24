@@ -24,6 +24,7 @@ import type {
   Dimension,
   Encoding,
   FoldInfo,
+  Measure,
 } from 'src/types'
 
 export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, context) => {
@@ -48,7 +49,7 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
   const datasets: Dataset = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
-  reshapeMeasures.forEach((subMeasures, index) => {
+  reshapeMeasures.forEach((subMeasures: Measure[], index: number) => {
     if (!subMeasures) {
       return
     }
@@ -73,7 +74,7 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
 
     if (encoding.value?.length) {
       const valueField = encoding.value[0]
-      const m = subMeasures.find((m) => m.id === valueField)
+      const m = subMeasures.find((m: Measure) => m.id === valueField)
       const binData = bin(dataset, {
         field: valueField,
         groupField: [...(encoding.x ?? []), ...(encoding.color ?? [])] as string[],
@@ -110,7 +111,7 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
         colorItemAsId: false,
       })
 
-      res.dataset.forEach((d) => {
+      res.dataset.forEach((d: Datum) => {
         newDatasets.push(d)
       })
       unfoldInfo = res.unfoldInfo
@@ -118,15 +119,16 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
       const res = dataReshapeByEncoding(
         dataset,
         uniqueBy(dimensions, (item: Dimension) => item.id),
-        subMeasures.filter((item) => encoding.y?.includes(item.id)).slice(0, 1),
+        subMeasures.filter((item: Datum) => encoding.y?.includes(item.id)).slice(0, 1),
         encoding as Encoding,
         {
           colorItemAsId: false,
           colorMeasureId,
+          omitIds: [],
         },
       )
 
-      res.dataset.forEach((datum) => {
+      res.dataset.forEach((datum: Datum) => {
         datum[BinStartMeasureId] = datum[encoding.x0![0]]
         datum[BinEndMeasureId] = datum[encoding.x1![0]]
         datum[FoldMeasureId] = datum[encoding.y![0]]

@@ -1,4 +1,4 @@
-import { uniqueBy, unique } from 'remeda'
+import { uniqueBy } from 'remeda'
 import {
   dataReshapeByEncoding,
   FoldXMeasureId,
@@ -29,15 +29,11 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
   const measures = reshapeMeasures?.[0] ?? []
   const foldInfoList: FoldInfo[] = []
   const unfoldInfoList: UnfoldInfo[] = []
-  let allMeasuresIds = unique(measures.map((m: Measure) => m.id))
-
-  if (encoding?.size?.length) {
-    allMeasuresIds = allMeasuresIds.filter((mId: string) => !encoding.size!.includes(mId))
-  }
+  const sizeEncodingIds = encoding?.size ?? []
 
   const datasets: Dataset[] = []
-  const xMeasures = measures.filter((m) => m.encoding === 'xAxis') as Measures
-  const yMeasures = measures.filter((m) => m.encoding === 'yAxis') as Measures
+  const xMeasures = measures.filter((m: Measure) => m.encoding === 'xAxis') as Measures
+  const yMeasures = measures.filter((m: Measure) => m.encoding === 'yAxis') as Measures
 
   const xResult = dataReshapeByEncoding(
     dataset,
@@ -49,7 +45,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
       foldMeasureId: FoldXMeasureId,
       colorItemAsId: true,
       colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-      omitIds: allMeasuresIds,
+      omitIds: xMeasures.map((m: Measure) => m.id).filter((id: string) => !sizeEncodingIds.includes(id)),
     },
   )
 
@@ -67,7 +63,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
       foldMeasureId: FoldYMeasureId,
       colorItemAsId: true,
       colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
-      omitIds: allMeasuresIds,
+      omitIds: yMeasures.map((m: Measure) => m.id).filter((id: string) => !sizeEncodingIds.includes(id)),
     },
   )
 

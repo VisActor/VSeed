@@ -71,17 +71,13 @@ export const isPivot = (vseed: VSeed) => {
     return true
   }
 
-  if (
-    vseed.chartType === ChartTypeEnum.Scatter &&
-    (measures.filter((m: Measure) => m.encoding === 'xAxis').length > 1 ||
-      measures.filter((m: Measure) => m.encoding === 'yAxis').length > 1)
-  ) {
+  if (vseed.chartType === ChartTypeEnum.Scatter) {
     const xCount = measures.filter((m: Measure) => m.encoding === 'xAxis').length
     const yCount = measures.filter((m: Measure) => m.encoding === 'yAxis').length
     const otherCount = measures.filter(
       (m: Measure) =>
         !['size', 'xAxis', 'yAxis'].includes(m.encoding as string) &&
-        isCommonMeasureEncoding(m.encoding as MeasureEncoding),
+        !isCommonMeasureEncoding(m.encoding as MeasureEncoding),
     ).length
     const finalXCount = xCount > 0 ? xCount : otherCount > 0 ? 1 : 0
     const finalYCount = xCount > 0 ? yCount + otherCount : yCount + Math.max(otherCount - 1, 0)

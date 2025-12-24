@@ -1,7 +1,7 @@
-import type { Measures } from 'src/types'
+import type { MeasureEncoding, Measures } from 'src/types'
 import { type Dimensions, type DimensionGroup, type VSeed, type Measure } from 'src/types'
 import { isPositionMeasure } from './measures'
-import { isMeasureTreeWithParentId } from '../advanced/chart/pipes/measures/utils'
+import { isCommonMeasureEncoding, isMeasureTreeWithParentId } from '../advanced/chart/pipes/measures/utils'
 import { unique } from 'remeda'
 import { ChartTypeEnum, DEFAULT_PARENT_ID } from './constant'
 
@@ -62,11 +62,34 @@ export const isPivotChart = (vseed: VSeed) => {
  * @description 存在column 或 row的encoding
  */
 export const isPivot = (vseed: VSeed) => {
-  const { dimensions = [] } = vseed as {
+  const { dimensions = [], measures = [] } = vseed as {
     dimensions: Dimensions
+    measures: Measures
   }
 
-  return dimensions && dimensions.some((dimension) => dimension.encoding === 'row' || dimension.encoding === 'column')
+  if (dimensions && dimensions.some((dimension) => dimension.encoding === 'row' || dimension.encoding === 'column')) {
+    return true
+  }
+
+  if (
+    vseed.chartType === ChartTypeEnum.Scatter &&
+    (measures.filter((m: Measure) => m.encoding === 'xAxis').length > 1 ||
+      measures.filter((m: Measure) => m.encoding === 'yAxis').length > 1)
+  ) {
+    const xCount = measures.filter((m: Measure) => m.encoding === 'xAxis').length
+    const yCount = measures.filter((m: Measure) => m.encoding === 'yAxis').length
+    const otherCount = measures.filter(
+      (m: Measure) =>
+        !['size', 'xAxis', 'yAxis'].includes(m.encoding as string) &&
+        isCommonMeasureEncoding(m.encoding as MeasureEncoding),
+    ).length
+    const finalXCount = xCount > 0 ? xCount : otherCount > 0 ? 1 : 0
+    const finalYCount = xCount > 0 ? yCount + otherCount : yCount + Math.max(otherCount - 1, 0)
+
+    if (finalXCount > 1 || finalYCount > 1) return true
+  }
+
+  return false
 }
 
 /**

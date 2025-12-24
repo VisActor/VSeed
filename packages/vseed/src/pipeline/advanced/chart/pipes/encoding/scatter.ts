@@ -1,5 +1,5 @@
 import { unique } from 'remeda'
-import { MeasureId } from 'src/dataReshape'
+import { FoldXMeasureId, FoldYMeasureId, MeasureId } from 'src/dataReshape'
 import type { AdvancedPipe, Dimension, Dimensions, Encoding, Measure, Measures } from 'src/types'
 
 export const defaultEncodingForScatter: AdvancedPipe = (advancedVSeed) => {
@@ -58,7 +58,7 @@ const generateDimensionEncoding = (dimensions: Dimensions, encoding: Encoding) =
   }
   // tooltip
   encoding.tooltip = unique(dimensions.map((item) => item.id))
-  encoding.tooltip = encoding.tooltip.filter((d) => d !== MeasureId)
+  encoding.tooltip = encoding.tooltip.filter((d) => ![MeasureId, FoldYMeasureId, FoldXMeasureId].includes(d))
 
   // label
   encoding.label = unique(dimensions.filter((item) => item.encoding === 'label').map((item) => item.id))

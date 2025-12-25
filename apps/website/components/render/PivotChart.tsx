@@ -1,7 +1,7 @@
 import { useRef, useEffect, memo } from 'react'
 import VChart from '@visactor/vchart'
 import { register, PivotChart as VTablePivotChart, PivotChartConstructorOptions } from '@visactor/vtable'
-import { registerAll, VSeed, Builder, ColorIdEncoding } from '@visactor/vseed'
+import { registerAll, VSeed, Builder, ColorIdEncoding, DATUM_HIDE_KEY } from '@visactor/vseed'
 import { useDark } from 'rspress/runtime'
 
 register.chartModule('vchart', VChart)
@@ -43,18 +43,34 @@ export const PivotChart = memo((props: { vseed: VSeed }) => {
     tableInstance.on('legend_change', (args) => {
       const maxValue = args.value[1]
       const minValue = args.value[0]
-      tableInstance.updateFilterRules([
-        {
-          filterFunc: (record) => {
-            const value = record[record[ColorIdEncoding]]
-            console.log('updateFilterRules', record)
-            if (value >= minValue && value <= maxValue) {
+
+      if (vseed.chartType === 'heatmap') {
+        tableInstance.updateFilterRules([
+          {
+            filterFunc: (record) => {
+              console.log(record[ColorIdEncoding])
+              const value = record[record[ColorIdEncoding]]
+              const isShow = value >= minValue && value <= maxValue
+
+              record[DATUM_HIDE_KEY] = !isShow
+
               return true
-            }
-            return false
+            },
           },
-        },
-      ])
+        ])
+      } else {
+        tableInstance.updateFilterRules([
+          {
+            filterFunc: (record) => {
+              const value = record[record[ColorIdEncoding]]
+              if (value >= minValue && value <= maxValue) {
+                return true
+              }
+              return false
+            },
+          },
+        ])
+      }
     })
 
     return () => tableInstance.release()

@@ -16,10 +16,10 @@ export function colorAdapter<TSpec>(
 }
 
 export const isLinearColor = <T extends AdvancedVSeed, U extends VSeed>(advancedVSeed: T, vseed: U) => {
-  const { encoding } = advancedVSeed
+  const { encoding, chartType } = advancedVSeed
   const measureIdList = (vseed.measures || advancedVSeed.measures)!.map((measure) => measure.id)
   const { color } = encoding
-  return color?.length === 1 && measureIdList.includes(color[0])
+  return chartType === 'heatmap' ? color?.length : color?.length === 1 && measureIdList.includes(color[0])
 }
 
 export const getColorMeasureId = <T extends AdvancedVSeed, U extends VSeed>(

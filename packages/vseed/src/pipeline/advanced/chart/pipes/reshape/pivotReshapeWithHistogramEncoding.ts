@@ -119,7 +119,7 @@ export const pivotReshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, c
       const res = dataReshapeByEncoding(
         dataset,
         uniqueBy(dimensions, (item: Dimension) => item.id),
-        subMeasures.filter((item: Datum) => encoding.y?.includes(item.id)).slice(0, 1),
+        subMeasures.filter((item: Measure) => encoding.y?.includes(item.id)).slice(0, 1),
         encoding as Encoding,
         {
           colorItemAsId: false,

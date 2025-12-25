@@ -5,7 +5,7 @@ export const addPivotDimensionsForScatter: AdvancedPipe = (advancedVSeed) => {
   const { reshapeMeasures = [] } = advancedVSeed
 
   if (reshapeMeasures[0]?.length >= 2) {
-    const dimensions = advancedVSeed.dimensions as Dimensions
+    const dimensions = (advancedVSeed.dimensions ?? []) as Dimensions
     const xMeasures = reshapeMeasures[0].filter((m: Measure) => m.encoding === 'xAxis')
     const yMeasures = reshapeMeasures[0].filter((m: Measure) => m.encoding === 'yAxis')
 

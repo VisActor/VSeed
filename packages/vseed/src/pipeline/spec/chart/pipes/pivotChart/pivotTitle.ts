@@ -11,7 +11,7 @@ export const pivotTitle: PivotChartSpecPipe = (spec, context) => {
 
   if (columns && columns.length > 0) {
     result.title = {
-      text: (spec as unknown as { columns: { title: string }[] }).columns.map((entry) => entry.title).join('/'),
+      text: columns.map((entry: any) => entry.title).join('/'),
       align: 'center',
       orient: 'top',
       padding: [2, 0, 0, 0],

@@ -27,13 +27,7 @@ export const tooltipScatter: VChartSpecPipe = (spec, context) => {
       },
       content: createMarkContent(encoding.tooltip || [], dimensions, vseed.measures as Measures, locale, foldInfoList),
       updateContent: (prev: Datum[] = []) => {
-        return prev.reduce((res: Datum[], entry) => {
-          if (res.some((e) => e.key === entry.key && e.value === entry.value)) {
-            return res
-          }
-          res.push(entry)
-          return res
-        }, [])
+        return uniqueBy(prev, (entry) => `${String(entry.key)}::${String(entry.value)}`)
       },
     },
     dimension: {

@@ -14,4 +14,8 @@ export interface HeatmapCell {
    * Cell corner radius
    */
   cornerRadius?: number | null
+  /**
+   * Hover shadow color
+   */
+  hoverShadowColor?: string | null
 }

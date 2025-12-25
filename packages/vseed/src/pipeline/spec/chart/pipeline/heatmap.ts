@@ -24,10 +24,11 @@ import {
   cellStyle,
   colorCellStyleFill,
   pivotDiscreteLegend,
-  pivotColorLegend,
   pivotTitle,
   pivotAxisStyle,
   heatmapBandAxis,
+  pivotColorLegend,
+  heatmapColorDomain,
 } from '../pipes'
 import { initHeatmap } from '../pipes/init/heatmap'
 
@@ -66,6 +67,7 @@ const pivotHeatmap: PivotChartSpecPipeline = [
     annotationHorizontalLine,
     annotationArea,
   ]),
+  heatmapColorDomain,
   pivotRowDimensions,
   pivotColumnDimensions,
   pivotTitle,

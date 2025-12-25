@@ -12,7 +12,6 @@ export const pivotIndicators =
 
     const colorItems = unique(datasetReshapeInfo.flatMap((d) => d.unfoldInfo.colorItems))
     const allMeasureIds = unique(datasetReshapeInfo.flatMap((d) => Object.keys(d.foldInfo.foldMap || {})))
-
     const indicators = datasetReshapeInfo.map((reshapeInfo, index) => {
       const subMeasures = (reshapeMeasures[index] || []) as Measures
       const subMeasuresId = (reshapeMeasures[index] || []).map((d) => d.id)
@@ -43,6 +42,7 @@ export const pivotIndicators =
       }
 
       const chartSpec = execPipeline(chartPipeline, newContext, {})
+
       return {
         indicatorKey: `${reshapeInfo.id}`,
         title: isRectungularCoordinate(advancedVSeed.chartType)

@@ -35,7 +35,7 @@ export const isPositionMeasure = (measure: Measure, chartType: string): boolean 
   }
 
   if (chartType === ChartTypeEnum.DualAxis) {
-    return ['primaryAxis', 'secondaryAxis'].includes(measure.encoding as string)
+    return ['primaryYAxis', 'secondaryYAxis'].includes(measure.encoding as string)
   }
 
   if (ChartTypeEnum.Radar === chartType) {

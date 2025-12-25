@@ -10,7 +10,7 @@ import {
   unfoldDimensions,
   UpperWhisker,
 } from 'src/dataReshape'
-import type { AdvancedPipe, ColumnParallel, Dataset, Dimension, Encoding } from 'src/types'
+import type { AdvancedPipe, ColumnParallel, Dataset, Datum, Dimension, Encoding } from 'src/types'
 import { boxplot } from '@visactor/vdataset'
 import { uniqueBy } from 'remeda'
 
@@ -46,7 +46,7 @@ export const reshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, context)
         },
       }) as Dataset
 
-      boxPlotData.forEach((datum) => {
+      boxPlotData.forEach((datum: Datum) => {
         datum[FoldMeasureId] = f
         datum[FoldMeasureName] = m?.alias ?? f
       })
@@ -58,7 +58,7 @@ export const reshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, context)
       colorItemAsId: false,
     })
 
-    res.dataset.forEach((d) => {
+    res.dataset.forEach((d: Datum) => {
       newDatasets.push(d)
     })
     unfoldInfo = res.unfoldInfo
@@ -75,7 +75,7 @@ export const reshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, context)
       colorItemAsId: false,
     })
 
-    res.dataset.forEach((datum) => {
+    res.dataset.forEach((datum: Datum) => {
       datum[UpperWhisker] = datum[encoding.max![0]]
       datum[LowerWhisker] = datum[encoding.min![0]]
       datum[Q1MeasureValue] = datum[encoding.q1![0]]

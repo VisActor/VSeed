@@ -13,7 +13,16 @@ import {
   UpperWhisker,
 } from 'src/dataReshape'
 import { DEFAULT_PARENT_ID, revisedBoxPlotFieldKey } from 'src/pipeline/utils'
-import type { AdvancedPipe, ColumnParallel, Dataset, DatasetReshapeInfo, Dimension, Encoding } from 'src/types'
+import type {
+  AdvancedPipe,
+  ColumnParallel,
+  Dataset,
+  DatasetReshapeInfo,
+  Datum,
+  Dimension,
+  Encoding,
+  Measure,
+} from 'src/types'
 
 export const pivotReshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, context) => {
   const result = { ...advancedVSeed }
@@ -33,16 +42,18 @@ export const pivotReshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, con
   const datasets: Dataset = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
-  reshapeMeasures.forEach((measureGroup, index) => {
+  reshapeMeasures.forEach((measureGroup: Measure[], index: number) => {
     const groupId = measureGroup[0].parentId ?? DEFAULT_PARENT_ID
     let newDatasets: any[] = []
     let foldInfo: any = {}
     let unfoldInfo: any = {}
-    const validEncodingIds = (encoding.value || []).filter((id) => measureGroup.find((field) => field.id === id))
+    const validEncodingIds = (encoding.value || []).filter((id: string) =>
+      measureGroup.find((field) => field.id === id),
+    )
 
     if (validEncodingIds.length) {
       const boxPlotDataList: Dataset = []
-      validEncodingIds.forEach((f) => {
+      validEncodingIds.forEach((f: string) => {
         const m = measureGroup.find((m) => m.id === f)
         const boxPlotData = boxplot(dataset, {
           field: f,
@@ -62,7 +73,7 @@ export const pivotReshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, con
           },
         }) as Dataset
 
-        boxPlotData.forEach((datum) => {
+        boxPlotData.forEach((datum: Datum) => {
           datum[FoldMeasureId] = f
           datum[FoldMeasureName] = m?.alias ?? f
           datum[revisedBoxPlotFieldKey(Q1MeasureValue, groupId)] = datum[Q1MeasureValue]
@@ -81,7 +92,7 @@ export const pivotReshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, con
         colorItemAsId: false,
       })
 
-      res.dataset.forEach((d) => {
+      res.dataset.forEach((d: Datum) => {
         newDatasets.push(d)
       })
       unfoldInfo = res.unfoldInfo
@@ -98,7 +109,7 @@ export const pivotReshapeWithBoxplotEncoding: AdvancedPipe = (advancedVSeed, con
         colorItemAsId: false,
       })
 
-      res.dataset.forEach((datum) => {
+      res.dataset.forEach((datum: Datum) => {
         datum[UpperWhisker] = datum[encoding.max![0]]
         datum[revisedBoxPlotFieldKey(Q1MeasureValue, groupId)] = datum[encoding.max![0]]
         datum[LowerWhisker] = datum[encoding.min![0]]

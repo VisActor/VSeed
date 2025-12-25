@@ -14,7 +14,7 @@ export const dataReshapeByEncoding = (
     foldMeasureValue?: string
     colorItemAsId?: boolean
     colorMeasureId?: string
-    omitIds?: string[]
+    omitIds: string[]
   },
 ): {
   dataset: Dataset

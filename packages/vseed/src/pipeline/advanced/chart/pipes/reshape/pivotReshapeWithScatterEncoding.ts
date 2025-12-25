@@ -1,4 +1,12 @@
-import { dataReshapeByEncoding, FoldXMeasureValue, FoldYMeasureValue } from 'src/dataReshape'
+import { unique } from 'remeda'
+import {
+  dataReshapeByEncoding,
+  FoldXMeasureId,
+  FoldXMeasureValue,
+  FoldYMeasureId,
+  FoldYMeasureValue,
+  ORIGINAL_DATA,
+} from 'src/dataReshape'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes'
 import type {
   AdvancedPipe,
@@ -6,6 +14,7 @@ import type {
   ColumnParallel,
   Dataset,
   DatasetReshapeInfo,
+  Datum,
   Encoding,
   FoldInfo,
   Measure,
@@ -19,12 +28,16 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
   const { encoding, chartType } = advancedVSeed
   const reshapeMeasures = advancedVSeed.reshapeMeasures ?? []
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
-  const allMeasuresIds = reshapeMeasures.flatMap((measureGroup) => measureGroup.map((m) => m.id))
+  let allMeasuresIds = unique(reshapeMeasures.flatMap((measureGroup: Measure[]) => measureGroup.map((m) => m.id)))
+
+  if (encoding?.size?.length) {
+    allMeasuresIds = allMeasuresIds.filter((mId: string) => !encoding.size!.includes(mId))
+  }
 
   const datasetList: Dataset[] = []
   const datasetReshapeInfo: DatasetReshapeInfo = []
 
-  reshapeMeasures.forEach((measures: Measure[], index) => {
+  reshapeMeasures.forEach((measures: Measure[], index: number) => {
     const foldInfoList: FoldInfo[] = []
     const unfoldInfoList: UnfoldInfo[] = []
 
@@ -34,6 +47,7 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
 
     const xResult = dataReshapeByEncoding(dataset, dimensions, xMeasures, encoding as Encoding, {
       foldMeasureValue: `${FoldXMeasureValue}${index}`,
+      foldMeasureId: FoldXMeasureId,
       colorItemAsId: true,
       colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
       omitIds: allMeasuresIds,
@@ -45,6 +59,7 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
 
     const yResult = dataReshapeByEncoding(dataset, dimensions, yMeasures, encoding as Encoding, {
       foldMeasureValue: `${FoldYMeasureValue}${index}`,
+      foldMeasureId: FoldYMeasureId,
       colorItemAsId: true,
       colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
       omitIds: allMeasuresIds,
@@ -69,7 +84,20 @@ export const pivotReshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, con
     }
 
     datasetReshapeInfo.push(reshapeInfo)
-    datasetList.push(datasets[0].map((d, index) => ({ ...d, ...(datasets[1]?.[index] || {}) })))
+    datasetList.push(
+      datasets[0].flatMap((d: Datum) => {
+        return datasets[1]
+          .filter((yDatum: Datum) => {
+            return yDatum[ORIGINAL_DATA] === d[ORIGINAL_DATA]
+          })
+          .map((yDatum: Datum) => {
+            return {
+              ...d,
+              ...yDatum,
+            }
+          })
+      }),
+    )
   })
 
   return {

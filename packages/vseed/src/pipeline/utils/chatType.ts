@@ -1,7 +1,7 @@
-import type { Measures } from 'src/types'
+import type { MeasureEncoding, Measures } from 'src/types'
 import { type Dimensions, type DimensionGroup, type VSeed, type Measure } from 'src/types'
 import { isPositionMeasure } from './measures'
-import { isMeasureTreeWithParentId } from '../advanced/chart/pipes/measures/utils'
+import { isCommonMeasureEncoding, isMeasureTreeWithParentId } from '../advanced/chart/pipes/measures/utils'
 import { unique } from 'remeda'
 import { ChartTypeEnum, DEFAULT_PARENT_ID } from './constant'
 
@@ -62,11 +62,61 @@ export const isPivotChart = (vseed: VSeed) => {
  * @description 存在column 或 row的encoding
  */
 export const isPivot = (vseed: VSeed) => {
-  const { dimensions = [] } = vseed as {
+  const { dimensions = [], measures = [] } = vseed as {
     dimensions: Dimensions
+    measures: Measures
   }
 
-  return dimensions && dimensions.some((dimension) => dimension.encoding === 'row' || dimension.encoding === 'column')
+  if (dimensions && dimensions.some((dimension) => dimension.encoding === 'row' || dimension.encoding === 'column')) {
+    return true
+  }
+
+  if (vseed.chartType === ChartTypeEnum.Scatter) {
+    const xCount = measures.filter((m: Measure) => m.encoding === 'xAxis').length
+    const yCount = measures.filter((m: Measure) => m.encoding === 'yAxis').length
+    const otherCount = measures.filter(
+      (m: Measure) =>
+        !['size', 'xAxis', 'yAxis'].includes(m.encoding as string) &&
+        !isCommonMeasureEncoding(m.encoding as MeasureEncoding),
+    ).length
+
+    /**
+     * Scatter "matrix" detection logic
+     *
+     * xCount:    number of measures explicitly encoded on the x-axis
+     * yCount:    number of measures explicitly encoded on the y-axis
+     * otherCount: measures that are not size/xAxis/yAxis and are not common encodings
+     *
+     * When there is at least one explicit x-axis measure (xCount > 0):
+     * - All x-encoded measures are counted as X.
+     * - Remaining measures (y-encoded + "other") are treated as Y variants.
+     *
+     * When there is no explicit x-axis measure (xCount === 0):
+     * - If there is at least one "other" measure, we treat exactly one of them as the X measure
+     *   (so finalXCount = 1), and the remaining "other" measures contribute to Y alongside
+     *   the explicit y-encoded measures.
+     * - Since we conceptually "promote" one of the other measures to X, only (otherCount - 1)
+     *   are left to be counted towards Y. Math.max(..., 0) protects against negative values
+     *   when otherCount is 0.
+     */
+    let finalXCount: number
+    let finalYCount: number
+
+    if (xCount > 0) {
+      // Explicit x-axis measures exist: X is fixed, Y aggregates y-encoded + other measures.
+      finalXCount = xCount
+      finalYCount = yCount + otherCount
+    } else {
+      // No explicit x-axis measure:
+      // - If there are "other" measures, treat one as X.
+      // - Remaining "other" measures contribute to Y, together with any y-encoded measures.
+      finalXCount = otherCount > 0 ? 1 : 0
+      finalYCount = yCount + Math.max(otherCount - 1, 0)
+    }
+    if (finalXCount > 1 || finalYCount > 1) return true
+  }
+
+  return false
 }
 
 /**

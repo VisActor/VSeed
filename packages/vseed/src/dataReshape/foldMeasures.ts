@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Dataset, FoldInfo, Measures } from 'src/types'
 import { ColorEncoding, ColorIdEncoding, ORIGINAL_DATA } from './constant'
 import { omit } from 'remeda'
@@ -48,10 +47,10 @@ export const foldMeasures = (
 
   const result: Dataset = new Array(dataset.length * measures.length) as Dataset
   let index = 0
-  const ids = measures.map((d) => d.id)
+  // const ids = measures.map((d) => d.id)
   for (let i = 0; i < dataset.length; i++) {
     for (let j = 0; j < measures.length; j++) {
-      const datum: Record<string, any> = omit({ ...dataset[i] }, [...ids, ...omitIds])
+      const datum: Record<string, any> = omit({ ...dataset[i] }, omitIds)
 
       datum[ORIGINAL_DATA] = dataset[i]
 

@@ -10,7 +10,17 @@ import {
   Separator,
   unfoldDimensions,
 } from 'src/dataReshape'
-import type { AdvancedPipe, AdvancedVSeed, ColumnParallel, Dataset, Dimension, Encoding, FoldInfo } from 'src/types'
+import type {
+  AdvancedPipe,
+  AdvancedVSeed,
+  ColumnParallel,
+  Dataset,
+  Datum,
+  Dimension,
+  Encoding,
+  FoldInfo,
+  Measure,
+} from 'src/types'
 import { bin } from '@visactor/vdataset'
 import { uniqueBy } from 'remeda'
 import { getColorMeasureId } from 'src/pipeline/spec/chart/pipes/color/colorAdapter'
@@ -48,7 +58,7 @@ export const reshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, contex
 
   if (encoding.value?.length) {
     const valueField = encoding.value[0]
-    const m = measures.find((m) => m.id === valueField)
+    const m = measures.find((m: Measure) => m.id === valueField)
     const binData = bin(dataset, {
       field: valueField,
       groupField: [...(encoding.x ?? []), ...(encoding.color ?? [])] as string[],
@@ -62,7 +72,7 @@ export const reshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, contex
       },
     }) as Dataset
 
-    binData.forEach((datum) => {
+    binData.forEach((datum: Datum) => {
       datum[FoldMeasureId] = valueField
       datum[FoldMeasureName] = m?.alias ?? valueField
       const valueNumber = binValueType === 'percentage' ? +datum[BinPercentageMeasureId] : +datum[BinCountMeasureId]
@@ -83,7 +93,7 @@ export const reshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, contex
       colorItemAsId: false,
     })
 
-    res.dataset.forEach((d) => {
+    res.dataset.forEach((d: Datum) => {
       newDatasets.push(d)
     })
     unfoldInfo = res.unfoldInfo
@@ -91,15 +101,16 @@ export const reshapeWithHistogramEncoding: AdvancedPipe = (advancedVSeed, contex
     const res = dataReshapeByEncoding(
       dataset,
       uniqueBy(dimensions, (item: Dimension) => item.id),
-      measures.filter((item) => encoding.y?.includes(item.id)).slice(0, 1),
+      measures.filter((item: Measure) => encoding.y?.includes(item.id)).slice(0, 1),
       encoding as Encoding,
       {
         colorItemAsId: false,
         colorMeasureId,
+        omitIds: [],
       },
     )
 
-    res.dataset.forEach((datum) => {
+    res.dataset.forEach((datum: Datum) => {
       datum[BinStartMeasureId] = datum[encoding.x0![0]]
       datum[BinEndMeasureId] = datum[encoding.x1![0]]
     })

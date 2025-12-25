@@ -23,6 +23,7 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
   const { encoding, chartType } = advancedVSeed
   const measures = (advancedVSeed.reshapeMeasures?.[0] ?? []) as Measure[]
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
+  const allMeasuresIds = measures.map((m: Measure) => m.id)
 
   const foldInfoList: FoldInfo[] = []
   const unfoldInfoList: UnfoldInfo[] = []
@@ -54,6 +55,7 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
         colorItemAsId: false,
         foldMeasureValue: FoldPrimaryMeasureValue,
         colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+        omitIds: allMeasuresIds,
       },
     )
 
@@ -79,6 +81,7 @@ export const reshapeWithDualEncoding: AdvancedPipe = (advancedVSeed, context) =>
         colorItemAsId: false,
         foldMeasureValue: FoldSecondaryMeasureValue,
         colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+        omitIds: allMeasuresIds,
       },
     )
 

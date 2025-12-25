@@ -26,14 +26,14 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
   const { dataset } = vseed as ColumnParallel
   const { encoding, chartType, reshapeMeasures } = advancedVSeed
   const dimensions = advancedVSeed.reshapeDimensions ?? advancedVSeed.dimensions ?? []
-
   const measures = reshapeMeasures?.[0] ?? []
   const foldInfoList: FoldInfo[] = []
   const unfoldInfoList: UnfoldInfo[] = []
+  const sizeEncodingIds = encoding?.size ?? []
 
   const datasets: Dataset[] = []
-  const xMeasures = measures.filter((m) => m.encoding === 'xAxis') as Measures
-  const yMeasures = measures.filter((m) => m.encoding === 'yAxis') as Measures
+  const xMeasures = measures.filter((m: Measure) => m.encoding === 'xAxis') as Measures
+  const yMeasures = measures.filter((m: Measure) => m.encoding === 'yAxis') as Measures
 
   const xResult = dataReshapeByEncoding(
     dataset,
@@ -45,6 +45,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
       foldMeasureId: FoldXMeasureId,
       colorItemAsId: true,
       colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+      omitIds: xMeasures.map((m: Measure) => m.id).filter((id: string) => !sizeEncodingIds.includes(id)),
     },
   )
 
@@ -62,6 +63,7 @@ export const reshapeWithScatterEncoding: AdvancedPipe = (advancedVSeed, context)
       foldMeasureId: FoldYMeasureId,
       colorItemAsId: true,
       colorMeasureId: getColorMeasureId(advancedVSeed as AdvancedVSeed, vseed),
+      omitIds: yMeasures.map((m: Measure) => m.id).filter((id: string) => !sizeEncodingIds.includes(id)),
     },
   )
 

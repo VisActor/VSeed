@@ -20,7 +20,6 @@ export const color: VChartSpecPipe = (spec, context) => {
 
   result.color = {
     type: 'ordinal',
-    field: unfoldInfo.encodingColor,
     domain: colorItems,
     range: colorScheme,
     specified: createSpecifiedForColorMapping(colorMapping, colorIdMap, colorItems),

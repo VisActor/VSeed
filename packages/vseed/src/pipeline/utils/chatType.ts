@@ -125,7 +125,7 @@ export const isPivot = (vseed: VSeed) => {
 export const isCombination = (vseed: VSeed) => {
   if (isMeasureTreeWithParentId(vseed.measures)) {
     const parentIds = vseed.measures
-      ?.filter(isPositionMeasure)
+      ?.filter((m: Measure) => isPositionMeasure(m, vseed.chartType))
       .map((measure: Measure) => measure.parentId || DEFAULT_PARENT_ID)
     return parentIds && unique(parentIds).length > 1
   }

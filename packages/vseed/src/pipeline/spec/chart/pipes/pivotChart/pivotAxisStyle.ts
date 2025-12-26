@@ -1,6 +1,7 @@
 import type { ILineChartSpec } from '@visactor/vchart'
+import { isNil } from '@visactor/vutils'
 import { MeasureId } from 'src/dataReshape'
-import { BAND_AXIS_INNER_OFFSET_IN_PIVOT } from 'src/pipeline/utils/constant'
+import { BAND_AXIS_INNER_OFFSET_IN_PIVOT, ChartTypeEnum } from 'src/pipeline/utils/constant'
 import type { Config, VChartSpecPipe } from 'src/types'
 
 export const pivotAxisStyle = (axisStyle: VChartSpecPipe): VChartSpecPipe => {
@@ -9,7 +10,7 @@ export const pivotAxisStyle = (axisStyle: VChartSpecPipe): VChartSpecPipe => {
 
     if (result.axes) {
       const { advancedVSeed } = context
-      const { config, chartType, encoding, reshapeMeasures } = advancedVSeed
+      const { config, chartType, encoding, reshapeMeasures, datasetReshapeInfo } = advancedVSeed
       const themConfig = (config?.[chartType] as Config['line'])?.pivotGrid ?? {}
 
       result.axes.forEach((axis: any) => {
@@ -30,6 +31,16 @@ export const pivotAxisStyle = (axisStyle: VChartSpecPipe): VChartSpecPipe => {
             axis.innerOffset = {
               top: BAND_AXIS_INNER_OFFSET_IN_PIVOT,
               bottom: BAND_AXIS_INNER_OFFSET_IN_PIVOT,
+            }
+
+            if (
+              reshapeMeasures &&
+              reshapeMeasures.length > 1 &&
+              chartType === ChartTypeEnum.Heatmap &&
+              isNil(axis.title.text)
+            ) {
+              axis.title.visible = true
+              axis.title.text = Object.values(datasetReshapeInfo[0].foldInfo.foldMap)[0]
             }
           } else if (axis.orient === 'top' || axis.orient === 'bottom') {
             axis.innerOffset = {

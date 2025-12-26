@@ -29,6 +29,7 @@ import {
   pivotHideIndicatorName,
   funnelTransformStyle,
   pivotTitle,
+  addRegionPadding,
 } from '../pipes'
 
 const funnel: VChartSpecPipeline = [
@@ -55,6 +56,7 @@ const pivotFunnel: PivotChartSpecPipeline = [
   datasetPivot,
   pivotIndicators([
     initFunnel,
+    addRegionPadding,
     backgroundColor,
     datasetXY,
     colorAdapter(color, linearColor),

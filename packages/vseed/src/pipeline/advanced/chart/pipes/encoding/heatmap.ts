@@ -89,14 +89,14 @@ const generateDefaultMeasureEncoding = (measures: Measures, encoding: Encoding) 
     measures.filter((item) => item.encoding === 'color' || !item.encoding).map((item) => item.id),
   )
   if (colorDims.length > 0) {
-    encoding.color = [colorDims[0]]
+    encoding.color = colorDims
   }
 }
 const generateMeasureEncoding = (measures: Measures, encoding: Encoding) => {
   // color
   const color = unique(measures.filter((item) => item.encoding === 'color').map((item) => item.id))
   if (color.length > 0) {
-    encoding.color = [color[0]]
+    encoding.color = color
   }
 
   // label

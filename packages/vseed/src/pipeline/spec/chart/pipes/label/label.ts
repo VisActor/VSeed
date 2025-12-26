@@ -177,6 +177,10 @@ export const buildLabel = (
     smartInvert: labelColorSmartInvert,
   }
 
+  if (labelColorSmartInvert) {
+    ;(result.style as any).lineWidth = 2 // label 边框线宽度，不设置这个会导致智能反色失败
+  }
+
   if (labelOverlap) {
     ;(result as any).overlap = {
       hideOnHit: true,

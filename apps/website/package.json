@@ -14,8 +14,8 @@
     "@visactor/vbi": "workspace:*",
     "@visactor/vseed": "workspace:*",
     "@visactor/vquery": "workspace:*",
-    "@visactor/vchart": "2.0.11",
-    "@visactor/vtable": "1.22.8",
+    "@visactor/vchart": "2.0.12",
+    "@visactor/vtable": "1.22.9-alpha.2",
     "zustand": "5.0.6"
   },
   "devDependencies": {

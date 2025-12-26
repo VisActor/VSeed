@@ -62,7 +62,18 @@ export const foldMeasures = (
       datum[measureName] = alias || id
       datum[measureValue] = dataset[i][id] as unknown
 
-      if (colorMeasureId) {
+      const valueNumber = Number(datum[id])
+      foldInfo.statistics.min = Math.min(foldInfo.statistics.min, valueNumber)
+      foldInfo.statistics.max = Math.max(foldInfo.statistics.max, valueNumber)
+      foldInfo.statistics.sum += valueNumber
+      foldInfo.statistics.count++
+
+      if (measure.encoding === 'color') {
+        foldInfo.statistics.colorMin = foldInfo.statistics.min
+        foldInfo.statistics.colorMax = foldInfo.statistics.max
+        datum[ColorEncoding] = valueNumber
+        datum[ColorIdEncoding] = measure.id
+      } else if (colorMeasureId) {
         const value = (datum[ORIGINAL_DATA] as Record<string, string | number>)[colorMeasureId]
         datum[ColorEncoding] = value
         datum[ColorIdEncoding] = colorMeasureId
@@ -71,12 +82,6 @@ export const foldMeasures = (
         foldInfo.statistics.colorMin = Math.min(foldInfo.statistics.colorMin, valueNumber)
         foldInfo.statistics.colorMax = Math.max(foldInfo.statistics.colorMax, valueNumber)
       }
-
-      const valueNumber = Number(datum[id])
-      foldInfo.statistics.min = Math.min(foldInfo.statistics.min, valueNumber)
-      foldInfo.statistics.max = Math.max(foldInfo.statistics.max, valueNumber)
-      foldInfo.statistics.sum += valueNumber
-      foldInfo.statistics.count++
 
       foldInfo.foldMap[id] = alias
       result[index++] = datum

@@ -176,7 +176,6 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
           tableInstance.updateFilterRules([
             {
               filterFunc: (record) => {
-                console.log(record[ColorIdEncoding])
                 const value = record[record[ColorIdEncoding]]
                 const isShow = value >= minValue && value <= maxValue
 

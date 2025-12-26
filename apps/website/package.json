@@ -16,6 +16,7 @@
     "@visactor/vquery": "workspace:*",
     "@visactor/vchart": "2.0.13-alpha.9",
     "@visactor/vtable": "1.22.11-alpha.8",
+    "demo": "workspace:*",
     "zustand": "5.0.6",
     "yjs": "13.6.28"
   },

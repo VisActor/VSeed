@@ -4,8 +4,8 @@
 
 [Node Download](https://nodejs.org/zh-cn/download)
 ```bash title="node"
-nvm install 20
-nvm use 20
+nvm install 24
+nvm use 24
 ```
 
 [Pnpm Download](https://pnpm.io/zh/installation#%E4%BD%BF%E7%94%A8-corepack)
@@ -14,9 +14,9 @@ nvm use 20
 corepack enable pnpm
 ```
 
-检查pnpm版本, 预期是10.13.1.
+检查pnpm版本, 预期是10.26.1.
 ```bash title="pnpm version"
-pnpm -v # expected 10.13.1
+pnpm -v # expected 10.26.1
 ```
 
 ## 启动项目

@@ -14,6 +14,7 @@
     "@visactor/vbi": "workspace:*",
     "@visactor/vseed": "workspace:*",
     "@visactor/vquery": "workspace:*",
+    "demo": "workspace:*",
     "@visactor/vchart": "2.0.11",
     "@visactor/vtable": "1.22.8",
     "zustand": "5.0.6",

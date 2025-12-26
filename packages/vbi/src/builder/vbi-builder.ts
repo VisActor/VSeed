@@ -71,7 +71,14 @@ export class VBIBuilder implements VBIBuilderInterface {
     return buildVQuery(vbiDSL, this)
   }
 
-  build = (): VBIDSL => {
+  public getSchema = async () => {
+    const connectorId = this.dsl.get('connectorId')
+    const con = await VBIBuilder.getConnector(connectorId)
+    const result = await con.discoverSchema()
+    return result
+  }
+
+  public build = (): VBIDSL => {
     return this.dsl.toJSON() as VBIDSL
   }
 

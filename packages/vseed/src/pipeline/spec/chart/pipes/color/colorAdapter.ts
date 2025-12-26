@@ -1,4 +1,12 @@
-import type { AdvancedVSeed, PivotChartSpecPipe, VChartSpecPipe, VSeed, Pipe, SpecPipelineContext } from 'src/types'
+import type {
+  AdvancedVSeed,
+  PivotChartSpecPipe,
+  VChartSpecPipe,
+  VSeed,
+  Pipe,
+  SpecPipelineContext,
+  Measure,
+} from 'src/types'
 
 export function colorAdapter(ordinalPipe: PivotChartSpecPipe, linearPipe: PivotChartSpecPipe): PivotChartSpecPipe
 export function colorAdapter(ordinalPipe: VChartSpecPipe, linearPipe: VChartSpecPipe): VChartSpecPipe
@@ -17,9 +25,11 @@ export function colorAdapter<TSpec>(
 
 export const isLinearColor = <T extends AdvancedVSeed, U extends VSeed>(advancedVSeed: T, vseed: U) => {
   const { encoding, chartType } = advancedVSeed
-  const measureIdList = (vseed.measures || advancedVSeed.measures)!.map((measure) => measure.id)
+  const measureIdList = (vseed.measures || advancedVSeed.measures)!.map((measure: Measure) => measure.id)
   const { color } = encoding
-  return chartType === 'heatmap' ? color?.length : color?.length === 1 && measureIdList.includes(color[0])
+  return chartType === 'heatmap'
+    ? color!.length >= 1 && color!.every((c: string) => measureIdList.includes(c))
+    : color!.length === 1 && measureIdList.includes(color![0])
 }
 
 export const getColorMeasureId = <T extends AdvancedVSeed, U extends VSeed>(

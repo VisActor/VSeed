@@ -9,103 +9,19 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    measures: [
-      {
-        id: 'xA_20251225161243_72b9',
-        alias: 'sum(amount)',
-        encoding: 'color',
-        format: {
-          auto: true,
-          thousandSeparator: true,
-          type: 'number',
-        },
-        autoFormat: true,
-        parentId: '0',
-      },
-      {
-        id: 'xA_20251225161306_afc3',
-        alias: 'sum(discount)',
-        encoding: 'color',
-        format: {
-          auto: true,
-          fractionDigits: 2,
-          thousandSeparator: true,
-          type: 'number',
-        },
-        autoFormat: true,
-        parentId: '1',
-      },
-    ],
-    dimensions: [
-      {
-        id: 'yA_20251225161239_6eda',
-        alias: 'product_type',
-        encoding: 'yAxis',
-        autoFormat: true,
-      },
-      {
-        id: 'co_20251225161258_9260',
-        alias: 'customer_type',
-        encoding: 'xAxis',
-        autoFormat: true,
-      },
-    ],
     chartType: 'heatmap',
     dataset: [
-      {
-        co_20251225161258_9260: '公司',
-        xA_20251225161243_72b9: '6514',
-        xA_20251225161306_afc3: '157.0000000000007',
-        yA_20251225161239_6eda: '办公用品',
-      },
-      {
-        co_20251225161258_9260: '公司',
-        xA_20251225161243_72b9: '2564',
-        xA_20251225161306_afc3: '96.70000000000016',
-        yA_20251225161239_6eda: '家具',
-      },
-      {
-        co_20251225161258_9260: '公司',
-        xA_20251225161243_72b9: '2503',
-        xA_20251225161306_afc3: '84.80000000000015',
-        yA_20251225161239_6eda: '技术',
-      },
-      {
-        co_20251225161258_9260: '小型企业',
-        xA_20251225161243_72b9: '3824',
-        xA_20251225161306_afc3: '76.00000000000004',
-        yA_20251225161239_6eda: '办公用品',
-      },
-      {
-        co_20251225161258_9260: '小型企业',
-        xA_20251225161243_72b9: '1591',
-        xA_20251225161306_afc3: '59.74999999999993',
-        yA_20251225161239_6eda: '家具',
-      },
-      {
-        co_20251225161258_9260: '小型企业',
-        xA_20251225161243_72b9: '1365',
-        xA_20251225161306_afc3: '37.39999999999994',
-        yA_20251225161239_6eda: '技术',
-      },
-      {
-        co_20251225161258_9260: '消费者',
-        xA_20251225161243_72b9: '11063',
-        xA_20251225161306_afc3: '251.00000000000182',
-        yA_20251225161239_6eda: '办公用品',
-      },
-      {
-        co_20251225161258_9260: '消费者',
-        xA_20251225161243_72b9: '4336',
-        xA_20251225161306_afc3: '168.65000000000074',
-        yA_20251225161239_6eda: '家具',
-      },
-      {
-        co_20251225161258_9260: '消费者',
-        xA_20251225161243_72b9: '3774',
-        xA_20251225161306_afc3: '128.40000000000077',
-        yA_20251225161239_6eda: '技术',
-      },
+      { date: '2019', profit: 100, sales: 200, count: 500 },
+      { date: '2020', profit: 310, sales: 60, count: 50 },
+      { date: '2021', profit: 30, sales: 60, count: 50 },
+      { date: '2022', profit: 50, sales: 100, count: 50 },
+      { date: '2023', profit: 40, sales: 80, count: 50 },
+    ],
+    dimensions: [{ id: 'date', alias: '日期' }],
+    measures: [
+      { id: 'sales', alias: '销售额', encoding: 'color' },
+      { id: 'profit', alias: '利润', encoding: 'detail' },
+      { id: 'count', alias: '数量', encoding: 'tooltip' },
     ],
   }
 

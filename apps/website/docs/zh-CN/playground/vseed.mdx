@@ -9,38 +9,38 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-  "chartType": "column",
-  "measures": [
-    {
-      "id": "sales",
-      "alias": "sales",
-      "parentId": "sales-and-profit"
-    },
-    {
-      "id": "profit",
-      "alias": "利润",
-      "parentId": "sales-and-profit"
-    },
-    {
-      "id": "rateOfReturn",
-      "alias": "回报率",
-      "parentId": "ratio"
-    }
-  ],
-  "dataset": [
-    { "date": "2019", "profit": 10, "sales": 20, "rateOfReturn": 0.1 },
-    { "date": "2020", "profit": 20, "sales": 40, "rateOfReturn": 0.2 },
-    { "date": "2021", "profit": 30, "sales": 60, "rateOfReturn": 0.3 },
-    { "date": "2022", "profit": 40, "sales": 80, "rateOfReturn": 0.4 },
-    { "date": "2023", "profit": 50, "sales": 100, "rateOfReturn": 0.5 }
-  ],
-  "dimensions": [
-    {
-      "id": "date",
-      "alias": "日期"
-    }
-  ]
-}
+    chartType: 'column',
+    measures: [
+      {
+        id: 'sales',
+        alias: 'sales',
+        parentId: 'sales-and-profit',
+      },
+      {
+        id: 'profit',
+        alias: '利润',
+        parentId: 'sales-and-profit',
+      },
+      {
+        id: 'rateOfReturn',
+        alias: '回报率',
+        parentId: 'ratio',
+      },
+    ],
+    dataset: [
+      { date: '2019', profit: 10, sales: 20, rateOfReturn: 0.1 },
+      { date: '2020', profit: 20, sales: 40, rateOfReturn: 0.2 },
+      { date: '2021', profit: 30, sales: 60, rateOfReturn: 0.3 },
+      { date: '2022', profit: 40, sales: 80, rateOfReturn: 0.4 },
+      { date: '2023', profit: 50, sales: 100, rateOfReturn: 0.5 },
+    ],
+    dimensions: [
+      {
+        id: 'date',
+        alias: '日期',
+      },
+    ],
+  }
 
   const parseRes = zVSeed.safeParse(vseed)
   if (parseRes.success) {
@@ -86,25 +86,25 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
     const spec = {
       ...builder.build(),
       brush: {
-      visible: true,
-      brushType: 'rect',
-      inBrush: {
-        colorAlpha: 1,
+        visible: true,
+        brushType: 'rect',
+        inBrush: {
+          colorAlpha: 1,
+        },
+        outOfBrush: {
+          colorAlpha: 0.2,
+        },
       },
-      outOfBrush: {
-        colorAlpha: 0.2,
+      chartDimensionLinkage: {
+        selectedStateFilter: (datum) => {
+          console.log('brush,!!!!!', datum.__MeaName__, datum)
+          return false
+        },
+        // selectedReverseStateFilter: (datum) => {
+        //   console.log('brush,????', datum)
+        //   return true;
+        // }
       },
-    },
-    chartDimensionLinkage: {
-      selectedStateFilter: (datum) => {
-        console.log('brush,!!!!!', datum.__MeaName__, datum)
-        return false;
-      },
-      // selectedReverseStateFilter: (datum) => {
-      //   console.log('brush,????', datum)
-      //   return true;
-      // }
-    }
     }
     console.log('final spec = ', spec)
     console.log('builder', builder)

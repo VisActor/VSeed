@@ -9,7 +9,7 @@ export const defaultDimensions: AdvancedPipe = (advancedVSeed, context) => {
 
   if (dimensions && dimensions.length > 0) {
     const clonedDimensions = clone(dimensions)
-    preorderTraverse(clonedDimensions, (node) => {
+    preorderTraverse(clonedDimensions as any, (node) => {
       if (isDimension(node as Dimension)) {
         ;(node as Dimension).alias = (node as Dimension).alias || (node as Dimension).id
       }

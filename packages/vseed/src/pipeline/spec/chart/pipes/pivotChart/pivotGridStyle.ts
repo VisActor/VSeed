@@ -27,11 +27,11 @@ export const pivotGridStyle: PivotChartSpecPipe = (spec, context) => {
   const frameCornerRadius = themConfig.frameCornerRadius ?? 0
 
   if (!isNullish(themConfig.minChartWidth)) {
-    result.defaultColWidth = themConfig.minChartWidth
+    result.defaultColWidth = themConfig.minChartWidth!
   }
 
   if (!isNullish(themConfig.minChartHeight)) {
-    result.defaultRowHeight = themConfig.minChartHeight
+    result.defaultRowHeight = themConfig.minChartHeight!
   }
 
   return {
@@ -46,12 +46,13 @@ export const pivotGridStyle: PivotChartSpecPipe = (spec, context) => {
             chartType === 'pie' ||
             chartType === 'rose' ||
             chartType === 'donut' ||
-            chartType === 'funnel' ||
             chartType === 'radar' ||
             chartType === 'roseParallel'
 
           return [
-            arg.row === 0 ? outlineBorderLineWidth : 1,
+            arg.row === 0 || (chartType === 'funnel' && arg.row === 1 && arg.table.rowCount <= 2)
+              ? outlineBorderLineWidth
+              : 1,
             outlineBorderLineWidth,
             0,
             arg.col === 0 || (noYAxis && arg.col === 1 && arg.table.colCount <= 2) ? outlineBorderLineWidth : 1,

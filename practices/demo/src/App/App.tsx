@@ -6,7 +6,7 @@ import { useVBI } from 'src/hooks/useVBI';
 
 export const APP = () => {
   const { vseed, vbiBuilder, loading } = useVBI();
-
+  console.log('debug render APP');
   if (!vbiBuilder) {
     return <Spin tip="Initializing..." fullscreen />;
   }

@@ -8,6 +8,8 @@ import { zPivotChartGridConfig } from './pivotGrid'
 import { zHeatmapCell } from './heatmap/zHeatmap'
 import { zXBandAxis, zYBandAxis } from './axes/zBandAxis'
 
+import { zBrushConfig } from '../brush/zBrush'
+
 export const zHeatmapConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
   label: zLabel.nullish(),
@@ -20,6 +22,8 @@ export const zHeatmapConfig = z.object({
 
   xAxis: zXBandAxis.nullish(),
   yAxis: zYBandAxis.nullish(),
+
+  brush: zBrushConfig.nullish(),
 })
 
 export type HeatmapConfig = z.infer<typeof zHeatmapConfig>

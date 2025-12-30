@@ -5,6 +5,7 @@ import {
   getLightColorLegend,
   getLightCrosshairLine,
   getLightCrosshairRect,
+  getLightBrushConfig,
   getLightLabel,
   getLightLegend,
   getLightPivotChartGridConfig,
@@ -40,6 +41,7 @@ export const lightTheme = (): CustomThemeConfig => {
     label: getLightLabel(),
     legend: getLightLegend(),
     tooltip: getLightTooltip(),
+    brush: getLightBrushConfig(),
   }
   const tableConfig = getLightTableConfig()
 

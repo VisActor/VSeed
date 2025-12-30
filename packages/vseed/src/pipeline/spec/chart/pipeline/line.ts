@@ -37,6 +37,7 @@ import {
   pivotAxisStyle,
   splitLine,
   dimensionLinkage,
+  brush,
 } from '../pipes'
 
 const line: VChartSpecPipeline = [
@@ -47,6 +48,7 @@ const line: VChartSpecPipeline = [
   progressive,
   xBand,
   yLinear,
+  brush,
   verticalCrosshairLine,
   colorAdapter(discreteLegend, colorLegend),
   colorPointStyleFill(pointStyle),
@@ -74,6 +76,7 @@ const pivotLine: PivotChartSpecPipeline = [
     progressive,
     xBand,
     pivotAxisStyle(yLinear),
+    brush,
     verticalCrosshairLine,
     colorPointStyleFill(pointStyle),
     pointStateDimensionHover,

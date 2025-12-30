@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { merge } from '@visactor/vutils'
 import { pick } from 'remeda'
 import { BinEndMeasureId, BinStartMeasureId } from 'src/dataReshape'
@@ -25,7 +24,7 @@ export const histogramConfig: AdvancedPipe = (advancedVSeed, context) => {
     'binCount',
     'binStep',
     'binValueType',
-
+    'brush',
     'dimensionLinkage',
   ]) as Config['histogram']
 

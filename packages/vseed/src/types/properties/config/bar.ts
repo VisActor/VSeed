@@ -11,6 +11,8 @@ import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
 import { zDimensionLinkage } from './dimensionLinkage/dimensionLinkage'
 
+import { zBrushConfig } from '../brush/zBrush'
+
 export const zBarConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
   label: zLabel.nullish(),
@@ -26,6 +28,8 @@ export const zBarConfig = z.object({
   annotation: zAnnotationConfig.nullish(),
 
   dimensionLinkage: zDimensionLinkage.nullish(),
+
+  brush: zBrushConfig.nullish(),
 })
 export const zBarParallelConfig = zBarConfig
 export const zBarPercentConfig = zBarConfig

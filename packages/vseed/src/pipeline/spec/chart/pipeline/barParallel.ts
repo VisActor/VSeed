@@ -36,6 +36,7 @@ import {
   pivotAxisStyle,
   pivotTitle,
   dimensionLinkage,
+  brush,
 } from '../pipes'
 
 const barParallel: VChartSpecPipeline = [
@@ -50,6 +51,7 @@ const barParallel: VChartSpecPipeline = [
   xLinear,
   yBand,
   label,
+  brush,
   tooltip,
   colorAdapter(discreteLegend, colorLegend),
   horizontalCrosshairRect,
@@ -74,6 +76,7 @@ const pivotBarParallel: PivotChartSpecPipeline = [
     datasetYX,
     xLinear,
     pivotAxisStyle(yBand),
+    brush,
     label,
     tooltip,
     colorBarStyleFill(barStyle),

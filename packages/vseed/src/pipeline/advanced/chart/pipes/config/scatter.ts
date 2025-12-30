@@ -20,7 +20,7 @@ export const scatterConfig: AdvancedPipe = (advancedVSeed, context) => {
     'sizeRange',
     'size',
     'crosshairLine',
-
+    'brush',
     'dimensionLinkage',
   ]) as Config['line']
 

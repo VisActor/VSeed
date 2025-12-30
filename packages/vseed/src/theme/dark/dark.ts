@@ -3,6 +3,7 @@ import {
   getDarkColor,
   getDarkCrosshairLine,
   getDarkCrosshairRect,
+  getDarkBrushConfig,
   getDarkTableConfig,
   getDarkPivotChartGridConfig,
   getDarkLabel,
@@ -39,6 +40,7 @@ export const darkTheme = (): CustomThemeConfig => {
     label: getDarkLabel(),
     legend: getDarkLegend(),
     tooltip: getDarkTooltip(),
+    brush: getDarkBrushConfig(),
   }
 
   const tableConfig = getDarkTableConfig()

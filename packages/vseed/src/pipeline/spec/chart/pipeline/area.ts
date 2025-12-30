@@ -40,6 +40,7 @@ import {
   pivotTitle,
   splitLine,
   dimensionLinkage,
+  brush,
 } from '../pipes'
 
 const area: VChartSpecPipeline = [
@@ -52,6 +53,7 @@ const area: VChartSpecPipeline = [
   xBand,
   yLinear,
   label,
+  brush,
   tooltip,
   colorAdapter(discreteLegend, colorLegend),
   verticalCrosshairLine,
@@ -81,6 +83,7 @@ const pivotArea: PivotChartSpecPipeline = [
     xBand,
     pivotAxisStyle(yLinear),
     label,
+    brush,
     tooltip,
     verticalCrosshairLine,
     colorPointStyleFill(pointStyle),

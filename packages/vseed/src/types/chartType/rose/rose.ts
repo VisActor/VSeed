@@ -1,6 +1,7 @@
 import { type Locale } from '../../i18n'
 import type { RoseDimension, RoseMeasure, PieLabel } from '../../properties'
 import { type BackgroundColor, type Color, type Dataset, type Legend, type Theme, type Tooltip } from '../../properties'
+import type { Brush } from '../../properties'
 
 /**
  * @description 堆叠玫瑰图，适用于多维度数据对比场景，通过极坐标系下的扇形弧度和半径展示数据大小
@@ -87,6 +88,12 @@ export interface Rose {
    * @description 提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等.
    */
   tooltip?: Tooltip
+
+  /**
+   * 框选
+   * @description 框选配置，用于开启/关闭 brush 框选能力
+   */
+  brush?: Brush
 
   /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置

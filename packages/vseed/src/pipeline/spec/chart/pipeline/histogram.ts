@@ -34,6 +34,7 @@ import {
   pivotAxisStyle,
   dimensionLinkage,
   histogramXLinear,
+  brush,
 } from '../pipes'
 
 const histogram: VChartSpecPipeline = [
@@ -45,6 +46,7 @@ const histogram: VChartSpecPipeline = [
   histogramXLinear,
   yLinear,
   label,
+  brush,
   tooltipHistogram,
   colorAdapter(discreteLegend, colorLegend),
   histogramVerticalCrosshairRect,
@@ -69,6 +71,7 @@ const pivotHistogram: PivotChartSpecPipeline = [
     progressive,
     histogramXLinear,
     pivotAxisStyle(yLinear),
+    brush,
     label,
     tooltipHistogram,
     colorBarStyleFill(barStyle),

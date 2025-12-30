@@ -10,6 +10,8 @@ import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
 import { zDimensionLinkage } from './dimensionLinkage/dimensionLinkage'
 
+import { zBrushConfig } from '../brush/zBrush'
+
 export const zAreaConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
   label: zLabel.nullish(),
@@ -24,6 +26,8 @@ export const zAreaConfig = z.object({
   annotation: zAnnotationConfig.nullish(),
 
   dimensionLinkage: zDimensionLinkage.nullish(),
+
+  brush: zBrushConfig.nullish(),
 })
 export const zAreaPercentConfig = zAreaConfig
 

@@ -30,6 +30,7 @@ import {
   pivotHideIndicatorName,
   pivotTitle,
   addRegionPadding,
+  brush,
 } from '../pipes'
 
 const donut: VChartSpecPipeline = [
@@ -38,6 +39,7 @@ const donut: VChartSpecPipeline = [
   backgroundColor,
   datasetXY,
   progressive,
+  brush,
   labelPie,
   colorPieStyleFill(pieStyle),
   colorAdapter(discreteLegend, colorLegend),
@@ -61,6 +63,7 @@ const pivotDonut: PivotChartSpecPipeline = [
     backgroundColor,
     datasetXY,
     progressive,
+    brush,
     labelPie,
     colorPieStyleFill(pieStyle),
     tooltip,

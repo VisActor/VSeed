@@ -13,6 +13,8 @@ import { zBarGapInGroup, zBarMaxWidth } from './barWidth'
 import { zRegressionLine } from '../regressionLine'
 import { zDimensionLinkage } from './dimensionLinkage/dimensionLinkage'
 
+import { zBrushConfig } from '../brush/zBrush'
+
 export const zColumnParallelConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
   label: zLabel.nullish(),
@@ -30,6 +32,8 @@ export const zColumnParallelConfig = z.object({
   annotation: zAnnotationConfig.nullish(),
 
   dimensionLinkage: zDimensionLinkage.nullish(),
+
+  brush: zBrushConfig.nullish(),
 })
 export const zColumnConfig = zColumnParallelConfig.extend({
   regressionLine: zRegressionLine.nullish(),

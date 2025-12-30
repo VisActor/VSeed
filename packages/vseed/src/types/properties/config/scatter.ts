@@ -11,6 +11,8 @@ import { zPivotChartGridConfig } from './pivotGrid'
 import { zRegressionLine } from '../regressionLine/zRegressionLine'
 import { zDimensionLinkage } from './dimensionLinkage/dimensionLinkage'
 
+import { zBrushConfig } from '../brush/zBrush'
+
 export const zScatterConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
   label: zLabel.nullish(),
@@ -28,6 +30,8 @@ export const zScatterConfig = z.object({
   regressionLine: zRegressionLine.nullish(),
 
   dimensionLinkage: zDimensionLinkage.nullish(),
+
+  brush: zBrushConfig.nullish(),
 })
 
 export type ScatterConfig = z.infer<typeof zScatterConfig>

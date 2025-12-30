@@ -7,6 +7,7 @@ import type {
   AnnotationVerticalLine,
   AreaStyle,
   BackgroundColor,
+  Brush,
   Color,
   Dataset,
   Label,
@@ -109,6 +110,12 @@ export interface AreaPercent {
    * @description 提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等.
    */
   tooltip?: Tooltip
+
+  /**
+   * 框选
+   * @description 框选配置，用于开启/关闭 brush 框选能力
+   */
+  brush?: Brush
 
   /**
    * x轴

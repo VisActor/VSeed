@@ -21,6 +21,7 @@ import {
   zStackCornerRadius,
   zTheme,
   zTooltip,
+  zBrush,
   zXLinearAxis,
   zYBandAxis,
 } from '../../properties'
@@ -36,6 +37,7 @@ export const zBarParallel = z.object({
   label: zLabel.nullish(),
   legend: zLegend.nullish(),
   tooltip: zTooltip.nullish(),
+  brush: zBrush.nullish(),
   xAxis: zXLinearAxis.nullish(),
   yAxis: zYBandAxis.nullish(),
   crosshairRect: zCrosshairRect.nullish(),

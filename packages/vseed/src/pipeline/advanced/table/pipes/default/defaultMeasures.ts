@@ -11,9 +11,9 @@ export const defaultMeasures: AdvancedPipe = (advancedVSeed, context) => {
 
   if (measures && measures.length > 0) {
     const clonedMeasures = clone(measures)
-    preorderTraverse(clonedMeasures, (node) => {
-      if (isMeasure(node as Measure)) {
-        ;(node as Measure).alias = (node as Measure).alias || (node as Measure).id
+    preorderTraverse<Measure>(clonedMeasures as unknown as Measure[], (node) => {
+      if (isMeasure(node)) {
+        node.alias = node.alias || node.id
       }
       return false
     })

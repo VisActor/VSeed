@@ -17,37 +17,46 @@ export const FunnelChart = memo(() => {
   return <VChartRender vseed={vseed} />
 })
 
+export const MultiMeasuresFunnelChart = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'funnel',
+    dataset: [{ profit: 10, sales: 20, profit1: 0.1 }],
+    measures: [
+      {
+        id: 'sales',
+        alias: '销售',
+      },
+      {
+        id: 'profit',
+        alias: '利润',
+      },
+      {
+        id: 'profit1',
+        alias: '回报率',
+      },
+    ],
+  }
+  return <VChartRender vseed={vseed} />
+})
+
 export const CombinationFunnelChart = memo(() => {
   const vseed: VSeed = {
     chartType: 'funnel',
     dataset: [
-      { date: '2019', profit: 10, sales: 20, rateOfReturn: 0.1 },
-      { date: '2020', profit: 20, sales: 40, rateOfReturn: 0.2 },
-      { date: '2021', profit: 30, sales: 60, rateOfReturn: 0.3 },
-      { date: '2022', profit: 40, sales: 80, rateOfReturn: 0.4 },
-      { date: '2023', profit: 50, sales: 100, rateOfReturn: 0.5 },
+      { date: '2022', profit: 100, sales: 134 },
+      { date: '2023', profit: 80, sales: 90 },
+      { date: '2020', profit: 60, sales: 70 },
+      { date: '2021', profit: 40, sales: 60 },
+      { date: '2019', profit: 20, sales: 30 },
+    ],
+    measures: [
+      { id: 'sales', alias: '销售', parentId: 'left' },
+      { id: 'profit', alias: '利润', parentId: 'right' },
     ],
     dimensions: [
       {
         id: 'date',
         alias: '日期',
-      },
-    ],
-    measures: [
-      {
-        id: 'sales',
-        alias: 'sales',
-        parentId: 'sales-and-profit',
-      },
-      {
-        id: 'profit',
-        alias: '利润',
-        parentId: 'sales-and-profit',
-      },
-      {
-        id: 'rateOfReturn',
-        alias: '回报率',
-        parentId: 'ratio',
       },
     ],
   }

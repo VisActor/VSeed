@@ -9,7 +9,7 @@ import {
   pivotColumnDimensions,
   pivotGridStyle,
   pivotIndicators,
-  pivotIndicatorsAsRow,
+  pivotIndicatorsAsCol,
   pivotRowDimensions,
   tooltip,
   annotationPoint,
@@ -51,7 +51,7 @@ const funnel: VChartSpecPipeline = [
 const pivotFunnel: PivotChartSpecPipeline = [
   initPivot,
   pivotGridStyle,
-  pivotIndicatorsAsRow,
+  pivotIndicatorsAsCol,
   pivotHideIndicatorName,
   datasetPivot,
   pivotIndicators([

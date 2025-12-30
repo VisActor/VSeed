@@ -43,6 +43,12 @@
   },
   {
     "type": "dir",
+    "name": "interaction",
+    "label": "interaction",
+    "collapsed": true
+  },
+  {
+    "type": "dir",
     "name": "regressionLine",
     "label": "regressionLine",
     "collapsed": true

@@ -59,6 +59,14 @@
     "en-US": "Annotation",
     "zh-CN": "标注"
   },
+  "interaction": {
+    "en-US": "interaction",
+    "zh-CN": "交互"
+  },
+  "brush": {
+    "en-US": "brush",
+    "zh-CN": "框选"
+  },
   "regressionLine": {
     "en-US": "Regression Line",
     "zh-CN": "回归线"

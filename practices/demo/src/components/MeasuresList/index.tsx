@@ -41,14 +41,18 @@ export const MeasuresList = ({
   return (
     <Card
       title="Measures"
-      style={{ display: 'flex', flexDirection: 'column', ...style }}
-      bodyStyle={{
-        padding: '0 0 10px 0',
-        flex: 1,
-        overflowY: 'auto',
-        minHeight: 0,
+      style={{ ...style }}
+      styles={{
+        body: {
+          padding: '0 0 10px 0',
+          flex: 1,
+          overflowY: 'auto',
+          minHeight: 0,
+        },
+        header: {
+          minHeight: '48px',
+        },
       }}
-      headStyle={{ minHeight: '48px' }}
     >
       <List
         size="small"

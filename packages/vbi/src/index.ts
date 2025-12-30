@@ -1,4 +1,4 @@
-export { VBIBuilder, VBIBuilder as VBI } from './builder'
+export { VBIBuilder, VBI } from './builder'
 export { MeasuresBuilder, DimensionsBuilder, ChartTypeBuilder } from './builder'
 export * from './types'
 export * from './utils'

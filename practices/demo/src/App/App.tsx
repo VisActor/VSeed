@@ -1,5 +1,10 @@
-import { VBI } from '@visactor/vbi';
-import { VQuery } from '@visactor/vquery';
+import { VBI, VBIBuilder } from '@visactor/vbi';
+import {
+  DatasetColumn,
+  RawDatasetSource,
+  VQuery,
+  VQueryDSL,
+} from '@visactor/vquery';
 
 import { VSeed } from '@visactor/vseed';
 import { useEffect, useState } from 'react';
@@ -8,7 +13,7 @@ import { VSeedRender } from 'src/VSeedRender';
 export const APP = () => {
   const [vseed, setVSeed] = useState<VSeed>();
 
-  const [vbiBuilder, setVBIBuilder] = useState<VBI | null>(null);
+  const [vbiBuilder, setVBIBuilder] = useState<VBIBuilder | null>(null);
 
   useEffect(() => {
     const vquery = new VQuery();
@@ -47,10 +52,16 @@ export const APP = () => {
             const url =
               'https://visactor.github.io/VSeed/dataset/supermarket.csv';
             const datasetSource = { type: 'csv', rawDataset: url };
-            await vquery.createDataset(connectorId, schema, datasetSource);
+            await vquery.createDataset(
+              connectorId,
+              schema as DatasetColumn[],
+              datasetSource as RawDatasetSource,
+            );
           }
           const dataset = await vquery.connectDataset(connectorId);
-          const queryResult = await dataset.query(queryDSL);
+          const queryResult = await dataset.query(
+            queryDSL as VQueryDSL<Record<string, string | number>>,
+          );
 
           return {
             dataset: queryResult.dataset,
@@ -68,7 +79,7 @@ export const APP = () => {
       return;
     }
 
-    vbiBuilder.on('update', async () => {
+    vbiBuilder.doc.on('update', async () => {
       const newVSeed = await vbiBuilder.buildVSeed();
       console.log('debug newVSeed', newVSeed);
       setVSeed(() => newVSeed);
@@ -97,8 +108,13 @@ export const APP = () => {
   );
 };
 
-const MeasuresList = ({ builder }: { builder: VBI }) => {
-  const [schema, setSchema] = useState([]);
+const MeasuresList = ({ builder }: { builder: VBIBuilder }) => {
+  const [schema, setSchema] = useState<
+    {
+      name: string;
+      type: string;
+    }[]
+  >([]);
 
   useEffect(() => {
     const run = async () => {

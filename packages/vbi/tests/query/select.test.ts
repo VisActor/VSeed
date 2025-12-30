@@ -42,7 +42,7 @@ describe('select', () => {
             await vquery.createDataset(connectorId, schema as DatasetColumn[], datasetSource as RawDatasetSource)
           }
           const dataset = await vquery.connectDataset(connectorId)
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
           const queryResult = await dataset.query(queryDSL as VQueryDSL<any>)
 
           await dataset.disconnect()

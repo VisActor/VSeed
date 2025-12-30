@@ -5,8 +5,18 @@ import { dualAxisConfig } from './dualAxis'
 import { scatterConfig } from './scatter'
 import { histogramConfig } from './histogram'
 import { boxplotConfig } from './boxplot'
+import { heatmapConfig } from './heatmap'
 
-export { lineConfig, columnConfig, pieConfig, dualAxisConfig, scatterConfig, histogramConfig, boxplotConfig }
+export {
+  lineConfig,
+  columnConfig,
+  pieConfig,
+  dualAxisConfig,
+  scatterConfig,
+  histogramConfig,
+  boxplotConfig,
+  heatmapConfig,
+}
 
 // area
 export const areaConfig = lineConfig
@@ -29,4 +39,4 @@ export const radarConfig = pieConfig
 
 // funnel, heatmap
 export const funnelConfig = pieConfig
-export const heatmapConfig = pieConfig
+// heatmapConfig 已独立导出

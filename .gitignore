@@ -22,3 +22,8 @@ coverage/
 
 tools/llm_test/top-key
 tools/llm_test/new-type
+
+
+# Claude
+
+.claude

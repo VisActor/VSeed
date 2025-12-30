@@ -40,6 +40,7 @@ import {
   pivotAxisStyle,
   pivotTitle,
   dimensionLinkage,
+  brush,
 } from '../pipes'
 
 const scatter: VChartSpecPipeline = [
@@ -50,6 +51,7 @@ const scatter: VChartSpecPipeline = [
   progressive,
   xLinear,
   yLinear,
+  brush,
   scatterSize,
   labelScatter,
   tooltipScatter,
@@ -81,6 +83,7 @@ const pivotScatter: PivotChartSpecPipeline = [
     progressive,
     xLinear,
     pivotAxisStyle(yLinear),
+    brush,
     scatterSize,
     labelScatter,
     tooltipScatter,

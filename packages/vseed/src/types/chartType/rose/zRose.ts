@@ -12,6 +12,7 @@ import {
   zMeasures,
   zTheme,
   zTooltip,
+  zBrush,
 } from '../../properties'
 
 export const zRose = z.object({
@@ -25,6 +26,7 @@ export const zRose = z.object({
   label: zLabel.nullish(),
   legend: zLegend.nullish(),
   tooltip: zTooltip.nullish(),
+  brush: zBrush.nullish(),
   theme: zTheme.nullish(),
   locale: zLocale.nullish(),
 })

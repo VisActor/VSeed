@@ -22,6 +22,7 @@ import {
   zPolynomialRegressionLine,
   zTheme,
   zTooltip,
+  zBrush,
   zXLinearAxis,
   zYLinearAxis,
 } from '../../properties'
@@ -39,6 +40,7 @@ export const zScatter = z.object({
   label: zLabel.nullish(),
   legend: zLegend.nullish(),
   tooltip: zTooltip.nullish(),
+  brush: zBrush.nullish(),
   xAxis: zXLinearAxis.nullish(),
   yAxis: zYLinearAxis.nullish(),
   crosshairLine: zCrosshairLine.nullish(),

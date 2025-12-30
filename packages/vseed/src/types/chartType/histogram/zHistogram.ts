@@ -20,6 +20,7 @@ import {
   zMeasures,
   zTheme,
   zTooltip,
+  zBrush,
   zXLinearAxis,
   zYLinearAxis,
 } from '../../properties'
@@ -35,6 +36,7 @@ export const zHistogram = z.object({
   label: zLabel.nullish(),
   legend: zLegend.nullish(),
   tooltip: zTooltip.nullish(),
+  brush: zBrush.nullish(),
   xAxis: zXLinearAxis.nullish(),
   yAxis: zYLinearAxis.nullish(),
   crosshairRect: zCrosshairRect.nullish(),

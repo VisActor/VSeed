@@ -11,6 +11,7 @@ import {
   zMeasures,
   zTheme,
   zTooltip,
+  zBrush,
 } from '../../properties'
 
 export const zRoseParallel = z.object({
@@ -24,6 +25,7 @@ export const zRoseParallel = z.object({
   label: zLabel.nullish(),
   legend: zLegend.nullish(),
   tooltip: zTooltip.nullish(),
+  brush: zBrush.nullish(),
   theme: zTheme.nullish(),
   locale: zLocale.nullish(),
 })

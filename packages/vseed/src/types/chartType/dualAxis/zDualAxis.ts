@@ -24,6 +24,7 @@ import {
   zSortLegend,
   zTheme,
   zTooltip,
+  zBrush,
   zXBandAxis,
   zYLinearAxis,
 } from 'src/types/properties'
@@ -46,6 +47,7 @@ export const zDualAxis = z.object({
   label: zLabel.nullish(),
   legend: zLegend.nullish(),
   tooltip: zTooltip.nullish(),
+  brush: zBrush.nullish(),
 
   crosshairRect: zCrosshairRect.nullish(),
   sort: zSort.nullish(),

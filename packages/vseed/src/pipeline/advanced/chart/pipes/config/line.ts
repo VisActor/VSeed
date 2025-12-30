@@ -18,6 +18,7 @@ export const lineConfig: AdvancedPipe = (advancedVSeed, context) => {
     'xAxis',
     'yAxis',
     'crosshairLine',
+    'brush',
     'dimensionLinkage',
   ]) as Config['line']
 

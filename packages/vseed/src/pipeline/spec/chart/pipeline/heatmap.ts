@@ -28,6 +28,7 @@ import {
   heatmapBandAxis,
   pivotColorLegend,
   heatmapColorDomain,
+  brush,
 } from '../pipes'
 import { initHeatmap } from '../pipes/init/heatmap'
 
@@ -38,6 +39,7 @@ const heatmap: VChartSpecPipeline = [
   colorAdapter(color, linearColor),
   label,
   heatmapBandAxis,
+  brush,
   colorAdapter(discreteLegend, heatmapColorLegend),
   cellStyle,
   tooltipHeatmap,
@@ -59,6 +61,7 @@ const pivotHeatmap: PivotChartSpecPipeline = [
     colorAdapter(color, linearColor),
     label,
     pivotAxisStyle(heatmapBandAxis),
+    brush,
     tooltipHeatmap,
     cellStyle,
     annotationPoint,

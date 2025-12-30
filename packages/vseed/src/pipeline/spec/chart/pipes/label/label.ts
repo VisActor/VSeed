@@ -166,6 +166,7 @@ export const buildLabel = (
       }
       return result.join(' ')
     },
+    syncState: true,
     position: labelPosition,
     style: {
       stroke: labelStroke,

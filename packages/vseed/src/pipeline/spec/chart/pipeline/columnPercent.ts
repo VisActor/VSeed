@@ -37,6 +37,7 @@ import {
   pivotAxisStyle,
   pivotTitle,
   dimensionLinkage,
+  brush,
 } from '../pipes'
 
 const columnPercent: VChartSpecPipeline = [
@@ -52,6 +53,7 @@ const columnPercent: VChartSpecPipeline = [
   xBand,
   yLinear,
   label,
+  brush,
   tooltip,
   colorAdapter(discreteLegend, colorLegend),
   verticalCrosshairRect,
@@ -79,6 +81,7 @@ const pivotColumnPercent: PivotChartSpecPipeline = [
     progressive,
     xBand,
     pivotAxisStyle(yLinear),
+    brush,
     label,
     tooltip,
     verticalCrosshairRect,

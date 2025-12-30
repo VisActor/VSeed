@@ -36,6 +36,7 @@ import {
   pivotAxisStyle,
   pivotTitle,
   dimensionLinkage,
+  brush,
 } from '../pipes'
 
 const barPercent: VChartSpecPipeline = [
@@ -50,6 +51,7 @@ const barPercent: VChartSpecPipeline = [
   xLinear,
   yBand,
   label,
+  brush,
   tooltip,
   colorAdapter(discreteLegend, colorLegend),
   horizontalCrosshairRect,
@@ -75,6 +77,7 @@ const pivotBarPercent: PivotChartSpecPipeline = [
     datasetYX,
     xLinear,
     pivotAxisStyle(yBand),
+    brush,
     label,
     tooltip,
     colorBarStyleFill(barStyle),

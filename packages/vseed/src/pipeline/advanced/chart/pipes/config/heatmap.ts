@@ -2,14 +2,24 @@ import { pick } from 'remeda'
 import { replaceNullToUndefined } from 'src/pipeline/utils'
 import type { AdvancedPipe, AdvancedVSeed, Config } from 'src/types'
 
-export const pieConfig: AdvancedPipe = (advancedVSeed, context) => {
+export const heatmapConfig: AdvancedPipe = (advancedVSeed, context) => {
   const { vseed } = context
   const { chartType } = vseed
   const result = {
     ...advancedVSeed,
   }
 
-  const pickedConfig = pick(vseed, ['backgroundColor', 'color', 'label', 'legend', 'tooltip', 'brush']) as Config['pie']
+  const pickedConfig = pick(vseed, [
+    'backgroundColor',
+    'color',
+    'label',
+    'legend',
+    'tooltip',
+    'xAxis',
+    'yAxis',
+    'brush',
+    'dimensionLinkage',
+  ]) as Config['heatmap']
 
   const config = replaceNullToUndefined(pickedConfig)
 

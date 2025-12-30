@@ -11,6 +11,7 @@ import type {
   Theme,
   Tooltip,
 } from '../../properties'
+import type { Brush } from '../../properties'
 
 /**
  * @description 饼图，适用于展示单一维度数据的占比关系，通过扇形面积大小表示各类别占比
@@ -96,6 +97,12 @@ export interface Pie {
    * @description 提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等.
    */
   tooltip?: Tooltip
+
+  /**
+   * 框选
+   * @description 框选配置，用于开启/关闭 brush 框选能力
+   */
+  brush?: Brush
 
   /**
    * 图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置

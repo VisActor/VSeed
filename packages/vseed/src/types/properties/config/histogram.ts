@@ -12,6 +12,8 @@ import { zPivotChartGridConfig } from './pivotGrid'
 import { zRegressionLine } from '../regressionLine'
 import { zDimensionLinkage } from './dimensionLinkage/dimensionLinkage'
 
+import { zBrushConfig } from '../brush/zBrush'
+
 export const zHistogramConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
   label: zLabel.nullish(),
@@ -31,6 +33,8 @@ export const zHistogramConfig = z.object({
   regressionLine: zRegressionLine.nullish(),
 
   dimensionLinkage: zDimensionLinkage.nullish(),
+
+  brush: zBrushConfig.nullish(),
 })
 
 export type HistogramConfig = z.infer<typeof zHistogramConfig>

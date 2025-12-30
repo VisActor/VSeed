@@ -21,6 +21,7 @@ import {
   zStackCornerRadius,
   zTheme,
   zTooltip,
+  zBrush,
   zXBandAxis,
   zYLinearAxis,
 } from '../../properties'
@@ -36,6 +37,7 @@ export const zColumnParallel = z.object({
   label: zLabel.nullish(),
   legend: zLegend.nullish(),
   tooltip: zTooltip.nullish(),
+  brush: zBrush.nullish(),
   xAxis: zXBandAxis.nullish(),
   yAxis: zYLinearAxis.nullish(),
   crosshairRect: zCrosshairRect.nullish(),

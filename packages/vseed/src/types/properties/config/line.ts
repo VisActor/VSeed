@@ -10,6 +10,8 @@ import { zAnnotationConfig } from './annotation/zAnnotaion'
 import { zPivotChartGridConfig } from './pivotGrid'
 import { zDimensionLinkage } from './dimensionLinkage'
 
+import { zBrushConfig } from '../brush/zBrush'
+
 export const zLineConfig = z.object({
   backgroundColor: zBackgroundColor.nullish(),
   label: zLabel.nullish(),
@@ -24,6 +26,8 @@ export const zLineConfig = z.object({
   annotation: zAnnotationConfig.nullish(),
 
   dimensionLinkage: zDimensionLinkage.nullish(),
+
+  brush: zBrushConfig.nullish(),
 })
 
 export type LineConfig = z.infer<typeof zLineConfig>

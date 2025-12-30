@@ -9,72 +9,18 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'rose',
-    measures: [
-      {
-        parentId: 'line1',
-        id: 'sales',
-        alias: '销售额',
-        format: {
-          type: 'number',
-          ratio: 1000,
-          thousandSeparator: true,
-          decimalPlaces: 0,
-          symbol: '千',
-          prefix: '利润',
-          suffix: '$',
-        },
-      },
-      {
-        parentId: 'line2',
-        id: 'profit',
-        alias: '利润',
-        autoFormat: true,
-        format: {
-          type: 'number',
-          ratio: 1000,
-          thousandSeparator: true,
-          decimalPlaces: 0,
-          symbol: '千',
-          prefix: '利润',
-          suffix: '$',
-        },
-      },
-    ],
-    dimensions: [
-      { id: 'month', alias: '月' },
-      { id: 'date', alias: '年', encoding: 'column' },
-      { id: 'type', alias: '类型', encoding: 'row' },
-    ],
+    chartType: 'column',
     dataset: [
-      { date: '2019', type: 'A', month: '1', profit: 10000, sales: 200000 },
-      { date: '2019', type: 'A', month: '2', profit: 20000, sales: 400000 },
-      { date: '2019', type: 'A', month: '3', profit: 30000, sales: 600000 },
-      { date: '2019', type: 'A', month: '4', profit: 40000, sales: 800000 },
-      { date: '2019', type: 'A', month: '5', profit: 50000, sales: 1000000 },
-      { date: '2019', type: 'A', month: '6', profit: 10000, sales: 300000 },
-
-      { date: '2019', type: 'B', month: '1', profit: 10000, sales: 200000 },
-      { date: '2019', type: 'B', month: '2', profit: 20000, sales: 400000 },
-      { date: '2019', type: 'B', month: '3', profit: 30000, sales: 600000 },
-      { date: '2019', type: 'B', month: '4', profit: 40000, sales: 800000 },
-      { date: '2019', type: 'B', month: '5', profit: 50000, sales: 1000000 },
-      { date: '2019', type: 'B', month: '6', profit: 10000, sales: 300000 },
-
-      { date: '2020', type: 'A', month: '1', profit: 10000, sales: 200000 },
-      { date: '2020', type: 'A', month: '2', profit: 20000, sales: 400000 },
-      { date: '2020', type: 'A', month: '3', profit: 30000, sales: 600000 },
-      { date: '2020', type: 'A', month: '4', profit: 40000, sales: 800000 },
-      { date: '2020', type: 'A', month: '5', profit: 50000, sales: 1000000 },
-      { date: '2020', type: 'A', month: '6', profit: 10000, sales: 300000 },
-
-      { date: '2020', type: 'B', month: '1', profit: 10000, sales: 200000 },
-      { date: '2020', type: 'B', month: '2', profit: 20000, sales: 400000 },
-      { date: '2020', type: 'B', month: '3', profit: 30000, sales: 600000 },
-      { date: '2020', type: 'B', month: '4', profit: 40000, sales: 800000 },
-      { date: '2020', type: 'B', month: '5', profit: 50000, sales: 1000000 },
-      { date: '2020', type: 'B', month: '6', profit: 10000, sales: 300000 },
+      { date: '2019', profit: 10, sales: 20 },
+      { date: '2020', profit: 30, sales: 60 },
+      { date: '2021', profit: 30, sales: 60 },
+      { date: '2022', profit: 50, sales: 100 },
+      { date: '2023', profit: 40, sales: 80 },
     ],
+    brush: {
+      enable: true,
+      removeOnClick: true,
+    },
   }
 
   const parseRes = zVSeed.safeParse(vseed)
@@ -172,6 +118,10 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
     } else if (isVChart(vseed)) {
       const vchart = new VChart(spec, { dom: ref.current })
       vchart.renderSync()
+
+      vchart.on('brushEnd', (e) => {
+        console.log(e)
+      })
 
       window.vchart = vchart
       return () => vchart.release()

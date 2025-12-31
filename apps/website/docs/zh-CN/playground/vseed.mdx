@@ -40,6 +40,9 @@ const Demo = () => {
         alias: '日期',
       },
     ],
+    brush: {
+      enable: true,
+    },
   }
 
   const parseRes = zVSeed.safeParse(vseed)
@@ -77,6 +80,7 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
   const ref = useRef<HTMLDivElement>(null)
   const builderRef = useRef<Builder>()
   const dark = useDark()
+  const selectedDimValueRef = useRef<string[]>([])
   useEffect(() => {
     if (!ref.current) {
       return
@@ -85,25 +89,15 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
     const builder = Builder.from(vseed.theme ? vseed : { ...vseed, theme })
     const spec = {
       ...builder.build(),
-      brush: {
-        visible: true,
-        brushType: 'rect',
-        inBrush: {
-          colorAlpha: 1,
-        },
-        outOfBrush: {
-          colorAlpha: 0.2,
-        },
-      },
       chartDimensionLinkage: {
         selectedStateFilter: (datum) => {
           console.log('brush,!!!!!', datum.__MeaName__, datum)
-          return false
+          return selectedDimValueRef.current.length ? selectedDimValueRef.current.includes(datum['__Dim_X__']) : true
         },
-        // selectedReverseStateFilter: (datum) => {
-        //   console.log('brush,????', datum)
-        //   return true;
-        // }
+        selectedReverseStateFilter: (datum) => {
+          console.log('brush,????', datum)
+          return selectedDimValueRef.current.length ? !selectedDimValueRef.current.includes(datum['__Dim_X__']) : false
+        },
       },
     }
     console.log('final spec = ', spec)
@@ -123,8 +117,9 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
           },
         ])
       })
-      tableInstance.on('brushEnd', (...args) => {
+      tableInstance.onVChartEvent('brushEnd', (args) => {
         console.log('brushEnd', args)
+        selectedDimValueRef.current = args.value.inBrushData.map((dataItem) => dataItem.__Dim_X__)
       })
 
       tableInstance.on('legend_change', (args) => {

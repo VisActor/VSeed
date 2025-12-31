@@ -2,13 +2,20 @@ import type { IBarChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { BarStyle, Datum, VChartSpecPipe } from 'src/types'
 import { isEmpty, isNullish } from 'remeda'
+import { isPivotChart } from 'src/pipeline/utils'
+import type { BrushConfig } from 'src/types/properties/brush/zBrush'
 
 export const barStyle: VChartSpecPipe = (spec, context) => {
-  const { advancedVSeed } = context
+  const { advancedVSeed, vseed } = context
   const { markStyle, dataset = [] } = advancedVSeed
   const { barStyle } = markStyle
+  const { chartType } = vseed
 
   const showStroke = dataset.length <= 100
+  const isPivot = isPivotChart(vseed)
+
+  // 在pivot场景下读取brush配置
+  const brushConfig = isPivot ? ((advancedVSeed.config as any)?.[chartType]?.brush ?? ({} as BrushConfig)) : null
 
   const result = {
     ...spec,
@@ -21,6 +28,17 @@ export const barStyle: VChartSpecPipe = (spec, context) => {
       state: {
         hover: {
           fillOpacity: 0.6,
+        },
+        selected: {
+          opacity: brushConfig?.inBrushStyle?.opacity ?? 1,
+          ...(brushConfig?.inBrushStyle?.stroke && { stroke: brushConfig.inBrushStyle.stroke }),
+          ...(brushConfig?.inBrushStyle?.lineWidth && { lineWidth: brushConfig.inBrushStyle.lineWidth }),
+        },
+        selected_reverse: {
+          // fill: '#ddd'
+          opacity: brushConfig?.outOfBrushStyle?.opacity ?? 0.2,
+          ...(brushConfig?.outOfBrushStyle?.stroke && { stroke: brushConfig.outOfBrushStyle.stroke }),
+          ...(brushConfig?.outOfBrushStyle?.lineWidth && { lineWidth: brushConfig.outOfBrushStyle.lineWidth }),
         },
       },
     },

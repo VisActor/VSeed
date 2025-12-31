@@ -51,6 +51,11 @@
   },
   {
     "type": "file",
+    "name": "brush",
+    "label": "brush "
+  },
+  {
+    "type": "file",
     "name": "chartType",
     "label": "chartType "
   },

@@ -159,6 +159,10 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
       const vchart = new VChart(spec, { dom: ref.current })
       vchart.renderSync()
 
+      vchart.on('brushEnd', (e) => {
+        console.log(e)
+      })
+
       window.vchart = vchart
       return () => vchart.release()
     } else if (isTable(vseed)) {

@@ -1,0 +1,43 @@
+---
+pageType: doc
+---
+
+import { InteractionBrushEnable, InteractionBrushKeepSelection } from '@components'
+
+# brush
+
+## enable
+
+<InteractionBrushEnable />
+
+```tsx pure {4-7}
+export const InteractionBrushEnable = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'column',
+    brush: {
+      enable: true,
+      removeOnClick: true,
+    },
+  }
+
+  return <VChartRender vseed={vseed} />
+})
+```
+
+## removeOnClick
+
+<InteractionBrushKeepSelection />
+
+```tsx pure {4-7}
+export const InteractionBrushKeepSelection = memo(() => {
+  const vseed: VSeed = {
+    chartType: 'column',
+    brush: {
+      enable: true,
+      removeOnClick: false,
+    },
+  }
+
+  return <VChartRender vseed={vseed} />
+})
+```

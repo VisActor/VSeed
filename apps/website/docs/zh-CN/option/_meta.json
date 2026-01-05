@@ -5,135 +5,116 @@
     "label": "Overview"
   },
   {
-    "type": "dir",
+    "type": "divider"
+  },
+  {
+    "type": "file",
     "name": "area",
-    "label": "area ",
-    "collapsed": true
+    "label": "area "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "areaPercent",
-    "label": "areaPercent ",
-    "collapsed": true
+    "label": "areaPercent "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "bar",
-    "label": "bar ",
-    "collapsed": true
+    "label": "bar "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "barParallel",
-    "label": "barParallel ",
-    "collapsed": true
+    "label": "barParallel "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "barPercent",
-    "label": "barPercent ",
-    "collapsed": true
+    "label": "barPercent "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "boxPlot",
-    "label": "boxPlot ",
-    "collapsed": true
+    "label": "boxPlot "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "column",
-    "label": "column ",
-    "collapsed": true
+    "label": "column "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "columnParallel",
-    "label": "columnParallel ",
-    "collapsed": true
+    "label": "columnParallel "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "columnPercent",
-    "label": "columnPercent ",
-    "collapsed": true
+    "label": "columnPercent "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "donut",
-    "label": "donut ",
-    "collapsed": true
+    "label": "donut "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "dualAxis",
-    "label": "dualAxis ",
-    "collapsed": true
+    "label": "dualAxis "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "funnel",
-    "label": "funnel ",
-    "collapsed": true
+    "label": "funnel "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "heatmap",
-    "label": "heatmap ",
-    "collapsed": true
+    "label": "heatmap "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "histogram",
-    "label": "histogram ",
-    "collapsed": true
+    "label": "histogram "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "line",
-    "label": "line ",
-    "collapsed": true
+    "label": "line "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "pie",
-    "label": "pie ",
-    "collapsed": true
+    "label": "pie "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "pivotTable",
-    "label": "pivotTable ",
-    "collapsed": true
+    "label": "pivotTable "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "radar",
-    "label": "radar ",
-    "collapsed": true
+    "label": "radar "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "rose",
-    "label": "rose ",
-    "collapsed": true
+    "label": "rose "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "roseParallel",
-    "label": "roseParallel ",
-    "collapsed": true
+    "label": "roseParallel "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "scatter",
-    "label": "scatter ",
-    "collapsed": true
+    "label": "scatter "
   },
   {
-    "type": "dir",
+    "type": "file",
     "name": "table",
-    "label": "table ",
-    "collapsed": true
+    "label": "table "
   }
 ]

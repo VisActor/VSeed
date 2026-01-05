@@ -73,11 +73,7 @@ function processChartType(project, chartName) {
   }
 
   // Generate a markdown file for the chart type itself
-  const chartDir = path.join(outputDir, chartName)
-  ensureDir(chartDir)
-
-  const mdPath = path.join(chartDir, 'index.md')
-  fs.writeFileSync(mdPath, generateMarkdownContent(chartInterface, project), 'utf-8')
+  let content = generateMarkdownContent(chartInterface, project)
 
   // Process all properties of the interface.
   const props = chartInterface.getProperties()
@@ -86,14 +82,16 @@ function processChartType(project, chartName) {
     if (propName.startsWith('[Symbol')) {
       return
     }
-    const propMdPath = path.join(chartDir, `${propName}.md`)
-    const markdownContent = generateMarkdownContent(prop, project)
+    const markdownContent = generateMarkdownContent(prop, project, 2)
     if (markdownContent) {
-      fs.writeFileSync(propMdPath, markdownContent, 'utf-8')
+      content += '\n' + markdownContent
     }
   })
 
-  console.log(`文档生成完成 for ${chartName}, 目录：`, chartDir)
+  const mdPath = path.join(outputDir, `${chartName}.md`)
+  fs.writeFileSync(mdPath, content, 'utf-8')
+
+  console.log(`文档生成完成 for ${chartName}, 文件：`, mdPath)
 }
 
 // ==================================================================================
@@ -266,7 +264,7 @@ function generateMetaJsonRecursive(directory) {
 
   // 4. Add the root index file.
   if (isRoot) {
-    meta.unshift({ type: 'file', name: 'index', label: 'Overview' })
+    meta.unshift({ type: 'file', name: 'index', label: 'Overview' }, { type: 'divider' })
   }
 
   // 5. Write the _meta.json file.
@@ -282,6 +280,9 @@ function generateMetaJsonRecursive(directory) {
 function extractObjectTypes(type) {
   if (!type) {
     return []
+  }
+  if (type.isIntersection()) {
+    return [type]
   }
   if (type.isObject() && !type.isArray() && !type.isUnion()) {
     return [type]

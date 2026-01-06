@@ -2,8 +2,7 @@ import type { IBoxPlotChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { BoxPlotStyle, Datum, VChartSpecPipe } from 'src/types'
 import { isEmpty, isNullish } from 'remeda'
-import { isPivotChart } from 'src/pipeline/utils'
-import type { BrushConfig } from 'src/types/properties/brush/zBrush'
+// removed isPivotChart and BrushConfig usage
 
 export const boxPlotStyle: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
@@ -11,9 +10,6 @@ export const boxPlotStyle: VChartSpecPipe = (spec, context) => {
   const { boxPlotStyle } = markStyle
   const { chartType } = vseed
   const theme = config?.[chartType as 'boxPlot']?.boxPlotStyle
-
-  const isPivot = isPivotChart(vseed)
-  const brushConfig = isPivot ? ((config as any)?.[chartType]?.brush ?? ({} as BrushConfig)) : null
 
   const result = {
     ...spec,
@@ -27,18 +23,7 @@ export const boxPlotStyle: VChartSpecPipe = (spec, context) => {
         boxCornerRadius: theme?.boxCornerRadius,
         medianStroke: theme?.medianBorderColor ?? theme?.boxBorderColor,
       },
-      state: {
-        selected: {
-          opacity: brushConfig?.inBrushStyle?.opacity ?? 1,
-          ...(brushConfig?.inBrushStyle?.stroke && { stroke: brushConfig.inBrushStyle.stroke }),
-          ...(brushConfig?.inBrushStyle?.lineWidth && { lineWidth: brushConfig.inBrushStyle.lineWidth }),
-        },
-        selected_reverse: {
-          opacity: brushConfig?.outOfBrushStyle?.opacity ?? 0.2,
-          ...(brushConfig?.outOfBrushStyle?.stroke && { stroke: brushConfig.outOfBrushStyle.stroke }),
-          ...(brushConfig?.outOfBrushStyle?.lineWidth && { lineWidth: brushConfig.outOfBrushStyle.lineWidth }),
-        },
-      },
+      state: {},
     },
   } as IBoxPlotChartSpec
 

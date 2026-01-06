@@ -90,14 +90,15 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
     const spec = {
       ...builder.build(),
       chartDimensionLinkage: {
-        selectedStateFilter: (datum) => {
-          console.log('brush,!!!!!', datum.__MeaName__, datum)
+        inBrushStateFilter: (datum) => {
+          console.log('inBrushState', datum)
           return selectedDimValueRef.current.length ? selectedDimValueRef.current.includes(datum['__Dim_X__']) : true
         },
-        selectedReverseStateFilter: (datum) => {
-          console.log('brush,????', datum)
+        outOfBrushStateFilter: (datum) => {
           return selectedDimValueRef.current.length ? !selectedDimValueRef.current.includes(datum['__Dim_X__']) : false
         },
+        listenBrushChange: true,
+        brushChangeDelay: 100,
       },
     }
     console.log('final spec = ', spec)
@@ -120,6 +121,14 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
       tableInstance.onVChartEvent('brushEnd', (args) => {
         console.log('brushEnd', args)
         selectedDimValueRef.current = args.value.inBrushData.map((dataItem) => dataItem.__Dim_X__)
+      })
+      tableInstance.onVChartEvent('brushChange', (args) => {
+        console.log('brushChange', args)
+        selectedDimValueRef.current = args.value.inBrushData.map((dataItem) => dataItem.__Dim_X__)
+      })
+      tableInstance.onVChartEvent('brushClear', (args) => {
+        console.log('brushClear', args)
+        selectedDimValueRef.current = []
       })
 
       tableInstance.on('legend_change', (args) => {

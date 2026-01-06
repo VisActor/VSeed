@@ -6,7 +6,7 @@ services:
       context: ..
       dockerfile: docker/vbi_fe/Dockerfile.dev
     ports:
-      - "3000:3000"
+      - '3000:3000'
     volumes:
       - ../apps/vbi_fe/src:/app/apps/vbi_fe/src
       - ../apps/vbi_fe/public:/app/apps/vbi_fe/public
@@ -25,7 +25,7 @@ services:
       context: ..
       dockerfile: docker/vbi_be/Dockerfile.dev
     ports:
-      - "3030:3030"
+      - '3030:3030'
     volumes:
       - ../apps/vbi_be/src:/app/apps/vbi_be/src
       - ../apps/vbi_be/test:/app/apps/vbi_be/test
@@ -53,7 +53,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
-      - "5433:5432"
+      - '5433:5432'
     networks:
       - vbi_net
 

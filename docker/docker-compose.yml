@@ -6,7 +6,7 @@ services:
       context: ..
       dockerfile: docker/vbi_fe/Dockerfile
     ports:
-      - "3000:80"
+      - '3000:80'
     depends_on:
       - vbi_be
     restart: unless-stopped
@@ -18,7 +18,7 @@ services:
       context: ..
       dockerfile: docker/vbi_be/Dockerfile
     ports:
-      - "3030:3030"
+      - '3030:3030'
     environment:
       - NODE_ENV=production
       - DB_HOST=db
@@ -42,7 +42,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
-      - "5433:5432"
+      - '5433:5432'
     networks:
       - vbi_net
 

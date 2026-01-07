@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "rsbuild preview",
     "test": "rstest",
-    "test:watch": "rstest --watch"
+    "test:watch": "rstest --watch",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@ant-design/icons": "6.1.0",

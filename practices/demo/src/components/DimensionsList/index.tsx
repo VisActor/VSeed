@@ -10,7 +10,6 @@ export const DimensionsList = ({
   builder: VBIBuilder;
   style?: React.CSSProperties;
 }) => {
-  console.log('debug render DimensionsList');
   const [schema, setSchema] = useState<
     {
       name: string;

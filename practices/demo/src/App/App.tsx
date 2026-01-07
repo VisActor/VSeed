@@ -5,9 +5,12 @@ import { DimensionsList } from 'src/components/DimensionsList';
 import { useVBI } from 'src/hooks/useVBI';
 import { VBIBuilder } from '@visactor/vbi';
 
-export const APP = ({ builder }: { builder: VBIBuilder }) => {
+interface APPProps {
+  builder: VBIBuilder;
+}
+export const APP = (props: APPProps) => {
+  const { builder } = props;
   const { vseed, loading } = useVBI(builder);
-  console.log('debug render APP');
   if (!builder) {
     return <Spin tip="Initializing..." fullscreen />;
   }

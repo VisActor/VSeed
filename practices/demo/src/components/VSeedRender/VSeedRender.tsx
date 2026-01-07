@@ -28,7 +28,6 @@ export const VSeedRender = (props: { vseed: VSeed }) => {
   const ref = useRef<HTMLDivElement>(null);
   const vseedBuilderRef = useRef<VSeedBuilder>(null);
 
-  console.log('debug vseed', vseed);
   useEffect(() => {
     if (!ref.current) {
       return;

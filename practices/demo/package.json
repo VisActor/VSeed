@@ -21,7 +21,7 @@
     "test": "rstest"
   },
   "dependencies": {
-    "@ant-design/icons": "~6.1.0",
+    "@ant-design/icons": "6.1.0",
     "@visactor/vbi": "workspace:*",
     "@visactor/vchart": "latest",
     "@visactor/vquery": "workspace:*",

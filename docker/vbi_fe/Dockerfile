@@ -12,6 +12,7 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 # Copy source code
 COPY packages/ packages/
+COPY practices/ practices/
 COPY apps/vbi_fe/ apps/vbi_fe/
 
 # Install dependencies and build

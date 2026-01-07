@@ -7,13 +7,12 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
-# Copy workspace config first
+# Copy workspace config
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
-# Copy packages source code (needed for dependencies)
+# Copy source code
 COPY packages/ packages/
-
-# Copy app source code
+COPY practices/ practices/
 COPY apps/vbi_fe/ apps/vbi_fe/
 
 # Install all dependencies (including devDependencies)

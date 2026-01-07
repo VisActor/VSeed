@@ -17,6 +17,8 @@ export const brush: VChartSpecPipe = (spec, context) => {
   result.brush = {
     visible: true,
     removeOnClick: brush.removeOnClick,
+    brushMode: brush?.brushMode || 'single',
+    brushType: brush?.brushType || 'rect',
     inBrush: {
       opacity: theme.inBrushStyle?.opacity,
       stroke: theme.inBrushStyle?.stroke,

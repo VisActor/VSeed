@@ -17,6 +17,13 @@ export const APP = (props: APPProps) => {
 
   return (
     <div
+      onClick={() => {
+        console.group(`selected vbi`);
+        console.log('builder', builder);
+        console.log('dsl', builder.build());
+
+        console.groupEnd();
+      }}
       style={{
         display: 'flex',
         height: 'calc(100vh - 72px)',

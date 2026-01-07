@@ -1,7 +1,7 @@
 import { Splitter } from 'antd';
 import './App.css';
 import { APP } from 'demo';
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { VBI, VBIBuilder } from '@visactor/vbi';
 import {
   VQuery,
@@ -12,7 +12,8 @@ import {
 import * as Y from 'yjs';
 import { WebsocketProvider } from 'y-websocket';
 
-const App = () => {
+const App = memo(() => {
+  console.log('debug APP');
   return (
     <Splitter>
       <Splitter.Panel defaultSize="50%" min="30%" max="70%">
@@ -23,7 +24,7 @@ const App = () => {
       </Splitter.Panel>
     </Splitter>
   );
-};
+});
 
 const connectorId = 'demo';
 const registerDemoConnector = () => {
@@ -90,8 +91,9 @@ const useCollaborativeBuilder = (roomName: string) => {
     const doc = new Y.Doc();
     const provider = new WebsocketProvider(
       'ws://localhost:3030',
-      roomName,
+      'yjs/ws',
       doc,
+      { params: { room: roomName } },
     );
     const connectorId = 'demo';
 
@@ -128,20 +130,20 @@ const useCollaborativeBuilder = (roomName: string) => {
   return builder;
 };
 
-const UserA = () => {
+const UserA = memo(() => {
   const builder = useCollaborativeBuilder('vbi-demo-room');
   if (!builder) {
     return <div>Loading User A...</div>;
   }
   return <APP builder={builder} />;
-};
+});
 
-const UserB = () => {
+const UserB = memo(() => {
   const builder = useCollaborativeBuilder('vbi-demo-room');
   if (!builder) {
     return <div>Loading User B...</div>;
   }
   return <APP builder={builder} />;
-};
+});
 
 export default App;

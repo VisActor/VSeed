@@ -36,6 +36,9 @@
     },
     {
       "path": "../../packages/vbi"
+    },
+    {
+      "path": "../../practices/demo"
     }
   ],
   "include": ["src"]

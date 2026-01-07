@@ -123,6 +123,15 @@ importers:
       '@ant-design/icons':
         specifier: 6.1.0
         version: 6.1.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@visactor/vbi':
+        specifier: workspace:*
+        version: link:../../packages/vbi
+      '@visactor/vquery':
+        specifier: workspace:*
+        version: link:../../packages/vquery
+      '@visactor/vseed':
+        specifier: workspace:*
+        version: link:../../packages/vseed
       antd:
         specifier: 6.1.3
         version: 6.1.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)

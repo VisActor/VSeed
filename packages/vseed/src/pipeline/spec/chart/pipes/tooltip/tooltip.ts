@@ -47,7 +47,13 @@ export const tooltip: VChartSpecPipe = (spec, context) => {
       title: {
         visible: true,
       },
-      content: createDimensionContent(dimensions, measures, foldInfo, unfoldInfo, reshapeMeasures.length > 1),
+      content: createDimensionContent(
+        encoding.tooltip || [],
+        measures,
+        foldInfo,
+        unfoldInfo,
+        reshapeMeasures.length > 1,
+      ),
     },
 
     updateElement: updateTooltipElement,
@@ -56,7 +62,7 @@ export const tooltip: VChartSpecPipe = (spec, context) => {
 }
 
 export const createDimensionContent = (
-  dimensions: Dimensions = [],
+  tooltip: string[],
   measures: Measures = [],
   foldInfo: FoldInfo,
   unfoldInfo: UnfoldInfo,
@@ -65,12 +71,14 @@ export const createDimensionContent = (
   const { measureId, measureValue, foldMap } = foldInfo
   const { encodingColor } = unfoldInfo
 
+  const hasMeasureTooltip = tooltip.some((d) => measures.find((item) => item.id === d))
+
   return [
     {
       visible: true,
       shapeType: 'rectRound',
       hasShape: true,
-      key: dimensions.some((d) => d.encoding === 'color')
+      key: !hasMeasureTooltip
         ? (v: unknown) => {
             const datum = v as Datum
             const key = (datum && (datum[encodingColor] as string)) || ''

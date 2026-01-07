@@ -25,7 +25,6 @@ export const CursorOverlay = ({
     const mouseMoveFunnel = funnel<[MouseEvent], MouseEvent>(
       (e: MouseEvent) => {
         const { clientX, clientY } = e;
-        // console.log('CursorOverlay: Sending cursor pos', clientX, clientY);
         awareness.setLocalStateField('cursor', {
           x: clientX / window.innerWidth,
           y: clientY / window.innerHeight,
@@ -45,20 +44,35 @@ export const CursorOverlay = ({
     // Handle awareness changes
     const updateCursors = () => {
       const states = awareness.getStates();
-      const cursorList: CursorAwarenessState[] = [];
+      const uniqueCursors = new Map<string, CursorAwarenessState>();
+
+      // Get current user's ID to filter out own ghost cursors
+      const myState = awareness.getLocalState() as CursorAwarenessState | null;
+      const myUserId = myState?.user?.id;
 
       states.forEach((state, clientId) => {
         if (clientId === awareness.clientID) return; // Skip own cursor
+
         const typedState = state as unknown as CursorAwarenessState;
-        if (typedState.user && typedState.cursor) {
-          cursorList.push({
+        if (!typedState.user || !typedState.cursor || !typedState.user.id)
+          return;
+
+        // 1. If it's my own old connection, ignore it
+        if (myUserId && typedState.user.id === myUserId) return;
+
+        // 2. For other users, if duplicate connections exist, keep only the latest one
+        const userId = typedState.user.id;
+        const existing = uniqueCursors.get(userId);
+
+        if (!existing || typedState.user.updatedAt > existing.user.updatedAt) {
+          uniqueCursors.set(userId, {
             user: typedState.user,
             cursor: typedState.cursor,
           });
         }
       });
 
-      setCursors(cursorList);
+      setCursors(Array.from(uniqueCursors.values()));
     };
 
     updateCursors();

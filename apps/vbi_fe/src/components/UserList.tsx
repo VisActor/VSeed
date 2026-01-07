@@ -3,8 +3,10 @@ import { useEffect, useState } from 'react';
 import { WebsocketProvider } from 'y-websocket';
 
 export interface User {
+  id: string;
   name: string;
   color: string;
+  updatedAt: number;
 }
 
 export const UserList = ({ provider }: { provider: WebsocketProvider }) => {
@@ -15,10 +17,21 @@ export const UserList = ({ provider }: { provider: WebsocketProvider }) => {
 
     const updateUsers = () => {
       const states = awareness.getStates();
-      const userList = Array.from(states.values())
-        .map((state) => (state as { user: User }).user)
-        .filter(Boolean);
-      setUsers(userList);
+      const uniqueUsers = new Map<string, User>();
+
+      states.forEach((state) => {
+        const user = (state as { user: User }).user;
+        console.log('debug user', user);
+        if (!user || !user.id) return;
+
+        const existing = uniqueUsers.get(user.id);
+        // Keep the user state with the latest timestamp
+        if (!existing || user.updatedAt > existing.updatedAt) {
+          uniqueUsers.set(user.id, user);
+        }
+      });
+
+      setUsers(Array.from(uniqueUsers.values()));
     };
 
     updateUsers();

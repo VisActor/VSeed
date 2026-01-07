@@ -120,11 +120,20 @@ importers:
 
   apps/vbi_fe:
     dependencies:
+      '@ant-design/icons':
+        specifier: 6.1.0
+        version: 6.1.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      antd:
+        specifier: 6.1.3
+        version: 6.1.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      demo:
+        specifier: workspace:*
+        version: link:../../practices/demo
       react:
-        specifier: ^19.2.3
+        specifier: 19.2.3
         version: 19.2.3
       react-dom:
-        specifier: ^19.2.3
+        specifier: 19.2.3
         version: 19.2.3(react@19.2.3)
     devDependencies:
       '@eslint/js':
@@ -396,7 +405,7 @@ importers:
   practices/demo:
     dependencies:
       '@ant-design/icons':
-        specifier: ~6.1.0
+        specifier: 6.1.0
         version: 6.1.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@visactor/vbi':
         specifier: workspace:*

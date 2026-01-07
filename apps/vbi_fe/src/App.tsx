@@ -1,11 +1,18 @@
+import { Splitter } from 'antd';
 import './App.css';
-
+import { APP } from 'demo';
 const App = () => {
   return (
-    <div className="content">
-      <h1>Rsbuild with React</h1>
-      <p>Start building amazing things with Rsbuild.</p>
-    </div>
+    <Splitter
+      style={{ height: '100vh', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}
+    >
+      <Splitter.Panel defaultSize="50%" min="30%" max="70%">
+        <APP />
+      </Splitter.Panel>
+      <Splitter.Panel>
+        <APP />
+      </Splitter.Panel>
+    </Splitter>
   );
 };
 

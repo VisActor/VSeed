@@ -12,6 +12,7 @@ services:
       - ../apps/vbi_fe/public:/app/apps/vbi_fe/public
       - ../apps/vbi_fe/rsbuild.config.ts:/app/apps/vbi_fe/rsbuild.config.ts
       - ../packages:/app/packages
+      - ../practices:/app/practices
     environment:
       - NODE_ENV=development
     depends_on:

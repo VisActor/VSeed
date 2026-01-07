@@ -39,7 +39,13 @@ export const tooltipOfDualAxisSeries = (options: DualAxisOptions): VChartSpecPip
         title: {
           visible: true,
         },
-        content: createDimensionContent(dimensions, measures, options.foldInfo, unfoldInfo, reshapeMeasures.length > 1),
+        content: createDimensionContent(
+          encoding.tooltip || [],
+          measures,
+          options.foldInfo,
+          unfoldInfo,
+          reshapeMeasures.length > 1,
+        ),
       },
     }
     return result

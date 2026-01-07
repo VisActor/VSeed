@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.3.3
+
+### Patch Changes
+
+- fix: tooltip missing color key
+
 ## 0.3.2
 
 ### Patch Changes

@@ -1,6 +1,7 @@
 import './App.css';
 import { APP } from 'demo';
 import { memo } from 'react';
+import { CursorOverlay } from './components/CursorOverlay';
 import { UserList } from './components/UserList';
 import { useCollaborativeBuilder } from './hooks/useCollaborativeBuilder';
 import { registerDemoConnector } from './utils/demoConnector';
@@ -19,6 +20,7 @@ const UserA = memo(({ userName }: { userName: string }) => {
   return (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       <UserList provider={provider} />
+      <CursorOverlay provider={provider} />
       <div style={{ flex: 1, overflow: 'hidden' }}>
         <APP builder={builder} />
       </div>

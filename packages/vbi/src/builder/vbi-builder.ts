@@ -45,7 +45,6 @@ export class VBIBuilder implements VBIBuilderInterface {
     const schema = await connector.discoverSchema()
     const queryResult = await connector.query({ queryDSL, schema, connectorId })
 
-    console.log('debug queryDSL', queryDSL)
     return {
       chartType: vbiDSL.chartType,
       dataset: queryResult.dataset,

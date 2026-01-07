@@ -15,7 +15,6 @@ export const useVBI = (builder: VBIBuilder) => {
       setLoading(true);
       try {
         const newVSeed = await builder.buildVSeed();
-        console.log('debug newVSeed', newVSeed);
         setVSeed(() => newVSeed);
       } finally {
         setLoading(false);

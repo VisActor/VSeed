@@ -31,8 +31,10 @@ export const useCollaborativeBuilder = (roomName: string, userName: string) => {
 
     // Set user awareness
     provider.awareness.setLocalStateField('user', {
+      id: userName,
       name: userName,
       color: getRandomColor(),
+      updatedAt: Date.now(),
     });
 
     const connectorId = 'demo';

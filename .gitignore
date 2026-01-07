@@ -25,5 +25,7 @@ tools/llm_test/new-type
 
 
 # Claude
-
 .claude
+
+# Trae
+.trae

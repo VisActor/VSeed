@@ -165,6 +165,9 @@ importers:
       react-dom:
         specifier: 19.2.3
         version: 19.2.3(react@19.2.3)
+      remeda:
+        specifier: 2.28.0
+        version: 2.28.0
       y-websocket:
         specifier: 1.5.4
         version: 1.5.4(yjs@13.6.28)

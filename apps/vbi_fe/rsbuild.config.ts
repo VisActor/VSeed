@@ -7,4 +7,11 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  tools: {
+    rspack: {
+      resolve: {
+        conditionNames: ['source', '...'],
+      },
+    },
+  },
 });

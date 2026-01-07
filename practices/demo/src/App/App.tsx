@@ -3,11 +3,12 @@ import { VSeedRender } from 'src/components/VSeedRender';
 import { MeasuresList } from 'src/components/MeasuresList';
 import { DimensionsList } from 'src/components/DimensionsList';
 import { useVBI } from 'src/hooks/useVBI';
+import { VBIBuilder } from '@visactor/vbi';
 
-export const APP = () => {
-  const { vseed, vbiBuilder, loading } = useVBI();
+export const APP = ({ builder }: { builder: VBIBuilder }) => {
+  const { vseed, loading } = useVBI(builder);
   console.log('debug render APP');
-  if (!vbiBuilder) {
+  if (!builder) {
     return <Spin tip="Initializing..." fullscreen />;
   }
 
@@ -33,11 +34,8 @@ export const APP = () => {
           gap: '20px',
         }}
       >
-        <DimensionsList
-          builder={vbiBuilder}
-          style={{ flex: 1, minHeight: 0 }}
-        />
-        <MeasuresList builder={vbiBuilder} style={{ flex: 1, minHeight: 0 }} />
+        <DimensionsList builder={builder} style={{ flex: 1, minHeight: 0 }} />
+        <MeasuresList builder={builder} style={{ flex: 1, minHeight: 0 }} />
       </div>
       <div
         style={{

@@ -14,6 +14,9 @@
   },
   "dependencies": {
     "demo": "workspace:*",
+    "@visactor/vbi": "workspace:*",
+    "@visactor/vseed": "workspace:*",
+    "@visactor/vquery": "workspace:*",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "antd": "6.1.3",

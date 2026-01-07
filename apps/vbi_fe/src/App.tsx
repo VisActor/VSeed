@@ -91,7 +91,7 @@ const useCollaborativeBuilder = (roomName: string) => {
     const doc = new Y.Doc();
     const provider = new WebsocketProvider(
       'ws://localhost:3030',
-      'yjs/ws',
+      'collaboration/ws',
       doc,
       { params: { room: roomName } },
     );

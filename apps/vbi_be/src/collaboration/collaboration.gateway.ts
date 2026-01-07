@@ -9,8 +9,8 @@ import { Server, WebSocket } from 'ws';
 import { IncomingMessage } from 'http';
 import { setupWSConnection } from 'y-websocket/bin/utils';
 
-@WebSocketGateway({ path: '/yjs/ws' })
-export class YjsGateway
+@WebSocketGateway({ path: '/collaboration/ws' })
+export class CollaborationGateway
   implements OnGatewayConnection, OnGatewayDisconnect, OnGatewayInit
 {
   @WebSocketServer()

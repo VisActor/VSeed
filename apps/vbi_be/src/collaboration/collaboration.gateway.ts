@@ -5,8 +5,8 @@ import {
   OnGatewayDisconnect,
   OnGatewayInit,
 } from '@nestjs/websockets';
-import { Server, WebSocket } from 'ws';
-import { IncomingMessage } from 'http';
+import type { Server, WebSocket } from 'ws';
+import type { IncomingMessage } from 'http';
 import { setupWSConnection } from 'y-websocket/bin/utils';
 
 @WebSocketGateway({ path: '/collaboration/ws' })

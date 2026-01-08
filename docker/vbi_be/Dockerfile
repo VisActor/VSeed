@@ -19,4 +19,7 @@ RUN pnpm --filter vbi_be build
 
 EXPOSE 3030
 
+RUN chmod +x ./apps/vbi_be/scripts/docker-entrypoint.sh
+ENTRYPOINT ["./apps/vbi_be/scripts/docker-entrypoint.sh"]
+
 CMD [ "node", "apps/vbi_be/dist/main" ]

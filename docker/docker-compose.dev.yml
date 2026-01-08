@@ -48,8 +48,8 @@ services:
     image: postgres:15-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123456
       POSTGRES_DB: vbi
     volumes:
       - postgres_data:/var/lib/postgresql/data

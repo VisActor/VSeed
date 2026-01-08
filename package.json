@@ -10,7 +10,7 @@
   "description": "VSeed, an elegant data composer, transforming complexity into simplicity.",
   "scripts": {
     "dev": "pnpm --filter=website run dev",
-    "dev:vbi": "pnpm --filter=vbi_be run dev && pnpm --filter=vbi_fe run dev",
+    "dev:vbi": "docker-compose -f ./docker/docker-compose.dev.yml up --build",
     "build": "pnpm run build:all",
     "format": "pnpm prettier --write .",
     "lint": "pnpm -r --color --parallel lint",

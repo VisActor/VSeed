@@ -31,6 +31,7 @@ import {
   pivotTitle,
   addRegionPadding,
   brush,
+  dimensionLinkage,
 } from '../pipes'
 
 const pie: VChartSpecPipeline = [
@@ -76,6 +77,7 @@ const pivotPie: PivotChartSpecPipeline = [
   pivotColumnDimensions,
   pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
 export const pieSpecPipeline = [pivotAdapter(pie, pivotPie)]

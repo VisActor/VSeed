@@ -9,7 +9,7 @@ const Demo = () => {
   const MeasureNames = '__MeaName__'
 
   const vseed: VSeed = {
-    chartType: 'column',
+    chartType: 'bar',
     dataset: [
       { date: '2019', profit: 10, sales: 20 },
       { date: '2020', profit: 30, sales: 60 },
@@ -17,10 +17,9 @@ const Demo = () => {
       { date: '2022', profit: 50, sales: 100 },
       { date: '2023', profit: 40, sales: 80 },
     ],
-    brush: {
-      enable: true,
-      removeOnClick: true,
-    },
+    dimensions: [{ id: 'date', encoding: 'xAxis' }],
+    measures: [{ id: 'profit', encoding: 'yAxis' }],
+    polynomialRegressionLine: [{ color: 'red', text: 'Degree-2', degree: 2, confidenceIntervalVisible: true }],
   }
 
   const parseRes = zVSeed.safeParse(vseed)

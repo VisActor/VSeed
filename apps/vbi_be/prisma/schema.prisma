@@ -27,3 +27,29 @@ model Post {
   author    User    @relation(fields: [authorId], references: [id])
   authorId  Int
 }
+
+model Document {
+  id        String   @id @default(uuid())
+  name      String?
+  data      Bytes
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  updates DocumentUpdate[]
+
+  @@index([updatedAt])
+}
+
+model DocumentUpdate {
+  id         BigInt   @id @default(autoincrement())
+  documentId String
+  data       Bytes
+  merged     Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  document Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@index([documentId, id])
+  @@index([documentId, merged])
+}

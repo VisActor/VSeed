@@ -33,6 +33,7 @@ import {
   pivotHideIndicatorName,
   pivotTitle,
   addRegionPadding,
+  dimensionLinkage,
 } from '../pipes'
 
 const roseParallel: VChartSpecPipeline = [
@@ -82,6 +83,7 @@ const pivotRoseParallel: PivotChartSpecPipeline = [
   pivotColumnDimensions,
   pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
 export const roseParallelSpecPipeline = [pivotAdapter(roseParallel, pivotRoseParallel)]

@@ -1,9 +1,0 @@
-# legend
-
-**Type:** `ColorLegend | undefined`
-
-:::note{title=描述}
-颜色图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.
-
-:::
-

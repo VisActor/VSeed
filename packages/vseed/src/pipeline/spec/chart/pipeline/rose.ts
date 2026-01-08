@@ -30,6 +30,7 @@ import {
   pivotHideIndicatorName,
   pivotTitle,
   addRegionPadding,
+  dimensionLinkage,
 } from '../pipes'
 
 const rose: VChartSpecPipeline = [
@@ -73,6 +74,7 @@ const pivotRose: PivotChartSpecPipeline = [
   pivotColumnDimensions,
   pivotTitle,
   colorAdapter(pivotDiscreteLegend, pivotColorLegend),
+  dimensionLinkage,
 ]
 
 export const roseSpecPipeline = [pivotAdapter(rose, pivotRose)]

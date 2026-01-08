@@ -1,8 +1,12 @@
 // apps/vbi_be/prisma/seed.ts
-import { PrismaClient } from '../src/generated/client/client.js';
+import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
 
-// @ts-expect-error PrismaClient missing option
-const prisma = new PrismaClient();
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL!,
+});
+
+const prisma = new PrismaClient({ adapter });
 
 async function main() {
   // 1. 比如创建一个默认管理员
@@ -11,7 +15,7 @@ async function main() {
     update: {},
     create: {
       email: 'admin​@vbi.com',
-      name: 'Admin User',
+      name: 'Admin',
       posts: {
         create: {
           title: 'Welcome to VBI',
@@ -21,7 +25,7 @@ async function main() {
       },
     },
   });
-  console.log({ admin });
+  console.info({ admin });
 }
 
 main()

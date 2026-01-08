@@ -23,8 +23,8 @@ services:
       - NODE_ENV=production
       - DB_HOST=db
       - DB_PORT=5432
-      - DB_USERNAME=postgres
-      - DB_PASSWORD=postgres
+      - DB_USERNAME=admin
+      - DB_PASSWORD=123456
       - DB_DATABASE=vbi
     depends_on:
       - db

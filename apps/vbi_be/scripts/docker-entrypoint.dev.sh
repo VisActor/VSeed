@@ -4,7 +4,7 @@
 PROJECT_DIR="apps/vbi_be"
 
 echo "🛠  Running migrations..."
-(cd $PROJECT_DIR && pnpx prisma migrate deploy)
+(cd $PROJECT_DIR && pnpx prisma migrate dev)
 
 echo "📦 Generating Prisma Client..."
 (cd $PROJECT_DIR && pnpx prisma generate)

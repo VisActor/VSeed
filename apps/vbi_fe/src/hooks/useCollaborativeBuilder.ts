@@ -23,7 +23,7 @@ export const useCollaborativeBuilder = (roomName: string, userName: string) => {
   useEffect(() => {
     const doc = new Y.Doc();
     const provider = new WebsocketProvider(
-      'ws://localhost:3030',
+      `ws://${window.location.host}`,
       'collaboration/ws',
       doc,
       { params: { room: roomName } },

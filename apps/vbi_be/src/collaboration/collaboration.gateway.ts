@@ -7,7 +7,8 @@ import {
 } from '@nestjs/websockets';
 import type { Server, WebSocket } from 'ws';
 import type { IncomingMessage } from 'http';
-import { setupWSConnection } from 'y-websocket/bin/utils';
+import { setupWSConnection, setPersistence } from 'y-websocket/bin/utils';
+import { PrismaPersistenceService } from './prisma-persistence.service';
 
 @WebSocketGateway({ path: '/collaboration/ws' })
 export class CollaborationGateway
@@ -15,6 +16,8 @@ export class CollaborationGateway
 {
   @WebSocketServer()
   server: Server;
+
+  constructor(private persistenceService: PrismaPersistenceService) {}
 
   handleConnection(client: WebSocket, req: IncomingMessage) {
     const url = new URL(req.url ?? '', 'http://localhost');
@@ -37,5 +40,11 @@ export class CollaborationGateway
 
   afterInit() {
     console.log('YjsGateway initialized');
+    // Initialize persistence
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    setPersistence({
+      bindState: this.persistenceService.bindState,
+      writeState: this.persistenceService.writeState,
+    });
   }
 }

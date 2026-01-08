@@ -1,8 +1,8 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app/app.module';
 import { WsAdapter } from '@nestjs/platform-ws';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import { VersioningType } from '@nestjs/common';
+import { VersioningType, ValidationPipe } from '@nestjs/common';
+import { AppModule } from './app/app.module';
 import { TransformInterceptor } from './common/interceptors/transform.interceptor';
 import { AllExceptionsFilter } from './common/filters/all-exceptions.filter';
 
@@ -17,6 +17,9 @@ const bootstrap = async () => {
     type: VersioningType.URI,
     defaultVersion: '1',
   });
+
+  // Enable ValidationPipe globally
+  app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
   // 3. Unified response format { code, message, data }
   app.useGlobalInterceptors(new TransformInterceptor());
@@ -36,7 +39,7 @@ const bootstrap = async () => {
   SwaggerModule.setup('docs', app, document);
 
   // 6. Start the application
-  await app.listen(process.env.PORT ?? 3030);
+  await app.listen(process.env.PORT ?? 3030, '0.0.0.0');
 
   console.log(`Application is running on: ${await app.getUrl()}`);
 };

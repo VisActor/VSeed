@@ -57,5 +57,7 @@ pnpm run type-check
 ### 3.1 启动与关闭 VBI Docker 容器
 
 - **启动VBI Docker容器**: `pnpm run vbi:up`
-- **构建VBI Docker容器**: `pnpm run vbi:up --build`
 - **关闭VBI Docker容器**: `pnpm run vbi:down`
+
+- **构建VBI Docker容器**: `pnpm run vbi:up --build`
+- **删除VBI Docker容器**: `pnpm run vbi:down -v`

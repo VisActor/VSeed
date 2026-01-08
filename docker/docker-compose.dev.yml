@@ -38,6 +38,7 @@ services:
       - DB_USERNAME=admin
       - DB_PASSWORD=123456
       - DB_DATABASE=vbi
+      - DATABASE_URL=postgresql://admin:123456@db:5432/vbi
     depends_on:
       - db
     restart: unless-stopped

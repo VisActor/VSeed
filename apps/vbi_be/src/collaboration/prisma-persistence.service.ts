@@ -1,14 +1,13 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { PrismaService } from '../app/prisma.service';
-
+import * as Y from 'yjs';
+import { VBI } from '@visactor/vbi';
 @Injectable()
 export class PrismaPersistenceService {
   private logger = new Logger(PrismaPersistenceService.name);
 
   constructor(private prisma: PrismaService) {}
-
-  bindState = async (docName: string, yDoc: any) => {
-    const Y = await import('yjs');
+  bindState = async (docName: string, yDoc: Y.Doc) => {
     this.logger.log(`Binding state for document ${docName}`);
     try {
       // 1. Load snapshot
@@ -24,7 +23,31 @@ export class PrismaPersistenceService {
       }
 
       if (doc.data && doc.data.length > 0) {
+        this.logger.log(`Loading snapshot for document ${docName}`);
         Y.applyUpdate(yDoc, new Uint8Array(doc.data));
+
+        console.log('debug Y applyUpdate success', yDoc.get('dsl').toJSON());
+      } else {
+        this.logger.log(`Creating empty snapshot for document ${docName}`);
+        const connectorId = 'demo';
+        const newDoc = new Y.Doc();
+        const empty = VBI.generateEmptyDSL(connectorId);
+        const dsl = newDoc.getMap('dsl');
+        newDoc.transact(() => {
+          if (empty.connectorId) dsl.set('connectorId', empty.connectorId);
+          if (empty.chartType) dsl.set('chartType', empty.chartType);
+          if (empty.theme) dsl.set('theme', empty.theme);
+          if (empty.locale) dsl.set('locale', empty.locale);
+          if (empty.version) dsl.set('version', empty.version);
+
+          if (!dsl.get('measures')) {
+            dsl.set('measures', new Y.Array());
+          }
+          if (!dsl.get('dimensions')) {
+            dsl.set('dimensions', new Y.Array());
+          }
+        });
+        Y.applyUpdate(yDoc, Y.encodeStateAsUpdate(newDoc));
       }
 
       // 2. Load incremental updates
@@ -42,7 +65,6 @@ export class PrismaPersistenceService {
       }
 
       // 3. Listen for new updates
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
       yDoc.on('update', (update: Uint8Array) => {
         const run = async () => {
           await this.prisma.documentUpdate.create({
@@ -66,9 +88,7 @@ export class PrismaPersistenceService {
     }
   };
 
-  writeState = async (docName: string, yDoc: any) => {
-    const Y = await import('yjs');
-
+  writeState = async (docName: string, yDoc: Y.Doc) => {
     this.logger.log(`Writing state (snapshot) for document ${docName}`);
     try {
       // Create a snapshot
@@ -83,11 +103,8 @@ export class PrismaPersistenceService {
       });
 
       // Clear the incremental updates since we now have a full snapshot
-      await this.prisma.documentUpdate.updateMany({
+      await this.prisma.documentUpdate.deleteMany({
         where: { documentId: docName },
-        data: {
-          merged: true,
-        },
       });
 
       this.logger.log(`Snapshot saved for ${docName}`);

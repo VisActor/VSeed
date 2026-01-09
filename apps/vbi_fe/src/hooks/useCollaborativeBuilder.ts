@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import * as Y from 'yjs';
 import { WebsocketProvider } from 'y-websocket';
-import { VBI, VBIBuilder } from '@visactor/vbi';
+import { VBIBuilder } from '@visactor/vbi';
 
 const getRandomColor = () => {
   const colors = [
@@ -37,28 +37,12 @@ export const useCollaborativeBuilder = (roomName: string, userName: string) => {
       updatedAt: Date.now(),
     });
 
-    const connectorId = 'demo';
-
+    doc.on('update', () => {
+      console.log('debug load success', doc.get('dsl').toJSON());
+    });
     provider.on('sync', (isSynced: boolean) => {
       if (isSynced) {
-        const dsl = doc.getMap('dsl');
-        if (dsl.size === 0) {
-          const empty = VBI.generateEmptyDSL(connectorId);
-          doc.transact(() => {
-            if (empty.connectorId) dsl.set('connectorId', empty.connectorId);
-            if (empty.chartType) dsl.set('chartType', empty.chartType);
-            if (empty.theme) dsl.set('theme', empty.theme);
-            if (empty.locale) dsl.set('locale', empty.locale);
-            if (empty.version) dsl.set('version', empty.version);
-
-            if (!dsl.get('measures')) {
-              dsl.set('measures', new Y.Array());
-            }
-            if (!dsl.get('dimensions')) {
-              dsl.set('dimensions', new Y.Array());
-            }
-          });
-        }
+        console.log('debug sync success', doc.get('dsl').toJSON());
         setBuilder(new VBIBuilder(doc));
         setProvider(provider);
       }

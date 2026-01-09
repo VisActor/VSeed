@@ -59,6 +59,9 @@ importers:
       '@prisma/client':
         specifier: 7.2.0
         version: 7.2.0(prisma@7.2.0(@types/react@19.2.7)(magicast@0.3.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.7.3))(typescript@5.7.3)
+      '@visactor/vbi':
+        specifier: workspace:*
+        version: link:../../packages/vbi
       class-transformer:
         specifier: 0.5.1
         version: 0.5.1

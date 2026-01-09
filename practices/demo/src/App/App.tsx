@@ -4,13 +4,13 @@ import { MeasuresList } from 'src/components/MeasuresList';
 import { DimensionsList } from 'src/components/DimensionsList';
 import { useVBI } from 'src/hooks/useVBI';
 import { VBIBuilder } from '@visactor/vbi';
+import { ChartTypeSelector } from 'src/components/ChartType';
 
 interface APPProps {
-  builder: VBIBuilder;
+  builder?: VBIBuilder;
 }
 export const APP = (props: APPProps) => {
-  const { builder } = props;
-  const { vseed, loading } = useVBI(builder);
+  const { vseed, builder, loading } = useVBI(props.builder);
   if (!builder) {
     return <Spin tip="Initializing..." fullscreen />;
   }
@@ -44,6 +44,10 @@ export const APP = (props: APPProps) => {
           gap: '20px',
         }}
       >
+        <ChartTypeSelector
+          builder={builder}
+          style={{ flexBasis: 32, minHeight: 0 }}
+        />
         <DimensionsList builder={builder} style={{ flex: 1, minHeight: 0 }} />
         <MeasuresList builder={builder} style={{ flex: 1, minHeight: 0 }} />
       </div>

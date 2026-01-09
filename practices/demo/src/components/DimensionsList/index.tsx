@@ -52,6 +52,7 @@ export const DimensionsList = ({
           flex: 1,
           overflowY: 'auto',
           minHeight: 0,
+          height: 'calc(100% - 48px)',
         },
         header: {
           minHeight: '48px',

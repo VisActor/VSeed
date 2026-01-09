@@ -6,11 +6,10 @@ import { useVBI } from 'src/hooks/useVBI';
 import { VBIBuilder } from '@visactor/vbi';
 
 interface APPProps {
-  builder: VBIBuilder;
+  builder?: VBIBuilder;
 }
 export const APP = (props: APPProps) => {
-  const { builder } = props;
-  const { vseed, loading } = useVBI(builder);
+  const { vseed, builder, loading } = useVBI(props.builder);
   if (!builder) {
     return <Spin tip="Initializing..." fullscreen />;
   }

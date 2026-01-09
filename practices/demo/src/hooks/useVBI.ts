@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { VBIBuilder } from '@visactor/vbi';
 import { VSeed } from '@visactor/vseed';
+import { defaultBuilder } from 'src/utils/demoConnector';
 
-export const useVBI = (builder: VBIBuilder) => {
+export const useVBI = (builder: VBIBuilder = defaultBuilder) => {
   const [vseed, setVSeed] = useState<VSeed>();
   const [loading, setLoading] = useState(false);
 
@@ -22,5 +23,5 @@ export const useVBI = (builder: VBIBuilder) => {
     });
   }, [builder]);
 
-  return { vseed, loading };
+  return { vseed, builder, loading };
 };

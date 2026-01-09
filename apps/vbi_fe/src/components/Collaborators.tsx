@@ -1,4 +1,4 @@
-import { List, Typography, Avatar, Tag } from 'antd';
+import { Avatar, Tooltip } from 'antd';
 import { useEffect, useState } from 'react';
 import { WebsocketProvider } from 'y-websocket';
 import { funnel } from 'remeda';
@@ -92,27 +92,30 @@ export const Collaborators = ({
   return (
     <>
       {/* User List Section */}
-      <div style={{ padding: '10px', borderBottom: '1px solid #f0f0f0' }}>
-        <Typography.Title level={5}>
-          Online Users ({users.length})
-        </Typography.Title>
-        <List
-          grid={{ gutter: 16, column: 4 }}
-          dataSource={users}
-          renderItem={(user) => (
-            <List.Item>
-              <Tag color={user.color}>
-                <Avatar
-                  style={{ backgroundColor: user.color, marginRight: 8 }}
-                  size="small"
-                >
-                  {user.name[0]}
+      <div style={{ padding: '10px' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            flexWrap: 'nowrap',
+            overflow: 'hidden',
+          }}
+        >
+          <Avatar.Group
+            max={{
+              count: 8,
+              style: { color: '#f56a00', backgroundColor: '#fde3cf' },
+            }}
+          >
+            {users.map((user) => (
+              <Tooltip title={user.name} placement="top" key={user.id}>
+                <Avatar style={{ backgroundColor: user.color }}>
+                  {user.name[0]?.toUpperCase()}
                 </Avatar>
-                {user.name}
-              </Tag>
-            </List.Item>
-          )}
-        />
+              </Tooltip>
+            ))}
+          </Avatar.Group>
+        </div>
       </div>
 
       {/* Cursor Overlay Section */}

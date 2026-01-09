@@ -42,7 +42,7 @@ export const useCollaborativeBuilder = (roomName: string, userName: string) => {
     });
     provider.on('synced', (isSynced: boolean) => {
       if (isSynced) {
-        setBuilder(() => new VBIBuilder(doc));
+        setBuilder(() => new VBIBuilder(provider.doc));
         setProvider(provider);
       }
     });

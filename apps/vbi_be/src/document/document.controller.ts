@@ -25,7 +25,7 @@ export class DocumentController {
   create(@Body() createDocumentDto: CreateDocumentDto) {
     return this.documentService.create({
       name: createDocumentDto.name,
-      data: (createDocumentDto.data as Buffer<ArrayBuffer>) || Buffer.from([]),
+      data: Buffer.from([]),
     });
   }
 
@@ -54,15 +54,7 @@ export class DocumentController {
     @Param('id') id: string,
     @Body() updateDocumentDto: UpdateDocumentDto,
   ) {
-    const { data, ...rest } = updateDocumentDto;
-
-    const updateInput: any = { ...rest };
-    if (data !== undefined && data !== null) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      updateInput.data = (data as Buffer<ArrayBuffer>) || Buffer.from([]);
-    }
-
-    return this.documentService.update(id, updateInput);
+    return this.documentService.update(id, updateDocumentDto);
   }
 
   @Delete(':id')

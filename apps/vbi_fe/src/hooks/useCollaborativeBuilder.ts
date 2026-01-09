@@ -38,12 +38,11 @@ export const useCollaborativeBuilder = (roomName: string, userName: string) => {
     });
 
     doc.on('update', () => {
-      console.log('debug load success', doc.get('dsl').toJSON());
+      console.log('debug load success', doc.getMap('dsl').toJSON());
     });
-    provider.on('sync', (isSynced: boolean) => {
+    provider.on('synced', (isSynced: boolean) => {
       if (isSynced) {
-        console.log('debug sync success', doc.get('dsl').toJSON());
-        setBuilder(new VBIBuilder(doc));
+        setBuilder(() => new VBIBuilder(doc));
         setProvider(provider);
       }
     });

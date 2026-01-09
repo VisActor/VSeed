@@ -24,9 +24,7 @@ export class PrismaPersistenceService {
 
       if (doc.data && doc.data.length > 0) {
         this.logger.log(`Loading snapshot for document ${docName}`);
-        Y.applyUpdate(yDoc, new Uint8Array(doc.data));
-
-        console.log('debug Y applyUpdate success', yDoc.get('dsl').toJSON());
+        Y.applyUpdate(yDoc, doc.data);
       } else {
         this.logger.log(`Creating empty snapshot for document ${docName}`);
         const connectorId = 'demo';

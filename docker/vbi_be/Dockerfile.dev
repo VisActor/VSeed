@@ -21,10 +21,8 @@ COPY apps/vbi_be/ apps/vbi_be/
 # Install all dependencies
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
-EXPOSE 3000
+EXPOSE 3030 9229
 
 RUN chmod +x ./apps/vbi_be/scripts/docker-entrypoint.dev.sh
 ENTRYPOINT ["./apps/vbi_be/scripts/docker-entrypoint.dev.sh"]
 
-# Start dev server with watch mode
-CMD ["pnpm", "--filter", "vbi_be", "dev"]

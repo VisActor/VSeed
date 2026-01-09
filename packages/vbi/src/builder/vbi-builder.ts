@@ -20,7 +20,7 @@ export class VBIBuilder implements VBIBuilderInterface {
 
   constructor(doc: Y.Doc) {
     this.doc = doc
-    this.dsl = doc.get('dsl') as Y.Map<any>
+    this.dsl = doc.getMap('dsl') as Y.Map<any>
 
     this.undoManager = new Y.UndoManager(this.dsl)
     this.chartType = new ChartTypeBuilder(doc, this.dsl)

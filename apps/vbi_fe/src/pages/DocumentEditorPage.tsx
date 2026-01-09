@@ -32,7 +32,7 @@ export const DocumentEditorPage: React.FC = memo(() => {
           height: '100vh',
         }}
       >
-        <Spin size="large" tip="Loading Editor..." />
+        <Spin size="large" />
       </div>
     );
   }

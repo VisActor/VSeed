@@ -13,7 +13,7 @@ export const DocumentEditorPage: React.FC = memo(() => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const userName =
-    new URLSearchParams(window.location.search).get('userName') || 'User A';
+    new URLSearchParams(window.location.search).get('userName') || 'unknown';
 
   // We use the ID from the route as the roomName
   const { builder, provider } = useCollaborativeBuilder(id || '', userName);
@@ -51,15 +51,12 @@ export const DocumentEditorPage: React.FC = memo(() => {
       >
         <Space>
           <Button icon={<ArrowLeftOutlined />} onClick={() => navigate('/')}>
-            Back to List
+            Back
           </Button>
           <Text strong>Document: {id}</Text>
         </Space>
 
-        <Space>
-          <Text type="secondary">User: {userName}</Text>
-          <Collaborators provider={provider} />
-        </Space>
+        <Collaborators provider={provider} />
       </Header>
       <Content style={{ flex: 1, overflow: 'hidden', position: 'relative' }}>
         <APP builder={builder} />

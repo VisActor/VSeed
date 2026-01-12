@@ -6,7 +6,6 @@ import { useVBI } from 'src/hooks/useVBI';
 import { VBIBuilder } from '@visactor/vbi';
 import { ChartTypeSelector } from 'src/components/ChartType';
 
-import './App.css';
 import { MeasureShelf } from 'src/components/Shelf/MeasureShelf';
 import { DimensionShelf } from 'src/components/Shelf/DimensionShelf';
 
@@ -42,7 +41,13 @@ export const APP = (props: APPProps) => {
         <MeasuresList builder={builder} style={{ flex: 1, minHeight: 0 }} />
       </Flex>
       <Flex vertical={true} gap={20} style={{ flexGrow: 1 }}>
-        <Card>
+        <Card
+          styles={{
+            body: {
+              padding: '12px',
+            },
+          }}
+        >
           <Flex vertical={true} gap={8}>
             <Flex align="center">
               <div style={{ width: 100, fontWeight: 500 }}>Dimensions</div>
@@ -67,6 +72,7 @@ export const APP = (props: APPProps) => {
               height: '100%',
             },
             body: {
+              padding: '12px',
               height: '100%',
             },
           }}

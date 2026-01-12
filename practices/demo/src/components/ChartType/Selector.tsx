@@ -1,4 +1,4 @@
-import { VBIBuilder } from '@visactor/vbi';
+import type { ObserveCallback, VBIBuilder } from '@visactor/vbi';
 import { Select } from 'antd';
 import { useEffect, useState } from 'react';
 
@@ -14,14 +14,14 @@ export const ChartTypeSelector = (props: {
   const [chartType, setChartType] = useState(builder.chartType.getChartType());
 
   useEffect(() => {
-    const updateChartType = (event, transaction) => {
-      console.log('chartType', event, transaction);
+    const updateChartType: ObserveCallback = (event, transaction) => {
+      console.info('[observe] chartType', event, transaction);
       setChartType(builder.chartType.getChartType());
     };
 
     builder.chartType.observe(updateChartType);
     return () => {
-      builder.chartType.unObserve(updateChartType);
+      builder.chartType.unobserve(updateChartType);
     };
   }, [builder]);
 

@@ -1,13 +1,13 @@
 import { Flex, Spin, Card } from 'antd';
-import { VSeedRender } from 'src/components/VSeedRender';
-import { MeasuresList } from 'src/components/MeasuresList';
-import { DimensionsList } from 'src/components/DimensionsList';
+import { VSeedRender } from 'src/components/Render';
+import { MeasuresList } from 'src/components/Fields/MeasuresList';
+import { DimensionsList } from 'src/components/Fields/DimensionsList';
 import { useVBI } from 'src/hooks/useVBI';
 import { VBIBuilder } from '@visactor/vbi';
 import { ChartTypeSelector } from 'src/components/ChartType';
 
-import { MeasureShelf } from 'src/components/Shelf/MeasureShelf';
-import { DimensionShelf } from 'src/components/Shelf/DimensionShelf';
+import { MeasureShelf } from 'src/components/Shelfs/MeasureShelf';
+import { DimensionShelf } from 'src/components/Shelfs/DimensionShelf';
 
 interface APPProps {
   builder?: VBIBuilder;

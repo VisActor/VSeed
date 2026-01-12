@@ -1,5 +1,5 @@
 import * as Y from 'yjs'
-import { VBIMeasure, VBIMeasureGroup, VBIMeasureTree } from '../../../types'
+import type { ObserveCallback, VBIMeasure, VBIMeasureGroup, VBIMeasureTree } from 'src/types'
 import { MeasureNodeBuilder } from './measure-node-builder'
 
 export class MeasuresBuilder {
@@ -59,6 +59,14 @@ export class MeasuresBuilder {
 
   getMeasures(): VBIMeasure[] {
     return this.dsl.get('measures').toJSON()
+  }
+
+  observe(callback: ObserveCallback) {
+    this.dsl.get('measures').observe(callback)
+  }
+
+  unobserve(callback: ObserveCallback) {
+    this.dsl.get('measures').unobserve(callback)
   }
 
   static isMeasureNode(node: VBIMeasureTree[0]): node is VBIMeasure {

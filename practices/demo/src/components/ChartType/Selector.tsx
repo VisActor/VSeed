@@ -1,5 +1,6 @@
 import { VBIBuilder } from '@visactor/vbi';
 import { Select } from 'antd';
+import { useEffect, useState } from 'react';
 
 export const ChartTypeSelector = (props: {
   builder: VBIBuilder;
@@ -10,11 +11,26 @@ export const ChartTypeSelector = (props: {
     builder.chartType.changeChartType(chartType);
   };
 
+  const [chartType, setChartType] = useState(builder.chartType.getChartType());
+
+  useEffect(() => {
+    const updateChartType = (event, transaction) => {
+      console.log('chartType', event, transaction);
+      setChartType(builder.chartType.getChartType());
+    };
+
+    builder.chartType.observe(updateChartType);
+    return () => {
+      builder.chartType.unObserve(updateChartType);
+    };
+  }, [builder]);
+
   const availableChartTypes = builder.chartType.getAvailableChartTypes();
   return (
     <div style={style}>
       <Select
         defaultValue={builder.chartType.getChartType()}
+        value={chartType}
         onChange={changeChartType}
         style={{ width: '100%' }}
       >

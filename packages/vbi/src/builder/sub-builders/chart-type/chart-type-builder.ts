@@ -7,6 +7,23 @@ export class ChartTypeBuilder {
     this.dsl = dsl
   }
 
+  observe(callback: (e: Y.YMapEvent<any>, trans: Y.Transaction) => void) {
+    const wrapper = (e: Y.YMapEvent<any>, trans: Y.Transaction) => {
+      if (e.keysChanged.has('chartType')) {
+        callback(e, trans)
+      }
+    }
+    this.dsl.observe(wrapper)
+  }
+  unObserve(callback: (e: Y.YMapEvent<any>, arg1: Y.Transaction) => void) {
+    const wrapper = (e: Y.YMapEvent<any>, trans: Y.Transaction) => {
+      if (e.keysChanged.has('chartType')) {
+        callback(e, trans)
+      }
+    }
+    this.dsl.unobserve(wrapper)
+  }
+
   changeChartType(chartType: string) {
     this.dsl.set('chartType', chartType)
   }

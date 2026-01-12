@@ -1,6 +1,6 @@
 import { Avatar, Tooltip } from 'antd';
 import { useEffect, useState } from 'react';
-import { WebsocketProvider } from 'y-websocket';
+import { HocuspocusProvider } from '@hocuspocus/provider';
 import { funnel } from 'remeda';
 
 interface User {
@@ -21,13 +21,15 @@ interface UserState extends User {
 export const Collaborators = ({
   provider,
 }: {
-  provider: WebsocketProvider;
+  provider: HocuspocusProvider;
 }) => {
   const [users, setUsers] = useState<UserState[]>([]);
 
   useEffect(() => {
     const awareness = provider.awareness;
-
+    if (!awareness) {
+      return;
+    }
     // --- Mouse Move Logic ---
     const mouseMoveFunnel = funnel<[MouseEvent], MouseEvent>(
       (e: MouseEvent) => {
@@ -133,7 +135,7 @@ export const Collaborators = ({
       >
         {users.map((user) => {
           // Filter out the current client's own cursor
-          if (user.clientId === provider.awareness.clientID) return null;
+          if (user.clientId === provider.awareness?.clientID) return null;
           if (!user.cursor) return null;
 
           const { x, y } = user.cursor;

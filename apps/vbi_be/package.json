@@ -23,6 +23,9 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@hocuspocus/extension-database": "3.4.3",
+    "@hocuspocus/extension-logger": "3.4.3",
+    "@hocuspocus/server": "3.4.3",
     "@nestjs/common": "11.1.1",
     "@nestjs/core": "11.1.1",
     "@nestjs/platform-express": "11.1.1",
@@ -41,7 +44,6 @@
     "rxjs": "7.8.1",
     "swagger-ui-express": "^5.0.1",
     "ws": "8.19.0",
-    "y-websocket": "1.5.4",
     "yjs": "13.6.28"
   },
   "devDependencies": {

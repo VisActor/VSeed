@@ -5,6 +5,8 @@ import { VersioningType, ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app/app.module';
 import { TransformInterceptor } from './common/interceptors/transform.interceptor';
 import { AllExceptionsFilter } from './common/filters/all-exceptions.filter';
+import { HocuspocusServer } from './collaboration/hocuspocus-server';
+import { PrismaService } from './app/prisma.service';
 
 const bootstrap = async () => {
   const app = await NestFactory.create(AppModule);
@@ -26,7 +28,12 @@ const bootstrap = async () => {
   app.useGlobalFilters(new AllExceptionsFilter());
 
   // 4. Enable CORS and WebSocket Adapter
-  app.enableCors();
+  app.enableCors({
+    origin: true,
+    credentials: true,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: 'Content-Type, Authorization',
+  });
   app.useWebSocketAdapter(new WsAdapter(app));
 
   // 5. Generate Swagger documentation
@@ -39,14 +46,19 @@ const bootstrap = async () => {
   SwaggerModule.setup('docs', app, document);
 
   // 6. Start the application
-  await app.listen(process.env.PORT ?? 3030, '0.0.0.0');
+  await app.listen(3030, '0.0.0.0');
 
-  console.log(`Application is running on: ${await app.getUrl()}`);
+  // 7. Start Hocuspocus server on separate port
+  const prisma = app.get(PrismaService);
+  const hocuspocusServer = new HocuspocusServer(prisma);
+  await hocuspocusServer.start();
 };
 
 bootstrap()
   .then(() => {
-    console.log('Application is running');
+    console.log('🟢 Application is running:');
+    console.log(`🟢 Nest       Server on: 0.0.0.0:3030`);
+    console.log(`🟢 Hocuspocus server on: 0.0.0.0:1234`);
   })
   .catch((err) => {
     console.error('Application failed to start', err);

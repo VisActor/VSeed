@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useEffectEvent } from 'react';
 import * as Y from 'yjs';
-import { WebsocketProvider } from 'y-websocket';
+import { HocuspocusProvider } from '@hocuspocus/provider';
 import { VBIBuilder } from '@visactor/vbi';
+import { isValidDoc } from 'src/utils';
 
 const getRandomColor = () => {
   const colors = [
@@ -18,40 +19,59 @@ const getRandomColor = () => {
 
 export const useCollaborativeBuilder = (roomName: string, userName: string) => {
   const [builder, setBuilder] = useState<VBIBuilder | null>(null);
-  const [provider, setProvider] = useState<WebsocketProvider | null>(null);
+  const [provider, setProvider] = useState<HocuspocusProvider | null>(null);
+  const [isConnected, setIsConnected] = useState(false);
+
+  const createBuilder = useEffectEvent((doc: Y.Doc) => {
+    if (!isValidDoc(doc)) {
+      return;
+    }
+    setBuilder(() => new VBIBuilder(doc));
+  });
+
+  const destroyBuilder = useEffectEvent(() => {
+    setBuilder(null);
+  });
 
   useEffect(() => {
-    const doc = new Y.Doc();
-    const provider = new WebsocketProvider(
-      `ws://${window.location.host}`,
-      'collaboration/ws',
-      doc,
-      { params: { room: roomName } },
-    );
+    if (!roomName) {
+      return;
+    }
 
-    // Set user awareness
-    provider.awareness.setLocalStateField('user', {
+    const doc = new Y.Doc();
+
+    const provider = new HocuspocusProvider({
+      url: `ws://localhost:3000/collaboration`,
+      name: roomName,
+      document: doc,
+    });
+
+    // 感知协议
+    provider.awareness?.setLocalStateField('user', {
       id: userName,
       name: userName,
       color: getRandomColor(),
       updatedAt: Date.now(),
     });
 
-    doc.on('update', () => {
-      console.log('debug load success', doc.getMap('dsl').toJSON());
-    });
-    provider.on('synced', (isSynced: boolean) => {
-      if (isSynced) {
-        setBuilder(() => new VBIBuilder(provider.doc));
+    // 同步状态
+    provider.on('synced', ({ state }: { state: boolean }) => {
+      console.log('Connection state:', state);
+      setIsConnected(state);
+      if (state) {
+        createBuilder(doc);
         setProvider(provider);
       }
     });
 
     return () => {
-      provider.destroy();
       doc.destroy();
+      destroyBuilder();
+      if (provider) {
+        provider.destroy();
+      }
     };
   }, [roomName, userName]);
 
-  return { builder, provider };
+  return { builder, provider, isConnected };
 };

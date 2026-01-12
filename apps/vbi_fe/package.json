@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "6.1.0",
+    "@hocuspocus/provider": "3.4.3",
     "@visactor/vbi": "workspace:*",
     "@visactor/vquery": "workspace:*",
     "@visactor/vseed": "workspace:*",
@@ -24,7 +25,6 @@
     "react-dom": "19.2.3",
     "react-router-dom": "7.12.0",
     "remeda": "2.28.0",
-    "y-websocket": "1.5.4",
     "yjs": "13.6.28"
   },
   "devDependencies": {

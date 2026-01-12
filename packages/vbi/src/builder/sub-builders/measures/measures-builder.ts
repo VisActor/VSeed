@@ -49,7 +49,15 @@ export class MeasuresBuilder {
     }
   }
 
-  build(): VBIMeasure[] {
+  removeMeasure(field: VBIMeasure['field']) {
+    const measures = this.dsl.get('measures')
+    const index = measures.toArray().findIndex((item: any) => item.get('field') === field)
+    if (index !== -1) {
+      this.dsl.get('measures').delete(index, 1)
+    }
+  }
+
+  getMeasures(): VBIMeasure[] {
     return this.dsl.get('measures').toJSON()
   }
 

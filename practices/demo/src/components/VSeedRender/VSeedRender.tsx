@@ -92,7 +92,7 @@ export const VSeedRender = (props: { vseed: VSeed }) => {
   return (
     <div
       ref={ref}
-      style={{ height: '100%', width: '100%' }}
+      style={{ height: '100%', width: '100%', minHeight: 300 }}
       onClick={() => {
         console.group(`selected ${vseed.chartType}`);
         console.log('builder', vseedBuilderRef.current);
@@ -110,9 +110,7 @@ export const VSeedRender = (props: { vseed: VSeed }) => {
         );
         console.groupEnd();
       }}
-    >
-      {' '}
-    </div>
+    ></div>
   );
 };
 

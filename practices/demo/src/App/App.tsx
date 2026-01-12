@@ -1,10 +1,14 @@
-import { Spin } from 'antd';
+import { Flex, Spin, Card } from 'antd';
 import { VSeedRender } from 'src/components/VSeedRender';
 import { MeasuresList } from 'src/components/MeasuresList';
 import { DimensionsList } from 'src/components/DimensionsList';
 import { useVBI } from 'src/hooks/useVBI';
 import { VBIBuilder } from '@visactor/vbi';
 import { ChartTypeSelector } from 'src/components/ChartType';
+
+import './App.css';
+import { MeasureShelf } from 'src/components/Shelf/MeasureShelf';
+import { DimensionShelf } from 'src/components/Shelf/DimensionShelf';
 
 interface APPProps {
   builder?: VBIBuilder;
@@ -16,71 +20,60 @@ export const APP = (props: APPProps) => {
   }
 
   return (
-    <div
+    <Flex
+      vertical={false}
       onClick={() => {
         console.group(`selected vbi`);
         console.log('builder', builder);
         console.log('dsl', builder.build());
-
         console.groupEnd();
       }}
       style={{
-        display: 'flex',
-        height: 'calc(100vh - 72px)',
-        overflow: 'hidden',
         padding: '20px',
         gap: '20px',
-        boxSizing: 'border-box',
       }}
     >
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '280px',
-          minWidth: '280px',
-          height: '100%',
-          overflow: 'hidden',
-          gap: '20px',
-        }}
-      >
+      <Flex vertical={true} gap={20} style={{ flexBasis: 300 }}>
         <ChartTypeSelector
           builder={builder}
           style={{ flexBasis: 32, minHeight: 0 }}
         />
         <DimensionsList builder={builder} style={{ flex: 1, minHeight: 0 }} />
         <MeasuresList builder={builder} style={{ flex: 1, minHeight: 0 }} />
-      </div>
-      <div
-        style={{
-          flex: 1,
-          height: '100%',
-          border: '1px solid #eee',
-          position: 'relative',
-          overflow: 'hidden',
-          borderRadius: '8px',
-        }}
-      >
-        {loading && (
-          <div
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: 'rgba(255, 255, 255, 0.7)',
-              zIndex: 10,
-            }}
-          >
-            <Spin size="large" />
-          </div>
-        )}
-        {vseed && <VSeedRender vseed={vseed} />}
-      </div>
-    </div>
+      </Flex>
+      <Flex vertical={true} gap={20} style={{ flexGrow: 1 }}>
+        <Card>
+          <Flex vertical={true} gap={8}>
+            <Flex align="center">
+              <div style={{ width: 100, fontWeight: 500 }}>Dimensions</div>
+              <DimensionShelf
+                builder={builder}
+                style={{ flex: 1, minHeight: 0 }}
+              />
+            </Flex>
+            <Flex align="center">
+              <div style={{ width: 100, fontWeight: 500 }}>Measures</div>
+              <MeasureShelf
+                builder={builder}
+                style={{ flex: 1, minHeight: 0 }}
+              />
+            </Flex>
+          </Flex>
+        </Card>
+        <Card
+          loading={loading}
+          styles={{
+            root: {
+              height: '100%',
+            },
+            body: {
+              height: '100%',
+            },
+          }}
+        >
+          {vseed && <VSeedRender vseed={vseed} />}
+        </Card>
+      </Flex>
+    </Flex>
   );
 };

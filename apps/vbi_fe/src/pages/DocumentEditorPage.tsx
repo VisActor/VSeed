@@ -9,12 +9,11 @@ import { Collaborators } from '../components/Collaborators';
 const { Header, Content } = Layout;
 const { Text } = Typography;
 
+const userName = Math.random().toString(36).substring(2, 6);
+
 export const DocumentEditorPage: React.FC = memo(() => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const userName =
-    new URLSearchParams(window.location.search).get('userName') || 'unknown';
-
   // We use the ID from the route as the roomName
   const { builder, provider } = useCollaborativeBuilder(id || '', userName);
 
@@ -38,7 +37,7 @@ export const DocumentEditorPage: React.FC = memo(() => {
   }
 
   return (
-    <Layout style={{ height: '100vh' }}>
+    <Layout style={{ height: '100%' }}>
       <Header
         style={{
           display: 'flex',
@@ -55,10 +54,17 @@ export const DocumentEditorPage: React.FC = memo(() => {
           </Button>
           <Text strong>Document: {id}</Text>
         </Space>
-
         <Collaborators provider={provider} />
       </Header>
-      <Content style={{ flex: 1, overflow: 'hidden', position: 'relative' }}>
+      <Content
+        style={{
+          flex: 1,
+          overflow: 'hidden',
+          position: 'relative',
+          height: '100%',
+          background: '#fff',
+        }}
+      >
         <APP builder={builder} />
       </Content>
     </Layout>

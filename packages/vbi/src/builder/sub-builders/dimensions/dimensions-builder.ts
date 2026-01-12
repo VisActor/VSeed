@@ -44,7 +44,15 @@ export class DimensionsBuilder {
     }
   }
 
-  build(): VBIDimension[] {
+  removeDimension(field: VBIDimension['field']) {
+    const dimensions = this.dsl.get('dimensions')
+    const index = dimensions.toArray().findIndex((item: any) => item.get('field') === field)
+    if (index !== -1) {
+      this.dsl.get('dimensions').delete(index, 1)
+    }
+  }
+
+  getDimensions(): VBIDimension[] {
     return this.dsl.get('dimensions').toJSON()
   }
 

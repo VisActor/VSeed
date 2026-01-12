@@ -1,5 +1,5 @@
 import * as Y from 'yjs'
-import { VBIDimension, VBIDimensionGroup, VBIDimensionTree } from '../../../types'
+import type { ObserveCallback, VBIDimension, VBIDimensionGroup, VBIDimensionTree } from 'src/types'
 import { DimensionNodeBuilder } from './dimension-node-builder'
 
 export class DimensionsBuilder {
@@ -54,6 +54,14 @@ export class DimensionsBuilder {
 
   getDimensions(): VBIDimension[] {
     return this.dsl.get('dimensions').toJSON()
+  }
+
+  observe(callback: ObserveCallback) {
+    this.dsl.get('dimensions').observe(callback)
+  }
+
+  unobserve(callback: ObserveCallback) {
+    this.dsl.get('dimensions').unobserve(callback)
   }
 
   static isDimensionNode(node: VBIDimensionTree[0]): node is VBIDimension {

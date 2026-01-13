@@ -17,11 +17,6 @@ const Demo = () => {
         parentId: 'sales-and-profit',
       },
       {
-        id: 'profit',
-        alias: '利润',
-        parentId: 'sales-and-profit',
-      },
-      {
         id: 'rateOfReturn',
         alias: '回报率',
         parentId: 'ratio',
@@ -42,6 +37,7 @@ const Demo = () => {
     ],
     brush: {
       enable: true,
+      brushType: 'x',
     },
   }
 
@@ -87,11 +83,18 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
     }
     const theme = dark ? 'dark' : 'light'
     const builder = Builder.from(vseed.theme ? vseed : { ...vseed, theme })
-    const spec = {
-      ...builder.build(),
+    let spec = builder.build()
+    spec = {
+      ...spec,
       chartDimensionLinkage: {
+        ...spec.chartDimensionLinkage,
+        clearChartState: () => {
+          console.log('!!ClearChartState')
+          selectedDimValueRef.current = []
+          window.pivotChart.enableTooltipToAllChartInstances()
+        },
         inBrushStateFilter: (datum) => {
-          console.log('inBrushState', datum)
+          console.log('inBrushState', datum, selectedDimValueRef.current)
           return selectedDimValueRef.current.length ? selectedDimValueRef.current.includes(datum['__Dim_X__']) : true
         },
         outOfBrushStateFilter: (datum) => {
@@ -122,13 +125,12 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
         console.log('brushEnd', args)
         selectedDimValueRef.current = args.value.inBrushData.map((dataItem) => dataItem.__Dim_X__)
       })
+      tableInstance.onVChartEvent('brushStart', (args) => {
+        window.pivotChart.enableTooltipToAllChartInstances()
+      })
       tableInstance.onVChartEvent('brushChange', (args) => {
         console.log('brushChange', args)
         selectedDimValueRef.current = args.value.inBrushData.map((dataItem) => dataItem.__Dim_X__)
-      })
-      tableInstance.onVChartEvent('brushClear', (args) => {
-        console.log('brushClear', args)
-        selectedDimValueRef.current = []
       })
 
       tableInstance.on('legend_change', (args) => {

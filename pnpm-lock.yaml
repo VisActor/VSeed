@@ -36,8 +36,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/vbi
       '@visactor/vchart':
-        specifier: 2.0.13-alpha.3
-        version: 2.0.13-alpha.3
+        specifier: 2.0.13-alpha.9
+        version: 2.0.13-alpha.9
       '@visactor/vquery':
         specifier: workspace:*
         version: link:../../packages/vquery
@@ -45,8 +45,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/vseed
       '@visactor/vtable':
-        specifier: 1.22.11-alpha.0
-        version: 1.22.11-alpha.0
+        specifier: 1.22.11-alpha.8
+        version: 1.22.11-alpha.8
       rspress:
         specifier: 1.47.0
         version: 1.47.0(webpack@5.101.0)
@@ -202,11 +202,11 @@ importers:
         specifier: 8.48.0
         version: 8.48.0(@typescript-eslint/parser@8.48.0(eslint@9.39.0(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.0(jiti@2.6.1))(typescript@5.9.3)
       '@visactor/vchart':
-        specifier: 2.0.13-alpha.3
-        version: 2.0.13-alpha.3
+        specifier: 2.0.13-alpha.9
+        version: 2.0.13-alpha.9
       '@visactor/vtable':
-        specifier: 1.22.11-alpha.0
-        version: 1.22.11-alpha.0
+        specifier: 1.22.11-alpha.8
+        version: 1.22.11-alpha.8
       '@vitest/coverage-istanbul':
         specifier: 3.2.4
         version: 3.2.4(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.10.1)(jiti@2.6.1)(jsdom@26.1.0)(sass-embedded@1.91.0)(sass@1.91.0)(terser@5.43.1)(yaml@2.8.1))
@@ -2078,8 +2078,8 @@ packages:
     peerDependencies:
       react: '>=18.3.1'
 
-  '@visactor/vchart@2.0.13-alpha.3':
-    resolution: {integrity: sha512-G4A2wCkQs3BGTxsbUKoPh85I3QtkYxjVasfdDvILN30LofHplbRTcgbsKFFdGM5TlMUldm5Hl0eAo0gRuNwekQ==}
+  '@visactor/vchart@2.0.13-alpha.9':
+    resolution: {integrity: sha512-QOx9gC9JMF+u86hue5K6eiWrdtxLZFrbmlvmqKXHhfp1eoZYILwNAIkDa9iY2dhnjhCooKPoiSfs5InbfO56rQ==}
 
   '@visactor/vdataset@1.0.21':
     resolution: {integrity: sha512-ZY1LFZsiZ3lHnDydQGoVJfuVAk6WWddSQXrWxFM4g+59OeByNJwLCf+46QtbJIjeRrJU7qgr+L2mlI4Mz3qeWQ==}
@@ -2117,17 +2117,17 @@ packages:
   '@visactor/vscale@1.0.21':
     resolution: {integrity: sha512-TIc5QyCfH/cvRMi6Mxi+D6KIUMIOfI9WsWidSKSCh3T1gNw2CdwiLLasayQyxqNdMbRjGzGV06A8g4TsjVHxEA==}
 
-  '@visactor/vtable-editors@1.22.11-alpha.0':
-    resolution: {integrity: sha512-Fbpsr2lFKngrBMcCkGTsqiBRGJyPHbj1QG+wDs+8QtLFATqi6n1WsYcAzKFF1tKMJ4p4Z/N6leLlDt7bJjHbWw==}
+  '@visactor/vtable-editors@1.22.11-alpha.8':
+    resolution: {integrity: sha512-dHPXBoy4mPKxtIDeegAn1jyXee1YRDK6CZvTk+yeCz9Flja226MMgCPzEOeqSifMwnfYq6hcSPmbxqYqGo7JMQ==}
 
-  '@visactor/vtable@1.22.11-alpha.0':
-    resolution: {integrity: sha512-J3lAgIqzx4wAMbnKOdiZltT8QsJfyJb9fKMGqoO5XI+PfN3gVYb3VSsxDo0YhbmqpPD0iO5mfatsfQf0pTI+cw==}
+  '@visactor/vtable@1.22.11-alpha.8':
+    resolution: {integrity: sha512-ImEilZJAzP8D9Hpy/3kk4gSu8NSLAcTr8kZ0uabRk8D27WBKF3K/1J8vByyY7GaZ1tk2GtfL/s6+v6vG7RPAGQ==}
 
   '@visactor/vutils-extension@2.0.12':
     resolution: {integrity: sha512-4/gxUbKHH2eW1L0w+Xwv9a91UJaZSfklcFRdX/hAnV471WPXNMQhgW7sdJyFdEdcKH9qb+UxsNQ4wSfDc0ry2g==}
 
-  '@visactor/vutils-extension@2.0.13-alpha.3':
-    resolution: {integrity: sha512-QkXF2KR4J3/FvpewTjKXTZQf2xX8IlzM/4VwlpKIwzkxmoQPjNTHxMBpsJySi36xz8KBJYhms1CGOpPMNRZs7g==}
+  '@visactor/vutils-extension@2.0.13-alpha.9':
+    resolution: {integrity: sha512-VkiDrBqiKl2PCLzUJeI03yvM41ai3JPm4FsieI6RLOC45GqB9cfSDE+IlUkbQf6W7VwS6LbVOdnRaLMnoXuqow==}
 
   '@visactor/vutils@1.0.12':
     resolution: {integrity: sha512-lHvWbB2gC+IvkGkgnGbxiAeRQ99EEvgPqor6joyZ5KOU2lelHo8KPeSGzZMbN6LNwrpAsnV3x9jds7lGdC1NHQ==}
@@ -7931,7 +7931,7 @@ snapshots:
       react: 19.1.1
       unhead: 2.0.14
 
-  '@visactor/vchart@2.0.13-alpha.3':
+  '@visactor/vchart@2.0.13-alpha.9':
     dependencies:
       '@visactor/vdataset': 1.0.21
       '@visactor/vlayouts': 1.0.12
@@ -7941,7 +7941,7 @@ snapshots:
       '@visactor/vrender-kits': 1.0.37-alpha.1
       '@visactor/vscale': 1.0.21
       '@visactor/vutils': 1.0.21
-      '@visactor/vutils-extension': 2.0.13-alpha.3
+      '@visactor/vutils-extension': 2.0.13-alpha.9
 
   '@visactor/vdataset@1.0.21':
     dependencies:
@@ -7986,7 +7986,7 @@ snapshots:
       '@visactor/vrender-animate': 1.0.36
       '@visactor/vrender-core': 1.0.36
       '@visactor/vrender-kits': 1.0.36
-      '@visactor/vscale': 1.0.12
+      '@visactor/vscale': 1.0.21
       '@visactor/vutils': 1.0.21
 
   '@visactor/vrender-components@1.0.37-alpha.1':
@@ -8033,9 +8033,9 @@ snapshots:
     dependencies:
       '@visactor/vutils': 1.0.21
 
-  '@visactor/vtable-editors@1.22.11-alpha.0': {}
+  '@visactor/vtable-editors@1.22.11-alpha.8': {}
 
-  '@visactor/vtable@1.22.11-alpha.0':
+  '@visactor/vtable@1.22.11-alpha.8':
     dependencies:
       '@visactor/vdataset': 1.0.21
       '@visactor/vrender-animate': 1.0.36
@@ -8043,7 +8043,7 @@ snapshots:
       '@visactor/vrender-core': 1.0.36
       '@visactor/vrender-kits': 1.0.36
       '@visactor/vscale': 1.0.21
-      '@visactor/vtable-editors': 1.22.11-alpha.0
+      '@visactor/vtable-editors': 1.22.11-alpha.8
       '@visactor/vutils': 1.0.21
       '@visactor/vutils-extension': 2.0.12
       cssfontparser: 1.2.1
@@ -8055,7 +8055,7 @@ snapshots:
       '@visactor/vdataset': 1.0.21
       '@visactor/vutils': 1.0.21
 
-  '@visactor/vutils-extension@2.0.13-alpha.3':
+  '@visactor/vutils-extension@2.0.13-alpha.9':
     dependencies:
       '@visactor/vdataset': 1.0.21
       '@visactor/vutils': 1.0.21

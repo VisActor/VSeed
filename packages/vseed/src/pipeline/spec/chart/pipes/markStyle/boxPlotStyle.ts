@@ -7,7 +7,8 @@ export const boxPlotStyle: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { markStyle, config } = advancedVSeed
   const { boxPlotStyle } = markStyle
-  const theme = config?.[vseed.chartType as 'boxPlot']?.boxPlotStyle
+  const { chartType } = vseed
+  const theme = config?.[chartType as 'boxPlot']?.boxPlotStyle
 
   const result = {
     ...spec,

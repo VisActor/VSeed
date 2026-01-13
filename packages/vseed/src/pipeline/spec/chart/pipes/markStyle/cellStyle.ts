@@ -26,11 +26,6 @@ export const cellStyle: VChartSpecPipe = (spec, context) => {
       },
       state: {
         hover: {
-          // innerBorder: {
-          //   lineWidth: 1,
-          //   stroke: cell?.hoverShadowColor,
-          //   distance: 1,
-          // },
           shadowColor: cell?.hoverShadowColor,
           shadowBlur: 5,
           shadowOffsetX: 0,

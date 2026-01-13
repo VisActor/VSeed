@@ -7,12 +7,13 @@ export const outlierStyle: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
   const { markStyle, config } = advancedVSeed
   const { outlierStyle } = markStyle
-  const theme = config?.[vseed.chartType as 'boxPlot']?.outlierStyle
+  const { chartType } = vseed
+  const theme = config?.[chartType as 'boxPlot']?.outlierStyle
+
   const result = {
     ...spec,
     outlier: {
       style: {
-        // stroke: theme?.pointColor,
         fill: theme?.pointColor,
         lineWidth: theme?.pointBorderWidth,
         stroke: theme?.pointBorderColor,

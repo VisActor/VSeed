@@ -10,16 +10,34 @@ const Demo = () => {
 
   const vseed: VSeed = {
     chartType: 'column',
+    measures: [
+      {
+        id: 'sales',
+        alias: 'sales',
+        parentId: 'sales-and-profit',
+      },
+      {
+        id: 'rateOfReturn',
+        alias: '回报率',
+        parentId: 'ratio',
+      },
+    ],
     dataset: [
-      { date: '2019', profit: 10, sales: 20 },
-      { date: '2020', profit: 30, sales: 60 },
-      { date: '2021', profit: 30, sales: 60 },
-      { date: '2022', profit: 50, sales: 100 },
-      { date: '2023', profit: 40, sales: 80 },
+      { date: '2019', profit: 10, sales: 20, rateOfReturn: 0.1 },
+      { date: '2020', profit: 20, sales: 40, rateOfReturn: 0.2 },
+      { date: '2021', profit: 30, sales: 60, rateOfReturn: 0.3 },
+      { date: '2022', profit: 40, sales: 80, rateOfReturn: 0.4 },
+      { date: '2023', profit: 50, sales: 100, rateOfReturn: 0.5 },
+    ],
+    dimensions: [
+      {
+        id: 'date',
+        alias: '日期',
+      },
     ],
     brush: {
       enable: true,
-      removeOnClick: true,
+      brushType: 'x',
     },
   }
 
@@ -58,13 +76,35 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
   const ref = useRef<HTMLDivElement>(null)
   const builderRef = useRef<Builder>()
   const dark = useDark()
+  const selectedDimValueRef = useRef<string[]>([])
   useEffect(() => {
     if (!ref.current) {
       return
     }
     const theme = dark ? 'dark' : 'light'
     const builder = Builder.from(vseed.theme ? vseed : { ...vseed, theme })
-    const spec = builder.build()
+    let spec = builder.build()
+    spec = {
+      ...spec,
+      chartDimensionLinkage: {
+        ...spec.chartDimensionLinkage,
+        clearChartState: () => {
+          console.log('!!ClearChartState')
+          selectedDimValueRef.current = []
+          window.pivotChart.enableTooltipToAllChartInstances()
+        },
+        inBrushStateFilter: (datum) => {
+          console.log('inBrushState', datum, selectedDimValueRef.current)
+          return selectedDimValueRef.current.length ? selectedDimValueRef.current.includes(datum['__Dim_X__']) : true
+        },
+        outOfBrushStateFilter: (datum) => {
+          return selectedDimValueRef.current.length ? !selectedDimValueRef.current.includes(datum['__Dim_X__']) : false
+        },
+        listenBrushChange: true,
+        brushChangeDelay: 100,
+      },
+    }
+    console.log('final spec = ', spec)
     console.log('builder', builder)
     console.log('builder performance', builder.performance)
 
@@ -80,6 +120,17 @@ const SimpleVSeedRender = (props: { vseed: VSeed }) => {
             filteredValues: args.value,
           },
         ])
+      })
+      tableInstance.onVChartEvent('brushEnd', (args) => {
+        console.log('brushEnd', args)
+        selectedDimValueRef.current = args.value.inBrushData.map((dataItem) => dataItem.__Dim_X__)
+      })
+      tableInstance.onVChartEvent('brushStart', (args) => {
+        window.pivotChart.enableTooltipToAllChartInstances()
+      })
+      tableInstance.onVChartEvent('brushChange', (args) => {
+        console.log('brushChange', args)
+        selectedDimValueRef.current = args.value.inBrushData.map((dataItem) => dataItem.__Dim_X__)
       })
 
       tableInstance.on('legend_change', (args) => {

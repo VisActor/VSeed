@@ -9,6 +9,7 @@ export const areaStyle: VChartSpecPipe = (spec, context) => {
   const { markStyle, datasetReshapeInfo, dataset } = advancedVSeed
   const { areaStyle, lineStyle } = markStyle
   const { unfoldInfo } = datasetReshapeInfo[0]
+
   const result = {
     ...spec,
     area: {

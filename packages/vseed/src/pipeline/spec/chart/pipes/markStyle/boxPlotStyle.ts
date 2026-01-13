@@ -2,7 +2,6 @@ import type { IBoxPlotChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { BoxPlotStyle, Datum, VChartSpecPipe } from 'src/types'
 import { isEmpty, isNullish } from 'remeda'
-// removed isPivotChart and BrushConfig usage
 
 export const boxPlotStyle: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed, vseed } = context
@@ -23,7 +22,6 @@ export const boxPlotStyle: VChartSpecPipe = (spec, context) => {
         boxCornerRadius: theme?.boxCornerRadius,
         medianStroke: theme?.medianBorderColor ?? theme?.boxBorderColor,
       },
-      state: {},
     },
   } as IBoxPlotChartSpec
 

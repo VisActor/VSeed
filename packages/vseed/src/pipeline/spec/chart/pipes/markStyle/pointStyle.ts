@@ -7,7 +7,6 @@ export const pointStyle: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { markStyle } = advancedVSeed
   const { pointStyle } = markStyle
-
   const result = {
     ...spec,
     point: {

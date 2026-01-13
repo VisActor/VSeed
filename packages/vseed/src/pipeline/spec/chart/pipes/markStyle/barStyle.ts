@@ -2,7 +2,6 @@ import type { IBarChartSpec } from '@visactor/vchart'
 import { selector } from '../../../../../dataSelector'
 import type { BarStyle, Datum, VChartSpecPipe } from 'src/types'
 import { isEmpty, isNullish } from 'remeda'
-// removed isPivotChart and BrushConfig usage
 
 export const barStyle: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed } = context

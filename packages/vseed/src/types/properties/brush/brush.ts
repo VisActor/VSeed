@@ -16,7 +16,13 @@ export type Brush = {
    * @default 'rect'
    */
   brushType?: 'x' | 'y' | 'rect' | 'polygon'
-  /** 框选模式，单选还是多选，默认单选 */
+  /**
+   * 框选模式，单选还是多选
+   * @description 定义刷选的模式
+   * - `single`: 单选模式，每次只能有一个刷选框
+   * - `multiple`: 多选模式，可以同时存在多个刷选框
+   * @default 'single'
+   */
   brushMode?: 'single' | 'multiple'
   /**
    * 框选结束是否清除选框

@@ -8,7 +8,6 @@ export const lineStyle: VChartSpecPipe = (spec, context) => {
   const { advancedVSeed } = context
   const { markStyle } = advancedVSeed
   const { lineStyle } = markStyle
-
   const result = {
     ...spec,
     line: {

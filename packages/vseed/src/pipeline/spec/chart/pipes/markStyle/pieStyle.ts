@@ -20,7 +20,6 @@ export const pieStyle: VChartSpecPipe = (spec, context) => {
 
   if ((spec as IPieChartSpec).outerRadius) {
     result.pie.state = {
-      ...result.pie.state,
       hover: {
         outerRadius: ((spec as IPieChartSpec).outerRadius as number) * 1.1,
       },

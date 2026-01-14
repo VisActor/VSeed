@@ -5,7 +5,7 @@ import { pluginPlayground } from '@rspress/plugin-playground'
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
-  base: '/VSeed/',
+  base: '/VBI/',
   globalStyles: path.join(__dirname, 'components/styles/index.css'),
   plugins: [
     pluginPlayground({
@@ -24,8 +24,8 @@ export default defineConfig({
     {
       lang: 'zh-CN',
       label: '简体中文',
-      title: 'VisActor VSeed',
-      description: 'VisActor VSeed',
+      title: 'VisActor VBI',
+      description: 'VisActor VBI',
     },
     // {
     //   lang: 'en-US',

@@ -39,7 +39,7 @@ export default defineConfig({
       {
         icon: 'github',
         mode: 'link',
-        content: 'https://github.com/visactor/vseed',
+        content: 'https://github.com/visactor/vbi',
       },
     ],
     locales: [
@@ -58,9 +58,9 @@ export default defineConfig({
   markdown: {
     showLineNumbers: true,
   },
-  title: 'VisActor/VSeed',
+  title: 'VisActor/VBI',
   icon: '/logo.svg',
-  logoText: 'VisActor VSeed',
+  logoText: 'VisActor VBI',
   route: {
     exclude: ['components/**/*'],
   },
@@ -77,7 +77,7 @@ export default defineConfig({
     },
     output: {
       sourceMap: true,
-      assetPrefix: 'https://visactor.github.io/VSeed/',
+      assetPrefix: 'https://visactor.github.io/VBI/',
     },
   },
 })

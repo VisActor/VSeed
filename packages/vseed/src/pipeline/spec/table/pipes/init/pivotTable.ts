@@ -26,6 +26,9 @@ export const initPivotTable: PivotTableSpecPipe = (spec, context) => {
     },
     tooltip: {
       isShowOverflowTextTooltip: true,
+      renderMode: 'html',
+      confine: false,
+      parentElement: document.body,
     },
     corner: {
       titleOnDimension: 'all',

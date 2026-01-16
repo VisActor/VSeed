@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.3.4
+
+### Patch Changes
+
+- fix: tooltip clipped
+
 ## 0.3.3
 
 ### Patch Changes

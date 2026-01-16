@@ -57,7 +57,7 @@
   "bugs": "https://github.com/VisActor/VSeed/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/VisActor/VSeed",
+    "url": "https://github.com/VisActor/VBI",
     "directory": "packages/vquery"
   },
   "author": {

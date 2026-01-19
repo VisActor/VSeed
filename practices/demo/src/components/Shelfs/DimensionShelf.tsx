@@ -1,15 +1,12 @@
 import { DeleteOutlined } from '@ant-design/icons';
-import { ObserveCallback, VBIBuilder, VBIDimension } from '@visactor/vbi';
+import { ObserveCallback, VBIDimension } from '@visactor/vbi';
 import { Button, Flex, Space } from 'antd';
 import { useEffect, useState } from 'react';
+import { useVBIStore } from 'src/model';
 
-export const DimensionShelf = ({
-  builder,
-  style,
-}: {
-  builder: VBIBuilder;
-  style?: React.CSSProperties;
-}) => {
+export const DimensionShelf = ({ style }: { style?: React.CSSProperties }) => {
+  const builder = useVBIStore((state) => state.builder);
+
   const deleteDimension = (field: VBIDimension['field']) => {
     builder.dimensions.removeDimension(field);
   };

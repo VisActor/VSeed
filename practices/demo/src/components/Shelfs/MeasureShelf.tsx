@@ -1,15 +1,11 @@
 import { DeleteOutlined } from '@ant-design/icons';
-import { ObserveCallback, VBIBuilder, VBIMeasure } from '@visactor/vbi';
+import { ObserveCallback, VBIMeasure } from '@visactor/vbi';
 import { Button, Flex, Space } from 'antd';
 import { useEffect, useState } from 'react';
+import { useVBIStore } from 'src/model';
 
-export const MeasureShelf = ({
-  builder,
-  style,
-}: {
-  builder: VBIBuilder;
-  style?: React.CSSProperties;
-}) => {
+export const MeasureShelf = ({ style }: { style?: React.CSSProperties }) => {
+  const builder = useVBIStore((state) => state.builder);
   const [measures, setMeasures] = useState<VBIMeasure[]>(
     builder.measures.getMeasures(),
   );

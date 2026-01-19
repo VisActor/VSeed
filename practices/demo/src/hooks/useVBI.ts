@@ -12,8 +12,6 @@ export const useVBI = (builder: VBIBuilder = defaultBuilder) => {
       return;
     }
     const updateHandler = async () => {
-      console.log('debug update doc', builder.doc.getMap('dsl').toJSON());
-
       setLoading(true);
       try {
         const newVSeed = await builder.buildVSeed();

@@ -1,15 +1,12 @@
-import { VBIBuilder } from '@visactor/vbi';
 import { List, Card } from 'antd';
 import { useEffect, useState } from 'react';
 import { NumberOutlined } from '@ant-design/icons';
+import { useVBIStore } from 'src/model';
 
-export const MeasuresList = ({
-  builder,
-  style,
-}: {
-  builder: VBIBuilder;
-  style?: React.CSSProperties;
-}) => {
+export const MeasuresList = ({ style }: { style?: React.CSSProperties }) => {
+  const builder = useVBIStore((state) => state.builder);
+  console.log('debug DimensionsList rerender');
+
   const [schema, setSchema] = useState<
     {
       name: string;

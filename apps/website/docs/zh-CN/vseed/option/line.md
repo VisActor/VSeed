@@ -1,4 +1,4 @@
-# Area
+# Line
 
 :::info{title=推荐}
 \- 推荐字段配置: `1`个指标, `2`个维度
@@ -8,11 +8,11 @@
 :::
 
 :::info{title=编码映射}
-面积图支持以下视觉通道:
+折线图支持以下视觉通道:
 
-`xAxis`  : x轴通道, 支持`多个维度`, 按维度值映射至x轴
+`x`      : x轴通道, 支持`多个维度`, 按维度值映射至x轴
 
-`yAxis`  : y轴通道, 支持`多个指标`, 按指标值映射至y轴
+`y`      : y轴通道, 支持`多个指标`, 按指标值映射至y轴
 
 `color`  : 颜色通道, 支持`多个维度`或 `一个指标`, 维度颜色用于区分不同的数据系列, 指标颜色用于线性映射指标值到图形颜色
 
@@ -23,56 +23,45 @@
 :::
 
 :::note{title=描述}
-面积图, 适用于展示数据随时间变化的趋势及累积关系, 通过填充区域增强数据对比. X轴为类目轴(分类数据), Y轴为数值轴(连续数据).
+折线图，适用于展示数据随时间或有序类别变化的趋势，通过线段连接数据点形成趋势线
 
 适用场景:
 
-\- 展示单一数据系列的趋势变化
+\- 展示时间序列数据的变化趋势
 
-\- 强调总量随时间的累积效果
+\- 比较多个数据系列的趋势对比
 
-\- 对比多个数据系列的总量差异
+\- 分析数据的增长或下降规律
 
 :::
 
 :::warning{title=Warning}
 数据要求:
 
-\- 至少1个指标字段（度量）
+\- 至少1个数值字段（度量）
 
-\- 第一个维度字段映射到X轴，其余维度字段会与指标名称(存在多个指标时)合并, 作为图例项展示.
+\- 第一个维度会放至X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
 
 \- 所有指标会自动合并为一个指标
 
 默认开启的功能:
 
-\- 模块开启堆叠
-
-\- 默认开启图例、坐标轴、区域填充、数据标签、提示信息
+\- 默认开启图例、坐标轴、数据点标记、提示信息、趋势线
 
 :::
 
 
 ## chartType
 
-**Type:** `"area"`
+**Type:** `"line"`
 
 :::note{title=描述}
-面积图
-
-
-
-面积图，展示数据趋势及累积关系的图表类型
+折线图，适用于展示数据随时间或有序类别变化的趋势
 
 :::
 
 **示例**
-```js {2}
-{
-  chartType: 'area',
-  dataset: [{month:'1月', value:100}, {month:'2月', value:150}, {month:'3月', value:120}],
-}
-```
+'line'
 
 
 
@@ -82,11 +71,7 @@
 **Type:** `Record<string | number, any>[]`
 
 :::note{title=描述}
-数据集
-
-
-
-符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 面积图的数据最终会被转换为2个维度, 1个指标.
+数据源, 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 折线图的数据最终会被转换为2个维度, 1个指标.
 
 :::
 
@@ -98,19 +83,15 @@
 
 ## dimensions
 
-**Type:** `ColumnDimension[] | undefined`
+**Type:** `import("/Users/bytedance/Projects/VSeed/packages/vseed/src/index").ColumnDimension[] | undefined`
 
 :::note{title=描述}
-维度
-
-
-
-第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
+维度, 折线图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
 
 :::
 
 **示例**
-[{ id: 'month', alias: '月份' }, { id: 'year', alias: '年份' }]
+[{id: "month", alias: "月份"}]
 
 
 
@@ -159,19 +140,15 @@
 
 ## measures
 
-**Type:** `ColumnMeasure[] | undefined`
+**Type:** `import("/Users/bytedance/Projects/VSeed/packages/vseed/src/index").ColumnMeasure[] | undefined`
 
 :::note{title=描述}
-指标
-
-
-
-面积图的指标会自动合并为一个指标, 映射到Y轴, 指标名称会与其余维度合并, 作为图例项展示.
+指标, 折线图的所有指标会自动合并为一个指标, 映射到Y轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
 
 :::
 
 **示例**
-[{id: 'value', alias: '数值'}]
+[{id: "value", alias: "数值"}]
 
 
 
@@ -536,7 +513,7 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 
 
 
-背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
+图表的背景颜色, 默认为透明背景, 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
 
 :::
 
@@ -1183,12 +1160,140 @@ maxSize: 2
 
 :::
 
+### brushType
+
+**Type:** `"rect" | "x" | "y" | "polygon" | undefined`
+
+:::note{title=描述}
+brush的类型
+
+
+
+定义刷选框的形状和刷选方向
+
+\- `rect`: 矩形框选，可以在X轴和Y轴两个方向上同时进行框选
+
+\- `polygon`: 多边形框选，通过点击多个点绘制任意多边形进行框选
+
+\- `x`: X轴方向框选，只在X轴方向上进行框选，Y轴方向不限制
+
+\- `y`: Y轴方向框选，只在Y轴方向上进行框选，X轴方向不限制
+
+:::
+
+### brushMode
+
+**Type:** `"single" | "multiple" | undefined`
+
+:::note{title=描述}
+框选模式，单选还是多选
+
+
+
+定义刷选的模式
+
+\- `single`: 单选模式，每次只能有一个刷选框
+
+\- `multiple`: 多选模式，可以同时存在多个刷选框
+
+:::
+
 ### removeOnClick
 
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
 框选结束是否清除选框
+
+:::
+
+### inBrushStyle
+
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
+
+:::note{title=描述}
+被框选中的数据样式
+
+
+
+定义被刷选中的数据点的样式
+
+:::
+
+
+#### opacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+不透明度
+
+
+
+被框选中的数据点的不透明度，取值范围 0\-1
+
+:::
+
+#### stroke
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+描边颜色
+
+:::
+
+#### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+描边宽度
+
+:::
+
+### outOfBrushStyle
+
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
+
+:::note{title=描述}
+未被框选中的数据样式
+
+
+
+定义未被刷选中的数据点的样式
+
+:::
+
+
+#### opacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+不透明度
+
+
+
+未被框选中的数据点的不透明度，取值范围 0\-1
+
+:::
+
+#### stroke
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+描边颜色
+
+:::
+
+#### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+描边宽度
 
 :::
 
@@ -2214,6 +2319,10 @@ order:'asc'
 **Type:** `PointStyle | PointStyle[] | undefined`
 
 :::note{title=描述}
+点图元样式
+
+
+
 点图元样式配置, 用于定义图表的点图元样式, 包括点图元的颜色, 边框等.
 
 支持全局样式或条件样式配置
@@ -2428,6 +2537,10 @@ dotted
 **Type:** `LineStyle | LineStyle[] | undefined`
 
 :::note{title=描述}
+线图元样式
+
+
+
 线图元样式配置, 用于定义图表的线图元样式, 包括线图元的颜色, 透明度, 曲线等.
 
 支持全局样式或条件样式配置
@@ -2586,168 +2699,15 @@ same as operator
 :::
 
 
-## areaStyle
-
-**Type:** `AreaStyle | AreaStyle[] | undefined`
-
-:::note{title=描述}
-面积图元样式配置, 用于定义图表的面积图元样式, 包括面积图元的颜色, 透明度, 边框等.
-
-支持全局样式或条件样式配置
-
-数据筛选器
-
-若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
-
-若未配置selector, 则样式全局生效.
-
-:::
-
-
-### selector
-
-**Type:** `Selector | Selectors | undefined`
-
-:::note{title=描述}
-数据选择器
-
-
-
-若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
-
-若未配置selector, 则样式全局生效.
-
-:::
-
-**示例**
-数值选择器
-selector = "tool"
-selector = ["tool", "book"]
-selector = 100
-selector = [100, 200]
-
-局部数据选择器
-selector = { profit: 100 }
-selector = [{ profit: 100 }, { profit: 200 }]
-
-条件维度选择器
-selector = {
-field: 'category',
-operator: 'in',
-value: 'tool'
-}
-selector = {
-field: 'category',
-operator: 'not in',
-value: 'book'
-}
-
-条件指标选择器
-selector = {
-field: 'profit',
-operator: '>=',
-value: 100
-}
-selector = {
-field: 'profit',
-operator: 'between'
-value: [100, 300]
-}
-
-
-
-
-#### field
-
-**Type:** `string`
-
-:::note{title=描述}
-维度字段, dimensions 某一项的 id
-
-:::
-
-#### operator
-
-**Type:** `"in" | "not in" | undefined`
-
-:::note{title=描述}
-操作符
-
-\- in: 选择数据项中维度字段的值在 value 中的数据项
-
-\- not in: 选择数据项中维度字段的值不在 value 中的数据项
-
-:::
-
-#### op
-
-**Type:** `"in" | "not in" | undefined`
-
-:::note{title=描述}
-操作符
-
-\- in: 选择数据项中维度字段的值在 value 中的数据项
-
-\- not in: 选择数据项中维度字段的值不在 value 中的数据项
-
-same as operator
-
-:::
-
-#### value
-
-**Type:** `string | number | (string | number)[]`
-
-:::note{title=描述}
-选择数据项中维度字段的值, 支持数组
-
-:::
-
-### areaVisible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-面积图元是否可见
-
-
-
-面积图元是否可见
-
-:::
-
-### areaColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-面积图元的颜色
-
-
-
-面积图元的颜色
-
-:::
-
-### areaColorOpacity
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-面积图元的颜色透明度
-
-
-
-面积图元的颜色透明度
-
-:::
-
-
 ## annotationPoint
 
 **Type:** `AnnotationPoint | AnnotationPoint[] | undefined`
 
 :::note{title=描述}
+标注点
+
+
+
 标注点配置, 根据选择的数据, 定义图表的标注点, 包括标注点的位置, 格式, 样式等.
 
 :::

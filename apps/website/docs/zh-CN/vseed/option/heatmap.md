@@ -1,22 +1,22 @@
-# Rose
+# Heatmap
 
 :::info{title=推荐}
-\- 推荐字段配置: `1`个指标, `1`个维度
+\- 推荐字段配置: `1`个指标, `2`个维度
 
 \- 支持数据重塑: 至少`1`个指标, `0`个维度
 
 :::
 
 :::info{title=编码映射}
-堆叠玫瑰图支持以下视觉通道:
+热力图支持以下视觉通道:
 
-`angle`  : 角度通道, 支持`多个维度`, 按维度值映射至角度轴
+`xAxis`      : x轴通道, 支持`多个维度`, 按维度值映射至x轴
 
-`radius` : 半径通道, 支持`多个指标`, 按指标值映射至半径轴
+`yAxis`      : y轴通道, 支持`多个维度`, 按维度值映射至y轴
 
 `detail` : 细分通道, 支持`多个维度`, 在同一个颜色系列下展示更细粒度的数据时使用
 
-`color`  : 颜色通道, 支持`多个维度`或 `一个指标`, 维度颜色用于区分不同的数据系列, 指标颜色用于线性映射指标值到图形颜色
+`color`  : 颜色通道, 支持`一个指标`, 按指标值映射至颜色
 
 `tooltip`: 提示通道, 支持`多个维度`与 `多个指标`, 会在鼠标悬停在数据点上时展示
 
@@ -25,49 +25,49 @@
 :::
 
 :::note{title=描述}
-堆叠玫瑰图，适用于多维度数据对比场景，通过极坐标系下的扇形弧度和半径展示数据大小
+热力图，通过二维矩阵的颜色深浅展示数据的分布和强弱关系
 
 适用场景:
 
-\- 多维度数据的分布对比
+\- 大规模二维数据的密度和强度展示
 
-\- 周期性数据的强弱比较
+\- 分类与数值的关联分析
 
-\- 分类数据的数值与占比同时展示
+\- 时间序列与类别的交叉对比
 
 :::
 
 :::warning{title=Warning}
 数据要求:
 
-\- 至少1个数值字段（度量）
+\- 至少2个维度字段，用于确定热力图的行和列
 
-\- 第一个维度会放至角度轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
+\- 至少1个数值字段（度量），用于映射颜色深浅
 
-\- 所有指标会自动合并为一个指标
+\- 支持多个指标时，通常选择一个指标进行颜色映射
 
 默认开启的功能:
 
-\- 默认开启图例、极坐标系、数据标签、提示信息、数值缩放
+\- 默认开启图例、坐标轴、数据标签、提示信息、数值缩放
 
 :::
 
 
 ## chartType
 
-**Type:** `"rose"`
+**Type:** `"heatmap"`
 
 :::note{title=描述}
-堆叠玫瑰图
+热力图
 
 
 
-堆叠玫瑰图，通过极坐标系展示多维度数据对比关系
+热力图，通过二维矩阵的颜色深浅展示数据的分布和强弱关系
 
 :::
 
 **示例**
-'rose'
+'heatmap'
 
 
 
@@ -81,7 +81,7 @@
 
 
 
-符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 玫瑰图的数据最终会被转换为2个维度, 1个指标.
+符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 热力图的数据最终会被转换为2个维度, 1个指标.
 
 :::
 
@@ -93,14 +93,14 @@
 
 ## dimensions
 
-**Type:** `import("/Users/bytedance/Projects/VSeed/packages/vseed/src/index").RadarDimension[] | undefined`
+**Type:** `HeatmapDimension[] | undefined`
 
 :::note{title=描述}
 维度
 
 
 
-玫瑰图的第一个维度被映射到角度轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
+热力图的第一个维度被映射到角度轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
 
 :::
 
@@ -130,16 +130,14 @@
 
 ### encoding
 
-**Type:** `"color" | "detail" | "tooltip" | "label" | "row" | "column" | "angle" | undefined`
+**Type:** `"xAxis" | "tooltip" | "label" | "row" | "column" | "yAxis" | undefined`
 
 :::note{title=描述}
 维度映射的通道
 
-\- angle: 支持将多个维度映射到角度通道
+\- xAxis: 支持将多个维度映射到x轴
 
-\- color: 支持将多个维度映射到颜色通道
-
-\- detail: 支持将多个维度映射到详情通道
+\- yAxis: 支持将多个维度映射到y轴
 
 \- tooltip: 支持将多个维度映射到提示通道
 
@@ -154,14 +152,14 @@
 
 ## measures
 
-**Type:** `import("/Users/bytedance/Projects/VSeed/packages/vseed/src/index").RadarMeasure[] | undefined`
+**Type:** `HeatmapMeasure[] | undefined`
 
 :::note{title=描述}
 指标
 
 
 
-玫瑰图的指标会自动合并为一个指标, 映射到半径轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
+热力图的指标会自动合并为一个指标, 映射到半径轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
 
 :::
 
@@ -490,12 +488,10 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 
 ### encoding
 
-**Type:** `"color" | "tooltip" | "label" | "radius" | undefined`
+**Type:** `"color" | "tooltip" | "label" | undefined`
 
 :::note{title=描述}
 指标映射的通道
-
-\- radius: 指标映射的半径
 
 \- color: 指标映射的颜色
 
@@ -614,14 +610,10 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 
 ## label
 
-**Type:** `PieLabel | undefined`
+**Type:** `Label | undefined`
 
 :::note{title=描述}
-标签
-
-
-
-标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
+热力图标签配置, 用于定义图表的数据标签, 自动开启标签反色, 确保标签可读性.
 
 :::
 
@@ -960,34 +952,33 @@ same as operator
 
 :::
 
-### labelLayout
-
-**Type:** `"arc" | "labelLine" | "edge" | undefined`
-
-:::note{title=描述}
-标签布局方式, 仅对饼图、环形图生效且`labelPosition`为`outside`时生效
-
-\- arc: 按弧形为标签布局
-
-\- labelLine: 标签两端对齐, 通过引导线连接扇形图元与标签
-
-\- edge: 标签两端对齐, 通过引导线连接扇形图元与标签, 并且贴近图表两端边缘
-
-:::
-
 
 ## legend
 
-**Type:** `Legend | undefined`
+**Type:** `ColorLegend | undefined`
 
 :::note{title=描述}
 图例
 
 
 
-图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.
+热力图的颜色图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.
 
 :::
+
+
+### position
+
+**Type:** `"left" | "leftTop" | "leftBottom" | "lt" | "lb" | "top" | "topLeft" | "topRight" | "tl" | "tr" | "right" | "rightTop" | "rightBottom" | "rt" | "rb" | "bottom" | "bottomLeft" | "bottomRight" | "bl" | "br" | undefined`
+
+:::note{title=描述}
+图例位置
+
+:::
+
+**示例**
+position: 'rightTop'
+
 
 
 ### enable
@@ -1004,25 +995,6 @@ enable: true
 
 
 
-### border
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-图例边框是否开启
-
-:::
-
-**示例**
-border: true
-
-
-
-:::warning{title=Warning}
-仅离散图例生效
-
-:::
-
 ### labelColor
 
 **Type:** `string | undefined`
@@ -1032,21 +1004,12 @@ border: true
 
 :::
 
-### pagerIconColor
+### labelFontColor
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-分页器icon颜色
-
-:::
-
-### pagerIconDisableColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-分页器icon置灰颜色
+图例字体颜色
 
 :::
 
@@ -1064,15 +1027,6 @@ labelFontSize: 10
 
 
 
-### labelFontColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-图例字体颜色
-
-:::
-
 ### labelFontWeight
 
 **Type:** `string | number | undefined`
@@ -1087,61 +1041,13 @@ labelFontWeight: 400
 
 
 
-### shapeType
+### railBackgroundColor
 
-**Type:** `"circle" | "cross" | "diamond" | "square" | "arrow" | "arrow2Left" | "arrow2Right" | "wedge" | "thinTriangle" | "triangle" | "triangleUp" | "triangleDown" | "triangleRight" | "triangleLeft" | "stroke" | "star" | "wye" | "rect" | "arrowLeft" | "arrowRight" | "rectRound" | "roundLine" | undefined`
+**Type:** `string | undefined`
 
-:::note{title=描述}
-图例形状
+### handlerBorderColor
 
-:::
-
-**示例**
-shapeType: 'circle'
-
-
-
-:::warning{title=Warning}
-仅离散图例生效
-
-:::
-
-### position
-
-**Type:** `"left" | "leftTop" | "leftBottom" | "lt" | "lb" | "top" | "topLeft" | "topRight" | "tl" | "tr" | "right" | "rightTop" | "rightBottom" | "rt" | "rb" | "bottom" | "bottomLeft" | "bottomRight" | "bl" | "br" | undefined`
-
-:::note{title=描述}
-图例位置
-
-:::
-
-**示例**
-position: 'rightTop'
-
-
-
-### maxSize
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-存在大量图例时, 最大列数 或 图例最大行数
-
-如果position为水平方向(bottom, bottomLeft, bottomRight, bl, br, top, topLeft, topRight, tl, tr), maxSize控制显示的列数
-
-如果position为垂直方向(left, leftTop, leftBottom, lt, lb, right, rightTop, rightBottom, rt, rb), maxSize控制显示的行数
-
-:::
-
-**示例**
-maxSize: 2
-
-
-
-:::warning{title=Warning}
-仅离散图例生效
-
-:::
+**Type:** `string | undefined`
 
 
 ## tooltip
@@ -1153,7 +1059,7 @@ maxSize: 2
 
 
 
-提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等.
+热力图的提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等.
 
 :::
 
@@ -1191,12 +1097,140 @@ maxSize: 2
 
 :::
 
+### brushType
+
+**Type:** `"rect" | "x" | "y" | "polygon" | undefined`
+
+:::note{title=描述}
+brush的类型
+
+
+
+定义刷选框的形状和刷选方向
+
+\- `rect`: 矩形框选，可以在X轴和Y轴两个方向上同时进行框选
+
+\- `polygon`: 多边形框选，通过点击多个点绘制任意多边形进行框选
+
+\- `x`: X轴方向框选，只在X轴方向上进行框选，Y轴方向不限制
+
+\- `y`: Y轴方向框选，只在Y轴方向上进行框选，X轴方向不限制
+
+:::
+
+### brushMode
+
+**Type:** `"single" | "multiple" | undefined`
+
+:::note{title=描述}
+框选模式，单选还是多选
+
+
+
+定义刷选的模式
+
+\- `single`: 单选模式，每次只能有一个刷选框
+
+\- `multiple`: 多选模式，可以同时存在多个刷选框
+
+:::
+
 ### removeOnClick
 
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
 框选结束是否清除选框
+
+:::
+
+### inBrushStyle
+
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
+
+:::note{title=描述}
+被框选中的数据样式
+
+
+
+定义被刷选中的数据点的样式
+
+:::
+
+
+#### opacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+不透明度
+
+
+
+被框选中的数据点的不透明度，取值范围 0\-1
+
+:::
+
+#### stroke
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+描边颜色
+
+:::
+
+#### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+描边宽度
+
+:::
+
+### outOfBrushStyle
+
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
+
+:::note{title=描述}
+未被框选中的数据样式
+
+
+
+定义未被刷选中的数据点的样式
+
+:::
+
+
+#### opacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+不透明度
+
+
+
+未被框选中的数据点的不透明度，取值范围 0\-1
+
+:::
+
+#### stroke
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+描边颜色
+
+:::
+
+#### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+描边宽度
 
 :::
 

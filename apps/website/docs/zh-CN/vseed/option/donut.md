@@ -1,14 +1,14 @@
-# Pie
+# Donut
 
 :::info{title=推荐}
-\- 推荐字段配置: `1`个指标, `1`个维度
+\- 推荐字段配置: `1`个指标, `2`个维度
 
 \- 支持数据重塑: 至少`1`个指标, `0`个维度
 
 :::
 
 :::info{title=编码映射}
-饼图支持以下视觉通道:
+环形图支持以下视觉通道:
 
 `angle`  : 角度通道, 支持`多个指标`, 按指标值映射至扇形角度
 
@@ -23,49 +23,49 @@
 :::
 
 :::note{title=描述}
-饼图，适用于展示单一维度数据的占比关系，通过扇形面积大小表示各类别占比
+环形图，适用于展示单一维度数据的占比关系，中心留有空白区域可展示汇总信息
 
 适用场景:
 
-\- 展示分类数据的占比分布
+\- 需要同时展示整体数据和各部分占比
 
 \- 强调数据的整体与部分关系
 
-\- 类别数量较少（建议不超过6个）的占比分析
+\- 中心区域需要展示关键指标或标题
 
 :::
 
 :::warning{title=Warning}
 数据要求:
 
-\- 至少1个数值字段（度量）
+\- 至少1个指标字段（度量）
 
-\- 所有维度会与指标名称(存在多个指标时)合并成一个维度, 作为图例项展示
+\- 所有维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
 
 \- 所有指标会自动合并为一个指标
 
 默认开启的功能:
 
-\- 默认开启图例、数据标签、提示信息、占比计算
+\- 默认开启图例、数据标签、提示信息、占比计算、中心文本
 
 :::
 
 
 ## chartType
 
-**Type:** `"pie"`
+**Type:** `"donut"`
 
 :::note{title=描述}
-饼图
+环形图
 
 
 
-饼图，展示单一维度数据的占比关系
+环形图，中心留有空白区域的饼图变体
 
 :::
 
 **示例**
-'pie'
+'donut'
 
 
 
@@ -79,7 +79,7 @@
 
 
 
-符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 饼图的数据最终会被转换为1个维度, 1个指标.
+符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 环形图的数据最终会被转换为1个维度, 1个指标.
 
 :::
 
@@ -91,14 +91,14 @@
 
 ## dimensions
 
-**Type:** `PieDimension[] | undefined`
+**Type:** `import("/Users/bytedance/Projects/VSeed/packages/vseed/src/index").PieDimension[] | undefined`
 
 :::note{title=描述}
 维度
 
 
 
-饼图的所有维度会与指标名称(存在多个指标时)合并成一个维度, 映射到角度, 并作为图例项展示
+环形图的所有维度会与指标名称(存在多个指标时)合并成1个维度, 映射到饼图的角度, 并作为图例项展示.
 
 :::
 
@@ -150,14 +150,14 @@
 
 ## measures
 
-**Type:** `PieMeasure[] | undefined`
+**Type:** `import("/Users/bytedance/Projects/VSeed/packages/vseed/src/index").PieMeasure[] | undefined`
 
 :::note{title=描述}
 指标
 
 
 
-饼图的所有指标会自动合并为一个指标, 映射到半径轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
+环形图的所有指标会自动合并为一个指标, 映射到饼图的半径, 存在多个指标时, 指标名称会与其余维度合并, 并作为图例项展示.
 
 :::
 
@@ -1187,12 +1187,140 @@ maxSize: 2
 
 :::
 
+### brushType
+
+**Type:** `"rect" | "x" | "y" | "polygon" | undefined`
+
+:::note{title=描述}
+brush的类型
+
+
+
+定义刷选框的形状和刷选方向
+
+\- `rect`: 矩形框选，可以在X轴和Y轴两个方向上同时进行框选
+
+\- `polygon`: 多边形框选，通过点击多个点绘制任意多边形进行框选
+
+\- `x`: X轴方向框选，只在X轴方向上进行框选，Y轴方向不限制
+
+\- `y`: Y轴方向框选，只在Y轴方向上进行框选，X轴方向不限制
+
+:::
+
+### brushMode
+
+**Type:** `"single" | "multiple" | undefined`
+
+:::note{title=描述}
+框选模式，单选还是多选
+
+
+
+定义刷选的模式
+
+\- `single`: 单选模式，每次只能有一个刷选框
+
+\- `multiple`: 多选模式，可以同时存在多个刷选框
+
+:::
+
 ### removeOnClick
 
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
 框选结束是否清除选框
+
+:::
+
+### inBrushStyle
+
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
+
+:::note{title=描述}
+被框选中的数据样式
+
+
+
+定义被刷选中的数据点的样式
+
+:::
+
+
+#### opacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+不透明度
+
+
+
+被框选中的数据点的不透明度，取值范围 0\-1
+
+:::
+
+#### stroke
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+描边颜色
+
+:::
+
+#### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+描边宽度
+
+:::
+
+### outOfBrushStyle
+
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
+
+:::note{title=描述}
+未被框选中的数据样式
+
+
+
+定义未被刷选中的数据点的样式
+
+:::
+
+
+#### opacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+不透明度
+
+
+
+未被框选中的数据点的不透明度，取值范围 0\-1
+
+:::
+
+#### stroke
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+描边颜色
+
+:::
+
+#### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+描边宽度
 
 :::
 

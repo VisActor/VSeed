@@ -1,28 +1,23 @@
 [
   {
-    "text": "介绍",
-    "link": "/guide/quickStart",
-    "activeMatch": "/guide/"
+    "text": "VSeed",
+    "link": "/vseed/guide/quickStart",
+    "activeMatch": "/vseed/"
   },
   {
-    "text": "配置项",
-    "link": "/option/index",
-    "activeMatch": "/option/"
+    "text": "VQuery",
+    "link": "/vquery",
+    "activeMatch": "/vquery"
   },
   {
-    "text": "示例",
-    "link": "/galley/dataConfig/dataset",
-    "activeMatch": "/galley"
-  },
-  {
-    "text": "贡献指南",
-    "link": "/development/quickStart",
-    "activeMatch": "/development/"
+    "text": "VBI",
+    "link": "/vbi/",
+    "activeMatch": "/vbi"
   },
   {
     "text": "Playground",
     "link": "/playground/vseed",
-    "activeMatch": "/playground"
+    "activeMatch": "/VBI/playground"
   },
   {
     "text": "了解VChart",

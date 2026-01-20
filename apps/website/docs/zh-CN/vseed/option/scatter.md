@@ -1,20 +1,18 @@
-# Column
+# Scatter
 
 :::info{title=推荐}
-\- 推荐字段配置: `1`个指标, `2`个维度
+\- 推荐字段配置: `2`个指标, `1`个维度
 
 \- 支持数据重塑: 至少`1`个指标, `0`个维度
 
 :::
 
 :::info{title=编码映射}
-柱状图支持以下视觉通道:
+散点图支持以下视觉通道:
 
-`xAxis`  : x轴通道, 支持`多个维度`, 按维度值映射至x轴
+`xAxis`  : x轴通道, 支持`多个指标`, 按指标值映射至x轴
 
 `yAxis`  : y轴通道, 支持`多个指标`, 按指标值映射至y轴
-
-`detail` : 细分通道, 支持`多个维度`, 在同一个颜色系列下展示更细粒度的数据时使用
 
 `color`  : 颜色通道, 支持`多个维度`或 `一个指标`, 维度颜色用于区分不同的数据系列, 指标颜色用于线性映射指标值到图形颜色
 
@@ -25,45 +23,45 @@
 :::
 
 :::note{title=描述}
-柱状图，适用于纵向数据对比场景，X轴为类目轴（分类数据），Y轴为数值轴（连续数据），柱子纵向排列
+散点图，适用于展示数据的分布情况，通过点的位置表示数据的数值
 
 适用场景:
 
-\- 数据项名称较短时
-
-\- 需要直观比较不同类别的数值大小
-
-\- 展示时间序列数据变化趋势
+\- 分析数据的分布特征, 如数据的中心趋势, 分布范围, 异常值等
 
 :::
 
 :::warning{title=Warning}
 数据要求:
 
-\- 至少1个数值字段（度量）
+\- 至少2个数值字段（度量）
 
-\- 第一个维度会放至X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
+\- 第一个指标字段会放至X轴, 其余指标会进行合并, 映射至Y轴
 
-\- 所有指标会自动合并为一个指标
+\- 指标名称和维度名称会合并, 作为图例项展示
 
 默认开启的功能:
 
-\- 默认开启图例、坐标轴、数据标签、提示信息
+\- 默认开启图例、坐标轴、数据点标记、提示信息、趋势线
 
 :::
 
 
 ## chartType
 
-**Type:** `"column"`
+**Type:** `"scatter"`
 
 :::note{title=描述}
-柱状图，适用于纵向数据对比场景，X轴为类目轴（分类数据），Y轴为数值轴（连续数据），柱子纵向排列
+散点图
+
+
+
+散点图，适用于展示数据的分布情况，通过点的位置表示数据的数值
 
 :::
 
 **示例**
-'column'
+'scatter'
 
 
 
@@ -73,27 +71,35 @@
 **Type:** `Record<string | number, any>[]`
 
 :::note{title=描述}
-符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 柱状图的数据最终会被转换为2个维度, 1个指标.
+数据集
+
+
+
+符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 折线图的数据最终会被转换为2个维度, 1个指标.
 
 :::
 
 **示例**
-[{category:'A', value:100}, {category:'B', value:200}]
+[{month:'1月', value:100}, {month:'2月', value:150}, {month:'3月', value:120}]
 
 
 
 
 ## dimensions
 
-**Type:** `ColumnDimension[] | undefined`
+**Type:** `ScatterDimension[] | undefined`
 
 :::note{title=描述}
-柱状图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
+维度
+
+
+
+散点图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
 
 :::
 
 **示例**
-[{id: "category", alias: "类别"}]
+[{id: "month", alias: "月份"}]
 
 
 
@@ -118,12 +124,10 @@
 
 ### encoding
 
-**Type:** `"xAxis" | "color" | "detail" | "tooltip" | "label" | "row" | "column" | undefined`
+**Type:** `"color" | "detail" | "tooltip" | "label" | "row" | "column" | undefined`
 
 :::note{title=描述}
 维度映射的通道
-
-\- xAxis: 支持将多个维度映射到x轴
 
 \- color: 支持将多个维度映射到颜色通道
 
@@ -142,15 +146,22 @@
 
 ## measures
 
-**Type:** `ColumnMeasure[] | undefined`
+**Type:** `ScatterMeasure[] | undefined`
 
 :::note{title=描述}
-柱状图的所有指标会自动合并为一个指标, 映射到Y轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
+散点图指标
 
 :::
 
 **示例**
-[{id: "value", alias: "数值"}]
+[
+  {
+    id: 'profit', alias: '利润', encoding: 'xAxis'
+  },
+  {
+    id: 'sales', alias: '销售额', encoding: 'yAxis'
+  }
+]
 
 
 
@@ -474,14 +485,16 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 
 ### encoding
 
-**Type:** `"color" | "detail" | "tooltip" | "label" | "yAxis" | undefined`
+**Type:** `"xAxis" | "color" | "tooltip" | "label" | "yAxis" | "size" | undefined`
 
 :::note{title=描述}
 指标映射的通道
 
+\- xAxis: 指标映射的x轴
+
 \- yAxis: 指标映射的y轴
 
-\- detail: 指标映射的详情
+\- size: 指标映射的大小
 
 \- color: 指标映射的颜色
 
@@ -506,12 +519,48 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 :::
 
 
+## size
+
+**Type:** `number | number[] | undefined`
+
+:::note{title=描述}
+散点图指标的大小, 用于定义散点图中数据点的大小 或 大小范围
+
+\- 若大小范围是一个数字, 例如10, 表示数据点的大小范围固定为10
+
+\- 若大小范围是一个长度为2的数组, 例如[10, 40], 表示数据点的大小范围在10到40之间
+
+\- 与sizeRange互斥, 优先级低于 size
+
+:::
+
+
+## sizeRange
+
+**Type:** `number | number[] | undefined`
+
+:::note{title=描述}
+散点图指标的大小范围, 用于定义散点图中数据点的大小范围,
+
+\- 若大小范围是一个长度为2的数组, 例如[10, 40], 表示数据点的大小范围在10到40之间
+
+\- 若大小范围是一个数字, 例如10, 表示数据点的大小范围固定为10
+
+\- 与sizeRange互斥, 优先级高于 size
+
+:::
+
+
 ## backgroundColor
 
 **Type:** `BackgroundColor`
 
 :::note{title=描述}
-图表的背景颜色, 背景颜色可以是颜色字符串, 默认为透明背景, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
+图表的背景颜色
+
+
+
+背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
 
 :::
 
@@ -521,6 +570,10 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 **Type:** `Color | undefined`
 
 :::note{title=描述}
+颜色
+
+
+
 颜色配置, 用于定义图表的颜色方案, 包括颜色列表, 颜色映射, 颜色渐变等.
 
 :::
@@ -595,6 +648,10 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 **Type:** `Label | undefined`
 
 :::note{title=描述}
+标签
+
+
+
 标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
 
 :::
@@ -940,6 +997,10 @@ same as operator
 **Type:** `Legend | undefined`
 
 :::note{title=描述}
+图例
+
+
+
 图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.
 
 :::
@@ -1104,6 +1165,10 @@ maxSize: 2
 **Type:** `Tooltip | undefined`
 
 :::note{title=描述}
+提示信息
+
+
+
 提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等.
 
 :::
@@ -1142,6 +1207,44 @@ maxSize: 2
 
 :::
 
+### brushType
+
+**Type:** `"rect" | "x" | "y" | "polygon" | undefined`
+
+:::note{title=描述}
+brush的类型
+
+
+
+定义刷选框的形状和刷选方向
+
+\- `rect`: 矩形框选，可以在X轴和Y轴两个方向上同时进行框选
+
+\- `polygon`: 多边形框选，通过点击多个点绘制任意多边形进行框选
+
+\- `x`: X轴方向框选，只在X轴方向上进行框选，Y轴方向不限制
+
+\- `y`: Y轴方向框选，只在Y轴方向上进行框选，X轴方向不限制
+
+:::
+
+### brushMode
+
+**Type:** `"single" | "multiple" | undefined`
+
+:::note{title=描述}
+框选模式，单选还是多选
+
+
+
+定义刷选的模式
+
+\- `single`: 单选模式，每次只能有一个刷选框
+
+\- `multiple`: 多选模式，可以同时存在多个刷选框
+
+:::
+
 ### removeOnClick
 
 **Type:** `boolean | undefined`
@@ -1151,182 +1254,39 @@ maxSize: 2
 
 :::
 
+### inBrushStyle
 
-## xAxis
-
-**Type:** `XBandAxis | undefined`
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
 
 :::note{title=描述}
-x轴, 类目轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.
+被框选中的数据样式
+
+
+
+定义被刷选中的数据点的样式
 
 :::
 
 
-### visible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴是否可见
-
-:::
-
-### inverse
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴是否反向展示, 仅对数值轴生效
-
-:::
-
-### zero
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-是否在坐标轴上强制显示 0 值, 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
-
-:::
-
-### labelAutoHide
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴标签, 自动隐藏, 2个标签若重叠(间隔小于autoHideGap), 则自动隐藏导致重叠的标签. 仅对类目轴生效.
-
-:::
-
-### labelAutoHideGap
+#### opacity
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-轴标签, 自动隐藏间隔, 若2个文本标签的间隔小于autoHideGap, 则自动隐藏导致重叠的标签. 仅对类目轴生效.
+不透明度
 
-autoHide开启时, 使用autoHide, 设置在autoHideSeparation上
 
-autoHide关闭时, 使用sampling采样, 设置在minGap上
 
-:::
-
-### labelAutoRotate
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴标签, 自动旋转, 当标签宽度超过轴长度时, 自动旋转标签. 仅对类目轴生效.
+被框选中的数据点的不透明度，取值范围 0\-1
 
 :::
 
-### labelAutoRotateAngleRange
-
-**Type:** `number[] | undefined`
-
-:::note{title=描述}
-轴标签, 自动旋转角度范围, 当自动旋转开启时, 标签旋转角度范围. 仅对类目轴生效.
-
-:::
-
-### labelAutoLimit
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴标签, 自动限制长度, 当标签宽度超过轴长度时, 超出部分省略号表示, 鼠标悬浮后可见标签, 自动限制标签宽度. 仅对类目轴生效.
-
-:::
-
-### labelAutoLimitLength
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-轴标签, 自动限制长度的最大长度, 当标签文本长度超过最大长度时, 超出部分省略号表示, 鼠标悬浮后可见标签. 仅对类目轴生效.
-
-:::
-
-### label
-
-**Type:** `{ visible?: boolean; labelColor?: string; labelFontSize?: number; labelFontWeight?: number; labelAngle?: number; } | undefined`
-
-:::note{title=描述}
-X轴刻度标签
-
-:::
-
-
-#### visible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-标签是否可见
-
-:::
-
-#### labelColor
+#### stroke
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-标签颜色
-
-:::
-
-#### labelFontSize
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-标签字体大小
-
-:::
-
-#### labelFontWeight
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-标签字体粗细
-
-:::
-
-#### labelAngle
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-标签旋转角度
-
-:::
-
-### line
-
-**Type:** `{ visible?: boolean; lineColor?: string; lineWidth?: number; } | undefined`
-
-:::note{title=描述}
-X轴线
-
-:::
-
-
-#### visible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴线是否可见
-
-:::
-
-#### lineColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-轴线颜色
+描边颜色
 
 :::
 
@@ -1335,159 +1295,66 @@ X轴线
 **Type:** `number | undefined`
 
 :::note{title=描述}
-轴线宽度
+描边宽度
 
 :::
 
-### tick
+### outOfBrushStyle
 
-**Type:** `{ visible?: boolean; tickInside?: boolean; tickColor?: string; tickSize?: number; } | undefined`
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
 
 :::note{title=描述}
-X轴刻度
+未被框选中的数据样式
+
+
+
+定义未被刷选中的数据点的样式
 
 :::
 
 
-#### visible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-刻度是否可见
-
-:::
-
-#### tickInside
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-刻度是否朝内
-
-:::
-
-#### tickColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-刻度颜色
-
-:::
-
-#### tickSize
+#### opacity
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-刻度尺寸
+不透明度
+
+
+
+未被框选中的数据点的不透明度，取值范围 0\-1
 
 :::
 
-### title
-
-**Type:** `{ visible?: boolean; titleText?: string; titleColor?: string; titleFontSize?: number; titleFontWeight?: number; } | undefined`
-
-:::note{title=描述}
-X轴标题
-
-:::
-
-
-#### visible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-标题是否可见
-
-:::
-
-#### titleText
+#### stroke
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-标题文本, 默认跟随字段配置
+描边颜色
 
 :::
 
-#### titleColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-标题颜色
-
-:::
-
-#### titleFontSize
+#### lineWidth
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-标题字体大小
-
-:::
-
-#### titleFontWeight
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-标题字体粗细
-
-:::
-
-### grid
-
-**Type:** `{ visible?: boolean; gridColor?: string; gridWidth?: number; gridLineDash?: number[]; } | undefined`
-
-:::note{title=描述}
-X轴网格线
+描边宽度
 
 :::
 
 
-#### visible
+## xAxis
 
-**Type:** `boolean | undefined`
-
-#### gridColor
-
-**Type:** `string | undefined`
+**Type:** `XLinearAxis | undefined`
 
 :::note{title=描述}
-网格线颜色
-
-:::
-
-#### gridWidth
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-网格线宽度
-
-:::
-
-#### gridLineDash
-
-**Type:** `number[] | undefined`
-
-:::note{title=描述}
-网格线类型
-
-:::
+x轴
 
 
-## yAxis
 
-**Type:** `YLinearAxis | undefined`
-
-:::note{title=描述}
-y轴, 数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.
+数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.
 
 :::
 
@@ -1948,122 +1815,532 @@ X轴网格线
 :::
 
 
-## sort
+## yAxis
 
-**Type:** `Sort | undefined`
+**Type:** `YLinearAxis | undefined`
 
 :::note{title=描述}
-X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+y轴
+
+
+
+数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.
+
+:::
+
+
+### visible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+轴是否可见
+
+:::
+
+### min
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+轴的最小值, 优先级高于 nice 与 zero
+
+:::
+
+### max
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+轴的最大值, 优先级高于 nice 与 zero
+
+:::
+
+### log
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否使用对数轴, 仅对数值轴生效
+
+:::
+
+### logBase
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+对数轴的底数, 仅对数值轴生效
+
+:::
+
+### nice
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否自动调整轴的刻度间隔，使刻度标签更易读, 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
+
+:::
+
+### inverse
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+轴是否反向展示, 仅对数值轴生效
+
+:::
+
+### zero
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否在坐标轴上强制显示 0 值, 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
+
+:::
+
+### autoFormat
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否自动格式化数值轴的刻度标签, 仅对数值轴生效, autoFormat 为 true 时, numFormat 配置失效
+
+:::
+
+### numFormat
+
+**Type:** `NumFormat | undefined`
+
+:::note{title=描述}
+数值轴的数字格式化, 仅对数值轴生效, 优先级低于 autoFormat
+
+:::
+
+
+#### type
+
+**Type:** `"number" | "percent" | "permille" | "scientific" | undefined`
+
+:::note{title=描述}
+数字格式化类型, 支持数值(十进制)、百分比(%)、千分比(‰)、科学计数法
+
+:::
+
+#### ratio
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+数值格式化比例, 不能为0
 
 :::
 
 **示例**
-sort: {
-  orderBy: 'profit',
-  order: 'asc',
-}
-sort: {
-  customOrder:['2019', '2020', '2021']
-}
+\- 100000 转换为 10万, ratio:10000, symbol:"万"
+\- 100000 转换为 10K, ratio:1000, symbol:"K"
 
 
 
-
-### order
-
-**Type:** `"asc" | "desc" | undefined`
-
-:::note{title=描述}
-排序顺序, 可选值为 'asc' 或 'desc'
-
-:::
-
-**示例**
-order:'asc'
-
-
-
-### orderBy
+#### symbol
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-排序依赖的字段, 可以是维度id或指标id
+数值格式化符号, 例如%、‰
 
 :::
 
 **示例**
-\- orderBy:'date'
-\- orderBy:'profit'
+\- 100000 转换为 10万, ratio:10000, symbol:"万"
+\- 100000 转换为 10K, ratio:1000, symbol:"K"
 
 
 
-### customOrder
+#### thousandSeparator
 
-**Type:** `string[] | undefined`
+**Type:** `boolean | undefined`
 
 :::note{title=描述}
-自定义排序顺序, 该顺序将直接应用至类目轴
+数值格式化千分位分隔符
 
 :::
 
-
-## sortLegend
-
-**Type:** `SortLegend | undefined`
-
-:::note{title=描述}
-图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
-
-:::
-
-**示例**
-sortLegend: {
-  orderBy: 'profit',
-  order: 'asc',
-}
-sortLegend: {
-  customOrder:['2019', '2020', '2021']
-}
-
-
-
-
-### order
-
-**Type:** `"asc" | "desc" | undefined`
-
-:::note{title=描述}
-排序顺序, 可选值为 'asc' 或 'desc'
-
-:::
-
-**示例**
-order:'asc'
-
-
-
-### orderBy
+#### suffix
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-排序依赖的字段, 可以是维度id或指标id
+数值格式化后缀
+
+:::
+
+#### prefix
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+数值格式化前缀
+
+:::
+
+#### fractionDigits
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+数值格式化小数位, 使用浏览器提供的 Intl.NumberFormat 中的 minimumFractionDigits 和 maximumFractionDigits 进行格式化, 优先级低于 significantDigits
 
 :::
 
 **示例**
-\- orderBy:'date'
-\- orderBy:'profit'
+\- 1234.5678 转换为 1235, fractionDigits:0 (roundingMode:halfCeil)
+\- 1234.5678 转换为 1234.6, fractionDigits:1 (roundingMode:halfCeil)
+\- 1234.5678 转换为 1234.57, fractionDigits:2 (roundingMode:halfCeil)
+\- 1234.5678 转换为 1230.568, fractionDigits:3 (roundingMode:halfCeil)
+\- 1234.5678 转换为 1234.5678, fractionDigits:4 (roundingMode:halfCeil)
+\- 1234.5678 转换为 1234.56780, fractionDigits:5 (roundingMode:halfCeil)
 
 
 
-### customOrder
+#### significantDigits
 
-**Type:** `string[] | undefined`
+**Type:** `number | undefined`
 
 :::note{title=描述}
-自定义排序顺序, 该顺序将直接应用至图例, 升序从左到右或从上到下, 降序从右到左或从下到上
+数值格式化有效位, 使用浏览器提供的 Intl.NumberFormat 中的 minimumSignificantDigits 和 maximumSignificantDigits 进行格式化, 优先级高于 fractionDigits
+
+:::
+
+**示例**
+\- 1234.5678 转换为 1000, significantDigits:1
+\- 1234.5678 转换为 1200, significantDigits:2
+\- 1234.5678 转换为 1230, significantDigits:3
+\- 1234.5678 转换为 1234, significantDigits:4
+\- 1234.5678 转换为 1234.6, significantDigits:5 (roundingMode:halfCeil)
+\- 1234.5678 转换为 1234.57, significantDigits:6 (roundingMode:halfCeil)
+\- 1234.5678 转换为 1234.568, significantDigits:7 (roundingMode:halfCeil)
+\- 1234.5678 转换为 1234.5678, significantDigits:8 (roundingMode:halfCeil)
+
+
+
+#### roundingPriority
+
+**Type:** `"morePrecision" | "lessPrecision" | undefined`
+
+:::note{title=描述}
+数值格式化舍入优先级, 处理同时设置了 significantDigits 和 fractionDigits 时的舍入优先级, 使用浏览器提供的 Intl.NumberFormat 进行格式化, 规则同 Intl.NumberFormat 中的 roundingPriority
+
+:::
+
+**示例**
+\- 1234.5678 转换为 1230, significantDigits:3 (roundingPriority:lessPrecision)
+\- 1234.5678 转换为 1234.5678, significantDigits:3 (roundingPriority:morePrecision)
+
+
+
+#### roundingMode
+
+**Type:** `"floor" | "ceil" | "expand" | "trunc" | "halfCeil" | "halfFloor" | "halfExpand" | "halfTrunc" | "halfEven" | undefined`
+
+:::note{title=描述}
+数值格式化舍入模式, 使用浏览器提供的 Intl.NumberFormat 进行格式化, 规则同 Intl.NumberFormat 中的 roundingMode
+
+:::
+
+### label
+
+**Type:** `{ visible?: boolean; labelColor?: string; labelFontSize?: number; labelFontWeight?: number; labelAngle?: number; } | undefined`
+
+:::note{title=描述}
+X轴刻度标签
+
+:::
+
+
+#### visible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+标签是否可见
+
+:::
+
+#### labelColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+标签颜色
+
+:::
+
+#### labelFontSize
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标签字体大小
+
+:::
+
+#### labelFontWeight
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标签字体粗细
+
+:::
+
+#### labelAngle
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标签旋转角度
+
+:::
+
+### line
+
+**Type:** `{ visible?: boolean; lineColor?: string; lineWidth?: number; } | undefined`
+
+:::note{title=描述}
+X轴线
+
+:::
+
+
+#### visible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+轴线是否可见
+
+:::
+
+#### lineColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+轴线颜色
+
+:::
+
+#### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+轴线宽度
+
+:::
+
+### tick
+
+**Type:** `{ visible?: boolean; tickInside?: boolean; tickColor?: string; tickSize?: number; } | undefined`
+
+:::note{title=描述}
+X轴刻度
+
+:::
+
+
+#### visible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+刻度是否可见
+
+:::
+
+#### tickInside
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+刻度是否朝内
+
+:::
+
+#### tickColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+刻度颜色
+
+:::
+
+#### tickSize
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+刻度尺寸
+
+:::
+
+### title
+
+**Type:** `{ visible?: boolean; titleText?: string; titleColor?: string; titleFontSize?: number; titleFontWeight?: number; } | undefined`
+
+:::note{title=描述}
+X轴标题
+
+:::
+
+
+#### visible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+标题是否可见
+
+:::
+
+#### titleText
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+标题文本, 默认跟随字段配置
+
+:::
+
+#### titleColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+标题颜色
+
+:::
+
+#### titleFontSize
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标题字体大小
+
+:::
+
+#### titleFontWeight
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标题字体粗细
+
+:::
+
+### grid
+
+**Type:** `{ visible?: boolean; gridColor?: string; gridWidth?: number; gridLineDash?: number[]; } | undefined`
+
+:::note{title=描述}
+X轴网格线
+
+:::
+
+
+#### visible
+
+**Type:** `boolean | undefined`
+
+#### gridColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+网格线颜色
+
+:::
+
+#### gridWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+网格线宽度
+
+:::
+
+#### gridLineDash
+
+**Type:** `number[] | undefined`
+
+:::note{title=描述}
+网格线类型
+
+:::
+
+
+## crosshairLine
+
+**Type:** `CrosshairLine | undefined`
+
+:::note{title=描述}
+垂直提示线
+
+
+
+鼠标移动到图表上时, 显示的垂直提示线
+
+:::
+
+
+### visible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否显示十字准星线
+
+:::
+
+### lineColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+十字准星线颜色
+
+:::
+
+### labelColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+十字准星线标签颜色
+
+:::
+
+### labelVisible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否显示十字准星线标签
+
+:::
+
+### labelBackgroundColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+十字准星线标签背景颜色
 
 :::
 
@@ -2073,7 +2350,11 @@ order:'asc'
 **Type:** `Theme | undefined`
 
 :::note{title=描述}
-图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置, 内置light与dark两种主题, 用户可以通过Builder自定义主题
+图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置
+
+
+
+内置light与dark两种主题, 用户可以通过Builder自定义主题
 
 :::
 
@@ -2096,88 +2377,16 @@ order:'asc'
 **Type:** `unique symbol`
 
 
-## crosshairRect
+## pointStyle
 
-**Type:** `CrosshairRect | undefined`
-
-:::note{title=描述}
-垂直提示框配置, 用于定义图表的垂直提示框, 包括垂直提示框的颜色、标签样式等.
-
-:::
-
-
-### visible
-
-**Type:** `boolean | undefined`
+**Type:** `PointStyle | PointStyle[] | undefined`
 
 :::note{title=描述}
-是否显示十字准星线矩形区域
-
-:::
-
-### rectColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-十字准星线矩形区域颜色
-
-:::
-
-### labelColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-十字准星线矩形区域标签颜色
-
-:::
-
-### labelVisible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-是否显示十字准星线矩形区域标签
-
-:::
-
-### labelBackgroundColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-十字准星线矩形区域标签背景颜色
-
-:::
+点图元样式
 
 
-## stackCornerRadius
 
-**Type:** `number | number[] | undefined`
-
-:::note{title=描述}
-柱状图 堆叠圆角
-
-:::
-
-
-## barMaxWidth
-
-**Type:** `string | number | undefined`
-
-:::note{title=描述}
-柱子的最大宽度，可以是像素值或者百分比字符串
-
-:::
-
-
-## barStyle
-
-**Type:** `BarStyle | BarStyle[] | undefined`
-
-:::note{title=描述}
-矩形图元样式, 柱状图样式配置, 用于定义图表的柱状图样式, 包括柱状图的颜色, 边框, 圆角等.
+点图元样式配置, 用于定义图表的点图元样式, 包括点图元的颜色, 边框等.
 
 支持全局样式或条件样式配置
 
@@ -2289,57 +2498,90 @@ same as operator
 
 :::
 
-### barVisible
+### pointVisible
 
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
-柱图元(矩形图元)是否可见
+点是否可见
 
 :::
 
-### barColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-柱图元(矩形图元)颜色
-
-:::
-
-### barColorOpacity
+### pointSize
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-柱图元(矩形图元)颜色透明度
+点大小
+
+
+
+点大小
 
 :::
 
-### barBorderColor
+### pointColor
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-柱图元(矩形图元)边框颜色
+点图元颜色
+
+
+
+点图元颜色
 
 :::
 
-### barBorderWidth
+### pointColorOpacity
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-柱图元(矩形图元)边框宽度
+点图元颜色透明度
+
+
+
+点图元颜色透明度
 
 :::
 
-### barBorderStyle
+### pointBorderColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+点图元边框颜色
+
+
+
+点图元边框颜色
+
+:::
+
+### pointBorderWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+点图元边框宽度
+
+
+
+点图元边框宽度
+
+:::
+
+### pointBorderStyle
 
 **Type:** `"solid" | "dashed" | "dotted" | undefined`
 
 :::note{title=描述}
-柱图元(矩形图元)边框样式
+点图元边框样式
+
+
+
+点图元边框样式
 
 :::
 
@@ -2352,36 +2594,16 @@ dotted
 
 
 
-### barBorderOpacity
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-柱图元(矩形图元)圆角
-
-
-
-柱图元(矩形图元)描边透明度
-
-:::
-
-**示例**
-4
-
-[0, 0, 10, 10]
-
-
-
-### barRadius
-
-**Type:** `number | number[] | undefined`
-
 
 ## annotationPoint
 
 **Type:** `AnnotationPoint | AnnotationPoint[] | undefined`
 
 :::note{title=描述}
+标注点
+
+
+
 标注点配置, 根据选择的数据, 定义图表的标注点, 包括标注点的位置, 格式, 样式等.
 
 :::
@@ -2669,7 +2891,11 @@ offsetX: 5, 标注点整体向右偏移5像素
 **Type:** `AnnotationVerticalLine | AnnotationVerticalLine[] | undefined`
 
 :::note{title=描述}
-维度值标注线，竖直方向展示，能够设置标注线的位置, 样式等
+标注垂直线
+
+
+
+数值标注线(包括均值线、最大值线、最小值线等)，竖直方向展示，能够设置标注线的位置, 样式等，如需绘制x轴度量均值线等数值对应的标注线请使用该配置
 
 :::
 
@@ -2943,7 +3169,11 @@ true
 **Type:** `AnnotationHorizontalLine | AnnotationHorizontalLine[] | undefined`
 
 :::note{title=描述}
-数值标注线(包括均值线、最大值线、最小值线等)，水平方向展示，能够设置标注线的位置, 样式等，如需绘制均值线等数值对应的标注线请使用该配置
+标注水平线
+
+
+
+数值标注线(包括均值线、最大值线、最小值线等)，竖直方向展示，能够设置标注线的位置, 样式等，如需绘制y轴度量均值线等数值对应的标注线请使用该配置
 
 :::
 
@@ -3257,6 +3487,10 @@ true
 **Type:** `AnnotationArea | AnnotationArea[] | undefined`
 
 :::note{title=描述}
+标注区域
+
+
+
 标注区域配置, 根据选择的数据, 定义图表的标注区域, 包括标注区域的位置, 样式等.
 
 :::
@@ -3623,6 +3857,364 @@ true
 
 
 
+## linearRegressionLine
+
+**Type:** `LinearRegressionLine | LinearRegressionLine[] | undefined`
+
+:::note{title=描述}
+线性回归线
+
+
+
+线性回归线配置, 包括线性回归线的样式等.
+
+:::
+
+
+### enable
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否开启
+
+:::
+
+### color
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+回归线颜色
+
+用于设置回归线的颜色，如果不设置，默认使用图表的主颜色
+
+:::
+
+### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+回归线宽度
+
+用于设置回归线的宽度，单位为像素，默认值为1
+
+:::
+
+### lineDash
+
+**Type:** `number[] | undefined`
+
+:::note{title=描述}
+回归线样式
+
+用于设置回归线的样式，例如实线、虚线等，默认值为实线
+
+:::
+
+### text
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+回归线标签文本
+
+用于设置回归线的标签文本，空字符串表示不显示标签
+
+:::
+
+### textColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+文本颜色
+
+:::
+
+**示例**
+'red'
+
+
+
+### textFontSize
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+文本字体大小
+
+:::
+
+**示例**
+12
+
+
+
+### textFontWeight
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+文本字体重量
+
+:::
+
+**示例**
+400
+
+
+
+### confidenceIntervalVisible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否显示置信区间
+
+:::
+
+### confidenceLevel
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+置信区间数值设定，默认95%置信度
+
+:::
+
+### confidenceIntervalColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+置信区间颜色
+
+:::
+
+### confidenceIntervalOpacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+置信区间透明度
+
+:::
+
+**示例**
+0.5
+
+
+
+### shadowBlur
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+图形模糊效果程度
+
+:::
+
+**示例**
+0
+
+
+
+### shadowColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+图形的阴影颜色
+
+:::
+
+**示例**
+'#FFFFFF4D'
+
+
+
+### shadowOffsetX
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+阴影水平偏移距离
+
+:::
+
+**示例**
+0
+
+
+
+### shadowOffsetY
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+阴影垂直偏移距离
+
+:::
+
+**示例**
+1
+
+
+
+
+## lowessRegressionLine
+
+**Type:** `LowessRegressionLine | LowessRegressionLine[] | undefined`
+
+:::note{title=描述}
+局部加权回归线配置项
+
+
+
+局部加权回归线配置项, 包括局部加权回归线的样式等.
+
+:::
+
+
+### enable
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否开启
+
+:::
+
+### color
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+回归线颜色
+
+用于设置回归线的颜色，如果不设置，默认使用图表的主颜色
+
+:::
+
+### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+回归线宽度
+
+用于设置回归线的宽度，单位为像素，默认值为1
+
+:::
+
+### lineDash
+
+**Type:** `number[] | undefined`
+
+:::note{title=描述}
+回归线样式
+
+用于设置回归线的样式，例如实线、虚线等，默认值为实线
+
+:::
+
+### text
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+回归线标签文本
+
+用于设置回归线的标签文本，空字符串表示不显示标签
+
+:::
+
+### textColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+文本颜色
+
+:::
+
+**示例**
+'red'
+
+
+
+### textFontSize
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+文本字体大小
+
+:::
+
+**示例**
+12
+
+
+
+### textFontWeight
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+文本字体重量
+
+:::
+
+**示例**
+400
+
+
+
+### confidenceIntervalVisible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否显示置信区间
+
+:::
+
+### confidenceLevel
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+置信区间数值设定，默认95%置信度
+
+:::
+
+### confidenceIntervalColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+置信区间颜色
+
+:::
+
+### confidenceIntervalOpacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+置信区间透明度
+
+:::
+
+**示例**
+0.5
+
+
+
+
 ## polynomialRegressionLine
 
 **Type:** `PolynomialRegressionLine | PolynomialRegressionLine[] | undefined`
@@ -3663,6 +4255,157 @@ true
 
 :::note{title=描述}
 多项式回归的阶数
+
+:::
+
+### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+回归线宽度
+
+用于设置回归线的宽度，单位为像素，默认值为1
+
+:::
+
+### lineDash
+
+**Type:** `number[] | undefined`
+
+:::note{title=描述}
+回归线样式
+
+用于设置回归线的样式，例如实线、虚线等，默认值为实线
+
+:::
+
+### text
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+回归线标签文本
+
+用于设置回归线的标签文本，空字符串表示不显示标签
+
+:::
+
+### textColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+文本颜色
+
+:::
+
+**示例**
+'red'
+
+
+
+### textFontSize
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+文本字体大小
+
+:::
+
+**示例**
+12
+
+
+
+### textFontWeight
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+文本字体重量
+
+:::
+
+**示例**
+400
+
+
+
+### confidenceIntervalVisible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否显示置信区间
+
+:::
+
+### confidenceLevel
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+置信区间数值设定，默认95%置信度
+
+:::
+
+### confidenceIntervalColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+置信区间颜色
+
+:::
+
+### confidenceIntervalOpacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+置信区间透明度
+
+:::
+
+**示例**
+0.5
+
+
+
+
+## logisticRegressionLine
+
+**Type:** `LogisticRegressionLine | LogisticRegressionLine[] | undefined`
+
+:::note{title=描述}
+逻辑回归线
+
+
+
+逻辑回归线配置, 包括逻辑回归线的样式等.
+
+:::
+
+
+### enable
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否开启
+
+:::
+
+### color
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+回归线颜色
+
+用于设置回归线的颜色，如果不设置，默认使用图表的主颜色
 
 :::
 
@@ -3828,6 +4571,10 @@ true
 **Type:** `Locale | undefined`
 
 :::note{title=描述}
+语言
+
+
+
 图表语言配置, 支持'zh\-CN'与'en\-US'两种语言, 另外可以调用 intl.setLocale('zh\-CN') 方法设置语言
 
 :::

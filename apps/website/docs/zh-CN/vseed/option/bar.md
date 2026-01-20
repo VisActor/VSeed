@@ -1,4 +1,4 @@
-# BarParallel
+# Bar
 
 :::info{title=推荐}
 \- 推荐字段配置: `1`个指标, `2`个维度
@@ -8,7 +8,7 @@
 :::
 
 :::info{title=编码映射}
-并列条形图支持以下视觉通道:
+条形图支持以下视觉通道:
 
 `yAxis`  : y轴通道, 支持`多个维度`, 按维度值映射至y轴
 
@@ -25,22 +25,22 @@
 :::
 
 :::note{title=描述}
-并列条形图，适用于多指标横向并行对比场景，多个条形平行排列展示不同指标值
+条形图，适用于横向数据对比场景，Y轴为类目轴（分类数据），X轴为数值轴（连续数据），柱子横向排列
 
 适用场景:
 
-\- 类别名称较长时的多指标对比
+\- 数据项名称较长时
 
-\- 排名与数值同时展示的横向比较
+\- 需要展示数据排名对比
 
-\- 多维度数据的并列分析
+\- 展示正负双向数据
 
 :::
 
 :::warning{title=Warning}
 数据要求:
 
-\- 至少1个指标字段（度量）
+\- 至少1个指标（度量）
 
 \- 第一个维度会放至Y轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
 
@@ -55,15 +55,15 @@
 
 ## chartType
 
-**Type:** `"barParallel"`
+**Type:** `"bar"`
 
 :::note{title=描述}
-并列条形图，适用于多指标横向并行对比场景
+条形图，适用于横向数据对比场景，Y轴为类目轴（分类数据），X轴为数值轴（连续数据），柱子横向排列
 
 :::
 
 **示例**
-'barParallel'
+'bar'
 
 
 
@@ -73,12 +73,12 @@
 **Type:** `Record<string | number, any>[]`
 
 :::note{title=描述}
-数据源, 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 并列条形图的数据最终会被转换为2个维度, 1个指标.
+数据源, 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 条形图的数据最终会被转换为2个维度, 1个指标.
 
 :::
 
 **示例**
-[{category:'A', value1:100, value2:200}, {category:'B', value1:150, value2:250}]
+[{date:'2020\-01\-01', value:100}, {date:'2020\-01\-02', value:200}]
 
 
 
@@ -93,7 +93,7 @@
 :::
 
 **示例**
-[{id: 'category', alias: '类别'}]
+[{id: "date", alias: "日期"}, {id: "value", alias: "数值"}]
 
 
 
@@ -145,12 +145,16 @@
 **Type:** `BarMeasure[] | undefined`
 
 :::note{title=描述}
-指标, 并列条形图指标会自动合并为一个指标, 映射到X轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
+指标
+
+
+
+指标, 条形图指标会自动合并为一个指标, 映射到X轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
 
 :::
 
 **示例**
-[{id: 'value1', alias: '指标1'}, {id: 'value2', alias: '指标2'}]
+[{id: "value", alias: "数值"}]
 
 
 
@@ -521,6 +525,10 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 **Type:** `Color | undefined`
 
 :::note{title=描述}
+颜色
+
+
+
 颜色配置, 用于定义图表的颜色方案, 包括颜色列表, 颜色映射, 颜色渐变等.
 
 :::
@@ -1142,12 +1150,140 @@ maxSize: 2
 
 :::
 
+### brushType
+
+**Type:** `"rect" | "x" | "y" | "polygon" | undefined`
+
+:::note{title=描述}
+brush的类型
+
+
+
+定义刷选框的形状和刷选方向
+
+\- `rect`: 矩形框选，可以在X轴和Y轴两个方向上同时进行框选
+
+\- `polygon`: 多边形框选，通过点击多个点绘制任意多边形进行框选
+
+\- `x`: X轴方向框选，只在X轴方向上进行框选，Y轴方向不限制
+
+\- `y`: Y轴方向框选，只在Y轴方向上进行框选，X轴方向不限制
+
+:::
+
+### brushMode
+
+**Type:** `"single" | "multiple" | undefined`
+
+:::note{title=描述}
+框选模式，单选还是多选
+
+
+
+定义刷选的模式
+
+\- `single`: 单选模式，每次只能有一个刷选框
+
+\- `multiple`: 多选模式，可以同时存在多个刷选框
+
+:::
+
 ### removeOnClick
 
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
 框选结束是否清除选框
+
+:::
+
+### inBrushStyle
+
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
+
+:::note{title=描述}
+被框选中的数据样式
+
+
+
+定义被刷选中的数据点的样式
+
+:::
+
+
+#### opacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+不透明度
+
+
+
+被框选中的数据点的不透明度，取值范围 0\-1
+
+:::
+
+#### stroke
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+描边颜色
+
+:::
+
+#### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+描边宽度
+
+:::
+
+### outOfBrushStyle
+
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
+
+:::note{title=描述}
+未被框选中的数据样式
+
+
+
+定义未被刷选中的数据点的样式
+
+:::
+
+
+#### opacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+不透明度
+
+
+
+未被框选中的数据点的不透明度，取值范围 0\-1
+
+:::
+
+#### stroke
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+描边颜色
+
+:::
+
+#### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+描边宽度
 
 :::
 
@@ -2020,16 +2156,6 @@ X轴网格线
 
 :::note{title=描述}
 矩形的最大高度，可以是像素值或者百分比字符串
-
-:::
-
-
-## barGapInGroup
-
-**Type:** `string | number | undefined`
-
-:::note{title=描述}
-同一分类下，矩形之间的距离，可以是像素值或者百分比字符串
 
 :::
 

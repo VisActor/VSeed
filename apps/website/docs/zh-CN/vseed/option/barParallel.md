@@ -1,18 +1,20 @@
-# BoxPlot
+# BarParallel
 
 :::info{title=推荐}
-\- 推荐字段配置: `1`个指标, `1`个维度
+\- 推荐字段配置: `1`个指标, `2`个维度
 
 \- 支持数据重塑: 至少`1`个指标, `0`个维度
 
 :::
 
 :::info{title=编码映射}
-箱线图支持以下视觉通道:
+并列条形图支持以下视觉通道:
 
-`xAxis`  : x轴通道, 支持`多个维度`, 按维度值映射至x轴
+`yAxis`  : y轴通道, 支持`多个维度`, 按维度值映射至y轴
 
-`yAxis`  : y轴通道, 支持`多个指标`, 按指标值映射至y轴
+`xAxis`  : x轴通道, 支持`多个指标`, 按指标值映射至x轴
+
+`detail` : 细分通道, 支持`多个维度`, 在同一个颜色系列下展示更细粒度的数据时使用
 
 `color`  : 颜色通道, 支持`多个维度`或 `一个指标`, 维度颜色用于区分不同的数据系列, 指标颜色用于线性映射指标值到图形颜色
 
@@ -23,24 +25,24 @@
 :::
 
 :::note{title=描述}
-箱线图，适用于展示数据分布情况，X轴为类目轴（分类数据），Y轴为数值轴（连续数据），箱体纵向排列
+并列条形图，适用于多指标横向并行对比场景，多个条形平行排列展示不同指标值
 
 适用场景:
 
-\- 数据项名称较短时
+\- 类别名称较长时的多指标对比
 
-\- 需要直观比较不同类别的数值大小
+\- 排名与数值同时展示的横向比较
 
-\- 展示时间序列数据变化趋势
+\- 多维度数据的并列分析
 
 :::
 
 :::warning{title=Warning}
 数据要求:
 
-\- 至少1个数值字段（度量）
+\- 至少1个指标字段（度量）
 
-\- 第一个维度会放至X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
+\- 第一个维度会放至Y轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
 
 \- 所有指标会自动合并为一个指标
 
@@ -53,15 +55,15 @@
 
 ## chartType
 
-**Type:** `"boxPlot"`
+**Type:** `"barParallel"`
 
 :::note{title=描述}
-箱型图，适用于展示数据分布情况，X轴为类目轴（分类数据），Y轴为数值轴（连续数据），箱体纵向排列
+并列条形图，适用于多指标横向并行对比场景
 
 :::
 
 **示例**
-'boxPlot'
+'barParallel'
 
 
 
@@ -71,27 +73,27 @@
 **Type:** `Record<string | number, any>[]`
 
 :::note{title=描述}
-符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 柱状图的数据最终会被转换为2个维度, 1个指标.
+数据源, 符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 并列条形图的数据最终会被转换为2个维度, 1个指标.
 
 :::
 
 **示例**
-[{category:'A', value:100}, {category:'B', value:200}]
+[{category:'A', value1:100, value2:200}, {category:'B', value1:150, value2:250}]
 
 
 
 
 ## dimensions
 
-**Type:** `BoxPlotDimension[] | undefined`
+**Type:** `BarDimension[] | undefined`
 
 :::note{title=描述}
-箱线图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
+维度, 第一个维度被映射到Y轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
 
 :::
 
 **示例**
-[{id: "category", alias: "类别"}]
+[{id: 'category', alias: '类别'}]
 
 
 
@@ -116,14 +118,16 @@
 
 ### encoding
 
-**Type:** `"xAxis" | "color" | "tooltip" | "label" | "row" | "column" | undefined`
+**Type:** `"color" | "detail" | "tooltip" | "label" | "row" | "column" | "yAxis" | undefined`
 
 :::note{title=描述}
 维度映射的通道
 
-\- xAxis: 支持将多个维度映射到x轴
+\- yAxis: 支持将多个维度映射到y轴
 
 \- color: 支持将多个维度映射到颜色通道
+
+\- detail: 支持将多个维度映射到详情通道
 
 \- tooltip: 支持将多个维度映射到提示通道
 
@@ -138,15 +142,15 @@
 
 ## measures
 
-**Type:** `BoxPlotMeasure[] | undefined`
+**Type:** `BarMeasure[] | undefined`
 
 :::note{title=描述}
-箱线图的所有指标会自动合并为一个指标, 映射到Y轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
+指标, 并列条形图指标会自动合并为一个指标, 映射到X轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
 
 :::
 
 **示例**
-[{id: "value", alias: "数值"}]
+[{id: 'value1', alias: '指标1'}, {id: 'value2', alias: '指标2'}]
 
 
 
@@ -470,24 +474,12 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 
 ### encoding
 
-**Type:** `"value" | "color" | "tooltip" | "label" | "q1" | "median" | "q3" | "min" | "max" | "outliers" | undefined`
+**Type:** `"xAxis" | "color" | "detail" | "tooltip" | "label" | undefined`
 
 :::note{title=描述}
 指标映射的通道
 
-\- value: 离散的值对应的指标，用于计算统计值展示箱线图
-
-\- q1: 统计值 25 分位数对应的指标映射
-
-\- q3: 统计值 75 分位数对应的指标映射
-
-\- min: 盒须最小值的指标映射
-
-\- max: 盒须最大值的指标映射
-
-\- meadian: 统计值中位数的指标映射
-
-\- outliers: 异常值的指标映射
+\- xAxis: 指标映射的x轴
 
 \- detail: 指标映射的详情
 
@@ -519,7 +511,7 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 **Type:** `BackgroundColor`
 
 :::note{title=描述}
-图表的背景颜色, 背景颜色可以是颜色字符串, 默认为透明背景, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
+图表的背景颜色, 默认为透明背景, 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
 
 :::
 
@@ -1150,6 +1142,44 @@ maxSize: 2
 
 :::
 
+### brushType
+
+**Type:** `"rect" | "x" | "y" | "polygon" | undefined`
+
+:::note{title=描述}
+brush的类型
+
+
+
+定义刷选框的形状和刷选方向
+
+\- `rect`: 矩形框选，可以在X轴和Y轴两个方向上同时进行框选
+
+\- `polygon`: 多边形框选，通过点击多个点绘制任意多边形进行框选
+
+\- `x`: X轴方向框选，只在X轴方向上进行框选，Y轴方向不限制
+
+\- `y`: Y轴方向框选，只在Y轴方向上进行框选，X轴方向不限制
+
+:::
+
+### brushMode
+
+**Type:** `"single" | "multiple" | undefined`
+
+:::note{title=描述}
+框选模式，单选还是多选
+
+
+
+定义刷选的模式
+
+\- `single`: 单选模式，每次只能有一个刷选框
+
+\- `multiple`: 多选模式，可以同时存在多个刷选框
+
+:::
+
 ### removeOnClick
 
 **Type:** `boolean | undefined`
@@ -1159,182 +1189,39 @@ maxSize: 2
 
 :::
 
+### inBrushStyle
 
-## xAxis
-
-**Type:** `XBandAxis | undefined`
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
 
 :::note{title=描述}
-x轴, 类目轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.
+被框选中的数据样式
+
+
+
+定义被刷选中的数据点的样式
 
 :::
 
 
-### visible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴是否可见
-
-:::
-
-### inverse
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴是否反向展示, 仅对数值轴生效
-
-:::
-
-### zero
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-是否在坐标轴上强制显示 0 值, 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
-
-:::
-
-### labelAutoHide
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴标签, 自动隐藏, 2个标签若重叠(间隔小于autoHideGap), 则自动隐藏导致重叠的标签. 仅对类目轴生效.
-
-:::
-
-### labelAutoHideGap
+#### opacity
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-轴标签, 自动隐藏间隔, 若2个文本标签的间隔小于autoHideGap, 则自动隐藏导致重叠的标签. 仅对类目轴生效.
+不透明度
 
-autoHide开启时, 使用autoHide, 设置在autoHideSeparation上
 
-autoHide关闭时, 使用sampling采样, 设置在minGap上
 
-:::
-
-### labelAutoRotate
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴标签, 自动旋转, 当标签宽度超过轴长度时, 自动旋转标签. 仅对类目轴生效.
+被框选中的数据点的不透明度，取值范围 0\-1
 
 :::
 
-### labelAutoRotateAngleRange
-
-**Type:** `number[] | undefined`
-
-:::note{title=描述}
-轴标签, 自动旋转角度范围, 当自动旋转开启时, 标签旋转角度范围. 仅对类目轴生效.
-
-:::
-
-### labelAutoLimit
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴标签, 自动限制长度, 当标签宽度超过轴长度时, 超出部分省略号表示, 鼠标悬浮后可见标签, 自动限制标签宽度. 仅对类目轴生效.
-
-:::
-
-### labelAutoLimitLength
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-轴标签, 自动限制长度的最大长度, 当标签文本长度超过最大长度时, 超出部分省略号表示, 鼠标悬浮后可见标签. 仅对类目轴生效.
-
-:::
-
-### label
-
-**Type:** `{ visible?: boolean; labelColor?: string; labelFontSize?: number; labelFontWeight?: number; labelAngle?: number; } | undefined`
-
-:::note{title=描述}
-X轴刻度标签
-
-:::
-
-
-#### visible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-标签是否可见
-
-:::
-
-#### labelColor
+#### stroke
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-标签颜色
-
-:::
-
-#### labelFontSize
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-标签字体大小
-
-:::
-
-#### labelFontWeight
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-标签字体粗细
-
-:::
-
-#### labelAngle
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-标签旋转角度
-
-:::
-
-### line
-
-**Type:** `{ visible?: boolean; lineColor?: string; lineWidth?: number; } | undefined`
-
-:::note{title=描述}
-X轴线
-
-:::
-
-
-#### visible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-轴线是否可见
-
-:::
-
-#### lineColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-轴线颜色
+描边颜色
 
 :::
 
@@ -1343,159 +1230,62 @@ X轴线
 **Type:** `number | undefined`
 
 :::note{title=描述}
-轴线宽度
+描边宽度
 
 :::
 
-### tick
+### outOfBrushStyle
 
-**Type:** `{ visible?: boolean; tickInside?: boolean; tickColor?: string; tickSize?: number; } | undefined`
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
 
 :::note{title=描述}
-X轴刻度
+未被框选中的数据样式
+
+
+
+定义未被刷选中的数据点的样式
 
 :::
 
 
-#### visible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-刻度是否可见
-
-:::
-
-#### tickInside
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-刻度是否朝内
-
-:::
-
-#### tickColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-刻度颜色
-
-:::
-
-#### tickSize
+#### opacity
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-刻度尺寸
+不透明度
+
+
+
+未被框选中的数据点的不透明度，取值范围 0\-1
 
 :::
 
-### title
-
-**Type:** `{ visible?: boolean; titleText?: string; titleColor?: string; titleFontSize?: number; titleFontWeight?: number; } | undefined`
-
-:::note{title=描述}
-X轴标题
-
-:::
-
-
-#### visible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-标题是否可见
-
-:::
-
-#### titleText
+#### stroke
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-标题文本, 默认跟随字段配置
+描边颜色
 
 :::
 
-#### titleColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-标题颜色
-
-:::
-
-#### titleFontSize
+#### lineWidth
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-标题字体大小
-
-:::
-
-#### titleFontWeight
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-标题字体粗细
-
-:::
-
-### grid
-
-**Type:** `{ visible?: boolean; gridColor?: string; gridWidth?: number; gridLineDash?: number[]; } | undefined`
-
-:::note{title=描述}
-X轴网格线
+描边宽度
 
 :::
 
 
-#### visible
+## xAxis
 
-**Type:** `boolean | undefined`
-
-#### gridColor
-
-**Type:** `string | undefined`
+**Type:** `XLinearAxis | undefined`
 
 :::note{title=描述}
-网格线颜色
-
-:::
-
-#### gridWidth
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-网格线宽度
-
-:::
-
-#### gridLineDash
-
-**Type:** `number[] | undefined`
-
-:::note{title=描述}
-网格线类型
-
-:::
-
-
-## yAxis
-
-**Type:** `YLinearAxis | undefined`
-
-:::note{title=描述}
-y轴, 数值轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.
+x轴, 数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.
 
 :::
 
@@ -1956,12 +1746,428 @@ X轴网格线
 :::
 
 
+## yAxis
+
+**Type:** `YBandAxis | undefined`
+
+:::note{title=描述}
+y轴, 类目轴, y轴配置, 用于定义图表的y轴, 包括y轴的位置, 格式, 样式等.
+
+:::
+
+
+### visible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+轴是否可见
+
+:::
+
+### inverse
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+轴是否反向展示, 仅对数值轴生效
+
+:::
+
+### zero
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否在坐标轴上强制显示 0 值, 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
+
+:::
+
+### labelAutoHide
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+轴标签, 自动隐藏, 2个标签若重叠(间隔小于autoHideGap), 则自动隐藏导致重叠的标签. 仅对类目轴生效.
+
+:::
+
+### labelAutoHideGap
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+轴标签, 自动隐藏间隔, 若2个文本标签的间隔小于autoHideGap, 则自动隐藏导致重叠的标签. 仅对类目轴生效.
+
+autoHide开启时, 使用autoHide, 设置在autoHideSeparation上
+
+autoHide关闭时, 使用sampling采样, 设置在minGap上
+
+:::
+
+### labelAutoRotate
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+轴标签, 自动旋转, 当标签宽度超过轴长度时, 自动旋转标签. 仅对类目轴生效.
+
+:::
+
+### labelAutoRotateAngleRange
+
+**Type:** `number[] | undefined`
+
+:::note{title=描述}
+轴标签, 自动旋转角度范围, 当自动旋转开启时, 标签旋转角度范围. 仅对类目轴生效.
+
+:::
+
+### labelAutoLimit
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+轴标签, 自动限制长度, 当标签宽度超过轴长度时, 超出部分省略号表示, 鼠标悬浮后可见标签, 自动限制标签宽度. 仅对类目轴生效.
+
+:::
+
+### labelAutoLimitLength
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+轴标签, 自动限制长度的最大长度, 当标签文本长度超过最大长度时, 超出部分省略号表示, 鼠标悬浮后可见标签. 仅对类目轴生效.
+
+:::
+
+### label
+
+**Type:** `{ visible?: boolean; labelColor?: string; labelFontSize?: number; labelFontWeight?: number; labelAngle?: number; } | undefined`
+
+:::note{title=描述}
+X轴刻度标签
+
+:::
+
+
+#### visible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+标签是否可见
+
+:::
+
+#### labelColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+标签颜色
+
+:::
+
+#### labelFontSize
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标签字体大小
+
+:::
+
+#### labelFontWeight
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标签字体粗细
+
+:::
+
+#### labelAngle
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标签旋转角度
+
+:::
+
+### line
+
+**Type:** `{ visible?: boolean; lineColor?: string; lineWidth?: number; } | undefined`
+
+:::note{title=描述}
+X轴线
+
+:::
+
+
+#### visible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+轴线是否可见
+
+:::
+
+#### lineColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+轴线颜色
+
+:::
+
+#### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+轴线宽度
+
+:::
+
+### tick
+
+**Type:** `{ visible?: boolean; tickInside?: boolean; tickColor?: string; tickSize?: number; } | undefined`
+
+:::note{title=描述}
+X轴刻度
+
+:::
+
+
+#### visible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+刻度是否可见
+
+:::
+
+#### tickInside
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+刻度是否朝内
+
+:::
+
+#### tickColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+刻度颜色
+
+:::
+
+#### tickSize
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+刻度尺寸
+
+:::
+
+### title
+
+**Type:** `{ visible?: boolean; titleText?: string; titleColor?: string; titleFontSize?: number; titleFontWeight?: number; } | undefined`
+
+:::note{title=描述}
+X轴标题
+
+:::
+
+
+#### visible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+标题是否可见
+
+:::
+
+#### titleText
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+标题文本, 默认跟随字段配置
+
+:::
+
+#### titleColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+标题颜色
+
+:::
+
+#### titleFontSize
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标题字体大小
+
+:::
+
+#### titleFontWeight
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+标题字体粗细
+
+:::
+
+### grid
+
+**Type:** `{ visible?: boolean; gridColor?: string; gridWidth?: number; gridLineDash?: number[]; } | undefined`
+
+:::note{title=描述}
+X轴网格线
+
+:::
+
+
+#### visible
+
+**Type:** `boolean | undefined`
+
+#### gridColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+网格线颜色
+
+:::
+
+#### gridWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+网格线宽度
+
+:::
+
+#### gridLineDash
+
+**Type:** `number[] | undefined`
+
+:::note{title=描述}
+网格线类型
+
+:::
+
+
+## crosshairRect
+
+**Type:** `CrosshairRect | undefined`
+
+:::note{title=描述}
+水平提示框配置, 用于定义图表的水平提示框, 包括水平提示框的颜色、标签样式等.
+
+:::
+
+
+### visible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否显示十字准星线矩形区域
+
+:::
+
+### rectColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+十字准星线矩形区域颜色
+
+:::
+
+### labelColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+十字准星线矩形区域标签颜色
+
+:::
+
+### labelVisible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否显示十字准星线矩形区域标签
+
+:::
+
+### labelBackgroundColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+十字准星线矩形区域标签背景颜色
+
+:::
+
+
+## stackCornerRadius
+
+**Type:** `number | number[] | undefined`
+
+:::note{title=描述}
+条形图 堆叠圆角
+
+:::
+
+
+## barMaxWidth
+
+**Type:** `string | number | undefined`
+
+:::note{title=描述}
+矩形的最大高度，可以是像素值或者百分比字符串
+
+:::
+
+
+## barGapInGroup
+
+**Type:** `string | number | undefined`
+
+:::note{title=描述}
+同一分类下，矩形之间的距离，可以是像素值或者百分比字符串
+
+:::
+
+
 ## sort
 
 **Type:** `Sort | undefined`
 
 :::note{title=描述}
-X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+Y轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
 
 :::
 
@@ -2104,68 +2310,20 @@ order:'asc'
 **Type:** `unique symbol`
 
 
-## crosshairRect
+## barStyle
 
-**Type:** `CrosshairRect | undefined`
-
-:::note{title=描述}
-垂直提示框配置, 用于定义图表的垂直提示框, 包括垂直提示框的颜色、标签样式等.
-
-:::
-
-
-### visible
-
-**Type:** `boolean | undefined`
+**Type:** `BarStyle | BarStyle[] | undefined`
 
 :::note{title=描述}
-是否显示十字准星线矩形区域
+矩形图元样式, 条形图样式配置, 用于定义图表的条形图样式, 包括条形图的颜色, 边框, 圆角等.
 
-:::
+支持全局样式或条件样式配置
 
-### rectColor
+数据筛选器
 
-**Type:** `string | undefined`
+若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
 
-:::note{title=描述}
-十字准星线矩形区域颜色
-
-:::
-
-### labelColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-十字准星线矩形区域标签颜色
-
-:::
-
-### labelVisible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-是否显示十字准星线矩形区域标签
-
-:::
-
-### labelBackgroundColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-十字准星线矩形区域标签背景颜色
-
-:::
-
-
-## boxPlotStyle
-
-**Type:** `BoxPlotStyle | BoxPlotStyle[] | undefined`
-
-:::note{title=描述}
-箱线图箱体的样式配置，支持全局或选择器粒度生效
+若未配置selector, 则样式全局生效.
 
 :::
 
@@ -2269,281 +2427,57 @@ same as operator
 
 :::
 
-### boxVisible
+### barVisible
 
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
-boxPlot图元是否可见
+柱图元(矩形图元)是否可见
 
 :::
 
-### boxColor
+### barColor
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-boxPlot图元颜色
+柱图元(矩形图元)颜色
 
 :::
 
-### boxColorOpacity
+### barColorOpacity
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-boxPlot图元颜色透明度
+柱图元(矩形图元)颜色透明度
 
 :::
 
-### boxBorderColor
+### barBorderColor
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-boxPlot图元边框颜色
+柱图元(矩形图元)边框颜色
 
 :::
 
-### boxBorderWidth
+### barBorderWidth
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-boxPlot图元边框宽度
+柱图元(矩形图元)边框宽度
 
 :::
 
-### boxBorderOpacity
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-boxPlot图元边框透明度
-
-:::
-
-### boxCornerRadius
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-箱体的圆角大小
-
-:::
-
-### medianBorderColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-中位数线的颜色
-
-:::
-
-### whiskerBorderColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-盒须线的颜色
-
-:::
-
-
-## outlierStyle
-
-**Type:** `OutlierStyle | OutlierStyle[] | undefined`
-
-:::note{title=描述}
-异常点的样式配置，支持全局或选择器粒度生效
-
-:::
-
-
-### selector
-
-**Type:** `Selector | Selectors | undefined`
-
-:::note{title=描述}
-数据选择器
-
-
-
-若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
-
-若未配置selector, 则样式全局生效.
-
-:::
-
-**示例**
-数值选择器
-selector = "tool"
-selector = ["tool", "book"]
-selector = 100
-selector = [100, 200]
-
-局部数据选择器
-selector = { profit: 100 }
-selector = [{ profit: 100 }, { profit: 200 }]
-
-条件维度选择器
-selector = {
-field: 'category',
-operator: 'in',
-value: 'tool'
-}
-selector = {
-field: 'category',
-operator: 'not in',
-value: 'book'
-}
-
-条件指标选择器
-selector = {
-field: 'profit',
-operator: '>=',
-value: 100
-}
-selector = {
-field: 'profit',
-operator: 'between'
-value: [100, 300]
-}
-
-
-
-
-#### field
-
-**Type:** `string`
-
-:::note{title=描述}
-维度字段, dimensions 某一项的 id
-
-:::
-
-#### operator
-
-**Type:** `"in" | "not in" | undefined`
-
-:::note{title=描述}
-操作符
-
-\- in: 选择数据项中维度字段的值在 value 中的数据项
-
-\- not in: 选择数据项中维度字段的值不在 value 中的数据项
-
-:::
-
-#### op
-
-**Type:** `"in" | "not in" | undefined`
-
-:::note{title=描述}
-操作符
-
-\- in: 选择数据项中维度字段的值在 value 中的数据项
-
-\- not in: 选择数据项中维度字段的值不在 value 中的数据项
-
-same as operator
-
-:::
-
-#### value
-
-**Type:** `string | number | (string | number)[]`
-
-:::note{title=描述}
-选择数据项中维度字段的值, 支持数组
-
-:::
-
-### pointVisible
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-点是否可见
-
-:::
-
-### pointSize
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-点大小
-
-
-
-点大小
-
-:::
-
-### pointColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-点图元颜色
-
-
-
-点图元颜色
-
-:::
-
-### pointColorOpacity
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-点图元颜色透明度
-
-
-
-点图元颜色透明度
-
-:::
-
-### pointBorderColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-点图元边框颜色
-
-
-
-点图元边框颜色
-
-:::
-
-### pointBorderWidth
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-点图元边框宽度
-
-
-
-点图元边框宽度
-
-:::
-
-### pointBorderStyle
+### barBorderStyle
 
 **Type:** `"solid" | "dashed" | "dotted" | undefined`
 
 :::note{title=描述}
-点图元边框样式
-
-
-
-点图元边框样式
+柱图元(矩形图元)边框样式
 
 :::
 
@@ -2556,21 +2490,29 @@ dotted
 
 
 
+### barBorderOpacity
 
-## whiskers
-
-**Type:** `number | number[] | undefined`
+**Type:** `number | undefined`
 
 :::note{title=描述}
-直方图的须长配置，支持标量值和长度为2 的数组
+柱图元(矩形图元)圆角
 
-当值为标量的时候，使用 whiskers * IQR 来计算上界值和下界值
 
-当值为2元数组的时候，whiskers[0] 需要在[0, 0.25)之间，表示下界值取对应的百分位数；
 
-whiskers[1] 需要在(0.75, 1]之间，表示上界值取对应的百分位数；
+柱图元(矩形图元)描边透明度
 
 :::
+
+**示例**
+4
+
+[0, 0, 10, 10]
+
+
+
+### barRadius
+
+**Type:** `number | number[] | undefined`
 
 
 ## annotationPoint
@@ -2865,7 +2807,7 @@ offsetX: 5, 标注点整体向右偏移5像素
 **Type:** `AnnotationVerticalLine | AnnotationVerticalLine[] | undefined`
 
 :::note{title=描述}
-维度值标注线，竖直方向展示，能够设置标注线的位置, 样式等
+数值标注线(包括均值线、最大值线、最小值线等)，竖直方向展示，能够设置标注线的位置, 样式等，如需绘制均值线等数值对应的标注线请使用该配置
 
 :::
 
@@ -3139,7 +3081,7 @@ true
 **Type:** `AnnotationHorizontalLine | AnnotationHorizontalLine[] | undefined`
 
 :::note{title=描述}
-数值标注线(包括均值线、最大值线、最小值线等)，水平方向展示，能够设置标注线的位置, 样式等，如需绘制均值线等数值对应的标注线请使用该配置
+维度值标注线，水平展示，能够设置标注线的位置, 样式等
 
 :::
 
@@ -3865,26 +3807,6 @@ true
 
 :::note{title=描述}
 图表语言配置, 支持'zh\-CN'与'en\-US'两种语言, 另外可以调用 intl.setLocale('zh\-CN') 方法设置语言
-
-:::
-
-
-## boxMaxWidth
-
-**Type:** `string | number | undefined`
-
-:::note{title=描述}
-箱线图的最大宽度，可以设置绝对的像素值，也可以使用百分比（如 '10%'）
-
-:::
-
-
-## boxGapInGroup
-
-**Type:** `string | number | undefined`
-
-:::note{title=描述}
-分组箱线图中各个分组内的间距，可以设置绝对的像素值，也可以使用百分比（如 '10%'）。
 
 :::
 

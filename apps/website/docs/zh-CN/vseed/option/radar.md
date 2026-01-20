@@ -1,22 +1,20 @@
-# Heatmap
+# Radar
 
 :::info{title=推荐}
-\- 推荐字段配置: `1`个指标, `2`个维度
+\- 推荐字段配置: `1`个指标, `1`个维度
 
 \- 支持数据重塑: 至少`1`个指标, `0`个维度
 
 :::
 
 :::info{title=编码映射}
-热力图支持以下视觉通道:
+雷达图支持以下视觉通道:
 
-`xAxis`      : x轴通道, 支持`多个维度`, 按维度值映射至x轴
+`angle`  : 角度通道, 支持`多个维度`, 按维度值映射至角度轴
 
-`yAxis`      : y轴通道, 支持`多个维度`, 按维度值映射至y轴
+`radius` : 半径通道, 支持`多个指标`, 按指标值映射至半径轴
 
-`detail` : 细分通道, 支持`多个维度`, 在同一个颜色系列下展示更细粒度的数据时使用
-
-`color`  : 颜色通道, 支持`一个指标`, 按指标值映射至颜色
+`color`  : 颜色通道, 支持`多个维度`或 `一个指标`, 维度颜色用于区分不同的数据系列, 指标颜色用于线性映射指标值到图形颜色
 
 `tooltip`: 提示通道, 支持`多个维度`与 `多个指标`, 会在鼠标悬停在数据点上时展示
 
@@ -25,49 +23,49 @@
 :::
 
 :::note{title=描述}
-热力图，通过二维矩阵的颜色深浅展示数据的分布和强弱关系
+雷达图，适用于多维度数据的对比分析，通过多轴坐标系展示各维度的数值分布
 
 适用场景:
 
-\- 大规模二维数据的密度和强度展示
+\- 多维度数据的综合表现对比
 
-\- 分类与数值的关联分析
+\- 多个对象在多个指标上的性能评估
 
-\- 时间序列与类别的交叉对比
+\- 分类数据的多维度特征展示
 
 :::
 
 :::warning{title=Warning}
 数据要求:
 
-\- 至少2个维度字段，用于确定热力图的行和列
+\- 至少1个数值字段（度量）
 
-\- 至少1个数值字段（度量），用于映射颜色深浅
+\- 第一个维度作为雷达图的各个维度轴，其他维度作为不同的系列进行对比
 
-\- 支持多个指标时，通常选择一个指标进行颜色映射
+\- 支持多个指标分别作为不同的系列展示
 
 默认开启的功能:
 
-\- 默认开启图例、坐标轴、数据标签、提示信息、数值缩放
+\- 默认开启图例、雷达坐标系、数据标签、提示信息、数值缩放
 
 :::
 
 
 ## chartType
 
-**Type:** `"heatmap"`
+**Type:** `"radar"`
 
 :::note{title=描述}
-热力图
+雷达图
 
 
 
-热力图，通过二维矩阵的颜色深浅展示数据的分布和强弱关系
+雷达图，通过多轴坐标系展示多维度数据对比关系
 
 :::
 
 **示例**
-'heatmap'
+'radar'
 
 
 
@@ -81,7 +79,7 @@
 
 
 
-符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 热力图的数据最终会被转换为2个维度, 1个指标.
+符合TidyData规范的且已经聚合的数据集，用于定义图表的数据来源和结构, 用户输入的数据集并不需要进行任何处理, VSeed带有强大的数据重塑功能, 会自行进行数据重塑, 玫瑰图的数据最终会被转换为2个维度, 1个指标.
 
 :::
 
@@ -93,14 +91,14 @@
 
 ## dimensions
 
-**Type:** `HeatmapDimension[] | undefined`
+**Type:** `RadarDimension[] | undefined`
 
 :::note{title=描述}
 维度
 
 
 
-热力图的第一个维度被映射到角度轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
+雷达图的第一个维度被映射到角度轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示.
 
 :::
 
@@ -130,14 +128,16 @@
 
 ### encoding
 
-**Type:** `"xAxis" | "tooltip" | "label" | "row" | "column" | "yAxis" | undefined`
+**Type:** `"color" | "detail" | "tooltip" | "label" | "row" | "column" | "angle" | undefined`
 
 :::note{title=描述}
 维度映射的通道
 
-\- xAxis: 支持将多个维度映射到x轴
+\- angle: 支持将多个维度映射到角度通道
 
-\- yAxis: 支持将多个维度映射到y轴
+\- color: 支持将多个维度映射到颜色通道
+
+\- detail: 支持将多个维度映射到详情通道
 
 \- tooltip: 支持将多个维度映射到提示通道
 
@@ -152,14 +152,14 @@
 
 ## measures
 
-**Type:** `HeatmapMeasure[] | undefined`
+**Type:** `RadarMeasure[] | undefined`
 
 :::note{title=描述}
 指标
 
 
 
-热力图的指标会自动合并为一个指标, 映射到半径轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
+雷达图的指标会自动合并为一个指标, 映射到半径轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
 
 :::
 
@@ -488,10 +488,12 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 
 ### encoding
 
-**Type:** `"color" | "tooltip" | "label" | undefined`
+**Type:** `"color" | "tooltip" | "label" | "radius" | undefined`
 
 :::note{title=描述}
 指标映射的通道
+
+\- radius: 指标映射的半径
 
 \- color: 指标映射的颜色
 
@@ -613,7 +615,11 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 **Type:** `Label | undefined`
 
 :::note{title=描述}
-热力图标签配置, 用于定义图表的数据标签, 自动开启标签反色, 确保标签可读性.
+标签
+
+
+
+标签配置, 用于定义图表的数据标签, 包括数据标签的位置, 格式, 样式等.
 
 :::
 
@@ -955,30 +961,16 @@ same as operator
 
 ## legend
 
-**Type:** `ColorLegend | undefined`
+**Type:** `Legend | undefined`
 
 :::note{title=描述}
 图例
 
 
 
-热力图的颜色图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.
+图例配置, 用于定义图表的图例, 包括图例的位置, 格式, 样式等.
 
 :::
-
-
-### position
-
-**Type:** `"left" | "leftTop" | "leftBottom" | "lt" | "lb" | "top" | "topLeft" | "topRight" | "tl" | "tr" | "right" | "rightTop" | "rightBottom" | "rt" | "rb" | "bottom" | "bottomLeft" | "bottomRight" | "bl" | "br" | undefined`
-
-:::note{title=描述}
-图例位置
-
-:::
-
-**示例**
-position: 'rightTop'
-
 
 
 ### enable
@@ -995,6 +987,25 @@ enable: true
 
 
 
+### border
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+图例边框是否开启
+
+:::
+
+**示例**
+border: true
+
+
+
+:::warning{title=Warning}
+仅离散图例生效
+
+:::
+
 ### labelColor
 
 **Type:** `string | undefined`
@@ -1004,12 +1015,21 @@ enable: true
 
 :::
 
-### labelFontColor
+### pagerIconColor
 
 **Type:** `string | undefined`
 
 :::note{title=描述}
-图例字体颜色
+分页器icon颜色
+
+:::
+
+### pagerIconDisableColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+分页器icon置灰颜色
 
 :::
 
@@ -1027,6 +1047,15 @@ labelFontSize: 10
 
 
 
+### labelFontColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+图例字体颜色
+
+:::
+
 ### labelFontWeight
 
 **Type:** `string | number | undefined`
@@ -1041,13 +1070,61 @@ labelFontWeight: 400
 
 
 
-### railBackgroundColor
+### shapeType
 
-**Type:** `string | undefined`
+**Type:** `"circle" | "cross" | "diamond" | "square" | "arrow" | "arrow2Left" | "arrow2Right" | "wedge" | "thinTriangle" | "triangle" | "triangleUp" | "triangleDown" | "triangleRight" | "triangleLeft" | "stroke" | "star" | "wye" | "rect" | "arrowLeft" | "arrowRight" | "rectRound" | "roundLine" | undefined`
 
-### handlerBorderColor
+:::note{title=描述}
+图例形状
 
-**Type:** `string | undefined`
+:::
+
+**示例**
+shapeType: 'circle'
+
+
+
+:::warning{title=Warning}
+仅离散图例生效
+
+:::
+
+### position
+
+**Type:** `"left" | "leftTop" | "leftBottom" | "lt" | "lb" | "top" | "topLeft" | "topRight" | "tl" | "tr" | "right" | "rightTop" | "rightBottom" | "rt" | "rb" | "bottom" | "bottomLeft" | "bottomRight" | "bl" | "br" | undefined`
+
+:::note{title=描述}
+图例位置
+
+:::
+
+**示例**
+position: 'rightTop'
+
+
+
+### maxSize
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+存在大量图例时, 最大列数 或 图例最大行数
+
+如果position为水平方向(bottom, bottomLeft, bottomRight, bl, br, top, topLeft, topRight, tl, tr), maxSize控制显示的列数
+
+如果position为垂直方向(left, leftTop, leftBottom, lt, lb, right, rightTop, rightBottom, rt, rb), maxSize控制显示的行数
+
+:::
+
+**示例**
+maxSize: 2
+
+
+
+:::warning{title=Warning}
+仅离散图例生效
+
+:::
 
 
 ## tooltip
@@ -1059,7 +1136,7 @@ labelFontWeight: 400
 
 
 
-热力图的提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等.
+提示信息配置, 用于定义图表的提示信息, 包括提示信息的位置, 格式, 样式等.
 
 :::
 
@@ -1097,12 +1174,140 @@ labelFontWeight: 400
 
 :::
 
+### brushType
+
+**Type:** `"rect" | "x" | "y" | "polygon" | undefined`
+
+:::note{title=描述}
+brush的类型
+
+
+
+定义刷选框的形状和刷选方向
+
+\- `rect`: 矩形框选，可以在X轴和Y轴两个方向上同时进行框选
+
+\- `polygon`: 多边形框选，通过点击多个点绘制任意多边形进行框选
+
+\- `x`: X轴方向框选，只在X轴方向上进行框选，Y轴方向不限制
+
+\- `y`: Y轴方向框选，只在Y轴方向上进行框选，X轴方向不限制
+
+:::
+
+### brushMode
+
+**Type:** `"single" | "multiple" | undefined`
+
+:::note{title=描述}
+框选模式，单选还是多选
+
+
+
+定义刷选的模式
+
+\- `single`: 单选模式，每次只能有一个刷选框
+
+\- `multiple`: 多选模式，可以同时存在多个刷选框
+
+:::
+
 ### removeOnClick
 
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
 框选结束是否清除选框
+
+:::
+
+### inBrushStyle
+
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
+
+:::note{title=描述}
+被框选中的数据样式
+
+
+
+定义被刷选中的数据点的样式
+
+:::
+
+
+#### opacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+不透明度
+
+
+
+被框选中的数据点的不透明度，取值范围 0\-1
+
+:::
+
+#### stroke
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+描边颜色
+
+:::
+
+#### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+描边宽度
+
+:::
+
+### outOfBrushStyle
+
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
+
+:::note{title=描述}
+未被框选中的数据样式
+
+
+
+定义未被刷选中的数据点的样式
+
+:::
+
+
+#### opacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+不透明度
+
+
+
+未被框选中的数据点的不透明度，取值范围 0\-1
+
+:::
+
+#### stroke
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+描边颜色
+
+:::
+
+#### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+描边宽度
 
 :::
 
@@ -1137,6 +1342,540 @@ labelFontWeight: 400
 ### brand
 
 **Type:** `unique symbol`
+
+
+## pointStyle
+
+**Type:** `PointStyle | PointStyle[] | undefined`
+
+:::note{title=描述}
+点图元样式配置, 用于定义图表的点图元样式, 包括点图元的颜色, 边框等.
+
+支持全局样式或条件样式配置
+
+数据筛选器
+
+若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
+
+若未配置selector, 则样式全局生效.
+
+:::
+
+
+### selector
+
+**Type:** `Selector | Selectors | undefined`
+
+:::note{title=描述}
+数据选择器
+
+
+
+若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
+
+若未配置selector, 则样式全局生效.
+
+:::
+
+**示例**
+数值选择器
+selector = "tool"
+selector = ["tool", "book"]
+selector = 100
+selector = [100, 200]
+
+局部数据选择器
+selector = { profit: 100 }
+selector = [{ profit: 100 }, { profit: 200 }]
+
+条件维度选择器
+selector = {
+field: 'category',
+operator: 'in',
+value: 'tool'
+}
+selector = {
+field: 'category',
+operator: 'not in',
+value: 'book'
+}
+
+条件指标选择器
+selector = {
+field: 'profit',
+operator: '>=',
+value: 100
+}
+selector = {
+field: 'profit',
+operator: 'between'
+value: [100, 300]
+}
+
+
+
+
+#### field
+
+**Type:** `string`
+
+:::note{title=描述}
+维度字段, dimensions 某一项的 id
+
+:::
+
+#### operator
+
+**Type:** `"in" | "not in" | undefined`
+
+:::note{title=描述}
+操作符
+
+\- in: 选择数据项中维度字段的值在 value 中的数据项
+
+\- not in: 选择数据项中维度字段的值不在 value 中的数据项
+
+:::
+
+#### op
+
+**Type:** `"in" | "not in" | undefined`
+
+:::note{title=描述}
+操作符
+
+\- in: 选择数据项中维度字段的值在 value 中的数据项
+
+\- not in: 选择数据项中维度字段的值不在 value 中的数据项
+
+same as operator
+
+:::
+
+#### value
+
+**Type:** `string | number | (string | number)[]`
+
+:::note{title=描述}
+选择数据项中维度字段的值, 支持数组
+
+:::
+
+### pointVisible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+点是否可见
+
+:::
+
+### pointSize
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+点大小
+
+
+
+点大小
+
+:::
+
+### pointColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+点图元颜色
+
+
+
+点图元颜色
+
+:::
+
+### pointColorOpacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+点图元颜色透明度
+
+
+
+点图元颜色透明度
+
+:::
+
+### pointBorderColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+点图元边框颜色
+
+
+
+点图元边框颜色
+
+:::
+
+### pointBorderWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+点图元边框宽度
+
+
+
+点图元边框宽度
+
+:::
+
+### pointBorderStyle
+
+**Type:** `"solid" | "dashed" | "dotted" | undefined`
+
+:::note{title=描述}
+点图元边框样式
+
+
+
+点图元边框样式
+
+:::
+
+**示例**
+solid
+
+dashed
+
+dotted
+
+
+
+
+## lineStyle
+
+**Type:** `LineStyle | LineStyle[] | undefined`
+
+:::note{title=描述}
+线图元样式配置, 用于定义图表的线图元样式, 包括线图元的颜色, 透明度, 曲线等.
+
+支持全局样式或条件样式配置
+
+数据筛选器
+
+若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
+
+若未配置selector, 则样式全局生效.
+
+:::
+
+
+### selector
+
+**Type:** `Selector | Selectors | undefined`
+
+:::note{title=描述}
+数据选择器
+
+
+
+若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
+
+若未配置selector, 则样式全局生效.
+
+:::
+
+**示例**
+数值选择器
+selector = "tool"
+selector = ["tool", "book"]
+selector = 100
+selector = [100, 200]
+
+局部数据选择器
+selector = { profit: 100 }
+selector = [{ profit: 100 }, { profit: 200 }]
+
+条件维度选择器
+selector = {
+field: 'category',
+operator: 'in',
+value: 'tool'
+}
+selector = {
+field: 'category',
+operator: 'not in',
+value: 'book'
+}
+
+条件指标选择器
+selector = {
+field: 'profit',
+operator: '>=',
+value: 100
+}
+selector = {
+field: 'profit',
+operator: 'between'
+value: [100, 300]
+}
+
+
+
+
+#### field
+
+**Type:** `string`
+
+:::note{title=描述}
+维度字段, dimensions 某一项的 id
+
+:::
+
+#### operator
+
+**Type:** `"in" | "not in" | undefined`
+
+:::note{title=描述}
+操作符
+
+\- in: 选择数据项中维度字段的值在 value 中的数据项
+
+\- not in: 选择数据项中维度字段的值不在 value 中的数据项
+
+:::
+
+#### op
+
+**Type:** `"in" | "not in" | undefined`
+
+:::note{title=描述}
+操作符
+
+\- in: 选择数据项中维度字段的值在 value 中的数据项
+
+\- not in: 选择数据项中维度字段的值不在 value 中的数据项
+
+same as operator
+
+:::
+
+#### value
+
+**Type:** `string | number | (string | number)[]`
+
+:::note{title=描述}
+选择数据项中维度字段的值, 支持数组
+
+:::
+
+### lineVisible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+线段是否可见
+
+:::
+
+### lineSmooth
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+线段是否平滑
+
+:::
+
+### lineColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+线段颜色
+
+:::
+
+### lineColorOpacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+线段颜色透明度
+
+:::
+
+### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+线段宽度
+
+:::
+
+
+## areaStyle
+
+**Type:** `AreaStyle | AreaStyle[] | undefined`
+
+:::note{title=描述}
+面积图元样式配置, 用于定义图表的面积图元样式, 包括面积图元的颜色, 透明度, 边框等.
+
+支持全局样式或条件样式配置
+
+数据筛选器
+
+若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
+
+若未配置selector, 则样式全局生效.
+
+:::
+
+
+### selector
+
+**Type:** `Selector | Selectors | undefined`
+
+:::note{title=描述}
+数据选择器
+
+
+
+若配置selector, 提供数值 selector, 局部数据 selector, 条件维度 selector, 条件指标 selector 共四类数据匹配能力
+
+若未配置selector, 则样式全局生效.
+
+:::
+
+**示例**
+数值选择器
+selector = "tool"
+selector = ["tool", "book"]
+selector = 100
+selector = [100, 200]
+
+局部数据选择器
+selector = { profit: 100 }
+selector = [{ profit: 100 }, { profit: 200 }]
+
+条件维度选择器
+selector = {
+field: 'category',
+operator: 'in',
+value: 'tool'
+}
+selector = {
+field: 'category',
+operator: 'not in',
+value: 'book'
+}
+
+条件指标选择器
+selector = {
+field: 'profit',
+operator: '>=',
+value: 100
+}
+selector = {
+field: 'profit',
+operator: 'between'
+value: [100, 300]
+}
+
+
+
+
+#### field
+
+**Type:** `string`
+
+:::note{title=描述}
+维度字段, dimensions 某一项的 id
+
+:::
+
+#### operator
+
+**Type:** `"in" | "not in" | undefined`
+
+:::note{title=描述}
+操作符
+
+\- in: 选择数据项中维度字段的值在 value 中的数据项
+
+\- not in: 选择数据项中维度字段的值不在 value 中的数据项
+
+:::
+
+#### op
+
+**Type:** `"in" | "not in" | undefined`
+
+:::note{title=描述}
+操作符
+
+\- in: 选择数据项中维度字段的值在 value 中的数据项
+
+\- not in: 选择数据项中维度字段的值不在 value 中的数据项
+
+same as operator
+
+:::
+
+#### value
+
+**Type:** `string | number | (string | number)[]`
+
+:::note{title=描述}
+选择数据项中维度字段的值, 支持数组
+
+:::
+
+### areaVisible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+面积图元是否可见
+
+
+
+面积图元是否可见
+
+:::
+
+### areaColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+面积图元的颜色
+
+
+
+面积图元的颜色
+
+:::
+
+### areaColorOpacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+面积图元的颜色透明度
+
+
+
+面积图元的颜色透明度
+
+:::
 
 
 ## locale

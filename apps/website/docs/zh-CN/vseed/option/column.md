@@ -1,34 +1,71 @@
-# Histogram
+# Column
+
+:::info{title=推荐}
+\- 推荐字段配置: `1`个指标, `2`个维度
+
+\- 支持数据重塑: 至少`1`个指标, `0`个维度
+
+:::
 
 :::info{title=编码映射}
-直方图支持以下视觉通道:
+柱状图支持以下视觉通道:
 
-`xAxis`  : x轴通道, 支持`一个维度`, 按维度值分箱计算后显示到x轴
+`xAxis`  : x轴通道, 支持`多个维度`, 按维度值映射至x轴
+
+`yAxis`  : y轴通道, 支持`多个指标`, 按指标值映射至y轴
+
+`detail` : 细分通道, 支持`多个维度`, 在同一个颜色系列下展示更细粒度的数据时使用
+
+`color`  : 颜色通道, 支持`多个维度`或 `一个指标`, 维度颜色用于区分不同的数据系列, 指标颜色用于线性映射指标值到图形颜色
+
+`tooltip`: 提示通道, 支持`多个维度`与 `多个指标`, 会在鼠标悬停在数据点上时展示
+
+`label`  : 标签通道, 支持`多个维度`与 `多个指标`, 会在数据点上展示数据标签
 
 :::
 
 :::note{title=描述}
-直方图，适用于展示数据分布情况的场景，X轴为数值轴（连续数据），Y轴为数值轴（连续数据），柱子纵向排列
+柱状图，适用于纵向数据对比场景，X轴为类目轴（分类数据），Y轴为数值轴（连续数据），柱子纵向排列
 
 适用场景:
 
-\- 展示数据的分布情况，如频率分布、概率分布等
+\- 数据项名称较短时
 
-\- 分析数据的集中趋势和离散程度
+\- 需要直观比较不同类别的数值大小
 
-\- 识别数据中的异常值和模式
+\- 展示时间序列数据变化趋势
+
+:::
+
+:::warning{title=Warning}
+数据要求:
+
+\- 至少1个数值字段（度量）
+
+\- 第一个维度会放至X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
+
+\- 所有指标会自动合并为一个指标
+
+默认开启的功能:
+
+\- 默认开启图例、坐标轴、数据标签、提示信息
 
 :::
 
 
 ## chartType
 
-**Type:** `"histogram"`
+**Type:** `"column"`
 
 :::note{title=描述}
-直方图，适用于展示数据分布情况
+柱状图，适用于纵向数据对比场景，X轴为类目轴（分类数据），Y轴为数值轴（连续数据），柱子纵向排列
 
 :::
+
+**示例**
+'column'
+
+
 
 
 ## dataset
@@ -48,10 +85,10 @@
 
 ## dimensions
 
-**Type:** `HistogramDimension[] | undefined`
+**Type:** `ColumnDimension[] | undefined`
 
 :::note{title=描述}
-直方图通常不需要维度
+柱状图的第一个维度被映射到X轴, 其余维度会与指标名称(存在多个指标时)合并, 作为图例项展示
 
 :::
 
@@ -81,10 +118,12 @@
 
 ### encoding
 
-**Type:** `"tooltip" | "label" | "row" | "column" | undefined`
+**Type:** `"xAxis" | "color" | "detail" | "tooltip" | "label" | "row" | "column" | undefined`
 
 :::note{title=描述}
 维度映射的通道
+
+\- xAxis: 支持将多个维度映射到x轴
 
 \- color: 支持将多个维度映射到颜色通道
 
@@ -103,10 +142,10 @@
 
 ## measures
 
-**Type:** `HistogramMeasure[] | undefined`
+**Type:** `ColumnMeasure[] | undefined`
 
 :::note{title=描述}
-直方图仅支持一个维度，并且数据为离散数据
+柱状图的所有指标会自动合并为一个指标, 映射到Y轴, 存在多个指标时, 指标名称会与其余维度合并, 作为图例项展示.
 
 :::
 
@@ -435,16 +474,14 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 
 ### encoding
 
-**Type:** `"value" | "color" | "tooltip" | "label" | "x0" | "x1" | undefined`
+**Type:** `"color" | "detail" | "tooltip" | "label" | "yAxis" | undefined`
 
 :::note{title=描述}
 指标映射的通道
 
-\- value: 直方图的值通道
+\- yAxis: 指标映射的y轴
 
-\- x0: 直方图的x0通道
-
-\- x1: 直方图的x1通道
+\- detail: 指标映射的详情
 
 \- color: 指标映射的颜色
 
@@ -1105,6 +1142,44 @@ maxSize: 2
 
 :::
 
+### brushType
+
+**Type:** `"rect" | "x" | "y" | "polygon" | undefined`
+
+:::note{title=描述}
+brush的类型
+
+
+
+定义刷选框的形状和刷选方向
+
+\- `rect`: 矩形框选，可以在X轴和Y轴两个方向上同时进行框选
+
+\- `polygon`: 多边形框选，通过点击多个点绘制任意多边形进行框选
+
+\- `x`: X轴方向框选，只在X轴方向上进行框选，Y轴方向不限制
+
+\- `y`: Y轴方向框选，只在Y轴方向上进行框选，X轴方向不限制
+
+:::
+
+### brushMode
+
+**Type:** `"single" | "multiple" | undefined`
+
+:::note{title=描述}
+框选模式，单选还是多选
+
+
+
+定义刷选的模式
+
+\- `single`: 单选模式，每次只能有一个刷选框
+
+\- `multiple`: 多选模式，可以同时存在多个刷选框
+
+:::
+
 ### removeOnClick
 
 **Type:** `boolean | undefined`
@@ -1114,13 +1189,103 @@ maxSize: 2
 
 :::
 
+### inBrushStyle
+
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
+
+:::note{title=描述}
+被框选中的数据样式
+
+
+
+定义被刷选中的数据点的样式
+
+:::
+
+
+#### opacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+不透明度
+
+
+
+被框选中的数据点的不透明度，取值范围 0\-1
+
+:::
+
+#### stroke
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+描边颜色
+
+:::
+
+#### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+描边宽度
+
+:::
+
+### outOfBrushStyle
+
+**Type:** `{ opacity?: number; stroke?: string; lineWidth?: number; } | undefined`
+
+:::note{title=描述}
+未被框选中的数据样式
+
+
+
+定义未被刷选中的数据点的样式
+
+:::
+
+
+#### opacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+不透明度
+
+
+
+未被框选中的数据点的不透明度，取值范围 0\-1
+
+:::
+
+#### stroke
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+描边颜色
+
+:::
+
+#### lineWidth
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+描边宽度
+
+:::
+
 
 ## xAxis
 
-**Type:** `XLinearAxis | undefined`
+**Type:** `XBandAxis | undefined`
 
 :::note{title=描述}
-x轴, 数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.
+x轴, 类目轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格式, 样式等.
 
 :::
 
@@ -1131,51 +1296,6 @@ x轴, 数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格
 
 :::note{title=描述}
 轴是否可见
-
-:::
-
-### min
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-轴的最小值, 优先级高于 nice 与 zero
-
-:::
-
-### max
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-轴的最大值, 优先级高于 nice 与 zero
-
-:::
-
-### log
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-是否使用对数轴, 仅对数值轴生效
-
-:::
-
-### logBase
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-对数轴的底数, 仅对数值轴生效
-
-:::
-
-### nice
-
-**Type:** `boolean | undefined`
-
-:::note{title=描述}
-是否自动调整轴的刻度间隔，使刻度标签更易读, 当配置了 min 和 max, 该配置项失效, 仅对数值轴生效
 
 :::
 
@@ -1197,152 +1317,61 @@ x轴, 数值轴, x轴配置, 用于定义图表的x轴, 包括x轴的位置, 格
 
 :::
 
-### autoFormat
+### labelAutoHide
 
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
-是否自动格式化数值轴的刻度标签, 仅对数值轴生效, autoFormat 为 true 时, numFormat 配置失效
+轴标签, 自动隐藏, 2个标签若重叠(间隔小于autoHideGap), 则自动隐藏导致重叠的标签. 仅对类目轴生效.
 
 :::
 
-### numFormat
-
-**Type:** `NumFormat | undefined`
-
-:::note{title=描述}
-数值轴的数字格式化, 仅对数值轴生效, 优先级低于 autoFormat
-
-:::
-
-
-#### type
-
-**Type:** `"number" | "percent" | "permille" | "scientific" | undefined`
-
-:::note{title=描述}
-数字格式化类型, 支持数值(十进制)、百分比(%)、千分比(‰)、科学计数法
-
-:::
-
-#### ratio
+### labelAutoHideGap
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-数值格式化比例, 不能为0
+轴标签, 自动隐藏间隔, 若2个文本标签的间隔小于autoHideGap, 则自动隐藏导致重叠的标签. 仅对类目轴生效.
+
+autoHide开启时, 使用autoHide, 设置在autoHideSeparation上
+
+autoHide关闭时, 使用sampling采样, 设置在minGap上
 
 :::
 
-**示例**
-\- 100000 转换为 10万, ratio:10000, symbol:"万"
-\- 100000 转换为 10K, ratio:1000, symbol:"K"
-
-
-
-#### symbol
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-数值格式化符号, 例如%、‰
-
-:::
-
-**示例**
-\- 100000 转换为 10万, ratio:10000, symbol:"万"
-\- 100000 转换为 10K, ratio:1000, symbol:"K"
-
-
-
-#### thousandSeparator
+### labelAutoRotate
 
 **Type:** `boolean | undefined`
 
 :::note{title=描述}
-数值格式化千分位分隔符
+轴标签, 自动旋转, 当标签宽度超过轴长度时, 自动旋转标签. 仅对类目轴生效.
 
 :::
 
-#### suffix
+### labelAutoRotateAngleRange
 
-**Type:** `string | undefined`
+**Type:** `number[] | undefined`
 
 :::note{title=描述}
-数值格式化后缀
+轴标签, 自动旋转角度范围, 当自动旋转开启时, 标签旋转角度范围. 仅对类目轴生效.
 
 :::
 
-#### prefix
+### labelAutoLimit
 
-**Type:** `string | undefined`
+**Type:** `boolean | undefined`
 
 :::note{title=描述}
-数值格式化前缀
+轴标签, 自动限制长度, 当标签宽度超过轴长度时, 超出部分省略号表示, 鼠标悬浮后可见标签, 自动限制标签宽度. 仅对类目轴生效.
 
 :::
 
-#### fractionDigits
+### labelAutoLimitLength
 
 **Type:** `number | undefined`
 
 :::note{title=描述}
-数值格式化小数位, 使用浏览器提供的 Intl.NumberFormat 中的 minimumFractionDigits 和 maximumFractionDigits 进行格式化, 优先级低于 significantDigits
-
-:::
-
-**示例**
-\- 1234.5678 转换为 1235, fractionDigits:0 (roundingMode:halfCeil)
-\- 1234.5678 转换为 1234.6, fractionDigits:1 (roundingMode:halfCeil)
-\- 1234.5678 转换为 1234.57, fractionDigits:2 (roundingMode:halfCeil)
-\- 1234.5678 转换为 1230.568, fractionDigits:3 (roundingMode:halfCeil)
-\- 1234.5678 转换为 1234.5678, fractionDigits:4 (roundingMode:halfCeil)
-\- 1234.5678 转换为 1234.56780, fractionDigits:5 (roundingMode:halfCeil)
-
-
-
-#### significantDigits
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-数值格式化有效位, 使用浏览器提供的 Intl.NumberFormat 中的 minimumSignificantDigits 和 maximumSignificantDigits 进行格式化, 优先级高于 fractionDigits
-
-:::
-
-**示例**
-\- 1234.5678 转换为 1000, significantDigits:1
-\- 1234.5678 转换为 1200, significantDigits:2
-\- 1234.5678 转换为 1230, significantDigits:3
-\- 1234.5678 转换为 1234, significantDigits:4
-\- 1234.5678 转换为 1234.6, significantDigits:5 (roundingMode:halfCeil)
-\- 1234.5678 转换为 1234.57, significantDigits:6 (roundingMode:halfCeil)
-\- 1234.5678 转换为 1234.568, significantDigits:7 (roundingMode:halfCeil)
-\- 1234.5678 转换为 1234.5678, significantDigits:8 (roundingMode:halfCeil)
-
-
-
-#### roundingPriority
-
-**Type:** `"morePrecision" | "lessPrecision" | undefined`
-
-:::note{title=描述}
-数值格式化舍入优先级, 处理同时设置了 significantDigits 和 fractionDigits 时的舍入优先级, 使用浏览器提供的 Intl.NumberFormat 进行格式化, 规则同 Intl.NumberFormat 中的 roundingPriority
-
-:::
-
-**示例**
-\- 1234.5678 转换为 1230, significantDigits:3 (roundingPriority:lessPrecision)
-\- 1234.5678 转换为 1234.5678, significantDigits:3 (roundingPriority:morePrecision)
-
-
-
-#### roundingMode
-
-**Type:** `"floor" | "ceil" | "expand" | "trunc" | "halfCeil" | "halfFloor" | "halfExpand" | "halfTrunc" | "halfEven" | undefined`
-
-:::note{title=描述}
-数值格式化舍入模式, 使用浏览器提供的 Intl.NumberFormat 进行格式化, 规则同 Intl.NumberFormat 中的 roundingMode
+轴标签, 自动限制长度的最大长度, 当标签文本长度超过最大长度时, 超出部分省略号表示, 鼠标悬浮后可见标签. 仅对类目轴生效.
 
 :::
 
@@ -2047,6 +2076,154 @@ X轴网格线
 :::
 
 
+## sort
+
+**Type:** `Sort | undefined`
+
+:::note{title=描述}
+X轴排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+
+:::
+
+**示例**
+sort: {
+  orderBy: 'profit',
+  order: 'asc',
+}
+sort: {
+  customOrder:['2019', '2020', '2021']
+}
+
+
+
+
+### order
+
+**Type:** `"asc" | "desc" | undefined`
+
+:::note{title=描述}
+排序顺序, 可选值为 'asc' 或 'desc'
+
+:::
+
+**示例**
+order:'asc'
+
+
+
+### orderBy
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+排序依赖的字段, 可以是维度id或指标id
+
+:::
+
+**示例**
+\- orderBy:'date'
+\- orderBy:'profit'
+
+
+
+### customOrder
+
+**Type:** `string[] | undefined`
+
+:::note{title=描述}
+自定义排序顺序, 该顺序将直接应用至类目轴
+
+:::
+
+
+## sortLegend
+
+**Type:** `SortLegend | undefined`
+
+:::note{title=描述}
+图例排序配置, 支持根据维度或指标排序, 以及自定义排序顺序
+
+:::
+
+**示例**
+sortLegend: {
+  orderBy: 'profit',
+  order: 'asc',
+}
+sortLegend: {
+  customOrder:['2019', '2020', '2021']
+}
+
+
+
+
+### order
+
+**Type:** `"asc" | "desc" | undefined`
+
+:::note{title=描述}
+排序顺序, 可选值为 'asc' 或 'desc'
+
+:::
+
+**示例**
+order:'asc'
+
+
+
+### orderBy
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+排序依赖的字段, 可以是维度id或指标id
+
+:::
+
+**示例**
+\- orderBy:'date'
+\- orderBy:'profit'
+
+
+
+### customOrder
+
+**Type:** `string[] | undefined`
+
+:::note{title=描述}
+自定义排序顺序, 该顺序将直接应用至图例, 升序从左到右或从上到下, 降序从右到左或从下到上
+
+:::
+
+
+## theme
+
+**Type:** `Theme | undefined`
+
+:::note{title=描述}
+图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置, 内置light与dark两种主题, 用户可以通过Builder自定义主题
+
+:::
+
+**示例**
+'dark'
+
+'light'
+
+'customThemeName'
+
+
+
+
+### length
+
+**Type:** `number`
+
+### brand
+
+**Type:** `unique symbol`
+
+
 ## crosshairRect
 
 **Type:** `CrosshairRect | undefined`
@@ -2113,62 +2290,14 @@ X轴网格线
 :::
 
 
-## binCount
+## barMaxWidth
 
-**Type:** `number | undefined`
-
-:::note{title=描述}
-直方图分箱数量, 用于定义直方图的分箱矩形（柱子）的数量
-
-:::
-
-
-## binStep
-
-**Type:** `number | undefined`
+**Type:** `string | number | undefined`
 
 :::note{title=描述}
-分箱步长，用于计算分箱的宽度，也会影响最终直方图中矩形（柱子）的宽度。如果同时设置了 binCount 和 binStep，则以 binStep 为准
+柱子的最大宽度，可以是像素值或者百分比字符串
 
 :::
-
-
-## binValueType
-
-**Type:** `"count" | "percentage" | undefined`
-
-:::note{title=描述}
-直方图分箱值类型, 用于定义直方图的分箱矩形（柱子）值类型, 默认为'count'
-
-:::
-
-
-## theme
-
-**Type:** `Theme | undefined`
-
-:::note{title=描述}
-图表的主题, 主题是优先级较低的功能配置, 包含所有图表类型共用的通用配置, 与单类图表类型共用的图表配置, 内置light与dark两种主题, 用户可以通过Builder自定义主题
-
-:::
-
-**示例**
-'dark'
-
-'light'
-
-'customThemeName'
-
-
-
-
-### length
-
-**Type:** `number`
-
-### brand
-
-**Type:** `unique symbol`
 
 
 ## barStyle
@@ -2668,7 +2797,7 @@ offsetX: 5, 标注点整体向右偏移5像素
 **Type:** `AnnotationVerticalLine | AnnotationVerticalLine[] | undefined`
 
 :::note{title=描述}
-数值标注线(分箱值)，竖直方向展示，能够设置标注线的位置, 样式等，如需分箱值对应的标注线，可以使用该配置
+维度值标注线，竖直方向展示，能够设置标注线的位置, 样式等
 
 :::
 
@@ -2942,7 +3071,7 @@ true
 **Type:** `AnnotationHorizontalLine | AnnotationHorizontalLine[] | undefined`
 
 :::note{title=描述}
-数值标注线(包括均值线、最大值线、最小值线等)，水平方向展示，能够设置标注线的位置, 样式等，如需绘制分箱值对应的标注线请使用该配置；注意分箱值受`binValueType` 影响
+数值标注线(包括均值线、最大值线、最小值线等)，水平方向展示，能够设置标注线的位置, 样式等，如需绘制均值线等数值对应的标注线请使用该配置
 
 :::
 
@@ -3622,118 +3751,16 @@ true
 
 
 
-## kdeRegressionLine
+## polynomialRegressionLine
 
-**Type:** `KdeRegressionLine | KdeRegressionLine[] | undefined`
-
-:::note{title=描述}
-核密度回归线配置, 用于展示数据的趋势和分布情况
-
-:::
-
-
-### enable
-
-**Type:** `boolean | undefined`
+**Type:** `PolynomialRegressionLine | PolynomialRegressionLine[] | undefined`
 
 :::note{title=描述}
-是否开启回归线功能
-
-:::
-
-### color
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-回归线颜色
-
-用于设置回归线的颜色，如果不设置，默认使用图表的主颜色
-
-:::
-
-### lineWidth
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-回归线宽度
-
-用于设置回归线的宽度，单位为像素，默认值为1
-
-:::
-
-### lineDash
-
-**Type:** `number[] | undefined`
-
-:::note{title=描述}
-回归线样式
-
-用于设置回归线的样式，例如实线、虚线等，默认值为实线
-
-:::
-
-### text
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-回归线标签文本
-
-用于设置回归线的标签文本，空字符串表示不显示标签
-
-:::
-
-### textColor
-
-**Type:** `string | undefined`
-
-:::note{title=描述}
-文本颜色
-
-:::
-
-**示例**
-'red'
+多项式回归线
 
 
 
-### textFontSize
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-文本字体大小
-
-:::
-
-**示例**
-12
-
-
-
-### textFontWeight
-
-**Type:** `number | undefined`
-
-:::note{title=描述}
-文本字体重量
-
-:::
-
-**示例**
-400
-
-
-
-
-## ecdfRegressionLine
-
-**Type:** `EcdfRegressionLine | EcdfRegressionLine[] | undefined`
-
-:::note{title=描述}
-经验累积分布函数回归线配置, 用于展示数据的累积分布情况
+多项式回归线配置, 包括多项式的阶数、回归线的样式等.
 
 :::
 
@@ -3758,6 +3785,15 @@ true
 
 :::
 
+### degree
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+多项式回归的阶数
+
+:::
+
 ### lineWidth
 
 **Type:** `number | undefined`
@@ -3830,6 +3866,47 @@ true
 
 **示例**
 400
+
+
+
+### confidenceIntervalVisible
+
+**Type:** `boolean | undefined`
+
+:::note{title=描述}
+是否显示置信区间
+
+:::
+
+### confidenceLevel
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+置信区间数值设定，默认95%置信度
+
+:::
+
+### confidenceIntervalColor
+
+**Type:** `string | undefined`
+
+:::note{title=描述}
+置信区间颜色
+
+:::
+
+### confidenceIntervalOpacity
+
+**Type:** `number | undefined`
+
+:::note{title=描述}
+置信区间透明度
+
+:::
+
+**示例**
+0.5
 
 
 

@@ -1,7 +1,6 @@
 ---
-title: 标题
-playgroundDirection: horizontal
-pageType: custom
+title: Playground
+playgroundDirection: vertical
 ---
 
 ```tsx
@@ -22,7 +21,7 @@ const run = async (setVSeed) => {
     { area: 'SHANG HAI', date: '2025-11-03', sales: 300 },
   ]
 
-  const datasetId = 'demoDataset'
+  const datasetId = 'vquery-demo'
 
   if (await vquery.hasDataset(datasetId)) {
     await vquery.dropDataset(datasetId)

@@ -1,7 +1,6 @@
 ---
-title: 标题
-playgroundDirection: horizontal
-pageType: custom
+title: Playground
+playgroundDirection: vertical
 ---
 
 ```tsx
@@ -55,7 +54,7 @@ const run = async (setVSeed) => {
 
   const builder = VBI.from(VBI.generateEmptyDSL(connectorId))
 
-  builder.on('update', async () => {
+  builder.doc.on('update', async () => {
     const vseed = await builder.buildVSeed()
     console.log('debug update', vseed)
     setVSeed(() => vseed)

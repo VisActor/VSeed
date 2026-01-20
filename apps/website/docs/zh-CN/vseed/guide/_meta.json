@@ -3,6 +3,7 @@
   {
     "type": "dir",
     "name": "intro",
-    "label": "功能概览"
+    "label": "功能概览",
+    "collapsed": true
   }
 ]

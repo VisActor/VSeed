@@ -1,0 +1,67 @@
+services:
+  vbi_fe:
+    build:
+      context: ..
+      dockerfile: docker/vbi_fe/Dockerfile.dev
+    ports:
+      - '3000:3000'
+    volumes:
+      - ../apps/vbi_fe/src:/app/apps/vbi_fe/src
+      - ../apps/vbi_fe/public:/app/apps/vbi_fe/public
+      - ../apps/vbi_fe/rsbuild.config.ts:/app/apps/vbi_fe/rsbuild.config.ts
+      - ../packages:/app/packages
+      - ../practices:/app/practices
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - vbi_be
+    restart: unless-stopped
+    networks:
+      - vbi_net
+
+  vbi_be:
+    build:
+      context: ..
+      dockerfile: docker/vbi_be/Dockerfile.dev
+    command: pnpm --filter vbi_be start:debug
+    ports:
+      - '3030:3030'
+      - '9229:9229'
+      - '1234:1234'
+    volumes:
+      - ../apps/vbi_be/src:/app/apps/vbi_be/src
+      - ../apps/vbi_be/test:/app/apps/vbi_be/test
+      - ../packages:/app/packages
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USERNAME=admin
+      - DB_PASSWORD=123456
+      - DB_DATABASE=vbi
+      - DATABASE_URL=postgresql://admin:123456@db:5432/vbi
+    depends_on:
+      - db
+    restart: unless-stopped
+    networks:
+      - vbi_net
+
+  db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: vbi
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - '5433:5432'
+    networks:
+      - vbi_net
+
+volumes:
+  postgres_data:
+
+networks:
+  vbi_net:

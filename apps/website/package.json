@@ -16,15 +16,17 @@
     "@visactor/vquery": "workspace:*",
     "@visactor/vchart": "2.0.13-alpha.9",
     "@visactor/vtable": "1.22.11-alpha.8",
-    "zustand": "5.0.6"
+    "demo": "workspace:*",
+    "zustand": "5.0.6",
+    "yjs": "13.6.28"
   },
   "devDependencies": {
     "@eslint/js": "9.39.0",
-    "@rspress/plugin-playground": "1.45.3",
+    "@rspress/plugin-playground": "1.47.0",
     "@types/node": "24.10.1",
     "eslint": "9.39.0",
     "globals": "16.4.0",
     "typescript-eslint": "8.48.0",
-    "@types/react": "18.0.0"
+    "@types/react": "19.2.7"
   }
 }

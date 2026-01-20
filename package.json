@@ -31,7 +31,9 @@
     "test:coverage": "pnpm --filter=@visactor/vseed test:coverage && node scripts/build-coverage-badge.mjs",
     "publish:ci": "pnpm run build:vseed && pnpm run build:vquery && pnpm changeset publish --filter=@visactor/vseed,@visactor/vquery --access=public",
     "prepare": "husky",
-    "sync-bugserver-cases": "node ./scripts/sync-bugserver-cases.js"
+    "sync-bugserver-cases": "node ./scripts/sync-bugserver-cases.js",
+    "vbi:down": "docker-compose -f ./docker/docker-compose.dev.yml down",
+    "vbi:up": "docker-compose -f ./docker/docker-compose.dev.yml up"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,md,mdx}": [

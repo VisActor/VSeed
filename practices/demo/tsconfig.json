@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2021", "DOM"],
+    "module": "ESNext",
+    "noEmit": false,
+    "jsx": "react-jsx",
+    "emitDeclarationOnly": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "bundler",
+    "useDefineForClassFields": true,
+    "allowImportingTsExtensions": true,
+    "composite": true,
+    "outDir": "dist",
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["./src/*"]
+    }
+  },
+  "references": [
+    {
+      "path": "../../packages/vseed"
+    },
+    {
+      "path": "../../packages/vquery"
+    },
+    {
+      "path": "../../packages/vbi"
+    }
+  ],
+  "include": ["src", "src/**/*.csv"]
+}

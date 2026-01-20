@@ -17,6 +17,7 @@ coverage/
 # IDE
 .vscode/*
 !.vscode/settings.json
+!.vscode/launch.json
 !.vscode/extensions.json
 .idea
 
@@ -25,5 +26,7 @@ tools/llm_test/new-type
 
 
 # Claude
-
 .claude
+
+# Trae
+.trae

@@ -1,0 +1,28 @@
+FROM node:24.12.0-slim
+
+RUN apt-get update -y && apt-get install -y openssl
+
+WORKDIR /app
+
+# Enable pnpm
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
+# Copy workspace config first
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+
+# Copy packages source code (needed for dependencies)
+COPY packages/ packages/
+
+# Copy app source code
+COPY apps/vbi_be/ apps/vbi_be/
+
+# Install all dependencies
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+
+EXPOSE 3030 9229
+
+RUN chmod +x ./apps/vbi_be/scripts/docker-entrypoint.dev.sh
+ENTRYPOINT ["./apps/vbi_be/scripts/docker-entrypoint.dev.sh"]
+

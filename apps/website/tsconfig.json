@@ -27,6 +27,9 @@
     },
     {
       "path": "../../packages/vbi"
+    },
+    {
+      "path": "../../practices/demo"
     }
   ],
   "include": ["docs", "components", "theme", "rspress.config.ts"],

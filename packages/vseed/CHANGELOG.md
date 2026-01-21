@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.3.7
+
+### Patch Changes
+
+- fix: document is not defined
+
 ## 0.3.6
 
 ### Patch Changes

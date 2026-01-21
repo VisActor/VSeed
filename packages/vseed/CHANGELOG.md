@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.3.5
+
+### Patch Changes
+
+- fix: document missing in node
+
 ## 0.3.4
 
 ### Patch Changes

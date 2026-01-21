@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.3.6
+
+### Patch Changes
+
+- fix: document error in node
+
 ## 0.3.5
 
 ### Patch Changes

@@ -20,7 +20,7 @@ export const initTable: ListTableSpecPipe = (spec, context) => {
       isShowOverflowTextTooltip: true,
       renderMode: 'html',
       confine: false,
-      parentElement: document.body,
+      parentElement: document?.body,
     },
     animationAppear: {
       duration: 300,

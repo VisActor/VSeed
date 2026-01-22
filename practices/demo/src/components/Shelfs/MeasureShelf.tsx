@@ -27,13 +27,26 @@ export const MeasureShelf = ({ style }: { style?: React.CSSProperties }) => {
   };
 
   return (
-    <Flex vertical={false} gap={5} style={{ flexBasis: 300, ...style }}>
+    <Flex vertical={true} gap={5} style={{ ...style }}>
       {measures.map((measure) => (
         <Space.Compact key={`measure-shelf-${measure.field}`}>
-          <Button style={{ color: 'green' }}>{measure.field}</Button>
+          <Button
+            style={{
+              color: '#4ade80',
+              backgroundColor: '#1a1a23',
+              borderColor: '#333',
+            }}
+          >
+            {measure.field}
+          </Button>
           <Button
             icon={<DeleteOutlined />}
             onClick={() => deleteMeasure(measure.field)}
+            style={{
+              backgroundColor: '#1a1a23',
+              borderColor: '#333',
+              color: '#e0e0e0',
+            }}
           />
         </Space.Compact>
       ))}

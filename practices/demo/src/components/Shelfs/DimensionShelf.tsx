@@ -28,13 +28,26 @@ export const DimensionShelf = ({ style }: { style?: React.CSSProperties }) => {
   }, [builder]);
 
   return (
-    <Flex vertical={false} gap={5} style={{ flexBasis: 300, ...style }}>
+    <Flex vertical={true} gap={5} style={{ ...style }}>
       {dimensions.map((dimension) => (
         <Space.Compact key={`dimension-shelf-${dimension.field}`}>
-          <Button style={{ color: 'blue' }}>{dimension.field}</Button>
+          <Button
+            style={{
+              color: '#60a5fa',
+              backgroundColor: '#1a1a23',
+              borderColor: '#333',
+            }}
+          >
+            {dimension.field}
+          </Button>
           <Button
             icon={<DeleteOutlined />}
             onClick={() => deleteDimension(dimension.field)}
+            style={{
+              backgroundColor: '#1a1a23',
+              borderColor: '#333',
+              color: '#e0e0e0',
+            }}
           />
         </Space.Compact>
       ))}

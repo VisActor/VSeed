@@ -1,0 +1,77 @@
+/* 左列 Card 内滚动条样式 */
+.left-scroll-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.left-scroll-body::-webkit-scrollbar-track {
+    background: transparent;
+    /* 无背景轨道 */
+}
+
+.left-scroll-body::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
+}
+
+.left-scroll-body:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.45);
+}
+
+/* Firefox */
+.left-scroll-body {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+}
+
+/* ChartTypeSelector 下拉面板暗色主题 */
+.ant-select {
+    background-color: #1a1a23 !important;
+}
+
+.ant-select-selector {
+    background-color: #1a1a23 !important;
+    border-color: #333 !important;
+}
+
+.ant-select-focused .ant-select-selector {
+    background-color: #1a1a23 !important;
+    border-color: #555 !important;
+}
+
+.ant-select-dropdown {
+    background-color: #1a1a23 !important;
+}
+
+.ant-select-item {
+    background-color: #1a1a23 !important;
+    color: #e0e0e0 !important;
+}
+
+.ant-select-item:hover {
+    background-color: #252b36 !important;
+}
+
+.ant-select-item-option-selected {
+    background-color: #252b36 !important;
+}
+
+/* 紧凑字段列表样式 (MeasuresList & DimensionsList) */
+.left-scroll-body .ant-list {
+    padding: 0 !important;
+}
+
+.left-scroll-body .ant-list-item {
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    min-height: auto !important;
+}
+
+.left-scroll-body .ant-list-item>div {
+    width: 100% !important;
+    padding: 2px 8px !important;
+    line-height: 1.4 !important;
+}
+
+.left-scroll-body .ant-list-split-item {
+    border-bottom: none !important;
+}

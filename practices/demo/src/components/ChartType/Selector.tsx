@@ -31,10 +31,12 @@ export const ChartTypeSelector = (props: { style?: React.CSSProperties }) => {
         defaultValue={builder.chartType.getChartType()}
         value={chartType}
         onChange={changeChartType}
-        style={{ width: '100%' }}
+        style={{ width: '100%', color: '#e0e0e0' }}
+        variant="filled"
+        popupMatchSelectWidth={false}
       >
         {availableChartTypes.map((type) => (
-          <Select.Option key={type} value={type}>
+          <Select.Option key={type} value={type} style={{ color: '#e0e0e0' }}>
             {type}
           </Select.Option>
         ))}

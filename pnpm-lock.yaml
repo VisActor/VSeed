@@ -292,6 +292,9 @@ importers:
       rspress:
         specifier: 1.47.0
         version: 1.47.0(webpack@5.104.1)
+      streamlined:
+        specifier: workspace:*
+        version: link:../../practices/streamlined
       yjs:
         specifier: 13.6.28
         version: 13.6.28
@@ -494,6 +497,79 @@ importers:
       '@visactor/vchart':
         specifier: latest
         version: 2.0.13
+      '@visactor/vquery':
+        specifier: workspace:*
+        version: link:../../packages/vquery
+      '@visactor/vseed':
+        specifier: workspace:*
+        version: link:../../packages/vseed
+      '@visactor/vtable':
+        specifier: latest
+        version: 1.22.11
+      antd:
+        specifier: 6.1.3
+        version: 6.1.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      zustand:
+        specifier: 5.0.6
+        version: 5.0.6(@types/react@19.2.7)(react@19.2.3)
+    devDependencies:
+      '@eslint/js':
+        specifier: 9.39.1
+        version: 9.39.1
+      '@rsbuild/plugin-react':
+        specifier: 1.4.2
+        version: 1.4.2(@rsbuild/core@1.7.2)
+      '@rslib/core':
+        specifier: 0.18.6
+        version: 0.18.6(typescript@5.9.3)
+      '@rstest/core':
+        specifier: 0.7.5
+        version: 0.7.5(jsdom@26.1.0)
+      '@testing-library/jest-dom':
+        specifier: 6.9.1
+        version: 6.9.1
+      '@testing-library/react':
+        specifier: 16.3.1
+        version: 16.3.1(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@types/react':
+        specifier: 19.2.7
+        version: 19.2.7
+      eslint:
+        specifier: 9.39.1
+        version: 9.39.1(jiti@2.6.1)
+      globals:
+        specifier: 16.5.0
+        version: 16.5.0
+      jsdom:
+        specifier: 26.1.0
+        version: 26.1.0
+      prettier:
+        specifier: 3.7.3
+        version: 3.7.3
+      react:
+        specifier: 19.2.3
+        version: 19.2.3
+      react-dom:
+        specifier: 19.2.3
+        version: 19.2.3(react@19.2.3)
+      typescript:
+        specifier: 5.9.3
+        version: 5.9.3
+      typescript-eslint:
+        specifier: 8.48.0
+        version: 8.48.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
+
+  practices/streamlined:
+    dependencies:
+      '@ant-design/icons':
+        specifier: 6.1.0
+        version: 6.1.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@visactor/vbi':
+        specifier: workspace:*
+        version: link:../../packages/vbi
+      '@visactor/vchart':
+        specifier: latest
+        version: 2.0.14
       '@visactor/vquery':
         specifier: workspace:*
         version: link:../../packages/vquery
@@ -3848,6 +3924,9 @@ packages:
   '@visactor/vchart@2.0.13-alpha.9':
     resolution: {integrity: sha512-QOx9gC9JMF+u86hue5K6eiWrdtxLZFrbmlvmqKXHhfp1eoZYILwNAIkDa9iY2dhnjhCooKPoiSfs5InbfO56rQ==}
 
+  '@visactor/vchart@2.0.14':
+    resolution: {integrity: sha512-sJ0fRID+wkvj4Jl7XpRyEaetsvxLnr+jTJ4aDWzH01m4HWrQfybADGM0A9TNqOxNIIdamFdp+JH3fN+7P/dXgQ==}
+
   '@visactor/vdataset@1.0.21':
     resolution: {integrity: sha512-ZY1LFZsiZ3lHnDydQGoVJfuVAk6WWddSQXrWxFM4g+59OeByNJwLCf+46QtbJIjeRrJU7qgr+L2mlI4Mz3qeWQ==}
 
@@ -3863,6 +3942,9 @@ packages:
   '@visactor/vrender-animate@1.0.38':
     resolution: {integrity: sha512-G3hvKBOxJKw3hE0Ka1j9DE/Um7/LfYN201zDmRc00hwCuEMxMFRXU0ZLJc82iw2UZVG+rMHZihiwXMa+/aAdNQ==}
 
+  '@visactor/vrender-animate@1.0.39':
+    resolution: {integrity: sha512-u8iNccWTlszdVoGFqHjLRXiVjHefZKcnQIGod0xrNx4/vaV/OCJZD/+7EvUUyoFYLZPCqafOcBtZh9jRr8cAYQ==}
+
   '@visactor/vrender-components@1.0.36':
     resolution: {integrity: sha512-z4MNfjwGwekKkwjjfci5A5c7+mOOjBKcA6cZtS0wDxiKY8R48fjPpd2QZlpVSOoLSeaYSbMBGCbTRXWpzLBQVg==}
 
@@ -3871,6 +3953,9 @@ packages:
 
   '@visactor/vrender-components@1.0.38':
     resolution: {integrity: sha512-P+h1ynpKxaYorraejn3xfollBIRPlaaueQVBHbKjMVjMGJyOAWRwEL4LoVR63x5aOQUt1hddm1/qyFCWeA8M9g==}
+
+  '@visactor/vrender-components@1.0.39':
+    resolution: {integrity: sha512-i/j16Rf6/mPiA4LZvvXJi0PvDFBCbcI/gSEV2JX6QTZmMWhXOgRZ2mA4kyqQVD4rNIyyXJEmIeVKsgPM0+3Qlw==}
 
   '@visactor/vrender-core@1.0.36':
     resolution: {integrity: sha512-u/JprSGz0rNt/Oul/Y9h8/4qcAu9Xki+zX5fww2uePJREwhvQNnAAOubsUP7tG0jlHq5v9HIaJN+COUlKIZTyw==}
@@ -3881,6 +3966,9 @@ packages:
   '@visactor/vrender-core@1.0.38':
     resolution: {integrity: sha512-UAv5hQYfOe8XaT5jQ+exZDXsOJc1KHeBM0NN6gM92eCpo09OV54gUb/nkc+yHXSZlZAlr53VGR/m8IG2Hvomxw==}
 
+  '@visactor/vrender-core@1.0.39':
+    resolution: {integrity: sha512-+TrkiSt14qPzW2k8GlKt5gcNItFwfha+MnJa5TO7i6pu+rnzmjsStku5ZXyLEbEXzRLoUGGg13UoEznFqitawA==}
+
   '@visactor/vrender-kits@1.0.36':
     resolution: {integrity: sha512-+gQayxykuqCDo2ncCH8u1jaVWyXzyTfqu9PFLmXusHeJF0zp4FvvEEsOy540b24mf0kKFimSpmWk6Duqb+0utw==}
 
@@ -3889,6 +3977,9 @@ packages:
 
   '@visactor/vrender-kits@1.0.38':
     resolution: {integrity: sha512-ZjsXBq4MvKDmtBprTIF1p97HNkl8csZAVsvaHe6HbUhsbK1VNqkmhR+6ZJK/V1TimgoM645+fiVricA6O2WGKA==}
+
+  '@visactor/vrender-kits@1.0.39':
+    resolution: {integrity: sha512-cF/4sC0xHYQhQklstp5EwH6Td0pd9cy2kpFzPXrTwDJTr2Eqk9sU5sq6gCpqPnL0fWDZfSyJmJ7tM9ffDmcxHQ==}
 
   '@visactor/vscale@1.0.12':
     resolution: {integrity: sha512-Mx81QatZKAWWcfX2BfX25jZRLwXVdWNt92PtA7hwVs8HplXA+ZcEvSQbZkma/ssZ66ijgSlWUQOlxJ87ZY0FBw==}
@@ -3916,6 +4007,9 @@ packages:
 
   '@visactor/vutils-extension@2.0.13-alpha.9':
     resolution: {integrity: sha512-VkiDrBqiKl2PCLzUJeI03yvM41ai3JPm4FsieI6RLOC45GqB9cfSDE+IlUkbQf6W7VwS6LbVOdnRaLMnoXuqow==}
+
+  '@visactor/vutils-extension@2.0.14':
+    resolution: {integrity: sha512-Yp2YSiqwBEjSVxC2YD0LvPSNMlXGnTwyU9nfiecDhoEto3ZZIi0IZvnHqo2RlMRUgxL6i9v43z3e6+c9tG0NhQ==}
 
   '@visactor/vutils@1.0.12':
     resolution: {integrity: sha512-lHvWbB2gC+IvkGkgnGbxiAeRQ99EEvgPqor6joyZ5KOU2lelHo8KPeSGzZMbN6LNwrpAsnV3x9jds7lGdC1NHQ==}
@@ -12468,7 +12562,7 @@ snapshots:
 
   '@testing-library/react@16.3.1(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@babel/runtime': 7.28.2
+      '@babel/runtime': 7.28.6
       '@testing-library/dom': 10.4.1
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
@@ -13082,6 +13176,18 @@ snapshots:
       '@visactor/vutils': 1.0.21
       '@visactor/vutils-extension': 2.0.13-alpha.9
 
+  '@visactor/vchart@2.0.14':
+    dependencies:
+      '@visactor/vdataset': 1.0.21
+      '@visactor/vlayouts': 1.0.12
+      '@visactor/vrender-animate': 1.0.39
+      '@visactor/vrender-components': 1.0.39
+      '@visactor/vrender-core': 1.0.39
+      '@visactor/vrender-kits': 1.0.39
+      '@visactor/vscale': 1.0.21
+      '@visactor/vutils': 1.0.21
+      '@visactor/vutils-extension': 2.0.14
+
   '@visactor/vdataset@1.0.21':
     dependencies:
       '@turf/flatten': 6.5.0
@@ -13125,6 +13231,11 @@ snapshots:
       '@visactor/vrender-core': 1.0.38
       '@visactor/vutils': 1.0.21
 
+  '@visactor/vrender-animate@1.0.39':
+    dependencies:
+      '@visactor/vrender-core': 1.0.39
+      '@visactor/vutils': 1.0.21
+
   '@visactor/vrender-components@1.0.36':
     dependencies:
       '@visactor/vrender-animate': 1.0.36
@@ -13149,6 +13260,14 @@ snapshots:
       '@visactor/vscale': 1.0.21
       '@visactor/vutils': 1.0.21
 
+  '@visactor/vrender-components@1.0.39':
+    dependencies:
+      '@visactor/vrender-animate': 1.0.39
+      '@visactor/vrender-core': 1.0.39
+      '@visactor/vrender-kits': 1.0.39
+      '@visactor/vscale': 1.0.21
+      '@visactor/vutils': 1.0.21
+
   '@visactor/vrender-core@1.0.36':
     dependencies:
       '@visactor/vutils': 1.0.21
@@ -13160,6 +13279,11 @@ snapshots:
       color-convert: 2.0.1
 
   '@visactor/vrender-core@1.0.38':
+    dependencies:
+      '@visactor/vutils': 1.0.21
+      color-convert: 2.0.1
+
+  '@visactor/vrender-core@1.0.39':
     dependencies:
       '@visactor/vutils': 1.0.21
       color-convert: 2.0.1
@@ -13186,6 +13310,15 @@ snapshots:
     dependencies:
       '@resvg/resvg-js': 2.4.1
       '@visactor/vrender-core': 1.0.38
+      '@visactor/vutils': 1.0.21
+      gifuct-js: 2.1.2
+      lottie-web: 5.13.0
+      roughjs: 4.6.6
+
+  '@visactor/vrender-kits@1.0.39':
+    dependencies:
+      '@resvg/resvg-js': 2.4.1
+      '@visactor/vrender-core': 1.0.39
       '@visactor/vutils': 1.0.21
       gifuct-js: 2.1.2
       lottie-web: 5.13.0
@@ -13244,6 +13377,11 @@ snapshots:
       '@visactor/vutils': 1.0.21
 
   '@visactor/vutils-extension@2.0.13-alpha.9':
+    dependencies:
+      '@visactor/vdataset': 1.0.21
+      '@visactor/vutils': 1.0.21
+
+  '@visactor/vutils-extension@2.0.14':
     dependencies:
       '@visactor/vdataset': 1.0.21
       '@visactor/vutils': 1.0.21

@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "lib": ["DOM", "ES2020"],
+    "lib": ["ES2021", "DOM"],
     "module": "ESNext",
+    "noEmit": false,
     "jsx": "react-jsx",
-    "noEmit": true,
+    "emitDeclarationOnly": true,
     "strict": true,
     "skipLibCheck": true,
     "isolatedModules": true,
@@ -12,12 +12,14 @@
     "moduleResolution": "bundler",
     "useDefineForClassFields": true,
     "allowImportingTsExtensions": true,
+    "composite": true,
+    "outDir": "dist",
+    "rootDir": "./src",
     "baseUrl": ".",
     "paths": {
-      "@components": ["./components"]
+      "src/*": ["./src/*"]
     }
   },
-  "composite": true,
   "references": [
     {
       "path": "../../packages/vseed"
@@ -27,16 +29,7 @@
     },
     {
       "path": "../../packages/vbi"
-    },
-    {
-      "path": "../../practices/demo"
-    },
-    {
-      "path": "../../practices/streamlined"
     }
   ],
-  "include": ["docs", "components", "theme", "rspress.config.ts"],
-  "mdx": {
-    "checkMdx": true
-  }
+  "include": ["src", "src/**/*.csv"]
 }

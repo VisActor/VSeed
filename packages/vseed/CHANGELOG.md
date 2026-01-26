@@ -1,5 +1,23 @@
 # @visactor/vseed
 
+## 0.3.7
+
+### Patch Changes
+
+- fix: document is not defined
+
+## 0.3.6
+
+### Patch Changes
+
+- fix: document error in node
+
+## 0.3.5
+
+### Patch Changes
+
+- fix: document missing in node
+
 ## 0.3.4
 
 ### Patch Changes

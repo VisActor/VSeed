@@ -1,14 +1,6 @@
 [
   {
     "type": "file",
-    "name": "index",
-    "label": "Overview"
-  },
-  {
-    "type": "divider"
-  },
-  {
-    "type": "file",
     "name": "area",
     "label": "area "
   },

@@ -1,4 +1,4 @@
-export interface Page {
+export type Page = {
   /**
    * @description 分页字段, 用于指定分页的字段名, 必须是维度
    */

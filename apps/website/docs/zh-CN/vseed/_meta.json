@@ -1,6 +1,6 @@
 [
   { "type": "dir", "name": "guide", "label": "介绍", "collapsed": false },
-  { "type": "dir", "name": "galley", "label": "示例", "collapsed": false },
+  { "type": "dir", "name": "galley", "label": "示例", "collapsed": true },
   { "type": "dir", "name": "option", "label": "配置项", "collapsed": true },
   { "type": "dir", "name": "development", "label": "贡献指南", "collapsed": true }
 ]

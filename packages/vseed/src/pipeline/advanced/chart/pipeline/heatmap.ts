@@ -17,9 +17,11 @@ import {
   encodingAdapter,
   defaultEncodingForHeatmap,
   pickDimensionsForReshape,
+  page,
 } from '../pipes'
 
 export const heatmapAdvancedPipeline: AdvancedPipeline = [
+  page,
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,

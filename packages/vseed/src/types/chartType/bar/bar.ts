@@ -19,6 +19,7 @@ import {
   type Tooltip,
   type XLinearAxis,
   type YBandAxis,
+  type Page,
 } from '../../properties'
 
 /**
@@ -72,6 +73,12 @@ export interface Bar {
    * @example [{id: "value", alias: "数值"}]
    */
   measures?: BarMeasure[]
+
+  /**
+   * 分页
+   * @description 分页配置，用于配置图表的分页功能
+   */
+  page?: Page
 
   /**
    * @description 图表的背景颜色, 默认为透明背景, 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'

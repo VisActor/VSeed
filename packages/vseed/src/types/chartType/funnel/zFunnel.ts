@@ -9,6 +9,7 @@ import {
   zEncoding,
   zLabel,
   zMeasures,
+  zPage,
   zTheme,
   zTooltip,
   zBrush,
@@ -20,6 +21,8 @@ export const zFunnel = z.object({
   encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasures.nullish(),
+  page: zPage.nullish(),
+
   backgroundColor: zBackgroundColor.nullish(),
   color: zColor.nullish(),
   label: zLabel.nullish(),

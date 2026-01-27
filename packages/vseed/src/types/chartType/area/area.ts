@@ -24,6 +24,7 @@ import type {
   DimensionLinkage,
   ColumnDimension,
   ColumnMeasure,
+  Page,
 } from '../../properties'
 
 /**
@@ -87,6 +88,12 @@ export interface Area {
    * @example [{id: 'value', alias: '数值'}]
    */
   measures?: ColumnMeasure[]
+
+  /**
+   * 分页
+   * @description 分页配置，用于配置图表的分页功能
+   */
+  page?: Page
 
   /**
    * 图表的背景颜色

@@ -1,5 +1,5 @@
 import { type Locale } from '../../i18n'
-import type { BodyCellStyle, TableDimension, TableMeasure } from '../../properties'
+import type { BodyCellStyle, Page, TableDimension, TableMeasure } from '../../properties'
 import { type BackgroundColor, type Dataset, type Theme } from '../../properties'
 
 /**
@@ -51,6 +51,10 @@ export interface PivotTable {
    * @example [{id: 'sales', alias: '销售额', aggregation: 'sum'}]
    */
   measures?: TableMeasure[]
+  /**
+   * @description 分页配置, 用于指定分页的字段名, 必须是维度
+   */
+  page?: Page
 
   /**
    * @default transparent 默认为透明背景

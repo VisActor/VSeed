@@ -519,6 +519,40 @@ same as numFormat, 指标的数值格式化, 会自动应用于label、tooltip
 :::
 
 
+## page
+
+**Type:** `Page | undefined`
+
+:::note{title=描述}
+分页配置, 用于指定分页的字段名, 必须是维度
+
+:::
+
+
+### field
+
+**Type:** `string`
+
+:::note{title=描述}
+分页字段, 用于指定分页的字段名, 必须是维度
+
+:::
+
+### currentValue
+
+**Type:** `string`
+
+:::note{title=描述}
+当前分页值, 用于指定当前分页的依据值
+
+:::
+
+**示例**
+'2023\-01\-01'
+
+
+
+
 ## size
 
 **Type:** `number | number[] | undefined`

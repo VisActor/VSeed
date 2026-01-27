@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.3.8
+
+### Patch Changes
+
+- 04501fd: feat: add page for all chart types
+
 ## 0.3.7
 
 ### Patch Changes

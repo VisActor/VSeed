@@ -14,7 +14,8 @@
     "allowImportingTsExtensions": true,
     "baseUrl": ".",
     "paths": {
-      "@components": ["./components"]
+      "@components": ["./components"],
+      "@components/*": ["./components/*"]
     }
   },
   "composite": true,

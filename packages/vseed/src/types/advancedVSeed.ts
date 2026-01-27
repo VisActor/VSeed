@@ -7,7 +7,7 @@ import { zEncoding } from './properties/encoding'
 import { zDatasetReshapeInfo } from './properties/datasetReshapeInfo'
 import { zTheme, zCustomThemeConfig } from './properties/theme'
 import { zConfig } from './properties/config'
-import { zAnalysis, zAnnotation, zRegressionLine, zMarkStyle } from './properties'
+import { zAnalysis, zAnnotation, zRegressionLine, zMarkStyle, zPage } from './properties'
 import { zLocale } from './i18n'
 import { zCellStyle } from './properties/cellStyle/cellStyle'
 
@@ -23,6 +23,7 @@ export const zAdvancedVSeed = z.object({
   measureTree: zMeasureTree.optional(), // 现在只有表格中可能会配置这种树状结构
   dimensionTree: zDimensionTree.optional(), // 现在只有表格中可能会配置这种树状结构
   encoding: zEncoding,
+  page: zPage.optional(),
   config: zConfig,
   analysis: zAnalysis,
   theme: zTheme,

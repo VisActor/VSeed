@@ -1,5 +1,5 @@
 import { type Locale } from '../../i18n'
-import type { RoseParallelDimension, RoseParallelMeasure, PieLabel } from '../../properties'
+import type { RoseParallelDimension, RoseParallelMeasure, PieLabel, Page } from '../../properties'
 import { type BackgroundColor, type Color, type Dataset, type Legend, type Theme, type Tooltip } from '../../properties'
 import type { Brush } from '../../properties'
 
@@ -57,6 +57,11 @@ export interface RoseParallel {
    * @example [{id: 'value', alias: '数值'}]
    */
   measures?: RoseParallelMeasure[]
+
+  /**
+   * @description 分页配置, 用于指定分页的字段名, 必须是维度
+   */
+  page?: Page
 
   /**
    * 图表的背景颜色

@@ -22,6 +22,7 @@ import {
   zBrush,
   zXBandAxis,
   zYLinearAxis,
+  zPage,
 } from '../../properties'
 
 import { z } from 'zod'
@@ -32,6 +33,8 @@ export const zColumnPercent = z.object({
   encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasures.nullish(),
+  page: zPage.nullish(),
+
   backgroundColor: zBackgroundColor.nullish(),
   color: zColor.nullish(),
   label: zLabel.nullish(),

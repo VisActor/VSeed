@@ -23,6 +23,7 @@ import {
   zBrush,
   zXBandAxis,
   zYLinearAxis,
+  zPage,
 } from '../../properties'
 
 export const zArea = z.object({
@@ -31,6 +32,8 @@ export const zArea = z.object({
   encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasures.nullish(),
+  page: zPage.nullish(),
+
   backgroundColor: zBackgroundColor.nullish(),
   color: zColor.nullish(),
   label: zLabel.nullish(),

@@ -23,6 +23,7 @@ import {
   zBrush,
   zXLinearAxis,
   zYLinearAxis,
+  zPage,
 } from '../../properties'
 
 export const zHistogram = z.object({
@@ -31,6 +32,8 @@ export const zHistogram = z.object({
   encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasures.nullish(),
+  page: zPage.nullish(),
+
   backgroundColor: zBackgroundColor.nullish(),
   color: zColor.nullish(),
   label: zLabel.nullish(),

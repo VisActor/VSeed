@@ -13,6 +13,7 @@ import type {
   HistogramDimension,
   Label,
   Legend,
+  Page,
   StackCornerRadius,
   Theme,
   Tooltip,
@@ -57,6 +58,11 @@ export interface Histogram {
    * @example [{id: "value", alias: "数值"}]
    */
   measures?: HistogramMeasure[]
+
+  /**
+   * @description 分页配置
+   */
+  page?: Page
 
   /**
    * @description 图表的背景颜色, 背景颜色可以是颜色字符串, 默认为透明背景, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'
@@ -175,6 +181,7 @@ export interface Histogram {
    * 当hover 到某个维度值时，联动高亮其他图表中相同维度值的数据
    */
   dimensionLinkage?: DimensionLinkage
+
   /**
    * @description 图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言
    * @default 'zh-CN'

@@ -27,14 +27,15 @@ import {
   zBrush,
   zXBandAxis,
   zYLinearAxis,
+  zPage,
 } from 'src/types/properties'
 
 export const zDualAxis = z.object({
   chartType: z.literal('dualAxis'),
-
   dataset: zDataset.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zDualMeasures.nullish(),
+  page: zPage.nullish(),
 
   alignTicks: z.array(z.boolean()).or(z.boolean()).nullish(),
 

@@ -16,11 +16,13 @@ import {
   pickDimensionsForReshape,
   regressionLine,
   addPivotDimensionsForScatter,
+  page,
 } from '../pipes'
 import { reshapeWithScatterEncoding } from '../pipes/reshape/reshapeWithScatterEncoding'
 import { pivotReshapeWithScatterEncoding } from '../pipes/reshape/pivotReshapeWithScatterEncoding'
 
 export const scatterAdvancedPipeline: AdvancedPipeline = [
+  page,
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,

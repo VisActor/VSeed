@@ -17,9 +17,11 @@ import {
   encodingForBoxplot,
   reshapeWithBoxplotEncoding,
   boxplotConfig,
+  page,
 } from '../pipes'
 
 export const boxplotAdvancedPipeline: AdvancedPipeline = [
+  page,
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,

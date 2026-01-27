@@ -18,9 +18,11 @@ import {
   encodingAdapter,
   defaultEncodingForDualAxis,
   pickDimensionsForReshape,
+  page,
 } from '../pipes'
 
 export const dualAxisAdvancedPipeline: AdvancedPipeline = [
+  page,
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,

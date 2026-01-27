@@ -1,10 +1,10 @@
 import * as path from 'node:path'
-import { defineConfig } from 'rspress/config'
 import { pluginPlayground } from '@rspress/plugin-playground'
-// const isDev = process.env.NODE_ENV === 'development'
+import { defineConfig } from '@rspress/core'
+import i18nJson from './i18n.json'
 
 export default defineConfig({
-  root: path.join(__dirname, 'docs'),
+  root: './docs',
   base: '/VBI/',
   globalStyles: path.join(__dirname, 'components/styles/index.css'),
   plugins: [
@@ -15,7 +15,7 @@ export default defineConfig({
         '@visactor/vseed',
         '@visactor/vquery',
         '@visactor/vbi',
-        'rspress/runtime',
+        '@rspress/core/runtime',
         'yjs',
       ],
     }),
@@ -28,12 +28,6 @@ export default defineConfig({
       title: 'VisActor VBI',
       description: 'VisActor VBI',
     },
-    // {
-    //   lang: 'en-US',
-    //   label: 'English',
-    //   title: 'VisActor VSeed',
-    //   description: 'VisActor VSeed',
-    // },
   ],
   themeConfig: {
     socialLinks: [
@@ -44,21 +38,16 @@ export default defineConfig({
       },
     ],
     locales: [
-      // {
-      //   lang: 'en-US',
-      //   label: 'English',
-      //   outlineTitle: 'ON THIS Page',
-      // },
       {
         lang: 'zh-CN',
         label: '简体中文',
-        outlineTitle: '目录',
       },
     ],
   },
   markdown: {
     showLineNumbers: true,
   },
+  i18nSource: i18nJson as Record<string, Record<string, string>>,
   title: 'VisActor/VBI',
   icon: '/logo.svg',
   logoText: 'VisActor VBI',

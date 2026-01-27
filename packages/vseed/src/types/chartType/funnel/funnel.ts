@@ -6,6 +6,7 @@ import type {
   ColorLegend,
   Dataset,
   Label,
+  Page,
   FunnelDimension,
   FunnelMeasure,
   Theme,
@@ -65,6 +66,11 @@ export interface Funnel {
    * @example [{id: 'value', alias: '数值占比', format: 'percent'}]
    */
   measures?: FunnelMeasure[]
+
+  /**
+   * @description 分页配置
+   */
+  page?: Page
 
   /**
    * 图表的背景颜色

@@ -23,6 +23,7 @@ import {
   zBrush,
   zXLinearAxis,
   zYBandAxis,
+  zPage,
 } from '../../properties'
 
 export const zBarPercent = z.object({
@@ -31,6 +32,8 @@ export const zBarPercent = z.object({
   encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasures.nullish(),
+  page: zPage.nullish(),
+
   backgroundColor: zBackgroundColor.nullish(),
   color: zColor.nullish(),
   label: zLabel.nullish(),

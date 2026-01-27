@@ -24,6 +24,7 @@ import type {
   PolynomialRegressionLine,
   LogisticRegressionLine,
   DimensionLinkage,
+  Page,
 } from '../../properties'
 
 /**
@@ -83,6 +84,10 @@ export interface Scatter {
    * ]
    */
   measures?: ScatterMeasure[]
+  /**
+   * @description 分页配置, 用于指定分页的字段名, 必须是维度
+   */
+  page?: Page
 
   /**
    * @description 散点图指标的大小, 用于定义散点图中数据点的大小 或 大小范围

@@ -19,9 +19,11 @@ import {
   defaultEncodingForColumn,
   pickDimensionsForReshape,
   regressionLine,
+  page,
 } from '../pipes'
 
 export const columnAdvancedPipeline: AdvancedPipeline = [
+  page,
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,

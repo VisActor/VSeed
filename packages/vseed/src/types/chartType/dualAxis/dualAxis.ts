@@ -18,6 +18,7 @@ import type {
   DualAxisMeasure,
   Label,
   Legend,
+  Page,
   LineStyle,
   PointStyle,
   Sort,
@@ -83,6 +84,11 @@ export interface DualAxis {
    * @example [{ id: 'value', encoding: 'primaryYAxis' }, { id: 'growth', encoding: 'secondaryYAxis' }]
    */
   measures?: DualAxisMeasure[]
+
+  /**
+   * @description 分页配置
+   */
+  page?: Page
 
   /**
    * @description 用于定义双轴图的两根轴的刻度是否对齐, 当measures有多组时, alignTicks可以配置为数组, 每项对应一个双轴图的刻度是否对齐.
@@ -244,6 +250,7 @@ export interface DualAxis {
    * 当hover 到某个维度值时，联动高亮其他图表中相同维度值的数据
    */
   dimensionLinkage?: DimensionLinkage
+
   /**
    * @description 国际化配置, 图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言
    * @default 'zh-CN'

@@ -1,4 +1,4 @@
-import { pipe, uniqueBy } from 'remeda'
+import { pipe, unique, uniqueBy } from 'remeda'
 import { createFormatterByMeasure, findMeasureById } from '../../../../utils'
 import type {
   Datum,
@@ -11,7 +11,7 @@ import type {
   Dimension,
   Measure,
 } from 'src/types'
-import { ORIGINAL_DATA } from 'src/dataReshape'
+import { MeasureId, MeasureName, ORIGINAL_DATA } from 'src/dataReshape'
 import { getTooltipStyle } from './tooltipStyle'
 import { updateTooltipElement } from './tooltipElement'
 
@@ -49,6 +49,7 @@ export const tooltip: VChartSpecPipe = (spec, context) => {
       },
       content: createDimensionContent(
         encoding.tooltip || [],
+        encoding.color || [],
         measures,
         foldInfo,
         unfoldInfo,
@@ -62,7 +63,8 @@ export const tooltip: VChartSpecPipe = (spec, context) => {
 }
 
 export const createDimensionContent = (
-  tooltip: string[],
+  tooltips: string[],
+  colors: string[],
   measures: Measures = [],
   foldInfo: FoldInfo,
   unfoldInfo: UnfoldInfo,
@@ -71,8 +73,10 @@ export const createDimensionContent = (
   const { measureId, measureValue, foldMap } = foldInfo
   const { encodingColor } = unfoldInfo
 
-  const hasMeasureTooltip = tooltip.some((d) => measures.find((item) => item.id === d))
-
+  const hasMeasureTooltip = tooltips.some((d) => measures.find((item) => item.id === d))
+  const hasMeasureIdInColor = colors.some((d) =>
+    measures.find((item) => item.id === d || d === MeasureId || d === MeasureName),
+  )
   return [
     {
       visible: true,
@@ -81,17 +85,21 @@ export const createDimensionContent = (
       key: !hasMeasureTooltip
         ? (v: unknown) => {
             const datum = v as Datum
-            const key = (datum && (datum[encodingColor] as string)) || ''
+            const colorId = datum?.[encodingColor]
+            const colorAlias = unfoldInfo.colorIdMap?.[colorId]?.alias ?? colorId
 
-            const colorKey = `${unfoldInfo.colorIdMap[key].alias ?? key}`
-
+            // 指标组合场景, 保证的 Tooltip 中包含指标.
             if (hasMultiMeasureGroup) {
-              const mId = (datum && (datum[measureId] as string)) || ''
-
-              return `${colorKey}-${foldMap[mId] ?? mId}`
+              // 图例 Color 内已有指标, 则无需添加指标, 避免重复
+              if (hasMeasureIdInColor) {
+                return colorAlias
+              }
+              // 指标需添加到 Tooltip 中.
+              const meaAlias = (datum && (datum[MeasureName] as string)) || ''
+              return unique([colorAlias, meaAlias]).join('-')
             }
 
-            return colorKey
+            return colorAlias
           }
         : (v: unknown) => {
             const datum = v as Datum

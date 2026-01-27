@@ -41,6 +41,7 @@ export const tooltipOfDualAxisSeries = (options: DualAxisOptions): VChartSpecPip
         },
         content: createDimensionContent(
           encoding.tooltip || [],
+          encoding.color || [],
           measures,
           options.foldInfo,
           unfoldInfo,

@@ -4,9 +4,8 @@ export interface Page {
    */
   field: string
   /**
-   * @description 当前分页值, 用于指定当前分页的页码或页码范围
-   * @example 1
+   * @description 当前分页值, 用于指定当前分页的依据值
    * @example '2023-01-01'
    */
-  currentValue: string | number
+  currentValue: string
 }

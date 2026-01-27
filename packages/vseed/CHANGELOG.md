@@ -1,5 +1,11 @@
 # @visactor/vseed
 
+## 0.3.9
+
+### Patch Changes
+
+- 74944cc: fix: tooltip conflict with measure encoded as color
+
 ## 0.3.8
 
 ### Patch Changes

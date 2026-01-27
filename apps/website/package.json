@@ -10,7 +10,7 @@
     "preview": "rspress preview"
   },
   "dependencies": {
-    "rspress": "1.47.0",
+    "@rspress/core": "2.0.0-rc.7",
     "@visactor/vbi": "workspace:*",
     "@visactor/vseed": "workspace:*",
     "@visactor/vquery": "workspace:*",

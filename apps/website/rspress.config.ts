@@ -1,10 +1,10 @@
 import * as path from 'node:path'
-import { defineConfig } from 'rspress/config'
+import { defineConfig } from '@rspress/core'
 import { pluginPlayground } from '@rspress/plugin-playground'
 // const isDev = process.env.NODE_ENV === 'development'
 
 export default defineConfig({
-  root: path.join(__dirname, 'docs'),
+  root: './docs',
   base: '/VBI/',
   globalStyles: path.join(__dirname, 'components/styles/index.css'),
   plugins: [
@@ -15,7 +15,7 @@ export default defineConfig({
         '@visactor/vseed',
         '@visactor/vquery',
         '@visactor/vbi',
-        'rspress/runtime',
+        '@rspress/core/runtime',
         'yjs',
       ],
     }),

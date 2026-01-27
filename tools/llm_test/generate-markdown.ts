@@ -256,9 +256,13 @@ function generateComponentMarkdown() {
     const fileContentStr = fileContent.toString()
 
     const typeSignature = `type ${topKey}`
+    const interfaceSignature = `export interface ${topKey}`
     let startIndex = fileContentStr.indexOf(`export ${typeSignature}`)
     if (startIndex === -1) {
       startIndex = fileContentStr.indexOf(typeSignature)
+    }
+    if (startIndex === -1) {
+      startIndex = fileContentStr.indexOf(interfaceSignature)
     }
 
     if (startIndex !== -1) {

@@ -18,9 +18,11 @@ import {
   encodingAdapter,
   defaultEncodingForLine,
   pickDimensionsForReshape,
+  page,
 } from '../pipes'
 
 export const lineAdvancedPipeline: AdvancedPipeline = [
+  page,
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,

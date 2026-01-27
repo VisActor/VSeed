@@ -17,9 +17,11 @@ import {
   encodingAdapter,
   defaultEncodingForRadar,
   pickDimensionsForReshape,
+  page,
 } from '../pipes'
 
 export const radarAdvancedPipeline: AdvancedPipeline = [
+  page,
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,

@@ -24,6 +24,7 @@ import type {
   DimensionLinkage,
   ColumnMeasure,
   ColumnDimension,
+  Page,
 } from '../../properties'
 
 /**
@@ -77,6 +78,11 @@ export interface Column {
    * @example [{id: "value", alias: "数值"}]
    */
   measures?: ColumnMeasure[]
+
+  /**
+   * @description 分页配置, 用于指定分页的字段名, 必须是维度
+   */
+  page?: Page
 
   /**
    * @description 图表的背景颜色, 背景颜色可以是颜色字符串, 默认为透明背景, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'

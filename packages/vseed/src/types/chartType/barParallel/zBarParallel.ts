@@ -24,6 +24,7 @@ import {
   zBrush,
   zXLinearAxis,
   zYBandAxis,
+  zPage,
 } from '../../properties'
 
 export const zBarParallel = z.object({
@@ -52,4 +53,5 @@ export const zBarParallel = z.object({
   annotationArea: z.array(zAnnotationArea).or(zAnnotationArea).nullish(),
   dimensionLinkage: zDimensionLinkage.nullish(),
   locale: zLocale.nullish(),
+  page: zPage.nullish(),
 })

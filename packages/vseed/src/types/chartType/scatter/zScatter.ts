@@ -25,6 +25,7 @@ import {
   zBrush,
   zXLinearAxis,
   zYLinearAxis,
+  zPage,
 } from '../../properties'
 
 export const zScatter = z.object({
@@ -33,6 +34,8 @@ export const zScatter = z.object({
   encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasures.nullish(),
+  page: zPage.nullish(),
+
   backgroundColor: zBackgroundColor.nullish(),
   size: z.number().or(z.array(z.number())).nullish(),
   sizeRange: z.number().or(z.array(z.number())).nullish(),

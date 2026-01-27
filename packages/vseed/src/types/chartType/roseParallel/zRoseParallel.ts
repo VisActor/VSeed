@@ -12,6 +12,7 @@ import {
   zTheme,
   zTooltip,
   zBrush,
+  zPage,
 } from '../../properties'
 
 export const zRoseParallel = z.object({
@@ -20,6 +21,8 @@ export const zRoseParallel = z.object({
   encoding: zEncoding.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasures.nullish(),
+  page: zPage.nullish(),
+
   backgroundColor: zBackgroundColor.nullish(),
   color: zColor.nullish(),
   label: zLabel.nullish(),

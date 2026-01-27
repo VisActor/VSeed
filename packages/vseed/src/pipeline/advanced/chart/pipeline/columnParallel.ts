@@ -18,9 +18,11 @@ import {
   encodingAdapter,
   defaultEncodingForColumn,
   pickDimensionsForReshape,
+  page,
 } from '../pipes'
 
 export const columnParallelAdvancedPipeline: AdvancedPipeline = [
+  page,
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,

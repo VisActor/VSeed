@@ -17,10 +17,12 @@ import {
   encodingForHistogram,
   reshapeWithHistogramEncoding,
   regressionLine,
+  page,
 } from '../pipes'
 import { histogramXAxisConfig } from '../pipes/config/histogram'
 
 export const histogramAdvancedPipeline: AdvancedPipeline = [
+  page,
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,

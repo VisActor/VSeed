@@ -65,6 +65,7 @@ export default defineConfig({
   route: {
     exclude: ['components/**/*'],
   },
+
   builderConfig: {
     tools: {
       rspack: {

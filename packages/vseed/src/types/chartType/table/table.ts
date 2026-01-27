@@ -1,5 +1,5 @@
 import { type Locale } from '../../i18n'
-import type { BodyCellStyle, DimensionTree, MeasureTree } from '../../properties'
+import type { BodyCellStyle, DimensionTree, MeasureTree, Page } from '../../properties'
 import { type BackgroundColor, type Dataset, type Theme } from '../../properties'
 
 /**
@@ -49,6 +49,10 @@ export interface Table {
    */
   measures?: MeasureTree
 
+  /**
+   * @description 分页配置, 用于指定分页的字段名, 必须是维度
+   */
+  page?: Page
   /**
    * @default transparent 默认为透明背景
    * @description 背景颜色可以是颜色字符串, 例如'red', 'blue', 也可以是hex, rgb或rgba'#ff0000', 'rgba(255,0,0,0.5)'

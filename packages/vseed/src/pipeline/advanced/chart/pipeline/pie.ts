@@ -15,9 +15,11 @@ import {
   encodingAdapter,
   defaultEncodingForPie,
   pickDimensionsForReshape,
+  page,
 } from '../pipes'
 
 export const pieAdvancedPipeline: AdvancedPipeline = [
+  page,
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,

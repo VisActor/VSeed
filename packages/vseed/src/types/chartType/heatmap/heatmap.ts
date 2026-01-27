@@ -1,6 +1,6 @@
 import { type Locale } from '../../i18n'
 import type { Color, ColorLegend, HeatmapDimension, HeatmapMeasure } from '../../properties'
-import { type BackgroundColor, type Dataset, type Label, type Theme, type Tooltip } from '../../properties'
+import { type BackgroundColor, type Dataset, type Label, type Page, type Theme, type Tooltip } from '../../properties'
 import type { Brush } from '../../properties'
 
 /**
@@ -57,6 +57,11 @@ export interface Heatmap {
    * @example [{id: 'value', alias: '数值'}]
    */
   measures?: HeatmapMeasure[]
+
+  /**
+   * @description 分页配置
+   */
+  page?: Page
 
   /**
    * 图表的背景颜色

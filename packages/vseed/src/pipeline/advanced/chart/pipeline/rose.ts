@@ -16,9 +16,11 @@ import {
   encodingForRose,
   defaultEncodingForRose,
   pickDimensionsForReshape,
+  page,
 } from '../pipes'
 
 export const roseAdvancedPipeline: AdvancedPipeline = [
+  page,
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,

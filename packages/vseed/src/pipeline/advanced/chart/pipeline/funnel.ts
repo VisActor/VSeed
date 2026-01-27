@@ -15,9 +15,11 @@ import {
   encodingAdapter,
   defaultEncodingForFunnel,
   pickDimensionsForReshape,
+  page,
 } from '../pipes'
 
 export const funnelAdvancedPipeline: AdvancedPipeline = [
+  page,
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,

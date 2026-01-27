@@ -12,6 +12,7 @@ import {
   zTheme,
   zTooltip,
   zBrush,
+  zPage,
 } from '../../properties'
 
 export const zHeatmap = z.object({
@@ -19,6 +20,8 @@ export const zHeatmap = z.object({
   dataset: zDataset.nullish(),
   dimensions: zDimensions.nullish(),
   measures: zMeasures.nullish(),
+  page: zPage.nullish(),
+
   backgroundColor: zBackgroundColor.nullish(),
   color: zColor.nullish(),
   label: zLabel.nullish(),

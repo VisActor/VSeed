@@ -7,11 +7,13 @@ import {
   defaultMeasures,
   encodingForPivotTable,
   initAdvancedVSeed,
+  page,
   pivotTableConfig,
   reshapePivotTable,
 } from '../pipes'
 
 export const pivotTableAdvancedPipeline: AdvancedPipeline = [
+  page,
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,

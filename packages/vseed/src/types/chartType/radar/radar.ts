@@ -8,6 +8,7 @@ import {
   type Legend,
   type Theme,
   type Tooltip,
+  type Page,
 } from '../../properties'
 import type { Brush } from '../../properties'
 
@@ -64,6 +65,11 @@ export interface Radar {
    * @example [{id: 'value', alias: '数值'}]
    */
   measures?: RadarMeasure[]
+
+  /**
+   * @description 分页配置, 用于指定分页的字段名, 必须是维度
+   */
+  page?: Page
 
   /**
    * 图表的背景颜色

@@ -10,6 +10,7 @@ import type {
   Dataset,
   Label,
   Legend,
+  Page,
   LineStyle,
   PointStyle,
   Theme,
@@ -74,6 +75,10 @@ export interface Line {
    * @example [{id: "value", alias: "数值"}]
    */
   measures?: LineMeasure[]
+  /**
+   * @description 分页配置
+   */
+  page?: Page
 
   /**
    * 图表的背景颜色
@@ -210,6 +215,7 @@ export interface Line {
    * 当hover 到某个维度值时，联动高亮其他图表中相同维度值的数据
    */
   dimensionLinkage?: DimensionLinkage
+
   /**
    * 语言
    * @description 图表语言配置, 支持'zh-CN'与'en-US'两种语言, 另外可以调用 intl.setLocale('zh-CN') 方法设置语言

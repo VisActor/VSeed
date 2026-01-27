@@ -18,9 +18,11 @@ import {
   encodingAdapter,
   defaultEncodingForBar,
   pickDimensionsForReshape,
+  page,
 } from '../pipes'
 
 export const barParallelAdvancedPipeline: AdvancedPipeline = [
+  page,
   initAdvancedVSeed,
   defaultMeasures,
   defaultDimensions,

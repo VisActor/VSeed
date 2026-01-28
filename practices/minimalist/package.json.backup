@@ -1,0 +1,55 @@
+{
+  "name": "minimalist",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "source": "./src/index.tsx",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build --watch",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "test": "rstest"
+  },
+  "dependencies": {
+    "@ant-design/icons": "6.1.0",
+    "@visactor/vbi": "workspace:*",
+    "@visactor/vchart": "latest",
+    "@visactor/vquery": "workspace:*",
+    "@visactor/vseed": "workspace:*",
+    "@visactor/vtable": "latest",
+    "antd": "6.1.3",
+    "zustand": "5.0.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@rsbuild/plugin-react": "^1.4.3",
+    "@rslib/core": "^0.19.3",
+    "@rstest/adapter-rslib": "^0.1.1",
+    "@rstest/core": "^0.7.9",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@types/react": "^19.2.8",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "happy-dom": "^20.3.3",
+    "prettier": "^3.7.3",
+    "react": "^19.2.3",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.48.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "private": true
+}
